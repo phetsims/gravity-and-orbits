@@ -36,7 +36,9 @@ define( function( require ) {
 
   inherit( PropertySet, GravityAndOrbitsModel, {
     step: function() {},
-    reset: function() {}
+    reset: function() {
+      this.scaleProperty.reset();
+    }
   } );
 
   return GravityAndOrbitsModel;

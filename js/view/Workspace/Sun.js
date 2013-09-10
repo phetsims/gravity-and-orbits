@@ -13,13 +13,23 @@ define( function( require ) {
   var Circle = require( 'SCENERY/nodes/Circle' );
 
   function Sun( model ) {
+    var self = this;
     Node.call( this, model.sun.coordinates );
 
-    this.addChild( new Circle( model.sun.radius, {
+    this.view = new Circle( model.sun.radius, {
       fill: new RadialGradient( model.sun.radius * 0.3, -model.sun.radius * 0.3, 1, model.sun.radius * 0.3, -model.sun.radius * 0.3, model.sun.radius / 1.5 )
         .addColorStop( 0, model.sun.colorGradient[0] )
         .addColorStop( 1, model.sun.colorGradient[1] )
-    } ) );
+    } );
+
+    this.addChild( this.view );
+
+    model.scaleProperty.link( function( newScale, oldScale ) {
+      if ( oldScale ) {
+        self.view.scale( 1 / oldScale );
+      }
+      self.view.scale( newScale );
+    } );
   }
 
   inherit( Node, Sun );
