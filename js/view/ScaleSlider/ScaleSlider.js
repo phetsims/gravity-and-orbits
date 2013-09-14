@@ -16,8 +16,13 @@ define( function( require ) {
   function ScaleSlider( model, x, y, options ) {
     Node.call( this, {x: x, y: y} );
 
+    // add plus button
     this.addChild( new SliderButton( 0, 0, model, options.range, true ) );
+
+    // add slide line
     this.addChild( new SliderLine( 0, 34, 150, model.scaleProperty, options.range ) );
+
+    // add minus button
     this.addChild( new SliderButton( 0, 190, model, options.range, false ) );
   }
 

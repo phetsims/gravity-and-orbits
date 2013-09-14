@@ -16,11 +16,13 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   function Button( x, y, model, range, isIncrease ) {
-    var rectangleButton, callback, sample, width = 25, height = 25;
-    Node.call( this, {x: x - width / 2, y: y, cursor: 'pointer'} );
+    var callback, sample, width = 25, height = 25;
+    Node.call( this, {x: x - width / 2, y: y} );
 
+    // create default view
     sample = new Node( {children: [new Rectangle( 0, 0, width, height, 2, 2, {fill: '#DBD485'} ), new Rectangle( 4, height / 2 - 1, width - 8, 2, {fill: 'black'} )]} );
 
+    // increase or decrease behaviour
     if ( isIncrease ) {
       callback = function() {
         model.scale = Math.min( model.scale + 0.1, range.max );
@@ -40,38 +42,13 @@ define( function( require ) {
       disabledNode: new Node( {children: [sample]} )
     };
 
-    // add background
+    // create button
     var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, callback );
 
     this.addChild( pushButton );
   }
 
   inherit( Node, Button );
-
-
-  /*function Button( x, y, model, range, isIncrease ) {
-   var rectangleButton, width = 20, height = 20;
-   Node.call( this, {x: x - width / 2, y: y, cursor: 'pointer'} );
-
-   // add background
-   var node = new Node();
-   node.addChild( new Rectangle( 0, 0, width, height ) );
-
-   if ( isIncrease ) {
-   rectangleButton = new RectangleButton( node, function() {
-   model.scale = Math.min( model.scale + 0.1, range.max );
-   } );
-   }
-   else {
-   rectangleButton = new RectangleButton( node, function() {
-   model.scale = Math.max( model.scale - 0.1, range.min );
-   } );
-   }
-
-   this.addChild( rectangleButton );
-   }
-
-   inherit( RectangleButton, Button );*/
 
   return Button;
 } );
