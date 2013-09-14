@@ -10,24 +10,33 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var Sun = require( 'view/Workspace/Sun' );
+  var Sun = require( 'view/SpaceObject/Sun' );
 
   function Workspace( model ) {
-    model = _.extend( {
+    var self = this;
+    var options = {
       sun: {
-        coordinates: {
+        coords: {
           x: 275,
           y: 225
         },
-        colorGradient: ["#fff", "#ff0"], // [<gradient light>, <gradient dark>]
         radius: 50 // radius when scale is 1.0
       }
-    }, model );
+    };
 
     Node.call( this );
 
     // add sun to workspace
-    this.addChild( new Sun( model ) );
+    this.sun = new Sun( options.sun.coords, options.sun.radius );
+    this.addChild( this.sun );
+
+    // redraw objects when scale is changing
+    model.scaleProperty.link( function( newScale, oldScale ) {
+      if ( oldScale ) {
+        self.sun.view.scale( 1 / oldScale );
+      }
+      self.sun.view.scale( newScale );
+    } );
   }
 
   inherit( Node, Workspace );

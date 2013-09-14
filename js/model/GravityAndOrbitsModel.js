@@ -19,8 +19,6 @@ define( function( require ) {
   };
 
   function GravityAndOrbitsModel( width, height ) {
-
-    var model = this;
     this.massRange = new Range( 0.5, 2 );
 
     // dimensions of the model's space
@@ -28,6 +26,7 @@ define( function( require ) {
     this.height = height;
 
     PropertySet.call( this, {
+      planetMode: 0,
       scale: 1
     } );
 
@@ -38,6 +37,7 @@ define( function( require ) {
     step: function() {},
     reset: function() {
       this.scaleProperty.reset();
+      this.planetModeProperty.reset();
     }
   } );
 

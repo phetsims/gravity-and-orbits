@@ -12,10 +12,17 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Workspace = require( 'view/Workspace/Workspace' );
   var ResetAllButton = require( 'view/ResetAllButton' );
-  var ScaleSlider = require( "view/ScaleSlider/ScaleSlider" );
+  var ScaleSlider = require( 'view/ScaleSlider/ScaleSlider' );
+  var RightControlPanel = require( 'view/RightControlPanel/RightControlPanel' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
+    var options = {
+      scaleSlider: {
+        range: {max: 1.5, min: 0.5}
+      },
+      rightControlPanel: {}
+    };
 
     // add workspace
     this.addChild( new Workspace( model ) );
@@ -25,10 +32,10 @@ define( function( require ) {
     this.addChild( resetAllButton );
 
     // add scale slider
-    var options = {
-      range: {max: 1.5, min: 0.5}
-    };
-    this.addChild( new ScaleSlider( model, 25, 10, options ) );
+    this.addChild( new ScaleSlider( model, 25, 10, options.scaleSlider ) );
+
+    // add right control panel
+    this.addChild( new RightControlPanel( model, 585, 10 ) );
   }
 
   inherit( ScreenView, GravityAndOrbitsView );
