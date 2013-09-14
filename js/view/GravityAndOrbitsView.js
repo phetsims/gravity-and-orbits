@@ -28,14 +28,14 @@ define( function( require ) {
     this.addChild( new Workspace( model ) );
 
     // add reset button
-    var resetAllButton = new ResetAllButton( function() { model.reset(); }, { scale: 0.8, x: 650, y: 400 } );
+    var resetAllButton = new ResetAllButton( function() { model.reset(); }, { scale: 0.8, x: 638, y: 400 } );
     this.addChild( resetAllButton );
 
     // add scale slider
     this.addChild( new ScaleSlider( model, 25, 10, options.scaleSlider ) );
 
     // add right control panel
-    this.addChild( new RightControlPanel( model, 585, 10 ) );
+    this.addChild( new RightControlPanel( model, 560, 10 ) );
   }
 
   inherit( ScreenView, GravityAndOrbitsView );

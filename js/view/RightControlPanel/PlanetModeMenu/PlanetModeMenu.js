@@ -17,13 +17,13 @@ define( function( require ) {
     Node.call( this, coords );
 
     // add reset button
-    this.addChild( new PlanetModeResetButton( model, {x: 143, y: 7} ) );
+    this.addChild( new PlanetModeResetButton( model, {x: 168, y: 7} ) );
 
     // add planet mode options
-    this.addChild( new PlanetModeOption( model, {x: 7, y: 5}, 0 ) );
-    this.addChild( new PlanetModeOption( model, {x: 7, y: 35}, 1 ) );
-    this.addChild( new PlanetModeOption( model, {x: 7, y: 65}, 2 ) );
-    this.addChild( new PlanetModeOption( model, {x: 7, y: 95}, 3 ) );
+    this.addChild( new PlanetModeOption( model, {x: 7, y: 5}, {num: 0, sun: true, earth: true, moon: false, spaceStation: false} ) );
+    this.addChild( new PlanetModeOption( model, {x: 7, y: 35}, {num: 1, sun: true, earth: true, moon: true, spaceStation: false} ) );
+    this.addChild( new PlanetModeOption( model, {x: 7, y: 65}, {num: 2, sun: false, earth: true, moon: true, spaceStation: false} ) );
+    this.addChild( new PlanetModeOption( model, {x: 7, y: 95}, {num: 3, sun: false, earth: true, moon: false, spaceStation: true} ) );
   }
 
   inherit( Node, PlanetModeMenu );

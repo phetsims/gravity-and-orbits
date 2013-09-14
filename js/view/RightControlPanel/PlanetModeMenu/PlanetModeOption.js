@@ -14,14 +14,35 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PushButton = require( 'SUN/PushButton' );
 
-  function PlanetModeOption( model, coords, num ) {
+  var Sun = require( 'view/SpaceObject/Sun' );
+  var Earth = require( 'view/SpaceObject/Earth' );
+  var Moon = require( 'view/SpaceObject/Moon' );
+  var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
+
+  function PlanetModeOption( model, coords, opt ) {
     var self = this;
     Node.call( this, coords );
 
     // create view
-    var stroke = new Rectangle( 0, 0, 125, 30, 5, 5, {fill: 'rgba(0,0,0,0)', stroke: '#fff', lineWidth: 2} );
-    var strokeDisabled = new Rectangle( 0, 0, 125, 30, 5, 5, {fill: 'rgba(0,0,0,0)', cursor: 'pointer'} );
-    var node = new Node( {children: []} );
+    var stroke = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', stroke: '#fff', lineWidth: 2} );
+    var strokeDisabled = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', cursor: 'pointer'} );
+    var node = new Node();
+
+    if ( opt.sun ) {
+      node.addChild( new Sun( {x: 16, y: 15}, 11 ) );
+    }
+
+    if ( opt.earth ) {
+      node.addChild( new Earth( {x: 52, y: 15}, 11 ) );
+    }
+
+    if ( opt.moon ) {
+      node.addChild( new Moon( {x: 88, y: 15}, 11 ) );
+    }
+
+    if ( opt.spaceStation ) {
+      node.addChild( new SpaceStation( {x: 124, y: 15}, 12 ) );
+    }
 
     // button options
     var options = {
@@ -30,7 +51,7 @@ define( function( require ) {
       downNode: new Node( {children: [node, stroke]} ),
       disabledNode: new Node( {children: [node, strokeDisabled]} ),
       callback: function() {
-        model.planetMode = num;
+        model.planetMode = opt.num;
       }
     };
 
@@ -39,7 +60,7 @@ define( function( require ) {
     this.addChild( this.button );
 
     model.planetModeProperty.link( function( mode ) {
-      self.button._enabled.set( mode === num );
+      self.button._enabled.set( mode === opt.num );
     } );
   }
 

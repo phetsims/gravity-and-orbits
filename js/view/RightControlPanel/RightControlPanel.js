@@ -23,7 +23,7 @@ define( function( require ) {
     Node.call( this, {x: x, y: y} );
 
     // add background
-    this.addChild( new Rectangle( 0, 0, 175, 375, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} ) );
+    this.addChild( new Rectangle( 0, 0, 200, 375, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} ) );
 
     // add planet mode menu
     this.addChild( new PlanetModeMenu( model ) );
