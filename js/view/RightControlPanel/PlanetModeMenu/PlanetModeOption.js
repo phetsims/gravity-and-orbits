@@ -12,7 +12,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PushButton = require( 'SUN/PushButton' );
+  var RadioButton = require( 'SUN/RadioButton' );
 
   var Sun = require( 'view/SpaceObject/Sun' );
   var Earth = require( 'view/SpaceObject/Earth' );
@@ -20,12 +20,11 @@ define( function( require ) {
   var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
 
   function PlanetModeOption( model, coords, opt ) {
-    var self = this;
     Node.call( this, coords );
 
     // create view
-    var stroke = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', stroke: '#fff', lineWidth: 2} );
-    var strokeDisabled = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', cursor: 'pointer'} );
+    var strokeSelected = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', stroke: '#fff', lineWidth: 2} );
+    var strokeDeselected = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', cursor: 'pointer'} );
     var node = new Node();
 
     if ( opt.sun ) {
@@ -46,22 +45,13 @@ define( function( require ) {
 
     // button options
     var options = {
-      upNode: new Node( {children: [node, stroke]} ),
-      overNode: new Node( {children: [node, stroke]} ),
-      downNode: new Node( {children: [node, stroke]} ),
-      disabledNode: new Node( {children: [node, strokeDisabled]} ),
-      callback: function() {
-        model.planetMode = opt.num;
-      }
+      selectedNode: new Node( {children: [node, strokeSelected]} ),
+      deselectedNode: new Node( {children: [node, strokeDeselected]} )
     };
 
     // create button
-    this.button = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, options.callback );
+    this.button = new RadioButton( model.planetModeProperty, opt.num, options.selectedNode, options.deselectedNode );
     this.addChild( this.button );
-
-    model.planetModeProperty.link( function( mode ) {
-      self.button._enabled.set( mode === opt.num );
-    } );
   }
 
   inherit( Node, PlanetModeOption );

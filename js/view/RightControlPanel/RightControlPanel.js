@@ -10,14 +10,8 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var Strings = require( 'Strings' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var PlanetModeMenu = require( 'view/RightControlPanel/PlanetModeMenu/PlanetModeMenu' );
-
-  var FONT = new PhetFont( 16 );
+  var GravityModeMenu = require( 'view/RightControlPanel/GravityModeMenu/GravityModeMenu' );
 
   function RightControlPanel( model, x, y ) {
     Node.call( this, {x: x, y: y} );
@@ -26,11 +20,13 @@ define( function( require ) {
     this.addChild( new Rectangle( 0, 0, 200, 375, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} ) );
 
     // add planet mode menu
-    this.addChild( new PlanetModeMenu( model ) );
+    this.addChild( new PlanetModeMenu( model, {x: 7, y: 5} ) );
+
+    // add gravity mode menu
+    //this.addChild( new GravityModeMenu( model, {x: 7, y: 145} ) );
   }
 
   inherit( Node, RightControlPanel );
 
   return RightControlPanel;
-} )
-;
+} );
