@@ -27,6 +27,7 @@ define( function( require ) {
 
     PropertySet.call( this, {
       planetMode: 0,
+      gravity: true,
       scale: 1
     } );
 
@@ -36,8 +37,9 @@ define( function( require ) {
   inherit( PropertySet, GravityAndOrbitsModel, {
     step: function() {},
     reset: function() {
-      this.scaleProperty.reset();
       this.planetModeProperty.reset();
+      this.gravityProperty.reset();
+      this.scaleProperty.reset();
     }
   } );
 

@@ -23,7 +23,7 @@ define( function( require ) {
     this.addChild( new PlanetModeMenu( model, {x: 7, y: 5} ) );
 
     // add gravity mode menu
-    //this.addChild( new GravityModeMenu( model, {x: 7, y: 145} ) );
+    this.addChild( new GravityModeMenu( model, {x: 7, y: 145} ) );
   }
 
   inherit( Node, RightControlPanel );
