@@ -28,6 +28,10 @@ define( function( require ) {
     PropertySet.call( this, {
       planetMode: 0,
       gravity: true,
+      forceArrow: false,
+      velocityArrow: false,
+      path: false,
+      grid: false,
       scale: 1
     } );
 
@@ -39,6 +43,10 @@ define( function( require ) {
     reset: function() {
       this.planetModeProperty.reset();
       this.gravityProperty.reset();
+      this.forceArrowProperty.reset();
+      this.velocityArrowProperty.reset();
+      this.pathProperty.reset();
+      this.gridProperty.reset();
       this.scaleProperty.reset();
     }
   } );

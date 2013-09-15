@@ -3,6 +3,10 @@
 define( {
   "GAO.name": "Gravity and Orbits Lab",
   "GAO.gravity": "Gravity",
+  "GAO.force": "Force",
+  "GAO.velocity": "Velocity",
+  "GAO.path": "Path",
+  "GAO.grid": "Grid",
   "GAO.on": "on",
   "GAO.off": "off"
 } );

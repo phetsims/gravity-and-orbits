@@ -12,6 +12,7 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PlanetModeMenu = require( 'view/RightControlPanel/PlanetModeMenu/PlanetModeMenu' );
   var GravityModeMenu = require( 'view/RightControlPanel/GravityModeMenu/GravityModeMenu' );
+  var SpaceObjectsPropertyCheckbox = require( 'view/RightControlPanel/SpaceObjectsPropertyCheckbox/SpaceObjectsPropertyCheckbox' );
 
   function RightControlPanel( model, x, y ) {
     Node.call( this, {x: x, y: y} );
@@ -23,7 +24,10 @@ define( function( require ) {
     this.addChild( new PlanetModeMenu( model, {x: 7, y: 5} ) );
 
     // add gravity mode menu
-    this.addChild( new GravityModeMenu( model, {x: 7, y: 145} ) );
+    this.addChild( new GravityModeMenu( model, {x: 7, y: 151} ) );
+
+    // add space objects property checkbox
+    this.addChild( new SpaceObjectsPropertyCheckbox( model, {x: 7, y: 185} ) );
   }
 
   inherit( Node, RightControlPanel );
