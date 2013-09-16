@@ -25,7 +25,14 @@ define( function( require ) {
     this.massRange = new Range( 0.5, 2 );
 
     this.viewModes = ['cartoon', 'scale'];
-    this.interval = null;
+
+    this.spaseObjects = ['sun', 'earth', 'moon', 'spaceStation'];
+    this.planetModes = [
+      {sun: true, earth: true, moon: false, spaceStation: false},
+      {sun: true, earth: true, moon: true, spaceStation: false},
+      {sun: false, earth: true, moon: true, spaceStation: false},
+      {sun: false, earth: true, moon: false, spaceStation: true}
+    ];
 
     // dimensions of the model's space
     this.width = width;

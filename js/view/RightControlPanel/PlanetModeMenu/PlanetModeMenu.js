@@ -20,10 +20,9 @@ define( function( require ) {
     this.addChild( new PlanetModeResetButton( model, {x: 161, y: -13} ) );
 
     // add planet mode options
-    this.addChild( new PlanetModeOption( model, {x: 0, y: -15}, {num: 0, sun: true, earth: true, moon: false, spaceStation: false} ) );
-    this.addChild( new PlanetModeOption( model, {x: 0, y: 15}, {num: 1, sun: true, earth: true, moon: true, spaceStation: false} ) );
-    this.addChild( new PlanetModeOption( model, {x: 0, y: 45}, {num: 2, sun: false, earth: true, moon: true, spaceStation: false} ) );
-    this.addChild( new PlanetModeOption( model, {x: 0, y: 75}, {num: 3, sun: false, earth: true, moon: false, spaceStation: true} ) );
+    for ( var i = 0, dy = 30; i < model.planetModes.length; i++ ) {
+      this.addChild( new PlanetModeOption( model, {x: 0, y: -15 + i * dy}, i ) );
+    }
   }
 
   inherit( Node, PlanetModeMenu );

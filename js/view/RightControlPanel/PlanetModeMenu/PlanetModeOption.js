@@ -19,28 +19,25 @@ define( function( require ) {
   var Moon = require( 'view/SpaceObject/Moon' );
   var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
 
-  function PlanetModeOption( model, coords, opt ) {
+  function PlanetModeOption( model, coords, num ) {
     Node.call( this, coords );
+    var map = {
+      sun: Sun,
+      earth: Earth,
+      moon: Moon,
+      spaceStation: SpaceStation
+    };
 
     // create view
     var strokeSelected = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', stroke: '#fff', lineWidth: 2} );
     var strokeDeselected = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', cursor: 'pointer'} );
     var node = new Node();
 
-    if ( opt.sun ) {
-      node.addChild( new Sun( {x: 16, y: 15}, 11 ) );
-    }
-
-    if ( opt.earth ) {
-      node.addChild( new Earth( {x: 52, y: 15}, 11 ) );
-    }
-
-    if ( opt.moon ) {
-      node.addChild( new Moon( {x: 88, y: 15}, 11 ) );
-    }
-
-    if ( opt.spaceStation ) {
-      node.addChild( new SpaceStation( {x: 124, y: 15}, 12 ) );
+    for ( var i = model.spaseObjects.length, currentObj; i--; ) {
+      currentObj = model.spaseObjects[i];
+      if ( model.planetModes[num][currentObj] ) {
+        node.addChild( new map[currentObj]( {x: 16 + i * 36, y: 15}, 11 ) );
+      }
     }
 
     // button options
@@ -50,7 +47,7 @@ define( function( require ) {
     };
 
     // create button
-    this.button = new RadioButton( model.planetModeProperty, opt.num, options.selectedNode, options.deselectedNode );
+    this.button = new RadioButton( model.planetModeProperty, num, options.selectedNode, options.deselectedNode );
     this.addChild( this.button );
   }
 
