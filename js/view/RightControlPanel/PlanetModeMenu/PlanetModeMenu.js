@@ -17,13 +17,13 @@ define( function( require ) {
     Node.call( this, coords );
 
     // add reset button
-    this.addChild( new PlanetModeResetButton( model, {x: 161, y: 2} ) );
+    this.addChild( new PlanetModeResetButton( model, {x: 161, y: -13} ) );
 
     // add planet mode options
-    this.addChild( new PlanetModeOption( model, {x: 0, y: 0}, {num: 0, sun: true, earth: true, moon: false, spaceStation: false} ) );
-    this.addChild( new PlanetModeOption( model, {x: 0, y: 30}, {num: 1, sun: true, earth: true, moon: true, spaceStation: false} ) );
-    this.addChild( new PlanetModeOption( model, {x: 0, y: 60}, {num: 2, sun: false, earth: true, moon: true, spaceStation: false} ) );
-    this.addChild( new PlanetModeOption( model, {x: 0, y: 90}, {num: 3, sun: false, earth: true, moon: false, spaceStation: true} ) );
+    this.addChild( new PlanetModeOption( model, {x: 0, y: -15}, {num: 0, sun: true, earth: true, moon: false, spaceStation: false} ) );
+    this.addChild( new PlanetModeOption( model, {x: 0, y: 15}, {num: 1, sun: true, earth: true, moon: true, spaceStation: false} ) );
+    this.addChild( new PlanetModeOption( model, {x: 0, y: 45}, {num: 2, sun: false, earth: true, moon: true, spaceStation: false} ) );
+    this.addChild( new PlanetModeOption( model, {x: 0, y: 75}, {num: 3, sun: false, earth: true, moon: false, spaceStation: true} ) );
   }
 
   inherit( Node, PlanetModeMenu );

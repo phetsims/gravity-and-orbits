@@ -15,19 +15,52 @@ define( function( require ) {
   var SpaceObjectsPropertyCheckbox = require( 'view/RightControlPanel/SpaceObjectsPropertyCheckbox/SpaceObjectsPropertyCheckbox' );
 
   function RightControlPanel( model, x, y ) {
+    var self = this, height = 0, lineOffset, sectionsOffset;
     Node.call( this, {x: x, y: y} );
 
     // add background
-    this.addChild( new Rectangle( 0, 0, 200, 375, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} ) );
+    this.back = new Rectangle( 0, 0, 200, 0, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} );
+    this.addChild( this.back );
 
-    // add planet mode menu
-    this.addChild( new PlanetModeMenu( model, {x: 7, y: 5} ) );
+    // add sections
+    var sections = [
+      {constructor: PlanetModeMenu, name: 'PlanetModeMenu'},
+      {constructor: GravityModeMenu, name: 'GravityModeMenu'},
+      {constructor: SpaceObjectsPropertyCheckbox, name: 'SpaceObjectsPropertyCheckbox'}
+    ];
 
-    // add gravity mode menu
-    this.addChild( new GravityModeMenu( model, {x: 7, y: 151} ) );
+    lineOffset = 10;
+    sectionsOffset = 20;
+    for ( var i = 0, len = sections.length; i < len; i++ ) {
+      // add section
+      this[sections[i].name] = {
+        view: new sections[i].constructor( model, {x: 7, y: height + sectionsOffset} )
+      };
+      height += this[sections[i].name].view.getHeight() + lineOffset;
+      this.addChild( this[sections[i].name].view );
 
-    // add space objects property checkbox
-    this.addChild( new SpaceObjectsPropertyCheckbox( model, {x: 7, y: 185} ) );
+      // add bottom line
+      if ( i !== len - 1 ) {
+        this[sections[i].name].line = new Rectangle( -1, height, 200, 2, {fill: '#8E9097'} );
+        this.addChild( this[sections[i].name].line );
+      }
+    }
+
+    // set background height
+    this.back.setRectHeight( height );
+
+    model.viewModeProperty.link( function() {
+      // resize control panel
+      var i, h = 0, len = sections.length;
+      for ( i = 0; i < len; i++ ) {
+        self[sections[i].name].view.setY( h + sectionsOffset );
+        h += self[sections[i].name].view.getHeight() + lineOffset;
+        if ( i !== len - 1 ) {
+          self[sections[i].name].line.setRectY( h );
+        }
+      }
+      self.back.setRectHeight( h );
+    } );
   }
 
   inherit( Node, RightControlPanel );

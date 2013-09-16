@@ -21,17 +21,22 @@ define( function( require ) {
   function GravityAndOrbitsModel( width, height ) {
     this.massRange = new Range( 0.5, 2 );
 
+    this.viewModes = ['cartoon', 'scale'];
+
     // dimensions of the model's space
     this.width = width;
     this.height = height;
 
     PropertySet.call( this, {
+      viewMode: this.viewModes[0],
       planetMode: 0,
       gravity: true,
       forceArrow: false,
       velocityArrow: false,
       path: false,
       grid: false,
+      tape: false,
+      mass: false,
       scale: 1
     } );
 
@@ -47,6 +52,8 @@ define( function( require ) {
       this.velocityArrowProperty.reset();
       this.pathProperty.reset();
       this.gridProperty.reset();
+      this.tapeProperty.reset();
+      this.massProperty.reset();
       this.scaleProperty.reset();
     }
   } );
