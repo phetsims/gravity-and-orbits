@@ -29,7 +29,15 @@ define( function() {
       'reset_button_over.png',
       'reset_button_down.png',
       'reset_button_disabled.png',
-      'slider.png'
+      'slider.png',
+      'button_sim_pause.png',
+      'button_sim_pause_hover.png',
+      'button_sim_play.png',
+      'button_sim_play_hover.png',
+      'button_step_deactivated.png',
+      'button_step_hover.png',
+      'button_step_pressed.png',
+      'button_step_unpressed.png'
     ]
   };
 } );

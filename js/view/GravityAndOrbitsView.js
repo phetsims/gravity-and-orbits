@@ -14,6 +14,7 @@ define( function( require ) {
   var ResetAllButton = require( 'view/ResetAllButton' );
   var ScaleSlider = require( 'view/ScaleSlider/ScaleSlider' );
   var RightControlPanel = require( 'view/RightControlPanel/RightControlPanel' );
+  var BottomControlPanel = require( 'view/BottomControlPanel/BottomControlPanel' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
@@ -36,6 +37,9 @@ define( function( require ) {
 
     // add right control panel
     this.addChild( new RightControlPanel( model, 560, 10 ) );
+
+    // add bottom control panel
+    this.addChild( new BottomControlPanel( model, 100, 400 ) );
   }
 
   inherit( ScreenView, GravityAndOrbitsView );

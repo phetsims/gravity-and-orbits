@@ -10,5 +10,10 @@ define( {
   "GAO.tape": "Measuring Tape",
   "GAO.mass": "Mass",
   "GAO.on": "on",
-  "GAO.off": "off"
+  "GAO.off": "off",
+  "GAO.fastForward": "Fast Forward",
+  "GAO.normal": "Normal",
+  "GAO.slowMotion": "Slow Motion",
+  "GAO.clear": "Clear",
+  "GAO.earthDays": "Earth Days"
 } );

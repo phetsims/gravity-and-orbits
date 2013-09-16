@@ -12,6 +12,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
 
+  var fps = 30, tick = 0;
+
   var G = 6.67384E-11; // gravitational constant
 
   var calculateForce = function( mass1, mass2, distance ) {
@@ -19,24 +21,29 @@ define( function( require ) {
   };
 
   function GravityAndOrbitsModel( width, height ) {
+    var self = this;
     this.massRange = new Range( 0.5, 2 );
 
     this.viewModes = ['cartoon', 'scale'];
+    this.interval = null;
 
     // dimensions of the model's space
     this.width = width;
     this.height = height;
 
     PropertySet.call( this, {
-      viewMode: this.viewModes[0],
-      planetMode: 0,
-      gravity: true,
-      forceArrow: false,
-      velocityArrow: false,
-      path: false,
-      grid: false,
-      tape: false,
-      mass: false,
+      viewMode: this.viewModes[0], // 'cartoon', 'scale'
+      planetMode: 0, // which planet showing
+      gravity: true, // switch gravity
+      forceArrow: false, // visible force arrows
+      velocityArrow: false, // visible velocity arrows
+      path: false, // visible path
+      grid: false, // visible grid
+      tape: false, // visible tape
+      mass: false, // visible mass
+      play: false, // play/pause state
+      speed: 1, // 1.75, 1, 0.25
+      day: 0,
       scale: 1
     } );
 
@@ -44,7 +51,12 @@ define( function( require ) {
   }
 
   inherit( PropertySet, GravityAndOrbitsModel, {
-    step: function() {},
+    step: function() {
+      if ( this.play && (++tick % fps === 0) ) {
+        this.stepManual();
+        tick = 0;
+      }
+    },
     reset: function() {
       this.planetModeProperty.reset();
       this.gravityProperty.reset();
@@ -54,7 +66,16 @@ define( function( require ) {
       this.gridProperty.reset();
       this.tapeProperty.reset();
       this.massProperty.reset();
+      this.playProperty.reset();
+      this.speedProperty.reset();
+      this.dayProperty.reset();
       this.scaleProperty.reset();
+    },
+    clear: function() {
+      this.dayProperty.reset();
+    },
+    stepManual: function() {
+      this.day += this.speed;
     }
   } );
 
