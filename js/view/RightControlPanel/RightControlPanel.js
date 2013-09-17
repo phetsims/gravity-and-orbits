@@ -13,9 +13,10 @@ define( function( require ) {
   var PlanetModeMenu = require( 'view/RightControlPanel/PlanetModeMenu/PlanetModeMenu' );
   var GravityModeMenu = require( 'view/RightControlPanel/GravityModeMenu/GravityModeMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'view/RightControlPanel/SpaceObjectsPropertyCheckbox/SpaceObjectsPropertyCheckbox' );
+  var MassMenu = require( 'view/RightControlPanel/MassMenu/MassMenu' );
 
   function RightControlPanel( model, x, y ) {
-    var self = this, height = 0, lineOffset, sectionsOffset;
+    var self = this, options = {height: 0, lineOffset: 10, sectionsOffset: 20};
     Node.call( this, {x: x, y: y} );
 
     // add background
@@ -26,42 +27,52 @@ define( function( require ) {
     var sections = [
       {constructor: PlanetModeMenu, name: 'PlanetModeMenu'},
       {constructor: GravityModeMenu, name: 'GravityModeMenu'},
-      {constructor: SpaceObjectsPropertyCheckbox, name: 'SpaceObjectsPropertyCheckbox'}
+      {constructor: SpaceObjectsPropertyCheckbox, name: 'SpaceObjectsPropertyCheckbox'},
+      {constructor: MassMenu, name: 'MassMenu'}
     ];
 
-    lineOffset = 10;
-    sectionsOffset = 20;
+    addSections.call( this, model, sections, options );
+
+    // set background height
+    this.back.setRectHeight( options.height );
+    model.rightPanelHeight = options.height;
+
+    model.viewModeProperty.link( function() {
+      resizeSections.call( self, model, sections, options );
+    } );
+  }
+
+  var addSections = function( model, sections, options ) {
     for ( var i = 0, len = sections.length; i < len; i++ ) {
       // add section
       this[sections[i].name] = {
-        view: new sections[i].constructor( model, {x: 7, y: height + sectionsOffset} )
+        view: new sections[i].constructor( model, {x: 7, y: options.height + options.sectionsOffset} )
       };
-      height += this[sections[i].name].view.getHeight() + lineOffset;
+      options.height += this[sections[i].name].view.getHeight() + options.lineOffset;
       this.addChild( this[sections[i].name].view );
 
       // add bottom line
       if ( i !== len - 1 ) {
-        this[sections[i].name].line = new Rectangle( -1, height, 200, 2, {fill: '#8E9097'} );
+        this[sections[i].name].line = new Rectangle( -1, options.height, 200, 2, {fill: '#8E9097'} );
         this.addChild( this[sections[i].name].line );
       }
     }
+  };
 
-    // set background height
-    this.back.setRectHeight( height );
+  var resizeSections = function( model, sections, options ) {
+    var i, len = sections.length;
+    options.height = 0;
 
-    model.viewModeProperty.link( function() {
-      // resize control panel
-      var i, h = 0, len = sections.length;
-      for ( i = 0; i < len; i++ ) {
-        self[sections[i].name].view.setY( h + sectionsOffset );
-        h += self[sections[i].name].view.getHeight() + lineOffset;
-        if ( i !== len - 1 ) {
-          self[sections[i].name].line.setRectY( h );
-        }
+    for ( i = 0; i < len; i++ ) {
+      this[sections[i].name].view.setY( options.height + options.sectionsOffset );
+      options.height += this[sections[i].name].view.getHeight() + options.lineOffset;
+      if ( i !== len - 1 ) {
+        this[sections[i].name].line.setRectY( options.height );
       }
-      self.back.setRectHeight( h );
-    } );
-  }
+    }
+    this.back.setRectHeight( options.height );
+    model.rightPanelHeight = options.height;
+  };
 
   inherit( Node, RightControlPanel );
 
