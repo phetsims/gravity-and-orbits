@@ -15,21 +15,21 @@ define( function( require ) {
   var ScaleSlider = require( 'view/ScaleSlider/ScaleSlider' );
   var RightControlPanel = require( 'view/RightControlPanel/RightControlPanel' );
   var BottomControlPanel = require( 'view/BottomControlPanel/BottomControlPanel' );
+  var ViewModePanel = require( 'view/ViewModePanel/ViewModePanel' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
     var options = {
       scaleSlider: {
         range: {max: 1.5, min: 0.5}
-      },
-      rightControlPanel: {}
+      }
     };
 
     // add workspace
     this.addChild( new Workspace( model ) );
 
     // add reset button
-    var resetAllButton = new ResetAllButton( function() { model.reset(); }, { scale: 0.8, x: 638, y: 400 } );
+    var resetAllButton = new ResetAllButton( function() { model.reset(); }, { scale: 0.8, x: 638 } );
     this.addChild( resetAllButton );
 
     // add scale slider
@@ -40,6 +40,14 @@ define( function( require ) {
 
     // add bottom control panel
     this.addChild( new BottomControlPanel( model, 100, 400 ) );
+
+    // add view mode panel
+    this.addChild( new ViewModePanel( model, 250, 10 ) );
+
+    model.rightPanelHeightProperty.link( function( height ) {
+      var resetButtonOffsetY = 30;
+      resetAllButton.setY( height + resetButtonOffsetY );
+    } );
   }
 
   inherit( ScreenView, GravityAndOrbitsView );

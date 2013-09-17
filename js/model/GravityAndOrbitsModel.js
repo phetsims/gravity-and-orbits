@@ -49,6 +49,7 @@ define( function( require ) {
       tape: false, // visible tape
       mass: false, // visible mass
       play: false, // play/pause state
+      rightPanelHeight: 0, // height of right control panel
       speed: 1, // 1.75, 1, 0.25
       day: 0,
       scale: 1
