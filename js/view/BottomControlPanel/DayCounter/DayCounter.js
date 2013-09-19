@@ -1,6 +1,6 @@
 /**
  * Copyright 2002-2013, University of Colorado
- * view day counter
+ * view for day counter
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -17,14 +17,14 @@ define( function( require ) {
   var Strings = require( 'Strings' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 28 );
+  var FONT = new PhetFont( 24 );
 
   function DayCounter( model, coords ) {
     var self = this;
     Node.call( this, coords );
 
     // add day text counter
-    this.day = new Text( '', { font: FONT, fill: '#fff', pickable: false, y: 32, x: 10 } );
+    this.day = new Text( '', { font: FONT, fontWeight: 'bold',  fill: '#fff', pickable: false, y: 32, x: 10 } );
     this.addChild( this.day );
 
     // create default view for clear button

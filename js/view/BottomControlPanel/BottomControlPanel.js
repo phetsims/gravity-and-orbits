@@ -15,7 +15,7 @@ define( function( require ) {
 
   function BottomControlPanel( model, x, y ) {
     var self = this;
-    Node.call( this, {x: x, y: y} );
+    Node.call( this, {x: x, y: y, scale: 0.9} );
 
     // add speed check box
     this.addChild( new SpeedCheckbox( model, {x: 0, y: 25} ) );

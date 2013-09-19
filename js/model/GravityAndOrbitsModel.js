@@ -12,13 +12,15 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
 
-  var fps = 30, tick = 0;
+  var Vector2 = require( 'DOT/Vector2' );
 
   var G = 6.67384E-11; // gravitational constant
 
   var calculateForce = function( mass1, mass2, distance ) {
     return ( G * mass1 * mass2 ) / ( distance * distance );
   };
+
+  var fps = 10;
 
   function GravityAndOrbitsModel( width, height ) {
     var self = this;
@@ -49,6 +51,10 @@ define( function( require ) {
       tape: false, // visible tape
       mass: false, // visible mass
       play: false, // play/pause state
+      sunMass: 1, // sun mass
+      earthMass: 1, // earth mass
+      moonMass: 1, // moon mass
+      spaceStationMass: 1, // space station mass
       rightPanelHeight: 0, // height of right control panel
       speed: 1, // 1.75, 1, 0.25
       day: 0,
@@ -59,10 +65,9 @@ define( function( require ) {
   }
 
   inherit( PropertySet, GravityAndOrbitsModel, {
-    step: function() {
-      if ( this.play && (++tick % fps === 0) ) {
-        this.stepManual();
-        tick = 0;
+    step: function( dt ) {
+      if ( this.play ) {
+        this.stepManual( dt );
       }
     },
     reset: function() {
@@ -77,13 +82,18 @@ define( function( require ) {
       this.playProperty.reset();
       this.speedProperty.reset();
       this.dayProperty.reset();
+      this.sunMassProperty.reset();
+      this.earthMassProperty.reset();
+      this.moonMassProperty.reset();
+      this.spaceStationMassProperty.reset();
       this.scaleProperty.reset();
     },
     clear: function() {
       this.dayProperty.reset();
     },
-    stepManual: function() {
-      this.day += this.speed;
+    stepManual: function( dt ) {
+      dt = dt || 1 / fps;
+      this.day += dt * this.speed * 10;
     }
   } );
 

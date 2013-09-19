@@ -14,17 +14,17 @@ define( function( require ) {
   var Strings = require( 'Strings' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 16 );
+  var FONT = new PhetFont( 14 );
 
   function GravityModeMenu( model, coords ) {
     Node.call( this, coords );
 
     // add "gravity" text
-    this.addChild( new Text( Strings['GAO.gravity'] + ':', { font: FONT, fill: '#fff', pickable: false } ) );
+    this.addChild( new Text( Strings['GAO.gravity'] + ':', { font: FONT, fill: '#fff', pickable: false, y: -1 } ) );
 
     // add on/off buttons
-    this.addChild( new AquaRadioButton( model.gravityProperty, true, new Text( Strings['GAO.on'], { font: FONT, fill: '#fff', pickable: false, x: 82 } ), {radius: 7, x: 70, y: -5} ) );
-    this.addChild( new AquaRadioButton( model.gravityProperty, false, new Text( Strings['GAO.off'], { font: FONT, fill: '#fff', pickable: false, x: 132 } ), {radius: 7, x: 120, y: -5 } ) );
+    this.addChild( new AquaRadioButton( model.gravityProperty, true, new Text( Strings['GAO.on'], { font: FONT, fill: '#fff', pickable: false, x: 82 } ), {radius: 7, x: 70, y: -6} ) );
+    this.addChild( new AquaRadioButton( model.gravityProperty, false, new Text( Strings['GAO.off'], { font: FONT, fill: '#fff', pickable: false, x: 132 } ), {radius: 7, x: 120, y: -6 } ) );
   }
 
   inherit( Node, GravityModeMenu );

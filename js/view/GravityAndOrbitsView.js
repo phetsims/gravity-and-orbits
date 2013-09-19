@@ -29,23 +29,23 @@ define( function( require ) {
     this.addChild( new Workspace( model ) );
 
     // add reset button
-    var resetAllButton = new ResetAllButton( function() { model.reset(); }, { scale: 0.8, x: 638 } );
+    var resetAllButton = new ResetAllButton( function() { model.reset(); }, { scale: 0.6, x: 638 } );
     this.addChild( resetAllButton );
 
     // add scale slider
-    this.addChild( new ScaleSlider( model, 25, 10, options.scaleSlider ) );
+    this.addChild( new ScaleSlider( model, 20, 10, options.scaleSlider ) );
 
     // add right control panel
     this.addChild( new RightControlPanel( model, 560, 10 ) );
 
     // add bottom control panel
-    this.addChild( new BottomControlPanel( model, 100, 400 ) );
+    this.addChild( new BottomControlPanel( model, 100, 410 ) );
 
     // add view mode panel
     this.addChild( new ViewModePanel( model, 250, 10 ) );
 
     model.rightPanelHeightProperty.link( function( height ) {
-      var resetButtonOffsetY = 30;
+      var resetButtonOffsetY = 18;
       resetAllButton.setY( height + resetButtonOffsetY );
     } );
   }
