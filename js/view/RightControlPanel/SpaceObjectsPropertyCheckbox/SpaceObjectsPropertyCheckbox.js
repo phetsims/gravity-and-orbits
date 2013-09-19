@@ -13,6 +13,8 @@ define( function( require ) {
   var CheckBox = require( 'SUN/CheckBox' );
   var VerticalCheckBoxGroup = require( 'SUN/VerticalCheckBoxGroup' );
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var Shape = require( 'KITE/Shape' );
+  var Path = require( 'SCENERY/nodes/Path' );
 
   var imageLoader = require( 'gravity-and-orbits-images' );
   var Image = require( 'SCENERY/nodes/Image' );
@@ -46,7 +48,14 @@ define( function( require ) {
       {
         property: model.gridProperty,
         text: Strings['GAO.grid'],
-        node: new Node()
+        node: new Node( {children: [
+          new Path( Shape.lineSegment( 0, 0, 20, 0 ), {stroke: 'gray', lineWidth: 1.5} ),
+          new Path( Shape.lineSegment( 20, 0, 20, 20 ), {stroke: 'gray', lineWidth: 1.5} ),
+          new Path( Shape.lineSegment( 20, 20, 0, 20 ), {stroke: 'gray', lineWidth: 1.5} ),
+          new Path( Shape.lineSegment( 0, 20, 0, 0 ), {stroke: 'gray', lineWidth: 1.5} ),
+          new Path( Shape.lineSegment( 10, 0, 10, 20 ), {stroke: 'gray', lineWidth: 1.5} ),
+          new Path( Shape.lineSegment( 0, 10, 20, 10 ), {stroke: 'gray', lineWidth: 1.5} )
+        ], x: 74, y: -18} )
       },
       {
         property: model.tapeProperty,
