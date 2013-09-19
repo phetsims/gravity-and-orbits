@@ -16,7 +16,7 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Text = require( 'SCENERY/nodes/Text' );
 
-  function HorizontalSlider( x, y, w, targetProperty, img, value, rounding, tick ) {
+  function HorizontalSlider( x, y, w, targetProperty, img, value, rounding, tick, defaultValue ) {
     var thisNode = this;
     Node.call( this, {x: x, y: y} );
 
@@ -55,7 +55,13 @@ define( function( require ) {
         drag: function( event ) {
           var x = thisNode.globalToParentPoint( event.pointer.point ).x - clickXOffset;
           x = Math.max( Math.min( x, xMax ), xMin );
-          targetProperty.set( round( positionToValue( x ), rounding ) );
+          x = positionToValue( x );
+
+          // snap to default value
+          if ( Math.abs( x - defaultValue ) / defaultValue < 0.03 ) {
+            x = defaultValue;
+          }
+          targetProperty.set( round( x, rounding ) );
         },
         translate: function() {
           // do nothing, override default behavior

@@ -26,6 +26,7 @@ define( function( require ) {
         title: '',
         property: null,
         scope: {min: 0.5, max: 2},
+        default: 1,
         rounding: false,
         width: 200,
         height: 50
@@ -38,7 +39,7 @@ define( function( require ) {
     // add slider
     var slider = new Node( {children: [
       new Rectangle( 0, 0, options.width, options.height, {} ),
-      new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, imageLoader.getImage( 'slider.png' ), options.scope, options.rounding, tick ),
+      new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, imageLoader.getImage( 'slider.png' ), options.scope, options.rounding, tick, options.default ),
       new Text( options.title, {centerX: options.width / 2.7, top: 0, font: FONT, fill: '#fff', pickable: false} )
     ], y: 5} );
     this.addChild( slider );
