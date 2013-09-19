@@ -38,7 +38,11 @@ define( function() {
       'button_step_hover.png',
       'button_step_pressed.png',
       'button_step_unpressed.png',
-      'slider.png'
+      'slider.png',
+      'button_sim_rewind.svg',
+      'button_sim_rewind_deactivated.svg',
+      'button_sim_rewind_hover.svg',
+      'button_sim_rewind_pressed.svg'
     ]
   };
 } );
