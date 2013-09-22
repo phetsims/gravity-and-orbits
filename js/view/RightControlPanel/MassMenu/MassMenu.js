@@ -28,7 +28,7 @@ define( function( require ) {
     var map = {
       sun: {
         title: Strings['GAO.ourSun'],
-        property: model.sunMassProperty,
+        property: model.sunMassCoeffProperty,
         icon: {
           text: Strings['GAO.star'],
           image: Sun
@@ -36,7 +36,7 @@ define( function( require ) {
       },
       earth: {
         title: Strings['GAO.ourEarth'],
-        property: model.earthMassProperty,
+        property: model.earthMassCoeffProperty,
         icon: {
           text: Strings['GAO.planet'],
           image: Earth
@@ -44,7 +44,7 @@ define( function( require ) {
       },
       moon: {
         title: Strings['GAO.ourMoon'],
-        property: model.moonMassProperty,
+        property: model.moonMassCoeffProperty,
         icon: {
           text: Strings['GAO.moon'],
           image: Moon
@@ -52,7 +52,7 @@ define( function( require ) {
       },
       spaceStation: {
         title: Strings['GAO.spaceStation'],
-        property: model.spaceStationMassProperty,
+        property: model.spaceStationMassCoeffProperty,
         icon: {
           text: Strings['GAO.satellite'],
           image: SpaceStation

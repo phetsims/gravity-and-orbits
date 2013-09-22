@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * main object view
+ * main view
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -10,32 +10,42 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var Sun = require( 'view/SpaceObject/Sun' );
+
+  var WorkspaceBuilder = require( 'view/Workspace/WorkspaceBuilder' );
 
   function Workspace( model ) {
     var self = this;
-    var options = {
-      sun: {
-        coords: {
-          x: 275,
-          y: 225
-        },
-        radius: 50 // radius when scale is 1.0
-      }
-    };
-
     Node.call( this );
 
-    // add sun to workspace
-    this.sun = new Sun( options.sun.coords, options.sun.radius );
-    this.addChild( this.sun );
-
-    // redraw objects when scale is changing
+    // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
       if ( oldScale ) {
-        self.sun.view.scale( 1 / oldScale );
+        self.scale( 1 / oldScale );
       }
-      self.sun.view.scale( newScale );
+      self.scale( newScale );
+    } );
+
+    // redraw workspace when selected new mode
+    model.planetModeProperty.link( function( num ) {
+      self.removeAllChildren();
+
+      self.view = new WorkspaceBuilder( model, num );
+      self.addChild( self.view );
+      self.x = model.scaleCenter.x;
+      self.y = model.scaleCenter.y;
+    } );
+
+    // redraw workspace position of object is changing
+    model.dayProperty.link( function() {
+      if ( self.view ) {
+        for ( var i = 0, obj; i < model.spaceObjects.length; i++ ) {
+          obj = self.view[model.spaceObjects[i]];
+          if ( obj ) {
+            obj.x = model[model.spaceObjects[i] + 'Position'].x;
+            obj.y = model[model.spaceObjects[i] + 'Position'].y;
+          }
+        }
+      }
     } );
   }
 

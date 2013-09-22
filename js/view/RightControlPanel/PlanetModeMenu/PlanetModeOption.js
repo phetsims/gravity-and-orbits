@@ -33,8 +33,8 @@ define( function( require ) {
     var strokeDeselected = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', cursor: 'pointer'} );
     var node = new Node();
 
-    for ( var i = model.spaseObjects.length, currentObj; i--; ) {
-      currentObj = model.spaseObjects[i];
+    for ( var i = model.spaceObjects.length, currentObj; i--; ) {
+      currentObj = model.spaceObjects[i];
       if ( model.planetModes[num][currentObj] ) {
         node.addChild( new map[currentObj]( {x: 16 + i * 36, y: 15}, 11 ) );
       }
