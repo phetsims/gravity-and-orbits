@@ -27,6 +27,7 @@ define( function( require ) {
 
     // redraw workspace when selected new mode
     model.planetModeProperty.link( function( num ) {
+      model.dayProperty.reset();
       self.removeAllChildren();
 
       self.view = new WorkspaceBuilder( model, num );
@@ -37,14 +38,10 @@ define( function( require ) {
 
     // redraw workspace position of object is changing
     model.dayProperty.link( function() {
-      if ( self.view ) {
-        for ( var i = 0, obj; i < model.spaceObjects.length; i++ ) {
-          obj = self.view[model.spaceObjects[i]];
-          if ( obj ) {
-            obj.x = model[model.spaceObjects[i] + 'Position'].x;
-            obj.y = model[model.spaceObjects[i] + 'Position'].y;
-          }
-        }
+      for ( var i = 0, obj; i < model.spaceObjects.length; i++ ) {
+        obj = model[model.spaceObjects[i] + 'View'];
+        obj.x = model[model.spaceObjects[i] + 'Position'].x;
+        obj.y = model[model.spaceObjects[i] + 'Position'].y;
       }
     } );
   }

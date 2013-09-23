@@ -56,33 +56,15 @@ define( function( require ) {
         // add space object
         model[model.spaceObjects[i] + 'View'] = new map[model.spaceObjects[i]]( model[model.spaceObjects[i] + 'Position'], obj.radius * scale );
         this.addChild( model[model.spaceObjects[i] + 'View'] );
+
+        // clean up previous values
+        model[model.spaceObjects[i] + 'Acceleration'].set( 0, 0 );
+        model[model.spaceObjects[i] + 'VelocityHalf'].set( 0, 0 );
+      }
+      else {
+        model[model.spaceObjects[i] + 'View'] = new Node();
       }
     }
-
-    // create link mass to radius
-    /*model.spaceObjects.forEach( function( el ) {
-     if ( model.planetModes[num][el] ) {
-     var defaultRadius = model.planetModes[num][el].radius;
-     model[el + 'MassProperty'].link( function( newValue, oldValue ) {
-
-     //Math.pow( newValue, 1 / 3 );
-
-     console.log(Math.pow( newValue, 1 / 3 ));
-
-     //model[model.spaceObjects[i] + 'Radius'] =
-
-     if ( oldValue ) {
-     self[el].scale( 1 / oldValue );
-     }
-     //self[el].scale( model[el + 'Radius'] / defaultRadius );
-     //console.log( defaultRadius, model[el + 'Radius'] );
-     } );
-
-     model[model.spaceObjects[i] + 'RadiusProperty'].link( function() {
-
-     } );
-     }
-     } ); */
   }
 
   inherit( Node, WorkspaceBuilder );
