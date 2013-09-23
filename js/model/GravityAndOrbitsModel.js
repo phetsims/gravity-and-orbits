@@ -52,8 +52,8 @@ define( function( require ) {
         mass: CONSTANTS.EARTH_MASS * 10200
       },
       options: {
-        forceScale: 0.573 * 120 / 10200,
-        timeScale: 365.0 / 25.5,
+        forceScale: 1.017,
+        timeScale: 365.0 / 26.0, // 365 day in 26 sec
         scale: 1.75E-9,
         centerX: 250,
         centerY: 300
@@ -82,8 +82,8 @@ define( function( require ) {
         mass: CONSTANTS.MOON_MASS
       },
       options: {
-        forceScale: 0.573 * 120 / 10200,
-        timeScale: 365.0 / 25.5,
+        forceScale: 1.017,
+        timeScale: 365.0 / 26.0,
         scale: 1.75E-9,
         centerX: 250,
         centerY: 300
@@ -187,16 +187,14 @@ define( function( require ) {
     PropertySet.call( this, getSpaceObjectProperties.call( this ) );
 
     // update view for every new time tick
-    this.dayProperty.link( function( day ) {
-      updateView.call( self, day );
+    this.dayProperty.link( function( newDay, prevDay ) {
+      updateView.call( self, newDay - prevDay );
     } );
 
     // add observers for mass sliders
     this.spaceObjects.forEach( function( el ) {
       self[el + 'MassCoeffProperty'].link( function( newValue, oldValue ) {
-        if ( oldValue ) {
-          self[el + 'Mass'] *= 1 / oldValue;
-        }
+        self[el + 'Mass'] *= 1 / (oldValue || 1);
         self[el + 'Mass'] *= newValue;
 
         // change radius
@@ -204,9 +202,7 @@ define( function( require ) {
       } );
 
       self[el + 'RadiusCoeffProperty'].link( function( newValue, oldValue ) {
-        if ( oldValue ) {
-          self[el + 'View'].scale( 1 / oldValue );
-        }
+        self[el + 'View'].scale( 1 / (oldValue || 1) );
         self[el + 'View'].scale( newValue );
       } );
     } );
@@ -255,23 +251,38 @@ define( function( require ) {
       mode = model.planetModes[model.planetMode],
       scale = mode.options.scale,
       forceScale = mode.options.forceScale,
-      timeScale = 365 * 24 * 60,
-      dt = t * timeScale,
+      timeScale = 24 * 60 * 60 * 0.967,
+      STEPS = 10,
+      dt = t * timeScale / STEPS,
+    //dx = {},
       i,
       currentObj;
 
+    /*for ( i = 0; i < model.spaceObjects.length; i++ ) {
+     dx[model.spaceObjects[i]] = new Vector2( 0, 0 );
+     }*/
 
-    for ( i = 0; i < model.spaceObjects.length; i++ ) {
-      currentObj = model.spaceObjects[i];
+    for ( var j = 0; j < STEPS; j++ ) {
+      for ( i = 0; i < model.spaceObjects.length; i++ ) {
+        currentObj = model.spaceObjects[i];
 
-      // change position of not fixed objects
-      if ( mode[currentObj] && !mode[currentObj].fixed ) {
-        model[currentObj + 'Position'] = model[currentObj + 'PositionStart'].timesScalar( 1 / scale ).plus( model[currentObj + 'Velocity'].timesScalar( dt ).plus( model[currentObj + 'Acceleration'].timesScalar( dt * dt / 2 ) ) ).timesScalar( scale );
-        model[currentObj + 'VelocityHalf'] = model[currentObj + 'Velocity'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2 ) );
-        model[currentObj + 'Acceleration'] = getForce.call( model, currentObj ).timesScalar( -forceScale / model[currentObj + 'Mass'] );
-        model[currentObj + 'Velocity'] = model[currentObj + 'VelocityHalf'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2 ) );
+        // change position of not fixed objects
+        if ( mode[currentObj] && !mode[currentObj].fixed ) {
+          //dx[currentObj] = dx[currentObj].plus( model[currentObj + 'Velocity'].timesScalar( dt ).plus( model[currentObj + 'Acceleration'].timesScalar( dt * dt / 2 ) ) );
+          model[currentObj + 'Position'] = model[currentObj + 'Position'].timesScalar( 1.0 / scale ).plus( model[currentObj + 'Velocity'].timesScalar( dt ).plus( model[currentObj + 'Acceleration'].timesScalar( dt * dt / 2.0 ) ) ).timesScalar( scale );
+          model[currentObj + 'VelocityHalf'] = model[currentObj + 'Velocity'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2.0 ) );
+          model[currentObj + 'Acceleration'] = getForce.call( model, currentObj ).timesScalar( -forceScale / model[currentObj + 'Mass'] );
+          model[currentObj + 'Velocity'] = model[currentObj + 'VelocityHalf'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2.0 ) );
+        }
       }
     }
+
+    /*for ( i = 0; i < model.spaceObjects.length; i++ ) {
+     currentObj = model.spaceObjects[i];
+     if ( mode[currentObj] && !mode[currentObj].fixed ) {
+     model[currentObj + 'Position'] = model[currentObj + 'Position'].timesScalar( 1 / scale ).plus( dx[currentObj] ).timesScalar( scale );
+     }
+     }*/
   };
 
   var getForce = function( target ) {
