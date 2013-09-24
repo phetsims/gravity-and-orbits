@@ -11,14 +11,13 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RadioButton = require( 'SUN/RadioButton' );
-  var imageLoader = require( 'gravity-and-orbits-images' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   function ViewModePanel( model, coords, options ) {
     var self = this, imageScale = 0.1;
     Node.call( this, coords );
 
-    var img = new Image( imageLoader.getImage( options.image ), {scale: imageScale} );
+    var img = new Image( options.image, {scale: imageScale} );
     var stroke = new Rectangle( 0, 0, img.getImageWidth() * imageScale, img.getImageHeight() * imageScale, {fill: 'rgba(0,0,0,0)', stroke: '#fff', lineWidth: 2} );
 
     // button options

@@ -9,14 +9,14 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var imageLoader = require( 'gravity-and-orbits-images' );
+  var spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/../images/space-station.png' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   function SpaceStation( coords, radius ) {
-    var img = imageLoader.getImage( 'space-station.png' ), width = img.width / 2, scale = radius / width;
+    var img = spaceStationImage, width = img.width / 2, scale = radius / width;
     Node.call( this, coords );
 
-    this.view = new Image( img, {scale: scale, x: -width * scale* 0.75, y: -width * scale * 0.75} );
+    this.view = new Image( img, {scale: scale, x: -width * scale * 0.75, y: -width * scale * 0.75} );
     this.addChild( this.view );
   }
 
