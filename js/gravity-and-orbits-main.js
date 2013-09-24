@@ -21,7 +21,7 @@ define( function( require ) {
     thanks: 'Thanks -\n' +
             'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
   };
-  SimLauncher.launch( {imageNames: []}, function() {
+  SimLauncher.launch( function() {
     //Create and start the sim
     new Sim( Strings['GAO.name'], [
       {
