@@ -16,6 +16,7 @@ define( {
   "GAO.slowMotion": "Slow Motion",
   "GAO.clear": "Clear",
   "GAO.earthDays": "Earth Days",
+  "GAO.earthMinutes": "Earth Minutes",
   "GAO.ourSun": "Our Sun",
   "GAO.ourEarth": "Our Earth",
   "GAO.ourMoon": "Our Moon",

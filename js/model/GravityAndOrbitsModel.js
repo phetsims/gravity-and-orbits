@@ -35,6 +35,8 @@ define( function( require ) {
     SPACE_STATION_PERIGEE: 347000
   };
 
+  var fps = 60, timeModes = ['days', 'minutes'];
+
   var planetModes = [
     {
       sun: {
@@ -54,6 +56,7 @@ define( function( require ) {
       options: {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
         timeScale: 365.0 / 26.0, // days per seconds
+        timeMode: timeModes[0],
         scale: 1.75E-9,
         centerX: 250,
         centerY: 300
@@ -84,6 +87,7 @@ define( function( require ) {
       options: {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
         timeScale: 365.0 / 26.0, // days per seconds
+        timeMode: timeModes[0],
         scale: 1.75E-9,
         centerX: 250,
         centerY: 300
@@ -107,6 +111,7 @@ define( function( require ) {
       options: {
         forceScale: 1.001,
         timeScale: 365.0 / 96.0, // days per seconds
+        timeMode: timeModes[0],
         scale: 5.6E-7,
         centerX: -82130,
         centerY: 250
@@ -130,6 +135,7 @@ define( function( require ) {
       options: {
         forceScale: 1,
         timeScale: 365.0 / 31855.0, // days per seconds
+        timeMode: timeModes[1],
         scale: 2.4E-5,
         centerX: 240,
         centerY: 230
@@ -137,11 +143,10 @@ define( function( require ) {
     }
   ];
 
-  var fps = 60;
-
   function GravityAndOrbitsModel( width, height ) {
     var self = this;
     this.viewModes = ['cartoon', 'scale'];
+    this.timeModes = timeModes;
 
     this.spaceObjects = ['sun', 'earth', 'moon', 'spaceStation'];
     this.spaceObjectsProps = [
@@ -167,7 +172,8 @@ define( function( require ) {
 
     PropertySet.call( this, {
       viewMode: this.viewModes[0], // 'cartoon', 'scale'
-      planetMode: 0, // which planet showing
+      planetMode: 0, // planet mode
+      timeMode: timeModes[0], // time counter format
       gravity: true, // switch gravity
       forceArrow: false, // visible force arrows
       velocityArrow: false, // visible velocity arrows

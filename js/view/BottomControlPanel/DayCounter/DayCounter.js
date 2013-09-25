@@ -24,7 +24,7 @@ define( function( require ) {
     Node.call( this, coords );
 
     // add day text counter
-    this.day = new Text( '', { font: FONT, fontWeight: 'bold',  fill: '#fff', pickable: false, y: 32, x: 10 } );
+    this.day = new Text( '', { font: FONT, fontWeight: 'bold', fill: '#fff', pickable: false, y: 32, x: 10 } );
     this.addChild( this.day );
 
     // create default view for clear button
@@ -47,9 +47,23 @@ define( function( require ) {
     // create button
     this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, options.callback ) );
 
-    model.dayProperty.link( function( day ) {
-      self.day.setText( parseInt( day, 10 ).toString() + ' ' + Strings['GAO.earthDays'] );
+    var updateDay = function( day ) {
+      self.day.setText( parseInt( day * self.multiplier, 10 ).toString() + ' ' + self.text );
+    };
+
+    model.timeModeProperty.link( function( mode ) {
+      if ( mode === model.timeModes[0] ) { // days
+        self.text = Strings['GAO.earthDays'];
+        self.multiplier = 1;
+      }
+      else if ( mode === model.timeModes[1] ) { // minutes
+        self.text = Strings['GAO.earthMinutes'];
+        self.multiplier = 24 * 60;
+      }
+      updateDay( model.day );
     } );
+
+    model.dayProperty.link( updateDay );
   }
 
   inherit( Node, DayCounter );

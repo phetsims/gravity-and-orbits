@@ -17,7 +17,7 @@ define( function( require ) {
   var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
 
   function WorkspaceBuilder( model, num ) {
-    var self = this, i, obj = {}, scale = model.planetModes[num].options.scale;
+    var self = this, i, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
     Node.call( this );
 
     var map = {
@@ -60,6 +60,8 @@ define( function( require ) {
         // clean up previous values
         model[model.spaceObjects[i] + 'Acceleration'].set( 0, 0 );
         model[model.spaceObjects[i] + 'VelocityHalf'].set( 0, 0 );
+
+        model.timeMode = timeMode;
       }
       else {
         model[model.spaceObjects[i] + 'View'] = new Node();
