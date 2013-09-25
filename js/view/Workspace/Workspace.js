@@ -37,31 +37,32 @@ define( function( require ) {
 
     // redraw workspace position of object is changing
     model.dayProperty.link( function() {
-      for ( var i = 0, obj; i < model.spaceObjects.length; i++ ) {
-        obj = model[model.spaceObjects[i] + 'View'];
-        obj.x = model[model.spaceObjects[i] + 'Position'].x;
-        obj.y = model[model.spaceObjects[i] + 'Position'].y;
-      }
+      model.spaceObjects.forEach( function( el ) {
+        model[el + 'View'].x = model[el + 'Position'].x;
+        model[el + 'View'].y = model[el + 'Position'].y;
+      } );
     } );
 
     model.spaceObjects.forEach( function( el ) {
-      var clickYOffset, clickXOffset, view = model[el + 'View'];
-      view.cursor = 'pointer';
-      view.addInputListener( new SimpleDragHandler( {
-        start: function( e ) {
-          clickYOffset = view.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
-          clickXOffset = view.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
-          model.drag = el;
-        },
-        drag: function( e ) {
-          var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset;
-          var x = view.globalToParentPoint( e.pointer.point ).x - clickXOffset;
-          model[el + 'Position'].set( x, y );
-        },
-        end: function() {
-          model.drag = '';
-        }
-      } ) );
+      model[el + 'ViewProperty'].link( function( view ) {
+        var clickYOffset, clickXOffset;
+        view.cursor = 'pointer';
+        view.addInputListener( new SimpleDragHandler( {
+          start: function( e ) {
+            clickYOffset = view.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
+            clickXOffset = view.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
+            model.drag = el;
+          },
+          drag: function( e ) {
+            var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset;
+            var x = view.globalToParentPoint( e.pointer.point ).x - clickXOffset;
+            model[el + 'Position'].set( x, y );
+          },
+          end: function() {
+            model.drag = '';
+          }
+        } ) );
+      } );
     } );
   }
 
