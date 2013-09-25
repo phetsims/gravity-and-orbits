@@ -60,6 +60,7 @@ define( function( require ) {
         // clean up previous values
         model[model.spaceObjects[i] + 'Acceleration'].set( 0, 0 );
         model[model.spaceObjects[i] + 'VelocityHalf'].set( 0, 0 );
+        model[model.spaceObjects[i] + 'Exploded'] = false;
 
         model.timeMode = timeMode;
       }

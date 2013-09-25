@@ -19,9 +19,7 @@ define( function( require ) {
 
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
-      if ( oldScale ) {
-        self.scale( 1 / oldScale );
-      }
+      self.scale( 1 / (oldScale || 1) );
       self.scale( newScale );
     } );
 

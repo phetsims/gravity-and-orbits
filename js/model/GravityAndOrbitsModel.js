@@ -153,7 +153,7 @@ define( function( require ) {
       {name: 'View', value: new Node()},
       {name: 'Mass', value: 1},
       {name: 'MassCoeff', value: 1},
-      {name: 'Radius', value: 1},
+      {name: 'Radius', value: 0},
       {name: 'RadiusCoeff', value: 1},
       {name: 'Exploded', value: false},
       {name: 'Velocity', type: 'vector', value: { x: 0, y: 0}},
@@ -197,8 +197,8 @@ define( function( require ) {
       updateView.call( self, newDay - prevDay );
     } );
 
-    // add observers for mass sliders
     this.spaceObjects.forEach( function( el ) {
+      // add observers for mass sliders
       self[el + 'MassCoeffProperty'].link( function( newValue, oldValue ) {
         self[el + 'Mass'] *= 1 / (oldValue || 1);
         self[el + 'Mass'] *= newValue;
@@ -207,9 +207,23 @@ define( function( require ) {
         self[el + 'RadiusCoeff'] = Math.pow( newValue, 1 / 3 );
       } );
 
+      // resize view if radius changed
       self[el + 'RadiusCoeffProperty'].link( function( newValue, oldValue ) {
         self[el + 'View'].scale( 1 / (oldValue || 1) );
         self[el + 'View'].scale( newValue );
+      } );
+
+      // hide view if it was exploded
+      self[el + 'ExplodedProperty'].link( function( exploded ) {
+        self[el + 'View'].setVisible( !exploded );
+      } );
+
+      self[el + 'RadiusCoeffProperty'].link( function() {
+        checkExplosion( self );
+      } );
+
+      self[el + 'PositionProperty'].link( function() {
+        checkExplosion( self );
       } );
     } );
 
@@ -235,13 +249,6 @@ define( function( require ) {
       this.speedProperty.reset();
       this.dayProperty.reset();
       this.scaleProperty.reset();
-
-      // reset property for space objects
-      for ( var i = 0, j; i < this.spaceObjects.length; i++ ) {
-        for ( j = 0; j < this.spaceObjectsProps.length; j++ ) {
-          this[this.spaceObjects[i] + this.spaceObjectsProps[j].name + 'Property'].reset();
-        }
-      }
     },
     clear: function() {
       this.dayProperty.reset();
@@ -313,6 +320,24 @@ define( function( require ) {
       }
     }
     return props;
+  };
+
+  var checkExplosion = function( model ) {
+    var obj1, obj2, i, j, dx, dr, mode = model.planetModes[model.planetMode];
+
+    for ( i = 0; i < model.spaceObjects.length; i++ ) {
+      obj1 = model.spaceObjects[i];
+      if ( !mode[obj1] ) {continue;}
+      for ( j = i + 1; j < model.spaceObjects.length; j++ ) {
+        obj2 = model.spaceObjects[j];
+        if ( !mode[obj2] ) {continue;}
+        dx = model[obj1 + 'Position'].minus( model[obj2 + 'Position'] ).magnitude(); // distance between planets
+        dr = (model[obj1 + 'View'].getWidth() + model[obj2 + 'View'].getWidth()) / 2;
+        if ( dr > dx ) {
+          model[(model[obj1 + 'Mass'] > model[obj2 + 'Mass'] ? obj2 : obj1 ) + 'Exploded'] = true;
+        }
+      }
+    }
   };
 
   return GravityAndOrbitsModel;
