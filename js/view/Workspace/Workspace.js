@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   var WorkspaceBuilder = require( 'view/Workspace/WorkspaceBuilder' );
 
@@ -41,6 +42,26 @@ define( function( require ) {
         obj.x = model[model.spaceObjects[i] + 'Position'].x;
         obj.y = model[model.spaceObjects[i] + 'Position'].y;
       }
+    } );
+
+    model.spaceObjects.forEach( function( el ) {
+      var clickYOffset, clickXOffset, view = model[el + 'View'];
+      view.cursor = 'pointer';
+      view.addInputListener( new SimpleDragHandler( {
+        start: function( e ) {
+          clickYOffset = view.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
+          clickXOffset = view.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
+          model.drag = el;
+        },
+        drag: function( e ) {
+          var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset;
+          var x = view.globalToParentPoint( e.pointer.point ).x - clickXOffset;
+          model[el + 'Position'].set( x, y );
+        },
+        end: function() {
+          model.drag = '';
+        }
+      } ) );
     } );
   }
 

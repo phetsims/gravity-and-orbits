@@ -184,6 +184,7 @@ define( function( require ) {
       play: false, // play/pause state
       rightPanelHeight: 0, // height of right control panel
       speed: 1, // 1.75, 1, 0.25
+      drag: '',
       day: 0,
       scale: 1,
       scaleCenter: new Vector2( 0, 0 )
@@ -274,8 +275,8 @@ define( function( require ) {
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
         currentObj = model.spaceObjects[i];
 
-        // change position of not fixed objects
-        if ( mode[currentObj] && !mode[currentObj].fixed ) {
+        // change position of not fixed or dragging objects
+        if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
           model[currentObj + 'Position'] = model[currentObj + 'Position'].timesScalar( 1.0 / scale ).plus( model[currentObj + 'Velocity'].timesScalar( dt ).plus( model[currentObj + 'Acceleration'].timesScalar( dt * dt / 2.0 ) ) ).timesScalar( scale );
           model[currentObj + 'VelocityHalf'] = model[currentObj + 'Velocity'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2.0 ) );
           model[currentObj + 'Acceleration'] = getForce.call( model, currentObj ).timesScalar( -forceScale / model[currentObj + 'Mass'] );
