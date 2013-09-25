@@ -53,7 +53,7 @@ define( function( require ) {
       },
       options: {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
-        timeScale: 365.0 / 26.0, // 365 day in 26 sec
+        timeScale: 365.0 / 26.0, // days per seconds
         scale: 1.75E-9,
         centerX: 250,
         centerY: 300
@@ -83,7 +83,7 @@ define( function( require ) {
       },
       options: {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
-        timeScale: 365.0 / 26.0, // 365 day in 26 sec
+        timeScale: 365.0 / 26.0, // days per seconds
         scale: 1.75E-9,
         centerX: 250,
         centerY: 300
@@ -106,7 +106,7 @@ define( function( require ) {
       },
       options: {
         forceScale: 1.001,
-        timeScale: 365.0 / 96.0,
+        timeScale: 365.0 / 96.0, // days per seconds
         scale: 5.6E-7,
         centerX: -82130,
         centerY: 250
@@ -114,25 +114,25 @@ define( function( require ) {
     },
     {
       earth: {
-        x: CONSTANTS.EARTH_PERIHELION,
+        x: 0,
         y: 0,
-        radius: CONSTANTS.EARTH_RADIUS * 0.8 / 500,
-        velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
+        radius: CONSTANTS.EARTH_RADIUS * 0.8,
+        velocity: {x: 0, y: 0},
         mass: CONSTANTS.EARTH_MASS
       },
       spaceStation: {
         x: CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
         y: 0,
-        radius: CONSTANTS.SPACE_STATION_RADIUS * 8,
+        radius: CONSTANTS.SPACE_STATION_RADIUS * 8000,
         velocity: {x: 0, y: -CONSTANTS.SPACE_STATION_SPEED},
         mass: CONSTANTS.SPACE_STATION_MASS
       },
       options: {
-        forceScale: 3E13,
-        timeScale: 365.0 / 26.0,
-        scale: 1E-2,
-        centerX: 200,
-        centerY: 200
+        forceScale: 1,
+        timeScale: 365.0 / 31855.0, // days per seconds
+        scale: 2.4E-5,
+        centerX: 240,
+        centerY: 230
       }
     }
   ];
