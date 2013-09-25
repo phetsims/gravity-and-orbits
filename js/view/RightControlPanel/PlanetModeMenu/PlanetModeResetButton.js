@@ -8,7 +8,8 @@
 define( function( require ) {
   'use strict';
 
-  var imageLoader = require( 'gravity-and-orbits-images' );
+  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/../images/reset_arrow.png' );
+
   var Image = require( 'SCENERY/nodes/Image' );
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -21,7 +22,7 @@ define( function( require ) {
     // create default view
     var node = new Node( {children: [
       new Rectangle( 0, 0, 25, 25, 5, 5, {fill: '#fff'} ),
-      new Image( imageLoader.getImage( 'reset_arrow.svg' ), {x: 2, y: 1} )
+      new Image( resetArrowImg, {x: 2, y: 1} )
     ]} );
 
     // button options

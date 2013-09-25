@@ -11,7 +11,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var HorizontalSlider = require( 'view/RightControlPanel/MassMenu/Slider/HorizontalSlider' );
-  var imageLoader = require( 'gravity-and-orbits-images' );
+
+  var sliderImg = require( 'image!GRAVITY_AND_ORBITS/../images/slider.png' );
 
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -39,7 +40,7 @@ define( function( require ) {
     // add slider
     var slider = new Node( {children: [
       new Rectangle( 0, 0, options.width, options.height, {} ),
-      new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, imageLoader.getImage( 'slider.png' ), options.scope, options.rounding, tick, options.default ),
+      new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, sliderImg, options.scope, options.rounding, tick, options.default ),
       new Text( options.title, {centerX: options.width / 2.7, top: 0, font: FONT, fill: '#fff', pickable: false} )
     ], y: 5} );
     this.addChild( slider );

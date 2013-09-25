@@ -52,7 +52,7 @@ define( function( require ) {
         mass: CONSTANTS.EARTH_MASS * 10200
       },
       options: {
-        forceScale: 1.017,
+        forceScale: 1.017, // ratio of the gravitational and centripetal forces
         timeScale: 365.0 / 26.0, // 365 day in 26 sec
         scale: 1.75E-9,
         centerX: 250,
@@ -82,8 +82,8 @@ define( function( require ) {
         mass: CONSTANTS.MOON_MASS
       },
       options: {
-        forceScale: 1.017,
-        timeScale: 365.0 / 26.0,
+        forceScale: 1.017, // ratio of the gravitational and centripetal forces
+        timeScale: 365.0 / 26.0, // 365 day in 26 sec
         scale: 1.75E-9,
         centerX: 250,
         centerY: 300
@@ -93,22 +93,22 @@ define( function( require ) {
       earth: {
         x: CONSTANTS.EARTH_PERIHELION,
         y: 0,
-        radius: CONSTANTS.EARTH_RADIUS * 15,
+        radius: CONSTANTS.EARTH_RADIUS * 15 * 400,
         velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
         mass: CONSTANTS.EARTH_MASS
       },
       moon: {
         x: CONSTANTS.MOON_X,
         y: -CONSTANTS.MOON_Y,
-        radius: CONSTANTS.MOON_RADIUS * 15,
+        radius: CONSTANTS.MOON_RADIUS * 15 * 400,
         velocity: {x: CONSTANTS.MOON_SPEED, y: 0},
         mass: CONSTANTS.MOON_MASS
       },
       options: {
-        forceScale: 0.77 * 45,
-        timeScale: 365.0 / 25.5,
-        scale: 1E-6,
-        centerX: 147098 + 200,
+        forceScale: 1.017,
+        timeScale: 365.0 / 26.0,
+        scale: 1E-9,
+        centerX: 200,
         centerY: 200
       }
     },
@@ -129,7 +129,7 @@ define( function( require ) {
       },
       options: {
         forceScale: 3E13,
-        timeScale: 365.0 / 25.5,
+        timeScale: 365.0 / 26.0,
         scale: 1E-2,
         centerX: 200,
         centerY: 200
@@ -254,13 +254,8 @@ define( function( require ) {
       timeScale = 24 * 60 * 60 * 0.967,
       STEPS = 10,
       dt = t * timeScale / STEPS,
-    //dx = {},
       i,
       currentObj;
-
-    /*for ( i = 0; i < model.spaceObjects.length; i++ ) {
-     dx[model.spaceObjects[i]] = new Vector2( 0, 0 );
-     }*/
 
     for ( var j = 0; j < STEPS; j++ ) {
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
@@ -268,7 +263,6 @@ define( function( require ) {
 
         // change position of not fixed objects
         if ( mode[currentObj] && !mode[currentObj].fixed ) {
-          //dx[currentObj] = dx[currentObj].plus( model[currentObj + 'Velocity'].timesScalar( dt ).plus( model[currentObj + 'Acceleration'].timesScalar( dt * dt / 2 ) ) );
           model[currentObj + 'Position'] = model[currentObj + 'Position'].timesScalar( 1.0 / scale ).plus( model[currentObj + 'Velocity'].timesScalar( dt ).plus( model[currentObj + 'Acceleration'].timesScalar( dt * dt / 2.0 ) ) ).timesScalar( scale );
           model[currentObj + 'VelocityHalf'] = model[currentObj + 'Velocity'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2.0 ) );
           model[currentObj + 'Acceleration'] = getForce.call( model, currentObj ).timesScalar( -forceScale / model[currentObj + 'Mass'] );
@@ -276,13 +270,6 @@ define( function( require ) {
         }
       }
     }
-
-    /*for ( i = 0; i < model.spaceObjects.length; i++ ) {
-     currentObj = model.spaceObjects[i];
-     if ( mode[currentObj] && !mode[currentObj].fixed ) {
-     model[currentObj + 'Position'] = model[currentObj + 'Position'].timesScalar( 1 / scale ).plus( dx[currentObj] ).timesScalar( scale );
-     }
-     }*/
   };
 
   var getForce = function( target ) {

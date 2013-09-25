@@ -12,8 +12,22 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var PushButton = require( 'SUN/PushButton' );
-  var imageLoader = require( 'gravity-and-orbits-images' );
+
+  var pauseImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_pause.png' );
+  var playImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_play.png' );
+
+  var buttonStepUnpressedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_unpressed.png' );
+  var buttonStepHoverImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_hover.png' );
+  var buttonStepPressedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_pressed.png' );
+  var buttonStepDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_deactivated.png' );
+
+  var buttonRewindImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind.svg' );
+  var buttonRewindHoverImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind_hover.svg' );
+  var buttonRewindPressedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind_pressed.svg' );
+  var buttonRewindDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind_deactivated.svg' );
+
   var Image = require( 'SCENERY/nodes/Image' );
+
   var ToggleButton = require( 'SUN/ToggleButton' );
 
   function PlayPauseButton( model, options ) {
@@ -22,8 +36,8 @@ define( function( require ) {
 
     // add play button
     this.addChild( new ToggleButton(
-      new Image( imageLoader.getImage( 'button_sim_pause.png' ) ),
-      new Image( imageLoader.getImage( 'button_sim_play.png' ) ),
+      new Image( pauseImg ),
+      new Image( playImg ),
       model.playProperty,
       {scale: 0.7} ) );
 
@@ -32,20 +46,20 @@ define( function( require ) {
       model.stepManual();
     };
     this.addChild( stepButton = new PushButton(
-      new Image( imageLoader.getImage( 'button_step_unpressed.png' ) ),
-      new Image( imageLoader.getImage( 'button_step_hover.png' ) ),
-      new Image( imageLoader.getImage( 'button_step_pressed.png' ) ),
-      new Image( imageLoader.getImage( 'button_step_deactivated.png' ) ),
+      new Image( buttonStepUnpressedImg ),
+      new Image( buttonStepHoverImg ),
+      new Image( buttonStepPressedImg ),
+      new Image( buttonStepDeactivatedImg ),
       step, {scale: 0.7, x: 50, y: 7} ) );
     stepButton.enabled = false;
 
     // add rewind button
     rewind = function() {model.day = 0;};
     this.addChild( rewindButton = new PushButton(
-      new Image( imageLoader.getImage( 'button_sim_rewind.svg' ) ),
-      new Image( imageLoader.getImage( 'button_sim_rewind_hover.svg' ) ),
-      new Image( imageLoader.getImage( 'button_sim_rewind_pressed.svg' ) ),
-      new Image( imageLoader.getImage( 'button_sim_rewind_deactivated.svg' ) ),
+      new Image( buttonRewindImg ),
+      new Image( buttonRewindHoverImg ),
+      new Image( buttonRewindPressedImg ),
+      new Image( buttonRewindDeactivatedImg ),
       rewind, {scale: 0.7, x: -35, y: 7} ) );
     rewindButton.enabled = false;
 

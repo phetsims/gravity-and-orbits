@@ -8,7 +8,11 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var imageLoader = require( 'gravity-and-orbits-images' );
+  var resetButtonUp = require( 'image!GRAVITY_AND_ORBITS/../images/reset_button_up.png' );
+  var resetButtonOver = require( 'image!GRAVITY_AND_ORBITS/../images/reset_button_over.png' );
+  var resetButtonDown = require( 'image!GRAVITY_AND_ORBITS/../images/reset_button_down.png' );
+  var resetButtonDisabled = require( 'image!GRAVITY_AND_ORBITS/../images/reset_button_disabled.png' );
+
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PushButton = require( 'SUN/PushButton' );
@@ -20,10 +24,10 @@ define( function( require ) {
 
   function ResetAllButton( callback, options ) {
     PushButton.call( this,
-      new ResetAllImage( imageLoader.getImage( 'reset_button_up.png' ) ),
-      new ResetAllImage( imageLoader.getImage( 'reset_button_over.png' ) ),
-      new ResetAllImage( imageLoader.getImage( 'reset_button_down.png' ) ),
-      new ResetAllImage( imageLoader.getImage( 'reset_button_disabled.png' ) ),
+      new ResetAllImage( resetButtonUp ),
+      new ResetAllImage( resetButtonOver ),
+      new ResetAllImage( resetButtonDown ),
+      new ResetAllImage( resetButtonDisabled ),
       callback, options );
   }
 

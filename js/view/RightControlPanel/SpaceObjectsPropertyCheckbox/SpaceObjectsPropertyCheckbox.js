@@ -16,7 +16,9 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
 
-  var imageLoader = require( 'gravity-and-orbits-images' );
+  var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/../images/icon_path.png' );
+  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/../images/measuringTape.svg' );
+  var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/../images/icon_mass.svg' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   var Strings = require( 'Strings' );
@@ -43,7 +45,7 @@ define( function( require ) {
       {
         property: model.pathProperty,
         text: Strings['GAO.path'],
-        node: new Node( {children: [new Image( imageLoader.getImage( 'icon_path.png' ) )], x: 70, y: -23} )
+        node: new Node( {children: [new Image( iconPathImg )], x: 70, y: -23} )
       },
       {
         property: model.gridProperty,
@@ -60,12 +62,12 @@ define( function( require ) {
       {
         property: model.tapeProperty,
         text: Strings['GAO.tape'],
-        node: new Node( {children: [new Image( imageLoader.getImage( 'measuringTape.svg' ) )], x: 140, y: -23, scale: 0.5} )
+        node: new Node( {children: [new Image( measuringTapeImg )], x: 140, y: -23, scale: 0.5} )
       },
       {
         property: model.massProperty,
         text: Strings['GAO.mass'],
-        node: new Node( {children: [new Image( imageLoader.getImage( 'icon_mass.svg' ) )], x: 70, y: -23} )
+        node: new Node( {children: [new Image( iconMassImg )], x: 70, y: -23} )
       }
     ], dy = 25;
 
