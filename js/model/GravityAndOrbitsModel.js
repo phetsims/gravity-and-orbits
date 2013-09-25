@@ -93,23 +93,23 @@ define( function( require ) {
       earth: {
         x: CONSTANTS.EARTH_PERIHELION,
         y: 0,
-        radius: CONSTANTS.EARTH_RADIUS * 15 * 400,
-        velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
+        radius: CONSTANTS.EARTH_RADIUS * 15,
+        velocity: {x: -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, y: 0}, // -vx for fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS
       },
       moon: {
         x: CONSTANTS.MOON_X,
         y: -CONSTANTS.MOON_Y,
-        radius: CONSTANTS.MOON_RADIUS * 15 * 400,
+        radius: CONSTANTS.MOON_RADIUS * 15,
         velocity: {x: CONSTANTS.MOON_SPEED, y: 0},
         mass: CONSTANTS.MOON_MASS
       },
       options: {
-        forceScale: 1.017,
-        timeScale: 365.0 / 26.0,
-        scale: 1E-9,
-        centerX: 200,
-        centerY: 200
+        forceScale: 1.001,
+        timeScale: 365.0 / 96.0,
+        scale: 5.6E-7,
+        centerX: -82130,
+        centerY: 250
       }
     },
     {
