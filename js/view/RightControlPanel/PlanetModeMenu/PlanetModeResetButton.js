@@ -8,7 +8,7 @@
 define( function( require ) {
   'use strict';
 
-  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/../images/reset_arrow.png' );
+  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/../images/reset_arrow.svg' );
 
   var Image = require( 'SCENERY/nodes/Image' );
   var Node = require( 'SCENERY/nodes/Node' );

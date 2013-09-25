@@ -9,7 +9,6 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-
   var spaceStationImg = require( 'image!GRAVITY_AND_ORBITS/../images/space-station.png' );
   var Image = require( 'SCENERY/nodes/Image' );
 
