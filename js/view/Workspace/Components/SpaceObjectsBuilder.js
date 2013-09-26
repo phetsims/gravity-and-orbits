@@ -28,9 +28,6 @@ define( function( require ) {
       spaceStation: SpaceStation
     };
 
-    // set scale center
-    model.scaleCenter.set( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
-
     // add planets
     for ( i = 0; i < model.spaceObjects.length; i++ ) {
       obj = model.planetModes[num][model.spaceObjects[i]];

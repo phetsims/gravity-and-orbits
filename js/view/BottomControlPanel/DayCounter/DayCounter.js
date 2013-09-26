@@ -64,6 +64,10 @@ define( function( require ) {
     } );
 
     model.dayProperty.link( updateDay );
+
+    model.planetModeProperty.link( function() {
+      model.dayProperty.reset();
+    } );
   }
 
   inherit( Node, DayCounter );
