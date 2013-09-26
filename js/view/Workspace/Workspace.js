@@ -11,6 +11,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var ForceArrows = require( 'view/Workspace/Components/ForceArrows' );
 
   var WorkspaceBuilder = require( 'view/Workspace/WorkspaceBuilder' );
 
@@ -27,12 +29,22 @@ define( function( require ) {
     // redraw workspace when selected new mode
     model.planetModeProperty.link( function( num ) {
       model.dayProperty.reset();
-      self.removeAllChildren();
+      if ( self.view ) {
+        self.removeChild( self.view );
+        self.view = undefined;
+      }
 
+      // add space objects
       self.view = new WorkspaceBuilder( model, num );
       self.addChild( self.view );
       self.x = model.scaleCenter.x;
       self.y = model.scaleCenter.y;
+
+      forceArrowObserver.call( self, model, model.forceArrow );
+    } );
+
+    model.forceArrowProperty.link( function( flag ) {
+      forceArrowObserver.call( self, model, flag );
     } );
 
     // redraw workspace position of object is changing
@@ -43,6 +55,7 @@ define( function( require ) {
       } );
     } );
 
+    // init drag and drop for space objects
     model.spaceObjects.forEach( function( el ) {
       model[el + 'ViewProperty'].link( function( view ) {
         var clickYOffset, clickXOffset;
@@ -56,7 +69,7 @@ define( function( require ) {
           drag: function( e ) {
             var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset;
             var x = view.globalToParentPoint( e.pointer.point ).x - clickXOffset;
-            model[el + 'Position'].set( x, y );
+            model[el + 'Position'] = new Vector2( x, y );
           },
           end: function() {
             model.drag = '';
@@ -65,6 +78,22 @@ define( function( require ) {
       } );
     } );
   }
+
+  var forceArrowObserver = function( model, flag ) {
+    var self = this;
+    // unlink previous observers and remove force arrows
+    if ( self.forceArrows ) {
+      self.forceArrows.unlink( model );
+      self.removeChild( self.forceArrows );
+      self.forceArrows = undefined;
+    }
+
+    if ( flag ) {
+      // add new arrows
+      self.forceArrows = new ForceArrows( model, model.planetMode );
+      self.addChild( self.forceArrows );
+    }
+  };
 
   inherit( Node, Workspace );
 

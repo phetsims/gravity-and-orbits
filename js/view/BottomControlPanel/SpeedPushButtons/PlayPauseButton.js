@@ -54,7 +54,7 @@ define( function( require ) {
     stepButton.enabled = false;
 
     // add rewind button
-    rewind = function() {model.day = 0;};
+    rewind = function() {model.clear();};
     this.addChild( rewindButton = new PushButton(
       new Image( buttonRewindImg ),
       new Image( buttonRewindHoverImg ),

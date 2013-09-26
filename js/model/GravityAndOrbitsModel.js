@@ -253,6 +253,10 @@ define( function( require ) {
     },
     clear: function() {
       this.dayProperty.reset();
+
+      var mode = this.planetMode;
+      this.planetModeProperty.reset();
+      this.planetMode = mode;
     },
     stepManual: function( dt ) {
       dt = dt || 1 / fps;
