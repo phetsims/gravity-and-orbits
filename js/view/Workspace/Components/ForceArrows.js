@@ -12,42 +12,48 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
 
-
-  function ForceArrows( model, num ) {
-    var self = this;
-    this.num = num;
+  function ForceArrows( model ) {
+    var self = this, prevPosition = {};
     Node.call( this );
 
-    // find max force for current mode
-    this.maxForce = {};
-    this.maxForce[this.num] = this.findMaxForce( model );
+    // find max force for all modes
+    this.maxForce = [];
+    for ( var i = 0; i < model.planetModes.length; i++ ) {
+      this.maxForce[i] = getMaxForce( model, i );
+    }
 
-    // define redraw function
-    this.redraw = function( newPosition ) {
-      if ( self.prevPosition[self.el].minus( newPosition ).magnitude() > 1 ) {
-        self.removeAllChildren();
+    var drawArrows = function() {
+      self.removeAllChildren();
+      if ( self.flag ) {
         self.addArrows( model );
-        self.prevPosition[self.el] = newPosition;
       }
     };
 
-    // add observers for space object's position
-    self.prevPosition = {};
     model.spaceObjects.forEach( function( el ) {
-      self.el = el;
-      self.prevPosition[el] = model[el + 'Position'];
-      model[el + 'PositionProperty'].link( self.redraw );
+      prevPosition[el] = model[el + 'Position'];
+      model[el + 'PositionProperty'].link( function( newPosition ) {
+        if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
+          prevPosition[el] = newPosition;
+          drawArrows();
+        }
+      } );
     } );
 
-    // add arrows
-    this.addArrows( model );
+    model.forceArrowProperty.link( function( flag ) {
+      self.flag = flag;
+      drawArrows();
+    } );
+
+    model.planetModeProperty.link( function() {
+      drawArrows();
+    } );
   }
 
   inherit( Node, ForceArrows );
 
   ForceArrows.prototype.addArrows = function( model ) {
     var self = this,
-      num = self.num,
+      num = model.planetMode,
       maxForce = self.maxForce[num],
       mode = model.planetModes[num],
       arrowSize = 10,
@@ -79,8 +85,8 @@ define( function( require ) {
     }
   };
 
-  ForceArrows.prototype.findMaxForce = function( model ) {
-    var num = this.num, mode = model.planetModes[num], obj1, obj2, len = model.spaceObjects.length, i, j, f, scale = model.planetModes[num].options.scale, maxForce = 1;
+  var getMaxForce = function( model, num ) {
+    var mode = model.planetModes[num], obj1, obj2, len = model.spaceObjects.length, i, j, f, scale = model.planetModes[num].options.scale, maxForce = 1;
     for ( i = 0; i < len; i++ ) {
       obj1 = model.spaceObjects[i];
       if ( !mode[obj1] ) {continue;}
@@ -92,13 +98,6 @@ define( function( require ) {
       }
     }
     return maxForce;
-  };
-
-  ForceArrows.prototype.unlink = function( model ) {
-    var self = this;
-    model.spaceObjects.forEach( function( el ) {
-      model[el + 'PositionProperty'].unlink( self.redraw );
-    } );
   };
 
   return ForceArrows;

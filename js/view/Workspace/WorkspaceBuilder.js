@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   var Sun = require( 'view/SpaceObject/Sun' );
   var Earth = require( 'view/SpaceObject/Earth' );
@@ -35,8 +36,8 @@ define( function( require ) {
       obj = model.planetModes[num][model.spaceObjects[i]];
       if ( obj ) {
         // set space object's coordinates
-        model[model.spaceObjects[i] + 'PositionStart'].set( obj.x * scale, obj.y * scale );
-        model[model.spaceObjects[i] + 'Position'].set( obj.x * scale, obj.y * scale );
+        model[model.spaceObjects[i] + 'PositionStart'] = new Vector2( obj.x * scale, obj.y * scale );
+        model[model.spaceObjects[i] + 'Position'] = new Vector2( obj.x * scale, obj.y * scale );
 
         // set space object's velocity
         if ( obj.velocity ) {

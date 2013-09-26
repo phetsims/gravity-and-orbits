@@ -21,6 +21,11 @@ define( function( require ) {
     var self = this;
     Node.call( this );
 
+    // add force arrows
+    self.forceArrows = new ForceArrows( model );
+    self.addChild( self.forceArrows );
+
+    // add grids
     self.grid = new Grid( model );
     self.addChild( self.grid );
 
@@ -43,13 +48,6 @@ define( function( require ) {
       self.addChild( self.view );
       self.x = model.scaleCenter.x;
       self.y = model.scaleCenter.y;
-
-      // tune arrows
-      forceArrowObserver.call( self, model, model.forceArrow );
-    } );
-
-    model.forceArrowProperty.link( function( flag ) {
-      forceArrowObserver.call( self, model, flag );
     } );
 
     // redraw workspace position of object is changing
@@ -83,22 +81,6 @@ define( function( require ) {
       } );
     } );
   }
-
-  var forceArrowObserver = function( model, flag ) {
-    var self = this;
-    // unlink previous observers and remove force arrows
-    if ( self.forceArrows ) {
-      self.forceArrows.unlink( model );
-      self.removeChild( self.forceArrows );
-      self.forceArrows = undefined;
-    }
-
-    if ( flag ) {
-      // add new arrows
-      self.forceArrows = new ForceArrows( model, model.planetMode );
-      self.addChild( self.forceArrows );
-    }
-  };
 
   inherit( Node, Workspace );
 
