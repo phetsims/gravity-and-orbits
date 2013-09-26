@@ -95,14 +95,14 @@ define( function( require ) {
     },
     {
       earth: {
-        x: CONSTANTS.EARTH_PERIHELION,
+        x: 0,
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 15,
         velocity: {x: -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, y: 0}, // -vx for fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS
       },
       moon: {
-        x: CONSTANTS.MOON_X,
+        x: 0,
         y: -CONSTANTS.MOON_Y,
         radius: CONSTANTS.MOON_RADIUS * 15,
         velocity: {x: CONSTANTS.MOON_SPEED, y: 0},
@@ -113,7 +113,7 @@ define( function( require ) {
         timeScale: 365.0 / 96.0, // days per seconds
         timeMode: timeModes[0],
         scale: 5.6E-7,
-        centerX: -82130,
+        centerX: 200,
         centerY: 250
       }
     },

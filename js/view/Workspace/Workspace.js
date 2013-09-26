@@ -13,12 +13,16 @@ define( function( require ) {
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var Vector2 = require( 'DOT/Vector2' );
   var ForceArrows = require( 'view/Workspace/Components/ForceArrows' );
+  var Grid = require( 'view/Workspace/Components/Grid' );
 
   var WorkspaceBuilder = require( 'view/Workspace/WorkspaceBuilder' );
 
   function Workspace( model ) {
     var self = this;
     Node.call( this );
+
+    self.grid = new Grid( model );
+    self.addChild( self.grid );
 
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
@@ -40,6 +44,7 @@ define( function( require ) {
       self.x = model.scaleCenter.x;
       self.y = model.scaleCenter.y;
 
+      // tune arrows
       forceArrowObserver.call( self, model, model.forceArrow );
     } );
 
