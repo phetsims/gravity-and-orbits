@@ -14,6 +14,7 @@ define( function( require ) {
   var SpaceObjects = require( 'view/Workspace/Components/SpaceObjects' );
   var ForceArrows = require( 'view/Workspace/Components/ForceArrows' );
   var VelocityArrows = require( 'view/Workspace/Components/VelocityArrows' );
+  var PlanetPath = require( 'view/Workspace/Components/PlanetPath' );
   var Grid = require( 'view/Workspace/Components/Grid' );
 
   function Workspace( model ) {
@@ -21,20 +22,19 @@ define( function( require ) {
     Node.call( this );
 
     // add space objects
-    self.spaceObjects = new SpaceObjects( model );
-    self.addChild( self.spaceObjects );
+    self.addChild( new SpaceObjects( model ) );
 
     // add force arrows
-    self.forceArrows = new ForceArrows( model );
-    self.addChild( self.forceArrows );
+    self.addChild( new ForceArrows( model ) );
 
-    // add force arrows
-    self.velocityArrows = new VelocityArrows( model );
-    self.addChild( self.velocityArrows );
+    // add velocity arrows
+    self.addChild( new VelocityArrows( model ) );
+
+    // add planet path
+    self.addChild( new PlanetPath( model ) );
 
     // add grids
-    self.grid = new Grid( model );
-    self.addChild( self.grid );
+    self.addChild( new Grid( model ) );
 
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
