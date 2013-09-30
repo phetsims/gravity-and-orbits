@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * main object view
+ * return view of space objects
  *
  * @author Andrey Zelenkov (Mlearner)
  */
