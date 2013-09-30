@@ -13,6 +13,7 @@ define( function( require ) {
 
   var SpaceObjects = require( 'view/Workspace/Components/SpaceObjects' );
   var ForceArrows = require( 'view/Workspace/Components/ForceArrows' );
+  var VelocityArrows = require( 'view/Workspace/Components/VelocityArrows' );
   var Grid = require( 'view/Workspace/Components/Grid' );
 
   function Workspace( model ) {
@@ -26,6 +27,10 @@ define( function( require ) {
     // add force arrows
     self.forceArrows = new ForceArrows( model );
     self.addChild( self.forceArrows );
+
+    // add force arrows
+    self.velocityArrows = new VelocityArrows( model );
+    self.addChild( self.velocityArrows );
 
     // add grids
     self.grid = new Grid( model );
