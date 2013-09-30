@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * velocity arrows view
+ * planet path view
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -26,6 +26,7 @@ define( function( require ) {
       spaceStation: 'gray'
     };
 
+    // max length of paths
     self.totalLengthMax = [
       {
         sun: 1400,
@@ -46,12 +47,13 @@ define( function( require ) {
       }
     ];
 
-
+    //
     self.prevPosition = {};
     self.totalLength = {};
     self.path = {};
     self.shape = {};
 
+    // function to update paths
     var drawPath = function() {
       self.removeAllChildren();
       if ( self.flag ) {
@@ -59,7 +61,8 @@ define( function( require ) {
       }
     };
 
-    self.updatePath( model );
+    // add observers for planet positions
+    self.clearPath( model );
     model.spaceObjects.forEach( function( el ) {
       model[el + 'PositionProperty'].link( function( newPosition ) {
         var dr = newPosition.minus( self.prevPosition[el][self.prevPosition[el].length - 1] ).magnitude(), num = model.planetMode;
@@ -76,12 +79,12 @@ define( function( require ) {
 
     model.pathProperty.link( function( flag ) {
       self.flag = flag;
-      self.updatePath( model );
+      self.clearPath( model );
       drawPath();
     } );
 
     model.planetModeProperty.link( function() {
-      self.updatePath( model );
+      self.clearPath( model );
       drawPath();
     } );
   }
@@ -116,7 +119,7 @@ define( function( require ) {
     }
   };
 
-  PlanetPath.prototype.updatePath = function( model ) {
+  PlanetPath.prototype.clearPath = function( model ) {
     var self = this;
     model.spaceObjects.forEach( function( el ) {
       self.prevPosition[el] = [model[el + 'Position']];
