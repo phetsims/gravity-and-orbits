@@ -69,25 +69,27 @@ define( function( require ) {
         text: Strings['GAO.mass'],
         node: new Node( {children: [new Image( iconMassImg )], x: 70, y: -23} )
       }
-    ], dy = 25;
+    ], dy = 25, order = {
+      cartoon: [0, 1, 2, 3],
+      scale: [0, 1, 5, 2, 3, 4]
+    };
 
     // add checkboxes
     for ( var i = 0; i < options.length; i++ ) {
-      this[options[i].text] = new CheckBox( new Node( {children: [
-        new Text( options[i].text, { font: FONT, fill: '#fff', pickable: false, x: 30, y: i * dy } ),
-        new Node( {children: [options[i].node], x: 0, y: 4 + i * dy} )
-      ]} ), options[i].property, {x: 3, y: 4 + i * dy, scale: 0.8} );
-      this.addChild( this[options[i].text] );
+      this[options[i].text] = {
+        view: new CheckBox( new Node( {children: [
+          new Text( options[i].text, { font: FONT, fill: '#fff', pickable: false, x: 30, y: i * dy } ),
+          new Node( {children: [options[i].node], x: 0, y: 4 + i * dy} )
+        ]} ), options[i].property, {x: 3, y: 4 + i * dy, scale: 0.8} ),
+        y: 4 + i * dy};
+      this.addChild( this[options[i].text].view );
     }
 
     model.viewModeProperty.link( function( mode ) {
-        if ( mode === model.viewModes[0] ) {
-          self.removeChild( self[options[4].text] );
-          self.removeChild( self[options[5].text] );
-        }
-        else if ( mode === model.viewModes[1] ) {
-          self.addChild( self[options[4].text] );
-          self.addChild( self[options[5].text] );
+        var menu = order[mode];
+        self.removeAllChildren();
+        for ( var i = 0; i < menu.length; i++ ) {
+          self.addChild( self[options[menu[i]].text].view.setY( self[options[i].text].y ) );
         }
       }
     );

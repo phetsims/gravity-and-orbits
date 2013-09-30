@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * planet path view
+ * space object's path view
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -18,7 +18,7 @@ define( function( require ) {
     var self = this;
     Node.call( this );
 
-    // color for planet's paths
+    // color for space object's paths
     self.color = {
       sun: 'yellow',
       earth: 'gray',
@@ -47,7 +47,7 @@ define( function( require ) {
       }
     ];
 
-    //
+    // variables for each space object
     self.prevPosition = {};
     self.totalLength = {};
     self.path = {};
@@ -61,7 +61,7 @@ define( function( require ) {
       }
     };
 
-    // add observers for planet positions
+    // add observers for space object's positions
     self.clearPath( model );
     model.spaceObjects.forEach( function( el ) {
       model[el + 'PositionProperty'].link( function( newPosition ) {
@@ -111,11 +111,11 @@ define( function( require ) {
   };
 
   PlanetPath.prototype.cutPoints = function( el, num ) {
-    var dx;
+    var dr;
     while ( this.totalLength[el] > this.totalLengthMax[num][el] ) {
-      dx = this.prevPosition[el][0].minus( this.prevPosition[el][1] ).magnitude();
+      dr = this.prevPosition[el][0].minus( this.prevPosition[el][1] ).magnitude();
       this.prevPosition[el].shift();
-      this.totalLength[el] -= dx;
+      this.totalLength[el] -= dr;
     }
   };
 
