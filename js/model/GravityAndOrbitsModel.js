@@ -57,9 +57,9 @@ define( function( require ) {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
         timeScale: 365.0 / 26.0, // days per seconds
         timeMode: timeModes[0],
-        scale: 1.75E-9,
-        centerX: 250,
-        centerY: 300
+        scale: 1.5E-9,
+        centerX: 245,
+        centerY: 275
       }
     },
     {
@@ -88,9 +88,9 @@ define( function( require ) {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
         timeScale: 365.0 / 26.0, // days per seconds
         timeMode: timeModes[0],
-        scale: 1.75E-9,
-        centerX: 250,
-        centerY: 300
+        scale: 1.5E-9,
+        centerX: 245,
+        centerY: 275
       }
     },
     {
@@ -112,9 +112,9 @@ define( function( require ) {
         forceScale: 1.001,
         timeScale: 365.0 / 96.0, // days per seconds
         timeMode: timeModes[0],
-        scale: 5.6E-7,
-        centerX: 200,
-        centerY: 250
+        scale: 5E-7,
+        centerX: 245,
+        centerY: 280
       }
     },
     {
@@ -136,8 +136,8 @@ define( function( require ) {
         forceScale: 1,
         timeScale: 365.0 / 31855.0, // days per seconds
         timeMode: timeModes[1],
-        scale: 2.4E-5,
-        centerX: 240,
+        scale: 2.6E-5,
+        centerX: 270,
         centerY: 230
       }
     }
@@ -249,14 +249,15 @@ define( function( require ) {
       this.speedProperty.reset();
       this.dayProperty.reset();
       this.scaleProperty.reset();
+
+      this.planetMode++;
       this.planetModeProperty.reset();
     },
     clear: function() {
       this.dayProperty.reset();
 
-      var mode = this.planetMode;
+      this.planetMode++;
       this.planetModeProperty.reset();
-      this.planetMode = mode;
     },
     stepManual: function( dt ) {
       dt = dt || 1 / fps;
