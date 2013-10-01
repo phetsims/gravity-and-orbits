@@ -25,5 +25,6 @@ define( {
   "GAO.planet": "Planet",
   "GAO.moon": "Moon",
   "GAO.satellite": "Satellite",
-  "GAO.v": "V"
+  "GAO.v": "V",
+  "GAO.thousandMiles": "thousand miles"
 } );

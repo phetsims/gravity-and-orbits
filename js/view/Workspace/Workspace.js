@@ -16,6 +16,7 @@ define( function( require ) {
   var VelocityArrows = require( 'view/Workspace/Components/VelocityArrows' );
   var PlanetPath = require( 'view/Workspace/Components/PlanetPath' );
   var Grid = require( 'view/Workspace/Components/Grid' );
+  var MeasuringTape = require( 'view/Workspace/Components/MeasuringTape' );
 
   function Workspace( model ) {
     var self = this;
@@ -35,6 +36,9 @@ define( function( require ) {
 
     // add grids
     self.addChild( new Grid( model ) );
+
+    // add measuring tape
+    self.addChild( new MeasuringTape( model ) );
 
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
