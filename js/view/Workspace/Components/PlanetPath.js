@@ -29,17 +29,17 @@ define( function( require ) {
     // max length of paths
     self.totalLengthMax = [
       {
-        sun: 1400,
-        earth: 1400
+        sun: 3000,
+        earth: 3000
       },
       {
         sun: 1400,
-        earth: 1400,
-        moon: 1600
+        earth: 1200,
+        moon: 1350
       },
       {
         earth: 0,
-        moon: 900
+        moon: 920
       },
       {
         earth: 1400,

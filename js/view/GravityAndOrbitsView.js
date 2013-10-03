@@ -42,7 +42,7 @@ define( function( require ) {
     this.addChild( new BottomControlPanel( model, 100, 410 ) );
 
     // add view mode panel
-    this.addChild( new ViewModePanel( model, 250, 10 ) );
+    this.addChild( new ViewModePanel( model, 250, 465 ) );
 
     model.rightPanelHeightProperty.link( function( height ) {
       var resetButtonOffsetY = 18;

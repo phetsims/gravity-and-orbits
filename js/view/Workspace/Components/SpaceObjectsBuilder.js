@@ -17,8 +17,8 @@ define( function( require ) {
   var Moon = require( 'view/SpaceObject/Moon' );
   var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
 
-  function WorkspaceBuilder( model, num ) {
-    var self = this, i, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
+  function SpaceObjectsBuilder( model, num ) {
+    var self = this, i, name, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode, modeCoeff;
     Node.call( this );
 
     var map = {
@@ -30,45 +30,54 @@ define( function( require ) {
 
     // add planets
     for ( i = 0; i < model.spaceObjects.length; i++ ) {
-      obj = model.planetModes[num][model.spaceObjects[i]];
+      name = model.spaceObjects[i];
+      obj = model.planetModes[num][name];
       if ( obj ) {
         // set space object's coordinates
-        model[model.spaceObjects[i] + 'PositionStart'] = new Vector2( obj.x * scale, obj.y * scale );
-        model[model.spaceObjects[i] + 'Position'] = new Vector2( obj.x * scale, obj.y * scale );
+        model[name + 'PositionStart'] = new Vector2( obj.x * scale, obj.y * scale );
+        model[name + 'Position'] = new Vector2( obj.x * scale, obj.y * scale );
 
         // set space object's velocity
         if ( obj.velocity ) {
-          model[model.spaceObjects[i] + 'Velocity'].set( obj.velocity.x, obj.velocity.y );
+          model[name + 'Velocity'].set( obj.velocity.x, obj.velocity.y );
         }
         else {
-          model[model.spaceObjects[i] + 'Velocity'].set( 0, 0 );
+          model[name + 'Velocity'].set( 0, 0 );
         }
 
         // set space object's mass
-        model[model.spaceObjects[i] + 'MassCoeffProperty'].reset();
-        model[model.spaceObjects[i] + 'Mass'] = obj.mass;
+        model[name + 'MassCoeffProperty'].reset();
+        model[name + 'Mass'] = obj.mass;
 
         // set space object's radius
-        model[model.spaceObjects[i] + 'Radius'] = obj.radius;
+        if ( model.viewMode === model.viewModes[0] ) {
+          modeCoeff = 1;
+        }
+        else if ( model.viewMode === model.viewModes[1] ) {
+          modeCoeff = obj.radiusScaleMode;
+        }
 
         // add space object
-        model[model.spaceObjects[i] + 'View'] = new map[model.spaceObjects[i]]( model[model.spaceObjects[i] + 'Position'], obj.radius * scale );
+        model[name + 'View'] = new map[name]( model[name + 'Position'], obj.radius * scale );
+        model[name + 'View'].scale( modeCoeff );
         this.addChild( model[model.spaceObjects[i] + 'View'] );
 
+        // add tooltip
+
         // clean up previous values
-        model[model.spaceObjects[i] + 'Acceleration'].set( 0, 0 );
-        model[model.spaceObjects[i] + 'VelocityHalf'].set( 0, 0 );
-        model[model.spaceObjects[i] + 'Exploded'] = false;
+        model[name + 'Acceleration'].set( 0, 0 );
+        model[name + 'VelocityHalf'].set( 0, 0 );
+        model[name + 'Exploded'] = false;
 
         model.timeMode = timeMode;
       }
       else {
-        model[model.spaceObjects[i] + 'View'] = new Node();
+        model[name + 'View'] = new Node();
       }
     }
   }
 
-  inherit( Node, WorkspaceBuilder );
+  inherit( Node, SpaceObjectsBuilder );
 
-  return WorkspaceBuilder;
+  return SpaceObjectsBuilder;
 } );

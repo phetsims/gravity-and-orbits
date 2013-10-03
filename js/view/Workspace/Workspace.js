@@ -20,30 +20,33 @@ define( function( require ) {
 
   function Workspace( model ) {
     var self = this;
+    this.toScale = new Node();
     Node.call( this );
 
     // add space objects
-    self.addChild( new SpaceObjects( model ) );
+    this.toScale.addChild( new SpaceObjects( model ) );
 
     // add force arrows
-    self.addChild( new ForceArrows( model ) );
+    this.toScale.addChild( new ForceArrows( model ) );
 
     // add velocity arrows
-    self.addChild( new VelocityArrows( model ) );
+    this.toScale.addChild( new VelocityArrows( model ) );
 
     // add planet path
-    self.addChild( new PlanetPath( model ) );
+    this.toScale.addChild( new PlanetPath( model ) );
 
     // add grids
-    self.addChild( new Grid( model ) );
+    this.toScale.addChild( new Grid( model ) );
+
+    this.addChild( this.toScale );
 
     // add measuring tape
-    self.addChild( new MeasuringTape( model ) );
+    this.addChild( new MeasuringTape( model ) );
 
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
-      self.scale( 1 / (oldScale || 1) );
-      self.scale( newScale );
+      self.toScale.scale( 1 / (oldScale || 1) );
+      self.toScale.scale( newScale );
     } );
 
     // add scale center observer

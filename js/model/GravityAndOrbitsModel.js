@@ -44,12 +44,14 @@ define( function( require ) {
         x: 0,
         y: 0,
         radius: CONSTANTS.SUN_RADIUS * 50,
+        radiusScaleMode: 0.025,
         mass: CONSTANTS.SUN_MASS
       },
       earth: {
         x: CONSTANTS.EARTH_PERIHELION,
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 800,
+        radiusScaleMode: 0.05,
         velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
         mass: CONSTANTS.EARTH_MASS * 10200
       },
@@ -68,12 +70,14 @@ define( function( require ) {
         x: 0,
         y: 0,
         radius: CONSTANTS.SUN_RADIUS * 50,
+        radiusScaleMode: 0.025,
         mass: CONSTANTS.SUN_MASS
       },
       earth: {
         x: CONSTANTS.EARTH_PERIHELION,
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 800,
+        radiusScaleMode: 0.05,
         velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
         mass: CONSTANTS.EARTH_MASS * 10200
       },
@@ -81,6 +85,7 @@ define( function( require ) {
         x: CONSTANTS.MOON_X,
         y: -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
         radius: CONSTANTS.MOON_RADIUS * 800,
+        radiusScaleMode: 0.05,
         velocity: {x: CONSTANTS.MOON_SPEED * 21, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
         mass: CONSTANTS.MOON_MASS
       },
@@ -98,6 +103,7 @@ define( function( require ) {
         x: 0,
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 15,
+        radiusScaleMode: 0.05,
         velocity: {x: -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, y: 0}, // -vx for fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS
       },
@@ -105,6 +111,7 @@ define( function( require ) {
         x: 0,
         y: -CONSTANTS.MOON_Y,
         radius: CONSTANTS.MOON_RADIUS * 15,
+        radiusScaleMode: 0.05,
         velocity: {x: CONSTANTS.MOON_SPEED, y: 0},
         mass: CONSTANTS.MOON_MASS
       },
@@ -122,6 +129,7 @@ define( function( require ) {
         x: 0,
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 0.8,
+        radiusScaleMode: 1.27,
         velocity: {x: 0, y: 0},
         mass: CONSTANTS.EARTH_MASS
       },
@@ -129,6 +137,7 @@ define( function( require ) {
         x: CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
         y: 0,
         radius: CONSTANTS.SPACE_STATION_RADIUS * 8000,
+        radiusScaleMode: 0.1,
         velocity: {x: 0, y: -CONSTANTS.SPACE_STATION_SPEED},
         mass: CONSTANTS.SPACE_STATION_MASS
       },
