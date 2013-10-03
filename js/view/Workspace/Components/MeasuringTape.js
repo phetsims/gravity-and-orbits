@@ -166,6 +166,7 @@ define( function( require ) {
       angle = 0;
     } );
 
+    // TODO: resize line
     model.scaleProperty.link( function( newScale, oldScale ) {
 
     } );

@@ -60,9 +60,10 @@ define( function( require ) {
         // add space object
         model[name + 'View'] = new map[name]( model[name + 'Position'], obj.radius * scale );
         model[name + 'View'].scale( modeCoeff );
-        this.addChild( model[model.spaceObjects[i] + 'View'] );
+        this.addChild( model[name + 'View'] );
 
-        // add tooltip
+        // check tooltip
+        model[name + 'Tooltip'].setVisible( ( model[name + 'View'].getWidth() < 10 ) );
 
         // clean up previous values
         model[name + 'Acceleration'].set( 0, 0 );
@@ -73,6 +74,7 @@ define( function( require ) {
       }
       else {
         model[name + 'View'] = new Node();
+        model[name + 'Tooltip'].setVisible( false );
       }
     }
   }

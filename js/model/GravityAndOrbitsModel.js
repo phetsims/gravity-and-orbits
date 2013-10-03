@@ -160,6 +160,7 @@ define( function( require ) {
     this.spaceObjects = ['sun', 'earth', 'moon', 'spaceStation'];
     this.spaceObjectsProps = [
       {name: 'View', value: new Node()},
+      {name: 'Tooltip', value: new Node()},
       {name: 'Mass', value: 1},
       {name: 'MassCoeff', value: 1},
       {name: 'Radius', value: 0},
@@ -350,6 +351,9 @@ define( function( require ) {
         if ( !mode[obj2] ) {continue;}
         dx = model[obj1 + 'Position'].minus( model[obj2 + 'Position'] ).magnitude(); // distance between planets
         dr = (model[obj1 + 'View'].getWidth() + model[obj2 + 'View'].getWidth()) / 2;
+        if ( !isFinite( dx ) || !isFinite( dr ) ) {
+          {continue;}
+        }
         if ( dr > dx ) {
           model[(model[obj1 + 'Mass'] > model[obj2 + 'Mass'] ? obj2 : obj1 ) + 'Exploded'] = true;
         }
