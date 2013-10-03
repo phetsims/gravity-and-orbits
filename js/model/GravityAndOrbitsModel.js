@@ -228,6 +228,12 @@ define( function( require ) {
       } );
     } );
 
+    // force planet mode reset function
+    this.planetModeReset = function() {
+      self.planetMode += ( (self.planetMode === (self.planetModes.length - 1)) ? -1 : 1);
+      self.planetModeProperty.reset();
+    };
+
     this.reset();
   }
 
@@ -249,15 +255,11 @@ define( function( require ) {
       this.speedProperty.reset();
       this.dayProperty.reset();
       this.scaleProperty.reset();
-
-      this.planetMode++;
-      this.planetModeProperty.reset();
+      this.planetModeReset();
     },
     clear: function() {
       this.dayProperty.reset();
-
-      this.planetMode++;
-      this.planetModeProperty.reset();
+      this.planetModeReset();
     },
     stepManual: function( dt ) {
       dt = dt || 1 / fps;
