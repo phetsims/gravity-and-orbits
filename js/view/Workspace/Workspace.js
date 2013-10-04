@@ -17,6 +17,7 @@ define( function( require ) {
   var PlanetPath = require( 'view/Workspace/Components/PlanetPath' );
   var Grid = require( 'view/Workspace/Components/Grid' );
   var MeasuringTape = require( 'view/Workspace/Components/MeasuringTape' );
+  var MassText = require( 'view/Workspace/Components/MassText' );
 
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -51,6 +52,9 @@ define( function( require ) {
     // add measuring tape
     this.addChild( new MeasuringTape( model ) );
 
+    // add mass text
+    this.addChild( new MassText( model ) );
+
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
       self.toScale.scale( 1 / (oldScale || 1) );
@@ -65,7 +69,7 @@ define( function( require ) {
 
     // add tooltips
     model.spaceObjects.forEach( function( el ) {
-      var name = (el === 'spaceStation' ? 'satellite' : el),
+      var name = (el === 'spaceStation' ? 'satellite' : el), // change "space station" -> satellite
         position = model[el + 'Position'],
         scale = model.planetModes[model.planetMode].options.scale;
 
@@ -81,8 +85,8 @@ define( function( require ) {
       } );
     } );
 
+    // redraw workspace position of object is changing
     model.spaceObjects.forEach( function( el ) {
-      // redraw workspace position of object is changing
       model[el + 'PositionProperty'].link( function( vect ) {
         model[el + 'View'].x = vect.x;
         model[el + 'View'].y = vect.y;

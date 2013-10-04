@@ -11,6 +11,7 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Strings = require( 'Strings' );
 
   var Vector2 = require( 'DOT/Vector2' );
 
@@ -45,7 +46,11 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.SUN_RADIUS * 50,
         radiusScaleMode: 0.025,
-        mass: CONSTANTS.SUN_MASS
+        mass: CONSTANTS.SUN_MASS,
+        massTooltip: {
+          defaultValue: 333,
+          text: Strings["GAO.thousandEarthMasses"]
+        }
       },
       earth: {
         x: CONSTANTS.EARTH_PERIHELION,
@@ -53,7 +58,12 @@ define( function( require ) {
         radius: CONSTANTS.EARTH_RADIUS * 800,
         radiusScaleMode: 0.05,
         velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
-        mass: CONSTANTS.EARTH_MASS * 10200
+        mass: CONSTANTS.EARTH_MASS * 10200,
+        massTooltip: {
+          defaultValue: 1,
+          text: Strings["GAO.earthMasses"],
+          precision: 2
+        }
       },
       options: {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
@@ -71,7 +81,11 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.SUN_RADIUS * 50,
         radiusScaleMode: 0.025,
-        mass: CONSTANTS.SUN_MASS
+        mass: CONSTANTS.SUN_MASS,
+        massTooltip: {
+          defaultValue: 333,
+          text: Strings["GAO.thousandEarthMasses"]
+        }
       },
       earth: {
         x: CONSTANTS.EARTH_PERIHELION,
@@ -79,7 +93,12 @@ define( function( require ) {
         radius: CONSTANTS.EARTH_RADIUS * 800,
         radiusScaleMode: 0.05,
         velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
-        mass: CONSTANTS.EARTH_MASS * 10200
+        mass: CONSTANTS.EARTH_MASS * 10200,
+        massTooltip: {
+          defaultValue: 1,
+          text: Strings["GAO.earthMasses"],
+          precision: 2
+        }
       },
       moon: {
         x: CONSTANTS.MOON_X,
@@ -87,7 +106,12 @@ define( function( require ) {
         radius: CONSTANTS.MOON_RADIUS * 800,
         radiusScaleMode: 0.05,
         velocity: {x: CONSTANTS.MOON_SPEED * 21, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
-        mass: CONSTANTS.MOON_MASS
+        mass: CONSTANTS.MOON_MASS,
+        massTooltip: {
+          defaultValue: 0.01,
+          text: Strings["GAO.earthMasses"],
+          precision: 2
+        }
       },
       options: {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
@@ -105,7 +129,12 @@ define( function( require ) {
         radius: CONSTANTS.EARTH_RADIUS * 15,
         radiusScaleMode: 0.05,
         velocity: {x: -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, y: 0}, // -vx for fulfill the law of conservation of momentum
-        mass: CONSTANTS.EARTH_MASS
+        mass: CONSTANTS.EARTH_MASS,
+        massTooltip: {
+          defaultValue: 1,
+          text: Strings["GAO.earthMasses"],
+          precision: 2
+        }
       },
       moon: {
         x: 0,
@@ -113,7 +142,12 @@ define( function( require ) {
         radius: CONSTANTS.MOON_RADIUS * 15,
         radiusScaleMode: 0.05,
         velocity: {x: CONSTANTS.MOON_SPEED, y: 0},
-        mass: CONSTANTS.MOON_MASS
+        mass: CONSTANTS.MOON_MASS,
+        massTooltip: {
+          defaultValue: 0.01,
+          text: Strings["GAO.earthMasses"],
+          precision: 2
+        }
       },
       options: {
         forceScale: 1.001,
@@ -131,7 +165,11 @@ define( function( require ) {
         radius: CONSTANTS.EARTH_RADIUS * 0.8,
         radiusScaleMode: 1.27,
         velocity: {x: 0, y: 0},
-        mass: CONSTANTS.EARTH_MASS
+        mass: CONSTANTS.EARTH_MASS,
+        massTooltip: {
+          defaultValue: 16,
+          text: Strings["GAO.billionBillionSpaceStationMasses"]
+        }
       },
       spaceStation: {
         x: CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
@@ -139,7 +177,12 @@ define( function( require ) {
         radius: CONSTANTS.SPACE_STATION_RADIUS * 8000,
         radiusScaleMode: 0.1,
         velocity: {x: 0, y: -CONSTANTS.SPACE_STATION_SPEED},
-        mass: CONSTANTS.SPACE_STATION_MASS
+        mass: CONSTANTS.SPACE_STATION_MASS,
+        massTooltip: {
+          defaultValue: 1,
+          text: Strings["GAO.spaceStationMasses"],
+          precision: 2
+        }
       },
       options: {
         forceScale: 1,
@@ -161,6 +204,7 @@ define( function( require ) {
     this.spaceObjectsProps = [
       {name: 'View', value: new Node()},
       {name: 'Tooltip', value: new Node()},
+      {name: 'MassText', value: new Node()},
       {name: 'Mass', value: 1},
       {name: 'MassCoeff', value: 1},
       {name: 'Radius', value: 0},
@@ -227,6 +271,7 @@ define( function( require ) {
       // hide view if it was exploded
       self[el + 'ExplodedProperty'].link( function( exploded ) {
         self[el + 'View'].setVisible( !exploded );
+        self[el + 'Tooltip'].setVisible( !exploded );
       } );
 
       self[el + 'RadiusCoeffProperty'].link( function() {
