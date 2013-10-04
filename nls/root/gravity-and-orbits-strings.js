@@ -28,5 +28,9 @@ define( {
   "GAO.sun": "Sun",
   "GAO.satellite": "Satellite",
   "GAO.v": "V",
-  "GAO.thousandMiles": "thousand miles"
+  "GAO.thousandMiles": "thousand miles",
+  "GAO.thousandEarthMasses": "thousand Earth masses",
+  "GAO.earthMasses": "Earth masses",
+  "GAO.billionBillionSpaceStationMasses": "billion billion Space Station masses",
+  "GAO.spaceStationMasses": "Space Station masses"
 } );

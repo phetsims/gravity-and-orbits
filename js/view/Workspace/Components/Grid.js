@@ -20,7 +20,7 @@ define( function( require ) {
 
     var options = [
       {
-        x0: -549,
+        x0: -549.5,
         y0: -660,
         x1: 1200,
         y1: 500,
@@ -28,7 +28,7 @@ define( function( require ) {
         dy: 110
       },
       {
-        x0: -549,
+        x0: -549.5,
         y0: -660,
         x1: 1200,
         y1: 500,
@@ -44,12 +44,12 @@ define( function( require ) {
         dy: 98
       },
       {
-        x0: -529,
-        y0: -711,
+        x0: -528,
+        y0: -704,
         x1: 1200,
         y1: 500,
-        dx: 177,
-        dy: 177
+        dx: 176,
+        dy: 176
       }
     ];
 
