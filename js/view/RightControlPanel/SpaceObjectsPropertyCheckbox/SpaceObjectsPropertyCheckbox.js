@@ -21,7 +21,13 @@ define( function( require ) {
   var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/../images/icon_mass.svg' );
   var Image = require( 'SCENERY/nodes/Image' );
 
-  var Strings = require( 'Strings' );
+  var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
+  var forceString = require( 'string!GRAVITY_AND_ORBITS/force' );
+  var velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' );
+  var pathString = require( 'string!GRAVITY_AND_ORBITS/path' );
+  var tapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
+  var massString = require( 'string!GRAVITY_AND_ORBITS/mass' );
+  var gridString = require( 'string!GRAVITY_AND_ORBITS/grid' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 14 );
@@ -34,22 +40,22 @@ define( function( require ) {
     var options = [
       {
         property: model.forceArrowProperty,
-        text: Strings['GAO.gravity'] + ' ' + Strings['GAO.force'],
+        text: gravityString + ' ' + forceString,
         node: new ArrowNode( 135, -10, 180, -10, {fill: '#4380C2'} )
       },
       {
         property: model.velocityArrowProperty,
-        text: Strings['GAO.velocity'],
+        text: velocityString,
         node: new ArrowNode( 95, -10, 140, -10, {fill: '#ED1C24'} )
       },
       {
         property: model.pathProperty,
-        text: Strings['GAO.path'],
+        text: pathString,
         node: new Node( {children: [new Image( iconPathImg )], x: 70, y: -23} )
       },
       {
         property: model.gridProperty,
-        text: Strings['GAO.grid'],
+        text: gridString,
         node: new Node( {children: [
           new Path( Shape.lineSegment( 0, 0, 20, 0 ), {stroke: 'gray', lineWidth: 1.5} ),
           new Path( Shape.lineSegment( 20, 0, 20, 20 ), {stroke: 'gray', lineWidth: 1.5} ),
@@ -61,12 +67,12 @@ define( function( require ) {
       },
       {
         property: model.tapeProperty,
-        text: Strings['GAO.tape'],
+        text: tapeString,
         node: new Node( {children: [new Image( measuringTapeImg )], x: 140, y: -23, scale: 0.5} )
       },
       {
         property: model.massProperty,
-        text: Strings['GAO.mass'],
+        text: massString,
         node: new Node( {children: [new Image( iconMassImg )], x: 70, y: -23} )
       }
     ], dy = 25, order = {

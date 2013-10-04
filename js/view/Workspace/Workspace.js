@@ -22,10 +22,13 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
 
-  var Strings = require( 'Strings' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 12 );
+  var sunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
+  var earthString = require( 'string!GRAVITY_AND_ORBITS/ourEarth' );
+  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  var moonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
 
   function Workspace( model ) {
     var self = this;
@@ -128,8 +131,12 @@ define( function( require ) {
         position = model[el + 'Position'],
         scale = model.planetModes[model.planetMode].options.scale;
 
+      var tooltipText = name === 'sun' ? sunString :
+                        name === 'earth' ? earthString :
+                        name === 'moon' ? moonString :
+                        satelliteString;
       model[el + 'Tooltip'] = new Node( {visible: true, children: [
-        new Text( Strings["GAO." + name], { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ),
+        new Text( tooltipText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ),
         new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} )
       ]} );
       self.toScale.addChild( model[el + 'Tooltip'] );

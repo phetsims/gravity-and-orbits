@@ -6,13 +6,13 @@
  * @author Andrey Zelenkov (Mlearner)
  */
 
-define( function( require ) {
+define( [
+  'JOIST/SimLauncher',
+  'JOIST/Sim',
+  'model/GravityAndOrbitsModel',
+  'view/GravityAndOrbitsView',
+  'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name'], function( SimLauncher, Sim, GravityAndOrbitsModel, GravityAndOrbitsView, titleString ) {
   'use strict';
-  var SimLauncher = require( 'JOIST/SimLauncher' ),
-    Sim = require( 'JOIST/Sim' ),
-    Strings = require( 'Strings' ),
-    GravityAndOrbitsModel = require( 'model/GravityAndOrbitsModel' ),
-    GravityAndOrbitsView = require( 'view/GravityAndOrbitsView' );
 
   var simOptions = {
     credits: 'PhET Development Team -\n' +
@@ -23,9 +23,9 @@ define( function( require ) {
   };
   SimLauncher.launch( function() {
     //Create and start the sim
-    new Sim( Strings['GAO.name'], [
+    new Sim( titleString, [
       {
-        name: Strings['GAO.name'],
+        name: titleString,
         createModel: function() { return new GravityAndOrbitsModel( 768, 504 ); },
         createView: function( model ) { return new GravityAndOrbitsView( model ); },
         backgroundColor: '#000'

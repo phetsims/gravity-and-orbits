@@ -14,7 +14,9 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
 
-  var Strings = require( 'Strings' );
+  var slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' );
+  var fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
+  var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 16 );
@@ -23,9 +25,9 @@ define( function( require ) {
     Node.call( this, coords );
 
     this.addChild( new VerticalAquaRadioButtonGroup( [
-      {property: model.speedProperty, value: 1.75, node: new Text( Strings['GAO.fastForward'], { font: FONT, fill: '#fff', pickable: false, y: -7 } )},
-      {property: model.speedProperty, value: 1, node: new Text( Strings['GAO.normal'], { font: FONT, fill: '#fff', pickable: false, y: -7 } )},
-      {property: model.speedProperty, value: 0.25, node: new Text( Strings['GAO.slowMotion'], { font: FONT, fill: '#fff', pickable: false, y: -7 } )}
+      {property: model.speedProperty, value: 1.75, node: new Text( fastForwardString, { font: FONT, fill: '#fff', pickable: false, y: -7 } )},
+      {property: model.speedProperty, value: 1, node: new Text( normalString, { font: FONT, fill: '#fff', pickable: false, y: -7 } )},
+      {property: model.speedProperty, value: 0.25, node: new Text( slowMotionString, { font: FONT, fill: '#fff', pickable: false, y: -7 } )}
     ], {scale: 0.9} ) );
   }
 

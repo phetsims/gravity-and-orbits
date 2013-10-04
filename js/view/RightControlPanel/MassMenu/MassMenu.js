@@ -12,13 +12,19 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   var Slider = require( 'view/RightControlPanel/MassMenu/Slider/Slider' );
-  var Strings = require( 'Strings' );
+  var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
+  var ourEarthString = require( 'string!GRAVITY_AND_ORBITS/ourEarth' );
+  var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
+  var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
+  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
 
   var Sun = require( 'view/SpaceObject/Sun' );
   var Earth = require( 'view/SpaceObject/Earth' );
   var Moon = require( 'view/SpaceObject/Moon' );
   var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
-
 
   function MassMenu( model, x, y ) {
     var self = this;
@@ -27,34 +33,34 @@ define( function( require ) {
     // slides options
     var map = {
       sun: {
-        title: Strings['GAO.ourSun'],
+        title: ourSunString,
         property: model.sunMassCoeffProperty,
         icon: {
-          text: Strings['GAO.star'],
+          text: starString,
           image: Sun
         }
       },
       earth: {
-        title: Strings['GAO.ourEarth'],
+        title: ourEarthString,
         property: model.earthMassCoeffProperty,
         icon: {
-          text: Strings['GAO.planet'],
+          text: planetString,
           image: Earth
         }
       },
       moon: {
-        title: Strings['GAO.ourMoon'],
+        title: ourMoonString,
         property: model.moonMassCoeffProperty,
         icon: {
-          text: Strings['GAO.moon'],
+          text: moonString,
           image: Moon
         }
       },
       spaceStation: {
-        title: Strings['GAO.spaceStation'],
+        title: spaceStationString,
         property: model.spaceStationMassCoeffProperty,
         icon: {
-          text: Strings['GAO.satellite'],
+          text: satelliteString,
           image: SpaceStation
         }
       }

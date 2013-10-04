@@ -11,7 +11,10 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var Strings = require( 'Strings' );
+  var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
+  var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
+  var billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
+  var spaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMasses' );
 
   var Vector2 = require( 'DOT/Vector2' );
 
@@ -49,7 +52,7 @@ define( function( require ) {
         mass: CONSTANTS.SUN_MASS,
         massTooltip: {
           defaultValue: 333,
-          text: Strings["GAO.thousandEarthMasses"]
+          text: thousandEarthMassesString
         }
       },
       earth: {
@@ -61,7 +64,7 @@ define( function( require ) {
         mass: CONSTANTS.EARTH_MASS * 10200,
         massTooltip: {
           defaultValue: 1,
-          text: Strings["GAO.earthMasses"],
+          text: earthMassesString,
           precision: 2
         }
       },
@@ -84,7 +87,7 @@ define( function( require ) {
         mass: CONSTANTS.SUN_MASS,
         massTooltip: {
           defaultValue: 333,
-          text: Strings["GAO.thousandEarthMasses"]
+          text: thousandEarthMassesString
         }
       },
       earth: {
@@ -96,7 +99,7 @@ define( function( require ) {
         mass: CONSTANTS.EARTH_MASS * 10200,
         massTooltip: {
           defaultValue: 1,
-          text: Strings["GAO.earthMasses"],
+          text: earthMassesString,
           precision: 2
         }
       },
@@ -109,7 +112,7 @@ define( function( require ) {
         mass: CONSTANTS.MOON_MASS,
         massTooltip: {
           defaultValue: 0.01,
-          text: Strings["GAO.earthMasses"],
+          text: earthMassesString,
           precision: 2
         }
       },
@@ -132,7 +135,7 @@ define( function( require ) {
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
           defaultValue: 1,
-          text: Strings["GAO.earthMasses"],
+          text: earthMassesString,
           precision: 2
         }
       },
@@ -145,7 +148,7 @@ define( function( require ) {
         mass: CONSTANTS.MOON_MASS,
         massTooltip: {
           defaultValue: 0.01,
-          text: Strings["GAO.earthMasses"],
+          text: earthMassesString,
           precision: 2
         }
       },
@@ -168,7 +171,7 @@ define( function( require ) {
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
           defaultValue: 16,
-          text: Strings["GAO.billionBillionSpaceStationMasses"]
+          text: billionBillionSpaceStationMassesString
         }
       },
       spaceStation: {
@@ -180,7 +183,7 @@ define( function( require ) {
         mass: CONSTANTS.SPACE_STATION_MASS,
         massTooltip: {
           defaultValue: 1,
-          text: Strings["GAO.spaceStationMasses"],
+          text: spaceStationMassesString,
           precision: 2
         }
       },

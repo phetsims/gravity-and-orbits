@@ -14,7 +14,9 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PushButton = require( 'SUN/PushButton' );
 
-  var Strings = require( 'Strings' );
+  var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
+  var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
+  var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 24 );
@@ -30,7 +32,7 @@ define( function( require ) {
     // create default view for clear button
     var node = new Node( {children: [
       new Rectangle( 0, 0, 65, 25, 5, 5, {fill: '#fff'} ),
-      new Text( Strings['GAO.clear'], { font: new PhetFont( 18 ), fill: '#000', pickable: false, y: 18, x: 10 } )
+      new Text( clearString, { font: new PhetFont( 18 ), fill: '#000', pickable: false, y: 18, x: 10 } )
     ], x: 50, y: 50 } );
 
     // button options
@@ -53,11 +55,11 @@ define( function( require ) {
 
     model.timeModeProperty.link( function( mode ) {
       if ( mode === model.timeModes[0] ) { // days
-        self.text = Strings['GAO.earthDays'];
+        self.text = earthDaysString;
         self.multiplier = 1;
       }
       else if ( mode === model.timeModes[1] ) { // minutes
-        self.text = Strings['GAO.earthMinutes'];
+        self.text = earthMinutesString;
         self.multiplier = 24 * 60;
       }
       updateDay( model.day );

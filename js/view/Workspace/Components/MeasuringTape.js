@@ -20,7 +20,7 @@ define( function( require ) {
   var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/../images/measuringTape.svg' );
   var Image = require( 'SCENERY/nodes/Image' );
 
-  var Strings = require( 'Strings' );
+  var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 16 );
@@ -133,7 +133,7 @@ define( function( require ) {
         angle = Math.atan2( y, x );
         self.base.rotateAround( new Vector2( x1, y1 ), angle );
         self.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
-        self.text.setText( (length / lengthDefault * valueDefault).toFixed( precision ).replace( '.', ',' ) + ' ' + Strings["GAO.thousandMiles"] );
+        self.text.setText( (length / lengthDefault * valueDefault).toFixed( precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
       }
     } ) );
 
@@ -181,7 +181,7 @@ define( function( require ) {
     self.base.setY( -self.centerRotation.y + option.y );
     self.notBase.setX( option.x );
     self.notBase.setY( option.y );
-    self.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ).replace( '.', ',' ) + ' ' + Strings["GAO.thousandMiles"] );
+    self.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
     self.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( option.lengthDefault, 0 ) );
     self.tip.setX( option.lengthDefault );
     self.tip.setY( 0 );

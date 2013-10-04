@@ -13,7 +13,6 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Circle = require( 'SCENERY/nodes/Circle' );
 
-  var Strings = require( 'Strings' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 22 );
@@ -89,7 +88,7 @@ define( function( require ) {
         stroke: '#C0C0C0',
         lineWidth: 3
       } ) );
-      self.addChild( new Text( Strings["GAO.v"], { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, x: x - 7, y: y + 2 } ) );
+      self.addChild( new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, x: x - 7, y: y + 2 } ) );
       self.addChild( new ArrowNode( model[obj + 'Position'].x, model[obj + 'Position'].y, x, y, {fill: '#ED1C24'} ) );
     }
   };
