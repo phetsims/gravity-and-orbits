@@ -46,7 +46,6 @@ define( function( require ) {
 
     // add grids
     this.toScale.addChild( new Grid( model ) );
-
     this.addChild( this.toScale );
 
     // add measuring tape
@@ -54,6 +53,9 @@ define( function( require ) {
 
     // add mass text
     this.addChild( new MassText( model ) );
+
+    // add tooltips
+    addTooltips.call( this, model );
 
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale, oldScale ) {
@@ -67,25 +69,13 @@ define( function( require ) {
       self.y = vect.y;
     } );
 
-    // add tooltips
-    model.spaceObjects.forEach( function( el ) {
-      var name = (el === 'spaceStation' ? 'satellite' : el), // change "space station" -> satellite
-        position = model[el + 'Position'],
-        scale = model.planetModes[model.planetMode].options.scale;
-
-      model[el + 'Tooltip'] = new Node( {visible: true, children: [
-        new Text( Strings["GAO." + name], { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ),
-        new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} )
-      ]} );
-      self.toScale.addChild( model[el + 'Tooltip'] );
-
-      model.scaleProperty.link( function( newScale, oldScale ) {
-        model[el + 'Tooltip'].scale( (oldScale || 1) );
-        model[el + 'Tooltip'].scale( 1 / newScale );
-      } );
-    } );
-
     // redraw workspace position of object is changing
+    addPositionObservers( model );
+  }
+
+  inherit( Node, Workspace );
+
+  var addPositionObservers = function( model ) {
     model.spaceObjects.forEach( function( el ) {
       model[el + 'PositionProperty'].link( function( vect ) {
         model[el + 'View'].x = vect.x;
@@ -128,9 +118,28 @@ define( function( require ) {
         checkTooltip();
       } );
     } );
-  }
+  };
 
-  inherit( Node, Workspace );
+  // TODO: put it into the SpaceObjects.js or make new class
+  var addTooltips = function( model ) {
+    var self = this;
+    model.spaceObjects.forEach( function( el ) {
+      var name = (el === 'spaceStation' ? 'satellite' : el), // change "space station" -> satellite
+        position = model[el + 'Position'],
+        scale = model.planetModes[model.planetMode].options.scale;
+
+      model[el + 'Tooltip'] = new Node( {visible: true, children: [
+        new Text( Strings["GAO." + name], { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ),
+        new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} )
+      ]} );
+      self.toScale.addChild( model[el + 'Tooltip'] );
+
+      model.scaleProperty.link( function( newScale, oldScale ) {
+        model[el + 'Tooltip'].scale( (oldScale || 1) );
+        model[el + 'Tooltip'].scale( 1 / newScale );
+      } );
+    } );
+  };
 
   return Workspace;
 } );

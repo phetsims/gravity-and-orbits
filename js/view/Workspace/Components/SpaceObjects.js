@@ -25,6 +25,7 @@ define( function( require ) {
 
       // add new space objects
       self.removeAllChildren();
+      model.day = 0;
       self.view = new SpaceObjectsBuilder( model, num );
       self.addChild( self.view );
     } );
