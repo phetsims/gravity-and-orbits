@@ -51,15 +51,6 @@ define( function( require ) {
     self.prevPosition = {};
     self.totalLength = {};
     self.path = {};
-    self.shape = {};
-
-    // function to update paths
-    var drawPath = function() {
-      self.removeAllChildren();
-      if ( self.flag ) {
-        self.addPath( model );
-      }
-    };
 
     // add observers for space object's positions
     self.clearPath( model );
@@ -67,63 +58,52 @@ define( function( require ) {
       model[el + 'PositionProperty'].link( function( newPosition ) {
         var dr = newPosition.minus( self.prevPosition[el][self.prevPosition[el].length - 1] ).magnitude(), num = model.planetMode;
         if ( dr > 2 && self.flag ) {
-          self.prevPosition[el].push( newPosition );
+          self.addPath( el, newPosition );
           self.totalLength[el] += dr;
-          if ( self.totalLength[el] > self.totalLengthMax[num][el] ) {
-            self.cutPoints( el, num );
-          }
-          drawPath();
+          self.checkLength( el );
         }
       } );
     } );
 
     model.pathProperty.link( function( flag ) {
-      self.flag = flag;
       self.clearPath( model );
-      drawPath();
+      self.flag = flag;
     } );
 
-    model.planetModeProperty.link( function() {
+    model.planetModeProperty.link( function( num ) {
       self.clearPath( model );
-      drawPath();
+      self.num = num;
     } );
   }
 
   inherit( Node, PlanetPath );
 
-  PlanetPath.prototype.addPath = function( model ) {
-    var self = this,
-      num = model.planetMode,
-      mode = model.planetModes[num],
-      obj, points, shape;
+  PlanetPath.prototype.addPath = function( el, newPosition ) {
+    var prevPosition = this.prevPosition[el][this.prevPosition[el].length - 1],
+      path = new Path( new Shape().moveTo( prevPosition.x, prevPosition.y ).lineTo( newPosition.x, newPosition.y ), {stroke: this.color[el], lineWidth: 3} );
 
-    self.removeAllChildren();
-    for ( var i = 0, len1 = model.spaceObjects.length; i < len1; i++ ) {
-      obj = model.spaceObjects[i];
-      if ( !mode[obj] || mode[obj + 'Exploded'] ) {continue;}
-      points = self.prevPosition[obj];
-      shape = new Shape();
-      for ( var j = 0, len2 = points.length - 1; j < len2; j++ ) {
-        shape = shape.moveTo( points[j].x, points[j].y ).lineTo( points[j + 1].x, points[j + 1].y );
-      }
-      self.addChild( new Path( shape, {stroke: self.color[obj], lineWidth: 3} ) );
-    }
+    this.path[el].push( path );
+    this.addChild( path );
+    this.prevPosition[el].push( newPosition );
   };
 
-  PlanetPath.prototype.cutPoints = function( el, num ) {
-    var dr;
+  PlanetPath.prototype.checkLength = function( el ) {
+    var dr, num = this.num;
     while ( this.totalLength[el] > this.totalLengthMax[num][el] ) {
       dr = this.prevPosition[el][0].minus( this.prevPosition[el][1] ).magnitude();
       this.prevPosition[el].shift();
+      this.removeChild( this.path[el].shift() );
       this.totalLength[el] -= dr;
     }
   };
 
   PlanetPath.prototype.clearPath = function( model ) {
     var self = this;
+    self.removeAllChildren();
     model.spaceObjects.forEach( function( el ) {
       self.prevPosition[el] = [model[el + 'Position']];
       self.totalLength[el] = 0;
+      self.path[el] = [];
     } );
   };
 
