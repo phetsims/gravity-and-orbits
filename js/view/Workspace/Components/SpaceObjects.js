@@ -58,10 +58,8 @@ define( function( require ) {
 
     // init drag and drop for space objects
     model.spaceObjects.forEach( function( el ) {
-      model[el + 'ViewProperty'].link( function( view ) {
-        var clickYOffset, clickXOffset;
-        view.cursor = 'pointer';
-        view.addInputListener( new SimpleDragHandler( {
+      var clickYOffset, clickXOffset, getListener = function( view ) {
+        return new SimpleDragHandler( {
           start: function( e ) {
             clickYOffset = view.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
             clickXOffset = view.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
@@ -75,7 +73,17 @@ define( function( require ) {
           end: function() {
             model.drag = '';
           }
-        } ) );
+        } );
+      };
+
+      model[el + 'ViewProperty'].link( function( view ) {
+        view.cursor = 'pointer';
+        view.addInputListener( getListener( view ) );
+      } );
+
+      model[el + 'TooltipProperty'].link( function( tooltip ) {
+        tooltip.cursor = 'pointer';
+        tooltip.addInputListener( getListener( tooltip ) );
       } );
     } );
   }

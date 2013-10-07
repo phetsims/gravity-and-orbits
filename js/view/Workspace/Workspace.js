@@ -21,6 +21,7 @@ define( function( require ) {
 
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
+  var Circle = require( 'SCENERY/nodes/Circle' );
 
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -97,29 +98,12 @@ define( function( require ) {
         }
       };
 
-      model.scaleProperty.link( function() {
-        checkTooltip();
-      } );
-
-      model[el + 'ViewProperty'].link( function() {
-        checkTooltip();
-      } );
-
-      model.viewModeProperty.link( function() {
-        checkTooltip();
-      } );
-
-      model.planetModeProperty.link( function() {
-        checkTooltip();
-      } );
-
-      model[el + 'RadiusProperty'].link( function() {
-        checkTooltip();
-      } );
-
-      model[el + 'RadiusCoeffProperty'].link( function() {
-        checkTooltip();
-      } );
+      model.scaleProperty.link( checkTooltip );
+      model.viewModeProperty.link( checkTooltip );
+      model.planetModeProperty.link( checkTooltip );
+      model[el + 'ViewProperty'].link( checkTooltip );
+      model[el + 'RadiusProperty'].link( checkTooltip );
+      model[el + 'RadiusCoeffProperty'].link( checkTooltip );
     } );
   };
 
@@ -137,7 +121,8 @@ define( function( require ) {
                         satelliteString;
       model[el + 'Tooltip'] = new Node( {visible: true, children: [
         new Text( tooltipText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ),
-        new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} )
+        new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ),
+        new Circle( 25, {fill: 'rgba(0,0,0,0)', x: position.x * scale + 25, y: position.y * scale - 25 } )
       ]} );
       self.toScale.addChild( model[el + 'Tooltip'] );
 
