@@ -56,11 +56,13 @@ define( function( require ) {
     self.clearPath( model );
     model.spaceObjects.forEach( function( el ) {
       model[el + 'PositionProperty'].link( function( newPosition ) {
-        var dr = newPosition.minus( self.prevPosition[el][self.prevPosition[el].length - 1] ).magnitude(), num = model.planetMode;
-        if ( dr > 2 && self.flag ) {
-          self.addPath( el, newPosition );
-          self.totalLength[el] += dr;
-          self.checkLength( el );
+        if ( !model[el + 'Exploded'] ) {
+          var dr = newPosition.minus( self.prevPosition[el][self.prevPosition[el].length - 1] ).magnitude(), num = model.planetMode;
+          if ( dr > 2 && self.flag ) {
+            self.addPath( el, newPosition );
+            self.totalLength[el] += dr;
+            self.checkLength( el );
+          }
         }
       } );
     } );
