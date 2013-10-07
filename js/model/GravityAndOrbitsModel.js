@@ -270,20 +270,6 @@ define( function( require ) {
         self[el + 'View'].scale( 1 / (oldValue || 1) );
         self[el + 'View'].scale( newValue );
       } );
-
-      // hide view if it was exploded
-      self[el + 'ExplodedProperty'].link( function( exploded ) {
-        self[el + 'View'].setVisible( !exploded );
-        self[el + 'Tooltip'].setVisible( !exploded );
-      } );
-
-      self[el + 'RadiusCoeffProperty'].link( function() {
-        checkExplosion( self );
-      } );
-
-      self[el + 'PositionProperty'].link( function() {
-        checkExplosion( self );
-      } );
     } );
 
     // force planet mode reset function
@@ -386,27 +372,6 @@ define( function( require ) {
       }
     }
     return props;
-  };
-
-  var checkExplosion = function( model ) {
-    var obj1, obj2, i, j, dx, dr, mode = model.planetModes[model.planetMode];
-
-    for ( i = 0; i < model.spaceObjects.length; i++ ) {
-      obj1 = model.spaceObjects[i];
-      if ( !mode[obj1] ) {continue;}
-      for ( j = i + 1; j < model.spaceObjects.length; j++ ) {
-        obj2 = model.spaceObjects[j];
-        if ( !mode[obj2] ) {continue;}
-        dx = model[obj1 + 'Position'].minus( model[obj2 + 'Position'] ).magnitude(); // distance between planets
-        dr = (model[obj1 + 'View'].getWidth() + model[obj2 + 'View'].getWidth()) / 2;
-        if ( !isFinite( dx ) || !isFinite( dr ) ) {
-          {continue;}
-        }
-        if ( dr > dx ) {
-          model[(model[obj1 + 'Mass'] > model[obj2 + 'Mass'] ? obj2 : obj1 ) + 'Exploded'] = true;
-        }
-      }
-    }
   };
 
   return GravityAndOrbitsModel;
