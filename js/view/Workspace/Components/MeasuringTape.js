@@ -25,65 +25,66 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 16 );
 
+  // options for planet modes
+  var options = [
+    {
+      x: 0,
+      y: 75,
+      tipX: 119.5,
+      tipY: 0,
+      scale: 1,
+      lengthDefault: 119.5,
+      length: 119.5,
+      valueDefault: 50000,
+      value: 50000,
+      precision: 0
+    },
+    {
+      x: 0,
+      y: 75,
+      tipX: 119.5,
+      tipY: 0,
+      scale: 1,
+      lengthDefault: 119.5,
+      length: 119.5,
+      valueDefault: 50000,
+      value: 50000,
+      precision: 0
+    },
+    {
+      x: 0,
+      y: 125,
+      tipX: 85,
+      tipY: 0,
+      scale: 1,
+      lengthDefault: 85,
+      length: 85,
+      valueDefault: 100,
+      value: 100,
+      precision: 0
+    },
+    {
+      x: 150,
+      y: -175,
+      tipX: 85,
+      tipY: 0,
+      scale: 1,
+      lengthDefault: 85,
+      length: 85,
+      valueDefault: 2,
+      value: 2,
+      precision: 1
+    }
+  ];
+
   function MeasuringTape( model ) {
     var self = this;
     Node.call( this );
 
-    // options for planet modes
-    var options = [
-      {
-        x: 0,
-        y: 75,
-        tipX: 119.5,
-        tipY: 0,
-        scale: 1,
-        lengthDefault: 119.5,
-        length: 119.5,
-        valueDefault: 50000,
-        value: 50000,
-        precision: 0
-      },
-      {
-        x: 0,
-        y: 75,
-        tipX: 119.5,
-        tipY: 0,
-        scale: 1,
-        lengthDefault: 119.5,
-        length: 119.5,
-        valueDefault: 50000,
-        value: 50000,
-        precision: 0
-      },
-      {
-        x: 0,
-        y: 125,
-        tipX: 85,
-        tipY: 0,
-        scale: 1,
-        lengthDefault: 85,
-        length: 85,
-        valueDefault: 100,
-        value: 100,
-        precision: 0
-      },
-      {
-        x: 150,
-        y: -175,
-        tipX: 85,
-        tipY: 0,
-        scale: 1,
-        lengthDefault: 85,
-        length: 85,
-        valueDefault: 2,
-        value: 2,
-        precision: 1
-      }
-    ];
     this.mode = model.planetMode;
     this.prevScale = 1;
 
-    this.options = options.slice( 0 );
+    this.options = options;
 
     // add base of tape and not base node
     this.base = new Node( {children: [new Image( measuringTapeImg )], scale: 0.8} );
@@ -166,7 +167,9 @@ define( function( require ) {
     } );
 
     model.planetModeProperty.link( function( mode ) {
+      self.options[self.mode].lengthDefault *= 1 / self.prevScale;
       self.mode = mode;
+      self.options[mode].lengthDefault = options[self.mode].lengthDefault * self.prevScale;
       self.init( self.options[mode], angle );
       angle = 0;
     } );
@@ -181,7 +184,6 @@ define( function( require ) {
   MeasuringTape.prototype.init = function( option, angle ) {
     this.rotate( -angle );
     this.translate( option.x, option.y );
-    option.lengthDefault *= this.prevScale;
     this.setTip( option.lengthDefault, 0 );
     this.base.setX( -this.centerRotation.x + option.x );
     this.base.setY( -this.centerRotation.y + option.y );
