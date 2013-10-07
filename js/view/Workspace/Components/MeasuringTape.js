@@ -34,6 +34,9 @@ define( function( require ) {
       {
         x: 0,
         y: 75,
+        tipX: 119.5,
+        tipY: 0,
+        scale: 1,
         lengthDefault: 119.5,
         length: 119.5,
         valueDefault: 50000,
@@ -43,6 +46,9 @@ define( function( require ) {
       {
         x: 0,
         y: 75,
+        tipX: 119.5,
+        tipY: 0,
+        scale: 1,
         lengthDefault: 119.5,
         length: 119.5,
         valueDefault: 50000,
@@ -52,6 +58,9 @@ define( function( require ) {
       {
         x: 0,
         y: 125,
+        tipX: 85,
+        tipY: 0,
+        scale: 1,
         lengthDefault: 85,
         length: 85,
         valueDefault: 100,
@@ -61,6 +70,9 @@ define( function( require ) {
       {
         x: 150,
         y: -175,
+        tipX: 85,
+        tipY: 0,
+        scale: 1,
         lengthDefault: 85,
         length: 85,
         valueDefault: 2,
@@ -68,6 +80,8 @@ define( function( require ) {
         precision: 1
       }
     ];
+    this.mode = model.planetMode;
+    this.prevScale = 1;
 
     this.options = options.slice( 0 );
 
@@ -93,9 +107,9 @@ define( function( require ) {
         clickXOffset = x0 - v.x;
       },
       drag: function( e ) {
-        // TODO: call setState instead
-        self.notBase.setY( self.globalToParentPoint( e.pointer.point ).y - clickYOffset );
-        self.notBase.setX( self.globalToParentPoint( e.pointer.point ).x - clickXOffset );
+        var x = self.globalToParentPoint( e.pointer.point ).x - clickXOffset;
+        var y = self.globalToParentPoint( e.pointer.point ).y - clickYOffset;
+        self.translate( x, y );
       }
     } ) );
 
@@ -120,20 +134,12 @@ define( function( require ) {
         clickXOffset = self.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
       },
       drag: function( e ) {
-        // TODO: call setState instead
         var y = self.globalToParentPoint( e.pointer.point ).y - clickYOffset;
         var x = self.globalToParentPoint( e.pointer.point ).x - clickXOffset;
-        var valueDefault = self.options[model.planetMode].valueDefault;
-        var precision = self.options[model.planetMode].precision;
-        var lengthDefault = self.options[model.planetMode].lengthDefault;
-        var length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
-        var y1 = self.notBase.y;
-        var x1 = self.notBase.x;
-        self.base.rotateAround( new Vector2( x1, y1 ), -angle );
+        self.rotate( -angle );
         angle = Math.atan2( y, x );
-        self.base.rotateAround( new Vector2( x1, y1 ), angle );
-        self.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
-        self.text.setText( (length / lengthDefault * valueDefault).toFixed( precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
+        self.rotate( angle );
+        self.setTip( x, y );
       }
     } ) );
 
@@ -160,31 +166,54 @@ define( function( require ) {
     } );
 
     model.planetModeProperty.link( function( mode ) {
-      var option = self.options[mode];
       self.mode = mode;
-      setState.call( self, option, angle );
+      self.init( self.options[mode], angle );
       angle = 0;
     } );
 
-    // TODO: resize line
-    model.scaleProperty.link( function( newScale, oldScale ) {
-
+    model.scaleProperty.link( function( newScale ) {
+      self.scale( newScale );
     } );
   }
 
   inherit( Node, MeasuringTape );
 
-  var setState = function( option, angle ) {
-    var self = this, x1 = self.notBase.x, y1 = self.notBase.y;
-    self.base.rotateAround( new Vector2( x1, y1 ), -angle );
-    self.base.setX( -self.centerRotation.x + option.x );
-    self.base.setY( -self.centerRotation.y + option.y );
-    self.notBase.setX( option.x );
-    self.notBase.setY( option.y );
-    self.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
-    self.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( option.lengthDefault, 0 ) );
-    self.tip.setX( option.lengthDefault );
-    self.tip.setY( 0 );
+  MeasuringTape.prototype.init = function( option, angle ) {
+    this.rotate( -angle );
+    this.translate( option.x, option.y );
+    option.lengthDefault *= this.prevScale;
+    this.setTip( option.lengthDefault, 0 );
+    this.base.setX( -this.centerRotation.x + option.x );
+    this.base.setY( -this.centerRotation.y + option.y );
+  };
+
+  MeasuringTape.prototype.rotate = function( angle ) {
+    this.base.rotateAround( new Vector2( this.notBase.x, this.notBase.y ), angle );
+  };
+
+  MeasuringTape.prototype.scale = function( scale ) {
+    this.options[this.mode].lengthDefault *= 1 / this.prevScale;
+    this.options[this.mode].lengthDefault *= scale;
+    this.setTip( this.options[this.mode].tipX / this.prevScale, this.options[this.mode].tipY / this.prevScale );
+    this.setTip( this.options[this.mode].tipX * scale, this.options[this.mode].tipY * scale );
+    this.prevScale = scale;
+  };
+
+  MeasuringTape.prototype.setTip = function( x, y ) {
+    var option = this.options[this.mode];
+    option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
+
+    this.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
+    this.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
+    this.tip.setX( x );
+    this.tip.setY( y );
+    option.tipX = x;
+    option.tipY = y;
+  };
+
+  MeasuringTape.prototype.translate = function( x, y ) {
+    this.notBase.setX( x );
+    this.notBase.setY( y );
   };
 
   return MeasuringTape;
