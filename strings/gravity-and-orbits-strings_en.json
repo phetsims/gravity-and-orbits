@@ -8,7 +8,7 @@
   "velocity": "Velocity",
   "earthDays": "Earth Days",
   "measuringTape": "Measuring Tape",
-  "billionBillionSpaceStationMasses": "billion billion Space Station masses",
+  "billionBillionSatelliteMasses": "billion billion Satellite masses",
   "physics": "Physics",
   "zoomOut": "-",
   "spaceStationMass": "Space Station mass",
@@ -42,7 +42,7 @@
   "fastForward": "Fast Forward",
   "normal": "Normal",
   "slowMotion": "Slow Motion",
-  "spaceStationMasses": "Space Station masses",
+  "satelliteMasses": "Satellite masses",
   "ourEarth": "Our Earth",
   "force": "Force"
 }

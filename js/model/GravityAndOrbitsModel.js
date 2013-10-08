@@ -13,8 +13,8 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
   var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
-  var billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
-  var spaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMasses' );
+  var billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' );
+  var satelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/satelliteMasses' );
 
   var Vector2 = require( 'DOT/Vector2' );
 
@@ -72,9 +72,9 @@ define( function( require ) {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
         timeScale: 365.0 / 26.0, // days per seconds
         timeMode: timeModes[0],
-        scale: 1.5E-9,
-        centerX: 245,
-        centerY: 275
+        scale: 1.15E-9,
+        centerX: 275,
+        centerY: 235
       }
     },
     {
@@ -120,9 +120,9 @@ define( function( require ) {
         forceScale: 1.017, // ratio of the gravitational and centripetal forces
         timeScale: 365.0 / 26.0, // days per seconds
         timeMode: timeModes[0],
-        scale: 1.5E-9,
-        centerX: 245,
-        centerY: 275
+        scale: 1.15E-9,
+        centerX: 275,
+        centerY: 235
       }
     },
     {
@@ -156,9 +156,9 @@ define( function( require ) {
         forceScale: 1.001,
         timeScale: 365.0 / 96.0, // days per seconds
         timeMode: timeModes[0],
-        scale: 5E-7,
-        centerX: 245,
-        centerY: 280
+        scale: 3.7E-7,
+        centerX: 295,
+        centerY: 235
       }
     },
     {
@@ -171,7 +171,7 @@ define( function( require ) {
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
           defaultValue: 16,
-          text: billionBillionSpaceStationMassesString
+          text: billionBillionSatelliteMassesString
         }
       },
       spaceStation: {
@@ -183,7 +183,7 @@ define( function( require ) {
         mass: CONSTANTS.SPACE_STATION_MASS,
         massTooltip: {
           defaultValue: 1,
-          text: spaceStationMassesString,
+          text: satelliteMassesString,
           precision: 2
         }
       },
@@ -191,8 +191,8 @@ define( function( require ) {
         forceScale: 1,
         timeScale: 365.0 / 31855.0, // days per seconds
         timeMode: timeModes[1],
-        scale: 2.6E-5,
-        centerX: 270,
+        scale: 2E-5,
+        centerX: 280,
         centerY: 230
       }
     }
