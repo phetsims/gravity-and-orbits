@@ -66,10 +66,10 @@ define( function( require ) {
 
     for ( var i = 0; i < len; i++ ) {
       obj1 = model.spaceObjects[i];
-      if ( !mode[obj1] || mode[obj1 + 'Exploded'] ) {continue;}
+      if ( !mode[obj1] || model[obj1 + 'Exploded'] ) {continue;}
       for ( var j = i + 1; j < len; j++ ) {
         obj2 = model.spaceObjects[j];
-        if ( !mode[obj2] || mode[obj2 + 'Exploded'] ) {continue;}
+        if ( !mode[obj2] || model[obj2 + 'Exploded'] ) {continue;}
         distance = model[obj2 + 'Position'].minus( model[obj1 + 'Position'] );
         if ( !distance.magnitude() ) {continue;}
 

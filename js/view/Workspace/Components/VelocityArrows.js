@@ -71,7 +71,7 @@ define( function( require ) {
 
     for ( var i = 0; i < len; i++ ) {
       obj = model.spaceObjects[i];
-      if ( !mode[obj] || mode[obj + 'Exploded'] ) {continue;}
+      if ( !mode[obj] || model[obj + 'Exploded'] ) {continue;}
       velocity = model[obj + 'Velocity'];
       if ( !velocity.magnitude() ) {continue;}
 
