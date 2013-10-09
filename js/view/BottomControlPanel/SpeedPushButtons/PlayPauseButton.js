@@ -13,18 +13,18 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var PushButton = require( 'SUN/PushButton' );
 
-  var pauseImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_pause.png' );
-  var playImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_play.png' );
+  var pauseImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_pause.png' );
+  var playImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_play.png' );
 
-  var buttonStepUnpressedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_unpressed.png' );
-  var buttonStepHoverImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_hover.png' );
-  var buttonStepPressedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_pressed.png' );
-  var buttonStepDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_step_deactivated.png' );
+  var buttonStepUnpressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_unpressed.png' );
+  var buttonStepHoverImg = require( 'image!GRAVITY_AND_ORBITS/button_step_hover.png' );
+  var buttonStepPressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_pressed.png' );
+  var buttonStepDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_deactivated.png' );
 
-  var buttonRewindImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind.svg' );
-  var buttonRewindHoverImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind_hover.svg' );
-  var buttonRewindPressedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind_pressed.svg' );
-  var buttonRewindDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/../images/button_sim_rewind_deactivated.svg' );
+  var buttonRewindImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind.svg' );
+  var buttonRewindHoverImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_hover.svg' );
+  var buttonRewindPressedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_pressed.svg' );
+  var buttonRewindDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_deactivated.svg' );
 
   var Image = require( 'SCENERY/nodes/Image' );
 

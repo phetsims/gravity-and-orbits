@@ -10,7 +10,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
 
-  var earthImg = require( 'image!GRAVITY_AND_ORBITS/../images/earth.gif' );
+  var earthImg = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   function Earth( coords, radius ) {

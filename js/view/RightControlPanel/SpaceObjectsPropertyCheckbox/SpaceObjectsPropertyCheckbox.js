@@ -16,9 +16,9 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
 
-  var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/../images/icon_path.png' );
-  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/../images/measuringTape.svg' );
-  var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/../images/icon_mass.svg' );
+  var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' );
+  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.svg' );
+  var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.svg' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );

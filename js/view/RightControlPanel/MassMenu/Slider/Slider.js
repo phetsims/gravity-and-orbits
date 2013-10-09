@@ -12,7 +12,7 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var HorizontalSlider = require( 'view/RightControlPanel/MassMenu/Slider/HorizontalSlider' );
 
-  var sliderImg = require( 'image!GRAVITY_AND_ORBITS/../images/slider.png' );
+  var sliderImg = require( 'image!GRAVITY_AND_ORBITS/slider.png' );
 
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );

@@ -10,7 +10,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
 
-  var moonImg = require( 'image!GRAVITY_AND_ORBITS/../images/moon.png' );
+  var moonImg = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   function Moon( coords, radius ) {
