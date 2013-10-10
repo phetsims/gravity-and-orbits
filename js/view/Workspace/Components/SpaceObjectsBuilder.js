@@ -18,7 +18,7 @@ define( function( require ) {
   var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
 
   function SpaceObjectsBuilder( model, num ) {
-    var self = this, i, name, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode, modeCoeff;
+    var self = this, i, name, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode, modeCoeff;
     Node.call( this );
 
     var map = {
@@ -33,10 +33,7 @@ define( function( require ) {
       name = model.spaceObjects[i];
       obj = model.planetModes[num][name];
       if ( obj ) {
-        // set space object's coordinates
-        model[name + 'PositionStart'] = new Vector2( obj.x * scale, obj.y * scale );
-        model[name + 'Position'] = new Vector2( obj.x * scale, obj.y * scale );
-
+        position = new Vector2( obj.x * scale, obj.y * scale );
         // set space object's velocity
         if ( obj.velocity ) {
           model[name + 'Velocity'].set( obj.velocity.x, obj.velocity.y );
@@ -58,9 +55,14 @@ define( function( require ) {
         }
 
         // add space object
-        model[name + 'View'] = new map[name]( model[name + 'Position'], obj.radius * scale );
+        model[name + 'View'] = new map[name]( position.copy(), obj.radius * scale );
+        model[name + 'View'].setRadius( 0 );
         model[name + 'View'].scale( modeCoeff );
         this.addChild( model[name + 'View'] );
+
+        // set space object's coordinates
+        model[name + 'PositionStart'] = position.copy();
+        model[name + 'Position'] = position.copy();
 
         // check tooltip
         model[name + 'Tooltip'].setVisible( ( model[name + 'View'].getWidth() < 10 ) );
@@ -71,6 +73,7 @@ define( function( require ) {
         model[name + 'Exploded'] = false;
 
         model.timeMode = timeMode;
+        model[name + 'View'].setRadius( obj.radius * scale );
       }
       else {
         model[name + 'View'] = new Node();

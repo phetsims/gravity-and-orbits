@@ -26,5 +26,9 @@ define( function( require ) {
 
   inherit( Node, Sun );
 
+  Sun.prototype.setRadius = function( r ) {
+    this.view.setRadius( r );
+  };
+
   return Sun;
 } );

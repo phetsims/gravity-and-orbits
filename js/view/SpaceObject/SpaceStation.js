@@ -13,14 +13,20 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
 
   function SpaceStation( coords, radius ) {
-    var width = spaceStationImg.width / 2, scale = radius / width;
     Node.call( this, coords );
 
-    this.view = new Image( spaceStationImg, {scale: scale, x: -width * scale* 0.75, y: -width * scale * 0.75} );
-    this.addChild( this.view );
+    this.setRadius( radius );
   }
 
   inherit( Node, SpaceStation );
+
+  SpaceStation.prototype.setRadius = function( radius ) {
+    var width = spaceStationImg.width / 2, scale = radius / width;
+    if ( this.view ) {this.removeChild( this.view );}
+
+    this.view = new Image( spaceStationImg, {scale: scale, x: -width * scale, y: -width * scale} );
+    this.addChild( this.view );
+  };
 
   return SpaceStation;
 } );
