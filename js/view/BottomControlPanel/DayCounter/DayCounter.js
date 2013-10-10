@@ -22,7 +22,7 @@ define( function( require ) {
   var FONT = new PhetFont( 24 );
 
   function DayCounter( model, coords ) {
-    var self = this;
+    var self = this, dayOffset = 0;
     Node.call( this, coords );
 
     // add day text counter
@@ -42,7 +42,8 @@ define( function( require ) {
       downNode: new Node( {children: [node]} ),
       disabledNode: new Node( {children: [node]} ),
       callback: function() {
-        model.clear();
+        dayOffset = model.day;
+        updateDay( model.day );
       }
     };
 
@@ -50,7 +51,7 @@ define( function( require ) {
     this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, options.callback ) );
 
     var updateDay = function( day ) {
-      self.day.setText( parseInt( day * self.multiplier, 10 ).toString() + ' ' + self.text );
+      self.day.setText( parseInt( (day - dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
     };
 
     model.timeModeProperty.link( function( mode ) {
@@ -69,6 +70,7 @@ define( function( require ) {
 
     model.planetModeProperty.link( function() {
       model.dayProperty.reset();
+      dayOffset = 0;
     } );
   }
 
