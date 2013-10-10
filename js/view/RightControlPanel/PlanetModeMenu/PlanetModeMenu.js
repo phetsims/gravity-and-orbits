@@ -17,10 +17,11 @@ define( function( require ) {
     Node.call( this, coords );
 
     // add reset button
-    this.addChild( new PlanetModeResetButton( model, {x: 161, y: -13} ) );
+    var dy = 30;
+    this.addChild( new PlanetModeResetButton( model, {x: 161, y: -13}, dy ) );
 
     // add planet mode options
-    for ( var i = 0, dy = 30; i < model.planetModes.length; i++ ) {
+    for ( var i = 0; i < model.planetModes.length; i++ ) {
       this.addChild( new PlanetModeOption( model, {x: 0, y: -15 + i * dy}, i ) );
     }
   }

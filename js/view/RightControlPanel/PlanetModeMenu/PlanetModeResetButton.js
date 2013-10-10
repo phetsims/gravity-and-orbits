@@ -16,7 +16,7 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PushButton = require( 'SUN/PushButton' );
 
-  function PlanetModeResetButton( model, coords ) {
+  function PlanetModeResetButton( model, coords, dy ) {
     Node.call( this, coords );
 
     // create default view
@@ -33,11 +33,18 @@ define( function( require ) {
       disabledNode: new Node( {children: [node]} ),
       callback: function() {
         model.planetModeProperty.reset();
+        pushButton.setY( 0 );
       }
     };
 
     // create button
-    this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, options.callback ) );
+    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, options.callback );
+    this.addChild( pushButton );
+
+    model.planetModeProperty.link( function( mode ) {
+      console.log(pushButton, dy);
+      pushButton.setY( mode * dy );
+    } );
   }
 
   inherit( Node, PlanetModeResetButton );
