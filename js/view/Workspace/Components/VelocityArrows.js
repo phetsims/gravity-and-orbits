@@ -21,17 +21,16 @@ define( function( require ) {
     var self = this, prevPosition = {};
     Node.call( this );
 
+    this.init( model );
+
     // find max velocity for all modes
     this.maxVelocity = [];
     for ( var i = 0; i < model.planetModes.length; i++ ) {
       this.maxVelocity[i] = getMaxVelocity( model, i );
     }
 
-    var drawArrows = function() {
-      self.removeAllChildren();
-      if ( self.flag ) {
-        self.addArrows( model );
-      }
+    var checkArrows = function() {
+      self[(self.flag ? 'show' : 'hide') + 'Arrows']( model );
     };
 
     model.spaceObjects.forEach( function( el ) {
@@ -39,24 +38,75 @@ define( function( require ) {
       model[el + 'PositionProperty'].link( function( newPosition ) {
         if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
           prevPosition[el] = newPosition;
-          drawArrows();
+          checkArrows();
         }
       } );
     } );
 
     model.velocityArrowProperty.link( function( flag ) {
       self.flag = flag;
-      drawArrows();
+      checkArrows();
     } );
 
     model.planetModeProperty.link( function() {
-      drawArrows();
+      checkArrows();
     } );
   }
 
   inherit( Node, VelocityArrows );
 
-  VelocityArrows.prototype.addArrows = function( model ) {
+  var getMaxVelocity = function( model, num ) {
+    var mode = model.planetModes[num], obj, len = model.spaceObjects.length, i, v, maxVelocity = 1;
+    for ( i = 0; i < len; i++ ) {
+      obj = model.spaceObjects[i];
+      if ( !mode[obj] || !mode[obj].velocity ) {continue;}
+      v = Math.sqrt( Math.pow( mode[obj].velocity.x, 2 ) + Math.pow( mode[obj].velocity.y, 2 ) );
+      maxVelocity = Math.max( v, maxVelocity );
+    }
+    return maxVelocity;
+  };
+
+  VelocityArrows.prototype.init = function( model ) {
+    var self = this;
+    this.arrows = {};
+    model.spaceObjects.forEach( function( el ) {
+      self.arrows[el] = {
+        view: new Node(),
+        circle: new Circle( 18, {
+          fill: 'rgba(0,0,0,0)',
+          stroke: '#C0C0C0',
+          lineWidth: 3
+        } ),
+        text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false } ),
+        arrowNode: new Node()
+      };
+
+      self.arrows[el].view.addChild( self.arrows[el].circle );
+      self.arrows[el].view.addChild( self.arrows[el].text );
+      self.arrows[el].view.addChild( self.arrows[el].arrowNode );
+      self.arrows[el].view.setVisible( false );
+      self.addChild( self.arrows[el].view );
+    } );
+  };
+
+  VelocityArrows.prototype.hideArrows = function( model ) {
+    var self = this;
+    model.spaceObjects.forEach( function( el ) {
+      self.arrows[el].view.setVisible( false );
+    } );
+  };
+
+  VelocityArrows.prototype.setArrow = function( model, obj, x, y ) {
+    this.arrows[obj].circle.setX( x );
+    this.arrows[obj].circle.setY( y );
+    this.arrows[obj].text.x = x - 6;
+    this.arrows[obj].text.y = y + 2;
+
+    this.arrows[obj].arrowNode.removeAllChildren();
+    this.arrows[obj].arrowNode.addChild( new ArrowNode( model[obj + 'Position'].x, model[obj + 'Position'].y, x, y, {fill: '#ED1C24'} ) );
+  };
+
+  VelocityArrows.prototype.showArrows = function( model ) {
     var self = this,
       num = model.planetMode,
       maxVelocity = self.maxVelocity[num],
@@ -71,9 +121,11 @@ define( function( require ) {
 
     for ( var i = 0; i < len; i++ ) {
       obj = model.spaceObjects[i];
-      if ( !mode[obj] || model[obj + 'Exploded'] ) {continue;}
       velocity = model[obj + 'Velocity'];
-      if ( !velocity.magnitude() ) {continue;}
+      if ( !mode[obj] || model[obj + 'Exploded'] || !velocity.magnitude() ) {
+        self.arrows[obj].view.setVisible( false );
+        continue;
+      }
 
       arrowSize = arrowSizeNormal * velocity.magnitude() / maxVelocity;
       arrowSize = Math.max( arrowSize, arrowSizeMin );
@@ -82,26 +134,10 @@ define( function( require ) {
 
       x = model[obj + 'Position'].x + unitVector.x * arrowSize;
       y = model[obj + 'Position'].y + unitVector.y * arrowSize;
-      self.addChild( new Circle( 18, {
-        x: x, y: y - 6,
-        fill: 'rgba(0,0,0,0)',
-        stroke: '#C0C0C0',
-        lineWidth: 3
-      } ) );
-      self.addChild( new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, x: x - 7, y: y + 2 } ) );
-      self.addChild( new ArrowNode( model[obj + 'Position'].x, model[obj + 'Position'].y, x, y, {fill: '#ED1C24'} ) );
-    }
-  };
 
-  var getMaxVelocity = function( model, num ) {
-    var mode = model.planetModes[num], obj, len = model.spaceObjects.length, i, v, maxVelocity = 1;
-    for ( i = 0; i < len; i++ ) {
-      obj = model.spaceObjects[i];
-      if ( !mode[obj] || !mode[obj].velocity ) {continue;}
-      v = Math.sqrt( Math.pow( mode[obj].velocity.x, 2 ) + Math.pow( mode[obj].velocity.y, 2 ) );
-      maxVelocity = Math.max( v, maxVelocity );
+      self.setArrow( model, obj, x, y );
+      self.arrows[obj].view.setVisible( true );
     }
-    return maxVelocity;
   };
 
   return VelocityArrows;
