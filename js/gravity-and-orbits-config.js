@@ -11,12 +11,6 @@ require.config( {
 
   deps: ['gravity-and-orbits-main'],
 
-  config: {
-    i18n: {
-      locale: 'en_us'
-    }
-  },
-
   paths: {
 
     // plugins
