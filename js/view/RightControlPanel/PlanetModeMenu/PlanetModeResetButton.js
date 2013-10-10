@@ -42,7 +42,6 @@ define( function( require ) {
     this.addChild( pushButton );
 
     model.planetModeProperty.link( function( mode ) {
-      console.log(pushButton, dy);
       pushButton.setY( mode * dy );
     } );
   }
