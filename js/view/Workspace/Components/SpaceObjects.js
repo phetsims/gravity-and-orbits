@@ -87,6 +87,12 @@ define( function( require ) {
         tooltip.addInputListener( getListener( tooltip ) );
       } );
     } );
+
+    // replace earth by gray sphere
+    var earth = model.spaceObjects[1];
+    model[earth + 'RadiusCoeffProperty'].link( function( coeff ) {
+      model[earth + 'View']['set' + (coeff === 1 ? 'Default' : 'Gray') + 'View']();
+    } );
   }
 
   inherit( Node, SpaceObjects );
