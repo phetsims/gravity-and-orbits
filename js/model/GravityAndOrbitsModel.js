@@ -15,6 +15,8 @@ define( function( require ) {
   var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
   var billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' );
   var satelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/satelliteMasses' );
+  var cartoonString = require('string!GRAVITY_AND_ORBITS/cartoon');
+  var toScaleString = require('string!GRAVITY_AND_ORBITS/toScale');
 
   var Vector2 = require( 'DOT/Vector2' );
 
@@ -107,7 +109,7 @@ define( function( require ) {
         x: CONSTANTS.MOON_X,
         y: -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
         radius: CONSTANTS.MOON_RADIUS * 800,
-        radiusScaleMode: 0.25,
+        radiusScaleMode: 0.3,
         velocity: {x: CONSTANTS.MOON_SPEED * 21, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
         mass: CONSTANTS.MOON_MASS,
         massTooltip: {
@@ -198,9 +200,9 @@ define( function( require ) {
     }
   ];
 
-  function GravityAndOrbitsModel( width, height ) {
+  function GravityAndOrbitsModel( width, height, viewMode ) {
     var self = this;
-    this.viewModes = ['cartoon', 'scale'];
+    this.viewModes = [cartoonString, toScaleString];
     this.timeModes = timeModes;
 
     this.spaceObjects = ['sun', 'earth', 'moon', 'spaceStation'];
@@ -228,7 +230,7 @@ define( function( require ) {
     this.height = height;
 
     PropertySet.call( this, {
-      viewMode: this.viewModes[0], // 'cartoon', 'scale'
+      viewMode: viewMode, // 'cartoon', 'to scale'
       planetMode: 0, // planet mode
       timeMode: timeModes[0], // time counter format
       gravity: true, // switch gravity

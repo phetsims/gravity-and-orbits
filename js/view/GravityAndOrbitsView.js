@@ -15,7 +15,6 @@ define( function( require ) {
   var ScaleSlider = require( 'view/ScaleSlider/ScaleSlider' );
   var RightControlPanel = require( 'view/RightControlPanel/RightControlPanel' );
   var BottomControlPanel = require( 'view/BottomControlPanel/BottomControlPanel' );
-  var ViewModePanel = require( 'view/ViewModePanel/ViewModePanel' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
@@ -40,9 +39,6 @@ define( function( require ) {
 
     // add bottom control panel
     this.addChild( new BottomControlPanel( model, 100, 410 ) );
-
-    // add view mode panel
-    this.addChild( new ViewModePanel( model, 250, 465 ) );
 
     model.rightPanelHeightProperty.link( function( height ) {
       var resetButtonOffsetY = 18;

@@ -75,10 +75,10 @@ define( function( require ) {
         text: massString,
         node: new Node( {children: [new Image( iconMassImg )], x: 70, y: -23} )
       }
-    ], dy = 25, order = {
-      cartoon: [0, 1, 2, 3],
-      scale: [0, 1, 5, 2, 3, 4]
-    };
+    ], dy = 25, order = {};
+
+    order[model.viewModes[0]] = [0, 1, 2, 3];
+    order[model.viewModes[1]] = [0, 1, 5, 2, 3, 4];
 
     // add checkboxes
     for ( var i = 0; i < options.length; i++ ) {

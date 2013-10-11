@@ -31,32 +31,6 @@ define( function( require ) {
       self.addChild( self.view );
     } );
 
-    // change scale for view modes
-    model.viewModeProperty.link( function( mode, prevMode ) {
-      var name, obj, num = model.planetMode, oldScale = 1, newScale = 1;
-      for ( var i = 0; i < model.spaceObjects.length; i++ ) {
-        name = model.spaceObjects[i];
-        obj = model.planetModes[num][name];
-        if ( obj ) {
-          if ( mode === model.viewModes[0] ) {
-            newScale = 1;
-          }
-          else if ( mode === model.viewModes[1] ) {
-            newScale = obj.radiusScaleMode;
-          }
-
-          if ( prevMode === model.viewModes[0] ) {
-            oldScale = 1;
-          }
-          else if ( prevMode === model.viewModes[1] ) {
-            oldScale = obj.radiusScaleMode;
-          }
-
-          model[name + 'View'].scale( newScale / oldScale );
-        }
-      }
-    } );
-
     // add explosion animation
     model.spaceObjects.forEach( function( el ) {
       model[el + 'RadiusCoeffProperty'].link( function() {
