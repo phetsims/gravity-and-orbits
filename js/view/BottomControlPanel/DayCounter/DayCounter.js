@@ -43,15 +43,15 @@ define( function( require ) {
       disabledNode: new Node( {children: [node]} ),
       callback: function() {
         dayOffset = model.day;
-        updateDay( model.day );
+        updateDay();
       }
     };
 
     // create button
     this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, options.callback ) );
 
-    var updateDay = function( day ) {
-      self.day.setText( parseInt( (day - dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
+    var updateDay = function() {
+      self.day.setText( parseInt( (model.day - dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
     };
 
     model.timeModeProperty.link( function( mode ) {
@@ -63,7 +63,7 @@ define( function( require ) {
         self.text = earthMinutesString;
         self.multiplier = 24 * 60;
       }
-      updateDay( model.day );
+      updateDay();
     } );
 
     model.dayProperty.link( updateDay );
@@ -71,6 +71,7 @@ define( function( require ) {
     model.planetModeProperty.link( function() {
       model.dayProperty.reset();
       dayOffset = 0;
+      updateDay();
     } );
   }
 
