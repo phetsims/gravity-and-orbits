@@ -124,7 +124,7 @@ define( function( require ) {
     this.notBase.addChild( this.mediator );
 
     // add tip
-    this.tip = new Node( {children: [new Circle( 5, {fill: 'rgba(0,0,0,0)'} ), new Path( new Shape().moveTo( -size, 0 ).lineTo( size, 0 ).moveTo( 0, -size ).lineTo( 0, size ), {stroke: '#E05F20', lineWidth: 2} )]} );
+    this.tip = new Node( {children: [new Circle( 15, {fill: 'rgba(0,0,0,0)'} ), new Path( new Shape().moveTo( -size, 0 ).lineTo( size, 0 ).moveTo( 0, -size ).lineTo( 0, size ), {stroke: '#E05F20', lineWidth: 2} )]} );
     this.tip.cursor = 'pointer';
     this.notBase.addChild( this.tip );
 
