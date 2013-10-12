@@ -17,13 +17,13 @@ define( function( require ) {
     Node.call( this, {x: x, y: y, scale: 0.8} );
 
     // add plus button
-    this.addChild( new SliderButton( 0, 0, model, options.range, true ) );
+    this.addChild( new SliderButton( 0, 0, model, options.range, options.step, true ) );
 
     // add slide line
     this.addChild( new SliderLine( 0, 34, 150, model.scaleProperty, options.range ) );
 
     // add minus button
-    this.addChild( new SliderButton( 0, 190, model, options.range, false ) );
+    this.addChild( new SliderButton( 0, 190, model, options.range, options.step, false ) );
   }
 
   inherit( Node, ScaleSlider );

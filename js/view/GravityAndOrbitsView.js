@@ -20,7 +20,8 @@ define( function( require ) {
     ScreenView.call( this, { renderer: 'svg' } );
     var options = {
       scaleSlider: {
-        range: {max: 1.5, min: 0.5}
+        range: {max: 1.5, min: 0.5},
+        step: 0.1
       }
     };
 
