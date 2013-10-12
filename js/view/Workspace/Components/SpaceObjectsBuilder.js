@@ -12,74 +12,58 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Vector2 = require( 'DOT/Vector2' );
 
-  var Sun = require( 'view/SpaceObject/Sun' );
-  var Earth = require( 'view/SpaceObject/Earth' );
-  var Moon = require( 'view/SpaceObject/Moon' );
-  var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
+  var map = {
+    sun: require( 'view/SpaceObject/Sun' ),
+    earth: require( 'view/SpaceObject/Earth' ),
+    moon: require( 'view/SpaceObject/Moon' ),
+    spaceStation: require( 'view/SpaceObject/SpaceStation' )
+  };
 
-  function SpaceObjectsBuilder( model, num ) {
-    var self = this, i, name, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode, modeCoeff;
+  function SpaceObjectsBuilder( model, num, state ) {
+    var self = this, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
     Node.call( this );
 
-    var map = {
-      sun: Sun,
-      earth: Earth,
-      moon: Moon,
-      spaceStation: SpaceStation
-    };
+    model.spaceObjects.forEach( function( name ) {
+      obj = (state && state[name] ? state[name] : model.planetModes[num][name]);
 
-    // add planets
-    for ( i = 0; i < model.spaceObjects.length; i++ ) {
-      name = model.spaceObjects[i];
-      obj = model.planetModes[num][name];
-      if ( obj ) {
+      // set explosion property
+      model[name + 'Exploded'] = (obj ? obj.exploded : false);
+
+      if ( obj && !obj.exploded ) {
         position = new Vector2( obj.x * scale, obj.y * scale );
         // set space object's velocity
-        if ( obj.velocity ) {
+        if ( !obj.fixed ) {
           model[name + 'Velocity'].set( obj.velocity.x, obj.velocity.y );
-        }
-        else {
-          model[name + 'Velocity'].set( 0, 0 );
-        }
-
-        // set space object's mass
-        model[name + 'MassCoeffProperty'].reset();
-        model[name + 'Mass'] = obj.mass;
-
-        // set space object's radius
-        if ( model.viewMode === model.viewModes[0] ) {
-          modeCoeff = 1;
-        }
-        else if ( model.viewMode === model.viewModes[1] ) {
-          modeCoeff = obj.radiusScaleMode;
         }
 
         // add space object
         model[name + 'View'] = new map[name]( position.copy(), obj.radius * scale );
-        model[name + 'View'].setRadius( 0 );
-        model[name + 'View'].scale( modeCoeff );
-        this.addChild( model[name + 'View'] );
+        model[name + 'View'].scale( model.viewMode === model.viewModes[1] ? obj.radiusScaleMode : 1 );
+        self.addChild( model[name + 'View'] );
 
         // set space object's coordinates
         model[name + 'PositionStart'] = position.copy();
         model[name + 'Position'] = position.copy();
 
+        model.timeMode = timeMode;
+        model[name + 'View'].setRadius( obj.radius * scale );
+
         // check tooltip
         model[name + 'Tooltip'].setVisible( ( model[name + 'View'].getWidth() < 10 ) );
 
-        // clean up previous values
-        model[name + 'Acceleration'].set( 0, 0 );
-        model[name + 'VelocityHalf'].set( 0, 0 );
-        model[name + 'Exploded'] = false;
+        // set space object's mass
+        model[name + 'MassCoeff'] = obj.massCoeff || 1;
+        model[name + 'Mass'] = obj.mass;
 
-        model.timeMode = timeMode;
-        model[name + 'View'].setRadius( obj.radius * scale );
+        // set up previous values
+        model[name + 'Acceleration'].set( obj.acceleration ? obj.acceleration.x : 0, obj.acceleration ? obj.acceleration.y : 0 );
+        model[name + 'VelocityHalf'].set( obj.velocityHalf ? obj.velocityHalf.x : 0, obj.velocityHalf ? obj.velocityHalf.y : 0 );
       }
       else {
         model[name + 'View'] = new Node();
         model[name + 'Tooltip'].setVisible( false );
       }
-    }
+    } );
   }
 
   inherit( Node, SpaceObjectsBuilder );

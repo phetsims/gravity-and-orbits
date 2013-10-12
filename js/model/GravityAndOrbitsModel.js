@@ -15,8 +15,8 @@ define( function( require ) {
   var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
   var billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' );
   var satelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/satelliteMasses' );
-  var cartoonString = require('string!GRAVITY_AND_ORBITS/cartoon');
-  var toScaleString = require('string!GRAVITY_AND_ORBITS/toScale');
+  var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
+  var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
 
   var Vector2 = require( 'DOT/Vector2' );
 
@@ -243,10 +243,13 @@ define( function( require ) {
       play: false, // play/pause state
       rightPanelHeight: 0, // height of right control panel
       speed: 1, // 1.75, 1, 0.25
-      drag: '',
-      day: 0,
-      scale: 1,
-      scaleCenter: new Vector2( 0, 0 )
+      drag: '', // current dragging object
+      refreshMode: false, // refresh current planetMode
+      showExplosion: true, // check explosion flag
+      day: 0, // current day
+      dayOffset: 0, // offset from zero day
+      scale: 1, // scale coefficient
+      scaleCenter: new Vector2( 0, 0 ) // scale center
     } );
 
     // add property for space objects

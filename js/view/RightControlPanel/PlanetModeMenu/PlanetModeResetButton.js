@@ -32,8 +32,7 @@ define( function( require ) {
       downNode: new Node( {children: [node]} ),
       disabledNode: new Node( {children: [node]} ),
       callback: function() {
-        model.planetModeProperty.reset();
-        pushButton.setY( 0 );
+        model.refreshMode = true;
       }
     };
 

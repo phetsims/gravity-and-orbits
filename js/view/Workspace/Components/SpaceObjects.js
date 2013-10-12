@@ -20,15 +20,26 @@ define( function( require ) {
     var self = this;
     Node.call( this );
 
-    model.planetModeProperty.link( function( num ) {
-      // set scale center
-      model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
+    this.state = [];
+    this.view = new Node();
 
-      // add new space objects
-      self.removeAllChildren();
-      model.day = 0;
-      self.view = new SpaceObjectsBuilder( model, num );
-      self.addChild( self.view );
+    model.planetModeProperty.link( function( num, prevNum ) {
+      // disable explosion
+      model.showExplosion = false;
+
+      if ( prevNum !== null ) {
+        self.saveState( model, prevNum );
+      }
+
+      if ( self.state[num] ) {
+        self.restoreState( model, num );
+      }
+      else {
+        self.initState( model, num );
+      }
+
+      // enable explosion
+      model.showExplosion = true;
     } );
 
     // add explosion animation
@@ -43,10 +54,25 @@ define( function( require ) {
 
       model[el + 'ExplodedProperty'].link( function( exploded ) {
         model[el + 'View'].setVisible( !exploded );
-        if ( exploded ) {
+        if ( exploded && model.showExplosion ) {
           self.showExplosion( model[el + 'Position'], model[el + 'View'].getWidth() );
         }
       } );
+    } );
+
+    model.refreshModeProperty.link( function( flag ) {
+      if ( flag ) {
+        // disable explosion
+        model.showExplosion = false;
+
+        // set init state
+        self.initState( model, model.planetMode );
+
+        // enable explosion
+        model.showExplosion = true;
+
+        model.refreshMode = false;
+      }
     } );
 
     // redraw space objects when position changing
@@ -128,6 +154,73 @@ define( function( require ) {
         }
       }
     }
+  };
+
+  SpaceObjects.prototype.initState = function( model, num ) {
+    // set scale center
+    model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
+
+    this.removeChild( this.view );
+    model.scale = 1;
+    model.day = 0;
+    model.dayOffset = 0;
+
+    // add new space objects
+    this.view = new SpaceObjectsBuilder( model, num );
+    this.addChild( this.view );
+  };
+
+  SpaceObjects.prototype.restoreState = function( model, num ) {
+    model.scale = this.state[num].scale;
+    model.scaleCenter = this.state[num].scaleCenter;
+
+    // add new space objects
+    this.removeChild( this.view );
+
+    model.dayOffset = model.day - this.state[num].dayShow;
+    this.view = new SpaceObjectsBuilder( model, num, this.state[num].spaceObjects );
+    this.addChild( this.view );
+  };
+
+  SpaceObjects.prototype.saveState = function( model, num ) {
+    var self = this, obj, spaceObject;
+    this.state[num] = {
+      scale: model.scale,
+      scaleCenter: model.scaleCenter.copy(),
+      dayShow: model.day - model.dayOffset,
+      spaceObjects: {}
+    };
+
+    model.spaceObjects.forEach( function( name ) {
+      obj = model.planetModes[num][name];
+      if ( obj ) {
+        self.state[num].spaceObjects[name] = {};
+        spaceObject = self.state[num].spaceObjects[name];
+        for ( var prop in obj ) {
+          if ( obj.hasOwnProperty( prop ) ) {
+            spaceObject[prop] = obj[prop];
+          }
+        }
+        spaceObject.x = model[name + 'Position'].x / model.planetModes[num].options.scale;
+        spaceObject.y = model[name + 'Position'].y / model.planetModes[num].options.scale;
+        if ( !spaceObject.fixed ) {
+          spaceObject.velocity = {
+            x: model[name + 'Velocity'].x,
+            y: model[name + 'Velocity'].y
+          };
+        }
+        spaceObject.massCoeff = model[name + 'MassCoeff'];
+        spaceObject.acceleration = {
+          x: model[name + 'Acceleration'].x,
+          y: model[name + 'Acceleration'].y
+        };
+        spaceObject.velocityHalf = {
+          x: model[name + 'VelocityHalf'].x,
+          y: model[name + 'VelocityHalf'].y
+        };
+        spaceObject.exploded = model[name + 'Exploded'];
+      }
+    } );
   };
 
   return SpaceObjects;
