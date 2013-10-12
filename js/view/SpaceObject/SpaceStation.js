@@ -21,7 +21,7 @@ define( function( require ) {
   inherit( Node, SpaceStation );
 
   SpaceStation.prototype.setRadius = function( radius ) {
-    var width = spaceStationImg.width / 2, scale = radius / width;
+    var width = spaceStationImg.width / 2.6, scale = radius / width;
     if ( this.view ) {this.removeChild( this.view );}
 
     this.view = new Image( spaceStationImg, {scale: scale, x: -width * scale, y: -width * scale} );
