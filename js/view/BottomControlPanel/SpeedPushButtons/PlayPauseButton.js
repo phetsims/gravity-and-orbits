@@ -31,15 +31,14 @@ define( function( require ) {
   var ToggleButton = require( 'SUN/ToggleButton' );
 
   function PlayPauseButton( model, options ) {
-    Node.call( this, {x: options.x, y: options.y, scale: 1} );
+    Node.call( this, {x: options.x, y: options.y, scale: 0.7} );
     var stepButton, rewindButton, step, rewind;
 
     // add play button
     this.addChild( new ToggleButton(
       new Image( pauseImg ),
       new Image( playImg ),
-      model.playProperty,
-      {scale: 0.7} ) );
+      model.playProperty ) );
 
     // add step button
     step = function() {
@@ -50,27 +49,35 @@ define( function( require ) {
       new Image( buttonStepHoverImg ),
       new Image( buttonStepPressedImg ),
       new Image( buttonStepDeactivatedImg ),
-      step, {scale: 0.7, x: 50, y: 7} ) );
+      step, {x: 70, y: 7} ) );
     stepButton.enabled = false;
 
     // add rewind button
-    rewind = function() {model.clear();};
+    rewind = function() {model.refreshMode = true;};
     this.addChild( rewindButton = new PushButton(
       new Image( buttonRewindImg ),
       new Image( buttonRewindHoverImg ),
       new Image( buttonRewindPressedImg ),
       new Image( buttonRewindDeactivatedImg ),
-      rewind, {scale: 0.7, x: -35, y: 7} ) );
+      rewind, {x: -50, y: 7} ) );
     rewindButton.enabled = false;
 
     model.playProperty.link( function updatePlayPauseButton( value ) {
       stepButton.enabled = !value;
     } );
 
-    model.dayProperty.link( function updatePlayPauseButton( day ) {
-      rewindButton.enabled = !!day;
+    model.dayProperty.link( function() {
+      rewindButton.enabled = getDay( model );
+    } );
+
+    model.dayOffsetProperty.link( function() {
+      rewindButton.enabled = getDay( model );
     } );
   }
+
+  var getDay = function( model ) {
+    return (model.day - model.dayOffset);
+  };
 
   inherit( Node, PlayPauseButton );
 
