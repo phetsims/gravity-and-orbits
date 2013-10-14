@@ -76,6 +76,12 @@ define( function( require ) {
       self.clearPath( model );
       self.num = num;
     } );
+
+    model.refreshModeProperty.link( function( flag ) {
+      if ( flag ) {
+        self.clearPath( model );
+      }
+    } );
   }
 
   inherit( Node, PlanetPath );
