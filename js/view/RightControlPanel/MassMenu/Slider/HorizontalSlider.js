@@ -62,9 +62,6 @@ define( function( require ) {
             x = defaultValue;
           }
           targetProperty.set( round( x, rounding ) );
-        },
-        translate: function() {
-          // do nothing, override default behavior
         }
       } ) );
     targetProperty.link( function( value ) {

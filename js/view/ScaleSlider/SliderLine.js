@@ -51,9 +51,6 @@ define( function( require ) {
           var y = thisNode.globalToParentPoint( event.pointer.point ).y - clickYOffset;
           y = Math.max( Math.min( y, yMax ), yMin );
           targetProperty.set( positionToValue( y ) );
-        },
-        translate: function() {
-          // do nothing, override default behavior
         }
       } ) );
     targetProperty.link( function( value ) {
