@@ -13,6 +13,7 @@ define( function( require ) {
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var Vector2 = require( 'DOT/Vector2' );
   var Explosion = require( 'view/SpaceObject/Explosion' );
+  var Timer = require( 'JOIST/Timer' );
 
   var SpaceObjectsBuilder = require( 'view/Workspace/Components/SpaceObjectsBuilder' );
 
@@ -126,10 +127,10 @@ define( function( require ) {
   SpaceObjects.prototype.showExplosion = function( position, radius ) {
     var self = this, explosion = new Explosion( position, 2 * radius ), frames = 5;
     this.addChild( explosion );
-    var interval = setInterval( function() {
+    var interval = Timer.setInterval( function() {
       explosion.scale( 0.8 );
       if ( !--frames ) {
-        clearInterval( interval );
+        Timer.clearInterval( interval );
         self.removeChild( explosion );
       }
     }, 50 );
