@@ -27,7 +27,7 @@ define( function( require ) {
       sample.addChild( new Rectangle( width / 2 - 1, 4, 2, height - 8, {fill: 'black'} ) );
     }
 
-    // callback
+    // callback (can be optimized by splitting to two functions)
     callback = function() {
       model.scale = Math.max( Math.min( model.scale + (isIncrease ? step : -step), range.max ), range.min );
     };

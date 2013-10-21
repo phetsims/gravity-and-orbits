@@ -15,8 +15,7 @@ define( function( require ) {
 
   function Slider( x, y, h, targetProperty, value ) {
     Node.call( this, {x: x, y: y} );
-    var thisNode = this,
-      options = {
+    var options = {
         line: {
           width: 3,
           height: h,
@@ -35,7 +34,7 @@ define( function( require ) {
 
     var track = new Node( {children: [new Rectangle( -options.track.width / 2, 0, options.track.width, options.track.height, options.track.arcSize, options.track.arcSize, options.track.options ), new Rectangle( -(options.track.width - 8) / 2, options.track.height / 2, options.track.width - 8, 1, {fill: 'black' } )], cursor: 'pointer'} );
 
-    var clickYOffset,
+    var realY,
       yMin = 0,
       yMax = h - track.height;
 
@@ -44,13 +43,13 @@ define( function( require ) {
     this.addChild( track );
     track.addInputListener( new SimpleDragHandler(
       {
-        start: function( event ) {
-          clickYOffset = thisNode.globalToParentPoint( event.pointer.point ).y - event.currentTarget.y;
+        start: function() {
+          realY = track.y;
         },
-        drag: function( event ) {
-          var y = thisNode.globalToParentPoint( event.pointer.point ).y - clickYOffset;
-          y = Math.max( Math.min( y, yMax ), yMin );
-          targetProperty.set( positionToValue( y ) );
+        translate: function( event ) {
+          realY += event.delta.y;
+          var value = positionToValue( Math.max( yMin, Math.min( realY, yMax ) ) );
+          targetProperty.set( value );
         }
       } ) );
     targetProperty.link( function( value ) {

@@ -17,7 +17,6 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
 
   function HorizontalSlider( x, y, w, targetProperty, img, value, rounding, tick, defaultValue ) {
-    var thisNode = this;
     Node.call( this, {x: x, y: y} );
 
     var round = function( value, rounding ) {
@@ -25,7 +24,6 @@ define( function( require ) {
     };
 
     var track = new Node( {children: [new Image( img, {centerX: 0, centerY: 0, scale: 0.5} )], cursor: "pointer"} ),
-      clickXOffset,
       xMin = 0,
       xMax = w - track.width,
       valueToPosition = new LinearFunction( value.min, value.max, xMin, xMax, true ),
@@ -44,24 +42,27 @@ define( function( require ) {
     this.addChild( nodeTick );
     this.addChild( track );
     var dx = 0.25 * track.width,
-      dy = 0.5 * track.height;
+      dy = 0.5 * track.height,
+      realX;
     track.touchArea = Shape.rectangle( ( -track.width / 2 ) - dx, ( -track.height / 2 ) - dy, track.width + dx + dx, track.height + dy + dy );
     track.addInputListener( new SimpleDragHandler(
       {
         allowTouchSnag: true,
-        start: function( event ) {
-          clickXOffset = thisNode.globalToParentPoint( event.pointer.point ).x - event.currentTarget.x;
+        start: function() {
+          realX = track.x;
         },
-        drag: function( event ) {
-          var x = thisNode.globalToParentPoint( event.pointer.point ).x - clickXOffset;
-          x = Math.max( Math.min( x, xMax ), xMin );
-          x = positionToValue( x );
+        translate: function( event ) {
+          realX += event.delta.x;
+
+          var value = positionToValue( Math.max( xMin, Math.min( realX, xMax ) ) );
 
           // snap to default value
-          if ( Math.abs( x - defaultValue ) / defaultValue < 0.03 ) {
-            x = defaultValue;
+          if ( Math.abs( value - defaultValue ) / defaultValue < 0.03 ) {
+            value = defaultValue;
           }
-          targetProperty.set( round( x, rounding ) );
+          value = round( value, rounding );
+
+          targetProperty.set( value );
         }
       } ) );
     targetProperty.link( function( value ) {
