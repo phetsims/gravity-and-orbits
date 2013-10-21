@@ -293,6 +293,8 @@ define( function( require ) {
       }
     },
     reset: function() {
+      var self = this;
+      this.showExplosion = false;
       this.gravityProperty.reset();
       this.forceArrowProperty.reset();
       this.velocityArrowProperty.reset();
@@ -304,7 +306,15 @@ define( function( require ) {
       this.speedProperty.reset();
       this.dayProperty.reset();
       this.scaleProperty.reset();
+
+      // reset all modes
+      this.planetModes.forEach( function( mode, i ) {
+        self.planetMode = i;
+        self.refreshMode = true;
+      } );
+
       this.planetModeReset();
+      this.showExplosion = true;
     },
     clear: function() {
       this.dayProperty.reset();
