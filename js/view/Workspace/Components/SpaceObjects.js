@@ -195,7 +195,7 @@ define( function( require ) {
       previousDay: model.previousDay,
       spaceObjects: {}
     };
-    console.log('save', model.previousDay)
+    console.log( 'save', model.previousDay );
     model.spaceObjects.forEach( function( name ) {
       obj = model.planetModes[num][name];
       if ( obj ) {
