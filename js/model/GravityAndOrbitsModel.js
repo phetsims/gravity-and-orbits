@@ -249,7 +249,8 @@ define( function( require ) {
       day: 0, // current day
       dayOffset: 0, // offset from zero day
       scale: 1, // scale coefficient
-      scaleCenter: new Vector2( 0, 0 ) // scale center
+      scaleCenter: new Vector2( 0, 0 ), // scale center
+      previousDay: 0 // previous day for rewind
     } );
 
     // add property for space objects
@@ -288,7 +289,8 @@ define( function( require ) {
 
   inherit( PropertySet, GravityAndOrbitsModel, {
     step: function( dt ) {
-      if ( this.play ) {
+      if ( this.play && !this.rewindLock ) {
+        this.lastStep = dt;
         this.stepManual( dt );
       }
     },
@@ -306,6 +308,7 @@ define( function( require ) {
       this.speedProperty.reset();
       this.dayProperty.reset();
       this.scaleProperty.reset();
+      this.previousDayProperty.reset();
 
       // reset all modes
       this.planetModes.forEach( function( mode, i ) {
@@ -323,6 +326,13 @@ define( function( require ) {
     stepManual: function( dt ) {
       dt = dt || 1 / fps;
       this.day += dt * this.speed * this.planetModes[this.planetMode].options.timeScale;
+    },
+    rewind: function( day ) {
+      this.rewindLock = true;
+      while ( this.day > day ) {
+        this.stepManual( -this.lastStep );
+      }
+      this.rewindLock = false;
     }
   } );
 

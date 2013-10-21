@@ -53,7 +53,7 @@ define( function( require ) {
     stepButton.enabled = false;
 
     // add rewind button
-    rewind = function() {model.refreshMode = true;};
+    rewind = function() {model.rewind( model.previousDay );};
     this.addChild( rewindButton = new PushButton(
       new Image( buttonRewindImg ),
       new Image( buttonRewindHoverImg ),
@@ -64,6 +64,9 @@ define( function( require ) {
 
     model.playProperty.link( function updatePlayPauseButton( value ) {
       stepButton.enabled = !value;
+      if ( value ) {
+        model.previousDay = model.day;
+      }
     } );
 
     model.dayProperty.link( function() {

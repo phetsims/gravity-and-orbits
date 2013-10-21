@@ -165,6 +165,7 @@ define( function( require ) {
     model.scale = 1;
     model.day = 0;
     model.dayOffset = 0;
+    model.previousDay = 0;
 
     // add new space objects
     this.view = new SpaceObjectsBuilder( model, num );
@@ -179,6 +180,8 @@ define( function( require ) {
     this.removeChild( this.view );
 
     model.dayOffset = model.day - this.state[num].dayShow;
+    console.log(this.state[num].previousDay);
+    model.previousDay = this.state[num].previousDay;
     this.view = new SpaceObjectsBuilder( model, num, this.state[num].spaceObjects );
     this.addChild( this.view );
   };
@@ -189,9 +192,10 @@ define( function( require ) {
       scale: model.scale,
       scaleCenter: model.scaleCenter.copy(),
       dayShow: model.day - model.dayOffset,
+      previousDay: model.previousDay,
       spaceObjects: {}
     };
-
+    console.log('save', model.previousDay)
     model.spaceObjects.forEach( function( name ) {
       obj = model.planetModes[num][name];
       if ( obj ) {
