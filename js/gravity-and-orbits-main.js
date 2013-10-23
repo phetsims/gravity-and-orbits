@@ -7,11 +7,11 @@
  */
 
 define( [
-  'JOIST/SimLauncher', 'JOIST/Sim', 'model/GravityAndOrbitsModel', 'view/GravityAndOrbitsView',
+  'JOIST/SimLauncher', 'JOIST/Sim', 'JOIST/Screen', 'model/GravityAndOrbitsModel', 'view/GravityAndOrbitsView',
   'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name',
   'image!GRAVITY_AND_ORBITS/cartoon_icon.png', 'image!GRAVITY_AND_ORBITS/to_scale_icon.png',
   'string!GRAVITY_AND_ORBITS/cartoon', 'string!GRAVITY_AND_ORBITS/toScale'],
-  function( SimLauncher, Sim, GravityAndOrbitsModel, GravityAndOrbitsView, titleString, cartoonIcon, toScaleIcon, cartoonString, toScaleString ) {
+  function( SimLauncher, Sim, Screen, GravityAndOrbitsModel, GravityAndOrbitsView, titleString, cartoonIcon, toScaleIcon, cartoonString, toScaleString ) {
     'use strict';
 
     var simOptions = {
@@ -27,20 +27,16 @@ define( [
     SimLauncher.launch( function() {
       //Create and start the sim
       new Sim( titleString, [
-        {
-          name: cartoonString,
-          icon: new Image( cartoonIcon ),
-          createModel: function() { return new GravityAndOrbitsModel( 768, 504, cartoonString ); },
-          createView: function( model ) { return new GravityAndOrbitsView( model ); },
-          backgroundColor: '#000'
-        },
-        {
-          name: toScaleString,
-          icon: new Image( toScaleIcon ),
-          createModel: function() { return new GravityAndOrbitsModel( 768, 504, toScaleString ); },
-          createView: function( model ) { return new GravityAndOrbitsView( model ); },
-          backgroundColor: '#000'
-        }
+        new Screen( cartoonString, new Image( cartoonIcon ),
+          function() { return new GravityAndOrbitsModel( 768, 504, cartoonString ); },
+          function( model ) { return new GravityAndOrbitsView( model ); },
+          { backgroundColor: '#000' }
+        ),
+        new Screen( toScaleString, new Image( toScaleIcon ),
+          function() { return new GravityAndOrbitsModel( 768, 504, toScaleString ); },
+          function( model ) { return new GravityAndOrbitsView( model ); },
+          { backgroundColor: '#000' }
+        )
       ], simOptions ).start();
     } );
   } );
