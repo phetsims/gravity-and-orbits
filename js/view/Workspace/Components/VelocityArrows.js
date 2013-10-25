@@ -11,6 +11,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var ArrowShape = require( 'SCENERY_PHET/ArrowShape' );
   var Circle = require( 'SCENERY/nodes/Circle' );
 
   var Text = require( 'SCENERY/nodes/Text' );
@@ -78,7 +79,7 @@ define( function( require ) {
           lineWidth: 3
         } ),
         text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false } ),
-        arrowNode: new Node()
+        arrowNode: new ArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
       };
 
       self.arrows[el].view.addChild( self.arrows[el].circle );
@@ -102,8 +103,7 @@ define( function( require ) {
     this.arrows[obj].text.x = x - 6;
     this.arrows[obj].text.y = y + 2;
 
-    this.arrows[obj].arrowNode.removeAllChildren();
-    this.arrows[obj].arrowNode.addChild( new ArrowNode( model[obj + 'Position'].x, model[obj + 'Position'].y, x, y, {fill: '#ED1C24'} ) );
+    this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj + 'Position'].x, model[obj + 'Position'].y, x, y ) );
   };
 
   VelocityArrows.prototype.showArrows = function( model ) {
