@@ -82,6 +82,12 @@ define( function( require ) {
         self.clearPath( model );
       }
     } );
+
+    model.rewindProperty.link( function( flag ) {
+      if ( flag ) {
+        self.clearPath( model );
+      }
+    } );
   }
 
   inherit( Node, PlanetPath );

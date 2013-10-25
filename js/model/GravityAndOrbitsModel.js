@@ -168,7 +168,7 @@ define( function( require ) {
         x: 0,
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 0.8,
-        radiusScaleMode: 1.27,
+        radiusScaleMode: 1.25,
         velocity: {x: 0, y: 0},
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
@@ -250,7 +250,7 @@ define( function( require ) {
       dayOffset: 0, // offset from zero day
       scale: 1, // scale coefficient
       scaleCenter: new Vector2( 0, 0 ), // scale center
-      previousDay: 0 // previous day for rewind
+      rewind: false // rewind trigger
     } );
 
     // add property for space objects
@@ -308,7 +308,7 @@ define( function( require ) {
       this.speedProperty.reset();
       this.dayProperty.reset();
       this.scaleProperty.reset();
-      this.previousDayProperty.reset();
+      this.rewindProperty.reset();
 
       // reset all modes
       this.planetModes.forEach( function( mode, i ) {
@@ -326,13 +326,6 @@ define( function( require ) {
     stepManual: function( dt ) {
       dt = dt || 1 / fps;
       this.day += dt * this.speed * this.planetModes[this.planetMode].options.timeScale;
-    },
-    rewind: function( day ) {
-      this.rewindLock = true;
-      while ( this.day > day ) {
-        this.stepManual( -this.lastStep );
-      }
-      this.rewindLock = false;
     }
   } );
 

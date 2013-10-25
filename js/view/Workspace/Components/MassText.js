@@ -50,6 +50,10 @@ define( function( require ) {
       };
 
       // set observers
+      model[el + 'ExplodedProperty'].link( function( exploded ) {
+        self.setVisible( !exploded );
+      } );
+
       model.planetModeProperty.link( function() {
         setMassText();
         setMassTextPosition();

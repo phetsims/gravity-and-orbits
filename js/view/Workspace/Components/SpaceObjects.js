@@ -28,17 +28,19 @@ define( function( require ) {
       // disable explosion
       model.showExplosion = false;
 
+      // save state
       if ( prevNum !== null ) {
-        self.saveState( model, prevNum );
+        self.saveState( model, prevNum, 0 );
       }
 
       if ( self.state[num] ) {
-        self.restoreState( model, num );
+        self.restoreState( model, num, 0 );
       }
       else {
         self.initState( model, num );
       }
 
+      self.saveState( model, num, 1 );
       // enable explosion
       model.showExplosion = true;
     } );
@@ -120,6 +122,19 @@ define( function( require ) {
     model[earth + 'RadiusCoeffProperty'].link( function( coeff ) {
       model[earth + 'View']['set' + (coeff === 1 ? 'Default' : 'Gray') + 'View']();
     } );
+
+    model.playProperty.link( function( flag ) {
+      if ( flag ) {
+        self.saveState( model, model.planetMode, 1 );
+      }
+    } );
+
+    model.rewindProperty.link( function( flag ) {
+      if ( flag ) {
+        self.restoreState( model, model.planetMode, 1 );
+        model.rewind = false;
+      }
+    } );
   }
 
   inherit( Node, SpaceObjects );
@@ -172,35 +187,35 @@ define( function( require ) {
     this.addChild( this.view );
   };
 
-  SpaceObjects.prototype.restoreState = function( model, num ) {
-    model.scale = this.state[num].scale;
-    model.scaleCenter = this.state[num].scaleCenter;
+  SpaceObjects.prototype.restoreState = function( model, num, target ) {
+    var state = this.state[num][target];
+    model.scale = state.scale;
+    model.scaleCenter = state.scaleCenter;
 
     // add new space objects
     this.removeChild( this.view );
 
-    model.dayOffset = model.day - this.state[num].dayShow;
-    console.log(this.state[num].previousDay);
-    model.previousDay = this.state[num].previousDay;
-    this.view = new SpaceObjectsBuilder( model, num, this.state[num].spaceObjects );
+    model.dayOffset = model.day - state.dayShow;
+    model.previousDay = state.previousDay;
+    this.view = new SpaceObjectsBuilder( model, num, state.spaceObjects );
     this.addChild( this.view );
   };
 
-  SpaceObjects.prototype.saveState = function( model, num ) {
-    var self = this, obj, spaceObject;
-    this.state[num] = {
+  SpaceObjects.prototype.getState = function( model, num ) {
+    var obj, spaceObject, state;
+    state = {
       scale: model.scale,
       scaleCenter: model.scaleCenter.copy(),
       dayShow: model.day - model.dayOffset,
       previousDay: model.previousDay,
       spaceObjects: {}
     };
-    console.log( 'save', model.previousDay );
+
     model.spaceObjects.forEach( function( name ) {
       obj = model.planetModes[num][name];
       if ( obj ) {
-        self.state[num].spaceObjects[name] = {};
-        spaceObject = self.state[num].spaceObjects[name];
+        state.spaceObjects[name] = {};
+        spaceObject = state.spaceObjects[name];
         for ( var prop in obj ) {
           if ( obj.hasOwnProperty( prop ) ) {
             spaceObject[prop] = obj[prop];
@@ -209,23 +224,23 @@ define( function( require ) {
         spaceObject.x = model[name + 'Position'].x / model.planetModes[num].options.scale;
         spaceObject.y = model[name + 'Position'].y / model.planetModes[num].options.scale;
         if ( !spaceObject.fixed ) {
-          spaceObject.velocity = {
-            x: model[name + 'Velocity'].x,
-            y: model[name + 'Velocity'].y
-          };
+          spaceObject.velocity = model[name + 'Velocity'].copy();
         }
         spaceObject.massCoeff = model[name + 'MassCoeff'];
-        spaceObject.acceleration = {
-          x: model[name + 'Acceleration'].x,
-          y: model[name + 'Acceleration'].y
-        };
-        spaceObject.velocityHalf = {
-          x: model[name + 'VelocityHalf'].x,
-          y: model[name + 'VelocityHalf'].y
-        };
+        spaceObject.acceleration = model[name + 'Acceleration'].copy();
+        spaceObject.velocityHalf = model[name + 'VelocityHalf'].copy();
         spaceObject.exploded = model[name + 'Exploded'];
       }
     } );
+
+    return state;
+  };
+
+  SpaceObjects.prototype.saveState = function( model, num, target ) {
+    if ( !this.state[num] ) {
+      this.state[num] = [];
+    }
+    this.state[num][target] = this.getState( model, num );
   };
 
   return SpaceObjects;
