@@ -15,11 +15,11 @@ define( [
     'use strict';
 
     var simOptions = {
-      credits: 'PhET Development Team -\n' +
-               'Software Development: Sam Reid, John Blanco, Chris Malley\n' +
-               'Design Team: Carl Wieman, Trish Loeblein, Wendy Adams\n',
-      thanks: 'Thanks -\n' +
-              'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
+      credits: {
+        softwareDevelopment: 'Sam Reid, John Blanco',
+        designTeam: 'Carl Wieman, Trish Loeblein, Wendy Adams',
+        thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
+      }
     };
 
     var Image = require( 'SCENERY/nodes/Image' );
