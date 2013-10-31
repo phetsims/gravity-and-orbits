@@ -1,5 +1,6 @@
+// Copyright 2002-2013, University of Colorado Boulder
+
 /**
- * Copyright 2002-2013, University of Colorado
  * Container for mass sliders
  *
  * @author Andrey Zelenkov (Mlearner)

@@ -1,5 +1,6 @@
+// Copyright 2002-2013, University of Colorado Boulder
+
 /**
- * Copyright 2002-2013, University of Colorado
  * view for space objects property checkbox
  *
  * @author Andrey Zelenkov (Mlearner)

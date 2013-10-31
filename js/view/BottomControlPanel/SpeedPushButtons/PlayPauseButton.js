@@ -1,5 +1,6 @@
+// Copyright 2002-2013, University of Colorado Boulder
+
 /**
- * Copyright 2002-2013, University of Colorado
  * Control Play/Pause and Step buttons view
  *
  * @author Andrey Zelenkov (Mlearner)
