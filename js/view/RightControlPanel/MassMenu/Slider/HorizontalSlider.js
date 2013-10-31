@@ -2,7 +2,7 @@
  * Copyright 2002-2013, University of Colorado
  * view for horizontal slider control
  *
- * @author Zndrey Zelenkov (Mlearner)
+ * @author Andrey Zelenkov (Mlearner)
  */
 
 define( function( require ) {
