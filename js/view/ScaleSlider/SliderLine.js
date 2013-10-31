@@ -17,18 +17,18 @@ define( function( require ) {
   function Slider( x, y, h, targetProperty, value ) {
     Node.call( this, {x: x, y: y} );
     var options = {
-        line: {
-          width: 3,
-          height: h,
-          color: 'white'
-        },
-        track: {
-          width: 30,
-          height: 20,
-          arcSize: 3,
-          options: {fill: 'gray', stroke: "#000", lineWidth: 3 }
-        }
-      };
+      line: {
+        width: 3,
+        height: h,
+        color: 'white'
+      },
+      track: {
+        width: 30,
+        height: 20,
+        arcSize: 3,
+        options: {fill: 'gray', stroke: "#000", lineWidth: 3 }
+      }
+    };
 
     // add line
     this.addChild( new Rectangle( -options.line.width / 2, -( options.track.options.lineWidth ? options.track.options.lineWidth / 2 : 0), options.line.width, options.line.height, {fill: options.line.color } ) );

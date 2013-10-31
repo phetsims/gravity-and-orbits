@@ -11,7 +11,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
 
-  var PlayPauseButton = require('view/BottomControlPanel/SpeedPushButtons/PlayPauseButton');
+  var PlayPauseButton = require( 'view/BottomControlPanel/SpeedPushButtons/PlayPauseButton' );
 
   function SpeedPushButtons( model, coords ) {
     var self = this;
