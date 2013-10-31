@@ -25,8 +25,9 @@ define(
 
     var simOptions = {
       credits: {
-        softwareDevelopment: 'Sam Reid, John Blanco',
-        designTeam: 'Carl Wieman, Trish Loeblein, Wendy Adams',
+        leadDesign: 'Noah Podolefsky, Emily Moore',
+        softwareDevelopment: 'Sam Reid, Jon Olson',
+        designTeam: 'Kathy Perkins, Trish Loeblein',
         thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
       }
     };
