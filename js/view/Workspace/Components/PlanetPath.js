@@ -26,98 +26,129 @@ define( function( require ) {
       spaceStation: 'gray'
     };
 
-    // max length of paths
-    self.totalLengthMax = [
-      {
-        sun: 2000,
-        earth: 2000
-      },
-      {
-        sun: 1400,
-        earth: 900,
-        moon: 1015
-      },
-      {
-        earth: 0,
-        moon: 700
-      },
-      {
-        earth: 1400,
-        spaceStation: 620
-      }
-    ];
+    self.time = [];
+    self.maxTime = [400, 300, 20, 0.05];
 
-    // variables for each space object
-    self.prevPosition = {};
-    self.totalLength = {};
-    self.path = {};
-
-    // add observers for space object's positions
-    self.clearPath( model );
+    self.clearAll( model );
     model.spaceObjects.forEach( function( el ) {
-      model[el + 'PositionProperty'].link( function( newPosition ) {
+      model.dayProperty.link( function() {
         if ( !model[el + 'Exploded'] ) {
-          var dr = newPosition.minus( self.prevPosition[el][self.prevPosition[el].length - 1] ).magnitude(), num = model.planetMode;
-          if ( dr > 2 && self.flag ) {
-            self.addPath( el, newPosition );
-            self.totalLength[el] += dr;
-            self.checkLength( el );
+          var newPosition = model[el + 'Position'];
+          var dr = newPosition.minus( self.prevPosition[self.num][el][self.prevPosition[self.num][el].length - 1] ).magnitude();
+          if ( dr > 2 && self.flag && model.planetMode === self.num ) {
+            self.add( model, el, newPosition );
           }
         }
       } );
     } );
 
     model.pathProperty.link( function( flag ) {
-      self.clearPath( model );
+      self.clearAll( model );
       self.flag = flag;
     } );
 
     model.planetModeProperty.link( function( num ) {
-      self.clearPath( model );
-      self.num = num;
+      self.hide( model, self.num );
+      self.show( model, self.num = num );
     } );
 
     model.refreshModeProperty.link( function( flag ) {
       if ( flag ) {
-        self.clearPath( model );
+        self.clearOne( model, self.num );
       }
     } );
 
     model.rewindProperty.link( function( flag ) {
       if ( flag ) {
-        self.clearPath( model );
+        self.clearOne( model, self.num );
       }
+    } );
+
+    model.dayProperty.link( function( newDay, oldDay ) {
+      if ( model.planetMode !== self.num ) {return;}
+      self.time[self.num] += (newDay - oldDay) / model.speed;
     } );
   }
 
   inherit( Node, PlanetPath );
 
-  PlanetPath.prototype.addPath = function( el, newPosition ) {
-    var prevPosition = this.prevPosition[el][this.prevPosition[el].length - 1],
+  PlanetPath.prototype.add = function( model, el, newPosition ) {
+    var prevPosition = this.prevPosition[this.num][el][this.prevPosition[this.num][el].length - 1],
       path = new Path( new Shape().moveTo( prevPosition.x, prevPosition.y ).lineTo( newPosition.x, newPosition.y ), {stroke: this.color[el], lineWidth: 3} );
 
-    this.path[el].push( path );
+    this.path[this.num][el].push( {view: path, time: this.time[this.num]} );
     this.addChild( path );
-    this.prevPosition[el].push( newPosition );
+    this.prevPosition[this.num][el].push( newPosition );
+
+    this.check( model );
   };
 
-  PlanetPath.prototype.checkLength = function( el ) {
-    var dr, num = this.num;
-    while ( this.totalLength[el] > this.totalLengthMax[num][el] ) {
-      dr = this.prevPosition[el][0].minus( this.prevPosition[el][1] ).magnitude();
-      this.prevPosition[el].shift();
-      this.removeChild( this.path[el].shift() );
-      this.totalLength[el] -= dr;
-    }
+  PlanetPath.prototype.check = function( model ) {
+    var self = this, paths, path;
+
+    model.spaceObjects.forEach( function( el ) {
+      paths = self.path[self.num][el];
+      if ( !paths.length ) {return;}
+
+      while ( self.time[self.num] - paths[0].time > self.maxTime[self.num] ) {
+        path = paths.shift();
+        self.removeChild( path.view );
+        if ( !paths.length ) {return;}
+      }
+    } );
   };
 
-  PlanetPath.prototype.clearPath = function( model ) {
+  PlanetPath.prototype.clearAll = function( model ) {
     var self = this;
     self.removeAllChildren();
+
+    self.num = model.planetMode;
+    self.path = [];
+    self.prevPosition = [];
+    model.planetModes.forEach( function( el, i ) {
+      self.time[i] = 0;
+      self.path[i] = {};
+      self.prevPosition[i] = {};
+      model.spaceObjects.forEach( function( el ) {
+        self.path[i][el] = [];
+        self.prevPosition[i][el] = [model[el + 'Position']];
+      } );
+    } );
+  };
+
+  PlanetPath.prototype.clearOne = function( model, mode ) {
+    var self = this;
     model.spaceObjects.forEach( function( el ) {
-      self.prevPosition[el] = [model[el + 'Position']];
-      self.totalLength[el] = 0;
-      self.path[el] = [];
+      self.path[mode][el].forEach( function( obj ) {
+        self.removeChild( obj.view );
+      } );
+      self.path[mode][el] = [];
+      self.prevPosition[mode][el] = [model[el + 'Position']];
+    } );
+  };
+
+  PlanetPath.prototype.hide = function( model, mode ) {
+    var self = this;
+    model.spaceObjects.forEach( function( el ) {
+      for ( var i = 0; i < self.path[mode][el].length; i++ ) {
+        self.path[mode][el][i].view.setVisible( false );
+      }
+    } );
+  };
+
+  PlanetPath.prototype.show = function( model, mode ) {
+    var self = this;
+    model.spaceObjects.forEach( function( el ) {
+      for ( var i = 0; i < self.path[mode][el].length; i++ ) {
+        self.path[mode][el][i].view.setVisible( true );
+      }
+
+      if ( self.prevPosition[mode][el].length > 1 ) {
+        self.prevPosition[mode][el] = [self.prevPosition[mode][el].pop()];
+      }
+      else {
+        self.prevPosition[mode][el] = [model[el + 'Position']];
+      }
     } );
   };
 
