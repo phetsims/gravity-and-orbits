@@ -289,8 +289,7 @@ define( function( require ) {
 
   inherit( PropertySet, GravityAndOrbitsModel, {
     step: function( dt ) {
-      if ( this.play && !this.rewindLock ) {
-        this.lastStep = dt;
+      if ( this.play ) {
         this.stepManual( dt );
       }
     },
