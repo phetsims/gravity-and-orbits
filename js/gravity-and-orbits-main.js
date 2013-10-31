@@ -6,20 +6,28 @@
  * @author Andrey Zelenkov (Mlearner)
  */
 
-define( [
-  'JOIST/SimLauncher', 'JOIST/Sim', 'JOIST/Screen', 'model/GravityAndOrbitsModel', 'view/GravityAndOrbitsView',
-  'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name',
-  'image!GRAVITY_AND_ORBITS/cartoon_icon.png', 'image!GRAVITY_AND_ORBITS/to_scale_icon.png',
-  'string!GRAVITY_AND_ORBITS/cartoon', 'string!GRAVITY_AND_ORBITS/toScale'],
-  function( SimLauncher, Sim, Screen, GravityAndOrbitsModel, GravityAndOrbitsView, titleString, cartoonIcon, toScaleIcon, cartoonString, toScaleString ) {
+define(
+  function( require ) {
     'use strict';
 
+    var
+      SimLauncher = require( 'JOIST/SimLauncher' ),
+      Sim = require( 'JOIST/Sim' ),
+      Screen = require( 'JOIST/Screen' ),
+      GravityAndOrbitsModel = require( 'model/GravityAndOrbitsModel' ),
+      GravityAndOrbitsView = require( 'view/GravityAndOrbitsView' ),
+      titleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' ),
+      cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' ),
+      toScaleIcon = require( 'image!GRAVITY_AND_ORBITS/to_scale_icon.png' ),
+      cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' ),
+      toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
+
     var simOptions = {
-      credits: 'PhET Development Team -\n' +
-               'Software Development: Sam Reid, John Blanco, Chris Malley\n' +
-               'Design Team: Carl Wieman, Trish Loeblein, Wendy Adams\n',
-      thanks: 'Thanks -\n' +
-              'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
+      credits: {
+        softwareDevelopment: 'Sam Reid, John Blanco',
+        designTeam: 'Carl Wieman, Trish Loeblein, Wendy Adams',
+        thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
+      }
     };
 
     var Image = require( 'SCENERY/nodes/Image' );
