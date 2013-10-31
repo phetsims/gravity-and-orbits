@@ -20,7 +20,8 @@ define(
       cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' ),
       toScaleIcon = require( 'image!GRAVITY_AND_ORBITS/to_scale_icon.png' ),
       cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' ),
-      toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
+      toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' ),
+      ScreenView = require( 'JOIST/ScreenView' );
 
     var simOptions = {
       credits: {
@@ -36,12 +37,12 @@ define(
       //Create and start the sim
       new Sim( titleString, [
         new Screen( cartoonString, new Image( cartoonIcon ),
-          function() { return new GravityAndOrbitsModel( 768, 504, cartoonString ); },
+          function() { return new GravityAndOrbitsModel( ScreenView.LAYOUT_BOUNDS.width, ScreenView.LAYOUT_BOUNDS.height, cartoonString ); },
           function( model ) { return new GravityAndOrbitsView( model ); },
           { backgroundColor: '#000' }
         ),
         new Screen( toScaleString, new Image( toScaleIcon ),
-          function() { return new GravityAndOrbitsModel( 768, 504, toScaleString ); },
+          function() { return new GravityAndOrbitsModel( ScreenView.LAYOUT_BOUNDS.width, ScreenView.LAYOUT_BOUNDS.height, toScaleString ); },
           function( model ) { return new GravityAndOrbitsView( model ); },
           { backgroundColor: '#000' }
         )
