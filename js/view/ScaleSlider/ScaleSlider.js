@@ -21,7 +21,7 @@ define( function( require ) {
     this.addChild( new SliderButton( 0, 0, model, options.range, options.step, true ) );
 
     // add slide line
-    this.addChild( new SliderLine( 0, 34, 150, model.scaleProperty, options.range ) );
+    this.addChild( new SliderLine( 0, 28, model.scaleProperty, options.range ) );
 
     // add minus button
     this.addChild( new SliderButton( 0, 190, model, options.range, options.step, false ) );
