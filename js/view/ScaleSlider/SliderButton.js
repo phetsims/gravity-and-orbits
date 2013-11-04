@@ -40,7 +40,7 @@ define( function( require ) {
     };
 
     // create button
-    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { callback: callback } );
+    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: callback } );
 
     this.addChild( pushButton );
   }

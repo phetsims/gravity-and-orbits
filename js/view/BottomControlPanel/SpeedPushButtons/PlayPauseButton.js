@@ -50,7 +50,7 @@ define( function( require ) {
       new Image( buttonStepHoverImg ),
       new Image( buttonStepPressedImg ),
       new Image( buttonStepDeactivatedImg ),
-      {x: 70, y: 7, callback: step} ) );
+      {x: 70, y: 7, listener: step} ) );
     stepButton.enabled = false;
 
     // add rewind button
@@ -60,7 +60,7 @@ define( function( require ) {
       new Image( buttonRewindHoverImg ),
       new Image( buttonRewindPressedImg ),
       new Image( buttonRewindDeactivatedImg ),
-      {x: -50, y: 7, callback: rewind} ) );
+      {x: -50, y: 7, listener: rewind} ) );
     rewindButton.enabled = false;
 
     model.playProperty.link( function updatePlayPauseButton( value ) {

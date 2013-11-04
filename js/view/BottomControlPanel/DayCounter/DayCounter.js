@@ -42,14 +42,14 @@ define( function( require ) {
       overNode: new Node( {children: [node]} ),
       downNode: new Node( {children: [node]} ),
       disabledNode: new Node( {children: [node]} ),
-      callback: function() {
+      listener: function() {
         model.dayOffset = model.day;
         updateDay();
       }
     };
 
     // create button
-    this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { callback: options.callback } ) );
+    this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.callback } ) );
 
     var updateDay = function() {
       self.day.setText( parseInt( (model.day - model.dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );

@@ -32,13 +32,13 @@ define( function( require ) {
       overNode: new Node( {children: [node]} ),
       downNode: new Node( {children: [node]} ),
       disabledNode: new Node( {children: [node]} ),
-      callback: function() {
+      listener: function() {
         model.refreshMode = true;
       }
     };
 
     // create button
-    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { callback: options.callback } );
+    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.callback } );
     this.addChild( pushButton );
 
     model.planetModeProperty.link( function( mode ) {
