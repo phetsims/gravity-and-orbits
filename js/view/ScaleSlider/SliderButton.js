@@ -12,7 +12,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PushButton = require( 'SUN/PushButton' );
-  var RectangleButton = require( 'SUN/RectangleButton' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
@@ -41,7 +40,7 @@ define( function( require ) {
     };
 
     // create button
-    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, callback );
+    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { callback: callback } );
 
     this.addChild( pushButton );
   }

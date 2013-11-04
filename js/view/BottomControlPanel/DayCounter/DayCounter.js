@@ -49,7 +49,7 @@ define( function( require ) {
     };
 
     // create button
-    this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, options.callback ) );
+    this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { callback: options.callback } ) );
 
     var updateDay = function() {
       self.day.setText( parseInt( (model.day - model.dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
