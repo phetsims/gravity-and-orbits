@@ -15,7 +15,6 @@ define( function( require ) {
   var DayCounter = require( 'view/BottomControlPanel/DayCounter/DayCounter' );
 
   function BottomControlPanel( model, x, y ) {
-    var self = this;
     Node.call( this, {x: x, y: y, scale: 0.9} );
 
     // add speed check box
