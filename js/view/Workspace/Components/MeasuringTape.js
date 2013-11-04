@@ -179,44 +179,38 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, MeasuringTape );
+  return inherit( Node, MeasuringTape, {
+    init: function( option, angle ) {
+      this.rotate( -angle );
+      this.translate( option.x, option.y );
+      this.setTip( option.lengthDefault, 0 );
+      this.base.setX( -this.centerRotation.x + option.x );
+      this.base.setY( -this.centerRotation.y + option.y );
+    },
+    rotate: function( angle ) {
+      this.base.rotateAround( new Vector2( this.notBase.x, this.notBase.y ), angle );
+    },
+    scale: function( scale ) {
+      this.options[this.mode].lengthDefault *= 1 / this.prevScale;
+      this.options[this.mode].lengthDefault *= scale;
+      this.setTip( this.options[this.mode].tipX / this.prevScale, this.options[this.mode].tipY / this.prevScale );
+      this.setTip( this.options[this.mode].tipX * scale, this.options[this.mode].tipY * scale );
+      this.prevScale = scale;
+    },
+    setTip: function( x, y ) {
+      var option = this.options[this.mode];
+      option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
 
-  MeasuringTape.prototype.init = function( option, angle ) {
-    this.rotate( -angle );
-    this.translate( option.x, option.y );
-    this.setTip( option.lengthDefault, 0 );
-    this.base.setX( -this.centerRotation.x + option.x );
-    this.base.setY( -this.centerRotation.y + option.y );
-  };
-
-  MeasuringTape.prototype.rotate = function( angle ) {
-    this.base.rotateAround( new Vector2( this.notBase.x, this.notBase.y ), angle );
-  };
-
-  MeasuringTape.prototype.scale = function( scale ) {
-    this.options[this.mode].lengthDefault *= 1 / this.prevScale;
-    this.options[this.mode].lengthDefault *= scale;
-    this.setTip( this.options[this.mode].tipX / this.prevScale, this.options[this.mode].tipY / this.prevScale );
-    this.setTip( this.options[this.mode].tipX * scale, this.options[this.mode].tipY * scale );
-    this.prevScale = scale;
-  };
-
-  MeasuringTape.prototype.setTip = function( x, y ) {
-    var option = this.options[this.mode];
-    option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
-
-    this.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
-    this.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
-    this.tip.setX( x );
-    this.tip.setY( y );
-    option.tipX = x;
-    option.tipY = y;
-  };
-
-  MeasuringTape.prototype.translate = function( x, y ) {
-    this.notBase.setX( x );
-    this.notBase.setY( y );
-  };
-
-  return MeasuringTape;
+      this.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
+      this.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
+      this.tip.setX( x );
+      this.tip.setY( y );
+      option.tipX = x;
+      option.tipY = y;
+    },
+    translate: function( x, y ) {
+      this.notBase.setX( x );
+      this.notBase.setY( y );
+    }
+  } );
 } );

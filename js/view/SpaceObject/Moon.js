@@ -19,15 +19,13 @@ define( function( require ) {
     this.setRadius( radius );
   }
 
-  inherit( Node, Moon );
+  return inherit( Node, Moon, {
+    setRadius: function( radius ) {
+      var width = moonImg.width / 2, scale = radius / width;
+      if ( this.view ) {this.removeChild( this.view );}
 
-  Moon.prototype.setRadius = function( radius ) {
-    var width = moonImg.width / 2, scale = radius / width;
-    if ( this.view ) {this.removeChild( this.view );}
-
-    this.view = new Image( moonImg, {scale: scale, x: -width * scale, y: -width * scale} );
-    this.addChild( this.view );
-  };
-
-  return Moon;
+      this.view = new Image( moonImg, {scale: scale, x: -width * scale, y: -width * scale} );
+      this.addChild( this.view );
+    }
+  } );
 } );

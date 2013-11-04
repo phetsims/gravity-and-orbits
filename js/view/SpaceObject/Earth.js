@@ -28,27 +28,23 @@ define( function( require ) {
     this.setRadius( radius );
   }
 
-  inherit( Node, Earth );
+  return inherit( Node, Earth, {
+    setRadius: function( radius ) {
+      var width = earthImg.width / 2, scale = radius / width;
+      if ( this.view ) {this.removeChild( this.view );}
 
-  Earth.prototype.setRadius = function( radius ) {
-    var width = earthImg.width / 2, scale = radius / width;
-    if ( this.view ) {this.removeChild( this.view );}
+      this.view = new Image( earthImg, {scale: scale, x: -width * scale, y: -width * scale} );
+      this.addChild( this.view );
 
-    this.view = new Image( earthImg, {scale: scale, x: -width * scale, y: -width * scale} );
-    this.addChild( this.view );
-
-    this.viewGray.setRadius( radius );
-  };
-
-  Earth.prototype.setGrayView = function() {
-    this.viewGray.setVisible( true );
-    this.view.setVisible( false );
-  };
-
-  Earth.prototype.setDefaultView = function() {
-    this.viewGray.setVisible( false );
-    this.view.setVisible( true );
-  };
-
-  return Earth;
+      this.viewGray.setRadius( radius );
+    },
+    setGrayView: function() {
+      this.viewGray.setVisible( true );
+      this.view.setVisible( false );
+    },
+    setDefaultView: function() {
+      this.viewGray.setVisible( false );
+      this.view.setVisible( true );
+    }
+  } );
 } );

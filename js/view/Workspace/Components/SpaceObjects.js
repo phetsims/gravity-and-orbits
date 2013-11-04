@@ -137,111 +137,104 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, SpaceObjects );
-
-  SpaceObjects.prototype.showExplosion = function( position, radius ) {
-    var self = this, explosion = new Explosion( position, 2 * radius ), frames = 5;
-    this.addChild( explosion );
-    var interval = Timer.setInterval( function() {
-      explosion.scale( 0.8 );
-      if ( !--frames ) {
-        Timer.clearInterval( interval );
-        self.removeChild( explosion );
-      }
-    }, 50 );
-  };
-
-  SpaceObjects.prototype.checkExplosion = function( model ) {
-    var obj1, obj2, i, j, dx, dr, mode = model.planetModes[model.planetMode];
-
-    for ( i = 0; i < model.spaceObjects.length; i++ ) {
-      obj1 = model.spaceObjects[i];
-      if ( !mode[obj1] ) {continue;}
-      for ( j = i + 1; j < model.spaceObjects.length; j++ ) {
-        obj2 = model.spaceObjects[j];
-        if ( !mode[obj2] ) {continue;}
-        dx = model[obj1 + 'Position'].minus( model[obj2 + 'Position'] ).magnitude(); // distance between planets
-        dr = (model[obj1 + 'View'].getWidth() + model[obj2 + 'View'].getWidth()) / 2;
-        if ( !isFinite( dx ) || !isFinite( dr ) ) {
-          {continue;}
+  return inherit( Node, SpaceObjects, {
+    showExplosion: function( position, radius ) {
+      var self = this, explosion = new Explosion( position, 2 * radius ), frames = 5;
+      this.addChild( explosion );
+      var interval = Timer.setInterval( function() {
+        explosion.scale( 0.8 );
+        if ( !--frames ) {
+          Timer.clearInterval( interval );
+          self.removeChild( explosion );
         }
-        if ( dr > dx ) {
-          model[(model[obj1 + 'Mass'] > model[obj2 + 'Mass'] ? obj2 : obj1 ) + 'Exploded'] = true;
-        }
-      }
-    }
-  };
+      }, 50 );
+    },
+    checkExplosion: function( model ) {
+      var obj1, obj2, i, j, dx, dr, mode = model.planetModes[model.planetMode];
 
-  SpaceObjects.prototype.initState = function( model, num ) {
-    // set scale center
-    model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
-
-    this.removeChild( this.view );
-    model.scale = 1;
-    model.day = 0;
-    model.dayOffset = 0;
-    model.previousDay = 0;
-
-    // add new space objects
-    this.view = new SpaceObjectsBuilder( model, num );
-    this.addChild( this.view );
-  };
-
-  SpaceObjects.prototype.restoreState = function( model, num, target ) {
-    var state = this.state[num][target];
-    model.scale = state.scale;
-    model.scaleCenter = state.scaleCenter;
-
-    // add new space objects
-    this.removeChild( this.view );
-
-    model.dayOffset = model.day - state.dayShow;
-    model.previousDay = state.previousDay;
-    this.view = new SpaceObjectsBuilder( model, num, state.spaceObjects );
-    this.addChild( this.view );
-  };
-
-  SpaceObjects.prototype.getState = function( model, num ) {
-    var obj, spaceObject, state;
-    state = {
-      scale: model.scale,
-      scaleCenter: model.scaleCenter.copy(),
-      dayShow: model.day - model.dayOffset,
-      previousDay: model.previousDay,
-      spaceObjects: {}
-    };
-
-    model.spaceObjects.forEach( function( name ) {
-      obj = model.planetModes[num][name];
-      if ( obj ) {
-        state.spaceObjects[name] = {};
-        spaceObject = state.spaceObjects[name];
-        for ( var prop in obj ) {
-          if ( obj.hasOwnProperty( prop ) ) {
-            spaceObject[prop] = obj[prop];
+      for ( i = 0; i < model.spaceObjects.length; i++ ) {
+        obj1 = model.spaceObjects[i];
+        if ( !mode[obj1] ) {continue;}
+        for ( j = i + 1; j < model.spaceObjects.length; j++ ) {
+          obj2 = model.spaceObjects[j];
+          if ( !mode[obj2] ) {continue;}
+          dx = model[obj1 + 'Position'].minus( model[obj2 + 'Position'] ).magnitude(); // distance between planets
+          dr = (model[obj1 + 'View'].getWidth() + model[obj2 + 'View'].getWidth()) / 2;
+          if ( !isFinite( dx ) || !isFinite( dr ) ) {
+            {continue;}
+          }
+          if ( dr > dx ) {
+            model[(model[obj1 + 'Mass'] > model[obj2 + 'Mass'] ? obj2 : obj1 ) + 'Exploded'] = true;
           }
         }
-        spaceObject.x = model[name + 'Position'].x / model.planetModes[num].options.scale;
-        spaceObject.y = model[name + 'Position'].y / model.planetModes[num].options.scale;
-        if ( !spaceObject.fixed ) {
-          spaceObject.velocity = model[name + 'Velocity'].copy();
-        }
-        spaceObject.massCoeff = model[name + 'MassCoeff'];
-        spaceObject.acceleration = model[name + 'Acceleration'].copy();
-        spaceObject.velocityHalf = model[name + 'VelocityHalf'].copy();
-        spaceObject.exploded = model[name + 'Exploded'];
       }
-    } );
+    },
+    initState: function( model, num ) {
+      // set scale center
+      model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
 
-    return state;
-  };
+      this.removeChild( this.view );
+      model.scale = 1;
+      model.day = 0;
+      model.dayOffset = 0;
+      model.previousDay = 0;
 
-  SpaceObjects.prototype.saveState = function( model, num, target ) {
-    if ( !this.state[num] ) {
-      this.state[num] = [];
+      // add new space objects
+      this.view = new SpaceObjectsBuilder( model, num );
+      this.addChild( this.view );
+    },
+    restoreState: function( model, num, target ) {
+      var state = this.state[num][target];
+      model.scale = state.scale;
+      model.scaleCenter = state.scaleCenter;
+
+      // add new space objects
+      this.removeChild( this.view );
+
+      model.dayOffset = model.day - state.dayShow;
+      model.previousDay = state.previousDay;
+      this.view = new SpaceObjectsBuilder( model, num, state.spaceObjects );
+      this.addChild( this.view );
+    },
+    getState: function( model, num ) {
+      var obj, spaceObject, state;
+      state = {
+        scale: model.scale,
+        scaleCenter: model.scaleCenter.copy(),
+        dayShow: model.day - model.dayOffset,
+        previousDay: model.previousDay,
+        spaceObjects: {}
+      };
+
+      model.spaceObjects.forEach( function( name ) {
+        obj = model.planetModes[num][name];
+        if ( obj ) {
+          state.spaceObjects[name] = {};
+          spaceObject = state.spaceObjects[name];
+          for ( var prop in obj ) {
+            if ( obj.hasOwnProperty( prop ) ) {
+              spaceObject[prop] = obj[prop];
+            }
+          }
+          spaceObject.x = model[name + 'Position'].x / model.planetModes[num].options.scale;
+          spaceObject.y = model[name + 'Position'].y / model.planetModes[num].options.scale;
+          if ( !spaceObject.fixed ) {
+            spaceObject.velocity = model[name + 'Velocity'].copy();
+          }
+          spaceObject.massCoeff = model[name + 'MassCoeff'];
+          spaceObject.acceleration = model[name + 'Acceleration'].copy();
+          spaceObject.velocityHalf = model[name + 'VelocityHalf'].copy();
+          spaceObject.exploded = model[name + 'Exploded'];
+        }
+      } );
+
+      return state;
+    },
+    saveState: function( model, num, target ) {
+      if ( !this.state[num] ) {
+        this.state[num] = [];
+      }
+      this.state[num][target] = this.getState( model, num );
     }
-    this.state[num][target] = this.getState( model, num );
-  };
-
-  return SpaceObjects;
+  } );
 } );

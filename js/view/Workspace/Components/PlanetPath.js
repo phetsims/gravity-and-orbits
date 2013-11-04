@@ -70,87 +70,80 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, PlanetPath );
+  return inherit( Node, PlanetPath, {
+    add: function( model, el, newPosition ) {
+      var prevPosition = this.prevPosition[this.num][el][this.prevPosition[this.num][el].length - 1],
+        path = new Path( new Shape().moveTo( prevPosition.x, prevPosition.y ).lineTo( newPosition.x, newPosition.y ), {stroke: this.color[el], lineWidth: 3} );
 
-  PlanetPath.prototype.add = function( model, el, newPosition ) {
-    var prevPosition = this.prevPosition[this.num][el][this.prevPosition[this.num][el].length - 1],
-      path = new Path( new Shape().moveTo( prevPosition.x, prevPosition.y ).lineTo( newPosition.x, newPosition.y ), {stroke: this.color[el], lineWidth: 3} );
+      this.path[this.num][el].push( {view: path, time: this.time[this.num]} );
+      this.addChild( path );
+      this.prevPosition[this.num][el].push( newPosition );
 
-    this.path[this.num][el].push( {view: path, time: this.time[this.num]} );
-    this.addChild( path );
-    this.prevPosition[this.num][el].push( newPosition );
+      this.check( model );
+    },
+    check: function( model ) {
+      var self = this, paths, path;
 
-    this.check( model );
-  };
-
-  PlanetPath.prototype.check = function( model ) {
-    var self = this, paths, path;
-
-    model.spaceObjects.forEach( function( el ) {
-      paths = self.path[self.num][el];
-      if ( !paths.length ) {return;}
-
-      while ( self.time[self.num] - paths[0].time > self.maxTime[self.num] ) {
-        path = paths.shift();
-        self.removeChild( path.view );
-        if ( !paths.length ) {return;}
-      }
-    } );
-  };
-
-  PlanetPath.prototype.clearAll = function( model ) {
-    var self = this;
-    self.removeAllChildren();
-
-    self.num = model.planetMode;
-    self.path = [];
-    self.prevPosition = [];
-    model.planetModes.forEach( function( el, i ) {
-      self.time[i] = 0;
-      self.path[i] = {};
-      self.prevPosition[i] = {};
       model.spaceObjects.forEach( function( el ) {
-        self.path[i][el] = [];
-        self.prevPosition[i][el] = [model[el + 'Position']];
+        paths = self.path[self.num][el];
+        if ( !paths.length ) {return;}
+
+        while ( self.time[self.num] - paths[0].time > self.maxTime[self.num] ) {
+          path = paths.shift();
+          self.removeChild( path.view );
+          if ( !paths.length ) {return;}
+        }
       } );
-    } );
-  };
+    },
+    clearAll: function( model ) {
+      var self = this;
+      self.removeAllChildren();
 
-  PlanetPath.prototype.clearOne = function( model, mode ) {
-    var self = this;
-    model.spaceObjects.forEach( function( el ) {
-      self.path[mode][el].forEach( function( obj ) {
-        self.removeChild( obj.view );
+      self.num = model.planetMode;
+      self.path = [];
+      self.prevPosition = [];
+      model.planetModes.forEach( function( el, i ) {
+        self.time[i] = 0;
+        self.path[i] = {};
+        self.prevPosition[i] = {};
+        model.spaceObjects.forEach( function( el ) {
+          self.path[i][el] = [];
+          self.prevPosition[i][el] = [model[el + 'Position']];
+        } );
       } );
-      self.path[mode][el] = [];
-      self.prevPosition[mode][el] = [model[el + 'Position']];
-    } );
-  };
-
-  PlanetPath.prototype.hide = function( model, mode ) {
-    var self = this;
-    model.spaceObjects.forEach( function( el ) {
-      for ( var i = 0; i < self.path[mode][el].length; i++ ) {
-        self.path[mode][el][i].view.setVisible( false );
-      }
-    } );
-  };
-
-  PlanetPath.prototype.show = function( model, mode ) {
-    var self = this;
-    model.spaceObjects.forEach( function( el ) {
-      for ( var i = 0; i < self.path[mode][el].length; i++ ) {
-        self.path[mode][el][i].view.setVisible( true );
-      }
-
-      if ( self.prevPosition[mode][el].length > 1 ) {
-        self.prevPosition[mode][el] = [self.prevPosition[mode][el].pop()];
-      }
-      else {
+    },
+    clearOne: function( model, mode ) {
+      var self = this;
+      model.spaceObjects.forEach( function( el ) {
+        self.path[mode][el].forEach( function( obj ) {
+          self.removeChild( obj.view );
+        } );
+        self.path[mode][el] = [];
         self.prevPosition[mode][el] = [model[el + 'Position']];
-      }
-    } );
-  };
+      } );
+    },
+    hide: function( model, mode ) {
+      var self = this;
+      model.spaceObjects.forEach( function( el ) {
+        for ( var i = 0; i < self.path[mode][el].length; i++ ) {
+          self.path[mode][el][i].view.setVisible( false );
+        }
+      } );
+    },
+    show: function( model, mode ) {
+      var self = this;
+      model.spaceObjects.forEach( function( el ) {
+        for ( var i = 0; i < self.path[mode][el].length; i++ ) {
+          self.path[mode][el][i].view.setVisible( true );
+        }
 
-  return PlanetPath;
+        if ( self.prevPosition[mode][el].length > 1 ) {
+          self.prevPosition[mode][el] = [self.prevPosition[mode][el].pop()];
+        }
+        else {
+          self.prevPosition[mode][el] = [model[el + 'Position']];
+        }
+      } );
+    }
+  } );
 } );
