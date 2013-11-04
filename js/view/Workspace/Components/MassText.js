@@ -42,19 +42,20 @@ define( function( require ) {
 
       // update mass text position
       var setMassTextPosition = function() {
+        if ( !self.flag ) {return;}
         var height = ( isFinite( model[el + 'View'].getHeight() ) ? model[el + 'View'].getHeight() : 0),
           positions = model[el + 'Position'];
 
-        model[el + 'MassText'].x = positions.x * model.scale - model[el + 'MassText'].getWidth() / 2;
-        model[el + 'MassText'].y = (positions.y + height / 2) * model.scale + 15;
+        model[el + 'MassText'].setTranslation( positions.x * model.scale - model[el + 'MassText'].getWidth() / 2, (positions.y + height / 2) * model.scale + 15 );
       };
 
       // set observers
       model[el + 'ExplodedProperty'].link( function( exploded ) {
-        self.setVisible( !exploded );
+        model[el + 'MassText'].setVisible( !exploded );
       } );
 
       model.planetModeProperty.link( function() {
+        model[el + 'MassText'].setVisible( self.flag );
         setMassText();
         setMassTextPosition();
       } );
@@ -76,7 +77,9 @@ define( function( require ) {
       } );
 
       model.massProperty.link( function( flag ) {
+        self.flag = flag;
         model[el + 'MassText'].setVisible( flag );
+        setMassTextPosition();
       } );
 
       model.viewModeProperty.link( function( mode ) {
@@ -89,7 +92,6 @@ define( function( require ) {
         }
       } );
     } );
-
   }
 
   inherit( Node, MassText );
