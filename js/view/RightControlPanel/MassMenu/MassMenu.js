@@ -12,7 +12,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
 
-  var Slider = require( 'view/RightControlPanel/MassMenu/Slider/Slider' );
+  var Slider = require( 'view/RightControlPanel/MassMenu/Slider' );
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
   var ourEarthString = require( 'string!GRAVITY_AND_ORBITS/ourEarth' );
   var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );

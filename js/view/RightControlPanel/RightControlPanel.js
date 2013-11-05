@@ -12,8 +12,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PlanetModeMenu = require( 'view/RightControlPanel/PlanetModeMenu/PlanetModeMenu' );
-  var GravityModeMenu = require( 'view/RightControlPanel/GravityModeMenu/GravityModeMenu' );
-  var SpaceObjectsPropertyCheckbox = require( 'view/RightControlPanel/SpaceObjectsPropertyCheckbox/SpaceObjectsPropertyCheckbox' );
+  var GravityModeMenu = require( 'view/RightControlPanel/GravityModeMenu' );
+  var SpaceObjectsPropertyCheckbox = require( 'view/RightControlPanel/SpaceObjectsPropertyCheckbox' );
   var MassMenu = require( 'view/RightControlPanel/MassMenu/MassMenu' );
 
   function RightControlPanel( model, x, y ) {

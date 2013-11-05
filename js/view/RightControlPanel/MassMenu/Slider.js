@@ -11,7 +11,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var HorizontalSlider = require( 'view/RightControlPanel/MassMenu/Slider/HorizontalSlider' );
+  var HorizontalSlider = require( 'view/RightControlPanel/MassMenu/SliderHorizontalPart' );
 
   var sliderImg = require( 'image!GRAVITY_AND_ORBITS/slider.png' );
 
