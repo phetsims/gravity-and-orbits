@@ -152,16 +152,16 @@ define( function( require ) {
 
 
     // add observers
-    model.tapeProperty.link( function( flag ) {
-      self.flag = flag;
-      self.setVisible( flag );
+    model.tapeProperty.link( function( visibility ) {
+      self.visibility = visibility;
+      self.setVisible( visibility );
     } );
 
     model.viewModeProperty.link( function( mode ) {
       if ( model.viewModes[0] === mode ) { // cartoon
         self.setVisible( false );
       }
-      else if ( model.viewModes[1] === mode && self.flag ) { // scale
+      else if ( model.viewModes[1] === mode && self.visibility ) { // scale
         self.setVisible( true );
       }
     } );

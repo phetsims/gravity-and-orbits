@@ -31,7 +31,7 @@ define( function( require ) {
     }
 
     var checkArrows = function() {
-      self[(self.flag ? 'show' : 'hide') + 'Arrows']( model );
+      self[(self.visibility ? 'show' : 'hide') + 'Arrows']( model );
     };
 
     model.spaceObjects.forEach( function( el ) {
@@ -44,8 +44,8 @@ define( function( require ) {
       } );
     } );
 
-    model.velocityArrowProperty.link( function( flag ) {
-      self.flag = flag;
+    model.velocityArrowProperty.link( function( visibility ) {
+      self.visibility = visibility;
       checkArrows();
     } );
 

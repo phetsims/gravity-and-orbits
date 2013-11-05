@@ -20,7 +20,7 @@ define( function( require ) {
     this.init( model );
 
     var drawArrows = function() {
-      self[(self.flag ? 'set' : 'hide') + 'Arrows']( model );
+      self[(self.visibility ? 'set' : 'hide') + 'Arrows']( model );
     };
 
     model.spaceObjects.forEach( function( el ) {
@@ -33,8 +33,8 @@ define( function( require ) {
       } );
     } );
 
-    model.forceArrowProperty.link( function( flag ) {
-      self.flag = flag;
+    model.forceArrowProperty.link( function( visibility ) {
+      self.visibility = visibility;
       drawArrows();
     } );
 

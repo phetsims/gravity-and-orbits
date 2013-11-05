@@ -63,8 +63,8 @@ define( function( require ) {
       } );
     } );
 
-    model.refreshModeProperty.link( function( flag ) {
-      if ( flag ) {
+    model.refreshModeProperty.link( function( trigger ) {
+      if ( trigger ) {
         // disable explosion
         model.showExplosion = false;
 
@@ -123,14 +123,14 @@ define( function( require ) {
       model[earth + 'View']['set' + (coeff === 1 ? 'Default' : 'Gray') + 'View']();
     } );
 
-    model.playProperty.link( function( flag ) {
-      if ( flag ) {
+    model.playProperty.link( function( isPlay ) {
+      if ( isPlay ) {
         self.saveState( model, model.planetMode, 1 );
       }
     } );
 
-    model.rewindProperty.link( function( flag ) {
-      if ( flag ) {
+    model.rewindProperty.link( function( isRewind ) {
+      if ( isRewind ) {
         self.restoreState( model, model.planetMode, 1 );
         model.rewind = false;
       }

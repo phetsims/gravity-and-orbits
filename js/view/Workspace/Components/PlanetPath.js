@@ -35,16 +35,16 @@ define( function( require ) {
         if ( !model[el + 'Exploded'] ) {
           var newPosition = model[el + 'Position'];
           var dr = newPosition.minus( self.prevPosition[self.num][el][self.prevPosition[self.num][el].length - 1] ).magnitude();
-          if ( dr > 2 && self.flag && model.planetMode === self.num ) {
+          if ( dr > 2 && self.visibility && model.planetMode === self.num ) {
             self.add( model, el, newPosition );
           }
         }
       } );
     } );
 
-    model.pathProperty.link( function( flag ) {
+    model.pathProperty.link( function( visibility ) {
       self.clearAll( model );
-      self.flag = flag;
+      self.visibility = visibility;
     } );
 
     model.planetModeProperty.link( function( num ) {
@@ -52,14 +52,14 @@ define( function( require ) {
       self.show( model, self.num = num );
     } );
 
-    model.refreshModeProperty.link( function( flag ) {
-      if ( flag ) {
+    model.refreshModeProperty.link( function( trigger ) {
+      if ( trigger ) {
         self.clearOne( model, self.num );
       }
     } );
 
-    model.rewindProperty.link( function( flag ) {
-      if ( flag ) {
+    model.rewindProperty.link( function( isRewind ) {
+      if ( isRewind ) {
         self.clearOne( model, self.num );
       }
     } );

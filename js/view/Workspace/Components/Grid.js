@@ -56,7 +56,7 @@ define( function( require ) {
     var drawGrid = function() {
       var mode = self.mode;
       self.removeAllChildren();
-      if ( self.flag ) {
+      if ( self.visibility ) {
         var opt = options[mode];
         for ( var i = 0; opt.x0 + i * opt.dx < opt.x1; i++ ) {
           self.addChild( new Path( Shape.lineSegment( opt.x0 + i * opt.dx, opt.y0, opt.x0 + i * opt.dx, opt.y1 ), {stroke: 'gray', lineWidth: 1} ) );
@@ -72,8 +72,8 @@ define( function( require ) {
       drawGrid();
     } );
 
-    model.gridProperty.link( function( flag ) {
-      self.flag = flag;
+    model.gridProperty.link( function( visibility ) {
+      self.visibility = visibility;
       drawGrid();
     } );
   }

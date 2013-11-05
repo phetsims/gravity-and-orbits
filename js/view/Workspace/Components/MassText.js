@@ -42,7 +42,7 @@ define( function( require ) {
 
       // update mass text position
       var setMassTextPosition = function() {
-        if ( !self.flag ) {return;}
+        if ( !self.visibility ) {return;}
         var height = ( isFinite( model[el + 'View'].getHeight() ) ? model[el + 'View'].getHeight() : 0),
           positions = model[el + 'Position'];
 
@@ -55,7 +55,7 @@ define( function( require ) {
       } );
 
       model.planetModeProperty.link( function() {
-        model[el + 'MassText'].setVisible( self.flag );
+        model[el + 'MassText'].setVisible( self.visibility );
         setMassText();
         setMassTextPosition();
       } );
@@ -76,9 +76,9 @@ define( function( require ) {
         setMassTextPosition();
       } );
 
-      model.massProperty.link( function( flag ) {
-        self.flag = flag;
-        model[el + 'MassText'].setVisible( flag );
+      model.massProperty.link( function( visibility ) {
+        self.visibility = visibility;
+        model[el + 'MassText'].setVisible( visibility );
         setMassTextPosition();
       } );
 
