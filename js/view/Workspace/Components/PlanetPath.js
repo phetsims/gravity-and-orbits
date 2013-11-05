@@ -31,9 +31,10 @@ define( function( require ) {
 
     self.clearAll( model );
     model.spaceObjects.forEach( function( el ) {
+      var body = model[el];
       model.dayProperty.link( function() {
-        if ( !model[el + 'Exploded'] ) {
-          var newPosition = model[el + 'Position'];
+        if ( !body.exploded ) {
+          var newPosition = body.position;
           var dr = newPosition.minus( self.prevPosition[self.num][el][self.prevPosition[self.num][el].length - 1] ).magnitude();
           if ( dr > 2 && self.visibility && model.planetMode === self.num ) {
             self.add( model, el, newPosition );
@@ -108,7 +109,7 @@ define( function( require ) {
         self.prevPosition[i] = {};
         model.spaceObjects.forEach( function( el ) {
           self.path[i][el] = [];
-          self.prevPosition[i][el] = [model[el + 'Position']];
+          self.prevPosition[i][el] = [model[el].position];
         } );
       } );
     },
@@ -119,7 +120,7 @@ define( function( require ) {
           self.removeChild( obj.view );
         } );
         self.path[mode][el] = [];
-        self.prevPosition[mode][el] = [model[el + 'Position']];
+        self.prevPosition[mode][el] = [model[el].position];
       } );
     },
     hide: function( model, mode ) {
@@ -141,7 +142,7 @@ define( function( require ) {
           self.prevPosition[mode][el] = [self.prevPosition[mode][el].pop()];
         }
         else {
-          self.prevPosition[mode][el] = [model[el + 'Position']];
+          self.prevPosition[mode][el] = [model[el].position];
         }
       } );
     }

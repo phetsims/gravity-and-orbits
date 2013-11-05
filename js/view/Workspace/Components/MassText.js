@@ -21,56 +21,57 @@ define( function( require ) {
 
     // add text for each space object
     model.spaceObjects.forEach( function( el ) {
-      model[el + 'MassText'] = new Text( "", { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} );
-      self.addChild( model[el + 'MassText'] );
+      var body = model[el];
+      body.massText = new Text( "", { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} );
+      self.addChild( body.massText );
 
       // update mass text
       var setMassText = function() {
         var text, defaultValue, precision;
 
-        if ( model.planetModes[model.planetMode][el] && !model[el + 'Exploded'] ) {
+        if ( model.planetModes[model.planetMode][el] && !body.exploded ) {
           text = model.planetModes[model.planetMode][el].massTooltip.text;
           defaultValue = model.planetModes[model.planetMode][el].massTooltip.defaultValue;
           precision = model.planetModes[model.planetMode][el].massTooltip.precision || 0;
 
-          model[el + 'MassText'].setText( (model[el + 'MassCoeff'] * defaultValue).toFixed( precision ).replace( "1.00", "1" ) + " " + text );
+          body.massText.setText( (body.massCoeff * defaultValue).toFixed( precision ).replace( "1.00", "1" ) + " " + text );
         }
         else {
-          model[el + 'MassText'].setText( "" );
+          body.massText.setText( "" );
         }
       };
 
       // update mass text position
       var setMassTextPosition = function() {
         if ( !self.visibility ) {return;}
-        var height = ( isFinite( model[el + 'View'].getHeight() ) ? model[el + 'View'].getHeight() : 0),
-          positions = model[el + 'Position'];
+        var height = ( isFinite( body.view.getHeight() ) ? body.view.getHeight() : 0),
+          positions = body.position;
 
-        model[el + 'MassText'].setTranslation( positions.x * model.scale - model[el + 'MassText'].getWidth() / 2, (positions.y + height / 2) * model.scale + 15 );
+        body.massText.setTranslation( positions.x * model.scale - body.massText.getWidth() / 2, (positions.y + height / 2) * model.scale + 15 );
       };
 
       // set observers
-      model[el + 'ExplodedProperty'].link( function( exploded ) {
+      body.explodedProperty.link( function( exploded ) {
         if ( self.visibility ) {
-          model[el + 'MassText'].setVisible( !exploded );
+          body.massText.setVisible( !exploded );
         }
       } );
 
       model.planetModeProperty.link( function() {
-        model[el + 'MassText'].setVisible( self.visibility );
+        body.massText.setVisible( self.visibility );
         setMassText();
         setMassTextPosition();
       } );
 
-      model[el + 'MassCoeffProperty'].link( function() {
+      body.massCoeffProperty.link( function() {
         setMassText();
       } );
 
-      model[el + 'PositionProperty'].link( function() {
+      body.positionProperty.link( function() {
         setMassTextPosition();
       } );
 
-      model[el + 'RadiusCoeffProperty'].link( function() {
+      body.radiusCoeffProperty.link( function() {
         setMassTextPosition();
       } );
 
@@ -80,7 +81,7 @@ define( function( require ) {
 
       model.massProperty.link( function( visibility ) {
         self.visibility = visibility;
-        model[el + 'MassText'].setVisible( visibility );
+        body.massText.setVisible( visibility );
         setMassTextPosition();
       } );
 

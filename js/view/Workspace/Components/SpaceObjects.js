@@ -47,18 +47,19 @@ define( function( require ) {
 
     // add explosion animation
     model.spaceObjects.forEach( function( el ) {
-      model[el + 'RadiusCoeffProperty'].link( function() {
+      var body = model[el];
+      body.radiusCoeffProperty.link( function() {
         self.checkExplosion( model );
       } );
 
-      model[el + 'PositionProperty'].link( function() {
+      body.positionProperty.link( function() {
         self.checkExplosion( model );
       } );
 
-      model[el + 'ExplodedProperty'].link( function( exploded ) {
-        model[el + 'View'].setVisible( !exploded );
+      body.explodedProperty.link( function( exploded ) {
+        body.view.setVisible( !exploded );
         if ( exploded && model.showExplosion ) {
-          self.showExplosion( model[el + 'Position'], model[el + 'View'].getWidth() );
+          self.showExplosion( body.position, body.view.getWidth() );
         }
       } );
     } );
@@ -80,15 +81,16 @@ define( function( require ) {
 
     // redraw space objects when position changing
     model.spaceObjects.forEach( function( el ) {
-      model[el + 'PositionProperty'].link( function( vect ) {
-        model[el + 'View'].x = vect.x;
-        model[el + 'View'].y = vect.y;
+      var body = model[el];
+      body.positionProperty.link( function( vect ) {
+        body.view.x = vect.x;
+        body.view.y = vect.y;
       } );
     } );
 
     // init drag and drop for space objects
     model.spaceObjects.forEach( function( el ) {
-      var clickYOffset, clickXOffset, getListener = function( view ) {
+      var clickYOffset, clickXOffset, body = model[el], getListener = function( view ) {
         return new SimpleDragHandler( {
           start: function( e ) {
             clickYOffset = view.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
@@ -98,7 +100,7 @@ define( function( require ) {
           drag: function( e ) {
             var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset;
             var x = view.globalToParentPoint( e.pointer.point ).x - clickXOffset;
-            model[el + 'Position'] = new Vector2( x, y );
+            body.position = new Vector2( x, y );
           },
           end: function() {
             model.drag = '';
@@ -106,12 +108,12 @@ define( function( require ) {
         } );
       };
 
-      model[el + 'ViewProperty'].link( function( view ) {
+      body.viewProperty.link( function( view ) {
         view.cursor = 'pointer';
         view.addInputListener( getListener( view ) );
       } );
 
-      model[el + 'TooltipProperty'].link( function( tooltip ) {
+      body.tooltipProperty.link( function( tooltip ) {
         tooltip.cursor = 'pointer';
         tooltip.addInputListener( getListener( tooltip ) );
       } );
@@ -119,8 +121,8 @@ define( function( require ) {
 
     // replace earth by gray sphere
     var earth = model.spaceObjects[1];
-    model[earth + 'RadiusCoeffProperty'].link( function( coeff ) {
-      model[earth + 'View']['set' + (coeff === 1 ? 'Default' : 'Gray') + 'View']();
+    model[earth].radiusCoeffProperty.link( function( coeff ) {
+      model[earth].view['set' + (coeff === 1 ? 'Default' : 'Gray') + 'View']();
     } );
 
     model.playProperty.link( function( isPlay ) {
@@ -158,13 +160,13 @@ define( function( require ) {
         for ( j = i + 1; j < model.spaceObjects.length; j++ ) {
           obj2 = model.spaceObjects[j];
           if ( !mode[obj2] ) {continue;}
-          dx = model[obj1 + 'Position'].minus( model[obj2 + 'Position'] ).magnitude(); // distance between planets
-          dr = (model[obj1 + 'View'].getWidth() + model[obj2 + 'View'].getWidth()) / 2;
+          dx = model[obj1].position.minus( model[obj2].position ).magnitude(); // distance between planets
+          dr = (model[obj1].view.getWidth() + model[obj2].view.getWidth()) / 2;
           if ( !isFinite( dx ) || !isFinite( dr ) ) {
             {continue;}
           }
           if ( dr > dx ) {
-            model[(model[obj1 + 'Mass'] > model[obj2 + 'Mass'] ? obj2 : obj1 ) + 'Exploded'] = true;
+            model[(model[obj1].mass > model[obj2].mass ? obj2 : obj1 )].exploded = true;
           }
         }
       }
@@ -197,7 +199,7 @@ define( function( require ) {
       this.addChild( this.view );
     },
     getState: function( model, num ) {
-      var obj, spaceObject, state;
+      var obj, spaceObject, state, body;
       state = {
         scale: model.scale,
         scaleCenter: model.scaleCenter.copy(),
@@ -209,6 +211,7 @@ define( function( require ) {
       model.spaceObjects.forEach( function( name ) {
         obj = model.planetModes[num][name];
         if ( obj ) {
+          body = model[name];
           state.spaceObjects[name] = {};
           spaceObject = state.spaceObjects[name];
           for ( var prop in obj ) {
@@ -216,15 +219,15 @@ define( function( require ) {
               spaceObject[prop] = obj[prop];
             }
           }
-          spaceObject.x = model[name + 'Position'].x / model.planetModes[num].options.scale;
-          spaceObject.y = model[name + 'Position'].y / model.planetModes[num].options.scale;
+          spaceObject.x = body.position.x / model.planetModes[num].options.scale;
+          spaceObject.y = body.position.y / model.planetModes[num].options.scale;
           if ( !spaceObject.fixed ) {
-            spaceObject.velocity = model[name + 'Velocity'].copy();
+            spaceObject.velocity = body.velocity.copy();
           }
-          spaceObject.massCoeff = model[name + 'MassCoeff'];
-          spaceObject.acceleration = model[name + 'Acceleration'].copy();
-          spaceObject.velocityHalf = model[name + 'VelocityHalf'].copy();
-          spaceObject.exploded = model[name + 'Exploded'];
+          spaceObject.massCoeff = body.massCoeff;
+          spaceObject.acceleration = body.acceleration.copy();
+          spaceObject.velocityHalf = body.velocityHalf.copy();
+          spaceObject.exploded = body.exploded;
         }
       } );
 

@@ -11,6 +11,7 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var SpaceObjectModel = require( 'model/SpaceObjectModel' );
   var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
   var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
   var billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' );
@@ -206,21 +207,6 @@ define( function( require ) {
     this.timeModes = timeModes;
 
     this.spaceObjects = ['sun', 'earth', 'moon', 'spaceStation'];
-    this.spaceObjectsProps = [
-      {name: 'View', value: new Node()},
-      {name: 'Tooltip', value: new Node()},
-      {name: 'MassText', value: new Node()},
-      {name: 'Mass', value: 1},
-      {name: 'MassCoeff', value: 1},
-      {name: 'Radius', value: 0},
-      {name: 'RadiusCoeff', value: 1},
-      {name: 'Exploded', value: false},
-      {name: 'Velocity', type: 'vector', value: { x: 0, y: 0}},
-      {name: 'VelocityHalf', type: 'vector', value: { x: 0, y: 0}},
-      {name: 'Acceleration', type: 'vector', value: { x: 0, y: 0}},
-      {name: 'PositionStart', type: 'vector', value: { x: 0, y: 0}},
-      {name: 'Position', type: 'vector', value: { x: 0, y: 0}}
-    ];
 
     // possible planet modes
     this.planetModes = planetModes;
@@ -254,7 +240,9 @@ define( function( require ) {
     } );
 
     // add property for space objects
-    PropertySet.call( this, getSpaceObjectProperties.call( this ) );
+    this.spaceObjects.forEach( function( el ) {
+      self[el] = new SpaceObjectModel();
+    } );
 
     // update view for every new time tick
     this.dayProperty.link( function( newDay, prevDay ) {
@@ -262,19 +250,21 @@ define( function( require ) {
     } );
 
     this.spaceObjects.forEach( function( el ) {
+      var body = self[el];
+
       // add observers for mass sliders
-      self[el + 'MassCoeffProperty'].link( function( newValue, oldValue ) {
-        self[el + 'Mass'] *= 1 / (oldValue || 1);
-        self[el + 'Mass'] *= newValue;
+      body.massCoeffProperty.link( function( newValue, oldValue ) {
+        body.mass *= 1 / (oldValue || 1);
+        body.mass *= newValue;
 
         // change radius
-        self[el + 'RadiusCoeff'] = Math.pow( newValue, 1 / 3 );
+        body.radiusCoeff = Math.pow( newValue, 1 / 3 );
       } );
 
       // resize view if radius changed
-      self[el + 'RadiusCoeffProperty'].link( function( newValue, oldValue ) {
-        self[el + 'View'].scale( 1 / (oldValue || 1) );
-        self[el + 'View'].scale( newValue );
+      body.radiusCoeffProperty.link( function( newValue, oldValue ) {
+        body.view.scale( 1 / (oldValue || 1) );
+        body.view.scale( newValue );
       } );
     } );
 
@@ -335,7 +325,7 @@ define( function( require ) {
       STEPS = 10,
       dt = t * timeScale / STEPS,
       i,
-      currentObj;
+      currentObj, body;
 
     for ( var j = 0; j < STEPS; j++ ) {
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
@@ -343,28 +333,30 @@ define( function( require ) {
 
         // change position of not fixed or dragging objects
         if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
-          model[currentObj + 'Position'] = model[currentObj + 'Position'].timesScalar( 1.0 / scale ).plus( model[currentObj + 'Velocity'].timesScalar( dt ).plus( model[currentObj + 'Acceleration'].timesScalar( dt * dt / 2.0 ) ) ).timesScalar( scale );
-          model[currentObj + 'VelocityHalf'] = model[currentObj + 'Velocity'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2.0 ) );
-          model[currentObj + 'Acceleration'] = getForce.call( model, currentObj ).timesScalar( -forceScale / model[currentObj + 'Mass'] );
-          model[currentObj + 'Velocity'] = model[currentObj + 'VelocityHalf'].plus( model[currentObj + 'Acceleration'].timesScalar( dt / 2.0 ) );
+          body = model[currentObj];
+          body.position = body.position.timesScalar( 1.0 / scale ).plus( body.velocity.timesScalar( dt ).plus( body.acceleration.timesScalar( dt * dt / 2.0 ) ) ).timesScalar( scale );
+          body.velocityHalf = body.velocity.plus( body.acceleration.timesScalar( dt / 2.0 ) );
+          body.acceleration = getForce.call( model, currentObj ).timesScalar( -forceScale / body.mass );
+          body.velocity = body.velocityHalf.plus( body.acceleration.timesScalar( dt / 2.0 ) );
         }
       }
     }
   };
 
   var getForce = function( target ) {
-    var F = new Vector2( 0, 0 ), currentObj, model = this, mode = model.planetModes[model.planetMode], scale = mode.options.scale, targetPos = model[target + 'Position'].timesScalar( 1 / scale ) , sourcePos;
+    var F = new Vector2( 0, 0 ), currentObj, sourceBody, sourcePos, model = this, targetBody = model[target], mode = model.planetModes[model.planetMode], scale = mode.options.scale, targetPos = targetBody.position.timesScalar( 1 / scale );
 
     // zero vector, for no gravity
     if ( model.gravity ) {
       for ( var i = 0; i < model.spaceObjects.length; i++ ) {
         currentObj = model.spaceObjects[i];
-        sourcePos = model[currentObj + 'Position'].timesScalar( 1 / scale );
+        sourceBody = model[currentObj];
+        sourcePos = sourceBody.position.timesScalar( 1 / scale );
 
         // ignore computation if that body has exploded,
         // or if they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
-        if ( mode[currentObj] && currentObj !== target && !model[currentObj + 'Exploded'] && !targetPos.equals( sourcePos ) ) {
-          F = F.plus( getUnitVector( sourcePos, targetPos ).timesScalar( CONSTANTS.G * model[currentObj + 'Mass'] * model[target + 'Mass'] / (targetPos.distanceSquared( sourcePos )) ) );
+        if ( mode[currentObj] && currentObj !== target && !sourceBody.exploded && !targetPos.equals( sourcePos ) ) {
+          F = F.plus( getUnitVector( sourcePos, targetPos ).timesScalar( CONSTANTS.G * sourceBody.mass * targetBody.mass / (targetPos.distanceSquared( sourcePos )) ) );
         }
       }
     }
@@ -373,20 +365,6 @@ define( function( require ) {
 
   var getUnitVector = function( source, target ) {
     return target.minus( source ).normalized();
-  };
-
-  var getSpaceObjectProperties = function() {
-    for ( var i = 0, props = {}, j; i < this.spaceObjects.length; i++ ) {
-      for ( j = 0; j < this.spaceObjectsProps.length; j++ ) {
-        if ( this.spaceObjectsProps[j].type === 'vector' ) {
-          props[this.spaceObjects[i] + this.spaceObjectsProps[j].name] = new Vector2( this.spaceObjectsProps[j].value.x, this.spaceObjectsProps[j].value.y );
-        }
-        else {
-          props[this.spaceObjects[i] + this.spaceObjectsProps[j].name] = this.spaceObjectsProps[j].value;
-        }
-      }
-    }
-    return props;
   };
 
   return GravityAndOrbitsModel;

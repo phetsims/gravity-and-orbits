@@ -17,7 +17,7 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Text = require( 'SCENERY/nodes/Text' );
 
-  function HorizontalSlider( x, y, w, targetProperty, img, value, rounding, tick, defaultValue ) {
+  function SliderHorizontalPark( x, y, w, targetProperty, img, value, rounding, tick, defaultValue ) {
     Node.call( this, {x: x, y: y} );
 
     var round = function( value, rounding ) {
@@ -72,7 +72,7 @@ define( function( require ) {
     this.x += track.width / 2;
   }
 
-  inherit( Node, HorizontalSlider );
+  inherit( Node, SliderHorizontalPark );
 
-  return HorizontalSlider;
+  return SliderHorizontalPark;
 } );

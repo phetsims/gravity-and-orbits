@@ -24,8 +24,8 @@ define( function( require ) {
     };
 
     model.spaceObjects.forEach( function( el ) {
-      prevPosition[el] = model[el + 'Position'];
-      model[el + 'PositionProperty'].link( function( newPosition ) {
+      prevPosition[el] = model[el].position;
+      model[el].positionProperty.link( function( newPosition ) {
         if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
           prevPosition[el] = newPosition;
           drawArrows();
@@ -105,38 +105,40 @@ define( function( require ) {
         len = model.spaceObjects.length,
         distance,
         f,
-        obj1,
-        obj2,
+        obj1, body1,
+        obj2, body2,
         unitVector;
 
       for ( var i = 0; i < len; i++ ) {
         obj1 = model.spaceObjects[i];
+        body1 = model[obj1];
 
-        if ( !mode[obj1] || model[obj1 + 'Exploded'] ) {
+        if ( !mode[obj1] || body1.exploded ) {
           self.hideOne( model, obj1 );
           continue;
         }
 
         for ( var j = i + 1; j < len; j++ ) {
           obj2 = model.spaceObjects[j];
-          if ( !mode[obj2] || model[obj2 + 'Exploded'] ) {
+          body2 = model[obj2];
+          if ( !mode[obj2] || body2.exploded ) {
             self.hideOne( model, obj2 );
             continue;
           }
 
-          distance = model[obj2 + 'Position'].minus( model[obj1 + 'Position'] );
+          distance = body2.position.minus( body1.position );
           if ( !distance.magnitude() ) {
             self.hideOne( model, obj2 );
             continue;
           }
 
-          f = model[obj2 + 'Mass'] * model[obj1 + 'Mass'] / (distance.magnitude() * distance.magnitude());
+          f = body2.mass * body1.mass / (distance.magnitude() * distance.magnitude());
           arrowSize = Math.max( 60 * f / maxForce, 10 );
 
           unitVector = distance.normalized().timesScalar( arrowSize );
 
-          self.shapes[obj1 + obj2].setShape( new ArrowShape( model[obj1 + 'Position'].x, model[obj1 + 'Position'].y, model[obj1 + 'Position'].x + unitVector.x, model[obj1 + 'Position'].y + unitVector.y ) );
-          self.shapes[obj2 + obj1].setShape( new ArrowShape( model[obj2 + 'Position'].x, model[obj2 + 'Position'].y, model[obj2 + 'Position'].x - unitVector.x, model[obj2 + 'Position'].y - unitVector.y ) );
+          self.shapes[obj1 + obj2].setShape( new ArrowShape( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y ) );
+          self.shapes[obj2 + obj1].setShape( new ArrowShape( body2.position.x, body2.position.y, body2.position.x - unitVector.x, body2.position.y - unitVector.y ) );
         }
       }
     }

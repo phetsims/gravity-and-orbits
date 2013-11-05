@@ -35,8 +35,8 @@ define( function( require ) {
     };
 
     model.spaceObjects.forEach( function( el ) {
-      prevPosition[el] = model[el + 'Position'];
-      model[el + 'PositionProperty'].link( function( newPosition ) {
+      prevPosition[el] = model[el].position;
+      model[el].positionProperty.link( function( newPosition ) {
         if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
           prevPosition[el] = newPosition;
           checkArrows();
@@ -100,7 +100,7 @@ define( function( require ) {
       this.arrows[obj].text.x = x - 6;
       this.arrows[obj].text.y = y + 2;
 
-      this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj + 'Position'].x, model[obj + 'Position'].y, x, y ) );
+      this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj].position.x, model[obj].position.y, x, y ) );
     },
     showArrows: function( model ) {
       var self = this,
@@ -117,8 +117,8 @@ define( function( require ) {
 
       for ( var i = 0; i < len; i++ ) {
         obj = model.spaceObjects[i];
-        velocity = model[obj + 'Velocity'];
-        if ( !mode[obj] || model[obj + 'Exploded'] || !velocity.magnitude() ) {
+        velocity = model[obj].velocity;
+        if ( !mode[obj] || model[obj].exploded || !velocity.magnitude() ) {
           self.arrows[obj].view.setVisible( false );
           continue;
         }
@@ -128,8 +128,8 @@ define( function( require ) {
 
         unitVector = velocity.normalized();
 
-        x = model[obj + 'Position'].x + unitVector.x * arrowSize;
-        y = model[obj + 'Position'].y + unitVector.y * arrowSize;
+        x = model[obj].position.x + unitVector.x * arrowSize;
+        y = model[obj].position.y + unitVector.y * arrowSize;
 
         self.setArrow( model, obj, x, y );
         self.arrows[obj].view.setVisible( true );

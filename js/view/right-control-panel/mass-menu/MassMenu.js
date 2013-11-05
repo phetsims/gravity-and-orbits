@@ -35,7 +35,7 @@ define( function( require ) {
     var map = {
       sun: {
         title: ourSunString,
-        property: model.sunMassCoeffProperty,
+        property: model.sun.massCoeffProperty,
         icon: {
           text: starString,
           image: Sun
@@ -43,7 +43,7 @@ define( function( require ) {
       },
       earth: {
         title: ourEarthString,
-        property: model.earthMassCoeffProperty,
+        property: model.earth.massCoeffProperty,
         icon: {
           text: planetString,
           image: Earth
@@ -51,7 +51,7 @@ define( function( require ) {
       },
       moon: {
         title: ourMoonString,
-        property: model.moonMassCoeffProperty,
+        property: model.moon.massCoeffProperty,
         icon: {
           text: moonString,
           image: Moon
@@ -59,7 +59,7 @@ define( function( require ) {
       },
       spaceStation: {
         title: spaceStationString,
-        property: model.spaceStationMassCoeffProperty,
+        property: model.spaceStation.massCoeffProperty,
         icon: {
           text: satelliteString,
           image: SpaceStation

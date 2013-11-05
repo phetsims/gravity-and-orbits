@@ -20,48 +20,48 @@ define( function( require ) {
   };
 
   function SpaceObjectsBuilder( model, num, state ) {
-    var self = this, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
+    var self = this, body, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
     Node.call( this );
 
     model.spaceObjects.forEach( function( name ) {
       obj = (state && state[name] ? state[name] : model.planetModes[num][name]);
-
+      body = model[name];
       // set explosion property
-      model[name + 'Exploded'] = (obj ? obj.exploded : false);
+      body.exploded = (obj ? obj.exploded : false);
 
       if ( obj && !obj.exploded ) {
         position = new Vector2( obj.x * scale, obj.y * scale );
         // set space object's velocity
         if ( !obj.fixed ) {
-          model[name + 'Velocity'].set( obj.velocity.x, obj.velocity.y );
+          body.velocity.set( obj.velocity.x, obj.velocity.y );
         }
 
         // add space object
-        model[name + 'View'] = new map[name]( position.copy(), obj.radius * scale );
-        model[name + 'View'].scale( model.viewMode === model.viewModes[1] ? obj.radiusScaleMode : 1 );
-        self.addChild( model[name + 'View'] );
+        body.view = new map[name]( position.copy(), obj.radius * scale );
+        body.view.scale( model.viewMode === model.viewModes[1] ? obj.radiusScaleMode : 1 );
+        self.addChild( body.view );
 
         // set space object's coordinates
-        model[name + 'PositionStart'] = position.copy();
-        model[name + 'Position'] = position.copy();
+        body.positionStart = position.copy();
+        body.position = position.copy();
 
         model.timeMode = timeMode;
-        model[name + 'View'].setRadius( obj.radius * scale );
+        body.view.setRadius( obj.radius * scale );
 
         // check tooltip
-        model[name + 'Tooltip'].setVisible( ( model[name + 'View'].getWidth() < 10 ) );
+        body.tooltip.setVisible( ( body.view.getWidth() < 10 ) );
 
         // set space object's mass
-        model[name + 'MassCoeff'] = obj.massCoeff || 1;
-        model[name + 'Mass'] = obj.mass;
+        body.massCoeff = obj.massCoeff || 1;
+        body.mass = obj.mass;
 
         // set up previous values
-        model[name + 'Acceleration'].set( obj.acceleration ? obj.acceleration.x : 0, obj.acceleration ? obj.acceleration.y : 0 );
-        model[name + 'VelocityHalf'].set( obj.velocityHalf ? obj.velocityHalf.x : 0, obj.velocityHalf ? obj.velocityHalf.y : 0 );
+        body.acceleration.set( obj.acceleration ? obj.acceleration.x : 0, obj.acceleration ? obj.acceleration.y : 0 );
+        body.velocityHalf.set( obj.velocityHalf ? obj.velocityHalf.x : 0, obj.velocityHalf ? obj.velocityHalf.y : 0 );
       }
       else {
-        model[name + 'View'] = new Node();
-        model[name + 'Tooltip'].setVisible( false );
+        body.view = new Node();
+        body.tooltip.setVisible( false );
       }
     } );
   }
