@@ -28,7 +28,7 @@ define( function( require ) {
       var setMassText = function() {
         var text, defaultValue, precision;
 
-        if ( model.planetModes[model.planetMode][el] ) {
+        if ( model.planetModes[model.planetMode][el] && !model[el + 'Exploded'] ) {
           text = model.planetModes[model.planetMode][el].massTooltip.text;
           defaultValue = model.planetModes[model.planetMode][el].massTooltip.defaultValue;
           precision = model.planetModes[model.planetMode][el].massTooltip.precision || 0;
