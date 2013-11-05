@@ -202,7 +202,7 @@ define( function( require ) {
       option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
 
       this.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
-      this.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ).replace( '.', ',' ) + ' ' + thousandMilesString );
+      this.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + thousandMilesString );
       this.tip.setX( x );
       this.tip.setY( y );
       option.tipX = x;
