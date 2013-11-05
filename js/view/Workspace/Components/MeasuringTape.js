@@ -93,11 +93,11 @@ define( function( require ) {
     this.notBase = new Node();
 
     // init drag and drop for measuring tape
-    var clickYOffset, clickXOffset, angle = 0;
+    var clickYOffset, clickXOffset, angle = 0, v;
     this.base.cursor = 'pointer';
     this.base.addInputListener( new SimpleDragHandler( {
       start: function( e ) {
-        var v, h,
+        var h,
           y0 = self.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y,
           x0 = self.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
 
@@ -110,7 +110,7 @@ define( function( require ) {
       drag: function( e ) {
         var x = self.globalToParentPoint( e.pointer.point ).x - clickXOffset;
         var y = self.globalToParentPoint( e.pointer.point ).y - clickYOffset;
-        self.translate( x, y );
+        self.translate( x, y, v );
       }
     } ) );
 
@@ -208,9 +208,13 @@ define( function( require ) {
       option.tipX = x;
       option.tipY = y;
     },
-    translate: function( x, y ) {
+    translate: function( x, y, v ) {
       this.notBase.setX( x );
       this.notBase.setY( y );
+
+      v = v || new Vector2( 0, 0 );
+      this.base.setX( x - v.x );
+      this.base.setY( y - v.y );
     }
   } );
 } );
