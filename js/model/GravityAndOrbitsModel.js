@@ -280,7 +280,9 @@ define( function( require ) {
 
     // force planet mode reset function
     this.planetModeReset = function() {
+      // set another planet mode (to call observers if planetMode already equal to initial value)
       self.planetMode += ( (self.planetMode === (self.planetModes.length - 1)) ? -1 : 1);
+      // set initial value
       self.planetModeProperty.reset();
     };
 
@@ -317,10 +319,6 @@ define( function( require ) {
 
       this.planetModeReset();
       this.showExplosion = true;
-    },
-    clear: function() {
-      this.dayProperty.reset();
-      this.planetModeReset();
     },
     stepManual: function( dt ) {
       dt = dt || 1 / fps;
