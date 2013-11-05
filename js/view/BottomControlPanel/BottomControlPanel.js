@@ -11,7 +11,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var SpeedPushButtons = require( 'view/BottomControlPanel/SpeedPushButtons/SpeedPushButtons' );
-  var SpeedCheckbox = require( 'view/BottomControlPanel/SpeedCheckbox/SpeedCheckbox' );
+  var SpeedCheckbox = require( 'view/BottomControlPanel/SpeedRadioButton/SpeedRadioButton' );
   var DayCounter = require( 'view/BottomControlPanel/DayCounter/DayCounter' );
 
   function BottomControlPanel( model, x, y ) {

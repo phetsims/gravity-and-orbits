@@ -22,7 +22,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 16 );
 
-  function SpeedCheckbox( model, coords ) {
+  function SpeedRadioButton( model, coords ) {
     Node.call( this, coords );
 
     this.addChild( new VerticalAquaRadioButtonGroup( [
@@ -32,7 +32,7 @@ define( function( require ) {
     ], {scale: 0.9} ) );
   }
 
-  inherit( Node, SpeedCheckbox );
+  inherit( Node, SpeedRadioButton );
 
-  return SpeedCheckbox;
+  return SpeedRadioButton;
 } );
