@@ -11,8 +11,8 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PlanetModeResetButton = require( 'view/RightControlPanel/PlanetModeMenu/PlanetModeResetButton' );
-  var PlanetModeOption = require( 'view/RightControlPanel/PlanetModeMenu/PlanetModeOption' );
+  var PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
+  var PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
 
   function PlanetModeMenu( model, coords ) {
     Node.call( this, coords );

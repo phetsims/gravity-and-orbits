@@ -11,10 +11,10 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PlanetModeMenu = require( 'view/RightControlPanel/PlanetModeMenu/PlanetModeMenu' );
-  var GravityModeMenu = require( 'view/RightControlPanel/GravityModeMenu' );
-  var SpaceObjectsPropertyCheckbox = require( 'view/RightControlPanel/SpaceObjectsPropertyCheckbox' );
-  var MassMenu = require( 'view/RightControlPanel/MassMenu/MassMenu' );
+  var PlanetModeMenu = require( 'view/right-control-panel/planet-mode-menu/PlanetModeMenu' );
+  var GravityModeMenu = require( 'view/right-control-panel/GravityModeMenu' );
+  var SpaceObjectsPropertyCheckbox = require( 'view/right-control-panel/SpaceObjectsPropertyCheckbox' );
+  var MassMenu = require( 'view/right-control-panel/mass-menu/MassMenu' );
 
   function RightControlPanel( model, x, y ) {
     var self = this, options = {height: 0, lineOffset: 10, sectionsOffset: 20};

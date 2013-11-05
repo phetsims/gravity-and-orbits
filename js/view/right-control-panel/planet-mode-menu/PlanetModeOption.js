@@ -15,10 +15,10 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RadioButton = require( 'SUN/RadioButton' );
 
-  var Sun = require( 'view/SpaceObject/Sun' );
-  var Earth = require( 'view/SpaceObject/Earth' );
-  var Moon = require( 'view/SpaceObject/Moon' );
-  var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
+  var Sun = require( 'view/space-object/Sun' );
+  var Earth = require( 'view/space-object/Earth' );
+  var Moon = require( 'view/space-object/Moon' );
+  var SpaceStation = require( 'view/space-object/SpaceStation' );
 
   function PlanetModeOption( model, coords, num ) {
     Node.call( this, coords );

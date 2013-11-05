@@ -13,10 +13,10 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   var map = {
-    sun: require( 'view/SpaceObject/Sun' ),
-    earth: require( 'view/SpaceObject/Earth' ),
-    moon: require( 'view/SpaceObject/Moon' ),
-    spaceStation: require( 'view/SpaceObject/SpaceStation' )
+    sun: require( 'view/space-object/Sun' ),
+    earth: require( 'view/space-object/Earth' ),
+    moon: require( 'view/space-object/Moon' ),
+    spaceStation: require( 'view/space-object/SpaceStation' )
   };
 
   function SpaceObjectsBuilder( model, num, state ) {

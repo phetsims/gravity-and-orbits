@@ -12,7 +12,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
 
-  var Slider = require( 'view/RightControlPanel/MassMenu/Slider' );
+  var Slider = require( 'view/right-control-panel/mass-menu/Slider' );
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
   var ourEarthString = require( 'string!GRAVITY_AND_ORBITS/ourEarth' );
   var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
@@ -22,10 +22,10 @@ define( function( require ) {
   var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
 
-  var Sun = require( 'view/SpaceObject/Sun' );
-  var Earth = require( 'view/SpaceObject/Earth' );
-  var Moon = require( 'view/SpaceObject/Moon' );
-  var SpaceStation = require( 'view/SpaceObject/SpaceStation' );
+  var Sun = require( 'view/space-object/Sun' );
+  var Earth = require( 'view/space-object/Earth' );
+  var Moon = require( 'view/space-object/Moon' );
+  var SpaceStation = require( 'view/space-object/SpaceStation' );
 
   function MassMenu( model, x, y ) {
     var self = this;

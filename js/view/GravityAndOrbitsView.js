@@ -10,11 +10,11 @@ define( function( require ) {
   'use strict';
   var ScreenView = require( 'JOIST/ScreenView' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Workspace = require( 'view/Workspace/Workspace' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
-  var ScaleSlider = require( 'view/ScaleSlider/ScaleSlider' );
-  var RightControlPanel = require( 'view/RightControlPanel/RightControlPanel' );
-  var BottomControlPanel = require( 'view/BottomControlPanel/BottomControlPanel' );
+  var Workspace = require( 'view/workspace/Workspace' );
+  var ScaleSlider = require( 'view/scale-slider/ScaleSlider' );
+  var RightControlPanel = require( 'view/right-control-panel/RightControlPanel' );
+  var BottomControlPanel = require( 'view/bottom-control-panel/BottomControlPanel' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );

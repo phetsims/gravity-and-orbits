@@ -12,10 +12,10 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var Vector2 = require( 'DOT/Vector2' );
-  var Explosion = require( 'view/SpaceObject/Explosion' );
+  var Explosion = require( 'view/space-object/Explosion' );
   var Timer = require( 'JOIST/Timer' );
 
-  var SpaceObjectsBuilder = require( 'view/Workspace/Components/SpaceObjectsBuilder' );
+  var SpaceObjectsBuilder = require( 'view/workspace/components/SpaceObjectsBuilder' );
 
   function SpaceObjects( model ) {
     var self = this;
