@@ -38,7 +38,7 @@ define( function( require ) {
     };
 
     // create button
-    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.callback } );
+    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.listener } );
     this.addChild( pushButton );
 
     model.planetModeProperty.link( function( mode ) {
