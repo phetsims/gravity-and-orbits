@@ -33,7 +33,7 @@ define( function( require ) {
           defaultValue = model.planetModes[model.planetMode][el].massTooltip.defaultValue;
           precision = model.planetModes[model.planetMode][el].massTooltip.precision || 0;
 
-          model[el + 'MassText'].setText( (model[el + 'MassCoeff'] * defaultValue).toFixed( precision ).replace( "1.00", "1" ).replace( ".", "," ) + " " + text );
+          model[el + 'MassText'].setText( (model[el + 'MassCoeff'] * defaultValue).toFixed( precision ).replace( "1.00", "1" ) + " " + text );
         }
         else {
           model[el + 'MassText'].setText( "" );
