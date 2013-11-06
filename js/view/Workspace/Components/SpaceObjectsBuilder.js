@@ -33,7 +33,7 @@ define( function( require ) {
         position = new Vector2( obj.x * scale, obj.y * scale );
         // set space object's velocity
         if ( !obj.fixed ) {
-          body.velocity.set( obj.velocity.x, obj.velocity.y );
+          body.velocity.setXY( obj.velocity.x, obj.velocity.y );
         }
 
         // add space object
@@ -56,8 +56,8 @@ define( function( require ) {
         body.mass = obj.mass;
 
         // set up previous values
-        body.acceleration.set( obj.acceleration ? obj.acceleration.x : 0, obj.acceleration ? obj.acceleration.y : 0 );
-        body.velocityHalf.set( obj.velocityHalf ? obj.velocityHalf.x : 0, obj.velocityHalf ? obj.velocityHalf.y : 0 );
+        body.acceleration.setXY( obj.acceleration ? obj.acceleration.x : 0, obj.acceleration ? obj.acceleration.y : 0 );
+        body.velocityHalf.setXY( obj.velocityHalf ? obj.velocityHalf.x : 0, obj.velocityHalf ? obj.velocityHalf.y : 0 );
       }
       else {
         body.view = new Node();
