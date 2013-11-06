@@ -12,5 +12,7 @@
     "requirejs": "~2.1.8",
     "esprima": "~1.0.4",
     "escodegen": "~0.0.27"
-  }
+  },
+  "requirejsNamespace": "GRAVITY_AND_ORBITS",
+  "simTitleStringKey": "GRAVITY_AND_ORBITS/gravity-and-orbits.name"
 }
