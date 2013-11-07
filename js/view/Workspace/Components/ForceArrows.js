@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * force arrows view
+ * Visual representation of force arrows.
+ * It shows the direction of the gravitational force.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -19,10 +20,12 @@ define( function( require ) {
 
     this.init( model );
 
+    // controls the visibility and direction of arrows
     var drawArrows = function() {
       self[(self.visibility ? 'set' : 'hide') + 'Arrows']( model );
     };
 
+    // add observers for space objects
     model.spaceObjects.forEach( function( el ) {
       prevPosition[el] = model[el].position;
       model[el].positionProperty.link( function( newPosition ) {

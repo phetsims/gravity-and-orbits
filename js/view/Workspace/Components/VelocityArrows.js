@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * velocity arrows view
+ * Visual representation of velocity arrows.
+ * It shows the direction and amplitude of the current velocity.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -30,10 +31,12 @@ define( function( require ) {
       this.maxVelocity[i] = getMaxVelocity( model, i );
     }
 
+    // controls the visibility and direction of arrows
     var checkArrows = function() {
       self[(self.visibility ? 'show' : 'hide') + 'Arrows']( model );
     };
 
+    // add observers
     model.spaceObjects.forEach( function( el ) {
       prevPosition[el] = model[el].position;
       model[el].positionProperty.link( function( newPosition ) {

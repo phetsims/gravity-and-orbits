@@ -35,7 +35,7 @@ define(
     var Image = require( 'SCENERY/nodes/Image' );
 
     SimLauncher.launch( function() {
-      //Create and start the sim
+      // create and start the sim
       new Sim( titleString, [
         new Screen( cartoonString, new Image( cartoonIcon ),
           function() { return new GravityAndOrbitsModel( ScreenView.LAYOUT_BOUNDS.width, ScreenView.LAYOUT_BOUNDS.height, cartoonString ); },

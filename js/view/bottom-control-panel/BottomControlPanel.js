@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for bottom control panel
+ * Container for bottom control panel.
+ * Include day counter, speed radio buttons and speed controls.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

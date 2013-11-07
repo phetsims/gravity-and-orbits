@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for planet mode option button
+ * Visual representation of single planet mode option button.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -19,6 +19,13 @@ define( function( require ) {
   var Earth = require( 'view/space-object/Earth' );
   var Moon = require( 'view/space-object/Moon' );
   var SpaceStation = require( 'view/space-object/SpaceStation' );
+
+  /**
+   * @param {model} model
+   * @param {Object} coords coordinates of buttons
+   * @param {Number} num Number of option
+   * @constructor
+   */
 
   function PlanetModeOption( model, coords, num ) {
     Node.call( this, coords );
@@ -41,7 +48,7 @@ define( function( require ) {
       }
     }
 
-    // button options
+    // set button options
     var options = {
       selectedNode: new Node( {children: [node, strokeSelected]} ),
       deselectedNode: new Node( {children: [node, strokeDeselected]} )

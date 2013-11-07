@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for right control panel
+ * Container for right control panel.
+ * Include planet mode menu, gravity switcher, checkbox with properties and mass sliders.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

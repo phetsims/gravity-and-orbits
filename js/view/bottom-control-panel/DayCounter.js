@@ -1,7 +1,9 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for day counter
+ * Visual representation of day counter.
+ * Contains clear button and numeric counter.
+ * Mode of counting (day/minutes) depends on the planet mode.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

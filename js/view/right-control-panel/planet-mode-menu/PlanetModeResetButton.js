@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for planet mode reset button
+ * Visual representation of planet mode reset button.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

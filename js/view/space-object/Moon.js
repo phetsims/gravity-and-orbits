@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for moon
+ * View for Moon.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

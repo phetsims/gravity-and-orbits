@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * return view of space objects
+ * Return space objects in given state.
+ * If state is not given - return initial state.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

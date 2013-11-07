@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for space station
+ * View for space station.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

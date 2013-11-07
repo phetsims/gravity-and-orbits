@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Container for scale slider
+ * Container for scale slider.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

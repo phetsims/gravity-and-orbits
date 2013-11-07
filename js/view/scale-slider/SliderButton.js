@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for button scale control
+ * Visual representation of button scale control.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -15,6 +15,15 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
+  /**
+   * @param {Number} x x-coordinate
+   * @param {Number} y y-coordinate
+   * @param {model} model
+   * @param {range} range working range
+   * @param {Number} step step of scale changes
+   * @param {Boolean} isIncrease type of button
+   * @constructor
+   */
   function Button( x, y, model, range, step, isIncrease ) {
     var callback, sample, width = 25, height = 25;
     Node.call( this, {x: x - width / 2, y: y} );

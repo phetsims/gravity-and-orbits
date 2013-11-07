@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for measuring tape
+ * Visual representation of measuring tape.
+ * Each planet mode use its scale.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

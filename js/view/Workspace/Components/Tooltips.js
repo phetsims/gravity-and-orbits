@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for tooltips
+ * Visual representation of planet's tooltips.
+ * It appears when size of planet less then minimal limit.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

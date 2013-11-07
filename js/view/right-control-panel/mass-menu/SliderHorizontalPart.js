@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for horizontal slider control
+ * Horizontal part of mass slider.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -19,6 +19,16 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
 
+  /**
+   * @param {Number} x x-coordinate
+   * @param {Number} y y-coordinate
+   * @param {Number} w width of slider
+   * @param {Property} targetProperty property to update
+   * @param {range} range working range
+   * @param {Number} rounding precision
+   * @param {Number} tickStep tick step
+   * @constructor
+   */
   function SliderHorizontalPark( x, y, w, targetProperty, range, rounding, tickStep ) {
     var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 14;
     Node.call( this, {x: x, y: y} );
@@ -42,8 +52,8 @@ define( function( require ) {
 
     // add ticks
     if ( tickStep ) {
-      for ( i = range.min ; i <= range.max; i += tickStep ) {
-        nodeTick.addChild( new Path( Shape.lineSegment( w * (i - range.min) / (range.max- range.min), -5, w * (i - range.min) / (range.max- range.min), -tickHeight ), { stroke: 'white', lineWidth: 1 } ) );
+      for ( i = range.min; i <= range.max; i += tickStep ) {
+        nodeTick.addChild( new Path( Shape.lineSegment( w * (i - range.min) / (range.max - range.min), -5, w * (i - range.min) / (range.max - range.min), -tickHeight ), { stroke: 'white', lineWidth: 1 } ) );
       }
       this.addChild( nodeTick );
     }

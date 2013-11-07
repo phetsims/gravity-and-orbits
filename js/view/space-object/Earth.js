@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for earth
+ * View for Earth.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

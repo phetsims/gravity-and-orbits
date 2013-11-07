@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for sun
+ * View for Sun.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * control speed radio buttons view
+ * Visual representation of speed radio buttons.
+ * Three different modes: slow/normal/fast motion.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

@@ -13,6 +13,13 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
 
+  /**
+   * @param {Number} x x-coordinate
+   * @param {Number} y y-coordinate
+   * @param {Property} targetProperty property for updating
+   * @param {range} range range for targetProperty
+   * @constructor
+   */
   function Slider( x, y, targetProperty, range ) {
     Node.call( this, {x: x, y: y} );
     var options = {

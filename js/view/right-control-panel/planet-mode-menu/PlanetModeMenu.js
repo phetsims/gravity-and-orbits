@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for planet mode menu
+ * Container for planet mode menu.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

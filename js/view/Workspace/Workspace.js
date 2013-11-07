@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * main view
+ * main view for workspace.
+ * Contains space objects with related entities, arrows, grids and measuring tape.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

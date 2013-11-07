@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for slider control
+ * Visual representation of single mass slider.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -12,8 +12,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var HorizontalSlider = require( 'view/right-control-panel/mass-menu/SliderHorizontalPart' );
-
-  var sliderImg = require( 'image!GRAVITY_AND_ORBITS/slider.png' );
 
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );

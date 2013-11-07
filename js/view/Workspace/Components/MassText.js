@@ -1,7 +1,9 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for planet's mass text
+ * Visual representation of mass tooltip.
+ * The tooltip appears below the planet.
+ * Measurements are carried out in relative units.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -50,7 +52,7 @@ define( function( require ) {
         body.massText.setTranslation( positions.x * model.scale - body.massText.getWidth() / 2, (positions.y + height / 2) * model.scale + 15 );
       };
 
-      // set observers
+      // add observers
       body.explodedProperty.link( function( exploded ) {
         if ( self.visibility ) {
           body.massText.setVisible( !exploded );

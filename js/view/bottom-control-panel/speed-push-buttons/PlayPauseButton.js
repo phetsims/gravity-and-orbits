@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Control Play/Pause and Step buttons view
+ * Visual representation of speed control buttons.
+ * Rewind button return to the last day, when play button was pressed.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for speed control buttons
+ * Container for speed control buttons.
+ * Contains play/pause, rewind and forward button.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

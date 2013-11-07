@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * space object's path view
+ * Visual representation of planet's path.
+ * Each segment of the path is stored till maximum time for a given mode.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

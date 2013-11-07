@@ -1,7 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * space objects view on workspace
+ * Visual representation of space objects.
+ * When switching between modes, the state of space objects stores and restores using SpaceObjectsBuilder.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

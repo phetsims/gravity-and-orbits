@@ -1,7 +1,9 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Container for mass sliders
+ * Container for mass sliders.
+ * There should be two sliders.
+ * Sliders can selected through variable showModes.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

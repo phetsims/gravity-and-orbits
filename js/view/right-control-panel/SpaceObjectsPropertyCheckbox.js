@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * view for space objects property checkbox
+ * Visual representation of space object's property checkbox.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
