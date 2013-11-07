@@ -75,7 +75,7 @@ define( function( require ) {
     // init all sliders
     for ( var object in map ) {
       if ( map.hasOwnProperty( object ) ) {
-        this[object] = new Slider( 10, 0, {title: map[object].title, property: map[object].property, icon: map[object].icon, rounding: 2, tick: {step: 0.5} } );
+        this[object] = new Slider( 10, 0, {title: map[object].title, property: map[object].property, icon: map[object].icon } );
       }
     }
 

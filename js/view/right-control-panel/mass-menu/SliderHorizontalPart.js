@@ -15,61 +15,52 @@ define( function( require ) {
   var LinearFunction = require( 'DOT/LinearFunction' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
-  var Text = require( 'SCENERY/nodes/Text' );
 
-  function SliderHorizontalPark( x, y, w, targetProperty, img, value, rounding, tick, defaultValue ) {
+  var Dimension2 = require( 'DOT/Dimension2' );
+  var HSlider = require( 'SUN/HSlider' );
+
+  function SliderHorizontalPark( x, y, w, targetProperty, range, rounding, tickStep ) {
+    var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 14;
     Node.call( this, {x: x, y: y} );
 
+    var options = {
+      line: {
+        height: w,
+        width: 2
+      },
+      track: {
+        height: 15,
+        width: 20
+      }
+    };
+
+    // add slider
+    this.addChild( new HSlider( targetProperty, range, {
+      trackSize: new Dimension2( options.line.height, options.line.width ),
+      thumbSize: new Dimension2( options.track.height, options.track.width )
+    } ) );
+
+    // add ticks
+    if ( tickStep ) {
+      for ( i = range.min ; i <= range.max; i += tickStep ) {
+        nodeTick.addChild( new Path( Shape.lineSegment( w * (i - range.min) / (range.max- range.min), -5, w * (i - range.min) / (range.max- range.min), -tickHeight ), { stroke: 'white', lineWidth: 1 } ) );
+      }
+      this.addChild( nodeTick );
+    }
+
+    // rounding function
     var round = function( value, rounding ) {
       return (rounding ? Math.round( value * Math.pow( 10, rounding ) ) / Math.pow( 10, rounding ) : value );
     };
 
-    var track = new Node( {children: [new Image( img, {centerX: 0, centerY: 0, scale: 0.5} )], cursor: "pointer"} ),
-      xMin = 0,
-      xMax = w - track.width,
-      valueToPosition = new LinearFunction( value.min, value.max, xMin, xMax, true ),
-      positionToValue = new LinearFunction( xMin, xMax, value.min, value.max, true ),
-      nodeTick = new Node();
-
-    this.addChild( new Path( Shape.lineSegment( 0, 0, w - track.width, 0 ), { stroke: 'white', lineWidth: 3 } ) );
-
-    if ( tick && tick.step ) {
-      var i = value.min, tickHeight = 14;
-
-      for ( ; i <= value.max; i += tick.step ) {
-        nodeTick.addChild( new Path( Shape.lineSegment( valueToPosition( i ), -5, valueToPosition( i ), -tickHeight ), { stroke: 'white', lineWidth: 1 } ) );
-      }
-    }
-    this.addChild( nodeTick );
-    this.addChild( track );
-    var dx = 0.25 * track.width,
-      dy = 0.5 * track.height,
-      realX;
-    track.touchArea = Shape.rectangle( ( -track.width / 2 ) - dx, ( -track.height / 2 ) - dy, track.width + dx + dx, track.height + dy + dy );
-    track.addInputListener( new SimpleDragHandler(
-      {
-        allowTouchSnag: true,
-        start: function() {
-          realX = track.x;
-        },
-        translate: function( event ) {
-          realX += event.delta.x;
-
-          var value = positionToValue( Math.max( xMin, Math.min( realX, xMax ) ) );
-
-          // snap to default value
-          if ( Math.abs( value - defaultValue ) / defaultValue < 0.03 ) {
-            value = defaultValue;
-          }
-          value = round( value, rounding );
-
-          targetProperty.set( value );
-        }
-      } ) );
+    // add observer
     targetProperty.link( function( value ) {
-      track.x = valueToPosition( value );
+      targetProperty.set( round( value, rounding ) );
+      // snap to default value
+      if ( Math.abs( value - defaultValue ) / defaultValue < 0.03 ) {
+        targetProperty.set( defaultValue );
+      }
     } );
-    this.x += track.width / 2;
   }
 
   inherit( Node, SliderHorizontalPark );

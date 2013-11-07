@@ -24,24 +24,21 @@ define( function( require ) {
   function Slider( x, y, options ) {
     options = _.extend(
       {
-        tick: {step: 0, minText: '', maxText: ''},
+        tickStep: 0.5,
         title: '',
         property: null,
         scope: {min: 0.5, max: 2},
-        default: 1,
-        rounding: false,
+        rounding: 2,
         width: 200,
         height: 50
       }, options );
 
     Node.call( this, {x: x, y: y} );
 
-    var tick = options.tick || false;
-
     // add slider
     var slider = new Node( {children: [
       new Rectangle( 0, 0, options.width, options.height, {} ),
-      new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, sliderImg, options.scope, options.rounding, tick, options.default ),
+      new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, options.scope, options.rounding, options.tickStep ),
       new Text( options.title, {centerX: options.width / 2.7, top: 0, font: FONT, fill: '#fff', pickable: false} )
     ], y: 5} );
     this.addChild( slider );
