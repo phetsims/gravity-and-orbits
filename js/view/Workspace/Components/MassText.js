@@ -73,6 +73,16 @@ define( function( require ) {
         setMassTextPosition();
       } );
 
+      body.viewProperty.link( function() {
+        setMassTextPosition();
+      } );
+
+      model.refreshModeProperty.link( function( trigger ) {
+        if ( trigger ) {
+          setMassTextPosition();
+        }
+      } );
+
       body.radiusCoeffProperty.link( function() {
         setMassTextPosition();
       } );

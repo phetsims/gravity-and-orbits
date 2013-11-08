@@ -39,6 +39,7 @@ define( function( require ) {
 
         // add space object
         body.view = new map[name]( position.copy(), obj.radius * scale );
+        body.view.scale( body.radiusCoeff );
         body.view.scale( model.viewMode === model.viewModes[1] ? obj.radiusScaleMode : 1 );
         self.addChild( body.view );
 
