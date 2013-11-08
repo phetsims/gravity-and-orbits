@@ -44,7 +44,7 @@ define( function( require ) {
     // add label
     var label = new Node( {children: [
       new Text( options.icon.text, {centerX: options.width / 2.5, top: -16, font: FONTICON, fontWeight: 'bold', fill: '#fff', pickable: false} ),
-      new options.icon.image( {x: options.width / 1.7, y: -7}, 7 )
+      new options.icon.image( {x: options.width / 1.6, y: -7}, 7 )
     ]} );
     this.addChild( label );
 
