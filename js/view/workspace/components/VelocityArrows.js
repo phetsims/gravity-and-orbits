@@ -95,16 +95,9 @@ define( function( require ) {
 
         self.arrows[el].circle.addInputListener( new SimpleDragHandler( {
           translate: function( e ) {
-            var velocity = e.position.minus( model[el].position ), amplitude = Math.sqrt( velocity.magnitude() * self.maxVelocity[model.planetMode] / (self.arrowSizeNormal - 25) );
-            if ( velocity.magnitude() > self.maxVelocity[model.planetMode] ) {
-              velocity = velocity.normalize().timesScalar( self.maxVelocity[model.planetMode] );
-            }
-            else {
-              velocity = velocity.timesScalar( amplitude );
-            }
-            self.setArrow( model, el, e.position.x, e.position.y );
-            model[el].velocity.set( velocity );
-            model[el].velocityHalf.set( velocity );
+            var velocity = e.position.minus( model[el].position ), amplitude = velocity.magnitude() * self.maxVelocity[model.planetMode] / self.arrowSizeNormal;
+            self.setArrow( model, el, e.position );
+            model[el].velocity.set( velocity.normalized().timesScalar( amplitude ) );
           }
         } ) );
 
@@ -121,11 +114,10 @@ define( function( require ) {
         self.arrows[el].view.setVisible( false );
       } );
     },
-    setArrow: function( model, obj, x, y ) {
-      this.arrows[obj].circle.setTranslation( x, y );
-      this.arrows[obj].text.setTranslation( x - 6, y + 2 );
-
-      this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj].position.x, model[obj].position.y, x, y ) );
+    setArrow: function( model, obj, v ) {
+      this.arrows[obj].circle.setTranslation( v );
+      this.arrows[obj].text.setTranslation( v.x - 6, v.y + 2 );
+      this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj].position.x, model[obj].position.y, v.x, v.y ) );
     },
     showArrows: function( model ) {
       var self = this,
@@ -137,10 +129,10 @@ define( function( require ) {
         arrowSizeNormal = self.arrowSizeNormal,
         len = model.spaceObjects.length,
         velocity,
-        obj, x, y,
+        obj,
         unitVector;
 
-      for ( var i = 0; i < len; i++ ) {
+      for ( var i = 0, v; i < len; i++ ) {
         obj = model.spaceObjects[i];
         velocity = model[obj].velocity;
         if ( !mode[obj] || model[obj].exploded || !velocity.magnitude() ) {
@@ -152,11 +144,9 @@ define( function( require ) {
         arrowSize = Math.max( arrowSize, arrowSizeMin );
 
         unitVector = velocity.normalized();
+        v = model[obj].position.plus( unitVector.timesScalar( arrowSize ) );
 
-        x = model[obj].position.x + unitVector.x * arrowSize;
-        y = model[obj].position.y + unitVector.y * arrowSize;
-
-        self.setArrow( model, obj, x, y );
+        self.setArrow( model, obj, v );
         self.arrows[obj].view.setVisible( true );
       }
     }
