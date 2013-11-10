@@ -15,6 +15,8 @@ define( function( require ) {
   var ArrowShape = require( 'SCENERY_PHET/ArrowShape' );
   var Circle = require( 'SCENERY/nodes/Circle' );
 
+  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 22 );
@@ -55,6 +57,12 @@ define( function( require ) {
     model.planetModeProperty.link( function() {
       checkArrows();
     } );
+
+    model.refreshModeProperty.link( function( trigger ) {
+      if ( trigger ) {
+        checkArrows();
+      }
+    } );
   }
 
   var getMaxVelocity = function( model, num ) {
@@ -71,10 +79,11 @@ define( function( require ) {
   return inherit( Node, VelocityArrows, {
     init: function( model ) {
       var self = this;
+      this.arrowSizeNormal = 160;
       this.arrows = {};
       model.spaceObjects.forEach( function( el ) {
         self.arrows[el] = {
-          view: new Node(),
+          view: new Node( {cursor: 'pointer'} ),
           circle: new Circle( 18, {
             fill: 'rgba(0,0,0,0)',
             stroke: '#C0C0C0',
@@ -83,6 +92,21 @@ define( function( require ) {
           text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false } ),
           arrowNode: new ArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
         };
+
+        self.arrows[el].circle.addInputListener( new SimpleDragHandler( {
+          translate: function( e ) {
+            var velocity = e.position.minus( model[el].position ), amplitude = Math.sqrt( velocity.magnitude() * self.maxVelocity[model.planetMode] / (self.arrowSizeNormal - 25) );
+            if ( velocity.magnitude() > self.maxVelocity[model.planetMode] ) {
+              velocity = velocity.normalize().timesScalar( self.maxVelocity[model.planetMode] );
+            }
+            else {
+              velocity = velocity.timesScalar( amplitude );
+            }
+            self.setArrow( model, el, e.position.x, e.position.y );
+            model[el].velocity.set( velocity );
+            model[el].velocityHalf.set( velocity );
+          }
+        } ) );
 
         self.arrows[el].view.addChild( self.arrows[el].circle );
         self.arrows[el].view.addChild( self.arrows[el].text );
@@ -98,10 +122,8 @@ define( function( require ) {
       } );
     },
     setArrow: function( model, obj, x, y ) {
-      this.arrows[obj].circle.setX( x );
-      this.arrows[obj].circle.setY( y );
-      this.arrows[obj].text.x = x - 6;
-      this.arrows[obj].text.y = y + 2;
+      this.arrows[obj].circle.setTranslation( x, y );
+      this.arrows[obj].text.setTranslation( x - 6, y + 2 );
 
       this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj].position.x, model[obj].position.y, x, y ) );
     },
@@ -112,7 +134,7 @@ define( function( require ) {
         mode = model.planetModes[num],
         arrowSize = 0,
         arrowSizeMin = 10,
-        arrowSizeNormal = 160,
+        arrowSizeNormal = self.arrowSizeNormal,
         len = model.spaceObjects.length,
         velocity,
         obj, x, y,
