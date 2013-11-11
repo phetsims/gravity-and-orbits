@@ -21,7 +21,8 @@ define(
       toScaleIcon = require( 'image!GRAVITY_AND_ORBITS/to_scale_icon.png' ),
       cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' ),
       toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' ),
-      ScreenView = require( 'JOIST/ScreenView' );
+      ScreenView = require( 'JOIST/ScreenView' ),
+      Image = require( 'SCENERY/nodes/Image' );
 
     var simOptions = {
       credits: {
@@ -31,8 +32,6 @@ define(
         thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
       }
     };
-
-    var Image = require( 'SCENERY/nodes/Image' );
 
     SimLauncher.launch( function() {
       // create and start the sim
