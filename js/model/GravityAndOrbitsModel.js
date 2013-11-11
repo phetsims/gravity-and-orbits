@@ -348,7 +348,15 @@ define( function( require ) {
   };
 
   var getForce = function( target ) {
-    var F = new Vector2( 0, 0 ), currentObj, sourceBody, sourcePos, model = this, targetBody = model[target], mode = model.planetModes[model.planetMode], scale = mode.options.scale, targetPos = targetBody.position.timesScalar( 1 / scale );
+    var F = new Vector2( 0, 0 ),
+      currentObj,
+      sourceBody,
+      sourcePos,
+      model = this,
+      targetBody = model[target],
+      mode = model.planetModes[model.planetMode],
+      scale = mode.options.scale,
+      targetPos = targetBody.position.timesScalar( 1 / scale );
 
     // zero vector, for no gravity
     if ( model.gravity ) {
