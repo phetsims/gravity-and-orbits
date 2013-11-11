@@ -46,7 +46,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, PlanetModeResetButton );
-
-  return PlanetModeResetButton;
+  return inherit( Node, PlanetModeResetButton );
 } );

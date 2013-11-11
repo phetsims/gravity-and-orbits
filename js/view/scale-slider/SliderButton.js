@@ -54,7 +54,5 @@ define( function( require ) {
     this.addChild( pushButton );
   }
 
-  inherit( Node, Button );
-
-  return Button;
+  return inherit( Node, Button );
 } );

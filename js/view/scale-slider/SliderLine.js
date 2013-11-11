@@ -46,7 +46,5 @@ define( function( require ) {
     this.addChild( hslider );
   }
 
-  inherit( Node, Slider );
-
-  return Slider;
+  return inherit( Node, Slider );
 } );

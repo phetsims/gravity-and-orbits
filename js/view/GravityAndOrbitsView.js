@@ -47,6 +47,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( ScreenView, GravityAndOrbitsView );
-  return GravityAndOrbitsView;
+  return inherit( ScreenView, GravityAndOrbitsView );
 } );

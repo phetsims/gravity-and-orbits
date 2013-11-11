@@ -27,7 +27,5 @@ define( function( require ) {
     this.addChild( new SliderButton( 0, 190, model, options.range, options.step, false ) );
   }
 
-  inherit( Node, ScaleSlider );
-
-  return ScaleSlider;
+  return inherit( Node, ScaleSlider );
 } );

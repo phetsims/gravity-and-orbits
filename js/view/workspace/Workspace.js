@@ -71,7 +71,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, Workspace );
-
-  return Workspace;
+  return inherit( Node, Workspace );
 } );

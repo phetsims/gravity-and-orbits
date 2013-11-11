@@ -30,7 +30,5 @@ define( function( require ) {
     this.addChild( new AquaRadioButton( model.gravityProperty, false, new Text( offString, { font: FONT, fill: '#fff', pickable: false, x: 132 } ), {radius: 7, x: 120, y: -6 } ) );
   }
 
-  inherit( Node, GravityModeMenu );
-
-  return GravityModeMenu;
+  return inherit( Node, GravityModeMenu );
 } );

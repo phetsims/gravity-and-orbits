@@ -76,7 +76,5 @@ define( function( require ) {
     model.rightPanelHeight = options.height;
   };
 
-  inherit( Node, RightControlPanel );
-
-  return RightControlPanel;
+  return inherit( Node, RightControlPanel );
 } );

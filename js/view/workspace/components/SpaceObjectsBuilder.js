@@ -68,7 +68,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, SpaceObjectsBuilder );
-
-  return SpaceObjectsBuilder;
+  return inherit( Node, SpaceObjectsBuilder );
 } );

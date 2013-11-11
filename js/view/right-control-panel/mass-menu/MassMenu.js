@@ -90,7 +90,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, MassMenu );
-
-  return MassMenu;
+  return inherit( Node, MassMenu );
 } );

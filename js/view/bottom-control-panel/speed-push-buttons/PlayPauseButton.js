@@ -81,7 +81,5 @@ define( function( require ) {
     return (model.day - model.dayOffset);
   };
 
-  inherit( Node, PlayPauseButton );
-
-  return PlayPauseButton;
+  return inherit( Node, PlayPauseButton );
 } );

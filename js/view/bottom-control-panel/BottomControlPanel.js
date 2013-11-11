@@ -28,7 +28,5 @@ define( function( require ) {
     this.addChild( new DayCounter( model, {x: 275, y: 15} ) );
   }
 
-  inherit( Node, BottomControlPanel );
-
-  return BottomControlPanel;
+  return inherit( Node, BottomControlPanel );
 } );

@@ -77,7 +77,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, Tooltips );
-
-  return Tooltips;
+  return inherit( Node, Tooltips );
 } );

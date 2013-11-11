@@ -102,7 +102,5 @@ define( function( require ) {
     );
   }
 
-  inherit( Node, SpaceObjectsPropertyCheckbox );
-
-  return SpaceObjectsPropertyCheckbox;
+  return inherit( Node, SpaceObjectsPropertyCheckbox );
 } );

@@ -34,10 +34,8 @@ define( function( require ) {
     } );
   }
 
-  inherit( PropertySet, SpaceObjectModel, {
+  return inherit( PropertySet, SpaceObjectModel, {
     step: function() {},
     reset: function() {}
   } );
-
-  return SpaceObjectModel;
 } );

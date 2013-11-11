@@ -73,7 +73,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, SliderHorizontalPark );
-
-  return SliderHorizontalPark;
+  return inherit( Node, SliderHorizontalPark );
 } );

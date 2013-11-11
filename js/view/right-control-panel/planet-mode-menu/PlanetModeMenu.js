@@ -27,7 +27,5 @@ define( function( require ) {
     }
   }
 
-  inherit( Node, PlanetModeMenu );
-
-  return PlanetModeMenu;
+  return inherit( Node, PlanetModeMenu );
 } );

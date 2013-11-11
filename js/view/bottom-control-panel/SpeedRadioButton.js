@@ -33,7 +33,5 @@ define( function( require ) {
     ], {scale: 0.9} ) );
   }
 
-  inherit( Node, SpeedRadioButton );
-
-  return SpeedRadioButton;
+  return inherit( Node, SpeedRadioButton );
 } );

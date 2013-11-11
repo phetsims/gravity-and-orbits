@@ -59,7 +59,5 @@ define( function( require ) {
     this.addChild( this.button );
   }
 
-  inherit( Node, PlanetModeOption );
-
-  return PlanetModeOption;
+  return inherit( Node, PlanetModeOption );
 } );

@@ -109,7 +109,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, MassText );
-
-  return MassText;
+  return inherit( Node, MassText );
 } );

@@ -34,7 +34,5 @@ define( function( require ) {
     this.addChild( this.view );
   }
 
-  inherit( Node, Explosion );
-
-  return Explosion;
+  return inherit( Node, Explosion );
 } );

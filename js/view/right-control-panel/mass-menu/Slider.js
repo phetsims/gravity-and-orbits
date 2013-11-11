@@ -52,7 +52,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, Slider );
-
-  return Slider;
+  return inherit( Node, Slider );
 } );

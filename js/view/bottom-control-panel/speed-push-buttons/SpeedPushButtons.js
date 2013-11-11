@@ -22,7 +22,5 @@ define( function( require ) {
     this.addChild( new PlayPauseButton( model, {x: 0, y: 0} ) );
   }
 
-  inherit( Node, SpeedPushButtons );
-
-  return SpeedPushButtons;
+  return inherit( Node, SpeedPushButtons );
 } );

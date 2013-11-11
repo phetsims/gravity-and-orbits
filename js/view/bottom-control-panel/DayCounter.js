@@ -73,7 +73,5 @@ define( function( require ) {
     model.dayOffsetProperty.link( updateDay );
   }
 
-  inherit( Node, DayCounter );
-
-  return DayCounter;
+  return inherit( Node, DayCounter );
 } );

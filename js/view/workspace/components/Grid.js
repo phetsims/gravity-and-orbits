@@ -74,7 +74,5 @@ define( function( require ) {
     } );
   }
 
-  inherit( Node, Grid );
-
-  return Grid;
+  return inherit( Node, Grid );
 } );
