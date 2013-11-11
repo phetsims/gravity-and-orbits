@@ -29,7 +29,7 @@ define( function( require ) {
    * @param {Number} tickStep tick step
    * @constructor
    */
-  function SliderHorizontalPark( x, y, w, targetProperty, range, rounding, tickStep ) {
+  function SliderHorizontalPart( x, y, w, targetProperty, range, rounding, tickStep ) {
     var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 14;
     Node.call( this, {x: x, y: y} );
 
@@ -73,5 +73,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Node, SliderHorizontalPark );
+  return inherit( Node, SliderHorizontalPart );
 } );
