@@ -16,16 +16,17 @@ define( function( require ) {
   var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
 
   function BottomControlPanel( model, x, y ) {
-    Node.call( this, {x: x, y: y, scale: 0.9} );
+    Node.call( this, {x: x, y: y, scale: 0.9, children: [
 
-    // add speed check box
-    this.addChild( new SpeedCheckbox( model, {x: 0, y: 25} ) );
+      // add speed check box
+      new SpeedCheckbox( model, {x: 0, y: 25} ),
 
-    // add speed push buttons
-    this.addChild( new SpeedPushButtons( model, {x: 180, y: 15} ) );
+      // add speed push buttons
+      new SpeedPushButtons( model, {x: 180, y: 15} ),
 
-    // add speed push buttons
-    this.addChild( new DayCounter( model, {x: 275, y: 15} ) );
+      //add Day counter
+      new DayCounter( model, {x: 275, y: 15} )
+    ]} );
   }
 
   return inherit( Node, BottomControlPanel );
