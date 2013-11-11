@@ -1,0 +1,13 @@
+button_sim_rewind* source=PhET
+button_step* source=PhET
+button_play* source=PhET
+cartoon_icon.png source=PhET
+earth.gif source=NASA notes=see http://www.harmsy.freeuk.com/images/earth2.jpeg, http://cac-science8.wikispaces.com/ nasa copyright rules here http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html
+icon_mass.png source=PhET
+icon_path.png source=PhET
+measuringTape.png source=PhET
+moon.png source=public domain notes=http://astro.unl.edu/misc/moonpics/moon08_th.jpg public domain license at http://astro.unl.edu/misc/moonpics
+reset_arrow.png source=PhET
+reset_arrow.svg source=PhET
+space-station.png source=nasa notes=http://www.nasa.gov/images/content/323090main_s119e009793_hires.jpg linked from http://www.nasa.gov/mission_pages/station/multimedia/iss_sts119_images.html
+to_scale_icon.png source=PhET
