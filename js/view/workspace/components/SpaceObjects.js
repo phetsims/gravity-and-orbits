@@ -30,11 +30,11 @@ define( function( require ) {
       model.showExplosion = false;
 
       // save state
-      if ( prevNum !== null ) {
+      if ( prevNum !== null && typeof prevNum !== 'undefined' ) {
         self.saveState( model, prevNum, 0 );
       }
 
-      if ( self.state[num] ) {
+      if ( self.state[num] && self.state[num][0] ) {
         self.restoreState( model, num, 0 );
       }
       else {

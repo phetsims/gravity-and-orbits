@@ -270,8 +270,9 @@ define( function( require ) {
 
     // force planet mode reset function
     this.planetModeReset = function() {
-      // set another planet mode (to call observers if planetMode already equal to initial value)
-      self.planetMode += ( (self.planetMode === (self.planetModes.length - 1)) ? -1 : 1);
+      // notify observers
+      self.planetModeProperty._notifyObservers();
+
       // set initial value
       self.planetModeProperty.reset();
     };
