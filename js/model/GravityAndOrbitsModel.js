@@ -39,7 +39,8 @@ define( function( require ) {
     SPACE_STATION_RADIUS: 109,
     SPACE_STATION_MASS: 369914,
     SPACE_STATION_SPEED: 7706,
-    SPACE_STATION_PERIGEE: 347000
+    SPACE_STATION_PERIGEE: 347000,
+    METERS_PER_MILE: 0.000621371192
   };
 
   var fps = 60, timeModes = ['days', 'minutes'];
@@ -205,6 +206,8 @@ define( function( require ) {
     var self = this;
     this.viewModes = [cartoonString, toScaleString];
     this.timeModes = timeModes;
+    this.CONSTANTS = CONSTANTS;
+    this.isTapeUnitsMiles = true; // use in measuring tape miles or meters metric system
 
     this.spaceObjects = ['sun', 'earth', 'moon', 'spaceStation'];
 

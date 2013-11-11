@@ -22,6 +22,7 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
 
   var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
+  var thousandKilometers = require( 'string!GRAVITY_AND_ORBITS/thousandKilometers' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 16 );
@@ -34,9 +35,7 @@ define( function( require ) {
       tipX: 119.5,
       tipY: 0,
       scale: 1,
-      lengthDefault: 119.5,
       length: 119.5,
-      valueDefault: 50000,
       value: 50000,
       precision: 0
     },
@@ -46,9 +45,7 @@ define( function( require ) {
       tipX: 119.5,
       tipY: 0,
       scale: 1,
-      lengthDefault: 119.5,
       length: 119.5,
-      valueDefault: 50000,
       value: 50000,
       precision: 0
     },
@@ -58,9 +55,7 @@ define( function( require ) {
       tipX: 85,
       tipY: 0,
       scale: 1,
-      lengthDefault: 85,
       length: 85,
-      valueDefault: 100,
       value: 100,
       precision: 0
     },
@@ -70,9 +65,7 @@ define( function( require ) {
       tipX: 85,
       tipY: 0,
       scale: 1,
-      lengthDefault: 85,
       length: 85,
-      valueDefault: 2,
       value: 2,
       precision: 1
     }
@@ -86,6 +79,7 @@ define( function( require ) {
     this.prevScale = 1;
 
     this.options = options;
+    this.init( model );
 
     // add base of tape and not base node
     this.base = new Node( {children: [new Image( measuringTapeImg )], scale: 0.8} );
@@ -171,7 +165,7 @@ define( function( require ) {
       self.options[self.mode].lengthDefault *= 1 / self.prevScale;
       self.mode = mode;
       self.options[mode].lengthDefault = options[self.mode].lengthDefault * self.prevScale;
-      self.init( self.options[mode], angle );
+      self.initTape( self.options[mode], angle );
       angle = 0;
     } );
 
@@ -181,12 +175,23 @@ define( function( require ) {
   }
 
   return inherit( Node, MeasuringTape, {
-    init: function( option, angle ) {
+    init: function( model ) {
+      this.options.forEach( function( el ) {
+        el.valueDefaultMiles = el.value / (model.CONSTANTS.METERS_PER_MILE * 1000);
+        el.lengthDefault = el.length;
+      } );
+
+      this.string = model.isTapeUnitsMiles ? thousandMilesString : thousandKilometers;
+    },
+    getText: function() {
+      var option = this.options[this.mode];
+      return (option.length / option.lengthDefault * option.valueDefaultMiles).toFixed( option.precision ) + ' ' + this.string;
+    },
+    initTape: function( option, angle ) {
       this.rotate( -angle );
       this.translate( option.x, option.y );
       this.setTip( option.lengthDefault, 0 );
-      this.base.setX( -this.centerRotation.x + option.x );
-      this.base.setY( -this.centerRotation.y + option.y );
+      this.base.setTranslation( -this.centerRotation.x + option.x, -this.centerRotation.y + option.y );
     },
     rotate: function( angle ) {
       this.base.rotateAround( new Vector2( this.notBase.x, this.notBase.y ), angle );
@@ -203,19 +208,16 @@ define( function( require ) {
       option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
 
       this.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
-      this.text.setText( (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + thousandMilesString );
-      this.tip.setX( x );
-      this.tip.setY( y );
+      this.text.setText( this.getText() );
+      this.tip.setTranslation( x, y );
       option.tipX = x;
       option.tipY = y;
     },
     translate: function( x, y, v ) {
-      this.notBase.setX( x );
-      this.notBase.setY( y );
+      this.notBase.setTranslation( x, y );
 
       v = v || new Vector2( 0, 0 );
-      this.base.setX( x - v.x );
-      this.base.setY( y - v.y );
+      this.base.setTranslation( x - v.x, y - v.y );
     }
   } );
 } );
