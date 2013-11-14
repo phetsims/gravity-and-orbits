@@ -41,6 +41,7 @@ define( function( require ) {
             self.add( model, el, newPosition );
           }
         }
+        self.check( model );
       } );
     } );
 
@@ -80,8 +81,6 @@ define( function( require ) {
       this.path[this.num][el].push( {view: path, time: this.time[this.num]} );
       this.addChild( path );
       this.prevPosition[this.num][el].push( newPosition );
-
-      this.check( model );
     },
     check: function( model ) {
       var self = this, paths, path;
