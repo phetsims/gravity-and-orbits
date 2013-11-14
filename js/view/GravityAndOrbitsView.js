@@ -15,36 +15,30 @@ define( function( require ) {
   var ScaleSlider = require( 'view/scale-slider/ScaleSlider' );
   var RightControlPanel = require( 'view/right-control-panel/RightControlPanel' );
   var BottomControlPanel = require( 'view/bottom-control-panel/BottomControlPanel' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
-    var options = {
-      scaleSlider: {
-        range: {max: 1.5, min: 0.5},
-        step: 0.1
-      }
-    };
 
     // add workspace
     this.addChild( new Workspace( model ) );
 
-    // add reset button
-    var resetAllButton = new ResetAllButton( function() { model.reset(); }, { scale: 0.6, x: 638 } );
-    this.addChild( resetAllButton );
-
     // add scale slider
-    this.addChild( new ScaleSlider( model, 20, 10, options.scaleSlider ) );
+    this.addChild( new ScaleSlider( model, 20, 10, {
+      range: {max: 1.5, min: 0.5},
+      step: 0.1
+    } ) );
 
-    // add right control panel
-    this.addChild( new RightControlPanel( model, 560, 10 ) );
+    this.addChild( new VBox( {spacing: 5, left: 560, top: 10, children: [
+      // add right control panel
+      new RightControlPanel( model ),
+
+      // add reset button
+      new ResetAllButton( function() { model.reset(); }, { scale: 0.6, x: 100 } )
+    ]} ) );
 
     // add bottom control panel
     this.addChild( new BottomControlPanel( model, 100, 410 ) );
-
-    model.rightPanelHeightProperty.link( function( height ) {
-      var resetButtonOffsetY = 18;
-      resetAllButton.setY( height + resetButtonOffsetY );
-    } );
   }
 
   return inherit( ScreenView, GravityAndOrbitsView );

@@ -23,20 +23,22 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 24 );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
-  function DayCounter( model, coords ) {
+  function DayCounter( model ) {
     var self = this;
-    Node.call( this, coords );
+    Node.call( this );
 
-    // add day text counter
-    this.day = new Text( '', { font: FONT, fontWeight: 'bold', fill: '#fff', pickable: false, y: 32, x: 10 } );
-    this.addChild( this.day );
+    var updateDay = function() {
+      self.day.setText( parseInt( (model.day - model.dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
+      box.updateLayout();
+    };
 
     // create default view for clear button
     var node = new Node( {children: [
       new Rectangle( 0, 0, 65, 25, 5, 5, {fill: '#fff'} ),
       new Text( clearString, { font: new PhetFont( 18 ), fill: '#000', pickable: false, y: 18, x: 10 } )
-    ], x: 50, y: 50 } );
+    ] } );
 
     // button options
     var options = {
@@ -50,12 +52,18 @@ define( function( require ) {
       }
     };
 
-    // create button
-    this.addChild( new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.listener } ) );
+    // day text counter
+    this.day = new Text( '', { font: FONT, fontWeight: 'bold', fill: '#fff', pickable: false } );
 
-    var updateDay = function() {
-      self.day.setText( parseInt( (model.day - model.dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
-    };
+    var box = new VBox( {spacing: 10, children: [
+      // add day text counter
+      this.day,
+
+      // add clear button
+      new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.listener } )
+    ]} );
+
+    this.addChild( box );
 
     model.timeModeProperty.link( function( mode ) {
       if ( mode === model.timeModes[0] ) { // days

@@ -14,18 +14,20 @@ define( function( require ) {
   var SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' );
   var SpeedCheckbox = require( 'view/bottom-control-panel/SpeedRadioButton' );
   var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
 
   function BottomControlPanel( model, x, y ) {
     Node.call( this, {x: x, y: y, scale: 0.9, children: [
+      new HBox( {spacing: 20, children: [
+        // add speed check box
+        new SpeedCheckbox( model ),
 
-      // add speed check box
-      new SpeedCheckbox( model, {x: 0, y: 25} ),
+        // add speed push buttons
+        new SpeedPushButtons( model ),
 
-      // add speed push buttons
-      new SpeedPushButtons( model, {x: 180, y: 15} ),
-
-      //add Day counter
-      new DayCounter( model, {x: 275, y: 15} )
+        //add day counter
+        new DayCounter( model ) ]
+      } )
     ]} );
   }
 

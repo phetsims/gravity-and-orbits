@@ -18,16 +18,16 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 14 );
+  var HBox = require( 'SCENERY/nodes/HBox' );
 
   function GravityModeMenu( model, coords ) {
     Node.call( this, coords );
 
-    // add "gravity" text
-    this.addChild( new Text( gravityString + ':', { font: FONT, fill: '#fff', pickable: false, y: -1 } ) );
-
-    // add on/off buttons
-    this.addChild( new AquaRadioButton( model.gravityProperty, true, new Text( onString, { font: FONT, fill: '#fff', pickable: false, x: 82 } ), {radius: 7, x: 70, y: -6} ) );
-    this.addChild( new AquaRadioButton( model.gravityProperty, false, new Text( offString, { font: FONT, fill: '#fff', pickable: false, x: 132 } ), {radius: 7, x: 120, y: -6 } ) );
+    this.addChild( new HBox( {spacing: 10, bottom: 2, children: [
+      new Text( gravityString + ':', { font: FONT, fill: '#fff', pickable: false } ),
+      new AquaRadioButton( model.gravityProperty, true, new Text( onString, { font: FONT, fill: '#fff', pickable: false } ), {radius: 7} ),
+      new AquaRadioButton( model.gravityProperty, false, new Text( offString, { font: FONT, fill: '#fff', pickable: false } ), {radius: 7} )
+    ]} ) );
   }
 
   return inherit( Node, GravityModeMenu );

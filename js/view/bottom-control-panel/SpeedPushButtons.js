@@ -29,40 +29,44 @@ define( function( require ) {
   var buttonRewindDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_deactivated.svg' );
 
   var Image = require( 'SCENERY/nodes/Image' );
-
+  var HBox = require( 'SCENERY/nodes/HBox' );
   var ToggleButton = require( 'SUN/ToggleButton' );
 
-  function SpeedPushButtons( model, coords ) {
-    Node.call( this, {x: coords.x, y: coords.y, scale: 0.7} );
-    var stepButton, rewindButton, step, rewind;
+  function SpeedPushButtons( model ) {
+    Node.call( this, {scale: 0.7} );
+    var stepButton, rewindButton, playButton, step, rewind;
 
     // add play button
-    this.addChild( new ToggleButton(
+    playButton = new ToggleButton(
       new Image( pauseImg ),
       new Image( playImg ),
-      model.playProperty ) );
+      model.playProperty );
 
     // add step button
     step = function() {
       model.stepManual();
     };
-    this.addChild( stepButton = new PushButton(
+    stepButton = new PushButton(
       new Image( buttonStepUnpressedImg ),
       new Image( buttonStepHoverImg ),
       new Image( buttonStepPressedImg ),
       new Image( buttonStepDeactivatedImg ),
-      {x: 70, y: 7, listener: step} ) );
+      {listener: step} );
     stepButton.enabled = false;
 
     // add rewind button
     rewind = function() {model.rewind = true;};
-    this.addChild( rewindButton = new PushButton(
+    rewindButton = new PushButton(
       new Image( buttonRewindImg ),
       new Image( buttonRewindHoverImg ),
       new Image( buttonRewindPressedImg ),
       new Image( buttonRewindDeactivatedImg ),
-      {x: -50, y: 7, listener: rewind} ) );
+      {listener: rewind} );
     rewindButton.enabled = false;
+
+    this.addChild( new HBox( {spacing: 0, children: [
+      rewindButton, playButton, stepButton
+    ]} ) );
 
     model.playProperty.link( function updatePlayPauseButton( value ) {
       stepButton.enabled = !value;

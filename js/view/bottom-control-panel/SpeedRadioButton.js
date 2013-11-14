@@ -21,15 +21,15 @@ define( function( require ) {
   var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 16 );
 
-  function SpeedRadioButton( model, coords ) {
-    Node.call( this, coords );
+  function SpeedRadioButton( model ) {
+    var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };
+    Node.call( this );
 
     this.addChild( new VerticalAquaRadioButtonGroup( [
-      {property: model.speedProperty, value: 1.75, node: new Text( fastForwardString, { font: FONT, fill: '#fff', pickable: false, y: -7 } )},
-      {property: model.speedProperty, value: 1, node: new Text( normalString, { font: FONT, fill: '#fff', pickable: false, y: -7 } )},
-      {property: model.speedProperty, value: 0.25, node: new Text( slowMotionString, { font: FONT, fill: '#fff', pickable: false, y: -7 } )}
+      {property: model.speedProperty, value: 1.75, node: new Text( fastForwardString, textOption)},
+      {property: model.speedProperty, value: 1, node: new Text( normalString, textOption )},
+      {property: model.speedProperty, value: 0.25, node: new Text( slowMotionString, textOption )}
     ], {scale: 0.9} ) );
   }
 

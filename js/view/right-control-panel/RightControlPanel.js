@@ -16,10 +16,11 @@ define( function( require ) {
   var GravityModeMenu = require( 'view/right-control-panel/GravityModeMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'view/right-control-panel/SpaceObjectsPropertyCheckbox' );
   var MassMenu = require( 'view/right-control-panel/mass-menu/MassMenu' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
-  function RightControlPanel( model, x, y ) {
+  function RightControlPanel( model ) {
     var self = this, options = {height: 0, lineOffset: 10, sectionsOffset: 20};
-    Node.call( this, {x: x, y: y} );
+    Node.call( this );
 
     // add background
     this.back = new Rectangle( 0, 0, 200, 0, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} );
@@ -37,11 +38,8 @@ define( function( require ) {
 
     // set background height
     this.back.setRectHeight( options.height );
-    model.rightPanelHeight = options.height;
 
-    model.viewModeProperty.link( function() {
-      resizeSections.call( self, model, sections, options );
-    } );
+    resizeSections.call( self, model, sections, options );
   }
 
   var addSections = function( model, sections, options ) {
@@ -73,7 +71,6 @@ define( function( require ) {
       }
     }
     this.back.setRectHeight( options.height );
-    model.rightPanelHeight = options.height;
   };
 
   return inherit( Node, RightControlPanel );

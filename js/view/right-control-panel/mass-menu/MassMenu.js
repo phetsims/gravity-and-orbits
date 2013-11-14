@@ -28,6 +28,7 @@ define( function( require ) {
   var Earth = require( 'view/space-object/Earth' );
   var Moon = require( 'view/space-object/Moon' );
   var SpaceStation = require( 'view/space-object/SpaceStation' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   function MassMenu( model, x, y ) {
     var self = this;
@@ -81,12 +82,18 @@ define( function( require ) {
       }
     }
 
+    this.vBox = new VBox( {spacing: 2} );
+    this.addChild( this.vBox );
+
     // add sliders
     model.planetModeProperty.link( function( mode ) {
-      self.removeAllChildren();
-      showModes[mode].forEach( function( el, i ) { // i === 0 or i === 1
-        self.addChild( (i ? self[el].setY( self.getHeight() + 3 ) : self[el].setY( 0 ) ) );
+      self.vBox.removeAllChildren();
+      showModes[mode].forEach( function( el ) {
+        self.vBox.addChild( self[el] );
       } );
+
+      self.vBox.bottom = 40;
+      self.vBox.updateLayout();
     } );
   }
 
