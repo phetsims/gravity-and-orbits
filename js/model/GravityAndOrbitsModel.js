@@ -339,7 +339,7 @@ define( function( require ) {
           body = model[currentObj];
           body.position = body.position.timesScalar( 1.0 / scale ).plus( body.velocity.timesScalar( dt ).plus( body.acceleration.timesScalar( dt * dt / 2.0 ) ) ).timesScalar( scale );
           body.velocityHalf = body.velocity.plus( body.acceleration.timesScalar( dt / 2.0 ) );
-          body.acceleration = getForce.call( model, currentObj ).timesScalar( -forceScale / body.mass );
+          body.acceleration = getForce.call( model, currentObj ).multiply( -forceScale / body.mass );
           body.velocity = body.velocityHalf.plus( body.acceleration.timesScalar( dt / 2.0 ) );
         }
       }
@@ -367,7 +367,7 @@ define( function( require ) {
         // ignore computation if that body has exploded,
         // or if they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
         if ( mode[currentObj] && currentObj !== target && !sourceBody.exploded && !targetPos.equals( sourcePos ) ) {
-          F = F.plus( getUnitVector( sourcePos, targetPos ).timesScalar( CONSTANTS.G * sourceBody.mass * targetBody.mass / (targetPos.distanceSquared( sourcePos )) ) );
+          F.add( getUnitVector( sourcePos, targetPos ).multiply( CONSTANTS.G * sourceBody.mass * targetBody.mass / (targetPos.distanceSquared( sourcePos )) ) );
         }
       }
     }
