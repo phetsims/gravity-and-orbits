@@ -32,8 +32,8 @@ define( function( require ) {
 
   var ToggleButton = require( 'SUN/ToggleButton' );
 
-  function PlayPauseButton( model, options ) {
-    Node.call( this, {x: options.x, y: options.y, scale: 0.7} );
+  function SpeedPushButtons( model, coords ) {
+    Node.call( this, {x: coords.x, y: coords.y, scale: 0.7} );
     var stepButton, rewindButton, step, rewind;
 
     // add play button
@@ -81,5 +81,5 @@ define( function( require ) {
     return (model.day - model.dayOffset);
   };
 
-  return inherit( Node, PlayPauseButton );
+  return inherit( Node, SpeedPushButtons );
 } );
