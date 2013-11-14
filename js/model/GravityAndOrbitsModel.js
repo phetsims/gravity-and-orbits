@@ -328,7 +328,7 @@ define( function( require ) {
       STEPS = 10,
       dt = t * timeScale / STEPS,
       i, j,
-      currentObj, body;
+      currentObj, body, temp = new Vector2( 0, 0 ), temp1 = new Vector2();
 
     for ( j = 0; j < STEPS; j++ ) {
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
@@ -337,13 +337,23 @@ define( function( require ) {
         // change position of not fixed or dragging objects
         if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
           body = model[currentObj];
-          body.position = body.position.timesScalar( 1.0 / scale ).plus( body.velocity.timesScalar( dt ).plus( body.acceleration.timesScalar( dt * dt / 2.0 ) ) ).timesScalar( scale );
-          body.velocityHalf = body.velocity.plus( body.acceleration.timesScalar( dt / 2.0 ) );
-          body.acceleration = getForce.call( model, currentObj ).multiply( -forceScale / body.mass );
-          body.velocity = body.velocityHalf.plus( body.acceleration.timesScalar( dt / 2.0 ) );
+          body.position.multiply( 1.0 / scale ).add( temp.set( body.velocity ).multiply( dt ).add( temp1.set( body.acceleration ).multiply( dt * dt / 2.0 ) ) ).multiply( scale );
+          body.velocityHalf.set( body.velocity.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
+          body.acceleration.set( getForce.call( model, currentObj ).multiply( -forceScale / body.mass ) );
+          body.velocity.set( body.velocityHalf.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
         }
       }
     }
+
+    // notify observers
+    model.spaceObjects.forEach( function( el ) {
+      var body = model[el];
+      // I've try to to use _notifyObservers and notifyObserversUnsafe, but without success
+      body.position = body.position.copy();
+      body.velocityHalf = body.velocityHalf.copy();
+      body.acceleration = body.acceleration.copy();
+      body.velocity = body.velocity.copy();
+    } );
   };
 
   var getForce = function( target ) {
