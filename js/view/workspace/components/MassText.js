@@ -97,15 +97,14 @@ define( function( require ) {
         setMassTextPosition();
       } );
 
-      model.viewModeProperty.link( function( mode ) {
-        if ( mode !== model.viewModes[1] ) {
-          model.mass = false;
-        }
-        else {
-          setMassText();
-          setMassTextPosition();
-        }
-      } );
+      if ( model.viewMode !== model.viewModes[1] ) {
+        model.mass = false;
+      }
+      else {
+        setMassText();
+        setMassTextPosition();
+      }
+
     } );
   }
 

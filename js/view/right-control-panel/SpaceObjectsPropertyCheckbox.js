@@ -89,17 +89,13 @@ define( function( require ) {
           new Node( {children: [options[i].node], x: 0, y: 4 + i * dy} )
         ]} ), options[i].property, {x: 3, y: 4 + i * dy, scale: 0.8} ),
         y: 4 + i * dy};
-      this.addChild( this[options[i].text].view );
     }
 
-    model.viewModeProperty.link( function( mode ) {
-        var menu = order[mode];
-        self.removeAllChildren();
-        for ( var i = 0; i < menu.length; i++ ) {
-          self.addChild( self[options[menu[i]].text].view.setY( self[options[i].text].y ) );
-        }
-      }
-    );
+    var menu = order[model.viewMode];
+    for ( i = 0; i < menu.length; i++ ) {
+      self.addChild( self[options[menu[i]].text].view.setY( self[options[i].text].y ) );
+    }
+
   }
 
   return inherit( Node, SpaceObjectsPropertyCheckbox );

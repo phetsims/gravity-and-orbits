@@ -205,6 +205,7 @@ define( function( require ) {
   function GravityAndOrbitsModel( width, height, viewMode ) {
     var self = this;
     this.viewModes = [cartoonString, toScaleString];
+    this.viewMode = viewMode; // 'cartoon', 'to scale'
     this.timeModes = timeModes;
     this.CONSTANTS = CONSTANTS;
     this.isTapeUnitsMiles = true; // use in measuring tape miles or meters metric system
@@ -219,7 +220,6 @@ define( function( require ) {
     this.height = height;
 
     PropertySet.call( this, {
-      viewMode: viewMode, // 'cartoon', 'to scale'
       planetMode: 0, // planet mode
       timeMode: timeModes[0], // time counter format
       gravity: true, // switch gravity
@@ -230,7 +230,6 @@ define( function( require ) {
       tape: false, // visible tape
       mass: false, // visible mass
       play: false, // play/pause state
-      rightPanelHeight: 0, // height of right control panel
       speed: 1, // 1.75, 1, 0.25
       drag: '', // current dragging object
       refreshMode: false, // refresh current planetMode
@@ -328,10 +327,10 @@ define( function( require ) {
       timeScale = 24 * 60 * 60 * 0.967,
       STEPS = 10,
       dt = t * timeScale / STEPS,
-      i,
+      i, j,
       currentObj, body;
 
-    for ( var j = 0; j < STEPS; j++ ) {
+    for ( j = 0; j < STEPS; j++ ) {
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
         currentObj = model.spaceObjects[i];
 

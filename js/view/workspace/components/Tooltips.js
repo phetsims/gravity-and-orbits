@@ -59,7 +59,6 @@ define( function( require ) {
       };
 
       model.scaleProperty.link( checkTooltip );
-      model.viewModeProperty.link( checkTooltip );
       model.planetModeProperty.link( checkTooltip );
       body.viewProperty.link( checkTooltip );
       body.radiusProperty.link( checkTooltip );

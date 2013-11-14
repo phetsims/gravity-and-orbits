@@ -146,19 +146,17 @@ define( function( require ) {
     this.addChild( this.notBase );
 
 
+    if ( model.viewModes[0] === model.viewMode ) { // cartoon
+      self.setVisible( false );
+    }
+    else if ( model.viewModes[1] === model.viewMode && self.visibility ) { // scale
+      self.setVisible( true );
+    }
+
     // add observers
     model.tapeProperty.link( function( visibility ) {
       self.visibility = visibility;
       self.setVisible( visibility );
-    } );
-
-    model.viewModeProperty.link( function( mode ) {
-      if ( model.viewModes[0] === mode ) { // cartoon
-        self.setVisible( false );
-      }
-      else if ( model.viewModes[1] === mode && self.visibility ) { // scale
-        self.setVisible( true );
-      }
     } );
 
     model.planetModeProperty.link( function( mode ) {
@@ -177,7 +175,7 @@ define( function( require ) {
   return inherit( Node, MeasuringTape, {
     init: function( model ) {
       this.options.forEach( function( el ) {
-        el.valueDefaultMiles = el.value / (model.CONSTANTS.METERS_PER_MILE * 1000);
+        el.valueDefault = el.value / ( model.isTapeUnitsMiles ? 1 : model.CONSTANTS.METERS_PER_MILE * 1000);
         el.lengthDefault = el.length;
       } );
 
@@ -185,7 +183,7 @@ define( function( require ) {
     },
     getText: function() {
       var option = this.options[this.mode];
-      return (option.length / option.lengthDefault * option.valueDefaultMiles).toFixed( option.precision ) + ' ' + this.string;
+      return (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + this.string;
     },
     initTape: function( option, angle ) {
       this.rotate( -angle );
