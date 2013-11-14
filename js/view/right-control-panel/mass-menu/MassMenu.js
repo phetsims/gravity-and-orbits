@@ -82,7 +82,7 @@ define( function( require ) {
       }
     }
 
-    this.vBox = new VBox( {spacing: 2} );
+    this.vBox = new VBox( {spacing: 2, y: -10} );
     this.addChild( this.vBox );
 
     // add sliders
@@ -92,7 +92,6 @@ define( function( require ) {
         self.vBox.addChild( self[el] );
       } );
 
-      self.vBox.bottom = 40;
       self.vBox.updateLayout();
     } );
   }
