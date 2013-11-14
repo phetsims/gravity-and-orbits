@@ -33,7 +33,7 @@ define( function( require ) {
     self.clearAll( model );
     model.spaceObjects.forEach( function( el ) {
       var body = model[el];
-      model.dayProperty.link( function() {
+      model[el].positionProperty.link( function() {
         if ( !body.exploded ) {
           var newPosition = body.position;
           var dr = newPosition.minus( self.prevPosition[self.num][el][self.prevPosition[self.num][el].length - 1] ).magnitude();
@@ -76,7 +76,7 @@ define( function( require ) {
   return inherit( Node, PlanetPath, {
     add: function( model, el, newPosition ) {
       var prevPosition = this.prevPosition[this.num][el][this.prevPosition[this.num][el].length - 1],
-        path = new Path( new Shape().moveTo( prevPosition.x, prevPosition.y ).lineTo( newPosition.x, newPosition.y ), {stroke: this.color[el], lineWidth: 3} );
+        path = new Path( new Shape().moveTo( prevPosition.x, prevPosition.y ).lineTo( newPosition.x, newPosition.y ), {stroke: this.color[el], lineWidth: 3, lineCap: 'square'} );
 
       this.path[this.num][el].push( {view: path, time: this.time[this.num]} );
       this.addChild( path );

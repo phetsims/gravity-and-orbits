@@ -97,7 +97,7 @@ define( function( require ) {
           x0 = self.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
 
         h = self.centerRotation.timesScalar( Math.cos( angle / 2 ) ).rotated( angle / 2 );
-        v = self.centerRotation.plus( h.minus( self.centerRotation ).timesScalar( 2 ) );
+        v = self.centerRotation.plus( h.minus( self.centerRotation ).multiply( 2 ) );
 
         clickYOffset = y0 - v.y;
         clickXOffset = x0 - v.x;

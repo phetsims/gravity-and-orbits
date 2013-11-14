@@ -97,7 +97,7 @@ define( function( require ) {
           translate: function( e ) {
             var velocity = e.position.minus( model[el].position ), amplitude = velocity.magnitude() * self.maxVelocity[model.planetMode] / self.arrowSizeNormal;
             self.setArrow( model, el, e.position );
-            model[el].velocity.set( velocity.normalized().timesScalar( amplitude ) );
+            model[el].velocity.set( velocity.normalized().multiply( amplitude ) );
           }
         } ) );
 
@@ -144,7 +144,7 @@ define( function( require ) {
         arrowSize = Math.max( arrowSize, arrowSizeMin );
 
         unitVector = velocity.normalized();
-        v = model[obj].position.plus( unitVector.timesScalar( arrowSize ) );
+        v = model[obj].position.plus( unitVector.multiply( arrowSize ) );
 
         self.setArrow( model, obj, v );
         self.arrows[obj].view.setVisible( true );

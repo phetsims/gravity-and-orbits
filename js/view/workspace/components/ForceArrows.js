@@ -29,7 +29,7 @@ define( function( require ) {
     model.spaceObjects.forEach( function( el ) {
       prevPosition[el] = model[el].position;
       model[el].positionProperty.link( function( newPosition ) {
-        if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
+        if ( newPosition.minus( prevPosition[el] ).magnitude() > 0.5 ) {
           prevPosition[el] = newPosition;
           drawArrows();
         }
@@ -135,10 +135,10 @@ define( function( require ) {
             continue;
           }
 
-          f = body2.mass * body1.mass / (distance.magnitude() * distance.magnitude());
+          f = body2.mass * body1.mass / (distance.magnitudeSquared());
           arrowSize = Math.max( 60 * f / maxForce, 10 );
 
-          unitVector = distance.normalized().timesScalar( arrowSize );
+          unitVector = distance.normalized().multiply( arrowSize );
 
           self.shapes[obj1 + obj2].setShape( new ArrowShape( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y ) );
           self.shapes[obj2 + obj1].setShape( new ArrowShape( body2.position.x, body2.position.y, body2.position.x - unitVector.x, body2.position.y - unitVector.y ) );
