@@ -11,9 +11,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PushButton = require( 'SUN/PushButton' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var RectanglePushButton = require( 'SUN/RectanglePushButton' );
 
   /**
    * @param {Number} x x-coordinate
@@ -41,17 +39,13 @@ define( function( require ) {
       model.scale = Math.max( Math.min( model.scale + (isIncrease ? step : -step), range.max ), range.min );
     };
 
-    var options = {
-      upNode: new Node( {children: [sample]} ),
-      overNode: new Node( {children: [sample]} ),
-      downNode: new Node( {children: [sample]} ),
-      disabledNode: new Node( {children: [sample]} )
-    };
-
     // create button
-    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: callback } );
-
-    this.addChild( pushButton );
+    this.addChild( new RectanglePushButton( sample,
+      {
+        rectangleXMargin: 0,
+        rectangleYMargin: 0,
+        listener: callback
+      } ) );
   }
 
   return inherit( Node, Button );

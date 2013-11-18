@@ -15,31 +15,26 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PushButton = require( 'SUN/PushButton' );
+  var RectanglePushButton = require( 'SUN/RectanglePushButton' );
 
   function PlanetModeResetButton( model, coords, dy ) {
+    var pushButton;
     Node.call( this, coords );
 
-    // create default view
-    var node = new Node( {children: [
-      new Rectangle( 0, 0, 25, 25, 5, 5, {fill: '#fff'} ),
-      new Image( resetArrowImg, {x: 2, y: 1} )
-    ]} );
-
-    // button options
-    var options = {
-      upNode: new Node( {children: [node]} ),
-      overNode: new Node( {children: [node]} ),
-      downNode: new Node( {children: [node]} ),
-      disabledNode: new Node( {children: [node]} ),
-      listener: function() {
-        model.refreshMode = true;
-      }
-    };
-
     // create button
-    var pushButton = new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.listener } );
-    this.addChild( pushButton );
+    this.addChild( pushButton = new RectanglePushButton( new Node( {
+      children: [
+        new Rectangle( 0, 0, 25, 25, 5, 5, {fill: '#fff'} ),
+        new Image( resetArrowImg, {x: 2, y: 1} )
+      ]} ),
+      {
+        rectangleXMargin: 0,
+        rectangleYMargin: 0,
+        listener: function() {
+          model.refreshMode = true;
+        }
+      } )
+    );
 
     model.planetModeProperty.link( function( mode ) {
       pushButton.setY( mode * dy );

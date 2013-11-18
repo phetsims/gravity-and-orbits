@@ -15,14 +15,15 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PushButton = require( 'SUN/PushButton' );
+  var TextPushButton = require( 'SUN/TextPushButton' );
+  var Color = require( 'SCENERY/util/Color' );
 
   var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
   var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
   var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 24 );
+  var FONT = new PhetFont( 18 );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   function DayCounter( model ) {
@@ -34,24 +35,6 @@ define( function( require ) {
       box.updateLayout();
     };
 
-    // create default view for clear button
-    var node = new Node( {children: [
-      new Rectangle( 0, 0, 65, 25, 5, 5, {fill: '#fff'} ),
-      new Text( clearString, { font: new PhetFont( 18 ), fill: '#000', pickable: false, y: 18, x: 10 } )
-    ] } );
-
-    // button options
-    var options = {
-      upNode: new Node( {children: [node]} ),
-      overNode: new Node( {children: [node]} ),
-      downNode: new Node( {children: [node]} ),
-      disabledNode: new Node( {children: [node]} ),
-      listener: function() {
-        model.dayOffset = model.day;
-        updateDay();
-      }
-    };
-
     // day text counter
     this.day = new Text( '', { font: FONT, fontWeight: 'bold', fill: '#fff', pickable: false } );
 
@@ -60,7 +43,13 @@ define( function( require ) {
       this.day,
 
       // add clear button
-      new PushButton( options.upNode, options.overNode, options.downNode, options.disabledNode, { listener: options.listener } )
+      new TextPushButton( clearString, {
+        font: FONT,
+        rectangleFillUp: new Color( 255, 255, 255 ),
+        listener: function() {
+          model.dayOffset = model.day;
+          updateDay();
+        }} )
     ]} );
 
     this.addChild( box );
