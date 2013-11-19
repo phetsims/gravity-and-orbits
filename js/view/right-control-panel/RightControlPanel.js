@@ -20,7 +20,6 @@ define( function( require ) {
 
   function RightControlPanel( model ) {
     Node.call( this );
-    this.lines = [];
 
     // add background
     this.back = new Rectangle( 0, 0, 0, 0, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} );
