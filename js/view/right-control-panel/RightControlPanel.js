@@ -19,12 +19,16 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   function RightControlPanel( model ) {
-    var self = this, options = {height: 0, lineOffset: 10, sectionsOffset: 20};
     Node.call( this );
+    this.lines = [];
 
     // add background
-    this.back = new Rectangle( 0, 0, 200, 0, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} );
+    this.back = new Rectangle( 0, 0, 0, 0, 2, 2, {fill: '#030085', stroke: '#8E9097', lineWidth: 2} );
     this.addChild( this.back );
+
+    // add container for sections
+    this.box = new VBox( {spacing: 5, y: 5} );
+    this.addChild( this.box );
 
     // add sections
     var sections = [
@@ -34,43 +38,36 @@ define( function( require ) {
       {constructor: MassMenu, name: 'MassMenu'}
     ];
 
-    addSections.call( this, model, sections, options );
+    addSections.call( this, model, sections );
 
-    // set background height
-    this.back.setRectHeight( options.height );
+    // update container
+    this.box.updateLayout();
 
-    resizeSections.call( self, model, sections, options );
+    // set background size
+    this.back.setRectHeight( this.box.getHeight() + this.box.y );
+    this.back.setRectWidth( this.box.getWidth() );
   }
 
-  var addSections = function( model, sections, options ) {
+  var addSections = function( model, sections ) {
+    var nodes = [], width;
+
+    // add sections
     for ( var i = 0, len = sections.length; i < len; i++ ) {
-      // add section
-      this[sections[i].name] = {
-        view: new sections[i].constructor( model, {x: 7, y: options.height + options.sectionsOffset} )
-      };
-      options.height += this[sections[i].name].view.getHeight() + options.lineOffset;
-      this.addChild( this[sections[i].name].view );
-
-      // add bottom line
-      if ( i !== len - 1 ) {
-        this[sections[i].name].line = new Rectangle( -1, options.height, 200, 2, {fill: '#8E9097'} );
-        this.addChild( this[sections[i].name].line );
-      }
+      nodes[i] = new Node( { children: [
+        new sections[i].constructor( model, {x:5} )
+      ]} );
+      this.box.addChild( nodes[i] );
     }
-  };
 
-  var resizeSections = function( model, sections, options ) {
-    var i, len = sections.length;
-    options.height = 0;
+    // find width for lines
+    width = this.box.getWidth();
 
+    // add bottom lines (last line is invisible)
     for ( i = 0; i < len; i++ ) {
-      this[sections[i].name].view.setY( options.height + options.sectionsOffset );
-      options.height += this[sections[i].name].view.getHeight() + options.lineOffset;
-      if ( i !== len - 1 ) {
-        this[sections[i].name].line.setRectY( options.height );
-      }
+      nodes[i].addChild( new Rectangle( 0, nodes[i].getHeight() - 7, width + 10, 2,
+        {fill: ( (i !== len - 1) ? '#8E9097' : 'rgba(0,0,0,0)')}
+      ) );
     }
-    this.back.setRectHeight( options.height );
   };
 
   return inherit( Node, RightControlPanel );

@@ -15,6 +15,7 @@ define( function( require ) {
 
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
 
   var FONT = new PhetFont( 11 );
   var FONTICON = new PhetFont( 14 );
@@ -42,8 +43,8 @@ define( function( require ) {
     this.addChild( slider );
 
     // add label
-    var label = new Node( {children: [
-      new Text( options.icon.text, {centerX: options.width / 2.5, top: -16, font: FONTICON, fontWeight: 'bold', fill: '#fff', pickable: false} ),
+    var label = new HBox( {spacing: 7, x: 50, children: [
+      new Text( options.icon.text, { font: FONTICON, fontWeight: 'bold', fill: '#fff', pickable: false} ),
       new options.icon.image( {x: options.width / 1.6, y: -7}, 7 )
     ]} );
     this.addChild( label );
