@@ -84,8 +84,7 @@ define( function( require ) {
     model.spaceObjects.forEach( function( el ) {
       var body = model[el];
       body.positionProperty.link( function( vect ) {
-        body.view.x = vect.x;
-        body.view.y = vect.y;
+        body.view.setTranslation( vect );
       } );
     } );
 

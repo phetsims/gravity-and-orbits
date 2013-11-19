@@ -30,10 +30,12 @@ define( function( require ) {
   var SpaceStation = require( 'view/space-object/SpaceStation' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
-  function MassMenu( model, x, y ) {
+  function MassMenu( model, coords ) {
     var self = this;
-    Node.call( this, {x: x, y: y, scale: 0.9} );
-
+    Node.call( this, {scale: 0.85} );
+    if ( coords ) {
+      this.setTranslation( coords );
+    }
     // slides options
     var map = {
       sun: {
@@ -82,7 +84,7 @@ define( function( require ) {
       }
     }
 
-    this.vBox = new VBox( {spacing: 2, y: -10} );
+    this.vBox = new VBox( {spacing: 2} );
     this.addChild( this.vBox );
 
     // add sliders
