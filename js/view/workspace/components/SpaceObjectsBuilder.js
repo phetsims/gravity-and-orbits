@@ -55,7 +55,11 @@ define( function( require ) {
 
         // set space object's mass
         body.massCoeff = obj.massCoeff || 1;
-        body.mass = obj.mass;
+        body.mass = obj.mass * body.massCoeff;
+
+        if ( name === 'earth' && body.radiusCoeff !== 1 ) {
+          body.view.setGrayView();
+        }
 
         // set up previous values
         body.acceleration.setXY( obj.acceleration ? obj.acceleration.x : 0, obj.acceleration ? obj.acceleration.y : 0 );

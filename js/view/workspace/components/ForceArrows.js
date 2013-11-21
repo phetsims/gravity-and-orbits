@@ -44,6 +44,16 @@ define( function( require ) {
     model.planetModeProperty.link( function() {
       drawArrows();
     } );
+
+    model.spaceObjects.forEach( function( el ) {
+      model[el].massProperty.link( function() {
+        drawArrows();
+      } );
+
+      model[el].viewProperty.link( function() {
+        drawArrows();
+      } );
+    } );
   }
 
   var getMaxForce = function( model, num ) {
