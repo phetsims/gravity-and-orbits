@@ -270,15 +270,6 @@ define( function( require ) {
       } );
     } );
 
-    // force planet mode reset function
-    this.planetModeReset = function() {
-      // notify observers
-      self.planetModeProperty._notifyObservers();
-
-      // set initial value
-      self.planetModeProperty.reset();
-    };
-
     this.reset();
   }
 
@@ -319,7 +310,7 @@ define( function( require ) {
         self.refreshMode = true;
       } );
 
-      this.planetModeReset();
+      this.planetModeProperty.reset();
       this.showExplosion = true;
     },
     stepManual: function( dt ) {
