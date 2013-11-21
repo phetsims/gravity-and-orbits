@@ -43,7 +43,7 @@ define( function( require ) {
     METERS_PER_MILE: 0.000621371192
   };
 
-  var fps = 60, timeModes = ['days', 'minutes'];
+  var fps = 60, timeModes = ['days', 'minutes'], lastDt = 0;
 
   var planetModes = [
     {
@@ -284,7 +284,16 @@ define( function( require ) {
 
   inherit( PropertySet, GravityAndOrbitsModel, {
     step: function( dt ) {
+      if ( !lastDt ) {lastDt = dt;} // init lastDt value
+
       if ( this.play ) {
+        // prevent incorrect behaviour when running in background
+        if ( Math.abs( lastDt - dt ) > lastDt * 0.3 ) {
+          dt = lastDt;
+        }
+        else {
+          lastDt = dt;
+        }
         this.stepManual( dt );
       }
     },
