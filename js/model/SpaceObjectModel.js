@@ -15,8 +15,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   function SpaceObjectModel() {
-    var self = this;
-
     PropertySet.call( this, {
       view: new Node(), // node for view of space object
       tooltip: new Node(), // node for tooltip
