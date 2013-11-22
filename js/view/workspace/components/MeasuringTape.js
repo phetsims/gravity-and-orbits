@@ -18,7 +18,7 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
   var Circle = require( 'SCENERY/nodes/Circle' );
 
-  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.svg' );
+  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
