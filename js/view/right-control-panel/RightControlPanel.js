@@ -53,7 +53,7 @@ define( function( require ) {
     // add sections
     for ( var i = 0, len = sections.length; i < len; i++ ) {
       nodes[i] = new Node( { children: [
-        new sections[i].constructor( model, {x:5} )
+        new sections[i].constructor( model, {x: 5} )
       ]} );
       this.box.addChild( nodes[i] );
     }

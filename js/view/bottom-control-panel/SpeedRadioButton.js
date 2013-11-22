@@ -27,7 +27,7 @@ define( function( require ) {
     Node.call( this );
 
     this.addChild( new VerticalAquaRadioButtonGroup( [
-      {property: model.speedProperty, value: 1.75, node: new Text( fastForwardString, textOption)},
+      {property: model.speedProperty, value: 1.75, node: new Text( fastForwardString, textOption )},
       {property: model.speedProperty, value: 1, node: new Text( normalString, textOption )},
       {property: model.speedProperty, value: 0.25, node: new Text( slowMotionString, textOption )}
     ], {scale: 0.9} ) );

@@ -85,7 +85,7 @@ define( function( require ) {
     // add checkboxes
     for ( var i = 0; i < options.length; i++ ) {
       this[options[i].text] = {
-        view: new CheckBox( new HBox( { spacing: 10,  children: [
+        view: new CheckBox( new HBox( { spacing: 10, children: [
           new Text( options[i].text, { font: FONT, fill: '#fff', pickable: false} ),
           new Node( {children: [options[i].node]} )
         ]} ), options[i].property, {scale: 0.8} )
