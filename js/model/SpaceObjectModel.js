@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * model for single space object.
+ * Model for single space object, such as a moon, earth or satellite.
  *
  * @author Andrey Zelenkov (Mlearner)
  */

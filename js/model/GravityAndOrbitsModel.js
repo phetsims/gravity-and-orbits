@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * main Model container.
+ * The main model for Gravity and Orbits, which contains the physics and the model representation of the bodies.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
