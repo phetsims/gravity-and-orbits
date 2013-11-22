@@ -48,21 +48,25 @@ define( function( require ) {
   }
 
   var addSections = function( model, sections ) {
-    var nodes = [], width;
+    var nodes = [], sectionLinks = [], width;
 
     // add sections
     for ( var i = 0, len = sections.length; i < len; i++ ) {
-      nodes[i] = new Node( { children: [
-        new sections[i].constructor( model, {x: 5} )
-      ]} );
+      sectionLinks[i] = new sections[i].constructor( model, {x: 5} );
+      nodes[i] = new Node( { children: [sectionLinks[i]]} );
       this.box.addChild( nodes[i] );
     }
 
     // find width for lines
     width = this.box.getWidth();
 
-    // add bottom lines (last line is invisible)
     for ( i = 0; i < len; i++ ) {
+      // align center first and last sections
+      if ( i === 0 || i === len - 1 ) {
+        sectionLinks[i].centerX = width / 2 + 5;
+      }
+
+      // add bottom lines (last line is invisible)
       nodes[i].addChild( new Rectangle( 0, nodes[i].getHeight() - 7, width + 10, 2,
         {fill: ( (i !== len - 1) ? '#8E9097' : 'rgba(0,0,0,0)')}
       ) );
