@@ -12,14 +12,14 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
 
-  var SpaceObjects = require( 'view/workspace/components/SpaceObjects' );
-  var ForceArrows = require( 'view/workspace/components/ForceArrows' );
-  var VelocityArrows = require( 'view/workspace/components/VelocityArrows' );
-  var PlanetPath = require( 'view/workspace/components/PlanetPath' );
-  var Grid = require( 'view/workspace/components/Grid' );
-  var MeasuringTape = require( 'view/workspace/components/MeasuringTape' );
-  var MassText = require( 'view/workspace/components/MassText' );
-  var Tooltips = require( 'view/workspace/components/Tooltips' );
+  var SpaceObjects = require( 'view/workspace/SpaceObjects' );
+  var ForceArrows = require( 'view/workspace/ForceArrows' );
+  var VelocityArrows = require( 'view/workspace/VelocityArrows' );
+  var PlanetPath = require( 'view/workspace/PlanetPath' );
+  var Grid = require( 'view/workspace/Grid' );
+  var MeasuringTape = require( 'view/workspace/MeasuringTape' );
+  var MassText = require( 'view/workspace/MassText' );
+  var Tooltips = require( 'view/workspace/Tooltips' );
 
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );

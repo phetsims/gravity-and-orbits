@@ -16,7 +16,7 @@ define( function( require ) {
   var Explosion = require( 'view/space-object/Explosion' );
   var Timer = require( 'JOIST/Timer' );
 
-  var SpaceObjectsBuilder = require( 'view/workspace/components/SpaceObjectsBuilder' );
+  var SpaceObjectsBuilder = require( 'view/workspace/SpaceObjectsBuilder' );
 
   function SpaceObjects( model ) {
     var self = this;
