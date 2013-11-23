@@ -233,7 +233,7 @@ define( function( require ) {
       speed: 1, // 1.75, 1, 0.25
       drag: '', // current dragging object
       refreshMode: false, // refresh current planetMode
-      showExplosion: true, // check explosion flag
+      showExplosion: false, // check explosion flag
       day: 0, // current day
       dayOffset: 0, // offset from zero day
       scale: 1, // scale coefficient
@@ -291,18 +291,7 @@ define( function( require ) {
     reset: function() {
       var self = this;
       this.showExplosion = false;
-      this.gravityProperty.reset();
-      this.forceArrowProperty.reset();
-      this.velocityArrowProperty.reset();
-      this.pathProperty.reset();
-      this.gridProperty.reset();
-      this.tapeProperty.reset();
-      this.massProperty.reset();
-      this.playProperty.reset();
-      this.speedProperty.reset();
-      this.dayProperty.reset();
-      this.scaleProperty.reset();
-      this.rewindProperty.reset();
+      PropertySet.prototype.reset.call( this );
 
       // reset all modes
       this.planetModes.forEach( function( mode, i ) {
