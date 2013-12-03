@@ -70,9 +70,9 @@ define( function( require ) {
         body.tooltip.setTranslation( v );
       } );
 
-      model.scaleProperty.link( function( newScale ) {
-        body.tooltip.resetTransform(); // return to initial proportions
-        body.tooltip.scale( 1 / newScale ); // set new scale
+      model.scaleProperty.link( function( newScale, oldScale ) {
+        body.tooltip.scale( (oldScale || 1) ); // return to previous proportions
+        body.tooltip.scale( 1 / newScale );
       } );
     } );
   }
