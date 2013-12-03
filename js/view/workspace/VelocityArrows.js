@@ -96,7 +96,7 @@ define( function( require ) {
             stroke: '#C0C0C0',
             lineWidth: 3
           } ),
-          text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false } ),
+          text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, boundsMethod: 'accurate' } ),
           arrowNode: new ArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
         };
 
@@ -125,7 +125,7 @@ define( function( require ) {
     },
     setArrow: function( model, obj, v ) {
       this.arrows[obj].circle.setTranslation( v );
-      this.arrows[obj].text.setTranslation( v.x - 6, v.y + 2 );
+      this.arrows[obj].text.setTranslation( v.x - this.arrows[obj].text.width / 2, v.y + this.arrows[obj].text.height / 2 );
       this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj].position.x, model[obj].position.y, v.x, v.y ) );
     },
     showArrows: function( model ) {
