@@ -40,13 +40,13 @@ define( function( require ) {
 
     // add observers
     model.spaceObjects.forEach( function( el ) {
-      prevPosition[el] = model[el].position;
+      prevPosition[el] = model[el].position.copy();
 
       // add position property observer
       model[el].positionProperty.link( function( newPosition ) {
         // update velocity arrow if position was changed significantly
         if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
-          prevPosition[el] = newPosition;
+          prevPosition[el] = newPosition.copy();
           checkArrows();
         }
       } );

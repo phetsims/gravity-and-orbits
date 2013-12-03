@@ -337,11 +337,10 @@ define( function( require ) {
     // notify observers
     model.spaceObjects.forEach( function( el ) {
       var body = model[el];
-      // I've try to to use _notifyObservers and notifyObserversUnsafe, but without success
-      body.position = body.position.copy();
-      body.velocityHalf = body.velocityHalf.copy();
-      body.acceleration = body.acceleration.copy();
-      body.velocity = body.velocity.copy();
+      body.positionProperty.notifyObserversUnsafe();
+      body.velocityHalfProperty.notifyObserversUnsafe();
+      body.accelerationProperty.notifyObserversUnsafe();
+      body.velocityProperty.notifyObserversUnsafe();
     } );
   };
 

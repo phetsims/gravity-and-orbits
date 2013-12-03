@@ -34,13 +34,13 @@ define( function( require ) {
 
     // add observers for space objects
     model.spaceObjects.forEach( function( el ) {
-      prevPosition[el] = model[el].position;
+      prevPosition[el] = model[el].position.copy();
 
       // add position property observer
       model[el].positionProperty.link( function( newPosition ) {
         // update force arrow if position was changed significantly
         if ( newPosition.minus( prevPosition[el] ).magnitude() > 0.5 ) {
-          prevPosition[el] = newPosition;
+          prevPosition[el] = newPosition.copy();
           checkArrows();
         }
       } );
