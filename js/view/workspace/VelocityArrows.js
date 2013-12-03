@@ -96,6 +96,9 @@ define( function( require ) {
             stroke: '#C0C0C0',
             lineWidth: 3
           } ),
+
+          //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
+          //a potentially unstable feature, and may increase the startup time of the simulation
           text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, boundsMethod: 'accurate' } ),
           arrowNode: new ArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
         };
