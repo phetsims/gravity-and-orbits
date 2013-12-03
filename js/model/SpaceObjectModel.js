@@ -13,12 +13,15 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
 
   var Vector2 = require( 'DOT/Vector2' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var FONT = new PhetFont( 12 );
 
   function SpaceObjectModel() {
+    this.tooltip = new Node( {visible: true, cursor: 'pointer'} ); // node for tooltip
+    this.massText = new Text( "", { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} ); // node for mass text
+    this.view = new Node(); // node for view of space object
     PropertySet.call( this, {
-      view: new Node(), // node for view of space object
-      tooltip: new Node(), // node for tooltip
-      massText: new Node(), // node for mass text
       mass: 1, // mass of space object
       massCoeff: 1, // mass coefficient
       radius: 0, // radius of space object
@@ -28,7 +31,8 @@ define( function( require ) {
       velocityHalf: new Vector2( 0, 0 ), // intermediate velocity of space object for calculation
       acceleration: new Vector2( 0, 0 ), // acceleration of space object
       positionStart: new Vector2( 0, 0 ), // initial position of space object
-      position: new Vector2( 0, 0 ) // position of space object
+      position: new Vector2( 0, 0 ), // position of space object
+      initDrag: false // trigger for drag initialization
     } );
   }
 

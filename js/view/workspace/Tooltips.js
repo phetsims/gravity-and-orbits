@@ -40,11 +40,9 @@ define( function( require ) {
                         satelliteString;
 
       // create tooltip node for each space object
-      body.tooltip = new Node( {visible: true, children: [
-        new Text( tooltipText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ),
-        new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ),
-        new Circle( 25, {fill: 'rgba(0,0,0,0)', x: position.x * scale + 25, y: position.y * scale - 25 } )
-      ]} );
+      body.tooltip.addChild( new Text( tooltipText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ) );
+      body.tooltip.addChild( new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ) );
+      body.tooltip.addChild( new Circle( 25, {fill: 'rgba(0,0,0,0)', x: position.x * scale + 25, y: position.y * scale - 25 } ) );
       self.addChild( body.tooltip );
 
       body.explodedProperty.link( function() {
@@ -62,7 +60,6 @@ define( function( require ) {
 
       model.scaleProperty.link( checkTooltip );
       model.planetModeProperty.link( checkTooltip );
-      body.viewProperty.link( checkTooltip );
       body.radiusProperty.link( checkTooltip );
       body.radiusCoeffProperty.link( checkTooltip );
 

@@ -61,10 +61,6 @@ define( function( require ) {
       model[el].massProperty.link( function() {
         checkArrows();
       } );
-
-      model[el].viewProperty.link( function() {
-        checkArrows();
-      } );
     } );
   }
 

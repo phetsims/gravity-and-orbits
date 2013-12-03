@@ -13,10 +13,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
 
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 12 );
-
   function MassText( model ) {
     var self = this;
     Node.call( this );
@@ -24,7 +20,6 @@ define( function( require ) {
     // add text for each space object
     model.spaceObjects.forEach( function( el ) {
       var body = model[el];
-      body.massText = new Text( "", { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} );
       self.addChild( body.massText );
 
       // update mass text
@@ -70,10 +65,6 @@ define( function( require ) {
       } );
 
       body.positionProperty.link( function() {
-        setMassTextPosition();
-      } );
-
-      body.viewProperty.link( function() {
         setMassTextPosition();
       } );
 

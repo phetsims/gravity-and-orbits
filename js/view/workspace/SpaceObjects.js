@@ -111,16 +111,16 @@ define( function( require ) {
       };
 
       // can drag using view of space object
-      body.viewProperty.link( function( view ) {
-        view.cursor = 'pointer';
-        view.addInputListener( getListener( view ) );
+      body.initDragProperty.link( function( isDrag ) {
+        if ( isDrag ) {
+          body.view.cursor = 'pointer';
+          body.view.addInputListener( getListener( body.view ) );
+          body.initDrag = false;
+        }
       } );
 
       // can drag using tooltip
-      body.tooltipProperty.link( function( tooltip ) {
-        tooltip.cursor = 'pointer';
-        tooltip.addInputListener( getListener( tooltip ) );
-      } );
+      body.tooltip.addInputListener( getListener( body.tooltip ) );
     } );
 
     // replace earth by gray sphere

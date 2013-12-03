@@ -42,6 +42,7 @@ define( function( require ) {
         body.view.scale( body.radiusCoeff );
         body.view.scale( model.viewMode === model.viewModes[1] ? obj.radiusScaleMode : 1 );
         self.addChild( body.view );
+        body.initDrag = true;
 
         // set space object's coordinates
         body.positionStart = position.copy();
