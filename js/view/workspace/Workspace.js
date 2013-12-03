@@ -59,15 +59,14 @@ define( function( require ) {
     this.addChild( new MassText( model ) );
 
     // redraw workspace when scale is changing
-    model.scaleProperty.link( function( newScale, oldScale ) {
-      self.toScale.scale( 1 / (oldScale || 1) );
+    model.scaleProperty.link( function( newScale ) {
+      self.toScale.resetTransform(); // return to initial proportions
       self.toScale.scale( newScale );
     } );
 
     // add scale center observer
-    model.scaleCenterProperty.link( function( vect ) {
-      self.x = vect.x;
-      self.y = vect.y;
+    model.scaleCenterProperty.link( function( v ) {
+      self.setTranslation( v );
     } );
   }
 

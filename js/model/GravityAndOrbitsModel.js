@@ -252,21 +252,24 @@ define( function( require ) {
     } );
 
     this.spaceObjects.forEach( function( el ) {
-      var body = self[el];
+      var body = self[el], defaultMass = 0;
+      // set default mass for space objects
+      if ( planetModes[self.planetMode][el] ) {
+        defaultMass = planetModes[self.planetMode][el].mass;
+      }
 
       // add observers for mass sliders
-      body.massCoeffProperty.link( function( newValue, oldValue ) {
-        body.mass *= 1 / (oldValue || 1);
-        body.mass *= newValue;
+      body.massCoeffProperty.link( function( newCoeff ) {
+        body.mass = defaultMass * newCoeff;
 
         // change radius
-        body.radiusCoeff = Math.pow( newValue, 1 / 3 );
+        body.radiusCoeff = Math.pow( newCoeff, 1 / 3 );
       } );
 
       // resize view if radius changed
-      body.radiusCoeffProperty.link( function( newValue, oldValue ) {
-        body.view.scale( 1 / (oldValue || 1) );
-        body.view.scale( newValue );
+      body.radiusCoeffProperty.link( function( newCoeff ) {
+        body.view.resetTransform(); // return to initial proportions
+        body.view.scale( newCoeff );
       } );
     } );
 
