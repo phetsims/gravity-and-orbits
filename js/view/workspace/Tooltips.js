@@ -38,6 +38,8 @@ define( function( require ) {
                         name === 'earth' ? earthString :
                         name === 'moon' ? moonString :
                         satelliteString;
+
+      // create tooltip node for each space object
       body.tooltip = new Node( {visible: true, children: [
         new Text( tooltipText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ),
         new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ),
@@ -64,14 +66,13 @@ define( function( require ) {
       body.radiusProperty.link( checkTooltip );
       body.radiusCoeffProperty.link( checkTooltip );
 
-      body.positionProperty.link( function( vect ) {
-        body.tooltip.x = vect.x;
-        body.tooltip.y = vect.y;
+      body.positionProperty.link( function( v ) {
+        body.tooltip.setTranslation( v );
       } );
 
       model.scaleProperty.link( function( newScale, oldScale ) {
-        body.tooltip.scale( (oldScale || 1) );
-        body.tooltip.scale( 1 / newScale );
+        body.tooltip.scale( (oldScale || 1) ); // return to previous proportions
+        body.tooltip.scale( 1 / newScale ); // set new scale
       } );
     } );
   }

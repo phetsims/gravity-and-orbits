@@ -50,10 +50,11 @@ define( function( require ) {
     ];
 
     var drawGrid = function() {
-      var mode = self.mode;
-      self.removeAllChildren();
-      if ( self.visibility ) {
-        var opt = options[mode];
+      self.removeAllChildren(); // remove previous grid
+
+      // add grid if it's visible
+      if ( model.grid ) {
+        var opt = options[model.planetMode];
         for ( var i = 0; opt.x0 + i * opt.delta < opt.x1; i++ ) {
           self.addChild( new Path( Shape.lineSegment( opt.x0 + i * opt.delta, opt.y0, opt.x0 + i * opt.delta, opt.y1 ), {stroke: 'gray', lineWidth: 1} ) );
         }
@@ -63,13 +64,11 @@ define( function( require ) {
       }
     };
 
-    model.planetModeProperty.link( function( mode ) {
-      self.mode = mode;
+    model.planetModeProperty.link( function() {
       drawGrid();
     } );
 
-    model.gridProperty.link( function( visibility ) {
-      self.visibility = visibility;
+    model.gridProperty.link( function() {
       drawGrid();
     } );
   }

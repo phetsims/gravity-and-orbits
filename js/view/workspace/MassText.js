@@ -45,7 +45,7 @@ define( function( require ) {
 
       // update mass text position
       var setMassTextPosition = function() {
-        if ( !self.visibility ) {return;}
+        if ( !model.mass ) {return;} // check visibility
         var height = ( isFinite( body.view.getHeight() ) ? body.view.getHeight() : 0),
           positions = body.position;
 
@@ -54,7 +54,7 @@ define( function( require ) {
 
       // add observers
       body.explodedProperty.link( function( exploded ) {
-        if ( self.visibility ) {
+        if ( model.mass ) { // check visibility
           body.massText.setVisible( !exploded );
         }
       } );
@@ -92,11 +92,11 @@ define( function( require ) {
       } );
 
       model.massProperty.link( function( visibility ) {
-        self.visibility = visibility;
         body.massText.setVisible( visibility );
         setMassTextPosition();
       } );
 
+      // tune for different view modes
       if ( model.viewMode !== model.viewModes[1] ) {
         model.mass = false;
       }
@@ -104,7 +104,6 @@ define( function( require ) {
         setMassText();
         setMassTextPosition();
       }
-
     } );
   }
 

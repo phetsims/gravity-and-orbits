@@ -132,7 +132,10 @@ define( function( require ) {
       drag: function( e ) {
         var y = self.globalToParentPoint( e.pointer.point ).y - clickYOffset;
         var x = self.globalToParentPoint( e.pointer.point ).x - clickXOffset;
+        // return to previous angle
         self.rotate( -angle );
+
+        // set new angle
         angle = Math.atan2( y, x );
         self.rotate( angle );
         self.setTip( x, y );
@@ -149,13 +152,12 @@ define( function( require ) {
     if ( model.viewModes[0] === model.viewMode ) { // cartoon
       self.setVisible( false );
     }
-    else if ( model.viewModes[1] === model.viewMode && self.visibility ) { // scale
+    else if ( model.viewModes[1] === model.viewMode && model.tape ) { // scale
       self.setVisible( true );
     }
 
     // add observers
     model.tapeProperty.link( function( visibility ) {
-      self.visibility = visibility;
       self.setVisible( visibility );
     } );
 
@@ -173,6 +175,7 @@ define( function( require ) {
   }
 
   return inherit( Node, MeasuringTape, {
+    // init tape for view mode
     init: function( model ) {
       this.options.forEach( function( el ) {
         el.valueDefault = el.value / ( model.isTapeUnitsMiles ? 1 : model.CONSTANTS.METERS_PER_MILE * 1000);
@@ -181,15 +184,17 @@ define( function( require ) {
 
       this.string = model.isTapeUnitsMiles ? thousandMilesString : thousandKilometers;
     },
-    getText: function() {
-      var option = this.options[this.mode];
-      return (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + this.string;
-    },
+    // init tape for new planet mode
     initTape: function( option, angle ) {
       this.rotate( -angle );
       this.translate( option.x, option.y );
       this.setTip( option.lengthDefault, 0 );
       this.base.setTranslation( -this.centerRotation.x + option.x, -this.centerRotation.y + option.y );
+    },
+    // return text for current planet mode
+    getText: function() {
+      var option = this.options[this.mode];
+      return (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + this.string;
     },
     rotate: function( angle ) {
       this.base.rotateAround( new Vector2( this.notBase.x, this.notBase.y ), angle );

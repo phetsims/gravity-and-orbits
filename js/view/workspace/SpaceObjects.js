@@ -34,9 +34,11 @@ define( function( require ) {
         self.saveState( model, prevNum, 0 );
       }
 
+      // restore state if state was stored for this planet mode
       if ( self.state[num] && self.state[num][0] ) {
         self.restoreState( model, num, 0 );
       }
+      // else set initial state
       else {
         self.initState( model, num );
       }
@@ -108,11 +110,13 @@ define( function( require ) {
         } );
       };
 
+      // can drag using view of space object
       body.viewProperty.link( function( view ) {
         view.cursor = 'pointer';
         view.addInputListener( getListener( view ) );
       } );
 
+      // can drag using tooltip
       body.tooltipProperty.link( function( tooltip ) {
         tooltip.cursor = 'pointer';
         tooltip.addInputListener( getListener( tooltip ) );
@@ -125,12 +129,14 @@ define( function( require ) {
       model[earth].view['set' + (coeff === 1 ? 'Default' : 'Gray') + 'View']();
     } );
 
+    // save state when play button pressed
     model.playProperty.link( function( isPlay ) {
       if ( isPlay ) {
         self.saveState( model, model.planetMode, 1 );
       }
     } );
 
+    // restore state when rewind button pressed
     model.rewindProperty.link( function( isRewind ) {
       if ( isRewind ) {
         self.restoreState( model, model.planetMode, 1 );
@@ -140,6 +146,7 @@ define( function( require ) {
   }
 
   return inherit( Node, SpaceObjects, {
+    // animation for explosion
     showExplosion: function( position, radius ) {
       var self = this, explosion = new Explosion( position, 2 * radius ), frames = 5;
       this.addChild( explosion );
@@ -160,17 +167,26 @@ define( function( require ) {
         for ( j = i + 1; j < model.spaceObjects.length; j++ ) {
           obj2 = model.spaceObjects[j];
           if ( !mode[obj2] ) {continue;}
+
+          // distance between objects
           dx = model[obj1].position.minus( model[obj2].position ).magnitude(); // distance between planets
+
+          // sum of radius of objects
           dr = (model[obj1].view.getWidth() + model[obj2].view.getWidth()) / 2;
+
+          // check finite distance
           if ( !isFinite( dx ) || !isFinite( dr ) ) {
             {continue;}
           }
+
+          // explosion if distance less that sum of radius
           if ( dr > dx ) {
             model[(model[obj1].mass > model[obj2].mass ? obj2 : obj1 )].exploded = true;
           }
         }
       }
     },
+    // set init state for given planet mode
     initState: function( model, num ) {
       // set scale center
       model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
@@ -185,6 +201,7 @@ define( function( require ) {
       this.view = new SpaceObjectsBuilder( model, num );
       this.addChild( this.view );
     },
+    // restore state for given planet mode
     restoreState: function( model, num, target ) {
       var state = this.state[num][target];
       model.scale = state.scale;
@@ -198,8 +215,10 @@ define( function( require ) {
       this.view = new SpaceObjectsBuilder( model, num, state.spaceObjects );
       this.addChild( this.view );
     },
+    // return state for given planet mode
     getState: function( model, num ) {
       var obj, spaceObject, state, body;
+      // common properties for all space objects
       state = {
         scale: model.scale,
         scaleCenter: model.scaleCenter.copy(),
@@ -208,17 +227,22 @@ define( function( require ) {
         spaceObjects: {}
       };
 
+      // individual properties for each space objects
       model.spaceObjects.forEach( function( name ) {
         obj = model.planetModes[num][name];
         if ( obj ) {
           body = model[name];
           state.spaceObjects[name] = {};
           spaceObject = state.spaceObjects[name];
+
+          // save static properties
           for ( var prop in obj ) {
             if ( obj.hasOwnProperty( prop ) ) {
               spaceObject[prop] = obj[prop];
             }
           }
+
+          // save dynamic properties
           spaceObject.x = body.position.x / model.planetModes[num].options.scale;
           spaceObject.y = body.position.y / model.planetModes[num].options.scale;
           if ( !spaceObject.fixed ) {
@@ -233,6 +257,7 @@ define( function( require ) {
 
       return state;
     },
+    // save state for given planet mode
     saveState: function( model, num, target ) {
       if ( !this.state[num] ) {
         this.state[num] = [];

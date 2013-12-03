@@ -15,55 +15,71 @@ define( function( require ) {
   var ArrowShape = require( 'SCENERY_PHET/ArrowShape' );
 
   function ForceArrows( model ) {
-    var self = this, prevPosition = {};
+    var self = this, prevPosition = {}, hided;
     Node.call( this );
 
-    this.init( model );
+    this.init( model ); // prepare component for work
 
     // controls the visibility and direction of arrows
-    var drawArrows = function() {
-      self[(self.visibility ? 'set' : 'hide') + 'Arrows']( model );
+    var checkArrows = function() {
+      if ( model.forceArrow ) { // if arrows visible - set new shapes
+        self.setArrows( model );
+        hided = false;
+      }
+      else if ( !hided ) { // hide arrows if it is not visible and not hided yet
+        self.hideArrows( model );
+        hided = true;
+      }
     };
 
     // add observers for space objects
     model.spaceObjects.forEach( function( el ) {
       prevPosition[el] = model[el].position;
+
+      // add position property observer
       model[el].positionProperty.link( function( newPosition ) {
+        // update force arrow if position was changed significantly
         if ( newPosition.minus( prevPosition[el] ).magnitude() > 0.5 ) {
           prevPosition[el] = newPosition;
-          drawArrows();
+          checkArrows();
         }
       } );
     } );
 
-    model.forceArrowProperty.link( function( visibility ) {
-      self.visibility = visibility;
-      drawArrows();
+    // check force arrow if visibility changed
+    model.forceArrowProperty.link( function() {
+      checkArrows();
     } );
 
+    // check force arrow if planet mode was changed
     model.planetModeProperty.link( function() {
-      drawArrows();
+      checkArrows();
     } );
 
+    // check force arrow if mass or view was changed
     model.spaceObjects.forEach( function( el ) {
       model[el].massProperty.link( function() {
-        drawArrows();
+        checkArrows();
       } );
 
       model[el].viewProperty.link( function() {
-        drawArrows();
+        checkArrows();
       } );
     } );
   }
 
+  // find max value of gravitational force for given planet mode
   var getMaxForce = function( model, num ) {
     var mode = model.planetModes[num], obj1, obj2, len = model.spaceObjects.length, i, j, f, scale = model.planetModes[num].options.scale, maxForce = 1;
+
     for ( i = 0; i < len; i++ ) {
       obj1 = model.spaceObjects[i];
-      if ( !mode[obj1] ) {continue;}
+      if ( !mode[obj1] ) {continue;}  // take next object if current doesn't exist for given mode
       for ( j = i + 1; j < len; j++ ) {
         obj2 = model.spaceObjects[j];
-        if ( !mode[obj2] ) {continue;}
+        if ( !mode[obj2] ) {continue;} // take next object if current doesn't exist for given mode
+
+        // find force between obj1 and obj2
         f = mode[obj1].mass * mode[obj2].mass / (Math.pow( (mode[obj1].x - mode[obj2].x) * scale, 2 ) + Math.pow( (mode[obj1].y - mode[obj2].y) * scale, 2 ));
         maxForce = Math.max( maxForce, f );
       }
@@ -79,7 +95,7 @@ define( function( require ) {
         this.maxForce[i] = getMaxForce( model, i );
       }
 
-      // prepare shapes
+      // prepare shapes of arrows
       this.shapes = {};
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
         for ( j = 0; j < model.spaceObjects.length; j++ ) {
@@ -90,6 +106,7 @@ define( function( require ) {
         }
       }
     },
+    // hide force arrow for space object with given name
     hideOne: function( model, name ) {
       var hidedShape = new ArrowShape( 0, 0, 0, 0 );
       for ( var i = 0; i < model.spaceObjects.length; i++ ) {
@@ -99,16 +116,18 @@ define( function( require ) {
         }
       }
     },
+    // hide all force arrows
     hideArrows: function( model ) {
-      var i, j, hidedShape = new ArrowShape( 0, 0, 0, 0 );
-      for ( i = 0; i < model.spaceObjects.length; i++ ) {
-        for ( j = 0; j < model.spaceObjects.length; j++ ) {
+      var i, j, len = model.spaceObjects.length, hidedShape = new ArrowShape( 0, 0, 0, 0 );
+      for ( i = 0; i < len; i++ ) {
+        for ( j = 0; j < len; j++ ) {
           if ( i !== j ) {
             this.shapes[model.spaceObjects[i] + model.spaceObjects[j]].setShape( hidedShape );
           }
         }
       }
     },
+    // show all force arrows and set new shapes
     setArrows: function( model ) {
       var self = this,
         num = model.planetMode,
@@ -126,6 +145,7 @@ define( function( require ) {
         obj1 = model.spaceObjects[i];
         body1 = model[obj1];
 
+        // hide space object if it doesn't exist or exploded
         if ( !mode[obj1] || body1.exploded ) {
           self.hideOne( model, obj1 );
           continue;
@@ -134,6 +154,8 @@ define( function( require ) {
         for ( var j = i + 1; j < len; j++ ) {
           obj2 = model.spaceObjects[j];
           body2 = model[obj2];
+
+          // hide space object if it doesn't exist or exploded
           if ( !mode[obj2] || body2.exploded ) {
             self.hideOne( model, obj2 );
             continue;
@@ -150,7 +172,9 @@ define( function( require ) {
 
           unitVector = distance.normalized().multiply( arrowSize );
 
+          // add arrow from obj1 to obj2
           self.shapes[obj1 + obj2].setShape( new ArrowShape( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y ) );
+          // add arrow from obj2 to obj1
           self.shapes[obj2 + obj1].setShape( new ArrowShape( body2.position.x, body2.position.y, body2.position.x - unitVector.x, body2.position.y - unitVector.y ) );
         }
       }

@@ -25,7 +25,7 @@ define( function( require ) {
     var self = this, prevPosition = {};
     Node.call( this );
 
-    this.init( model );
+    this.init( model ); // prepare component for work
 
     // find max velocity for all modes
     this.maxVelocity = [];
@@ -35,13 +35,16 @@ define( function( require ) {
 
     // controls the visibility and direction of arrows
     var checkArrows = function() {
-      self[(self.visibility ? 'show' : 'hide') + 'Arrows']( model );
+      self[(model.velocityArrow ? 'show' : 'hide') + 'Arrows']( model );
     };
 
     // add observers
     model.spaceObjects.forEach( function( el ) {
       prevPosition[el] = model[el].position;
+
+      // add position property observer
       model[el].positionProperty.link( function( newPosition ) {
+        // update velocity arrow if position was changed significantly
         if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
           prevPosition[el] = newPosition;
           checkArrows();
@@ -49,15 +52,17 @@ define( function( require ) {
       } );
     } );
 
-    model.velocityArrowProperty.link( function( visibility ) {
-      self.visibility = visibility;
+    // check velocity arrow if visibility changed
+    model.velocityArrowProperty.link( function() {
       checkArrows();
     } );
 
+    // check velocity arrow if planet mode was changed
     model.planetModeProperty.link( function() {
       checkArrows();
     } );
 
+    // check velocity arrow if refresh was called
     model.refreshModeProperty.link( function( trigger ) {
       if ( trigger ) {
         checkArrows();
@@ -65,12 +70,13 @@ define( function( require ) {
     } );
   }
 
+  // find max value of start velocity for given planet mode
   var getMaxVelocity = function( model, num ) {
     var mode = model.planetModes[num], obj, len = model.spaceObjects.length, i, v, maxVelocity = 1;
     for ( i = 0; i < len; i++ ) {
       obj = model.spaceObjects[i];
-      if ( !mode[obj] || !mode[obj].velocity ) {continue;}
-      v = Math.sqrt( Math.pow( mode[obj].velocity.x, 2 ) + Math.pow( mode[obj].velocity.y, 2 ) );
+      if ( !mode[obj] || !mode[obj].velocity ) {continue;} // take next object if current doesn't exist for given mode
+      v = mode[obj].velocity.magnitude();
       maxVelocity = Math.max( v, maxVelocity );
     }
     return maxVelocity;
@@ -82,6 +88,7 @@ define( function( require ) {
       this.arrowSizeNormal = 160;
       this.arrows = {};
       model.spaceObjects.forEach( function( el ) {
+        // init arrow view for each space object
         self.arrows[el] = {
           view: new Node( {cursor: 'pointer'} ),
           circle: new Circle( 18, {
@@ -93,6 +100,7 @@ define( function( require ) {
           arrowNode: new ArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
         };
 
+        // init drag and drop for arrow
         self.arrows[el].circle.addInputListener( new SimpleDragHandler( {
           translate: function( e ) {
             var velocity = e.position.minus( model[el].position ), amplitude = velocity.magnitude() * self.maxVelocity[model.planetMode] / self.arrowSizeNormal;
@@ -101,6 +109,7 @@ define( function( require ) {
           }
         } ) );
 
+        // add arrow's components to view and add view to main node
         self.arrows[el].view.addChild( self.arrows[el].circle );
         self.arrows[el].view.addChild( self.arrows[el].text );
         self.arrows[el].view.addChild( self.arrows[el].arrowNode );

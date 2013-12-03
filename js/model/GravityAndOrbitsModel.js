@@ -64,7 +64,7 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 800,
         radiusScaleMode: 0.15,
-        velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
+        velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
         mass: CONSTANTS.EARTH_MASS * 10200,
         massTooltip: {
           defaultValue: 1,
@@ -99,7 +99,7 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 800,
         radiusScaleMode: 0.15,
-        velocity: {x: 0, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
+        velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
         mass: CONSTANTS.EARTH_MASS * 10200,
         massTooltip: {
           defaultValue: 1,
@@ -112,7 +112,7 @@ define( function( require ) {
         y: -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
         radius: CONSTANTS.MOON_RADIUS * 800,
         radiusScaleMode: 0.3,
-        velocity: {x: CONSTANTS.MOON_SPEED * 21, y: -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION},
+        velocity: new Vector2( CONSTANTS.MOON_SPEED * 21, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
         mass: CONSTANTS.MOON_MASS,
         massTooltip: {
           defaultValue: 0.01,
@@ -135,7 +135,7 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 15,
         radiusScaleMode: 0.05,
-        velocity: {x: -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, y: 0}, // -vx for fulfill the law of conservation of momentum
+        velocity: new Vector2( -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, 0 ), // -vx for fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
           defaultValue: 1,
@@ -148,7 +148,7 @@ define( function( require ) {
         y: -CONSTANTS.MOON_Y,
         radius: CONSTANTS.MOON_RADIUS * 15,
         radiusScaleMode: 0.1,
-        velocity: {x: CONSTANTS.MOON_SPEED, y: 0},
+        velocity: new Vector2( CONSTANTS.MOON_SPEED, 0 ),
         mass: CONSTANTS.MOON_MASS,
         massTooltip: {
           defaultValue: 0.01,
@@ -171,7 +171,7 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 0.8,
         radiusScaleMode: 1.25,
-        velocity: {x: 0, y: 0},
+        velocity: new Vector2( 0, 0 ),
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
           defaultValue: 16,
@@ -183,7 +183,7 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.SPACE_STATION_RADIUS * 8000,
         radiusScaleMode: 0.1,
-        velocity: {x: 0, y: -CONSTANTS.SPACE_STATION_SPEED},
+        velocity: new Vector2( 0, -CONSTANTS.SPACE_STATION_SPEED ),
         mass: CONSTANTS.SPACE_STATION_MASS,
         massTooltip: {
           defaultValue: 1,
