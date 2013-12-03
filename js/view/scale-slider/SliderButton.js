@@ -22,7 +22,7 @@ define( function( require ) {
    * @param {Boolean} isIncrease type of button
    * @constructor
    */
-  function Button( x, y, model, range, step, isIncrease ) {
+  function SliderButton( x, y, model, range, step, isIncrease ) {
     var callback, sample, width = 25, height = 25;
     Node.call( this, {x: x - width / 2, y: y} );
 
@@ -48,5 +48,5 @@ define( function( require ) {
       } ) );
   }
 
-  return inherit( Node, Button );
+  return inherit( Node, SliderButton );
 } );
