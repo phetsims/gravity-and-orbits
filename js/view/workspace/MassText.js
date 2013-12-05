@@ -24,14 +24,16 @@ define( function( require ) {
 
       // update mass text
       var setMassText = function() {
-        var text, defaultValue, precision;
+        var text, defaultValue, precision, value;
 
         if ( model.planetModes[model.planetMode][el] && !body.exploded ) {
           text = model.planetModes[model.planetMode][el].massTooltip.text;
           defaultValue = model.planetModes[model.planetMode][el].massTooltip.defaultValue;
           precision = model.planetModes[model.planetMode][el].massTooltip.precision || 0;
+          value = (body.massCoeff * defaultValue).toFixed( precision );
 
-          body.massText.setText( (body.massCoeff * defaultValue).toFixed( precision ).replace( "1.00", "1" ) + " " + text );
+          // if value ==== '1.00' replace 1.00 -> 1 and masses -> mass
+          body.massText.setText( (value === '1.00' ? value.replace( "1.00", "1" ) + " " + text.substr( 0, text.length - 2 ) : value + " " + text) );
         }
         else {
           body.massText.setText( "" );
@@ -55,7 +57,7 @@ define( function( require ) {
       } );
 
       model.planetModeProperty.link( function() {
-        body.massText.setVisible( self.visibility );
+        body.massText.setVisible( model.mass );
         setMassText();
         setMassTextPosition();
       } );
