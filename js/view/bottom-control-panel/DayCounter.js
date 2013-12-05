@@ -31,7 +31,6 @@ define( function( require ) {
 
     var updateDay = function() {
       self.day.setText( parseInt( (model.day - model.dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
-      box.updateLayout();
     };
 
     // day text counter
@@ -67,6 +66,9 @@ define( function( require ) {
 
     model.dayProperty.link( updateDay );
     model.dayOffsetProperty.link( updateDay );
+
+    // update layout view
+    box.updateLayout();
   }
 
   return inherit( Node, DayCounter );
