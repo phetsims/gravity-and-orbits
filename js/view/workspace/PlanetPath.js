@@ -36,7 +36,7 @@ define( function( require ) {
 
       // add position property observer
       model[el].positionProperty.link( function() {
-        if ( !body.exploded && model.path && model.planetMode === self.num ) {
+        if ( !body.exploded && model.path && model.planetMode === self.num && model.drag !== el ) {
           var newPosition = body.position;
           var dr = newPosition.minus( self.prevPosition[self.num][el] ).magnitude();
 
