@@ -52,7 +52,7 @@ define( function( require ) {
         body.view.setRadius( obj.radius * scale );
 
         // check tooltip
-        body.tooltip.setVisible( ( body.view.getWidth() < 10 ) );
+        body.tooltip.setVisible( body.view.getWidth() < 10 );
 
         // set space object's mass
         body.massCoeff = obj.massCoeff || 1;
