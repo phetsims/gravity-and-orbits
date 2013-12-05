@@ -64,13 +64,8 @@ define( function( require ) {
       }
     };
 
-    model.planetModeProperty.link( function() {
-      drawGrid();
-    } );
-
-    model.gridProperty.link( function() {
-      drawGrid();
-    } );
+    model.planetModeProperty.link( drawGrid );
+    model.gridProperty.link( drawGrid );
   }
 
   return inherit( Node, Grid );

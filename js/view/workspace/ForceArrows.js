@@ -47,20 +47,14 @@ define( function( require ) {
     } );
 
     // check force arrow if visibility changed
-    model.forceArrowProperty.link( function() {
-      checkArrows();
-    } );
+    model.forceArrowProperty.link( checkArrows );
 
     // check force arrow if planet mode was changed
-    model.planetModeProperty.link( function() {
-      checkArrows();
-    } );
+    model.planetModeProperty.link( checkArrows );
 
     // check force arrow if mass or view was changed
     model.spaceObjects.forEach( function( el ) {
-      model[el].massProperty.link( function() {
-        checkArrows();
-      } );
+      model[el].massProperty.link( checkArrows );
     } );
   }
 

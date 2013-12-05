@@ -60,13 +60,9 @@ define( function( require ) {
         setMassTextPosition();
       } );
 
-      body.massCoeffProperty.link( function() {
-        setMassText();
-      } );
+      body.massCoeffProperty.link( setMassText );
 
-      body.positionProperty.link( function() {
-        setMassTextPosition();
-      } );
+      body.positionProperty.link( setMassTextPosition );
 
       model.refreshModeProperty.link( function( trigger ) {
         if ( trigger ) {
@@ -74,13 +70,9 @@ define( function( require ) {
         }
       } );
 
-      body.radiusCoeffProperty.link( function() {
-        setMassTextPosition();
-      } );
+      body.radiusCoeffProperty.link( setMassTextPosition );
 
-      model.scaleProperty.link( function() {
-        setMassTextPosition();
-      } );
+      model.scaleProperty.link( setMassTextPosition );
 
       model.massProperty.link( function( visibility ) {
         body.massText.setVisible( visibility );

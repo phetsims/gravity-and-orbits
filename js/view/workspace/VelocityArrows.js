@@ -53,14 +53,10 @@ define( function( require ) {
     } );
 
     // check velocity arrow if visibility changed
-    model.velocityArrowProperty.link( function() {
-      checkArrows();
-    } );
+    model.velocityArrowProperty.link( checkArrows );
 
     // check velocity arrow if planet mode was changed
-    model.planetModeProperty.link( function() {
-      checkArrows();
-    } );
+    model.planetModeProperty.link( checkArrows );
 
     // check velocity arrow if refresh was called
     model.refreshModeProperty.link( function( trigger ) {
