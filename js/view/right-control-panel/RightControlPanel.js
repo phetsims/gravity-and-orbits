@@ -30,12 +30,7 @@ define( function( require ) {
     this.addChild( this.box );
 
     // add sections
-    var sections = [
-      {constructor: PlanetModeMenu, name: 'PlanetModeMenu'},
-      {constructor: GravityModeMenu, name: 'GravityModeMenu'},
-      {constructor: SpaceObjectsPropertyCheckbox, name: 'SpaceObjectsPropertyCheckbox'},
-      {constructor: MassMenu, name: 'MassMenu'}
-    ];
+    var sections = [PlanetModeMenu, GravityModeMenu, SpaceObjectsPropertyCheckbox, MassMenu];
 
     addSections.call( this, model, sections );
 
@@ -52,7 +47,7 @@ define( function( require ) {
 
     // add sections
     for ( var i = 0, len = sections.length; i < len; i++ ) {
-      sectionLinks[i] = new sections[i].constructor( model, {x: 5} );
+      sectionLinks[i] = new sections[i]( model, {x: 5} );
       nodes[i] = new Node( { children: [sectionLinks[i]]} );
       this.box.addChild( nodes[i] );
     }
