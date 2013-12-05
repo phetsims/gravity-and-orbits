@@ -12,7 +12,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' );
-  var SpeedCheckbox = require( 'view/bottom-control-panel/SpeedRadioButton' );
+  var SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' );
   var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
   var HBox = require( 'SCENERY/nodes/HBox' );
 
@@ -20,7 +20,7 @@ define( function( require ) {
     Node.call( this, {x: x, y: y, scale: 0.9, children: [
       new HBox( {spacing: 20, children: [
         // add speed check box
-        new SpeedCheckbox( model ),
+        new SpeedRadioButtons( model ),
 
         // add speed push buttons
         new SpeedPushButtons( model ),

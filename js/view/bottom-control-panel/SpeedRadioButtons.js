@@ -21,7 +21,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
-  function SpeedRadioButton( model ) {
+  function SpeedRadioButtons( model ) {
     var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };
     Node.call( this );
 
@@ -32,5 +32,5 @@ define( function( require ) {
     ], {scale: 0.9} ) );
   }
 
-  return inherit( Node, SpeedRadioButton );
+  return inherit( Node, SpeedRadioButtons );
 } );
