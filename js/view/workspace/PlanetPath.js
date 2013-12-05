@@ -13,7 +13,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
 
   var Shape = require( 'KITE/Shape' );
-  var Path = require( 'SCENERY/nodes/Path' );
+  var Line = require( 'SCENERY/nodes/Line' );
 
   function PlanetPath( model ) {
     var self = this;
@@ -88,10 +88,10 @@ define( function( require ) {
     // add new piece of path for given element
     add: function( model, el, newPosition ) {
       var prevPosition = this.prevPosition[this.num][el],
-        path = new Path( new Shape().moveTo( prevPosition.x, prevPosition.y ).lineTo( newPosition.x, newPosition.y ), {stroke: this.color[el], lineWidth: 3, lineCap: 'square'} );
+        line = new Line( prevPosition, newPosition, {stroke: this.color[el], lineWidth: 3, lineCap: 'square'} );
 
-      this.path[this.num][el].push( {view: path, time: this.time[this.num]} );
-      this.addChild( path );
+      this.path[this.num][el].push( {view: line, time: this.time[this.num]} );
+      this.addChild( line );
       this.prevPosition[this.num][el] = newPosition.copy();
     },
     // check lifetime of all pieces for all space objects
