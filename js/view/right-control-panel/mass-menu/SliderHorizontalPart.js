@@ -53,7 +53,10 @@ define( function( require ) {
     // add ticks
     if ( tickStep ) {
       for ( i = range.min; i <= range.max; i += tickStep ) {
-        nodeTick.addChild( new Path( Shape.lineSegment( w * (i - range.min) / (range.max - range.min), -5, w * (i - range.min) / (range.max - range.min), -tickHeight ), { stroke: 'white', lineWidth: 1 } ) );
+        nodeTick.addChild( new Path( Shape.lineSegment(
+          w * (i - range.min) / (range.max - range.min), -5,
+          w * (i - range.min) / (range.max - range.min), -tickHeight
+        ), { stroke: 'white', lineWidth: 1 } ) );
       }
       this.addChild( nodeTick );
     }
@@ -63,7 +66,7 @@ define( function( require ) {
       return (rounding ? Math.round( value * Math.pow( 10, rounding ) ) / Math.pow( 10, rounding ) : value );
     };
 
-    // add observer
+    // add observer.  But round the value and snap to the default if within a small range
     targetProperty.link( function( value ) {
       targetProperty.set( round( value, rounding ) );
       // snap to default value
