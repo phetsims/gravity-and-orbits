@@ -63,9 +63,7 @@ define( function( require ) {
       body.radiusProperty.link( checkTooltip );
       body.radiusCoeffProperty.link( checkTooltip );
 
-      body.positionProperty.link( function( v ) {
-        body.tooltip.setTranslation( v );
-      } );
+      body.positionProperty.linkAttribute( body.tooltip, 'translation' );
 
       model.scaleProperty.link( function( newScale, oldScale ) {
         body.tooltip.scale( (oldScale || 1) ); // return to previous proportions

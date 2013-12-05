@@ -157,9 +157,7 @@ define( function( require ) {
     }
 
     // add observers
-    model.tapeProperty.link( function( visibility ) {
-      self.setVisible( visibility );
-    } );
+    model.tapeProperty.linkAttribute( this, 'visible' );
 
     model.planetModeProperty.link( function( mode ) {
       self.options[self.mode].lengthDefault *= 1 / self.prevScale;

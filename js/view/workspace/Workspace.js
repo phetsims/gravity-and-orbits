@@ -65,9 +65,7 @@ define( function( require ) {
     } );
 
     // add scale center observer
-    model.scaleCenterProperty.link( function( v ) {
-      self.setTranslation( v );
-    } );
+    model.scaleCenterProperty.linkAttribute( self, 'translation' );
   }
 
   return inherit( Node, Workspace );
