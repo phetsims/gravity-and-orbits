@@ -48,9 +48,6 @@ define( function( require ) {
       new options.icon.image( {x: options.width / 1.6, y: -7}, 7 )
     ]} );
     this.addChild( label );
-
-    options.property.link( function updateMass( value ) {
-    } );
   }
 
   return inherit( Node, Slider );
