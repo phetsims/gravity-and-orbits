@@ -14,7 +14,6 @@ define( function( require ) {
   // imports
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var TextPushButton = require( 'SUN/TextPushButton' );
   var Color = require( 'SCENERY/util/Color' );
 
