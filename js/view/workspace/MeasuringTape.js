@@ -88,10 +88,11 @@ define( function( require ) {
     this.notBase = new Node();
 
     // init drag and drop for measuring tape
-    var clickYOffset, clickXOffset, angle = 0, v;
+    var clickYOffset, clickXOffset, angle = 0, v, currentlyDragging = '';
     this.base.cursor = 'pointer';
     this.base.addInputListener( new SimpleDragHandler( {
       start: function( e ) {
+        currentlyDragging = 'base';
         var h,
           y0 = self.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y,
           x0 = self.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
@@ -103,6 +104,7 @@ define( function( require ) {
         clickXOffset = x0 - v.x;
       },
       drag: function( e ) {
+        if ( currentlyDragging !== 'base' ) {return;}
         var x = self.globalToParentPoint( e.pointer.point ).x - clickXOffset;
         var y = self.globalToParentPoint( e.pointer.point ).y - clickYOffset;
         self.translate( x, y, v );
@@ -126,10 +128,12 @@ define( function( require ) {
     // init drag and drop for tip
     this.tip.addInputListener( new SimpleDragHandler( {
       start: function( e ) {
+        currentlyDragging = 'tip';
         clickYOffset = self.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
         clickXOffset = self.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
       },
       drag: function( e ) {
+        if ( currentlyDragging !== 'tip' ) {return;}
         var y = self.globalToParentPoint( e.pointer.point ).y - clickYOffset;
         var x = self.globalToParentPoint( e.pointer.point ).x - clickXOffset;
         // return to previous angle
