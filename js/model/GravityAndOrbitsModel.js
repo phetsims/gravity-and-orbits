@@ -252,15 +252,11 @@ define( function( require ) {
     } );
 
     this.spaceObjects.forEach( function( el ) {
-      var body = self[el], defaultMass = 0;
-      // set default mass for space objects
-      if ( planetModes[self.planetMode][el] ) {
-        defaultMass = planetModes[self.planetMode][el].mass;
-      }
+      var body = self[el];
 
       // add observers for mass sliders
-      body.massCoeffProperty.link( function( newCoeff ) {
-        body.mass = defaultMass * newCoeff;
+      body.massCoeffProperty.link( function( newCoeff, prevCoeff ) {
+        body.mass *= newCoeff / (prevCoeff || 1); // divide by (prevCoeff || 1) to return to the default mass value and multiply by a new coefficient
 
         // change radius
         body.radiusCoeff = Math.pow( newCoeff, 1 / 3 );
