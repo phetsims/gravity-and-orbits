@@ -135,7 +135,7 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 15,
         radiusScaleMode: 0.05,
-        velocity: new Vector2( -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, 0 ), // -vx for fulfill the law of conservation of momentum
+        velocity: new Vector2( -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, 0 ), // -vx to fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
           defaultValue: 1,
@@ -171,7 +171,7 @@ define( function( require ) {
         y: 0,
         radius: CONSTANTS.EARTH_RADIUS * 0.8,
         radiusScaleMode: 1.25,
-        velocity: new Vector2( 0, 0 ),
+        velocity: new Vector2( 0, CONSTANTS.SPACE_STATION_MASS * CONSTANTS.SPACE_STATION_SPEED / CONSTANTS.EARTH_MASS ), // vy to fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS,
         massTooltip: {
           defaultValue: 16,
