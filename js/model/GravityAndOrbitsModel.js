@@ -248,7 +248,7 @@ define( function( require ) {
 
     // update view for every new time tick
     this.dayProperty.link( function( newDay, prevDay ) {
-      updateView.call( self, newDay - prevDay );
+      updateModel.call( self, newDay - prevDay );
     } );
 
     this.spaceObjects.forEach( function( el ) {
@@ -307,7 +307,7 @@ define( function( require ) {
     }
   } );
 
-  var updateView = function( t ) {
+  var updateModel = function( t ) {
     var model = this,
       mode = model.planetModes[model.planetMode],
       scale = mode.options.scale,
