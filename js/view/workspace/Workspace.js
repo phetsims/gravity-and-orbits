@@ -19,7 +19,7 @@ define( function( require ) {
   var Grid = require( 'view/workspace/Grid' );
   var MeasuringTape = require( 'view/workspace/MeasuringTape' );
   var MassText = require( 'view/workspace/MassText' );
-  var Tooltips = require( 'view/workspace/Tooltips' );
+  var Labels = require( 'view/workspace/Labels' );
 
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -48,8 +48,8 @@ define( function( require ) {
     // add grids
     this.toScale.addChild( new Grid( model ) );
 
-    // add tooltips
-    this.toScale.addChild( new Tooltips( model ) );
+    // add labels
+    this.toScale.addChild( new Labels( model ) );
     this.addChild( this.toScale );
 
     // add measuring tape

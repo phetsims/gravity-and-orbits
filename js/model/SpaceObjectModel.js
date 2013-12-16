@@ -18,7 +18,7 @@ define( function( require ) {
   var FONT = new PhetFont( 12 );
 
   function SpaceObjectModel() {
-    this.tooltip = new Node( {visible: true, cursor: 'pointer'} ); // node for tooltip
+    this.label = new Node( {visible: true, cursor: 'pointer'} ); // node for label
     this.massText = new Text( "", { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} ); // node for mass text
     this.view = new Node(); // node for view of space object
     PropertySet.call( this, {

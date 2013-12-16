@@ -1,8 +1,8 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Visual representation of mass tooltip.
- * The tooltip appears below the planet.
+ * Visual representation of mass label.
+ * The label appears below the planet.
  * Measurements are carried out in relative units.
  *
  * @author Andrey Zelenkov (Mlearner)
@@ -27,9 +27,9 @@ define( function( require ) {
         var text, defaultValue, precision, value;
 
         if ( model.planetModes[model.planetMode][el] && !body.exploded ) {
-          text = model.planetModes[model.planetMode][el].massTooltip.text;
-          defaultValue = model.planetModes[model.planetMode][el].massTooltip.defaultValue;
-          precision = model.planetModes[model.planetMode][el].massTooltip.precision || 0;
+          text = model.planetModes[model.planetMode][el].massLabel.text;
+          defaultValue = model.planetModes[model.planetMode][el].massLabel.defaultValue;
+          precision = model.planetModes[model.planetMode][el].massLabel.precision || 0;
           value = (body.massCoeff * defaultValue).toFixed( precision );
 
           // if value ==== '1.00' replace 1.00 -> 1 and masses -> mass

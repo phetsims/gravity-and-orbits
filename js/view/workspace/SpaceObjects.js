@@ -119,8 +119,8 @@ define( function( require ) {
         }
       } );
 
-      // can drag using tooltip
-      body.tooltip.addInputListener( getListener( body.tooltip ) );
+      // can drag using label
+      body.label.addInputListener( getListener( body.label ) );
     } );
 
     // replace earth by gray sphere

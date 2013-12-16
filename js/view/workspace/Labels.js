@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Visual representation of planet's tooltips.
+ * Visual representation of planet's labels.
  * It appears when size of planet less then minimal limit.
  *
  * @author Andrey Zelenkov (Mlearner)
@@ -24,7 +24,7 @@ define( function( require ) {
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
   var moonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
 
-  function Tooltips( model ) {
+  function Labels( model ) {
     var self = this;
     Node.call( this );
 
@@ -34,43 +34,43 @@ define( function( require ) {
         position = body.position,
         scale = model.planetModes[model.planetMode].options.scale;
 
-      var tooltipText = name === 'sun' ? sunString :
+      var labelText = name === 'sun' ? sunString :
                         name === 'earth' ? earthString :
                         name === 'moon' ? moonString :
                         satelliteString;
 
-      // create tooltip node for each space object
-      body.tooltip.addChild( new Text( tooltipText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ) );
-      body.tooltip.addChild( new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ) );
-      body.tooltip.addChild( new Circle( 25, {fill: 'rgba(0,0,0,0)', x: position.x * scale + 25, y: position.y * scale - 25 } ) );
-      self.addChild( body.tooltip );
+      // create label node for each space object
+      body.label.addChild( new Text( labelText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ) );
+      body.label.addChild( new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ) );
+      body.label.addChild( new Circle( 25, {fill: 'rgba(0,0,0,0)', x: position.x * scale + 25, y: position.y * scale - 25 } ) );
+      self.addChild( body.label );
 
       body.explodedProperty.link( function() {
-        body.tooltip.setVisible( false );
+        body.label.setVisible( false );
       } );
 
-      var checkTooltip = function() {
+      var checkLabel = function() {
         if ( !isFinite( body.view.getWidth() ) || body.exploded ) {
-          body.tooltip.setVisible( false );
+          body.label.setVisible( false );
         }
         else {
-          body.tooltip.setVisible( ( body.view.getWidth() * model.scale < 10 ) );
+          body.label.setVisible( ( body.view.getWidth() * model.scale < 10 ) );
         }
       };
 
-      model.scaleProperty.link( checkTooltip );
-      model.planetModeProperty.link( checkTooltip );
-      body.radiusProperty.link( checkTooltip );
-      body.radiusCoeffProperty.link( checkTooltip );
+      model.scaleProperty.link( checkLabel );
+      model.planetModeProperty.link( checkLabel );
+      body.radiusProperty.link( checkLabel );
+      body.radiusCoeffProperty.link( checkLabel );
 
-      body.positionProperty.linkAttribute( body.tooltip, 'translation' );
+      body.positionProperty.linkAttribute( body.label, 'translation' );
 
       model.scaleProperty.link( function( newScale, oldScale ) {
-        body.tooltip.scale( (oldScale || 1) ); // return to previous proportions
-        body.tooltip.scale( 1 / newScale );
+        body.label.scale( (oldScale || 1) ); // return to previous proportions
+        body.label.scale( 1 / newScale );
       } );
     } );
   }
 
-  return inherit( Node, Tooltips );
+  return inherit( Node, Labels );
 } );

@@ -54,7 +54,7 @@ define( function( require ) {
         radius: CONSTANTS.SUN_RADIUS * 50,
         radiusScaleMode: 0.025,
         mass: CONSTANTS.SUN_MASS,
-        massTooltip: {
+        massLabel: {
           defaultValue: 333,
           text: thousandEarthMassesString
         }
@@ -66,7 +66,7 @@ define( function( require ) {
         radiusScaleMode: 0.15,
         velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
         mass: CONSTANTS.EARTH_MASS * 10200,
-        massTooltip: {
+        massLabel: {
           defaultValue: 1,
           text: earthMassesString,
           precision: 2
@@ -89,7 +89,7 @@ define( function( require ) {
         radius: CONSTANTS.SUN_RADIUS * 50,
         radiusScaleMode: 0.025,
         mass: CONSTANTS.SUN_MASS,
-        massTooltip: {
+        massLabel: {
           defaultValue: 333,
           text: thousandEarthMassesString
         }
@@ -101,7 +101,7 @@ define( function( require ) {
         radiusScaleMode: 0.15,
         velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
         mass: CONSTANTS.EARTH_MASS * 10200,
-        massTooltip: {
+        massLabel: {
           defaultValue: 1,
           text: earthMassesString,
           precision: 2
@@ -114,7 +114,7 @@ define( function( require ) {
         radiusScaleMode: 0.3,
         velocity: new Vector2( CONSTANTS.MOON_SPEED * 21, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
         mass: CONSTANTS.MOON_MASS,
-        massTooltip: {
+        massLabel: {
           defaultValue: 0.01,
           text: earthMassesString,
           precision: 2
@@ -137,7 +137,7 @@ define( function( require ) {
         radiusScaleMode: 0.05,
         velocity: new Vector2( -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, 0 ), // -vx to fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS,
-        massTooltip: {
+        massLabel: {
           defaultValue: 1,
           text: earthMassesString,
           precision: 2
@@ -150,7 +150,7 @@ define( function( require ) {
         radiusScaleMode: 0.1,
         velocity: new Vector2( CONSTANTS.MOON_SPEED, 0 ),
         mass: CONSTANTS.MOON_MASS,
-        massTooltip: {
+        massLabel: {
           defaultValue: 0.01,
           text: earthMassesString,
           precision: 2
@@ -173,7 +173,7 @@ define( function( require ) {
         radiusScaleMode: 1.25,
         velocity: new Vector2( 0, CONSTANTS.SPACE_STATION_MASS * CONSTANTS.SPACE_STATION_SPEED / CONSTANTS.EARTH_MASS ), // vy to fulfill the law of conservation of momentum
         mass: CONSTANTS.EARTH_MASS,
-        massTooltip: {
+        massLabel: {
           defaultValue: 16,
           text: billionBillionSatelliteMassesString
         }
@@ -185,7 +185,7 @@ define( function( require ) {
         radiusScaleMode: 0.1,
         velocity: new Vector2( 0, -CONSTANTS.SPACE_STATION_SPEED ),
         mass: CONSTANTS.SPACE_STATION_MASS,
-        massTooltip: {
+        massLabel: {
           defaultValue: 1,
           text: satelliteMassesString,
           precision: 2
