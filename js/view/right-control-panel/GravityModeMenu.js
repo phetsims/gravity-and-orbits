@@ -20,8 +20,8 @@ define( function( require ) {
   var FONT = new PhetFont( 14 );
   var HBox = require( 'SCENERY/nodes/HBox' );
 
-  function GravityModeMenu( model, coords ) {
-    Node.call( this, coords );
+  function GravityModeMenu( model, options ) {
+    Node.call( this, options );
 
     this.addChild( new HBox( {spacing: 10, bottom: 2, children: [
       new Text( gravityString + ':', { font: FONT, fill: '#fff', pickable: false } ),

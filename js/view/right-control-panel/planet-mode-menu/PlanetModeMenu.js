@@ -14,8 +14,8 @@ define( function( require ) {
   var PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
   var PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
 
-  function PlanetModeMenu( model, coords ) {
-    Node.call( this, coords );
+  function PlanetModeMenu( model, options ) {
+    Node.call( this, options );
 
     // add reset button
     var dy = 30;

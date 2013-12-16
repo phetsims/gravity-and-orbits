@@ -22,13 +22,13 @@ define( function( require ) {
 
   /**
    * @param {model} model
-   * @param {Object} coords coordinates of buttons
+   * @param {Object} options for buttons
    * @param {Number} num Number of option
    * @constructor
    */
 
-  function PlanetModeOption( model, coords, num ) {
-    Node.call( this, coords );
+  function PlanetModeOption( model, options, num ) {
+    Node.call( this, options );
     var map = {
       sun: Sun,
       earth: Earth,

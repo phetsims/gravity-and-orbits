@@ -35,11 +35,11 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
 
-  function SpaceObjectsPropertyCheckbox( model, coords ) {
-    Node.call( this, coords );
+  function SpaceObjectsPropertyCheckbox( model, options ) {
+    Node.call( this, options );
 
-    // checkbox options
-    var options = [
+    // checkbox params
+    var params = [
       {
         property: model.forceArrowProperty,
         text: gravityString + ' ' + forceString,
@@ -83,12 +83,12 @@ define( function( require ) {
     order[model.viewModes[1]] = [0, 1, 5, 2, 3, 4];
 
     // add checkboxes
-    for ( var i = 0; i < options.length; i++ ) {
-      this[options[i].text] = {
+    for ( var i = 0; i < params.length; i++ ) {
+      this[params[i].text] = {
         view: new CheckBox( new HBox( { spacing: 10, children: [
-          new Text( options[i].text, { font: FONT, fill: '#fff', pickable: false} ),
-          new Node( {children: [options[i].node]} )
-        ]} ), options[i].property, {scale: 0.8} )
+          new Text( params[i].text, { font: FONT, fill: '#fff', pickable: false} ),
+          new Node( {children: [params[i].node]} )
+        ]} ), params[i].property, {scale: 0.8} )
       };
     }
 
@@ -96,7 +96,7 @@ define( function( require ) {
 
     menu = order[model.viewMode];
     for ( i = 0; i < menu.length; i++ ) {
-      this.vBox.addChild( this[options[menu[i]].text].view );
+      this.vBox.addChild( this[params[menu[i]].text].view );
     }
 
     this.addChild( this.vBox );

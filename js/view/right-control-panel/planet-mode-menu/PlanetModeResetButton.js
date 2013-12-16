@@ -17,9 +17,9 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RectanglePushButton = require( 'SUN/RectanglePushButton' );
 
-  function PlanetModeResetButton( model, coords, dy ) {
+  function PlanetModeResetButton( model, options, dy ) {
     var pushButton;
-    Node.call( this, coords );
+    Node.call( this, options );
 
     // create button
     this.addChild( pushButton = new RectanglePushButton( new Node( {
