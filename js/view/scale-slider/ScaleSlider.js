@@ -15,7 +15,7 @@ define( function( require ) {
   var SliderButton = require( 'view/scale-slider/SliderButton' );
 
   function ScaleSlider( model, x, y, options ) {
-    Node.call( this, {x: x, y: y, scale: 0.8} );
+    Node.call( this, {x: x, y: y, scale: 0.63} );
 
     // add plus button
     this.addChild( new SliderButton( 0, 0, model, options.range, options.step, true ) );
