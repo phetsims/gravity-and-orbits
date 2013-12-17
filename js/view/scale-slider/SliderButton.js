@@ -50,10 +50,11 @@ define( function( require ) {
       } ) );
 
     //Increase the touch area in all directions except toward the slider knob, so that they won't interfere too much on touch devices
-    var dilateLeft = 10;
-    var dilateRight = 10;
-    var dilateTop = isIncrease ? 10 : 0;
-    var dilateBottom = isIncrease ? 0 : 10;
+    var dilationSize = 15;
+    var dilateLeft = dilationSize;
+    var dilateRight = dilationSize;
+    var dilateTop = isIncrease ? dilationSize : 0;
+    var dilateBottom = isIncrease ? 0 : dilationSize;
     this.touchArea = Shape.bounds( new Bounds2( this.localBounds.minX - dilateLeft, this.localBounds.minY - dilateTop, this.localBounds.maxX + dilateRight, this.localBounds.maxY + dilateBottom ) );
   }
 
