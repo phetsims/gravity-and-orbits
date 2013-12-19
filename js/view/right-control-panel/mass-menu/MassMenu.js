@@ -16,7 +16,7 @@ define( function( require ) {
 
   var Slider = require( 'view/right-control-panel/mass-menu/Slider' );
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
-  var ourEarthString = require( 'string!GRAVITY_AND_ORBITS/ourEarth' );
+  var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
   var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
   var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
   var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
@@ -47,7 +47,7 @@ define( function( require ) {
         }
       },
       earth: {
-        title: ourEarthString,
+        title: earthString,
         property: model.earth.massCoeffProperty,
         icon: {
           text: planetString,

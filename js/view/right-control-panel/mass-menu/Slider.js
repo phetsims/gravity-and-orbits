@@ -38,7 +38,7 @@ define( function( require ) {
     var slider = new Node( {children: [
       new Rectangle( 0, 0, options.width, options.height, {} ),
       new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, options.scope, options.rounding, options.tickStep ),
-      new Text( options.title, {centerX: options.width / 2.7, top: 0, font: FONT, fill: '#fff', pickable: false} )
+      new Text( options.title, {centerX: options.width / 2.875, top: 0, font: FONT, fill: '#fff', pickable: false} )
     ], y: 5} );
     this.addChild( slider );
 
