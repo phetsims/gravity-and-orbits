@@ -49,7 +49,7 @@ define( function( require ) {
     }
 
     // set button options
-    var options = {
+    options = {
       selectedNode: new Node( {children: [node, strokeSelected]} ),
       deselectedNode: new Node( {children: [node, strokeDeselected]} )
     };
