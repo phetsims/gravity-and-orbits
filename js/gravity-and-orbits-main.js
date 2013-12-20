@@ -37,12 +37,12 @@ define(
       // create and start the sim
       new Sim( titleString, [
         new Screen( cartoonString, new Image( cartoonIcon ),
-          function() { return new GravityAndOrbitsModel( ScreenView.LAYOUT_BOUNDS.width, ScreenView.LAYOUT_BOUNDS.height, cartoonString ); },
+          function() { return new GravityAndOrbitsModel( ScreenView.DEFAULT_LAYOUT_BOUNDS.width, ScreenView.DEFAULT_LAYOUT_BOUNDS.height, cartoonString ); },
           function( model ) { return new GravityAndOrbitsView( model ); },
           { backgroundColor: '#000' }
         ),
         new Screen( toScaleString, new Image( toScaleIcon ),
-          function() { return new GravityAndOrbitsModel( ScreenView.LAYOUT_BOUNDS.width, ScreenView.LAYOUT_BOUNDS.height, toScaleString ); },
+          function() { return new GravityAndOrbitsModel( ScreenView.DEFAULT_LAYOUT_BOUNDS.width, ScreenView.DEFAULT_LAYOUT_BOUNDS.height, toScaleString ); },
           function( model ) { return new GravityAndOrbitsView( model ); },
           { backgroundColor: '#000' }
         )
