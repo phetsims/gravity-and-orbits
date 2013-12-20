@@ -65,7 +65,7 @@ define( function( require ) {
       tipX: 85,
       tipY: 0,
       scale: 1,
-      length: 85,
+      length: 63.5,
       value: 2,
       precision: 1
     }
