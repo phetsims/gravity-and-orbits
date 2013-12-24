@@ -250,11 +250,6 @@ define( function( require ) {
       self[el] = new SpaceObjectModel();
     } );
 
-    // update view for every new time tick
-    this.dayProperty.link( function( newDay, prevDay ) {
-      updateModel.call( self, newDay - prevDay );
-    } );
-
     this.spaceObjects.forEach( function( el ) {
       var body = self[el];
 
@@ -306,46 +301,50 @@ define( function( require ) {
       this.showExplosion = true;
     },
     stepManual: function( dt ) {
+      var dDay, model = this,
+        mode = this.planetModes[this.planetMode],
+        scale = mode.options.scale,
+        forceScale = mode.options.forceScale,
+        timeScale = 24 * 60 * 60 * 0.967,
+        STEPS = 10,
+        i,
+        j,
+        currentObj,
+        body,
+        temp = new Vector2( 0, 0 ),
+        temp1 = new Vector2();
       dt = dt || 1 / fps;
-      this.day += dt * this.speed * this.planetModes[this.planetMode].options.timeScale;
-    }
-  } );
 
-  var updateModel = function( t ) {
-    var model = this,
-      mode = model.planetModes[model.planetMode],
-      scale = mode.options.scale,
-      forceScale = mode.options.forceScale,
-      timeScale = 24 * 60 * 60 * 0.967,
-      STEPS = 10,
-      dt = t * timeScale / STEPS,
-      i, j,
-      currentObj, body, temp = new Vector2( 0, 0 ), temp1 = new Vector2();
+      dDay = dt * this.speed * this.planetModes[this.planetMode].options.timeScale;
+      this.day += dDay;
 
-    for ( j = 0; j < STEPS; j++ ) {
-      for ( i = 0; i < model.spaceObjects.length; i++ ) {
-        currentObj = model.spaceObjects[i];
+      dt = dDay * timeScale / STEPS;
 
-        // change position of not fixed or dragging objects
-        if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
-          body = model[currentObj];
-          body.position.multiply( 1.0 / scale ).add( temp.set( body.velocity ).multiply( dt ).add( temp1.set( body.acceleration ).multiply( dt * dt / 2.0 ) ) ).multiply( scale );
-          body.velocityHalf.set( body.velocity.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
-          body.acceleration.set( getForce.call( model, currentObj ).multiply( -forceScale / body.mass ) );
-          body.velocity.set( body.velocityHalf.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
+      for ( j = 0; j < STEPS; j++ ) {
+        for ( i = 0; i < this.spaceObjects.length; i++ ) {
+          currentObj = this.spaceObjects[i];
+
+          // change position of not fixed or dragging objects
+          if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
+            body = this[currentObj];
+            body.position.multiply( 1.0 / scale ).add( temp.set( body.velocity ).multiply( dt ).add( temp1.set( body.acceleration ).multiply( dt * dt / 2.0 ) ) ).multiply( scale );
+            body.velocityHalf.set( body.velocity.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
+            body.acceleration.set( getForce.call( this, currentObj ).multiply( -forceScale / body.mass ) );
+            body.velocity.set( body.velocityHalf.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
+          }
         }
       }
-    }
 
-    // notify observers
-    model.spaceObjects.forEach( function( el ) {
-      var body = model[el];
-      body.positionProperty.notifyObserversUnsafe();
-      body.velocityHalfProperty.notifyObserversUnsafe();
-      body.accelerationProperty.notifyObserversUnsafe();
-      body.velocityProperty.notifyObserversUnsafe();
-    } );
-  };
+      // notify observers
+      this.spaceObjects.forEach( function( el ) {
+        var body = model[el];
+        body.positionProperty.notifyObserversUnsafe();
+        body.velocityHalfProperty.notifyObserversUnsafe();
+        body.accelerationProperty.notifyObserversUnsafe();
+        body.velocityProperty.notifyObserversUnsafe();
+      } );
+    }
+  } );
 
   var getForce = function( target ) {
     var F = new Vector2( 0, 0 ),
