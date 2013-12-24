@@ -9,12 +9,12 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' );
-  var SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' );
-  var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' ),
+    SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' ),
+    DayCounter = require( 'view/bottom-control-panel/DayCounter' ),
+    HBox = require( 'SCENERY/nodes/HBox' );
 
   function BottomControlPanel( model, x, y ) {
     Node.call( this, {x: x, y: y, scale: 0.9, children: [

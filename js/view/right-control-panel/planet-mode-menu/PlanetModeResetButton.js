@@ -9,13 +9,18 @@
 define( function( require ) {
   'use strict';
 
-  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.svg' );
+  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.svg' ),
+    Image = require( 'SCENERY/nodes/Image' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+    RectanglePushButton = require( 'SUN/RectanglePushButton' );
 
-  var Image = require( 'SCENERY/nodes/Image' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var RectanglePushButton = require( 'SUN/RectanglePushButton' );
+  /**
+   * @param {Object} model
+   * @param {Object} options for buttons
+   * @param {Number} dy y-offset of node
+   */
 
   function PlanetModeResetButton( model, options, dy ) {
     var pushButton;

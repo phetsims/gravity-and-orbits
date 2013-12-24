@@ -9,22 +9,20 @@
 define( function( require ) {
   'use strict';
 
-  var Image = require( 'SCENERY/nodes/Image' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var RadioButton = require( 'SUN/RadioButton' );
-
-  var Sun = require( 'view/space-object/Sun' );
-  var Earth = require( 'view/space-object/Earth' );
-  var Moon = require( 'view/space-object/Moon' );
-  var SpaceStation = require( 'view/space-object/SpaceStation' );
+  var Image = require( 'SCENERY/nodes/Image' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+    RadioButton = require( 'SUN/RadioButton' ),
+    Sun = require( 'view/space-object/Sun' ),
+    Earth = require( 'view/space-object/Earth' ),
+    Moon = require( 'view/space-object/Moon' ),
+    SpaceStation = require( 'view/space-object/SpaceStation' );
 
   /**
-   * @param {model} model
+   * @param {Object} model
    * @param {Object} options for buttons
-   * @param {Number} num Number of option
-   * @constructor
+   * @param {Number} num Number of planet mode
    */
 
   function PlanetModeOption( model, options, num ) {

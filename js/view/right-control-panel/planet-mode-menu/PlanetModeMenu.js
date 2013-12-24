@@ -8,11 +8,16 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
-  var PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+    PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' ),
+    PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
+
+  /**
+   * @param {Object} model set of properties
+   * @param {Object} options options for node
+   */
 
   function PlanetModeMenu( model, options ) {
     Node.call( this, options );

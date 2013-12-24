@@ -11,24 +11,31 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Slider = require( 'view/right-control-panel/mass-menu/Slider' ),
+    ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' ),
+    earthString = require( 'string!GRAVITY_AND_ORBITS/earth' ),
+    ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' ),
+    spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' ),
+    starString = require( 'string!GRAVITY_AND_ORBITS/star' ),
+    planetString = require( 'string!GRAVITY_AND_ORBITS/planet' ),
+    moonString = require( 'string!GRAVITY_AND_ORBITS/moon' ),
+    satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' ),
 
-  var Slider = require( 'view/right-control-panel/mass-menu/Slider' );
-  var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
-  var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
-  var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
-  var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
-  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
-  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
-  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
-  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+    Sun = require( 'view/space-object/Sun' ),
+    Earth = require( 'view/space-object/Earth' ),
+    Moon = require( 'view/space-object/Moon' ),
+    SpaceStation = require( 'view/space-object/SpaceStation' ),
+    VBox = require( 'SCENERY/nodes/VBox' );
 
-  var Sun = require( 'view/space-object/Sun' );
-  var Earth = require( 'view/space-object/Earth' );
-  var Moon = require( 'view/space-object/Moon' );
-  var SpaceStation = require( 'view/space-object/SpaceStation' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  /**
+   * @constructor
+   * @param {Object} model
+   * @param {Object} coords coordinates of node
+   * @param {number} coords.x x-coordinate
+   * @param {number} coords.y y-coordinate
+   */
 
   function MassMenu( model, coords ) {
     var self = this;

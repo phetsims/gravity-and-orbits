@@ -8,11 +8,10 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-
-  var Shape = require( 'KITE/Shape' );
-  var Path = require( 'SCENERY/nodes/Path' );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    Shape = require( 'KITE/Shape' ),
+    Path = require( 'SCENERY/nodes/Path' );
 
   function Grid( model ) {
     var self = this;

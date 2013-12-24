@@ -8,10 +8,10 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var moonImg = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
-  var Image = require( 'SCENERY/nodes/Image' );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    moonImg = require( 'image!GRAVITY_AND_ORBITS/moon.png' ),
+    Image = require( 'SCENERY/nodes/Image' );
 
   function Moon( coords, radius ) {
     Node.call( this, coords );

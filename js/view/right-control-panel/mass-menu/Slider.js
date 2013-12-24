@@ -8,17 +8,15 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var HorizontalSlider = require( 'view/right-control-panel/mass-menu/SliderHorizontalPart' );
-
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-
-  var FONT = new PhetFont( 11 );
-  var FONTICON = new PhetFont( 14 );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+    HorizontalSlider = require( 'view/right-control-panel/mass-menu/SliderHorizontalPart' ),
+    Text = require( 'SCENERY/nodes/Text' ),
+    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
+    HBox = require( 'SCENERY/nodes/HBox' ),
+    FONT = new PhetFont( 11 ),
+    FONTICON = new PhetFont( 14 );
 
   function Slider( x, y, options ) {
     options = _.extend(

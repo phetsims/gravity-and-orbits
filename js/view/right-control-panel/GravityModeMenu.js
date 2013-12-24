@@ -8,17 +8,21 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var AquaRadioButton = require( 'SUN/AquaRadioButton' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    AquaRadioButton = require( 'SUN/AquaRadioButton' ),
+    gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' ),
+    onString = require( 'string!GRAVITY_AND_ORBITS/on' ),
+    offString = require( 'string!GRAVITY_AND_ORBITS/off' ),
+    Text = require( 'SCENERY/nodes/Text' ),
+    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
+    FONT = new PhetFont( 14 ),
+    HBox = require( 'SCENERY/nodes/HBox' );
 
-  var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
-  var onString = require( 'string!GRAVITY_AND_ORBITS/on' );
-  var offString = require( 'string!GRAVITY_AND_ORBITS/off' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 14 );
-  var HBox = require( 'SCENERY/nodes/HBox' );
+  /**
+   * @param {Object} model set of properties
+   * @param {Object} options options for node
+   */
 
   function GravityModeMenu( model, options ) {
     Node.call( this, options );

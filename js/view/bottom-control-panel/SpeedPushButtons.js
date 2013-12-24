@@ -11,30 +11,26 @@ define( function( require ) {
   'use strict';
 
   // imports
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var PushButton = require( 'SUN/PushButton' );
-
-  var pauseImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_pause.png' );
-  var playImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_play.png' );
-
-  var buttonStepUnpressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_unpressed.png' );
-  var buttonStepHoverImg = require( 'image!GRAVITY_AND_ORBITS/button_step_hover.png' );
-  var buttonStepPressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_pressed.png' );
-  var buttonStepDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_deactivated.png' );
-
-  var buttonRewindImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind.svg' );
-  var buttonRewindHoverImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_hover.svg' );
-  var buttonRewindPressedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_pressed.svg' );
-  var buttonRewindDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_deactivated.svg' );
-
-  var Image = require( 'SCENERY/nodes/Image' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var ToggleButton = require( 'SUN/ToggleButton' );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    PushButton = require( 'SUN/PushButton' ),
+    pauseImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_pause.png' ),
+    playImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_play.png' ),
+    buttonStepUnpressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_unpressed.png' ),
+    buttonStepHoverImg = require( 'image!GRAVITY_AND_ORBITS/button_step_hover.png' ),
+    buttonStepPressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_pressed.png' ),
+    buttonStepDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_deactivated.png' ),
+    buttonRewindImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind.svg' ),
+    buttonRewindHoverImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_hover.svg' ),
+    buttonRewindPressedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_pressed.svg' ),
+    buttonRewindDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_deactivated.svg' ),
+    Image = require( 'SCENERY/nodes/Image' ),
+    HBox = require( 'SCENERY/nodes/HBox' ),
+    ToggleButton = require( 'SUN/ToggleButton' );
 
   function SpeedPushButtons( model ) {
-    Node.call( this, {scale: 0.7} );
     var stepButton, rewindButton, playButton, step, rewind;
+    Node.call( this, {scale: 0.7} );
 
     // add play button
     playButton = new ToggleButton(

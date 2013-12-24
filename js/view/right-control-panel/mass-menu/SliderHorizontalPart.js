@@ -8,16 +8,15 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Image = require( 'SCENERY/nodes/Image' );
-  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
-  var LinearFunction = require( 'DOT/LinearFunction' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var Shape = require( 'KITE/Shape' );
-
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var HSlider = require( 'SUN/HSlider' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Image = require( 'SCENERY/nodes/Image' ),
+    SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
+    LinearFunction = require( 'DOT/LinearFunction' ),
+    Path = require( 'SCENERY/nodes/Path' ),
+    Shape = require( 'KITE/Shape' ),
+    Dimension2 = require( 'DOT/Dimension2' ),
+    HSlider = require( 'SUN/HSlider' );
 
   /**
    * @param {Number} x x-coordinate
@@ -29,6 +28,7 @@ define( function( require ) {
    * @param {Number} tickStep tick step
    * @constructor
    */
+
   function SliderHorizontalPart( x, y, w, targetProperty, range, rounding, tickStep ) {
     var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 14;
     Node.call( this, {x: x, y: y} );

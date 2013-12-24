@@ -9,14 +9,14 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PlanetModeMenu = require( 'view/right-control-panel/planet-mode-menu/PlanetModeMenu' );
-  var GravityModeMenu = require( 'view/right-control-panel/GravityModeMenu' );
-  var SpaceObjectsPropertyCheckbox = require( 'view/right-control-panel/SpaceObjectsPropertyCheckbox' );
-  var MassMenu = require( 'view/right-control-panel/mass-menu/MassMenu' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+    PlanetModeMenu = require( 'view/right-control-panel/planet-mode-menu/PlanetModeMenu' ),
+    GravityModeMenu = require( 'view/right-control-panel/GravityModeMenu' ),
+    SpaceObjectsPropertyCheckbox = require( 'view/right-control-panel/SpaceObjectsPropertyCheckbox' ),
+    MassMenu = require( 'view/right-control-panel/mass-menu/MassMenu' ),
+    VBox = require( 'SCENERY/nodes/VBox' );
 
   function RightControlPanel( model ) {
     Node.call( this );

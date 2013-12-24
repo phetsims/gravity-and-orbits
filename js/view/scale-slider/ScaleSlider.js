@@ -9,12 +9,16 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var SliderLine = require( 'view/scale-slider/SliderLine' );
-  var SliderButton = require( 'view/scale-slider/SliderButton' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    SliderLine = require( 'view/scale-slider/SliderLine' ),
+    SliderButton = require( 'view/scale-slider/SliderButton' );
 
-  function ScaleSlider( model, x, y, options ) {
+  function ScaleSlider( model, x, y ) {
+    var options = {
+      range: {max: 1.5, min: 0.5},
+      step: 0.1
+    };
     Node.call( this, {x: x, y: y, scale: 0.63} );
 
     // add slide line

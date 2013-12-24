@@ -8,12 +8,12 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var RectanglePushButton = require( 'SUN/RectanglePushButton' );
-  var Shape = require( 'KITE/Shape' );
-  var Bounds2 = require( 'DOT/Bounds2' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+    RectanglePushButton = require( 'SUN/RectanglePushButton' ),
+    Shape = require( 'KITE/Shape' ),
+    Bounds2 = require( 'DOT/Bounds2' );
 
   /**
    * @param {Number} x x-coordinate
@@ -50,11 +50,11 @@ define( function( require ) {
       } ) );
 
     //Increase the touch area in all directions except toward the slider knob, so that they won't interfere too much on touch devices
-    var dilationSize = 15;
-    var dilateLeft = dilationSize;
-    var dilateRight = dilationSize;
-    var dilateTop = isIncrease ? dilationSize : 0;
-    var dilateBottom = isIncrease ? 0 : dilationSize;
+    var dilationSize = 15,
+      dilateLeft = dilationSize,
+      dilateRight = dilationSize,
+      dilateTop = isIncrease ? dilationSize : 0,
+      dilateBottom = isIncrease ? 0 : dilationSize;
     this.touchArea = Shape.bounds( new Bounds2( this.localBounds.minX - dilateLeft, this.localBounds.minY - dilateTop, this.localBounds.maxX + dilateRight, this.localBounds.maxY + dilateBottom ) );
   }
 

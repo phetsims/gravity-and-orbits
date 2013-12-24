@@ -8,199 +8,203 @@
 define( function( require ) {
   'use strict';
 
-  var PropertySet = require( 'AXON/PropertySet' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var SpaceObjectModel = require( 'model/SpaceObjectModel' );
-  var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
-  var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
-  var billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' );
-  var satelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/satelliteMasses' );
-  var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
-  var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
-
-  var Vector2 = require( 'DOT/Vector2' );
-
-  var CONSTANTS = {
-    G: 6.67384E-11, // gravitational constant
-    SUN_RADIUS: 6.955E8,
-    SUN_MASS: 1.989E30,
-    EARTH_RADIUS: 6.371E6,
-    EARTH_MASS: 5.9736E24,
-    EARTH_PERIHELION: 147098290E3,
-    EARTH_ORBITAL_SPEED_AT_PERIHELION: 30300,
-    MOON_MASS: 7.3477E22,
-    MOON_RADIUS: 1737.1E3,
-    MOON_EARTH_SPEED: -1.01E3,
-    MOON_SPEED: -1.01E3,
-    MOON_PERIGEE: 391370E3,
-    MOON_X: 147098290E3,
-    MOON_Y: 391370E3,
-    SPACE_STATION_RADIUS: 109,
-    SPACE_STATION_MASS: 369914,
-    SPACE_STATION_SPEED: 7706,
-    SPACE_STATION_PERIGEE: 347000,
-    METERS_PER_MILE: 0.000621371192
-  };
-
-  var fps = 60, timeModes = ['days', 'minutes'], lastDt = 0;
-
-  var planetModes = [
-    {
-      sun: {
-        fixed: true,
-        x: 0,
-        y: 0,
-        radius: CONSTANTS.SUN_RADIUS * 50,
-        radiusScaleMode: 0.025,
-        mass: CONSTANTS.SUN_MASS,
-        massLabel: {
-          defaultValue: 333,
-          text: thousandEarthMassesString
-        }
-      },
-      earth: {
-        x: CONSTANTS.EARTH_PERIHELION,
-        y: 0,
-        radius: CONSTANTS.EARTH_RADIUS * 800,
-        radiusScaleMode: 0.15,
-        velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
-        mass: CONSTANTS.EARTH_MASS * 10200,
-        massLabel: {
-          defaultValue: 1,
-          text: earthMassesString,
-          precision: 2
-        }
-      },
-      options: {
-        forceScale: 1.017, // ratio of the gravitational and centripetal forces
-        timeScale: 365.0 / 26.0, // days per seconds
-        timeMode: timeModes[0],
-        scale: 1.15E-9,
-        centerX: 275,
-        centerY: 235
-      }
+  var PropertySet = require( 'AXON/PropertySet' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    SpaceObjectModel = require( 'model/SpaceObjectModel' ),
+    thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' ),
+    earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' ),
+    billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' ),
+    satelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/satelliteMasses' ),
+    cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' ),
+    toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' ),
+    Vector2 = require( 'DOT/Vector2' ),
+    CONSTANTS = {
+      G: 6.67384E-11, // gravitational constant
+      SUN_RADIUS: 6.955E8,
+      SUN_MASS: 1.989E30,
+      EARTH_RADIUS: 6.371E6,
+      EARTH_MASS: 5.9736E24,
+      EARTH_PERIHELION: 147098290E3,
+      EARTH_ORBITAL_SPEED_AT_PERIHELION: 30300,
+      MOON_MASS: 7.3477E22,
+      MOON_RADIUS: 1737.1E3,
+      MOON_EARTH_SPEED: -1.01E3,
+      MOON_SPEED: -1.01E3,
+      MOON_PERIGEE: 391370E3,
+      MOON_X: 147098290E3,
+      MOON_Y: 391370E3,
+      SPACE_STATION_RADIUS: 109,
+      SPACE_STATION_MASS: 369914,
+      SPACE_STATION_SPEED: 7706,
+      SPACE_STATION_PERIGEE: 347000,
+      METERS_PER_MILE: 0.000621371192
     },
-    {
-      sun: {
-        fixed: true,
-        x: 0,
-        y: 0,
-        radius: CONSTANTS.SUN_RADIUS * 50,
-        radiusScaleMode: 0.025,
-        mass: CONSTANTS.SUN_MASS,
-        massLabel: {
-          defaultValue: 333,
-          text: thousandEarthMassesString
+    timeModes = ['days', 'minutes'],
+    planetModes = [
+      {
+        sun: {
+          fixed: true,
+          x: 0,
+          y: 0,
+          radius: CONSTANTS.SUN_RADIUS * 50,
+          radiusScaleMode: 0.025,
+          mass: CONSTANTS.SUN_MASS,
+          massLabel: {
+            defaultValue: 333,
+            text: thousandEarthMassesString
+          }
+        },
+        earth: {
+          x: CONSTANTS.EARTH_PERIHELION,
+          y: 0,
+          radius: CONSTANTS.EARTH_RADIUS * 800,
+          radiusScaleMode: 0.15,
+          velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
+          mass: CONSTANTS.EARTH_MASS * 10200,
+          massLabel: {
+            defaultValue: 1,
+            text: earthMassesString,
+            precision: 2
+          }
+        },
+        options: {
+          forceScale: 1.017, // ratio of the gravitational and centripetal forces
+          timeScale: 365.0 / 26.0, // days per seconds
+          timeMode: timeModes[0],
+          scale: 1.15E-9,
+          centerX: 275,
+          centerY: 235
         }
       },
-      earth: {
-        x: CONSTANTS.EARTH_PERIHELION,
-        y: 0,
-        radius: CONSTANTS.EARTH_RADIUS * 800,
-        radiusScaleMode: 0.15,
-        velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
-        mass: CONSTANTS.EARTH_MASS * 10200,
-        massLabel: {
-          defaultValue: 1,
-          text: earthMassesString,
-          precision: 2
+      {
+        sun: {
+          fixed: true,
+          x: 0,
+          y: 0,
+          radius: CONSTANTS.SUN_RADIUS * 50,
+          radiusScaleMode: 0.025,
+          mass: CONSTANTS.SUN_MASS,
+          massLabel: {
+            defaultValue: 333,
+            text: thousandEarthMassesString
+          }
+        },
+        earth: {
+          x: CONSTANTS.EARTH_PERIHELION,
+          y: 0,
+          radius: CONSTANTS.EARTH_RADIUS * 800,
+          radiusScaleMode: 0.15,
+          velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
+          mass: CONSTANTS.EARTH_MASS * 10200,
+          massLabel: {
+            defaultValue: 1,
+            text: earthMassesString,
+            precision: 2
+          }
+        },
+        moon: {
+          x: CONSTANTS.MOON_X,
+          y: -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
+          radius: CONSTANTS.MOON_RADIUS * 800,
+          radiusScaleMode: 0.3,
+          velocity: new Vector2( CONSTANTS.MOON_SPEED * 21, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
+          mass: CONSTANTS.MOON_MASS,
+          massLabel: {
+            defaultValue: 0.01,
+            text: earthMassesString,
+            precision: 2
+          }
+        },
+        options: {
+          forceScale: 1.017, // ratio of the gravitational and centripetal forces
+          timeScale: 365.0 / 26.0, // days per seconds
+          timeMode: timeModes[0],
+          scale: 1.15E-9,
+          centerX: 275,
+          centerY: 235
         }
       },
-      moon: {
-        x: CONSTANTS.MOON_X,
-        y: -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
-        radius: CONSTANTS.MOON_RADIUS * 800,
-        radiusScaleMode: 0.3,
-        velocity: new Vector2( CONSTANTS.MOON_SPEED * 21, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
-        mass: CONSTANTS.MOON_MASS,
-        massLabel: {
-          defaultValue: 0.01,
-          text: earthMassesString,
-          precision: 2
+      {
+        earth: {
+          x: 0,
+          y: 0,
+          radius: CONSTANTS.EARTH_RADIUS * 15,
+          radiusScaleMode: 0.05,
+          velocity: new Vector2( -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, 0 ), // -vx to fulfill the law of conservation of momentum
+          mass: CONSTANTS.EARTH_MASS,
+          massLabel: {
+            defaultValue: 1,
+            text: earthMassesString,
+            precision: 2
+          }
+        },
+        moon: {
+          x: 0,
+          y: -CONSTANTS.MOON_Y,
+          radius: CONSTANTS.MOON_RADIUS * 15,
+          radiusScaleMode: 0.1,
+          velocity: new Vector2( CONSTANTS.MOON_SPEED, 0 ),
+          mass: CONSTANTS.MOON_MASS,
+          massLabel: {
+            defaultValue: 0.01,
+            text: earthMassesString,
+            precision: 2
+          }
+        },
+        options: {
+          forceScale: 1.001,
+          timeScale: 365.0 / 96.0, // days per seconds
+          timeMode: timeModes[0],
+          scale: 3.7E-7,
+          centerX: 295,
+          centerY: 235
         }
       },
-      options: {
-        forceScale: 1.017, // ratio of the gravitational and centripetal forces
-        timeScale: 365.0 / 26.0, // days per seconds
-        timeMode: timeModes[0],
-        scale: 1.15E-9,
-        centerX: 275,
-        centerY: 235
+      {
+        earth: {
+          x: 0,
+          y: 0,
+          radius: CONSTANTS.EARTH_RADIUS * 0.8,
+          radiusScaleMode: 1.25,
+          velocity: new Vector2( 0, CONSTANTS.SPACE_STATION_MASS * CONSTANTS.SPACE_STATION_SPEED / CONSTANTS.EARTH_MASS ), // vy to fulfill the law of conservation of momentum
+          mass: CONSTANTS.EARTH_MASS,
+          massLabel: {
+            defaultValue: 16,
+            text: billionBillionSatelliteMassesString
+          }
+        },
+        spaceStation: {
+          x: CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
+          y: 0,
+          radius: CONSTANTS.SPACE_STATION_RADIUS * 8000,
+          radiusScaleMode: 0.1,
+          velocity: new Vector2( 0, -CONSTANTS.SPACE_STATION_SPEED ),
+          mass: CONSTANTS.SPACE_STATION_MASS,
+          massLabel: {
+            defaultValue: 1,
+            text: satelliteMassesString,
+            precision: 2
+          }
+        },
+        options: {
+          forceScale: 1,
+          timeScale: 365.0 / 31855.0, // days per seconds
+          timeMode: timeModes[1],
+          scale: 2E-5,
+          centerX: 280,
+          centerY: 230
+        }
       }
-    },
-    {
-      earth: {
-        x: 0,
-        y: 0,
-        radius: CONSTANTS.EARTH_RADIUS * 15,
-        radiusScaleMode: 0.05,
-        velocity: new Vector2( -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, 0 ), // -vx to fulfill the law of conservation of momentum
-        mass: CONSTANTS.EARTH_MASS,
-        massLabel: {
-          defaultValue: 1,
-          text: earthMassesString,
-          precision: 2
-        }
-      },
-      moon: {
-        x: 0,
-        y: -CONSTANTS.MOON_Y,
-        radius: CONSTANTS.MOON_RADIUS * 15,
-        radiusScaleMode: 0.1,
-        velocity: new Vector2( CONSTANTS.MOON_SPEED, 0 ),
-        mass: CONSTANTS.MOON_MASS,
-        massLabel: {
-          defaultValue: 0.01,
-          text: earthMassesString,
-          precision: 2
-        }
-      },
-      options: {
-        forceScale: 1.001,
-        timeScale: 365.0 / 96.0, // days per seconds
-        timeMode: timeModes[0],
-        scale: 3.7E-7,
-        centerX: 295,
-        centerY: 235
-      }
-    },
-    {
-      earth: {
-        x: 0,
-        y: 0,
-        radius: CONSTANTS.EARTH_RADIUS * 0.8,
-        radiusScaleMode: 1.25,
-        velocity: new Vector2( 0, CONSTANTS.SPACE_STATION_MASS * CONSTANTS.SPACE_STATION_SPEED / CONSTANTS.EARTH_MASS ), // vy to fulfill the law of conservation of momentum
-        mass: CONSTANTS.EARTH_MASS,
-        massLabel: {
-          defaultValue: 16,
-          text: billionBillionSatelliteMassesString
-        }
-      },
-      spaceStation: {
-        x: CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
-        y: 0,
-        radius: CONSTANTS.SPACE_STATION_RADIUS * 8000,
-        radiusScaleMode: 0.1,
-        velocity: new Vector2( 0, -CONSTANTS.SPACE_STATION_SPEED ),
-        mass: CONSTANTS.SPACE_STATION_MASS,
-        massLabel: {
-          defaultValue: 1,
-          text: satelliteMassesString,
-          precision: 2
-        }
-      },
-      options: {
-        forceScale: 1,
-        timeScale: 365.0 / 31855.0, // days per seconds
-        timeMode: timeModes[1],
-        scale: 2E-5,
-        centerX: 280,
-        centerY: 230
-      }
-    }
-  ];
+    ],
+    fps = 60,
+    lastDt = 0;
+
+  /**
+   * @param {Number} width of sim
+   * @param {Number} height of sim
+   * @param {String} viewMode "Cartoon" or "To Scale"
+   */
 
   function GravityAndOrbitsModel( width, height, viewMode ) {
     var self = this;

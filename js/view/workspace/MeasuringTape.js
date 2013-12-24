@@ -9,23 +9,20 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Vector2 = require( 'DOT/Vector2' );
-
-  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
-  var Shape = require( 'KITE/Shape' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
-
-  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' );
-  var Image = require( 'SCENERY/nodes/Image' );
-
-  var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
-  var thousandKilometers = require( 'string!GRAVITY_AND_ORBITS/thousandKilometers' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 16 );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    Vector2 = require( 'DOT/Vector2' ),
+    SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
+    Shape = require( 'KITE/Shape' ),
+    Path = require( 'SCENERY/nodes/Path' ),
+    Circle = require( 'SCENERY/nodes/Circle' ),
+    measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' ),
+    Image = require( 'SCENERY/nodes/Image' ),
+    thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' ),
+    thousandKilometers = require( 'string!GRAVITY_AND_ORBITS/thousandKilometers' ),
+    Text = require( 'SCENERY/nodes/Text' ),
+    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
+    FONT = new PhetFont( 16 );
 
   // options for planet modes
   var options = [

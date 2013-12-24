@@ -8,10 +8,10 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var HSlider = require( 'SUN/HSlider' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Dimension2 = require( 'DOT/Dimension2' ),
+    HSlider = require( 'SUN/HSlider' );
 
   /**
    * @param {Number} x x-coordinate
@@ -20,6 +20,7 @@ define( function( require ) {
    * @param {range} range range for targetProperty
    * @constructor
    */
+
   function Slider( x, y, targetProperty, range ) {
     Node.call( this, {x: x, y: y} );
     var options = {

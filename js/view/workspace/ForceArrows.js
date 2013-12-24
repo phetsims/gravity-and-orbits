@@ -9,10 +9,10 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var ArrowShape = require( 'SCENERY_PHET/ArrowShape' );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    ArrowNode = require( 'SCENERY_PHET/ArrowNode' ),
+    ArrowShape = require( 'SCENERY_PHET/ArrowShape' );
 
   function ForceArrows( model ) {
     var self = this, prevPosition = {}, hided;

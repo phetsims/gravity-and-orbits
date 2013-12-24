@@ -8,32 +8,30 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var CheckBox = require( 'SUN/CheckBox' );
-  var VerticalCheckBoxGroup = require( 'SUN/VerticalCheckBoxGroup' );
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var Shape = require( 'KITE/Shape' );
-  var Path = require( 'SCENERY/nodes/Path' );
-
-  var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' );
-  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' );
-  var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.svg' );
-  var Image = require( 'SCENERY/nodes/Image' );
-
-  var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
-  var forceString = require( 'string!GRAVITY_AND_ORBITS/force' );
-  var velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' );
-  var pathString = require( 'string!GRAVITY_AND_ORBITS/path' );
-  var tapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
-  var massString = require( 'string!GRAVITY_AND_ORBITS/mass' );
-  var gridString = require( 'string!GRAVITY_AND_ORBITS/grid' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 14 );
-  var VBox = require( 'SCENERY/nodes/VBox' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
+  var Node = require( 'SCENERY/nodes/Node' ),
+    inherit = require( 'PHET_CORE/inherit' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+    CheckBox = require( 'SUN/CheckBox' ),
+    VerticalCheckBoxGroup = require( 'SUN/VerticalCheckBoxGroup' ),
+    ArrowNode = require( 'SCENERY_PHET/ArrowNode' ),
+    Shape = require( 'KITE/Shape' ),
+    Path = require( 'SCENERY/nodes/Path' ),
+    iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' ),
+    measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' ),
+    iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.svg' ),
+    Image = require( 'SCENERY/nodes/Image' ),
+    gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' ),
+    forceString = require( 'string!GRAVITY_AND_ORBITS/force' ),
+    velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' ),
+    pathString = require( 'string!GRAVITY_AND_ORBITS/path' ),
+    tapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' ),
+    massString = require( 'string!GRAVITY_AND_ORBITS/mass' ),
+    gridString = require( 'string!GRAVITY_AND_ORBITS/grid' ),
+    Text = require( 'SCENERY/nodes/Text' ),
+    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
+    FONT = new PhetFont( 14 ),
+    VBox = require( 'SCENERY/nodes/VBox' ),
+    HBox = require( 'SCENERY/nodes/HBox' );
 
   function SpaceObjectsPropertyCheckbox( model, options ) {
     Node.call( this, options );

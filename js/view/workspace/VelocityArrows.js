@@ -9,17 +9,15 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var ArrowShape = require( 'SCENERY_PHET/ArrowShape' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
-
-  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
-
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var FONT = new PhetFont( 22 );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    ArrowNode = require( 'SCENERY_PHET/ArrowNode' ),
+    ArrowShape = require( 'SCENERY_PHET/ArrowShape' ),
+    Circle = require( 'SCENERY/nodes/Circle' ),
+    SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
+    Text = require( 'SCENERY/nodes/Text' ),
+    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
+    FONT = new PhetFont( 22 );
 
   function VelocityArrows( model ) {
     var self = this, prevPosition = {};

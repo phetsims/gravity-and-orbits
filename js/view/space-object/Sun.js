@@ -8,10 +8,10 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var RadialGradient = require( 'SCENERY/util/RadialGradient' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    RadialGradient = require( 'SCENERY/util/RadialGradient' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    Circle = require( 'SCENERY/nodes/Circle' );
 
   function Sun( coords, radius ) {
     Node.call( this, coords );

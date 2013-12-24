@@ -9,11 +9,10 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-
-  var Shape = require( 'KITE/Shape' );
-  var Line = require( 'SCENERY/nodes/Line' );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    Shape = require( 'KITE/Shape' ),
+    Line = require( 'SCENERY/nodes/Line' );
 
   function PlanetPath( model ) {
     var self = this;

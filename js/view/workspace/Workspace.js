@@ -9,24 +9,21 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-
-  var SpaceObjects = require( 'view/workspace/SpaceObjects' );
-  var ForceArrows = require( 'view/workspace/ForceArrows' );
-  var VelocityArrows = require( 'view/workspace/VelocityArrows' );
-  var PlanetPath = require( 'view/workspace/PlanetPath' );
-  var Grid = require( 'view/workspace/Grid' );
-  var MeasuringTape = require( 'view/workspace/MeasuringTape' );
-  var MassText = require( 'view/workspace/MassText' );
-  var Labels = require( 'view/workspace/Labels' );
-
-  var Shape = require( 'KITE/Shape' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
-
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var inherit = require( 'PHET_CORE/inherit' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    SpaceObjects = require( 'view/workspace/SpaceObjects' ),
+    ForceArrows = require( 'view/workspace/ForceArrows' ),
+    VelocityArrows = require( 'view/workspace/VelocityArrows' ),
+    PlanetPath = require( 'view/workspace/PlanetPath' ),
+    Grid = require( 'view/workspace/Grid' ),
+    MeasuringTape = require( 'view/workspace/MeasuringTape' ),
+    MassText = require( 'view/workspace/MassText' ),
+    Labels = require( 'view/workspace/Labels' ),
+    Shape = require( 'KITE/Shape' ),
+    Path = require( 'SCENERY/nodes/Path' ),
+    Circle = require( 'SCENERY/nodes/Circle' ),
+    Text = require( 'SCENERY/nodes/Text' ),
+    PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   function Workspace( model ) {
     var self = this;
