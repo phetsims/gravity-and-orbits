@@ -19,10 +19,10 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var FONT = new PhetFont( 12 );
-  var sunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
-  var earthString = require( 'string!GRAVITY_AND_ORBITS/ourEarth' );
+  var sunString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var earthString = require( 'string!GRAVITY_AND_ORBITS/planet' );
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
-  var moonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
+  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
 
   function Labels( model ) {
     var self = this;
@@ -35,9 +35,9 @@ define( function( require ) {
         scale = model.planetModes[model.planetMode].options.scale;
 
       var labelText = name === 'sun' ? sunString :
-                        name === 'earth' ? earthString :
-                        name === 'moon' ? moonString :
-                        satelliteString;
+                      name === 'earth' ? earthString :
+                      name === 'moon' ? moonString :
+                      satelliteString;
 
       // create label node for each space object
       body.label.addChild( new Text( labelText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ) );
@@ -54,7 +54,7 @@ define( function( require ) {
           body.label.setVisible( false );
         }
         else {
-          body.label.setVisible( ( body.view.getWidth() * model.scale < 10 ) );
+          body.label.setVisible( ( body.view.getWidth() * model.scale / body.radiusCoeff < 8 ) );
         }
       };
 
