@@ -5,6 +5,7 @@
  * Rewind button return to the last day, when play button was pressed.
  *
  * @author Andrey Zelenkov (Mlearner)
+ * @author Sam Reid
  */
 
 define( function( require ) {

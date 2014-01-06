@@ -17,7 +17,7 @@ define( function( require ) {
     HBox = require( 'SCENERY/nodes/HBox' );
 
   function BottomControlPanel( model, x, y ) {
-    Node.call( this, {x: x, y: y, scale: 0.9, children: [
+    Node.call( this, {x: x, y: y, children: [
       new HBox( {spacing: 20, children: [
         // add speed check box
         new SpeedRadioButtons( model ),
