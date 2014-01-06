@@ -12,14 +12,7 @@ define( function( require ) {
 
   // imports
   var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    PushButton = require( 'SUN/PushButton' ),
-    Image = require( 'SCENERY/nodes/Image' ),
     HBox = require( 'SCENERY/nodes/HBox' ),
-    ToggleButton = require( 'SUN/ToggleButton' ),
-    RoundShinyButton = require( 'SCENERY_PHET/RoundShinyButton' ),
-    Shape = require( 'KITE/Shape' ),
-    Path = require( 'SCENERY/nodes/Path' ),
     PlayPauseButton = require( 'SCENERY_PHET/PlayPauseButton' ),
     StepButton = require( 'SCENERY_PHET/StepButton' ),
     RewindButton = require( 'SCENERY_PHET/RewindButton' );
