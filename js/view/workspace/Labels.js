@@ -14,6 +14,7 @@ define( function( require ) {
     Shape = require( 'KITE/Shape' ),
     Path = require( 'SCENERY/nodes/Path' ),
     Circle = require( 'SCENERY/nodes/Circle' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
     Text = require( 'SCENERY/nodes/Text' ),
     PhetFont = require( 'SCENERY_PHET/PhetFont' ),
     FONT = new PhetFont( 12 ),
@@ -40,7 +41,10 @@ define( function( require ) {
       // create label node for each space object
       body.label.addChild( new Text( labelText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ) );
       body.label.addChild( new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ) );
-      body.label.addChild( new Circle( 25, {fill: 'rgba(0,0,0,0)', x: position.x * scale + 25, y: position.y * scale - 25 } ) );
+      var bodyLabelBounds = body.label.bounds;
+
+      //Add picking region and also go past the text bounds so that it doesn't leave red streaks, see https://github.com/phetsims/gravity-and-orbits/issues/57
+      body.label.addChild( new Rectangle( bodyLabelBounds.minX, bodyLabelBounds.minY, bodyLabelBounds.width + 10, bodyLabelBounds.height ) );
       self.addChild( body.label );
 
       body.explodedProperty.link( function() {
