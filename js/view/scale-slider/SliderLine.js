@@ -30,16 +30,16 @@ define( function( require ) {
       },
       track: {
         width: 28,
-        height: 20,
-        color: 'gray'
+        height: 20
       }
     };
 
     var hslider = new HSlider( targetProperty, range, {
       trackSize: new Dimension2( options.line.height, options.line.width ),
       thumbSize: new Dimension2( options.track.height, options.track.width ),
-      thumbFillEnabled: options.track.color,
-      thumbFillHighlighted: options.track.color
+      // custom thumb
+      thumbFillEnabled: '#98BECF',
+      thumbFillHighlighted: '#B3D3E2'
     } );
     hslider.rotate( -Math.PI / 2 );
     hslider.y = options.line.height + options.track.height / 2;

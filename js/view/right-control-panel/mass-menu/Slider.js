@@ -11,12 +11,13 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
     Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    HorizontalSlider = require( 'view/right-control-panel/mass-menu/SliderHorizontalPart' ),
+    SliderHorizontalPart = require( 'view/right-control-panel/mass-menu/SliderHorizontalPart' ),
     Text = require( 'SCENERY/nodes/Text' ),
     PhetFont = require( 'SCENERY_PHET/PhetFont' ),
     HBox = require( 'SCENERY/nodes/HBox' ),
     FONT = new PhetFont( 11 ),
-    FONTICON = new PhetFont( 14 );
+    FONTICON = new PhetFont( 14 ),
+    Dimension2 = require( 'DOT/Dimension2' );
 
   function Slider( x, y, options ) {
     options = _.extend(
@@ -35,7 +36,7 @@ define( function( require ) {
     // add slider
     var slider = new Node( {children: [
       new Rectangle( 0, 0, options.width, options.height, {} ),
-      new HorizontalSlider( 5, options.height - 20, options.width - 10, options.property, options.scope, options.rounding, options.tickStep ),
+      new SliderHorizontalPart( 5, options.height - 20, options.width - 10, options.property, options.scope, options.rounding, options.tickStep ),
       new Text( options.title, {centerX: options.width / 2.875, top: 0, font: FONT, fill: '#fff', pickable: false} )
     ], y: 5} );
     this.addChild( slider );

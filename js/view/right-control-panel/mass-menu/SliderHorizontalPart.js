@@ -30,7 +30,7 @@ define( function( require ) {
    */
 
   function SliderHorizontalPart( x, y, w, targetProperty, range, rounding, tickStep ) {
-    var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 14;
+    var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 16;
     Node.call( this, {x: x, y: y} );
 
     var options = {
@@ -44,22 +44,26 @@ define( function( require ) {
       }
     };
 
-    // add slider
-    this.addChild( new HSlider( targetProperty, range, {
-      trackSize: new Dimension2( options.line.height, options.line.width ),
-      thumbSize: new Dimension2( options.track.height, options.track.width )
-    } ) );
-
     // add ticks
     if ( tickStep ) {
       for ( i = range.min; i <= range.max; i += tickStep ) {
         nodeTick.addChild( new Path( Shape.lineSegment(
-          w * (i - range.min) / (range.max - range.min), -5,
+          w * (i - range.min) / (range.max - range.min), -10,
           w * (i - range.min) / (range.max - range.min), -tickHeight
         ), { stroke: 'white', lineWidth: 1 } ) );
       }
       this.addChild( nodeTick );
     }
+
+    // add slider
+    this.addChild( new HSlider( targetProperty, range, {
+      trackSize: new Dimension2( options.line.height, options.line.width ),
+      thumbSize: new Dimension2( options.track.height, options.track.width ),
+
+      // custom thumb
+      thumbFillEnabled: '#98BECF',
+      thumbFillHighlighted: '#B3D3E2'
+    } ) );
 
     // rounding function
     var round = function( value, rounding ) {
