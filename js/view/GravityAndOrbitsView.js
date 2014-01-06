@@ -14,8 +14,12 @@ define( function( require ) {
     Workspace = require( 'view/workspace/Workspace' ),
     ScaleSlider = require( 'view/scale-slider/ScaleSlider' ),
     RightControlPanel = require( 'view/right-control-panel/RightControlPanel' ),
-    BottomControlPanel = require( 'view/bottom-control-panel/BottomControlPanel' ),
-    VBox = require( 'SCENERY/nodes/VBox' );
+    VBox = require( 'SCENERY/nodes/VBox' ),
+    Node = require( 'SCENERY/nodes/Node' ),
+    SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' ),
+    SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' ),
+    DayCounter = require( 'view/bottom-control-panel/DayCounter' ),
+    HBox = require( 'SCENERY/nodes/HBox' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
@@ -26,16 +30,25 @@ define( function( require ) {
     // add scale slider
     this.addChild( new ScaleSlider( model, 20, 10 ) );
 
-    this.addChild( new VBox( {spacing: 5, left: 560, top: 10, children: [
+    var rightPanel = new VBox( {spacing: 5, left: 560, top: 10, children: [
       // add right control panel
       new RightControlPanel( model ),
 
       // add reset button
-      new ResetAllButton( function() { model.reset(); }, { scale: 0.6, x: 100 } )
-    ]} ) );
+      new ResetAllButton( function() { model.reset(); }, { scale: 0.75} )
+    ]} );
+    this.addChild( rightPanel );
 
-    // add bottom control panel
-    this.addChild( new BottomControlPanel( model, 100, 410 ) );
+    var bottomInset = 5;
+
+    // add speed check box
+    this.addChild( new SpeedRadioButtons( model ).mutate( {left: 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
+
+    // add speed push buttons
+    this.addChild( new SpeedPushButtons( model ).mutate( {centerX: rightPanel.left / 2, bottom: this.layoutBounds.maxY - bottomInset} ) );
+
+    //add day counter
+    this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
   }
 
   return inherit( ScreenView, GravityAndOrbitsView );

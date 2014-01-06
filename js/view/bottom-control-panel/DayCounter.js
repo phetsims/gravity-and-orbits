@@ -21,7 +21,7 @@ define( function( require ) {
     earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' ),
     Text = require( 'SCENERY/nodes/Text' ),
     PhetFont = require( 'SCENERY_PHET/PhetFont' ),
-    FONT = new PhetFont( 18 ),
+    FONT = new PhetFont( 16 ),
     VBox = require( 'SCENERY/nodes/VBox' );
 
   function DayCounter( model ) {
@@ -35,7 +35,7 @@ define( function( require ) {
     // day text counter
     this.day = new Text( '', { font: FONT, fontWeight: 'bold', fill: '#fff', pickable: false } );
 
-    var box = new VBox( {spacing: 10, children: [
+    var box = new VBox( {spacing: 4, children: [
       // add day text counter
       this.day,
 
