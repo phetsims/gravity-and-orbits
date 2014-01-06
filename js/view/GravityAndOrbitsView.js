@@ -30,12 +30,12 @@ define( function( require ) {
     // add scale slider
     this.addChild( new ScaleSlider( model, 20, 10 ) );
 
-    var rightPanel = new VBox( {spacing: 5, left: 560, top: 10, children: [
+    var rightPanel = new VBox( {spacing: 4, left: 560, top: 5, children: [
       // add right control panel
       new RightControlPanel( model ),
 
       // add reset button
-      new ResetAllButton( function() { model.reset(); }, { scale: 0.75} )
+      new ResetAllButton( function() { model.reset(); }, { scale: 0.73} )
     ]} );
     this.addChild( rightPanel );
 

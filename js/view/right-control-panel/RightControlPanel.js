@@ -26,7 +26,7 @@ define( function( require ) {
     this.addChild( this.back );
 
     // add container for sections
-    this.box = new VBox( {spacing: 5, y: 5} );
+    this.box = new VBox( {spacing: 4, y: 5} );
     this.addChild( this.box );
 
     // add sections
@@ -63,7 +63,7 @@ define( function( require ) {
 
       // add bottom lines (last line is invisible)
       nodes[i].addChild( new Rectangle( 0, nodes[i].getHeight() - 7, width + 10, 2,
-        {fill: ( (i !== len - 1) ? '#8E9097' : 'rgba(0,0,0,0)')}
+        {fill: ( (i !== len - 1) ? '#8E9097' : null)}
       ) );
     }
   };
