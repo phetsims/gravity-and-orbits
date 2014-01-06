@@ -30,7 +30,6 @@ define( function( require ) {
 
   function SpeedPushButtons( model ) {
     var stepButton, rewindButton, playButton, step, rewind;
-    Node.call( this, {scale: 0.7} );
 
     // add play button
     playButton = new ToggleButton(
@@ -60,10 +59,6 @@ define( function( require ) {
       {listener: rewind} );
     rewindButton.enabled = false;
 
-    this.addChild( new HBox( {spacing: 0, children: [
-      rewindButton, playButton, stepButton
-    ]} ) );
-
     model.playProperty.link( function updatePlayPauseButton( value ) {
       stepButton.enabled = !value;
     } );
@@ -75,11 +70,15 @@ define( function( require ) {
     model.dayOffsetProperty.link( function() {
       rewindButton.enabled = getDay( model );
     } );
+
+    HBox.call( this, {spacing: 0, children: [
+      rewindButton, playButton, stepButton
+    ]} );
   }
 
   var getDay = function( model ) {
     return (model.day - model.dayOffset);
   };
 
-  return inherit( Node, SpeedPushButtons );
+  return inherit( HBox, SpeedPushButtons );
 } );
