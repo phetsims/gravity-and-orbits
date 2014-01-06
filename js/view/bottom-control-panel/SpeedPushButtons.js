@@ -14,8 +14,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
     PushButton = require( 'SUN/PushButton' ),
-    pauseImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_pause.png' ),
-    playImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_play.png' ),
     buttonStepUnpressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_unpressed.png' ),
     buttonStepHoverImg = require( 'image!GRAVITY_AND_ORBITS/button_step_hover.png' ),
     buttonStepPressedImg = require( 'image!GRAVITY_AND_ORBITS/button_step_pressed.png' ),
@@ -26,21 +24,22 @@ define( function( require ) {
     buttonRewindDeactivatedImg = require( 'image!GRAVITY_AND_ORBITS/button_sim_rewind_deactivated.svg' ),
     Image = require( 'SCENERY/nodes/Image' ),
     HBox = require( 'SCENERY/nodes/HBox' ),
-    ToggleButton = require( 'SUN/ToggleButton' );
+    ToggleButton = require( 'SUN/ToggleButton' ),
+    RoundShinyButton = require( 'SCENERY_PHET/RoundShinyButton' ),
+    Shape = require( 'KITE/Shape' ),
+    Path = require( 'SCENERY/nodes/Path' ),
+    PlayPauseButton = require( 'SCENERY_PHET/PlayPauseButton' );
 
   function SpeedPushButtons( model ) {
-    var stepButton, rewindButton, playButton, step, rewind;
+    var stepButton, rewindButton, step, rewind;
 
-    // add play button
-    playButton = new ToggleButton(
-      new Image( pauseImg ),
-      new Image( playImg ),
-      model.playProperty );
+    var playPauseButton = new PlayPauseButton( model.playProperty, {} );
 
     // add step button
     step = function() {
       model.stepManual();
     };
+
     stepButton = new PushButton(
       new Image( buttonStepUnpressedImg ),
       new Image( buttonStepHoverImg ),
@@ -71,8 +70,8 @@ define( function( require ) {
       rewindButton.enabled = getDay( model );
     } );
 
-    HBox.call( this, {spacing: 0, children: [
-      rewindButton, playButton, stepButton
+    HBox.call( this, {align: 'bottom', children: [
+      rewindButton, playPauseButton, stepButton
     ]} );
   }
 
