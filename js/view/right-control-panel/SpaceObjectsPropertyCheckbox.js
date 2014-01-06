@@ -20,6 +20,7 @@ define( function( require ) {
     measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' ),
     iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.svg' ),
     Image = require( 'SCENERY/nodes/Image' ),
+    Line = require( 'SCENERY/nodes/Line' ),
     gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' ),
     forceString = require( 'string!GRAVITY_AND_ORBITS/force' ),
     velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' ),
@@ -37,6 +38,7 @@ define( function( require ) {
     Node.call( this, options );
 
     // checkbox params
+    var measuringTapeImageNode = new Image( measuringTapeImg );
     var params = [
       {
         property: model.forceArrowProperty,
@@ -68,7 +70,15 @@ define( function( require ) {
       {
         property: model.tapeProperty,
         text: tapeString,
-        node: new Node( {children: [new Image( measuringTapeImg )], scale: 0.5} )
+        node: new Node( {children: [
+
+          //Sticking down metal "tab" at the end of the tape
+          new Line( measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2 + 7, {stroke: '#aaaaaa', lineWidth: 3} ),
+
+          //A small amount of tape to help identify the icon as measuring tape
+          new Line( measuringTapeImageNode.width - 4, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30, measuringTapeImageNode.height - 2, {stroke: 'gray', lineWidth: 3} ),
+
+          measuringTapeImageNode], scale: 0.5} )
       },
       {
         property: model.massProperty,
