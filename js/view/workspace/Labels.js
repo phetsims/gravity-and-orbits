@@ -18,7 +18,7 @@ define( function( require ) {
     PhetFont = require( 'SCENERY_PHET/PhetFont' ),
     FONT = new PhetFont( 12 ),
     sunString = require( 'string!GRAVITY_AND_ORBITS/star' ),
-    earthString = require( 'string!GRAVITY_AND_ORBITS/planet' ),
+    planetString = require( 'string!GRAVITY_AND_ORBITS/planet' ),
     satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' ),
     moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
 
@@ -33,7 +33,7 @@ define( function( require ) {
         scale = model.planetModes[model.planetMode].options.scale;
 
       var labelText = name === 'sun' ? sunString :
-                      name === 'earth' ? earthString :
+                      name === 'earth' ? planetString :
                       name === 'moon' ? moonString :
                       satelliteString;
 
