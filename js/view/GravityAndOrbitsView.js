@@ -30,13 +30,7 @@ define( function( require ) {
     // add scale slider
     this.addChild( new ScaleSlider( model, 20, 10 ) );
 
-    var rightPanel = new VBox( {spacing: 4, left: 560, top: 5, children: [
-      // add right control panel
-      new RightControlPanel( model ),
-
-      // add reset button
-      new ResetAllButton( function() { model.reset(); }, { scale: 0.73} )
-    ]} );
+    var rightPanel = new RightControlPanel( model ).mutate( {right: this.layoutBounds.maxX, top: 5} );
     this.addChild( rightPanel );
 
     var bottomInset = 5;
@@ -49,6 +43,8 @@ define( function( require ) {
 
     //add day counter
     this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
+
+    this.addChild( new ResetAllButton( function() { model.reset(); }, { scale: 0.73, right: this.layoutBounds.maxX - 5, bottom: this.layoutBounds.maxY - 5} ) );
   }
 
   return inherit( ScreenView, GravityAndOrbitsView );
