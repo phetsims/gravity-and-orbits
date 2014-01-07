@@ -10,9 +10,6 @@ define( function( require ) {
   'use strict';
   var Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
-    Image = require( 'SCENERY/nodes/Image' ),
-    SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
-    LinearFunction = require( 'DOT/LinearFunction' ),
     Path = require( 'SCENERY/nodes/Path' ),
     Shape = require( 'KITE/Shape' ),
     Dimension2 = require( 'DOT/Dimension2' ),

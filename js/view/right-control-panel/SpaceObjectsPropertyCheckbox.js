@@ -10,9 +10,7 @@ define( function( require ) {
   'use strict';
   var Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
-    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
     CheckBox = require( 'SUN/CheckBox' ),
-    VerticalCheckBoxGroup = require( 'SUN/VerticalCheckBoxGroup' ),
     ArrowNode = require( 'SCENERY_PHET/ArrowNode' ),
     Shape = require( 'KITE/Shape' ),
     Path = require( 'SCENERY/nodes/Path' ),

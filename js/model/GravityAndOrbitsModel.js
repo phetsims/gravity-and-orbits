@@ -10,7 +10,6 @@ define( function( require ) {
 
   var PropertySet = require( 'AXON/PropertySet' ),
     inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
     SpaceObjectModel = require( 'model/SpaceObjectModel' ),
     thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' ),
     earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' ),

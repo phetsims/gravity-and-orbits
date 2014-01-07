@@ -18,12 +18,7 @@ define( function( require ) {
     Grid = require( 'view/workspace/Grid' ),
     MeasuringTape = require( 'view/workspace/MeasuringTape' ),
     MassText = require( 'view/workspace/MassText' ),
-    Labels = require( 'view/workspace/Labels' ),
-    Shape = require( 'KITE/Shape' ),
-    Path = require( 'SCENERY/nodes/Path' ),
-    Circle = require( 'SCENERY/nodes/Circle' ),
-    Text = require( 'SCENERY/nodes/Text' ),
-    PhetFont = require( 'SCENERY_PHET/PhetFont' );
+    Labels = require( 'view/workspace/Labels' );
 
   function Workspace( model ) {
     var self = this;

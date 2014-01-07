@@ -10,7 +10,6 @@ define( function( require ) {
   'use strict';
   var Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
-    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
     PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' ),
     PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
 

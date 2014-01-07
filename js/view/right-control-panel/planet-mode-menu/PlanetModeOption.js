@@ -9,8 +9,7 @@
 define( function( require ) {
   'use strict';
 
-  var Image = require( 'SCENERY/nodes/Image' ),
-    Node = require( 'SCENERY/nodes/Node' ),
+  var Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
     Rectangle = require( 'SCENERY/nodes/Rectangle' ),
     RadioButton = require( 'SUN/RadioButton' ),

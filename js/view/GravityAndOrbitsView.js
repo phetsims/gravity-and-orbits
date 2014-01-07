@@ -14,12 +14,9 @@ define( function( require ) {
     Workspace = require( 'view/workspace/Workspace' ),
     ScaleSlider = require( 'view/scale-slider/ScaleSlider' ),
     RightControlPanel = require( 'view/right-control-panel/RightControlPanel' ),
-    VBox = require( 'SCENERY/nodes/VBox' ),
-    Node = require( 'SCENERY/nodes/Node' ),
     SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' ),
     SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' ),
-    DayCounter = require( 'view/bottom-control-panel/DayCounter' ),
-    HBox = require( 'SCENERY/nodes/HBox' );
+    DayCounter = require( 'view/bottom-control-panel/DayCounter' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );

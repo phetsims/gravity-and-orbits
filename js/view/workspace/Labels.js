@@ -13,7 +13,6 @@ define( function( require ) {
     Node = require( 'SCENERY/nodes/Node' ),
     Shape = require( 'KITE/Shape' ),
     Path = require( 'SCENERY/nodes/Path' ),
-    Circle = require( 'SCENERY/nodes/Circle' ),
     Rectangle = require( 'SCENERY/nodes/Rectangle' ),
     Text = require( 'SCENERY/nodes/Text' ),
     PhetFont = require( 'SCENERY_PHET/PhetFont' ),

@@ -11,7 +11,6 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
-    Shape = require( 'KITE/Shape' ),
     Line = require( 'SCENERY/nodes/Line' );
 
   function PlanetPath( model ) {

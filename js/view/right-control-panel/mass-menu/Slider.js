@@ -16,8 +16,7 @@ define( function( require ) {
     PhetFont = require( 'SCENERY_PHET/PhetFont' ),
     HBox = require( 'SCENERY/nodes/HBox' ),
     FONT = new PhetFont( 11 ),
-    FONTICON = new PhetFont( 14 ),
-    Dimension2 = require( 'DOT/Dimension2' );
+    FONTICON = new PhetFont( 14 );
 
   function Slider( x, y, options ) {
     options = _.extend(
