@@ -44,6 +44,7 @@ define( function( require ) {
     //add day counter
     this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
 
+    //The reset all button
     this.addChild( new ResetAllButton( function() { model.reset(); }, { scale: 0.73, right: this.layoutBounds.maxX - 5, bottom: this.layoutBounds.maxY - 5} ) );
   }
 
