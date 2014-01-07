@@ -30,7 +30,7 @@ define( function( require ) {
    */
 
   function SliderHorizontalPart( x, y, w, targetProperty, range, rounding, tickStep ) {
-    var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 16;
+    var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 14;
     Node.call( this, {x: x, y: y} );
 
     var options = {
@@ -48,7 +48,7 @@ define( function( require ) {
     if ( tickStep ) {
       for ( i = range.min; i <= range.max; i += tickStep ) {
         nodeTick.addChild( new Path( Shape.lineSegment(
-          w * (i - range.min) / (range.max - range.min), -10,
+          w * (i - range.min) / (range.max - range.min), -5,
           w * (i - range.min) / (range.max - range.min), -tickHeight
         ), { stroke: 'white', lineWidth: 1 } ) );
       }
