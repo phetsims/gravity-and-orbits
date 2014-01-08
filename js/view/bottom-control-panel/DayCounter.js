@@ -33,7 +33,7 @@ define( function( require ) {
     };
 
     // day text counter
-    this.day = new Text( '', { font: FONT, fontWeight: 'bold', fill: '#fff', pickable: false } );
+    this.day = new Text( '', { font: FONT, fill: '#fff', pickable: false } );
 
     var box = new VBox( {spacing: 4, children: [
       // add day text counter

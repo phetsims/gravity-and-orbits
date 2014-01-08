@@ -36,10 +36,11 @@ define( function( require ) {
     this.addChild( new SpeedRadioButtons( model ).mutate( {left: 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
 
     // add speed push buttons
-    this.addChild( new SpeedPushButtons( model ).mutate( {centerX: rightPanel.left / 2, bottom: this.layoutBounds.maxY - bottomInset} ) );
+    var speedPushButtons = new SpeedPushButtons( model ).mutate( {centerX: rightPanel.left / 2, bottom: this.layoutBounds.maxY - bottomInset} );
+    this.addChild( speedPushButtons );
 
     //add day counter
-    this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
+    this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 30, top: speedPushButtons.top - 2} ) );
 
     //The reset all button
     this.addChild( new ResetAllButton( function() { model.reset(); }, { scale: 0.73, right: this.layoutBounds.maxX - 5, bottom: this.layoutBounds.maxY - 5} ) );

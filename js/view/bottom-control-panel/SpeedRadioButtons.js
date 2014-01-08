@@ -12,7 +12,6 @@ define( function( require ) {
 
   // imports
   var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
     VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' ),
     slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' ),
     fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' ),
@@ -22,14 +21,15 @@ define( function( require ) {
 
   function SpeedRadioButtons( model ) {
     var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };
-    Node.call( this );
-
-    this.addChild( new VerticalAquaRadioButtonGroup( [
+    VerticalAquaRadioButtonGroup.call( this, [
       {property: model.speedProperty, value: 1.75, node: new Text( fastForwardString, textOption )},
       {property: model.speedProperty, value: 1, node: new Text( normalString, textOption )},
       {property: model.speedProperty, value: 0.25, node: new Text( slowMotionString, textOption )}
-    ] ) );
+    ], {
+      spacing: 1,
+      radius: 10
+    } );
   }
 
-  return inherit( Node, SpeedRadioButtons );
+  return inherit( VerticalAquaRadioButtonGroup, SpeedRadioButtons );
 } );
