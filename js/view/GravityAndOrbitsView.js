@@ -27,7 +27,7 @@ define( function( require ) {
     // add scale slider
     this.addChild( new ScaleSlider( model, 20, 10 ) );
 
-    var rightPanel = new RightControlPanel( model ).mutate( {right: this.layoutBounds.maxX, top: 5} );
+    var rightPanel = new RightControlPanel( model ).mutate( {right: this.layoutBounds.maxX - 5, top: 5} );
     this.addChild( rightPanel );
 
     var bottomInset = 5;
