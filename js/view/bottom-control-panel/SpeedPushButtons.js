@@ -31,8 +31,8 @@ define( function( require ) {
       return (model.day - model.dayOffset);
     };
 
-    model.dayProperty.link( function() { rewindButton.enabled = getDay( model ); } );
-    model.dayOffsetProperty.link( function() { rewindButton.enabled = getDay( model ); } );
+    model.dayProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
+    model.dayOffsetProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
     HBox.call( this, {spacing: 10, children: [ rewindButton, playPauseButton, stepButton ]} );
   }
 
