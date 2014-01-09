@@ -190,6 +190,7 @@ define( function( require ) {
       // set scale center
       model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
 
+      //Remove the view, it will be discarded and garbage collected
       this.removeChild( this.view );
       model.scale = 1;
       model.day = 0;
