@@ -16,7 +16,7 @@ define( function( require ) {
     Text = require( 'SCENERY/nodes/Text' ),
     PhetFont = require( 'SCENERY_PHET/PhetFont' ),
     FONT = new PhetFont( 22 ),
-    ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+    MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
   function VelocityArrows( model ) {
     var self = this, prevPosition = {};
@@ -93,7 +93,7 @@ define( function( require ) {
           //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
           //a potentially unstable feature, and may increase the startup time of the simulation
           text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, boundsMethod: 'accurate' } ),
-          arrowNode: new ArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
+          arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
         };
 
         // init drag and drop for arrow

@@ -11,7 +11,7 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
-    ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+    MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
   function ForceArrows( model ) {
     var self = this, prevPosition = {}, hided;
@@ -89,7 +89,7 @@ define( function( require ) {
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
         for ( j = 0; j < model.spaceObjects.length; j++ ) {
           if ( i !== j ) {
-            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] = new ArrowNode( 0, 0, 0, 0, {fill: '#4380C2'} );
+            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2'} );
             this.addChild( this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] );
           }
         }
