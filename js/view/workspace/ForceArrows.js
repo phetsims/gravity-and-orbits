@@ -12,6 +12,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
     ArrowNode = require( 'SCENERY_PHET/ArrowNode' ),
+    MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' ),
     ArrowShape = require( 'SCENERY_PHET/ArrowShape' );
 
   function ForceArrows( model ) {
@@ -90,7 +91,7 @@ define( function( require ) {
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
         for ( j = 0; j < model.spaceObjects.length; j++ ) {
           if ( i !== j ) {
-            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] = new ArrowNode( 0, 0, 0, 0, {fill: '#4380C2'} );
+            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2'} );
             this.addChild( this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] );
           }
         }
@@ -98,21 +99,20 @@ define( function( require ) {
     },
     // hide force arrow for space object with given name
     hideOne: function( model, name ) {
-      var hidedShape = new ArrowShape( 0, 0, 0, 0 );
       for ( var i = 0; i < model.spaceObjects.length; i++ ) {
         if ( name !== model.spaceObjects[i] ) {
-          this.shapes[name + model.spaceObjects[i]].setShape( hidedShape );
-          this.shapes[model.spaceObjects[i] + name].setShape( hidedShape );
+          this.shapes[name + model.spaceObjects[i]].setTailAndTip( 0, 0, 0, 0 );
+          this.shapes[model.spaceObjects[i] + name].setTailAndTip( 0, 0, 0, 0 );
         }
       }
     },
     // hide all force arrows
     hideArrows: function( model ) {
-      var i, j, len = model.spaceObjects.length, hidedShape = new ArrowShape( 0, 0, 0, 0 );
+      var i, j, len = model.spaceObjects.length;
       for ( i = 0; i < len; i++ ) {
         for ( j = 0; j < len; j++ ) {
           if ( i !== j ) {
-            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]].setShape( hidedShape );
+            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]].setTailAndTip( 0, 0, 0, 0 );
           }
         }
       }
@@ -163,9 +163,9 @@ define( function( require ) {
           unitVector = distance.normalized().multiply( arrowSize );
 
           // add arrow from obj1 to obj2
-          self.shapes[obj1 + obj2].setShape( new ArrowShape( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y ) );
+          self.shapes[obj1 + obj2].setTailAndTip( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y );
           // add arrow from obj2 to obj1
-          self.shapes[obj2 + obj1].setShape( new ArrowShape( body2.position.x, body2.position.y, body2.position.x - unitVector.x, body2.position.y - unitVector.y ) );
+          self.shapes[obj2 + obj1].setTailAndTip( body2.position.x, body2.position.y, body2.position.x - unitVector.x, body2.position.y - unitVector.y );
         }
       }
     }

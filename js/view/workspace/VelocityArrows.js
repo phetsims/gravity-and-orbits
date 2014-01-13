@@ -12,6 +12,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
     ArrowNode = require( 'SCENERY_PHET/ArrowNode' ),
+    MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' ),
     ArrowShape = require( 'SCENERY_PHET/ArrowShape' ),
     Circle = require( 'SCENERY/nodes/Circle' ),
     SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
@@ -94,7 +95,7 @@ define( function( require ) {
           //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
           //a potentially unstable feature, and may increase the startup time of the simulation
           text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, boundsMethod: 'accurate' } ),
-          arrowNode: new ArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
+          arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
         };
 
         // init drag and drop for arrow
@@ -123,7 +124,7 @@ define( function( require ) {
     setArrow: function( model, obj, v ) {
       this.arrows[obj].circle.setTranslation( v );
       this.arrows[obj].text.setTranslation( v.x - this.arrows[obj].text.width / 2, v.y + this.arrows[obj].text.height / 2 );
-      this.arrows[obj].arrowNode.setShape( new ArrowShape( model[obj].position.x, model[obj].position.y, v.x, v.y ) );
+      this.arrows[obj].arrowNode.setTailAndTip( model[obj].position.x, model[obj].position.y, v.x, v.y );
     },
     showArrows: function( model ) {
       var self = this,
