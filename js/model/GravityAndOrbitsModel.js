@@ -276,11 +276,9 @@ define( function( require ) {
 
       if ( this.play ) {
         // prevent incorrect behaviour when running in background
-        if ( Math.abs( lastDt - dt ) > lastDt * 0.3 ) {
-          dt = lastDt;
-        }
-        else {
-          lastDt = dt;
+        // Slower machines should run at reduced frame rate, not at reduced speed
+        if ( dt > 1 || dt <= 0 ) {
+          dt = 1.0 / 60.0;
         }
         this.stepManual( dt );
       }
