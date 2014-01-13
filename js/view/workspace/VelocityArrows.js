@@ -11,9 +11,7 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
-    ArrowNode = require( 'SCENERY_PHET/ArrowNode' ),
     MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' ),
-    ArrowShape = require( 'SCENERY_PHET/ArrowShape' ),
     Circle = require( 'SCENERY/nodes/Circle' ),
     SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
     Text = require( 'SCENERY/nodes/Text' ),
