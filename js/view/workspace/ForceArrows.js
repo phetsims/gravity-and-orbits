@@ -11,6 +11,7 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
+    Vector2 = require( 'DOT/Vector2' ),
     MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
   function ForceArrows( model ) {
@@ -83,39 +84,25 @@ define( function( require ) {
     init: function( model ) {
       // find max force for all modes
       this.maxForce = [];
-      for ( var i = 0, j; i < model.planetModes.length; i++ ) {
+      for ( var i = 0; i < model.planetModes.length; i++ ) {
         this.maxForce[i] = getMaxForce( model, i );
       }
 
       // prepare shapes of arrows
       this.shapes = {};
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
-        for ( j = 0; j < model.spaceObjects.length; j++ ) {
-          if ( i !== j ) {
-            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2'} );
-            this.addChild( this.shapes[model.spaceObjects[i] + model.spaceObjects[j]] );
-          }
-        }
+        this.shapes[model.spaceObjects[i]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2'} );
+        this.addChild( this.shapes[model.spaceObjects[i]] );
       }
     },
     // hide force arrow for space object with given name
     hideOne: function( model, name ) {
-      for ( var i = 0; i < model.spaceObjects.length; i++ ) {
-        if ( name !== model.spaceObjects[i] ) {
-          this.shapes[name + model.spaceObjects[i]].setTailAndTip( 0, 0, 0, 0 );
-          this.shapes[model.spaceObjects[i] + name].setTailAndTip( 0, 0, 0, 0 );
-        }
-      }
+      this.shapes[name].setTailAndTip( 0, 0, 0, 0 );
     },
     // hide all force arrows
     hideArrows: function( model ) {
-      var i, j, len = model.spaceObjects.length;
-      for ( i = 0; i < len; i++ ) {
-        for ( j = 0; j < len; j++ ) {
-          if ( i !== j ) {
-            this.shapes[model.spaceObjects[i] + model.spaceObjects[j]].setTailAndTip( 0, 0, 0, 0 );
-          }
-        }
+      for ( var i = 0; i < model.spaceObjects.length; i++ ) {
+        this.shapes[model.spaceObjects[i]].setTailAndTip( 0, 0, 0, 0 );
       }
     },
     // show all force arrows and set new shapes
@@ -135,6 +122,7 @@ define( function( require ) {
       for ( var i = 0; i < len; i++ ) {
         obj1 = model.spaceObjects[i];
         body1 = model[obj1];
+        unitVector = new Vector2( 0, 0 );
 
         // hide space object if it doesn't exist or exploded
         if ( !mode[obj1] || body1.exploded ) {
@@ -142,31 +130,33 @@ define( function( require ) {
           continue;
         }
 
-        for ( var j = i + 1; j < len; j++ ) {
+        // calculate sum force
+        for ( var j = 0; j < len; j++ ) {
           obj2 = model.spaceObjects[j];
           body2 = model[obj2];
 
-          // hide space object if it doesn't exist or exploded
-          if ( !mode[obj2] || body2.exploded ) {
-            self.hideOne( model, obj2 );
+          // objects shouldn't be the same and obj2 should exist
+          if ( obj1 === obj2 || !mode[obj2] || body2.exploded ) {
             continue;
           }
 
           distance = body2.position.minus( body1.position );
           if ( !distance.magnitude() ) {
-            self.hideOne( model, obj2 );
             continue;
           }
 
           f = body2.mass * body1.mass / (distance.magnitudeSquared());
-          arrowSize = Math.max( 60 * f / maxForce, 10 );
+          unitVector.add( distance.normalized().multiply( f ) );
+        }
 
-          unitVector = distance.normalized().multiply( arrowSize );
+        // add arrow for obj1
+        if ( unitVector.magnitude() ) {
+          arrowSize = Math.max( 60 * unitVector.magnitude() / maxForce, 10 );
+          unitVector.set( unitVector.normalized().multiply( arrowSize ) );
 
-          // add arrow from obj1 to obj2
-          self.shapes[obj1 + obj2].setTailAndTip( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y );
-          // add arrow from obj2 to obj1
-          self.shapes[obj2 + obj1].setTailAndTip( body2.position.x, body2.position.y, body2.position.x - unitVector.x, body2.position.y - unitVector.y );
+          self.shapes[obj1].setTailAndTip( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y );
+        } else {
+          self.hideOne( model, obj1 );
         }
       }
     }
