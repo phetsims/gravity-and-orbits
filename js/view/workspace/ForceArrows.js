@@ -22,7 +22,7 @@ define( function( require ) {
 
     // controls the visibility and direction of arrows
     var checkArrows = function() {
-      if ( model.forceArrow ) { // if arrows visible - set new shapes
+      if ( model.forceArrow && model.gravity ) { // if arrows visible - set new shapes
         self.setArrows( model );
         hided = false;
       }
@@ -51,6 +51,9 @@ define( function( require ) {
 
     // check force arrow if planet mode was changed
     model.planetModeProperty.link( checkArrows );
+
+    // check force arrow if gravity mode was changed
+    model.gravityProperty.link( checkArrows );
 
     // check force arrow if mass or view was changed
     model.spaceObjects.forEach( function( el ) {
