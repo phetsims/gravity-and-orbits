@@ -347,7 +347,6 @@ define( function( require ) {
     var F = new Vector2( 0, 0 ),
       currentObj,
       sourceBody,
-      sourcePos,
       model = this,
       targetBody = model[target],
       mode = model.planetModes[model.planetMode],
@@ -359,7 +358,8 @@ define( function( require ) {
       for ( var i = 0; i < model.spaceObjects.length; i++ ) {
         currentObj = model.spaceObjects[i];
         sourceBody = model[currentObj];
-        sourcePos = sourceBody.position.timesScalar( 1 / scale );
+        sourcePos.x = sourceBody.position.x / scale;
+        sourcePos.y = sourceBody.position.y / scale;
 
         // ignore computation if that body has exploded,
         // or if they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
@@ -375,5 +375,7 @@ define( function( require ) {
     return target.minus( source ).normalized();
   };
 
+  //Micro-pool for sourcePosition used as temporary variable in getForce method.  Prevents 40 allocations/frame in the default screen & conditions.
+  var sourcePos = new Vector2();
   return GravityAndOrbitsModel;
 } );
