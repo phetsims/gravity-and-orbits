@@ -250,7 +250,6 @@ define( function( require ) {
           }
           spaceObject.massCoeff = body.massCoeff;
           spaceObject.acceleration = body.acceleration.copy();
-          spaceObject.velocityHalf = body.velocityHalf.copy();
           spaceObject.exploded = body.exploded;
         }
       } );

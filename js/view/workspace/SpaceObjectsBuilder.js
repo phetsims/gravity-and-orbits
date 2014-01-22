@@ -63,7 +63,6 @@ define( function( require ) {
 
         // set up previous values
         body.acceleration.setXY( obj.acceleration ? obj.acceleration.x : 0, obj.acceleration ? obj.acceleration.y : 0 );
-        body.velocityHalf.setXY( obj.velocityHalf ? obj.velocityHalf.x : 0, obj.velocityHalf ? obj.velocityHalf.y : 0 );
       }
       else {
         body.view = new Node();

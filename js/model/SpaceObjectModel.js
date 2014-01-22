@@ -27,7 +27,6 @@ define( function( require ) {
       radiusCoeff: 1, // radius coefficient
       exploded: false, // explode flag
       velocity: new Vector2( 0, 0 ), // velocity of space object
-      velocityHalf: new Vector2( 0, 0 ), // intermediate velocity of space object for calculation
       acceleration: new Vector2( 0, 0 ), // acceleration of space object
       positionStart: new Vector2( 0, 0 ), // initial position of space object
       position: new Vector2( 0, 0 ), // position of space object
