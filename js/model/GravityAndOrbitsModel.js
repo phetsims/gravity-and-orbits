@@ -376,15 +376,20 @@ define( function( require ) {
         // ignore computation if that body has exploded,
         // or if they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
         if ( mode[currentObj] && currentObj !== target && !sourceBody.exploded && !targetPos.equals( sourcePos ) ) {
-          F.add( getUnitVector( sourcePos, targetPos ).multiply( CONSTANTS.G * sourceBody.mass * targetBody.mass / (targetPos.distanceSquared( sourcePos )) ) );
+
+          //Do math component-wise to save on garbage collection, see #84
+          //F.add( getUnitVector( sourcePos, targetPos ).multiply( CONSTANTS.G * sourceBody.mass * targetBody.mass / distanceSquared ) );
+          var distanceSquared = targetPos.distanceSquared( sourcePos );
+          var distance = Math.sqrt( distanceSquared );
+          var unitVectorX = (targetPos.x - sourcePos.x) / distance;
+          var unitVectorY = (targetPos.y - sourcePos.y) / distance;
+
+          F.x = F.x + unitVectorX * CONSTANTS.G * sourceBody.mass * targetBody.mass / distanceSquared;
+          F.y = F.y + unitVectorY * CONSTANTS.G * sourceBody.mass * targetBody.mass / distanceSquared;
         }
       }
     }
     return F;
-  };
-
-  var getUnitVector = function( source, target ) {
-    return target.minus( source ).normalized();
   };
 
   //Micro-pool for sourcePosition used as temporary variable in getForce method.  Prevents 40 allocations/frame in the default screen & conditions.
