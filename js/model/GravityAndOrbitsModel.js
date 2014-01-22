@@ -307,9 +307,7 @@ define( function( require ) {
         i,
         j,
         currentObj,
-        body,
-        temp = new Vector2( 0, 0 ),
-        temp1 = new Vector2();
+        body;
       dt = dt || 1 / fps;
 
       dDay = dt * this.speed * this.planetModes[this.planetMode].options.timeScale;
