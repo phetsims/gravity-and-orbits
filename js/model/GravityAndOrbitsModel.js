@@ -18,6 +18,7 @@ define( function( require ) {
     cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' ),
     toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' ),
     Vector2 = require( 'DOT/Vector2' ),
+    watchGarbage = require( 'JOIST/util/watchGarbage' ),
     CONSTANTS = {
       G: 6.67384E-11, // gravitational constant
       SUN_RADIUS: 6.955E8,
@@ -272,6 +273,7 @@ define( function( require ) {
 
   inherit( PropertySet, GravityAndOrbitsModel, {
     step: function( dt ) {
+      watchGarbage();
       if ( !lastDt ) {lastDt = dt;} // init lastDt value
 
       if ( this.play ) {
