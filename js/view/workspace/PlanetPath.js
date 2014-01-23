@@ -25,8 +25,30 @@ define( function( require ) {
       spaceStation: 'gray'
     };
 
-    self.time = []; // passed time for each mode (self.time.length === self.maxTime.length)
-    self.maxTime = [400, 300, 20, 0.05]; // max time to store path
+    // max length of paths
+    self.totalLengthMax = [
+      {
+        sun: 0,
+        earth: 900
+      },
+      {
+        sun: 0,
+        earth: 900,
+        moon: 1015
+      },
+      {
+        earth: 0,
+        moon: 750
+      },
+      {
+        earth: 0,
+        spaceStation: 700
+      }
+    ];
+
+    // variables for each space object
+    self.prevPosition = {};
+    self.path = {};
 
     self.clearAll( model ); // prepare component for work
     model.spaceObjects.forEach( function( el ) {
@@ -34,17 +56,15 @@ define( function( require ) {
 
       // add position property observer
       model[el].positionProperty.link( function() {
-        if ( !body.exploded && model.path && model.planetMode === self.num && model.drag !== el ) {
+        if ( !body.exploded && model.path && model.planetMode === self.num && model.drag !== el && self.totalLengthMax[self.num][el] > 0 ) {
           var newPosition = body.position;
           var dr = newPosition.minus( self.prevPosition[self.num][el] ).magnitude();
 
           // add new piece of path if position was changed significantly
           if ( dr > 2 ) {
-            self.add( model, el, newPosition );
+            self.add( model, el, newPosition, dr );
           }
         }
-        // check lifetime of path
-        self.check( model );
       } );
     } );
 
@@ -74,38 +94,39 @@ define( function( require ) {
         self.clearOne( model, self.num );
       }
     } );
-
-    // update time value for current mode
-    model.dayProperty.link( function( newDay, oldDay ) {
-      if ( model.planetMode !== self.num ) {return;}
-      self.time[self.num] += (newDay - oldDay) / model.speed;
-    } );
   }
 
   return inherit( Node, PlanetPath, {
     // add new piece of path for given element
-    add: function( model, el, newPosition ) {
+    add: function( model, el, newPosition, dr ) {
       var prevPosition = this.prevPosition[this.num][el],
         line = new Line( prevPosition, newPosition, {stroke: this.color[el], lineWidth: 3, lineCap: 'square'} );
 
-      this.path[this.num][el].push( {view: line, time: this.time[this.num]} );
+      this.path[this.num][el].push( {view: line, size: dr} );
       this.addChild( line );
       this.prevPosition[this.num][el] = newPosition.copy();
+
+      // check length of path
+      this.checkLength( el );
     },
-    // check lifetime of all pieces for all space objects
-    check: function( model ) {
-      var self = this, paths, path;
+    // check length of given planet
+    checkLength: function( el ) {
+      var num = this.num,
+        totalLength = 0,
+        maxLength = this.totalLengthMax[num][el],
+        paths = this.path[num][el],
+        path;
 
-      model.spaceObjects.forEach( function( el ) {
-        paths = self.path[self.num][el];
-        if ( !paths.length ) {return;}
+      // define current length
+      for ( var i = 0; i < paths.length; i++ ) {
+        totalLength += paths[i].size;
+      }
 
-        while ( self.time[self.num] - paths[0].time > self.maxTime[self.num] ) {
-          path = paths.shift();
-          self.removeChild( path.view );
-          if ( !paths.length ) {return;}
-        }
-      } );
+      while ( totalLength > maxLength ) {
+        path = paths.shift();
+        this.removeChild( path.view );
+        totalLength -= path.size;
+      }
     },
     // remove all path for all modes
     clearAll: function( model ) {
@@ -116,7 +137,6 @@ define( function( require ) {
       self.path = []; // contains all pieces of path for all modes
       self.prevPosition = []; // contains all pieces of path for all modes
       model.planetModes.forEach( function( el, i ) {
-        self.time[i] = 0;
         self.path[i] = {};
         self.prevPosition[i] = {};
         model.spaceObjects.forEach( function( el ) {
