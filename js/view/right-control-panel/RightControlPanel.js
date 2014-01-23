@@ -26,7 +26,7 @@ define( function( require ) {
     this.addChild( this.back );
 
     // add container for sections
-    this.box = new VBox( {spacing: 4, y: 5} );
+    this.box = new VBox( {resize: false, spacing: 4, y: 5} );
     this.addChild( this.box );
 
     // add sections

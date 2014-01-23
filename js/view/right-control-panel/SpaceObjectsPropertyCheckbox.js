@@ -98,7 +98,7 @@ define( function( require ) {
       };
     }
 
-    this.vBox = new VBox( {spacing: 5, align: 'left'} );
+    this.vBox = new VBox( {resize: false, spacing: 5, align: 'left'} );
 
     menu = order[model.viewMode];
     for ( i = 0; i < menu.length; i++ ) {

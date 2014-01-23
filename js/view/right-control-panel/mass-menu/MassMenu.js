@@ -91,7 +91,7 @@ define( function( require ) {
       }
     }
 
-    this.vBox = new VBox( {spacing: 2} );
+    this.vBox = new VBox( {resize: false, spacing: 2} );
     this.addChild( this.vBox );
 
     // add sliders
