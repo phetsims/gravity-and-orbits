@@ -57,6 +57,11 @@ define( function( require ) {
         else {
           body.label.setVisible( ( body.view.getWidth() * model.scale / body.radiusCoeff < 8 ) );
         }
+
+        //If it just became visible, mkae sure the position is accurate.
+        if ( body.label.visible ) {
+          body.label.translation = body.position;
+        }
       };
 
       model.scaleProperty.link( checkLabel );
@@ -64,7 +69,12 @@ define( function( require ) {
       body.radiusProperty.link( checkLabel );
       body.radiusCoeffProperty.link( checkLabel );
 
-      body.positionProperty.linkAttribute( body.label, 'translation' );
+      //Update the label location, but only if it is visible (to save on garbage)
+      body.positionProperty.link( function( position ) {
+        if ( body.label.visible ) {
+          body.label.translation = position;
+        }
+      } );
 
       model.scaleProperty.link( function( newScale, oldScale ) {
         body.label.scale( (oldScale || 1) ); // return to previous proportions

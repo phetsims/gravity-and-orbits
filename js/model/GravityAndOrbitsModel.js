@@ -198,7 +198,12 @@ define( function( require ) {
       }
     ],
     fps = 60,
-    lastDt = 0;
+    lastDt = 0,
+    distanceSquared = function( x1, y1, x2, y2 ) {
+      var a = x2 - x1;
+      var b = y2 - y1;
+      return a * a + b * b;
+    };
 
   /**
    * @param {Number} width of sim
@@ -325,16 +330,20 @@ define( function( require ) {
           if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
             body = this[currentObj];
 
+//            body.position.multiply( 1.0 / scale ).add( temp.set( body.velocity ).multiply( dt ).add( temp1.set( body.acceleration ).multiply( dt * dt / 2.0 ) ) ).multiply( scale );
             body.position.x = (body.position.x / scale + body.velocity.x * dt + body.acceleration.x * dt * dt / 2) * scale;
             body.position.y = (body.position.y / scale + body.velocity.y * dt + body.acceleration.y * dt * dt / 2) * scale;
 
+//            body.velocityHalf.set( body.velocity.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
             var velocityHalfX = body.velocity.x + body.acceleration.x * dt / 2;
             var velocityHalfY = body.velocity.y + body.acceleration.y * dt / 2;
 
-            var force = getForce.call( this, currentObj );
+//            body.acceleration.set( getForce.call( this, currentObj ).multiply( -forceScale / body.mass ) );
+            var force = getForce.call( this, currentObj, getForceResult );
             body.acceleration.x = force.x * (-forceScale / body.mass);
             body.acceleration.y = force.y * (-forceScale / body.mass);
 
+//            body.velocity.set( body.velocityHalf.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
             body.velocity.x = velocityHalfX + body.acceleration.x * dt / 2;
             body.velocity.y = velocityHalfY + body.acceleration.y * dt / 2;
           }
@@ -351,44 +360,54 @@ define( function( require ) {
     }
   } );
 
-  var getForce = function( target ) {
-    var F = new Vector2( 0, 0 ),
+  /**
+   * Gets the force between two objects. Uses the passed in result as a "micro-pool" to avoid allocations.
+   * @param target
+   * @param result
+   * @returns {*}
+   */
+  var getForce = function( target, result ) {
+    var fx = 0, fy = 0,
       currentObj,
       sourceBody,
       model = this,
       targetBody = model[target],
       mode = model.planetModes[model.planetMode],
       scale = mode.options.scale,
-      targetPos = targetBody.position.timesScalar( 1 / scale );
+      targetPosX = targetBody.position.x / scale,
+      targetPosY = targetBody.position.y / scale,
+      sourcePosX, sourcePosY;
 
     // zero vector, for no gravity
     if ( model.gravity ) {
       for ( var i = 0; i < model.spaceObjects.length; i++ ) {
         currentObj = model.spaceObjects[i];
         sourceBody = model[currentObj];
-        sourcePos.x = sourceBody.position.x / scale;
-        sourcePos.y = sourceBody.position.y / scale;
+        sourcePosX = sourceBody.position.x / scale;
+        sourcePosY = sourceBody.position.y / scale;
 
         // ignore computation if that body has exploded,
         // or if they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
-        if ( mode[currentObj] && currentObj !== target && !sourceBody.exploded && !targetPos.equals( sourcePos ) ) {
+        if ( mode[currentObj] && currentObj !== target && !sourceBody.exploded && !(targetPosX === sourcePosX && targetPosY === sourcePosY) ) {
 
           //Do math component-wise to save on garbage collection, see #84
           //F.add( getUnitVector( sourcePos, targetPos ).multiply( CONSTANTS.G * sourceBody.mass * targetBody.mass / distanceSquared ) );
-          var distanceSquared = targetPos.distanceSquared( sourcePos );
-          var distance = Math.sqrt( distanceSquared );
-          var unitVectorX = (targetPos.x - sourcePos.x) / distance;
-          var unitVectorY = (targetPos.y - sourcePos.y) / distance;
+          var distSquared = distanceSquared( targetPosX, targetPosY, sourcePosX, sourcePosY );
+          var distance = Math.sqrt( distSquared );
+          var unitVectorX = (targetPosX - sourcePosX) / distance;
+          var unitVectorY = (targetPosY - sourcePosY) / distance;
 
-          F.x = F.x + unitVectorX * CONSTANTS.G * sourceBody.mass * targetBody.mass / distanceSquared;
-          F.y = F.y + unitVectorY * CONSTANTS.G * sourceBody.mass * targetBody.mass / distanceSquared;
+          fx = fx + unitVectorX * CONSTANTS.G * sourceBody.mass * targetBody.mass / distSquared;
+          fy = fy + unitVectorY * CONSTANTS.G * sourceBody.mass * targetBody.mass / distSquared;
         }
       }
     }
-    return F;
+    result.x = fx;
+    result.y = fy;
+    return result;
   };
 
   //Micro-pool for sourcePosition used as temporary variable in getForce method.  Prevents 40 allocations/frame in the default screen & conditions.
-  var sourcePos = new Vector2();
+  var getForceResult = new Vector2();
   return GravityAndOrbitsModel;
 } );
