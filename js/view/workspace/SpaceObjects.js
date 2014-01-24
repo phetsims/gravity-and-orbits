@@ -191,7 +191,7 @@ define( function( require ) {
       model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
 
       // Remove the view, it will be discarded and garbage collected
-      if ( this.view._children.length ) {
+      if ( this.view.children.length ) {
         this.removeChild( this.view );
       }
       model.scale = 1;
