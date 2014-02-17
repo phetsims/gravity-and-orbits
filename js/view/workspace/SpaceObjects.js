@@ -84,10 +84,17 @@ define( function( require ) {
 
     // redraw space objects when position changing
     model.spaceObjects.forEach( function( el ) {
-      var body = model[el], position = new Vector2( 0, 0 );
+      var body = model[el],
+        position = new Vector2( 0, 0 );
+
       body.positionProperty.link( function( newPosition ) {
-        // round coordinates to integer values
-        position.setXY( Util.toFixedNumber( newPosition.x, 0 ), Util.toFixedNumber( newPosition.y, 0 ) );
+        // round coordinates and prevent ripple effect for some cases
+        if ( el === 'earth' && model.planetMode === 2 && model.viewMode === model.viewModes[0] ) {
+          position.setXY( Util.toFixedNumber( newPosition.x, 0 ), Util.toFixedNumber( newPosition.y, 0 ) );
+        }
+        else {
+          position.setXY( Math.round( newPosition.x * 2 ) / 2, Math.round( newPosition.y * 2 ) / 2 );
+        }
         body.view.setTranslation( position );
       } );
     } );
