@@ -83,9 +83,11 @@ define( function( require ) {
 
     // redraw space objects when position changing
     model.spaceObjects.forEach( function( el ) {
-      var body = model[el];
-      body.positionProperty.link( function( vect ) {
-        body.view.setTranslation( vect );
+      var body = model[el], position = new Vector2( 0, 0 );
+      body.positionProperty.link( function( newPosition ) {
+        // round coordinates to integer values
+        position.setXY( parseInt( newPosition.x, 10 ), parseInt( newPosition.y, 10 ) );
+        body.view.setTranslation( position );
       } );
     } );
 
