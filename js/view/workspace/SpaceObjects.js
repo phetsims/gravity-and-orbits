@@ -11,6 +11,7 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
+    Util = require( 'DOT/Util' ),
     SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
     Vector2 = require( 'DOT/Vector2' ),
     Explosion = require( 'view/space-object/Explosion' ),
@@ -86,7 +87,7 @@ define( function( require ) {
       var body = model[el], position = new Vector2( 0, 0 );
       body.positionProperty.link( function( newPosition ) {
         // round coordinates to integer values
-        position.setXY( parseInt( newPosition.x, 10 ), parseInt( newPosition.y, 10 ) );
+        position.setXY( Util.toFixedNumber( newPosition.x, 0 ), Util.toFixedNumber( newPosition.y, 0 ) );
         body.view.setTranslation( position );
       } );
     } );
