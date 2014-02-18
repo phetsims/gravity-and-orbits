@@ -89,7 +89,6 @@ define( function( require ) {
 
       body.positionProperty.link( function( newPosition ) {
         // round coordinates and prevent ripple effect for some cases
-        position.setXY( Util.toFixedNumber( newPosition.x, 0 ), Util.toFixedNumber( newPosition.y, 0 ) );
         if ( el === 'earth' && model.planetMode === 2 && model.viewMode === model.viewModes[0] ) {
           position.setXY( Util.toFixedNumber( newPosition.x, 0 ), Util.toFixedNumber( newPosition.y, 0 ) );
           body.view.setTranslation( position );
