@@ -91,7 +91,7 @@ define( function( require ) {
       // prepare shapes of arrows
       this.shapes = {};
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
-        this.shapes[model.spaceObjects[i]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2'} );
+        this.shapes[model.spaceObjects[i]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2', headHeightMaximumHalf: true} );
         this.addChild( this.shapes[model.spaceObjects[i]] );
       }
     },

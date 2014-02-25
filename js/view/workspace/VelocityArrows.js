@@ -93,7 +93,7 @@ define( function( require ) {
           //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
           //a potentially unstable feature, and may increase the startup time of the simulation
           text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, boundsMethod: 'accurate' } ),
-          arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24'} )
+          arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24', headHeightMaximumHalf: true} )
         };
 
         // init drag and drop for arrow
