@@ -129,10 +129,9 @@ define( function( require ) {
         num = model.planetMode,
         maxVelocity = self.maxVelocity[num],
         mode = model.planetModes[num],
-        arrowSize = 0,
-        arrowSizeMin = 10,
         arrowSizeNormal = self.arrowSizeNormal,
         len = model.spaceObjects.length,
+        arrowSize,
         velocity,
         obj,
         unitVector;
@@ -146,7 +145,6 @@ define( function( require ) {
         }
 
         arrowSize = arrowSizeNormal * velocity.magnitude() / maxVelocity;
-        arrowSize = Math.max( arrowSize, arrowSizeMin );
 
         unitVector = velocity.normalized();
         v = model[obj].position.plus( unitVector.multiply( arrowSize ) );
