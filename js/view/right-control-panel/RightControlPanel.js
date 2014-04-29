@@ -47,9 +47,11 @@ define( function( require ) {
 
     // add sections
     for ( var i = 0, len = sections.length; i < len; i++ ) {
-      sectionLinks[i] = new sections[i]( model, {x: 5} );
+      sectionLinks[i] = new sections[i]( model, {x: 5, y: 0} );
       nodes[i] = new Node( { children: [sectionLinks[i]]} );
       this.box.addChild( nodes[i] );
+      assert && assert( !isNaN( nodes[i].width ) );
+      assert && assert( !isNaN( nodes[i].height ) );
     }
 
     // find width for lines

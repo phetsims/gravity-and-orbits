@@ -103,6 +103,8 @@ define( function( require ) {
 
       self.vBox.updateLayout();
     } );
+
+    assert && assert( !isNaN( this.height ) );
   }
 
   return inherit( Node, MassMenu );
