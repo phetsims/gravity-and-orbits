@@ -351,9 +351,9 @@ define( function( require ) {
       // notify observers
       this.spaceObjects.forEach( function( el ) {
         var body = model[el];
-        body.positionProperty.notifyObserversUnsafe();
-        body.accelerationProperty.notifyObserversUnsafe();
-        body.velocityProperty.notifyObserversUnsafe();
+        body.positionProperty.notifyObserversStatic();
+        body.accelerationProperty.notifyObserversStatic();
+        body.velocityProperty.notifyObserversStatic();
       } );
     }
   } );
