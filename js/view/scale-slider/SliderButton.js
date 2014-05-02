@@ -11,7 +11,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
     Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    RectanglePushButton = require( 'SUN/RectanglePushButton' ),
+    RectanglePushButtonDeprecated = require( 'SUN/RectanglePushButtonDeprecated' ),
     Shape = require( 'KITE/Shape' ),
     Bounds2 = require( 'DOT/Bounds2' );
 
@@ -42,7 +42,7 @@ define( function( require ) {
     };
 
     // create button
-    this.addChild( new RectanglePushButton( sample,
+    this.addChild( new RectanglePushButtonDeprecated( sample,
       {
         rectangleXMargin: 0,
         rectangleYMargin: 0,
