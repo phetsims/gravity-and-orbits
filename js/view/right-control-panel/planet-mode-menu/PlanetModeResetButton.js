@@ -14,7 +14,7 @@ define( function( require ) {
     Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
     Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    RectanglePushButtonDeprecated = require( 'SUN/RectanglePushButtonDeprecated' );
+    RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
 
   /**
    * @param {Object} model
@@ -27,14 +27,14 @@ define( function( require ) {
     Node.call( this, options );
 
     // create button
-    this.addChild( pushButton = new RectanglePushButtonDeprecated( new Node( {
-      children: [
-        new Rectangle( 0, 0, 25, 25, 5, 5, {fill: '#fff'} ),
-        new Image( resetArrowImg, {x: 2, y: 1} )
-      ]} ),
-      {
-        rectangleXMargin: 0,
-        rectangleYMargin: 0,
+    this.addChild( pushButton = new RectangularPushButton( {
+        content: new Node( {
+          children: [
+            new Rectangle( 0, 0, 25, 25, 5, 5, {fill: '#fff'} ),
+            new Image( resetArrowImg, {x: 2, y: 1} )
+          ]} ),
+        xMargin: 0,
+        yMargin: 0,
         listener: function() {
           model.refreshMode = true;
         }

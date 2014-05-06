@@ -11,7 +11,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
     Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    RectanglePushButtonDeprecated = require( 'SUN/RectanglePushButtonDeprecated' ),
+    RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' ),
     Shape = require( 'KITE/Shape' ),
     Bounds2 = require( 'DOT/Bounds2' );
 
@@ -42,12 +42,12 @@ define( function( require ) {
     };
 
     // create button
-    this.addChild( new RectanglePushButtonDeprecated( sample,
-      {
-        rectangleXMargin: 0,
-        rectangleYMargin: 0,
-        listener: callback
-      } ) );
+    this.addChild( new RectangularPushButton( {
+      content: sample,
+      xMargin: 0,
+      yMargin: 0,
+      listener: callback
+    } ) );
 
     //Increase the touch area in all directions except toward the slider knob, so that they won't interfere too much on touch devices
     var dilationSize = 15,
