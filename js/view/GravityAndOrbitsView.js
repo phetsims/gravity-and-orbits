@@ -10,7 +10,7 @@ define( function( require ) {
   'use strict';
   var ScreenView = require( 'JOIST/ScreenView' ),
     inherit = require( 'PHET_CORE/inherit' ),
-    ResetAllButtonDeprecated = require( 'SCENERY_PHET/ResetAllButtonDeprecated' ),
+    ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' ),
     Workspace = require( 'view/workspace/Workspace' ),
     ScaleSlider = require( 'view/scale-slider/ScaleSlider' ),
     RightControlPanel = require( 'view/right-control-panel/RightControlPanel' ),
@@ -43,7 +43,7 @@ define( function( require ) {
     this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 30, top: speedPushButtons.top - 2} ) );
 
     //The reset all button
-    this.addChild( new ResetAllButtonDeprecated( function() { model.reset(); }, { scale: 0.73, right: this.layoutBounds.maxX - 5, bottom: this.layoutBounds.maxY - 5} ) );
+    this.addChild( new ResetAllButton( { listener: function() { model.reset(); }, right: this.layoutBounds.maxX - 5, bottom: this.layoutBounds.maxY - 5} ) );
   }
 
   return inherit( ScreenView, GravityAndOrbitsView );
