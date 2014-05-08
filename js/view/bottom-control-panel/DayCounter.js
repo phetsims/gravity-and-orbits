@@ -14,7 +14,7 @@ define( function( require ) {
   // imports
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
-    TextPushButton = require( 'SUN/TextPushButton' ),
+    TextPushButtonDeprecated = require( 'SUN/TextPushButtonDeprecated' ),
     Color = require( 'SCENERY/util/Color' ),
     clearString = require( 'string!GRAVITY_AND_ORBITS/clear' ),
     earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' ),
@@ -40,7 +40,7 @@ define( function( require ) {
       this.day,
 
       // add clear button
-      new TextPushButton( clearString, {
+      new TextPushButtonDeprecated( clearString, {
         font: FONT,
         rectangleFillUp: new Color( 255, 255, 255 ),
         listener: function() {
