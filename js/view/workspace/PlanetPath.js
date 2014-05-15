@@ -11,7 +11,10 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
-    Line = require( 'SCENERY/nodes/Line' );
+    Line = require( 'SCENERY/nodes/Line' ),
+
+  // constants
+    SINGLE_PATH_SEGMENT_LENGTH = 2;
 
   function PlanetPath( model ) {
     var self = this;
@@ -47,21 +50,24 @@ define( function( require ) {
     ];
 
     // variables for each space object
-    self.prevPosition = {};
-    self.path = {};
+    self.prevPosition = [];
+    self.path = [];
 
-    self.clearAll( model ); // prepare component for work
+    // prepare component for work
+    self.init( model );
+    self.clearAll( model );
+
     model.spaceObjects.forEach( function( el ) {
       var body = model[el];
 
       // add position property observer
       model[el].positionProperty.link( function() {
         if ( !body.exploded && model.path && model.planetMode === self.num && model.drag !== el && self.totalLengthMax[self.num][el] > 0 ) {
-          var newPosition = body.position;
-          var dr = newPosition.minus( self.prevPosition[self.num][el] ).magnitude();
+          var newPosition = body.position,
+            dr = newPosition.minus( self.prevPosition[self.num][el] ).magnitude();
 
           // add new piece of path if position was changed significantly
-          if ( dr > 2 ) {
+          if ( dr > SINGLE_PATH_SEGMENT_LENGTH ) {
             self.add( model, el, newPosition, dr );
           }
         }
@@ -100,13 +106,20 @@ define( function( require ) {
     // add new piece of path for given element
     add: function( model, el, newPosition, dr ) {
       var prevPosition = this.prevPosition[this.num][el],
-        line = new Line( prevPosition, newPosition, {stroke: this.color[el], lineWidth: 3, lineCap: 'square'} );
+        linesObj = this.path[this.num][el],
+        line;
 
-      this.path[this.num][el].push( {view: line, size: dr} );
-      this.addChild( line );
+      // move pointer
+      linesObj.pointerTail = ((linesObj.pointerTail + 1) % linesObj.paths.length);
+
+      // get line
+      line = linesObj.paths[linesObj.pointerTail];
+
+      line.view.setLine( prevPosition.x, prevPosition.y, newPosition.x, newPosition.y );
+      line.length = dr;
+      this.addChild( line.view );
       this.prevPosition[this.num][el] = newPosition.copy();
 
-      // check length of path
       this.checkLength( el );
     },
     // check length of given planet
@@ -114,18 +127,21 @@ define( function( require ) {
       var num = this.num,
         totalLength = 0,
         maxLength = this.totalLengthMax[num][el],
-        paths = this.path[num][el],
-        path;
+        linesObj = this.path[num][el],
+        lines = linesObj.paths,
+        line;
 
       // define current length
-      for ( var i = 0; i < paths.length; i++ ) {
-        totalLength += paths[i].size;
+      for ( var i = 0; i < lines.length; i++ ) {
+        totalLength += lines[i].length;
       }
 
       while ( totalLength > maxLength ) {
-        path = paths.shift();
-        this.removeChild( path.view );
-        totalLength -= path.size;
+        linesObj.pointerHead = ((linesObj.pointerHead + 1) % lines.length);
+        line = lines[linesObj.pointerHead];
+        this.removeChild( line.view );
+        totalLength -= line.length;
+        line.length = 0;
       }
     },
     // remove all path for all modes
@@ -134,14 +150,19 @@ define( function( require ) {
       self.removeAllChildren();
 
       self.num = model.planetMode; // save planet mode value
-      self.path = []; // contains all pieces of path for all modes
-      self.prevPosition = []; // contains all pieces of path for all modes
+      self.prevPosition = []; // contains previous positions for all modes
       model.planetModes.forEach( function( el, i ) {
-        self.path[i] = {};
         self.prevPosition[i] = {};
         model.spaceObjects.forEach( function( el ) {
-          self.path[i][el] = [];
           self.prevPosition[i][el] = model[el].position.copy();
+
+          if ( self.path[self.num][el] ) {
+            self.path[self.num][el].paths.forEach( function( obj ) {
+              obj.length = 0;
+            } );
+            self.path[self.num][el].pointerHead = 0;
+            self.path[self.num][el].pointerTail = 0;
+          }
         } );
       } );
     },
@@ -149,19 +170,55 @@ define( function( require ) {
     clearOne: function( model, mode ) {
       var self = this;
       model.spaceObjects.forEach( function( el ) {
-        self.path[mode][el].forEach( function( obj ) {
-          self.removeChild( obj.view );
-        } );
-        self.path[mode][el] = [];
-        self.prevPosition[mode][el] = model[el].position.copy();
+        if ( self.path[mode][el] ) {
+          self.path[mode][el].paths.forEach( function( obj ) {
+            if ( self.isChild( obj.view ) ) {
+              self.removeChild( obj.view );
+              obj.length = 0;
+            }
+          } );
+
+          self.path[mode][el].pointerHead = 0;
+          self.path[mode][el].pointerTail = 0;
+
+          self.prevPosition[mode][el] = model[el].position.copy();
+        }
       } );
     },
     // hide all path for given mode
     hide: function( model, mode ) {
       var self = this;
+
       model.spaceObjects.forEach( function( el ) {
-        for ( var i = 0; i < self.path[mode][el].length; i++ ) {
-          self.path[mode][el][i].view.setVisible( false );
+        if ( self.path[mode][el] ) {
+          for ( var i = 0, paths = self.path[mode][el].paths; i < paths.length; i++ ) {
+            paths[i].view.setVisible( false );
+          }
+        }
+      } );
+    },
+    // init paths for further using
+    init: function() {
+      var self = this,
+        pathLength;
+
+      this.totalLengthMax.forEach( function( planetLength, i ) {
+        self.path[i] = {};
+        for ( var planet in planetLength ) {
+          if ( planetLength.hasOwnProperty( planet ) && planetLength[planet] ) {
+            pathLength = planetLength[planet];
+            self.path[i][planet] = {
+              pointerHead: 0,
+              pointerTail: 0,
+              paths: []
+            };
+            for ( var j = 0; j <= pathLength / SINGLE_PATH_SEGMENT_LENGTH; j++ ) {
+              self.path[i][planet].paths.push( {
+                length: 0,
+                view: new Line( 0, 0, 0, 0, {stroke: self.color[planet], lineWidth: 3, lineCap: 'square'} )
+              } );
+            }
+          }
         }
       } );
     },
@@ -169,13 +226,15 @@ define( function( require ) {
     show: function( model, mode ) {
       var self = this;
       model.spaceObjects.forEach( function( el ) {
-        // show all path for given mode
-        for ( var i = 0; i < self.path[mode][el].length; i++ ) {
-          self.path[mode][el][i].view.setVisible( true );
-        }
+        if ( self.path[mode][el] ) {
+          // show all path for given mode
+          for ( var i = 0, paths = self.path[mode][el].paths; i < paths.length; i++ ) {
+            paths[i].view.setVisible( true );
+          }
 
-        // set new previous position
-        self.prevPosition[mode][el] = model[el].position.copy();
+          // set new previous position
+          self.prevPosition[mode][el] = model[el].position.copy();
+        }
       } );
     }
   } );
