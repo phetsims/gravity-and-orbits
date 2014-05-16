@@ -117,8 +117,9 @@ define( function( require ) {
       line = linesObj.paths[linesObj.pointerTail];
 
       //line.view.setLine( prevPosition.x, prevPosition.y, newPosition.x, newPosition.y );
-      line.view.setRect( prevPosition.x, prevPosition.y, newPosition.minus( prevPosition ).magnitude() * 1.5, 3 );
-      line.view.rotateAround( prevPosition, Math.atan2( (newPosition.y - prevPosition.y), (newPosition.x - prevPosition.x) ) );
+      line.view.setRect( 0, 0, newPosition.minus( prevPosition ).magnitude() * 1.5, 3 );
+      line.view.rotate( Math.atan2( newPosition.y - prevPosition.y, newPosition.x - prevPosition.x ) );
+      line.view.setTranslation( prevPosition );
 
       line.length = dr;
       this.addChild( line.view );
