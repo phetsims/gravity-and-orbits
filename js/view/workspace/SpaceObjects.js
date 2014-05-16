@@ -109,9 +109,10 @@ define( function( require ) {
             model.drag = el;
           },
           drag: function( e ) {
-            var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset;
-            var x = view.globalToParentPoint( e.pointer.point ).x - clickXOffset;
-            body.position = new Vector2( x, y );
+            var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset,
+              x = view.globalToParentPoint( e.pointer.point ).x - clickXOffset;
+            body.position.setXY( x, y );
+            body.positionProperty.notifyObserversStatic();
           },
           end: function() {
             model.drag = '';
