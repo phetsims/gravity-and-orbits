@@ -11,7 +11,8 @@ define( function( require ) {
   'use strict';
   var inherit = require( 'PHET_CORE/inherit' ),
     Node = require( 'SCENERY/nodes/Node' ),
-    Line = require( 'SCENERY/nodes/Line' ),
+  //Line = require( 'SCENERY/nodes/Line' ),
+    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
 
   // constants
     SINGLE_PATH_SEGMENT_LENGTH = 2;
@@ -115,7 +116,10 @@ define( function( require ) {
       // get line
       line = linesObj.paths[linesObj.pointerTail];
 
-      line.view.setLine( prevPosition.x, prevPosition.y, newPosition.x, newPosition.y );
+      //line.view.setLine( prevPosition.x, prevPosition.y, newPosition.x, newPosition.y );
+      line.view.setRect( prevPosition.x, prevPosition.y, newPosition.minus( prevPosition ).magnitude() * 1.5, 3 );
+      line.view.rotateAround( prevPosition, Math.atan2( (newPosition.y - prevPosition.y), (newPosition.x - prevPosition.x) ) );
+
       line.length = dr;
       this.addChild( line.view );
       this.prevPosition[this.num][el] = newPosition.copy();
@@ -215,7 +219,8 @@ define( function( require ) {
             for ( var j = 0; j <= pathLength / SINGLE_PATH_SEGMENT_LENGTH; j++ ) {
               self.path[i][planet].paths.push( {
                 length: 0,
-                view: new Line( 0, 0, 0, 0, {stroke: self.color[planet], lineWidth: 3, lineCap: 'square'} )
+                //view: new Line( 0, 0, 0, 0, {stroke: self.color[planet], lineWidth: 3, lineCap: 'square'} )
+                view: new Rectangle( 0, 0, 0, 0, {fill: self.color[planet]} )
               } );
             }
           }
