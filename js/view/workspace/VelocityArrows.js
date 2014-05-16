@@ -84,15 +84,15 @@ define( function( require ) {
         // init arrow view for each space object
         self.arrows[el] = {
           view: new Node( {cursor: 'pointer'} ),
-          circle: new Circle( 18, {
+          circle: new Node( {children: [new Circle( 18, {
             fill: 'rgba(0,0,0,0)',
             stroke: '#C0C0C0',
             lineWidth: 3
           } ),
-
-          //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
-          //a potentially unstable feature, and may increase the startup time of the simulation
-          text: new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', pickable: false, boundsMethod: 'accurate' } ),
+            //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
+            //a potentially unstable feature, and may increase the startup time of the simulation
+            new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', centerX: 0, centerY: 0, pickable: false, boundsMethod: 'accurate' } )
+          ]} ),
           arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24', headHeightMaximumHalf: true} )
         };
 
@@ -107,7 +107,6 @@ define( function( require ) {
 
         // add arrow's components to view and add view to main node
         self.arrows[el].view.addChild( self.arrows[el].circle );
-        self.arrows[el].view.addChild( self.arrows[el].text );
         self.arrows[el].view.addChild( self.arrows[el].arrowNode );
         self.arrows[el].view.setVisible( false );
         self.addChild( self.arrows[el].view );
@@ -121,7 +120,6 @@ define( function( require ) {
     },
     setArrow: function( model, obj, v ) {
       this.arrows[obj].circle.setTranslation( v );
-      this.arrows[obj].text.setTranslation( v.x - this.arrows[obj].text.width / 2, v.y + this.arrows[obj].text.height / 2 );
       this.arrows[obj].arrowNode.setTailAndTip( model[obj].position.x, model[obj].position.y, v.x, v.y );
     },
     showArrows: function( model ) {
