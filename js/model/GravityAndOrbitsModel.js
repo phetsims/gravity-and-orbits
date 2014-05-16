@@ -267,7 +267,11 @@ define( function( require ) {
 
       // resize view if radius changed
       body.radiusCoeffProperty.link( function( newCoeff, oldCoeff ) {
-        body.view.scale( 1 / oldCoeff || 1 ); // return to initial proportions
+        // return to initial proportions
+        if ( oldCoeff ) {
+          body.view.scale( 1 / oldCoeff );
+        }
+
         body.view.scale( newCoeff );
       } );
     } );
