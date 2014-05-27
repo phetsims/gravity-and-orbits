@@ -10,7 +10,7 @@
 define( function( require ) {
   'use strict';
 
-  // imports
+  // modules
   var inherit = require( 'PHET_CORE/inherit' ),
     VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' ),
     slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' ),

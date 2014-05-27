@@ -11,7 +11,7 @@
 define( function( require ) {
   'use strict';
 
-  // imports
+  // modules
   var inherit = require( 'PHET_CORE/inherit' ),
     HBox = require( 'SCENERY/nodes/HBox' ),
     PlayPauseButton = require( 'SCENERY_PHET/PlayPauseButton' ),
