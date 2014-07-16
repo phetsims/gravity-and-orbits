@@ -21,7 +21,7 @@ define( function( require ) {
   var SpaceObjectsBuilder = require( 'view/workspace/SpaceObjectsBuilder' );
 
   function SpaceObjects( model ) {
-    var self = this;
+    var spaceObjects = this;
     Node.call( this );
 
     this.state = [];
@@ -33,19 +33,19 @@ define( function( require ) {
 
       // save state
       if ( prevNum !== null && typeof prevNum !== 'undefined' ) {
-        self.saveState( model, prevNum, 0 );
+        spaceObjects.saveState( model, prevNum, 0 );
       }
 
       // restore state if state was stored for this planet mode
-      if ( self.state[num] && self.state[num][0] ) {
-        self.restoreState( model, num, 0 );
+      if ( spaceObjects.state[num] && spaceObjects.state[num][0] ) {
+        spaceObjects.restoreState( model, num, 0 );
       }
       // else set initial state
       else {
-        self.initState( model, num );
+        spaceObjects.initState( model, num );
       }
 
-      self.saveState( model, num, 1 );
+      spaceObjects.saveState( model, num, 1 );
       // enable explosion
       model.showExplosion = true;
     } );
@@ -54,17 +54,17 @@ define( function( require ) {
     model.spaceObjects.forEach( function( el ) {
       var body = model[el];
       body.radiusCoeffProperty.link( function() {
-        self.checkExplosion( model );
+        spaceObjects.checkExplosion( model );
       } );
 
       body.positionProperty.link( function() {
-        self.checkExplosion( model );
+        spaceObjects.checkExplosion( model );
       } );
 
       body.explodedProperty.link( function( exploded ) {
         body.view.setVisible( !exploded );
         if ( exploded && model.showExplosion ) {
-          self.showExplosion( body.position, body.view.getWidth() );
+          spaceObjects.showExplosion( body.position, body.view.getWidth() );
         }
       } );
     } );
@@ -75,7 +75,7 @@ define( function( require ) {
         model.showExplosion = false;
 
         // set init state
-        self.initState( model, model.planetMode );
+        spaceObjects.initState( model, model.planetMode );
 
         // enable explosion
         model.showExplosion = true;
@@ -144,14 +144,14 @@ define( function( require ) {
     // save state when play button pressed
     model.playProperty.link( function( isPlay ) {
       if ( isPlay ) {
-        self.saveState( model, model.planetMode, 1 );
+        spaceObjects.saveState( model, model.planetMode, 1 );
       }
     } );
 
     // restore state when rewind button pressed
     model.rewindProperty.link( function( isRewind ) {
       if ( isRewind ) {
-        self.restoreState( model, model.planetMode, 1 );
+        spaceObjects.restoreState( model, model.planetMode, 1 );
         model.rewind = false;
       }
     } );
@@ -160,13 +160,13 @@ define( function( require ) {
   return inherit( Node, SpaceObjects, {
     // animation for explosion
     showExplosion: function( position, radius ) {
-      var self = this, explosion = new Explosion( position, 2 * radius ), frames = 5;
+      var spaceObjects = this, explosion = new Explosion( position, 2 * radius ), frames = 5;
       this.addChild( explosion );
       var interval = Timer.setInterval( function() {
         explosion.scale( 0.8 );
         if ( !--frames ) {
           Timer.clearInterval( interval );
-          self.removeChild( explosion );
+          spaceObjects.removeChild( explosion );
         }
       }, 50 );
     },

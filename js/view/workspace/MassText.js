@@ -16,13 +16,13 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
 
   function MassText( model ) {
-    var self = this;
+    var massText = this;
     Node.call( this );
 
     // add text for each space object
     model.spaceObjects.forEach( function( el ) {
       var body = model[el];
-      self.addChild( body.massText );
+      massText.addChild( body.massText );
 
       // update mass text
       var setMassText = function() {

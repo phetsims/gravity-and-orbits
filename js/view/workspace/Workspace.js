@@ -23,7 +23,7 @@ define( function( require ) {
   var Labels = require( 'view/workspace/Labels' );
 
   function Workspace( model ) {
-    var self = this;
+    var workspace = this;
     this.toScale = new Node();
     Node.call( this );
 
@@ -54,12 +54,12 @@ define( function( require ) {
 
     // redraw workspace when scale is changing
     model.scaleProperty.link( function( newScale ) {
-      self.toScale.resetTransform(); // return to initial proportions
-      self.toScale.scale( newScale );
+      workspace.toScale.resetTransform(); // return to initial proportions
+      workspace.toScale.scale( newScale );
     } );
 
     // add scale center observer
-    model.scaleCenterProperty.linkAttribute( self, 'translation' );
+    model.scaleCenterProperty.linkAttribute( workspace, 'translation' );
   }
 
   return inherit( Node, Workspace );

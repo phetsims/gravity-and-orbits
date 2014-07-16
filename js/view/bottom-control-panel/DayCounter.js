@@ -28,11 +28,11 @@ define( function( require ) {
   var FONT = new PhetFont( 16 );
 
   function DayCounter( model ) {
-    var self = this;
+    var dayCounter = this;
     Node.call( this );
 
     var updateDay = function() {
-      self.day.setText( parseInt( (model.day - model.dayOffset) * self.multiplier, 10 ).toString() + ' ' + self.text );
+      dayCounter.day.setText( parseInt( (model.day - model.dayOffset) * dayCounter.multiplier, 10 ).toString() + ' ' + dayCounter.text );
     };
 
     // day text counter
@@ -55,12 +55,12 @@ define( function( require ) {
 
     model.timeModeProperty.link( function( mode ) {
       if ( mode === model.timeModes[0] ) { // days
-        self.text = earthDaysString;
-        self.multiplier = 1;
+        dayCounter.text = earthDaysString;
+        dayCounter.multiplier = 1;
       }
       else if ( mode === model.timeModes[1] ) { // minutes
-        self.text = earthMinutesString;
-        self.multiplier = 24 * 60;
+        dayCounter.text = earthMinutesString;
+        dayCounter.multiplier = 24 * 60;
       }
       updateDay();
     } );

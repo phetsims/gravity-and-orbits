@@ -24,7 +24,7 @@ define( function( require ) {
     this.massText = new Text( "", { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} ); // node for mass text
     this.view = new Node(); // node for view of space object
     PropertySet.call( this, {
-      mass: 1, // mass of space object
+      mass: 1, // mass of space object in kg
       massCoeff: 1, // mass coefficient
       radius: 0, // radius of space object
       radiusCoeff: 1, // radius coefficient

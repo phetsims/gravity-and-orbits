@@ -41,7 +41,7 @@ define( function( require ) {
    */
 
   function MassMenu( model, coords ) {
-    var self = this;
+    var massMenu = this;
     Node.call( this, {scale: 0.85} );
     if ( coords ) {
       this.setTranslation( coords );
@@ -99,12 +99,12 @@ define( function( require ) {
 
     // add sliders
     model.planetModeProperty.link( function( mode ) {
-      self.vBox.removeAllChildren();
+      massMenu.vBox.removeAllChildren();
       showModes[mode].forEach( function( el ) {
-        self.vBox.addChild( self[el] );
+        massMenu.vBox.addChild( massMenu[el] );
       } );
 
-      self.vBox.updateLayout();
+      massMenu.vBox.updateLayout();
     } );
 
     assert && assert( !isNaN( this.height ) );

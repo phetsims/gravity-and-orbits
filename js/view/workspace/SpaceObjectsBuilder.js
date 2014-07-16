@@ -24,7 +24,7 @@ define( function( require ) {
   };
 
   function SpaceObjectsBuilder( model, num, state ) {
-    var self = this, body, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
+    var spaceObjectBuilder = this, body, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
     Node.call( this );
 
     model.spaceObjects.forEach( function( name ) {
@@ -44,7 +44,7 @@ define( function( require ) {
         body.view = new map[name]( position.copy(), obj.radius * scale );
         body.view.scale( body.radiusCoeff );
         body.view.scale( model.viewMode === model.viewModes[1] ? obj.radiusScaleMode : 1 );
-        self.addChild( body.view );
+        spaceObjectBuilder.addChild( body.view );
         body.initDrag = true;
 
         // set space object's coordinates

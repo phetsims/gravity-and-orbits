@@ -29,7 +29,7 @@ define( function( require ) {
   var FONT = new PhetFont( 12 );
 
   function Labels( model ) {
-    var self = this;
+    var labels = this;
     Node.call( this );
 
     model.spaceObjects.forEach( function( el ) {
@@ -50,7 +50,7 @@ define( function( require ) {
 
       //Add picking region and also go past the text bounds so that it doesn't leave red streaks, see https://github.com/phetsims/gravity-and-orbits/issues/57
       body.label.addChild( new Rectangle( bodyLabelBounds.minX, bodyLabelBounds.minY, bodyLabelBounds.width + 10, bodyLabelBounds.height ) );
-      self.addChild( body.label );
+      labels.addChild( body.label );
 
       body.explodedProperty.link( function() {
         body.label.setVisible( false );

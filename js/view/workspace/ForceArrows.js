@@ -17,7 +17,7 @@ define( function( require ) {
   var MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
   function ForceArrows( model ) {
-    var self = this, prevPosition = {}, hided;
+    var forceArrows = this, prevPosition = {}, hided;
     Node.call( this );
 
     this.init( model ); // prepare component for work
@@ -25,11 +25,11 @@ define( function( require ) {
     // controls the visibility and direction of arrows
     var checkArrows = function() {
       if ( model.forceArrow && model.gravity ) { // if arrows visible - set new shapes
-        self.setArrows( model );
+        forceArrows.setArrows( model );
         hided = false;
       }
       else if ( !hided ) { // hide arrows if it is not visible and not hided yet
-        self.hideArrows( model );
+        forceArrows.hideArrows( model );
         hided = true;
       }
     };
@@ -109,9 +109,9 @@ define( function( require ) {
     },
     // show all force arrows and set new shapes
     setArrows: function( model ) {
-      var self = this,
+      var forceArrows = this,
         num = model.planetMode,
-        maxForce = self.maxForce[num],
+        maxForce = forceArrows.maxForce[num],
         mode = model.planetModes[num],
         arrowSize = 10,
         len = model.spaceObjects.length,
@@ -128,7 +128,7 @@ define( function( require ) {
 
         // hide space object if it doesn't exist or exploded
         if ( !mode[obj1] || body1.exploded ) {
-          self.hideOne( model, obj1 );
+          forceArrows.hideOne( model, obj1 );
           continue;
         }
 
@@ -156,10 +156,10 @@ define( function( require ) {
           arrowSize = Math.max( 60 * unitVector.magnitude() / maxForce, 10 );
           unitVector.set( unitVector.normalized().multiply( arrowSize ) );
 
-          self.shapes[obj1].setTailAndTip( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y );
+          forceArrows.shapes[obj1].setTailAndTip( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y );
         }
         else {
-          self.hideOne( model, obj1 );
+          forceArrows.hideOne( model, obj1 );
         }
       }
     }

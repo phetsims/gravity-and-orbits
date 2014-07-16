@@ -217,7 +217,7 @@ define( function( require ) {
    * @param {String} viewMode "Cartoon" or "To Scale"
    */
   function GravityAndOrbitsModel( width, height, viewMode ) {
-    var self = this;
+    var gravityAndOrbitsModel = this;
     this.viewModes = [cartoonString, toScaleString];
     this.viewMode = viewMode; // 'cartoon', 'to scale'
     this.timeModes = timeModes;
@@ -257,11 +257,11 @@ define( function( require ) {
 
     // add property for space objects
     this.spaceObjects.forEach( function( el ) {
-      self[el] = new SpaceObjectModel();
+      gravityAndOrbitsModel[el] = new SpaceObjectModel();
     } );
 
     this.spaceObjects.forEach( function( el ) {
-      var body = self[el];
+      var body = gravityAndOrbitsModel[el];
 
       // add observers for mass sliders
       body.massCoeffProperty.link( function( newCoeff, prevCoeff ) {
@@ -299,14 +299,14 @@ define( function( require ) {
       }
     },
     reset: function() {
-      var self = this;
+      var gravityandOrbitsModel = this;
       this.showExplosion = false;
       PropertySet.prototype.reset.call( this );
 
       // reset all modes
       this.planetModes.forEach( function( mode, i ) {
-        self.planetMode = i;
-        self.refreshMode = true;
+        gravityandOrbitsModel.planetMode = i;
+        gravityandOrbitsModel.refreshMode = true;
       } );
 
       this.planetModeProperty.reset();

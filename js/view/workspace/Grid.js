@@ -16,7 +16,7 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
 
   function Grid( model ) {
-    var self = this;
+    var grid = this;
     Node.call( this );
 
     var options = [
@@ -51,16 +51,16 @@ define( function( require ) {
     ];
 
     var drawGrid = function() {
-      self.removeAllChildren(); // remove previous grid
+      grid.removeAllChildren(); // remove previous grid
 
       // add grid if it's visible
       if ( model.grid ) {
         var opt = options[model.planetMode];
         for ( var i = 0; opt.x0 + i * opt.delta < opt.x1; i++ ) {
-          self.addChild( new Path( Shape.lineSegment( opt.x0 + i * opt.delta, opt.y0, opt.x0 + i * opt.delta, opt.y1 ), {stroke: 'gray', lineWidth: 1} ) );
+          grid.addChild( new Path( Shape.lineSegment( opt.x0 + i * opt.delta, opt.y0, opt.x0 + i * opt.delta, opt.y1 ), {stroke: 'gray', lineWidth: 1} ) );
         }
         for ( i = 0; opt.y0 + i * opt.delta < opt.y1; i++ ) {
-          self.addChild( new Path( Shape.lineSegment( opt.x0, opt.y0 + i * opt.delta, opt.x1, opt.y0 + i * opt.delta ), {stroke: 'gray', lineWidth: 1} ) );
+          grid.addChild( new Path( Shape.lineSegment( opt.x0, opt.y0 + i * opt.delta, opt.x1, opt.y0 + i * opt.delta ), {stroke: 'gray', lineWidth: 1} ) );
         }
       }
     };

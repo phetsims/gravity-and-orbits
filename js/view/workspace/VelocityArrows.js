@@ -23,7 +23,7 @@ define( function( require ) {
   var FONT = new PhetFont( 22 );
 
   function VelocityArrows( model ) {
-    var self = this, prevPosition = {};
+    var velocityArrows = this, prevPosition = {};
     Node.call( this );
 
     this.init( model ); // prepare component for work
@@ -36,7 +36,7 @@ define( function( require ) {
 
     // controls the visibility and direction of arrows
     var checkArrows = function() {
-      self[(model.velocityArrow ? 'show' : 'hide') + 'Arrows']( model );
+      velocityArrows[(model.velocityArrow ? 'show' : 'hide') + 'Arrows']( model );
     };
 
     // add observers
@@ -81,12 +81,12 @@ define( function( require ) {
 
   return inherit( Node, VelocityArrows, {
     init: function( model ) {
-      var self = this;
+      var velocityArrows = this;
       this.arrowSizeNormal = 160;
       this.arrows = {};
       model.spaceObjects.forEach( function( el ) {
         // init arrow view for each space object
-        self.arrows[el] = {
+        velocityArrows.arrows[el] = {
           view: new Node( {cursor: 'pointer'} ),
           circle: new Node( {children: [new Circle( 18, {
             fill: 'rgba(0,0,0,0)',
@@ -101,25 +101,25 @@ define( function( require ) {
         };
 
         // init drag and drop for arrow
-        self.arrows[el].circle.addInputListener( new SimpleDragHandler( {
+        velocityArrows.arrows[el].circle.addInputListener( new SimpleDragHandler( {
           translate: function( e ) {
-            var velocity = e.position.minus( model[el].position ), amplitude = velocity.magnitude() * self.maxVelocity[model.planetMode] / self.arrowSizeNormal;
-            self.setArrow( model, el, e.position );
+            var velocity = e.position.minus( model[el].position ), amplitude = velocity.magnitude() * velocityArrows.maxVelocity[model.planetMode] / velocityArrows.arrowSizeNormal;
+            velocityArrows.setArrow( model, el, e.position );
             model[el].velocity.set( velocity.normalized().multiply( amplitude ) );
           }
         } ) );
 
         // add arrow's components to view and add view to main node
-        self.arrows[el].view.addChild( self.arrows[el].circle );
-        self.arrows[el].view.addChild( self.arrows[el].arrowNode );
-        self.arrows[el].view.setVisible( false );
-        self.addChild( self.arrows[el].view );
+        velocityArrows.arrows[el].view.addChild( velocityArrows.arrows[el].circle );
+        velocityArrows.arrows[el].view.addChild( velocityArrows.arrows[el].arrowNode );
+        velocityArrows.arrows[el].view.setVisible( false );
+        velocityArrows.addChild( velocityArrows.arrows[el].view );
       } );
     },
     hideArrows: function( model ) {
-      var self = this;
+      var velocityArrows = this;
       model.spaceObjects.forEach( function( el ) {
-        self.arrows[el].view.setVisible( false );
+        velocityArrows.arrows[el].view.setVisible( false );
       } );
     },
     setArrow: function( model, obj, v ) {
@@ -127,11 +127,11 @@ define( function( require ) {
       this.arrows[obj].arrowNode.setTailAndTip( model[obj].position.x, model[obj].position.y, v.x, v.y );
     },
     showArrows: function( model ) {
-      var self = this,
+      var velocityArrows = this,
         num = model.planetMode,
-        maxVelocity = self.maxVelocity[num],
+        maxVelocity = velocityArrows.maxVelocity[num],
         mode = model.planetModes[num],
-        arrowSizeNormal = self.arrowSizeNormal,
+        arrowSizeNormal = velocityArrows.arrowSizeNormal,
         len = model.spaceObjects.length,
         arrowSize,
         velocity,
@@ -142,7 +142,7 @@ define( function( require ) {
         obj = model.spaceObjects[i];
         velocity = model[obj].velocity;
         if ( !mode[obj] || model[obj].exploded || !velocity.magnitude() ) {
-          self.arrows[obj].view.setVisible( false );
+          velocityArrows.arrows[obj].view.setVisible( false );
           continue;
         }
 
@@ -151,8 +151,8 @@ define( function( require ) {
         unitVector = velocity.normalized();
         v = model[obj].position.plus( unitVector.multiply( arrowSize ) );
 
-        self.setArrow( model, obj, v );
-        self.arrows[obj].view.setVisible( true );
+        velocityArrows.setArrow( model, obj, v );
+        velocityArrows.arrows[obj].view.setVisible( true );
       }
     }
   } );
