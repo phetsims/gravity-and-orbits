@@ -24,6 +24,8 @@ define( function( require ) {
 
   // constants
   var CONSTANTS = {
+
+      // All constants are in MKS (metric) units: meters, kg, seconds
       G: 6.67384E-11,  // gravitational constant
       SUN_RADIUS: 6.955E8,
       SUN_MASS: 1.989E30,
@@ -214,7 +216,6 @@ define( function( require ) {
    * @param {Number} height of sim
    * @param {String} viewMode "Cartoon" or "To Scale"
    */
-
   function GravityAndOrbitsModel( width, height, viewMode ) {
     var self = this;
     this.viewModes = [cartoonString, toScaleString];
