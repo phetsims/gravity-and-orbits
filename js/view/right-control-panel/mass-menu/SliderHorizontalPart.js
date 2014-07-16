@@ -45,8 +45,8 @@ define( function( require ) {
     if ( tickStep ) {
       for ( i = range.min; i <= range.max; i += tickStep ) {
         nodeTick.addChild( new Path( Shape.lineSegment(
-          w * (i - range.min) / (range.max - range.min), -5,
-          w * (i - range.min) / (range.max - range.min), -tickHeight
+            w * (i - range.min) / (range.max - range.min), -5,
+            w * (i - range.min) / (range.max - range.min), -tickHeight
         ), { stroke: 'white', lineWidth: 1 } ) );
       }
       this.addChild( nodeTick );

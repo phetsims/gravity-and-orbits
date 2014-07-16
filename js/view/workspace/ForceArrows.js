@@ -155,7 +155,8 @@ define( function( require ) {
           unitVector.set( unitVector.normalized().multiply( arrowSize ) );
 
           self.shapes[obj1].setTailAndTip( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y );
-        } else {
+        }
+        else {
           self.hideOne( model, obj1 );
         }
       }
