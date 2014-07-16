@@ -17,7 +17,7 @@ define( function( require ) {
   var MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
   function ForceArrows( model ) {
-    var forceArrows = this, prevPosition = {}, hided;
+    var forceArrows = this, prevPosition = {}, hidden;
     Node.call( this );
 
     this.init( model ); // prepare component for work
@@ -26,11 +26,11 @@ define( function( require ) {
     var checkArrows = function() {
       if ( model.forceArrow && model.gravity ) { // if arrows visible - set new shapes
         forceArrows.setArrows( model );
-        hided = false;
+        hidden = false;
       }
-      else if ( !hided ) { // hide arrows if it is not visible and not hided yet
+      else if ( !hidden ) { // hide arrows if it is not visible and not hided yet
         forceArrows.hideArrows( model );
-        hided = true;
+        hidden = true;
       }
     };
 
