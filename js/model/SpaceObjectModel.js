@@ -8,13 +8,16 @@
 define( function( require ) {
   'use strict';
 
-  var PropertySet = require( 'AXON/PropertySet' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    Vector2 = require( 'DOT/Vector2' ),
-    Text = require( 'SCENERY/nodes/Text' ),
-    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
-    FONT = new PhetFont( 12 );
+  // modules
+  var PropertySet = require( 'AXON/PropertySet' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+
+  // constants
+  var FONT = new PhetFont( 12 );
 
   function SpaceObjectModel() {
     this.label = new Node( {visible: true, cursor: 'pointer'} ); // node for label

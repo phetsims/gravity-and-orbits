@@ -8,18 +8,23 @@
 define( function( require ) {
   'use strict';
 
-  var PropertySet = require( 'AXON/PropertySet' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    SpaceObjectModel = require( 'model/SpaceObjectModel' ),
-    thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' ),
-    earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' ),
-    billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' ),
-    satelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/satelliteMasses' ),
-    cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' ),
-    toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' ),
-    Vector2 = require( 'DOT/Vector2' ),
-    CONSTANTS = {
-      G: 6.67384E-11, // gravitational constant
+  // modules
+  var PropertySet = require( 'AXON/PropertySet' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var SpaceObjectModel = require( 'model/SpaceObjectModel' );
+  var Vector2 = require( 'DOT/Vector2' );
+
+  // strings
+  var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
+  var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
+  var billionBillionSatelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSatelliteMasses' );
+  var satelliteMassesString = require( 'string!GRAVITY_AND_ORBITS/satelliteMasses' );
+  var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
+  var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
+
+  // constants
+  var CONSTANTS = {
+      G: 6.67384E-11,  // gravitational constant
       SUN_RADIUS: 6.955E8,
       SUN_MASS: 1.989E30,
       EARTH_RADIUS: 6.371E6,
