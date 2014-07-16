@@ -60,8 +60,8 @@ define( function( require ) {
     model.planetModeProperty.link( checkArrows );
 
     // check velocity arrow if refresh was called
-    model.refreshModeProperty.link( function( trigger ) {
-      if ( trigger ) {
+    model.refreshModeProperty.link( function( refreshMode ) {
+      if ( refreshMode ) {
         checkArrows();
       }
     } );
