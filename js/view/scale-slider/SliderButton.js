@@ -8,12 +8,14 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' ),
-    Shape = require( 'KITE/Shape' ),
-    Bounds2 = require( 'DOT/Bounds2' );
+
+  // modules
+  var Node = require( 'SCENERY/nodes/Node' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  var Shape = require( 'KITE/Shape' );
+  var Bounds2 = require( 'DOT/Bounds2' );
 
   /**
    * @param {Number} x x-coordinate

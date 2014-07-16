@@ -8,16 +8,22 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    AquaRadioButton = require( 'SUN/AquaRadioButton' ),
-    gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' ),
-    onString = require( 'string!GRAVITY_AND_ORBITS/on' ),
-    offString = require( 'string!GRAVITY_AND_ORBITS/off' ),
-    Text = require( 'SCENERY/nodes/Text' ),
-    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
-    FONT = new PhetFont( 14 ),
-    HBox = require( 'SCENERY/nodes/HBox' );
+
+  // modules
+  var Node = require( 'SCENERY/nodes/Node' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var AquaRadioButton = require( 'SUN/AquaRadioButton' );
+  var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
+
+  // strings
+  var onString = require( 'string!GRAVITY_AND_ORBITS/on' );
+  var offString = require( 'string!GRAVITY_AND_ORBITS/off' );
+
+  // constants
+  var FONT = new PhetFont( 14 );
 
   /**
    * @param {Object} model Contains set of properties. Instance of PropertySet class. General model for the whole application.

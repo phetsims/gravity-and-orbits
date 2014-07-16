@@ -8,15 +8,17 @@
 
 define( function( require ) {
   'use strict';
-  var ScreenView = require( 'JOIST/ScreenView' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' ),
-    Workspace = require( 'view/workspace/Workspace' ),
-    ScaleSlider = require( 'view/scale-slider/ScaleSlider' ),
-    RightControlPanel = require( 'view/right-control-panel/RightControlPanel' ),
-    SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' ),
-    SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' ),
-    DayCounter = require( 'view/bottom-control-panel/DayCounter' );
+
+  // modules
+  var ScreenView = require( 'JOIST/ScreenView' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
+  var Workspace = require( 'view/workspace/Workspace' );
+  var ScaleSlider = require( 'view/scale-slider/ScaleSlider' );
+  var RightControlPanel = require( 'view/right-control-panel/RightControlPanel' );
+  var SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' );
+  var SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' );
+  var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
 
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );

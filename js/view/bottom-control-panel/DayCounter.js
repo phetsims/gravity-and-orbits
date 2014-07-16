@@ -12,16 +12,20 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    TextPushButton = require( 'SUN/buttons/TextPushButton' ),
-    clearString = require( 'string!GRAVITY_AND_ORBITS/clear' ),
-    earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' ),
-    earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' ),
-    Text = require( 'SCENERY/nodes/Text' ),
-    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
-    FONT = new PhetFont( 16 ),
-    VBox = require( 'SCENERY/nodes/VBox' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var TextPushButton = require( 'SUN/buttons/TextPushButton' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
+
+  // strings
+  var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
+  var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
+  var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
+
+  // constants
+  var FONT = new PhetFont( 16 );
 
   function DayCounter( model ) {
     var self = this;

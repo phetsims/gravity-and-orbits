@@ -9,16 +9,18 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    SpaceObjects = require( 'view/workspace/SpaceObjects' ),
-    ForceArrows = require( 'view/workspace/ForceArrows' ),
-    VelocityArrows = require( 'view/workspace/VelocityArrows' ),
-    PlanetPath = require( 'view/workspace/PlanetPath' ),
-    Grid = require( 'view/workspace/Grid' ),
-    MeasuringTape = require( 'view/workspace/MeasuringTape' ),
-    MassText = require( 'view/workspace/MassText' ),
-    Labels = require( 'view/workspace/Labels' );
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var SpaceObjects = require( 'view/workspace/SpaceObjects' );
+  var ForceArrows = require( 'view/workspace/ForceArrows' );
+  var VelocityArrows = require( 'view/workspace/VelocityArrows' );
+  var PlanetPath = require( 'view/workspace/PlanetPath' );
+  var Grid = require( 'view/workspace/Grid' );
+  var MeasuringTape = require( 'view/workspace/MeasuringTape' );
+  var MassText = require( 'view/workspace/MassText' );
+  var Labels = require( 'view/workspace/Labels' );
 
   function Workspace( model ) {
     var self = this;

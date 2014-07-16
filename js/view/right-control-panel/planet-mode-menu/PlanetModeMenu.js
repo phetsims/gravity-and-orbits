@@ -8,10 +8,12 @@
 
 define( function( require ) {
   'use strict';
-  var Node = require( 'SCENERY/nodes/Node' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' ),
-    PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
+
+  // modules
+  var Node = require( 'SCENERY/nodes/Node' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
+  var PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
 
   /**
    * @param {Object} model Contains set of properties. Instance of PropertySet class. General model for the whole application.

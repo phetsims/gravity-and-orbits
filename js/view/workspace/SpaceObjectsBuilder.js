@@ -9,15 +9,19 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    Vector2 = require( 'DOT/Vector2' ),
-    map = {
-      sun: require( 'view/space-object/Sun' ),
-      earth: require( 'view/space-object/Earth' ),
-      moon: require( 'view/space-object/Moon' ),
-      spaceStation: require( 'view/space-object/SpaceStation' )
-    };
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Vector2 = require( 'DOT/Vector2' );
+
+  // constants
+  var map = {
+    sun: require( 'view/space-object/Sun' ),
+    earth: require( 'view/space-object/Earth' ),
+    moon: require( 'view/space-object/Moon' ),
+    spaceStation: require( 'view/space-object/SpaceStation' )
+  };
 
   function SpaceObjectsBuilder( model, num, state ) {
     var self = this, body, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;

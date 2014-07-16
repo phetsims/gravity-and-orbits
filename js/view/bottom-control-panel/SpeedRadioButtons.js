@@ -11,13 +11,15 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' ),
-    VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' ),
-    slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' ),
-    fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' ),
-    normalString = require( 'string!GRAVITY_AND_ORBITS/normal' ),
-    Text = require( 'SCENERY/nodes/Text' ),
-    PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+
+  // strings
+  var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
+  var slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' );
+  var fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
 
   function SpeedRadioButtons( model ) {
     var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };

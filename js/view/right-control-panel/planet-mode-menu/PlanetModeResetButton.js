@@ -9,12 +9,13 @@
 define( function( require ) {
   'use strict';
 
-  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' ),
-    Image = require( 'SCENERY/nodes/Image' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  // modules
+  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
+  var Image = require( 'SCENERY/nodes/Image' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
 
   /**
    * @param {Object} model

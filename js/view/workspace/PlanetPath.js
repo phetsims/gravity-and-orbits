@@ -9,13 +9,14 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-  //Line = require( 'SCENERY/nodes/Line' ),
-    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
   // constants
-    SINGLE_PATH_SEGMENT_LENGTH = 2;
+  var SINGLE_PATH_SEGMENT_LENGTH = 2;
 
   function PlanetPath( model ) {
     var self = this;

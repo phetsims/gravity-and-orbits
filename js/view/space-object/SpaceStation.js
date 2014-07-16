@@ -8,10 +8,14 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    spaceStationImg = require( 'image!GRAVITY_AND_ORBITS/space-station.png' ),
-    Image = require( 'SCENERY/nodes/Image' );
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Image = require( 'SCENERY/nodes/Image' );
+
+  // images
+  var spaceStationImg = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
 
   function SpaceStation( coords, radius ) {
     Node.call( this, coords );

@@ -9,14 +9,16 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    Util = require( 'DOT/Util' ),
-    SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' ),
-    Vector2 = require( 'DOT/Vector2' ),
-    Explosion = require( 'view/space-object/Explosion' ),
-    Timer = require( 'JOIST/Timer' ),
-    SpaceObjectsBuilder = require( 'view/workspace/SpaceObjectsBuilder' );
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Util = require( 'DOT/Util' );
+  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var Explosion = require( 'view/space-object/Explosion' );
+  var Timer = require( 'JOIST/Timer' );
+  var SpaceObjectsBuilder = require( 'view/workspace/SpaceObjectsBuilder' );
 
   function SpaceObjects( model ) {
     var self = this;

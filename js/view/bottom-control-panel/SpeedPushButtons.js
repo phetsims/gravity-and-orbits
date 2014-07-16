@@ -12,11 +12,11 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' ),
-    HBox = require( 'SCENERY/nodes/HBox' ),
-    PlayPauseButton = require( 'SCENERY_PHET/PlayPauseButton' ),
-    StepButton = require( 'SCENERY_PHET/StepButton' ),
-    RewindButton = require( 'SCENERY_PHET/RewindButton' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
+  var PlayPauseButton = require( 'SCENERY_PHET/PlayPauseButton' );
+  var StepButton = require( 'SCENERY_PHET/StepButton' );
+  var RewindButton = require( 'SCENERY_PHET/RewindButton' );
 
   function SpeedPushButtons( model ) {
     var playPauseButton = new PlayPauseButton( model.playProperty, {} );

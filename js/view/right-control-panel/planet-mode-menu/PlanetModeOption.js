@@ -9,14 +9,15 @@
 define( function( require ) {
   'use strict';
 
-  var Node = require( 'SCENERY/nodes/Node' ),
-    inherit = require( 'PHET_CORE/inherit' ),
-    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    RadioButton = require( 'SUN/RadioButton' ),
-    Sun = require( 'view/space-object/Sun' ),
-    Earth = require( 'view/space-object/Earth' ),
-    Moon = require( 'view/space-object/Moon' ),
-    SpaceStation = require( 'view/space-object/SpaceStation' );
+  // modules
+  var Node = require( 'SCENERY/nodes/Node' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var RadioButton = require( 'SUN/RadioButton' );
+  var Sun = require( 'view/space-object/Sun' );
+  var Earth = require( 'view/space-object/Earth' );
+  var Moon = require( 'view/space-object/Moon' );
+  var SpaceStation = require( 'view/space-object/SpaceStation' );
 
   /**
    * @param {Object} model

@@ -8,11 +8,13 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    RadialGradient = require( 'SCENERY/util/RadialGradient' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    Shape = require( 'KITE/Shape' ),
-    Path = require( 'SCENERY/nodes/Path' );
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var RadialGradient = require( 'SCENERY/util/RadialGradient' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Shape = require( 'KITE/Shape' );
+  var Path = require( 'SCENERY/nodes/Path' );
 
   function Explosion( coords, radius ) {
     Node.call( this, coords );

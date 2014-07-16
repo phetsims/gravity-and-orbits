@@ -9,18 +9,24 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    Shape = require( 'KITE/Shape' ),
-    Path = require( 'SCENERY/nodes/Path' ),
-    Rectangle = require( 'SCENERY/nodes/Rectangle' ),
-    Text = require( 'SCENERY/nodes/Text' ),
-    PhetFont = require( 'SCENERY_PHET/PhetFont' ),
-    FONT = new PhetFont( 12 ),
-    sunString = require( 'string!GRAVITY_AND_ORBITS/star' ),
-    planetString = require( 'string!GRAVITY_AND_ORBITS/planet' ),
-    satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' ),
-    moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Shape = require( 'KITE/Shape' );
+  var Path = require( 'SCENERY/nodes/Path' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+
+  // strings
+  var sunString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+
+  // constants
+  var FONT = new PhetFont( 12 );
 
   function Labels( model ) {
     var self = this;

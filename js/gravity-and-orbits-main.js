@@ -10,19 +10,23 @@ define(
   function( require ) {
     'use strict';
 
-    var
-      SimLauncher = require( 'JOIST/SimLauncher' ),
-      Sim = require( 'JOIST/Sim' ),
-      Screen = require( 'JOIST/Screen' ),
-      GravityAndOrbitsModel = require( 'model/GravityAndOrbitsModel' ),
-      GravityAndOrbitsView = require( 'view/GravityAndOrbitsView' ),
-      titleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' ),
-      cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' ),
-      toScaleIcon = require( 'image!GRAVITY_AND_ORBITS/to_scale_icon.png' ),
-      cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' ),
-      toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' ),
-      ScreenView = require( 'JOIST/ScreenView' ),
-      Image = require( 'SCENERY/nodes/Image' );
+    // modules
+    var SimLauncher = require( 'JOIST/SimLauncher' );
+    var Sim = require( 'JOIST/Sim' );
+    var Screen = require( 'JOIST/Screen' );
+    var GravityAndOrbitsModel = require( 'model/GravityAndOrbitsModel' );
+    var GravityAndOrbitsView = require( 'view/GravityAndOrbitsView' );
+    var ScreenView = require( 'JOIST/ScreenView' );
+    var Image = require( 'SCENERY/nodes/Image' );
+
+    // images
+    var cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' );
+    var toScaleIcon = require( 'image!GRAVITY_AND_ORBITS/to_scale_icon.png' );
+
+    // strings
+    var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
+    var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
+    var titleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' );
 
     var simOptions = {
       credits: {

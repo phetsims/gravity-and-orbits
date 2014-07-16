@@ -8,12 +8,16 @@
 
 define( function( require ) {
   'use strict';
-  var inherit = require( 'PHET_CORE/inherit' ),
-    Node = require( 'SCENERY/nodes/Node' ),
-    RadialGradient = require( 'SCENERY/util/RadialGradient' ),
-    Circle = require( 'SCENERY/nodes/Circle' ),
-    earthImg = require( 'image!GRAVITY_AND_ORBITS/earth.gif' ),
-    Image = require( 'SCENERY/nodes/Image' );
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var RadialGradient = require( 'SCENERY/util/RadialGradient' );
+  var Circle = require( 'SCENERY/nodes/Circle' );
+  var Image = require( 'SCENERY/nodes/Image' );
+
+  // images
+  var earthImg = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
 
   function Earth( coords, radius ) {
     Node.call( this, coords );
