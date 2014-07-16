@@ -338,20 +338,16 @@ define( function( require ) {
           if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
             body = this[currentObj];
 
-//            body.position.multiply( 1.0 / scale ).add( temp.set( body.velocity ).multiply( dt ).add( temp1.set( body.acceleration ).multiply( dt * dt / 2.0 ) ) ).multiply( scale );
             body.position.x = (body.position.x / scale + body.velocity.x * dt + body.acceleration.x * dt * dt / 2) * scale;
             body.position.y = (body.position.y / scale + body.velocity.y * dt + body.acceleration.y * dt * dt / 2) * scale;
 
-//            body.velocityHalf.set( body.velocity.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
             var velocityHalfX = body.velocity.x + body.acceleration.x * dt / 2;
             var velocityHalfY = body.velocity.y + body.acceleration.y * dt / 2;
 
-//            body.acceleration.set( getForce.call( this, currentObj ).multiply( -forceScale / body.mass ) );
             var force = getForce.call( this, currentObj, getForceResult );
             body.acceleration.x = force.x * (-forceScale / body.mass);
             body.acceleration.y = force.y * (-forceScale / body.mass);
 
-//            body.velocity.set( body.velocityHalf.plus( temp.set( body.acceleration ).multiply( dt / 2.0 ) ) );
             body.velocity.x = velocityHalfX + body.acceleration.x * dt / 2;
             body.velocity.y = velocityHalfY + body.acceleration.y * dt / 2;
           }
