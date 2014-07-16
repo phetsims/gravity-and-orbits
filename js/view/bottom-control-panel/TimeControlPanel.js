@@ -18,7 +18,7 @@ define( function( require ) {
   var StepButton = require( 'SCENERY_PHET/StepButton' );
   var RewindButton = require( 'SCENERY_PHET/RewindButton' );
 
-  function SpeedPushButtons( model ) {
+  function TimeControlPanel( model ) {
     var playPauseButton = new PlayPauseButton( model.playProperty, {} );
 
     var stepButton = new StepButton( model.stepManual.bind( model ), model.playProperty );
@@ -36,5 +36,5 @@ define( function( require ) {
     HBox.call( this, {spacing: 10, children: [ rewindButton, playPauseButton, stepButton ]} );
   }
 
-  return inherit( HBox, SpeedPushButtons );
+  return inherit( HBox, TimeControlPanel );
 } );

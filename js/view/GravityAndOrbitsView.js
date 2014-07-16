@@ -16,7 +16,7 @@ define( function( require ) {
   var Workspace = require( 'view/workspace/Workspace' );
   var ScaleSlider = require( 'view/scale-slider/ScaleSlider' );
   var RightControlPanel = require( 'view/right-control-panel/RightControlPanel' );
-  var SpeedPushButtons = require( 'view/bottom-control-panel/SpeedPushButtons' );
+  var TimeControlPanel = require( 'view/bottom-control-panel/TimeControlPanel' );
   var SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' );
   var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
 
@@ -38,11 +38,11 @@ define( function( require ) {
     this.addChild( new SpeedRadioButtons( model ).mutate( {left: 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
 
     // add speed push buttons
-    var speedPushButtons = new SpeedPushButtons( model ).mutate( {centerX: rightPanel.left / 2, bottom: this.layoutBounds.maxY - bottomInset} );
-    this.addChild( speedPushButtons );
+    var timeControlPanel = new TimeControlPanel( model ).mutate( {centerX: rightPanel.left / 2, bottom: this.layoutBounds.maxY - bottomInset} );
+    this.addChild( timeControlPanel );
 
     //add day counter
-    this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 30, top: speedPushButtons.top - 2} ) );
+    this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 30, top: timeControlPanel.top - 2} ) );
 
     //The reset all button
     this.addChild( new ResetAllButton( { listener: function() { model.reset(); }, right: this.layoutBounds.maxX - 5, bottom: this.layoutBounds.maxY - 5} ) );
