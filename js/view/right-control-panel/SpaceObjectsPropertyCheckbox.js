@@ -16,7 +16,7 @@ define( function( require ) {
     Path = require( 'SCENERY/nodes/Path' ),
     iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' ),
     measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' ),
-    iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.svg' ),
+    iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' ),
     Image = require( 'SCENERY/nodes/Image' ),
     Line = require( 'SCENERY/nodes/Line' ),
     gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' ),

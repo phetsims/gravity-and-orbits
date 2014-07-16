@@ -9,7 +9,7 @@
 define( function( require ) {
   'use strict';
 
-  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.svg' ),
+  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' ),
     Image = require( 'SCENERY/nodes/Image' ),
     Node = require( 'SCENERY/nodes/Node' ),
     inherit = require( 'PHET_CORE/inherit' ),
