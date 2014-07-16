@@ -45,6 +45,10 @@ define( function( require ) {
 
     // checkbox params
     var measuringTapeImageNode = new Image( measuringTapeImg );
+
+    // options for the grid line icon
+    var strokeOptions = {stroke: 'gray', lineWidth: 1.5};
+
     var params = [
       {
         property: model.forceArrowProperty,
@@ -65,26 +69,29 @@ define( function( require ) {
         property: model.gridProperty,
         text: gridString,
         node: new Node( {children: [
-          new Path( Shape.lineSegment( 0, 0, 20, 0 ), {stroke: 'gray', lineWidth: 1.5} ),
-          new Path( Shape.lineSegment( 20, 0, 20, 20 ), {stroke: 'gray', lineWidth: 1.5} ),
-          new Path( Shape.lineSegment( 20, 20, 0, 20 ), {stroke: 'gray', lineWidth: 1.5} ),
-          new Path( Shape.lineSegment( 0, 20, 0, 0 ), {stroke: 'gray', lineWidth: 1.5} ),
-          new Path( Shape.lineSegment( 10, 0, 10, 20 ), {stroke: 'gray', lineWidth: 1.5} ),
-          new Path( Shape.lineSegment( 0, 10, 20, 10 ), {stroke: 'gray', lineWidth: 1.5} )
+          new Path( Shape.lineSegment( 0, 0, 20, 0 ), strokeOptions ),
+          new Path( Shape.lineSegment( 20, 0, 20, 20 ), strokeOptions ),
+          new Path( Shape.lineSegment( 20, 20, 0, 20 ), strokeOptions ),
+          new Path( Shape.lineSegment( 0, 20, 0, 0 ), strokeOptions ),
+          new Path( Shape.lineSegment( 10, 0, 10, 20 ), strokeOptions ),
+          new Path( Shape.lineSegment( 0, 10, 20, 10 ), strokeOptions )
         ]} )
       },
       {
         property: model.tapeProperty,
         text: tapeString,
-        node: new Node( {children: [
+        node: new Node( {
+          children: [
 
-          //Sticking down metal "tab" at the end of the tape
-          new Line( measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2 + 7, {stroke: '#aaaaaa', lineWidth: 3} ),
+            //Sticking down metal "tab" at the end of the tape
+            new Line( measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2 + 7, {stroke: '#aaaaaa', lineWidth: 3} ),
 
-          //A small amount of tape to help identify the icon as measuring tape
-          new Line( measuringTapeImageNode.width - 4, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30, measuringTapeImageNode.height - 2, {stroke: 'gray', lineWidth: 3} ),
+            //A small amount of tape to help identify the icon as measuring tape
+            new Line( measuringTapeImageNode.width - 4, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30, measuringTapeImageNode.height - 2, {stroke: 'gray', lineWidth: 3} ),
 
-          measuringTapeImageNode], scale: 0.5} )
+            measuringTapeImageNode],
+          scale: 0.5
+        } )
       },
       {
         property: model.massProperty,
