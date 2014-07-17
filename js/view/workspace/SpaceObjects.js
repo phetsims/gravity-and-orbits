@@ -138,7 +138,12 @@ define( function( require ) {
     // replace earth by gray sphere
     var earth = model.spaceObjects[1];
     model[earth].radiusCoeffProperty.link( function( coeff ) {
-      model[earth].view['set' + (coeff === 1 ? 'Default' : 'Gray') + 'View']();
+      if ( coeff === 1 ) {
+        model[earth].view.setDefaultView();
+      }
+      else {
+        model[earth].view.setGrayView();
+      }
     } );
 
     // save state when play button pressed
