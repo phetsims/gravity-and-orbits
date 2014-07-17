@@ -18,6 +18,7 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Circle = require( 'SCENERY/nodes/Circle' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -117,7 +118,7 @@ define( function( require ) {
     } ) );
 
     // add line
-    this.line = new Path( new Shape().moveTo( 0, 0 ).lineTo( 0, 0 ), {stroke: 'gray', lineWidth: 2} );
+    this.line = new Line( 0, 0, 0, 0, {stroke: 'gray', lineWidth: 2} );
     this.notBase.addChild( this.line );
 
     // add center point
@@ -217,7 +218,7 @@ define( function( require ) {
       var option = this.options[this.mode];
       option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
 
-      this.line.setShape( new Shape().moveTo( 0, 0 ).lineTo( x, y ) );
+      this.line.setPoint2( x, y );
       this.text.setText( this.getText() );
       this.tip.setTranslation( x, y );
       option.tipX = x;
