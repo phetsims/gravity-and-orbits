@@ -35,14 +35,14 @@ define( function( require ) {
     };
 
     // add observers for space objects
-    model.spaceObjects.forEach( function( el ) {
-      prevPosition[el] = model[el].position.copy();
+    model.spaceObjects.forEach( function( spaceObject ) {
+      prevPosition[spaceObject] = model[spaceObject].position.copy();
 
       // add position property observer
-      model[el].positionProperty.link( function( newPosition ) {
+      model[spaceObject].positionProperty.link( function( newPosition ) {
         // update force arrow if position was changed significantly
-        if ( newPosition.minus( prevPosition[el] ).magnitude() > 0.5 ) {
-          prevPosition[el] = newPosition.copy();
+        if ( newPosition.minus( prevPosition[spaceObject] ).magnitude() > 0.5 ) {
+          prevPosition[spaceObject] = newPosition.copy();
           checkArrows();
         }
       } );
@@ -58,8 +58,8 @@ define( function( require ) {
     model.gravityProperty.link( checkArrows );
 
     // check force arrow if mass or view was changed
-    model.spaceObjects.forEach( function( el ) {
-      model[el].massProperty.link( checkArrows );
+    model.spaceObjects.forEach( function( spaceObject ) {
+      model[spaceObject].massProperty.link( checkArrows );
     } );
   }
 

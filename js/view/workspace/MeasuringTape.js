@@ -185,9 +185,9 @@ define( function( require ) {
   return inherit( Node, MeasuringTape, {
     // init tape for view mode
     init: function( model ) {
-      this.options.forEach( function( el ) {
-        el.valueDefault = el.value / ( model.isTapeUnitsMiles ? 1 : model.CONSTANTS.METERS_PER_MILE * 1000);
-        el.lengthDefault = el.length;
+      this.options.forEach( function( planetModeOption ) {
+        planetModeOption.valueDefault = planetModeOption.value / ( model.isTapeUnitsMiles ? 1 : model.CONSTANTS.METERS_PER_MILE * 1000);
+        planetModeOption.lengthDefault = planetModeOption.length;
       } );
 
       this.string = model.isTapeUnitsMiles ? thousandMilesString : thousandKilometersString;

@@ -32,9 +32,9 @@ define( function( require ) {
     var labels = this;
     Node.call( this );
 
-    model.spaceObjects.forEach( function( el ) {
-      var name = (el === 'spaceStation' ? 'satellite' : el), // change "space station" -> satellite
-        body = model[el],
+    model.spaceObjects.forEach( function( spaceObject ) {
+      var name = (spaceObject === 'spaceStation' ? 'satellite' : spaceObject), // change "space station" -> satellite
+        body = model[spaceObject],
         position = body.position,
         scale = model.planetModes[model.planetMode].options.scale;
 

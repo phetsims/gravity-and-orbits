@@ -20,18 +20,18 @@ define( function( require ) {
     Node.call( this );
 
     // add text for each space object
-    model.spaceObjects.forEach( function( el ) {
-      var body = model[el];
+    model.spaceObjects.forEach( function( spaceObject ) {
+      var body = model[spaceObject];
       massText.addChild( body.massText );
 
       // update mass text
       var setMassText = function() {
         var text, defaultValue, precision, value;
 
-        if ( model.planetModes[model.planetMode][el] && !body.exploded ) {
-          text = model.planetModes[model.planetMode][el].massLabel.text;
-          defaultValue = model.planetModes[model.planetMode][el].massLabel.defaultValue;
-          precision = model.planetModes[model.planetMode][el].massLabel.precision || 0;
+        if ( model.planetModes[model.planetMode][spaceObject] && !body.exploded ) {
+          text = model.planetModes[model.planetMode][spaceObject].massLabel.text;
+          defaultValue = model.planetModes[model.planetMode][spaceObject].massLabel.defaultValue;
+          precision = model.planetModes[model.planetMode][spaceObject].massLabel.precision || 0;
           value = (body.massCoeff * defaultValue).toFixed( precision );
 
           // if value ==== '1.00' replace 1.00 -> 1 and masses -> mass

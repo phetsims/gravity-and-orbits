@@ -51,8 +51,8 @@ define( function( require ) {
     } );
 
     // add explosion animation
-    model.spaceObjects.forEach( function( el ) {
-      var body = model[el];
+    model.spaceObjects.forEach( function( spaceObject ) {
+      var body = model[spaceObject];
       body.radiusCoeffProperty.link( function() {
         spaceObjects.checkExplosion( model );
       } );
@@ -85,13 +85,13 @@ define( function( require ) {
     } );
 
     // redraw space objects when position changing
-    model.spaceObjects.forEach( function( el ) {
-      var body = model[el],
+    model.spaceObjects.forEach( function( spaceObject ) {
+      var body = model[spaceObject],
         position = new Vector2( 0, 0 );
 
       body.positionProperty.link( function( newPosition ) {
         // round coordinates and prevent ripple effect for some cases
-        if ( el === 'earth' && model.planetMode === 2 && model.viewMode === model.viewModes[0] ) {
+        if ( spaceObject === 'earth' && model.planetMode === 2 && model.viewMode === model.viewModes[0] ) {
           position.setXY( Util.toFixedNumber( newPosition.x, 0 ), Util.toFixedNumber( newPosition.y, 0 ) );
           body.view.setTranslation( position );
         }
@@ -102,13 +102,13 @@ define( function( require ) {
     } );
 
     // init drag and drop for space objects
-    model.spaceObjects.forEach( function( el ) {
-      var clickYOffset, clickXOffset, body = model[el], getListener = function( view ) {
+    model.spaceObjects.forEach( function( spaceObject ) {
+      var clickYOffset, clickXOffset, body = model[spaceObject], getListener = function( view ) {
         return new SimpleDragHandler( {
           start: function( e ) {
             clickYOffset = view.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
             clickXOffset = view.globalToParentPoint( e.pointer.point ).x - e.currentTarget.x;
-            model.drag = el;
+            model.drag = spaceObject;
           },
           drag: function( e ) {
             var y = view.globalToParentPoint( e.pointer.point ).y - clickYOffset,

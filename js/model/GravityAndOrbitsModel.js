@@ -256,12 +256,12 @@ define( function( require ) {
     } );
 
     // add property for space objects
-    this.spaceObjects.forEach( function( el ) {
-      gravityAndOrbitsModel[el] = new SpaceObjectModel();
+    this.spaceObjects.forEach( function( spaceObject ) {
+      gravityAndOrbitsModel[spaceObject] = new SpaceObjectModel();
     } );
 
-    this.spaceObjects.forEach( function( el ) {
-      var body = gravityAndOrbitsModel[el];
+    this.spaceObjects.forEach( function( spaceObject ) {
+      var body = gravityAndOrbitsModel[spaceObject];
 
       // add observers for mass sliders
       body.massCoeffProperty.link( function( newCoeff, prevCoeff ) {
@@ -355,8 +355,8 @@ define( function( require ) {
       }
 
       // notify observers
-      this.spaceObjects.forEach( function( el ) {
-        var body = model[el];
+      this.spaceObjects.forEach( function( spaceObject ) {
+        var body = model[spaceObject];
         body.positionProperty.notifyObserversStatic();
         body.accelerationProperty.notifyObserversStatic();
         body.velocityProperty.notifyObserversStatic();

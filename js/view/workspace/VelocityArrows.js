@@ -40,14 +40,14 @@ define( function( require ) {
     };
 
     // add observers
-    model.spaceObjects.forEach( function( el ) {
-      prevPosition[el] = model[el].position.copy();
+    model.spaceObjects.forEach( function( spaceObject ) {
+      prevPosition[spaceObject] = model[spaceObject].position.copy();
 
       // add position property observer
-      model[el].positionProperty.link( function( newPosition ) {
+      model[spaceObject].positionProperty.link( function( newPosition ) {
         // update velocity arrow if position was changed significantly
-        if ( newPosition.minus( prevPosition[el] ).magnitude() > 1 ) {
-          prevPosition[el] = newPosition.copy();
+        if ( newPosition.minus( prevPosition[spaceObject] ).magnitude() > 1 ) {
+          prevPosition[spaceObject] = newPosition.copy();
           checkArrows();
         }
       } );
@@ -84,9 +84,9 @@ define( function( require ) {
       var velocityArrows = this;
       this.arrowSizeNormal = 160;
       this.arrows = {};
-      model.spaceObjects.forEach( function( el ) {
+      model.spaceObjects.forEach( function( spaceObject ) {
         // init arrow view for each space object
-        velocityArrows.arrows[el] = {
+        velocityArrows.arrows[spaceObject] = {
           view: new Node( {cursor: 'pointer'} ),
           circle: new Node( {children: [new Circle( 18, {
             fill: 'rgba(0,0,0,0)',
@@ -101,25 +101,25 @@ define( function( require ) {
         };
 
         // init drag and drop for arrow
-        velocityArrows.arrows[el].circle.addInputListener( new SimpleDragHandler( {
+        velocityArrows.arrows[spaceObject].circle.addInputListener( new SimpleDragHandler( {
           translate: function( e ) {
-            var velocity = e.position.minus( model[el].position ), amplitude = velocity.magnitude() * velocityArrows.maxVelocity[model.planetMode] / velocityArrows.arrowSizeNormal;
-            velocityArrows.setArrow( model, el, e.position );
-            model[el].velocity.set( velocity.normalized().multiply( amplitude ) );
+            var velocity = e.position.minus( model[spaceObject].position ), amplitude = velocity.magnitude() * velocityArrows.maxVelocity[model.planetMode] / velocityArrows.arrowSizeNormal;
+            velocityArrows.setArrow( model, spaceObject, e.position );
+            model[spaceObject].velocity.set( velocity.normalized().multiply( amplitude ) );
           }
         } ) );
 
         // add arrow's components to view and add view to main node
-        velocityArrows.arrows[el].view.addChild( velocityArrows.arrows[el].circle );
-        velocityArrows.arrows[el].view.addChild( velocityArrows.arrows[el].arrowNode );
-        velocityArrows.arrows[el].view.setVisible( false );
-        velocityArrows.addChild( velocityArrows.arrows[el].view );
+        velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].circle );
+        velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].arrowNode );
+        velocityArrows.arrows[spaceObject].view.setVisible( false );
+        velocityArrows.addChild( velocityArrows.arrows[spaceObject].view );
       } );
     },
     hideArrows: function( model ) {
       var velocityArrows = this;
-      model.spaceObjects.forEach( function( el ) {
-        velocityArrows.arrows[el].view.setVisible( false );
+      model.spaceObjects.forEach( function( spaceObject ) {
+        velocityArrows.arrows[spaceObject].view.setVisible( false );
       } );
     },
     setArrow: function( model, obj, v ) {

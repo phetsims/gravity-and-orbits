@@ -100,8 +100,8 @@ define( function( require ) {
     // add sliders
     model.planetModeProperty.link( function( mode ) {
       massMenu.vBox.removeAllChildren();
-      showModes[mode].forEach( function( el ) {
-        massMenu.vBox.addChild( massMenu[el] );
+      showModes[mode].forEach( function( spaceObject ) {
+        massMenu.vBox.addChild( massMenu[spaceObject] );
       } );
 
       massMenu.vBox.updateLayout();
