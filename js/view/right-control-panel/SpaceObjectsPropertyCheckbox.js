@@ -41,7 +41,7 @@ define( function( require ) {
   var FONT = new PhetFont( 14 );
 
   function SpaceObjectsPropertyCheckbox( model, options ) {
-    Node.call( this, options );
+    VBox.call( this, _.extend( {resize: false, spacing: 5, align: 'left'}, options ) );
 
     // checkbox params
     var measuringTapeImageNode = new Image( measuringTapeImg );
@@ -116,18 +116,15 @@ define( function( require ) {
       }
     }
 
-    this.vBox = new VBox( {resize: false, spacing: 5, align: 'left'} );
-
     // add checkboxes depend on view mode
     menu = order[model.viewMode];
-    for (var i = 0; i < menu.length; i++ ) {
-      this.vBox.addChild( this[checkboxesOptions[menu[i]].text].view );
+    for ( var i = 0; i < menu.length; i++ ) {
+      this.addChild( this[checkboxesOptions[menu[i]].text].view );
     }
 
-    this.addChild( this.vBox );
-    this.vBox.bottom = -12;
-    this.vBox.updateLayout();
+    this.bottom = -12;
+    this.updateLayout();
   }
 
-  return inherit( Node, SpaceObjectsPropertyCheckbox );
+  return inherit( VBox, SpaceObjectsPropertyCheckbox );
 } );
