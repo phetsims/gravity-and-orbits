@@ -36,7 +36,12 @@ define( function( require ) {
 
     // controls the visibility and direction of arrows
     var checkArrows = function() {
-      velocityArrows[(model.velocityArrow ? 'show' : 'hide') + 'Arrows']( model );
+      if ( model.velocityArrow ) {
+        velocityArrows.showArrows( model );
+      }
+      else {
+        velocityArrows.hideArrows( model );
+      }
     };
 
     // add observers
