@@ -49,23 +49,23 @@ define( function( require ) {
     // options for the grid line icon
     var strokeOptions = {stroke: 'gray', lineWidth: 1.5};
 
-    var params = [
-      {
+    var checkboxesOptions = {
+      "gravityArrow": {
         property: model.forceArrowProperty,
         text: gravityString + ' ' + forceString,
         node: new ArrowNode( 135, -10, 180, -10, {fill: '#4380C2'} )
       },
-      {
+      "velocityArrow": {
         property: model.velocityArrowProperty,
         text: velocityString,
         node: new ArrowNode( 95, -10, 140, -10, {fill: '#ED1C24'} )
       },
-      {
+      "path": {
         property: model.pathProperty,
         text: pathString,
         node: new Node( {children: [new Image( iconPathImg )], scale: 0.9} )
       },
-      {
+      "grid": {
         property: model.gridProperty,
         text: gridString,
         node: new Node( {children: [
@@ -77,7 +77,7 @@ define( function( require ) {
           new Path( Shape.lineSegment( 0, 10, 20, 10 ), strokeOptions )
         ]} )
       },
-      {
+      "tape": {
         property: model.tapeProperty,
         text: tapeString,
         node: new Node( {
@@ -93,31 +93,35 @@ define( function( require ) {
           scale: 0.5
         } )
       },
-      {
+      "mass": {
         property: model.massProperty,
         text: massString,
         node: new Node( {children: [new Image( iconMassImg )], scale: 0.8} )
       }
-    ], order = {}, menu;
+    }, order = {}, menu;
 
-    order[model.viewModes[0]] = [0, 1, 2, 3];
-    order[model.viewModes[1]] = [0, 1, 5, 2, 3, 4];
+    // order of checkboxes depend on view mode
+    order[model.viewModes[0]] = ['gravityArrow', 'velocityArrow', 'path', 'grid'];
+    order[model.viewModes[1]] = ['gravityArrow', 'velocityArrow', 'mass', 'path', 'grid', 'tape'];
 
-    // add checkboxes
-    for ( var i = 0; i < params.length; i++ ) {
-      this[params[i].text] = {
-        view: new CheckBox( new HBox( { spacing: 10, children: [
-          new Text( params[i].text, { font: FONT, fill: '#fff', pickable: false} ),
-          new Node( {children: [params[i].node]} )
-        ]} ), params[i].property, {scale: 0.8} )
-      };
+    // create all types of checkboxes
+    for ( var checkboxOption in checkboxesOptions ) {
+      if ( checkboxesOptions.hasOwnProperty( checkboxOption ) ) {
+        this[checkboxesOptions[checkboxOption].text] = {
+          view: new CheckBox( new HBox( { spacing: 10, children: [
+            new Text( checkboxesOptions[checkboxOption].text, { font: FONT, fill: '#fff', pickable: false} ),
+            new Node( {children: [checkboxesOptions[checkboxOption].node]} )
+          ]} ), checkboxesOptions[checkboxOption].property, {scale: 0.8} )
+        };
+      }
     }
 
     this.vBox = new VBox( {resize: false, spacing: 5, align: 'left'} );
 
+    // add checkboxes depend on view mode
     menu = order[model.viewMode];
-    for ( i = 0; i < menu.length; i++ ) {
-      this.vBox.addChild( this[params[menu[i]].text].view );
+    for (var i = 0; i < menu.length; i++ ) {
+      this.vBox.addChild( this[checkboxesOptions[menu[i]].text].view );
     }
 
     this.addChild( this.vBox );
