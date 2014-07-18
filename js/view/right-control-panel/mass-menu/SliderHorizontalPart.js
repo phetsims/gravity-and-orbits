@@ -17,6 +17,10 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
 
+  // constants
+  var TICK_HEIGHT = 14;
+  var THUMB_SIZE = new Dimension2( 15, 20 );
+
   /**
    * @param {Number} x x-coordinate
    * @param {Number} y y-coordinate
@@ -29,26 +33,18 @@ define( function( require ) {
    */
 
   function SliderHorizontalPart( x, y, w, targetProperty, range, rounding, tickStep ) {
-    var defaultValue = targetProperty.get(), nodeTick = new Node(), i, tickHeight = 14;
+    var defaultValue = targetProperty.get(),
+      trackSize = new Dimension2( w, 2 ),
+      nodeTick;
     Node.call( this, {x: x, y: y} );
-
-    var options = {
-      line: {
-        height: w,
-        width: 2
-      },
-      track: {
-        height: 15,
-        width: 20
-      }
-    };
 
     // add ticks
     if ( tickStep ) {
-      for ( i = range.min; i <= range.max; i += tickStep ) {
+      nodeTick = new Node();
+      for ( var i = range.min; i <= range.max; i += tickStep ) {
         nodeTick.addChild( new Path( Shape.lineSegment(
             w * (i - range.min) / (range.max - range.min), -5,
-            w * (i - range.min) / (range.max - range.min), -tickHeight
+            w * (i - range.min) / (range.max - range.min), -TICK_HEIGHT
         ), { stroke: 'white', lineWidth: 1 } ) );
       }
       this.addChild( nodeTick );
@@ -56,8 +52,8 @@ define( function( require ) {
 
     // add slider
     this.addChild( new HSlider( targetProperty, range, {
-      trackSize: new Dimension2( options.line.height, options.line.width ),
-      thumbSize: new Dimension2( options.track.height, options.track.width ),
+      trackSize: trackSize,
+      thumbSize: THUMB_SIZE,
 
       // custom thumb
       thumbFillEnabled: '#98BECF',
@@ -69,7 +65,7 @@ define( function( require ) {
       return (rounding ? Math.round( value * Math.pow( 10, rounding ) ) / Math.pow( 10, rounding ) : value );
     };
 
-    // add observer.  But round the value and snap to the default if within a small range
+    // add observer. But round the value and snap to the default if within a small range
     targetProperty.link( function( value ) {
       targetProperty.set( round( value, rounding ) );
       // snap to default value
