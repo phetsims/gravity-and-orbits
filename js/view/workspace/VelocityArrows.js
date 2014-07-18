@@ -20,13 +20,44 @@ define( function( require ) {
   var MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
   // constants
+  var ARROW_SIZE_DEFAULT = 160;
   var FONT = new PhetFont( 22 );
 
   function VelocityArrows( model ) {
     var velocityArrows = this, prevPosition = {};
     Node.call( this );
 
-    this.init( model ); // prepare component for work
+    this.arrows = {};
+    // init arrow view for each space object
+    model.spaceObjects.forEach( function( spaceObject ) {
+      velocityArrows.arrows[spaceObject] = {
+        view: new Node( {cursor: 'pointer', visible: false} ),
+        circle: new Node( {children: [new Circle( 18, {
+          fill: 'rgba(0,0,0,0)',
+          stroke: '#C0C0C0',
+          lineWidth: 3
+        } ),
+          //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
+          //a potentially unstable feature, and may increase the startup time of the simulation
+          new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', centerX: 0, centerY: 0, pickable: false, boundsMethod: 'accurate' } )
+        ]} ),
+        arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24', headHeightMaximumHalf: true} )
+      };
+
+      // init drag and drop for arrow
+      velocityArrows.arrows[spaceObject].circle.addInputListener( new SimpleDragHandler( {
+        translate: function( e ) {
+          var velocity = e.position.minus( model[spaceObject].position ), amplitude = velocity.magnitude() * velocityArrows.maxVelocity[model.planetMode] / ARROW_SIZE_DEFAULT;
+          velocityArrows.setArrow( model, spaceObject, e.position );
+          model[spaceObject].velocity.set( velocity.normalized().multiply( amplitude ) );
+        }
+      } ) );
+
+      // add arrow's components to view and add view to main node
+      velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].circle );
+      velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].arrowNode );
+      velocityArrows.addChild( velocityArrows.arrows[spaceObject].view );
+    } );
 
     // find max velocity for all modes
     this.maxVelocity = [];
@@ -94,41 +125,6 @@ define( function( require ) {
   };
 
   return inherit( Node, VelocityArrows, {
-    init: function( model ) {
-      var velocityArrows = this;
-      this.arrowSizeNormal = 160;
-      this.arrows = {};
-      model.spaceObjects.forEach( function( spaceObject ) {
-        // init arrow view for each space object
-        velocityArrows.arrows[spaceObject] = {
-          view: new Node( {cursor: 'pointer', visible: false} ),
-          circle: new Node( {children: [new Circle( 18, {
-            fill: 'rgba(0,0,0,0)',
-            stroke: '#C0C0C0',
-            lineWidth: 3
-          } ),
-            //Create the text to show in the velocity arrow.  Note, this uses boundsMethod: 'accurate' so it will be perfectly centered in the circle, but this is
-            //a potentially unstable feature, and may increase the startup time of the simulation
-            new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', centerX: 0, centerY: 0, pickable: false, boundsMethod: 'accurate' } )
-          ]} ),
-          arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24', headHeightMaximumHalf: true} )
-        };
-
-        // init drag and drop for arrow
-        velocityArrows.arrows[spaceObject].circle.addInputListener( new SimpleDragHandler( {
-          translate: function( e ) {
-            var velocity = e.position.minus( model[spaceObject].position ), amplitude = velocity.magnitude() * velocityArrows.maxVelocity[model.planetMode] / velocityArrows.arrowSizeNormal;
-            velocityArrows.setArrow( model, spaceObject, e.position );
-            model[spaceObject].velocity.set( velocity.normalized().multiply( amplitude ) );
-          }
-        } ) );
-
-        // add arrow's components to view and add view to main node
-        velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].circle );
-        velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].arrowNode );
-        velocityArrows.addChild( velocityArrows.arrows[spaceObject].view );
-      } );
-    },
     // redraw single arrow view
     redrawArrow: function( model, obj, arrowTipVector ) {
       this.arrows[obj].circle.setTranslation( arrowTipVector );
@@ -139,7 +135,6 @@ define( function( require ) {
       var velocityArrows = this,
         num = model.planetMode,
         maxVelocity = velocityArrows.maxVelocity[num],
-        arrowSizeNormal = velocityArrows.arrowSizeNormal,
         arrowSize,
         velocity,
         arrowTipVector,
@@ -151,7 +146,7 @@ define( function( require ) {
           velocity = model[spaceObject].velocity;
 
           // calculate new arrow size
-          arrowSize = arrowSizeNormal * velocity.magnitude() / maxVelocity;
+          arrowSize = ARROW_SIZE_DEFAULT * velocity.magnitude() / maxVelocity;
           unitVector = velocity.normalized();
           arrowTipVector = model[spaceObject].position.plus( unitVector.multiply( arrowSize ) );
 

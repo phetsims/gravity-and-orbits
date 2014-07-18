@@ -84,8 +84,12 @@ define( function( require ) {
     this.mode = model.planetMode;
     this.prevScale = 1;
 
-    this.options = options;
-    this.init( model );
+    options.forEach( function( planetModeOption ) {
+      planetModeOption.valueDefault = planetModeOption.value / ( model.isTapeUnitsMiles ? 1 : model.CONSTANTS.METERS_PER_MILE * 1000);
+      planetModeOption.lengthDefault = planetModeOption.length;
+    } );
+
+    this.string = model.isTapeUnitsMiles ? thousandMilesString : thousandKilometersString;
 
     // add base of tape and not base node
     this.base = new Node( {children: [new Image( measuringTapeImg )], scale: 0.8} );
@@ -170,10 +174,10 @@ define( function( require ) {
     model.tapeProperty.linkAttribute( this, 'visible' );
 
     model.planetModeProperty.link( function( mode ) {
-      measuringTape.options[measuringTape.mode].lengthDefault *= 1 / measuringTape.prevScale;
+      options[measuringTape.mode].lengthDefault *= 1 / measuringTape.prevScale;
       measuringTape.mode = mode;
-      measuringTape.options[mode].lengthDefault = options[measuringTape.mode].lengthDefault * measuringTape.prevScale;
-      measuringTape.initTape( measuringTape.options[mode], angle );
+      options[mode].lengthDefault = options[measuringTape.mode].lengthDefault * measuringTape.prevScale;
+      measuringTape.resetTape( options[mode], angle );
       angle = 0;
     } );
 
@@ -183,17 +187,8 @@ define( function( require ) {
   }
 
   return inherit( Node, MeasuringTape, {
-    // init tape for view mode
-    init: function( model ) {
-      this.options.forEach( function( planetModeOption ) {
-        planetModeOption.valueDefault = planetModeOption.value / ( model.isTapeUnitsMiles ? 1 : model.CONSTANTS.METERS_PER_MILE * 1000);
-        planetModeOption.lengthDefault = planetModeOption.length;
-      } );
-
-      this.string = model.isTapeUnitsMiles ? thousandMilesString : thousandKilometersString;
-    },
     // init tape for new planet mode
-    initTape: function( option, angle ) {
+    resetTape: function( option, angle ) {
       this.rotate( -angle );
       this.translate( option.x, option.y );
       this.setTip( option.lengthDefault, 0 );
@@ -201,21 +196,21 @@ define( function( require ) {
     },
     // return text for current planet mode
     getText: function() {
-      var option = this.options[this.mode];
+      var option = options[this.mode];
       return (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + this.string;
     },
     rotate: function( angle ) {
       this.base.rotateAround( new Vector2( this.notBase.x, this.notBase.y ), angle );
     },
     scale: function( scale ) {
-      this.options[this.mode].lengthDefault *= 1 / this.prevScale;
-      this.options[this.mode].lengthDefault *= scale;
-      this.setTip( this.options[this.mode].tipX / this.prevScale, this.options[this.mode].tipY / this.prevScale );
-      this.setTip( this.options[this.mode].tipX * scale, this.options[this.mode].tipY * scale );
+      options[this.mode].lengthDefault *= 1 / this.prevScale;
+      options[this.mode].lengthDefault *= scale;
+      this.setTip( options[this.mode].tipX / this.prevScale, options[this.mode].tipY / this.prevScale );
+      this.setTip( options[this.mode].tipX * scale, options[this.mode].tipY * scale );
       this.prevScale = scale;
     },
     setTip: function( x, y ) {
-      var option = this.options[this.mode];
+      var option = options[this.mode];
       option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
 
       this.line.setPoint2( x, y );

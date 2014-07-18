@@ -55,8 +55,29 @@ define( function( require ) {
     planetPath.prevPosition = [];
     planetPath.path = [];
 
-    // prepare component for work
-    planetPath.init( model );
+    // init path view for each space object
+    this.totalLengthMax.forEach( function( planetLength, i ) {
+      var pathLength;
+
+      planetPath.path[i] = {};
+      for ( var planet in planetLength ) {
+        if ( planetLength.hasOwnProperty( planet ) && planetLength[planet] ) {
+          pathLength = planetLength[planet];
+          planetPath.path[i][planet] = {
+            pointerHead: 0,
+            pointerTail: 0,
+            paths: []
+          };
+          for ( var j = 0; j <= pathLength / SINGLE_PATH_SEGMENT_LENGTH; j++ ) {
+            planetPath.path[i][planet].paths.push( {
+              length: 0,
+              view: new Rectangle( 0, 0, 0, 0, {fill: planetPath.color[planet]} )
+            } );
+          }
+        }
+      }
+    } );
+
     planetPath.clearAll( model );
 
     model.spaceObjects.forEach( function( spaceObject ) {
@@ -199,32 +220,6 @@ define( function( require ) {
         if ( planetPath.path[mode][spaceObject] ) {
           for ( var i = 0, paths = planetPath.path[mode][spaceObject].paths; i < paths.length; i++ ) {
             paths[i].view.setVisible( false );
-          }
-        }
-      } );
-    },
-    // init paths for further using
-    init: function() {
-      var planetPath = this,
-        pathLength;
-
-      this.totalLengthMax.forEach( function( planetLength, i ) {
-        planetPath.path[i] = {};
-        for ( var planet in planetLength ) {
-          if ( planetLength.hasOwnProperty( planet ) && planetLength[planet] ) {
-            pathLength = planetLength[planet];
-            planetPath.path[i][planet] = {
-              pointerHead: 0,
-              pointerTail: 0,
-              paths: []
-            };
-            for ( var j = 0; j <= pathLength / SINGLE_PATH_SEGMENT_LENGTH; j++ ) {
-              planetPath.path[i][planet].paths.push( {
-                length: 0,
-                //view: new Line( 0, 0, 0, 0, {stroke: self.color[planet], lineWidth: 3, lineCap: 'square'} )
-                view: new Rectangle( 0, 0, 0, 0, {fill: planetPath.color[planet]} )
-              } );
-            }
           }
         }
       } );

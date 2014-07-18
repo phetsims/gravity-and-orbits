@@ -20,7 +20,18 @@ define( function( require ) {
     var forceArrows = this, prevPosition = {}, hidden;
     Node.call( this );
 
-    this.init( model ); // prepare component for work
+    // find max force for all modes
+    this.maxForce = [];
+    for ( var i = 0; i < model.planetModes.length; i++ ) {
+      this.maxForce[i] = getMaxForce( model, i );
+    }
+
+    // prepare shapes of arrows
+    this.shapes = {};
+    for ( i = 0; i < model.spaceObjects.length; i++ ) {
+      this.shapes[model.spaceObjects[i]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2', headHeightMaximumHalf: true} );
+      this.addChild( this.shapes[model.spaceObjects[i]] );
+    }
 
     // controls the visibility and direction of arrows
     var checkArrows = function() {
@@ -83,20 +94,6 @@ define( function( require ) {
   };
 
   return inherit( Node, ForceArrows, {
-    init: function( model ) {
-      // find max force for all modes
-      this.maxForce = [];
-      for ( var i = 0; i < model.planetModes.length; i++ ) {
-        this.maxForce[i] = getMaxForce( model, i );
-      }
-
-      // prepare shapes of arrows
-      this.shapes = {};
-      for ( i = 0; i < model.spaceObjects.length; i++ ) {
-        this.shapes[model.spaceObjects[i]] = new MutableArrowNode( 0, 0, 0, 0, {fill: '#4380C2', headHeightMaximumHalf: true} );
-        this.addChild( this.shapes[model.spaceObjects[i]] );
-      }
-    },
     // hide force arrow for space object with given name
     hideOne: function( model, name ) {
       this.shapes[name].setTailAndTip( 0, 0, 0, 0 );
