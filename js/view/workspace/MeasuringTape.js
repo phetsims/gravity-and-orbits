@@ -85,6 +85,8 @@ define( function( require ) {
     this.prevScale = 1;
 
     options.forEach( function( planetModeOption ) {
+      // NOTE: 'valueDefault' and 'lengthDefault' need for correct calculation of distance after scaling tape:
+      // during scaling length of tape changing but appropriate value stay the same
       planetModeOption.valueDefault = planetModeOption.value / ( model.isTapeUnitsMiles ? 1 : model.CONSTANTS.METERS_PER_MILE * 1000);
       planetModeOption.lengthDefault = planetModeOption.length;
     } );
