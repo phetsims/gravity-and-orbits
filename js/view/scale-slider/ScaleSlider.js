@@ -24,7 +24,7 @@ define( function( require ) {
     Node.call( this, {x: x, y: y, scale: 0.63} );
 
     // add slide line
-    this.addChild( new SliderLine( 0, 28, model.scaleProperty, options.range ) );
+    this.addChild( new SliderLine( model.scaleProperty, options.range, 17, 0 ) );
 
     //Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
 

@@ -10,44 +10,34 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
 
+  // constants
+  var TRACK_SIZE = new Dimension2( 140, 3 );
+  var THUMB_SIZE = new Dimension2( 20, 28 );
+
   /**
-   * @param {Number} x x-coordinate
-   * @param {Number} y y-coordinate
    * @param {Property} targetProperty property for updating
    * @param {range} range range for targetProperty
+   * @param {Number} x x-coordinate
+   * @param {Number} y y-coordinate
    * @constructor
    */
 
-  function Slider( x, y, targetProperty, range ) {
-    Node.call( this, {x: x, y: y} );
-    var options = {
-      line: {
-        width: 3,
-        height: 140
-      },
-      track: {
-        width: 28,
-        height: 20
-      }
-    };
-
-    var hslider = new HSlider( targetProperty, range, {
-      trackSize: new Dimension2( options.line.height, options.line.width ),
-      thumbSize: new Dimension2( options.track.height, options.track.width ),
+  function SliderLine( targetProperty, range, x, y ) {
+    HSlider.call( this, targetProperty, range, {
+      trackSize: TRACK_SIZE,
+      thumbSize: THUMB_SIZE,
       // custom thumb
       thumbFillEnabled: '#98BECF',
       thumbFillHighlighted: '#B3D3E2'
     } );
-    hslider.rotate( -Math.PI / 2 );
-    hslider.y = options.line.height + options.track.height / 2;
-    hslider.x = -options.line.width / 2;
-    this.addChild( hslider );
+
+    this.rotate( -Math.PI / 2 );
+    this.translate( -TRACK_SIZE.width - THUMB_SIZE.width - x, -TRACK_SIZE.height / 2 - y );
   }
 
-  return inherit( Node, Slider );
+  return inherit( HSlider, SliderLine );
 } );
