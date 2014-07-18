@@ -34,16 +34,6 @@ define( function( require ) {
       this.maxVelocity[i] = getMaxVelocity( model, i );
     }
 
-    // controls the visibility and direction of arrows
-    var checkArrows = function() {
-      if ( model.velocityArrow ) {
-        velocityArrows.showArrows( model );
-      }
-      else {
-        velocityArrows.hideArrows( model );
-      }
-    };
-
     // add observers
     model.spaceObjects.forEach( function( spaceObject ) {
       prevPosition[spaceObject] = model[spaceObject].position.copy();
@@ -53,24 +43,43 @@ define( function( require ) {
         // update velocity arrow if position was changed significantly
         if ( newPosition.minus( prevPosition[spaceObject] ).magnitude() > 1 ) {
           prevPosition[spaceObject] = newPosition.copy();
-          checkArrows();
+          velocityArrows.updateArrows( model );
         }
       } );
     } );
 
+    var setArrowsVisibilityAndUpdateBinded = setArrowsVisibilityAndUpdate.bind( this, model );
     // check velocity arrow if visibility changed
-    model.velocityArrowProperty.link( checkArrows );
+    model.velocityArrowProperty.link( setArrowsVisibilityAndUpdateBinded );
 
     // check velocity arrow if planet mode was changed
-    model.planetModeProperty.link( checkArrows );
+    model.planetModeProperty.link( setArrowsVisibilityAndUpdateBinded );
 
     // check velocity arrow if refresh was called
-    model.refreshModeProperty.link( function( refreshMode ) {
-      if ( refreshMode ) {
-        checkArrows();
-      }
+    model.refreshModeProperty.onValue( true, setArrowsVisibilityAndUpdateBinded );
+
+    model.spaceObjects.forEach( function( spaceObject ) {
+      model[spaceObject].explodedProperty.link( setArrowsVisibilityAndUpdateBinded );
     } );
   }
+
+  // set visibility of arrows and update size
+  var setArrowsVisibilityAndUpdate = function( model ) {
+    var velocityArrows = this;
+
+    // set visibility of arrows
+    model.spaceObjects.forEach( function( spaceObject ) {
+      if ( !model.velocityArrow || !model.planetModes[model.planetMode][spaceObject] || model[spaceObject].exploded || !model[spaceObject].velocity.magnitude() ) {
+        velocityArrows.arrows[spaceObject].view.setVisible( false );
+      }
+      else {
+        velocityArrows.arrows[spaceObject].view.setVisible( true );
+      }
+    } );
+
+    // update size of arrows
+    velocityArrows.updateArrows( model );
+  };
 
   // find max value of start velocity for given planet mode
   var getMaxVelocity = function( model, num ) {
@@ -92,7 +101,7 @@ define( function( require ) {
       model.spaceObjects.forEach( function( spaceObject ) {
         // init arrow view for each space object
         velocityArrows.arrows[spaceObject] = {
-          view: new Node( {cursor: 'pointer'} ),
+          view: new Node( {cursor: 'pointer', visible: false} ),
           circle: new Node( {children: [new Circle( 18, {
             fill: 'rgba(0,0,0,0)',
             stroke: '#C0C0C0',
@@ -117,48 +126,39 @@ define( function( require ) {
         // add arrow's components to view and add view to main node
         velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].circle );
         velocityArrows.arrows[spaceObject].view.addChild( velocityArrows.arrows[spaceObject].arrowNode );
-        velocityArrows.arrows[spaceObject].view.setVisible( false );
         velocityArrows.addChild( velocityArrows.arrows[spaceObject].view );
       } );
     },
-    hideArrows: function( model ) {
-      var velocityArrows = this;
-      model.spaceObjects.forEach( function( spaceObject ) {
-        velocityArrows.arrows[spaceObject].view.setVisible( false );
-      } );
+    // redraw single arrow view
+    redrawArrow: function( model, obj, arrowTipVector ) {
+      this.arrows[obj].circle.setTranslation( arrowTipVector );
+      this.arrows[obj].arrowNode.setTailAndTip( model[obj].position.x, model[obj].position.y, arrowTipVector.x, arrowTipVector.y );
     },
-    setArrow: function( model, obj, v ) {
-      this.arrows[obj].circle.setTranslation( v );
-      this.arrows[obj].arrowNode.setTailAndTip( model[obj].position.x, model[obj].position.y, v.x, v.y );
-    },
-    showArrows: function( model ) {
+    // update arrow size for visible arrows
+    updateArrows: function( model ) {
       var velocityArrows = this,
         num = model.planetMode,
         maxVelocity = velocityArrows.maxVelocity[num],
-        mode = model.planetModes[num],
         arrowSizeNormal = velocityArrows.arrowSizeNormal,
-        len = model.spaceObjects.length,
         arrowSize,
         velocity,
-        obj,
+        arrowTipVector,
         unitVector;
 
-      for ( var i = 0, v; i < len; i++ ) {
-        obj = model.spaceObjects[i];
-        velocity = model[obj].velocity;
-        if ( !mode[obj] || model[obj].exploded || !velocity.magnitude() ) {
-          velocityArrows.arrows[obj].view.setVisible( false );
-          continue;
+      model.spaceObjects.forEach( function( spaceObject ) {
+        // update only visible arrows
+        if ( velocityArrows.arrows[spaceObject].view.visible ) {
+          velocity = model[spaceObject].velocity;
+
+          // calculate new arrow size
+          arrowSize = arrowSizeNormal * velocity.magnitude() / maxVelocity;
+          unitVector = velocity.normalized();
+          arrowTipVector = model[spaceObject].position.plus( unitVector.multiply( arrowSize ) );
+
+          // redraw arrow
+          velocityArrows.redrawArrow( model, spaceObject, arrowTipVector );
         }
-
-        arrowSize = arrowSizeNormal * velocity.magnitude() / maxVelocity;
-
-        unitVector = velocity.normalized();
-        v = model[obj].position.plus( unitVector.multiply( arrowSize ) );
-
-        velocityArrows.setArrow( model, obj, v );
-        velocityArrows.arrows[obj].view.setVisible( true );
-      }
+      } );
     }
   } );
 } );
