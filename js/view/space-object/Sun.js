@@ -11,23 +11,16 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var RadialGradient = require( 'SCENERY/util/RadialGradient' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
+  var SpaceObjectAbstract = require( 'view/space-object/SpaceObjectAbstract' );
 
   function Sun( coords, radius ) {
-    Node.call( this, coords );
+    SpaceObjectAbstract.call( this, {coords: coords} );
 
-    this.view = new Circle( radius, {
-      fill: new RadialGradient( radius * 0.3, -radius * 0.3, 1, radius * 0.3, -radius * 0.3, radius / 1.5 )
-        .addColorStop( 0, '#fff' )
-        .addColorStop( 1, '#ff0' )
-    } );
-
+    this.view = this.getCircleGradient( radius, '#fff', '#ff0', true );
     this.addChild( this.view );
   }
 
-  return inherit( Node, Sun, {
+  return inherit( SpaceObjectAbstract, Sun, {
     setRadius: function( r ) {
       this.view.setRadius( r );
     }

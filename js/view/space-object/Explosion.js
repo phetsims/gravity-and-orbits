@@ -12,28 +12,31 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var RadialGradient = require( 'SCENERY/util/RadialGradient' );
-  var Node = require( 'SCENERY/nodes/Node' );
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
 
+  // constants
+  var STAR_ANGEL_NUM = 7;
+  var SHARP_COEFF = 0.55;
+  var D_ALPHA = 2 * Math.PI / STAR_ANGEL_NUM;
+
   function Explosion( coords, radius ) {
-    Node.call( this, coords );
-
-    var NUM = 7, coeff = 0.55, dalpha = 2 * Math.PI / NUM, alpha = 0, shape = new Shape();
-    for ( var i = 0; i < NUM; i++ ) {
-      shape = shape
-        .moveTo( radius * Math.cos( alpha ), radius * Math.sin( alpha ) )
-        .lineTo( radius * coeff * Math.cos( alpha + dalpha / 2 ), radius * coeff * Math.sin( alpha + dalpha / 2 ) )
-        .lineTo( radius * Math.cos( alpha + dalpha ), radius * Math.sin( alpha + dalpha ) )
-        .lineTo( 0, 0 );
-      alpha += dalpha;
-    }
-
-    this.view = new Path( shape, { fill: new RadialGradient( radius * 0.1, -radius * 0.1, 1, radius * 0.1, -radius * 0.1, radius / 2 )
+    var alpha = 0, shape = new Shape();
+    Path.call( this, shape, {fill: new RadialGradient( radius * 0.1, -radius * 0.1, 1, radius * 0.1, -radius * 0.1, radius / 2 )
       .addColorStop( 0, '#fff' )
       .addColorStop( 1, '#ff0' )} );
-    this.addChild( this.view );
+
+    for ( var i = 0; i < STAR_ANGEL_NUM; i++ ) {
+      shape = shape
+        .moveTo( radius * Math.cos( alpha ), radius * Math.sin( alpha ) )
+        .lineTo( radius * SHARP_COEFF * Math.cos( alpha + D_ALPHA / 2 ), radius * SHARP_COEFF * Math.sin( alpha + D_ALPHA / 2 ) )
+        .lineTo( radius * Math.cos( alpha + D_ALPHA ), radius * Math.sin( alpha + D_ALPHA ) )
+        .lineTo( 0, 0 );
+      alpha += D_ALPHA;
+    }
+
+    this.setTranslation( coords );
   }
 
-  return inherit( Node, Explosion );
+  return inherit( Path, Explosion );
 } );

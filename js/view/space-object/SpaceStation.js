@@ -11,25 +11,16 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Image = require( 'SCENERY/nodes/Image' );
+  var SpaceObjectAbstract = require( 'view/space-object/SpaceObjectAbstract' );
 
   // images
   var spaceStationImg = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
 
   function SpaceStation( coords, radius ) {
-    Node.call( this, coords );
+    SpaceObjectAbstract.call( this, {image: spaceStationImg, coords: coords, scaleCoeff: 1.3} );
 
     this.setRadius( radius );
   }
 
-  return inherit( Node, SpaceStation, {
-    setRadius: function( radius ) {
-      var width = spaceStationImg.width / 2, height = spaceStationImg.height / 2, scale = radius / width * 1.3;
-      if ( this.view ) {this.removeChild( this.view );}
-
-      this.view = new Image( spaceStationImg, {scale: scale, x: -width * scale, y: -height * scale} );
-      this.addChild( this.view );
-    }
-  } );
+  return inherit( SpaceObjectAbstract, SpaceStation );
 } );
