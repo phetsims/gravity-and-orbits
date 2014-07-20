@@ -47,27 +47,53 @@ define( function( require ) {
       METERS_PER_MILE: 0.000621371192
     },
     timeModes = ['days', 'minutes'],
+  // options of planet for each mode
     planetModes = [
+    /** first planet mode:
+     * sun + earth
+     */
       {
         sun: {
+          // not change position when calculating gravitation forces
           fixed: true,
+
+          // initial coordinates
           x: 0,
           y: 0,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.SUN_RADIUS * 50,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.025,
+
+          // mass of planet
           mass: CONSTANTS.SUN_MASS,
+
+          // mass label description
           massLabel: {
             defaultValue: 333,
             text: thousandEarthMassesString
           }
         },
         earth: {
+          // initial coordinates
           x: CONSTANTS.EARTH_PERIHELION,
           y: 0,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.EARTH_RADIUS * 800,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.15,
+
+          // initial velocity
           velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
+
+          // mass of planet
           mass: CONSTANTS.EARTH_MASS * 10200,
+
+          // mass label description
           massLabel: {
             defaultValue: 1,
             text: earthMassesString,
@@ -75,34 +101,65 @@ define( function( require ) {
           }
         },
         options: {
-          forceScale: 1.017, // ratio of the gravitational and centripetal forces
-          timeScale: 365.0 / 26.0, // days per seconds
+          // ratio of the gravitational and centripetal forces
+          forceScale: 1.017,
+
+          // days per seconds
+          timeScale: 365.0 / 26.0,
+
           timeMode: timeModes[0],
           scale: 1.15E-9,
+
+          // scale center coordinates
           centerX: 275,
           centerY: 235
         }
       },
+    /** second planet mode:
+     * sun + earth + moon
+     */
       {
         sun: {
+          // not change position when calculating gravitation forces
           fixed: true,
+
+          // initial coordinates
           x: 0,
           y: 0,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.SUN_RADIUS * 50,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.025,
+
+          // mass of planet
           mass: CONSTANTS.SUN_MASS,
+
+          // mass label description
           massLabel: {
             defaultValue: 333,
             text: thousandEarthMassesString
           }
         },
         earth: {
+          // initial coordinates
           x: CONSTANTS.EARTH_PERIHELION,
           y: 0,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.EARTH_RADIUS * 800,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.15,
+
+          // initial velocity
           velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
+
+          // mass of planet
           mass: CONSTANTS.EARTH_MASS * 10200,
+
+          // mass label description
           massLabel: {
             defaultValue: 1,
             text: earthMassesString,
@@ -110,12 +167,23 @@ define( function( require ) {
           }
         },
         moon: {
+          // initial coordinates
           x: CONSTANTS.MOON_X,
           y: -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.MOON_RADIUS * 800,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.3,
+
+          // initial velocity
           velocity: new Vector2( CONSTANTS.MOON_SPEED * 21, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
+
+          // mass of planet
           mass: CONSTANTS.MOON_MASS,
+
+          // mass label description
           massLabel: {
             defaultValue: 0.01,
             text: earthMassesString,
@@ -123,22 +191,42 @@ define( function( require ) {
           }
         },
         options: {
-          forceScale: 1.017, // ratio of the gravitational and centripetal forces
-          timeScale: 365.0 / 26.0, // days per seconds
+          // ratio of the gravitational and centripetal forces
+          forceScale: 1.017,
+
+          // days per seconds
+          timeScale: 365.0 / 26.0,
+
           timeMode: timeModes[0],
           scale: 1.15E-9,
+
+          // scale center coordinates
           centerX: 275,
           centerY: 235
         }
       },
+    /** third planet mode:
+     * earth + moon
+     */
       {
         earth: {
+          // initial coordinates
           x: 0,
           y: 0,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.EARTH_RADIUS * 15,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.05,
+
+          // initial velocity
           velocity: new Vector2( -CONSTANTS.MOON_SPEED * CONSTANTS.MOON_MASS / CONSTANTS.EARTH_MASS, 0 ), // -vx to fulfill the law of conservation of momentum
+
+          // mass of planet
           mass: CONSTANTS.EARTH_MASS,
+
+          // mass label description
           massLabel: {
             defaultValue: 1,
             text: earthMassesString,
@@ -146,12 +234,23 @@ define( function( require ) {
           }
         },
         moon: {
+          // initial coordinates
           x: 0,
           y: -CONSTANTS.MOON_Y,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.MOON_RADIUS * 15,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.1,
+
+          // initial velocity
           velocity: new Vector2( CONSTANTS.MOON_SPEED, 0 ),
+
+          // mass of planet
           mass: CONSTANTS.MOON_MASS,
+
+          // mass label description
           massLabel: {
             defaultValue: 0.01,
             text: earthMassesString,
@@ -159,34 +258,65 @@ define( function( require ) {
           }
         },
         options: {
+          // ratio of the gravitational and centripetal forces
           forceScale: 1.001,
-          timeScale: 365.0 / 96.0, // days per seconds
+
+          // days per seconds
+          timeScale: 365.0 / 96.0,
+
           timeMode: timeModes[0],
           scale: 3.7E-7,
+
+          // scale center coordinates
           centerX: 295,
           centerY: 235
         }
       },
+    /** fourth planet mode:
+     * earth + space station
+     */
       {
         earth: {
+          // initial coordinates
           x: 0,
           y: 0,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.EARTH_RADIUS * 0.8,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 1.25,
+
+          // initial velocity
           velocity: new Vector2( 0, CONSTANTS.SPACE_STATION_MASS * CONSTANTS.SPACE_STATION_SPEED / CONSTANTS.EARTH_MASS ), // vy to fulfill the law of conservation of momentum
+
+          // mass of planet
           mass: CONSTANTS.EARTH_MASS,
+
+          // mass label description
           massLabel: {
             defaultValue: 16,
             text: billionBillionSatelliteMassesString
           }
         },
         spaceStation: {
+          // initial coordinates
           x: CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
           y: 0,
+
+          // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.SPACE_STATION_RADIUS * 8000,
+
+          // multiplier for radius for "To Scale" tab
           radiusScaleMode: 0.1,
+
+          // initial velocity
           velocity: new Vector2( 0, -CONSTANTS.SPACE_STATION_SPEED ),
+
+          // mass of planet
           mass: CONSTANTS.SPACE_STATION_MASS,
+
+          // mass label description
           massLabel: {
             defaultValue: 1,
             text: satelliteMassesString,
@@ -194,10 +324,16 @@ define( function( require ) {
           }
         },
         options: {
+          // ratio of the gravitational and centripetal forces
           forceScale: 1,
-          timeScale: 365.0 / 31855.0, // days per seconds
+
+          // days per seconds
+          timeScale: 365.0 / 31855.0,
+
           timeMode: timeModes[1],
           scale: 2E-5,
+
+          // scale center coordinates
           centerX: 280,
           centerY: 230
         }
