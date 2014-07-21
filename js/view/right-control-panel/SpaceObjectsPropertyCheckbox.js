@@ -54,22 +54,22 @@ define( function( require ) {
     var strokeOptions = {stroke: 'gray', lineWidth: 1.5};
 
     var checkboxesOptions = {
-      "gravityArrow": {
+      'gravityArrow': {
         property: model.forceArrowProperty,
         text: gravityString + ' ' + forceString,
         node: new ArrowNode( 135, -10, 180, -10, {fill: '#4380C2'} )
       },
-      "velocityArrow": {
+      'velocityArrow': {
         property: model.velocityArrowProperty,
         text: velocityString,
         node: new ArrowNode( 95, -10, 140, -10, {fill: '#ED1C24'} )
       },
-      "path": {
+      'path': {
         property: model.pathProperty,
         text: pathString,
         node: new Node( {children: [new Image( iconPathImg )], scale: 0.9} )
       },
-      "grid": {
+      'grid': {
         property: model.gridProperty,
         text: gridString,
         node: new Node( {children: [
@@ -81,13 +81,13 @@ define( function( require ) {
           new Path( Shape.lineSegment( 0, 10, 20, 10 ), strokeOptions )
         ]} )
       },
-      "tape": {
+      'tape': {
         property: model.tapeProperty,
         text: tapeString,
         node: new Node( {
           children: [
 
-            //Sticking down metal "tab" at the end of the tape
+            //Sticking down metal 'tab' at the end of the tape
             new Line( measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2 + 7, {stroke: '#aaaaaa', lineWidth: 3} ),
 
             //A small amount of tape to help identify the icon as measuring tape
@@ -97,7 +97,7 @@ define( function( require ) {
           scale: 0.5
         } )
       },
-      "mass": {
+      'mass': {
         property: model.massProperty,
         text: massString,
         node: new Node( {children: [new Image( iconMassImg )], scale: 0.8} )

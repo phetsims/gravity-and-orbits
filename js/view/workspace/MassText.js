@@ -38,10 +38,10 @@ define( function( require ) {
           value = (body.massCoeff * defaultValue).toFixed( precision );
 
           // if value ==== '1.00' replace 1.00 -> 1 and masses -> mass
-          body.massText.setText( (value === '1.00' ? value.replace( "1.00", "1" ) + " " + text.substr( 0, text.length - 2 ) : value + " " + text) );
+          body.massText.setText( (value === '1.00' ? value.replace( '1.00', '1' ) + ' ' + text.substr( 0, text.length - 2 ) : value + ' ' + text) );
         }
         else {
-          body.massText.setText( "" );
+          body.massText.setText( '' );
         }
       };
 

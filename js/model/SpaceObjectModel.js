@@ -21,7 +21,7 @@ define( function( require ) {
 
   function SpaceObjectModel() {
     this.label = new Node( {visible: true, cursor: 'pointer'} ); // node for label
-    this.massText = new Text( "", { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} ); // node for mass text
+    this.massText = new Text( '', { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} ); // node for mass text
     this.view = new Node(); // node for view of space object
     PropertySet.call( this, {
       mass: 1, // mass of space object in kg
