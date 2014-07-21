@@ -22,13 +22,13 @@ define( function( require ) {
   var THUMB_SIZE = new Dimension2( 15, 20 );
 
   /**
-   * @param {Number} x x-coordinate
-   * @param {Number} y y-coordinate
-   * @param {Number} w width of slider
-   * @param {Property} targetProperty property to update
-   * @param {range} range working range
-   * @param {Number} rounding precision
-   * @param {Number} tickStep tick step
+   * @param x {Number} x-coordinate
+   * @param y {Number} y-coordinate
+   * @param w {Number} width of slider
+   * @param targetProperty {Property} property to update
+   * @param range {range} working range
+   * @param rounding {Number} precision of rounding targetProperty
+   * @param tickStep {Number} tick step
    * @constructor
    */
 

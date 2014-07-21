@@ -23,6 +23,9 @@ define( function( require ) {
   var ARROW_SIZE_DEFAULT = 160;
   var FONT = new PhetFont( 22 );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function VelocityArrows( model ) {
     var velocityArrows = this, prevPosition = {};
     Node.call( this );

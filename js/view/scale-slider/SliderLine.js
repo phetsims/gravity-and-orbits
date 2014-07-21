@@ -19,13 +19,11 @@ define( function( require ) {
   var THUMB_SIZE = new Dimension2( 20, 28 );
 
   /**
-   * @param {Property} targetProperty property for updating
-   * @param {range} range range for targetProperty
-   * @param {Number} x x-coordinate
-   * @param {Number} y y-coordinate
-   * @constructor
+   * @param targetProperty {Property} property for updating
+   * @param range {range} range for targetProperty
+   * @param x {Number} x-coordinate
+   * @param y {Number} y-coordinate
    */
-
   function SliderLine( targetProperty, range, x, y ) {
     HSlider.call( this, targetProperty, range, {
       trackSize: TRACK_SIZE,

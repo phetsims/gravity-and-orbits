@@ -13,6 +13,10 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var SpaceObjectAbstract = require( 'view/space-object/SpaceObjectAbstract' );
 
+  /**
+   * @param coords {Object} coordinates to placing components
+   * @param radius {Number} radius of planet view
+   */
   function Sun( coords, radius ) {
     SpaceObjectAbstract.call( this, {coords: coords} );
 

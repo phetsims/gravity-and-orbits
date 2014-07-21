@@ -28,6 +28,9 @@ define( function( require ) {
   // constants
   var FONT = new PhetFont( 12 );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function Labels( model ) {
     var labels = this;
     Node.call( this );

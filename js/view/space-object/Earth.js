@@ -16,6 +16,10 @@ define( function( require ) {
   // images
   var earthImg = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
 
+  /**
+   * @param coords {Object} coordinates to placing components
+   * @param radius {Number} radius of planet view
+   */
   function Earth( coords, radius ) {
     SpaceObjectAbstract.call( this, {image: earthImg, coords: coords} );
 

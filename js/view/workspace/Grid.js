@@ -15,7 +15,11 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
 
-  function Grid( model ) {
+  /**
+   * @param gridProperty {Property} grid visibility flag
+   * @param planetModeProperty {Property} planet mode property. Grids depend on planet modes.
+   */
+  function Grid( gridProperty, planetModeProperty ) {
     var grid = this;
     Node.call( this );
 
@@ -54,8 +58,8 @@ define( function( require ) {
       grid.removeAllChildren(); // remove previous grid
 
       // add grid if it's visible
-      if ( model.grid ) {
-        var opt = options[model.planetMode];
+      if ( gridProperty.value ) {
+        var opt = options[planetModeProperty.value];
         for ( var i = 0; opt.x0 + i * opt.delta < opt.x1; i++ ) {
           grid.addChild( new Path( Shape.lineSegment( opt.x0 + i * opt.delta, opt.y0, opt.x0 + i * opt.delta, opt.y1 ), {stroke: 'gray', lineWidth: 1} ) );
         }
@@ -65,8 +69,8 @@ define( function( require ) {
       }
     };
 
-    model.planetModeProperty.link( drawGrid );
-    model.gridProperty.link( drawGrid );
+    planetModeProperty.lazyLink( drawGrid );
+    gridProperty.link( drawGrid );
   }
 
   return inherit( Node, Grid );

@@ -22,6 +22,12 @@ define( function( require ) {
   var FONT = new PhetFont( 11 );
   var FONTICON = new PhetFont( 14 );
 
+  /**
+   * @param x {Number} x-coordinate
+   * @param y {Number} y-coordinate
+   * @param options {Object} options for slider
+   */
+
   function Slider( x, y, options ) {
     options = _.extend(
       {

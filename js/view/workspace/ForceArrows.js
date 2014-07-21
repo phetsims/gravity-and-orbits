@@ -16,6 +16,9 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function ForceArrows( model ) {
     var forceArrows = this, prevPosition = {}, hidden;
     Node.call( this );

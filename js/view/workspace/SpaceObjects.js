@@ -20,6 +20,9 @@ define( function( require ) {
   var Timer = require( 'JOIST/Timer' );
   var SpaceObjectsBuilder = require( 'view/workspace/SpaceObjectsBuilder' );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function SpaceObjects( model ) {
     var spaceObjects = this;
     Node.call( this );

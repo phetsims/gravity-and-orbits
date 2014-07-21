@@ -27,12 +27,18 @@ define( function( require ) {
   // constants
   var FONT = new PhetFont( 16 );
 
-  function DayCounter( model ) {
+  /**
+   * @param dayProperty {Property} passed time in days
+   * @param dayOffsetProperty {Property} zero day value
+   * @param timeModeProperty {Property} type of representation of passed time
+   * @param timeModes {Array} possible time representation modes
+   */
+  function DayCounter( dayProperty, dayOffsetProperty, timeModeProperty, timeModes ) {
     var dayCounter = this;
     Node.call( this );
 
     var updateDay = function() {
-      dayCounter.day.setText( parseInt( (model.day - model.dayOffset) * dayCounter.multiplier, 10 ).toString() + ' ' + dayCounter.text );
+      dayCounter.day.setText( parseInt( (dayProperty.value - dayOffsetProperty.value) * dayCounter.multiplier, 10 ).toString() + ' ' + dayCounter.text );
     };
 
     // day text counter
@@ -46,27 +52,27 @@ define( function( require ) {
       new TextPushButton( clearString, {
         font: FONT,
         listener: function() {
-          model.dayOffset = model.day;
+          dayOffsetProperty.value = dayProperty.value;
           updateDay();
         }} )
     ]} );
 
     this.addChild( box );
 
-    model.timeModeProperty.link( function( mode ) {
-      if ( mode === model.timeModes[0] ) { // days
+    timeModeProperty.link( function( mode ) {
+      if ( mode === timeModes[0] ) { // days
         dayCounter.text = earthDaysString;
         dayCounter.multiplier = 1;
       }
-      else if ( mode === model.timeModes[1] ) { // minutes
+      else if ( mode === timeModes[1] ) { // minutes
         dayCounter.text = earthMinutesString;
         dayCounter.multiplier = 24 * 60;
       }
       updateDay();
     } );
 
-    model.dayProperty.link( updateDay );
-    model.dayOffsetProperty.link( updateDay );
+    dayProperty.link( updateDay );
+    dayOffsetProperty.link( updateDay );
 
     // update layout view
     box.updateLayout();

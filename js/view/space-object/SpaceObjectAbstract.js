@@ -16,6 +16,9 @@ define( function( require ) {
   var RadialGradient = require( 'SCENERY/util/RadialGradient' );
   var Circle = require( 'SCENERY/nodes/Circle' );
 
+  /**
+   * @param options {Object} options for build abstract space object
+   */
   function SpaceObjectAbstract( options ) {
     Node.call( this, options.coords );
 

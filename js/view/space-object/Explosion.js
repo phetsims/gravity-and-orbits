@@ -20,6 +20,10 @@ define( function( require ) {
   var SHARP_COEFF = 0.55;
   var D_ALPHA = 2 * Math.PI / STAR_ANGEL_NUM;
 
+  /**
+   * @param coords {Object} coordinates to placing components
+   * @param radius {Number} initial radius of explosion view
+   */
   function Explosion( coords, radius ) {
     var alpha = 0, shape = new Shape();
     Path.call( this, shape, {fill: new RadialGradient( radius * 0.1, -radius * 0.1, 1, radius * 0.1, -radius * 0.1, radius / 2 )

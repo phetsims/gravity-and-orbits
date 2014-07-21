@@ -16,6 +16,10 @@ define( function( require ) {
   // images
   var spaceStationImg = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
 
+  /**
+   * @param coords {Object} coordinates to placing components
+   * @param radius {Number} radius of planet view
+   */
   function SpaceStation( coords, radius ) {
     SpaceObjectAbstract.call( this, {image: spaceStationImg, coords: coords, scaleCoeff: 1.3} );
 

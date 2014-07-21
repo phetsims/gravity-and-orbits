@@ -18,15 +18,15 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
 
   /**
-   * @param {Number} x x-coordinate
-   * @param {Number} y y-coordinate
-   * @param {model} model
-   * @param {range} range working range
-   * @param {Number} step step of scale changes
-   * @param {Boolean} isIncrease type of button
+   * @param x {Number} x-coordinate
+   * @param y {Number} y-coordinate
+   * @param scaleProperty {Property} scale value
+   * @param range {range} working range
+   * @param step {Number} step of scale changes
+   * @param isIncrease {Boolean} flag for defining type of button
    * @constructor
    */
-  function SliderButton( x, y, model, range, step, isIncrease ) {
+  function SliderButton( x, y, scaleProperty, range, step, isIncrease ) {
     var callback, sample, width = 25, height = 25;
     Node.call( this, {x: x - width / 2, y: y} );
 
@@ -40,7 +40,7 @@ define( function( require ) {
 
     // callback (can be optimized by splitting to two functions)
     callback = function() {
-      model.scale = Math.max( Math.min( model.scale + (isIncrease ? step : -step), range.max ), range.min );
+      scaleProperty.value = Math.max( Math.min( scaleProperty.value + (isIncrease ? step : -step), range.max ), range.min );
     };
 
     // create button

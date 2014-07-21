@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * main ScreenView container.
+ * Main ScreenView container.
  *
  * @author Andrey Zelenkov (Mlearner)
  */
@@ -20,6 +20,9 @@ define( function( require ) {
   var SpeedRadioButtons = require( 'view/bottom-control-panel/SpeedRadioButtons' );
   var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
 
@@ -27,7 +30,7 @@ define( function( require ) {
     this.addChild( new Workspace( model ) );
 
     // add scale slider
-    this.addChild( new ScaleSlider( model, 20, 10 ) );
+    this.addChild( new ScaleSlider( model.property( 'scale' ), 20, 10 ) );
 
     var rightPanel = new RightControlPanel( model ).mutate( {right: this.layoutBounds.maxX - 5, top: 5} );
     this.addChild( rightPanel );
@@ -35,14 +38,14 @@ define( function( require ) {
     var bottomInset = 5;
 
     // add speed check box
-    this.addChild( new SpeedRadioButtons( model ).mutate( {left: 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
+    this.addChild( new SpeedRadioButtons( model.property( 'speed' ) ).mutate( {left: 10, bottom: this.layoutBounds.maxY - bottomInset} ) );
 
     // add speed push buttons
     var timeControlPanel = new TimeControlPanel( model ).mutate( {centerX: rightPanel.left / 2, bottom: this.layoutBounds.maxY - bottomInset} );
     this.addChild( timeControlPanel );
 
     //add day counter
-    this.addChild( new DayCounter( model ).mutate( {right: rightPanel.left - 30, top: timeControlPanel.top - 2} ) );
+    this.addChild( new DayCounter( model.property( 'day' ), model.property( 'dayOffset' ), model.property( 'timeMode' ), model.timeModes ).mutate( {right: rightPanel.left - 30, top: timeControlPanel.top - 2} ) );
 
     //The reset all button
     this.addChild( new ResetAllButton( { listener: function() { model.reset(); }, right: this.layoutBounds.maxX - 5, bottom: this.layoutBounds.maxY - 5} ) );

@@ -21,12 +21,15 @@ define( function( require ) {
   var slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' );
   var fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
 
-  function SpeedRadioButtons( model ) {
+  /**
+   * @param speedProperty {Property} the rate of flow of time
+   */
+  function SpeedRadioButtons( speedProperty ) {
     var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };
     VerticalAquaRadioButtonGroup.call( this, [
-      {property: model.speedProperty, value: 1.75, node: new Text( fastForwardString, textOption )},
-      {property: model.speedProperty, value: 1, node: new Text( normalString, textOption )},
-      {property: model.speedProperty, value: 0.25, node: new Text( slowMotionString, textOption )}
+      {property: speedProperty, value: 1.75, node: new Text( fastForwardString, textOption )},
+      {property: speedProperty, value: 1, node: new Text( normalString, textOption )},
+      {property: speedProperty, value: 0.25, node: new Text( slowMotionString, textOption )}
     ], {
       spacing: 1,
       radius: 10

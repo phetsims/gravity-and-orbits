@@ -20,6 +20,9 @@ define( function( require ) {
   var MassMenu = require( 'view/right-control-panel/mass-menu/MassMenu' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function RightControlPanel( model ) {
     Node.call( this );
 

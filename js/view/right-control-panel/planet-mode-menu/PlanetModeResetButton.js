@@ -18,9 +18,9 @@ define( function( require ) {
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
 
   /**
-   * @param {Object} model
-   * @param {Object} options for buttons
-   * @param {Number} dy y-offset of node
+   * @param model {Object} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param options {Object} options for buttons
+   * @param dy {Number} y-offset of node
    */
 
   function PlanetModeResetButton( model, options, dy ) {

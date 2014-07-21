@@ -16,7 +16,13 @@ define( function( require ) {
   var SliderLine = require( 'view/scale-slider/SliderLine' );
   var SliderButton = require( 'view/scale-slider/SliderButton' );
 
-  function ScaleSlider( model, x, y ) {
+  /**
+   * @param scaleProperty {Property} scale property for observing and updating
+   * @param x {Number} x-coordinate
+   * @param y {Number} y-coordinate
+   * @constructor
+   */
+  function ScaleSlider( scaleProperty, x, y ) {
     var options = {
       range: {max: 1.5, min: 0.5},
       step: 0.1
@@ -24,15 +30,15 @@ define( function( require ) {
     Node.call( this, {x: x, y: y, scale: 0.63} );
 
     // add slide line
-    this.addChild( new SliderLine( model.scaleProperty, options.range, 17, 0 ) );
+    this.addChild( new SliderLine( scaleProperty, options.range, 17, 0 ) );
 
     //Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
 
     // add plus button
-    this.addChild( new SliderButton( 0, 0, model, options.range, options.step, true ) );
+    this.addChild( new SliderButton( 0, 0, scaleProperty, options.range, options.step, true ) );
 
     // add minus button
-    this.addChild( new SliderButton( 0, 190, model, options.range, options.step, false ) );
+    this.addChild( new SliderButton( 0, 190, scaleProperty, options.range, options.step, false ) );
   }
 
   return inherit( Node, ScaleSlider );

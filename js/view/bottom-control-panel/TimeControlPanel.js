@@ -18,6 +18,10 @@ define( function( require ) {
   var StepButton = require( 'SCENERY_PHET/StepButton' );
   var RewindButton = require( 'SCENERY_PHET/RewindButton' );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * Necessary properties and methods: playProperty, stepManual, rewindProperty, dayProperty, dayOffsetProperty
+   */
   function TimeControlPanel( model ) {
     var playPauseButton = new PlayPauseButton( model.playProperty, {} );
 

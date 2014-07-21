@@ -22,6 +22,9 @@ define( function( require ) {
   var MassText = require( 'view/workspace/MassText' );
   var Labels = require( 'view/workspace/Labels' );
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function Workspace( model ) {
     var workspace = this;
     this.toScale = new Node();
@@ -40,7 +43,7 @@ define( function( require ) {
     this.toScale.addChild( new PlanetPath( model ) );
 
     // add grids
-    this.toScale.addChild( new Grid( model ) );
+    this.toScale.addChild( new Grid( model.property( 'grid' ), model.property( 'planetMode' ) ) );
 
     // add labels
     this.toScale.addChild( new Labels( model ) );

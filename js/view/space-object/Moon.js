@@ -16,6 +16,10 @@ define( function( require ) {
   // images
   var moonImg = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
 
+  /**
+   * @param coords {Object} coordinates to placing components
+   * @param radius {Number} radius of planet view
+   */
   function Moon( coords, radius ) {
     SpaceObjectAbstract.call( this, {image: moonImg, coords: coords} );
 

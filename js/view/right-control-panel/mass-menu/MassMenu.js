@@ -34,10 +34,10 @@ define( function( require ) {
 
   /**
    * @constructor
-   * @param {Object} model
-   * @param {Object} coords coordinates of node
-   * @param {number} coords.x x-coordinate
-   * @param {number} coords.y y-coordinate
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param coords {Object} coordinates of node
+   * @param coords.x {number} x-coordinate
+   * @param coords.y {number} y-coordinate
    */
 
   function MassMenu( model, coords ) {

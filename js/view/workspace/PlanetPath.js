@@ -18,6 +18,9 @@ define( function( require ) {
   // constants
   var SINGLE_PATH_SEGMENT_LENGTH = 2;
 
+  /**
+   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   */
   function PlanetPath( model ) {
     var planetPath = this;
     Node.call( this );
