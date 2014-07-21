@@ -13,8 +13,13 @@ define( function( require ) {
   // modules
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var SliderLine = require( 'view/scale-slider/SliderLine' );
   var SliderButton = require( 'view/scale-slider/SliderButton' );
+  var Dimension2 = require( 'DOT/Dimension2' );
+  var HSlider = require( 'SUN/HSlider' );
+
+  // constants
+  var TRACK_SIZE = new Dimension2( 140, 3 );
+  var THUMB_SIZE = new Dimension2( 20, 28 );
 
   /**
    * @param scaleProperty {Property} scale property for observing and updating
@@ -29,8 +34,20 @@ define( function( require ) {
     };
     Node.call( this, {x: x, y: y, scale: 0.63} );
 
+    var verticalSlider = new HSlider( scaleProperty, options.range, {
+      trackSize: TRACK_SIZE,
+      thumbSize: THUMB_SIZE,
+
+      // custom thumb colors
+      thumbFillEnabled: '#98BECF',
+      thumbFillHighlighted: '#B3D3E2'
+    } );
+
+    verticalSlider.rotate( -Math.PI / 2 );
+    verticalSlider.translate( -TRACK_SIZE.width - THUMB_SIZE.width - 17, -TRACK_SIZE.height / 2 - 0 );
+
     // add slide line
-    this.addChild( new SliderLine( scaleProperty, options.range, 17, 0 ) );
+    this.addChild( verticalSlider );
 
     //Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
 
