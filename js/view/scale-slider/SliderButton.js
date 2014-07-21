@@ -44,12 +44,27 @@ define( function( require ) {
     };
 
     // create button
-    this.addChild( new RectangularPushButton( {
+    var button;
+    this.addChild( button = new RectangularPushButton( {
       content: sample,
       xMargin: 0,
       yMargin: 0,
       listener: callback
     } ) );
+
+    // add disabling effect for buttons
+    if ( isIncrease ) {
+      // plus button
+      scaleProperty.link( function( scaleValue ) {
+        button.enabled = (scaleValue !== range.max);
+      } );
+    }
+    else {
+      // minus button
+      scaleProperty.link( function( scaleValue ) {
+        button.enabled = (scaleValue !== range.min);
+      } );
+    }
 
     //Increase the touch area in all directions except toward the slider knob, so that they won't interfere too much on touch devices
     var dilationSize = 15,
