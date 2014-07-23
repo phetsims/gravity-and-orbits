@@ -11,7 +11,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var SpaceObjectAbstract = require( 'view/space-object/SpaceObjectAbstract' );
+  var AbstractSpaceObject = require( 'view/space-object/AbstractSpaceObject' );
 
   // images
   var earthImg = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
@@ -21,7 +21,7 @@ define( function( require ) {
    * @param radius {Number} radius of planet view
    */
   function Earth( coords, radius ) {
-    SpaceObjectAbstract.call( this, {image: earthImg, coords: coords} );
+    AbstractSpaceObject.call( this, {image: earthImg, coords: coords} );
 
     this.setRadius( radius );
 
@@ -30,7 +30,7 @@ define( function( require ) {
     this.viewGray.setRadius( radius );
   }
 
-  return inherit( SpaceObjectAbstract, Earth, {
+  return inherit( AbstractSpaceObject, Earth, {
     setGrayView: function() {
       this.viewGray.setVisible( true );
       this.view.setVisible( false );
