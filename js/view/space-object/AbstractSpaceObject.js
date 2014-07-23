@@ -19,7 +19,7 @@ define( function( require ) {
   /**
    * @param options {Object} options for build abstract space object
    */
-  function SpaceObjectAbstract( options ) {
+  function AbstractSpaceObject( options ) {
     Node.call( this, options.coords );
 
     this.scaleCoeff = options.scaleCoeff || 1;
@@ -32,7 +32,7 @@ define( function( require ) {
     }
   }
 
-  return inherit( Node, SpaceObjectAbstract, {
+  return inherit( Node, AbstractSpaceObject, {
     setRadius: function( radius ) {
       var width = this.image.width / 2,
         height = this.image.height / 2,
