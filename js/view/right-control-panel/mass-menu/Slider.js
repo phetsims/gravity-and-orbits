@@ -27,7 +27,6 @@ define( function( require ) {
    * @param y {Number} y-coordinate
    * @param options {Object} options for slider
    */
-
   function Slider( x, y, options ) {
     options = _.extend(
       {
