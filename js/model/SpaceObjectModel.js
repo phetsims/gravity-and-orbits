@@ -19,20 +19,30 @@ define( function( require ) {
   // constants
   var FONT = new PhetFont( 12 );
 
-  function SpaceObjectModel() {
+  function SpaceObjectModel( SpaceObject ) {
     this.label = new Node( {visible: true, cursor: 'pointer'} ); // node for label
     this.massText = new Text( '', { visible: true, font: FONT, fontWeight: 'bold', textAlign: 'center', fill: 'white', pickable: false} ); // node for mass text
     this.view = new Node(); // node for view of space object
+
+    SpaceObject = _.extend( {
+      mass: 0,
+      radius: 0,
+      velocity: new Vector2( 0, 0 ),
+      acceleration: new Vector2( 0, 0 ),
+      positionStart: new Vector2( 0, 0 ),
+      position: new Vector2( 0, 0 )
+    }, SpaceObject );
+
     PropertySet.call( this, {
-      mass: 1, // mass of space object in kg
+      mass: SpaceObject.mass, // mass of space object in kg
       massCoeff: 1, // mass coefficient
-      radius: 0, // radius of space object
+      radius: SpaceObject.radius, // radius of space object
       radiusCoeff: 1, // radius coefficient
       exploded: false, // explode flag
-      velocity: new Vector2( 0, 0 ), // velocity of space object
-      acceleration: new Vector2( 0, 0 ), // acceleration of space object
-      positionStart: new Vector2( 0, 0 ), // initial position of space object
-      position: new Vector2( 0, 0 ), // position of space object
+      velocity: SpaceObject.velocity, // velocity of space object
+      acceleration: SpaceObject.acceleration, // acceleration of space object
+      positionStart: SpaceObject.positionStart, // initial position of space object
+      position: SpaceObject.position, // position of space object
       initDrag: false // trigger for drag initialization
     } );
   }

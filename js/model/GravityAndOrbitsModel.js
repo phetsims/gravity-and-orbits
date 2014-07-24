@@ -393,7 +393,7 @@ define( function( require ) {
 
     // add property for space objects
     this.spaceObjects.forEach( function( spaceObject ) {
-      gravityAndOrbitsModel[spaceObject] = new SpaceObjectModel();
+      gravityAndOrbitsModel[spaceObject] = new SpaceObjectModel( planetModes[0][spaceObject] );
     } );
 
     this.spaceObjects.forEach( function( spaceObject ) {
