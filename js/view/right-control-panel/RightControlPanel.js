@@ -37,7 +37,7 @@ define( function( require ) {
     // add sections
     var sections = [PlanetModeMenu, GravityModeMenu, SpaceObjectsPropertyCheckbox, MassMenu];
 
-    addSections.call( this, model, sections );
+    addSections( model, this.box, sections );
 
     // update container
     this.box.updateLayout();
@@ -47,20 +47,26 @@ define( function( require ) {
     this.back.setRectWidth( this.box.getWidth() );
   }
 
-  var addSections = function( model, sections ) {
+  /**
+   * Add sections to
+   * @param model {PropertySet} Contains set of properties. General model for the whole application. Necessary for building sections.
+   * @param box {Node} target box node for appending sections.
+   * @param sections {Array} Array of section constructors. Each constructor return node for appending to target node.
+   */
+  var addSections = function( model, box, sections ) {
     var nodes = [], sectionLinks = [], width;
 
     // add sections
     for ( var i = 0, len = sections.length; i < len; i++ ) {
       sectionLinks[i] = new sections[i]( model, {x: 5, y: 0} );
       nodes[i] = new Node( { children: [sectionLinks[i]]} );
-      this.box.addChild( nodes[i] );
+      box.addChild( nodes[i] );
       assert && assert( !isNaN( nodes[i].width ) );
       assert && assert( !isNaN( nodes[i].height ) );
     }
 
     // find width for lines
-    width = this.box.getWidth();
+    width = box.getWidth();
 
     for ( i = 0; i < len; i++ ) {
       // align center first and last sections

@@ -448,6 +448,7 @@ define( function( require ) {
       this.planetModeProperty.reset();
       this.showExplosion = true;
     },
+    // recalculate positions of all space objects
     stepManual: function( dt ) {
       var dDay, model = this,
         mode = this.planetModes[this.planetMode],
@@ -502,9 +503,9 @@ define( function( require ) {
 
   /**
    * Gets the force between two objects. Uses the passed in result as a "micro-pool" to avoid allocations.
-   * @param target
-   * @param result
-   * @returns {*}
+   * @param target {String} Name of the planet that we want to calculate the force.
+   * @param result {Vector2} Vector for setting calculation results.
+   * @returns {Vector2}
    */
   var getForce = function( target, result ) {
     var fx = 0, fy = 0,

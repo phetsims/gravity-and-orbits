@@ -166,7 +166,6 @@ define( function( require ) {
 
     this.addChild( this.notBase );
 
-
     if ( model.viewModes[0] === model.viewMode ) { // cartoon
       measuringTape.setVisible( false );
     }
@@ -203,9 +202,11 @@ define( function( require ) {
       var option = options[this.mode];
       return (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + this.string;
     },
+    // rotate tape view
     rotate: function( angle ) {
       this.base.rotateAround( new Vector2( this.notBase.x, this.notBase.y ), angle );
     },
+    // scale view: change only rule size
     scale: function( scale ) {
       options[this.mode].lengthDefault *= 1 / this.prevScale;
       options[this.mode].lengthDefault *= scale;
@@ -213,6 +214,7 @@ define( function( require ) {
       this.setTip( options[this.mode].tipX * scale, options[this.mode].tipY * scale );
       this.prevScale = scale;
     },
+    // set tip to given coordinates
     setTip: function( x, y ) {
       var option = options[this.mode];
       option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
@@ -223,6 +225,7 @@ define( function( require ) {
       option.tipX = x;
       option.tipY = y;
     },
+    // translate tape to given coordinates
     translate: function( x, y, v ) {
       this.notBase.setTranslation( x, y );
 

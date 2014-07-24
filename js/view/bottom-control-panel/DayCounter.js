@@ -37,6 +37,7 @@ define( function( require ) {
     var dayCounter = this;
     Node.call( this );
 
+    // update text representation of day
     var updateDay = function() {
       dayCounter.day.setText( parseInt( (dayProperty.value - dayOffsetProperty.value) * dayCounter.multiplier, 10 ).toString() + ' ' + dayCounter.text );
     };
