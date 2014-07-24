@@ -15,7 +15,7 @@ define( function( require ) {
   // modules
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Slider = require( 'view/right-control-panel/mass-menu/Slider' );
+  var MassMenuSlider = require( 'view/right-control-panel/mass-menu/MassMenuSlider' );
   var Sun = require( 'view/space-object/Sun' );
   var Earth = require( 'view/space-object/Earth' );
   var Moon = require( 'view/space-object/Moon' );
@@ -90,7 +90,7 @@ define( function( require ) {
     // init all sliders
     for ( var object in map ) {
       if ( map.hasOwnProperty( object ) ) {
-        this[object] = new Slider( 10, 0, {title: map[object].title, property: map[object].property, icon: map[object].icon } );
+        this[object] = new MassMenuSlider( 10, 0, {title: map[object].title, property: map[object].property, icon: map[object].icon } );
       }
     }
 
