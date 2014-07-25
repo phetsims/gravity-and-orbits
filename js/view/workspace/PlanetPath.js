@@ -70,10 +70,10 @@ define( function( require ) {
           planetPath.path[i][planet] = {
             pointerHead: 0,
             pointerTail: 0,
-            paths: []
+            pool: []
           };
           for ( var j = 0; j <= pathLength / SINGLE_PATH_SEGMENT_LENGTH; j++ ) {
-            planetPath.path[i][planet].paths.push( {
+            planetPath.path[i][planet].pool.push( {
               length: 0,
               view: new Line( 0, 0, 0, 0, {stroke: planetPath.color[planet], lineWidth: 3, lineCap: 'square'} )
               //view: new Rectangle( 0, 0, 0, 0, {fill: planetPath.color[planet]} )
@@ -138,10 +138,10 @@ define( function( require ) {
         line;
 
       // move pointer
-      linesObj.pointerTail = ((linesObj.pointerTail + 1) % linesObj.paths.length);
+      linesObj.pointerTail = ((linesObj.pointerTail + 1) % linesObj.pool.length);
 
       // get line
-      line = linesObj.paths[linesObj.pointerTail];
+      line = linesObj.pool[linesObj.pointerTail];
 
       line.view.setLine( prevPosition.x, prevPosition.y, newPosition.x, newPosition.y );
       //line.view.setTranslation( prevPosition );
@@ -160,7 +160,7 @@ define( function( require ) {
         totalLength = 0,
         maxLength = this.totalLengthMax[num][spaceObject],
         linesObj = this.path[num][spaceObject],
-        lines = linesObj.paths,
+        lines = linesObj.pool,
         line;
 
       // define current length
@@ -189,7 +189,7 @@ define( function( require ) {
           planetPath.prevPosition[i][spaceObject] = model[spaceObject].position.copy();
 
           if ( planetPath.path[planetPath.num][spaceObject] ) {
-            planetPath.path[planetPath.num][spaceObject].paths.forEach( function( obj ) {
+            planetPath.path[planetPath.num][spaceObject].pool.forEach( function( obj ) {
               obj.length = 0;
             } );
             planetPath.path[planetPath.num][spaceObject].pointerHead = 0;
@@ -203,7 +203,7 @@ define( function( require ) {
       var planetPath = this;
       model.spaceObjects.forEach( function( spaceObject ) {
         if ( planetPath.path[mode][spaceObject] ) {
-          planetPath.path[mode][spaceObject].paths.forEach( function( obj ) {
+          planetPath.path[mode][spaceObject].pool.forEach( function( obj ) {
             if ( planetPath.isChild( obj.view ) ) {
               planetPath.removeChild( obj.view );
               obj.length = 0;
@@ -223,8 +223,8 @@ define( function( require ) {
 
       model.spaceObjects.forEach( function( spaceObject ) {
         if ( planetPath.path[mode][spaceObject] ) {
-          for ( var i = 0, paths = planetPath.path[mode][spaceObject].paths; i < paths.length; i++ ) {
-            paths[i].view.setVisible( false );
+          for ( var i = 0, pool = planetPath.path[mode][spaceObject].pool; i < pool.length; i++ ) {
+            pool[i].view.setVisible( false );
           }
         }
       } );
@@ -235,8 +235,8 @@ define( function( require ) {
       model.spaceObjects.forEach( function( spaceObject ) {
         if ( planetPath.path[mode][spaceObject] ) {
           // show all path for given mode
-          for ( var i = 0, paths = planetPath.path[mode][spaceObject].paths; i < paths.length; i++ ) {
-            paths[i].view.setVisible( true );
+          for ( var i = 0, pool = planetPath.path[mode][spaceObject].pool; i < pool.length; i++ ) {
+            pool[i].view.setVisible( true );
           }
 
           // set new previous position
