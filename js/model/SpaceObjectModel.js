@@ -39,10 +39,10 @@ define( function( require ) {
       radius: SpaceObject.radius, // radius of space object
       radiusCoeff: 1, // radius coefficient
       exploded: false, // explode flag
-      velocity: SpaceObject.velocity, // velocity of space object
-      acceleration: SpaceObject.acceleration, // acceleration of space object
-      positionStart: SpaceObject.positionStart, // initial position of space object
-      position: SpaceObject.position, // position of space object
+      velocity: SpaceObject.velocity.copy(), // velocity of space object
+      acceleration: SpaceObject.acceleration.copy(), // acceleration of space object
+      positionStart: SpaceObject.positionStart.copy(), // initial position of space object
+      position: SpaceObject.position.copy(), // position of space object
       initDrag: false // trigger for drag initialization
     } );
   }
