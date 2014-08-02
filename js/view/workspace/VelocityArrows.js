@@ -51,7 +51,7 @@ define( function( require ) {
       velocityArrows.arrows[spaceObject].circle.addInputListener( new SimpleDragHandler( {
         translate: function( e ) {
           var velocity = e.position.minus( model[spaceObject].position ), amplitude = velocity.magnitude() * velocityArrows.maxVelocity[model.planetMode] / ARROW_SIZE_DEFAULT;
-          velocityArrows.setArrow( model, spaceObject, e.position );
+          velocityArrows.redrawArrow( model, spaceObject, e.position );
           model[spaceObject].velocity.set( velocity.normalized().multiply( amplitude ) );
         }
       } ) );
