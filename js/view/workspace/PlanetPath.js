@@ -14,7 +14,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  //var Line = require( 'SCENERY/nodes/Line' );
 
   // constants
   var SINGLE_PATH_SEGMENT_LENGTH = 2;
@@ -75,7 +74,6 @@ define( function( require ) {
           for ( var j = 0; j <= pathLength / SINGLE_PATH_SEGMENT_LENGTH; j++ ) {
             planetPath.path[i][planet].pool.push( {
               length: 0,
-              //view: new Line( 0, 0, 0, 0, {stroke: planetPath.color[planet], lineWidth: 3, lineCap: 'square'} )
               view: new Rectangle( 0, 0, 0, 0, {fill: planetPath.color[planet]} )
             } );
           }
