@@ -20,7 +20,6 @@ define( function( require ) {
    * @param {Object} options - This object contains options for main node of planet mode menu.
    * @constructor
    */
-
   function PlanetModeMenu( model, options ) {
     Node.call( this, options );
 

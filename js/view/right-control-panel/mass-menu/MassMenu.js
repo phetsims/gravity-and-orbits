@@ -39,7 +39,6 @@ define( function( require ) {
    * @param {Number} coords.y - Y-coordinate.
    * @constructor
    */
-
   function MassMenu( model, coords ) {
     var massMenu = this;
     Node.call( this, {scale: 0.85} );

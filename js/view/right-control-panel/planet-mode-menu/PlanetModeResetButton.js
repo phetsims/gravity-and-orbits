@@ -23,7 +23,6 @@ define( function( require ) {
    * @param {Number} dy - y-offset of node.
    * @constructor
    */
-
   function PlanetModeResetButton( model, options, dy ) {
     var pushButton;
     Node.call( this, options );

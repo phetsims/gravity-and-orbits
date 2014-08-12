@@ -25,7 +25,6 @@ define( function( require ) {
    * @param {Number} num - Number of planet mode.
    * @constructor
    */
-
   function PlanetModeOption( model, options, num ) {
     Node.call( this, options );
     var map = {
