@@ -30,7 +30,6 @@ define( function( require ) {
    * @param {Object} options - This object contains options for main node of gravity mode menu.
    * @constructor
    */
-
   function GravityModeMenu( model, options ) {
     Node.call( this, options );
 
