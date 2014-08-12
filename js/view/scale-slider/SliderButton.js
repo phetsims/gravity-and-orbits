@@ -18,10 +18,10 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
 
   /**
-   * @param x {Number} x-coordinate
-   * @param y {Number} y-coordinate
-   * @param scaleProperty {Property} scale value
-   * @param range {range} working range
+   * @param {Number} x x-coordinate
+   * @param {Number} y y-coordinate
+   * @param {Property} scaleProperty - Scale property for updating.
+   * @param {Range} range - Working range of slider.
    * @param step {Number} step of scale changes
    * @param isIncrease {Boolean} flag for defining type of button
    * @constructor

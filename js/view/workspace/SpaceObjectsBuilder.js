@@ -24,9 +24,9 @@ define( function( require ) {
   };
 
   /**
-   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param num {Number} number of planet mode
-   * @param state {Object} object with saved state
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {Number} num - Number of planet mode.
+   * @param {Object} state - Object with saved state.
    * @constructor
    */
   function SpaceObjectsBuilder( model, num, state ) {

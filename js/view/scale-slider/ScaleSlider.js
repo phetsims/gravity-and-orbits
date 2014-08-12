@@ -22,9 +22,9 @@ define( function( require ) {
   var THUMB_SIZE = new Dimension2( 20, 28 );
 
   /**
-   * @param scaleProperty {Property} scale property for observing and updating
-   * @param x {Number} x-coordinate
-   * @param y {Number} y-coordinate
+   * @param {Property} scaleProperty - Scale property for observing and updating.
+   * @param {Number} x x-coordinate
+   * @param {Number} y y-coordinate
    * @constructor
    */
   function ScaleSlider( scaleProperty, x, y ) {

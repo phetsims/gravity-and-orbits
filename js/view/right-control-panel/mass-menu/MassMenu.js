@@ -33,10 +33,10 @@ define( function( require ) {
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
 
   /**
-   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param coords {Object} coordinates of node
-   * @param coords.x {number} x-coordinate
-   * @param coords.y {number} y-coordinate
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {Object} coords - Coordinates of node.
+   * @param {Number} coords.x - X-coordinate.
+   * @param {Number} coords.y - Y-coordinate.
    * @constructor
    */
 

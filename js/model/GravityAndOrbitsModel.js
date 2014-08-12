@@ -348,9 +348,9 @@ define( function( require ) {
     };
 
   /**
-   * @param width {Number} width of sim
-   * @param height {Number} height of sim
-   * @param viewMode {String} viewMode "Cartoon" or "To Scale"
+   * @param {Number} width of sim.
+   * @param {Number} height of sim.
+   * @param {String} viewMode "Cartoon" or "To Scale".
    * @constructor
    */
   function GravityAndOrbitsModel( width, height, viewMode ) {
@@ -504,8 +504,8 @@ define( function( require ) {
 
   /**
    * Gets the force between two objects. Uses the passed in result as a "micro-pool" to avoid allocations.
-   * @param target {String} Name of the planet that we want to calculate the force.
-   * @param result {Vector2} Vector for setting calculation results.
+   * @param {String} target - Name of the planet that we want to calculate the force.
+   * @param {Vector2} result - Vector for setting calculation results.
    * @returns {Vector2}
    */
   var getForce = function( target, result ) {

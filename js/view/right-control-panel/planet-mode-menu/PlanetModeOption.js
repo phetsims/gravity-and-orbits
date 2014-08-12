@@ -20,9 +20,9 @@ define( function( require ) {
   var SpaceStation = require( 'view/space-object/SpaceStation' );
 
   /**
-   * @param model {Object} Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param options {Object} options for buttons
-   * @param num {Number} Number of planet mode
+   * @param {Object} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {Object} options - options for buttons.
+   * @param {Number} num - Number of planet mode.
    * @constructor
    */
 

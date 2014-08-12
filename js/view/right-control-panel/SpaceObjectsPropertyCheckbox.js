@@ -41,8 +41,8 @@ define( function( require ) {
   var FONT = new PhetFont( 14 );
 
   /**
-   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param options {Object} custom options for VBox contains checkboxes
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {Object} options - Custom options for VBox contains checkboxes.
    * @constructor
    */
   function SpaceObjectsPropertyCheckbox( model, options ) {

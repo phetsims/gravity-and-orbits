@@ -21,7 +21,7 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
-   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function RightControlPanel( model ) {
@@ -50,9 +50,9 @@ define( function( require ) {
 
   /**
    * Add sections to
-   * @param model {PropertySet} Contains set of properties. General model for the whole application. Necessary for building sections.
-   * @param box {Node} target box node for appending sections.
-   * @param sections {Array} Array of section constructors. Each constructor return node for appending to target node.
+   * @param {PropertySet} model - Contains set of properties. General model for the whole application. Necessary for building sections.
+   * @param {Node} box - Target box node for appending sections.
+   * @param {Array} sections - Array of section constructors. Each constructor return node for appending to target node.
    */
   var addSections = function( model, box, sections ) {
     var nodes = [], sectionLinks = [], width;

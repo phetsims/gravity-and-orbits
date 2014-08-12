@@ -28,10 +28,10 @@ define( function( require ) {
   var FONT = new PhetFont( 16 );
 
   /**
-   * @param dayProperty {Property} passed time in days
-   * @param dayOffsetProperty {Property} zero day value
-   * @param timeModeProperty {Property} type of representation of passed time
-   * @param timeModes {Array} possible time representation modes
+   * @param {Property} dayProperty - Passed time in days.
+   * @param {Property} dayOffsetProperty - Zero day value.
+   * @param {Property} timeModeProperty - Type of representation of passed time.
+   * @param {Array} timeModes - Possible time representation modes.
    * @constructor
    */
   function DayCounter( dayProperty, dayOffsetProperty, timeModeProperty, timeModes ) {

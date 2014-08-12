@@ -16,8 +16,8 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
 
   /**
-   * @param gridProperty {Property} grid visibility flag
-   * @param planetModeProperty {Property} planet mode property. Grids depend on planet modes.
+   * @param {Property} gridProperty - Grid visibility flag.
+   * @param {Property} planetModeProperty - Planet mode property. Grids depend on planet modes.
    * @constructor
    */
   function Grid( gridProperty, planetModeProperty ) {

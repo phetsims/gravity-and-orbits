@@ -17,8 +17,8 @@ define( function( require ) {
   var moonImg = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
 
   /**
-   * @param coords {Object} coordinates to placing components
-   * @param radius {Number} radius of planet view
+   * @param {Object} coords - Coordinates to placing components.
+   * @param {Number} radius - Radius of planet view.
    * @constructor
    */
   function Moon( coords, radius ) {

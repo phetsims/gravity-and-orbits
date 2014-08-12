@@ -14,8 +14,8 @@ define( function( require ) {
   var AbstractSpaceObject = require( 'view/space-object/AbstractSpaceObject' );
 
   /**
-   * @param coords {Object} coordinates to placing components
-   * @param radius {Number} radius of planet view
+   * @param {Object} coords - Coordinates to placing components.
+   * @param {Number} radius - Radius of planet view.
    * @constructor
    */
   function Sun( coords, radius ) {

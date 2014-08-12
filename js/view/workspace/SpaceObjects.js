@@ -21,7 +21,7 @@ define( function( require ) {
   var SpaceObjectsBuilder = require( 'view/workspace/SpaceObjectsBuilder' );
 
   /**
-   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function SpaceObjects( model ) {

@@ -21,8 +21,8 @@ define( function( require ) {
   var D_ALPHA = 2 * Math.PI / STAR_ANGEL_NUM;
 
   /**
-   * @param coords {Object} coordinates to placing components
-   * @param radius {Number} initial radius of explosion view
+   * @param {Object} coords - Coordinates to placing components.
+   * @param {Number} radius - Initial radius of explosion view.
    * @constructor
    */
   function Explosion( coords, radius ) {

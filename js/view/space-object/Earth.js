@@ -17,8 +17,8 @@ define( function( require ) {
   var earthImg = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
 
   /**
-   * @param coords {Object} coordinates to placing components
-   * @param radius {Number} radius of planet view
+   * @param {Object} coords - Coordinates to placing components.
+   * @param {Number} radius - Radius of planet view.
    * @constructor
    */
   function Earth( coords, radius ) {

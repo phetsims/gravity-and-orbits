@@ -1,7 +1,7 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * main view for workspace.
+ * Main view for workspace.
  * Contains space objects with related entities, arrows, grids and measuring tape.
  *
  * @author Andrey Zelenkov (Mlearner)
@@ -23,7 +23,7 @@ define( function( require ) {
   var Labels = require( 'view/workspace/Labels' );
 
   /**
-   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function Workspace( model ) {

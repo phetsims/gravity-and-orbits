@@ -22,7 +22,7 @@ define( function( require ) {
   var fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
 
   /**
-   * @param speedProperty {Property} the rate of flow of time
+   * @param {Property} speedProperty - The rate of flow of time.
    * @constructor
    */
   function SpeedRadioButtons( speedProperty ) {

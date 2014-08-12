@@ -28,9 +28,9 @@ define( function( require ) {
   var THUMB_SIZE = new Dimension2( 15, 20 );
 
   /**
-   * @param x {Number} x-coordinate
-   * @param y {Number} y-coordinate
-   * @param options {Object} options for slider
+   * @param {Number} x x-coordinate
+   * @param {Number} y y-coordinate
+   * @param {Object} options for slider
    * @constructor
    */
   function MassMenuSlider( x, y, options ) {

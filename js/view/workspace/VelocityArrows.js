@@ -24,7 +24,7 @@ define( function( require ) {
   var FONT = new PhetFont( 22 );
 
   /**
-   * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function VelocityArrows( model ) {
