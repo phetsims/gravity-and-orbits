@@ -22,8 +22,8 @@ define( function( require ) {
    * @param {Number} y y-coordinate
    * @param {Property} scaleProperty - Scale property for updating.
    * @param {Range} range - Working range of slider.
-   * @param step {Number} step of scale changes
-   * @param isIncrease {Boolean} flag for defining type of button
+   * @param {Number} step step of scale changes
+   * @param {Boolean} isIncrease flag for defining type of button
    * @constructor
    */
   function SliderButton( x, y, scaleProperty, range, step, isIncrease ) {
