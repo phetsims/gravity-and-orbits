@@ -31,6 +31,7 @@ define( function( require ) {
    * @param x {Number} x-coordinate
    * @param y {Number} y-coordinate
    * @param options {Object} options for slider
+   * @constructor
    */
   function MassMenuSlider( x, y, options ) {
     var horizontalPartNode = new Node(),

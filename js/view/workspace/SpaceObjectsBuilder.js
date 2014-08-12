@@ -27,6 +27,7 @@ define( function( require ) {
    * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param num {Number} number of planet mode
    * @param state {Object} object with saved state
+   * @constructor
    */
   function SpaceObjectsBuilder( model, num, state ) {
     var spaceObjectBuilder = this, body, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;

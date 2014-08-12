@@ -23,6 +23,7 @@ define( function( require ) {
    * @param model {Object} Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param options {Object} options for buttons
    * @param num {Number} Number of planet mode
+   * @constructor
    */
 
   function PlanetModeOption( model, options, num ) {

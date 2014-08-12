@@ -19,6 +19,7 @@ define( function( require ) {
   /**
    * @param coords {Object} coordinates to placing components
    * @param radius {Number} radius of planet view
+   * @constructor
    */
   function SpaceStation( coords, radius ) {
     AbstractSpaceObject.call( this, {image: spaceStationImg, coords: coords, scaleCoeff: 1.3} );

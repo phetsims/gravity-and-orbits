@@ -25,6 +25,7 @@ define( function( require ) {
 
   /**
    * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @constructor
    */
   function VelocityArrows( model ) {
     var velocityArrows = this, prevPosition = {};

@@ -18,6 +18,7 @@ define( function( require ) {
   /**
    * @param gridProperty {Property} grid visibility flag
    * @param planetModeProperty {Property} planet mode property. Grids depend on planet modes.
+   * @constructor
    */
   function Grid( gridProperty, planetModeProperty ) {
     var grid = this;

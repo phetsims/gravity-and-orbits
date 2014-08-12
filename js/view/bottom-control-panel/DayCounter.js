@@ -32,6 +32,7 @@ define( function( require ) {
    * @param dayOffsetProperty {Property} zero day value
    * @param timeModeProperty {Property} type of representation of passed time
    * @param timeModes {Array} possible time representation modes
+   * @constructor
    */
   function DayCounter( dayProperty, dayOffsetProperty, timeModeProperty, timeModes ) {
     var dayCounter = this;

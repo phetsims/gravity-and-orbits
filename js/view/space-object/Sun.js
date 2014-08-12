@@ -16,6 +16,7 @@ define( function( require ) {
   /**
    * @param coords {Object} coordinates to placing components
    * @param radius {Number} radius of planet view
+   * @constructor
    */
   function Sun( coords, radius ) {
     AbstractSpaceObject.call( this, {coords: coords} );

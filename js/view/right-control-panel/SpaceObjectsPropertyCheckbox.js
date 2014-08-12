@@ -43,6 +43,7 @@ define( function( require ) {
   /**
    * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param options {Object} custom options for VBox contains checkboxes
+   * @constructor
    */
   function SpaceObjectsPropertyCheckbox( model, options ) {
     VBox.call( this, _.extend( {resize: false, spacing: 5, align: 'left'}, options ) );

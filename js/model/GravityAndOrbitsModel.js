@@ -351,6 +351,7 @@ define( function( require ) {
    * @param width {Number} width of sim
    * @param height {Number} height of sim
    * @param viewMode {String} viewMode "Cartoon" or "To Scale"
+   * @constructor
    */
   function GravityAndOrbitsModel( width, height, viewMode ) {
     var gravityAndOrbitsModel = this;

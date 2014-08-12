@@ -21,6 +21,7 @@ define( function( require ) {
    * @param model {Object} Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param options {Object} options for buttons
    * @param dy {Number} y-offset of node
+   * @constructor
    */
 
   function PlanetModeResetButton( model, options, dy ) {

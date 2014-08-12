@@ -18,6 +18,7 @@ define( function( require ) {
 
   /**
    * @param options {Object} options for build abstract space object
+   * @constructor
    */
   function AbstractSpaceObject( options ) {
     Node.call( this, options.coords );

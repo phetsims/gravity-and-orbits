@@ -33,11 +33,11 @@ define( function( require ) {
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
 
   /**
-   * @constructor
    * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param coords {Object} coordinates of node
    * @param coords.x {number} x-coordinate
    * @param coords.y {number} y-coordinate
+   * @constructor
    */
 
   function MassMenu( model, coords ) {

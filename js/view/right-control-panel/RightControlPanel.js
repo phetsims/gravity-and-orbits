@@ -22,6 +22,7 @@ define( function( require ) {
 
   /**
    * @param model {PropertySet} Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @constructor
    */
   function RightControlPanel( model ) {
     Node.call( this );

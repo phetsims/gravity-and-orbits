@@ -23,6 +23,7 @@ define( function( require ) {
 
   /**
    * @param speedProperty {Property} the rate of flow of time
+   * @constructor
    */
   function SpeedRadioButtons( speedProperty ) {
     var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };

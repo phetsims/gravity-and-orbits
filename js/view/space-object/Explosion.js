@@ -23,6 +23,7 @@ define( function( require ) {
   /**
    * @param coords {Object} coordinates to placing components
    * @param radius {Number} initial radius of explosion view
+   * @constructor
    */
   function Explosion( coords, radius ) {
     var alpha = 0, shape = new Shape();
