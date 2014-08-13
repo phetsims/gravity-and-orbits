@@ -167,7 +167,12 @@ define( function( require ) {
   }
 
   return inherit( Node, SpaceObjects, {
-    // animation for explosion
+    /**
+     * Show animation for explosion.
+     *
+     * @param {Vector2} position of explosion.
+     * @param {Number} radius of explosion.
+     */
     showExplosion: function( position, radius ) {
       var spaceObjects = this, explosion = new Explosion( position, 2 * radius ), frames = 5;
       this.addChild( explosion );
@@ -179,6 +184,11 @@ define( function( require ) {
         }
       }, 50 );
     },
+    /**
+     * Check all space objects for explosion.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     */
     checkExplosion: function( model ) {
       var obj1, obj2, i, j, dx, dr, mode = model.planetModes[model.planetMode];
 
@@ -207,10 +217,15 @@ define( function( require ) {
         }
       }
     },
-    // set init state for given planet mode
-    initState: function( model, num ) {
+    /**
+     * Set init state for given planet mode.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {Number} modeIndex - Planet mode number for which necessary set init state.
+     */
+    initState: function( model, modeIndex ) {
       // set scale center
-      model.scaleCenter = new Vector2( model.planetModes[num].options.centerX, model.planetModes[num].options.centerY );
+      model.scaleCenter = new Vector2( model.planetModes[modeIndex].options.centerX, model.planetModes[modeIndex].options.centerY );
 
       // Remove the view, it will be discarded and garbage collected
       if ( this.view.children.length ) {
@@ -222,12 +237,18 @@ define( function( require ) {
       model.previousDay = 0;
 
       // add new space objects
-      this.view = new SpaceObjectsBuilder( model, num );
+      this.view = new SpaceObjectsBuilder( model, modeIndex );
       this.addChild( this.view );
     },
-    // restore state for given planet mode
-    restoreState: function( model, num, target ) {
-      var state = this.state[num][target];
+    /**
+     * Restore state for given planet mode.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {Number} modeIndex - Planet mode number for which necessary to restore state.
+     * @param {Number} stateIndex - State number for given planet mode state.
+     */
+    restoreState: function( model, modeIndex, stateIndex ) {
+      var state = this.state[modeIndex][stateIndex];
       model.scale = state.scale;
       model.scaleCenter = state.scaleCenter;
 
@@ -236,11 +257,17 @@ define( function( require ) {
 
       model.dayOffset = model.day - state.dayShow;
       model.previousDay = state.previousDay;
-      this.view = new SpaceObjectsBuilder( model, num, state.spaceObjects );
+      this.view = new SpaceObjectsBuilder( model, modeIndex, state.spaceObjects );
       this.addChild( this.view );
     },
-    // return state for given planet mode
-    getState: function( model, num ) {
+    /**
+     * Return current state for given planet mode.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {Number} modeIndex - Planet mode number for which necessary get current state.
+     * @return {Object} State object.
+     */
+    getState: function( model, modeIndex ) {
       var obj, spaceObject, state, body;
       // common properties for all space objects
       state = {
@@ -253,7 +280,7 @@ define( function( require ) {
 
       // individual properties for each space objects
       model.spaceObjects.forEach( function( name ) {
-        obj = model.planetModes[num][name];
+        obj = model.planetModes[modeIndex][name];
         if ( obj ) {
           body = model[name];
           state.spaceObjects[name] = {};
@@ -267,8 +294,8 @@ define( function( require ) {
           }
 
           // save dynamic properties
-          spaceObject.x = body.position.x / model.planetModes[num].options.scale;
-          spaceObject.y = body.position.y / model.planetModes[num].options.scale;
+          spaceObject.x = body.position.x / model.planetModes[modeIndex].options.scale;
+          spaceObject.y = body.position.y / model.planetModes[modeIndex].options.scale;
           if ( !spaceObject.fixed ) {
             spaceObject.velocity = body.velocity.copy();
           }
@@ -280,12 +307,18 @@ define( function( require ) {
 
       return state;
     },
-    // save state for given planet mode
-    saveState: function( model, num, target ) {
-      if ( !this.state[num] ) {
-        this.state[num] = [];
+    /**
+     * Save state for given planet mode.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {Number} modeIndex - Planet mode number for which necessary to save state.
+     * @param {Number} stateIndex - State number for given planet mode state.
+     */
+    saveState: function( model, modeIndex, stateIndex ) {
+      if ( !this.state[modeIndex] ) {
+        this.state[modeIndex] = [];
       }
-      this.state[num][target] = this.getState( model, num );
+      this.state[modeIndex][stateIndex] = this.getState( model, modeIndex );
     }
   } );
 } );

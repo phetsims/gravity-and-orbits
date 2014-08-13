@@ -191,12 +191,17 @@ define( function( require ) {
   }
 
   return inherit( Node, MeasuringTape, {
-    // init tape for new planet mode
-    resetTape: function( option, angle ) {
+    /**
+     * Init tape for new planet mode.
+     *
+     * @param {Object} initOptions - Object with initial settings of tape.
+     * @param {Number} angle - The current angle of rotation of the tape.
+     */
+    resetTape: function( initOptions, angle ) {
       this.rotate( -angle );
-      this.translate( option.x, option.y );
-      this.setTip( option.lengthDefault, 0 );
-      this.base.setTranslation( -this.centerRotation.x + option.x, -this.centerRotation.y + option.y );
+      this.translate( initOptions.x, initOptions.y );
+      this.setTip( initOptions.lengthDefault, 0 );
+      this.base.setTranslation( -this.centerRotation.x + initOptions.x, -this.centerRotation.y + initOptions.y );
     },
     // return text for current planet mode
     getText: function() {

@@ -44,7 +44,7 @@ define( function( require ) {
         hidden = false;
       }
       else if ( !hidden ) { // hide arrows if it is not visible and not hided yet
-        forceArrows.hideArrows( model );
+        forceArrows.hideArrows( model.spaceObjects );
         hidden = true;
       }
     };
@@ -78,9 +78,15 @@ define( function( require ) {
     } );
   }
 
-  // find max value of gravitational force for given planet mode
-  var getMaxForce = function( model, num ) {
-    var mode = model.planetModes[num], obj1, obj2, len = model.spaceObjects.length, i, j, f, scale = model.planetModes[num].options.scale, maxForce = 1;
+  /**
+   * Find max value of gravitational force for given planet mode.
+   *
+   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {Number} modeIndex - Planet mode number for which necessary to calculate max force.
+   * @return {Number} Max force value.
+   */
+  var getMaxForce = function( model, modeIndex ) {
+    var mode = model.planetModes[modeIndex], obj1, obj2, len = model.spaceObjects.length, i, j, f, scale = model.planetModes[modeIndex].options.scale, maxForce = 1;
 
     for ( i = 0; i < len; i++ ) {
       obj1 = model.spaceObjects[i];
@@ -98,17 +104,29 @@ define( function( require ) {
   };
 
   return inherit( Node, ForceArrows, {
-    // hide force arrow for space object with given name
-    hideOne: function( model, name ) {
-      this.shapes[name].setTailAndTip( 0, 0, 0, 0 );
+    /**
+     * Hide force arrow for space object with given name.
+     *
+     * @param {String} planetName - Name of the planet for which necessary to hide the arrows.
+     */
+    hideOne: function( planetName ) {
+      this.shapes[planetName].setTailAndTip( 0, 0, 0, 0 );
     },
-    // hide all force arrows
-    hideArrows: function( model ) {
-      for ( var i = 0; i < model.spaceObjects.length; i++ ) {
-        this.shapes[model.spaceObjects[i]].setTailAndTip( 0, 0, 0, 0 );
+    /**
+     * Hide all force arrows.
+     *
+     * @param {Array} planetNamesArray - Names of the planet for which necessary to hide the arrows.
+     */
+    hideArrows: function( planetNamesArray ) {
+      for ( var i = 0; i < planetNamesArray.length; i++ ) {
+        this.shapes[planetNamesArray[i]].setTailAndTip( 0, 0, 0, 0 );
       }
     },
-    // show all force arrows and set new shapes
+    /**
+     * Show all force arrows and set new shapes.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     */
     setArrows: function( model ) {
       var forceArrows = this,
         num = model.planetMode,
@@ -129,7 +147,7 @@ define( function( require ) {
 
         // hide space object if it doesn't exist or exploded
         if ( !mode[obj1] || body1.exploded ) {
-          forceArrows.hideOne( model, obj1 );
+          forceArrows.hideOne( obj1 );
           continue;
         }
 
@@ -160,7 +178,7 @@ define( function( require ) {
           forceArrows.shapes[obj1].setTailAndTip( body1.position.x, body1.position.y, body1.position.x + unitVector.x, body1.position.y + unitVector.y );
         }
         else {
-          forceArrows.hideOne( model, obj1 );
+          forceArrows.hideOne( obj1 );
         }
       }
     }

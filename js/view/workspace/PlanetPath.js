@@ -130,7 +130,14 @@ define( function( require ) {
   }
 
   return inherit( Node, PlanetPath, {
-    // add new piece of path for given element
+    /**
+     * Add new piece of path for given element.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {String} spaceObject - Name of space object for which necessary add new piece of path.
+     * @param {Vector2} newPosition - New space object position.
+     * @param {Number} dr - Length between previous and new position.
+     */
     add: function( model, spaceObject, newPosition, dr ) {
       var prevPosition = this.prevPosition[this.num][spaceObject],
         linesObj = this.path[this.num][spaceObject],
@@ -153,7 +160,11 @@ define( function( require ) {
 
       this.checkLength( spaceObject );
     },
-    // check length of given planet
+    /**
+     * Check length of given planet and remove extra paths.
+     *
+     * @param {String} spaceObject - Name of space object for which necessary check length.
+     */
     checkLength: function( spaceObject ) {
       var num = this.num,
         totalLength = 0,
@@ -175,7 +186,11 @@ define( function( require ) {
         line.length = 0;
       }
     },
-    // remove all path for all modes
+    /**
+     * Remove all path for all modes.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     */
     clearAll: function( model ) {
       var planetPath = this;
       planetPath.removeAllChildren();
@@ -197,49 +212,64 @@ define( function( require ) {
         } );
       } );
     },
-    // remove all path for given mode
-    clearOne: function( model, mode ) {
+    /**
+     * Remove all path for given mode.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {Number} modeIndex - Planet mode number for which necessary to remove all paths.
+     */
+    clearOne: function( model, modeIndex ) {
       var planetPath = this;
       model.spaceObjects.forEach( function( spaceObject ) {
-        if ( planetPath.path[mode][spaceObject] ) {
-          planetPath.path[mode][spaceObject].pool.forEach( function( obj ) {
+        if ( planetPath.path[modeIndex][spaceObject] ) {
+          planetPath.path[modeIndex][spaceObject].pool.forEach( function( obj ) {
             if ( planetPath.isChild( obj.view ) ) {
               planetPath.removeChild( obj.view );
               obj.length = 0;
             }
           } );
 
-          planetPath.path[mode][spaceObject].pointerHead = 0;
-          planetPath.path[mode][spaceObject].pointerTail = 0;
+          planetPath.path[modeIndex][spaceObject].pointerHead = 0;
+          planetPath.path[modeIndex][spaceObject].pointerTail = 0;
 
-          planetPath.prevPosition[mode][spaceObject] = model[spaceObject].position.copy();
+          planetPath.prevPosition[modeIndex][spaceObject] = model[spaceObject].position.copy();
         }
       } );
     },
-    // hide all path for given mode
-    hide: function( model, mode ) {
+    /**
+     * Hide all path for given mode.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {Number} modeIndex - Planet mode number for which necessary to hide all paths.
+     */
+    hide: function( model, modeIndex ) {
       var planetPath = this;
 
       model.spaceObjects.forEach( function( spaceObject ) {
-        if ( planetPath.path[mode][spaceObject] ) {
-          for ( var i = 0, pool = planetPath.path[mode][spaceObject].pool; i < pool.length; i++ ) {
+        if ( planetPath.path[modeIndex][spaceObject] ) {
+          for ( var i = 0, pool = planetPath.path[modeIndex][spaceObject].pool; i < pool.length; i++ ) {
             pool[i].view.setVisible( false );
           }
         }
       } );
     },
-    // show all path for given mode
-    show: function( model, mode ) {
+    /**
+     * Show all path for given mode.
+     *
+     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {Number} modeIndex - Planet mode number for which necessary to show all paths.
+     */
+    show: function( model, modeIndex ) {
       var planetPath = this;
       model.spaceObjects.forEach( function( spaceObject ) {
-        if ( planetPath.path[mode][spaceObject] ) {
+        if ( planetPath.path[modeIndex][spaceObject] ) {
           // show all path for given mode
-          for ( var i = 0, pool = planetPath.path[mode][spaceObject].pool; i < pool.length; i++ ) {
+          for ( var i = 0, pool = planetPath.path[modeIndex][spaceObject].pool; i < pool.length; i++ ) {
             pool[i].view.setVisible( true );
           }
 
           // set new previous position
-          planetPath.prevPosition[mode][spaceObject] = model[spaceObject].position.copy();
+          planetPath.prevPosition[modeIndex][spaceObject] = model[spaceObject].position.copy();
         }
       } );
     }
