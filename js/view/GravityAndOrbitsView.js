@@ -21,7 +21,7 @@ define( function( require ) {
   var DayCounter = require( 'view/bottom-control-panel/DayCounter' );
 
   /**
-   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function GravityAndOrbitsView( model ) {

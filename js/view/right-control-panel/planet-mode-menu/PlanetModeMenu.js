@@ -16,7 +16,7 @@ define( function( require ) {
   var PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
 
   /**
-   * @param {Object} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param {Object} options - This object contains options for main node of planet mode menu.
    * @constructor
    */

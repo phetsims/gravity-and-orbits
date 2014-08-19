@@ -19,7 +19,7 @@ define( function( require ) {
   var RewindButton = require( 'SCENERY_PHET/RewindButton' );
 
   /**
-   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * Necessary properties and methods: playProperty, stepManual, rewindProperty, dayProperty, dayOffsetProperty
    * @constructor
    */

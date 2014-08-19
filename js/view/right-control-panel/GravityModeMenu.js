@@ -26,7 +26,7 @@ define( function( require ) {
   var FONT = new PhetFont( 14 );
 
   /**
-   * @param {Object} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param {Object} options - This object contains options for main node of gravity mode menu.
    * @constructor
    */

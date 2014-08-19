@@ -21,7 +21,7 @@ define( function( require ) {
   var SpaceObjectsBuilder = require( 'view/workspace/SpaceObjectsBuilder' );
 
   /**
-   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function SpaceObjects( model ) {
@@ -187,7 +187,7 @@ define( function( require ) {
     /**
      * Check all space objects for explosion.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      */
     checkExplosion: function( model ) {
       var obj1, obj2, i, j, dx, dr, mode = model.planetModes[model.planetMode];
@@ -220,7 +220,7 @@ define( function( require ) {
     /**
      * Set init state for given planet mode.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {Number} modeIndex - Planet mode number for which necessary set init state.
      */
     initState: function( model, modeIndex ) {
@@ -243,7 +243,7 @@ define( function( require ) {
     /**
      * Restore state for given planet mode.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {Number} modeIndex - Planet mode number for which necessary to restore state.
      * @param {Number} stateIndex - State number for given planet mode state.
      */
@@ -263,7 +263,7 @@ define( function( require ) {
     /**
      * Return current state for given planet mode.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {Number} modeIndex - Planet mode number for which necessary get current state.
      * @return {Object} State object.
      */
@@ -310,7 +310,7 @@ define( function( require ) {
     /**
      * Save state for given planet mode.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {Number} modeIndex - Planet mode number for which necessary to save state.
      * @param {Number} stateIndex - State number for given planet mode state.
      */

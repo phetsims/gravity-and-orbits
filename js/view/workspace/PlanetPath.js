@@ -19,7 +19,7 @@ define( function( require ) {
   var SINGLE_PATH_SEGMENT_LENGTH = 2;
 
   /**
-   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function PlanetPath( model ) {
@@ -133,7 +133,7 @@ define( function( require ) {
     /**
      * Add new piece of path for given element.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {String} spaceObject - Name of space object for which necessary add new piece of path.
      * @param {Vector2} newPosition - New space object position.
      * @param {Number} dr - Length between previous and new position.
@@ -149,7 +149,6 @@ define( function( require ) {
       // get line
       line = linesObj.pool[linesObj.pointerTail];
 
-      //line.view.setLine( prevPosition.x, prevPosition.y, newPosition.x, newPosition.y );
       line.view.setRect( 0, -1.5, newPosition.minus( prevPosition ).magnitude() + 1, 3 );
       line.view.setRotation( Math.atan2( newPosition.y - prevPosition.y, newPosition.x - prevPosition.x ) );
       line.view.setTranslation( prevPosition );
@@ -189,7 +188,7 @@ define( function( require ) {
     /**
      * Remove all path for all modes.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      */
     clearAll: function( model ) {
       var planetPath = this;
@@ -215,7 +214,7 @@ define( function( require ) {
     /**
      * Remove all path for given mode.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {Number} modeIndex - Planet mode number for which necessary to remove all paths.
      */
     clearOne: function( model, modeIndex ) {
@@ -239,7 +238,7 @@ define( function( require ) {
     /**
      * Hide all path for given mode.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {Number} modeIndex - Planet mode number for which necessary to hide all paths.
      */
     hide: function( model, modeIndex ) {
@@ -256,7 +255,7 @@ define( function( require ) {
     /**
      * Show all path for given mode.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      * @param {Number} modeIndex - Planet mode number for which necessary to show all paths.
      */
     show: function( model, modeIndex ) {

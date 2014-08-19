@@ -23,7 +23,7 @@ define( function( require ) {
   var Labels = require( 'view/workspace/Labels' );
 
   /**
-   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function Workspace( model ) {

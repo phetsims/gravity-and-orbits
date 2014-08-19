@@ -17,7 +17,7 @@ define( function( require ) {
   var MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
 
   /**
-   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
   function ForceArrows( model ) {
@@ -81,7 +81,7 @@ define( function( require ) {
   /**
    * Find max value of gravitational force for given planet mode.
    *
-   * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @param {Number} modeIndex - Planet mode number for which necessary to calculate max force.
    * @return {Number} Max force value.
    */
@@ -125,7 +125,7 @@ define( function( require ) {
     /**
      * Show all force arrows and set new shapes.
      *
-     * @param {PropertySet} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+     * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      */
     setArrows: function( model ) {
       var forceArrows = this,
