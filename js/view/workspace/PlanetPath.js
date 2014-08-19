@@ -150,7 +150,7 @@ define( function( require ) {
       line = linesObj.pool[linesObj.pointerTail];
 
       //line.view.setLine( prevPosition.x, prevPosition.y, newPosition.x, newPosition.y );
-      line.view.setRect( 0, -1.5, newPosition.minus( prevPosition ).magnitude() * 1.25, 3 );
+      line.view.setRect( 0, -1.5, newPosition.minus( prevPosition ).magnitude() + 1, 3 );
       line.view.setRotation( Math.atan2( newPosition.y - prevPosition.y, newPosition.x - prevPosition.x ) );
       line.view.setTranslation( prevPosition );
 
