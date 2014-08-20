@@ -38,30 +38,30 @@ define( function( require ) {
     {
       x: 0,
       y: 75,
-      tipX: 119.5,
+      tipX: 92,
       tipY: 0,
       scale: 1,
-      length: 119.5,
+      length: 92,
       value: 50000,
       precision: 0
     },
     {
       x: 0,
       y: 75,
-      tipX: 119.5,
+      tipX: 92,
       tipY: 0,
       scale: 1,
-      length: 119.5,
+      length: 92,
       value: 50000,
       precision: 0
     },
     {
       x: 0,
       y: 125,
-      tipX: 85,
+      tipX: 60,
       tipY: 0,
       scale: 1,
-      length: 85,
+      length: 60,
       value: 100,
       precision: 0
     },
