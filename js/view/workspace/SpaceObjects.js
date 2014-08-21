@@ -156,7 +156,10 @@ define( function( require ) {
 
     // save state when play button pressed
     model.playProperty.onValue( true, function() {
-      spaceObjects.saveState( model, model.planetMode, 1 );
+      // save state if only initial state (current day equal to dayOffset)
+      if ( model.day === model.dayOffset ) {
+        spaceObjects.saveState( model, model.planetMode, 1 );
+      }
     } );
 
     // restore state when rewind button pressed
