@@ -444,6 +444,7 @@ define( function( require ) {
       this.planetModes.forEach( function( mode, i ) {
         gravityandOrbitsModel.planetMode = i;
         gravityandOrbitsModel.refreshMode = true;
+        gravityandOrbitsModel.scale = 1;
       } );
 
       this.planetModeProperty.reset();

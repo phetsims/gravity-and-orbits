@@ -46,6 +46,7 @@ define( function( require ) {
       }
       // else set initial state
       else {
+        model.scale = 1;
         spaceObjects.initState( model, num );
       }
 
@@ -231,7 +232,6 @@ define( function( require ) {
       if ( this.view.children.length ) {
         this.removeChild( this.view );
       }
-      model.scale = 1;
       model.day = 0;
       model.dayOffset = 0;
       model.previousDay = 0;
