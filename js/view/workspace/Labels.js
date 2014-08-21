@@ -68,7 +68,7 @@ define( function( require ) {
           body.label.setVisible( ( body.view.getWidth() * model.scale / body.radiusCoeff < 8 ) );
         }
 
-        //If it just became visible, mkae sure the position is accurate.
+        //If it just became visible, make sure the position is accurate.
         if ( body.label.visible ) {
           body.label.translation = body.position;
         }
@@ -76,6 +76,8 @@ define( function( require ) {
 
       model.scaleProperty.link( checkLabel );
       model.planetModeProperty.link( checkLabel );
+      model.rewindProperty.link( checkLabel );
+      model.refreshModeProperty.link( checkLabel );
       body.radiusProperty.link( checkLabel );
       body.radiusCoeffProperty.link( checkLabel );
 
