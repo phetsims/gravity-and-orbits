@@ -50,7 +50,10 @@ define( function( require ) {
         spaceObjects.initState( model, num );
       }
 
-      spaceObjects.saveState( model, num, 1 );
+      if ( !spaceObjects.state[num] || !spaceObjects.state[num][1] ) {
+        spaceObjects.saveState( model, num, 1 );
+      }
+
       // enable explosion
       model.showExplosion = true;
     } );
@@ -152,18 +155,14 @@ define( function( require ) {
     } );
 
     // save state when play button pressed
-    model.playProperty.link( function( isPlay ) {
-      if ( isPlay ) {
-        spaceObjects.saveState( model, model.planetMode, 1 );
-      }
+    model.playProperty.onValue( true, function() {
+      spaceObjects.saveState( model, model.planetMode, 1 );
     } );
 
     // restore state when rewind button pressed
-    model.rewindProperty.link( function( isRewind ) {
-      if ( isRewind ) {
-        spaceObjects.restoreState( model, model.planetMode, 1 );
-        model.rewind = false;
-      }
+    model.rewindProperty.onValue( true, function() {
+      spaceObjects.restoreState( model, model.planetMode, 1 );
+      model.rewind = false;
     } );
   }
 
