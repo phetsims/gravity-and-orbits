@@ -251,7 +251,12 @@ define( function( require ) {
      */
     restoreState: function( model, modeIndex, stateIndex ) {
       var state = this.state[modeIndex][stateIndex];
-      model.scale = state.scale;
+
+      // don't restore scale when rewinding
+      if ( stateIndex !== 1 ) {
+        model.scale = state.scale;
+      }
+
       model.scaleCenter = state.scaleCenter;
 
       // add new space objects
