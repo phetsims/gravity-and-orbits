@@ -45,7 +45,7 @@ define( function( require ) {
           //a potentially unstable feature, and may increase the startup time of the simulation
           new Text( 'v', { font: FONT, fontWeight: 'bold', fill: '#808080', centerX: 0, centerY: 0, pickable: false, boundsMethod: 'accurate' } )
         ]} ),
-        arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24', headHeightMaximumHalf: true} )
+        arrowNode: new MutableArrowNode( 0, 0, 0, 0, {fill: '#ED1C24', headHeightMaximumHalf: true, minArrowLength: 10} )
       };
 
       // init drag and drop for arrow
