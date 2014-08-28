@@ -389,7 +389,8 @@ define( function( require ) {
       dayOffset: 0, // offset from zero day
       scale: 1, // scale coefficient
       scaleCenter: new Vector2( 0, 0 ), // scale center
-      rewind: false // rewind trigger
+      rewind: false, // rewind trigger
+      units: { name: 'thousand miles', multiplier: 1 }
     } );
 
     // add property for space objects

@@ -27,9 +27,9 @@ define( function( require ) {
    */
   function GravityAndOrbitsView( model ) {
     ScreenView.call( this, { renderer: 'svg', layoutBounds: new Bounds2( 0, 0, model.width, model.height) } );
-
+    console.log(this.layoutBounds);
     // add workspace
-    this.addChild( new Workspace( model ) );
+    this.addChild( new Workspace( model, this.layoutBounds ) );
 
     // add scale slider
     this.addChild( new ScaleSlider( model.property( 'scale' ), 20, 10 ) );
