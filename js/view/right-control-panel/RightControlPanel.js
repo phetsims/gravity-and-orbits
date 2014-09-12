@@ -31,27 +31,28 @@ define( function( require ) {
    */
   function RightControlPanel( model ) {
 
-    // add thin rectangles to separate the differnet menu components
-    var separators = [];
-    for ( var i = 0; i < 3; i++ ) {
-      separators.push( new Rectangle( 0, 0, 0, 2, { fill: STROKE } ) );
-    }
-
-    // add menu sections with separator rectangles in between
+    // menu sections
     var sections = [
       new PlanetModeMenu( model, MENU_SECTION_OPTIONS ),
-      separators[0],
       new GravityModeMenu( model, MENU_SECTION_OPTIONS ),
-      separators[1],
       new SpaceObjectsPropertyCheckbox( model, MENU_SECTION_OPTIONS ),
-      separators[2],
       new MassMenu( model, MENU_SECTION_OPTIONS )
     ];
+
+    // add thin rectangles to separate the differnet menu components
+    // these get inserted into the sections array inbetween each component
+    var separators = [];
+    var numSeparators = sections.length - 1;
+    for ( var i = 0; i < numSeparators; i++ ) {
+      var separatorRectangle = new Rectangle( 0, 0, 0, 2, { fill: STROKE } );
+      sections.splice( ( i * 2 ) + 1, 0, separatorRectangle );
+      separators.push ( separatorRectangle );
+    }
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false } );
     Panel.call( this, vbox, { fill: '#030085', stroke: STROKE, lineWidth: 2, cornerRadius: 2, resize: false, xMargin: PANEL_X_MARGIN } );
 
-    // resize the separators to account for the margin
+    // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;
     for ( i = 0; i < 3; i++ ) {
       separators[i].setRect( -separatorWidth / 2, 0, separatorWidth, 2 );
