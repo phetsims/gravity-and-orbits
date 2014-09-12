@@ -10,10 +10,8 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var RadioButton = require( 'SUN/RadioButton' );
   var Sun = require( 'view/space-object/Sun' );
   var Earth = require( 'view/space-object/Earth' );
   var Moon = require( 'view/space-object/Moon' );
@@ -21,12 +19,11 @@ define( function( require ) {
 
   /**
    * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param {Object} options - options for buttons.
    * @param {Number} num - Number of planet mode.
    * @constructor
    */
-  function PlanetModeOption( model, options, num ) {
-    Node.call( this, options );
+  function PlanetModeOption( model, num ) {
+
     var map = {
       sun: Sun,
       earth: Earth,
@@ -34,28 +31,16 @@ define( function( require ) {
       spaceStation: SpaceStation
     };
 
-    // create view
-    var strokeSelected = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', stroke: '#fff', lineWidth: 2} );
-    var strokeDeselected = new Rectangle( 0, 0, 150, 30, 5, 5, {fill: 'rgba(0,0,0,0)', cursor: 'pointer'} );
-    var node = new Node();
+    Rectangle.call( this, 0, 0, 150, 30, 5, 5 );
 
+    // add space objects
     for ( var i = model.spaceObjects.length, currentObj; i--; ) {
       currentObj = model.spaceObjects[i];
       if ( model.planetModes[num][currentObj] ) {
-        node.addChild( new map[currentObj]( {x: 16 + i * 36, y: 15}, 11 ) );
+        this.addChild( new map[currentObj]( { x: 16 + i * 36, y: 15 }, 11 ) );
       }
     }
-
-    // set button options
-    options = {
-      selectedNode: new Node( {children: [node, strokeSelected]} ),
-      deselectedNode: new Node( {children: [node, strokeDeselected]} )
-    };
-
-    // create button
-    this.button = new RadioButton( model.planetModeProperty, num, options.selectedNode, options.deselectedNode );
-    this.addChild( this.button );
   }
 
-  return inherit( Node, PlanetModeOption );
+  return inherit( Rectangle, PlanetModeOption );
 } );

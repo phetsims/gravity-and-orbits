@@ -43,7 +43,7 @@ define( function( require ) {
     );
 
     model.planetModeProperty.link( function( mode ) {
-      pushButton.setY( mode * dy );
+      pushButton.setY( mode * dy + 2.5 );
     } );
   }
 

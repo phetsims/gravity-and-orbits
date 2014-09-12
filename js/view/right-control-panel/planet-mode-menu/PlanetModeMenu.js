@@ -12,6 +12,7 @@ define( function( require ) {
   // modules
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
   var PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
   var PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
 
@@ -24,13 +25,26 @@ define( function( require ) {
     Node.call( this, options );
 
     // add reset button
-    var dy = 30;
-    this.addChild( new PlanetModeResetButton( model, {x: 161, y: -13}, dy ) );
+    this.addChild( new PlanetModeResetButton( model, { x: 161 }, 30 ) );
 
-    // add planet mode options
+    var content = [];
     for ( var i = 0; i < model.planetModes.length; i++ ) {
-      this.addChild( new PlanetModeOption( model, {x: 0, y: -15 + i * dy}, i ) );
+      content.push( { value: i, node: new PlanetModeOption( model, i ) } );
     }
+
+    this.addChild( new RadioButtonGroup( model.planetModeProperty, content,
+      {
+        alignVertically: true,
+        selectedStroke: 'white',
+        selectedLineWidth: 2,
+        baseColor: 'rgba(0,0,0,0)',
+        deselectedLineWidth: 0,
+        buttonContentXMargin: 0,
+        buttonContentYMargin: 0,
+        spacing: -2,
+        deselectedOpacity: 1,
+        cornerRadius: 5
+      } ) );
   }
 
   return inherit( Node, PlanetModeMenu );
