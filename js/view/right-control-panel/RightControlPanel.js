@@ -49,14 +49,17 @@ define( function( require ) {
       separators.push ( separatorRectangle );
     }
 
-    var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false } );
+    var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vbox, { fill: '#030085', stroke: STROKE, lineWidth: 2, cornerRadius: 2, resize: false, xMargin: PANEL_X_MARGIN } );
 
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;
     for ( i = 0; i < 3; i++ ) {
-      separators[i].setRect( -separatorWidth / 2, 0, separatorWidth, 2 );
+      separators[i].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
     }
+
+    // center bottom control section
+    sections[sections.length - 1].centerX = ( vbox.width / 2 ) - PANEL_X_MARGIN;
   }
 
   return inherit( Panel, RightControlPanel );
