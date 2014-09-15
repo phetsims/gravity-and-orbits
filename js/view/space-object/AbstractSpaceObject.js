@@ -17,7 +17,7 @@ define( function( require ) {
   var Circle = require( 'SCENERY/nodes/Circle' );
 
   /**
-   * @param {Object} options for build abstract space object
+   * @param {Object} [options] for build abstract space object
    * @constructor
    */
   function AbstractSpaceObject( options ) {

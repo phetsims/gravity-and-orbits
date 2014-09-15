@@ -27,7 +27,7 @@ define( function( require ) {
 
   /**
    * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param {Object} options - This object contains options for main node of gravity mode menu.
+   * @param {Object} [options] - This object contains options for main node of gravity mode menu.
    * @constructor
    */
   function GravityModeMenu( model, options ) {

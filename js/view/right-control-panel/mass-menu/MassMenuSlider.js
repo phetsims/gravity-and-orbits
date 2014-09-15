@@ -30,7 +30,7 @@ define( function( require ) {
   /**
    * @param {Number} x x-coordinate
    * @param {Number} y y-coordinate
-   * @param {Object} options for slider
+   * @param {Object} [options] for slider
    * @constructor
    */
   function MassMenuSlider( x, y, options ) {

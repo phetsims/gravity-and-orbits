@@ -19,7 +19,7 @@ define( function( require ) {
 
   /**
    * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param {Object} options - Options for buttons.
+   * @param {Object} [options] - Options for buttons.
    * @param {Number} dy - y-offset of node.
    * @constructor
    */
