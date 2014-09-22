@@ -19,16 +19,13 @@ define( function( require ) {
 
   /**
    * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param {Object} [options] - Options for buttons.
-   * @param {Number} dy - y-offset of node.
+   * @param {Object} [options]
    * @constructor
    */
-  function PlanetModeResetButton( model, options, dy ) {
-    var pushButton;
-    Node.call( this, options );
-
+  function PlanetModeResetButton( model, options ) {
     // create button
-    this.addChild( pushButton = new RectangularPushButton( {
+    RectangularPushButton.call( this,
+      {
         content: new Node( {
           children: [
             new Rectangle( 0, 0, 25, 25, 5, 5, {fill: '#fff'} ),
@@ -39,13 +36,10 @@ define( function( require ) {
         listener: function() {
           model.refreshMode = true;
         }
-      } )
-    );
+      } );
 
-    model.planetModeProperty.link( function( mode ) {
-      pushButton.setY( mode * dy + 2.5 );
-    } );
+    this.mutate( options );
   }
 
-  return inherit( Node, PlanetModeResetButton );
+  return inherit( RectangularPushButton, PlanetModeResetButton );
 } );

@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var Node = require( 'SCENERY/nodes/Node' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
   var PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
@@ -24,15 +25,24 @@ define( function( require ) {
   function PlanetModeMenu( model, options ) {
     Node.call( this, options );
 
-    // add reset button
-    this.addChild( new PlanetModeResetButton( model, { x: 161 }, 30 ) );
-
-    var content = [];
+    var content = []; // for radio buttons
+    var resetButtons = [];
     for ( var i = 0; i < model.planetModes.length; i++ ) {
       content.push( { value: i, node: new PlanetModeOption( model, i ) } );
+
+      var resetButton = new PlanetModeResetButton( model );
+
+      // link reset buttons so that only the reset button next to the selected radio button is visible
+      ( function( i, resetButton ) {
+        model.planetModeProperty.link( function( mode ) {
+          resetButton.visible = ( mode === i );
+        } );
+      } )( i, resetButton );
+
+      resetButtons.push( resetButton );
     }
 
-    this.addChild( new RadioButtonGroup( model.planetModeProperty, content,
+    var buttonGroup = new RadioButtonGroup( model.planetModeProperty, content,
       {
         alignVertically: true,
         selectedStroke: 'white',
@@ -44,7 +54,11 @@ define( function( require ) {
         spacing: -2,
         deselectedOpacity: 1,
         cornerRadius: 5
-      } ) );
+      } );
+
+    this.addChild( buttonGroup );
+
+    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 2.5, y: 2.5 } ) );
   }
 
   return inherit( Node, PlanetModeMenu );
