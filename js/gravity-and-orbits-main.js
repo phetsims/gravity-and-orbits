@@ -29,7 +29,7 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
-      leadDesign: 'Noah Podolefsky, Emily Moore',
+      leadDesign: 'Noah Podolefsky, Emily B. Moore',
       softwareDevelopment: 'Sam Reid, Jon Olson',
       team: 'Trish Loeblein, Kathy Perkins',
       thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
