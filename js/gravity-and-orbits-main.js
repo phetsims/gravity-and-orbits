@@ -31,7 +31,7 @@ define( function( require ) {
     credits: {
       leadDesign: 'Noah Podolefsky, Emily Moore',
       softwareDevelopment: 'Sam Reid, Jon Olson',
-      designTeam: 'Kathy Perkins, Trish Loeblein',
+      team: 'Trish Loeblein, Kathy Perkins',
       thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
     }
   };
