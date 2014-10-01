@@ -373,10 +373,16 @@ define( function( require ) {
     },
 
     /**
+     * Add a listener for getting callbacks when the path has changed, for displaying the path with picclo
+     * TODO: Should this be rewritten using trigger?
      * @param {PathListener} listener
      */
     addPathListener: function( listener ) {
-      pathListeners.add( listener );
+
+      //assert that it has all the right parts
+      assert && assert( listener.pointAdded && listener.pointRemoved && listener.cleared );
+
+      this.pathListeners.add( listener );
     },
 
     /**
@@ -505,7 +511,7 @@ define( function( require ) {
       this.velocityProperty.rewind();
       this.massProperty.rewind();
       this.collidedProperty.rewind();
-      clearPath();
+      this.clearPath();
     },
 
     /**
@@ -551,15 +557,6 @@ define( function( require ) {
     getUserComponent: function() {
       return this.userComponent;
     },
-
-//    //Listener interface for getting callbacks when the path has changed, for displaying the path with picclo
-//    public static interface PathListener {
-//        public void pointAdded( Vector2 point );
-//
-//        public void pointRemoved();
-//
-//        public void cleared();
-//    }
 
     /**
      * @return {string}
