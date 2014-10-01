@@ -1,4 +1,5 @@
 {
+  "gravity-and-orbits.name": "Gravity And Orbits",
   "earth": "Earth",
   "earthMasses": "Earth masses",
   "millionEarthMasses": "million Earth masses",
@@ -33,7 +34,6 @@
   "path": "Path",
   "ourMoon": "Our Moon",
   "earthMinute": "Earth Minute",
-  "gravity-and-orbits.name": "Gravity and Orbits",
   "returnObject": "Return Object",
   "star": "Star",
   "thousandMiles": "thousand miles",
