@@ -75,10 +75,11 @@ define( function( require ) {
 
     this.userControlled = false;//True if the user is currently controlling the position of the body with the mouse
     this.pathListeners = [];// ArrayList<PathListener>();
-    this.path = [];//new ArrayList<Vector2D>();
+    this.path = [];//new ArrayList<Vector2>();
 
     //list of listeners that are notified when the user drags the object, so that we know when certain properties need to be updated
-    this.userModifiedPositionListeners = [];//new ArrayList<VoidFunction0>();
+    this.userModifiedPositionListeners = [];
+    this.userModifiedVelocityListeners = [];
 
     collidedProperty.onValue( true, function() {
       clockTicksSinceExplosion.set( 0 );
@@ -119,6 +120,7 @@ define( function( require ) {
     getVolume: function() {
       return 4.0 / 3.0 * Math.PI * Math.pow( this.getRadius(), 3 );
     },
+
     /**
      * @return {number}
      */
@@ -139,6 +141,7 @@ define( function( require ) {
     getHightlight: function() {
       return this.highlight;
     },
+
     /**
      * @return {RewindableProperty<Vector2>}
      */
@@ -172,7 +175,6 @@ define( function( require ) {
     //   That's not at all clear (not documented here), it's error prone and it introduces order dependency.
     //   Recommend making notifyUserModifiedPosition private and adding another public variant of translate,
     //   i.e. public void translate(Point2D delta,boolean userModified) {...}
-
     /**
      * @param {Vector2} delta
      */
@@ -246,233 +248,328 @@ define( function( require ) {
      */
     getVelocity: function() {
       return this.velocityProperty.get();
-    }
+    },
 
-  } );
-} );
+    /**
+     * @return {number}
+     */
+    getTickValue: function() {
+      return this.tickValue;
+    },
 
-//
+    /**
+     * Take the updated BodyState from the physics engine and update the state of this body based on it.
+     *
+     * @param {BodyState} bodyState
+     */
+    updateBodyStateFromModel: function( bodyState ) {
+      if ( this.collidedProperty.get() ) {
+        this.clockTicksSinceExplosion.set( this.clockTicksSinceExplosion.get() + 1 );
+      }
+      else {
+        if ( !isUserControlled() ) {
+          this.positionProperty.set( bodyState.position );
+          this.velocityProperty.set( bodyState.velocity );
+        }
+        this.accelerationProperty.set( bodyState.acceleration );
+        this.forceProperty.set( bodyState.acceleration.times( bodyState.mass ) );
+      }
+    },
 
-//
-//    //Take the updated BodyState from the physics engine and update the state of this body based on it.
-//    public void updateBodyStateFromModel( BodyState bodyState ) {
-//        if ( collidedProperty.get() ) {
-//            clockTicksSinceExplosion.set( clockTicksSinceExplosion.get() + 1 );
-//        }
-//        else {
-//            if ( !isUserControlled() ) {
-//                positionProperty.set( bodyState.position );
-//                velocityProperty.set( bodyState.velocity );
-//            }
-//            accelerationProperty.set( bodyState.acceleration );
-//            forceProperty.set( bodyState.acceleration.times( bodyState.mass ) );
-//        }
-//    }
-//
-//    //This method is called after all bodies have been updated by the physics engine (must be done as a batch), so that the path can be updated
-//    public void allBodiesUpdated() {
-//        //Only add to the path if the user isn't dragging it
-//        //But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
-//        if ( !isUserControlled() ) {
-//            addPathPoint();
-//        }
-//    }
-//
-//    private void addPathPoint() {
-//        while ( path.size() + 1//account for the point that will be added
-//                > maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
-//            path.remove( 0 );
-//            for ( PathListener listener : pathListeners ) {
-//                listener.pointRemoved();
-//            }
-//        }
-//        Vector2D pathPoint = getPosition();
-//        path.add( pathPoint );
-//        for ( PathListener listener : pathListeners ) {
-//            listener.pointAdded( pathPoint );
-//        }
-//    }
-//
-//    public void clearPath() {
-//        path.clear();
-//        for ( PathListener listener : pathListeners ) {
-//            listener.cleared();
-//        }
-//    }
-//
-//    public Property<Vector2D> getForceProperty() {
-//        return forceProperty;
-//    }
-//
-//    public void setMass( double mass ) {
-//        massProperty.set( mass );
-//        double radius = Math.pow( 3 * mass / 4 / Math.PI / density, 1.0 / 3.0 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
-//        diameterProperty.set( radius * 2 );
-//    }
-//
-//    public void resetAll() {
-//        positionProperty.reset();
-//        velocityProperty.reset();
-//        accelerationProperty.reset();
-//        forceProperty.reset();
-//        massProperty.reset();
-//        diameterProperty.reset();
-//        collidedProperty.reset();
-//        clockTicksSinceExplosion.reset();
-//        clearPath();
-//        //TODO: anything else to reset here?
-//    }
-//
-//    public RewindableProperty<Vector2D> getVelocityProperty() {
-//        return velocityProperty;
-//    }
-//
-//    public RewindableProperty<Double> getMassProperty() {
-//        return massProperty;
-//    }
-//
-//    public boolean isUserControlled() {
-//        return userControlled;
-//    }
-//
-//    public void setUserControlled( boolean b ) {
-//        this.userControlled = b;
-//    }
-//
-//    public void addPathListener( PathListener listener ) {
-//        pathListeners.add( listener );
-//    }
-//
-//    public void setVelocity( Vector2D velocity ) {
-//        velocityProperty.set( velocity );
-//    }
-//
-//    public void setPosition( double x, double y ) {
-//        positionProperty.set( new Vector2D( x, y ) );
-//    }
-//
-//    public void setAcceleration( Vector2D acceleration ) {
-//        this.accelerationProperty.set( acceleration );
-//    }
-//
-//    public void setForce( Vector2D force ) {
-//        this.forceProperty.set( force );
-//    }
-//
-//    public boolean isMassSettable() {
-//        return massSettable;
-//    }
-//
-//    public BodyRenderer createRenderer( double viewDiameter ) {
-//        return renderer.apply( this, viewDiameter );
-//    }
-//
-//    public double getLabelAngle() {
-//        return labelAngle;
-//    }
-//
-//    public int getMaxPathLength() {
-//        return maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS;
-//    }
-//
-//    public boolean isMassReadoutBelow() {
-//        return massReadoutBelow;
-//    }
-//
-//    public Property<Boolean> getCollidedProperty() {
-//        return collidedProperty;
-//    }
-//
-//    public boolean collidesWidth( Body body ) {
-//        double distance = getPosition().minus( body.getPosition() ).magnitude();
-//        double radiiSum = getDiameter() / 2 + body.getDiameter() / 2;
-//        return distance < radiiSum;
-//    }
-//
-//    public void setCollided( boolean b ) {
-//        collidedProperty.set( b );
-//    }
-//
-//    public double getTickValue() {
-//        return tickValue;
-//    }
-//
-//    public String getTickLabel() {
-//        return tickLabel;
-//    }
-//
-//    public void addUserModifiedPositionListener( VoidFunction0 listener ) {
-//        userModifiedPositionListeners.add( listener );
-//    }
-//
-//    public void notifyUserModifiedPosition() {
-//        for ( VoidFunction0 listener : userModifiedPositionListeners ) {
-//            listener.apply();
-//        }
-//    }
-//
-//    private ArrayList<VoidFunction0> userModifiedVelocityListeners = new ArrayList<VoidFunction0>();
-//
-//    public void addUserModifiedVelocityListener( VoidFunction0 listener ) {
-//        userModifiedVelocityListeners.add( listener );
-//    }
-//
-//    public void notifyUserModifiedVelocity() {
-//        for ( VoidFunction0 listener : userModifiedVelocityListeners ) {
-//            listener.apply();
-//        }
-//    }
-//
-//    public void rewind() {
-//        positionProperty.rewind();
-//        velocityProperty.rewind();
-//        massProperty.rewind();
-//        collidedProperty.rewind();
-//        clearPath();
-//    }
-//
-//    public Property<Boolean> anyPropertyDifferent() {
-//        return new MultiwayOr( Arrays.asList( positionProperty.different(), velocityProperty.different(), massProperty.different(), collidedProperty.different() ) );
-//    }
-//
-//    //Unexplodes and returns objects to the stage
-//    public void returnBody( GravityAndOrbitsModel model ) {
-//        if ( collidedProperty.get() || !bounds.get().contains( getPosition().toPoint2D() ) ) {
-//            setCollided( false );
-//            clearPath();//so there is no sudden jump in path from old to new location
-//            doReturnBody( model );
-//        }
-//    }
-//
-//    //Returns the body, overriden by bodies that need to be returned near the current location of the body they orbit
-//    protected void doReturnBody( GravityAndOrbitsModel model ) {
-//        positionProperty.reset();
-//        velocityProperty.reset();
-//    }
-//
-//    public boolean isCollided() {
-//        return collidedProperty.get();
-//    }
-//
-//    public IUserComponent getUserComponent() {
-//        return userComponent;
-//    }
-//
+    // This method is called after all bodies have been updated by the physics engine (must be done as a batch),
+    // so that the path can be updated
+    allBodiesUpdated: function() {
+      //Only add to the path if the user isn't dragging it
+      //But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
+      if ( !this.isUserControlled() ) {
+        this.addPathPoint();
+      }
+    },
+
+    addPathPoint: function() {
+      var i;
+      while ( this.path.length + 1//account for the point that will be added
+        > maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
+        this.path.remove( 0 );
+
+        for ( i = 0; i < this.pathListeners.length; i++ ) {
+          this.pathListeners[i].pointRemoved();
+        }
+      }
+      var pathPoint = this.getPosition();
+      this.path.add( pathPoint );
+
+      for ( i = 0; i < this.pathListeners.length; i++ ) {
+        this.pathListeners[i].pointAdded( pathPoint );
+      }
+    },
+
+    clearPath: function() {
+      this.path.clear();
+      for ( var i = 0; i < this.pathListeners.length; i++ ) {
+        this.pathListeners[i].cleared();
+      }
+    },
+
+    /**
+     * @return {Property<Vector2>}
+     */
+    getForceProperty: function() {
+      return this.forceProperty;
+    },
+
+    /**
+     * @param mass
+     */
+    setMass: function( mass ) {
+      this.massProperty.set( mass );
+      var radius = Math.pow( 3 * mass / 4 / Math.PI / this.density, 1.0 / 3.0 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
+      this.diameterProperty.set( radius * 2 );
+    },
+
+    resetAll: function() {
+      this.positionProperty.reset();
+      this.velocityProperty.reset();
+      this.accelerationProperty.reset();
+      this.forceProperty.reset();
+      this.massProperty.reset();
+      this.diameterProperty.reset();
+      this.collidedProperty.reset();
+      this.clockTicksSinceExplosion.reset();
+      clearPath();
+      //TODO: anything else to reset here?
+    },
+
+    /**
+     * @return {RewindableProperty<Vector2>}
+     */
+    getVelocityProperty: function() {
+      return this.velocityProperty;
+    },
+
+    /**
+     * @return {RewindableProperty<number>}
+     */
+    getMassProperty: function() {
+      return this.massProperty;
+    },
+
+    /**
+     * @return {boolean}
+     */
+    isUserControlled: function() {
+      return userControlled;
+    },
+
+    /**
+     * @param {boolean} b
+     */
+    setUserControlled: function( b ) {
+      this.userControlled = b;
+    },
+
+    /**
+     * @param {PathListener} listener
+     */
+    addPathListener: function( listener ) {
+      pathListeners.add( listener );
+    },
+
+    /**
+     * @param {Vector2} velocity
+     */
+    setVelocity: function( velocity ) {
+      this.velocityProperty.set( velocity );
+    },
+
+    /**
+     * @param {number} x
+     * @param {number} y
+     */
+    setPosition: function( x, y ) {
+      this.positionProperty.set( new Vector2( x, y ) );
+    },
+
+    /**
+     * @param {Vector2} acceleration
+     */
+    setAcceleration: function( acceleration ) {
+      this.accelerationProperty.set( acceleration );
+    },
+
+    /**
+     * @param {Vector2} force
+     */
+    setForce: function( force ) {
+      this.forceProperty.set( force );
+    },
+
+    /**
+     * @return {boolean}
+     */
+    isMassSettable: function() {
+      return this.massSettable;
+    },
+
+    /**
+     * @return {BodyRenderer}
+     */
+    createRenderer: function( viewDiameter ) {
+      return this.renderer.apply( this, viewDiameter );
+    },
+
+    /**
+     * @return {number}
+     */
+    getLabelAngle: function() {
+      return this.labelAngle;
+    },
+
+    /**
+     * @return {number}
+     */
+    getMaxPathLength: function() {
+      return this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS;
+    },
+
+    /**
+     * @return {boolean}
+     */
+    isMassReadoutBelow: function() {
+      return this.massReadoutBelow;
+    },
+
+    /**
+     * @return {Property<boolean>}
+     */
+    getCollidedProperty: function() {
+      return this.collidedProperty;
+    },
+
+    /**
+     * @param {Body} body
+     * @return {boolean}
+     */
+    collidesWidth: function( body ) {
+      var distance = this.getPosition().minus( body.getPosition() ).magnitude();
+      var radiiSum = this.getDiameter() / 2 + body.getDiameter() / 2;
+      return distance < radiiSum;
+    },
+
+    /**
+     * @param {boolean} b
+     */
+    setCollided: function( b ) {
+      this.collidedProperty.set( b );
+    },
+
+    /**
+     * @return {string}
+     */
+    getTickLabel: function() {
+      return this.tickLabel;
+    },
+
+    /**
+     * @param {function} listener
+     */
+    addUserModifiedPositionListener: function( listener ) {
+      this.userModifiedPositionListeners.push( listener );
+    },
+
+    notifyUserModifiedPosition: function() {
+      for ( var i = 0; i < this.userModifiedPositionListeners.length; i++ ) {
+        this.userModifiedPositionListeners[i].call( this );
+      }
+    },
+
+    /**
+     * @param {function} listener
+     */
+    addUserModifiedVelocityListener: function( listener ) {
+      this.userModifiedVelocityListeners.push( listener );
+    },
+
+    notifyUserModifiedVelocity: function() {
+      for ( var i = 0; i < this.userModifiedVelocityListeners.length; i++ ) {
+        this.userModifiedVelocityListeners[i].call( this );
+      }
+    },
+
+    rewind: function() {
+      this.positionProperty.rewind();
+      this.velocityProperty.rewind();
+      this.massProperty.rewind();
+      this.collidedProperty.rewind();
+      clearPath();
+    },
+
+    /**
+     * @returns {MultiwayOr}
+     */
+    anyPropertyDifferent: function() {
+      return new MultiwayOr( Arrays.asList( this.positionProperty.different(), this.velocityProperty.different(), this.massProperty.different(), this.collidedProperty.different() ) );
+    },
+
+    /**
+     * Unexplodes and returns objects to the stage
+     *
+     * @param {GravityAndOrbitsModel} model
+     */
+    returnBody: function( model ) {
+      if ( this.collidedProperty.get() || !bounds.get().contains( this.getPosition() ) ) {
+        this.setCollided( false );
+        this.clearPath();//so there is no sudden jump in path from old to new location
+        this.doReturnBody( model );
+      }
+    },
+
+    /**
+     * Unexplodes and returns objects to the stage
+     *
+     * @param {GravityAndOrbitsModel} model (why is the model passed here? was ported from the Java, should probably be removed)
+     */
+    doReturnBody: function( model ) {
+      this.positionProperty.reset();
+      this.velocityProperty.reset();
+    },
+
+    /**
+     * @return {boolean}
+     */
+    isCollided: function() {
+      return this.collidedProperty.get();
+    },
+
+    /**
+     * @return {IUserComponent}
+     */
+    getUserComponent: function() {
+      return this.userComponent;
+    },
+
 //    //Listener interface for getting callbacks when the path has changed, for displaying the path with picclo
 //    public static interface PathListener {
-//        public void pointAdded( Vector2D point );
+//        public void pointAdded( Vector2 point );
 //
 //        public void pointRemoved();
 //
 //        public void cleared();
 //    }
-//
-//    @Override
-//    public String toString() {
-//        return "name = " + getName() + ", mass = " + getMass();
-//    }
-//
-//    public Property<Shape> getBounds() {
-//        return bounds;
-//    }
-//}
+
+    /**
+     * @return {string}
+     */
+    toString: function() {
+      return "name = " + this.getName() + ", mass = " + this.getMass();
+    },
+
+    /**
+     * @return {Property<Rectangle>}
+     */
+    getBounds: function() {
+      return this.bounds;
+    }
+
+  } );
+} );
