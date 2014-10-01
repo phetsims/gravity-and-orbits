@@ -1,80 +1,77 @@
-//// Copyright 2002-2011, University of Colorado
-//
-//package edu.colorado.phet.gravityandorbits.model;
-//
-//import java.util.ArrayList;
-//
-//import edu.colorado.phet.common.phetcommon.model.property.Property;
-//import edu.colorado.phet.common.phetcommon.util.function.VoidFunction0;
-//
-///**
-// * This is a property that can be rewound, and when rewound it goes back
-// * to the value that was last set while the clock was paused.
-// *
-// * @author Sam Reid
-// */
-//public class RewindableProperty<T> extends Property<T> {
-//    private final Property<Boolean> playButtonPressed;
-//    private final Property<Boolean> stepping;//if the clock is paused and the user pressed 'step', do not store a rewind point
-//    private final Property<Boolean> rewinding;//if the clock is paused and the user pressed 'rewind', do not store a rewind point
-//    private T rewindValue;//the "initial condition" tha the property can be rewound to
-//    private Property<Boolean> different; // true when the rewind point value is different than the property's value
-//    private ArrayList<VoidFunction0> rewindValueChangedListeners = new ArrayList<VoidFunction0>();
-//
-//    public RewindableProperty( Property<Boolean> playButtonPressed,
-//                               Property<Boolean> isStepping,
-//                               Property<Boolean> isRewinding,
-//                               T value ) {
-//        super( value );
-//        this.playButtonPressed = playButtonPressed;
-//        stepping = isStepping;
-//        rewinding = isRewinding;
-//        this.rewindValue = value;
-//
-//        different = new Property<Boolean>( !equalsRewindPoint() );
-//    }
-//
-//    @Override
-//    public void set( T value ) {
-//        super.set( value );
-//        //If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
-//        if ( !playButtonPressed.get() && !stepping.get() && !rewinding.get() ) {
-//            storeRewindValueNoNotify();
-//            for ( VoidFunction0 rewindValueChangedListener : rewindValueChangedListeners ) {
-//                rewindValueChangedListener.apply();
-//            }
-//        }
-//        different.set( !equalsRewindPoint() );
-//    }
-//
-//    //Store the new value as the initial condition which can be rewound to.  We have to skip notifications sometimes or the wrong initial conditions get stored.
-//    public void storeRewindValueNoNotify() {
-//        rewindValue = get();
-//    }
-//
-//    //Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
-//    public void addRewindValueChangeListener( VoidFunction0 listener ) {
-//        rewindValueChangedListeners.add( listener );
-//    }
-//
-//    public boolean equalsRewindPoint() {
-//        return rewindValue.equals( get() );
-//    }
-//
-//    public void rewind() {
-//        set( rewindValue );
-//    }
-//
-//    //Convenient access to whether the value has deviated from the initial condition
-//    public Property<Boolean> different() {
-//        return different;
-//    }
-//
-//    /*
-//     *Makes this public for use in gravity and orbits.
-//     */
-//    @Override
-//    public T getInitialValue() {
-//        return super.getInitialValue();
-//    }
-//}
+// Copyright 2002-2011, University of Colorado
+/**
+ * This is a property that can be rewound, and when rewound it goes back
+ * to the value that was last set while the clock was paused.
+ *
+ * @author Sam Reid
+ */
+define( function( require ) {
+  'use strict';
+
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Property = require( 'AXON/Property' );
+
+  function RewindableProperty( playButtonPressed, isStepping, isRewinding, value ) {
+    Property.call( this, value );
+    this.playButtonPressed = playButtonPressed;
+
+    //if the clock is paused and the user pressed 'step', do not store a rewind point
+    this.stepping = isStepping;
+
+    //if the clock is paused and the user pressed 'rewind', do not store a rewind point
+    this.rewinding = isRewinding;
+
+    //the "initial condition" tha the property can be rewound to
+    this.rewindValue = value;
+
+    // true when the rewind point value is different than the property's value
+    this.different = new Property( !this.equalsRewindPoint() );
+  }
+
+  return inherit( Property, RewindableProperty, {
+
+    set: function( value ) {
+      super.set( value );
+      //If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
+      if ( !this.playButtonPressed.get() && !this.stepping.get() && !this.rewinding.get() ) {
+        this.storeRewindValueNoNotify();
+
+        for ( var i = 0; i < this.rewindValueChangedListeners.length; i++ ) {
+          var rewindValueChangedListener = this.rewindValueChangedListeners[i];
+          this.rewindValueChangedListener.apply();
+        }
+      }
+      this.different.set( !this.equalsRewindPoint() );
+    },
+
+    //Store the new value as the initial condition which can be rewound to.  We have to skip notifications sometimes or the wrong initial conditions get stored.
+    storeRewindValueNoNotify: function() {
+      this.rewindValue = this.get();
+    },
+
+    //Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
+    addRewindValueChangeListener: function( listener ) {
+      this.rewindValueChangedListeners.add( listener );
+    },
+
+    equalsRewindPoint: function() {
+      return rewindValue.equals( get() );
+    },
+
+    rewind: function() {
+      set( rewindValue );
+    },
+
+    //Convenient access to whether the value has deviated from the initial condition
+    different: function() {
+      return different;
+    },
+
+    /*
+     *Makes this public for use in gravity and orbits.
+     */
+    getInitialValue: function() {
+      return super.getInitialValue();
+    }
+  } );
+} );
