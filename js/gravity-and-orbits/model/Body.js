@@ -12,6 +12,9 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var PropertySet = require( 'AXON/PropertySet' );
+  var RewindableProperty = require( 'GRAVITY_AND_ORBITS/model/RewindableProperty' );
 
   /**
    *
@@ -71,7 +74,7 @@ define( function( require ) {
     this.velocityProperty = new RewindableProperty( playButtonPressed, stepping, rewinding, new Vector2( vx, vy ) );
     this.massProperty = new RewindableProperty( playButtonPressed, stepping, rewinding, mass );
     this.collidedProperty = new RewindableProperty( playButtonPressed, stepping, rewinding, false );
-    this.density = mass / getVolume();
+    this.density = mass / this.getVolume();
 
     this.userControlled = false;//True if the user is currently controlling the position of the body with the mouse
     this.pathListeners = [];// ArrayList<PathListener>();
@@ -81,8 +84,9 @@ define( function( require ) {
     this.userModifiedPositionListeners = [];
     this.userModifiedVelocityListeners = [];
 
-    collidedProperty.onValue( true, function() {
-      clockTicksSinceExplosion.set( 0 );
+    var thisBody = this;
+    this.collidedProperty.onValue( true, function() {
+      thisBody.clockTicksSinceExplosion.set( 0 );
     } );
 
     //If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
@@ -92,7 +96,6 @@ define( function( require ) {
     //  Pause, then move the planet closer to sun. Press play, planet will move CCW. Then pause and hit rewind.
     //  Press play again, the planet will start to move in the opposite direction (CW).
     //SR: reproduced this in 0.0.14, perhaps the velocity is not being reset?
-    var thisBody = this;
     var rewindValueChangeListener = function() {
       thisBody.positionProperty.storeRewindValueNoNotify();
       thisBody.velocityProperty.storeRewindValueNoNotify();
@@ -176,7 +179,8 @@ define( function( require ) {
     //   Recommend making notifyUserModifiedPosition private and adding another public variant of translate,
     //   i.e. public void translate(Point2D delta,boolean userModified) {...}
     /**
-     * @param {Vector2} delta
+     * @param {Vector2} dx
+     * @param {Vector2} dy
      */
     translate: function( dx, dy ) {
       if ( dx instanceof Vector2 ) {
