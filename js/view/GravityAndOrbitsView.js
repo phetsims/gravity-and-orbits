@@ -12,7 +12,7 @@ define( function( require ) {
   // modules
   var ScreenView = require( 'JOIST/ScreenView' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
+  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var Workspace = require( 'view/workspace/Workspace' );
   var ScaleSlider = require( 'view/scale-slider/ScaleSlider' );
   var RightControlPanel = require( 'view/right-control-panel/RightControlPanel' );
