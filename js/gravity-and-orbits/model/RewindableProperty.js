@@ -4,6 +4,7 @@
  * to the value that was last set while the clock was paused.
  *
  * @author Sam Reid
+ * @author Aaron Davis
  */
 define( function( require ) {
   'use strict';
@@ -26,19 +27,20 @@ define( function( require ) {
 
     // true when the rewind point value is different than the property's value
     this.different = new Property( !this.equalsRewindPoint() );
+
+    this.rewindValueChangedListeners = [];
   }
 
   return inherit( Property, RewindableProperty, {
 
     set: function( value ) {
-      super.set( value );
+      this.set( value );
       //If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
       if ( !this.playButtonPressed.get() && !this.stepping.get() && !this.rewinding.get() ) {
         this.storeRewindValueNoNotify();
 
         for ( var i = 0; i < this.rewindValueChangedListeners.length; i++ ) {
-          var rewindValueChangedListener = this.rewindValueChangedListeners[i];
-          this.rewindValueChangedListener.apply();
+          this.rewindValueChangedListeners[i].apply();
         }
       }
       this.different.set( !this.equalsRewindPoint() );
@@ -55,23 +57,23 @@ define( function( require ) {
     },
 
     equalsRewindPoint: function() {
-      return rewindValue.equals( get() );
+      return this.rewindValue.equals( this.get() );
     },
 
     rewind: function() {
-      set( rewindValue );
+      this.set( this.rewindValue );
     },
 
     //Convenient access to whether the value has deviated from the initial condition
     different: function() {
-      return different;
+      return this.different;
     },
 
     /*
      *Makes this public for use in gravity and orbits.
      */
     getInitialValue: function() {
-      return super.getInitialValue();
+      return this.rewindValue;
     }
   } );
 } );
