@@ -1,25 +1,37 @@
-//// Copyright 2002-2011, University of Colorado
-//package edu.colorado.phet.gravityandorbits.module;
-//
-//import edu.colorado.phet.common.phetcommon.model.property.Property;
-//
-///**
-// * Parameter object pattern, compositing multiple parameters that are passed to multiple modes.
-// *
-// * @author Sam Reid
-// */
-//public class ModeListParameterList {
-//    public final Property<Boolean> playButtonPressed;
-//    public final Property<Boolean> gravityEnabled;
-//    public final Property<Boolean> stepping;//True if the user is pressing the "step" button, to support storing states for the rewind feature
-//    public final Property<Boolean> rewinding;//Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
-//    public final Property<Double> timeSpeedScale;
-//
-//    public ModeListParameterList( Property<Boolean> playButtonPressed, Property<Boolean> gravityEnabled, Property<Boolean> stepping, Property<Boolean> rewinding, Property<Double> timeSpeedScale ) {
-//        this.playButtonPressed = playButtonPressed;
-//        this.gravityEnabled = gravityEnabled;
-//        this.stepping = stepping;
-//        this.rewinding = rewinding;
-//        this.timeSpeedScale = timeSpeedScale;
-//    }
-//}
+// Copyright 2002-2014, University of Colorado
+
+/**
+ * Parameter object pattern, compositing multiple parameters that are passed to multiple modes.
+ *
+ * @author Sam Reid
+ * @author Aaron Davis
+ */
+define( function( require ) {
+  'use strict';
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Property = require( 'AXON/Property' );
+
+  /**
+   *
+   * @param {Property<boolean>} playButtonPressed
+   * @param {Property<boolean>} gravityEnabled
+   * @param {Property<boolean>} stepping
+   * @param {Property<boolean>} rewinding
+   * @param {Property<number>} timeSpeedScale
+   * @constructor
+   */
+  function ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
+    this.playButtonPressed = playButtonPressed;
+    this.gravityEnabled = gravityEnabled;
+    //True if the user is pressing the "step" button, to support storing states for the rewind feature
+    this.stepping = stepping;
+    //Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
+    this.rewinding = rewinding;
+    this.timeSpeedScale = timeSpeedScale;
+  }
+
+  return inherit( Object, ModeListParameterList, {
+  } );
+} );

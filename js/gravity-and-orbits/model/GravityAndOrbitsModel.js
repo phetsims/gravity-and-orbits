@@ -14,6 +14,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
+  var ModelState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/ModelState' );
 
   //Subdivide DT intervals by this factor to improve smoothing, otherwise some orbits look too non-smooth (you can see their corners), see #3050
   var SMOOTHING_STEPS = 5;
@@ -42,14 +43,16 @@ define( function( require ) {
   function GravityAndOrbitsModel( gravityEnabledProperty ) {
 
 
-    PropertySet.call( this, {paused: true, simulationTime: 0} );
-
-    //Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
-    gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
+    PropertySet.call( this, {
+      gravityEnabled: true, // this was originally an argument to the model
+      paused: true,
+      simulationTime: 0 } );
 
     this.bodies = [];//Contains the sun, moon, earth, satellite
-
     this.modelStepListeners = [];//SimpleObservers//TODO: Convert to trigger
+
+    //Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
+    this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
   }
 
   return inherit( PropertySet, GravityAndOrbitsModel, {
@@ -62,7 +65,7 @@ define( function( require ) {
 
         //Break up the update into discrete steps to make the orbits look smoother, see #3050
         for ( i = 0; i < SMOOTHING_STEPS; i++ ) {
-          performSubStep( dt / SMOOTHING_STEPS );
+          this.performSubStep( dt / SMOOTHING_STEPS );
         }
 
         //TODO: Change to a trigger
@@ -77,21 +80,20 @@ define( function( require ) {
 
         var i;
         //Compute the next state for each body based on the current state of all bodies in the system.
-
         var bodyStates = this.bodies.map( function( body ) {return body.toBodyState();} );
         var newState = new ModelState( bodyStates ).getNextState(
           dt,
             400 / SMOOTHING_STEPS, // 1000 looks great, 50 starts to look awkward for sun+earth+moon, but 100 seems okay.
           // Update: 100 is poor for sun/earth/moon system in "to scale" because the orbit is gradually expanding.
           // Tests suggest 400 is a good performance/precision tradeoff
-          gravityEnabledProperty
+          this.gravityEnabledProperty.get()
         );
 
         // Set each body to its computed next state.
         // assumes that ModelState.getBodyState returns states in the same order as the container (ArrayList) used for
         // bodies. A possible future improvement would be
         // to switch to use ModelState.getState(Body), which would be safer.
-        for ( i = 0; i < this.bodies.size(); i++ ) {
+        for ( i = 0; i < this.bodies.length; i++ ) {
           this.bodies[i].updateBodyStateFromModel( newState.getBodyState( i ) );
         }
         //when two bodies collide, destroy the smaller

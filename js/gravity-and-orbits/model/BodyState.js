@@ -9,8 +9,7 @@ define( function( require ) {
   'use strict';
 
   var inherit = require( 'PHET_CORE/inherit' );
-  var Serializable = require( 'java.io.Serializable' );
-  var Vector2D = require( 'edu.colorado.phet.common.phetcommon.math.vector.Vector2D' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   /**
    *
