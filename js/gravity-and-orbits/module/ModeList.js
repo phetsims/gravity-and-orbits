@@ -449,7 +449,7 @@ define( function( require ) {
     } ) );
   }
 
-  return inherit( ArrayList, ModeList, {
+  inherit( Object, ModeList, {
 
       /**
        * @private
@@ -506,4 +506,14 @@ define( function( require ) {
       SPACE_STATION_SPEED: SPACE_STATION_SPEED,
       SPACE_STATION_PERIGEE: SPACE_STATION_PERIGEE
     } );
+
+  return {
+    ModeList: ModeList, // the original Java class
+
+    // These were public static inner classes
+    SunEarthModeConfig: SunEarthModeConfig,
+    SunEarthMoonModeConfig: SunEarthMoonModeConfig,
+    EarthMoonModeConfig: EarthMoonModeConfig,
+    EarthSpaceStationModeConfig: EarthSpaceStationModeConfig
+  }
 } );

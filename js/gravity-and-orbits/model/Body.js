@@ -18,7 +18,7 @@ define( function( require ) {
 
   /**
    *
-   * @param {IUserComponent} userComponent
+   * @param {UserComponent} userComponent
    * @param {string} name
    * @param {number} x
    * @param {number} y
@@ -28,7 +28,7 @@ define( function( require ) {
    * @param {number} mass
    * @param {Color} color
    * @param {Color} highlight
-   * @param {Function2<Body, Double, BodyRenderer>} renderer
+   * @param {function<Body, Double, BodyRenderer>} renderer
    * @param {number} labelAngle
    * @param {boolean} massSettable
    * @param {number} maxPathLength
@@ -552,7 +552,7 @@ define( function( require ) {
     },
 
     /**
-     * @return {IUserComponent}
+     * @return {UserComponent}
      */
     getUserComponent: function() {
       return this.userComponent;
