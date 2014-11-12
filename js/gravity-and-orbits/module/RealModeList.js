@@ -1,16 +1,33 @@
-//// Copyright 2002-2011, University of Colorado
-//package edu.colorado.phet.gravityandorbits.module;
-//
-//import edu.colorado.phet.common.phetcommon.model.property.Property;
-//
-///**
-// * Configuration file for "real" tab modes, uses physically accurate parameters.
-// *
-// * @author Sam Reid
-// */
-//public class RealModeList extends ModeList {
-//    public RealModeList( Property<Boolean> playButtonPressed, Property<Boolean> gravityEnabled, Property<Boolean> stepping, Property<Boolean> rewinding, Property<Double> timeSpeedScale ) {
-//        super( new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
-//               new SunEarthModeConfig(), new SunEarthMoonModeConfig(), new EarthMoonModeConfig(), new EarthSpaceStationModeConfig() );
-//    }
-//}
+// Copyright 2002-2014, University of Colorado
+
+/**
+ * Configuration file for "real" tab modes, uses physically accurate parameters.
+ *
+ * @author Sam Reid
+ * @author Aaron Davis
+ */
+define( function( require ) {
+  'use strict';
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Property = require( 'AXON/Property' );
+  var ModeList = require( 'GRAVITY_AND_ORBITS/module/ModeList' );
+  var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/module/ModeListParameterList' );
+
+  /**
+   *
+   * @param {Property<boolean>} playButtonPressed
+   * @param {Property<boolean>} gravityEnabled
+   * @param {Property<boolean>} stepping
+   * @param {Property<boolean>} rewinding
+   * @param {Property<number>} timeSpeedScale
+   * @constructor
+   */
+  function RealModeList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
+    ModeList.call( this, new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
+      new ModeList.SunEarthModeConfig(), new ModeList.SunEarthMoonModeConfig(), new ModeList.EarthMoonModeConfig(), new ModeList.EarthSpaceStationModeConfig() );
+  }
+
+  return inherit( ModeList, RealModeList );
+} );

@@ -50,7 +50,7 @@ define( function( require ) {
       gravityEnabled: true,
       stepping: false,
       rewinding: false,
-      mode: 0, // TODO this was black
+      mode: 0, // TODO this was blank
       whiteBackground: false, // was blank
       showMeasuringTape: false // was blank
     } );
