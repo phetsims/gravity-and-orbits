@@ -1,51 +1,77 @@
-//// Copyright 2002-2012, University of Colorado
-//package edu.colorado.phet.gravityandorbits.module;
-//
-//import java.awt.geom.Line2D;
-//
-//import edu.colorado.phet.common.phetcommon.math.vector.Vector2D;
-//
-//import static edu.colorado.phet.gravityandorbits.model.GravityAndOrbitsClock.DEFAULT_DT;
-//
-///**
-// * Configuration for setting up a particular GravityAndOrbitsMode, enumerated in ModeList
-// *
-// * @author Sam Reid
-// */
-//public abstract class ModeConfig {
-//    double zoom;
-//    double dt = DEFAULT_DT;
-//    protected double forceScale;
-//    public Line2D.Double initialMeasuringTapeLocation;
-//
-//    public ModeConfig( double zoom ) {
-//        this.zoom = zoom;
-//    }
-//
-//    public void center() {
-//        Vector2D deltaVelocity = getTotalMomentum().times( -1.0 / getTotalMass() );
-//        for ( BodyConfiguration prototype : getBodies() ) {
-//            prototype.vx += deltaVelocity.getX();
-//            prototype.vy += deltaVelocity.getY();
-//        }
-//    }
-//
-//    //Compute the total momentum for purposes of centering the camera on the center of momentum frame
-//    private Vector2D getTotalMomentum() {
-//        Vector2D totalMomentum = new Vector2D();
-//        for ( BodyConfiguration body : getBodies() ) {
-//            totalMomentum = totalMomentum.plus( body.getMomentum() );
-//        }
-//        return totalMomentum;
-//    }
-//
-//    private double getTotalMass() {
-//        double totalMass = 0.0;
-//        for ( BodyConfiguration prototype : getBodies() ) {
-//            totalMass += prototype.mass;
-//        }
-//        return totalMass;
-//    }
-//
-//    protected abstract BodyConfiguration[] getBodies();
-//}
+// Copyright 2002-2014, University of Colorado
+
+/**
+ * Configuration for setting up a particular GravityAndOrbitsMode, enumerated in ModeList
+ *
+ * @author Sam Reid
+ * @author Aaron Davis
+ */
+define( function( require ) {
+  'use strict';
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Line2D = require( 'java.awt.geom.Line2D' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var DEFAULT_DT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock/DEFAULT_DT' );//static
+
+  /**
+   *
+   * @param {number} zoom
+   * @constructor
+   */
+  function ModeConfig( zoom ) {
+    this.dt = DEFAULT_DT;
+    this.zoom = zoom;
+
+    // private members from java that weren't initialized in the constructor
+    this.forceScale = null;
+    this.initialMeasuringTapeLocation = null;
+  }
+
+  return inherit( Object, ModeConfig, {
+
+    center: function() {
+      var deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
+      var bodies = this.getBodies();
+      for ( var i = 0; i < bodies.length; i++ ) {
+        bodies[i].vx += deltaVelocity.x;
+        bodies[i].vy += deltaVelocity.y;
+      }
+    },
+
+    /**
+     * @private
+     *
+     * Compute the total momentum for purposes of centering the camera on the center of momentum frame
+     * @returns {Vector2}
+     */
+    getTotalMomentum: function() {
+      var totalMomentum = new Vector2();
+      var bodies = this.getBodies();
+      for ( var i = 0; i < bodies.length; i++ ) {
+        totalMomentum = totalMomentum.plus( bodies[i].getMomentum() );
+      }
+      return totalMomentum;
+    },
+
+    /**
+     * @private
+     * @returns {number}
+     */
+    getTotalMass: function() {
+      var totalMass = 0.0;
+      var bodies = this.getBodies();
+      for ( var i = 0; i < bodies.length; i++ ) {
+        totalMass += bodies[i].mass;
+      }
+      return totalMass;
+    },
+
+    // abstract
+    /**
+     * @returns {Array<BodyConfiguration}
+     */
+    getBodies: function() {}
+  } );
+} );
