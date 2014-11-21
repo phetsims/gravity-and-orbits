@@ -1,173 +1,165 @@
-//// Copyright 2002-2012, University of Colorado
-//
-//package edu.colorado.phet.gravityandorbits.view;
-//
-//import java.awt.Color;
-//import java.awt.Image;
-//import java.awt.geom.Dimension2D;
-//import java.awt.geom.Point2D;
-//import java.beans.PropertyChangeEvent;
-//import java.beans.PropertyChangeListener;
-//
-//import edu.colorado.phet.common.phetcommon.math.vector.Vector2D;
-//import edu.colorado.phet.common.phetcommon.model.property.Property;
-//import edu.colorado.phet.common.phetcommon.util.RichSimpleObserver;
-//import edu.colorado.phet.common.phetcommon.util.SimpleObserver;
-//import edu.colorado.phet.common.phetcommon.util.function.VoidFunction1;
-//import edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform;
-//import edu.colorado.phet.common.phetcommon.view.util.PhetFont;
-//import edu.colorado.phet.common.piccolophet.event.CursorHandler;
-//import edu.colorado.phet.common.piccolophet.nodes.ArrowNode;
-//import edu.colorado.phet.gravityandorbits.model.Body;
-//import edu.umd.cs.piccolo.PComponent;
-//import edu.umd.cs.piccolo.PNode;
-//import edu.umd.cs.piccolo.event.PBasicInputEventHandler;
-//import edu.umd.cs.piccolo.event.PInputEvent;
-//import edu.umd.cs.piccolo.nodes.PText;
-//
-///**
-// * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable, which changes
-// * the location of the Body.
-// *
-// * @author Sam Reid
-// */
-//public class BodyNode extends PNode {
-//    private final Property<ModelViewTransform> modelViewTransform;
-//    private final Body body;
-//    private final Property<Boolean> whiteBackgroundProperty;
-//    private final BodyRenderer bodyRenderer;
-//
-//    public BodyNode( final Body body,
-//                     final Property<ModelViewTransform> modelViewTransform,
-//                     final Property<Vector2D> mousePosition,//Keep track of the mouse position in case a body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
-//                     final PComponent parentComponent,
-//                     final double labelAngle,//Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
-//                     final Property<Boolean> whiteBackgroundProperty ) {
-//        this.modelViewTransform = modelViewTransform;
-//        this.body = body;
-//        this.whiteBackgroundProperty = whiteBackgroundProperty;
-//        body.getCollidedProperty().addObserver( new SimpleObserver() {
-//            public void update() {
-//                setVisible( !body.getCollidedProperty().get() );
+// Copyright 2002-2014, University of Colorado
+
+/**
+ * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable, which changes
+ * the location of the Body.
+ *
+ * @author Sam Reid
+ * @author Aaron Davis
+ */
+define( function( require ) {
+  'use strict';
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Color = require( 'SCENERY/util/Color' );
+  var Image = require( 'SCENERY/nodes/Image' );
+  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var Dimension2 = require( 'DOT/Dimension2' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var Property = require( 'AXON/Property' );
+  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
+  var Node = require( 'SCENERY/nodes/Node' );
+
+  /**
+   *
+   * @param {Body} body
+   * @param {ModelViewTransform} modelViewTransform
+   * @param {Vector2} mousePosition
+   * @param {PComponent} parentComponent
+   * @param {number} labelAngle
+   * @param {boolean} whiteBackgroundProperty
+   * @constructor
+   */
+  function BodyNode( body, modelViewTransform, //Keep track of the mouse position in case a body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
+                     mousePosition, parentComponent, //Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
+                     labelAngle, whiteBackgroundProperty ) {
+
+    Node.call( this );
+
+    // private attributes
+    this.modelViewTransform = modelViewTransform;
+    this.body = body;
+    this.whiteBackgroundProperty = whiteBackgroundProperty;
+
+    var thisNode = this;
+
+    this.body.collidedProperty.link( function( isCollided ) {
+      this.visible = !isCollided;
+    } );
+
+    this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() );
+    this.addChild( this.bodyRenderer );
+    var cursorHandler = new CursorHandler();
+
+    // Add drag handlers
+    this.addInputListener( cursorHandler );
+    this.addInputListener( new SimpleDragHandler( {
+      start: function( event ) {
+        thisNode.body.setUserControlled( true );
+      },
+      drag: function( event ) {
+        var delta = modelViewTransform.get().viewToModelDelta( event.getDeltaRelativeTo( getParent() ) );
+        thisNode.body.translate( new Vector2( delta.getWidth(), delta.getHeight() ) );
+        thisNode.body.notifyUserModifiedPosition();
+      },
+      end: function( event ) {
+        thisNode.body.setUserControlled( false );
+      }
+    } ) );
+
+    // TODO: is this necessary in JS version?
+//    this.body.positionProperty.link( function() {
+//      /* we need to determine whether the mouse is over the body both before and after the model change so
+//       * that we can toggle the hand pointer over the body.
+//       *
+//       * otherwise the body can move over the mouse and be dragged without ever seeing the hand pointer
+//       */
+//      var isMouseOverBefore = this.bodyRenderer.getGlobalFullBounds().contains( mousePosition.get().toPoint2D() );
+//      setOffset( getPosition( modelViewTransform, body ).toPoint2D() );
+//      var isMouseOverAfter = bodyRenderer.getGlobalFullBounds().contains( mousePosition.get().toPoint2D() );
+//      //Send mouse entered and mouse exited events when body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
+//      if ( parentComponent != null ) {
+//        if ( isMouseOverBefore && !isMouseOverAfter ) {
+//          cursorHandler.mouseExited( new PInputEvent( null, null ).withAnonymousClassBody( {
+//            getComponent: function() {
+//              return parentComponent;
 //            }
-//        } );
-//
-//        bodyRenderer = body.createRenderer( getViewDiameter() );
-//        addChild( bodyRenderer );
-//
-//        final CursorHandler cursorHandler = new CursorHandler();
-//
-//        //Add drag handlers
-//        addInputEventListener( cursorHandler );
-//        addInputEventListener( new PBasicInputEventHandler() {
-//            @Override
-//            public void mousePressed( PInputEvent event ) {
-//                body.setUserControlled( true );
+//          } ) );
+//        }
+//        if ( !isMouseOverBefore && isMouseOverAfter ) {
+//          cursorHandler.mouseEntered( new PInputEvent( null, null ).withAnonymousClassBody( {
+//            getComponent: function() {
+//              return parentComponent;
 //            }
-//
-//            @Override
-//            public void mouseDragged( PInputEvent event ) {
-//                final Dimension2D delta = modelViewTransform.get().viewToModelDelta( event.getDeltaRelativeTo( getParent() ) );
-//                body.translate( new Point2D.Double( delta.getWidth(), delta.getHeight() ) );
-//                body.notifyUserModifiedPosition();
-//            }
-//
-//            @Override
-//            public void mouseReleased( PInputEvent event ) {
-//                body.setUserControlled( false );
-//            }
-//        } );
-//        //TODO: Investigate using another mouse handler rather than overloading cursorHandler here.
-//        new RichSimpleObserver() {
-//            public void update() {
-//                /* we need to determine whether the mouse is over the body both before and after the model change so
-//                 * that we can toggle the hand pointer over the body.
-//                 *
-//                 * otherwise the body can move over the mouse and be dragged without ever seeing the hand pointer
-//                 */
-//                boolean isMouseOverBefore = bodyRenderer.getGlobalFullBounds().contains( mousePosition.get().toPoint2D() );
-//                setOffset( getPosition( modelViewTransform, body ).toPoint2D() );
-//                boolean isMouseOverAfter = bodyRenderer.getGlobalFullBounds().contains( mousePosition.get().toPoint2D() );
-//
-//                //Send mouse entered and mouse exited events when body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
-//                if ( parentComponent != null ) {
-//                    if ( isMouseOverBefore && !isMouseOverAfter ) {
-//                        cursorHandler.mouseExited( new PInputEvent( null, null ) {
-//                            @Override public PComponent getComponent() {
-//                                return parentComponent;
-//                            }
-//                        } );
-//                    }
-//                    if ( !isMouseOverBefore && isMouseOverAfter ) {
-//                        cursorHandler.mouseEntered( new PInputEvent( null, null ) {
-//                            @Override public PComponent getComponent() {
-//                                return parentComponent;
-//                            }
-//                        } );
-//                    }
-//                }
-//            }
-//        }.observe( body.getPositionProperty(), modelViewTransform );
-//
-//        new RichSimpleObserver() {
-//            public void update() {
-//                bodyRenderer.setDiameter( getViewDiameter() );
-//            }
-//        }.observe( body.getDiameterProperty(), modelViewTransform );
-//
-//        //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
-//        addChild( createArrowIndicator( body, labelAngle ) );
-//    }
-//
-//    //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
-//    private PNode createArrowIndicator( final Body body, final double labelAngle ) {
-//        return new PNode() {{
-//            Point2D viewCenter = new Point2D.Double( 0, 0 );
-//            Vector2D northEastVector = Vector2D.createPolar( 1, labelAngle );
-//            Point2D tip = northEastVector.times( 10 ).getDestination( viewCenter );
-//            final Point2D tail = northEastVector.times( 50 ).getDestination( viewCenter );
-//
-//            addChild( new ArrowNode( tail, tip, 0, 0, 3 ) {{
-//                setPaint( Color.yellow );
-//            }} );
-//            addChild( new PText( body.getName() ) {{
-//                setOffset( tail.getX() - getFullBounds().getWidth() / 2 - 5, tail.getY() - getFullBounds().getHeight() - 10 );
-//                whiteBackgroundProperty.addObserver( new VoidFunction1<Boolean>() {
-//                    public void apply( Boolean whiteBackground ) {
-//                        setTextPaint( whiteBackground ? Color.black : Color.white );
-//                    }
-//                } );
-//                setFont( new PhetFont( 18, true ) );
-//            }} );
-//            final PropertyChangeListener updateVisibility = new PropertyChangeListener() {
-//                public void propertyChange( PropertyChangeEvent evt ) {
-//                    setVisible( bodyRenderer.getGlobalFullBounds().getWidth() <= 10 );
-//                }
-//            };
-//            bodyRenderer.addPropertyChangeListener( PROPERTY_FULL_BOUNDS, updateVisibility );
-//            updateVisibility.propertyChange( null );
-//        }};
-//    }
-//
-//    private Vector2D getPosition( Property<ModelViewTransform> modelViewTransform, Body body ) {
-//        return modelViewTransform.get().modelToView( body.getPosition() );
-//    }
-//
-//    private double getViewDiameter() {
-//        double viewDiameter = modelViewTransform.get().modelToViewDeltaX( body.getDiameter() );
-//        return Math.max( viewDiameter, 2 );
-//    }
-//
-//    //Create a new image at the specified width. Use body.createRenderer() instead of bodyRenderer since we must specify a new width value
-//    public Image renderImage( int width ) {
-//        return body.createRenderer( width ).toImage( width, width, new Color( 0, 0, 0, 0 ) );
-//    }
-//
-//    public Body getBody() {
-//        return body;
-//    }
-//
-//    public BodyRenderer getBodyRenderer() {
-//        return bodyRenderer;
-//    }
-//}
+//          } ) );
+//        }
+//      }
+//    } );
+
+    this.body.diameterProperty.link( function() {
+      thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+    } );
+
+    //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
+    this.addChild( this.createArrowIndicator( this.body, labelAngle ) );
+  }
+
+  return inherit( Node, BodyNode, {
+
+    //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
+    //private
+    createArrowIndicator: function( body, labelAngle ) {
+      var node = new Node();
+      var viewCenter = new Vector2( 0, 0 );
+      var northEastVector = Vector2.createPolar( 1, labelAngle );
+      var tip = northEastVector.times( 10 ).getDestination( viewCenter );
+      var tail = northEastVector.times( 50 ).getDestination( viewCenter );
+
+      node.addChild( new ArrowNode( tail, tip, 0, 0, 3, { fill: 'yellow' } ) );
+      var text = new Text( body.getName(), {
+        font: new PhetFont( 18 ),
+        x: tail.x - this.width / 2 - 5,
+        y: tail.y - this.height - 10
+      } );
+      this.addChild( text );
+
+      this.whiteBackgroundProperty.link( function( whiteBackground ) {
+        text.fill = whiteBackground ? Color.black : Color.white;
+      } );
+
+      // TODO finish this port
+//      var updateVisibility = new PropertyChangeListener().withAnonymousClassBody( {
+//        propertyChange: function( evt ) {
+//          setVisible( bodyRenderer.getGlobalFullBounds().getWidth() <= 10 );
+//        }
+//      } );
+//      this.bodyRenderer.addPropertyChangeListener( PROPERTY_FULL_BOUNDS, updateVisibility );
+//      updateVisibility.propertyChange( null );
+    },
+
+    //private
+    getPosition: function( modelViewTransform, body ) {
+      return modelViewTransform.get().modelToView( body.getPosition() );
+    },
+
+    //private
+    getViewDiameter: function() {
+      var viewDiameter = this.modelViewTransform.modelToViewDeltaX( this.body.getDiameter() );
+      return Math.max( viewDiameter, 2 );
+    },
+
+    //Create a new image at the specified width. Use body.createRenderer() instead of bodyRenderer since we must specify a new width value
+    renderImage: function( width ) {
+      return this.body.createRenderer( width ).toImage( width, width, new Color( 0, 0, 0, 0 ) );
+    },
+
+    getBody: function() {
+      return this.body;
+    },
+
+    getBodyRenderer: function() {
+      return this.bodyRenderer;
+    }
+  } );
+} );
