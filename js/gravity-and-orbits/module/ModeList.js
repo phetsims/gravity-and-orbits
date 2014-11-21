@@ -13,16 +13,10 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Color = require( 'SCENERY/util/Color' );
-  var Image = require( 'java.awt.Image' );
-  var Line2D = require( 'java.awt.geom.Line2D' );
-  var Rectangle = require( 'KITE/Rectangle' );
-  var MessageFormat = require( 'java.text.MessageFormat' );
-  var ArrayList = require( 'java.util.ArrayList' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
-  var PhetPPath = require( 'edu.colorado.phet.common.piccolophet.nodes.PhetPPath' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
-  var GravityAndOrbitsApplication = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsApplication' );
+//  var GravityAndOrbitsApplication = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsApplication' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
@@ -36,11 +30,8 @@ define( function( require ) {
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var PImage = require( 'edu.umd.cs.piccolo.nodes.PImage' );
-  var multiScaleToWidth = require( 'edu.colorado.phet.common.phetcommon.view.util.BufferedImageUtils.multiScaleToWidth' );//static
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
-  var OUR_SUN = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings/OUR_SUN' );//static
-  var milesToMeters = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MeasuringTape/milesToMeters' );//static
+//  var milesToMeters = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MeasuringTape/milesToMeters' );//static
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model
@@ -306,7 +297,8 @@ define( function( require ) {
     updateBodyStateFromModel: function( bodyState ) {
       //store the original position in case it must be restored
       var position = this.getPosition();
-      super.updateBodyStateFromModel( bodyState );
+//      super.updateBodyStateFromModel( bodyState );
+      Body.prototype.updateBodyStateFromModel.call( this, bodyState );
       //Sun shouldn't move in cartoon modes
       if ( this.body.fixed ) {
         this.setPosition( position.getX(), position.getY() );

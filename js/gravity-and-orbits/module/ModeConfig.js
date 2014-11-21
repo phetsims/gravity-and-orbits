@@ -11,9 +11,8 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Line2D = require( 'java.awt.geom.Line2D' );
   var Vector2 = require( 'DOT/Vector2' );
-  var DEFAULT_DT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock/DEFAULT_DT' );//static
+//  var DEFAULT_DT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock/DEFAULT_DT' );//static
 
   /**
    *
@@ -21,7 +20,8 @@ define( function( require ) {
    * @constructor
    */
   function ModeConfig( zoom ) {
-    this.dt = DEFAULT_DT;
+//    this.dt = DEFAULT_DT;
+    this.dt = 1 / 60;
     this.zoom = zoom;
 
     // private members from java that weren't initialized in the constructor

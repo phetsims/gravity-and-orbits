@@ -10,7 +10,7 @@
  * @author Chris Malley
  * @author John Blanco
  * @author Aaron Davis
- * @see edu.colorado.phet.gravityandorbits.model.GravityAndOrbitsModel
+ * @see GravityAndOrbitsModel
  */
 define( function( require ) {
   'use strict';

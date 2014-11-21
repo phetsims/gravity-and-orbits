@@ -14,7 +14,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
   var PropertySet = require( 'AXON/PropertySet' );
-  var RewindableProperty = require( 'GRAVITY_AND_ORBITS/model/RewindableProperty' );
+  var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
 
   /**
    *
@@ -28,7 +28,7 @@ define( function( require ) {
    * @param {number} mass
    * @param {Color} color
    * @param {Color} highlight
-   * @param {function<Body, Double, BodyRenderer>} renderer
+   * @param {function<Body, number, BodyRenderer>} renderer
    * @param {number} labelAngle
    * @param {boolean} massSettable
    * @param {number} maxPathLength

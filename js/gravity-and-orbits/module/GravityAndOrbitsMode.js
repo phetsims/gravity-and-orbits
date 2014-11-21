@@ -19,39 +19,19 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
-  var Image = require( 'java.awt.Image' );
-  var MouseAdapter = require( 'java.awt.event.MouseAdapter' );
-  var MouseEvent = require( 'java.awt.event.MouseEvent' );
-  var Line2D = require( 'java.awt.geom.Line2D' );
-  var Rectangle = require( 'KITE/Rectangle' );
-  var ImageIcon = require( 'javax.swing.ImageIcon' );
-  var JComponent = require( 'javax.swing.JComponent' );
-  var JLabel = require( 'javax.swing.JLabel' );
-  var JPanel = require( 'javax.swing.JPanel' );
   var Vector2 = require( 'DOT/Vector2' );
-  var ClockAdapter = require( 'edu.colorado.phet.common.phetcommon.model.clock.ClockAdapter' );
-  var ClockEvent = require( 'edu.colorado.phet.common.phetcommon.model.clock.ClockEvent' );
   var Property = require( 'AXON/Property' );
-  var SimSharingManager = require( 'edu.colorado.phet.common.phetcommon.simsharing.SimSharingManager' );
-  var UserComponent = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponent' );
-  var UserComponentTypes = require( 'edu.colorado.phet.common.phetcommon.simsharing.messages.UserComponentTypes' );
-  var RichSimpleObserver = require( 'edu.colorado.phet.common.phetcommon.util.RichSimpleObserver' );
-  var SimpleObserver = require( 'edu.colorado.phet.common.phetcommon.util.SimpleObserver' );
-  var Function1 = require( 'edu.colorado.phet.common.phetcommon.util.function.Function1' );
-  var Function2 = require( 'edu.colorado.phet.common.phetcommon.util.function.Function2' );
-  var VoidFunction0 = require( 'edu.colorado.phet.common.phetcommon.util.function.VoidFunction0' );
-  var ModelViewTransform = require( 'edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform' );
-  var GAORadioButton = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GAORadioButton' );
-  var GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel' );
+  var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+//  var GAORadioButton = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GAORadioButton' );
+//  var GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
+//  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var pressed = require( 'edu.colorado.phet.common.phetcommon.simsharing.messages.UserActions.pressed' );//static
-  var chain = require( 'edu.colorado.phet.common.phetcommon.simsharing.messages.UserComponentChain.chain' );//static
-  var createRectangleInvertedYMapping = require( 'edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform.createRectangleInvertedYMapping' );//static
+//  var createRectangleInvertedYMapping = require( 'edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform.createRectangleInvertedYMapping' );//static
 
   // the play area only takes up the left side of the canvas; the control panel is on the right side
   var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width * 0.60;

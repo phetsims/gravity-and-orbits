@@ -14,9 +14,8 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
-  var ModeList = require( 'GRAVITY_AND_ORBITS/module/ModeList' );
-  var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/module/ModeListParameterList' );
-
+  var ModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/ModeList' );
+  var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/ModeListParameterList' );
 
   function SunEarthModeConfig() {
 
