@@ -48,7 +48,7 @@ define( function( require ) {
     Node.call( this );
     var thisNode = this;
 
-    console.log( 'canvas');
+    console.log( 'canvas' );
 
     module.whiteBackgroundProperty.link ( function( whiteBackground ) {
       thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
