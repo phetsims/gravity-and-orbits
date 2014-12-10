@@ -19,7 +19,7 @@ define( function( require ) {
   var VelocityArrows = require( 'view/workspace/VelocityArrows' );
   var PlanetPath = require( 'view/workspace/PlanetPath' );
   var Grid = require( 'view/workspace/Grid' );
-  var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var MeasuringTape = require( 'SCENERY_PHET/MeasuringTapeDeprecated' );
   var MassText = require( 'view/workspace/MassText' );
   var Labels = require( 'view/workspace/Labels' );
 
