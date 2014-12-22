@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Bounds2 = require( 'DOT/Bounds2' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
@@ -25,7 +26,7 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsView( model ) {
-    ScreenView.call( this, { renderer: 'svg' } );
+    ScreenView.call( this, { renderer: 'svg', layoutBounds: new Bounds2( 0, 0, model.width, model.height ) } );
 
     // add workspace
     this.addChild( new Workspace( model, this.layoutBounds ) );

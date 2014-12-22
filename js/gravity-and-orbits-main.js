@@ -17,6 +17,7 @@ define( function( require ) {
   var GravityAndOrbitsView = require( 'view/GravityAndOrbitsView' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var Image = require( 'SCENERY/nodes/Image' );
+  var Bounds2 = require( 'DOT/Bounds2' );
 
   // images
   var cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' );
@@ -26,6 +27,9 @@ define( function( require ) {
   var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
   var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
   var titleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' );
+
+  // constants
+  var LAYOUT_BOUNDS = new Bounds2( 0, 0, 768, 504 );
 
   var simOptions = {
     credits: {
@@ -40,12 +44,12 @@ define( function( require ) {
     // create and start the sim
     new Sim( titleString, [
       new Screen( cartoonString, new Image( cartoonIcon ),
-        function() { return new GravityAndOrbitsModel( ScreenView.DEFAULT_LAYOUT_BOUNDS.width, ScreenView.DEFAULT_LAYOUT_BOUNDS.height, cartoonString ); },
+        function() { return new GravityAndOrbitsModel( LAYOUT_BOUNDS.width, LAYOUT_BOUNDS.height, cartoonString ); },
         function( model ) { return new GravityAndOrbitsView( model ); },
         { backgroundColor: '#000' }
       ),
       new Screen( toScaleString, new Image( toScaleIcon ),
-        function() { return new GravityAndOrbitsModel( ScreenView.DEFAULT_LAYOUT_BOUNDS.width, ScreenView.DEFAULT_LAYOUT_BOUNDS.height, toScaleString ); },
+        function() { return new GravityAndOrbitsModel( LAYOUT_BOUNDS.width, LAYOUT_BOUNDS.height, toScaleString ); },
         function( model ) { return new GravityAndOrbitsView( model ); },
         { backgroundColor: '#000' }
       )
