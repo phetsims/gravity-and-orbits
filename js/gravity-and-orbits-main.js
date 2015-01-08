@@ -15,7 +15,6 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
   var GravityAndOrbitsModel = require( 'model/GravityAndOrbitsModel' );
   var GravityAndOrbitsView = require( 'view/GravityAndOrbitsView' );
-  var ScreenView = require( 'JOIST/ScreenView' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Bounds2 = require( 'DOT/Bounds2' );
 
