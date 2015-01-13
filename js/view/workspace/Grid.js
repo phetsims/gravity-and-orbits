@@ -60,12 +60,18 @@ define( function( require ) {
 
       // add grid if it's visible
       if ( gridProperty.value ) {
-        var opt = options[planetModeProperty.value];
+        var opt = options[ planetModeProperty.value ];
         for ( var i = 0; opt.x0 + i * opt.delta < opt.x1; i++ ) {
-          grid.addChild( new Path( Shape.lineSegment( opt.x0 + i * opt.delta, opt.y0, opt.x0 + i * opt.delta, opt.y1 ), {stroke: 'gray', lineWidth: 1} ) );
+          grid.addChild( new Path( Shape.lineSegment( opt.x0 + i * opt.delta, opt.y0, opt.x0 + i * opt.delta, opt.y1 ), {
+            stroke: 'gray',
+            lineWidth: 1
+          } ) );
         }
         for ( i = 0; opt.y0 + i * opt.delta < opt.y1; i++ ) {
-          grid.addChild( new Path( Shape.lineSegment( opt.x0, opt.y0 + i * opt.delta, opt.x1, opt.y0 + i * opt.delta ), {stroke: 'gray', lineWidth: 1} ) );
+          grid.addChild( new Path( Shape.lineSegment( opt.x0, opt.y0 + i * opt.delta, opt.x1, opt.y0 + i * opt.delta ), {
+            stroke: 'gray',
+            lineWidth: 1
+          } ) );
         }
       }
     };

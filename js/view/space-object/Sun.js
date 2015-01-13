@@ -19,7 +19,7 @@ define( function( require ) {
    * @constructor
    */
   function Sun( coords, radius ) {
-    AbstractSpaceObject.call( this, {coords: coords} );
+    AbstractSpaceObject.call( this, { coords: coords } );
 
     this.view = this.getCircleGradient( radius, '#fff', '#ff0', true );
     this.addChild( this.view );

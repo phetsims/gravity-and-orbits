@@ -22,7 +22,7 @@ define( function( require ) {
    * @constructor
    */
   function Moon( coords, radius ) {
-    AbstractSpaceObject.call( this, {image: moonImg, coords: coords} );
+    AbstractSpaceObject.call( this, { image: moonImg, coords: coords } );
 
     this.setRadius( radius );
   }

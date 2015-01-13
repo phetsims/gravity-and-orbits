@@ -46,41 +46,43 @@ define( function( require ) {
    * @constructor
    */
   function SpaceObjectsPropertyCheckbox( model, options ) {
-    VBox.call( this, _.extend( {resize: false, spacing: 5, align: 'left'}, options ) );
+    VBox.call( this, _.extend( { resize: false, spacing: 5, align: 'left' }, options ) );
 
     // checkbox params
     var measuringTapeImageNode = new Image( measuringTapeImg );
 
     // options for the grid line icon
-    var strokeOptions = {stroke: 'gray', lineWidth: 1.5};
+    var strokeOptions = { stroke: 'gray', lineWidth: 1.5 };
 
     var checkboxesOptions = {
       'gravityArrow': {
         property: model.forceArrowProperty,
         text: gravityString + ' ' + forceString,
-        node: new ArrowNode( 135, -10, 180, -10, {fill: '#4380C2'} )
+        node: new ArrowNode( 135, -10, 180, -10, { fill: '#4380C2' } )
       },
       'velocityArrow': {
         property: model.velocityArrowProperty,
         text: velocityString,
-        node: new ArrowNode( 95, -10, 140, -10, {fill: '#ED1C24'} )
+        node: new ArrowNode( 95, -10, 140, -10, { fill: '#ED1C24' } )
       },
       'path': {
         property: model.pathProperty,
         text: pathString,
-        node: new Node( {children: [new Image( iconPathImg )], scale: 0.9} )
+        node: new Node( { children: [ new Image( iconPathImg ) ], scale: 0.9 } )
       },
       'grid': {
         property: model.gridProperty,
         text: gridString,
-        node: new Node( {children: [
-          new Path( Shape.lineSegment( 0, 0, 20, 0 ), strokeOptions ),
-          new Path( Shape.lineSegment( 20, 0, 20, 20 ), strokeOptions ),
-          new Path( Shape.lineSegment( 20, 20, 0, 20 ), strokeOptions ),
-          new Path( Shape.lineSegment( 0, 20, 0, 0 ), strokeOptions ),
-          new Path( Shape.lineSegment( 10, 0, 10, 20 ), strokeOptions ),
-          new Path( Shape.lineSegment( 0, 10, 20, 10 ), strokeOptions )
-        ]} )
+        node: new Node( {
+          children: [
+            new Path( Shape.lineSegment( 0, 0, 20, 0 ), strokeOptions ),
+            new Path( Shape.lineSegment( 20, 0, 20, 20 ), strokeOptions ),
+            new Path( Shape.lineSegment( 20, 20, 0, 20 ), strokeOptions ),
+            new Path( Shape.lineSegment( 0, 20, 0, 0 ), strokeOptions ),
+            new Path( Shape.lineSegment( 10, 0, 10, 20 ), strokeOptions ),
+            new Path( Shape.lineSegment( 0, 10, 20, 10 ), strokeOptions )
+          ]
+        } )
       },
       'tape': {
         property: model.tapeProperty,
@@ -89,42 +91,50 @@ define( function( require ) {
           children: [
 
             //Sticking down metal 'tab' at the end of the tape
-            new Line( measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2 + 7, {stroke: '#aaaaaa', lineWidth: 3} ),
+            new Line( measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2 + 7, {
+              stroke: '#aaaaaa',
+              lineWidth: 3
+            } ),
 
             //A small amount of tape to help identify the icon as measuring tape
-            new Line( measuringTapeImageNode.width - 4, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30, measuringTapeImageNode.height - 2, {stroke: 'gray', lineWidth: 3} ),
+            new Line( measuringTapeImageNode.width - 4, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30, measuringTapeImageNode.height - 2, {
+              stroke: 'gray',
+              lineWidth: 3
+            } ),
 
-            measuringTapeImageNode],
+            measuringTapeImageNode ],
           scale: 0.5
         } )
       },
       'mass': {
         property: model.massProperty,
         text: massString,
-        node: new Node( {children: [new Image( iconMassImg )], scale: 0.8} )
+        node: new Node( { children: [ new Image( iconMassImg ) ], scale: 0.8 } )
       }
     }, order = {}, menu;
 
     // order of checkboxes depend on view mode
-    order[model.viewModes[0]] = ['gravityArrow', 'velocityArrow', 'path', 'grid'];
-    order[model.viewModes[1]] = ['gravityArrow', 'velocityArrow', 'mass', 'path', 'grid', 'tape'];
+    order[ model.viewModes[ 0 ] ] = [ 'gravityArrow', 'velocityArrow', 'path', 'grid' ];
+    order[ model.viewModes[ 1 ] ] = [ 'gravityArrow', 'velocityArrow', 'mass', 'path', 'grid', 'tape' ];
 
     // create all types of checkboxes
     for ( var checkboxOption in checkboxesOptions ) {
       if ( checkboxesOptions.hasOwnProperty( checkboxOption ) ) {
-        this[checkboxesOptions[checkboxOption].text] = {
-          view: new CheckBox( new HBox( { spacing: 10, children: [
-            new Text( checkboxesOptions[checkboxOption].text, { font: FONT, fill: '#fff', pickable: false} ),
-            new Node( {children: [checkboxesOptions[checkboxOption].node]} )
-          ]} ), checkboxesOptions[checkboxOption].property, {scale: 0.8} )
+        this[ checkboxesOptions[ checkboxOption ].text ] = {
+          view: new CheckBox( new HBox( {
+            spacing: 10, children: [
+              new Text( checkboxesOptions[ checkboxOption ].text, { font: FONT, fill: '#fff', pickable: false } ),
+              new Node( { children: [ checkboxesOptions[ checkboxOption ].node ] } )
+            ]
+          } ), checkboxesOptions[ checkboxOption ].property, { scale: 0.8 } )
         };
       }
     }
 
     // add checkboxes depend on view mode
-    menu = order[model.viewMode];
+    menu = order[ model.viewMode ];
     for ( var i = 0; i < menu.length; i++ ) {
-      this.addChild( this[checkboxesOptions[menu[i]].text].view );
+      this.addChild( this[ checkboxesOptions[ menu[ i ] ].text ].view );
     }
 
     this.bottom = -12;

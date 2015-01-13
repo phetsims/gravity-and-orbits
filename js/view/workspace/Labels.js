@@ -38,9 +38,9 @@ define( function( require ) {
 
     model.spaceObjects.forEach( function( spaceObject ) {
       var name = (spaceObject === 'spaceStation' ? 'satellite' : spaceObject), // change "space station" -> satellite
-        body = model[spaceObject],
+        body = model[ spaceObject ],
         position = body.position,
-        scale = model.planetModes[model.planetMode].options.scale;
+        scale = model.planetModes[ model.planetMode ].options.scale;
 
       var labelText = name === 'sun' ? sunString :
                       name === 'earth' ? planetString :
@@ -48,8 +48,18 @@ define( function( require ) {
                       satelliteString;
 
       // create label node for each space object
-      body.label.addChild( new Text( labelText, { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: position.x * scale + 15, y: position.y * scale - 30} ) );
-      body.label.addChild( new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {stroke: 'yellow', lineWidth: 1} ) );
+      body.label.addChild( new Text( labelText, {
+        font: FONT,
+        fontWeight: 'bold',
+        fill: 'white',
+        pickable: false,
+        x: position.x * scale + 15,
+        y: position.y * scale - 30
+      } ) );
+      body.label.addChild( new Path( new Shape().moveTo( position.x * scale + 7, position.y * scale - 7 ).lineTo( position.x * scale + 25, position.y * scale - 25 ), {
+        stroke: 'yellow',
+        lineWidth: 1
+      } ) );
       var bodyLabelBounds = body.label.bounds;
 
       //Add picking region and also go past the text bounds so that it doesn't leave red streaks, see https://github.com/phetsims/gravity-and-orbits/issues/57

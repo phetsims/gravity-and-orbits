@@ -27,9 +27,11 @@ define( function( require ) {
    */
   function Explosion( coords, radius ) {
     var alpha = 0, shape = new Shape();
-    Path.call( this, shape, {fill: new RadialGradient( radius * 0.1, -radius * 0.1, 1, radius * 0.1, -radius * 0.1, radius / 2 )
-      .addColorStop( 0, '#fff' )
-      .addColorStop( 1, '#ff0' )} );
+    Path.call( this, shape, {
+      fill: new RadialGradient( radius * 0.1, -radius * 0.1, 1, radius * 0.1, -radius * 0.1, radius / 2 )
+        .addColorStop( 0, '#fff' )
+        .addColorStop( 1, '#ff0' )
+    } );
 
     for ( var i = 0; i < STAR_ANGEL_NUM; i++ ) {
       shape = shape

@@ -22,7 +22,7 @@ define( function( require ) {
    * @constructor
    */
   function SpaceStation( coords, radius ) {
-    AbstractSpaceObject.call( this, {image: spaceStationImg, coords: coords, scaleCoeff: 1.3} );
+    AbstractSpaceObject.call( this, { image: spaceStationImg, coords: coords, scaleCoeff: 1.3 } );
 
     this.setRadius( radius );
   }

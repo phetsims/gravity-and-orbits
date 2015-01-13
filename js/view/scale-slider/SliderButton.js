@@ -28,14 +28,14 @@ define( function( require ) {
    */
   function SliderButton( x, y, scaleProperty, range, step, isIncrease ) {
     var callback, sample, width = 25, height = 25;
-    Node.call( this, {x: x - width / 2, y: y} );
+    Node.call( this, { x: x - width / 2, y: y } );
 
     // create default view
-    sample = new Node( {children: [new Rectangle( 0, 0, width, height, 2, 2, {fill: '#DBD485'} ), new Rectangle( 4, height / 2 - 1, width - 8, 2, {fill: 'black'} )]} );
+    sample = new Node( { children: [ new Rectangle( 0, 0, width, height, 2, 2, { fill: '#DBD485' } ), new Rectangle( 4, height / 2 - 1, width - 8, 2, { fill: 'black' } ) ] } );
 
     // increase or decrease view
     if ( isIncrease ) {
-      sample.addChild( new Rectangle( width / 2 - 1, 4, 2, height - 8, {fill: 'black'} ) );
+      sample.addChild( new Rectangle( width / 2 - 1, 4, 2, height - 8, { fill: 'black' } ) );
     }
 
     // callback (can be optimized by splitting to two functions)

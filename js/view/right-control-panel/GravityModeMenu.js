@@ -33,11 +33,13 @@ define( function( require ) {
   function GravityModeMenu( model, options ) {
     Node.call( this, options );
 
-    this.addChild( new HBox( {spacing: 10, bottom: 2, children: [
-      new Text( gravityString + ':', { font: FONT, fill: '#fff', pickable: false } ),
-      new AquaRadioButton( model.gravityProperty, true, new Text( onString, { font: FONT, fill: '#fff', pickable: false } ), {radius: 7} ),
-      new AquaRadioButton( model.gravityProperty, false, new Text( offString, { font: FONT, fill: '#fff', pickable: false } ), {radius: 7} )
-    ]} ) );
+    this.addChild( new HBox( {
+      spacing: 10, bottom: 2, children: [
+        new Text( gravityString + ':', { font: FONT, fill: '#fff', pickable: false } ),
+        new AquaRadioButton( model.gravityProperty, true, new Text( onString, { font: FONT, fill: '#fff', pickable: false } ), { radius: 7 } ),
+        new AquaRadioButton( model.gravityProperty, false, new Text( offString, { font: FONT, fill: '#fff', pickable: false } ), { radius: 7 } )
+      ]
+    } ) );
   }
 
   return inherit( Node, GravityModeMenu );

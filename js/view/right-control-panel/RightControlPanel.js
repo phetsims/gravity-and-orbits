@@ -46,7 +46,7 @@ define( function( require ) {
     for ( var i = 0; i < numSeparators; i++ ) {
       var separatorRectangle = new Rectangle( 0, 0, 0, 2, { fill: STROKE } );
       sections.splice( ( i * 2 ) + 1, 0, separatorRectangle );
-      separators.push ( separatorRectangle );
+      separators.push( separatorRectangle );
     }
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
@@ -55,11 +55,11 @@ define( function( require ) {
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;
     for ( i = 0; i < 3; i++ ) {
-      separators[i].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
+      separators[ i ].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
     }
 
     // center bottom control section
-    sections[sections.length - 1].centerX = ( vbox.width / 2 ) - PANEL_X_MARGIN;
+    sections[ sections.length - 1 ].centerX = ( vbox.width / 2 ) - PANEL_X_MARGIN;
   }
 
   return inherit( Panel, RightControlPanel );

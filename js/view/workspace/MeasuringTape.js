@@ -97,7 +97,7 @@ define( function( require ) {
     this.string = model.isTapeUnitsMiles ? thousandMilesString : thousandKilometersString;
 
     // add base of tape and not base node
-    this.base = new Node( {children: [new Image( measuringTapeImg )], scale: 0.8} );
+    this.base = new Node( { children: [ new Image( measuringTapeImg ) ], scale: 0.8 } );
     this.addChild( this.base );
     this.centerRotation = new Vector2( measuringTape.base.getWidth(), measuringTape.base.getHeight() );
     this.notBase = new Node();
@@ -127,16 +127,24 @@ define( function( require ) {
     } ) );
 
     // add line
-    this.line = new Line( 0, 0, 0, 0, {stroke: 'gray', lineWidth: 2} );
+    this.line = new Line( 0, 0, 0, 0, { stroke: 'gray', lineWidth: 2 } );
     this.notBase.addChild( this.line );
 
     // add center point
     var size = 5;
-    this.mediator = new Path( new Shape().moveTo( -size, 0 ).lineTo( size, 0 ).moveTo( 0, -size ).lineTo( 0, size ), {stroke: '#E05F20', lineWidth: 2} );
+    this.mediator = new Path( new Shape().moveTo( -size, 0 ).lineTo( size, 0 ).moveTo( 0, -size ).lineTo( 0, size ), {
+      stroke: '#E05F20',
+      lineWidth: 2
+    } );
     this.notBase.addChild( this.mediator );
 
     // add tip
-    this.tip = new Node( {children: [new Circle( 15, {fill: 'rgba(0,0,0,0)'} ), new Path( new Shape().moveTo( -size, 0 ).lineTo( size, 0 ).moveTo( 0, -size ).lineTo( 0, size ), {stroke: '#E05F20', lineWidth: 2} )]} );
+    this.tip = new Node( {
+      children: [ new Circle( 15, { fill: 'rgba(0,0,0,0)' } ), new Path( new Shape().moveTo( -size, 0 ).lineTo( size, 0 ).moveTo( 0, -size ).lineTo( 0, size ), {
+        stroke: '#E05F20',
+        lineWidth: 2
+      } ) ]
+    } );
     this.tip.cursor = 'pointer';
     this.notBase.addChild( this.tip );
 
@@ -162,15 +170,15 @@ define( function( require ) {
     } ) );
 
     // add text
-    this.text = new Text( '', { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: -75, y: 20} );
+    this.text = new Text( '', { font: FONT, fontWeight: 'bold', fill: 'white', pickable: false, x: -75, y: 20 } );
     this.notBase.addChild( this.text );
 
     this.addChild( this.notBase );
 
-    if ( model.viewModes[0] === model.viewMode ) { // cartoon
+    if ( model.viewModes[ 0 ] === model.viewMode ) { // cartoon
       measuringTape.setVisible( false );
     }
-    else if ( model.viewModes[1] === model.viewMode && model.tape ) { // scale
+    else if ( model.viewModes[ 1 ] === model.viewMode && model.tape ) { // scale
       measuringTape.setVisible( true );
     }
 
@@ -178,10 +186,10 @@ define( function( require ) {
     model.tapeProperty.linkAttribute( this, 'visible' );
 
     model.planetModeProperty.link( function( mode ) {
-      options[measuringTape.mode].lengthDefault *= 1 / measuringTape.prevScale;
+      options[ measuringTape.mode ].lengthDefault *= 1 / measuringTape.prevScale;
       measuringTape.mode = mode;
-      options[mode].lengthDefault = options[measuringTape.mode].lengthDefault * measuringTape.prevScale;
-      measuringTape.resetTape( options[mode], angle );
+      options[ mode ].lengthDefault = options[ measuringTape.mode ].lengthDefault * measuringTape.prevScale;
+      measuringTape.resetTape( options[ mode ], angle );
       angle = 0;
     } );
 
@@ -205,7 +213,7 @@ define( function( require ) {
     },
     // return text for current planet mode
     getText: function() {
-      var option = options[this.mode];
+      var option = options[ this.mode ];
       return (option.length / option.lengthDefault * option.valueDefault).toFixed( option.precision ) + ' ' + this.string;
     },
     // rotate tape view
@@ -214,15 +222,15 @@ define( function( require ) {
     },
     // scale view: change only rule size
     scale: function( scale ) {
-      options[this.mode].lengthDefault *= 1 / this.prevScale;
-      options[this.mode].lengthDefault *= scale;
-      this.setTip( options[this.mode].tipX / this.prevScale, options[this.mode].tipY / this.prevScale );
-      this.setTip( options[this.mode].tipX * scale, options[this.mode].tipY * scale );
+      options[ this.mode ].lengthDefault *= 1 / this.prevScale;
+      options[ this.mode ].lengthDefault *= scale;
+      this.setTip( options[ this.mode ].tipX / this.prevScale, options[ this.mode ].tipY / this.prevScale );
+      this.setTip( options[ this.mode ].tipX * scale, options[ this.mode ].tipY * scale );
       this.prevScale = scale;
     },
     // set tip to given coordinates
     setTip: function( x, y ) {
-      var option = options[this.mode];
+      var option = options[ this.mode ];
       option.length = Math.sqrt( Math.pow( x, 2 ) + Math.pow( y, 2 ) );
 
       this.line.setPoint2( x, y );

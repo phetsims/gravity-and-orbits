@@ -9,7 +9,7 @@
 
 require.config( {
 
-  deps: ['gravity-and-orbits-main'],
+  deps: [ 'gravity-and-orbits-main' ],
 
   paths: {
 

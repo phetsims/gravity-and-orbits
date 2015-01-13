@@ -46,7 +46,7 @@ define( function( require ) {
       SPACE_STATION_PERIGEE: 347000,
       METERS_PER_MILE: 0.000621371192
     },
-    timeModes = ['days', 'minutes'],
+    timeModes = [ 'days', 'minutes' ],
   // options of planet for each mode
     planetModes = [
     /** first planet mode:
@@ -107,7 +107,7 @@ define( function( require ) {
           // days per seconds
           timeScale: 365.0 / 26.0,
 
-          timeMode: timeModes[0],
+          timeMode: timeModes[ 0 ],
           scale: 1.15E-9,
 
           // scale center coordinates
@@ -197,7 +197,7 @@ define( function( require ) {
           // days per seconds
           timeScale: 365.0 / 26.0,
 
-          timeMode: timeModes[0],
+          timeMode: timeModes[ 0 ],
           scale: 1.15E-9,
 
           // scale center coordinates
@@ -264,7 +264,7 @@ define( function( require ) {
           // days per seconds
           timeScale: 365.0 / 96.0,
 
-          timeMode: timeModes[0],
+          timeMode: timeModes[ 0 ],
           scale: 3.7E-7,
 
           // scale center coordinates
@@ -330,7 +330,7 @@ define( function( require ) {
           // days per seconds
           timeScale: 365.0 / 31855.0,
 
-          timeMode: timeModes[1],
+          timeMode: timeModes[ 1 ],
           scale: 2E-5,
 
           // scale center coordinates
@@ -355,13 +355,13 @@ define( function( require ) {
    */
   function GravityAndOrbitsModel( width, height, viewMode ) {
     var gravityAndOrbitsModel = this;
-    this.viewModes = [cartoonString, toScaleString];
+    this.viewModes = [ cartoonString, toScaleString ];
     this.viewMode = viewMode; // 'cartoon', 'to scale'
     this.timeModes = timeModes;
     this.CONSTANTS = CONSTANTS;
     this.isTapeUnitsMiles = true; // use in measuring tape miles or meters metric system
 
-    this.spaceObjects = ['sun', 'earth', 'moon', 'spaceStation'];
+    this.spaceObjects = [ 'sun', 'earth', 'moon', 'spaceStation' ];
 
     // possible planet modes
     this.planetModes = planetModes;
@@ -372,7 +372,7 @@ define( function( require ) {
 
     PropertySet.call( this, {
       planetMode: 0, // planet mode
-      timeMode: timeModes[0], // time counter format
+      timeMode: timeModes[ 0 ], // time counter format
       gravity: true, // switch gravity
       forceArrow: false, // visible force arrows
       velocityArrow: false, // visible velocity arrows
@@ -395,11 +395,11 @@ define( function( require ) {
 
     // add property for space objects
     this.spaceObjects.forEach( function( spaceObject ) {
-      gravityAndOrbitsModel[spaceObject] = new SpaceObjectModel( planetModes[0][spaceObject] );
+      gravityAndOrbitsModel[ spaceObject ] = new SpaceObjectModel( planetModes[ 0 ][ spaceObject ] );
     } );
 
     this.spaceObjects.forEach( function( spaceObject ) {
-      var body = gravityAndOrbitsModel[spaceObject];
+      var body = gravityAndOrbitsModel[ spaceObject ];
 
       // add observers for mass sliders
       body.massCoeffProperty.link( function( newCoeff, prevCoeff ) {
@@ -454,7 +454,7 @@ define( function( require ) {
     // recalculate positions of all space objects
     stepManual: function( dt ) {
       var dDay, model = this,
-        mode = this.planetModes[this.planetMode],
+        mode = this.planetModes[ this.planetMode ],
         scale = mode.options.scale,
         forceScale = mode.options.forceScale,
         timeScale = 24 * 60 * 60 * 0.967,
@@ -465,18 +465,18 @@ define( function( require ) {
         body;
       dt = dt || 1 / fps;
 
-      dDay = dt * this.speed * this.planetModes[this.planetMode].options.timeScale;
+      dDay = dt * this.speed * this.planetModes[ this.planetMode ].options.timeScale;
       this.day += dDay;
 
       dt = dDay * timeScale / STEPS;
 
       for ( j = 0; j < STEPS; j++ ) {
         for ( i = 0; i < this.spaceObjects.length; i++ ) {
-          currentObj = this.spaceObjects[i];
+          currentObj = this.spaceObjects[ i ];
 
           // change position of not fixed or dragging objects
-          if ( mode[currentObj] && !mode[currentObj].fixed && currentObj !== model.drag ) {
-            body = this[currentObj];
+          if ( mode[ currentObj ] && !mode[ currentObj ].fixed && currentObj !== model.drag ) {
+            body = this[ currentObj ];
 
             body.position.x = (body.position.x / scale + body.velocity.x * dt + body.acceleration.x * dt * dt / 2) * scale;
             body.position.y = (body.position.y / scale + body.velocity.y * dt + body.acceleration.y * dt * dt / 2) * scale;
@@ -496,7 +496,7 @@ define( function( require ) {
 
       // notify observers
       this.spaceObjects.forEach( function( spaceObject ) {
-        var body = model[spaceObject];
+        var body = model[ spaceObject ];
         body.positionProperty.notifyObserversStatic();
         body.accelerationProperty.notifyObserversStatic();
         body.velocityProperty.notifyObserversStatic();
@@ -515,8 +515,8 @@ define( function( require ) {
       currentObj,
       sourceBody,
       model = this,
-      targetBody = model[target],
-      mode = model.planetModes[model.planetMode],
+      targetBody = model[ target ],
+      mode = model.planetModes[ model.planetMode ],
       scale = mode.options.scale,
       targetPosX = targetBody.position.x / scale,
       targetPosY = targetBody.position.y / scale,
@@ -525,14 +525,14 @@ define( function( require ) {
     // zero vector, for no gravity
     if ( model.gravity ) {
       for ( var i = 0; i < model.spaceObjects.length; i++ ) {
-        currentObj = model.spaceObjects[i];
-        sourceBody = model[currentObj];
+        currentObj = model.spaceObjects[ i ];
+        sourceBody = model[ currentObj ];
         sourcePosX = sourceBody.position.x / scale;
         sourcePosY = sourceBody.position.y / scale;
 
         // ignore computation if that body has exploded,
         // or if they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
-        if ( mode[currentObj] && currentObj !== target && !sourceBody.exploded && !(targetPosX === sourcePosX && targetPosY === sourcePosY) ) {
+        if ( mode[ currentObj ] && currentObj !== target && !sourceBody.exploded && !(targetPosX === sourcePosX && targetPosY === sourcePosY) ) {
 
           //Do math component-wise to save on garbage collection, see #84
           //F.add( getUnitVector( sourcePos, targetPos ).multiply( CONSTANTS.G * sourceBody.mass * targetBody.mass / distanceSquared ) );

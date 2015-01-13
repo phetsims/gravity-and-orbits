@@ -103,12 +103,12 @@ define( function( require ) {
     var xBound = layoutBounds.maxX * 0.4;
     var yBound = layoutBounds.maxY * 0.4;
     var tapeBounds = new Bounds2( -xBound, -yBound, xBound, yBound );
-    var measuringTape = new MeasuringTape( tapeBounds, model.scaleProperty, model.unitsProperty, TAPE_OPTIONS[0] );
+    var measuringTape = new MeasuringTape( tapeBounds, model.scaleProperty, model.unitsProperty, TAPE_OPTIONS[ 0 ] );
     this.toScale.addChild( measuringTape );
     model.tapeProperty.linkAttribute( measuringTape, 'visible' );
     model.planetModeProperty.link( function( mode ) {
-      for ( var option in TAPE_OPTIONS[mode] ) {
-        measuringTape.options[option] = TAPE_OPTIONS[mode][option];
+      for ( var option in TAPE_OPTIONS[ mode ] ) {
+        measuringTape.options[ option ] = TAPE_OPTIONS[ mode ][ option ];
       }
       measuringTape.resetTape();
     } );

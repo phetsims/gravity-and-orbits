@@ -35,9 +35,9 @@ define( function( require ) {
 
     // add space objects
     for ( var i = model.spaceObjects.length, currentObj; i--; ) {
-      currentObj = model.spaceObjects[i];
-      if ( model.planetModes[num][currentObj] ) {
-        this.addChild( new map[currentObj]( { x: 16 + i * 36, y: 15 }, 11 ) );
+      currentObj = model.spaceObjects[ i ];
+      if ( model.planetModes[ num ][ currentObj ] ) {
+        this.addChild( new map[ currentObj ]( { x: 16 + i * 36, y: 15 }, 11 ) );
       }
     }
   }

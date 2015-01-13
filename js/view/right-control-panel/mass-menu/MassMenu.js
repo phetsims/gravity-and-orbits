@@ -41,7 +41,7 @@ define( function( require ) {
    */
   function MassMenu( model, coords ) {
     var massMenu = this;
-    Node.call( this, {scale: 0.85} );
+    Node.call( this, { scale: 0.85 } );
     if ( coords ) {
       this.setTranslation( coords );
     }
@@ -80,27 +80,27 @@ define( function( require ) {
         }
       }
     }, showModes = [
-      ['sun', 'earth'], // planetMode === 0
-      ['sun', 'earth'], // planetMode === 1
-      ['earth', 'moon'], // planetMode === 2
-      ['earth', 'spaceStation'] // planetMode === 3
+      [ 'sun', 'earth' ], // planetMode === 0
+      [ 'sun', 'earth' ], // planetMode === 1
+      [ 'earth', 'moon' ], // planetMode === 2
+      [ 'earth', 'spaceStation' ] // planetMode === 3
     ];
 
     // init all sliders
     for ( var object in map ) {
       if ( map.hasOwnProperty( object ) ) {
-        this[object] = new MassMenuSlider( 10, 0, {title: map[object].title, property: map[object].property, icon: map[object].icon } );
+        this[ object ] = new MassMenuSlider( 10, 0, { title: map[ object ].title, property: map[ object ].property, icon: map[ object ].icon } );
       }
     }
 
-    this.vBox = new VBox( {resize: false, spacing: 2} );
+    this.vBox = new VBox( { resize: false, spacing: 2 } );
     this.addChild( this.vBox );
 
     // add sliders
     model.planetModeProperty.link( function( mode ) {
       massMenu.vBox.removeAllChildren();
-      showModes[mode].forEach( function( spaceObject ) {
-        massMenu.vBox.addChild( massMenu[spaceObject] );
+      showModes[ mode ].forEach( function( spaceObject ) {
+        massMenu.vBox.addChild( massMenu[ spaceObject ] );
       } );
 
       massMenu.vBox.updateLayout();

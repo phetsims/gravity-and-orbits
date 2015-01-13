@@ -46,27 +46,30 @@ define( function( require ) {
     // day text counter
     this.day = new Text( '', { font: FONT, fill: '#fff', pickable: false } );
 
-    var box = new VBox( {resize: false, spacing: 4, children: [
-      // add day text counter
-      this.day,
+    var box = new VBox( {
+      resize: false, spacing: 4, children: [
+        // add day text counter
+        this.day,
 
-      // add clear button
-      new TextPushButton( clearString, {
-        font: FONT,
-        listener: function() {
-          dayOffsetProperty.value = dayProperty.value;
-          updateDay();
-        }} )
-    ]} );
+        // add clear button
+        new TextPushButton( clearString, {
+          font: FONT,
+          listener: function() {
+            dayOffsetProperty.value = dayProperty.value;
+            updateDay();
+          }
+        } )
+      ]
+    } );
 
     this.addChild( box );
 
     timeModeProperty.link( function( mode ) {
-      if ( mode === timeModes[0] ) { // days
+      if ( mode === timeModes[ 0 ] ) { // days
         dayCounter.text = earthDaysString;
         dayCounter.multiplier = 1;
       }
-      else if ( mode === timeModes[1] ) { // minutes
+      else if ( mode === timeModes[ 1 ] ) { // minutes
         dayCounter.text = earthMinutesString;
         dayCounter.multiplier = 24 * 60;
       }

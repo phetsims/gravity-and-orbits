@@ -33,11 +33,11 @@ define( function( require ) {
       var resetButton = new PlanetModeResetButton( model );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
-      ( function( i, resetButton ) {
+      (function( i, resetButton ) {
         model.planetModeProperty.link( function( mode ) {
           resetButton.visible = ( mode === i );
         } );
-      } )( i, resetButton );
+      })( i, resetButton );
 
       resetButtons.push( resetButton );
     }

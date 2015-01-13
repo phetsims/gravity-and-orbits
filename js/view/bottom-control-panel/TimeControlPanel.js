@@ -38,7 +38,7 @@ define( function( require ) {
 
     model.dayProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
     model.dayOffsetProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
-    HBox.call( this, {spacing: 10, children: [ rewindButton, playPauseButton, stepButton ]} );
+    HBox.call( this, { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] } );
   }
 
   return inherit( HBox, TimeControlPanel );

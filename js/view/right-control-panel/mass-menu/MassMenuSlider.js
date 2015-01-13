@@ -43,22 +43,22 @@ define( function( require ) {
         tickStep: 0.5,
         title: '',
         property: null,
-        range: {min: 0.5, max: 2},
+        range: { min: 0.5, max: 2 },
         rounding: 2,
         width: 200,
         height: 50
       }, options );
 
-    Node.call( this, {x: x, y: y} );
+    Node.call( this, { x: x, y: y } );
 
     // add ticks
     if ( options.tickStep ) {
       nodeTick = new Node();
       for ( var i = options.range.min; i <= options.range.max; i += options.tickStep ) {
         nodeTick.addChild( new Line(
-            (options.width - 2 * MARGIN) * (i - options.range.min) / (options.range.max - options.range.min), -5,
-            (options.width - 2 * MARGIN) * (i - options.range.min) / (options.range.max - options.range.min), -TICK_HEIGHT,
-          {stroke: 'white', lineWidth: 1} ) );
+          (options.width - 2 * MARGIN) * (i - options.range.min) / (options.range.max - options.range.min), -5,
+          (options.width - 2 * MARGIN) * (i - options.range.min) / (options.range.max - options.range.min), -TICK_HEIGHT,
+          { stroke: 'white', lineWidth: 1 } ) );
       }
       horizontalPartNode.addChild( nodeTick );
     }
@@ -75,18 +75,22 @@ define( function( require ) {
 
     // add slider
     horizontalPartNode.setTranslation( MARGIN, options.height - 20 );
-    var slider = new Node( {children: [
-      new Rectangle( 0, 0, options.width, options.height, {} ),
-      horizontalPartNode,
-      new Text( options.title, {centerX: options.width / 2.875, top: 0, font: FONT, fill: '#fff', pickable: false} )
-    ], y: 5} );
+    var slider = new Node( {
+      children: [
+        new Rectangle( 0, 0, options.width, options.height, {} ),
+        horizontalPartNode,
+        new Text( options.title, { centerX: options.width / 2.875, top: 0, font: FONT, fill: '#fff', pickable: false } )
+      ], y: 5
+    } );
     this.addChild( slider );
 
     // add label
-    var label = new HBox( {spacing: 7, x: 50, children: [
-      new Text( options.icon.text, { font: FONTICON, fontWeight: 'bold', fill: '#fff', pickable: false} ),
-      new options.icon.image( {x: options.width / 1.6, y: -7}, 7 )
-    ]} );
+    var label = new HBox( {
+      spacing: 7, x: 50, children: [
+        new Text( options.icon.text, { font: FONTICON, fontWeight: 'bold', fill: '#fff', pickable: false } ),
+        new options.icon.image( { x: options.width / 1.6, y: -7 }, 7 )
+      ]
+    } );
     this.addChild( label );
 
     // add observer. But round the value and snap to the default if within a small range

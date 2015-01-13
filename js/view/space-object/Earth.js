@@ -22,7 +22,7 @@ define( function( require ) {
    * @constructor
    */
   function Earth( coords, radius ) {
-    AbstractSpaceObject.call( this, {image: earthImg, coords: coords} );
+    AbstractSpaceObject.call( this, { image: earthImg, coords: coords } );
 
     this.setRadius( radius );
 

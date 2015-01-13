@@ -25,17 +25,17 @@ define( function( require ) {
 
     // add text for each space object
     model.spaceObjects.forEach( function( spaceObject ) {
-      var body = model[spaceObject];
+      var body = model[ spaceObject ];
       massText.addChild( body.massText );
 
       // update mass text
       var setMassText = function() {
         var text, defaultValue, precision, value;
 
-        if ( model.planetModes[model.planetMode][spaceObject] && body.massText.isVisible ) {
-          text = model.planetModes[model.planetMode][spaceObject].massLabel.text;
-          defaultValue = model.planetModes[model.planetMode][spaceObject].massLabel.defaultValue;
-          precision = model.planetModes[model.planetMode][spaceObject].massLabel.precision || 0;
+        if ( model.planetModes[ model.planetMode ][ spaceObject ] && body.massText.isVisible ) {
+          text = model.planetModes[ model.planetMode ][ spaceObject ].massLabel.text;
+          defaultValue = model.planetModes[ model.planetMode ][ spaceObject ].massLabel.defaultValue;
+          precision = model.planetModes[ model.planetMode ][ spaceObject ].massLabel.precision || 0;
           value = (body.massCoeff * defaultValue).toFixed( precision );
 
           // if value ==== '1.00' replace 1.00 -> 1 and masses -> mass
@@ -56,7 +56,7 @@ define( function( require ) {
 
       // update mass text visibility
       var setMassTextVisibility = function() {
-        body.massText.setVisible( model.mass && model.planetModes[model.planetMode][spaceObject] && !body.exploded );
+        body.massText.setVisible( model.mass && model.planetModes[ model.planetMode ][ spaceObject ] && !body.exploded );
       };
 
       var updateMassText = function() {
@@ -79,7 +79,7 @@ define( function( require ) {
       model.scaleProperty.link( setMassTextPosition );
 
       // tune for different view modes
-      if ( model.viewMode !== model.viewModes[1] ) {
+      if ( model.viewMode !== model.viewModes[ 1 ] ) {
         model.mass = false;
       }
     } );

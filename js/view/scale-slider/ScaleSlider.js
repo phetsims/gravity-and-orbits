@@ -29,10 +29,10 @@ define( function( require ) {
    */
   function ScaleSlider( scaleProperty, x, y ) {
     var options = {
-      range: {max: 1.5, min: 0.5},
+      range: { max: 1.5, min: 0.5 },
       step: 0.1
     };
-    Node.call( this, {x: x, y: y, scale: 0.63} );
+    Node.call( this, { x: x, y: y, scale: 0.63 } );
 
     var verticalSlider = new HSlider( scaleProperty, options.range, {
       trackSize: TRACK_SIZE,

@@ -41,7 +41,7 @@ define( function( require ) {
       }
 
       // restore state if state was stored for this planet mode
-      if ( spaceObjects.state[num] && spaceObjects.state[num][0] ) {
+      if ( spaceObjects.state[ num ] && spaceObjects.state[ num ][ 0 ] ) {
         spaceObjects.restoreState( model, num, 0 );
       }
       // else set initial state
@@ -50,7 +50,7 @@ define( function( require ) {
         spaceObjects.initState( model, num );
       }
 
-      if ( !spaceObjects.state[num] || !spaceObjects.state[num][1] ) {
+      if ( !spaceObjects.state[ num ] || !spaceObjects.state[ num ][ 1 ] ) {
         spaceObjects.saveState( model, num, 1 );
       }
 
@@ -60,7 +60,7 @@ define( function( require ) {
 
     // add explosion animation
     model.spaceObjects.forEach( function( spaceObject ) {
-      var body = model[spaceObject];
+      var body = model[ spaceObject ];
       body.radiusCoeffProperty.link( function() {
         spaceObjects.checkExplosion( model );
       } );
@@ -94,12 +94,12 @@ define( function( require ) {
 
     // redraw space objects when position changing
     model.spaceObjects.forEach( function( spaceObject ) {
-      var body = model[spaceObject],
+      var body = model[ spaceObject ],
         position = new Vector2( 0, 0 );
 
       body.positionProperty.link( function( newPosition ) {
         // round coordinates and prevent ripple effect for some cases
-        if ( spaceObject === 'earth' && model.planetMode === 2 && model.viewMode === model.viewModes[0] ) {
+        if ( spaceObject === 'earth' && model.planetMode === 2 && model.viewMode === model.viewModes[ 0 ] ) {
           position.setXY( Util.toFixedNumber( newPosition.x, 0 ), Util.toFixedNumber( newPosition.y, 0 ) );
           body.view.setTranslation( position );
         }
@@ -111,7 +111,7 @@ define( function( require ) {
 
     // init drag and drop for space objects
     model.spaceObjects.forEach( function( spaceObject ) {
-      var clickYOffset, clickXOffset, body = model[spaceObject], getListener = function( view ) {
+      var clickYOffset, clickXOffset, body = model[ spaceObject ], getListener = function( view ) {
         return new SimpleDragHandler( {
           start: function( e ) {
             clickYOffset = view.globalToParentPoint( e.pointer.point ).y - e.currentTarget.y;
@@ -144,13 +144,13 @@ define( function( require ) {
     } );
 
     // replace earth by gray sphere
-    var earth = model.spaceObjects[1];
-    model[earth].radiusCoeffProperty.link( function( coeff ) {
+    var earth = model.spaceObjects[ 1 ];
+    model[ earth ].radiusCoeffProperty.link( function( coeff ) {
       if ( coeff === 1 ) {
-        model[earth].view.setDefaultView();
+        model[ earth ].view.setDefaultView();
       }
       else {
-        model[earth].view.setGrayView();
+        model[ earth ].view.setGrayView();
       }
     } );
 
@@ -193,20 +193,20 @@ define( function( require ) {
      * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
      */
     checkExplosion: function( model ) {
-      var obj1, obj2, i, j, dx, dr, mode = model.planetModes[model.planetMode];
+      var obj1, obj2, i, j, dx, dr, mode = model.planetModes[ model.planetMode ];
 
       for ( i = 0; i < model.spaceObjects.length; i++ ) {
-        obj1 = model.spaceObjects[i];
-        if ( !mode[obj1] ) {continue;}
+        obj1 = model.spaceObjects[ i ];
+        if ( !mode[ obj1 ] ) {continue;}
         for ( j = i + 1; j < model.spaceObjects.length; j++ ) {
-          obj2 = model.spaceObjects[j];
-          if ( !mode[obj2] ) {continue;}
+          obj2 = model.spaceObjects[ j ];
+          if ( !mode[ obj2 ] ) {continue;}
 
           // distance between objects
-          dx = model[obj1].position.minus( model[obj2].position ).magnitude(); // distance between planets
+          dx = model[ obj1 ].position.minus( model[ obj2 ].position ).magnitude(); // distance between planets
 
           // sum of radius of objects
-          dr = (model[obj1].view.getWidth() + model[obj2].view.getWidth()) / 2;
+          dr = (model[ obj1 ].view.getWidth() + model[ obj2 ].view.getWidth()) / 2;
 
           // check finite distance
           if ( !isFinite( dx ) || !isFinite( dr ) ) {
@@ -215,7 +215,7 @@ define( function( require ) {
 
           // explosion if distance less that sum of radius
           if ( dr > dx ) {
-            model[(model[obj1].mass > model[obj2].mass ? obj2 : obj1 )].exploded = true;
+            model[ (model[ obj1 ].mass > model[ obj2 ].mass ? obj2 : obj1 ) ].exploded = true;
           }
         }
       }
@@ -228,7 +228,7 @@ define( function( require ) {
      */
     initState: function( model, modeIndex ) {
       // set scale center
-      model.scaleCenter = new Vector2( model.planetModes[modeIndex].options.centerX, model.planetModes[modeIndex].options.centerY );
+      model.scaleCenter = new Vector2( model.planetModes[ modeIndex ].options.centerX, model.planetModes[ modeIndex ].options.centerY );
 
       // Remove the view, it will be discarded and garbage collected
       if ( this.view.children.length ) {
@@ -250,7 +250,7 @@ define( function( require ) {
      * @param {Number} stateIndex - State number for given planet mode state.
      */
     restoreState: function( model, modeIndex, stateIndex ) {
-      var state = this.state[modeIndex][stateIndex];
+      var state = this.state[ modeIndex ][ stateIndex ];
 
       // don't restore scale when rewinding
       if ( stateIndex !== 1 ) {
@@ -287,22 +287,22 @@ define( function( require ) {
 
       // individual properties for each space objects
       model.spaceObjects.forEach( function( name ) {
-        obj = model.planetModes[modeIndex][name];
+        obj = model.planetModes[ modeIndex ][ name ];
         if ( obj ) {
-          body = model[name];
-          state.spaceObjects[name] = {};
-          spaceObject = state.spaceObjects[name];
+          body = model[ name ];
+          state.spaceObjects[ name ] = {};
+          spaceObject = state.spaceObjects[ name ];
 
           // save static properties
           for ( var prop in obj ) {
             if ( obj.hasOwnProperty( prop ) ) {
-              spaceObject[prop] = obj[prop];
+              spaceObject[ prop ] = obj[ prop ];
             }
           }
 
           // save dynamic properties
-          spaceObject.x = body.position.x / model.planetModes[modeIndex].options.scale;
-          spaceObject.y = body.position.y / model.planetModes[modeIndex].options.scale;
+          spaceObject.x = body.position.x / model.planetModes[ modeIndex ].options.scale;
+          spaceObject.y = body.position.y / model.planetModes[ modeIndex ].options.scale;
           if ( !spaceObject.fixed ) {
             spaceObject.velocity = body.velocity.copy();
           }
@@ -322,10 +322,10 @@ define( function( require ) {
      * @param {Number} stateIndex - State number for given planet mode state.
      */
     saveState: function( model, modeIndex, stateIndex ) {
-      if ( !this.state[modeIndex] ) {
-        this.state[modeIndex] = [];
+      if ( !this.state[ modeIndex ] ) {
+        this.state[ modeIndex ] = [];
       }
-      this.state[modeIndex][stateIndex] = this.getState( model, modeIndex );
+      this.state[ modeIndex ][ stateIndex ] = this.getState( model, modeIndex );
     }
   } );
 } );

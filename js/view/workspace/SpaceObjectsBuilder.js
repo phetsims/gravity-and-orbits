@@ -30,12 +30,12 @@ define( function( require ) {
    * @constructor
    */
   function SpaceObjectsBuilder( model, num, state ) {
-    var spaceObjectBuilder = this, body, position, obj = {}, scale = model.planetModes[num].options.scale, timeMode = model.planetModes[num].options.timeMode;
+    var spaceObjectBuilder = this, body, position, obj = {}, scale = model.planetModes[ num ].options.scale, timeMode = model.planetModes[ num ].options.timeMode;
     Node.call( this );
 
     model.spaceObjects.forEach( function( name ) {
-      obj = (state && state[name] ? state[name] : model.planetModes[num][name]);
-      body = model[name];
+      obj = (state && state[ name ] ? state[ name ] : model.planetModes[ num ][ name ]);
+      body = model[ name ];
       // set explosion property
       body.exploded = (obj ? obj.exploded : false);
 
@@ -47,9 +47,9 @@ define( function( require ) {
         }
 
         // add space object
-        body.view = new map[name]( position.copy(), obj.radius * scale );
+        body.view = new map[ name ]( position.copy(), obj.radius * scale );
         body.view.scale( body.radiusCoeff );
-        body.view.scale( model.viewMode === model.viewModes[1] ? obj.radiusScaleMode : 1 );
+        body.view.scale( model.viewMode === model.viewModes[ 1 ] ? obj.radiusScaleMode : 1 );
         spaceObjectBuilder.addChild( body.view );
         body.initDrag = true;
 
