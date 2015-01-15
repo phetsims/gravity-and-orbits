@@ -50,7 +50,7 @@ define( function( require ) {
     var timeControlPanel = new TimeControlPanel( model ).mutate(
       {
         centerX: rightPanel.left / 2,
-        bottom: this.layoutBounds.maxY - bottomInset
+        bottom:  this.layoutBounds.maxY - bottomInset
       } );
     this.addChild( timeControlPanel );
 
@@ -58,7 +58,7 @@ define( function( require ) {
     var dayCounter = new DayCounter( model.property( 'day' ), model.property( 'dayOffset' ), model.property( 'timeMode' ), model.timeModes ).mutate(
       {
         right: rightPanel.left - 30,
-        top: timeControlPanel.top - 2
+        top:   timeControlPanel.top - 2
       } );
     this.addChild( dayCounter );
 
@@ -66,7 +66,7 @@ define( function( require ) {
     this.addChild( new ResetAllButton(
       {
         listener: function() { model.reset(); },
-        right: this.layoutBounds.maxX - 5,
+        right:  this.layoutBounds.maxX - 5,
         bottom: this.layoutBounds.maxY - 5
       } ) );
   }

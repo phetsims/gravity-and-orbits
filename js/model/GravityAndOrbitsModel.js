@@ -91,7 +91,7 @@ define( function( require ) {
           velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
 
           // mass of planet
-          mass: CONSTANTS.EARTH_MASS * 10200,
+          mass:   CONSTANTS.EARTH_MASS * 10200,
 
           // mass label description
           massLabel: {
@@ -157,7 +157,7 @@ define( function( require ) {
           velocity: new Vector2( 0, -CONSTANTS.EARTH_ORBITAL_SPEED_AT_PERIHELION ),
 
           // mass of planet
-          mass: CONSTANTS.EARTH_MASS * 10200,
+          mass:   CONSTANTS.EARTH_MASS * 10200,
 
           // mass label description
           massLabel: {
@@ -169,7 +169,7 @@ define( function( require ) {
         moon: {
           // initial coordinates
           x: CONSTANTS.MOON_X,
-          y: -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
+          y:      -CONSTANTS.EARTH_RADIUS * 800 * 1.7,
 
           // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
           radius: CONSTANTS.MOON_RADIUS * 800,
@@ -301,7 +301,7 @@ define( function( require ) {
         },
         spaceStation: {
           // initial coordinates
-          x: CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
+          x:      CONSTANTS.SPACE_STATION_PERIGEE + CONSTANTS.EARTH_RADIUS + CONSTANTS.SPACE_STATION_RADIUS,
           y: 0,
 
           // size of planet on the workarea (differs from the actual size to be able to see planet on the workarea, haven't influence to force calculating)
