@@ -68,11 +68,11 @@ define( function( require ) {
   };
 
   // Appending '?dev' to the URL will enable developer-only features.
-  if ( window.phetcommon.getQueryParameter( 'dev' ) ) {
-    simOptions = _.extend( {
-      // add dev-specific options here
-    }, simOptions );
-  }
+//  if ( window.phetcommon.getQueryParameter( 'dev' ) ) {
+//    simOptions = _.extend( {
+//      // add dev-specific options here
+//    }, simOptions );
+//  }
 
 //  SimLauncher.launch( function() {
 //    var sim = new Sim( simTitle, [ new GravityAndOrbitsScreen() ], simOptions );
@@ -84,12 +84,12 @@ define( function( require ) {
     // create and start the sim
     new Sim( simTitle, [
       new Screen( cartoonString, new Image( cartoonIcon ),
-        function() { return new GravityAndOrbitsModel( new Property( true ) ); },
+        function() { return new IntroModule( null, new Property( true ) ); },
         function( model ) { return new GravityAndOrbitsScreenView( model ); },
         { backgroundColor: '#000' }
       ),
       new Screen( toScaleString, new Image( toScaleIcon ),
-        function() { return new GravityAndOrbitsModel( new Property( true ) ); },
+        function() { return new CartoonModule( null, new Property( true ) ); },
         function( model ) { return new GravityAndOrbitsScreenView( model ); },
         { backgroundColor: '#000' }
       )

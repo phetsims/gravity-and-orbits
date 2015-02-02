@@ -90,9 +90,9 @@ define( function( require ) {
    * @constructor
    */
   function CartoonModeList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
-    ModeList.call( this, new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
+    ModeList.ModeList.call( this, new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
       new SunEarthModeConfig(), new SunEarthMoonModeConfig(), new EarthMoonModeConfig(), new EarthSpaceStationModeConfig() );
   }
 
-  return inherit( ModeList, CartoonModeList );
+  return inherit( ModeList.ModeList, CartoonModeList );
 } );

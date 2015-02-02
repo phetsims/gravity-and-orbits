@@ -19,6 +19,8 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var Bounds2 = require( 'DOT/Bounds2' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
@@ -49,16 +51,15 @@ define( function( require ) {
    * @param {number} defaultOrbitalPeriod
    * @param {number} velocityVectorScale
    * @param {function<BodyNode, Property<boolean>, Node>} massReadoutFactory
-   * @param {Line2.Double} initialMeasuringTapeLocation
+   * @param {Line} initialMeasuringTapeLocation
    * @param {number} defaultZoomScale
    * @param {Vector2} zoomOffset
    * @param {number} gridSpacing
    * @param {Vector2} gridCenter
    * @param {ModeListParameterList} p
-   * @param {function} initializer function to replace Java's double brace initialization
    * @constructor
    */
-  function GravityAndOrbitsMode( userComponent, forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p, initializer ) {
+  function GravityAndOrbitsMode( userComponent, forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
 
     // public Properties from the java version
     PropertySet.call( this, {
@@ -66,12 +67,11 @@ define( function( require ) {
       active: active, // boolean
       deviatedFromDefaults: false,
       timeSpeedScale: 0, // number
-      measuringTapeStartPoint: new Vector2( initialMeasuringTapeLocation.getP1() ),
-      measuringTapeEndPoint: new Vector2( initialMeasuringTapeLocation.getP2() ),
+      measuringTapeStartPoint: new Vector2( initialMeasuringTapeLocation.p1 ),
+      measuringTapeEndPoint: new Vector2( initialMeasuringTapeLocation.p2 ),
       zoomLevel: 1 // additional scale factor on top of defaultZoomScale
     } );
 
-    initializer();
     var thisMode = this;
 
     //private
@@ -104,10 +104,11 @@ define( function( require ) {
 
     // Function that creates a PNode to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
+
     this.transform = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
 
     this.zoomLevel.link( function() {
-      this.Mode.transform.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+      thisMode.transform.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
     // private
@@ -139,24 +140,28 @@ define( function( require ) {
      */
     createTransform: function( defaultZoomScale, zoomOffset ) {
       var targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevel.get(), zoomOffset );
-      var x = targetRectangle.getMinX();
-      var y = targetRectangle.getMinY();
-      var w = targetRectangle.getMaxX() - x;
-      var h = targetRectangle.getMaxY() - y;
-      return createRectangleInvertedYMapping( new Rectangle.Number( x, y, w, h ), new Rectangle.Number( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
+//      var x = targetRectangle.getMinX();
+//      var y = targetRectangle.getMinY();
+//      var w = targetRectangle.getMaxX() - x;
+//      var h = targetRectangle.getMaxY() - y;
+      var minX = targetRectangle.x;
+      var minY = targetRectangle.y;
+      var maxX = targetRectangle.x + targetRectangle.width;
+      var maxY = targetRectangle.y + targetRectangle.height;
+      return ModelViewTransform2.createRectangleInvertedYMapping( new Bounds2( minX, minY, maxX, maxY ), new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
     },
 
     /**
      * Find the rectangle that should be viewed in the model
      * @param targetScale
      * @param targetCenterModelPoint
-     * @returns {nopt.typeDefs.Number}
+     * @returns {Rectangle}
      */
     getTargetRectangle: function( targetScale, targetCenterModelPoint ) {
       var z = targetScale * 1.5E-9;
       var modelWidth = PLAY_AREA_WIDTH / z;
       var modelHeight = PLAY_AREA_HEIGHT / z;
-      return new Rectangle.Number( -modelWidth / 2 + targetCenterModelPoint.getX(), -modelHeight / 2 + targetCenterModelPoint.getY(), modelWidth, modelHeight );
+      return new Rectangle( -modelWidth / 2 + targetCenterModelPoint.x, -modelHeight / 2 + targetCenterModelPoint.y, modelWidth, modelHeight );
     },
 
     /**

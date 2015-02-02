@@ -13,6 +13,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Color = require( 'SCENERY/util/Color' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
@@ -56,14 +57,23 @@ define( function( require ) {
 
   var SECONDS_PER_MINUTE = 60;
 
+  // not original in this file
+  var METERS_PER_MILE = 0.000621371192;
+  var FORCE_SCALE = 76.0 / 5.179E15;
+
+  function milesToMeters( modelDistance ) {
+    return modelDistance / METERS_PER_MILE;
+  }
+
   // static class: SunEarthModeConfig
   function SunEarthModeConfig() {
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.timeScale = 1;
     ModeConfig.call( this, 1.25 );
-    this.initialMeasuringTapeLocation = new Line2D.Number( (this.sun.x + this.earth.x) / 3, -this.earth.x / 2, (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ), -this.earth.x / 2 );
-    this.forceScale = VectorNode.FORCE_SCALE * 120;
+    this.initialMeasuringTapeLocation = new Line( (this.sun.x + this.earth.x) / 3, -this.earth.x / 2, (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ), -this.earth.x / 2 );
+//    this.forceScale = VectorNode.FORCE_SCALE * 120;
+    this.forceScale = FORCE_SCALE * 120;
   }
 
   inherit( ModeConfig, SunEarthModeConfig, {
@@ -79,8 +89,8 @@ define( function( require ) {
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.timeScale = 1;
     ModeConfig.call( this, 1.25 );
-    this.initialMeasuringTapeLocation = new Line2D.Number( (this.sun.x + this.earth.x) / 3, -this.earth.x / 2, (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ), -this.earth.x / 2 );
-    this.forceScale = VectorNode.FORCE_SCALE * 120;
+    this.initialMeasuringTapeLocation = new Line( (this.sun.x + this.earth.x) / 3, -this.earth.x / 2, (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ), -this.earth.x / 2 );
+    this.forceScale = FORCE_SCALE * 120;
   }
 
   inherit( ModeConfig, SunEarthMoonModeConfig, {
@@ -94,8 +104,8 @@ define( function( require ) {
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0 );
     ModeConfig.call( this, 400 );
-    this.initialMeasuringTapeLocation = new Line2D.Number( this.earth.x + this.earth.radius * 2, -this.moon.y * 0.7, this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ), -this.moon.y * 0.7 );
-    this.forceScale = VectorNode.FORCE_SCALE * 45;
+    this.initialMeasuringTapeLocation = new Line( this.earth.x + this.earth.radius * 2, -this.moon.y * 0.7, this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ), -this.moon.y * 0.7 );
+    this.forceScale = FORCE_SCALE * 45;
   }
 
   inherit( ModeConfig, EarthMoonModeConfig, {
@@ -110,8 +120,8 @@ define( function( require ) {
     this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS, SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED );
     ModeConfig.call( this, 21600 );
     //Sampled at runtime from MeasuringTape
-    this.initialMeasuringTapeLocation = new Line2D.Number( 3162119, 7680496, 6439098, 7680496 );
-    this.forceScale = VectorNode.FORCE_SCALE * 3E13;
+    this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
+    this.forceScale = FORCE_SCALE * 3E13;
   }
 
   inherit( ModeConfig, EarthSpaceStationModeConfig, {
@@ -361,12 +371,10 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       ( sunEarth.earth.x / 2 ),
       new Vector2( 0, 0 ),
-      p,
-      // this was not an argument in the Java version but a double brace initialization
-      function() {
-        this.addBody( new Sun( this.getMaxPathLength(), sunEarth.sun ) );
-        this.addBody( new Earth( this.getMaxPathLength(), sunEarth.earth ) );
-      } ) );
+      p ) );
+
+    this.modes[0].addBody( new Sun( this.modes[0].getMaxPathLength(), sunEarth.sun ) );
+    this.modes[0].addBody( new Earth( this.modes[0].getMaxPathLength(), sunEarth.earth ) );
 
     this.modes.push( new GravityAndOrbitsMode(
       UserComponents.sunEarthMoonRadioButton,
@@ -383,14 +391,13 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       ( sunEarthMoon.earth.x / 2 ),
       new Vector2( 0, 0 ),
-      p,
-      function() {
-        this.addBody( new Sun( this.getMaxPathLength(), sunEarthMoon.sun ) );
-        this.addBody( new Earth( this.getMaxPathLength(), sunEarthMoon.earth ) );
-        this.addBody( new Moon(//no room for the slider
-          false, this.getMaxPathLength(), false, //so it doesn't intersect with earth mass readout
-          sunEarthMoon.moon ) );
-      } ) );
+      p ) );
+
+    this.modes[1].addBody( new Sun( this.modes[1].getMaxPathLength(), sunEarthMoon.sun ) );
+    this.modes[1].addBody( new Earth( this.modes[1].getMaxPathLength(), sunEarthMoon.earth ) );
+    this.modes[1].addBody( new Moon( // no room for the slider
+      false, this.modes[1].getMaxPathLength(), false, // so it doesn't intersect with earth mass readout
+      sunEarthMoon.moon ) );
 
     var SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
     this.modes.push( new GravityAndOrbitsMode(
@@ -408,12 +415,10 @@ define( function( require ) {
       new Vector2( earthMoon.earth.x, 0 ),
       ( earthMoon.moon.y / 2 ),
       new Vector2( earthMoon.earth.x, 0 ),
-      p,
-      function() {
-        //scale so it is a similar size to other modes
-        this.addBody( new Earth( this.getMaxPathLength(), earthMoon.earth ) );
-        this.addBody( new Moon( true, this.getMaxPathLength(), true, earthMoon.moon ) );
-      } ) );
+      p ) );
+
+    this.modes[2].addBody( new Earth( this.modes[2].getMaxPathLength(), earthMoon.earth ) );
+    this.modes[2].addBody( new Moon( this.modes[2].getMaxPathLength(), earthMoon.moon ) );
 
     var spaceStationMassReadoutFactory = function( bodyNode, visible ) {
       return new SpaceStationMassReadoutNode( bodyNode, visible );
@@ -434,14 +439,13 @@ define( function( require ) {
       new Vector2( earthSpaceStation.earth.x, 0 ),
       ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
       new Vector2( earthSpaceStation.earth.x, 0 ),
-      p,
-      function() {
-        this.addBody( new Earth( this.getMaxPathLength(), earthSpaceStation.earth ) );
-        this.addBody( new SpaceStation( earthSpaceStation, this.getMaxPathLength() ) );
-    } ) );
+      p ) );
+
+    this.modes[3].addBody( new Earth( this.modes[3].getMaxPathLength(), earthSpaceStation.earth ) );
+    this.modes[3].addBody( new SpaceStation( earthSpaceStation, this.modes[3].getMaxPathLength() ) );
   }
 
-  inherit( Object, ModeList, {
+   inherit( Object, ModeList, {
 
       /**
        * @private
@@ -465,16 +469,16 @@ define( function( require ) {
           icon.setVisible( visible );
         }
 
-        node.addChild( new PhetPPath( new Rectangle.Number( 20, 0, 1, 1 ), new Color( 0, 0, 0, 0 ) ) );
-        addIcon( inset, new PImage( new BodyRenderer.SphereRenderer( Color.yellow, Color.white, 30 ).toImage() ), sun );
-        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'earth_satellite.gif' ), 30 ) ), earth );
-        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'moon.png' ), 30 ) ), moon );
-        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'space-station.png' ), 30 ) ), spaceStation );
+//        node.addChild( new PhetPPath( new Rectangle.Number( 20, 0, 1, 1 ), new Color( 0, 0, 0, 0 ) ) );
+//        addIcon( inset, new PImage( new BodyRenderer.SphereRenderer( Color.yellow, Color.white, 30 ).toImage() ), sun );
+//        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'earth_satellite.gif' ), 30 ) ), earth );
+//        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'moon.png' ), 30 ) ), moon );
+//        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'space-station.png' ), 30 ) ), spaceStation );
 
         return node;
 //        node.toImage()?
 
-      }
+      },
 
     },
 
@@ -498,6 +502,8 @@ define( function( require ) {
       SPACE_STATION_SPEED: SPACE_STATION_SPEED,
       SPACE_STATION_PERIGEE: SPACE_STATION_PERIGEE
     } );
+
+//  return ModeList
 
   return {
     ModeList: ModeList, // the original Java class

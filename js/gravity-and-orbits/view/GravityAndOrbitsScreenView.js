@@ -11,6 +11,9 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
+  var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
+
 
   /**
    * @param {GravityAndOrbitsModel} gravityAndOrbitsModel
@@ -29,6 +32,8 @@ define( function( require ) {
       bottom: this.layoutBounds.maxY - 10
     } );
     this.addChild( resetAllButton );
+
+    this.addChild( new GravityAndOrbitsCanvas() );
   }
 
   return inherit( ScreenView, GravityAndOrbitsScreenView, {
