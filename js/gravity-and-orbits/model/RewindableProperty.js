@@ -33,8 +33,9 @@ define( function( require ) {
 
   return inherit( Property, RewindableProperty, {
 
-    set: function( value ) {
-      this.set( value );
+    // TODO: this was originally "set", but it seems to conflict with the setter of Property
+    setRewindable: function( value ) {
+      this.value = value;
       //If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
       if ( !this.playButtonPressed.get() && !this.stepping.get() && !this.rewinding.get() ) {
         this.storeRewindValueNoNotify();
@@ -53,11 +54,11 @@ define( function( require ) {
 
     //Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
     addRewindValueChangeListener: function( listener ) {
-      this.rewindValueChangedListeners.add( listener );
+      this.rewindValueChangedListeners.push( listener );
     },
 
     equalsRewindPoint: function() {
-      return this.rewindValue.equals( this.get() );
+      return this.rewindValue === this.get();
     },
 
     rewind: function() {

@@ -13,8 +13,11 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PropertySet = require( 'AXON/PropertySet' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
+  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
+  var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
 
   /**
    *
@@ -149,28 +152,28 @@ define( function( require ) {
      * @return {RewindableProperty<Vector2>}
      */
     getPositionProperty: function() {
-      return positionProperty;
+      return this.positionProperty;
     },
 
     /**
      * @return {Vector2}
      */
     getPosition: function() {
-      return positionProperty.get();
+      return this.positionProperty.get();
     },
 
     /**
      * @return {Property<Double> }
      */
     getDiameterProperty: function() {
-      return diameterProperty;
+      return this.diameterProperty;
     },
 
     /**
      * @return {number}
      */
     getDiameter: function() {
-      return diameterProperty.get();
+      return this.diameterProperty.get();
     },
 
     //TODO:
@@ -271,7 +274,7 @@ define( function( require ) {
         this.clockTicksSinceExplosion.set( this.clockTicksSinceExplosion.get() + 1 );
       }
       else {
-        if ( !isUserControlled() ) {
+        if ( !this.isUserControlled() ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
         }
@@ -293,7 +296,7 @@ define( function( require ) {
     addPathPoint: function() {
       var i;
       while ( this.path.length + 1//account for the point that will be added
-        > maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
+        > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
         this.path.remove( 0 );
 
         for ( i = 0; i < this.pathListeners.length; i++ ) {
@@ -301,7 +304,7 @@ define( function( require ) {
         }
       }
       var pathPoint = this.getPosition();
-      this.path.add( pathPoint );
+      this.path.push( pathPoint );
 
       for ( i = 0; i < this.pathListeners.length; i++ ) {
         this.pathListeners[i].pointAdded( pathPoint );
@@ -362,7 +365,7 @@ define( function( require ) {
      * @return {boolean}
      */
     isUserControlled: function() {
-      return userControlled;
+      return this.userControlled;
     },
 
     /**

@@ -112,20 +112,20 @@ define( function( require ) {
     } );
 
     // private
-    this.model = new GravityAndOrbitsModel( new GravityAndOrbitsClock( dt, p.stepping, this.timeSpeedScaleProperty ), p.gravityEnabled );
+    this.model = new GravityAndOrbitsModel( p.gravityEnabled );
 
     // When the user pauses the clock, assume they will change some other parameters as well, and set a new rewind point
     this.rewindClockTime = 0; // private
 
-    this.getClock().addClockListener( new ClockAdapter().withAnonymousClassBody( {
-      clockPaused: function( clockEvent ) {
-        thisMode.rewindClockTime = clockEvent.getSimulationTime();
-      }
-    } ) );
+//    this.getClock().addClockListener( new ClockAdapter().withAnonymousClassBody( {
+//      clockPaused: function( clockEvent ) {
+//        thisMode.rewindClockTime = clockEvent.getSimulationTime();
+//      }
+//    } ) );
 
-    Property.multilink( [p.playButtonPressed, this.active], function( playButtonPressed, active ) {
-      thisMode.model.getClock().setRunning( playButtonPressed && active );
-    } );
+//    Property.multilink( [p.playButtonPressed, this.active], function( playButtonPressed, active ) {
+//      thisMode.model.getClock().setRunning( playButtonPressed && active );
+//    } );
   }
 
   return inherit( PropertySet, GravityAndOrbitsMode, {
@@ -183,15 +183,17 @@ define( function( require ) {
      */
     addBody: function( body ) {
       this.model.addBody( body );
-      var updater = new SimpleObserver().withAnonymousClassBody( {
-        update: function() {
-          deviatedFromDefaults.set( true );
-        }
-      } );
-      body.getMassProperty().addObserver( updater, false );
+//      var updater = new SimpleObserver().withAnonymousClassBody( {
+//        update: function() {
+//          this.deviatedFromDefaults.set( true );
+//        }
+//      } );
+      var thisMode = this;
       var update = function() {
-        updater.update();
+        thisMode.deviatedFromDefaults.set( true );
+//        updater.update();
       };
+      body.getMassProperty().link( update );
       body.addUserModifiedPositionListener( update );
       body.addUserModifiedVelocityListener( update );
     },

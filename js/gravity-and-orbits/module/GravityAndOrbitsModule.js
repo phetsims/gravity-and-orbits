@@ -75,31 +75,31 @@ define( function( require ) {
     this.showMeasuringTape = showMeasuringTape;
 
     // TODO: look at java for this
-    getModulePanel().setLogoPanel( null );
+//    getModulePanel().setLogoPanel( null );
 
     for ( var i = 0; i < this.modes.length; i++ ) {
       this.modes[i].init( this );
     }
-    setSimulationPanel( getMode().getCanvas() );
+//    setSimulationPanel( getMode().getCanvas() );
     // Switch the entire canvas on mode switches
-    modeProperty.addObserver( new SimpleObserver().withAnonymousClassBody( {
-      update: function() {
-        SwingUtilities.invokeLater( new Runnable().withAnonymousClassBody( {
-          run: function() {
-            setSimulationPanel( getMode().getCanvas() );
-          }
-        } ) );
-        updateActiveModule();
-      }
-    } ) );
-    //clock panel appears in the canvas
-    setClockControlPanel( null );
-    reset();
+//    modeProperty.addObserver( new SimpleObserver().withAnonymousClassBody( {
+//      update: function() {
+//        SwingUtilities.invokeLater( new Runnable().withAnonymousClassBody( {
+//          run: function() {
+//            setSimulationPanel( getMode().getCanvas() );
+//          }
+//        } ) );
+//        updateActiveModule();
+//      }
+//    } ) );
+//    //clock panel appears in the canvas
+//    setClockControlPanel( null );
+    this.reset();
   }
 
   return inherit( PropertySet, GravityAndOrbitsModule, {
       getModeIndex: function() {
-        return modes.indexOf( getMode() );
+        return modes.indexOf( this.getMode() );
       },
 
       //private
@@ -118,20 +118,20 @@ define( function( require ) {
         }
       },
       reset: function() {
-        for ( var mode in modes ) {
-          mode.reset();
+        for ( var i = 0; i < this.modes.length; i++ ) {
+          this.modes[i].reset();
         }
         this.showGravityForceProperty.reset();
         this.showPathProperty.reset();
         this.showGridProperty.reset();
         this.showVelocityProperty.reset();
         this.showMassProperty.reset();
-        this.playButtonPressed.reset();
+        this.playButtonPressedProperty.reset();
         this.timeSpeedScaleProperty.reset();
         this.measuringTapeVisibleProperty.reset();
         this.gravityEnabledProperty.reset();
-        this.stepping.reset();
-        this.rewinding.reset();
+        this.steppingProperty.reset();
+        this.rewindingProperty.reset();
         this.modeProperty.reset();
       },
       setTeacherMode: function( b ) {

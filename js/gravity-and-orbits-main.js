@@ -38,8 +38,8 @@ define( function( require ) {
 
   // static class: IntroModule
   function IntroModule( phetFrame, whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, UserComponents.cartoonTab, phetFrame, whiteBackgroundProperty, GAOStrings.CARTOON, false, function( p ) {
-      return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
+    GravityAndOrbitsModule.call( this, UserComponents.cartoonTab, phetFrame, whiteBackgroundProperty, GAOStrings.TO_SCALE, false, function( p ) {
+      return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
     }, 0, false );
   }
 
@@ -47,8 +47,8 @@ define( function( require ) {
 
   // static class: CartoonModule
   function CartoonModule( phetFrame, whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, UserComponents.toScaleTab, phetFrame, whiteBackgroundProperty, GAOStrings.TO_SCALE, true, function( p ) {
-        return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
+    GravityAndOrbitsModule.call( this, UserComponents.toScaleTab, phetFrame, whiteBackgroundProperty, GAOStrings.CARTOON, true, function( p ) {
+        return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
       }, //Start Real tab in earth/satellite mode because it is more playful
       3, true );
   }

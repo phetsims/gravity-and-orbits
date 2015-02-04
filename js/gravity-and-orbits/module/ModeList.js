@@ -61,6 +61,11 @@ define( function( require ) {
   var METERS_PER_MILE = 0.000621371192;
   var FORCE_SCALE = 76.0 / 5.179E15;
 
+  // from GAO clock originally
+  var DAYS_PER_TICK = 1;
+  var SECONDS_PER_DAY = 86400;
+  var DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
+
   function milesToMeters( modelDistance ) {
     return modelDistance / METERS_PER_MILE;
   }
@@ -167,155 +172,7 @@ define( function( require ) {
     }
   };
 
-  // non-static inner class: SpaceStation
-  function SpaceStation( earthSpaceStation, maxPathLength ) {
-    Body.call(
-      this,
-      UserComponents.satellite,
-      GAOStrings.SATELLITE,
-      earthSpaceStation.spaceStation.x,
-      earthSpaceStation.spaceStation.y,
-      ( earthSpaceStation.spaceStation.radius * 2000 ),
-      earthSpaceStation.spaceStation.vx,
-      earthSpaceStation.spaceStation.vy,
-      earthSpaceStation.spaceStation.mass,
-      Color.gray,
-      Color.white,
-      getImageRenderer( 'space-station.png' ),
-      ( -Math.PI / 4),
-      true,
-      maxPathLength,
-      true,
-      earthSpaceStation.spaceStation.mass,
-      GAOStrings.SPACE_STATION,
-      p.playButtonPressed,
-      p.stepping,
-      p.rewinding,
-      earthSpaceStation.spaceStation.fixed );
-  }
 
-  inherit( Body, SpaceStation );
-
-  // non-static inner class: Moon
-  function Moon( massSettable, maxPathLength, massReadoutBelow, body ) {
-    Body.call(
-      this,
-      UserComponents.moon,
-      GAOStrings.MOON,
-      body.x,
-      body.y,
-      ( body.radius * 2 ),
-      body.vx,
-      body.vy,
-      body.mass,
-      Color.magenta,
-      Color.white, //putting this number too large makes a kink or curly-q in the moon trajectory, which should be avoided
-      getRenderer( 'moon.png', body.mass ),
-      ( -3 * Math.PI / 4 ),
-      massSettable,
-      maxPathLength,
-      massReadoutBelow,
-      body.mass,
-      GAOStrings.OUR_MOON,
-      p.playButtonPressed,
-      p.stepping,
-      p.rewinding,
-      body.fixed );
-  }
-
-  inherit( Body, Moon, {
-    doReturnBody: function( model ) {
-      Body.prototype.doReturnBody( model );
-      var earth = model.getBody( 'Planet' );
-      //Restore the moon near the earth and with the same relative velocity vector
-      if ( earth != null ) {
-        var relativePosition = this.positionProperty.initialValue.minus( earth.positionProperty.initialValue );
-        this.positionProperty.set( earth.getPosition().plus( relativePosition ) );
-        var relativeVelocity = this.velocityProperty.initialValue.minus( earth.velocityProperty.initialValue );
-        this.velocityProperty.set( earth.getVelocity().plus( relativeVelocity ) );
-      }
-      else {
-        throw new Error( 'Couldn\'t find planet.' );
-      }
-    }
-  } );
-
-  // non-static inner class: Earth
-  function Earth( maxPathLength, body ) {
-    Body.call(
-      this,
-      UserComponents.planet,
-      GAOStrings.PLANET,
-      body.x,
-      body.y,
-      ( body.radius * 2 ),
-      body.vx,
-      body.vy,
-      body.mass,
-      Color.gray,
-      Color.lightGray,
-      getRenderer( 'earth_satellite.gif', body.mass ),
-      ( -Math.PI / 4 ),
-      true,
-      maxPathLength,
-      true,
-      body.mass,
-      GAOStrings.EARTH,
-      p.playButtonPressed,
-      p.stepping,
-      p.rewinding,
-      body.fixed );
-  }
-
-  inherit( Body, Earth );
-
-  // non-static inner class: Sun
-  function Sun( maxPathLength, body ) {
-    // Function for rendering the sun
-    // private
-    var SUN_RENDERER = function( body, viewDiameter ) {
-      return new BodyRenderer.SphereRenderer( body, viewDiameter );
-    };
-
-    Body.call(
-      this,
-      UserComponents.star,
-      GAOStrings.STAR,
-      body.x,
-      body.y,
-      ( body.radius * 2 ),
-      body.vx,
-      body.vy,
-      body.mass,
-      Color.yellow,
-      Color.white,
-      SUN_RENDERER,
-      ( -Math.PI / 4 ),
-      true,
-      maxPathLength,
-      true,
-      body.mass,
-      OUR_SUN,
-      p.playButtonPressed,
-      p.stepping,
-      p.rewinding,
-      body.fixed );
-    this.body = body;
-  }
-
-  inherit( Body, Sun, {
-    updateBodyStateFromModel: function( bodyState ) {
-      //store the original position in case it must be restored
-      var position = this.getPosition();
-//      super.updateBodyStateFromModel( bodyState );
-      Body.prototype.updateBodyStateFromModel.call( this, bodyState );
-      //Sun shouldn't move in cartoon modes
-      if ( this.body.fixed ) {
-        this.setPosition( position.getX(), position.getY() );
-        this.setVelocity( new Vector2() );
-      }
-    }
-  } );
 
   /**
    * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the elapsed clock readout
@@ -339,6 +196,156 @@ define( function( require ) {
    * @constructor
    */
   function ModeList( p, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation ) {
+
+    // non-static inner class: SpaceStation
+    function SpaceStation( earthSpaceStation, maxPathLength ) {
+      Body.call(
+        this,
+        UserComponents.satellite,
+        GAOStrings.SATELLITE,
+        earthSpaceStation.spaceStation.x,
+        earthSpaceStation.spaceStation.y,
+        ( earthSpaceStation.spaceStation.radius * 2000 ),
+        earthSpaceStation.spaceStation.vx,
+        earthSpaceStation.spaceStation.vy,
+        earthSpaceStation.spaceStation.mass,
+        Color.gray,
+        Color.white,
+        getImageRenderer( 'space-station.png' ),
+        ( -Math.PI / 4),
+        true,
+        maxPathLength,
+        true,
+        earthSpaceStation.spaceStation.mass,
+        GAOStrings.SPACE_STATION,
+        p.playButtonPressed,
+        p.stepping,
+        p.rewinding,
+        earthSpaceStation.spaceStation.fixed );
+    }
+
+    inherit( Body, SpaceStation );
+
+    // non-static inner class: Moon
+    function Moon( massSettable, maxPathLength, massReadoutBelow, body ) {
+      Body.call(
+        this,
+        UserComponents.moon,
+        GAOStrings.MOON,
+        body.x,
+        body.y,
+        ( body.radius * 2 ),
+        body.vx,
+        body.vy,
+        body.mass,
+        Color.magenta,
+        Color.white, //putting this number too large makes a kink or curly-q in the moon trajectory, which should be avoided
+        getRenderer( 'moon.png', body.mass ),
+        ( -3 * Math.PI / 4 ),
+        massSettable,
+        maxPathLength,
+        massReadoutBelow,
+        body.mass,
+        GAOStrings.OUR_MOON,
+        p.playButtonPressed,
+        p.stepping,
+        p.rewinding,
+        body.fixed );
+    }
+
+    inherit( Body, Moon, {
+      doReturnBody: function( model ) {
+        Body.prototype.doReturnBody( model );
+        var earth = model.getBody( 'Planet' );
+        //Restore the moon near the earth and with the same relative velocity vector
+        if ( earth != null ) {
+          var relativePosition = this.positionProperty.initialValue.minus( earth.positionProperty.initialValue );
+          this.positionProperty.set( earth.getPosition().plus( relativePosition ) );
+          var relativeVelocity = this.velocityProperty.initialValue.minus( earth.velocityProperty.initialValue );
+          this.velocityProperty.set( earth.getVelocity().plus( relativeVelocity ) );
+        }
+        else {
+          throw new Error( 'Couldn\'t find planet.' );
+        }
+      }
+    } );
+
+    // non-static inner class: Earth
+    function Earth( maxPathLength, body ) {
+      Body.call(
+        this,
+        UserComponents.planet,
+        GAOStrings.PLANET,
+        body.x,
+        body.y,
+        ( body.radius * 2 ),
+        body.vx,
+        body.vy,
+        body.mass,
+        Color.gray,
+        Color.lightGray,
+        getRenderer( 'earth_satellite.gif', body.mass ),
+        ( -Math.PI / 4 ),
+        true,
+        maxPathLength,
+        true,
+        body.mass,
+        GAOStrings.EARTH,
+        p.playButtonPressed,
+        p.stepping,
+        p.rewinding,
+        body.fixed );
+    }
+
+    inherit( Body, Earth );
+
+    // non-static inner class: Sun
+    function Sun( maxPathLength, body ) {
+      // Function for rendering the sun
+      // private
+      var SUN_RENDERER = function( body, viewDiameter ) {
+        return new BodyRenderer.SphereRenderer( body, viewDiameter );
+      };
+
+      Body.call(
+        this,
+        UserComponents.star,
+        GAOStrings.STAR,
+        body.x,
+        body.y,
+        ( body.radius * 2 ),
+        body.vx,
+        body.vy,
+        body.mass,
+        Color.yellow,
+        Color.white,
+        SUN_RENDERER,
+        ( -Math.PI / 4 ),
+        true,
+        maxPathLength,
+        true,
+        body.mass,
+        GAOStrings.OUR_SUN,
+        p.playButtonPressed,
+        p.stepping,
+        p.rewinding,
+        body.fixed );
+      this.body = body;
+    }
+
+    inherit( Body, Sun, {
+      updateBodyStateFromModel: function( bodyState ) {
+        //store the original position in case it must be restored
+        var position = this.getPosition();
+//      super.updateBodyStateFromModel( bodyState );
+        Body.prototype.updateBodyStateFromModel.call( this, bodyState );
+        //Sun shouldn't move in cartoon modes
+        if ( this.body.fixed ) {
+          this.setPosition( position.x, position.y );
+          this.setVelocity( new Vector2() );
+        }
+      }
+    } );
 
     //private
     this.p = p;
@@ -404,7 +411,7 @@ define( function( require ) {
       UserComponents.earthMoonRadioButton,
       earthMoon.forceScale,
       false,
-      ( GravityAndOrbitsClock.DEFAULT_DT / 3 ), // actual days
+      ( DEFAULT_DT / 3 ), // actual days
       scaledDays( 1.0 ),
       this.createIconImage( false, true, true, false ),
       SEC_PER_MOON_ORBIT,
@@ -418,7 +425,7 @@ define( function( require ) {
       p ) );
 
     this.modes[2].addBody( new Earth( this.modes[2].getMaxPathLength(), earthMoon.earth ) );
-    this.modes[2].addBody( new Moon( this.modes[2].getMaxPathLength(), earthMoon.moon ) );
+    this.modes[2].addBody( new Moon( true, this.modes[2].getMaxPathLength(), true, earthMoon.moon ) );
 
     var spaceStationMassReadoutFactory = function( bodyNode, visible ) {
       return new SpaceStationMassReadoutNode( bodyNode, visible );
@@ -428,7 +435,7 @@ define( function( require ) {
       UserComponents.earthSpaceStationRadioButton,
       earthSpaceStation.forceScale,
       false,
-      ( GravityAndOrbitsClock.DEFAULT_DT * 9E-4 ),
+      ( DEFAULT_DT * 9E-4 ),
       formatMinutes,
       this.createIconImage( false, true, false, true ),
       5400,

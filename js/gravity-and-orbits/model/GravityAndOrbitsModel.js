@@ -86,7 +86,7 @@ define( function( require ) {
             400 / SMOOTHING_STEPS, // 1000 looks great, 50 starts to look awkward for sun+earth+moon, but 100 seems okay.
           // Update: 100 is poor for sun/earth/moon system in "to scale" because the orbit is gradually expanding.
           // Tests suggest 400 is a good performance/precision tradeoff
-          this.gravityEnabledProperty.get()
+          this.gravityEnabledProperty
         );
 
         // Set each body to its computed next state.
@@ -148,7 +148,7 @@ define( function( require ) {
         body.addUserModifiedPositionListener( function() {
           if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
         } );
-        body.getMassProperty().addObserver( function() {
+        body.getMassProperty().link( function() {
           if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
         } );
         this.updateForceVectors();

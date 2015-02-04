@@ -59,7 +59,7 @@ define( function( require ) {
         var newVelocityHalfStep = bodyState.velocity.plus( bodyState.acceleration.times( dt / 2 ) );
         var newAcceleration = this.getForce( bodyState, newPosition, gravityEnabledProperty ).times( -1.0 / bodyState.mass );
         var newVelocity = newVelocityHalfStep.plus( newAcceleration.times( dt / 2.0 ) );
-        newState.add( new BodyState( newPosition, newVelocity, newAcceleration, bodyState.mass, bodyState.exploded ) );
+        newState.push( new BodyState( newPosition, newVelocity, newAcceleration, bodyState.mass, bodyState.exploded ) );
       }
       return new ModelState( newState );
     },
