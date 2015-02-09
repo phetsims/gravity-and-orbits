@@ -34,10 +34,7 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-
-
 //    var module = new GravityAndOrbitsModule( null, null, new Property( false ), true, )
-
     this.addChild( gravityAndOrbitsModel.getMode().getCanvas() );
   }
 

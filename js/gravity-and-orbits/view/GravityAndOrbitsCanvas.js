@@ -58,8 +58,8 @@ define( function( require ) {
 
     // Root of our scene graph
     // private
-    this.rootNode = new Node();
-    this.addChild( this.rootNode );
+//    this.rootNode = new Node();
+//    this.addChild( this.rootNode );
 
     // stores the current position of the mouse so we can change to cursor hand when an object moves under the mouse
     var mousePositionProperty = null;
@@ -91,8 +91,7 @@ define( function( require ) {
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
       var bodyNode = new BodyNode( bodies[i], mode.transform, mousePositionProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
-      console.log( bodyNode );
-//      this.addChild( bodyNode );
+      this.addChild( bodyNode );
 
 //      var property = new Property( false );
 //      property.link( function( value ) {
@@ -352,9 +351,9 @@ define( function( require ) {
       },
 
       //private
-      addChild: function( node ) {
-        this.rootNode.addChild( node );
-      }
+//      addChild: function( node ) {
+//        this.rootNode.addChild( node );
+//      }
     },
 //statics
     {

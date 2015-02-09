@@ -27,13 +27,17 @@ define( function( require ) {
   var ModeConfig = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/ModeConfig' );
   var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyRenderer' );
-  var SphereRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SphereRenderer' );
   var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/EarthMassReadoutNode' );
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
 //  var milesToMeters = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MeasuringTape/milesToMeters' );//static
+
+  // images
+  var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
+  var moonImage = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
+  var spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model
@@ -212,7 +216,7 @@ define( function( require ) {
         earthSpaceStation.spaceStation.mass,
         Color.gray,
         Color.white,
-        getImageRenderer( 'space-station.png' ),
+        getImageRenderer( spaceStationImage ),
         ( -Math.PI / 4),
         true,
         maxPathLength,
@@ -241,7 +245,7 @@ define( function( require ) {
         body.mass,
         Color.magenta,
         Color.white, //putting this number too large makes a kink or curly-q in the moon trajectory, which should be avoided
-        getRenderer( 'moon.png', body.mass ),
+        getRenderer( moonImage, body.mass ),
         ( -3 * Math.PI / 4 ),
         massSettable,
         maxPathLength,
@@ -285,7 +289,8 @@ define( function( require ) {
         body.mass,
         Color.gray,
         Color.lightGray,
-        getRenderer( 'earth_satellite.gif', body.mass ),
+        getRenderer( earthImage, body.mass ),
+//        getRenderer( 'earth_satellite.gif', body.mass ),
         ( -Math.PI / 4 ),
         true,
         maxPathLength,
