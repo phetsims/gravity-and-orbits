@@ -14,6 +14,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PathNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/PathNode' );
   var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
+  var GridNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GridNode' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Color = require( 'SCENERY/util/Color' );
   var Dimension2 = require( 'DOT/Dimension2' );
@@ -144,16 +145,11 @@ define( function( require ) {
 //      this.addChild( new ExplosionNode( bodies[i], mode.transform ) );
 //    }
 //
-//    //Add the piccolo node for the overlay grid, setting its visibility based on the module.showGridProperty
-//    this.addChild( new GridNode( mode.transform, mode.getGridSpacing(), mode.getGridCenter() ).withAnonymousClassBody( {
-//      initializer: function() {
-//        module.showGridProperty.addObserver( new SimpleObserver().withAnonymousClassBody( {
-//          update: function() {
-//            setVisible( module.showGridProperty.get() );
-//          }
-//        } ) );
-//      }
-//    } ) );
+    //Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
+    var gridNode = new GridNode( mode.transform, mode.getGridSpacing(), mode.getGridCenter() );
+    module.showGridProperty.linkAttribute( gridNode, 'visible' );
+    this.addChild( gridNode );
+
 //
 //    // Control Panel
 //    var controlPanelNode = new ControlPanelNode( new PSwing( new GravityAndOrbitsControlPanel( module, model ) ), BACKGROUND, new BasicStroke( 3 ), green, 4 ).withAnonymousClassBody( {
