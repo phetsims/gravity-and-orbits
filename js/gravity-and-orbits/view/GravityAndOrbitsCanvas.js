@@ -150,17 +150,9 @@ define( function( require ) {
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
-//
-//    // Control Panel
-//    var controlPanelNode = new ControlPanelNode( new PSwing( new GravityAndOrbitsControlPanel( module, model ) ), BACKGROUND, new BasicStroke( 3 ), green, 4 ).withAnonymousClassBody( {
-//      initializer: function() {
-//        setOffset( GravityAndOrbitsCanvas.STAGE_SIZE.getWidth() - getFullBounds().getWidth(), 2 );
-//        //fine tuned so that control panels for all modes always fit on the screen, and match up with each other
-//        setScale( 0.82 );
-//      }
-//    } );
-//
-//    this.addChild( controlPanelNode );
+
+    // Control Panel is now added in the screen view
+
 //
 //    //Reset mode button
 //    var buttonForegroundColor = BLACK;

@@ -62,7 +62,7 @@ define( function( require ) {
         thisNode.body.setUserControlled( true );
       },
       drag: function( event ) {
-        var delta = modelViewTransform.get().viewToModelDelta( event.getDeltaRelativeTo( getParent() ) );
+        var delta = modelViewTransform.get().viewToModelDelta( event.getDeltaRelativeTo( thisNode.getParent() ) );
         thisNode.body.translate( new Vector2( delta.getWidth(), delta.getHeight() ) );
         thisNode.body.notifyUserModifiedPosition();
       },

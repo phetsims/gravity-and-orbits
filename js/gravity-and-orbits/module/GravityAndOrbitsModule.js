@@ -52,7 +52,7 @@ define( function( require ) {
       gravityEnabled: true,
       stepping: false,
       rewinding: false,
-      mode: 0, // TODO this was blank
+//      mode: 0, // TODO this was blank
       whiteBackground: false, // was blank
       showMeasuringTape: false // was blank
     } );
@@ -101,7 +101,7 @@ define( function( require ) {
 
   return inherit( PropertySet, GravityAndOrbitsModule, {
       getModeIndex: function() {
-        return modes.indexOf( this.getMode() );
+        return this.modes.modes.indexOf( this.getMode() );
       },
 
       //private
@@ -110,7 +110,7 @@ define( function( require ) {
       },
 
       getModes: function() {
-        return this.modes.slice( 0 );
+        return this.modes.modes.slice( 0 );
       },
 
       //private

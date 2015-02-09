@@ -14,28 +14,33 @@ define( function( require ) {
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
   var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
+  var RightControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/RightControlPanel' );
 
 
   /**
-   * @param {GravityAndOrbitsModel} gravityAndOrbitsModel
+   * @param {GravityAndOrbitsModule} module
    * @constructor
    */
-  function GravityAndOrbitsScreenView( gravityAndOrbitsModel ) {
+  function GravityAndOrbitsScreenView( module ) {
 
     ScreenView.call( this );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {
       listener: function() {
-        gravityAndOrbitsModel.reset();
+        module.reset();
       },
       right: this.layoutBounds.maxX - 10,
       bottom: this.layoutBounds.maxY - 10
     } );
     this.addChild( resetAllButton );
 
+    var controlPanelNode = new RightControlPanel( module );
+    this.addChild( controlPanelNode );
+
+
 //    var module = new GravityAndOrbitsModule( null, null, new Property( false ), true, )
-    this.addChild( gravityAndOrbitsModel.getMode().getCanvas() );
+    this.addChild( module.getMode().getCanvas() );
   }
 
   return inherit( ScreenView, GravityAndOrbitsScreenView, {
