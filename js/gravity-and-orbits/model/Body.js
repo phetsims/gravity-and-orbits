@@ -312,7 +312,8 @@ define( function( require ) {
     },
 
     clearPath: function() {
-      this.path.clear();
+//      this.path.clear();
+      this.path = [];
       for ( var i = 0; i < this.pathListeners.length; i++ ) {
         this.pathListeners[i].cleared();
       }
@@ -385,7 +386,7 @@ define( function( require ) {
       //assert that it has all the right parts
       assert && assert( listener.pointAdded && listener.pointRemoved && listener.cleared );
 
-      this.pathListeners.add( listener );
+      this.pathListeners.push( listener );
     },
 
     /**
@@ -428,7 +429,7 @@ define( function( require ) {
      * @return {BodyRenderer}
      */
     createRenderer: function( viewDiameter ) {
-      return this.renderer.apply( this, viewDiameter );
+      return this.renderer( this, viewDiameter );
     },
 
     /**

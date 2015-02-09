@@ -20,6 +20,9 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   /**
    *
@@ -45,15 +48,15 @@ define( function( require ) {
     var thisNode = this;
 
     this.body.collidedProperty.link( function( isCollided ) {
-      this.visible = !isCollided;
+      thisNode.visible = !isCollided;
     } );
 
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() );
     this.addChild( this.bodyRenderer );
-    var cursorHandler = new CursorHandler();
+//    var cursorHandler = new CursorHandler();
 
     // Add drag handlers
-    this.addInputListener( cursorHandler );
+//    this.addInputListener( cursorHandler );
     this.addInputListener( new SimpleDragHandler( {
       start: function( event ) {
         thisNode.body.setUserControlled( true );
@@ -113,16 +116,16 @@ define( function( require ) {
       var node = new Node();
       var viewCenter = new Vector2( 0, 0 );
       var northEastVector = Vector2.createPolar( 1, labelAngle );
-      var tip = northEastVector.times( 10 ).getDestination( viewCenter );
-      var tail = northEastVector.times( 50 ).getDestination( viewCenter );
+      var tip = northEastVector.times( 10 ).plus( viewCenter );
+      var tail = northEastVector.times( 50 ).plus( viewCenter );
 
-      node.addChild( new ArrowNode( tail, tip, 0, 0, 3, { fill: 'yellow' } ) );
+      node.addChild( new ArrowNode( tail.x, tail.y, tip.x, tip.y, { fill: 'yellow' } ) );
       var text = new Text( body.getName(), {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
         y: tail.y - this.height - 10
       } );
-      this.addChild( text );
+      node.addChild( text );
 
       this.whiteBackgroundProperty.link( function( whiteBackground ) {
         text.fill = whiteBackground ? Color.black : Color.white;
@@ -136,6 +139,7 @@ define( function( require ) {
 //      } );
 //      this.bodyRenderer.addPropertyChangeListener( PROPERTY_FULL_BOUNDS, updateVisibility );
 //      updateVisibility.propertyChange( null );
+      return node;
     },
 
     //private
@@ -145,7 +149,8 @@ define( function( require ) {
 
     //private
     getViewDiameter: function() {
-      var viewDiameter = this.modelViewTransform.modelToViewDeltaX( this.body.getDiameter() );
+//      console.log(this.modelViewTransform.get());
+      var viewDiameter = this.modelViewTransform.get().modelToViewDeltaX( this.body.getDiameter() );
       return Math.max( viewDiameter, 2 );
     },
 

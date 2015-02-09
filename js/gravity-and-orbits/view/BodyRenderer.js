@@ -19,6 +19,27 @@ define( function( require ) {
 //  var GravityAndOrbitsApplication = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsApplication' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Image = require( 'SCENERY/nodes/Image' );
+
+  function BodyRenderer( body ) {
+
+    Node.call( this );
+
+    //private
+    this.body = body;
+  }
+
+  var renderer = inherit( Node, BodyRenderer, {
+      getBody: function() {
+        return this.body;
+      },
+      setDiameter: function( viewDiameter ) {}
+    },
+    {
+      SphereRenderer: SphereRenderer,
+      SwitchableBodyRenderer: SwitchableBodyRenderer,
+      ImageRenderer: ImageRenderer
+    } );
 
   // static class: SwitchableBodyRenderer
   /**
@@ -42,7 +63,7 @@ define( function( require ) {
     //private
     this.defaultBodyRenderer = defaultBodyRenderer;
 
-    body.massProperty().link( function() {
+    body.getMassProperty().link( function() {
       thisRenderer.removeAllChildren();
       thisRenderer.addChild( ( body.getMass() == targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
     } );
@@ -93,10 +114,10 @@ define( function( require ) {
   inherit( BodyRenderer, SphereRenderer, {
     setDiameter: function( viewDiameter ) {
       //TODO: figure out how to speed this up or ignore irrelevant calls
-      if ( !GravityAndOrbitsApplication.teacherMode ) {
+//      if ( !GravityAndOrbitsApplication.teacherMode ) {
         this.sphereNode.radius = viewDiameter;
         this.sphereNode.fill = this.createPaint( viewDiameter );
-      }
+//      }
     },
 //The sim runs out of memory on Mac OS X 10.4 if you use a gradient here, see #2913
 
@@ -107,7 +128,7 @@ define( function( require ) {
 //        return this.body.getColor();
 //      }
 //      else {
-        return new RoundGradientPaint( diameter / 8, -diameter / 8, this.body.getHighlight(), new Vector2( diameter / 4, diameter / 4 ), this.body.getColor() );
+//      return new RoundGradientPaint( diameter / 8, -diameter / 8, this.body.getHighlight(), new Vector2( diameter / 4, diameter / 4 ), this.body.getColor() );
 //      }
     }
   } );
@@ -139,7 +160,7 @@ define( function( require ) {
   inherit( SphereRenderer, SunRenderer, {
     setDiameter: function( viewDiameter ) {
 //      super.setDiameter( viewDiameter );
-      SphereRenderer.prototype.setDiameter.call(this, viewDiameter );
+      SphereRenderer.prototype.setDiameter.call( this, viewDiameter );
       var angle = 0;
       var deltaAngle = Math.PI * 2 / numSegments;
       var radius = viewDiameter / 2;
@@ -178,25 +199,14 @@ define( function( require ) {
 
     //private
     updateViewDiameter: function() {
-      this.imageNode.setTransform( new AffineTransform() );
+//      this.imageNode.setTransform( new AffineTransform() );
       var scale = this.viewDiameter / this.imageNode.width;
-      this.imageNode.setScale( scale );
+      this.imageNode.scale = scale;
       //Make sure the image is centered on the body's center
       this.imageNode.translate( -this.imageNode.width / 2 / scale, -this.imageNode.height / 2 / scale );
     }
   } );
 
-  function BodyRenderer( body ) {
-
-    //private
-    this.body = body;
-  }
-
-  return inherit( Node, BodyRenderer, {
-    getBody: function() {
-      return this.body;
-    },
-    setDiameter: function( viewDiameter ) {},
-  } );
+  return renderer;
 } );
 

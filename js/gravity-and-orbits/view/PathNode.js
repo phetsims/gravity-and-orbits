@@ -35,7 +35,7 @@ define( function( require ) {
    */
   function PathNode( body, transform, visible, color ) {
 
-    CanvasNode.call( this, options );
+    CanvasNode.call( this );
     var thisNode = this;
 
     //points in view space
@@ -50,7 +50,8 @@ define( function( require ) {
     visible.link( function( isVisible ) {
       thisNode.visible = isVisible;
       thisNode.body.clearPath();
-      thisNode.points.clear();
+      thisNode.points = [];
+//      thisNode.points.clear();
       thisNode.invalidatePaint();
     } );
 
@@ -60,7 +61,7 @@ define( function( require ) {
         var pt = transform.get().modelToView( point );
         thisNode.points.push( pt );
         if ( thisNode.visible ) {
-          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
+//          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
           thisNode.invalidatePaint();
         }
       },
@@ -69,14 +70,16 @@ define( function( require ) {
           thisNode.points.remove( 0 );
         }
         if ( getVisible() ) {
-          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
+//          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
           thisNode.invalidatePaint();
         }
       },
       cleared: function() {
         while (thisNode.points.length) { thisNode.points.pop(); }
-        thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
+//        thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
         thisNode.invalidatePaint();
+        console.log( 'cleared ' );
+
       }
     };
     this.body.addPathListener( listener );
@@ -85,14 +88,18 @@ define( function( require ) {
     transform.link( function() {
       thisNode.body.clearPath();
     } );
+
+    console.log('path')
   }
 
-  return inherit( Node, PathNode, {
+  return inherit( CanvasNode, PathNode, {
 
     // @param {CanvasContextWrapper} wrapper
     paintCanvas: function( wrapper ) {
       var context = wrapper.context;
       var i;
+
+      console.log( 'paint');
 
       var numSolidPoints = Math.min( this.body.getMaxPathLength() - NUM_FADE_POINTS, this.points.length );
       var numTransparentPoints = this.points.length - numSolidPoints;

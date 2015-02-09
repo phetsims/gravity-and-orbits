@@ -70,15 +70,17 @@ define( function( require ) {
       this.rewindingProperty,
       this.timeSpeedScaleProperty) );
 
-    this.modeProperty = new Property( this.modes[initialModeIndex] );
+//    console.log(this.modes.modes[0]);
+
+    this.modeProperty = new Property( this.modes.modes[initialModeIndex] );
     this.whiteBackground = whiteBackgroundProperty;
     this.showMeasuringTape = showMeasuringTape;
 
     // TODO: look at java for this
 //    getModulePanel().setLogoPanel( null );
 
-    for ( var i = 0; i < this.modes.length; i++ ) {
-      this.modes[i].init( this );
+    for ( var i = 0; i < this.modes.modes.length; i++ ) {
+      this.modes.modes[i].init( this );
     }
 //    setSimulationPanel( getMode().getCanvas() );
     // Switch the entire canvas on mode switches
@@ -145,7 +147,7 @@ define( function( require ) {
         }
       },
       setModeIndex: function( selectedMode ) {
-        modeProperty.set( this.modes.get( selectedMode ) );
+        this.modeProperty.set( this.modes.get( selectedMode ) );
       }
     },
 //statics

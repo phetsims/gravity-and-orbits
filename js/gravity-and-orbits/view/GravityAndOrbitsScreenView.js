@@ -13,6 +13,7 @@ define( function( require ) {
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
   var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
+  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
 
 
   /**
@@ -33,7 +34,11 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    this.addChild( new GravityAndOrbitsCanvas() );
+
+
+//    var module = new GravityAndOrbitsModule( null, null, new Property( false ), true, )
+
+    this.addChild( gravityAndOrbitsModel.getMode().getCanvas() );
   }
 
   return inherit( ScreenView, GravityAndOrbitsScreenView, {

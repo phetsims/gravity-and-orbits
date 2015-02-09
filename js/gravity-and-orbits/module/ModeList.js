@@ -27,6 +27,7 @@ define( function( require ) {
   var ModeConfig = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/ModeConfig' );
   var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyRenderer' );
+  var SphereRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SphereRenderer' );
   var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/EarthMassReadoutNode' );
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
@@ -147,7 +148,7 @@ define( function( require ) {
   };
 
   /**
-   *Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
+   * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
    * @param {string} image
    * @param {number} targetMass
    * @returns {*}

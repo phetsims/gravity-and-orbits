@@ -48,14 +48,12 @@ define( function( require ) {
     Node.call( this );
     var thisNode = this;
 
-    console.log( 'canvas' );
-
     module.whiteBackgroundProperty.link ( function( whiteBackground ) {
       thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
     } );
 
     // TODO translate this to js
-    this.modelViewTransform = new ModelViewTransform2().createOffsetScaleMapping( new Vector2(), 1 );
+    this.modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2(), 1 );
 //    setWorldTransformStrategy( new Node.CenteredStage( this, STAGE_SIZE ) );
 
     // Root of our scene graph
@@ -76,9 +74,13 @@ define( function( require ) {
 
     var bodies = model.getBodies();
     var i;
+
+
     for ( i = 0; i < bodies.length; i++ ) {
-      this.addChild( new PathNode( bodies[i], mode.transform, module.showPathProperty, bodies[i].getColor() ) );
+//      this.addChild( new PathNode( bodies[i], mode.transform, module.showPathProperty, bodies[i].getColor() ) );
+//      console.log( i );
     }
+
 
     var forceVectorColorFill = new Color( 50, 130, 215 );
     var forceVectorColorOutline = new Color(64, 64, 64);
@@ -89,7 +91,8 @@ define( function( require ) {
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
       var bodyNode = new BodyNode( bodies[i], mode.transform, mousePositionProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
-      this.addChild( bodyNode );
+      console.log( bodyNode );
+//      this.addChild( bodyNode );
 
 //      var property = new Property( false );
 //      property.link( function( value ) {
@@ -350,7 +353,7 @@ define( function( require ) {
 
       //private
       addChild: function( node ) {
-        rootNode.addChild( node );
+        this.rootNode.addChild( node );
       }
     },
 //statics
