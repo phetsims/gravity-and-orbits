@@ -30,7 +30,7 @@ define( function( require ) {
    * @param {GravityAndOrbitsModule} module - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
-  function RightControlPanel( module ) {
+  function RightControlPanel( module, options ) {
 
     // menu sections
     var sections = [
@@ -51,7 +51,7 @@ define( function( require ) {
     }
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
-    Panel.call( this, vbox, { fill: '#030085', stroke: STROKE, lineWidth: 2, cornerRadius: 2, resize: false, xMargin: PANEL_X_MARGIN } );
+    Panel.call( this, vbox, _.extend( { fill: '#030085', stroke: STROKE, lineWidth: 2, cornerRadius: 2, resize: false, xMargin: PANEL_X_MARGIN }, options ) );
 
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;

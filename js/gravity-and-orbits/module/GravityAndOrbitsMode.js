@@ -111,6 +111,10 @@ define( function( require ) {
       thisMode.transform.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
+    this.transform.link( function( t ) {
+      console.log( t );
+    } );
+
     // private
     this.model = new GravityAndOrbitsModel( p.gravityEnabled );
 

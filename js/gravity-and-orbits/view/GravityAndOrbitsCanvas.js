@@ -26,12 +26,12 @@ define( function( require ) {
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
 //  var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
-  var Node = require( 'SCENERY/nodes/Node' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
 //  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
 //  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
 
-  var STAGE_SIZE = new Dimension2( 1008, 679 );
+  var STAGE_SIZE = new Dimension2( 1024, 618 );
   var buttonBackgroundColor = new Color( 255, 250, 125 );
 
   /**
@@ -46,12 +46,12 @@ define( function( require ) {
 
     //view size
 //    Node.call( this, new Dimension( 1500, 1500 ) );
-    Node.call( this );
+    Rectangle.call( this, 0, 0, 1024, 618, { fill: 'rgba(220,220,220,0.3)'} );
     var thisNode = this;
 
-    module.whiteBackgroundProperty.link ( function( whiteBackground ) {
-      thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
-    } );
+//    module.whiteBackgroundProperty.link ( function( whiteBackground ) {
+//      thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
+//    } );
 
     // TODO translate this to js
     this.modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2(), 1 );
@@ -93,6 +93,7 @@ define( function( require ) {
     for ( i = 0; i < bodies.length; i++ ) {
       var bodyNode = new BodyNode( bodies[i], mode.transform, mousePositionProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
       this.addChild( bodyNode );
+
 
 //      var property = new Property( false );
 //      property.link( function( value ) {
@@ -255,7 +256,7 @@ define( function( require ) {
 //    addChild( createZoomControls( mode ) );
   }
 
-  return inherit( Node, GravityAndOrbitsCanvas, {
+  return inherit( Rectangle, GravityAndOrbitsCanvas, {
 //TODO: this anonymous PNode should be a PNode subclass, it's not reusable
 
       //private

@@ -89,7 +89,7 @@ define( function( require ) {
 
     var thisBody = this;
     this.collidedProperty.onValue( true, function() {
-      thisBody.clockTicksSinceExplosion.set( 0 );
+      thisBody.clockTicksSinceExplosionProperty.set( 0 );
     } );
 
     //If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
@@ -203,14 +203,14 @@ define( function( require ) {
      * @return {number}
      */
     getY: function() {
-      return this.positionProperty.get().getY();
+      return this.positionProperty.get().y;
     },
 
     /**
      * @return {number}
      */
     getX: function() {
-      return this.positionProperty.get().getX();
+      return this.positionProperty.get().x;
     },
 
     /**
@@ -271,7 +271,8 @@ define( function( require ) {
      */
     updateBodyStateFromModel: function( bodyState ) {
       if ( this.collidedProperty.get() ) {
-        this.clockTicksSinceExplosion.set( this.clockTicksSinceExplosion.get() + 1 );
+//        this.clockTicksSinceExplosionProperty.set( this.clockTicksSinceExplosionProperty.get() + 1 );
+        this.clockTicksSinceExplosion += 1;
       }
       else {
         if ( !this.isUserControlled() ) {
@@ -297,7 +298,8 @@ define( function( require ) {
       var i;
       while ( this.path.length + 1//account for the point that will be added
         > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
-        this.path.remove( 0 );
+//        this.path.remove( 0 );
+        this.path.shift();
 
         for ( i = 0; i < this.pathListeners.length; i++ ) {
           this.pathListeners[i].pointRemoved();

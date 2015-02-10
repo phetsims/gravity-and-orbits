@@ -25,6 +25,7 @@ define( function( require ) {
 
     ScreenView.call( this );
 
+    console.log(this.layoutBounds);
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {
       listener: function() {
@@ -35,12 +36,22 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    var controlPanelNode = new RightControlPanel( module );
+    var modes = module.getModes();
+    for ( var i = 0; i < modes.length; i++ ) {
+      var gaoCanvas = modes[i].getCanvas();
+      gaoCanvas.visible = false;
+      this.addChild( gaoCanvas );
+    }
+
+    module.modeProperty.link( function( mode ) {
+      for ( var i = 0; i < modes.length; i++ ) {
+        modes[i].getCanvas().visible = false;
+      }
+      mode.getCanvas().visible = true;
+    } );
+
+    var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX } );
     this.addChild( controlPanelNode );
-
-
-//    var module = new GravityAndOrbitsModule( null, null, new Property( false ), true, )
-    this.addChild( module.getMode().getCanvas() );
   }
 
   return inherit( ScreenView, GravityAndOrbitsScreenView, {

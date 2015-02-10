@@ -23,6 +23,27 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var Bounds2 = require( 'DOT/Bounds2' );
+
+
+  /**
+   * Constrains a point to some bounds.
+   *
+   * @param {Vector2} point
+   * @param {Bounds2} bounds
+   * @returns {Vector2}
+   */
+  function constrainBounds( point ) {
+    var bounds = new Bounds2( 0, 0, 1024, 618 );
+    if ( _.isUndefined( bounds ) || bounds.containsPoint( point ) ) {
+      return point;
+    }
+    else {
+      var xConstrained = Math.max( Math.min( point.x, bounds.maxX ), bounds.minX );
+      var yConstrained = Math.max( Math.min( point.y, bounds.maxY ), bounds.minY );
+      return new Vector2( xConstrained, yConstrained );
+    }
+  }
 
   /**
    *
@@ -38,7 +59,7 @@ define( function( require ) {
                      mousePosition, parentComponent, //Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
                      labelAngle, whiteBackgroundProperty ) {
 
-    Node.call( this );
+    Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     // private attributes
     this.modelViewTransform = modelViewTransform;
@@ -57,19 +78,29 @@ define( function( require ) {
 
     // Add drag handlers
 //    this.addInputListener( cursorHandler );
+    var startOffset;
+
     this.addInputListener( new SimpleDragHandler( {
+
       start: function( event ) {
         thisNode.body.setUserControlled( true );
+        startOffset = event.currentTarget.globalToParentPoint( event.pointer.point ).minus( thisNode.translation );
       },
       drag: function( event ) {
-        var delta = modelViewTransform.get().viewToModelDelta( event.getDeltaRelativeTo( thisNode.getParent() ) );
-        thisNode.body.translate( new Vector2( delta.getWidth(), delta.getHeight() ) );
+        var parentPoint = event.currentTarget.globalToParentPoint( event.pointer.point ).minus( startOffset );
+        var delta = modelViewTransform.get().viewToModelDelta( parentPoint );
+//        var delta = modelViewTransform.get().viewToModelDelta( event.getDeltaRelativeTo( parentPoint ) );
+        thisNode.body.translate( delta.x, delta.y );
         thisNode.body.notifyUserModifiedPosition();
       },
       end: function( event ) {
         thisNode.body.setUserControlled( false );
       }
     } ) );
+
+    this.body.positionProperty.link( function( pos ) {
+      thisNode.translation = constrainBounds( modelViewTransform.get().modelToViewPosition( pos ) );
+    });
 
     // TODO: is this necessary in JS version?
 //    this.body.positionProperty.link( function() {
