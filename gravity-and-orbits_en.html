@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1"/>
 
-  <!-- internationalized title will be inserted by sim -->
+  <!-- Localized title will be filled in by JavaScript. -->
   <title>&nbsp;</title>
 
   <!-- Third-party libraries -->
@@ -19,11 +19,9 @@
 
   <!-- PhET common code that must be loaded pre-RequireJS -->
   <script type="text/javascript" src="../assert/js/assert.js"></script>
-  <script type="text/javascript" src="../phetcommon/js/util/query-parameters.js"></script>
-  <script type="text/javascript" src="../phetcommon/js/util/check-assertions.js"></script>
-  <script type="text/javascript" src="../phetcommon/js/analytics/google-analytics.js"></script>
+  <script type="text/javascript" src="../chipper/js/initialize-globals.js"></script>
 
-  <!-- sim -->
+  <!-- Simulation -->
   <script data-main="js/gravity-and-orbits-config.js" src="../sherpa/require-2.1.11.js"></script>
 
 </head>
