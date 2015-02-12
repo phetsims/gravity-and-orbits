@@ -21,8 +21,9 @@ require.config(
       text: '../../sherpa/text',
 
       // PhET plugins
-      image: '../../chipper/requirejs-plugins/image',
-      string: '../../chipper/requirejs-plugins/string',
+      image: '../../chipper/js/requirejs-plugins/image',
+      audio: '../../chipper/js/requirejs-plugins/audio',
+      string: '../../chipper/js/requirejs-plugins/string',
 
       // common directories, uppercase names to identify them in require imports
       ASSERT: '../../assert/js',
@@ -40,7 +41,7 @@ require.config(
       // this sim
       GRAVITY_AND_ORBITS: '.'
     },
-    
+
     // optional cache buster to make browser refresh load all included scripts, can be disabled with ?cacheBuster=false
     urlArgs: phet.chipper.getCacheBusterArgs()
   } );
