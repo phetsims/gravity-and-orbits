@@ -36,7 +36,8 @@ define( function( require ) {
 //  var createRectangleInvertedYMapping = require( 'edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform.createRectangleInvertedYMapping' );//static
 
   // the play area only takes up the left side of the canvas; the control panel is on the right side
-  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width * 0.60;
+//  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width * 0.60;
+  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width;
   var PLAY_AREA_HEIGHT = GravityAndOrbitsCanvas.STAGE_SIZE.height;
 
   /**
@@ -63,9 +64,10 @@ define( function( require ) {
 
     // public Properties from the java version
     PropertySet.call( this, {
-      transform: 0, // mvt
       active: active, // boolean
-      deviatedFromDefaults: false,
+
+      // private
+      deviatedFromDefaults: false, // Flag to indicate whether any value has deviated from the original value (which was originally used for showing a reset button, but not anymore)
       timeSpeedScale: 0, // number
       measuringTapeStartPoint: new Vector2( initialMeasuringTapeLocation.p1 ),
       measuringTapeEndPoint: new Vector2( initialMeasuringTapeLocation.p2 ),
@@ -76,10 +78,6 @@ define( function( require ) {
 
     //private
     this.canvas = null;
-
-    // Flag to indicate whether any value has deviated from the original value (which was originally used for showing a reset button, but not anymore)
-    // private
-    this.deviatedFromDefaults = new Property( false );
 
     //additional scale factor on top of defaultZoomScale
     this.zoomLevel = new Property( 1.0 );
@@ -105,15 +103,15 @@ define( function( require ) {
     // Function that creates a PNode to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
-    this.transform = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+    this.transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
 
     this.zoomLevel.link( function() {
-      thisMode.transform.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+      thisMode.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
-    this.transform.link( function( t ) {
-      console.log( t );
-    } );
+//    this.transformProperty.link( function( t ) {
+//      console.log( t );
+//    } );
 
     // private
     this.model = new GravityAndOrbitsModel( p.gravityEnabled );
@@ -143,7 +141,9 @@ define( function( require ) {
      * @returns {*}
      */
     createTransform: function( defaultZoomScale, zoomOffset ) {
+      console.log("zoom offset:", zoomOffset);
       var targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevel.get(), zoomOffset );
+      console.log( targetRectangle );
 //      var x = targetRectangle.getMinX();
 //      var y = targetRectangle.getMinY();
 //      var w = targetRectangle.getMaxX() - x;
@@ -152,6 +152,9 @@ define( function( require ) {
       var minY = targetRectangle.y;
       var maxX = targetRectangle.x + targetRectangle.width;
       var maxY = targetRectangle.y + targetRectangle.height;
+      console.log( minX, minY, maxX, maxY );
+//      var maxX = targetRectangle.width;
+//      var maxY = targetRectangle.height;
       return ModelViewTransform2.createRectangleInvertedYMapping( new Bounds2( minX, minY, maxX, maxY ), new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
     },
 
@@ -194,7 +197,7 @@ define( function( require ) {
 //      } );
       var thisMode = this;
       var update = function() {
-        thisMode.deviatedFromDefaults.set( true );
+        thisMode.deviatedFromDefaultsProperty.set( true );
 //        updater.update();
       };
       body.getMassProperty().link( update );

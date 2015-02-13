@@ -15,7 +15,6 @@ define( function( require ) {
   var PathNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/PathNode' );
   var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
   var GridNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GridNode' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Color = require( 'SCENERY/util/Color' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
@@ -53,8 +52,6 @@ define( function( require ) {
 //      thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
 //    } );
 
-    // TODO translate this to js
-    this.modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2(), 1 );
 //    setWorldTransformStrategy( new Node.CenteredStage( this, STAGE_SIZE ) );
 
     // Root of our scene graph
@@ -91,7 +88,7 @@ define( function( require ) {
     //Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      var bodyNode = new BodyNode( bodies[i], mode.transform, mousePositionProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
+      var bodyNode = new BodyNode( bodies[i], mode.transformProperty, mousePositionProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
       this.addChild( bodyNode );
 
 
@@ -147,7 +144,7 @@ define( function( require ) {
 //    }
 //
     //Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
-    var gridNode = new GridNode( mode.transform, mode.getGridSpacing(), mode.getGridCenter() );
+    var gridNode = new GridNode( mode.transformProperty, mode.getGridSpacing(), mode.getGridCenter() );
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 

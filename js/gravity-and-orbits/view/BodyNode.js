@@ -180,7 +180,6 @@ define( function( require ) {
 
     //private
     getViewDiameter: function() {
-//      console.log(this.modelViewTransform.get());
       var viewDiameter = this.modelViewTransform.get().modelToViewDeltaX( this.body.getDiameter() );
       return Math.max( viewDiameter, 2 );
     },

@@ -14,6 +14,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Color = require( 'SCENERY/util/Color' );
+  var RadialGradient = require( 'SCENERY/util/RadialGradient' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var Vector2 = require( 'DOT/Vector2' );
 //  var GravityAndOrbitsApplication = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsApplication' );
@@ -36,9 +37,10 @@ define( function( require ) {
       setDiameter: function( viewDiameter ) {}
     },
     {
-      SphereRenderer: SphereRenderer,
       SwitchableBodyRenderer: SwitchableBodyRenderer,
-      ImageRenderer: ImageRenderer
+      SphereRenderer: SphereRenderer,
+      ImageRenderer: ImageRenderer,
+      SunRendereer: SunRenderer
     } );
 
   // static class: SwitchableBodyRenderer
@@ -119,17 +121,15 @@ define( function( require ) {
         this.sphereNode.fill = this.createPaint( viewDiameter );
 //      }
     },
-//The sim runs out of memory on Mac OS X 10.4 if you use a gradient here, see #2913
 
     //private
     createPaint: function( diameter ) {
       // Create the gradient paint for the sphere in order to give it a 3D look.
-//      if ( PhetUtilities.isMacintosh() ) {
-//        return this.body.getColor();
-//      }
-//      else {
-//      return new RoundGradientPaint( diameter / 8, -diameter / 8, this.body.getHighlight(), new Vector2( diameter / 4, diameter / 4 ), this.body.getColor() );
-//      }
+//      return new RadialGradient( diameter / 8, -diameter / 8, this.body.getHighlight(), new Vector2( diameter / 4, diameter / 4 ), this.body.getColor() );
+      return new RadialGradient( diameter / 8, -diameter / 8, 0, diameter / 4, diameter / 4, diameter )
+        .addColorStop( 0, this.body.getHighlight() )
+        .addColorStop( 0.5, this.body.getColor() )
+        .addColorStop( 1, 'black' );
     }
   } );
 

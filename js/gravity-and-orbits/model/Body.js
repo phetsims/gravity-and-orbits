@@ -144,7 +144,7 @@ define( function( require ) {
     /**
      * @return {Color}
      */
-    getHightlight: function() {
+    getHighlight: function() {
       return this.highlight;
     },
 
