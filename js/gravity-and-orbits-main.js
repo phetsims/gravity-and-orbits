@@ -91,12 +91,12 @@ define( function( require ) {
         function() { return new IntroModule( null, new Property( true ) ); },
         function( model ) { return new GravityAndOrbitsScreenView( model ); },
         { backgroundColor: '#000' }
-      ),
-      new Screen( toScaleString, new Image( toScaleIcon ),
-        function() { return new CartoonModule( null, new Property( true ) ); },
-        function( model ) { return new GravityAndOrbitsScreenView( model ); },
-        { backgroundColor: '#000' }
       )
+//      new Screen( toScaleString, new Image( toScaleIcon ),
+//        function() { return new CartoonModule( null, new Property( true ) ); },
+//        function( model ) { return new GravityAndOrbitsScreenView( model ); },
+//        { backgroundColor: '#000' }
+//      )
     ], simOptions ).start();
   } );
 } );

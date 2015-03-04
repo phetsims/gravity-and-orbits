@@ -19,7 +19,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var Rectangle = require( 'DOT/Rectangle' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
@@ -141,20 +141,11 @@ define( function( require ) {
      * @returns {*}
      */
     createTransform: function( defaultZoomScale, zoomOffset ) {
-      console.log("zoom offset:", zoomOffset);
       var targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevel.get(), zoomOffset );
-      console.log( targetRectangle );
-//      var x = targetRectangle.getMinX();
-//      var y = targetRectangle.getMinY();
-//      var w = targetRectangle.getMaxX() - x;
-//      var h = targetRectangle.getMaxY() - y;
       var minX = targetRectangle.x;
       var minY = targetRectangle.y;
       var maxX = targetRectangle.x + targetRectangle.width;
       var maxY = targetRectangle.y + targetRectangle.height;
-      console.log( minX, minY, maxX, maxY );
-//      var maxX = targetRectangle.width;
-//      var maxY = targetRectangle.height;
       return ModelViewTransform2.createRectangleInvertedYMapping( new Bounds2( minX, minY, maxX, maxY ), new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
     },
 
