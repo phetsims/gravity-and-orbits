@@ -61,7 +61,7 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsMode( userComponent, forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
-    
+
     // public Properties from the java version
     PropertySet.call( this, {
       active: active, // boolean

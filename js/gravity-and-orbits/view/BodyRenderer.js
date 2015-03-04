@@ -40,7 +40,7 @@ define( function( require ) {
       SwitchableBodyRenderer: SwitchableBodyRenderer,
       SphereRenderer: SphereRenderer,
       ImageRenderer: ImageRenderer,
-      SunRendereer: SunRenderer
+      SunRenderer: SunRenderer
     } );
 
   // static class: SwitchableBodyRenderer
@@ -88,7 +88,7 @@ define( function( require ) {
    * @param viewDiameter
    * @constructor
    *
-   * Construcotr 2:
+   * Constructor 2:
    * @param body
    * @param viewDiameter
    * @constructor
@@ -105,7 +105,6 @@ define( function( require ) {
       viewDiameter = highlight;
 
       BodyRenderer.call( this, body );
-      //Buffer the sphere node for improved performance (JProfiler reported 80% time spent in rendering before buffering, 15% after)
 //      this.sphereNode = new SphericalNode( viewDiameter, createPaint( viewDiameter ), true );
       this.sphereNode = new Circle( viewDiameter );
       this.addChild( this.sphereNode );
@@ -117,19 +116,18 @@ define( function( require ) {
     setDiameter: function( viewDiameter ) {
       //TODO: figure out how to speed this up or ignore irrelevant calls
 //      if ( !GravityAndOrbitsApplication.teacherMode ) {
-        this.sphereNode.radius = viewDiameter;
-        this.sphereNode.fill = this.createPaint( viewDiameter );
+      this.sphereNode.radius = viewDiameter / 2;
+      this.sphereNode.fill = this.createPaint( viewDiameter );
 //      }
     },
 
     //private
     createPaint: function( diameter ) {
       // Create the gradient paint for the sphere in order to give it a 3D look.
-//      return new RadialGradient( diameter / 8, -diameter / 8, this.body.getHighlight(), new Vector2( diameter / 4, diameter / 4 ), this.body.getColor() );
       return new RadialGradient( diameter / 8, -diameter / 8, 0, diameter / 4, diameter / 4, diameter )
         .addColorStop( 0, this.body.getHighlight() )
-        .addColorStop( 0.5, this.body.getColor() )
-        .addColorStop( 1, 'black' );
+        .addColorStop( 0.5, this.body.getColor() );
+//        .addColorStop( 1, 'black' );
     }
   } );
 
@@ -150,11 +148,11 @@ define( function( require ) {
 //    this.twinkles = new PhetPPath( Color.yellow );
 
     SphereRenderer.call( this, body, viewDiameter );
-    this.numSegments = numSegments;
-    this.twinkleRadius = twinkleRadius;
-    this.addChild( twinkles );
-//    this.twinkles.moveToBack();
-    this.setDiameter( viewDiameter );
+//    this.numSegments = numSegments;
+//    this.twinkleRadius = twinkleRadius;
+//    this.addChild( twinkles );
+////    this.twinkles.moveToBack();
+//    this.setDiameter( viewDiameter );
   }
 
   inherit( SphereRenderer, SunRenderer, {
@@ -201,8 +199,12 @@ define( function( require ) {
     updateViewDiameter: function() {
 //      this.imageNode.setTransform( new AffineTransform() );
       var scale = this.viewDiameter / this.imageNode.width;
-      this.imageNode.scale = scale;
-      //Make sure the image is centered on the body's center
+
+      // TODO: fix this workaround for when scale is 1
+      if ( scale === 1 ) { return; }
+      this.imageNode.setScaleMagnitude( scale );
+
+      // Make sure the image is centered on the body's center
       this.imageNode.translate( -this.imageNode.width / 2 / scale, -this.imageNode.height / 2 / scale );
     }
   } );

@@ -42,7 +42,6 @@ define( function( require ) {
 
       resetButtons.push( resetButton );
     }
-console.log( module.modeProperty.value );
     var buttonGroup = new RadioButtonGroup( module.modeProperty, content,
       {
         alignVertically: true,

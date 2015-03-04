@@ -25,7 +25,6 @@ define( function( require ) {
 
     ScreenView.call( this );
 
-    console.log(this.layoutBounds);
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {
       listener: function() {
