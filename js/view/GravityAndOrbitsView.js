@@ -26,7 +26,7 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsView( model ) {
-    ScreenView.call( this, { renderer: 'svg', layoutBounds: new Bounds2( 0, 0, model.width, model.height ) } );
+    ScreenView.call( this, { layoutBounds: new Bounds2( 0, 0, model.width, model.height ) } );
 
     // add workspace
     this.addChild( new Workspace( model, this.layoutBounds ) );
