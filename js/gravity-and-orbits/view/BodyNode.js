@@ -14,7 +14,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Color = require( 'SCENERY/util/Color' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var MovableDragHandler = require( 'SCENERY_PHET/input/MovableDragHandler' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
@@ -80,22 +80,8 @@ define( function( require ) {
 //    this.addInputListener( cursorHandler );
     var startOffset;
 
-    this.addInputListener( new SimpleDragHandler( {
-
-      start: function( event ) {
-        thisNode.body.setUserControlled( true );
-        startOffset = event.currentTarget.globalToParentPoint( event.pointer.point ).minus( thisNode.translation );
-      },
-      drag: function( event ) {
-        var parentPoint = event.currentTarget.globalToParentPoint( event.pointer.point ).minus( startOffset );
-        var delta = modelViewTransform.get().viewToModelDelta( parentPoint );
-//        var delta = modelViewTransform.get().viewToModelDelta( event.getDeltaRelativeTo( parentPoint ) );
-        thisNode.body.translate( delta.x, delta.y );
-        thisNode.body.notifyUserModifiedPosition();
-      },
-      end: function( event ) {
-        thisNode.body.setUserControlled( false );
-      }
+    this.addInputListener( new MovableDragHandler( this.body.positionProperty, {
+      modelViewTransform: this.modelViewTransform.get()
     } ) );
 
     this.body.positionProperty.link( function( pos ) {
