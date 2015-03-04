@@ -61,7 +61,7 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsMode( userComponent, forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
-
+    
     // public Properties from the java version
     PropertySet.call( this, {
       active: active, // boolean
@@ -69,8 +69,8 @@ define( function( require ) {
       // private
       deviatedFromDefaults: false, // Flag to indicate whether any value has deviated from the original value (which was originally used for showing a reset button, but not anymore)
       timeSpeedScale: 0, // number
-      measuringTapeStartPoint: new Vector2( initialMeasuringTapeLocation.p1 ),
-      measuringTapeEndPoint: new Vector2( initialMeasuringTapeLocation.p2 ),
+      measuringTapeStartPoint: initialMeasuringTapeLocation.p1,
+      measuringTapeEndPoint: initialMeasuringTapeLocation.p2,
       zoomLevel: 1 // additional scale factor on top of defaultZoomScale
     } );
 
