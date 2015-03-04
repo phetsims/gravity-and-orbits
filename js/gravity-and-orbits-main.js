@@ -1,20 +1,28 @@
-// Copyright 2002-2013, University of Colorado Boulder
+//  Copyright 2002-2014, University of Colorado Boulder
 
 /**
- * Main entry point for the 'Gravity and Orbits Lab' sim.
+ * Main entry point for the sim.
  *
- * @author Andrey Zelenkov (Mlearner)
+ * @author PhET Interactive Simulations
  */
-
 define( function( require ) {
   'use strict';
 
   // modules
-  var SimLauncher = require( 'JOIST/SimLauncher' );
+  var GravityAndOrbitsScreen = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsScreen' );
+  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
+  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
+  var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
+  var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
+  var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
+  var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
+  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
+  var inherit = require( 'PHET_CORE/inherit' );
   var Sim = require( 'JOIST/Sim' );
+  var SimLauncher = require( 'JOIST/SimLauncher' );
+  var ScreenView = require( 'JOIST/ScreenView' );
   var Screen = require( 'JOIST/Screen' );
-  var GravityAndOrbitsModel = require( 'model/GravityAndOrbitsModel' );
-  var GravityAndOrbitsView = require( 'view/GravityAndOrbitsView' );
+  var Property = require( 'AXON/Property' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Bounds2 = require( 'DOT/Bounds2' );
 
@@ -25,31 +33,68 @@ define( function( require ) {
   // strings
   var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
   var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
-  var titleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' );
+  var simTitle = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' );
+
+  // these modules are originally from GravityAndOrbitsApplication
+
+  // static class: IntroModule
+  function IntroModule( phetFrame, whiteBackgroundProperty ) {
+    GravityAndOrbitsModule.call( this, UserComponents.cartoonTab, phetFrame, whiteBackgroundProperty, GAOStrings.TO_SCALE, false, function( p ) {
+      return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
+    }, 0, false );
+  }
+
+  inherit( GravityAndOrbitsModule, IntroModule );
+
+  // static class: CartoonModule
+  function CartoonModule( phetFrame, whiteBackgroundProperty ) {
+    GravityAndOrbitsModule.call( this, UserComponents.toScaleTab, phetFrame, whiteBackgroundProperty, GAOStrings.CARTOON, true, function( p ) {
+        return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
+      }, //Start Real tab in earth/satellite mode because it is more playful
+      3, true );
+  }
+
+  inherit( GravityAndOrbitsModule, CartoonModule );
 
   // constants
   var LAYOUT_BOUNDS = new Bounds2( 0, 0, 768, 504 );
 
   var simOptions = {
     credits: {
-      leadDesign: 'Noah Podolefsky, Emily B. Moore',
-      softwareDevelopment: 'Sam Reid, Jon Olson',
-      team: 'Trish Loeblein, Kathy Perkins',
-      thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
+      //TODO fill in proper credits, all of these fields are optional, see joist.AboutDialog
+      leadDesign: '',
+      softwareDevelopment: '',
+      team: '',
+      qualityAssurance: '',
+      graphicArts: '',
+      thanks: ''
     }
   };
 
+  // Appending '?dev' to the URL will enable developer-only features.
+//  if ( window.phetcommon.getQueryParameter( 'dev' ) ) {
+//    simOptions = _.extend( {
+//      // add dev-specific options here
+//    }, simOptions );
+//  }
+
+//  SimLauncher.launch( function() {
+//    var sim = new Sim( simTitle, [ new GravityAndOrbitsScreen() ], simOptions );
+//    sim.start();
+//  } );
+
+  // taken from MLL version, need to incorporate the modules somehow
   SimLauncher.launch( function() {
     // create and start the sim
-    new Sim( titleString, [
+    new Sim( simTitle, [
       new Screen( cartoonString, new Image( cartoonIcon ),
-        function() { return new GravityAndOrbitsModel( LAYOUT_BOUNDS.width, LAYOUT_BOUNDS.height, cartoonString ); },
-        function( model ) { return new GravityAndOrbitsView( model ); },
+        function() { return new IntroModule( null, new Property( true ) ); },
+        function( model ) { return new GravityAndOrbitsScreenView( model ); },
         { backgroundColor: '#000' }
       ),
       new Screen( toScaleString, new Image( toScaleIcon ),
-        function() { return new GravityAndOrbitsModel( LAYOUT_BOUNDS.width, LAYOUT_BOUNDS.height, toScaleString ); },
-        function( model ) { return new GravityAndOrbitsView( model ); },
+        function() { return new CartoonModule( null, new Property( true ) ); },
+        function( model ) { return new GravityAndOrbitsScreenView( model ); },
         { backgroundColor: '#000' }
       )
     ], simOptions ).start();

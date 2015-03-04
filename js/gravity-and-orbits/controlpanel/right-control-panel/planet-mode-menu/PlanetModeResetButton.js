@@ -35,7 +35,7 @@ define( function( require ) {
         xMargin: 0,
         yMargin: 0,
         listener: function() {
-          model.refreshMode = true;
+//          model.refreshMode = true;
         }
       } );
 

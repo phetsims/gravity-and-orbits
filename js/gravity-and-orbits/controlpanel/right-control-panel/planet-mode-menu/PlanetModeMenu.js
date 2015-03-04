@@ -14,35 +14,36 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
-  var PlanetModeResetButton = require( 'view/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
-  var PlanetModeOption = require( 'view/right-control-panel/planet-mode-menu/PlanetModeOption' );
+  var PlanetModeResetButton = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
+  var PlanetModeOption = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/planet-mode-menu/PlanetModeOption' );
 
   /**
-   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModule} module
    * @param {Object} [options] - This object contains options for main node of planet mode menu.
    * @constructor
    */
-  function PlanetModeMenu( model, options ) {
+  function PlanetModeMenu( module, options ) {
     Node.call( this, options );
 
     var content = []; // for radio buttons
     var resetButtons = [];
-    for ( var i = 0; i < model.planetModes.length; i++ ) {
-      content.push( { value: i, node: new PlanetModeOption( model, i ) } );
+    var modes = module.getModes();
+    for ( var i = 0; i < modes.length; i++ ) {
+      content.push( { value: modes[i], node: new PlanetModeOption( module, i ) } );
 
-      var resetButton = new PlanetModeResetButton( model );
+      var resetButton = new PlanetModeResetButton( module );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
       (function( i, resetButton ) {
-        model.planetModeProperty.link( function( mode ) {
+        module.modeProperty.link( function( mode ) {
           resetButton.visible = ( mode === i );
         } );
       })( i, resetButton );
 
       resetButtons.push( resetButton );
     }
-
-    var buttonGroup = new RadioButtonGroup( model.planetModeProperty, content,
+console.log( module.modeProperty.value );
+    var buttonGroup = new RadioButtonGroup( module.modeProperty, content,
       {
         alignVertically: true,
         selectedStroke: 'white',

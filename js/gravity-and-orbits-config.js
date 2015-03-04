@@ -1,10 +1,9 @@
-// Copyright 2002-2013, University of Colorado Boulder
+//  Copyright 2002-2014, University of Colorado Boulder
 
-/*
- * RequireJS configuration file for the 'Gravity and Orbits Lab' sim.
- * Paths are relative to the location of this file.
+/**
+ * RequireJS configuration file for the sim.
  *
- * @author Andrey Zelenkov (Mlearner)
+ * @author PhET Interactive Simulations
  */
 
 require.config( {

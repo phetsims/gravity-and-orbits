@@ -41,11 +41,11 @@ define( function( require ) {
   var FONT = new PhetFont( 14 );
 
   /**
-   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModel} module - Contains set of properties. Instance of PropertySet class. General module for the whole application.
    * @param {Object} [options] - Custom options for VBox contains checkboxes.
    * @constructor
    */
-  function SpaceObjectsPropertyCheckbox( model, options ) {
+  function SpaceObjectsPropertyCheckbox( module, options ) {
     VBox.call( this, _.extend( { resize: false, spacing: 5, align: 'left' }, options ) );
 
     // checkbox params
@@ -56,22 +56,22 @@ define( function( require ) {
 
     var checkboxesOptions = {
       'gravityArrow': {
-        property: model.forceArrowProperty,
+        property: module.showGravityForceProperty,
         text: gravityString + ' ' + forceString,
         node: new ArrowNode( 135, -10, 180, -10, { fill: '#4380C2' } )
       },
       'velocityArrow': {
-        property: model.velocityArrowProperty,
+        property: module.showVelocityProperty,
         text: velocityString,
         node: new ArrowNode( 95, -10, 140, -10, { fill: '#ED1C24' } )
       },
       'path': {
-        property: model.pathProperty,
+        property: module.showPathProperty,
         text: pathString,
         node: new Node( { children: [ new Image( iconPathImg ) ], scale: 0.9 } )
       },
       'grid': {
-        property: model.gridProperty,
+        property: module.showGridProperty,
         text: gridString,
         node: new Node( {
           children: [
@@ -85,7 +85,7 @@ define( function( require ) {
         } )
       },
       'tape': {
-        property: model.tapeProperty,
+        property: module.showMeasuringTapeProperty,
         text: tapeString,
         node: new Node( {
           children: [
@@ -107,15 +107,15 @@ define( function( require ) {
         } )
       },
       'mass': {
-        property: model.massProperty,
+        property: module.showMassProperty,
         text: massString,
         node: new Node( { children: [ new Image( iconMassImg ) ], scale: 0.8 } )
       }
     }, order = {}, menu;
 
     // order of checkboxes depend on view mode
-    order[ model.viewModes[ 0 ] ] = [ 'gravityArrow', 'velocityArrow', 'path', 'grid' ];
-    order[ model.viewModes[ 1 ] ] = [ 'gravityArrow', 'velocityArrow', 'mass', 'path', 'grid', 'tape' ];
+//    order[ module.viewModes[ 0 ] ] = [ 'gravityArrow', 'velocityArrow', 'path', 'grid' ];
+//    order[ module.viewModes[ 1 ] ] = [ 'gravityArrow', 'velocityArrow', 'mass', 'path', 'grid', 'tape' ];
 
     // create all types of checkboxes
     for ( var checkboxOption in checkboxesOptions ) {
@@ -132,7 +132,9 @@ define( function( require ) {
     }
 
     // add checkboxes depend on view mode
-    menu = order[ model.viewMode ];
+
+//    menu = order[ module.viewMode ];
+    menu = [ 'gravityArrow', 'velocityArrow', 'path', 'grid' ];
     for ( var i = 0; i < menu.length; i++ ) {
       this.addChild( this[ checkboxesOptions[ menu[ i ] ].text ].view );
     }
