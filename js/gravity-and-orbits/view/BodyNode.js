@@ -25,26 +25,6 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Bounds2 = require( 'DOT/Bounds2' );
 
-
-  /**
-   * Constrains a point to some bounds.
-   *
-   * @param {Vector2} point
-   * @param {Bounds2} bounds
-   * @returns {Vector2}
-   */
-  function constrainBounds( point ) {
-    var bounds = new Bounds2( 0, 0, 1024, 618 );
-    if ( _.isUndefined( bounds ) || bounds.containsPoint( point ) ) {
-      return point;
-    }
-    else {
-      var xConstrained = Math.max( Math.min( point.x, bounds.maxX ), bounds.minX );
-      var yConstrained = Math.max( Math.min( point.y, bounds.maxY ), bounds.minY );
-      return new Vector2( xConstrained, yConstrained );
-    }
-  }
-
   /**
    *
    * @param {Body} body
@@ -85,7 +65,7 @@ define( function( require ) {
     } ) );
 
     this.body.positionProperty.link( function( pos ) {
-      thisNode.translation = constrainBounds( modelViewTransform.get().modelToViewPosition( pos ) );
+      thisNode.translation = modelViewTransform.get().modelToViewPosition( pos );
     });
 
     // TODO: is this necessary in JS version?
