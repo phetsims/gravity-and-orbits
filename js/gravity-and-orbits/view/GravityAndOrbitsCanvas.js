@@ -27,6 +27,7 @@ define( function( require ) {
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
+  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 //  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
 //  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
 
@@ -82,7 +83,7 @@ define( function( require ) {
 
     var forceVectorColorFill = new Color( 50, 130, 215 );
     var forceVectorColorOutline = new Color(64, 64, 64);
-    var velocityVectorColorFill = new Color( 255, 85, 0 );
+    var velocityVectorColorFill = PhetColorScheme.RED_COLORBLIND;
     var velocityVectorColorOutline = new Color(64, 64, 64);
 
     //Use canvas coordinates to determine whether something has left the visible area
