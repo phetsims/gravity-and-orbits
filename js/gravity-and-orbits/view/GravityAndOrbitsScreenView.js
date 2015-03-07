@@ -15,6 +15,7 @@ define( function( require ) {
   var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var RightControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/RightControlPanel' );
+  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/TimeControlPanel' );
 
 
   /**
@@ -51,6 +52,9 @@ define( function( require ) {
 
     var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX } );
     this.addChild( controlPanelNode );
+
+    var timeControlPanel = new TimeControlPanel( module, {bottom: this.layoutBounds.bottom, centerX: this.layoutBounds.centerX} );
+    this.addChild( timeControlPanel );
   }
 
   return inherit( ScreenView, GravityAndOrbitsScreenView, {

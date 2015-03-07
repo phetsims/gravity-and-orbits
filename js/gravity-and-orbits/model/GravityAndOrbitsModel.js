@@ -59,6 +59,9 @@ define( function( require ) {
 
       // Called by the animation loop. Optional, so if your model has no animation, you can omit this.
       step: function( dt ) {
+        if ( !dt ) {
+          dt = 1000000 / 60; // java version was in ms
+        }
         // Handle model animation here.
 
         var i;

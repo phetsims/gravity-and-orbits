@@ -100,6 +100,12 @@ define( function( require ) {
   }
 
   return inherit( PropertySet, GravityAndOrbitsModule, {
+      step: function( dt ) {
+        if ( this.playButtonPressedProperty.value ) {
+          this.getMode().getModel().step( dt * 1000000 );
+        }
+    },
+
       getModeIndex: function() {
         return this.modes.modes.indexOf( this.getMode() );
       },
