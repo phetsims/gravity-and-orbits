@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * A collection of localized strings used by simulations.
@@ -7,53 +7,50 @@
 define( function( require ) {
   'use strict';
 
-  function getString( key ) {
-    return 'string!GRAVITY_AND_ORBITS/' + key;
-  }
-
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
 
-  var CARTOON = getString( 'cartoon' );
-  var TO_SCALE = getString( 'toScale' );
-  var BILLION_BILLION_SPACE_STATION_MASSES = getString( 'billionBillionSpaceStationMasses' );
-  var EARTH = getString( 'earth' );
-  var EARTH_DAY = getString( 'earthDay' );
-  var EARTH_DAYS = getString( 'earthDays' );
-  var EARTH_MASS = getString( 'earthMass' );
-  var EARTH_MASSES = getString( 'earthMasses' );
-  var EARTH_MINUTE = getString( 'earthMinute' );
-  var EARTH_MINUTES = getString( 'earthMinutes' );
-  var GRAVITY = getString( 'gravity' );
-  var GRAVITY_FORCE = getString( 'gravityForce' );
-  var MASS = getString( 'mass' );
-  var MEASURING_TAPE = getString( 'measuringTape' );
-  var MOON = getString( 'moon' );
-  var OUR_MOON = getString( 'ourMoon' );
-  var OUR_SUN = getString( 'ourSun' );
-  var PATH = getString( 'path' );
-  var GRID = getString( 'grid' );
-  var PHYSICS = getString( 'physics' );
-  var PLANET = getString( 'planet' );
-  var SPACE_STATION = getString( 'spaceStation' );
-  var SPACE_STATION_MASS = getString( 'spaceStationMass' );
-  var SATELLITE = getString( 'satellite' );
-  var SHOW = getString( 'show' );
-  var RESET = getString( 'reset' );
-  var CLEAR = getString( 'clear' );
-  var STAR = getString( 'star' );
-  var THOUSAND_EARTH_MASSES = getString( 'thousandEarthMasses' );
-  var THOUSAND_MILES = getString( 'thousandMiles' );
-  var VELOCITY = getString( 'velocity' );
-  var ON = getString( 'on' );
-  var OFF = getString( 'off' );
-  var PATTERN_LABEL = getString( 'pattern.0label' );
-  var PATTERN_VALUE_UNITS = getString( 'pattern.0value.1units' );
-  var ZOOM_IN = getString( 'zoomIn' );
-  var ZOOM_OUT = getString( 'zoomOut' );
-  var RETURN_OBJECT = getString( 'returnObject' );
-  /* not intended for instantiation */
+  // strings
+  var CARTOON = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
+  var TO_SCALE = require( 'string!GRAVITY_AND_ORBITS/toScale' );
+  var BILLION_BILLION_SPACE_STATION_MASSES = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
+  var EARTH = require( 'string!GRAVITY_AND_ORBITS/earth' );
+  var EARTH_DAY = require( 'string!GRAVITY_AND_ORBITS/earthDay' );
+  var EARTH_DAYS = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
+  var EARTH_MASS = require( 'string!GRAVITY_AND_ORBITS/earthMass' );
+  var EARTH_MASSES = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
+  var EARTH_MINUTE = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
+  var EARTH_MINUTES = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
+  var GRAVITY = require( 'string!GRAVITY_AND_ORBITS/gravity' );
+  var GRAVITY_FORCE = require( 'string!GRAVITY_AND_ORBITS/gravityForce' );
+  var MASS = require( 'string!GRAVITY_AND_ORBITS/mass' );
+  var MEASURING_TAPE = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
+  var MOON = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  var OUR_MOON = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
+  var OUR_SUN = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
+  var PATH = require( 'string!GRAVITY_AND_ORBITS/path' );
+  var GRID = require( 'string!GRAVITY_AND_ORBITS/grid' );
+  var PHYSICS = require( 'string!GRAVITY_AND_ORBITS/physics' );
+  var PLANET = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  var SPACE_STATION = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
+  var SPACE_STATION_MASS = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
+  var SATELLITE = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  var SHOW = require( 'string!GRAVITY_AND_ORBITS/show' );
+  var RESET = require( 'string!GRAVITY_AND_ORBITS/reset' );
+  var CLEAR = require( 'string!GRAVITY_AND_ORBITS/clear' );
+  var STAR = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var THOUSAND_EARTH_MASSES = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
+  var THOUSAND_MILES = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
+  var VELOCITY = require( 'string!GRAVITY_AND_ORBITS/velocity' );
+  var ON = require( 'string!GRAVITY_AND_ORBITS/on' );
+  var OFF = require( 'string!GRAVITY_AND_ORBITS/off' );
+  var PATTERN_LABEL = require( 'string!GRAVITY_AND_ORBITS/pattern.0label' );
+  var PATTERN_VALUE_UNITS = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  var ZOOM_IN = require( 'string!GRAVITY_AND_ORBITS/zoomIn' );
+  var ZOOM_OUT = require( 'string!GRAVITY_AND_ORBITS/zoomOut' );
+  var RETURN_OBJECT = require( 'string!GRAVITY_AND_ORBITS/returnObject' );
 
+  /* not intended for instantiation */
   //private
   function GAOStrings() {
   }
