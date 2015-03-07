@@ -476,7 +476,7 @@ define( function( require ) {
        */
       createIconImage: function( sun, earth, moon, spaceStation ) {
         var children = [
-          new Circle( 12.5, { fill: new BodyRenderer.SphereRenderer.getSphericalGradient( 25, 'white', 'yellow' ) } ),
+          new Circle( 12.5, { fill: new BodyRenderer.SphereRenderer.getSphericalGradient( 25, 'white', 'yellow' ), visible: sun  } ),
           new Image( earthImage, { visible: earth } ),
           new Image( moonImage, { visible: moon } ),
           new Image( spaceStationImage, { visible: spaceStation} )
