@@ -16,7 +16,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
   var PlanetModeResetButton = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
-  var PlanetModeOption = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/planet-mode-menu/PlanetModeOption' );
 
   /**
    * @param {GravityAndOrbitsModule} module
