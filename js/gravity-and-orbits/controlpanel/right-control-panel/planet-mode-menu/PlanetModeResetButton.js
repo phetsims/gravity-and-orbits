@@ -10,12 +10,14 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+
+  // images
+  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
 
   /**
    * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.

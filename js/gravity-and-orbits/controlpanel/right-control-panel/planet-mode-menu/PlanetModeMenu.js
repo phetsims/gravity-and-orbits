@@ -34,11 +34,11 @@ define( function( require ) {
       var resetButton = new PlanetModeResetButton( module );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
-      (function( i, resetButton ) {
+      (function( currentMode, resetButton ) {
         module.modeProperty.link( function( mode ) {
-          resetButton.visible = ( mode === i );
+          resetButton.visible = ( mode === currentMode );
         } );
-      })( i, resetButton );
+      })( modes[i], resetButton );
 
       resetButtons.push( resetButton );
     }
@@ -58,7 +58,7 @@ define( function( require ) {
 
     this.addChild( buttonGroup );
 
-    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 2.5, y: 2.5 } ) );
+    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 5, y: 2.5 } ) );
   }
 
   return inherit( Node, PlanetModeMenu );
