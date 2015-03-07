@@ -13,7 +13,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MassReadoutNode' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );//static ///*
+  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
 
   // constants
   var EARTH_MASS = 5.9736E24; // TODO: duplicated in ModeList

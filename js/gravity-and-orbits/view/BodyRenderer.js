@@ -81,56 +81,38 @@ define( function( require ) {
   // static class: SphereRenderer
   /**
    * Render a SphericalNode for the body.
-   *
-   * Constructor 1:
-   * @param color
-   * @param highlight
-   * @param viewDiameter
-   * @constructor
-   *
-   * Constructor 2:
    * @param body
    * @param viewDiameter
    * @constructor
    */
-  function SphereRenderer( color, highlight, viewDiameter ) {
-
-    if ( viewDiameter ) {
-      this.color = color;
-      this.highlight = highlight;
-    }
-
-    else {
-      var body = color;
-      viewDiameter = highlight;
-
-      BodyRenderer.call( this, body );
-//      this.sphereNode = new SphericalNode( viewDiameter, createPaint( viewDiameter ), true );
-      this.sphereNode = new Circle( viewDiameter );
-      this.addChild( this.sphereNode );
-    }
-
+  function SphereRenderer( body, viewDiameter ) {
+    BodyRenderer.call( this, body );
+    this.sphereNode = new Circle( viewDiameter / 2 );
+    this.addChild( this.sphereNode );
   }
 
   inherit( BodyRenderer, SphereRenderer, {
     setDiameter: function( viewDiameter ) {
-      //TODO: figure out how to speed this up or ignore irrelevant calls
 //      if ( !GravityAndOrbitsApplication.teacherMode ) {
       this.sphereNode.radius = viewDiameter / 2;
       this.sphereNode.fill = this.createPaint( viewDiameter );
+      return this;
 //      }
     },
 
     //private
     createPaint: function( diameter ) {
-      // Create the gradient paint for the sphere in order to give it a 3D look.
+      var highlight = ( this.body ) ? this.body.getHighlight() : 'white';
+      var color = ( this.body ) ? this.body.getColor() : 'yellow';
+      return BodyRenderer.SphereRenderer.getSphericalGradient( diameter, highlight, color );
+    }
+  }, {
+    getSphericalGradient: function( diameter, highlight, color ) {
       return new RadialGradient( diameter / 8, -diameter / 8, 0, diameter / 4, diameter / 4, diameter )
-        .addColorStop( 0, this.body.getHighlight() )
-        .addColorStop( 0.5, this.body.getColor() );
-//        .addColorStop( 1, 'black' );
+        .addColorStop( 0, highlight )
+        .addColorStop( 0.5, color );
     }
   } );
-
 
   // static class: SunRenderer
   /**

@@ -48,7 +48,7 @@ define( function( require ) {
    * @param {boolean} active
    * @param {number} dt
    * @param {function<number, string>} timeFormatter
-   * @param {Image} iconImage
+   * @param {Node} iconImage
    * @param {number} defaultOrbitalPeriod
    * @param {number} velocityVectorScale
    * @param {function<BodyNode, Property<boolean>, Node>} massReadoutFactory
@@ -228,23 +228,7 @@ define( function( require ) {
      * @returns {*}
      */
     newControl: function( modeProperty ) {
-      return new JPanel().withAnonymousClassBody( {
-        initializer: function() {
-          setForeground( GravityAndOrbitsControlPanel.FOREGROUND );
-          add( new GAORadioButton( userComponent, null, modeProperty, GravityAndOrbitsMode.this ) );
-          add( new JLabel( new ImageIcon( iconImage ) ).withAnonymousClassBody( {
-            initializer: function() {
-              addMouseListener( new MouseAdapter().withAnonymousClassBody( {
-                mouseReleased: function( e ) {
-                  SimSharingManager.sendUserMessage( chain( userComponent, "icon" ), UserComponentTypes.icon, pressed );
-                  //Make it so clicking on the icon also activates the mode
-                  modeProperty.set( GravityAndOrbitsMode.this );
-                }
-              } ) );
-            }
-          } ) );
-        }
-      } );
+      return this.iconImage;
     },
 
     /**

@@ -31,6 +31,10 @@ define( function( require ) {
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var Image = require( 'SCENERY/nodes/Image' );
+  var Circle = require( 'SCENERY/nodes/Circle' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
 //  var milesToMeters = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MeasuringTape/milesToMeters' );//static
 
@@ -464,35 +468,26 @@ define( function( require ) {
        * @private
        *
        * Creates an image that can be used for the mode icon, showing the nodes of each body in the mode.
-       * @param sun
-       * @param earth
-       * @param moon
-       * @param spaceStation
+       * @param{boolean} sun
+       * @param{boolean} earth
+       * @param{boolean} moon
+       * @param{boolean} spaceStation
        * @returns {Image}
        */
       createIconImage: function( sun, earth, moon, spaceStation ) {
+        var children = [
+          new Circle( 12.5, { fill: new BodyRenderer.SphereRenderer.getSphericalGradient( 25, 'white', 'yellow' ) } ),
+          new Image( earthImage, { visible: earth } ),
+          new Image( moonImage, { visible: moon } ),
+          new Image( spaceStationImage, { visible: spaceStation} )
+        ];
 
-        //distance between icons
-        var inset = 5;
-        var node = new Node();
-
-        function addIcon( inset, icon, visible ) {
-          node.addChild( icon );
-          icon.setOffset( getFullBounds().getMaxX() + inset + icon.getFullBounds().getWidth() / 2, 0 );
-          icon.setVisible( visible );
+        for ( var i = 1; i < children.length; i++ ) {
+          children[i].setScaleMagnitude( 25 / children[i].width );
         }
 
-//        node.addChild( new PhetPPath( new Rectangle.Number( 20, 0, 1, 1 ), new Color( 0, 0, 0, 0 ) ) );
-//        addIcon( inset, new PImage( new BodyRenderer.SphereRenderer( Color.yellow, Color.white, 30 ).toImage() ), sun );
-//        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'earth_satellite.gif' ), 30 ) ), earth );
-//        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'moon.png' ), 30 ) ), moon );
-//        addIcon( inset, new PImage( multiScaleToWidth( GravityAndOrbitsApplication.RESOURCES.getImage( 'space-station.png' ), 30 ) ), spaceStation );
-
-        return node;
-//        node.toImage()?
-
-      },
-
+        return new HBox( { children: children, spacing: 6 } );
+      }
     },
 
     //statics
@@ -515,8 +510,6 @@ define( function( require ) {
       SPACE_STATION_SPEED: SPACE_STATION_SPEED,
       SPACE_STATION_PERIGEE: SPACE_STATION_PERIGEE
     } );
-
-//  return ModeList
 
   return {
     ModeList: ModeList, // the original Java class

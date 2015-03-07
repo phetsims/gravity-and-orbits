@@ -1,9 +1,10 @@
-// Copyright 2002-2013, University of Colorado Boulder
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Container for planet mode menu.
  *
  * @author Andrey Zelenkov (Mlearner)
+ * @author Aaron Davis
  */
 
 define( function( require ) {
@@ -29,7 +30,7 @@ define( function( require ) {
     var resetButtons = [];
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
-      content.push( { value: modes[i], node: new PlanetModeOption( module, i ) } );
+      content.push( { value: modes[i], node: modes[i].newControl() } );
 
       var resetButton = new PlanetModeResetButton( module );
 
@@ -49,8 +50,8 @@ define( function( require ) {
         selectedLineWidth: 2,
         baseColor: 'rgba(0,0,0,0)',
         deselectedLineWidth: 0,
-        buttonContentXMargin: 0,
-        buttonContentYMargin: 0,
+        buttonContentXMargin: 2.5,
+        buttonContentYMargin: 2.5,
         spacing: -2,
         deselectedOpacity: 1,
         cornerRadius: 5
