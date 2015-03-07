@@ -110,6 +110,7 @@ define( function( require ) {
     //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
     //private
     createArrowIndicator: function( body, labelAngle ) {
+      var thisNode = this;
       var node = new Node();
       var viewCenter = new Vector2( 0, 0 );
       var northEastVector = Vector2.createPolar( 1, labelAngle );
@@ -128,14 +129,10 @@ define( function( require ) {
         text.fill = whiteBackground ? Color.black : Color.white;
       } );
 
-      // TODO finish this port
-//      var updateVisibility = new PropertyChangeListener().withAnonymousClassBody( {
-//        propertyChange: function( evt ) {
-//          setVisible( bodyRenderer.getGlobalFullBounds().getWidth() <= 10 );
-//        }
-//      } );
-//      this.bodyRenderer.addPropertyChangeListener( PROPERTY_FULL_BOUNDS, updateVisibility );
-//      updateVisibility.propertyChange( null );
+      this.body.diameterProperty.link( function() {
+        node.visible = thisNode.getViewDiameter() <= 10;
+      } );
+
       return node;
     },
 
