@@ -51,12 +51,10 @@ define( function( require ) {
   var RETURN_OBJECT = require( 'string!GRAVITY_AND_ORBITS/returnObject' );
 
   /* not intended for instantiation */
-  //private
   function GAOStrings() {
   }
 
   return inherit( Object, GAOStrings, {},
-    //statics
     {
       CARTOON: CARTOON,
       TO_SCALE: TO_SCALE,
@@ -98,4 +96,3 @@ define( function( require ) {
       RETURN_OBJECT: RETURN_OBJECT
     } );
 } );
-
