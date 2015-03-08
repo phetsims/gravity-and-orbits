@@ -25,15 +25,12 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-//  var GAORadioButton = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GAORadioButton' );
-//  var GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-//  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
+  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
   var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
   var Node = require( 'SCENERY/nodes/Node' );
-//  var createRectangleInvertedYMapping = require( 'edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform.createRectangleInvertedYMapping' );//static
 
   // the play area only takes up the left side of the canvas; the control panel is on the right side
 //  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width * 0.60;
@@ -114,7 +111,7 @@ define( function( require ) {
 //    } );
 
     // private
-    this.model = new GravityAndOrbitsModel( p.gravityEnabled );
+    this.model = new GravityAndOrbitsModel( new GravityAndOrbitsClock( dt, p.stepping, this.timeSpeedScaleProperty ), p.gravityEnabled );
 
     // When the user pauses the clock, assume they will change some other parameters as well, and set a new rewind point
     this.rewindClockTime = 0; // private
@@ -125,9 +122,9 @@ define( function( require ) {
 //      }
 //    } ) );
 
-//    Property.multilink( [p.playButtonPressed, this.active], function( playButtonPressed, active ) {
+    Property.multilink( [p.playButtonPressed, this.active], function( playButtonPressed, active ) {
 //      thisMode.model.getClock().setRunning( playButtonPressed && active );
-//    } );
+    } );
   }
 
   return inherit( PropertySet, GravityAndOrbitsMode, {

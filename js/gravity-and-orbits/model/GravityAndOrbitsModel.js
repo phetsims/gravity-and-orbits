@@ -37,17 +37,17 @@ define( function( require ) {
 
   /**
    * Main constructor for GravityAndOrbitsModel, which contains all of the model logic for the entire sim screen.
+   * @param {GravityAndOrbitsClock} clock flag to indicate whether gravity is on or off.
    * @param {Property<Boolean>} gravityEnabledProperty flag to indicate whether gravity is on or off.
    * @constructor
    */
-  function GravityAndOrbitsModel( gravityEnabledProperty ) {
-
-
+  function GravityAndOrbitsModel( clock, gravityEnabledProperty ) {
     PropertySet.call( this, {
       gravityEnabled: true, // this was originally an argument to the model
       paused: true,
       simulationTime: 0 } );
 
+    this.clock = clock;
     this.bodies = [];//Contains the sun, moon, earth, satellite
     this.modelStepListeners = [];//SimpleObservers//TODO: Convert to trigger
 
@@ -134,6 +134,7 @@ define( function( require ) {
       resetAll: function() {
         PropertySet.prototype.reset.call( this ); // Resets the simulation time
         this.resetBodies();
+        this.clock.resetSimulationTime();
         this.updateForceVectors();
       },
 
@@ -174,6 +175,10 @@ define( function( require ) {
        */
       getBodies: function() {
         return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
+      },
+
+      getClock: function() {
+        return this.clock;
       },
 
       resetBodies: function() {
