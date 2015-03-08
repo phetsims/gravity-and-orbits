@@ -223,15 +223,6 @@ define( function( require ) {
     },
 
     /**
-     * Create a control for the specified mode
-     * @param modeProperty
-     * @returns {*}
-     */
-    newControl: function( modeProperty ) {
-      return this.iconImage;
-    },
-
-    /**
      *
      * @returns {*}
      */

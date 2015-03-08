@@ -29,7 +29,7 @@ define( function( require ) {
     var resetButtons = [];
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
-      content.push( { value: modes[i], node: modes[i].newControl() } );
+      content.push( { value: modes[i], node: modes[i].iconImage } );
 
       var resetButton = new PlanetModeResetButton( module );
 
