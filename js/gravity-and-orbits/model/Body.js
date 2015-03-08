@@ -117,7 +117,7 @@ define( function( require ) {
      * @return {Property<number>}
      */
     getClockTicksSinceExplosion: function() {
-      return this.clockTicksSinceExplosion;
+      return this.clockTicksSinceExplosionProperty;
     },
 
     /**
@@ -271,8 +271,7 @@ define( function( require ) {
      */
     updateBodyStateFromModel: function( bodyState ) {
       if ( this.collidedProperty.get() ) {
-//        this.clockTicksSinceExplosionProperty.set( this.clockTicksSinceExplosionProperty.get() + 1 );
-        this.clockTicksSinceExplosion += 1;
+        this.clockTicksSinceExplosionProperty.value += 1;
       }
       else {
         if ( !this.isUserControlled() ) {

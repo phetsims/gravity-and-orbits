@@ -27,6 +27,7 @@ define( function( require ) {
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
+  var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 //  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
 //  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
@@ -139,11 +140,11 @@ define( function( require ) {
 //      }
 //    }
 //
-//    //Add explosion nodes, which are always in the scene graph but only visible during explosions
-//    for ( i = 0; i < bodies.length; i++ ) {
-//      this.addChild( new ExplosionNode( bodies[i], mode.transform ) );
-//    }
-//
+    //Add explosion nodes, which are always in the scene graph but only visible during explosions
+    for ( i = 0; i < bodies.length; i++ ) {
+      this.addChild( new ExplosionNode( bodies[i], mode.transformProperty ) );
+    }
+
     //Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
     var gridNode = new GridNode( mode.transformProperty, mode.getGridSpacing(), mode.getGridCenter() );
     module.showGridProperty.linkAttribute( gridNode, 'visible' );

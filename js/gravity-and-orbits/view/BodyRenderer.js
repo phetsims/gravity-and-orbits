@@ -17,10 +17,11 @@ define( function( require ) {
   var RadialGradient = require( 'SCENERY/util/RadialGradient' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var Vector2 = require( 'DOT/Vector2' );
-//  var GravityAndOrbitsApplication = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsApplication' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Image = require( 'SCENERY/nodes/Image' );
+  var Path = require( 'SCENERY/nodes/Path' );
+  var Shape = require( 'KITE/Shape' );
 
   function BodyRenderer( body ) {
 
@@ -118,41 +119,40 @@ define( function( require ) {
   /**
    * Adds triangle edges to the sun to make it look more recognizable
    *
-   * @param body
-   * @param viewDiameter
-   * @param numSegments
-   * @param twinkleRadius
+   * @param {Body} body
+   * @param {number} viewDiameter
+   * @param {number} numSegments
+   * @param {function} twinkleRadius
    * @constructor
    */
   function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
 
     //private
-//    this.twinkles = new PhetPPath( Color.yellow );
+    this.twinkles = new Path( null, { fill: 'yellow' } );
 
     SphereRenderer.call( this, body, viewDiameter );
-//    this.numSegments = numSegments;
-//    this.twinkleRadius = twinkleRadius;
-//    this.addChild( twinkles );
-////    this.twinkles.moveToBack();
-//    this.setDiameter( viewDiameter );
+    this.numSegments = numSegments;
+    this.twinkleRadius = twinkleRadius;
+    this.addChild( this.twinkles );
+    this.twinkles.moveToBack();
+    this.setDiameter( viewDiameter );
   }
 
   inherit( SphereRenderer, SunRenderer, {
     setDiameter: function( viewDiameter ) {
-//      super.setDiameter( viewDiameter );
       SphereRenderer.prototype.setDiameter.call( this, viewDiameter );
       var angle = 0;
-      var deltaAngle = Math.PI * 2 / numSegments;
+      var deltaAngle = Math.PI * 2 / this.numSegments;
       var radius = viewDiameter / 2;
-      var path = new DoubleGeneralPath();
-      path.moveTo( 0, 0 );
-      for ( var i = 0; i < numSegments + 1; i++ ) {
-        var myRadius = i % 2 == 0 ? twinkleRadius.apply( radius ) : radius;
+      var shape = new Shape();
+      shape.moveTo( 0, 0 );
+      for ( var i = 0; i < this.numSegments + 1; i++ ) {
+        var myRadius = ( i % 2 == 0 ) ? this.twinkleRadius( radius ) : radius;
         var target = Vector2.createPolar( myRadius, angle );
-        path.lineTo( target );
+        shape.lineToPoint( target );
         angle += deltaAngle;
       }
-      twinkles.setPathTo( path.getGeneralPath() );
+      this.twinkles.setShape( shape );
     }
   } );
 
