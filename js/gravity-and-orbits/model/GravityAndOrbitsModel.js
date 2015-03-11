@@ -45,7 +45,8 @@ define( function( require ) {
     PropertySet.call( this, {
       gravityEnabled: true, // this was originally an argument to the model
       paused: true,
-      simulationTime: 0 } );
+      simulationTime: 0
+    } );
 
     this.clock = clock;
     this.bodies = [];//Contains the sun, moon, earth, satellite
@@ -64,12 +65,6 @@ define( function( require ) {
 
       // Called by the animation loop. Optional, so if your model has no animation, you can omit this.
       step: function( dt ) {
-//        if ( !dt ) {
-//          dt = 1000000 / 60; // java version was in ms
-//        }
-        // Handle model animation here.
-//        dt *= this.clock.dt;
-
         var i;
 
         //Break up the update into discrete steps to make the orbits look smoother, see #3050
@@ -79,7 +74,7 @@ define( function( require ) {
 
         //TODO: Change to a trigger
         for ( i = 0; i < this.modelStepListeners.length; i++ ) {
-          var modelStepListener = this.modelStepListeners[i];
+          var modelStepListener = this.modelStepListeners[ i ];
           modelStepListener.update();
         }
       },
@@ -92,7 +87,7 @@ define( function( require ) {
         var bodyStates = this.bodies.map( function( body ) {return body.toBodyState();} );
         var newState = new ModelState( bodyStates ).getNextState(
           dt,
-            400 / SMOOTHING_STEPS, // 1000 looks great, 50 starts to look awkward for sun+earth+moon, but 100 seems okay.
+          400 / SMOOTHING_STEPS, // 1000 looks great, 50 starts to look awkward for sun+earth+moon, but 100 seems okay.
           // Update: 100 is poor for sun/earth/moon system in "to scale" because the orbit is gradually expanding.
           // Tests suggest 400 is a good performance/precision tradeoff
           this.gravityEnabledProperty
@@ -103,13 +98,13 @@ define( function( require ) {
         // bodies. A possible future improvement would be
         // to switch to use ModelState.getState(Body), which would be safer.
         for ( i = 0; i < this.bodies.length; i++ ) {
-          this.bodies[i].updateBodyStateFromModel( newState.getBodyState( i ) );
+          this.bodies[ i ].updateBodyStateFromModel( newState.getBodyState( i ) );
         }
         //when two bodies collide, destroy the smaller
         for ( var j = 0; j < this.bodies.length; j++ ) {
-          var body = this.bodies[j];
+          var body = this.bodies[ j ];
           for ( var k = 0; k < this.bodies.length; k++ ) {
-            var other = this.bodies[k];
+            var other = this.bodies[ k ];
             if ( other !== body ) {
               if ( other.collidesWidth( body ) ) {
                 getSmaller( other, body ).setCollided( true );
@@ -123,7 +118,7 @@ define( function( require ) {
 
         //Signify that the model completed an entire step so that any batch operations may be invoked
         for ( i = 0; i < this.bodies.length; i++ ) {
-          this.bodies[i].allBodiesUpdated();
+          this.bodies[ i ].allBodiesUpdated();
         }
       },
 
@@ -189,7 +184,7 @@ define( function( require ) {
 
       resetBodies: function() {
         for ( var i = 0; i < this.bodies.length; i++ ) {
-          this.bodies[i].resetAll();
+          this.bodies[ i ].resetAll();
         }
         this.updateForceVectors();//has to be done separately since physics is computed as a batch
       },
@@ -198,7 +193,7 @@ define( function( require ) {
       returnBodies: function() {
 
         for ( var i = 0; i < this.bodies.length; i++ ) {
-          var body = this.bodies[i];
+          var body = this.bodies[ i ];
           body.returnBody( this );
         }
 
@@ -209,7 +204,7 @@ define( function( require ) {
 
       getBody: function( name ) {
         for ( var i = 0; i < this.bodies.length; i++ ) {
-          var body = this.bodies[i];
+          var body = this.bodies[ i ];
 
           // TODO: is it important to do a case-insensitive compare?
           if ( body.getName().toLowerCase() === name.toLowerCase() ) {
