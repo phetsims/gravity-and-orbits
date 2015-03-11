@@ -37,14 +37,12 @@ define( function( require ) {
     Node.call( this );
 
     // day text counter
-    var dayText = new Text( '', { font: FONT, fill: '#fff', pickable: false } );
+    var dayText = new Text( '', { font: FONT, fill: '#fff' } );
 
     // update text representation of day
-    var updateDay = function() {
+    clock.simulationTimeProperty.link( function() {
       dayText.setText( timeFormatter( clock.getSimulationTime() ) );
-    };
-
-    clock.simulationTimeProperty.link( updateDay );
+    } );
 
     var box = new VBox( {
       resize: false, spacing: 4, children: [
@@ -56,7 +54,6 @@ define( function( require ) {
           font: FONT,
           listener: function() {
             clock.setSimulationTime( 0 );
-            updateDay();
           }
         } )
       ]
