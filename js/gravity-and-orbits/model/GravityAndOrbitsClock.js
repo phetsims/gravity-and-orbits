@@ -15,6 +15,9 @@ define( function( require ) {
 
   // constants
   var CLOCK_FRAME_RATE = 25; // fps, frames per second (wall time)
+  var DAYS_PER_TICK = 1;
+  var SECONDS_PER_DAY = 86400;
+  var DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
   /**
    *
@@ -76,10 +79,10 @@ define( function( require ) {
     },
 //statics
     {
-      CLOCK_FRAME_RATE: CLOCK_FRAME_RATE
-      //DAYS_PER_TICK: DAYS_PER_TICK,
-      //SECONDS_PER_DAY: SECONDS_PER_DAY,
-      //DEFAULT_DT: DEFAULT_DT
+      CLOCK_FRAME_RATE: CLOCK_FRAME_RATE,
+      DAYS_PER_TICK: DAYS_PER_TICK,
+      SECONDS_PER_DAY: SECONDS_PER_DAY,
+      DEFAULT_DT: DEFAULT_DT
     } );
 } );
 

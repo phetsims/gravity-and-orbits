@@ -17,6 +17,7 @@ define( function( require ) {
   var GridNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GridNode' );
   var Color = require( 'SCENERY/util/Color' );
   var Dimension2 = require( 'DOT/Dimension2' );
+  var Bounds2 = require( 'DOT/Bounds2' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
@@ -28,11 +29,13 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
+  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/SpeedRadioButtons' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 //  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
 //  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
 
-  var STAGE_SIZE = new Dimension2( 1024, 618 );
+  //var STAGE_SIZE = new Dimension2( 1024, 618 );
+  var STAGE_SIZE = new Bounds2( 0, 0, 1024, 618 );
   var buttonBackgroundColor = new Color( 255, 250, 125 );
 
   /**
@@ -41,9 +44,10 @@ define( function( require ) {
    * @param {GravityAndOrbitsModule} module
    * @param {GravityAndOrbitsMode} mode
    * @param {number} forceScale
+   * @param {Bounds2} layoutBounds
    * @constructor
    */
-  function GravityAndOrbitsCanvas( model, module, mode, forceScale ) {
+  function GravityAndOrbitsCanvas( model, module, mode, forceScale, layoutBounds ) {
 
     //view size
 //    Node.call( this, new Dimension( 1500, 1500 ) );
@@ -124,7 +128,7 @@ define( function( require ) {
 //        }
 //      } ) );
 //
-//      this.addChild( mode.massReadoutFactory.apply( bodyNode, module.showMassProperty ) );
+      this.addChild( mode.massReadoutFactory( bodyNode, module.showMassProperty ) );
     }
 
 //    //Add gravity force vector nodes
@@ -149,6 +153,10 @@ define( function( require ) {
     var gridNode = new GridNode( mode.transformProperty, mode.getGridSpacing(), mode.getGridCenter() );
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
+
+    // Add the speed control slider.
+    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom, left: STAGE_SIZE.left } ) );
+
 
 
     // Control Panel is now added in the screen view

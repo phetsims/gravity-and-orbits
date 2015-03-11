@@ -65,7 +65,6 @@ define( function( require ) {
 
       // private
       deviatedFromDefaults: false, // Flag to indicate whether any value has deviated from the original value (which was originally used for showing a reset button, but not anymore)
-      timeSpeedScale: 0, // number
       measuringTapeStartPoint: initialMeasuringTapeLocation.p1,
       measuringTapeEndPoint: initialMeasuringTapeLocation.p2,
       zoomLevel: 1 // additional scale factor on top of defaultZoomScale
@@ -105,10 +104,6 @@ define( function( require ) {
     this.zoomLevel.link( function() {
       thisMode.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
-
-//    this.transformProperty.link( function( t ) {
-//      console.log( t );
-//    } );
 
     // private
     this.model = new GravityAndOrbitsModel( new GravityAndOrbitsClock( dt, p.stepping, this.timeSpeedScaleProperty ), p.gravityEnabled );

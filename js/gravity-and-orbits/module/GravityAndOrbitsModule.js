@@ -47,7 +47,8 @@ define( function( require ) {
       showMass: false,
       playButtonPressed: false,
       //one quarter of the way up between 1/10 and 2 scale factors
-      timeSpeedScale: (0.1 + 2) / 4,
+      //timeSpeedScale: (0.1 + 2) / 4,
+      timeSpeedScale: 1, // js version should start at 1 I think
       measuringTapeVisible: false,
       gravityEnabled: true,
       stepping: false,

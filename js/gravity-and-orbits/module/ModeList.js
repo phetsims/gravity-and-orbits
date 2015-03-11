@@ -17,7 +17,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
-//  var GravityAndOrbitsApplication = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsApplication' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
@@ -70,10 +69,7 @@ define( function( require ) {
   var METERS_PER_MILE = 0.000621371192;
   var FORCE_SCALE = 76.0 / 5.179E15;
 
-  // from GAO clock originally
-  var DAYS_PER_TICK = 1;
-  var SECONDS_PER_DAY = 86400;
-  var DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
+  var DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
   function milesToMeters( modelDistance ) {
     return modelDistance / METERS_PER_MILE;
