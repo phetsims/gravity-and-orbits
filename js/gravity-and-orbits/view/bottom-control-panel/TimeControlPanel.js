@@ -17,6 +17,7 @@ define( function( require ) {
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
   var StepButton = require( 'SCENERY_PHET/buttons/StepButton' );
   var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
+  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
 
   /**
    * @param {GravityAndOrbitsModule} module
@@ -29,7 +30,7 @@ define( function( require ) {
     var playPauseButton = new PlayPauseButton( playProperty );
 
     var stepButton = new StepButton( function() {
-      module.getMode().getModel().getClock().step();
+      module.getMode().getModel().getClock().step( 1 / GravityAndOrbitsClock.CLOCK_FRAME_RATE );
     }, playProperty );
 
     var rewindButton = new RewindButton( function() {
