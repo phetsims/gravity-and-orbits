@@ -30,6 +30,7 @@ define( function( require ) {
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/SpeedRadioButtons' );
+  var DayCounter = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/DayCounter' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 //  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
 //  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
@@ -156,6 +157,7 @@ define( function( require ) {
 
     // Add the speed control slider.
     this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom, left: STAGE_SIZE.left } ) );
+    this.addChild( new DayCounter( mode.timeFormatter, model.clock, { bottom: STAGE_SIZE.bottom, right: STAGE_SIZE.right - 200 } ) );
 
 
 

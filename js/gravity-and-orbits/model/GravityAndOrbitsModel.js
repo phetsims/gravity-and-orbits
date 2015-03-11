@@ -44,8 +44,7 @@ define( function( require ) {
   function GravityAndOrbitsModel( clock, gravityEnabledProperty ) {
     PropertySet.call( this, {
       gravityEnabled: true, // this was originally an argument to the model
-      paused: true,
-      simulationTime: 0
+      paused: true
     } );
 
     this.clock = clock;
@@ -54,6 +53,7 @@ define( function( require ) {
 
     var thisModel = this;
     this.clock.addEventTimer( (function( dt ) {
+      thisModel.clock.setSimulationTime( thisModel.clock.dt + thisModel.clock.getSimulationTime() );
       thisModel.step( thisModel.clock.dt );
     }).bind( this ) );
 

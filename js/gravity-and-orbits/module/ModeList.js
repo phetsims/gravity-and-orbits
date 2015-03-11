@@ -35,6 +35,7 @@ define( function( require ) {
   var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
+  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
 //  var milesToMeters = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MeasuringTape/milesToMeters' );//static
 
   // images
@@ -173,11 +174,9 @@ define( function( require ) {
     return function( time ) {
       var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
       var units = (value == 1) ? GAOStrings.EARTH_DAY : GAOStrings.EARTH_DAYS;
-      return MessageFormat.format( GAOStrings.PATTERN_VALUE_UNITS, value, units );
+      return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value.toFixed( 0 ), units );
     }
   };
-
-
 
   /**
    * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the elapsed clock readout
@@ -187,7 +186,7 @@ define( function( require ) {
   var formatMinutes = function( time ) {
     var value = (time / SECONDS_PER_MINUTE);
     var units = (value == 1) ? GAOStrings.EARTH_MINUTE : GAOStrings.EARTH_MINUTES;
-    return MessageFormat.format( GAOStrings.PATTERN_VALUE_UNITS, value, units );
+    return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value.toFixed( 0 ), units );
   };
 
   /**
