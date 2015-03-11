@@ -17,28 +17,34 @@ define( function( require ) {
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
   var StepButton = require( 'SCENERY_PHET/buttons/StepButton' );
   var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
+  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
 
   /**
-   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * Necessary properties and methods: playProperty, stepManual, rewindProperty, dayProperty, dayOffsetProperty
+   * @param {GravityAndOrbitsModule} module
+   * @param {Object} [options]
    * @constructor
    */
-  function TimeControlPanel( model ) {
-    var playPauseButton = new PlayPauseButton( model.playProperty, {} );
+  function TimeControlPanel( module, options ) {
+    var playProperty = module.playButtonPressedProperty;
 
-    var stepButton = new StepButton( model.stepManual.bind( model ), model.playProperty );
+    var playPauseButton = new PlayPauseButton( playProperty );
 
-    var rewind = function() {model.rewind = true;};
-    var rewindButton = new RewindButton( rewind, model.playProperty );
+    var stepButton = new StepButton( function() {
+      module.getMode().getModel().getClock().step( 1 / GravityAndOrbitsClock.CLOCK_FRAME_RATE );
+    }, playProperty );
 
-    rewindButton.enabled = false;
-    var getDay = function( model ) {
-      return (model.day - model.dayOffset);
-    };
+    var rewindButton = new RewindButton( function() {
+      module.getMode().rewind();
+    }, playProperty );
 
-    model.dayProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
-    model.dayOffsetProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
-    HBox.call( this, { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] } );
+//    rewindButton.enabled = false;
+//    var getDay = function( model ) {
+//      return (model.day - model.dayOffset);
+//    };
+//
+//    model.dayProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
+//    model.dayOffsetProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
+    HBox.call( this, _.extend( { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
   }
 
   return inherit( HBox, TimeControlPanel );
