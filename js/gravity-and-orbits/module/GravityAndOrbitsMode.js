@@ -116,14 +116,12 @@ define( function( require ) {
     // When the user pauses the clock, assume they will change some other parameters as well, and set a new rewind point
     this.rewindClockTime = 0; // private
 
-//    this.getClock().addClockListener( new ClockAdapter().withAnonymousClassBody( {
-//      clockPaused: function( clockEvent ) {
-//        thisMode.rewindClockTime = clockEvent.getSimulationTime();
-//      }
-//    } ) );
+    this.getClock().runningProperty.onValue( false, function() {
+      thisMode.rewindClockTime = thisMode.getClock().getSimulationTime();
+    } );
 
     Property.multilink( [p.playButtonPressed, this.active], function( playButtonPressed, active ) {
-//      thisMode.model.getClock().setRunning( playButtonPressed && active );
+      thisMode.model.getClock().setRunning( playButtonPressed && active );
     } );
   }
 

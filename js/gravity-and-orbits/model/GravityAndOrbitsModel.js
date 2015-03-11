@@ -51,6 +51,11 @@ define( function( require ) {
     this.bodies = [];//Contains the sun, moon, earth, satellite
     this.modelStepListeners = [];//SimpleObservers//TODO: Convert to trigger
 
+    var thisModel = this;
+    this.clock.addEventTimer( (function( dt ) {
+      thisModel.step( thisModel.clock.dt );
+    }).bind( this ) );
+
     //Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
     this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
   }
@@ -59,10 +64,11 @@ define( function( require ) {
 
       // Called by the animation loop. Optional, so if your model has no animation, you can omit this.
       step: function( dt ) {
-        if ( !dt ) {
-          dt = 1000000 / 60; // java version was in ms
-        }
+//        if ( !dt ) {
+//          dt = 1000000 / 60; // java version was in ms
+//        }
         // Handle model animation here.
+//        dt *= this.clock.dt;
 
         var i;
 

@@ -12,13 +12,9 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
   var EventTimer = require( 'PHET_CORE/EventTimer' );
-//  var RGBPhotonEventModel = require( 'COLOR_VISION/rgb/model/RGBPhotonEventModel' );
 
   // constants
   var CLOCK_FRAME_RATE = 25; // fps, frames per second (wall time)
-  var DAYS_PER_TICK = 1;
-  var SECONDS_PER_DAY = 86400;
-  var DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
   /**
    *
@@ -28,22 +24,16 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsClock( baseDTValue, stepping, timeSpeedScale ) {
+    var thisClock = this;
 
-    //private
-//    ConstantDtClock.call( this, 1000 / CLOCK_FRAME_RATE, baseDTValue * timeSpeedScale.get() );
-
-    var delay = 1000 / CLOCK_FRAME_RATE; // desired wall time change between ticks
-    var dt = baseDTValue * timeSpeedScale.get(); // constant simulation time change between ticks
-    this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( 120 ), function( timeElapsed ) {
-    } );
-
-//    var rateProperty = new Property();
-//    var eventModel = new RGBPhotonEventModel();
+    this.runningProperty = new Property( false );
+    this.simulationTimeProperty = new Property( 0 );
+    this.dt = baseDTValue * timeSpeedScale.get();
 
     this.steppingProperty = stepping;
-//    timeSpeedScale.link( function() {
-//      eventTimer.setDt( baseDTValue * timeSpeedScale.get() );
-//    } );
+    timeSpeedScale.link( function() {
+      thisClock.dt = baseDTValue * timeSpeedScale.get();
+    } );
   }
 
   return inherit( Object, GravityAndOrbitsClock, {
@@ -57,14 +47,39 @@ define( function( require ) {
         this.steppingProperty.set( true );
 //        super.stepClockBackWhilePaused();
         this.steppingProperty.set( false );
+      },
+
+      setRunning: function( running ) {
+        this.runningProperty.set( running );
+      },
+
+      setSimulationTime: function( time ) {
+        this.simulationTimeProperty.set( time );
+      },
+
+      getSimulationTime: function() {
+        return this.simulationTimeProperty.get();
+      },
+
+      resetSimulationTime: function() {
+        this.simulationTimeProperty.reset();
+      },
+
+      addEventTimer: function( stepFunction ) {
+        this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
+      },
+
+      step: function( dt ) {
+        this.eventTimer.step( dt );
       }
+
     },
 //statics
     {
-      CLOCK_FRAME_RATE: CLOCK_FRAME_RATE,
-      DAYS_PER_TICK: DAYS_PER_TICK,
-      SECONDS_PER_DAY: SECONDS_PER_DAY,
-      DEFAULT_DT: DEFAULT_DT
+      CLOCK_FRAME_RATE: CLOCK_FRAME_RATE
+      //DAYS_PER_TICK: DAYS_PER_TICK,
+      //SECONDS_PER_DAY: SECONDS_PER_DAY,
+      //DEFAULT_DT: DEFAULT_DT
     } );
 } );
 

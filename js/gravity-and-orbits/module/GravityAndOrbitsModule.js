@@ -102,7 +102,7 @@ define( function( require ) {
   return inherit( PropertySet, GravityAndOrbitsModule, {
       step: function( dt ) {
         if ( this.playButtonPressedProperty.value ) {
-          this.getMode().getModel().step( dt * 1000000 );
+          this.getMode().getModel().getClock().step( dt );
         }
     },
 
