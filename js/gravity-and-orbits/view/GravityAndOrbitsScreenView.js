@@ -26,16 +26,6 @@ define( function( require ) {
 
     ScreenView.call( this );
 
-    // Create and add the Reset All Button in the bottom right, which resets the model
-    var resetAllButton = new ResetAllButton( {
-      listener: function() {
-        module.reset();
-      },
-      right: this.layoutBounds.maxX - 10,
-      bottom: this.layoutBounds.maxY - 10
-    } );
-    this.addChild( resetAllButton );
-
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
       var gaoCanvas = modes[i].getCanvas();
@@ -55,6 +45,16 @@ define( function( require ) {
 
     var timeControlPanel = new TimeControlPanel( module, {bottom: this.layoutBounds.bottom, centerX: this.layoutBounds.centerX} );
     this.addChild( timeControlPanel );
+
+    // Create and add the Reset All Button in the bottom right, which resets the model
+    var resetAllButton = new ResetAllButton( {
+      listener: function() {
+        module.reset();
+      },
+      right: this.layoutBounds.maxX - 10,
+      bottom: this.layoutBounds.maxY - 10
+    } );
+    this.addChild( resetAllButton );
   }
 
   return inherit( ScreenView, GravityAndOrbitsScreenView, {

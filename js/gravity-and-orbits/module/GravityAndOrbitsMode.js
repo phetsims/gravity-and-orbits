@@ -194,10 +194,10 @@ define( function( require ) {
       // reset the clock
       this.model.getClock().resetSimulationTime();
       this.model.resetAll();
-      this.deviatedFromDefaults.reset();
-      this.measuringTapeStartPoint.reset();
-      this.measuringTapeEndPoint.reset();
-      this.zoomLevel.reset();
+      this.deviatedFromDefaultsProperty.reset();
+      this.measuringTapeStartPointProperty.reset();
+      this.measuringTapeEndPointProperty.reset();
+      this.zoomLevelProperty.reset();
     },
 
     getCanvas: function() {

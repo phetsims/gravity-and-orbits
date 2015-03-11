@@ -123,12 +123,13 @@ define( function( require ) {
       //private
       updateActiveModule: function() {
         for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes[i].active.set( this.modes[i] === this.getMode() );
+          this.modes.modes[i].active.set( this.modes.modes[i] === this.getMode() );
         }
       },
       reset: function() {
-        for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes[i].reset();
+        for ( var i = 0; i < this.modes.modes.length; i++ ) {
+          //console.log( this.modes.modes[i] );
+          this.modes.modes[i].reset();
         }
         this.showGravityForceProperty.reset();
         this.showPathProperty.reset();

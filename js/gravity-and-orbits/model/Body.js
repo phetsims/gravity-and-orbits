@@ -344,8 +344,8 @@ define( function( require ) {
       this.massProperty.reset();
       this.diameterProperty.reset();
       this.collidedProperty.reset();
-      this.clockTicksSinceExplosion.reset();
-      clearPath();
+      this.clockTicksSinceExplosionProperty.reset();
+      this.clearPath();
       //TODO: anything else to reset here?
     },
 
