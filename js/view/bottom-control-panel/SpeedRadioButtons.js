@@ -16,6 +16,10 @@ define( function( require ) {
   var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
+
+  // constants
+  var STARTING_VALUE = GravityAndOrbitsModule.STARTING_SPEED_SCALE;
 
   // strings
   var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
@@ -28,6 +32,7 @@ define( function( require ) {
    * @constructor
    */
   function SpeedRadioButtons( speedProperty, options ) {
+
     options = _.extend( {
       spacing: 1,
       radius: 10
@@ -35,9 +40,9 @@ define( function( require ) {
 
     var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };
     VerticalAquaRadioButtonGroup.call( this, [
-      { property: speedProperty, value: 1.75, node: new Text( fastForwardString, textOption ) },
-      { property: speedProperty, value: 1, node: new Text( normalString, textOption ) },
-      { property: speedProperty, value: 0.25, node: new Text( slowMotionString, textOption ) }
+      { property: speedProperty, value: STARTING_VALUE * 1.75, node: new Text( fastForwardString, textOption ) },
+      { property: speedProperty, value: STARTING_VALUE, node: new Text( normalString, textOption ) },
+      { property: speedProperty, value: STARTING_VALUE * 0.25, node: new Text( slowMotionString, textOption ) }
     ], options );
   }
 

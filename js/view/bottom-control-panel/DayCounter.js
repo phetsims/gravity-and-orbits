@@ -33,7 +33,6 @@ define( function( require ) {
    * @constructor
    */
   function DayCounter( timeFormatter, clock, options ) {
-    var dayCounter = this;
     Node.call( this );
 
     // day text counter

@@ -21,8 +21,9 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/ModeListParameterList' );
 
-
+  // constants
   var G = 6.67428E-11;
+  var STARTING_SPEED_SCALE = (0.1 + 2) / 4; // one quarter of the way up between 1/10 and 2 scale factors
 
   /**
    * //    public GravityAndOrbitsModule( IUserComponent tabUserComponent, final PhetFrame phetFrame, Property<Boolean> whiteBackgroundProperty, final String name, boolean showMeasuringTape, Function1<ModeListParameterList, ArrayList<GravityAndOrbitsMode>> createModes, int initialModeIndex, boolean showMassCheckBox ) {
@@ -46,9 +47,8 @@ define( function( require ) {
       showVelocity: false,
       showMass: false,
       playButtonPressed: false,
-      //one quarter of the way up between 1/10 and 2 scale factors
-      //timeSpeedScale: (0.1 + 2) / 4,
-      timeSpeedScale: 1, // js version should start at 1 I think
+      timeSpeedScale: STARTING_SPEED_SCALE,
+      //timeSpeedScale: 1, // js version should start at 1 I think
       measuringTapeVisible: false,
       gravityEnabled: true,
       stepping: false,
@@ -160,6 +160,7 @@ define( function( require ) {
     },
 //statics
     {
-      G: G
+      G: G,
+      STARTING_SPEED_SCALE: STARTING_SPEED_SCALE
     } );
 } );
