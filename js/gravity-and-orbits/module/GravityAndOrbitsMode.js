@@ -243,7 +243,7 @@ define( function( require ) {
      */
     rewind: function() {
       this.rewindingProperty.set( true );
-      this.getClock().setSimulationTime( rewindClockTime );
+      this.getClock().setSimulationTime( this.rewindClockTime );
       var bodies = this.model.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
         bodies[i].rewind();

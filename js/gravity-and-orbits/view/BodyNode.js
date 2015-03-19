@@ -24,6 +24,18 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Bounds2 = require( 'DOT/Bounds2' );
+  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+
+  function constrainLocation( location, bounds ) {
+    if ( bounds.containsCoordinates( location.x, location.y ) ) {
+      return location;
+    }
+    else {
+      var xConstrained = Math.max( Math.min( location.x, bounds.maxX ), bounds.x );
+      var yConstrained = Math.max( Math.min( location.y, bounds.maxY ), bounds.y );
+      return new Vector2( xConstrained, yConstrained );
+    }
+  };
 
   /**
    *

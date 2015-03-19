@@ -12,39 +12,47 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
 
-  function RewindableProperty( playButtonPressed, isStepping, isRewinding, value ) {
+  /**
+   *
+   * @param {Property.<boolean>} playButtonPressedProperty
+   * @param {Property.<boolean>} isSteppingProperty
+   * @param {Property.<boolean>} isRewindingProperty
+   * @param {*} value
+   * @constructor
+   */
+  function RewindableProperty( playButtonPressedProperty, isSteppingProperty, isRewindingProperty, value ) {
     Property.call( this, value );
-    this.playButtonPressed = playButtonPressed;
+    this.playButtonPressedProperty = playButtonPressedProperty;
 
     //if the clock is paused and the user pressed 'step', do not store a rewind point
-    this.stepping = isStepping;
+    this.isSteppingProperty = isSteppingProperty;
 
     //if the clock is paused and the user pressed 'rewind', do not store a rewind point
-    this.rewinding = isRewinding;
+    this.isRewindingProperty= isRewindingProperty;
 
     //the "initial condition" tha the property can be rewound to
     this.rewindValue = value;
 
     // true when the rewind point value is different than the property's value
-    this.different = new Property( !this.equalsRewindPoint() );
+    this.differentProperty = new Property( !this.equalsRewindPoint() );
 
     this.rewindValueChangedListeners = [];
   }
 
   return inherit( Property, RewindableProperty, {
 
-    // TODO: this was originally "set", but it seems to conflict with the setter of Property
-    setRewindable: function( value ) {
-      this.value = value;
+    set: function( value ) {
+      Property.prototype.set.call( this, value );
+
       //If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
-      if ( !this.playButtonPressed.get() && !this.stepping.get() && !this.rewinding.get() ) {
+      if ( !this.playButtonPressedProperty.get() && !this.isSteppingProperty.get() && !this.isRewindingProperty.get() ) {
         this.storeRewindValueNoNotify();
 
         for ( var i = 0; i < this.rewindValueChangedListeners.length; i++ ) {
-          this.rewindValueChangedListeners[i].apply();
+          this.rewindValueChangedListeners[i]();
         }
       }
-      this.different.set( !this.equalsRewindPoint() );
+      this.differentProperty.set( !this.equalsRewindPoint() );
     },
 
     //Store the new value as the initial condition which can be rewound to.  We have to skip notifications sometimes or the wrong initial conditions get stored.
@@ -67,7 +75,7 @@ define( function( require ) {
 
     //Convenient access to whether the value has deviated from the initial condition
     different: function() {
-      return this.different;
+      return this.differentProperty.get();
     },
 
     /*

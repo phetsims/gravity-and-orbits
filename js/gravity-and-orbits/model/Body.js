@@ -38,14 +38,14 @@ define( function( require ) {
    * @param {boolean} massReadoutBelow
    * @param {number} tickValue
    * @param {string} tickLabel
-   * @param {Property<boolean>} playButtonPressed
-   * @param {Property<boolean>} stepping
-   * @param {Property<boolean>} rewinding
+   * @param {Property<boolean>} playButtonPressedProperty
+   * @param {Property<boolean>} steppingProperty
+   * @param {Property<boolean>} rewindingProperty
    * @param {boolean} fixed
    * @constructor
    */
   function Body( userComponent, name, x, y, diameter, vx, vy, mass, color, highlight, renderer,// way to associate the graphical representation directly instead of later with conditional logic or map
-                 labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel, playButtonPressed, stepping, rewinding, fixed ) {
+                 labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel, playButtonPressedProperty, steppingProperty, rewindingProperty, fixed ) {
 
     PropertySet.call( this, {
       acceleration: new Vector2(),
@@ -73,10 +73,10 @@ define( function( require ) {
 
     // This is in the model so we can associate the graphical representation directly instead of later with conditional logic or map
     this.labelAngle = labelAngle;
-    this.positionProperty = new RewindableProperty( playButtonPressed, stepping, rewinding, new Vector2( x, y ) );
-    this.velocityProperty = new RewindableProperty( playButtonPressed, stepping, rewinding, new Vector2( vx, vy ) );
-    this.massProperty = new RewindableProperty( playButtonPressed, stepping, rewinding, mass );
-    this.collidedProperty = new RewindableProperty( playButtonPressed, stepping, rewinding, false );
+    this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) );
+    this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) );
+    this.massProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, mass );
+    this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false );
     this.density = mass / this.getVolume();
 
     this.userControlled = false;//True if the user is currently controlling the position of the body with the mouse

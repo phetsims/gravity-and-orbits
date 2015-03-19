@@ -27,10 +27,14 @@ define( function( require ) {
   function TimeControlPanel( module, options ) {
     var playProperty = module.playButtonPressedProperty;
 
+    //playProperty.link( function( playing ) {
+    //  module.getMode().getClock().setRunning( playing );
+    //} );
+
     var playPauseButton = new PlayPauseButton( playProperty );
 
     var stepButton = new StepButton( function() {
-      module.getMode().getModel().getClock().step( 1 / GravityAndOrbitsClock.CLOCK_FRAME_RATE );
+      module.getMode().getModel().getClock().stepClockWhilePaused();
     }, playProperty );
 
     var rewindButton = new RewindButton( function() {
