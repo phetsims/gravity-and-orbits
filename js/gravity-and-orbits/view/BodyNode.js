@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2014, University of Colorado
 
 /**
  * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable, which changes
@@ -24,7 +24,6 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Bounds2 = require( 'DOT/Bounds2' );
-  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   /**
    *
@@ -55,9 +54,11 @@ define( function( require ) {
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() );
     this.addChild( this.bodyRenderer );
 
-    this.addInputListener( new MovableDragHandler( this.body.positionProperty, {
-      modelViewTransform: this.modelViewTransform.get()
-    } ) );
+    // @public
+    this.dragHandler = new MovableDragHandler( this.body.positionProperty, {
+      modelViewTransform: this.modelViewTransform.get() // TODO: we need to update the MVT of this handler when the property changes
+    } );
+    this.addInputListener( this.dragHandler );
 
     this.body.positionProperty.link( function( pos ) {
       thisNode.translation = modelViewTransform.get().modelToViewPosition( pos );

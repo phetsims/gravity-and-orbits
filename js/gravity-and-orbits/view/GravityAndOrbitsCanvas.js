@@ -67,7 +67,6 @@ define( function( require ) {
 //    this.addChild( this.rootNode );
 
     // stores the current position of the mouse so we can change to cursor hand when an object moves under the mouse
-    var mousePositionProperty = null;
 //    var mousePositionProperty = new Property( new Vector2() );
 //    addMouseMotionListener( new MouseMotionListener().withAnonymousClassBody( {
 //      mouseDragged: function( mouseEvent ) {
@@ -95,7 +94,10 @@ define( function( require ) {
     //Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      var bodyNode = new BodyNode( bodies[i], mode.transformProperty, mousePositionProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
+      var bodyNode = new BodyNode( bodies[i], mode.transformProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
+      mode.modelBoundsProperty.link( function( bounds ) {
+        bodyNode.dragHandler.setDragBounds( bounds );
+      } );
       this.addChild( bodyNode );
 
 

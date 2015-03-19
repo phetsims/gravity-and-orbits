@@ -99,6 +99,7 @@ define( function( require ) {
     // Function that creates a PNode to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
+    this.modelBoundsProperty = new Property(); // not in the Java version, needed for movableDragHandler bounds
     this.transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
 
     this.zoomLevel.link( function() {
@@ -136,7 +137,9 @@ define( function( require ) {
       var minY = targetRectangle.y;
       var maxX = targetRectangle.x + targetRectangle.width;
       var maxY = targetRectangle.y + targetRectangle.height;
-      return ModelViewTransform2.createRectangleInvertedYMapping( new Bounds2( minX, minY, maxX, maxY ), new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
+      var modelBounds = new Bounds2( minX, minY, maxX, maxY );
+      this.modelBoundsProperty.set( modelBounds );
+      return ModelViewTransform2.createRectangleInvertedYMapping( modelBounds, new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
     },
 
     /**
