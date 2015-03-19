@@ -25,6 +25,7 @@ define( function( require ) {
   function GravityAndOrbitsScreenView( module ) {
 
     ScreenView.call( this );
+    this.module = module;
 
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
@@ -59,9 +60,11 @@ define( function( require ) {
 
   return inherit( ScreenView, GravityAndOrbitsScreenView, {
 
-    // Called by the animation loop. Optional, so if your view has no animation, you can omit this.
     step: function( dt ) {
-      // Handle view animation here.
+      var paths = this.module.getMode().getCanvas().paths;
+      for ( var i = 0; i < paths.length; i ++ ) {
+        paths[ i ].step();
+      }
     }
   } );
 } );

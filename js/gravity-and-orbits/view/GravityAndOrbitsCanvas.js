@@ -55,34 +55,18 @@ define( function( require ) {
     Rectangle.call( this, 0, 0, 1024, 618, { fill: 'rgba(220,220,220,0.3)'} );
     var thisNode = this;
 
-//    module.whiteBackgroundProperty.link ( function( whiteBackground ) {
-//      thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
-//    } );
-
-//    setWorldTransformStrategy( new Node.CenteredStage( this, STAGE_SIZE ) );
-
-    // Root of our scene graph
-    // private
-//    this.rootNode = new Node();
-//    this.addChild( this.rootNode );
-
-    // stores the current position of the mouse so we can change to cursor hand when an object moves under the mouse
-//    var mousePositionProperty = new Property( new Vector2() );
-//    addMouseMotionListener( new MouseMotionListener().withAnonymousClassBody( {
-//      mouseDragged: function( mouseEvent ) {
-//      },
-//      mouseMoved: function( mouseEvent ) {
-//        mousePositionProperty.set( new Vector2( mouseEvent.getPoint().x, mouseEvent.getPoint().y ) );
-//      }
-//    } ) );
+    //module.whiteBackgroundProperty.link ( function( whiteBackground ) {
+    //  thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
+    //} );
 
     var bodies = model.getBodies();
     var i;
 
-
+    this.paths = [];
     for ( i = 0; i < bodies.length; i++ ) {
-//      this.addChild( new PathNode( bodies[i], mode.transform, module.showPathProperty, bodies[i].getColor() ) );
-//      console.log( i );
+      var path = new PathNode( bodies[i], mode.transformProperty, module.showPathProperty, bodies[i].getColor(), STAGE_SIZE );
+      this.paths.push( path );
+      this.addChild( path );
     }
 
 

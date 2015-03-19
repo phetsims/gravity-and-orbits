@@ -28,14 +28,15 @@ define( function( require ) {
   /**
    *
    * @param {Body} body
-   * @param {Property<ModelViewTransform2>} transform
-   * @param {Property<boolean>} visible
+   * @param {Property<ModelViewTransform2>} transformProperty
+   * @param {Property<boolean>} visibleProperty
    * @param {Color} color
+   * @param {Bounds2} canvasBounds
    * @constructor
    */
-  function PathNode( body, transform, visible, color ) {
+  function PathNode( body, transformProperty, visibleProperty, color, canvasBounds ) {
 
-    CanvasNode.call( this );
+    CanvasNode.call( this, { canvasBounds: canvasBounds } );
     var thisNode = this;
 
     //points in view space
@@ -46,8 +47,7 @@ define( function( require ) {
 
     this.invalidatePaint();
 
-    // this was a simpleObserver in Java
-    visible.link( function( isVisible ) {
+    visibleProperty.link( function( isVisible ) {
       thisNode.visible = isVisible;
       thisNode.body.clearPath();
       thisNode.points = [];
@@ -58,38 +58,36 @@ define( function( require ) {
     //Update when the Body path changes
     var listener = {
       pointAdded: function( point ) {
-        var pt = transform.get().modelToView( point );
+        var pt = transformProperty.get().modelToViewPosition( point );
         thisNode.points.push( pt );
-        if ( thisNode.visible ) {
+        if ( thisNode.visibleProperty ) {
 //          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
           thisNode.invalidatePaint();
         }
       },
       pointRemoved: function() {
         if ( thisNode.points.length > 0 ) {
-          thisNode.points.remove( 0 );
+          thisNode.points.shift();
         }
-        if ( getVisible() ) {
+        if ( visibleProperty.get() ) {
 //          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
           thisNode.invalidatePaint();
         }
       },
       cleared: function() {
-        while (thisNode.points.length) { thisNode.points.pop(); }
+        while ( thisNode.points.length ) { thisNode.points.pop(); }
 //        thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
         thisNode.invalidatePaint();
-        console.log( 'cleared ' );
 
       }
     };
     this.body.addPathListener( listener );
 
     // this was a simpleObserver in Java
-    transform.link( function() {
+    transformProperty.link( function() {
       thisNode.body.clearPath();
     } );
 
-    console.log('path')
   }
 
   return inherit( CanvasNode, PathNode, {
@@ -97,12 +95,9 @@ define( function( require ) {
     // @param {CanvasContextWrapper} wrapper
     paintCanvas: function( wrapper ) {
       var context = wrapper.context;
-      var i;
-
-      console.log( 'paint');
-
       var numSolidPoints = Math.min( this.body.getMaxPathLength() - NUM_FADE_POINTS, this.points.length );
       var numTransparentPoints = this.points.length - numSolidPoints;
+      var i;
 
       context.strokeStyle = this.color.toCSS();
       context.strokeWidth = STROKE_WIDTH;
@@ -112,10 +107,10 @@ define( function( require ) {
 
       //Create and render the solid part as a path.  New points are added at the tail of the list, so easiest to render backwards for fade-out.
       if ( this.points.length > 0 ) {
-        context.moveTo( this.points.get( this.points.length - 1 ).x, this.points.get( this.points.length - 1 ).y );
+        context.moveTo( this.points[ this.points.length - 1 ].x, this.points[ this.points.length - 1 ].y );
       }
       for ( i = this.points.length - 2; i >= numTransparentPoints; i-- ) {
-        context.lineTo( this.points[i].x, this.points[i].y );
+        context.lineTo( this.points[ i ].x, this.points[ i ].y );
       }
       context.stroke();
 
@@ -129,8 +124,8 @@ define( function( require ) {
         faded = new Color( faded.r, faded.g, faded.b, Math.max( 0, a ) );
         context.strokeStyle = faded.toCSS();
         context.beginPath();
-        context.moveTo( points[ i + 1 ].x, points[ i + 1 ].y );
-        context.lineTo( points[ i ].x, points[ i ].y );
+        context.moveTo( this.points[ i + 1 ].x, this.points[ i + 1 ].y );
+        context.lineTo( this.points[ i ].x, this.points[ i ].y );
         context.stroke();
       }
     },
