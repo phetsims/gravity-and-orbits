@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable, which changes
@@ -26,29 +26,17 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
-  function constrainLocation( location, bounds ) {
-    if ( bounds.containsCoordinates( location.x, location.y ) ) {
-      return location;
-    }
-    else {
-      var xConstrained = Math.max( Math.min( location.x, bounds.maxX ), bounds.x );
-      var yConstrained = Math.max( Math.min( location.y, bounds.maxY ), bounds.y );
-      return new Vector2( xConstrained, yConstrained );
-    }
-  };
-
   /**
    *
    * @param {Body} body
    * @param {ModelViewTransform} modelViewTransform
-   * @param {Vector2} mousePosition
    * @param {PComponent} parentComponent
    * @param {number} labelAngle
    * @param {boolean} whiteBackgroundProperty
    * @constructor
    */
   function BodyNode( body, modelViewTransform, //Keep track of the mouse position in case a body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
-                     mousePosition, parentComponent, //Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
+                     parentComponent, //Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
                      labelAngle, whiteBackgroundProperty ) {
 
     Node.call( this, { pickable: true, cursor: 'pointer' } );
@@ -66,11 +54,6 @@ define( function( require ) {
 
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() );
     this.addChild( this.bodyRenderer );
-//    var cursorHandler = new CursorHandler();
-
-    // Add drag handlers
-//    this.addInputListener( cursorHandler );
-    var startOffset;
 
     this.addInputListener( new MovableDragHandler( this.body.positionProperty, {
       modelViewTransform: this.modelViewTransform.get()
@@ -78,36 +61,7 @@ define( function( require ) {
 
     this.body.positionProperty.link( function( pos ) {
       thisNode.translation = modelViewTransform.get().modelToViewPosition( pos );
-    });
-
-    // TODO: is this necessary in JS version?
-//    this.body.positionProperty.link( function() {
-//      /* we need to determine whether the mouse is over the body both before and after the model change so
-//       * that we can toggle the hand pointer over the body.
-//       *
-//       * otherwise the body can move over the mouse and be dragged without ever seeing the hand pointer
-//       */
-//      var isMouseOverBefore = this.bodyRenderer.getGlobalFullBounds().contains( mousePosition.get().toPoint2D() );
-//      setOffset( getPosition( modelViewTransform, body ).toPoint2D() );
-//      var isMouseOverAfter = bodyRenderer.getGlobalFullBounds().contains( mousePosition.get().toPoint2D() );
-//      //Send mouse entered and mouse exited events when body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
-//      if ( parentComponent != null ) {
-//        if ( isMouseOverBefore && !isMouseOverAfter ) {
-//          cursorHandler.mouseExited( new PInputEvent( null, null ).withAnonymousClassBody( {
-//            getComponent: function() {
-//              return parentComponent;
-//            }
-//          } ) );
-//        }
-//        if ( !isMouseOverBefore && isMouseOverAfter ) {
-//          cursorHandler.mouseEntered( new PInputEvent( null, null ).withAnonymousClassBody( {
-//            getComponent: function() {
-//              return parentComponent;
-//            }
-//          } ) );
-//        }
-//      }
-//    } );
+    } );
 
     this.body.diameterProperty.link( function() {
       thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
