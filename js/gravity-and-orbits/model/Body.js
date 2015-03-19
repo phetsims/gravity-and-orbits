@@ -385,7 +385,7 @@ define( function( require ) {
     addPathListener: function( listener ) {
 
       //assert that it has all the right parts
-      assert && assert( listener.pointAdded && listener.pointRemoved && listener.cleared );
+      //assert && assert( listener.pointAdded && listener.pointRemoved && listener.cleared );
 
       this.pathListeners.push( listener );
     },

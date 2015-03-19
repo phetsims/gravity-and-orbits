@@ -1,77 +1,88 @@
-//// Copyright 2002-2012, University of Colorado
-//
-//package edu.colorado.phet.gravityandorbits.view;
-//
-//import java.awt.Color;
-//import java.awt.geom.Point2D;
-//
-//import edu.colorado.phet.common.phetcommon.math.vector.Vector2D;
-//import edu.colorado.phet.common.phetcommon.model.property.BooleanProperty;
-//import edu.colorado.phet.common.phetcommon.model.property.Property;
-//import edu.colorado.phet.common.phetcommon.util.RichSimpleObserver;
-//import edu.colorado.phet.common.phetcommon.util.function.VoidFunction1;
-//import edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform;
-//import edu.colorado.phet.common.piccolophet.nodes.ArrowNode;
-//import edu.colorado.phet.gravityandorbits.model.Body;
-//import edu.umd.cs.piccolo.PNode;
-//
-//import static edu.colorado.phet.common.phetcommon.model.property.Not.not;
-//
-///**
-// * Draws a vector for a Body, such as a force vector or velocity vector.
-// *
-// * @author Sam Reid
-// */
-//public class VectorNode extends PNode {
-//    public static final double FORCE_SCALE = 76.0 / 5.179E15;
-//    private final Body body;
-//    private final Property<ModelViewTransform> modelViewTransform;
-//    private final double scale;
-//    private Property<Vector2D> vector;
-//    private ArrowNode arrowNode;
-//
-//    public VectorNode( final Body body, final Property<ModelViewTransform> modelViewTransform, final BooleanProperty visible,
-//                       final Property<Vector2D> vector, final double scale, final Color fill, final Color outline ) {
-//        this.vector = vector;
-//        this.body = body;
-//        this.modelViewTransform = modelViewTransform;
-//        this.scale = scale;
-//        //Only show if the body hasn't collided
-//        visible.and( not( body.getCollidedProperty() ) ).addObserver( new VoidFunction1<Boolean>() {
-//            public void apply( Boolean visible ) {
-//                setVisible( visible );
-//            }
-//        } );
-//
-//        arrowNode = new ArrowNode( new Point2D.Double(), new Point2D.Double(), 15, 15, 5, 0.5, true ) {{
-//            setPaint( fill );
-//            setStrokePaint( outline );
-//        }};
-//        new RichSimpleObserver() {
-//            public void update() {
-//                final Point2D tail = getTail();
-//                arrowNode.setTipAndTailLocations( getTip( tail ), tail );
-//            }
-//        }.observe( vector, body.getPositionProperty(), modelViewTransform );
-//        addChild( arrowNode );
-//        arrowNode.setPickable( false );
-//        arrowNode.setChildrenPickable( false );
-//    }
-//
-//    private Point2D getTail() {
-//        return modelViewTransform.get().modelToView( body.getPositionProperty().get().toPoint2D() );
-//    }
-//
-//    protected Point2D getTip() {
-//        return getTip( getTail() );
-//    }
-//
-//    private Point2D.Double getTip( Point2D tail ) {
-//        int minArrowLength = 10;
-//        Vector2D force = new Vector2D( modelViewTransform.get().modelToViewDelta( vector.get().times( scale ).toPoint2D() ) );
-//        if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
-//            force = force.getInstanceOfMagnitude( minArrowLength );
-//        }
-//        return new Point2D.Double( force.getX() + tail.getX(), force.getY() + tail.getY() );
-//    }
-//}
+// Copyright 2002-2015, University of Colorado
+/**
+ * Draws a vector for a Body, such as a force vector or velocity vector.
+ *
+ * @author Sam Reid
+ * @author Aaron Davis
+ */
+define( function( require ) {
+  'use strict';
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Color = require( 'SCENERY/util/Color' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var Property = require( 'AXON/Property' );
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
+  var Node = require( 'SCENERY/nodes/Node' );
+
+  var FORCE_SCALE = 76.0 / 5.179E15;
+
+  /**
+   *
+   * @param {Body} body
+   * @param {Property.<ModelViewTransform>} transformProperty
+   * @param {Property.<boolean>} visibleProperty
+   * @param {Property.<Vector2>} vectorProperty
+   * @param {number} scale
+   * @param {Color} fill
+   * @param {Color} outline
+   * @constructor
+   */
+  function VectorNode( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline ) {
+    Node.call( this );
+    var thisNode = this;
+
+    this.body = body; // private
+    this.vectorProperty = vectorProperty; // private
+    this.body = body; // private
+    this.transformProperty = transformProperty; // private
+    this.scale = scale; // private
+
+    //Only show if the body hasn't collided
+    new DerivedProperty( [ visibleProperty, body.getCollidedProperty() ], function( visible, collided ) {
+      return visible && !collided;
+    } ).linkAttribute( this, 'visible' );
+
+    var arrowNode = new ArrowNode( 0, 0, 0, 0, {
+      headHeight: 15,
+      headWidth: 15,
+      tailWidth: 5,
+      fill: fill,
+      stroke: outline,
+      pickable: false
+    } );
+
+    Property.multilink( [ vectorProperty, body.getPositionProperty(), transformProperty ],
+      function() {
+        var tail = thisNode.getTail();
+        var tip = thisNode.getTip( tail );
+        arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
+      } );
+
+    this.addChild( arrowNode );
+  }
+
+  return inherit( Node, VectorNode, {
+
+      //private
+      getTail: function() {
+        return this.transformProperty.get().modelToViewPosition( this.body.getPositionProperty().get() );
+      },
+
+      getTip: function( tail ) {
+        var minArrowLength = 10;
+        var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
+        if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
+          //force = force.getInstanceOfMagnitude( minArrowLength );
+          force = force.times( minArrowLength );
+        }
+        return new Vector2( force.x + tail.x, force.y + tail.y );
+      }
+    },
+    {
+      FORCE_SCALE: FORCE_SCALE
+    } );
+} );

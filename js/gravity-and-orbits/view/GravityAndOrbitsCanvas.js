@@ -21,6 +21,7 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
+  var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
@@ -68,7 +69,6 @@ define( function( require ) {
       this.paths.push( path );
       this.addChild( path );
     }
-
 
     var forceVectorColorFill = new Color( 50, 130, 215 );
     var forceVectorColorOutline = new Color(64, 64, 64);
@@ -118,10 +118,10 @@ define( function( require ) {
       this.addChild( mode.massReadoutFactory( bodyNode, module.showMassProperty ) );
     }
 
-//    //Add gravity force vector nodes
-//    for ( i = 0; i < bodies.length; i++ ) {
-//      this.addChild( new VectorNode( bodies[i], mode.transform, module.showGravityForceProperty, bodies[i].getForceProperty(), forceScale, forceVectorColorFill, forceVectorColorOutline ) );
-//    }
+    //Add gravity force vector nodes
+    for ( i = 0; i < bodies.length; i++ ) {
+      this.addChild( new VectorNode( bodies[i], mode.transformProperty, module.showGravityForceProperty, bodies[i].getForceProperty(), forceScale, forceVectorColorFill, forceVectorColorOutline ) );
+    }
 //
 //    //Add velocity vector nodes
 //    for ( i = 0; i < bodies.length; i++ ) {
