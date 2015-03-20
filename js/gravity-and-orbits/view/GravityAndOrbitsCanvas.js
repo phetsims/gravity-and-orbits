@@ -22,6 +22,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
+  var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GrabbableVectorNode' );
   var GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
@@ -122,15 +123,15 @@ define( function( require ) {
     for ( i = 0; i < bodies.length; i++ ) {
       this.addChild( new VectorNode( bodies[i], mode.transformProperty, module.showGravityForceProperty, bodies[i].getForceProperty(), forceScale, forceVectorColorFill, forceVectorColorOutline ) );
     }
-//
-//    //Add velocity vector nodes
-//    for ( i = 0; i < bodies.length; i++ ) {
-//      if ( !bodies[i].fixed ) {
-//        this.addChild( new GrabbableVectorNode( bodies[i], mode.transform, module.showVelocityProperty, bodies[i].getVelocityProperty(), mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline, //TODO: i18n of "V", also recommended to trim to 1 char
-//          "V" ) );
-//      }
-//    }
-//
+
+    //Add velocity vector nodes
+    for ( i = 0; i < bodies.length; i++ ) {
+      if ( !bodies[i].fixed ) {
+        this.addChild( new GrabbableVectorNode( bodies[i], mode.transformProperty, module.showVelocityProperty, bodies[i].getVelocityProperty(), mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline, //TODO: i18n of "V", also recommended to trim to 1 char
+          'V' ) );
+      }
+    }
+
     //Add explosion nodes, which are always in the scene graph but only visible during explosions
     for ( i = 0; i < bodies.length; i++ ) {
       this.addChild( new ExplosionNode( bodies[i], mode.transformProperty ) );

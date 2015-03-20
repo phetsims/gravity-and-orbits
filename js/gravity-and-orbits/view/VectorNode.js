@@ -21,7 +21,7 @@ define( function( require ) {
   var FORCE_SCALE = 76.0 / 5.179E15;
 
   /**
-   *
+   * Constructor for VectorNode
    * @param {Body} body
    * @param {Property.<ModelViewTransform>} transformProperty
    * @param {Property.<boolean>} visibleProperty
@@ -73,8 +73,13 @@ define( function( require ) {
       },
 
       getTip: function( tail ) {
+        if ( typeof tail === 'undefined' ) {
+          tail = this.getTail();
+        }
+
         var minArrowLength = 10;
         var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
+
         if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
           //force = force.getInstanceOfMagnitude( minArrowLength );
           force = force.times( minArrowLength );
