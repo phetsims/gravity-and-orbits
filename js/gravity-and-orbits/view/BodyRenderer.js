@@ -22,6 +22,7 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
+  var Matrix3 = require( 'DOT/Matrix3' );
 
   function BodyRenderer( body ) {
 
@@ -165,7 +166,6 @@ define( function( require ) {
     BodyRenderer.call( this, body );
 
     this.imageNode = new Image( imageName );
-    this.originalWidth = this.imageNode.width;
     this.viewDiameter = viewDiameter;
     this.addChild( this.imageNode );
 
@@ -180,7 +180,8 @@ define( function( require ) {
 
     //private
     updateViewDiameter: function() {
-      var scale = this.viewDiameter / this.originalWidth;
+      this.imageNode.matrix = new Matrix3();
+      var scale = this.viewDiameter / this.imageNode.width;
       this.imageNode.setScaleMagnitude( scale );
 
       // Make sure the image is centered on the body's center
