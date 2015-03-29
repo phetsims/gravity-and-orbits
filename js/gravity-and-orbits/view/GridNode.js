@@ -14,31 +14,37 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
+  var Line = require( 'SCENERY/nodes/Line' );
 
   //private
   var NUM_GRID_LINES = 10;
 
-  function GridNode( transform, spacing, center ) {
+  /**
+   *
+   * @param {Property.<ModelViewTransform>} transformProperty
+   * @param {number} spacing
+   * @param {number} center
+   * @constructor
+   */
+  function GridNode( transformProperty, spacing, center ) {
 
     Node.call( this );
     var thisNode = this;
-//    setPickable( false );
-//    setChildrenPickable( false );
-    transform.link( function( mvt ) {
+    transformProperty.link( function( mvt ) {
       var i;
       //horizontal lines
       for ( i = -NUM_GRID_LINES; i <= NUM_GRID_LINES; i++ ) {
         var y = i * spacing + center.y;
         var x1 = NUM_GRID_LINES * spacing + center.x;
         var x2 = -NUM_GRID_LINES * spacing + center.x;
-        thisNode.addGridLine( Shape.lineSegment( x1, y, x2, y ), transform );
+        thisNode.addGridLine( Shape.lineSegment( x1, y, x2, y ), transformProperty );
       }
       //vertical lines
       for ( i = -NUM_GRID_LINES; i <= NUM_GRID_LINES; i++ ) {
         var x = i * spacing + center.x;
         var y1 = NUM_GRID_LINES * spacing + center.y;
         var y2 = -NUM_GRID_LINES * spacing + center.y;
-        thisNode.addGridLine( Shape.lineSegment( x, y1, x, y2 ), transform );
+        thisNode.addGridLine( Shape.lineSegment( x, y1, x, y2 ), transformProperty );
       }
     } );
   }
@@ -46,8 +52,8 @@ define( function( require ) {
   return inherit( Node, GridNode, {
 
     //private
-    addGridLine: function( line, transform ) {
-      var path = new Path( transform.get().modelToViewShape( line ), { stroke: 1, fill: 'gray' } );
+    addGridLine: function( line, transformProperty ) {
+      var path = new Path( transformProperty.get().modelToViewShape( line ), { lineWidth: 1, stroke: 'gray' } );
       this.addChild( path );
     }
   } );

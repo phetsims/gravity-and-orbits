@@ -54,7 +54,8 @@ define( function( require ) {
 
     //view size
 //    Node.call( this, new Dimension( 1500, 1500 ) );
-    Rectangle.call( this, 0, 0, 1024, 618, { fill: 'rgba(220,220,220,0.3)'} );
+//    Rectangle.call( this, 0, 0, 1024, 618, { fill: 'rgba(220,220,220,0.3)'} );
+    Rectangle.call( this, 0, 0, 1024, 618 );
     var thisNode = this;
 
     //module.whiteBackgroundProperty.link ( function( whiteBackground ) {
