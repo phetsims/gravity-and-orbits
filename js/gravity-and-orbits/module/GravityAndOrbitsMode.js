@@ -75,8 +75,6 @@ define( function( require ) {
     //private
     this.canvas = null;
 
-    //additional scale factor on top of defaultZoomScale
-    this.zoomLevel = new Property( 1.0 );
     this.userComponent = userComponent; // private
     this.dt = dt; // private
     this.p = p;
@@ -102,7 +100,7 @@ define( function( require ) {
     this.modelBoundsProperty = new Property(); // not in the Java version, needed for movableDragHandler bounds
     this.transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
 
-    this.zoomLevel.link( function() {
+    this.zoomLevelProperty.link( function() {
       thisMode.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
@@ -132,7 +130,7 @@ define( function( require ) {
      * @returns {*}
      */
     createTransform: function( defaultZoomScale, zoomOffset ) {
-      var targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevel.get(), zoomOffset );
+      var targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), zoomOffset );
       var minX = targetRectangle.x;
       var minY = targetRectangle.y;
       var maxX = targetRectangle.x + targetRectangle.width;

@@ -165,6 +165,7 @@ define( function( require ) {
     BodyRenderer.call( this, body );
 
     this.imageNode = new Image( imageName );
+    this.originalWidth = this.imageNode.width;
     this.viewDiameter = viewDiameter;
     this.addChild( this.imageNode );
 
@@ -179,11 +180,7 @@ define( function( require ) {
 
     //private
     updateViewDiameter: function() {
-//      this.imageNode.setTransform( new AffineTransform() );
-      var scale = this.viewDiameter / this.imageNode.width;
-
-      // TODO: fix this workaround for when scale is 1
-      if ( scale === 1 ) { return; }
+      var scale = this.viewDiameter / this.originalWidth;
       this.imageNode.setScaleMagnitude( scale );
 
       // Make sure the image is centered on the body's center

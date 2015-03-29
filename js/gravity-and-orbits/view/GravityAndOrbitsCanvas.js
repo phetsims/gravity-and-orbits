@@ -33,6 +33,7 @@ define( function( require ) {
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/SpeedRadioButtons' );
   var DayCounter = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/DayCounter' );
+  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/view/scale-slider/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 //  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
 //  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
@@ -250,7 +251,7 @@ define( function( require ) {
 //      }
 //    } ) );
 //    //Zoom controls
-//    addChild( createZoomControls( mode ) );
+    this.addChild( new ScaleSlider( mode.zoomLevelProperty ) );
   }
 
   return inherit( Rectangle, GravityAndOrbitsCanvas, {
@@ -258,6 +259,7 @@ define( function( require ) {
 
       //private
       createZoomControls: function( mode ) {
+        var node = new Node();
         return new Node().withAnonymousClassBody( {
           initializer: function() {
             var MAX = 1.5;

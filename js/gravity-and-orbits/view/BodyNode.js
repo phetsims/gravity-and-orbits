@@ -28,20 +28,20 @@ define( function( require ) {
   /**
    *
    * @param {Body} body
-   * @param {ModelViewTransform} modelViewTransform
+   * @param {Property.<ModelViewTransform>} modelViewTransformProperty
    * @param {PComponent} parentComponent
    * @param {number} labelAngle
    * @param {boolean} whiteBackgroundProperty
    * @constructor
    */
-  function BodyNode( body, modelViewTransform, //Keep track of the mouse position in case a body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
+  function BodyNode( body, modelViewTransformProperty, //Keep track of the mouse position in case a body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
                      parentComponent, //Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
                      labelAngle, whiteBackgroundProperty ) {
 
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     // private attributes
-    this.modelViewTransform = modelViewTransform;
+    this.modelViewTransformProperty = modelViewTransformProperty;
     this.body = body;
     this.whiteBackgroundProperty = whiteBackgroundProperty;
 
@@ -56,16 +56,16 @@ define( function( require ) {
 
     // @public
     this.dragHandler = new MovableDragHandler( this.body.positionProperty, {
-      modelViewTransform: this.modelViewTransform.get() // TODO: we need to update the MVT of this handler when the property changes
+      modelViewTransform: this.modelViewTransformProperty.get() // TODO: we need to update the MVT of this handler when the property changes
     } );
     this.addInputListener( this.dragHandler );
 
-    this.body.positionProperty.link( function( pos ) {
-      thisNode.translation = modelViewTransform.get().modelToViewPosition( pos );
+    Property.multilink( [ this.body.positionProperty, modelViewTransformProperty ], function( position, modelViewTransform ) {
+      thisNode.translation = modelViewTransform.modelToViewPosition( position );
     } );
 
-    this.body.diameterProperty.link( function() {
-      thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+    Property.multilink( [ this.body.diameterProperty, modelViewTransformProperty ], function( diameter, modelViewTransform ) {
+        thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
     } );
 
     //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
@@ -104,13 +104,13 @@ define( function( require ) {
     },
 
     //private
-    getPosition: function( modelViewTransform, body ) {
-      return modelViewTransform.get().modelToView( body.getPosition() );
+    getPosition: function( modelViewTransformProperty, body ) {
+      return modelViewTransformProperty.get().modelToView( body.getPosition() );
     },
 
     //private
     getViewDiameter: function() {
-      var viewDiameter = this.modelViewTransform.get().modelToViewDeltaX( this.body.getDiameter() );
+      var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.getDiameter() );
       return Math.max( viewDiameter, 2 );
     },
 

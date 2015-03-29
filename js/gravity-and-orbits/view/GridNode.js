@@ -30,7 +30,8 @@ define( function( require ) {
 
     Node.call( this );
     var thisNode = this;
-    transformProperty.link( function( mvt ) {
+    transformProperty.link( function() {
+      thisNode.removeAllChildren();
       var i;
       //horizontal lines
       for ( i = -NUM_GRID_LINES; i <= NUM_GRID_LINES; i++ ) {

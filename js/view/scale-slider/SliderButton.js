@@ -1,9 +1,10 @@
-// Copyright 2002-2013, University of Colorado Boulder
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Visual representation of button scale control.
  *
  * @author Andrey Zelenkov (Mlearner)
+ * @author Aaron Davis
  */
 
 define( function( require ) {
@@ -18,11 +19,11 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
 
   /**
-   * @param {Number} x x-coordinate
-   * @param {Number} y y-coordinate
-   * @param {Property} scaleProperty - Scale property for updating.
+   * @param {number} x x-coordinate
+   * @param {number} y y-coordinate
+   * @param {Property.<number>} scaleProperty - Scale property for updating.
    * @param {Range} range - Working range of slider.
-   * @param {Number} step step of scale changes
+   * @param {number} step step of scale changes
    * @param {Boolean} isIncrease flag for defining type of button
    * @constructor
    */
