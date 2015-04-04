@@ -39,18 +39,18 @@ define( function( require ) {
 
   // static class: IntroModule
   function ToScaleModule( phetFrame, whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, UserComponents.toScaleTab, phetFrame, whiteBackgroundProperty, GAOStrings.TO_SCALE, false, function( p ) {
+    GravityAndOrbitsModule.call( this, UserComponents.toScaleTab, phetFrame, whiteBackgroundProperty, GAOStrings.TO_SCALE, true, function( p ) {
       return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
-    }, 0, false );
+    }, 0, true );
   }
 
   inherit( GravityAndOrbitsModule, ToScaleModule );
 
   // static class: CartoonModule
   function CartoonModule( phetFrame, whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, UserComponents.cartoonTab, phetFrame, whiteBackgroundProperty, GAOStrings.CARTOON, true, function( p ) {
+    GravityAndOrbitsModule.call( this, UserComponents.cartoonTab, phetFrame, whiteBackgroundProperty, GAOStrings.CARTOON, false, function( p ) {
         return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
-      }, 0, true );
+      }, 0, false );
   }
 
   inherit( GravityAndOrbitsModule, CartoonModule );
