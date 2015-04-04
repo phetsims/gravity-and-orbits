@@ -32,7 +32,7 @@ define( function( require ) {
 
   var BACKGROUND = new Color( 3, 0, 133 );
   var FOREGROUND = Color.WHITE;
-  var CONTROL_FONT = new PhetFont( 16 );
+  var CONTROL_FONT = new PhetFont( 14 );
   var STAGE_SIZE = GravityAndOrbitsCanvas.STAGE_SIZE;
 
   var VIEW_MIN = 0;
@@ -47,6 +47,8 @@ define( function( require ) {
   var MARGIN = 5;
   var TICK_HEIGHT = 14;
   var NUM_TICKS = 4;
+  var WIDTH = 130;
+  var SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
 
   /**
    *
@@ -67,7 +69,8 @@ define( function( require ) {
 
     var label = new Text( body.getName(), {
       font: CONTROL_FONT,
-      fill: FOREGROUND
+      fill: FOREGROUND,
+      fontWeight: 'bold'
     } );
 
     var bodyNode = new BodyNode(
@@ -81,10 +84,12 @@ define( function( require ) {
       whiteBackgroundProperty
     );
     //var image = bodyNode.renderImage( 25 );
-    var image = body.createRenderer( 16 );
+    var image = body.createRenderer( 14 );
 
     //Top component that shows the body's name and icon
-    var content = new HBox( { children: [ label, image ], spacing: 10, left: 20 } );
+    var content = new HBox( { centerX: SPACING, children: [ label, image ], spacing: 10 } );
+
+    var smallLabel = new Text( valueLabel, { top: content.bottom, centerX: SPACING, font: new PhetFont( 11 ), fill: 'white', pickable: false } );
 
     body.getMassProperty().link( function( mass ) {
       updatingSlider = true;
@@ -102,14 +107,12 @@ define( function( require ) {
       updatingSlider = false;
     } );
 
-    var WIDTH = 100;
 
     var ticks = [];
-
     for( var i = 0; i < NUM_TICKS; i++ ) {
       ticks.push( new Line( 0, 0, 0, 10, { stroke: 'white', lineWidth: 1 } ) );
     }
-    var tickBox = new HBox( { children: ticks, spacing: ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 ) } );
+    var tickBox = new HBox( { children: ticks, spacing: SPACING } );
 
     var slider = new HSlider( body.getMassProperty(), { min: min, max: max }, {
       trackSize: new Dimension2( WIDTH, 2 ),
@@ -120,12 +123,12 @@ define( function( require ) {
       thumbFillHighlighted: '#B3D3E2'
     } );
 
-    var sliderWithTicksNode = new VBox( { children: [ tickBox, slider ], spacing: -5, resize: false } );
+    var sliderWithTicksNode = new VBox( { children: [ tickBox, slider ], spacing: -5, resize: false, top: smallLabel.bottom + 5 } );
 
-    VBox.call( this, { children: [ content, sliderWithTicksNode ], spacing: 10, resize: false } );
+    Node.call( this, { children: [ content, smallLabel, sliderWithTicksNode ] } );
   }
 
-  return inherit( VBox, BodyMassControl, {},
+  return inherit( Node, BodyMassControl, {},
 //statics
     {
       VIEW_MIN: VIEW_MIN,
