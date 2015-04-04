@@ -15,7 +15,39 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
-  var PlanetModeResetButton = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/planet-mode-menu/PlanetModeResetButton' );
+  var Image = require( 'SCENERY/nodes/Image' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+
+  // images
+  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
+
+  /**
+   * @param {GravityAndOrbitsMode} mode
+   * @param {Object} [options]
+   * @constructor
+   */
+  function PlanetModeResetButton( mode, options ) {
+    // create button
+    RectangularPushButton.call( this,
+      {
+        content: new Node( {
+          children: [
+            new Rectangle( 0, 0, 25, 25, 5, 5, { fill: '#fff' } ),
+            new Image( resetArrowImg, { x: 2, y: 1 } )
+          ]
+        } ),
+        xMargin: 0,
+        yMargin: 0,
+        listener: function() {
+          mode.resetMode();
+        }
+      } );
+
+    this.mutate( options );
+  }
+
+  inherit( RectangularPushButton, PlanetModeResetButton );
 
   /**
    * @param {GravityAndOrbitsModule} module
@@ -57,7 +89,6 @@ define( function( require ) {
       } );
 
     this.addChild( buttonGroup );
-
     this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 5, y: 2.5 } ) );
   }
 
