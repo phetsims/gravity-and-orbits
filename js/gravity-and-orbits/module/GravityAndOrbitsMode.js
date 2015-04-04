@@ -28,8 +28,8 @@ define( function( require ) {
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
-  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
+  var BodyNode = require( 'GRAVITY_AND_ORBITS/view/BodyNode' );
+  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/view/GravityAndOrbitsCanvas' );
   var Node = require( 'SCENERY/nodes/Node' );
 
   // the play area only takes up the left side of the canvas; the control panel is on the right side

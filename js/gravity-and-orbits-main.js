@@ -12,7 +12,7 @@ define( function( require ) {
   var GravityAndOrbitsScreen = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsScreen' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
-  var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
+  var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/view/GravityAndOrbitsScreenView' );
   var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );

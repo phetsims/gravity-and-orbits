@@ -27,8 +27,8 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
-  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
+  var BodyNode = require( 'GRAVITY_AND_ORBITS/view/BodyNode' );
+  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/view/GravityAndOrbitsCanvas' );
 
   var BACKGROUND = new Color( 3, 0, 133 );
   var FOREGROUND = Color.WHITE;

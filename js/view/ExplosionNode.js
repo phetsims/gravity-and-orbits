@@ -14,7 +14,7 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var LinearFunction = require( 'DOT/LinearFunction' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-  var BodyRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyRenderer' );
+  var BodyRenderer = require( 'GRAVITY_AND_ORBITS/view/BodyRenderer' );
   var Node = require( 'SCENERY/nodes/Node' );
 
   var NUM_STEPS_FOR_ANIMATION = 10;

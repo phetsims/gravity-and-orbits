@@ -21,14 +21,14 @@ define( function( require ) {
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
+  var BodyNode = require( 'GRAVITY_AND_ORBITS/view/BodyNode' );
   var BodyConfiguration = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/BodyConfiguration' );
   var ModeConfig = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/ModeConfig' );
   var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
-  var BodyRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyRenderer' );
-  var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/EarthMassReadoutNode' );
-  var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
+  var BodyRenderer = require( 'GRAVITY_AND_ORBITS/view/BodyRenderer' );
+  var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/view/EarthMassReadoutNode' );
+  var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/view/SpaceStationMassReadoutNode' );
+  var VectorNode = require( 'GRAVITY_AND_ORBITS/view/VectorNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Image = require( 'SCENERY/nodes/Image' );
@@ -36,7 +36,7 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-//  var milesToMeters = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MeasuringTape/milesToMeters' );//static
+//  var milesToMeters = require( 'GRAVITY_AND_ORBITS/view/MeasuringTape/milesToMeters' );//static
 
   // images
   var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );

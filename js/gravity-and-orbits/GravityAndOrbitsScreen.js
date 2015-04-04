@@ -9,7 +9,7 @@ define( function( require ) {
 
   // modules
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
-  var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
+  var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/view/GravityAndOrbitsScreenView' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
 
