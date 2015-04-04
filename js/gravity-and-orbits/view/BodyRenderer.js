@@ -90,6 +90,7 @@ define( function( require ) {
   function SphereRenderer( body, viewDiameter ) {
     BodyRenderer.call( this, body );
     this.sphereNode = new Circle( viewDiameter / 2 );
+    this.setDiameter( viewDiameter );
     this.addChild( this.sphereNode );
   }
 

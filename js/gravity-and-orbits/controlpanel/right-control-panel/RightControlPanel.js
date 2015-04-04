@@ -16,8 +16,8 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/planet-mode-menu/PlanetModeMenu' );
   var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/GravityModeMenu' );
+  var MassMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/mass-menu/MassMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/SpaceObjectsPropertyCheckbox' );
-//  var MassMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view2/right-control-panel/mass-menu/MassMenu' );
 
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -36,8 +36,8 @@ define( function( require ) {
     var sections = [
       new PlanetModeMenu( module, MENU_SECTION_OPTIONS ),
       new GravityModeMenu( module, MENU_SECTION_OPTIONS ),
-      new SpaceObjectsPropertyCheckbox( module, MENU_SECTION_OPTIONS )
-//      new MassMenu( module, MENU_SECTION_OPTIONS )
+      new SpaceObjectsPropertyCheckbox( module, MENU_SECTION_OPTIONS ),
+      new MassMenu( module, MENU_SECTION_OPTIONS )
     ];
 
     // add thin rectangles to separate the different menu components
@@ -55,7 +55,7 @@ define( function( require ) {
 
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;
-    for ( i = 0; i < 2; i++ ) {
+    for ( i = 0; i < 3; i++ ) {
       separators[ i ].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
     }
 

@@ -15,12 +15,8 @@ define( function( require ) {
   // modules
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MassMenuSlider = require( 'view/right-control-panel/mass-menu/MassMenuSlider' );
-  var Sun = require( 'view/space-object/Sun' );
-  var Earth = require( 'view/space-object/Earth' );
-  var Moon = require( 'view/space-object/Moon' );
-  var SpaceStation = require( 'view/space-object/SpaceStation' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/BodyMassControl' );
 
   // strings
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
@@ -33,81 +29,23 @@ define( function( require ) {
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
 
   /**
-   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
-   * @param {Object} coords - Coordinates of node.
-   * @param {Number} coords.x - X-coordinate.
-   * @param {Number} coords.y - Y-coordinate.
+   * @param {GravityAndOrbitsModule} module
    * @constructor
    */
-  function MassMenu( model, coords ) {
-    var massMenu = this;
-    Node.call( this, { scale: 0.85 } );
-    if ( coords ) {
-      this.setTranslation( coords );
-    }
-    // slides options
-    var map = {
-      sun: {
-        title: ourSunString,
-        property: model.sun.massCoeffProperty,
-        icon: {
-          text: starString,
-          image: Sun
-        }
-      },
-      earth: {
-        title: earthString,
-        property: model.earth.massCoeffProperty,
-        icon: {
-          text: planetString,
-          image: Earth
-        }
-      },
-      moon: {
-        title: ourMoonString,
-        property: model.moon.massCoeffProperty,
-        icon: {
-          text: moonString,
-          image: Moon
-        }
-      },
-      spaceStation: {
-        title: spaceStationString,
-        property: model.spaceStation.massCoeffProperty,
-        icon: {
-          text: satelliteString,
-          image: SpaceStation
-        }
-      }
-    }, showModes = [
-      [ 'sun', 'earth' ], // planetMode === 0
-      [ 'sun', 'earth' ], // planetMode === 1
-      [ 'earth', 'moon' ], // planetMode === 2
-      [ 'earth', 'spaceStation' ] // planetMode === 3
-    ];
+  function MassMenu( module, options ) {
 
-    // init all sliders
-    for ( var object in map ) {
-      if ( map.hasOwnProperty( object ) ) {
-        this[ object ] = new MassMenuSlider( 10, 0, { title: map[ object ].title, property: map[ object ].property, icon: map[ object ].icon } );
+    var children = [];
+    var bodies = module.getMode().getModel().getBodies();
+    for ( var i = 0; i < bodies.length; i++ ) {
+      var body = bodies[ i ];
+      if ( body.isMassSettable() ) {
+        children.push( new BodyMassControl( body, body.getMassProperty().getInitialValue() / 2, body.getMassProperty().getInitialValue() * 2, body.getTickValue(), body.getTickLabel(), module.whiteBackgroundProperty ) );
       }
     }
 
-    this.vBox = new VBox( { resize: false, spacing: 2 } );
-    this.addChild( this.vBox );
-
-    // add sliders
-    model.planetModeProperty.link( function( mode ) {
-      massMenu.vBox.removeAllChildren();
-      showModes[ mode ].forEach( function( spaceObject ) {
-        massMenu.vBox.addChild( massMenu[ spaceObject ] );
-      } );
-
-      massMenu.vBox.updateLayout();
-    } );
-
-    assert && assert( !isNaN( this.height ) );
+    options = _.extend( { children: children, resize: false }, options );
+    VBox.call( this, options );
   }
 
-  return inherit( Node, MassMenu );
+  return inherit( VBox, MassMenu );
 } );

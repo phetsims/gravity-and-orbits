@@ -65,7 +65,7 @@ define( function( require ) {
     } );
 
     Property.multilink( [ this.body.diameterProperty, modelViewTransformProperty ], function( diameter, modelViewTransform ) {
-        thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+      thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
     } );
 
     //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
@@ -92,9 +92,9 @@ define( function( require ) {
       } );
       node.addChild( text );
 
-      this.whiteBackgroundProperty.link( function( whiteBackground ) {
-        text.fill = whiteBackground ? Color.black : Color.white;
-      } );
+      //this.whiteBackgroundProperty.link( function( whiteBackground ) {
+      //  text.fill = whiteBackground ? Color.black : Color.white;
+      //} );
 
       this.body.diameterProperty.link( function() {
         node.visible = thisNode.getViewDiameter() <= 10;
@@ -116,7 +116,7 @@ define( function( require ) {
 
     //Create a new image at the specified width. Use body.createRenderer() instead of bodyRenderer since we must specify a new width value
     renderImage: function( width ) {
-      return this.body.createRenderer( width ).toImage( width, width, new Color( 0, 0, 0, 0 ) );
+      return this.body.createRenderer( width );
     },
 
     getBody: function() {

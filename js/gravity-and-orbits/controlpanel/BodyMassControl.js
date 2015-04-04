@@ -1,129 +1,129 @@
-//// Copyright 2002-2012, University of Colorado
-//
-//package edu.colorado.phet.gravityandorbits.controlpanel;
-//
-//import java.awt.Image;
-//import java.awt.Insets;
-//import java.awt.event.MouseAdapter;
-//import java.awt.event.MouseEvent;
-//import java.awt.geom.Point2D;
-//import java.util.Hashtable;
-//
-//import javax.swing.ImageIcon;
-//import javax.swing.JLabel;
-//import javax.swing.JPanel;
-//import javax.swing.SwingConstants;
-//import javax.swing.SwingUtilities;
-//import javax.swing.event.ChangeEvent;
-//import javax.swing.event.ChangeListener;
-//
-//import edu.colorado.phet.common.phetcommon.math.Function;
-//import edu.colorado.phet.common.phetcommon.math.vector.Vector2D;
-//import edu.colorado.phet.common.phetcommon.model.property.Property;
-//import edu.colorado.phet.common.phetcommon.simsharing.components.SimSharingJSlider;
-//import edu.colorado.phet.common.phetcommon.simsharing.messages.UserComponentChain;
-//import edu.colorado.phet.common.phetcommon.simsharing.messages.UserComponents;
-//import edu.colorado.phet.common.phetcommon.util.SimpleObserver;
-//import edu.colorado.phet.common.phetcommon.view.VerticalLayoutPanel;
-//import edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform;
-//import edu.colorado.phet.common.phetcommon.view.util.PhetFont;
-//import edu.colorado.phet.gravityandorbits.model.Body;
-//import edu.colorado.phet.gravityandorbits.view.BodyNode;
-//
-//import static edu.colorado.phet.common.phetcommon.view.graphics.transforms.ModelViewTransform.createSinglePointScaleInvertedYMapping;
-//import static edu.colorado.phet.gravityandorbits.controlpanel.GravityAndOrbitsControlPanel.CONTROL_FONT;
-//import static edu.colorado.phet.gravityandorbits.controlpanel.GravityAndOrbitsControlPanel.FOREGROUND;
-//import static edu.colorado.phet.gravityandorbits.view.GravityAndOrbitsCanvas.STAGE_SIZE;
-//
-///**
-// * This control allows the user to view and change the mass of certain Body instances, which also changes the radius.
-// *
-// * @author Sam Reid
-// */
-//public class BodyMassControl extends VerticalLayoutPanel {
-//    public static final int VIEW_MIN = 0;
-//    public static final int VIEW_MAX = 100000;//max value that the slider can take internally (i.e. the resolution of the slider)
-//    private static double SNAP_TOLERANCE = 0.08;//Percentage of the range the slider must be in to snap to a named label tick
-//
-//    private boolean updatingSlider = false;
-//
-//    public BodyMassControl( final Body body, double min, double max,
-//                            final double labelValue, final String valueLabel, final Property<Boolean> whiteBackgroundProperty ) {//for showing a label for a specific body such as "earth"
-//        final Function.LinearFunction modelToView = new Function.LinearFunction( min, max, VIEW_MIN, VIEW_MAX );
-//        setInsets( new Insets( 5, 5, 5, 5 ) );
-//
-//        //Top component that shows the body's name and icon
-//        add( new JPanel() {{
-//            add( new JLabel( body.getName() ) {{
-//                setFont( CONTROL_FONT );
-//                setForeground( FOREGROUND );
-//            }} );
-//            //using a scale of 1 instead of 1E-9 fixes a problem that caused transparent pixels to appear around an image, making the rendered part smaller than it should have been
-//            //However, that caused out of memory errors when we needed to buffer the round gradient paint graphics, so we reverted back to the 1E-9 scaling
-//            final BodyNode bodyNode = new BodyNode( body, new Property<ModelViewTransform>( createSinglePointScaleInvertedYMapping( new Point2D.Double( 0, 0 ), new Point2D.Double( STAGE_SIZE.width * 0.30, STAGE_SIZE.height * 0.5 ), 1E-9 ) ),
-//                                                    new Property<Vector2D>( new Vector2D( 0, 0 ) ), null, -Math.PI / 4, whiteBackgroundProperty );
-//            final Image image = bodyNode.renderImage( 22 );
-//            add( new JLabel( new ImageIcon( image ), SwingConstants.LEFT ) );
-//        }} );
-//        setForeground( FOREGROUND );
-//
-//        class SmallLabel extends JLabel {
-//            SmallLabel( String text ) {
-//                super( text );
-//                setForeground( FOREGROUND );
-//                setFont( new PhetFont( 14 ) );
-//            }
-//        }
-//        //Add the slider component.
-//        add( new SimSharingJSlider( UserComponentChain.chain( body.getUserComponent(), UserComponents.slider ), VIEW_MIN, VIEW_MAX ) {{
-//            setMajorTickSpacing( (int) ( modelToView.evaluate( labelValue ) - VIEW_MIN ) );
-//            setPaintLabels( true );
-//            setPaintTicks( true );
-//            setLabelTable( new Hashtable<Object, Object>() {{
-//                put( (int) modelToView.evaluate( labelValue ), new SmallLabel( valueLabel ) );//show the custom tick mark and label
-//            }} );
-//            setForeground( FOREGROUND );
-//            body.getMassProperty().addObserver( new SimpleObserver() {
-//                public void update() {
-//                    updatingSlider = true;
-//                    setValue( (int) modelToView.evaluate( body.getMass() ) );
-//                    updatingSlider = false;
-//                }
-//            } );
-//
-//            //TODO: Identify more clearly why this is problematic and come up with a better solution.
-//            // From the review: After reading this comment, I still don't understand why updatingSlider is necessary.  This is not a general issue with sliders. What is special about this slider than makes this necessary?
-//            // we don't want to set the body mass if we are updating the slider. otherwise we get a
-//            // mass change => update slider => mass change bounce and the wrong values are stored for a reset
-//            addChangeListener( new ChangeListener() {
-//                public void stateChanged( ChangeEvent e ) {
-//                    if ( !updatingSlider ) {
-//                        double sliderValue = modelToView.createInverse().evaluate( getValue() );
-//                        if ( Math.abs( sliderValue - labelValue ) / labelValue < SNAP_TOLERANCE ) {//if near to tick mark, then use that value
-//                            body.setMass( labelValue );
-//                        }
-//                        else {
-//                            body.setMass( modelToView.createInverse().evaluate( getValue() ) );
-//                        }
-//                    }
-//                }
-//            } );
-//            //if mouse is released near to tick mark, then use that value
-//            addMouseListener( new MouseAdapter() {
-//                @Override
-//                public void mouseReleased( MouseEvent e ) {
-//                    SwingUtilities.invokeLater( new Runnable() {
-//                        public void run() {
-//                            double sliderValue = modelToView.createInverse().evaluate( getValue() );
-//                            if ( Math.abs( sliderValue - labelValue ) / labelValue < SNAP_TOLERANCE ) {
-//                                body.setMass( labelValue );
-//                                //TODO: why is this necessary? Is this a workaround? If so, I would be concerned that you have an undiscovered bug.
-//                                body.getMassProperty().notifyIfChanged();//For unknown reasons, without this call, updates won't be sent properly and the thumb won't snap to the tick
-//                            }
-//                        }
-//                    } );
-//                }
-//            } );
-//        }} );
-//    }
-//}
+// Copyright 2002-2015, University of Colorado
+
+/**
+ * This control allows the user to view and change the mass of certain Body instances, which also changes the radius.
+ *
+ * @author Sam Reid
+ * @author Aaron Davis
+ */
+define( function( require ) {
+  'use strict';
+
+  // modules
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Image = require( 'SCENERY/nodes/Image' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var Line = require( 'SCENERY/nodes/Line' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
+  var Color = require( 'SCENERY/util/Color' );
+  var Dimension2 = require( 'DOT/Dimension2' );
+  var Panel = require( 'SUN/Panel' );
+  var HSlider = require( 'SUN/HSlider' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var LinearFunction = require( 'DOT/LinearFunction' );
+  var Property = require( 'AXON/Property' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
+  var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
+  var MassMenuSlider = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/mass-menu/MassMenuSlider' );
+  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
+
+  var BACKGROUND = new Color( 3, 0, 133 );
+  var FOREGROUND = Color.WHITE;
+  var CONTROL_FONT = new PhetFont( 16 );
+  var STAGE_SIZE = GravityAndOrbitsCanvas.STAGE_SIZE;
+
+  var VIEW_MIN = 0;
+  //max value that the slider can take internally (i.e. the resolution of the slider)
+  var VIEW_MAX = 100000;
+  //Percentage of the range the slider must be in to snap to a named label tick
+
+  //private
+  var SNAP_TOLERANCE = 0.08;
+
+  var THUMB_SIZE = new Dimension2( 15, 20 );
+  var MARGIN = 5;
+  var TICK_HEIGHT = 14;
+  var NUM_TICKS = 4;
+
+  /**
+   *
+   * @param {Body} body
+   * @param {number} min
+   * @param {number} max
+   * @param {number} labelValue
+   * @param {string} valueLabel
+   * @param whiteBackgroundProperty
+   * @constructor
+   */
+  function BodyMassControl( body, min, max, labelValue, valueLabel, whiteBackgroundProperty ) {
+
+    var updatingSlider = false;
+
+    //for showing a label for a specific body such as "earth"
+    var modelToView = new LinearFunction( min, max, VIEW_MIN, VIEW_MAX );
+
+    var label = new Text( body.getName(), {
+      font: CONTROL_FONT,
+      fill: FOREGROUND
+    } );
+
+    var bodyNode = new BodyNode(
+      body,
+      new Property( ModelViewTransform2.createSinglePointScaleInvertedYMapping(
+        new Vector2( 0, 0 ),
+        new Vector2( STAGE_SIZE.width * 0.30, STAGE_SIZE.height * 0.5 ),
+        1E-9 ) ),
+      null,
+      -Math.PI / 4,
+      whiteBackgroundProperty
+    );
+    //var image = bodyNode.renderImage( 25 );
+    var image = body.createRenderer( 16 );
+
+    //Top component that shows the body's name and icon
+    var content = new HBox( { children: [ label, image ], spacing: 10, left: 20 } );
+
+    body.getMassProperty().link( function( mass ) {
+      updatingSlider = true;
+
+      // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
+      // the mass itself is set by the slider in this case.
+      var radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1.0 / 3.0 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
+      body.diameterProperty.set( radius * 2 );
+      updatingSlider = false;
+    } );
+
+    var WIDTH = 100;
+
+    var ticks = [];
+
+    for( var i = 0; i < NUM_TICKS; i++ ) {
+      ticks.push( new Line( 0, 0, 0, 10, { stroke: 'white', lineWidth: 1 } ) );
+    }
+    var tickBox = new HBox( { children: ticks, spacing: ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 ) } );
+
+    var slider = new HSlider( body.getMassProperty(), { min: min, max: max }, {
+      trackSize: new Dimension2( WIDTH, 2 ),
+      thumbSize: THUMB_SIZE,
+
+      // custom thumb
+      thumbFillEnabled: '#98BECF',
+      thumbFillHighlighted: '#B3D3E2'
+    } );
+
+    var sliderWithTicksNode = new VBox( { children: [ tickBox, slider ], spacing: -5, resize: false } );
+
+    VBox.call( this, { children: [ content, sliderWithTicksNode ], spacing: 10, resize: false } );
+  }
+
+  return inherit( VBox, BodyMassControl, {},
+//statics
+    {
+      VIEW_MIN: VIEW_MIN,
+      VIEW_MAX: VIEW_MAX
+    } );
+} );
