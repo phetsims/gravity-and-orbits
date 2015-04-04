@@ -94,6 +94,12 @@ define( function( require ) {
       // the mass itself is set by the slider in this case.
       var radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1.0 / 3.0 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
       body.diameterProperty.set( radius * 2 );
+
+      // snap to default value if close
+      if ( Math.abs( mass - labelValue ) / labelValue < 0.03 ) {
+        body.getMassProperty().set( labelValue );
+      }
+
       updatingSlider = false;
     } );
 
