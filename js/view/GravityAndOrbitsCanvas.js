@@ -35,6 +35,11 @@ define( function( require ) {
   var DayCounter = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/DayCounter' );
   var ScaleSlider = require( 'GRAVITY_AND_ORBITS/view/scale-slider/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
+
+  // TODO: this measuring tape should perhaps live in scenery phet
+  var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
+  //var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+
 //  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
 //  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
 
@@ -214,7 +219,16 @@ define( function( require ) {
 //        addChild( new SimSpeedControlPNode( 0.1, mode.timeSpeedScaleProperty, 2.0, rewindButton.getFullBoundsReference().getMinX(), new IfElse( module.whiteBackgroundProperty, Color.black, Color.white ) ) );
 //      }
 //    } ) );
-//    addChild( new MeasuringTape( module.measuringTapeVisibleProperty, mode.measuringTapeStartPoint, mode.measuringTapeEndPoint, mode.transform ) );
+    var METERS_PER_MILE = 0.000621371192;
+    var thousandMilesMultiplier = METERS_PER_MILE / 1000;
+
+    var unitsProperty = new Property( { name: 'thousand miles', multiplier: thousandMilesMultiplier } );
+    this.addChild( new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
+      basePositionProperty: mode.measuringTapeStartPointProperty,
+      tipPositionProperty: mode.measuringTapeEndPointProperty,
+      modelViewTransform: mode.transformProperty.get()
+    } ) );
+
 //    // shows the bounds of the "stage", which is different from the canvas
 //    if ( false ) {
 //      addChild( new PhetPPath( new Rectangle.Number( 0, 0, STAGE_SIZE.width, STAGE_SIZE.height ), new BasicStroke( 1

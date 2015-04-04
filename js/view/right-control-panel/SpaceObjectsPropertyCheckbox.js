@@ -142,7 +142,7 @@ define( function( require ) {
             } )
           ]
         } ),
-        module.showMeasuringTapeProperty, CHECKBOX_OPTIONS ) );
+        module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
     }
 
     VBox.call( this, _.extend( { children: children, resize: false, spacing: 5, align: 'left', bottom: -12 }, options ) );
