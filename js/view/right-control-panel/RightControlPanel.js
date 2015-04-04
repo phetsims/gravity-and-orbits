@@ -14,10 +14,11 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PlanetModeMenu = require( 'view/right-control-panel/planet-mode-menu/PlanetModeMenu' );
-  var GravityModeMenu = require( 'view/right-control-panel/GravityModeMenu' );
-  var SpaceObjectsPropertyCheckbox = require( 'view/right-control-panel/SpaceObjectsPropertyCheckbox' );
-  var MassMenu = require( 'view/right-control-panel/mass-menu/MassMenu' );
+  var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/view/right-control-panel/PlanetModeMenu' );
+  var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/view/right-control-panel/GravityModeMenu' );
+  var MassMenu = require( 'GRAVITY_AND_ORBITS/view/right-control-panel/mass-menu/MassMenu' );
+  var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/view/right-control-panel/SpaceObjectsPropertyCheckbox' );
+
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // constants
@@ -26,21 +27,21 @@ define( function( require ) {
   var PANEL_X_MARGIN = 5;
 
   /**
-   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModule} module - Contains set of properties. Instance of PropertySet class. General model for the whole application.
    * @constructor
    */
-  function RightControlPanel( model ) {
+  function RightControlPanel( module, options ) {
 
     // menu sections
     var sections = [
-      new PlanetModeMenu( model, MENU_SECTION_OPTIONS ),
-      new GravityModeMenu( model, MENU_SECTION_OPTIONS ),
-      new SpaceObjectsPropertyCheckbox( model, MENU_SECTION_OPTIONS ),
-      new MassMenu( model, MENU_SECTION_OPTIONS )
+      new PlanetModeMenu( module, MENU_SECTION_OPTIONS ),
+      new GravityModeMenu( module, MENU_SECTION_OPTIONS ),
+      new SpaceObjectsPropertyCheckbox( module, MENU_SECTION_OPTIONS ),
+      new MassMenu( module, MENU_SECTION_OPTIONS )
     ];
 
-    // add thin rectangles to separate the differnet menu components
-    // these get inserted into the sections array inbetween each component
+    // add thin rectangles to separate the different menu components
+    // these get inserted into the sections array in-between each component
     var separators = [];
     var numSeparators = sections.length - 1;
     for ( var i = 0; i < numSeparators; i++ ) {
@@ -50,7 +51,7 @@ define( function( require ) {
     }
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
-    Panel.call( this, vbox, { fill: '#030085', stroke: STROKE, lineWidth: 2, cornerRadius: 2, resize: false, xMargin: PANEL_X_MARGIN } );
+    Panel.call( this, vbox, _.extend( { fill: '#030085', stroke: STROKE, lineWidth: 2, cornerRadius: 2, resize: false, xMargin: PANEL_X_MARGIN }, options ) );
 
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;

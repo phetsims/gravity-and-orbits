@@ -13,7 +13,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var VBox = require( 'SCENERY/nodes/VBox' );
-  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/BodyMassControl' );
+  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/view/right-control-panel/BodyMassControl' );
 
   /**
    * @param {GravityAndOrbitsModule} module

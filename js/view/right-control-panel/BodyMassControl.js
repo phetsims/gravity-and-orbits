@@ -28,7 +28,6 @@ define( function( require ) {
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
-  var MassMenuSlider = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/right-control-panel/mass-menu/MassMenuSlider' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
 
   var BACKGROUND = new Color( 3, 0, 133 );
