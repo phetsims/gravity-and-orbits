@@ -14,7 +14,9 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var MutableArrowNode = require( 'SCENERY_PHET/MutableArrowNode' );
+
+  // TODO: Look into MutableVectorNode instead - right now it isn't working correctly
+  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
 
@@ -46,7 +48,7 @@ define( function( require ) {
       return visible && !collided;
     } ).linkAttribute( this, 'visible' );
 
-    var arrowNode = new MutableArrowNode( 0, 0, 0, 0, {
+    var arrowNode = new ArrowNode( 0, 0, 0, 0, {
       headHeight: 15,
       headWidth: 15,
       tailWidth: 5,

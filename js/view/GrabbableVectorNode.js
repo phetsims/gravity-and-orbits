@@ -42,7 +42,7 @@ define( function( require ) {
     var tip = this.getTip();
 
     //a circle with text (a character) in the center, to help indicate what it represents ("v" for velocity in this sim)
-    var ellipse = Shape.ellipse( 0, 0, 40, 40, 0 );
+    var ellipse = Shape.ellipse( 0, 0, 18, 18, 0 );
     var grabArea = new Path( ellipse, {
       lineWidth: 3,
       stroke: Color.lightGray,
@@ -50,8 +50,9 @@ define( function( require ) {
     } );
 
     var text = new Text( labelText, {
-      font: new PhetFont( 28 ),
-      color: Color.gray
+      font: new PhetFont( 22 ),
+      fontWeight: 'bold',
+      fill: Color.gray
     } );
     text.center = tip;
     grabArea.center = tip;
@@ -78,6 +79,7 @@ define( function( require ) {
 
     //move behind the geometry created by the superclass
     grabArea.moveToBack();
+    text.moveToBack();
   }
 
   return inherit( VectorNode, GrabbableVectorNode );
