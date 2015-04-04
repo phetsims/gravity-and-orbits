@@ -31,7 +31,7 @@ define( function( require ) {
     for ( var i = 0; i < modes.length; i++ ) {
       content.push( { value: modes[i], node: modes[i].iconImage } );
 
-      var resetButton = new PlanetModeResetButton( module );
+      var resetButton = new PlanetModeResetButton( modes[i] );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
       (function( currentMode, resetButton ) {

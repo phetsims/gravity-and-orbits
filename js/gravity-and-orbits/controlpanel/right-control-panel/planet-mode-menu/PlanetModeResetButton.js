@@ -20,11 +20,11 @@ define( function( require ) {
   var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
 
   /**
-   * @param {GravityAndOrbitsModel} model - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsMode} mode
    * @param {Object} [options]
    * @constructor
    */
-  function PlanetModeResetButton( model, options ) {
+  function PlanetModeResetButton( mode, options ) {
     // create button
     RectangularPushButton.call( this,
       {
@@ -37,7 +37,7 @@ define( function( require ) {
         xMargin: 0,
         yMargin: 0,
         listener: function() {
-//          model.refreshMode = true;
+          mode.resetMode();
         }
       } );
 

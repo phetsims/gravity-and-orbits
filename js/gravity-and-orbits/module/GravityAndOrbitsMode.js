@@ -226,7 +226,7 @@ define( function( require ) {
      */
     resetMode: function() {
       this.model.resetBodies();
-      this.deviatedFromDefaults.set( false );
+      this.deviatedFromDefaultsProperty.set( false );
       //Same as pressing "clear" in the FloatingClockControlNode
       this.getClock().setSimulationTime( 0.0 );
     },
