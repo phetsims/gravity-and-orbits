@@ -55,7 +55,11 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     // @public
-    this.dragHandler = new MovableDragHandler( this.body.positionProperty );
+    this.dragHandler = new MovableDragHandler( this.body.positionProperty, {
+      onDrag: function() {
+        body.notifyUserModifiedPosition();
+      }
+    } );
     this.addInputListener( this.dragHandler );
 
     Property.multilink( [ this.body.positionProperty, modelViewTransformProperty ], function( position, modelViewTransform ) {

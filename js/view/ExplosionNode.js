@@ -17,7 +17,7 @@ define( function( require ) {
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/view/BodyRenderer' );
   var Node = require( 'SCENERY/nodes/Node' );
 
-  var NUM_STEPS_FOR_ANIMATION = 10;
+  var NUM_STEPS_FOR_ANIMATION = 25;
 
   /**
    *
