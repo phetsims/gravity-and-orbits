@@ -11,17 +11,13 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Image = require( 'SCENERY/nodes/Image' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Line = require( 'SCENERY/nodes/Line' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
-  var Color = require( 'SCENERY/util/Color' );
   var Dimension2 = require( 'DOT/Dimension2' );
-  var Panel = require( 'SUN/Panel' );
   var HSlider = require( 'SUN/HSlider' );
-  var Vector2 = require( 'DOT/Vector2' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   // constants

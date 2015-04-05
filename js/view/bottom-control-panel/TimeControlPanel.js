@@ -1,11 +1,11 @@
-// Copyright 2002-2013, University of Colorado Boulder
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Visual representation of speed control buttons.
- * Rewind button return to the last day, when play button was pressed.
  *
  * @author Andrey Zelenkov (Mlearner)
  * @author Sam Reid
+ * @author Aaron Davis
  */
 
 define( function( require ) {
@@ -17,7 +17,6 @@ define( function( require ) {
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
   var StepButton = require( 'SCENERY_PHET/buttons/StepButton' );
   var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
-  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
 
   /**
    * @param {GravityAndOrbitsModule} module
@@ -26,10 +25,6 @@ define( function( require ) {
    */
   function TimeControlPanel( module, options ) {
     var playProperty = module.playButtonPressedProperty;
-
-    //playProperty.link( function( playing ) {
-    //  module.getMode().getClock().setRunning( playing );
-    //} );
 
     var playPauseButton = new PlayPauseButton( playProperty );
 
@@ -41,13 +36,9 @@ define( function( require ) {
       module.getMode().rewind();
     }, playProperty );
 
-//    rewindButton.enabled = false;
-//    var getDay = function( model ) {
-//      return (model.day - model.dayOffset);
-//    };
-//
-//    model.dayProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
-//    model.dayOffsetProperty.link( function() { rewindButton.enabled = getDay( model ) > 0; } );
+    //TODO: rewind button should start disabled and enable after any property is changed
+    //rewindButton.enabled = false;
+
     HBox.call( this, _.extend( { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
   }
 
