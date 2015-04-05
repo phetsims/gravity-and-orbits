@@ -40,8 +40,8 @@ define( function( require ) {
   var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
   //var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
-  var WIDTH = 618;
-  var HEIGHT = 1024;
+  var WIDTH = 1024;
+  var HEIGHT = 618;
   var STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
   var buttonBackgroundColor = new Color( 255, 250, 125 );
 
