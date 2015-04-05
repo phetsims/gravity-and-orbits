@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
   var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/view/MassReadoutNode' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );

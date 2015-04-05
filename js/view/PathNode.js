@@ -14,11 +14,6 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Color = require( 'SCENERY/util/Color' );
-  var Vector2 = require( 'DOT/Vector2' );
-  var Property = require( 'AXON/Property' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-  var Node = require( 'SCENERY/nodes/Node' );
   var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
 
   // constants
