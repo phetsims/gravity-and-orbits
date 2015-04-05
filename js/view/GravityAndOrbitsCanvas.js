@@ -40,11 +40,9 @@ define( function( require ) {
   var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
   //var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
-//  var BACKGROUND = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/BACKGROUND' );//static
-//  var CONTROL_FONT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel/CONTROL_FONT' );//static
-
-  //var STAGE_SIZE = new Dimension2( 1024, 618 );
-  var STAGE_SIZE = new Bounds2( 0, 0, 1024, 618 );
+  var WIDTH = 618;
+  var HEIGHT = 1024;
+  var STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
   var buttonBackgroundColor = new Color( 255, 250, 125 );
 
   /**
@@ -60,8 +58,8 @@ define( function( require ) {
 
     //view size
 //    Node.call( this, new Dimension( 1500, 1500 ) );
-//    Rectangle.call( this, 0, 0, 1024, 618, { fill: 'rgba(220,220,220,0.3)'} );
-    Rectangle.call( this, 0, 0, 1024, 618 );
+//    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { fill: 'rgba(220,220,220,0.3)'} );
+    Rectangle.call( this, 0, 0, WIDTH, HEIGHT );
     var thisNode = this;
 
     //module.whiteBackgroundProperty.link ( function( whiteBackground ) {

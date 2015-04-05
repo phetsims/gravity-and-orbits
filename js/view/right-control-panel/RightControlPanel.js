@@ -1,10 +1,10 @@
-// Copyright 2002-2013, University of Colorado Boulder
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Container for right control panel.
- * Include planet mode menu, gravity switcher, checkbox with properties and mass sliders.
  *
  * @author Andrey Zelenkov (Mlearner)
+ * @author Aaron Davis
  */
 
 define( function( require ) {
@@ -27,7 +27,8 @@ define( function( require ) {
   var PANEL_X_MARGIN = 5;
 
   /**
-   * @param {GravityAndOrbitsModule} module - Contains set of properties. Instance of PropertySet class. General model for the whole application.
+   * @param {GravityAndOrbitsModule} module
+   * @param {Object} [options]
    * @constructor
    */
   function RightControlPanel( module, options ) {

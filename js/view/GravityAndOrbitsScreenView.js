@@ -37,7 +37,7 @@ define( function( require ) {
       mode.getCanvas().visible = true;
     } );
 
-    var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX } );
+    var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX, top: this.layoutBounds.top + 5, width: 200 } );
     this.addChild( controlPanelNode );
 
     var timeControlPanel = new TimeControlPanel( module, {bottom: this.layoutBounds.bottom, centerX: this.layoutBounds.centerX} );
@@ -48,8 +48,8 @@ define( function( require ) {
       listener: function() {
         module.reset();
       },
-      right: this.layoutBounds.maxX - 10,
-      bottom: this.layoutBounds.maxY - 10
+      right: this.layoutBounds.right,
+      bottom: this.layoutBounds.bottom - 5
     } );
     this.addChild( resetAllButton );
   }
