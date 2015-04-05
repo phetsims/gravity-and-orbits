@@ -55,9 +55,7 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     // @public
-    this.dragHandler = new MovableDragHandler( this.body.positionProperty, {
-      modelViewTransform: this.modelViewTransformProperty.get() // TODO: we need to update the MVT of this handler when the property changes
-    } );
+    this.dragHandler = new MovableDragHandler( this.body.positionProperty );
     this.addInputListener( this.dragHandler );
 
     Property.multilink( [ this.body.positionProperty, modelViewTransformProperty ], function( position, modelViewTransform ) {
@@ -66,6 +64,10 @@ define( function( require ) {
 
     Property.multilink( [ this.body.diameterProperty, modelViewTransformProperty ], function( diameter, modelViewTransform ) {
       thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+    } );
+
+    this.modelViewTransformProperty.link( function( modelViewTransform ) {
+      thisNode.dragHandler.setModelViewTransform( modelViewTransform );
     } );
 
     //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)

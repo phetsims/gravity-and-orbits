@@ -40,7 +40,7 @@ define( function( require ) {
   var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
   //var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
-  var WIDTH = 1024;
+  var WIDTH = 618;
   var HEIGHT = 618;
   var STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
   var buttonBackgroundColor = new Color( 255, 250, 125 );
@@ -84,12 +84,14 @@ define( function( require ) {
     //Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      var bodyNode = new BodyNode( bodies[i], mode.transformProperty, this, bodies[i].getLabelAngle(), module.whiteBackgroundProperty );
-      mode.modelBoundsProperty.link( function( bounds ) {
-        bodyNode.dragHandler.setDragBounds( bounds );
-      } );
-      this.addChild( bodyNode );
-
+      (function( i ) {
+        var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, this, bodies[ i ].getLabelAngle(), module.whiteBackgroundProperty );
+        mode.modelBoundsProperty.link( function( bounds ) {
+          bodyNode.dragHandler.setDragBounds( bounds );
+        } );
+        thisNode.addChild( bodyNode );
+        thisNode.addChild( mode.massReadoutFactory( bodyNode, module.showMassProperty ) );
+      })( i );
 
 //      var property = new Property( false );
 //      property.link( function( value ) {
@@ -121,7 +123,6 @@ define( function( require ) {
 //        }
 //      } ) );
 //
-      this.addChild( mode.massReadoutFactory( bodyNode, module.showMassProperty ) );
     }
 
     //Add gravity force vector nodes
