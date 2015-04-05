@@ -10,7 +10,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Node = require( 'SCENERY/nodes/Node' );
   var inherit = require( 'PHET_CORE/inherit' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var BodyMassControl = require( 'GRAVITY_AND_ORBITS/view/right-control-panel/BodyMassControl' );
@@ -36,7 +35,6 @@ define( function( require ) {
         }
       }
       thisNode.updateLayout();
-
     } );
   }
 

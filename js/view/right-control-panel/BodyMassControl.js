@@ -22,30 +22,14 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var HSlider = require( 'SUN/HSlider' );
   var Vector2 = require( 'DOT/Vector2' );
-  var LinearFunction = require( 'DOT/LinearFunction' );
-  var Property = require( 'AXON/Property' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/view/BodyNode' );
-  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/view/GravityAndOrbitsCanvas' );
 
-  var BACKGROUND = new Color( 3, 0, 133 );
-  var FOREGROUND = Color.WHITE;
+  // constants
   var CONTROL_FONT = new PhetFont( 14 );
-  var STAGE_SIZE = GravityAndOrbitsCanvas.STAGE_SIZE;
-
   var VIEW_MIN = 0;
-  //max value that the slider can take internally (i.e. the resolution of the slider)
-  var VIEW_MAX = 100000;
-  //Percentage of the range the slider must be in to snap to a named label tick
-
-  //private
-  var SNAP_TOLERANCE = 0.08;
-
+  var VIEW_MAX = 100000; // max value that the slider can take internally (i.e. the resolution of the slider)
+  var SNAP_TOLERANCE = 0.03;
   var THUMB_SIZE = new Dimension2( 15, 20 );
-  var MARGIN = 5;
-  var TICK_HEIGHT = 14;
   var NUM_TICKS = 4;
   var WIDTH = 130;
   var SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
@@ -62,51 +46,18 @@ define( function( require ) {
    */
   function BodyMassControl( body, min, max, labelValue, valueLabel, whiteBackgroundProperty ) {
 
-    var updatingSlider = false;
-
-    //for showing a label for a specific body such as "earth"
-    var modelToView = new LinearFunction( min, max, VIEW_MIN, VIEW_MAX );
-
     var label = new Text( body.getName(), {
       font: CONTROL_FONT,
-      fill: FOREGROUND,
+      fill: 'white',
       fontWeight: 'bold'
     } );
 
-    var bodyNode = new BodyNode(
-      body,
-      new Property( ModelViewTransform2.createSinglePointScaleInvertedYMapping(
-        new Vector2( 0, 0 ),
-        new Vector2( STAGE_SIZE.width * 0.30, STAGE_SIZE.height * 0.5 ),
-        1E-9 ) ),
-      null,
-      -Math.PI / 4,
-      whiteBackgroundProperty
-    );
-    //var image = bodyNode.renderImage( 25 );
     var image = body.createRenderer( 14 );
 
-    //Top component that shows the body's name and icon
+    // Top component that shows the body's name and icon
     var content = new HBox( { centerX: SPACING, children: [ label, image ], spacing: 10 } );
 
     var smallLabel = new Text( valueLabel, { top: content.bottom, centerX: SPACING, font: new PhetFont( 11 ), fill: 'white', pickable: false } );
-
-    body.getMassProperty().link( function( mass ) {
-      updatingSlider = true;
-
-      // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
-      // the mass itself is set by the slider in this case.
-      var radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1.0 / 3.0 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
-      body.diameterProperty.set( radius * 2 );
-
-      // snap to default value if close
-      if ( Math.abs( mass - labelValue ) / labelValue < 0.03 ) {
-        body.getMassProperty().set( labelValue );
-      }
-
-      updatingSlider = false;
-    } );
-
 
     var ticks = [];
     for( var i = 0; i < NUM_TICKS; i++ ) {
@@ -126,10 +77,23 @@ define( function( require ) {
     var sliderWithTicksNode = new VBox( { children: [ tickBox, slider ], spacing: -5, resize: false, top: smallLabel.bottom + 5 } );
 
     Node.call( this, { children: [ content, smallLabel, sliderWithTicksNode ] } );
+
+    body.getMassProperty().link( function( mass ) {
+
+      // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
+      // the mass itself is set by the slider in this case.
+      var radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1 / 3 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
+      body.diameterProperty.set( radius * 2 );
+
+      // snap to default value if close
+      if ( Math.abs( mass - labelValue ) / labelValue < SNAP_TOLERANCE ) {
+        body.getMassProperty().set( labelValue );
+      }
+    } );
   }
 
   return inherit( Node, BodyMassControl, {},
-//statics
+    // statics
     {
       VIEW_MIN: VIEW_MIN,
       VIEW_MAX: VIEW_MAX
