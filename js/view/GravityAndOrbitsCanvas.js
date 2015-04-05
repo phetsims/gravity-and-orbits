@@ -148,8 +148,8 @@ define( function( require ) {
     this.addChild( gridNode );
 
     // Add the speed control slider.
-    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom, left: STAGE_SIZE.left } ) );
-    this.addChild( new DayCounter( mode.timeFormatter, model.clock, { bottom: STAGE_SIZE.bottom, right: STAGE_SIZE.right - 200 } ) );
+    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left } ) );
+    this.addChild( new DayCounter( mode.timeFormatter, model.clock, { bottom: STAGE_SIZE.bottom - 10, right: STAGE_SIZE.right - 200 } ) );
 
 
 
@@ -263,7 +263,7 @@ define( function( require ) {
 //      }
 //    } ) );
 //    //Zoom controls
-    this.addChild( new ScaleSlider( mode.zoomLevelProperty ) );
+    this.addChild( new ScaleSlider( mode.zoomLevelProperty, { top: STAGE_SIZE.top + 10 } ) );
   }
 
   return inherit( Rectangle, GravityAndOrbitsCanvas, {

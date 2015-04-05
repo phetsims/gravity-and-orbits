@@ -40,7 +40,7 @@ define( function( require ) {
     var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX, top: this.layoutBounds.top + 5, width: 200 } );
     this.addChild( controlPanelNode );
 
-    var timeControlPanel = new TimeControlPanel( module, {bottom: this.layoutBounds.bottom, centerX: this.layoutBounds.centerX} );
+    var timeControlPanel = new TimeControlPanel( module, { bottom: this.layoutBounds.bottom - 5, centerX: this.layoutBounds.centerX } );
     this.addChild( timeControlPanel );
 
     // Create and add the Reset All Button in the bottom right, which resets the model

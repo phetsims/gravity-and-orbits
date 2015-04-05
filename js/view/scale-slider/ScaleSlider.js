@@ -94,7 +94,7 @@ define( function( require ) {
 
     options = _.extend( { scale: 0.63 }, options );
 
-    Node.call( this, options );
+    Node.call( this );
 
     var verticalSlider = new HSlider( scaleProperty, RANGE, {
       trackSize: TRACK_SIZE,
@@ -123,6 +123,8 @@ define( function( require ) {
     minusButton.x = -BUTTON_SIZE / 2;
     minusButton.y = 190;
     this.addChild( minusButton );
+
+    this.mutate( options );
   }
 
   return inherit( Node, ScaleSlider );
