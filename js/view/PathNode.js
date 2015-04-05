@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * Shows the "trail" left behind by a Body as it moves over time, which disappears after about 2 orbits
@@ -34,9 +34,8 @@ define( function( require ) {
     CanvasNode.call( this, { canvasBounds: canvasBounds } );
     var thisNode = this;
 
-    //points in view space
-    //private
-    this.points = [];
+    // points in view space
+    this.points = []; // @private
     this.body = body;
     this.color = color;
 
@@ -95,7 +94,7 @@ define( function( require ) {
       var i;
 
       context.strokeStyle = this.color.toCSS();
-      context.strokeWidth = STROKE_WIDTH;
+      context.lineWidth = STROKE_WIDTH;
       context.lineCap = 'round';
       context.lineJoin = 'round';
       context.beginPath();
