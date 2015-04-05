@@ -11,9 +11,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/view/GravityAndOrbitsCanvas' );
-  var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
-  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var RightControlPanel = require( 'GRAVITY_AND_ORBITS/view/right-control-panel/RightControlPanel' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/TimeControlPanel' );
 

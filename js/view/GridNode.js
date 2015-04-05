@@ -14,7 +14,6 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
-  var Line = require( 'SCENERY/nodes/Line' );
 
   //private
   var NUM_GRID_LINES = 10;
