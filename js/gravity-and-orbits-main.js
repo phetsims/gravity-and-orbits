@@ -9,9 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var GravityAndOrbitsScreen = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsScreen' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
-  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/view/GravityAndOrbitsScreenView' );
   var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
@@ -20,7 +18,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
-  var ScreenView = require( 'JOIST/ScreenView' );
   var Screen = require( 'JOIST/Screen' );
   var Property = require( 'AXON/Property' );
   var Image = require( 'SCENERY/nodes/Image' );
@@ -54,9 +51,6 @@ define( function( require ) {
   }
 
   inherit( GravityAndOrbitsModule, CartoonModule );
-
-  // constants
-  var LAYOUT_BOUNDS = new Bounds2( 0, 0, 768, 504 );
 
   var simOptions = {
     credits: {
