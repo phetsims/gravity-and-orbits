@@ -1,10 +1,11 @@
-// Copyright 2002-2012, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * ModelState represents an immutable representation of the entire physical state and code for performing the numerical integration which produces the next ModelState.
  * It is used by the GravityAndOrbitsModel to update the physics.
  *
  * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';
@@ -52,19 +53,42 @@ define( function( require ) {
       //See http://www.fisica.uniud.it/~ercolessi/md/md/node21.html
       var newState = [];
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
-        var bodyState = this.bodyStates[i];
+        var bodyState = this.bodyStates[ i ];
+
+        var dtSquaredOver2 = dt * dt / 2;
+        var dtOver2 = dt / 2;
 
         //Velocity Verlet (see svn history for Euler)
-        var newPosition = bodyState.position.plus( bodyState.velocity.times( dt ) ).plus( bodyState.acceleration.times( dt * dt / 2 ) );
-        var newVelocityHalfStep = bodyState.velocity.plus( bodyState.acceleration.times( dt / 2 ) );
-        var newAcceleration = this.getForce( bodyState, newPosition, gravityEnabledProperty ).times( -1.0 / bodyState.mass );
-        var newVelocity = newVelocityHalfStep.plus( newAcceleration.times( dt / 2.0 ) );
+        var newPosition = new Vector2(
+          bodyState.position.x + ( bodyState.velocity.x * dt ) + ( bodyState.acceleration.x * dtSquaredOver2 ),
+          bodyState.position.y + ( bodyState.velocity.y * dt ) + ( bodyState.acceleration.y * dtSquaredOver2 ) );
+
+        var velocityHalfX = bodyState.velocity.x + bodyState.acceleration.x * dtOver2;
+        var velocityHalfY = bodyState.velocity.y + bodyState.acceleration.y * dtOver2;
+
+        var force = this.getForce( bodyState, bodyState.position, gravityEnabledProperty );
+        var newAcceleration = new Vector2(
+          force.x * ( -1 / bodyState.mass ),
+          force.y * ( -1 / bodyState.mass ) );
+
+        var newVelocity = new Vector2(
+          velocityHalfX + bodyState.acceleration.x * dtOver2,
+          velocityHalfY + bodyState.acceleration.y * dtOver2 );
+
         newState.push( new BodyState( newPosition, newVelocity, newAcceleration, bodyState.mass, bodyState.exploded ) );
       }
       return new ModelState( newState );
     },
 
     //TODO: limit distance so forces don't become infinite
+    /**
+     *
+     * @param {BodyState} source
+     * @param {BodyState} target
+     * @param {Vector2} newTargetPosition
+     * @returns {*}
+     * @private
+     */
     _getForce: function( source, target, newTargetPosition ) {
       if ( source.position.equals( newTargetPosition ) ) {
 
@@ -85,14 +109,20 @@ define( function( require ) {
       return newPosition.minus( source.position ).normalized();
     },
 
-    //Get the force on body at its proposed new position, unconventional but necessary for velocity verlet.
+    /**
+     * Get the force on body at its proposed new position, unconventional but necessary for velocity verlet.
+     * @param {BodyState} target
+     * @param {Vector2} newTargetPosition
+     * @param {Property<boolean>} gravityEnabledProperty
+     * @returns {Vector2}
+     */
     getForce: function( target, newTargetPosition, gravityEnabledProperty ) {
 
       //zero vector, for no gravity
       var sum = new Vector2();
       if ( gravityEnabledProperty.get() ) {
         for ( var i = 0; i < this.bodyStates.length; i++ ) {
-          var source = this.bodyStates[i];
+          var source = this.bodyStates[ i ];
           if ( source != target ) {
             sum = sum.plus( this._getForce( source, target, newTargetPosition ) );
           }
@@ -103,7 +133,7 @@ define( function( require ) {
 
     //Get the BodyState for the specified index--future work could change this signature to getState(Body body) since it would be safer. See usage in GravityAndOrbitsModel constructor.
     getBodyState: function( index ) {
-      return this.bodyStates[index];
+      return this.bodyStates[ index ];
     }
   } );
 } );
