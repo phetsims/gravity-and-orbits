@@ -222,11 +222,19 @@ define( function( require ) {
     var thousandMilesMultiplier = METERS_PER_MILE / 1000;
 
     var unitsProperty = new Property( { name: 'thousand miles', multiplier: thousandMilesMultiplier } );
-    this.addChild( new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
+    var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
       modelViewTransform: mode.transformProperty.get()
-    } ) );
+    } );
+
+    mode.transformProperty.link( function( transform ) {
+      measuringTape.setModelViewTransform( transform );
+    } );
+    mode.modelBoundsProperty.link( function( bounds ) {
+      measuringTape.setDragBounds( bounds );
+    } );
+    this.addChild( measuringTape );
 
 //    // shows the bounds of the "stage", which is different from the canvas
 //    if ( false ) {
