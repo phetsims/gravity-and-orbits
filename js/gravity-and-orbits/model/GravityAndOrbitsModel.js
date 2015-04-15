@@ -17,7 +17,7 @@ define( function( require ) {
   var ModelState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/ModelState' );
 
   //Subdivide DT intervals by this factor to improve smoothing, otherwise some orbits look too non-smooth (you can see their corners), see #3050
-  var SMOOTHING_STEPS = 5;
+  var SMOOTHING_STEPS = 1; // TODO: this was 5 in the java version but kills performance in HTML5. Perhaps is it not needed.
 
   /**
    * Return the smaller of two Body instances, for determining which survives a collision.
