@@ -40,10 +40,13 @@ define( function( require ) {
   var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
   //var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
+  // constants
   var WIDTH = 618;
   var HEIGHT = 618;
   var STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
   var buttonBackgroundColor = new Color( 255, 250, 125 );
+  var METERS_PER_MILE = 0.000621371192;
+  var THOUSAND_MILES_MULTIPLIER = METERS_PER_MILE / 1000;
 
   /**
    *
@@ -71,15 +74,15 @@ define( function( require ) {
 
     this.paths = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      var path = new PathNode( bodies[i], mode.transformProperty, module.showPathProperty, bodies[i].getColor(), STAGE_SIZE );
+      var path = new PathNode( bodies[ i ], mode.transformProperty, module.showPathProperty, bodies[ i ].getColor(), STAGE_SIZE );
       this.paths.push( path );
       this.addChild( path );
     }
 
     var forceVectorColorFill = new Color( 50, 130, 215 );
-    var forceVectorColorOutline = new Color(64, 64, 64);
+    var forceVectorColorOutline = new Color( 64, 64, 64 );
     var velocityVectorColorFill = PhetColorScheme.RED_COLORBLIND;
-    var velocityVectorColorOutline = new Color(64, 64, 64);
+    var velocityVectorColorOutline = new Color( 64, 64, 64 );
 
     //Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
@@ -130,20 +133,20 @@ define( function( require ) {
 
     //Add gravity force vector nodes
     for ( i = 0; i < bodies.length; i++ ) {
-      this.addChild( new VectorNode( bodies[i], mode.transformProperty, module.showGravityForceProperty, bodies[i].getForceProperty(), forceScale, forceVectorColorFill, forceVectorColorOutline ) );
+      this.addChild( new VectorNode( bodies[ i ], mode.transformProperty, module.showGravityForceProperty, bodies[ i ].getForceProperty(), forceScale, forceVectorColorFill, forceVectorColorOutline ) );
     }
 
     //Add velocity vector nodes
     for ( i = 0; i < bodies.length; i++ ) {
-      if ( !bodies[i].fixed ) {
-        this.addChild( new GrabbableVectorNode( bodies[i], mode.transformProperty, module.showVelocityProperty, bodies[i].getVelocityProperty(), mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline, //TODO: i18n of "V", also recommended to trim to 1 char
+      if ( !bodies[ i ].fixed ) {
+        this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty, bodies[ i ].getVelocityProperty(), mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline, //TODO: i18n of "V", also recommended to trim to 1 char
           'V' ) );
       }
     }
 
     //Add explosion nodes, which are always in the scene graph but only visible during explosions
     for ( i = 0; i < bodies.length; i++ ) {
-      this.addChild( new ExplosionNode( bodies[i], mode.transformProperty ) );
+      this.addChild( new ExplosionNode( bodies[ i ], mode.transformProperty ) );
     }
 
     //Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
@@ -154,7 +157,6 @@ define( function( require ) {
     // Add the speed control slider.
     this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left } ) );
     this.addChild( new DayCounter( mode.timeFormatter, model.clock, { bottom: STAGE_SIZE.bottom - 10, right: STAGE_SIZE.right - 200 } ) );
-
 
 
     // Control Panel is now added in the screen view
@@ -221,14 +223,12 @@ define( function( require ) {
 //        addChild( new SimSpeedControlPNode( 0.1, mode.timeSpeedScaleProperty, 2.0, rewindButton.getFullBoundsReference().getMinX(), new IfElse( module.whiteBackgroundProperty, Color.black, Color.white ) ) );
 //      }
 //    } ) );
-    var METERS_PER_MILE = 0.000621371192;
-    var thousandMilesMultiplier = METERS_PER_MILE / 1000;
 
-    var unitsProperty = new Property( { name: 'thousand miles', multiplier: thousandMilesMultiplier } );
+    var unitsProperty = new Property( { name: GAOStrings.THOUSAND_MILES, multiplier: THOUSAND_MILES_MULTIPLIER } );
     var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
-      modelViewTransform: mode.transformProperty.get()
+      significantFigures: ( bodies[ 1 ].name === 'Satellite' ) ? 1 : 0
     } );
 
     mode.transformProperty.link( function( transform ) {
