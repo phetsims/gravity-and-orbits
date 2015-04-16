@@ -32,7 +32,7 @@ define( function( require ) {
     // Add the canvases, one for each of the four modes
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
-      var gaoCanvas = modes[i].getCanvas();
+      var gaoCanvas = modes[ i ].getCanvas();
       gaoCanvas.visible = false;
       this.addChild( gaoCanvas );
     }
@@ -40,7 +40,7 @@ define( function( require ) {
     // Make sure only one canvas is visible at a time
     module.modeProperty.link( function( mode ) {
       for ( var i = 0; i < modes.length; i++ ) {
-        modes[i].getCanvas().visible = false;
+        modes[ i ].getCanvas().visible = false;
       }
       mode.getCanvas().visible = true;
     } );
@@ -66,7 +66,7 @@ define( function( require ) {
 
     step: function( dt ) {
       var paths = this.module.getMode().getCanvas().paths;
-      for ( var i = 0; i < paths.length; i ++ ) {
+      for ( var i = 0; i < paths.length; i++ ) {
         paths[ i ].step();
       }
     }
