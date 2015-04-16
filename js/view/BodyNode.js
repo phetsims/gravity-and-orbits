@@ -21,7 +21,7 @@ define( function( require ) {
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Bounds2 = require( 'DOT/Bounds2' );
 
@@ -90,11 +90,12 @@ define( function( require ) {
       var tip = northEastVector.times( 10 ).plus( viewCenter );
       var tail = northEastVector.times( 50 ).plus( viewCenter );
 
-      node.addChild( new ArrowNode( tail.x, tail.y, tip.x, tip.y, { fill: 'yellow' } ) );
+      node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: 'yellow' } ) );
       var text = new Text( body.getName(), {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
-        y: tail.y - this.height - 10
+        y: tail.y - this.height - 10,
+        fill: 'white'
       } );
       node.addChild( text );
 
