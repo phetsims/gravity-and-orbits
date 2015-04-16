@@ -1,4 +1,5 @@
 // Copyright 2002-2015, University of Colorado
+
 /**
  * Provides a textual readout of a Body's mass in "earth masses"
  *

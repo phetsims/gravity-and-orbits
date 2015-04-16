@@ -1,4 +1,5 @@
 // Copyright 2002-2015, University of Colorado
+
 /**
  * Draws a vector for a Body, such as a force vector or velocity vector.
  *
@@ -35,13 +36,13 @@ define( function( require ) {
     Node.call( this );
     var thisNode = this;
 
-    this.body = body; // private
-    this.vectorProperty = vectorProperty; // private
-    this.body = body; // private
-    this.transformProperty = transformProperty; // private
-    this.scale = scale; // private
+    this.body = body; // @private
+    this.vectorProperty = vectorProperty; // @private
+    this.body = body; // @private
+    this.transformProperty = transformProperty; // @private
+    this.scale = scale; // @private
 
-    //Only show if the body hasn't collided
+    // Only show if the body hasn't collided
     new DerivedProperty( [ visibleProperty, body.getCollidedProperty() ], function( visible, collided ) {
       return visible && !collided;
     } ).linkAttribute( this, 'visible' );
@@ -67,7 +68,7 @@ define( function( require ) {
 
   return inherit( Node, VectorNode, {
 
-      //private
+      // @private
       getTail: function() {
         return this.transformProperty.get().modelToViewPosition( this.body.getPositionProperty().get() );
       },
@@ -81,8 +82,7 @@ define( function( require ) {
         var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
 
         if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
-          //force = force.getInstanceOfMagnitude( minArrowLength );
-          force = force.times( minArrowLength );
+          force = force.times( minArrowLength / force.magnitude() );
         }
         return new Vector2( force.x + tail.x, force.y + tail.y );
       }
