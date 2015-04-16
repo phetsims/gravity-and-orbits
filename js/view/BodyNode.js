@@ -26,7 +26,7 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
 
   /**
-   *
+   * Constructor for BodyNode
    * @param {Body} body
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    * @param {PComponent} parentComponent
