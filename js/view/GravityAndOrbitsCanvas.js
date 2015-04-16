@@ -89,8 +89,11 @@ define( function( require ) {
         mode.modelBoundsProperty.link( function( bounds ) {
           bodyNode.dragHandler.setDragBounds( bounds );
         } );
+
+        var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
         thisNode.addChild( bodyNode );
-        thisNode.addChild( mode.massReadoutFactory( bodyNode, module.showMassProperty ) );
+        bodyNode.addChild( massReadoutNode );
+
       })( i );
 
 //      var property = new Property( false );

@@ -14,8 +14,9 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var Property = require( 'AXON/Property' );
 
-  function MassReadoutNode( bodyNode, visible ) {
+  function MassReadoutNode( bodyNode, visibleProperty ) {
     Node.call( this );
     var thisNode = this;
     this.bodyNode = bodyNode;
@@ -23,44 +24,34 @@ define( function( require ) {
     var readoutText = new Text( this.createText(), {
       pickable: false,
       font: new PhetFont( 18 ),
-      color: 'white' } );
+      fill: 'white'
+    } );
     this.addChild( readoutText );
+
+    var updateLocation = function() {
+      var bounds = bodyNode.getBodyRenderer().getBounds();
+      
+      thisNode.x = bounds.centerX - thisNode.width / 2;
+      if ( bodyNode.getBody().isMassReadoutBelow() ) {
+        thisNode.y = bounds.maxX + thisNode.height;
+      }
+      else {
+        thisNode.y = bounds.minY - thisNode.height;
+      }
+    };
+
     bodyNode.getBody().getMassProperty().link( function() {
       readoutText.setText( thisNode.createText() );
+      updateLocation();
     } );
-//
-//    var updateLocation = new PropertyChangeListener().withAnonymousClassBody( {
-//      propertyChange: function( evt ) {
-//        var bounds = bodyNode.getBodyRenderer().getGlobalFullBounds();
-//        globalToLocal( bounds );
-//        localToParent( bounds );
-//        if ( bodyNode.getBody().isMassReadoutBelow() ) {
-//          setOffset( bounds.getCenterX() - getFullBounds().getWidth() / 2, bounds.getMaxY() );
-//        }
-//        else {
-//          setOffset( bounds.getCenterX() - getFullBounds().getWidth() / 2, bounds.getMinY() - getFullBounds().getHeight() );
-//        }
-//      }
-//    } );
-//    bodyNode.addPropertyChangeListener( Node.PROPERTY_FULL_BOUNDS, updateLocation );
-//    //Updating on visibility changes ensures that the labels appear in the correct place initially
-//    visible.addObserver( new SimpleObserver().withAnonymousClassBody( {
-//      update: function() {
-//        updateLocation.propertyChange( null );
-//      }
-//    } ) );
-//    new And( visible, new Not( bodyNode.getBody().getCollidedProperty() ) ).withAnonymousClassBody( {
-//      initializer: function() {
-//        addObserver( new SimpleObserver().withAnonymousClassBody( {
-//          update: function() {
-//            setVisible( get() );
-//          }
-//        } ) );
-//      }
-//    } );
+
+    visibleProperty.link( function( visible ) {
+      if ( !bodyNode.getBody().getCollidedProperty().get() ) {
+        thisNode.visible = visible;
+        updateLocation();
+      }
+    } );
   }
 
-  return inherit( Node, MassReadoutNode, {
-    createText: function() {}
-  } );
+  return inherit( Node, MassReadoutNode );
 } );
