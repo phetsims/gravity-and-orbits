@@ -41,7 +41,7 @@ define( function( require ) {
   //var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
   // constants
-  var WIDTH = 618;
+  var WIDTH = 845; // this is the same ratio as the Java STAGE_SIZE, perhaps not necessary to keep it exactly the same?
   var HEIGHT = 618;
   var STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
   var buttonBackgroundColor = new Color( 255, 250, 125 );
@@ -87,17 +87,10 @@ define( function( require ) {
     //Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      (function( i ) {
-        var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, this, bodies[ i ].getLabelAngle(), module.whiteBackgroundProperty );
-        mode.modelBoundsProperty.link( function( bounds ) {
-          bodyNode.dragHandler.setDragBounds( bounds );
-        } );
-
-        var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
-        thisNode.addChild( bodyNode );
-        bodyNode.addChild( massReadoutNode );
-
-      })( i );
+      var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, this, bodies[ i ].getLabelAngle(), module.whiteBackgroundProperty );
+      var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
+      thisNode.addChild( bodyNode );
+      bodyNode.addChild( massReadoutNode );
 
 //      var property = new Property( false );
 //      property.link( function( value ) {
