@@ -1,8 +1,10 @@
-// Copyright 2002-2014, University of Colorado Boulder
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
+ * GravityAndOrbitsScreenView. This file was not in the original Java code, but was created to have the sim follow the
+ * PhET HTML5 sim conventions.
  *
- * @author PhET Interactive Simulations
+ * @author Aaron Davis
  */
 define( function( require ) {
   'use strict';
@@ -15,6 +17,10 @@ define( function( require ) {
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/TimeControlPanel' );
 
   /**
+   * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module object as
+   * a parameter instead of a model. This seemed like the easiest way to port the Java version, which has one module for each
+   * screen. This is the ScreenView for both screens in this sim.
+   *
    * @param {GravityAndOrbitsModule} module
    * @constructor
    */
@@ -23,6 +29,7 @@ define( function( require ) {
     ScreenView.call( this );
     this.module = module;
 
+    // Add the canvases, one for each of the four modes
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
       var gaoCanvas = modes[i].getCanvas();
@@ -30,6 +37,7 @@ define( function( require ) {
       this.addChild( gaoCanvas );
     }
 
+    // Make sure only one canvas is visible at a time
     module.modeProperty.link( function( mode ) {
       for ( var i = 0; i < modes.length; i++ ) {
         modes[i].getCanvas().visible = false;
