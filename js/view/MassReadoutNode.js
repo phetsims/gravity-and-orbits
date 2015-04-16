@@ -30,7 +30,7 @@ define( function( require ) {
 
     var updateLocation = function() {
       var bounds = bodyNode.getBodyRenderer().getBounds();
-      
+
       thisNode.x = bounds.centerX - thisNode.width / 2;
       if ( bodyNode.getBody().isMassReadoutBelow() ) {
         thisNode.y = bounds.maxX + thisNode.height;
