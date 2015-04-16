@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable, which changes
@@ -28,7 +28,7 @@ define( function( require ) {
   /**
    *
    * @param {Body} body
-   * @param {Property.<ModelViewTransform>} modelViewTransformProperty
+   * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    * @param {PComponent} parentComponent
    * @param {number} labelAngle
    * @param {boolean} whiteBackgroundProperty
@@ -40,10 +40,9 @@ define( function( require ) {
 
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
-    // private attributes
-    this.modelViewTransformProperty = modelViewTransformProperty;
-    this.body = body;
-    this.whiteBackgroundProperty = whiteBackgroundProperty;
+    this.modelViewTransformProperty = modelViewTransformProperty; // @private
+    this.body = body; // @private
+    this.whiteBackgroundProperty = whiteBackgroundProperty; // @private
 
     var thisNode = this;
 
@@ -74,14 +73,18 @@ define( function( require ) {
       thisNode.dragHandler.setModelViewTransform( modelViewTransform );
     } );
 
-    //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
+    // Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
     this.addChild( this.createArrowIndicator( this.body, labelAngle ) );
   }
 
   return inherit( Node, BodyNode, {
 
-    //Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
-    //private
+    /**
+     * Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
+     * @param body
+     * @param labelAngle
+     * @private
+     */
     createArrowIndicator: function( body, labelAngle ) {
       var thisNode = this;
       var node = new Node();
@@ -110,18 +113,18 @@ define( function( require ) {
       return node;
     },
 
-    //private
+    // @private
     getPosition: function( modelViewTransformProperty, body ) {
       return modelViewTransformProperty.get().modelToView( body.getPosition() );
     },
 
-    //private
+    // @private
     getViewDiameter: function() {
       var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.getDiameter() );
       return Math.max( viewDiameter, 2 );
     },
 
-    //Create a new image at the specified width. Use body.createRenderer() instead of bodyRenderer since we must specify a new width value
+    // Create a new image at the specified width. Use body.createRenderer() instead of bodyRenderer since we must specify a new width value
     renderImage: function( width ) {
       return this.body.createRenderer( width );
     },
