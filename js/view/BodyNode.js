@@ -30,14 +30,11 @@ define( function( require ) {
    * @param {Body} body
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    * @param {PComponent} parentComponent
-   * @param {number} labelAngle
+   * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
    * @param {boolean} whiteBackgroundProperty
    * @constructor
    */
-  function BodyNode( body, modelViewTransformProperty, //Keep track of the mouse position in case a body moves underneath a stationary mouse (in which case the mouse should become a hand cursor)
-                     parentComponent, //Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
-                     labelAngle, whiteBackgroundProperty ) {
-
+  function BodyNode( body, modelViewTransformProperty, parentComponent, labelAngle, whiteBackgroundProperty ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     this.modelViewTransformProperty = modelViewTransformProperty; // @private
