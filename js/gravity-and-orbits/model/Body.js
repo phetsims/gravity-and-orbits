@@ -13,6 +13,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
+  var Bounds2 = require( 'DOT/Bounds2' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PropertySet = require( 'AXON/PropertySet' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
@@ -52,7 +53,7 @@ define( function( require ) {
       force: new Vector2(),
       diameter: diameter, // number
       clockTicksSinceExplosion: 0,
-      bounds: new Rectangle( 0, 0, 0, 0 ) //if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
+      bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
     } );
 
     this.userComponent = userComponent;//sun is immobile in cartoon mode
@@ -532,9 +533,9 @@ define( function( require ) {
      * @param {GravityAndOrbitsModel} model
      */
     returnBody: function( model ) {
-      if ( this.collidedProperty.get() || !bounds.get().contains( this.getPosition() ) ) {
+      if ( this.collidedProperty.get() || !this.bounds.containsPoint( this.getPosition() ) ) {
         this.setCollided( false );
-        this.clearPath();//so there is no sudden jump in path from old to new location
+        this.clearPath(); // so there is no sudden jump in path from old to new location
         this.doReturnBody( model );
       }
     },
@@ -574,7 +575,7 @@ define( function( require ) {
      * @return {Property<Rectangle>}
      */
     getBounds: function() {
-      return this.bounds;
+      return this.boundsProperty;
     }
 
   } );

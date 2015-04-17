@@ -20,6 +20,9 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var TextPushButton = require( 'SUN/buttons/TextPushButton' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/view/VectorNode' );
   var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/view/GrabbableVectorNode' );
@@ -92,36 +95,12 @@ define( function( require ) {
       thisNode.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
 
-//      var property = new Property( false );
-//      property.link( function( value ) {
-//        var canvasBounds = new Rectangle.Number( 0, 0, GravityAndOrbitsCanvas.this.getWidth(), GravityAndOrbitsCanvas.this.getHeight() );
-//        set( !canvasBounds.intersects( bodyNode.getGlobalFullBounds() ) );
-//      } );
-//
-//      returnable.push( new Property( false ).withAnonymousClassBody( {
-//        initializer: function() {
-//          var updateReturnable = new SimpleObserver().withAnonymousClassBody( {
-//            update: function() {
-//              var canvasBounds = new Rectangle.Number( 0, 0, GravityAndOrbitsCanvas.this.getWidth(), GravityAndOrbitsCanvas.this.getHeight() );
-//              set( !canvasBounds.intersects( bodyNode.getGlobalFullBounds() ) );
-//            }
-//          } );
-//          body.getPositionProperty().addObserver( updateReturnable );
-//          //This listener solves the problem that the 'return object' button is in the wrong state on startup
-//          addHierarchyListener( new HierarchyListener().withAnonymousClassBody( {
-//            hierarchyChanged: function( e ) {
-//              updateReturnable.update();
-//            }
-//          } ) );
-//          //This component listener solves the problem that the 'return object' button is in the wrong state when switching between modes
-//          addComponentListener( new ComponentAdapter().withAnonymousClassBody( {
-//            componentResized: function( e ) {
-//              updateReturnable.update();
-//            }
-//          } ) );
-//        }
-//      } ) );
-//
+      (function( bodyNode ) {
+        var property = new DerivedProperty( [ bodies[ i ].positionProperty ], function() {
+          return !STAGE_SIZE.intersectsBounds( bodyNode.bounds );
+        } );
+        returnable.push( property );
+      })( bodyNode );
     }
 
     //Add gravity force vector nodes
@@ -221,7 +200,7 @@ define( function( require ) {
     var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
-      significantFigures: ( bodies[ 1 ].name === 'Satellite' ) ? 1 : 0
+      significantFigures: ( bodies[ 1 ].name === 'Satellite' ) ? 1 : 0 // space station gets 1 sig fig, the other bodies have 0
     } );
 
     mode.transformProperty.link( function( transform ) {
@@ -232,42 +211,31 @@ define( function( require ) {
     } );
     this.addChild( measuringTape );
 
-//    // shows the bounds of the "stage", which is different from the canvas
-//    if ( false ) {
-//      addChild( new PhetPPath( new Rectangle.Number( 0, 0, STAGE_SIZE.width, STAGE_SIZE.height ), new BasicStroke( 1
-//      f
-//    ),
-//      Color.RED
-//    ))
-//      ;
-//    }
-//    //Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
-//    var stage = new Rectangle.Number( 0, 0, STAGE_SIZE.width, STAGE_SIZE.height );
-//    for ( var body in mode.getModel().getBodies() ) {
-//      body.getBounds().set( mode.transform.get().viewToModel( stage ) );
-//    }
-//    //If any body is out of bounds, show a "return object" button
-//    var anythingReturnable = new MultiwayOr( returnable );
-//    addChild( new TextButtonNode( RETURN_OBJECT ).withAnonymousClassBody( {
-//      initializer: function() {
-//        setFont( CONTROL_FONT );
-//        setBackground( buttonBackgroundColor );
-//        addActionListener( new ActionListener().withAnonymousClassBody( {
-//          actionPerformed: function( e ) {
-//            model.returnBodies();
-//            //At 3/21/2011 meeting we decided that "return object" button should also always pause the clock.
-//            module.playButtonPressed.set( false );
-//          }
-//        } ) );
-//        anythingReturnable.addObserver( new SimpleObserver().withAnonymousClassBody( {
-//          update: function() {
-//            setVisible( anythingReturnable.get() );
-//          }
-//        } ) );
-//        setOffset( 100, 100 );
-//      }
-//    } ) );
-//    //Zoom controls
+    // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
+    for ( i = 0; i < bodies.length; i++ ) {
+      bodies[i].getBounds().set( STAGE_SIZE );
+    }
+
+    // If any body is out of bounds, show a "return object" button
+    var anythingReturnable = new DerivedProperty( returnable, function() {
+      return _.any( arguments, _.identity );
+    } );
+
+    var returnButton = new TextPushButton( GAOStrings.RETURN_OBJECT, {
+      font: new PhetFont( 16 ),
+      textFill: 'white',
+      x: 100,
+      y: 100,
+      listener: function() {
+        model.returnBodies();
+        module.playButtonPressedProperty.set( false );
+      }
+    } );
+    this.addChild( returnButton );
+
+    anythingReturnable.linkAttribute( returnButton, 'visible' );
+
+    // Zoom controls
     this.addChild( new ScaleSlider( mode.zoomLevelProperty, { top: STAGE_SIZE.top + 10 } ) );
   }
 
