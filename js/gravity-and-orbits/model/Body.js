@@ -14,6 +14,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
   var Bounds2 = require( 'DOT/Bounds2' );
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PropertySet = require( 'AXON/PropertySet' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
@@ -297,19 +298,19 @@ define( function( require ) {
     addPathPoint: function() {
       var i;
       while ( this.path.length + 1//account for the point that will be added
-        > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
+              > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
 //        this.path.remove( 0 );
         this.path.shift();
 
         for ( i = 0; i < this.pathListeners.length; i++ ) {
-          this.pathListeners[i].pointRemoved();
+          this.pathListeners[ i ].pointRemoved();
         }
       }
       var pathPoint = this.getPosition();
       this.path.push( pathPoint );
 
       for ( i = 0; i < this.pathListeners.length; i++ ) {
-        this.pathListeners[i].pointAdded( pathPoint );
+        this.pathListeners[ i ].pointAdded( pathPoint );
       }
     },
 
@@ -317,7 +318,7 @@ define( function( require ) {
 //      this.path.clear();
       this.path = [];
       for ( var i = 0; i < this.pathListeners.length; i++ ) {
-        this.pathListeners[i].cleared();
+        this.pathListeners[ i ].cleared();
       }
     },
 
@@ -495,7 +496,7 @@ define( function( require ) {
 
     notifyUserModifiedPosition: function() {
       for ( var i = 0; i < this.userModifiedPositionListeners.length; i++ ) {
-        this.userModifiedPositionListeners[i].call( this );
+        this.userModifiedPositionListeners[ i ].call( this );
       }
     },
 
@@ -508,7 +509,7 @@ define( function( require ) {
 
     notifyUserModifiedVelocity: function() {
       for ( var i = 0; i < this.userModifiedVelocityListeners.length; i++ ) {
-        this.userModifiedVelocityListeners[i].call( this );
+        this.userModifiedVelocityListeners[ i ].call( this );
       }
     },
 
@@ -521,10 +522,13 @@ define( function( require ) {
     },
 
     /**
-     * @returns {MultiwayOr}
+     * @returns {DerivedProperty}
      */
     anyPropertyDifferent: function() {
-      return new MultiwayOr( Arrays.asList( this.positionProperty.different(), this.velocityProperty.different(), this.massProperty.different(), this.collidedProperty.different() ) );
+      var properties = [ this.positionProperty.different(), this.velocityProperty.different(), this.massProperty.different(), this.collidedProperty.different() ];
+      return new DerivedProperty( properties, function() {
+        return _.any( arguments, _.identity );
+      } );
     },
 
     /**

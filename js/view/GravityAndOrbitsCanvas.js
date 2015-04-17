@@ -38,6 +38,7 @@ define( function( require ) {
   var DayCounter = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/DayCounter' );
   var ScaleSlider = require( 'GRAVITY_AND_ORBITS/view/scale-slider/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
+  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/TimeControlPanel' );
 
   // TODO: this measuring tape should perhaps live in scenery phet
   var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
@@ -57,13 +58,10 @@ define( function( require ) {
    * @param {GravityAndOrbitsModule} module
    * @param {GravityAndOrbitsMode} mode
    * @param {number} forceScale
-   * @param {Bounds2} layoutBounds
    * @constructor
    */
-  function GravityAndOrbitsCanvas( model, module, mode, forceScale, layoutBounds ) {
+  function GravityAndOrbitsCanvas( model, module, mode, forceScale ) {
 
-    //view size
-//    Node.call( this, new Dimension( 1500, 1500 ) );
 //    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { fill: 'rgba(220,220,220,0.3)'} );
     Rectangle.call( this, 0, 0, WIDTH, HEIGHT );
     var thisNode = this;
@@ -130,72 +128,13 @@ define( function( require ) {
     this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left } ) );
     this.addChild( new DayCounter( mode.timeFormatter, model.clock, { bottom: STAGE_SIZE.bottom - 10, right: STAGE_SIZE.right - 200 } ) );
 
+    // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
-    // Control Panel is now added in the screen view
+    // Add play/pause, rewind, and step buttons
+    var timeControlPanel = new TimeControlPanel( module, bodies, { bottom: STAGE_SIZE.bottom - 5, centerX: STAGE_SIZE.centerX } );
+    this.addChild( timeControlPanel );
 
-//
-//    //Reset mode button
-//    var buttonForegroundColor = BLACK;
-//    var resetModeButton = new TextButtonNode( RESET, CONTROL_FONT ).withAnonymousClassBody( {
-//      initializer: function() {
-//        setUserComponent( UserComponents.resetButton );
-//        setForeground( buttonForegroundColor );
-//        setBackground( buttonBackgroundColor );
-//        setOffset( controlPanelNode.getFullBounds().getCenterX() - getFullBounds().getWidth() / 2, controlPanelNode.getFullBounds().getMaxY() + 5 );
-//        addActionListener( new ActionListener().withAnonymousClassBody( {
-//          actionPerformed: function( e ) {
-//            //also clears the deviated enable flag
-//            module.modeProperty.get().resetMode();
-//          }
-//        } ) );
-//      }
-//    } );
-//
-//    this.addChild( resetModeButton );
-//
-//    //Reset all button
-//    this.addChild( new ResetAllButtonNode( module, this, CONTROL_FONT.getSize(), buttonForegroundColor, buttonBackgroundColor ).withAnonymousClassBody( {
-//      initializer: function() {
-//        setFont( CONTROL_FONT );
-//        setOffset( resetModeButton.getFullBounds().getCenterX() - getFullBounds().getWidth() / 2, resetModeButton.getFullBounds().getMaxY() + 5 );
-//        setConfirmationEnabled( false );
-//      }
-//    } ) );
-//
-//    //Make it so a "reset" button appears if anything has changed in the sim
-//    var p = [];
-//    for ( var body in model.getBodies() ) {
-//      p.add( body.anyPropertyDifferent() );
-//    }
-//
-//    //Add the clock control within the play area
-//    addChild( new FloatingClockControlNode( module.playButtonPressed, mode.getTimeFormatter(), model.getClock(), CLEAR, new IfElse( module.whiteBackgroundProperty, Color.black, Color.white ) ).withAnonymousClassBody( {
-//      initializer: function() {
-//        setOffset( GravityAndOrbitsCanvas.STAGE_SIZE.getWidth() / 2 - getFullBounds().getWidth() / 2, GravityAndOrbitsCanvas.STAGE_SIZE.getHeight() - getFullBounds().getHeight() );
-//        // Add the rewind button and hook it up as needed.
-//        var rewindButton = new FloatingRewindButton().withAnonymousClassBody( {
-//          initializer: function() {
-//            addListener( new DefaultIconButton.Listener().withAnonymousClassBody( {
-//              buttonPressed: function() {
-//                mode.rewind();
-//              }
-//            } ) );
-//            // changed, otherwise there is nothing to rewind to.
-//            var anyPropertyChanged = new MultiwayOr( p );
-//            anyPropertyChanged.addObserver( new SimpleObserver().withAnonymousClassBody( {
-//              update: function() {
-//                setEnabled( anyPropertyChanged.get() );
-//              }
-//            } ) );
-//          }
-//        } );
-//        addChild( rewindButton );
-//        assert && assert( mode.timeSpeedScaleProperty != null );
-//        // Add the speed control slider.
-//        addChild( new SimSpeedControlPNode( 0.1, mode.timeSpeedScaleProperty, 2.0, rewindButton.getFullBoundsReference().getMinX(), new IfElse( module.whiteBackgroundProperty, Color.black, Color.white ) ) );
-//      }
-//    } ) );
-
+    // Add measuring tape
     var unitsProperty = new Property( { name: GAOStrings.THOUSAND_MILES, multiplier: THOUSAND_MILES_MULTIPLIER } );
     var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,

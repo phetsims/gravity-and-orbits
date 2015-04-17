@@ -73,9 +73,9 @@ define( function( require ) {
       this.set( this.rewindValue );
     },
 
-    //Convenient access to whether the value has deviated from the initial condition
+    // Convenient access to whether the value has deviated from the initial condition
     different: function() {
-      return this.differentProperty.get();
+      return this.differentProperty;
     },
 
     /*

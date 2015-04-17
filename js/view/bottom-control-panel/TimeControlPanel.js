@@ -13,6 +13,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
@@ -21,10 +22,11 @@ define( function( require ) {
 
   /**
    * @param {GravityAndOrbitsModule} module
+   * @param {Array.<Body>} bodies
    * @param {Object} [options]
    * @constructor
    */
-  function TimeControlPanel( module, options ) {
+  function TimeControlPanel( module, bodies, options ) {
     var playProperty = module.playButtonPressedProperty;
 
     var playPauseButton = new PlayPauseButton( playProperty );
@@ -35,11 +37,10 @@ define( function( require ) {
 
     var rewindButton = new RewindButton( function() {
       module.getMode().rewind();
-    }, playProperty );
+    }, new Property( false ) );
 
     var anyPropertyDifferentProperties = [];
-    var bodies = module.getMode().getModel().getBodies();
-    for ( var i = 0; i < bodies; i++ ) {
+    for ( var i = 0; i < bodies.length; i++ ) {
       anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
     }
 
