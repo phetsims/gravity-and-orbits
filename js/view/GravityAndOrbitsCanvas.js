@@ -213,7 +213,7 @@ define( function( require ) {
 
     // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
     for ( i = 0; i < bodies.length; i++ ) {
-      bodies[i].getBounds().set( STAGE_SIZE );
+      bodies[i].getBounds().set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
     }
 
     // If any body is out of bounds, show a "return object" button

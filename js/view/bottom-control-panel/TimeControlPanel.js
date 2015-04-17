@@ -13,6 +13,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
   var StepButton = require( 'SCENERY_PHET/buttons/StepButton' );
@@ -36,8 +37,19 @@ define( function( require ) {
       module.getMode().rewind();
     }, playProperty );
 
-    //TODO: rewind button should start disabled and enable after any property is changed
-    //rewindButton.enabled = false;
+    var anyPropertyDifferentProperties = [];
+    var bodies = module.getMode().getModel().getBodies();
+    for ( var i = 0; i < bodies; i++ ) {
+      anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
+    }
+
+    var anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
+      return _.any( arguments, _.identity );
+    } );
+
+    anyPropertyChanged.link( function( changed ) {
+      rewindButton.enabled = changed;
+    } );
 
     HBox.call( this, _.extend( { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
   }
