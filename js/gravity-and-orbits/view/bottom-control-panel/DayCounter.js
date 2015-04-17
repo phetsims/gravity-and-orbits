@@ -23,7 +23,7 @@ define( function( require ) {
   var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
 
   // constants
-  var FONT = new PhetFont( 16 );
+  var FONT = new PhetFont( 22 );
 
   /**
    *

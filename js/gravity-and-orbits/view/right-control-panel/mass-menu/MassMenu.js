@@ -21,7 +21,7 @@ define( function( require ) {
    */
   function MassMenu( module, options ) {
 
-    options = _.extend( { resize: false }, options );
+    options = _.extend( { resize: false, margin: 10 }, options );
     VBox.call( this, options );
 
     var thisNode = this;

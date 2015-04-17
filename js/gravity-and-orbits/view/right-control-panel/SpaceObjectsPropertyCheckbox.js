@@ -39,7 +39,7 @@ define( function( require ) {
   var gridString = require( 'string!GRAVITY_AND_ORBITS/grid' );
 
   // constants
-  var FONT = new PhetFont( 14 );
+  var FONT = new PhetFont( 18 );
   var GRID_LINE_OPTIONS = { stroke: 'gray', lineWidth: 1.5 };
   var ARROW_Y_COORDINATE = -10;
   var CHECKBOX_OPTIONS = { scale: 0.8 };
@@ -80,7 +80,7 @@ define( function( require ) {
           spacing: 10,
           children: [
             new Text( massString, TEXT_OPTIONS ),
-            new Image( iconMassImg )
+            new Image( iconMassImg, { scale: 0.8 } )
           ]
         } ),
         module.showMassProperty, CHECKBOX_OPTIONS ) );
@@ -91,7 +91,7 @@ define( function( require ) {
         spacing: 10,
         children: [
           new Text( pathString, TEXT_OPTIONS ),
-          new Image( iconPathImg )
+          new Image( iconPathImg, { scale: 0.9 } )
         ]
       } ),
       module.showPathProperty, CHECKBOX_OPTIONS ) );
@@ -145,7 +145,11 @@ define( function( require ) {
         module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
     }
 
-    VBox.call( this, _.extend( { children: children, resize: false, spacing: 5, align: 'left', bottom: -12 }, options ) );
+    for ( var i = 0; i < children.length; i++ ) {
+      console.log( children[i].height );
+    }
+
+    VBox.call( this, _.extend( { children: children, resize: false, spacing: 10, align: 'left', bottom: -12 }, options ) );
   }
 
   return inherit( VBox, SpaceObjectsPropertyCheckbox );

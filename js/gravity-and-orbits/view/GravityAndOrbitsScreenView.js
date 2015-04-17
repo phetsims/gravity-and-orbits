@@ -47,6 +47,7 @@ define( function( require ) {
 
     var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX, top: this.layoutBounds.top + 5, width: 200 } );
     this.addChild( controlPanelNode );
+    console.log( controlPanelNode.width );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {

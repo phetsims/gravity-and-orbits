@@ -481,7 +481,7 @@ define( function( require ) {
           children[i].setScaleMagnitude( 25 / children[i].width );
         }
 
-        return new HBox( { children: children, spacing: 10 } );
+        return new HBox( { children: children, spacing: 15 } );
       }
     },
 

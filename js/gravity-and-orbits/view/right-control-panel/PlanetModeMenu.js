@@ -81,15 +81,15 @@ define( function( require ) {
         selectedLineWidth: 2,
         baseColor: 'rgba(0,0,0,0)',
         deselectedLineWidth: 0,
-        buttonContentXMargin: 2.5,
-        buttonContentYMargin: 2.5,
-        spacing: -2,
+        buttonContentXMargin: 5,
+        buttonContentYMargin: 5,
+        spacing: 0,
         deselectedOpacity: 1,
         cornerRadius: 5
       } );
 
     this.addChild( buttonGroup );
-    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 5, y: 2.5 } ) );
+    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 12, y: 5 } ) );
   }
 
   return inherit( Node, PlanetModeMenu );

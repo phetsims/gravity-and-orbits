@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Container for scale slider.
+ * Container for scale slider. This file is not a direct port from the Java version.
  *
  * @author Andrey Zelenkov (Mlearner)
  * @author Aaron Davis
@@ -32,7 +32,7 @@ define( function( require ) {
    * @param {Property.<number>} scaleProperty - Scale property for updating.
    * @param {Object} range - Working range of slider.
    * @param {number} step step of scale changes
-   * @param {Boolean} isIncrease flag for defining type of button
+   * @param {boolean} isIncrease flag for defining type of button
    * @constructor
    */
   function SliderButton( scaleProperty, range, step, isIncrease ) {
@@ -92,7 +92,7 @@ define( function( require ) {
    */
   function ScaleSlider( scaleProperty, options ) {
 
-    options = _.extend( { scale: 0.63 }, options );
+    options = _.extend( { scale: 0.8 }, options );
 
     Node.call( this );
 

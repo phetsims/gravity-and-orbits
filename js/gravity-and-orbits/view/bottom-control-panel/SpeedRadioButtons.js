@@ -38,7 +38,7 @@ define( function( require ) {
       radius: 10
     }, options );
 
-    var textOption = { font: new PhetFont( 16 ), fill: '#fff', pickable: false, y: -7 };
+    var textOption = { font: new PhetFont( 22 ), fill: '#fff', pickable: false, y: -7 };
     VerticalAquaRadioButtonGroup.call( this, [
       { property: speedProperty, value: STARTING_VALUE * 1.75, node: new Text( fastForwardString, textOption ) },
       { property: speedProperty, value: STARTING_VALUE, node: new Text( normalString, textOption ) },
