@@ -12,9 +12,9 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var PathNode = require( 'GRAVITY_AND_ORBITS/view/PathNode' );
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/view/BodyNode' );
-  var GridNode = require( 'GRAVITY_AND_ORBITS/view/GridNode' );
+  var PathNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/PathNode' );
+  var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
+  var GridNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GridNode' );
   var Color = require( 'SCENERY/util/Color' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var Bounds2 = require( 'DOT/Bounds2' );
@@ -24,8 +24,8 @@ define( function( require ) {
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/view/VectorNode' );
-  var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/view/GrabbableVectorNode' );
+  var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
+  var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GrabbableVectorNode' );
   var GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
@@ -33,12 +33,12 @@ define( function( require ) {
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
-  var ExplosionNode = require( 'GRAVITY_AND_ORBITS/view/ExplosionNode' );
-  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/SpeedRadioButtons' );
-  var DayCounter = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/DayCounter' );
-  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/view/scale-slider/ScaleSlider' );
+  var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
+  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/SpeedRadioButtons' );
+  var DayCounter = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/DayCounter' );
+  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/scale-slider/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
-  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/view/bottom-control-panel/TimeControlPanel' );
+  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/TimeControlPanel' );
 
   // TODO: this measuring tape should perhaps live in scenery phet
   var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
