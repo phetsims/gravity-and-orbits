@@ -117,6 +117,7 @@ define( function( require ) {
 
     // measuring tape checkbox
     if ( module.showMeasuringTape ) {
+      // TODO: see charges-and-fields about how to create an image icon based on the Scenery-Phet measuring tape
       var measuringTapeImageNode = new Image( measuringTapeImg );
       children.push( new CheckBox( new HBox( {
           spacing: 10,

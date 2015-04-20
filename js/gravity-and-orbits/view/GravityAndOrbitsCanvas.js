@@ -39,10 +39,7 @@ define( function( require ) {
   var ScaleSlider = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/scale-slider/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/TimeControlPanel' );
-
-  // TODO: this measuring tape should perhaps live in scenery phet
-  var MeasuringTape = require( '../../../../charges-and-fields/js/charges-and-fields/view/MeasuringTape' );
-  //var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
   // constants
   var WIDTH = 845; // this is the same ratio as the Java STAGE_SIZE, perhaps not necessary to keep it exactly the same?
