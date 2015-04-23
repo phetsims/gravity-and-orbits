@@ -1,0 +1,143 @@
+{
+  "gravity-and-orbits.name": {
+    "value": "Gravity And Orbits"
+  },
+  "earth": {
+    "value": "Earth"
+  },
+  "earthMasses": {
+    "value": "Earth masses"
+  },
+  "millionEarthMasses": {
+    "value": "million Earth masses"
+  },
+  "ourSun": {
+    "value": "Our Sun"
+  },
+  "earthDay": {
+    "value": "Earth Day"
+  },
+  "planet": {
+    "value": "Planet"
+  },
+  "velocity": {
+    "value": "Velocity"
+  },
+  "earthDays": {
+    "value": "Earth Days"
+  },
+  "measuringTape": {
+    "value": "Measuring Tape"
+  },
+  "billionBillionSpaceStationMasses": {
+    "value": "billion billion Space Station masses"
+  },
+  "physics": {
+    "value": "Physics"
+  },
+  "zoomOut": {
+    "value": "-"
+  },
+  "spaceStationMass": {
+    "value": "Space Station mass"
+  },
+  "gravityForce": {
+    "value": "Gravity Force"
+  },
+  "cartoon": {
+    "value": "Cartoon"
+  },
+  "moon": {
+    "value": "Moon"
+  },
+  "zoomIn": {
+    "value": "+"
+  },
+  "thousandEarthMasses": {
+    "value": "thousand Earth masses"
+  },
+  "on": {
+    "value": "on"
+  },
+  "pattern.0value.1units": {
+    "value": "{0} {1}"
+  },
+  "show": {
+    "value": "Show"
+  },
+  "clear": {
+    "value": "Clear"
+  },
+  "spaceStation": {
+    "value": "Space Station"
+  },
+  "pattern.0label": {
+    "value": "{0}:"
+  },
+  "satellite": {
+    "value": "Satellite"
+  },
+  "earthMinutes": {
+    "value": "Earth Minutes"
+  },
+  "gravity": {
+    "value": "Gravity"
+  },
+  "reset": {
+    "value": "Reset"
+  },
+  "grid": {
+    "value": "Grid"
+  },
+  "mass": {
+    "value": "Mass"
+  },
+  "off": {
+    "value": "off"
+  },
+  "path": {
+    "value": "Path"
+  },
+  "ourMoon": {
+    "value": "Our Moon"
+  },
+  "earthMinute": {
+    "value": "Earth Minute"
+  },
+  "returnObject": {
+    "value": "Return Object"
+  },
+  "star": {
+    "value": "Star"
+  },
+  "thousandMiles": {
+    "value": "thousand miles"
+  },
+  "thousandKilometers": {
+    "value": "thousand kilometers"
+  },
+  "earthMass": {
+    "value": "Earth mass"
+  },
+  "toScale": {
+    "value": "To Scale"
+  },
+  "fastForward": {
+    "value": "Fast Forward"
+  },
+  "normal": {
+    "value": "Normal"
+  },
+  "slowMotion": {
+    "value": "Slow Motion"
+  },
+  "satelliteMasses": {
+    "value": "Satellite masses"
+  },
+  "ourEarth": {
+    "value": "Our Earth"
+  },
+  "force": {
+    "value": "Force"
+  }
+}
