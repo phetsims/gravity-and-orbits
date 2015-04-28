@@ -10,13 +10,12 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var LinearFunction = require( 'DOT/LinearFunction' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyRenderer' );
   var Node = require( 'SCENERY/nodes/Node' );
 
+  // constants
   var NUM_STEPS_FOR_ANIMATION = 25;
 
   /**
