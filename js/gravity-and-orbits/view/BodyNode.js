@@ -12,18 +12,13 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Color = require( 'SCENERY/util/Color' );
-  var Image = require( 'SCENERY/nodes/Image' );
   var MovableDragHandler = require( 'SCENERY_PHET/input/MovableDragHandler' );
-  var Dimension2 = require( 'DOT/Dimension2' );
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Line = require( 'SCENERY/nodes/Line' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Bounds2 = require( 'DOT/Bounds2' );
 
   /**
    * Constructor for BodyNode
