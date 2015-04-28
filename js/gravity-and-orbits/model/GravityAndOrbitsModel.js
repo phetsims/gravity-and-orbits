@@ -52,10 +52,10 @@ define( function( require ) {
     this.modelStepListeners = [];//SimpleObservers//TODO: Convert to trigger
 
     var thisModel = this;
-    this.clock.addEventTimer( (function( dt ) {
+    this.clock.addEventTimer( function( dt ) {
       thisModel.clock.setSimulationTime( thisModel.clock.dt + thisModel.clock.getSimulationTime() );
       thisModel.step( thisModel.clock.dt );
-    }).bind( this ) );
+    }.bind( this ) );
 
     //Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
     this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );

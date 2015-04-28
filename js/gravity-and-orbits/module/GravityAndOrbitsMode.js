@@ -21,16 +21,11 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var Rectangle = require( 'DOT/Rectangle' );
   var Bounds2 = require( 'DOT/Bounds2' );
-  var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
-  var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
-  var Node = require( 'SCENERY/nodes/Node' );
 
   // the play area only takes up the left side of the canvas; the control panel is on the right side
 //  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width * 0.60;

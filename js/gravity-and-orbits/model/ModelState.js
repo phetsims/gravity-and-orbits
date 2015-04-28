@@ -12,7 +12,6 @@ define( function( require ) {
 
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
-  var Property = require( 'AXON/Property' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
 
@@ -123,7 +122,7 @@ define( function( require ) {
       if ( gravityEnabledProperty.get() ) {
         for ( var i = 0; i < this.bodyStates.length; i++ ) {
           var source = this.bodyStates[ i ];
-          if ( source != target ) {
+          if ( source !== target ) {
             sum = sum.plus( this._getForce( source, target, newTargetPosition ) );
           }
         }

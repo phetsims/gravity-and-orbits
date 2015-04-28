@@ -15,28 +15,20 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Vector2 = require( 'DOT/Vector2' );
-  var Property = require( 'AXON/Property' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-  var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
-  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
   var BodyConfiguration = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/BodyConfiguration' );
   var ModeConfig = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/ModeConfig' );
   var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyRenderer' );
   var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/EarthMassReadoutNode' );
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-//  var milesToMeters = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MeasuringTape/milesToMeters' );//static
 
   // images
   var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
@@ -149,7 +141,7 @@ define( function( require ) {
   var getImageRenderer = function( image ) {
     return function( body, viewDiameter ) {
       return new BodyRenderer.ImageRenderer( body, viewDiameter, image );
-    }
+    };
   };
 
   /**
@@ -162,7 +154,7 @@ define( function( require ) {
     //the mass for which to use the image
     return function( body, viewDiameter ) {
       return new BodyRenderer.SwitchableBodyRenderer( body, targetMass, new BodyRenderer.ImageRenderer( body, viewDiameter, image ), new BodyRenderer.SphereRenderer( body, viewDiameter ) );
-    }
+    };
   };
 
   /**
@@ -173,9 +165,9 @@ define( function( require ) {
   var scaledDays = function( scale ) {
     return function( time ) {
       var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
-      var units = (value == 1) ? GAOStrings.EARTH_DAY : GAOStrings.EARTH_DAYS;
+      var units = (value === 1) ? GAOStrings.EARTH_DAY : GAOStrings.EARTH_DAYS;
       return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value.toFixed( 0 ), units );
-    }
+    };
   };
 
   /**
@@ -185,7 +177,7 @@ define( function( require ) {
    */
   var formatMinutes = function( time ) {
     var value = (time / SECONDS_PER_MINUTE);
-    var units = (value == 1) ? GAOStrings.EARTH_MINUTE : GAOStrings.EARTH_MINUTES;
+    var units = (value === 1) ? GAOStrings.EARTH_MINUTE : GAOStrings.EARTH_MINUTES;
     return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value.toFixed( 0 ), units );
   };
 
@@ -261,8 +253,8 @@ define( function( require ) {
       doReturnBody: function( model ) {
         Body.prototype.doReturnBody( model );
         var earth = model.getBody( 'Planet' );
-        //Restore the moon near the earth and with the same relative velocity vector
-        if ( earth != null ) {
+        // Restore the moon near the earth and with the same relative velocity vector
+        if ( earth !== null ) {
           var relativePosition = this.positionProperty.initialValue.minus( earth.positionProperty.initialValue );
           this.positionProperty.set( earth.getPosition().plus( relativePosition ) );
           var relativeVelocity = this.velocityProperty.initialValue.minus( earth.velocityProperty.initialValue );
@@ -289,7 +281,6 @@ define( function( require ) {
         Color.gray,
         Color.lightGray,
         getRenderer( earthImage, body.mass ),
-//        getRenderer( 'earth_satellite.gif', body.mass ),
         ( -Math.PI / 4 ),
         true,
         maxPathLength,
@@ -307,7 +298,7 @@ define( function( require ) {
     // non-static inner class: Sun
     function Sun( maxPathLength, body ) {
       // Function for rendering the sun
-      // private
+      // @private
       var SUN_RENDERER = function( body, viewDiameter ) {
         return new BodyRenderer.SphereRenderer( body, viewDiameter );
       };
@@ -340,11 +331,10 @@ define( function( require ) {
 
     inherit( Body, Sun, {
       updateBodyStateFromModel: function( bodyState ) {
-        //store the original position in case it must be restored
+        // store the original position in case it must be restored
         var position = this.getPosition();
-//      super.updateBodyStateFromModel( bodyState );
         Body.prototype.updateBodyStateFromModel.call( this, bodyState );
-        //Sun shouldn't move in cartoon modes
+        // Sun shouldn't move in cartoon modes
         if ( this.body.fixed ) {
           this.setPosition( position.x, position.y );
           this.setVelocity( new Vector2() );
@@ -352,7 +342,7 @@ define( function( require ) {
       }
     } );
 
-    //private
+    // @private
     this.p = p;
     this.modes = []; // in the java version this class extended ArrayList
 
@@ -365,7 +355,7 @@ define( function( require ) {
       return new EarthMassReadoutNode( bodyNode, visible );
     };
 
-    //Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
+    // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
     var SEC_PER_YEAR = 365 * 24 * 60 * 60;
     var SUN_MODES_VELOCITY_SCALE = 4.48E6;
     this.modes.push( new GravityAndOrbitsMode(
@@ -514,5 +504,5 @@ define( function( require ) {
     SunEarthMoonModeConfig: SunEarthMoonModeConfig,
     EarthMoonModeConfig: EarthMoonModeConfig,
     EarthSpaceStationModeConfig: EarthSpaceStationModeConfig
-  }
+  };
 } );
