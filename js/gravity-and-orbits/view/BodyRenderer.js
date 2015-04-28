@@ -13,11 +13,9 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Color = require( 'SCENERY/util/Color' );
   var RadialGradient = require( 'SCENERY/util/RadialGradient' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var Vector2 = require( 'DOT/Vector2' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -69,7 +67,7 @@ define( function( require ) {
 
     body.getMassProperty().link( function() {
       thisRenderer.removeAllChildren();
-      thisRenderer.addChild( ( body.getMass() == targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
+      thisRenderer.addChild( ( body.getMass() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
     } );
   }
 
@@ -149,7 +147,7 @@ define( function( require ) {
       var shape = new Shape();
       shape.moveTo( 0, 0 );
       for ( var i = 0; i < this.numSegments + 1; i++ ) {
-        var myRadius = ( i % 2 == 0 ) ? this.twinkleRadius( radius ) : radius;
+        var myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
         var target = Vector2.createPolar( myRadius, angle );
         shape.lineToPoint( target );
         angle += deltaAngle;
