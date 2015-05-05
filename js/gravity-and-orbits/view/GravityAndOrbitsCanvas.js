@@ -110,7 +110,7 @@ define( function( require ) {
     this.addChild( gridNode );
 
     // Add the speed control slider.
-    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left } ) );
+    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, module.whiteBackgroundProperty, { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left } ) );
     this.addChild( new DayCounter( mode.timeFormatter, model.clock, { bottom: STAGE_SIZE.bottom - 10, right: STAGE_SIZE.right } ) );
 
     // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
