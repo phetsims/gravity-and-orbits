@@ -1,4 +1,5 @@
-// Copyright 2002-2011, University of Colorado
+// Copyright 2002-2015, University of Colorado
+
 /**
  * The GravityAndOrbitsModule has a set of "modes", one mode for each configuration of bodies (eg, Sun + Planet).
  * Each mode has its own model, canvas, clock, etc, which are used in place of this Module's data.

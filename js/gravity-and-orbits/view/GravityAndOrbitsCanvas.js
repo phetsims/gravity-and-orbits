@@ -55,10 +55,6 @@ define( function( require ) {
     Rectangle.call( this, 0, 0, WIDTH, HEIGHT );
     var thisNode = this;
 
-    //module.whiteBackgroundProperty.link ( function( whiteBackground ) {
-    //  thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
-    //} );
-
     var bodies = model.getBodies();
     var i;
 
