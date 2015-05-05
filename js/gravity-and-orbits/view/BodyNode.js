@@ -18,6 +18,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Line = require( 'SCENERY/nodes/Line' );
+  var Color = require( 'SCENERY/util/Color' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   /**
@@ -94,9 +95,9 @@ define( function( require ) {
       } );
       node.addChild( text );
 
-      //this.whiteBackgroundProperty.link( function( whiteBackground ) {
-      //  text.fill = whiteBackground ? Color.black : Color.white;
-      //} );
+      this.whiteBackgroundProperty.link( function( whiteBackground ) {
+        text.fill = whiteBackground ? Color.black : Color.white;
+      } );
 
       this.body.diameterProperty.link( function() {
         node.visible = thisNode.getViewDiameter() <= 10;

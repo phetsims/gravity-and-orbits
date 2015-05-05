@@ -55,7 +55,6 @@ define( function( require ) {
       stepping: false,
       rewinding: false,
 //      mode: 0, // TODO this was blank
-      whiteBackground: false, // was blank
       showMeasuringTape: false // was blank
     } );
 
@@ -75,7 +74,7 @@ define( function( require ) {
 //    console.log(this.modes.modes[0]);
 
     this.modeProperty = new Property( this.modes.modes[initialModeIndex] );
-    this.whiteBackground = whiteBackgroundProperty;
+    this.whiteBackgroundProperty = whiteBackgroundProperty;
     this.showMeasuringTape = showMeasuringTape;
 
     // TODO: look at java for this
