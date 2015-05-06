@@ -15,13 +15,14 @@ define( function( require ) {
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
   var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
+  var GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GlobalOptionsNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var Screen = require( 'JOIST/Screen' );
   var Property = require( 'AXON/Property' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var Bounds2 = require( 'DOT/Bounds2' );
+  var Color = require( 'SCENERY/util/Color' );
 
   // images
   var cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' );
@@ -52,6 +53,8 @@ define( function( require ) {
 
   inherit( GravityAndOrbitsModule, CartoonModule );
 
+  var whiteBackgroundProperty = new Property( false );
+
   var simOptions = {
     credits: {
       //TODO fill in proper credits, all of these fields are optional, see joist.AboutDialog
@@ -61,35 +64,30 @@ define( function( require ) {
       qualityAssurance: '',
       graphicArts: '',
       thanks: ''
-    }
+    },
+    optionsNode: new GlobalOptionsNode( whiteBackgroundProperty )
   };
 
-  // Appending '?dev' to the URL will enable developer-only features.
-//  if ( window.phetcommon.getQueryParameter( 'dev' ) ) {
-//    simOptions = _.extend( {
-//      // add dev-specific options here
-//    }, simOptions );
-//  }
+  var cartoonScreen = new Screen( cartoonString, new Image( cartoonIcon ),
+    function() { return new CartoonModule( null, whiteBackgroundProperty ); },
+    function( model ) { return new GravityAndOrbitsScreenView( model ); },
+    { backgroundColor: '#000' }
+  );
 
-//  SimLauncher.launch( function() {
-//    var sim = new Sim( simTitle, [ new GravityAndOrbitsScreen() ], simOptions );
-//    sim.start();
-//  } );
+  var toScaleScreen = new Screen( toScaleString, new Image( toScaleIcon ),
+    function() { return new ToScaleModule( null, whiteBackgroundProperty ); },
+    function( model ) { return new GravityAndOrbitsScreenView( model ); },
+    { backgroundColor: '#000' }
+  );
 
-  // taken from MLL version, need to incorporate the modules somehow
+  whiteBackgroundProperty.link( function( whiteBackground ) {
+    var backgroundColor = ( whiteBackground ) ? Color.WHITE : Color.BLACK;
+    cartoonScreen.backgroundColor = backgroundColor;
+    toScaleScreen.backgroundColor = backgroundColor;
+  } );
+
   SimLauncher.launch( function() {
     // create and start the sim
-    new Sim( simTitle, [
-      new Screen( cartoonString, new Image( cartoonIcon ),
-        function() { return new CartoonModule( null, new Property( true ) ); },
-        function( model ) { return new GravityAndOrbitsScreenView( model ); },
-        { backgroundColor: '#000' }
-      ),
-      new Screen( toScaleString, new Image( toScaleIcon ),
-        function() { return new ToScaleModule( null, new Property( true ) ); },
-        function( model ) { return new GravityAndOrbitsScreenView( model ); },
-        { backgroundColor: '#000' }
-      )
-    ], simOptions ).start();
+    new Sim( simTitle, [ cartoonScreen, toScaleScreen ], simOptions ).start();
   } );
 } );

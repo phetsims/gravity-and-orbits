@@ -16,9 +16,7 @@ define( function( require ) {
   var BodyNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyNode' );
   var GridNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GridNode' );
   var Color = require( 'SCENERY/util/Color' );
-  var Dimension2 = require( 'DOT/Dimension2' );
   var Bounds2 = require( 'DOT/Bounds2' );
-  var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
@@ -26,13 +24,7 @@ define( function( require ) {
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GrabbableVectorNode' );
-  var GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/controlpanel/GravityAndOrbitsControlPanel' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
-  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
-//  var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsMode' );
-  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/SpeedRadioButtons' );
   var DayCounter = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/DayCounter' );
@@ -62,10 +54,6 @@ define( function( require ) {
 //    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { fill: 'rgba(220,220,220,0.3)'} );
     Rectangle.call( this, 0, 0, WIDTH, HEIGHT );
     var thisNode = this;
-
-    //module.whiteBackgroundProperty.link ( function( whiteBackground ) {
-    //  thisNode.fill = whiteBackground ? Color.WHITE : Color.BLACK;
-    //} );
 
     var bodies = model.getBodies();
     var i;
@@ -122,7 +110,7 @@ define( function( require ) {
     this.addChild( gridNode );
 
     // Add the speed control slider.
-    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left } ) );
+    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, module.whiteBackgroundProperty, { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left } ) );
     this.addChild( new DayCounter( mode.timeFormatter, model.clock, { bottom: STAGE_SIZE.bottom - 10, right: STAGE_SIZE.right } ) );
 
     // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
@@ -175,96 +163,8 @@ define( function( require ) {
     this.addChild( new ScaleSlider( mode.zoomLevelProperty, { top: STAGE_SIZE.top + 10 } ) );
   }
 
-  return inherit( Rectangle, GravityAndOrbitsCanvas, {
-//TODO: this anonymous PNode should be a PNode subclass, it's not reusable
-
-      //private
-      createZoomControls: function( mode ) {
-        var node = new Node();
-        return new Node().withAnonymousClassBody( {
-          initializer: function() {
-            var MAX = 1.5;
-            var MIN = 0.5;
-            var DELTA_ZOOM = 0.1;
-            var zoomButtonFont = new PhetFont( 20, true );
-            var inText = new PText( GAOStrings.ZOOM_IN ).withAnonymousClassBody( {
-              initializer: function() {
-                setFont( zoomButtonFont );
-              }
-            } );
-            var outText = new PText( GAOStrings.ZOOM_OUT ).withAnonymousClassBody( {
-              initializer: function() {
-                setFont( zoomButtonFont );
-              }
-            } );
-            var size = new PDimension( Math.max( inText.getFullBounds().getWidth(), outText.getFullBounds().getWidth() ), Math.max( inText.getFullBounds().getHeight(), outText.getFullBounds().getHeight() ) );
-            //bring in the insets a bit so there isn't so much padding
-            var dim = Math.max( size.getWidth(), size.getHeight() ) - 7;
-            var zoomInButton = new ZoomButtonNode( UserComponents.zoomInButton, inText, Color.black, buttonBackgroundColor, dim, dim ).withAnonymousClassBody( {
-              initializer: function() {
-                setFont( zoomButtonFont );
-                addActionListener( new ActionListener().withAnonymousClassBody( {
-                  actionPerformed: function( e ) {
-                    mode.zoomLevel.set( Math.min( MAX, mode.zoomLevel.get() + DELTA_ZOOM ) );
-                  }
-                } ) );
-                mode.zoomLevel.addObserver( new SimpleObserver().withAnonymousClassBody( {
-                  update: function() {
-                    setEnabled( mode.zoomLevel.get() != MAX );
-                  }
-                } ) );
-              }
-            } );
-            var zoomOutButton = new ZoomButtonNode( UserComponents.zoomOutButton, outText, Color.black, buttonBackgroundColor, dim, dim ).withAnonymousClassBody( {
-              initializer: function() {
-                setFont( zoomButtonFont );
-                addActionListener( new ActionListener().withAnonymousClassBody( {
-                  actionPerformed: function( e ) {
-                    mode.zoomLevel.set( Math.max( MIN, mode.zoomLevel.get() - DELTA_ZOOM ) );
-                  }
-                } ) );
-                mode.zoomLevel.addObserver( new SimpleObserver().withAnonymousClassBody( {
-                  update: function() {
-                    setEnabled( mode.zoomLevel.get() != MIN );
-                  }
-                } ) );
-              }
-            } );
-            var slider = new PSwing( new JSlider( JSlider.VERTICAL, 0, 100, 50 ).withAnonymousClassBody( {
-              initializer: function() {
-                setBackground( new Color( 0, 0, 0, 0 ) );
-                setPaintTicks( true );
-                setMajorTickSpacing( 25 );
-                var modelToView = new Function.LinearFunction( 0, 100, MIN, MAX );
-                addChangeListener( new ChangeListener().withAnonymousClassBody( {
-                  stateChanged: function( e ) {
-                    mode.zoomLevel.set( modelToView.evaluate( getValue() ) );
-                  }
-                } ) );
-                mode.zoomLevel.addObserver( new SimpleObserver().withAnonymousClassBody( {
-                  update: function() {
-                    setValue( modelToView.createInverse().evaluate( mode.zoomLevel.get() ) );
-                  }
-                } ) );
-              }
-            } ) );
-            slider.setScale( 0.7 );
-            slider.setOffset( 0, zoomInButton.getFullBounds().getMaxY() );
-            zoomOutButton.setOffset( 0, slider.getFullBounds().getMaxY() );
-            addChild( zoomInButton );
-            addChild( slider );
-            addChild( zoomOutButton );
-            setOffset( 10, 10 );
-          }
-        } );
-      },
-
-      //private
-//      addChild: function( node ) {
-//        this.rootNode.addChild( node );
-//      }
-    },
-//statics
+  return inherit( Rectangle, GravityAndOrbitsCanvas, {},
+    //statics
     {
       STAGE_SIZE: STAGE_SIZE,
       buttonBackgroundColor: buttonBackgroundColor

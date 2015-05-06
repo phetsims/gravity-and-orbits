@@ -1,15 +1,16 @@
-// Copyright 2002-2012, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * Immutable state returned by the physics engine update algorithm, it is applied to the mutable Body.
  *
  * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';
 
+  // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Vector2 = require( 'DOT/Vector2' );
 
   /**
    *
@@ -35,7 +36,8 @@ define( function( require ) {
     },
 
     toString: function() {
-      return "BodyState{" + "position=" + position + ", velocity=" + velocity + ", acceleration=" + acceleration + ", mass=" + mass + '}';
+      return "BodyState{" + "position=" + this.position + ", velocity=" + this.velocity + ", acceleration=" + this.acceleration +
+             ", mass=" + this.mass + '}';
     }
   } );
 } );

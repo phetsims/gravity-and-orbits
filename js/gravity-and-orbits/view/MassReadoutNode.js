@@ -14,7 +14,6 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var Property = require( 'AXON/Property' );
 
   function MassReadoutNode( bodyNode, visibleProperty ) {
     Node.call( this );

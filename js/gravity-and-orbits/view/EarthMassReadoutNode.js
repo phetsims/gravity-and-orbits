@@ -11,7 +11,6 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
   var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MassReadoutNode' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
@@ -47,7 +46,7 @@ define( function( require ) {
         //Handle showing exactly "1 earth mass" instead of "1 earth masses"
 //        value = new DecimalFormat( "0.00" ).format( earthMasses );
         value = earthMasses.toFixed( 2 );
-        units = (earthMasses == 1.0) ? GAOStrings.EARTH_MASS : GAOStrings.EARTH_MASSES;
+        units = (earthMasses === 1) ? GAOStrings.EARTH_MASS : GAOStrings.EARTH_MASSES;
       }
       return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value, units );
     }

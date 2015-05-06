@@ -15,7 +15,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PropertySet = require( 'AXON/PropertySet' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
@@ -67,7 +66,7 @@ define( function( require ) {
     this.tickValue = tickValue; //value that this body's mass should be identified with, for 'planet' this will be the earth's mass
     this.tickLabel = tickLabel; //name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
     this.fixed = fixed; //true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
-    assert && assert( renderer != null );
+    assert && assert( renderer !== null );
     this.name = name;
     this.color = color;
     this.highlight = highlight;
@@ -297,9 +296,10 @@ define( function( require ) {
 
     addPathPoint: function() {
       var i;
-      while ( this.path.length + 1//account for the point that will be added
-              > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {//start removing data after 2 orbits of the default system
-//        this.path.remove( 0 );
+
+      // start removing data after 2 orbits of the default system
+      // account for the point that will be added
+      while ( this.path.length + 1 > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {
         this.path.shift();
 
         for ( i = 0; i < this.pathListeners.length; i++ ) {
@@ -315,7 +315,6 @@ define( function( require ) {
     },
 
     clearPath: function() {
-//      this.path.clear();
       this.path = [];
       for ( var i = 0; i < this.pathListeners.length; i++ ) {
         this.pathListeners[ i ].cleared();

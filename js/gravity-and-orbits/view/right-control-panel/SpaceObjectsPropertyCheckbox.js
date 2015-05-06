@@ -146,10 +146,6 @@ define( function( require ) {
         module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
     }
 
-    for ( var i = 0; i < children.length; i++ ) {
-      console.log( children[i].height );
-    }
-
     VBox.call( this, _.extend( { children: children, resize: false, spacing: 10, align: 'left', bottom: -12 }, options ) );
   }
 

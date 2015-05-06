@@ -14,7 +14,6 @@ define( function( require ) {
   var ScreenView = require( 'JOIST/ScreenView' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var RightControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/RightControlPanel' );
-  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/TimeControlPanel' );
 
   /**
    * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module object as
@@ -33,21 +32,14 @@ define( function( require ) {
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
       var gaoCanvas = modes[ i ].getCanvas();
-      gaoCanvas.visible = false;
       this.addChild( gaoCanvas );
-    }
-
-    // Make sure only one canvas is visible at a time
-    module.modeProperty.link( function( mode ) {
-      for ( var i = 0; i < modes.length; i++ ) {
-        modes[ i ].getCanvas().visible = false;
+      if ( modes[ i ] !== module.getMode() ) {
+        gaoCanvas.visible = false;
       }
-      mode.getCanvas().visible = true;
-    } );
+    }
 
     var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX, top: this.layoutBounds.top + 5, width: 200 } );
     this.addChild( controlPanelNode );
-    console.log( controlPanelNode.width );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {

@@ -1,9 +1,11 @@
 // Copyright 2002-2014, University of Colorado
 
 /**
- * This is the PNode that renders the content of a physical body, such as a planet or space station.  This component is separate from
+ * This is the Node that renders the content of a physical body, such as a planet or space station.  This component is separate from
  * BodyNode since it is used to create icons.  It is also used to be able to switch between rendering types (i.e. image vs cartoon sphere) without
- * changing any other characteristics of the PNode.
+ * changing any other characteristics of the Node.
+ *
+ * The classes SwitchableBodyRenderer, SphereRenderer, ImageRenderer, and SunRenderer were static classes in the Java code
  *
  * @author Sam Reid
  * @author Aaron Davis
@@ -13,11 +15,9 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Color = require( 'SCENERY/util/Color' );
   var RadialGradient = require( 'SCENERY/util/RadialGradient' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var Vector2 = require( 'DOT/Vector2' );
-  var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -28,10 +28,13 @@ define( function( require ) {
 
     Node.call( this );
 
-    //private
+    // @private
     this.body = body;
   }
 
+  // this needs to be called before the static classes are defined, otherwise the inheritance does work right
+  // this jshint warning notifies if a variable is used before it is defined
+  /* jshint -W003 */
   var renderer = inherit( Node, BodyRenderer, {
       getBody: function() {
         return this.body;
@@ -44,8 +47,8 @@ define( function( require ) {
       ImageRenderer: ImageRenderer,
       SunRenderer: SunRenderer
     } );
+  /* jshint -W003 */
 
-  // static class: SwitchableBodyRenderer
   /**
    * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different renderer
    * otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to earth mass
@@ -69,7 +72,7 @@ define( function( require ) {
 
     body.getMassProperty().link( function() {
       thisRenderer.removeAllChildren();
-      thisRenderer.addChild( ( body.getMass() == targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
+      thisRenderer.addChild( ( body.getMass() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
     } );
   }
 
@@ -80,7 +83,6 @@ define( function( require ) {
     }
   } );
 
-  // static class: SphereRenderer
   /**
    * Render a SphericalNode for the body.
    * @param body
@@ -96,14 +98,12 @@ define( function( require ) {
 
   inherit( BodyRenderer, SphereRenderer, {
     setDiameter: function( viewDiameter ) {
-//      if ( !GravityAndOrbitsApplication.teacherMode ) {
       this.sphereNode.radius = viewDiameter / 2;
       this.sphereNode.fill = this.createPaint( viewDiameter );
       return this;
-//      }
     },
 
-    //private
+    // @private
     createPaint: function( diameter ) {
       var highlight = ( this.body ) ? this.body.getHighlight() : 'white';
       var color = ( this.body ) ? this.body.getColor() : 'yellow';
@@ -117,7 +117,6 @@ define( function( require ) {
     }
   } );
 
-  // static class: SunRenderer
   /**
    * Adds triangle edges to the sun to make it look more recognizable
    *
@@ -129,7 +128,7 @@ define( function( require ) {
    */
   function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
 
-    //private
+    // @private
     this.twinkles = new Path( null, { fill: 'yellow' } );
 
     SphereRenderer.call( this, body, viewDiameter );
@@ -149,7 +148,7 @@ define( function( require ) {
       var shape = new Shape();
       shape.moveTo( 0, 0 );
       for ( var i = 0; i < this.numSegments + 1; i++ ) {
-        var myRadius = ( i % 2 == 0 ) ? this.twinkleRadius( radius ) : radius;
+        var myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
         var target = Vector2.createPolar( myRadius, angle );
         shape.lineToPoint( target );
         angle += deltaAngle;
@@ -158,7 +157,6 @@ define( function( require ) {
     }
   } );
 
-  // static class: ImageRenderer
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
    */
@@ -179,7 +177,7 @@ define( function( require ) {
       this.updateViewDiameter();
     },
 
-    //private
+    // @private
     updateViewDiameter: function() {
       this.imageNode.matrix = new Matrix3();
       var scale = this.viewDiameter / this.imageNode.width;
