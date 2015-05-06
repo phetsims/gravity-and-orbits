@@ -39,8 +39,9 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsModule( tabUserComponent, phetFrame, whiteBackgroundProperty, name, showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
-    //Properties that are common to all "modes" should live here.
+    var thisModule = this;
 
+    // Properties that are common to all "modes" should live here.
     PropertySet.call( this, {
       showGravityForce: false,
       showPath: false,
@@ -49,13 +50,11 @@ define( function( require ) {
       showMass: false,
       playButtonPressed: false,
       timeSpeedScale: STARTING_SPEED_SCALE,
-      //timeSpeedScale: 1, // js version should start at 1 I think
       measuringTapeVisible: false,
       gravityEnabled: true,
       stepping: false,
       rewinding: false,
-//      mode: 0, // TODO this was blank
-      showMeasuringTape: false // was blank
+      showMeasuringTape: false
     } );
 
 
@@ -63,40 +62,31 @@ define( function( require ) {
 //    SimSharingPiccoloModule.call( this, tabUserComponent, name, new ConstantDtClock( 30, 1 ) );
     this.showMassCheckBox = showMassCheckBox;
 
-    //private
+    // @private
     this.modes = createModes( new ModeListParameterList(
       this.playButtonPressedProperty,
       this.gravityEnabledProperty,
       this.steppingProperty,
       this.rewindingProperty,
-      this.timeSpeedScaleProperty) );
+      this.timeSpeedScaleProperty ) );
 
-//    console.log(this.modes.modes[0]);
-
-    this.modeProperty = new Property( this.modes.modes[initialModeIndex] );
+    this.modeProperty = new Property( this.modes.modes[ initialModeIndex ] );
     this.whiteBackgroundProperty = whiteBackgroundProperty;
     this.showMeasuringTape = showMeasuringTape;
 
-    // TODO: look at java for this
-//    getModulePanel().setLogoPanel( null );
-
     for ( var i = 0; i < this.modes.modes.length; i++ ) {
-      this.modes.modes[i].init( this );
+      this.modes.modes[ i ].init( this );
     }
-//    setSimulationPanel( getMode().getCanvas() );
-    // Switch the entire canvas on mode switches
-//    modeProperty.addObserver( new SimpleObserver().withAnonymousClassBody( {
-//      update: function() {
-//        SwingUtilities.invokeLater( new Runnable().withAnonymousClassBody( {
-//          run: function() {
-//            setSimulationPanel( getMode().getCanvas() );
-//          }
-//        } ) );
-//        updateActiveModule();
-//      }
-//    } ) );
-//    //clock panel appears in the canvas
-//    setClockControlPanel( null );
+
+    // Make sure only one canvas is visible at a time
+    this.modeProperty.link( function( mode ) {
+      for ( var i = 0; i < thisModule.modes.modes.length; i++ ) {
+        thisModule.modes.modes[ i ].getCanvas().visible = false;
+      }
+      mode.getCanvas().visible = true;
+      thisModule.updateActiveModule();
+    } );
+
     this.reset();
   }
 
@@ -105,13 +95,12 @@ define( function( require ) {
         if ( this.playButtonPressedProperty.value ) {
           this.getMode().getModel().getClock().step( dt );
         }
-    },
+      },
 
       getModeIndex: function() {
         return this.modes.modes.indexOf( this.getMode() );
       },
 
-      //private
       getMode: function() {
         return this.modeProperty.get();
       },
@@ -120,16 +109,16 @@ define( function( require ) {
         return this.modes.modes.slice( 0 );
       },
 
-      //private
+      // @private
       updateActiveModule: function() {
         for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes.modes[i].active.set( this.modes.modes[i] === this.getMode() );
+          this.modes.modes[ i ].active.set( this.modes.modes[ i ] === this.getMode() );
         }
       },
+
       reset: function() {
         for ( var i = 0; i < this.modes.modes.length; i++ ) {
-          //console.log( this.modes.modes[i] );
-          this.modes.modes[i].reset();
+          this.modes.modes[ i ].reset();
         }
         this.showGravityForceProperty.reset();
         this.showPathProperty.reset();
@@ -144,21 +133,25 @@ define( function( require ) {
         this.rewindingProperty.reset();
         this.modeProperty.reset();
       },
+
       setTeacherMode: function( b ) {
         for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes[i].getModel().teacherMode = b;
+          this.modes[ i ].getModel().teacherMode = b;
         }
       },
+
       addModelSteppedListener: function( simpleObserver ) {
         for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes[i].getModel().addModelSteppedListener( simpleObserver );
+          this.modes[ i ].getModel().addModelSteppedListener( simpleObserver );
         }
       },
+
       setModeIndex: function( selectedMode ) {
         this.modeProperty.set( this.modes.get( selectedMode ) );
       }
     },
-//statics
+
+    // statics
     {
       G: G,
       STARTING_SPEED_SCALE: STARTING_SPEED_SCALE
