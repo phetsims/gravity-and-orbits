@@ -43,9 +43,11 @@ define( function( require ) {
    */
   function GravityAndOrbitsModel( clock, gravityEnabledProperty ) {
     PropertySet.call( this, {
-      gravityEnabled: true, // this was originally an argument to the model
       paused: true
     } );
+
+    // @private
+    this.gravityEnabledProperty = gravityEnabledProperty;
 
     this.clock = clock;
     this.bodies = [];//Contains the sun, moon, earth, satellite

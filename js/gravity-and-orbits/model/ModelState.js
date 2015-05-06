@@ -117,7 +117,7 @@ define( function( require ) {
      */
     getForce: function( target, newTargetPosition, gravityEnabledProperty ) {
 
-      //zero vector, for no gravity
+      // zero vector, for no gravity
       var sum = new Vector2();
       if ( gravityEnabledProperty.get() ) {
         for ( var i = 0; i < this.bodyStates.length; i++ ) {
