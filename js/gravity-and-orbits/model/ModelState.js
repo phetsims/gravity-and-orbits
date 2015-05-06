@@ -13,7 +13,6 @@ define( function( require ) {
 
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
   var Vector2 = require( 'DOT/Vector2' );
 
   // constants
@@ -35,8 +34,8 @@ define( function( require ) {
     this.workingCopyBodyStates = []; // {Array.<BodyState>}
 
     // TODO: bodyState is supposed to be immutable
-    // but i'll edit this workingcopy for my own purposes
-    //  not very kosher
+    // but I'll edit this working copy for my own purposes
+    // not very kosher
     this.bodyStates.forEach( function( bodyState ) {
       self.workingCopyBodyStates.push( new BodyState(
         bodyState.position,
@@ -68,7 +67,7 @@ define( function( require ) {
       }
       else {
         // gravity is not active, bodies are coasting;
-        return this.getNextCoastingState( dt )
+        return this.getNextCoastingState( dt );
       }
       return state;
     },
@@ -129,7 +128,7 @@ define( function( require ) {
       var netForce = new Vector2();
 
       for ( var j = 0; j < this.workingCopyBodyStates.length; j++ ) {
-        if ( bodyState != this.workingCopyBodyStates[ j ] ) // an object cannot act on itself
+        if ( bodyState !== this.workingCopyBodyStates[ j ] ) // an object cannot act on itself
         {
           // netForce is a mutable vector
           netForce.add( this.getTwoBodyForce( bodyState, this.workingCopyBodyStates[ j ] ) );
@@ -182,7 +181,7 @@ define( function( require ) {
       var newState = [];// {Array.<BodyState>}
       this.workingCopyBodyStates.forEach( function( bodyState ) {
         newState.push( new BodyState(
-          bodyState.position,
+          new Vector2( bodyState.position.x, bodyState.position.y ),
           bodyState.velocity,
           bodyState.acceleration,
           bodyState.mass,
