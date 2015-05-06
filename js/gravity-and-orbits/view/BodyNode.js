@@ -117,6 +117,7 @@ define( function( require ) {
     },
 
     // Create a new image at the specified width. Use body.createRenderer() instead of bodyRenderer since we must specify a new width value
+    // TODO: this method can probably be removed, since it is just a wrapper around body.createRenderer
     renderImage: function( width ) {
       return this.body.createRenderer( width );
     },
