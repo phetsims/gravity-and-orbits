@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * Provides the play area for a single GravityAndOrbitsMode.
@@ -28,7 +28,7 @@ define( function( require ) {
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/SpeedRadioButtons' );
   var DayCounter = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/DayCounter' );
-  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/scale-slider/ScaleSlider' );
+  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/TimeControlPanel' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );

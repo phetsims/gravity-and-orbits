@@ -167,15 +167,9 @@ define( function( require ) {
      */
     addBody: function( body ) {
       this.model.addBody( body );
-//      var updater = new SimpleObserver().withAnonymousClassBody( {
-//        update: function() {
-//          this.deviatedFromDefaults.set( true );
-//        }
-//      } );
       var thisMode = this;
       var update = function() {
         thisMode.deviatedFromDefaultsProperty.set( true );
-//        updater.update();
       };
       body.getMassProperty().link( update );
       body.addUserModifiedPositionListener( update );

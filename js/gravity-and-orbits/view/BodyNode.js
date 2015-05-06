@@ -46,13 +46,12 @@ define( function( require ) {
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() );
     this.addChild( this.bodyRenderer );
 
-    // @public
-    this.dragHandler = new MovableDragHandler( this.body.positionProperty, {
+    var dragHandler = new MovableDragHandler( this.body.positionProperty, {
       onDrag: function() {
         body.notifyUserModifiedPosition();
       }
     } );
-    this.addInputListener( this.dragHandler );
+    this.addInputListener( dragHandler );
 
     Property.multilink( [ this.body.positionProperty, modelViewTransformProperty ], function( position, modelViewTransform ) {
       thisNode.translation = modelViewTransform.modelToViewPosition( position );
@@ -63,7 +62,7 @@ define( function( require ) {
     } );
 
     this.modelViewTransformProperty.link( function( modelViewTransform ) {
-      thisNode.dragHandler.setModelViewTransform( modelViewTransform );
+      dragHandler.setModelViewTransform( modelViewTransform );
     } );
 
     // Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
@@ -118,6 +117,7 @@ define( function( require ) {
     },
 
     // Create a new image at the specified width. Use body.createRenderer() instead of bodyRenderer since we must specify a new width value
+    // TODO: this method can probably be removed, since it is just a wrapper around body.createRenderer
     renderImage: function( width ) {
       return this.body.createRenderer( width );
     },

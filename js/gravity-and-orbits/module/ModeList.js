@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado
 
 /**
  * ModeList enumerates and declares the possible modes in the GravityAndOrbitsModule, such as 'Sun & Earth' mode.
@@ -24,6 +24,7 @@ define( function( require ) {
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/BodyRenderer' );
   var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/EarthMassReadoutNode' );
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
+  var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
@@ -57,10 +58,10 @@ define( function( require ) {
   var SPACE_STATION_PERIGEE = 347000;
 
   var SECONDS_PER_MINUTE = 60;
+  var FORCE_SCALE = VectorNode.FORCE_SCALE;
 
-  // not original in this file
+  // not originally in this file
   var METERS_PER_MILE = 0.000621371192;
-  var FORCE_SCALE = 76.0 / 5.179E15;
 
   var DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
@@ -75,7 +76,6 @@ define( function( require ) {
     this.timeScale = 1;
     ModeConfig.call( this, 1.25 );
     this.initialMeasuringTapeLocation = new Line( (this.sun.x + this.earth.x) / 3, -this.earth.x / 2, (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ), -this.earth.x / 2 );
-//    this.forceScale = VectorNode.FORCE_SCALE * 120;
     this.forceScale = FORCE_SCALE * 120;
   }
 

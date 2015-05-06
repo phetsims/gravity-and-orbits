@@ -15,10 +15,11 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
 
-  // TODO: Look into MutableVectorNode instead - right now it isn't working correctly
+  // TODO: Look into MutableArrowNode instead for performance, but right now MutableArrowNode isn't working correctly
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
 
+  // constants
   var FORCE_SCALE = 76.0 / 5.179E15;
 
   /**
