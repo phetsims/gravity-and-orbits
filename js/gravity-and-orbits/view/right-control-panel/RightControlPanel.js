@@ -16,7 +16,7 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/PlanetModeMenu' );
   var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/GravityModeMenu' );
-  var MassMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/mass-menu/MassMenu' );
+  var MassMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/MassMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/SpaceObjectsPropertyCheckbox' );
 
   var VBox = require( 'SCENERY/nodes/VBox' );
