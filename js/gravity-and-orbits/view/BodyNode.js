@@ -50,6 +50,9 @@ define( function( require ) {
     this.dragHandler = new MovableDragHandler( this.body.positionProperty, {
       onDrag: function() {
         body.notifyUserModifiedPosition();
+        //if ( body.isCollided() ) {
+        //  body.clockTicksSinceExplosionProperty.set( body.clockTicksSinceExplosionProperty.get() + 1 );
+        //}
       }
     } );
     this.addInputListener( this.dragHandler );

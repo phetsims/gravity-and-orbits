@@ -1,4 +1,5 @@
 // Copyright 2002-2015, University of Colorado
+
 /**
  * Shows an explosion for a smaller Body when it crashes into a larger Body.
  *
@@ -16,7 +17,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
 
   // constants
-  var NUM_STEPS_FOR_ANIMATION = 25;
+  var NUM_STEPS_FOR_ANIMATION = 10;
 
   /**
    *
@@ -28,30 +29,33 @@ define( function( require ) {
     Node.call( this );
     var thisNode = this;
 
-    //Function that computes the diameter as a function of the animation step
+    // Function that computes the diameter as a function of the animation step
     var getDiameter = function( numClockTicksSinceExplosion ) {
       if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
-        return new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2, 1, this.getMaxViewDiameter( body, modelViewTransformProperty ) ).evaluate( numClockTicksSinceExplosion );
+        return new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2, 1, thisNode.getMaxViewDiameter( body, modelViewTransformProperty ) )( numClockTicksSinceExplosion );
       }
       else if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION ) {
-        return new LinearFunction( NUM_STEPS_FOR_ANIMATION / 2, NUM_STEPS_FOR_ANIMATION, this.getMaxViewDiameter( body, modelViewTransformProperty ), 1 ).evaluate( numClockTicksSinceExplosion );
+        return new LinearFunction( NUM_STEPS_FOR_ANIMATION / 2, NUM_STEPS_FOR_ANIMATION, thisNode.getMaxViewDiameter( body, modelViewTransformProperty ), 1 )( numClockTicksSinceExplosion );
       }
       else {
         return 1.0;
       }
     };
 
-    //Add the graphic that shows the explosion, uses the twinkle graphics from the cartoon sun
+    // Add the graphic that shows the explosion, uses the twinkle graphics from the cartoon sun
     this.addChild( this.getExplosionEdgeGraphic( body, getDiameter ) );
-    //update the location of this node when the body changes
+
+    // update the location of this node when the body changes, unless the body is collided
     body.positionProperty.link( function() {
-      thisNode.translation = modelViewTransformProperty.get().modelToViewPosition( body.getPosition() );
+      if ( !body.isCollided() ) { // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
+        thisNode.translation = modelViewTransformProperty.get().modelToViewPosition( body.getPosition() );
+      }
     } );
   }
 
   return inherit( Node, ExplosionNode, {
 
-      //private
+      // @private
       getExplosionEdgeGraphic: function( body, getDiameter ) {
         var yellowAndWhite = {
           getHighlight: function() {
@@ -66,7 +70,7 @@ define( function( require ) {
         };
         var explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
-        var explodedProperty = new DerivedProperty( [body.getCollidedProperty(), body.clockTicksSinceExplosionProperty],
+        var explodedProperty = new DerivedProperty( [ body.getCollidedProperty(), body.clockTicksSinceExplosionProperty ],
           function( collided, clockTicks ) {
             return collided && clockTicks <= NUM_STEPS_FOR_ANIMATION;
           } );
@@ -74,13 +78,13 @@ define( function( require ) {
         explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
 
         body.clockTicksSinceExplosionProperty.lazyLink( function( clockTicks ) {
-          explosionEdgeGraphic.setDiameter( clockTicks );
+          explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) );
         } );
 
         return explosionEdgeGraphic;
       },
 
-      //private
+      // @private
       getMaxViewDiameter: function( body, modelViewTransformProperty ) {
         return modelViewTransformProperty.get().modelToViewDeltaX( body.getDiameter() ) * 2;
       }

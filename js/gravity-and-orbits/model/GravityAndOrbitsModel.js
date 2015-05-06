@@ -16,7 +16,7 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/ModelState' );
 
-  //Subdivide DT intervals by this factor to improve smoothing, otherwise some orbits look too non-smooth (you can see their corners), see #3050
+  // Subdivide DT intervals by this factor to improve smoothing, otherwise some orbits look too non-smooth (you can see their corners), see #3050
   var SMOOTHING_STEPS = 1; // TODO: this was 5 in the java version but kills performance in HTML5. Perhaps is it not needed.
 
   /**
@@ -50,8 +50,8 @@ define( function( require ) {
     this.gravityEnabledProperty = gravityEnabledProperty;
 
     this.clock = clock;
-    this.bodies = [];//Contains the sun, moon, earth, satellite
-    this.modelStepListeners = [];//SimpleObservers//TODO: Convert to trigger
+    this.bodies = []; // Contains the sun, moon, earth, satellite
+    this.modelStepListeners = []; // SimpleObservers TODO: Convert to trigger
 
     var thisModel = this;
     this.clock.addEventTimer( function( dt ) {
@@ -59,7 +59,7 @@ define( function( require ) {
       thisModel.step( thisModel.clock.dt );
     }.bind( this ) );
 
-    //Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
+    // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
     this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
   }
 
@@ -69,7 +69,7 @@ define( function( require ) {
       step: function( dt ) {
         var i;
 
-        //Break up the update into discrete steps to make the orbits look smoother, see #3050
+        // Break up the update into discrete steps to make the orbits look smoother, see #3050
         for ( i = 0; i < SMOOTHING_STEPS; i++ ) {
           this.performSubStep( dt / SMOOTHING_STEPS );
         }
@@ -81,11 +81,11 @@ define( function( require ) {
         }
       },
 
-      //Perform one of several steps and update body paths in each iteration to smooth out the orbits
+      // Perform one of several steps and update body paths in each iteration to smooth out the orbits
       performSubStep: function( dt ) {
 
         var i;
-        //Compute the next state for each body based on the current state of all bodies in the system.
+        // Compute the next state for each body based on the current state of all bodies in the system.
         var bodyStates = this.bodies.map( function( body ) {return body.toBodyState();} );
         var newState = new ModelState( bodyStates ).getNextState(
           dt,
@@ -102,7 +102,7 @@ define( function( require ) {
         for ( i = 0; i < this.bodies.length; i++ ) {
           this.bodies[ i ].updateBodyStateFromModel( newState.getBodyState( i ) );
         }
-        //when two bodies collide, destroy the smaller
+        // when two bodies collide, destroy the smaller
         for ( var j = 0; j < this.bodies.length; j++ ) {
           var body = this.bodies[ j ];
           for ( var k = 0; k < this.bodies.length; k++ ) {
@@ -115,16 +115,13 @@ define( function( require ) {
           }
         }
 
-        //For debugging error in the integrator
-//                System.out.println( clock.getSimulationTime() + "\t" + getSunEarthDistance() );
-
-        //Signify that the model completed an entire step so that any batch operations may be invoked
+        // Signify that the model completed an entire step so that any batch operations may be invoked
         for ( i = 0; i < this.bodies.length; i++ ) {
           this.bodies[ i ].allBodiesUpdated();
         }
       },
 
-      //For debugging the stability of the integration rule
+      // For debugging the stability of the integration rule
       getSunEarthDistance: function() {
         var star = this.getBody( "star" );
         var planet = this.getBody( "planet" );
@@ -145,7 +142,7 @@ define( function( require ) {
         this.modelStepListeners.push( simpleObserver );
       },
 
-      //Adds a body and updates the body's force vectors
+      // Adds a body and updates the body's force vectors
       addBody: function( body ) {
         var gravityAndOrbitsModel = this;
         this.bodies.push( body );
@@ -188,7 +185,7 @@ define( function( require ) {
         for ( var i = 0; i < this.bodies.length; i++ ) {
           this.bodies[ i ].resetAll();
         }
-        this.updateForceVectors();//has to be done separately since physics is computed as a batch
+        this.updateForceVectors(); // has to be done separately since physics is computed as a batch
       },
 
       // Unexplodes and returns objects to the stage
