@@ -27,7 +27,6 @@ define( function( require ) {
   var STARTING_SPEED_SCALE = (0.1 + 2) / 4; // one quarter of the way up between 1/10 and 2 scale factors
 
   /**
-   * //    public GravityAndOrbitsModule( IUserComponent tabUserComponent, final PhetFrame phetFrame, Property<Boolean> whiteBackgroundProperty, final String name, boolean showMeasuringTape, Function1<ModeListParameterList, ArrayList<GravityAndOrbitsMode>> createModes, int initialModeIndex, boolean showMassCheckBox ) {
    * @param tabUserComponent
    * @param phetFrame
    * @param {Property<boolean>} whiteBackgroundProperty
@@ -62,26 +61,26 @@ define( function( require ) {
 //    SimSharingPiccoloModule.call( this, tabUserComponent, name, new ConstantDtClock( 30, 1 ) );
     this.showMassCheckBox = showMassCheckBox;
 
-    // @private
-    this.modes = createModes( new ModeListParameterList(
+    // @private {ModeList}
+    this.modeList = createModes( new ModeListParameterList(
       this.playButtonPressedProperty,
       this.gravityEnabledProperty,
       this.steppingProperty,
       this.rewindingProperty,
       this.timeSpeedScaleProperty ) );
 
-    this.modeProperty = new Property( this.modes.modes[ initialModeIndex ] );
+    this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
     this.whiteBackgroundProperty = whiteBackgroundProperty;
     this.showMeasuringTape = showMeasuringTape;
 
-    for ( var i = 0; i < this.modes.modes.length; i++ ) {
-      this.modes.modes[ i ].init( this );
+    for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+      this.modeList.modes[ i ].init( this );
     }
 
     // Make sure only one canvas is visible at a time
     this.modeProperty.link( function( mode ) {
-      for ( var i = 0; i < thisModule.modes.modes.length; i++ ) {
-        thisModule.modes.modes[ i ].getCanvas().visible = false;
+      for ( var i = 0; i < thisModule.modeList.modes.length; i++ ) {
+        thisModule.modeList.modes[ i ].getCanvas().visible = false;
       }
       mode.getCanvas().visible = true;
       thisModule.updateActiveModule();
@@ -98,7 +97,7 @@ define( function( require ) {
       },
 
       getModeIndex: function() {
-        return this.modes.modes.indexOf( this.getMode() );
+        return this.modeList.modes.indexOf( this.getMode() );
       },
 
       getMode: function() {
@@ -106,19 +105,19 @@ define( function( require ) {
       },
 
       getModes: function() {
-        return this.modes.modes.slice( 0 );
+        return this.modeList.modes.slice( 0 );
       },
 
       // @private
       updateActiveModule: function() {
-        for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes.modes[ i ].active.set( this.modes.modes[ i ] === this.getMode() );
+        for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+          this.modeList.modes[ i ].active.set( this.modeList.modes[ i ] === this.getMode() );
         }
       },
 
       reset: function() {
-        for ( var i = 0; i < this.modes.modes.length; i++ ) {
-          this.modes.modes[ i ].reset();
+        for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+          this.modeList.modes[ i ].reset();
         }
         this.showGravityForceProperty.reset();
         this.showPathProperty.reset();
@@ -135,7 +134,7 @@ define( function( require ) {
       },
 
       setTeacherMode: function( b ) {
-        for ( var i = 0; i < this.modes.length; i++ ) {
+        for ( var i = 0; i < this.modeList.modes.length; i++ ) {
           this.modes[ i ].getModel().teacherMode = b;
         }
       },
@@ -146,8 +145,12 @@ define( function( require ) {
         }
       },
 
+      /**
+       *
+       * @param {number} selectedMode - The index of the select mode
+       */
       setModeIndex: function( selectedMode ) {
-        this.modeProperty.set( this.modes.get( selectedMode ) );
+        this.modeProperty.set( this.modeList.modes[ selectedMode ] );
       }
     },
 
