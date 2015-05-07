@@ -96,10 +96,6 @@ define( function( require ) {
         }
       },
 
-      getModeIndex: function() {
-        return this.modeList.modes.indexOf( this.getMode() );
-      },
-
       getMode: function() {
         return this.modeProperty.get();
       },
@@ -137,14 +133,6 @@ define( function( require ) {
         for ( var i = 0; i < this.modes.length; i++ ) {
           this.modes[ i ].getModel().addModelSteppedListener( simpleObserver );
         }
-      },
-
-      /**
-       *
-       * @param {number} selectedMode - The index of the select mode
-       */
-      setModeIndex: function( selectedMode ) {
-        this.modeProperty.set( this.modeList.modes[ selectedMode ] );
       }
     },
 
