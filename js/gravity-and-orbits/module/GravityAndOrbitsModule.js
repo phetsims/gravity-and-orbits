@@ -133,12 +133,6 @@ define( function( require ) {
         this.modeProperty.reset();
       },
 
-      setTeacherMode: function( b ) {
-        for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modes[ i ].getModel().teacherMode = b;
-        }
-      },
-
       addModelSteppedListener: function( simpleObserver ) {
         for ( var i = 0; i < this.modes.length; i++ ) {
           this.modes[ i ].getModel().addModelSteppedListener( simpleObserver );
