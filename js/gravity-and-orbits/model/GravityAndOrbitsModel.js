@@ -89,7 +89,7 @@ define( function( require ) {
         var bodyStates = this.bodies.map( function( body ) {return body.toBodyState();} );
         var newState = new ModelState( bodyStates ).getNextState(
           dt,
-          40 / SMOOTHING_STEPS, // 1000 looks great, 50 starts to look awkward for sun+earth+moon, but 100 seems okay.
+          1 / SMOOTHING_STEPS, // 1000 looks great, 50 starts to look awkward for sun+earth+moon, but 100 seems okay.
           // Update: 100 is poor for sun/earth/moon system in "to scale" because the orbit is gradually expanding.
           // Tests suggest 400 is a good performance/precision tradeoff
           this.gravityEnabledProperty
