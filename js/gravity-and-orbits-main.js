@@ -3,7 +3,7 @@
 /**
  * Main entry point for the sim.
  *
- * @author PhET Interactive Simulations
+ * @author Aaron Davis
  */
 define( function( require ) {
   'use strict';
@@ -13,8 +13,6 @@ define( function( require ) {
   var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
   var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
-  var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GlobalOptionsNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Sim = require( 'JOIST/Sim' );
@@ -33,22 +31,29 @@ define( function( require ) {
   var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
   var simTitle = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' );
 
-  // these modules are originally from GravityAndOrbitsApplication
 
-  // static class: IntroModule
-  function ToScaleModule( phetFrame, whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, UserComponents.toScaleTab, phetFrame, whiteBackgroundProperty, GAOStrings.TO_SCALE, true, function( p ) {
+  /**
+   * ToScaleModule
+   * @param whiteBackgroundProperty
+   * @constructor
+   */
+  function ToScaleModule( whiteBackgroundProperty ) {
+    GravityAndOrbitsModule.call( this, whiteBackgroundProperty, true, function( p ) {
       return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
     }, 0, true );
   }
 
   inherit( GravityAndOrbitsModule, ToScaleModule );
 
-  // static class: CartoonModule
-  function CartoonModule( phetFrame, whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, UserComponents.cartoonTab, phetFrame, whiteBackgroundProperty, GAOStrings.CARTOON, false, function( p ) {
-        return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
-      }, 0, false );
+  /**
+   * CartoonModule
+   * @param whiteBackgroundProperty
+   * @constructor
+   */
+  function CartoonModule( whiteBackgroundProperty ) {
+    GravityAndOrbitsModule.call( this, whiteBackgroundProperty, false, function( p ) {
+      return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
+    }, 0, false );
   }
 
   inherit( GravityAndOrbitsModule, CartoonModule );
@@ -69,13 +74,13 @@ define( function( require ) {
   };
 
   var cartoonScreen = new Screen( cartoonString, new Image( cartoonIcon ),
-    function() { return new CartoonModule( null, whiteBackgroundProperty ); },
+    function() { return new CartoonModule( whiteBackgroundProperty ); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
     { backgroundColor: '#000' }
   );
 
   var toScaleScreen = new Screen( toScaleString, new Image( toScaleIcon ),
-    function() { return new ToScaleModule( null, whiteBackgroundProperty ); },
+    function() { return new ToScaleModule( whiteBackgroundProperty ); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
     { backgroundColor: '#000' }
   );

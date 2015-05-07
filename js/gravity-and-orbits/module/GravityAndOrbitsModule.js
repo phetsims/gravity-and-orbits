@@ -27,17 +27,14 @@ define( function( require ) {
   var STARTING_SPEED_SCALE = (0.1 + 2) / 4; // one quarter of the way up between 1/10 and 2 scale factors
 
   /**
-   * @param tabUserComponent
-   * @param phetFrame
    * @param {Property<boolean>} whiteBackgroundProperty
-   * @param {string} name
    * @param {boolean} showMeasuringTape
    * @param {function<ModeListParameterList, Array<GravityAndOrbitsMode>>} createModes
    * @param {number} initialModeIndex
    * @param {boolean} showMassCheckBox
    * @constructor
    */
-  function GravityAndOrbitsModule( tabUserComponent, phetFrame, whiteBackgroundProperty, name, showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
+  function GravityAndOrbitsModule( whiteBackgroundProperty, showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
     var thisModule = this;
 
     // Properties that are common to all "modes" should live here.
@@ -56,9 +53,6 @@ define( function( require ) {
       showMeasuringTape: false
     } );
 
-
-    //TODO: I don't think this clock is used since each mode has its own clock; perhaps this just runs the active tab?
-//    SimSharingPiccoloModule.call( this, tabUserComponent, name, new ConstantDtClock( 30, 1 ) );
     this.showMassCheckBox = showMassCheckBox;
 
     // @private {ModeList}
@@ -136,7 +130,6 @@ define( function( require ) {
       }
     },
 
-    // statics
     {
       G: G,
       STARTING_SPEED_SCALE: STARTING_SPEED_SCALE
