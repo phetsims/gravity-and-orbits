@@ -28,7 +28,6 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
-  var UserComponents = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/UserComponents' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
 
   // images
@@ -197,7 +196,6 @@ define( function( require ) {
     function SpaceStation( earthSpaceStation, maxPathLength ) {
       Body.call(
         this,
-        UserComponents.satellite,
         GAOStrings.SATELLITE,
         earthSpaceStation.spaceStation.x,
         earthSpaceStation.spaceStation.y,
@@ -226,7 +224,6 @@ define( function( require ) {
     function Moon( massSettable, maxPathLength, massReadoutBelow, body ) {
       Body.call(
         this,
-        UserComponents.moon,
         GAOStrings.MOON,
         body.x,
         body.y,
@@ -270,7 +267,6 @@ define( function( require ) {
     function Earth( maxPathLength, body ) {
       Body.call(
         this,
-        UserComponents.planet,
         GAOStrings.PLANET,
         body.x,
         body.y,
@@ -305,7 +301,6 @@ define( function( require ) {
 
       Body.call(
         this,
-        UserComponents.star,
         GAOStrings.STAR,
         body.x,
         body.y,
@@ -359,7 +354,6 @@ define( function( require ) {
     var SEC_PER_YEAR = 365 * 24 * 60 * 60;
     var SUN_MODES_VELOCITY_SCALE = 4.48E6;
     this.modes.push( new GravityAndOrbitsMode(
-      UserComponents.sunEarthRadioButton,
       sunEarth.forceScale,
       false,
       sunEarth.dt,
@@ -379,7 +373,6 @@ define( function( require ) {
     this.modes[0].addBody( new Earth( this.modes[0].getMaxPathLength(), sunEarth.earth ) );
 
     this.modes.push( new GravityAndOrbitsMode(
-      UserComponents.sunEarthMoonRadioButton,
       sunEarthMoon.forceScale,
       false,
       sunEarthMoon.dt,
@@ -403,7 +396,6 @@ define( function( require ) {
 
     var SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
     this.modes.push( new GravityAndOrbitsMode(
-      UserComponents.earthMoonRadioButton,
       earthMoon.forceScale,
       false,
       ( DEFAULT_DT / 3 ), // actual days
@@ -427,7 +419,6 @@ define( function( require ) {
     };
 
     this.modes.push( new GravityAndOrbitsMode(
-      UserComponents.earthSpaceStationRadioButton,
       earthSpaceStation.forceScale,
       false,
       ( DEFAULT_DT * 9E-4 ),
