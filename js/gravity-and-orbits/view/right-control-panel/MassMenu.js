@@ -12,6 +12,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var HStrut = require( 'SUN/HStrut' );
   var BodyMassControl = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/BodyMassControl' );
 
   /**
@@ -21,17 +22,22 @@ define( function( require ) {
    */
   function MassMenu( module, options ) {
 
-    options = _.extend( { resize: false, margin: 10 }, options );
+    options = _.extend( { resize: false }, options );
     VBox.call( this, options );
+
+    var hStrut = new HStrut( 220 );
 
     var thisNode = this;
     module.modeProperty.link( function( mode ) {
       thisNode.removeAllChildren();
+      thisNode.addChild( hStrut );
       var bodies = mode.getModel().getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
         var body = bodies[ i ];
         if ( body.isMassSettable() ) {
-          thisNode.addChild( new BodyMassControl( body, body.getMassProperty().getInitialValue() / 2, body.getMassProperty().getInitialValue() * 2, body.getTickValue(), body.getTickLabel(), module.whiteBackgroundProperty ) );
+          thisNode.addChild(
+            new BodyMassControl( body, body.getMassProperty().getInitialValue() / 2, body.getMassProperty().getInitialValue() * 2,
+              body.getTickValue(), body.getTickLabel(), module.whiteBackgroundProperty ) );
         }
       }
       thisNode.updateLayout();

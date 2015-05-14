@@ -27,7 +27,7 @@ define( function( require ) {
   var SNAP_TOLERANCE = 0.03;
   var THUMB_SIZE = new Dimension2( 15, 20 );
   var NUM_TICKS = 4;
-  var WIDTH = 200;
+  var WIDTH = 180;
   var SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
 
   /**
