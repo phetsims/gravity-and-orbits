@@ -4,21 +4,7 @@
   "license": "GPLv3",
   "simTitleStringKey": "GRAVITY_AND_ORBITS/gravity-and-orbits.name",
   "phetLibs": [
-    "gravity-and-orbits",
-    "assert",
-    "axon",
-    "babel",
-    "brand",
-    "chipper",
-    "dot",
-    "joist",
-    "kite",
-    "phet-core",
-    "phetcommon",
-    "scenery",
-    "scenery-phet",
-    "sherpa",
-    "sun"
+    "gravity-and-orbits"
   ],
   "repository": {
     "type": "git",
