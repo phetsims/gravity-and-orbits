@@ -107,7 +107,7 @@ define( function( require ) {
       thisMode.rewindClockTime = thisMode.getClock().getSimulationTime();
     } );
 
-    Property.multilink( [p.playButtonPressed, this.active], function( playButtonPressed, active ) {
+    Property.multilink( [ p.playButtonPressed, this.active ], function( playButtonPressed, active ) {
       thisMode.model.getClock().setRunning( playButtonPressed && active );
     } );
   }
@@ -234,7 +234,7 @@ define( function( require ) {
       this.getClock().setSimulationTime( this.rewindClockTime );
       var bodies = this.model.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
-        bodies[i].rewind();
+        bodies[ i ].rewind();
       }
       this.rewindingProperty.set( false );
     },

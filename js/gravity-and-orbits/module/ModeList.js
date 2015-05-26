@@ -444,10 +444,10 @@ define( function( require ) {
        * @private
        *
        * Creates an image that can be used for the mode icon, showing the nodes of each body in the mode.
-       * @param{boolean} sun
-       * @param{boolean} earth
-       * @param{boolean} moon
-       * @param{boolean} spaceStation
+       * @param {boolean} sun
+       * @param {boolean} earth
+       * @param {boolean} moon
+       * @param {boolean} spaceStation
        * @returns {Image}
        */
       createIconImage: function( sun, earth, moon, spaceStation ) {
@@ -462,7 +462,7 @@ define( function( require ) {
           children[i].setScaleMagnitude( 25 / children[i].width );
         }
 
-        return new HBox( { children: children, spacing: 15 } );
+        return new HBox( { children: children, spacing: 20 } );
       }
     },
 

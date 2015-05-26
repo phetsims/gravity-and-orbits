@@ -61,16 +61,16 @@ define( function( require ) {
     var resetButtons = [];
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
-      content.push( { value: modes[i], node: modes[i].iconImage } );
+      content.push( { value: modes[ i ], node: modes[ i ].iconImage } );
 
-      var resetButton = new PlanetModeResetButton( modes[i] );
+      var resetButton = new PlanetModeResetButton( modes[ i ] );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
       (function( currentMode, resetButton ) {
         module.modeProperty.link( function( mode ) {
           resetButton.visible = ( mode === currentMode );
         } );
-      })( modes[i], resetButton );
+      })( modes[ i ], resetButton );
 
       resetButtons.push( resetButton );
     }
