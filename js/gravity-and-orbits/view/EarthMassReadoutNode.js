@@ -29,7 +29,6 @@ define( function( require ) {
       //Show the value in terms of earth masses (or thousands of earth masses)
       var value, units;
       if ( earthMasses > 1E3 ) {
-//        value = new DecimalFormat( "0" ).format( Math.round( earthMasses / 1E3 ) );
         value = Math.round( earthMasses / 1E3 ).toFixed( 0 );
         units = GAOStrings.THOUSAND_EARTH_MASSES;
       }
@@ -38,13 +37,11 @@ define( function( require ) {
         units = GAOStrings.EARTH_MASS;
       }
       else if ( earthMasses < 1 ) {
-//        value = new DecimalFormat( "0.00" ).format( earthMasses );
         value = earthMasses.toFixed( 2 );
         units = GAOStrings.EARTH_MASSES;
       }
       else {
         //Handle showing exactly "1 earth mass" instead of "1 earth masses"
-//        value = new DecimalFormat( "0.00" ).format( earthMasses );
         value = earthMasses.toFixed( 2 );
         units = (earthMasses === 1) ? GAOStrings.EARTH_MASS : GAOStrings.EARTH_MASSES;
       }
