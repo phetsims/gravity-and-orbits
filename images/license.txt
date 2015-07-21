@@ -4,7 +4,7 @@ icon_mass.png source=PhET author=Sharon
 icon_path.png source=PhET author=Sharon
 measuringTape.png source=PhET notes=see piccolo-phet/assets
 moon.png source=public domain notes=http://astro.unl.edu/misc/moonpics/moon08_th.jpg public domain license at http://astro.unl.edu/misc/moonpics
-reset_arrow source=PhET author=Sam or Bryce or Sharon
+reset_arrow.png source=PhET author=Sam or Bryce or Sharon
 space-station.png source=nasa notes=http://www.nasa.gov/images/content/323090main_s119e009793_hires.jpg linked from http://www.nasa.gov/mission_pages/station/multimedia/iss_sts119_images.html
 sun.png source=NASA notes=http://www.eos.unh.edu/images/newsl_0309/sun_lg.jpg
 to_scale_icon.png source=PhET notes=SR thinks it was Bryce or Sharon
