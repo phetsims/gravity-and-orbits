@@ -26,7 +26,7 @@ define( function( require ) {
 
   // images
   var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' );
-  var measuringTapeImg = require( 'image!GRAVITY_AND_ORBITS/measuringTape.png' );
+  var measuringTapeImg = require( 'image!SCENERY_PHET/measuringTape.png' );
   var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
 
   // strings
