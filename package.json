@@ -15,9 +15,6 @@
   },
   "phet": {
     "requirejsNamespace": "GRAVITY_AND_ORBITS",
-    "simTitleStringKey": "GRAVITY_AND_ORBITS/gravity-and-orbits.name",
-    "phetLibs": [
-      "gravity-and-orbits"
-    ]
+    "simTitleStringKey": "GRAVITY_AND_ORBITS/gravity-and-orbits.name"
   }
 }
