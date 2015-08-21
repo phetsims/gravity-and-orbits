@@ -14,7 +14,6 @@
     "requirejs": "~2.1.8"
   },
   "phet": {
-    "requirejsNamespace": "GRAVITY_AND_ORBITS",
-    "simTitleStringKey": "GRAVITY_AND_ORBITS/gravity-and-orbits.name"
+    "requirejsNamespace": "GRAVITY_AND_ORBITS"
   }
 }
