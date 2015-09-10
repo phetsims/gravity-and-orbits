@@ -29,7 +29,7 @@ define( function( require ) {
   // strings
   var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
   var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
-  var simTitle = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.name' );
+  var simTitle = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
 
   /**
