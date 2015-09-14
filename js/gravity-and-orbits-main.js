@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
+  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
   var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
   var GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GlobalOptionsNode' );
@@ -76,19 +77,27 @@ define( function( require ) {
   var cartoonScreen = new Screen( cartoonString, new Image( cartoonIcon ),
     function() { return new CartoonModule( whiteBackgroundProperty ); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: '#000' }
+    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );
 
   var toScaleScreen = new Screen( toScaleString, new Image( toScaleIcon ),
     function() { return new ToScaleModule( whiteBackgroundProperty ); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: '#000' }
+    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );
 
-  whiteBackgroundProperty.link( function( whiteBackground ) {
-    var backgroundColor = ( whiteBackground ) ? Color.WHITE : Color.BLACK;
-    cartoonScreen.backgroundColor = backgroundColor;
-    toScaleScreen.backgroundColor = backgroundColor;
+  whiteBackgroundProperty.link( function( useProjectorColors ) {
+    if ( useProjectorColors ) {
+      GravityAndOrbitsColors.applyProfile( 'projector' );
+    }
+    else {
+      GravityAndOrbitsColors.applyProfile( 'default' );
+    }
+  } );
+
+  GravityAndOrbitsColors.link( 'background', function( color ) {
+    cartoonScreen.backgroundColor = color;
+    toScaleScreen.backgroundColor = color;
   } );
 
   SimLauncher.launch( function() {
