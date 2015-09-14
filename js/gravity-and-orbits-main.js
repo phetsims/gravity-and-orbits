@@ -21,7 +21,6 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
   var Property = require( 'AXON/Property' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var Color = require( 'SCENERY/util/Color' );
 
   // images
   var cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' );

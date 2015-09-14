@@ -12,7 +12,6 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var ColorProfile = require( 'SCENERY_PHET/ColorProfile' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
 
   // constants
   var BLACK = new Color( 0, 0, 0 );
