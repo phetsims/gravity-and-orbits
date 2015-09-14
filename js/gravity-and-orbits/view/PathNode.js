@@ -45,11 +45,10 @@ define( function( require ) {
       thisNode.visible = isVisible;
       thisNode.body.clearPath();
       thisNode.points = [];
-//      thisNode.points.clear();
       thisNode.invalidatePaint();
     } );
 
-    //Update when the Body path changes
+    // Update when the Body path changes
     var listener = {
       pointAdded: function( point ) {
         var pt = transformProperty.get().modelToViewPosition( point );
@@ -77,7 +76,6 @@ define( function( require ) {
     };
     this.body.addPathListener( listener );
 
-    // this was a simpleObserver in Java
     transformProperty.link( function() {
       thisNode.body.clearPath();
     } );
@@ -99,7 +97,7 @@ define( function( require ) {
       context.lineJoin = 'round';
       context.beginPath();
 
-      //Create and render the solid part as a path.  New points are added at the tail of the list, so easiest to render backwards for fade-out.
+      // Create and render the solid part as a path. New points are added at the tail of the list, so easiest to render backwards for fade-out.
       if ( this.points.length > 0 ) {
         context.moveTo( this.points[ this.points.length - 1 ].x, this.points[ this.points.length - 1 ].y );
       }
@@ -108,12 +106,12 @@ define( function( require ) {
       }
       context.stroke();
 
-      //Draw the faded out part
+      // Draw the faded out part
       context.lineCap = 'butt';
 
       var faded = this.color;
       for ( i = numTransparentPoints - 1; i >= 0; i-- ) {
-        //fade out a little bit each segment
+        // fade out a little bit each segment
         var a = (faded.a - 1 / NUM_FADE_POINTS);
         faded = new Color( faded.r, faded.g, faded.b, Math.max( 0, a ) );
         context.strokeStyle = faded.toCSS();

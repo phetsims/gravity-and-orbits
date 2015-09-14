@@ -33,6 +33,16 @@ define( function( require ) {
    */
   function RightControlPanel( module, options ) {
 
+    options = _.extend( {
+      fill: '#030085',
+      stroke: STROKE,
+      lineWidth: 2,
+      cornerRadius: 2,
+      resize: false,
+      xMargin: PANEL_X_MARGIN,
+      scale: 1.05
+    }, options );
+
     // menu sections
     var sections = [
       new PlanetModeMenu( module, MENU_SECTION_OPTIONS ),
@@ -52,7 +62,7 @@ define( function( require ) {
     }
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
-    Panel.call( this, vbox, _.extend( { fill: '#030085', stroke: STROKE, lineWidth: 2, cornerRadius: 2, resize: false, xMargin: PANEL_X_MARGIN }, options ) );
+    Panel.call( this, vbox, options );
 
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;

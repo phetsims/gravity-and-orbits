@@ -22,7 +22,6 @@ define( function( require ) {
 
   /**
    *
-   * @param {UserComponent} userComponent
    * @param {string} name
    * @param {number} x
    * @param {number} y
@@ -45,7 +44,7 @@ define( function( require ) {
    * @param {boolean} fixed
    * @constructor
    */
-  function Body( userComponent, name, x, y, diameter, vx, vy, mass, color, highlight, renderer,// way to associate the graphical representation directly instead of later with conditional logic or map
+  function Body( name, x, y, diameter, vx, vy, mass, color, highlight, renderer,// way to associate the graphical representation directly instead of later with conditional logic or map
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel, playButtonPressedProperty, steppingProperty, rewindingProperty, fixed ) {
 
     PropertySet.call( this, {
@@ -56,21 +55,20 @@ define( function( require ) {
       bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
     } );
 
-    this.userComponent = userComponent;//sun is immobile in cartoon mode
     this.massSettable = massSettable;
-    this.maxPathLength = maxPathLength; //Number of samples in the path before it starts erasing (fading out from the back)
+    this.maxPathLength = maxPathLength; // Number of samples in the path before it starts erasing (fading out from the back)
 
-    //True if the mass readout should appear below the body (so that readouts don't overlap too much),
+    // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
     this.massReadoutBelow = massReadoutBelow;
-    this.tickValue = tickValue; //value that this body's mass should be identified with, for 'planet' this will be the earth's mass
-    this.tickLabel = tickLabel; //name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
-    this.fixed = fixed; //true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
+    this.tickValue = tickValue; // value that this body's mass should be identified with, for 'planet' this will be the earth's mass
+    this.tickLabel = tickLabel; // name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
+    this.fixed = fixed; // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
     assert && assert( renderer !== null );
     this.name = name;
     this.color = color;
     this.highlight = highlight;
-    this.renderer = renderer; //function that creates a PNode for this Body.
+    this.renderer = renderer; // function that creates a Node for this Body.
 
     // This is in the model so we can associate the graphical representation directly instead of later with conditional logic or map
     this.labelAngle = labelAngle;
@@ -80,11 +78,11 @@ define( function( require ) {
     this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false );
     this.density = mass / this.getVolume();
 
-    this.userControlled = false;//True if the user is currently controlling the position of the body with the mouse
-    this.pathListeners = [];// ArrayList<PathListener>();
-    this.path = [];//new ArrayList<Vector2>();
+    this.userControlled = false; // True if the user is currently controlling the position of the body with the mouse
+    this.pathListeners = []; // {Array.<PathListener>}
+    this.path = []; // {Array.<Vector2>}
 
-    //list of listeners that are notified when the user drags the object, so that we know when certain properties need to be updated
+    // list of listeners that are notified when the user drags the object, so that we know when certain properties need to be updated
     this.userModifiedPositionListeners = [];
     this.userModifiedVelocityListeners = [];
 
@@ -93,13 +91,13 @@ define( function( require ) {
       thisBody.clockTicksSinceExplosionProperty.set( 0 );
     } );
 
-    //If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
+    // If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
 
-    //Relates to this problem reported by NP:
-    //NP: odd behavior with rewind: Open sim and press play, let the planet move to directly left of the sun.
-    //  Pause, then move the planet closer to sun. Press play, planet will move CCW. Then pause and hit rewind.
-    //  Press play again, the planet will start to move in the opposite direction (CW).
-    //SR: reproduced this in 0.0.14, perhaps the velocity is not being reset?
+    // Relates to this problem reported by NP:
+    // NP: odd behavior with rewind: Open sim and press play, let the planet move to directly left of the sun.
+    //   Pause, then move the planet closer to sun. Press play, planet will move CCW. Then pause and hit rewind.
+    //   Press play again, the planet will start to move in the opposite direction (CW).
+    // SR: reproduced this in 0.0.14, perhaps the velocity is not being reset?
     var rewindValueChangeListener = function() {
       thisBody.positionProperty.storeRewindValueNoNotify();
       thisBody.velocityProperty.storeRewindValueNoNotify();
@@ -287,8 +285,8 @@ define( function( require ) {
     // This method is called after all bodies have been updated by the physics engine (must be done as a batch),
     // so that the path can be updated
     allBodiesUpdated: function() {
-      //Only add to the path if the user isn't dragging it
-      //But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
+      // Only add to the path if the user isn't dragging it
+      // But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
       if ( !this.isUserControlled() ) {
         this.addPathPoint();
       }
@@ -558,13 +556,6 @@ define( function( require ) {
      */
     isCollided: function() {
       return this.collidedProperty.get();
-    },
-
-    /**
-     * @return {UserComponent}
-     */
-    getUserComponent: function() {
-      return this.userComponent;
     },
 
     /**

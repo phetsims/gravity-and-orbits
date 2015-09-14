@@ -27,17 +27,14 @@ define( function( require ) {
   var STARTING_SPEED_SCALE = (0.1 + 2) / 4; // one quarter of the way up between 1/10 and 2 scale factors
 
   /**
-   * @param tabUserComponent
-   * @param phetFrame
    * @param {Property<boolean>} whiteBackgroundProperty
-   * @param {string} name
    * @param {boolean} showMeasuringTape
    * @param {function<ModeListParameterList, Array<GravityAndOrbitsMode>>} createModes
    * @param {number} initialModeIndex
    * @param {boolean} showMassCheckBox
    * @constructor
    */
-  function GravityAndOrbitsModule( tabUserComponent, phetFrame, whiteBackgroundProperty, name, showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
+  function GravityAndOrbitsModule( whiteBackgroundProperty, showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
     var thisModule = this;
 
     // Properties that are common to all "modes" should live here.
@@ -56,9 +53,6 @@ define( function( require ) {
       showMeasuringTape: false
     } );
 
-
-    //TODO: I don't think this clock is used since each mode has its own clock; perhaps this just runs the active tab?
-//    SimSharingPiccoloModule.call( this, tabUserComponent, name, new ConstantDtClock( 30, 1 ) );
     this.showMassCheckBox = showMassCheckBox;
 
     // @private {ModeList}
@@ -96,10 +90,6 @@ define( function( require ) {
         }
       },
 
-      getModeIndex: function() {
-        return this.modeList.modes.indexOf( this.getMode() );
-      },
-
       getMode: function() {
         return this.modeProperty.get();
       },
@@ -133,28 +123,13 @@ define( function( require ) {
         this.modeProperty.reset();
       },
 
-      setTeacherMode: function( b ) {
-        for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modes[ i ].getModel().teacherMode = b;
-        }
-      },
-
       addModelSteppedListener: function( simpleObserver ) {
         for ( var i = 0; i < this.modes.length; i++ ) {
           this.modes[ i ].getModel().addModelSteppedListener( simpleObserver );
         }
-      },
-
-      /**
-       *
-       * @param {number} selectedMode - The index of the select mode
-       */
-      setModeIndex: function( selectedMode ) {
-        this.modeProperty.set( this.modeList.modes[ selectedMode ] );
       }
     },
 
-    // statics
     {
       G: G,
       STARTING_SPEED_SCALE: STARTING_SPEED_SCALE

@@ -13,15 +13,17 @@ require.config( {
   paths: {
 
     // plugins
-    image: '../../chipper/js/requirejs-plugins/image',
     audio: '../../chipper/js/requirejs-plugins/audio',
+    image: '../../chipper/js/requirejs-plugins/image',
+    mipmap: '../../chipper/js/requirejs-plugins/mipmap',
     string: '../../chipper/js/requirejs-plugins/string',
 
-    text: '../../sherpa/text-2.0.12',
+    // third-party libs
+    text: '../../sherpa/lib/text-2.0.12',
 
     // PhET libs, uppercase names to identify them in require.js imports
     AXON: '../../axon/js',
-    BRAND: '../../brand/js',
+    BRAND: '../../brand/' + phet.chipper.brand + '/js',
     DOT: '../../dot/js',
     JOIST: '../../joist/js',
     KITE: '../../kite/js',

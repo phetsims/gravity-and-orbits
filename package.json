@@ -2,24 +2,6 @@
   "name": "gravity-and-orbits",
   "version": "1.0.0-dev.1",
   "license": "GPLv3",
-  "simTitleStringKey": "GRAVITY_AND_ORBITS/gravity-and-orbits.name",
-  "phetLibs": [
-    "gravity-and-orbits",
-    "assert",
-    "axon",
-    "babel",
-    "brand",
-    "chipper",
-    "dot",
-    "joist",
-    "kite",
-    "phet-core",
-    "phetcommon",
-    "scenery",
-    "scenery-phet",
-    "sherpa",
-    "sun"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/phetsims/gravity-and-orbits.git"
@@ -30,5 +12,8 @@
     "grunt-contrib-jshint": "~0.6.4",
     "uglify-js": "~2.4.0",
     "requirejs": "~2.1.8"
+  },
+  "phet": {
+    "requirejsNamespace": "GRAVITY_AND_ORBITS"
   }
 }

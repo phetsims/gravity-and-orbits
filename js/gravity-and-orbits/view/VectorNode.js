@@ -15,7 +15,8 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
 
-  // TODO: Look into MutableArrowNode instead for performance, but right now MutableArrowNode isn't working correctly
+  // TODO: ArrowNode performance will likely be a problem in this simulation
+  // see https://github.com/phetsims/scenery-phet/issues/28
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
 

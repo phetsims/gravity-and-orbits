@@ -29,7 +29,7 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} speedProperty - The rate of flow of time.
-   * @param {Property.<boolean>} speedProperty - The rate of flow of time.
+   * @param {Property.<boolean>} whiteBackgroundProperty
    * @param [options]
    * @constructor
    */

@@ -1,0 +1,66 @@
+{
+  "cartoon_icon.png": {
+    "text": [
+      "Copyright 2002-2015 University of Colorado Boulder"
+    ],
+    "projectURL": "http://phet.colorado.edu",
+    "license": "contact phethelp@colorado.edu",
+    "notes": "created by Bryce Gruneich and Sharon Siman-Tov"
+  },
+  "earth.gif": {
+    "text": [
+      "Copyright NASA"
+    ],
+    "projectURL": "http://www.harmsy.freeuk.com/images/earth2.jpeg",
+    "license": "NASA",
+    "notes": "see http://www.harmsy.freeuk.com/images/earth2.jpeg, http://cac-science8.wikispaces.com/ nasa copyright rules here http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html"
+  },
+  "icon_mass.png": {
+    "text": [
+      "Copyright 2002-2015 University of Colorado Boulder"
+    ],
+    "projectURL": "http://phet.colorado.edu",
+    "license": "contact phethelp@colorado.edu",
+    "notes": "created by Sharon Siman-Tov"
+  },
+  "icon_path.png": {
+    "text": [
+      "Copyright 2002-2015 University of Colorado Boulder"
+    ],
+    "projectURL": "http://phet.colorado.edu",
+    "license": "contact phethelp@colorado.edu",
+    "notes": "created by Sharon Siman-Tov"
+  },
+  "moon.png": {
+    "text": [
+      "Public Domain"
+    ],
+    "projectURL": "http://astro.unl.edu/misc/moonpics/moon08_th.jpg",
+    "license": "Public Domain",
+    "notes": "Public domain license noted at http://astro.unl.edu/misc/moonpics"
+  },
+  "reset_arrow.png": {
+    "text": [
+      "Copyright 2002-2015 University of Colorado Boulder"
+    ],
+    "projectURL": "http://phet.colorado.edu",
+    "license": "contact phethelp@colorado.edu",
+    "notes": ""
+  },
+  "space-station.png": {
+    "text": [
+      "Copyright NASA"
+    ],
+    "projectURL": "http://www.nasa.gov/images/content/323090main_s119e009793_hires.jpg",
+    "license": "NASA",
+    "notes": "linked from http://www.nasa.gov/mission_pages/station/multimedia/iss_sts119_images.html"
+  },
+  "to_scale_icon.png": {
+    "text": [
+      "Copyright 2002-2015 University of Colorado Boulder"
+    ],
+    "projectURL": "http://phet.colorado.edu",
+    "license": "contact phethelp@colorado.edu",
+    "notes": ""
+  }
+}

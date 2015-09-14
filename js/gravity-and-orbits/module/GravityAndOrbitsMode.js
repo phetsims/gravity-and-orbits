@@ -35,7 +35,6 @@ define( function( require ) {
   /**
    * Create a new GravityAndOrbitsMode that shares ModeListParameterList values with other modes
    *
-   * @param {UserComponent} userComponent
    * @param {number} forceScale
    * @param {boolean} active
    * @param {number} dt
@@ -52,7 +51,7 @@ define( function( require ) {
    * @param {ModeListParameterList} p
    * @constructor
    */
-  function GravityAndOrbitsMode( userComponent, forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
+  function GravityAndOrbitsMode( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
 
     // public Properties from the java version
     PropertySet.call( this, {
@@ -70,7 +69,6 @@ define( function( require ) {
     //private
     this.canvas = null;
 
-    this.userComponent = userComponent; // private
     this.dt = dt; // private
     this.p = p;
     this.forceScale = forceScale; // private
@@ -109,7 +107,7 @@ define( function( require ) {
       thisMode.rewindClockTime = thisMode.getClock().getSimulationTime();
     } );
 
-    Property.multilink( [p.playButtonPressed, this.active], function( playButtonPressed, active ) {
+    Property.multilink( [ p.playButtonPressed, this.active ], function( playButtonPressed, active ) {
       thisMode.model.getClock().setRunning( playButtonPressed && active );
     } );
   }
@@ -236,7 +234,7 @@ define( function( require ) {
       this.getClock().setSimulationTime( this.rewindClockTime );
       var bodies = this.model.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
-        bodies[i].rewind();
+        bodies[ i ].rewind();
       }
       this.rewindingProperty.set( false );
     },
