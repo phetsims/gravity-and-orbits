@@ -22,6 +22,14 @@ define( function( require ) {
       background: {
         default: BLACK,
         projector: WHITE
+      },
+      bodyNodeText: {
+        default: WHITE,
+        projector: BLACK
+      },
+      speedRadioButtonsText: {
+        default: WHITE,
+        projector: BLACK
       }
     } );
   }

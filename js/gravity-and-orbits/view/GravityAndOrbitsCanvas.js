@@ -74,7 +74,7 @@ define( function( require ) {
     // Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, this, bodies[ i ].getLabelAngle(), module.whiteBackgroundProperty );
+      var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, this, bodies[ i ].getLabelAngle() );
       var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
       thisNode.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
@@ -113,7 +113,7 @@ define( function( require ) {
     this.addChild( gridNode );
 
     // Add the speed control slider.
-    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty, module.whiteBackgroundProperty,
+    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty,
       { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left + 5, scale: 1.2 } ) );
     this.addChild( new DayCounter( mode.timeFormatter, model.clock,
       { bottom: STAGE_SIZE.bottom - 20, right: STAGE_SIZE.right - 30, scale: 1.2 } ) );

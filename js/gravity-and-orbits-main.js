@@ -34,11 +34,10 @@ define( function( require ) {
 
   /**
    * ToScaleModule
-   * @param whiteBackgroundProperty
    * @constructor
    */
-  function ToScaleModule( whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, whiteBackgroundProperty, true, function( p ) {
+  function ToScaleModule() {
+    GravityAndOrbitsModule.call( this, true, function( p ) {
       return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
     }, 0, true );
   }
@@ -47,11 +46,10 @@ define( function( require ) {
 
   /**
    * CartoonModule
-   * @param whiteBackgroundProperty
    * @constructor
    */
-  function CartoonModule( whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, whiteBackgroundProperty, false, function( p ) {
+  function CartoonModule() {
+    GravityAndOrbitsModule.call( this, false, function( p ) {
       return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
     }, 0, false );
   }
@@ -74,13 +72,13 @@ define( function( require ) {
   };
 
   var cartoonScreen = new Screen( cartoonString, new Image( cartoonIcon ),
-    function() { return new CartoonModule( whiteBackgroundProperty ); },
+    function() { return new CartoonModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
     { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );
 
   var toScaleScreen = new Screen( toScaleString, new Image( toScaleIcon ),
-    function() { return new ToScaleModule( whiteBackgroundProperty ); },
+    function() { return new ToScaleModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
     { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );

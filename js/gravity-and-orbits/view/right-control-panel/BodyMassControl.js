@@ -37,10 +37,9 @@ define( function( require ) {
    * @param {number} max
    * @param {number} labelValue
    * @param {string} valueLabel
-   * @param whiteBackgroundProperty
    * @constructor
    */
-  function BodyMassControl( body, min, max, labelValue, valueLabel, whiteBackgroundProperty ) {
+  function BodyMassControl( body, min, max, labelValue, valueLabel ) {
 
     var label = new Text( body.getName(), {
       font: CONTROL_FONT,

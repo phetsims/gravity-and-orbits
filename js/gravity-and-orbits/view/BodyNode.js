@@ -18,8 +18,8 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Line = require( 'SCENERY/nodes/Line' );
-  var Color = require( 'SCENERY/util/Color' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
 
   /**
    * Constructor for BodyNode
@@ -27,15 +27,13 @@ define( function( require ) {
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    * @param {PComponent} parentComponent
    * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
-   * @param {boolean} whiteBackgroundProperty
    * @constructor
    */
-  function BodyNode( body, modelViewTransformProperty, parentComponent, labelAngle, whiteBackgroundProperty ) {
+  function BodyNode( body, modelViewTransformProperty, parentComponent, labelAngle ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     this.modelViewTransformProperty = modelViewTransformProperty; // @private
     this.body = body; // @private
-    this.whiteBackgroundProperty = whiteBackgroundProperty; // @private
 
     var thisNode = this;
 
@@ -94,8 +92,8 @@ define( function( require ) {
       } );
       node.addChild( text );
 
-      this.whiteBackgroundProperty.link( function( whiteBackground ) {
-        text.fill = whiteBackground ? Color.black : Color.white;
+      GravityAndOrbitsColors.link( 'bodyNodeText', function( color ) {
+        text.fill = color;
       } );
 
       this.body.diameterProperty.link( function() {

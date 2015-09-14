@@ -15,9 +15,9 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var Color = require( 'SCENERY/util/Color' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
+  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
 
   // constants
   var STARTING_VALUE = GravityAndOrbitsModule.STARTING_SPEED_SCALE;
@@ -29,11 +29,10 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} speedProperty - The rate of flow of time.
-   * @param {Property.<boolean>} whiteBackgroundProperty
    * @param [options]
    * @constructor
    */
-  function SpeedRadioButtons( speedProperty, whiteBackgroundProperty, options ) {
+  function SpeedRadioButtons( speedProperty, options ) {
 
     options = _.extend( {
       spacing: 1,
@@ -51,11 +50,10 @@ define( function( require ) {
       { property: speedProperty, value: STARTING_VALUE * 0.25, node: slowText }
     ], options );
 
-    whiteBackgroundProperty.link( function( whiteBackground ) {
-      var textColor = ( whiteBackground ) ? Color.BLACK : Color.WHITE;
-      fastText.fill = textColor;
-      normalText.fill = textColor;
-      slowText.fill = textColor;
+    GravityAndOrbitsColors.link( 'speedRadioButtonsText', function( color ) {
+      fastText.fill = color;
+      normalText.fill = color;
+      slowText.fill = color;
     } );
   }
 
