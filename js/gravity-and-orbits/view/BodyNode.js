@@ -25,11 +25,10 @@ define( function( require ) {
    * Constructor for BodyNode
    * @param {Body} body
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
-   * @param {PComponent} parentComponent
    * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
    * @constructor
    */
-  function BodyNode( body, modelViewTransformProperty, parentComponent, labelAngle ) {
+  function BodyNode( body, modelViewTransformProperty, labelAngle ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     this.modelViewTransformProperty = modelViewTransformProperty; // @private
