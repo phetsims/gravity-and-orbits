@@ -99,7 +99,7 @@ define( function( require ) {
       // @private
       updateActiveModule: function() {
         for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modeList.modes[ i ].active.set( this.modeList.modes[ i ] === this.getMode() );
+          this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.getMode() );
         }
       },
 
