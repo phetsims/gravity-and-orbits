@@ -29,6 +29,7 @@ define( function( require ) {
   var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Util = require( 'DOT/Util' );
 
   // images
   var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
@@ -165,7 +166,7 @@ define( function( require ) {
     return function( time ) {
       var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
       var units = (value === 1) ? GAOStrings.EARTH_DAY : GAOStrings.EARTH_DAYS;
-      return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value.toFixed( 0 ), units );
+      return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, Util.toFixed( value, 0 ), units );
     };
   };
 
@@ -177,7 +178,7 @@ define( function( require ) {
   var formatMinutes = function( time ) {
     var value = (time / SECONDS_PER_MINUTE);
     var units = (value === 1) ? GAOStrings.EARTH_MINUTE : GAOStrings.EARTH_MINUTES;
-    return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value.toFixed( 0 ), units );
+    return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, Util.toFixed( value, 0 ), units );
   };
 
   /**

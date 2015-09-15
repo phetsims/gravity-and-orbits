@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<!-- Copyright 2002-2014, University of Colorado Boulder -->
+
+<!--
+  Used for customizing Gravity and Orbits colors
+-->
+
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="phet-sim-level" content="production">
+  <title>Gravity and Orbits Colors</title>
+</head>
+<body bgcolor="#888">
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif
+  }
+</style>
+<iframe src="gravity-and-orbits_en.html" width="768" height="504" id="sim-iframe" style="position: absolute; top: 20; left: 300px;"></iframe>
+<script type="text/javascript">
+  var contentWindow = document.getElementById( 'sim-iframe' ).contentWindow;
+
+  var colors = [
+    'background',
+    'bodyNodeText',
+    'speedRadioButtonsText'
+  ];
+
+  for ( var i = 0; i < colors.length; i++ ) {
+    (function() {
+      var colorName = colors[ i ];
+
+      var input = document.createElement( 'input' );
+      input.id = 'color-' + colorName;
+      input.type = 'color';
+
+      input.addEventListener( 'input', function( evt ) {
+        contentWindow.postMessage( JSON.stringify( {
+          type: 'setColor',
+          name: colorName,
+          value: input.value
+        } ), '*' );
+      } );
+      document.body.appendChild( document.createElement( 'br' ) );
+      document.body.appendChild( input );
+      document.body.appendChild( document.createTextNode( ' ' + colorName ) );
+    })();
+  }
+
+  window.addEventListener( 'message', function( evt ) {
+    var data = JSON.parse( evt.data );
+    if ( data.type === 'reportColor' ) {
+      document.getElementById( 'color-' + data.name ).value = data.value;
+    }
+  } );
+</script>
+</body>
+</html>
+

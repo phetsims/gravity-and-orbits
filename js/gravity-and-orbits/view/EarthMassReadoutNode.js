@@ -30,7 +30,7 @@ define( function( require ) {
       //Show the value in terms of earth masses (or thousands of earth masses)
       var value, units;
       if ( earthMasses > 1E3 ) {
-        value = Util.roundSymmetric( earthMasses / 1E3 ).toFixed( 0 );
+        value = Util.toFixed( Util.roundSymmetric( earthMasses / 1E3 ), 0 );
         units = GAOStrings.THOUSAND_EARTH_MASSES;
       }
       else if ( Math.abs( earthMasses - 1 ) < 1E-2 ) {
@@ -38,12 +38,12 @@ define( function( require ) {
         units = GAOStrings.EARTH_MASS;
       }
       else if ( earthMasses < 1 ) {
-        value = earthMasses.toFixed( 2 );
+        value = Util.toFixed( earthMasses, 2 );
         units = GAOStrings.EARTH_MASSES;
       }
       else {
         // Handle showing exactly "1 earth mass" instead of "1 earth masses"
-        value = earthMasses.toFixed( 2 );
+        value = Util.toFixed( earthMasses, 2 );
         units = (earthMasses === 1) ? GAOStrings.EARTH_MASS : GAOStrings.EARTH_MASSES;
       }
       return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value, units );

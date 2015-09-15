@@ -84,7 +84,6 @@ define( function( require ) {
     this.gridCenter = gridCenter; // private
     this.rewindingProperty = p.rewinding; // save a reference to the rewinding property of p
     this.timeSpeedScaleProperty = p.timeSpeedScale;
-    this.active = new Property( active );
     this.timeFormatter = timeFormatter; // private
 
     // Function that creates a PNode to readout the mass for the specified body node (with the specified visibility flag)
@@ -107,7 +106,7 @@ define( function( require ) {
       thisMode.rewindClockTime = thisMode.getClock().getSimulationTime();
     } );
 
-    Property.multilink( [ p.playButtonPressed, this.active ], function( playButtonPressed, active ) {
+    Property.multilink( [ p.playButtonPressed, this.activeProperty ], function( playButtonPressed, active ) {
       thisMode.model.getClock().setRunning( playButtonPressed && active );
     } );
   }

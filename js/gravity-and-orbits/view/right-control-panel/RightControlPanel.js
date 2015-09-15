@@ -3,7 +3,6 @@
 /**
  * Container for right control panel.
  *
- * @author Andrey Zelenkov (Mlearner)
  * @author Aaron Davis
  */
 
@@ -43,35 +42,29 @@ define( function( require ) {
       scale: 1.05
     }, options );
 
-    // menu sections
+    var makeSeparatorRectangle = function() {
+      return new Rectangle( 0, 0, 0, 2, { fill: STROKE } );
+    };
+
+    // menu sections and separators
     var sections = [
       new PlanetModeMenu( module, MENU_SECTION_OPTIONS ),
+      makeSeparatorRectangle(),
       new GravityModeMenu( module, MENU_SECTION_OPTIONS ),
+      makeSeparatorRectangle(),
       new SpaceObjectsPropertyCheckbox( module, MENU_SECTION_OPTIONS ),
+      makeSeparatorRectangle(),
       new MassMenu( module, MENU_SECTION_OPTIONS )
     ];
-
-    // add thin rectangles to separate the different menu components
-    // these get inserted into the sections array in-between each component
-    var separators = [];
-    var numSeparators = sections.length - 1;
-    for ( var i = 0; i < numSeparators; i++ ) {
-      var separatorRectangle = new Rectangle( 0, 0, 0, 2, { fill: STROKE } );
-      sections.splice( ( i * 2 ) + 1, 0, separatorRectangle );
-      separators.push( separatorRectangle );
-    }
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vbox, options );
 
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;
-    for ( i = 0; i < 3; i++ ) {
-      separators[ i ].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
+    for ( var i = 0; i < 3; i++ ) {
+      sections[ i * 2 + 1 ].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
     }
-
-    // center bottom control section
-    sections[ sections.length - 1 ].centerX = ( vbox.width / 2 ) - PANEL_X_MARGIN;
   }
 
   return inherit( Panel, RightControlPanel );

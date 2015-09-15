@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
+  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
   var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
   var GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GlobalOptionsNode' );
@@ -20,7 +21,6 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
   var Property = require( 'AXON/Property' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var Color = require( 'SCENERY/util/Color' );
 
   // images
   var cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' );
@@ -34,11 +34,10 @@ define( function( require ) {
 
   /**
    * ToScaleModule
-   * @param whiteBackgroundProperty
    * @constructor
    */
-  function ToScaleModule( whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, whiteBackgroundProperty, true, function( p ) {
+  function ToScaleModule() {
+    GravityAndOrbitsModule.call( this, true, function( p ) {
       return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
     }, 0, true );
   }
@@ -47,11 +46,10 @@ define( function( require ) {
 
   /**
    * CartoonModule
-   * @param whiteBackgroundProperty
    * @constructor
    */
-  function CartoonModule( whiteBackgroundProperty ) {
-    GravityAndOrbitsModule.call( this, whiteBackgroundProperty, false, function( p ) {
+  function CartoonModule() {
+    GravityAndOrbitsModule.call( this, false, function( p ) {
       return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
     }, 0, false );
   }
@@ -74,21 +72,29 @@ define( function( require ) {
   };
 
   var cartoonScreen = new Screen( cartoonString, new Image( cartoonIcon ),
-    function() { return new CartoonModule( whiteBackgroundProperty ); },
+    function() { return new CartoonModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: '#000' }
+    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );
 
   var toScaleScreen = new Screen( toScaleString, new Image( toScaleIcon ),
-    function() { return new ToScaleModule( whiteBackgroundProperty ); },
+    function() { return new ToScaleModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: '#000' }
+    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );
 
-  whiteBackgroundProperty.link( function( whiteBackground ) {
-    var backgroundColor = ( whiteBackground ) ? Color.WHITE : Color.BLACK;
-    cartoonScreen.backgroundColor = backgroundColor;
-    toScaleScreen.backgroundColor = backgroundColor;
+  whiteBackgroundProperty.link( function( useProjectorColors ) {
+    if ( useProjectorColors ) {
+      GravityAndOrbitsColors.applyProfile( 'projector' );
+    }
+    else {
+      GravityAndOrbitsColors.applyProfile( 'default' );
+    }
+  } );
+
+  GravityAndOrbitsColors.link( 'background', function( color ) {
+    cartoonScreen.backgroundColor = color;
+    toScaleScreen.backgroundColor = color;
   } );
 
   SimLauncher.launch( function() {

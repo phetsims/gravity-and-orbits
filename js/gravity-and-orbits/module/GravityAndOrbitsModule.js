@@ -27,14 +27,13 @@ define( function( require ) {
   var STARTING_SPEED_SCALE = (0.1 + 2) / 4; // one quarter of the way up between 1/10 and 2 scale factors
 
   /**
-   * @param {Property<boolean>} whiteBackgroundProperty
    * @param {boolean} showMeasuringTape
    * @param {function<ModeListParameterList, Array<GravityAndOrbitsMode>>} createModes
    * @param {number} initialModeIndex
    * @param {boolean} showMassCheckBox
    * @constructor
    */
-  function GravityAndOrbitsModule( whiteBackgroundProperty, showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
+  function GravityAndOrbitsModule( showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
     var thisModule = this;
 
     // Properties that are common to all "modes" should live here.
@@ -64,7 +63,6 @@ define( function( require ) {
       this.timeSpeedScaleProperty ) );
 
     this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
-    this.whiteBackgroundProperty = whiteBackgroundProperty;
     this.showMeasuringTape = showMeasuringTape;
 
     for ( var i = 0; i < this.modeList.modes.length; i++ ) {
@@ -101,7 +99,7 @@ define( function( require ) {
       // @private
       updateActiveModule: function() {
         for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modeList.modes[ i ].active.set( this.modeList.modes[ i ] === this.getMode() );
+          this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.getMode() );
         }
       },
 

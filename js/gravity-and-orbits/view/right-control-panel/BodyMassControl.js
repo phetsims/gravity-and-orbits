@@ -37,10 +37,9 @@ define( function( require ) {
    * @param {number} max
    * @param {number} labelValue
    * @param {string} valueLabel
-   * @param whiteBackgroundProperty
    * @constructor
    */
-  function BodyMassControl( body, min, max, labelValue, valueLabel, whiteBackgroundProperty ) {
+  function BodyMassControl( body, min, max, labelValue, valueLabel ) {
 
     var label = new Text( body.getName(), {
       font: CONTROL_FONT,
@@ -78,7 +77,7 @@ define( function( require ) {
 
       // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
       // the mass itself is set by the slider in this case.
-      var radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1 / 3 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
+      var radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1 / 3 ); // derived from: density = mass/volume, and volume = 4/3 pi r r r
       body.diameterProperty.set( radius * 2 );
 
       // snap to default value if close
@@ -89,6 +88,7 @@ define( function( require ) {
   }
 
   return inherit( Node, BodyMassControl, {},
+
     // statics
     {
       VIEW_MIN: VIEW_MIN,
