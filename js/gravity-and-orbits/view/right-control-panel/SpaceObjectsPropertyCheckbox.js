@@ -18,15 +18,14 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var Line = require( 'SCENERY/nodes/Line' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
   // images
   var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' );
-  var measuringTapeImg = require( 'image!SCENERY_PHET/measuringTape.png' );
   var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
 
   // strings
@@ -117,33 +116,14 @@ define( function( require ) {
 
     // measuring tape checkbox
     if ( module.showMeasuringTape ) {
-      // TODO: see charges-and-fields about how to create an image icon based on the Scenery-Phet measuring tape
-      var measuringTapeImageNode = new Image( measuringTapeImg );
+      var measuringTapeIcon = MeasuringTape.createMeasuringTapeIcon( { scale: 0.4 } );
       children.push( new CheckBox( new HBox( {
-          spacing: 10,
-          children: [
-            new Text( tapeString, TEXT_OPTIONS ),
-            new Node( {
-              children: [
-
-                //Sticking down metal 'tab' at the end of the tape
-                new Line( measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30 - 2, measuringTapeImageNode.height - 2 + 7, {
-                  stroke: '#aaaaaa',
-                  lineWidth: 3
-                } ),
-
-                //A small amount of tape to help identify the icon as measuring tape
-                new Line( measuringTapeImageNode.width - 4, measuringTapeImageNode.height - 2, measuringTapeImageNode.width + 30, measuringTapeImageNode.height - 2, {
-                  stroke: 'gray',
-                  lineWidth: 3
-                } ),
-
-                measuringTapeImageNode ],
-              scale: 0.5
-            } )
-          ]
-        } ),
-        module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
+        spacing: 10,
+        children: [
+          new Text( tapeString, TEXT_OPTIONS ),
+          measuringTapeIcon
+        ]
+      } ), module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
     }
 
     VBox.call( this, _.extend( { children: children, resize: false, spacing: 10, align: 'left', bottom: -12 }, options ) );

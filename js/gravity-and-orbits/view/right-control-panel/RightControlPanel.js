@@ -3,7 +3,6 @@
 /**
  * Container for right control panel.
  *
- * @author Andrey Zelenkov (Mlearner)
  * @author Aaron Davis
  */
 
@@ -51,7 +50,7 @@ define( function( require ) {
       new MassMenu( module, MENU_SECTION_OPTIONS )
     ];
 
-    // add thin rectangles to separate the different menu components
+    // add thin rectangles to separate the different menu components.
     // these get inserted into the sections array in-between each component
     var separators = [];
     var numSeparators = sections.length - 1;

@@ -88,6 +88,7 @@ define( function( require ) {
   }
 
   return inherit( Node, BodyMassControl, {},
+
     // statics
     {
       VIEW_MIN: VIEW_MIN,
