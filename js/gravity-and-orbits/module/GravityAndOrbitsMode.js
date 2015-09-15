@@ -84,7 +84,6 @@ define( function( require ) {
     this.gridCenter = gridCenter; // private
     this.rewindingProperty = p.rewinding; // save a reference to the rewinding property of p
     this.timeSpeedScaleProperty = p.timeSpeedScale;
-    this.activeProperty = new Property( active );
     this.timeFormatter = timeFormatter; // private
 
     // Function that creates a PNode to readout the mass for the specified body node (with the specified visibility flag)
