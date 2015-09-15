@@ -249,10 +249,11 @@ define( function( require ) {
 
     inherit( Body, Moon, {
       doReturnBody: function( model ) {
-        Body.prototype.doReturnBody( model );
-        var earth = model.getBody( 'Planet' );
+        Body.prototype.doReturnBody.call( this, model );
+        var earth = model.getBody( GAOStrings.PLANET );
+
         // Restore the moon near the earth and with the same relative velocity vector
-        if ( earth !== null ) {
+        if ( earth ) {
           var relativePosition = this.positionProperty.initialValue.minus( earth.positionProperty.initialValue );
           this.positionProperty.set( earth.getPosition().plus( relativePosition ) );
           var relativeVelocity = this.velocityProperty.initialValue.minus( earth.velocityProperty.initialValue );
