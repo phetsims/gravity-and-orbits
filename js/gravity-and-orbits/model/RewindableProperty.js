@@ -24,13 +24,13 @@ define( function( require ) {
     Property.call( this, value );
     this.playButtonPressedProperty = playButtonPressedProperty;
 
-    //if the clock is paused and the user pressed 'step', do not store a rewind point
+    // if the clock is paused and the user pressed 'step', do not store a rewind point
     this.isSteppingProperty = isSteppingProperty;
 
-    //if the clock is paused and the user pressed 'rewind', do not store a rewind point
+    // if the clock is paused and the user pressed 'rewind', do not store a rewind point
     this.isRewindingProperty= isRewindingProperty;
 
-    //the "initial condition" tha the property can be rewound to
+    // the "initial condition" tha the property can be rewound to
     this.rewindValue = value;
 
     // true when the rewind point value is different than the property's value
@@ -44,7 +44,7 @@ define( function( require ) {
     set: function( value ) {
       Property.prototype.set.call( this, value );
 
-      //If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
+      // If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
       if ( !this.playButtonPressedProperty.get() && !this.isSteppingProperty.get() && !this.isRewindingProperty.get() ) {
         this.storeRewindValueNoNotify();
 
@@ -55,12 +55,12 @@ define( function( require ) {
       this.differentProperty.set( !this.equalsRewindPoint() );
     },
 
-    //Store the new value as the initial condition which can be rewound to.  We have to skip notifications sometimes or the wrong initial conditions get stored.
+    // Store the new value as the initial condition which can be rewound to.  We have to skip notifications sometimes or the wrong initial conditions get stored.
     storeRewindValueNoNotify: function() {
       this.rewindValue = this.get();
     },
 
-    //Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
+    // Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
     addRewindValueChangeListener: function( listener ) {
       this.rewindValueChangedListeners.push( listener );
     },
@@ -78,8 +78,8 @@ define( function( require ) {
       return this.differentProperty;
     },
 
-    /*
-     *Makes this public for use in gravity and orbits.
+    /**
+     * Makes this public for use in gravity and orbits.
      */
     getInitialValue: function() {
       return this.rewindValue;
