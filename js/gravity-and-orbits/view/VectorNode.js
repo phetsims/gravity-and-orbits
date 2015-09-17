@@ -14,9 +14,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-
-  // TODO: ArrowNode performance will likely be a problem in this simulation
-  // see https://github.com/phetsims/scenery-phet/issues/28
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
 
@@ -73,26 +70,25 @@ define( function( require ) {
 
   return inherit( Node, VectorNode, {
 
-      // @private
-      getTail: function() {
-        return this.transformProperty.get().modelToViewPosition( this.body.getPositionProperty().get() );
-      },
-
-      getTip: function( tail ) {
-        if ( typeof tail === 'undefined' ) {
-          tail = this.getTail();
-        }
-
-        var minArrowLength = 10;
-        var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
-
-        if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
-          force = force.times( minArrowLength / force.magnitude() );
-        }
-        return new Vector2( force.x + tail.x, force.y + tail.y );
-      }
+    // @private
+    getTail: function() {
+      return this.transformProperty.get().modelToViewPosition( this.body.getPositionProperty().get() );
     },
-    {
-      FORCE_SCALE: FORCE_SCALE
-    } );
+
+    getTip: function( tail ) {
+      if ( typeof tail === 'undefined' ) {
+        tail = this.getTail();
+      }
+
+      var minArrowLength = 10;
+      var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
+
+      if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
+        force = force.times( minArrowLength / force.magnitude() );
+      }
+      return new Vector2( force.x + tail.x, force.y + tail.y );
+    }
+  }, {
+    FORCE_SCALE: FORCE_SCALE
+  } );
 } );
