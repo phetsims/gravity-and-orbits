@@ -346,7 +346,6 @@ define( function( require ) {
       this.collidedProperty.reset();
       this.clockTicksSinceExplosionProperty.reset();
       this.clearPath();
-      //TODO: anything else to reset here?
     },
 
     /**
