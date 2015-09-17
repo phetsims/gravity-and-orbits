@@ -1,0 +1,59 @@
+{
+  "comment": "# gravity-and-orbits 1.0.0-dev.1 Tue Sep 15 2015 12:06:25 GMT-0600 (MDT)",
+  "assert": {
+    "sha": "858e65ac477bf1861883ce06eed56d9fdefa5027",
+    "branch": "master"
+  },
+  "axon": {
+    "sha": "1591786f5c5aef0c57bf5a3efa905dc1f2c9f4e0",
+    "branch": "master"
+  },
+  "brand": {
+    "sha": "f2c42d7b920e24dab53d747201598260a5f74128",
+    "branch": "master"
+  },
+  "chipper": {
+    "sha": "aa47da562b425813b5aa5638d87705284e57059b",
+    "branch": "master"
+  },
+  "dot": {
+    "sha": "c67d2a58648e5fa8ffdf58a2d9c312d190423cb5",
+    "branch": "master"
+  },
+  "gravity-and-orbits": {
+    "sha": "b2b5c7260ae4f16767e0559efeb1bfa329cb06a0",
+    "branch": "master"
+  },
+  "joist": {
+    "sha": "7f37e0ce821ed5e0af5c82c6ce2c996c6f00f926",
+    "branch": "master"
+  },
+  "kite": {
+    "sha": "3a1a5d34d7d4e45e9af7c2fc43652e8a4a182b86",
+    "branch": "master"
+  },
+  "phet-core": {
+    "sha": "8e31808c67a23066b43fbbd2080784daa44433c2",
+    "branch": "master"
+  },
+  "phetcommon": {
+    "sha": "acbbf59bfc34f60422ed5dd5972447226152c457",
+    "branch": "master"
+  },
+  "scenery": {
+    "sha": "45a29d68c1a20616d3396501cd10ecfe6ba26c37",
+    "branch": "master"
+  },
+  "scenery-phet": {
+    "sha": "8947acd1bb19437594aa212a4ab7c9456c43f4a9",
+    "branch": "master"
+  },
+  "sherpa": {
+    "sha": "1759eadefb4f6d680f85aef394ea7727df1928e6",
+    "branch": "master"
+  },
+  "sun": {
+    "sha": "382140f8705ffa3e8583b05570b755255d88efdf",
+    "branch": "master"
+  }
+}
