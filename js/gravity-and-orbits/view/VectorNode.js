@@ -14,9 +14,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-
-  // TODO: ArrowNode performance will likely be a problem in this simulation
-  // see https://github.com/phetsims/scenery-phet/issues/28
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
 
@@ -55,14 +52,17 @@ define( function( require ) {
       tailWidth: 5,
       fill: fill,
       stroke: outline,
-      pickable: false
+      pickable: false,
+      boundsMethod: 'none'
     } );
 
-    Property.multilink( [ vectorProperty, body.getPositionProperty(), transformProperty ],
-      function() {
-        var tail = thisNode.getTail();
-        var tip = thisNode.getTip( tail );
-        arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
+    Property.multilink( [ visibleProperty, vectorProperty, body.getPositionProperty(), transformProperty ],
+      function( visible ) {
+        if ( visible ) {
+          var tail = thisNode.getTail();
+          var tip = thisNode.getTip( tail );
+          arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
+        }
       } );
 
     this.addChild( arrowNode );
@@ -70,26 +70,25 @@ define( function( require ) {
 
   return inherit( Node, VectorNode, {
 
-      // @private
-      getTail: function() {
-        return this.transformProperty.get().modelToViewPosition( this.body.getPositionProperty().get() );
-      },
-
-      getTip: function( tail ) {
-        if ( typeof tail === 'undefined' ) {
-          tail = this.getTail();
-        }
-
-        var minArrowLength = 10;
-        var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
-
-        if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
-          force = force.times( minArrowLength / force.magnitude() );
-        }
-        return new Vector2( force.x + tail.x, force.y + tail.y );
-      }
+    // @private
+    getTail: function() {
+      return this.transformProperty.get().modelToViewPosition( this.body.getPositionProperty().get() );
     },
-    {
-      FORCE_SCALE: FORCE_SCALE
-    } );
+
+    getTip: function( tail ) {
+      if ( typeof tail === 'undefined' ) {
+        tail = this.getTail();
+      }
+
+      var minArrowLength = 10;
+      var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
+
+      if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
+        force = force.times( minArrowLength / force.magnitude() );
+      }
+      return new Vector2( force.x + tail.x, force.y + tail.y );
+    }
+  }, {
+    FORCE_SCALE: FORCE_SCALE
+  } );
 } );

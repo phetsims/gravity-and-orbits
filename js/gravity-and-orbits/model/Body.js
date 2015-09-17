@@ -191,9 +191,9 @@ define( function( require ) {
       }
       this.positionProperty.set( new Vector2( this.getX() + dx, this.getY() + dy ) );
 
-      //Only add to the path if the object hasn't collided
-      //NOTE: this check was not originally in the 2 param translate method
-      if ( !this.collidedProperty.get() && !this.userControlled ) {
+      // Only add to the path if the object hasn't collided
+      // NOTE: this check was not originally in the 2 param translate method
+      if ( !this.isCollided() && !this.userControlled ) {
         this.addPathPoint();
       }
     },
@@ -285,6 +285,7 @@ define( function( require ) {
     // This method is called after all bodies have been updated by the physics engine (must be done as a batch),
     // so that the path can be updated
     allBodiesUpdated: function() {
+
       // Only add to the path if the user isn't dragging it
       // But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
       if ( !this.isUserControlled() ) {
@@ -383,9 +384,8 @@ define( function( require ) {
      */
     addPathListener: function( listener ) {
 
-      //assert that it has all the right parts
-      //assert && assert( listener.pointAdded && listener.pointRemoved && listener.cleared );
-
+      // assert that it has all the right parts
+      assert && assert( !!listener.pointAdded && !!listener.pointRemoved && !!listener.cleared );
       this.pathListeners.push( listener );
     },
 

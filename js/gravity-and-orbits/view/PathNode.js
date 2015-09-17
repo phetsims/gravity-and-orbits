@@ -38,6 +38,7 @@ define( function( require ) {
     this.points = []; // @private
     this.body = body;
     this.color = color;
+    this.visibleProperty = visibleProperty;
 
     this.invalidatePaint();
 
@@ -54,7 +55,6 @@ define( function( require ) {
         var pt = transformProperty.get().modelToViewPosition( point );
         thisNode.points.push( pt );
         if ( thisNode.visibleProperty ) {
-//          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
           thisNode.invalidatePaint();
         }
       },
@@ -63,15 +63,12 @@ define( function( require ) {
           thisNode.points.shift();
         }
         if ( visibleProperty.get() ) {
-//          thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
           thisNode.invalidatePaint();
         }
       },
       cleared: function() {
         while ( thisNode.points.length ) { thisNode.points.pop(); }
-//        thisNode.setBounds( thisNode.getBounds( thisNode.points ) );
         thisNode.invalidatePaint();
-
       }
     };
     this.body.addPathListener( listener );
@@ -111,6 +108,7 @@ define( function( require ) {
 
       var faded = this.color;
       for ( i = numTransparentPoints - 1; i >= 0; i-- ) {
+
         // fade out a little bit each segment
         var a = (faded.a - 1 / NUM_FADE_POINTS);
         faded = new Color( faded.r, faded.g, faded.b, Math.max( 0, a ) );
@@ -123,30 +121,9 @@ define( function( require ) {
     },
 
     step: function( dt ) {
-      this.invalidatePaint();
-    },
-
-    /**
-     * Compute the bounds that contains the path, for repainting
-     * TODO is this needed in the JS version?
-     *
-     * @private
-     * @param points
-     * @returns {*}
-     */
-    getBounds: function( points ) {
-//      if ( points.length == 0 ) {
-//        return new Rectangle();
-//      }
-//      else {
-//        //            long start = System.currentTimeMillis();
-//        var rect = new Rectangle.Number( points.get( 0 ).getX(), points.get( 0 ).getY(), 0, 0 );
-//        for ( var point in points ) {
-//          rect.add( point.getX(), point.getY() );
-//        }
-//        //            console.log( "elapsed = " + elapsed );
-//        return RectangleUtils.expand( rect, STROKE_WIDTH, STROKE_WIDTH );
-//      }
+      if ( this.visibleProperty.get() ) {
+        this.invalidatePaint();
+      }
     }
   } );
 } );
