@@ -18,6 +18,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
 
   // strings
   var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
@@ -37,6 +38,10 @@ define( function( require ) {
 
     // day text counter
     var dayText = new Text( '', { font: FONT, fill: '#fff' } );
+
+    GravityAndOrbitsColors.link( 'bottomControlText', function( color ) {
+      dayText.fill = color;
+    } );
 
     // update text representation of day
     clock.simulationTimeProperty.link( function() {
