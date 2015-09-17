@@ -55,14 +55,17 @@ define( function( require ) {
       tailWidth: 5,
       fill: fill,
       stroke: outline,
-      pickable: false
+      pickable: false,
+      boundsMethod: 'none'
     } );
 
-    Property.multilink( [ vectorProperty, body.getPositionProperty(), transformProperty ],
-      function() {
-        var tail = thisNode.getTail();
-        var tip = thisNode.getTip( tail );
-        arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
+    Property.multilink( [ visibleProperty, vectorProperty, body.getPositionProperty(), transformProperty ],
+      function( visible ) {
+        if ( visible ) {
+          var tail = thisNode.getTail();
+          var tip = thisNode.getTip( tail );
+          arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
+        }
       } );
 
     this.addChild( arrowNode );
