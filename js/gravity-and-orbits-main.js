@@ -23,8 +23,8 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
 
   // images
-  var cartoonIcon = require( 'image!GRAVITY_AND_ORBITS/cartoon_icon.png' );
-  var toScaleIcon = require( 'image!GRAVITY_AND_ORBITS/to_scale_icon.png' );
+  var cartoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/cartoon_icon.png' );
+  var toScaleMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/to_scale_icon.png' );
 
   // strings
   var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
@@ -71,13 +71,13 @@ define( function( require ) {
     optionsNode: new GlobalOptionsNode( whiteBackgroundProperty )
   };
 
-  var cartoonScreen = new Screen( cartoonString, new Image( cartoonIcon ),
+  var cartoonScreen = new Screen( cartoonString, new Image( cartoonMipmap ),
     function() { return new CartoonModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
     { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );
 
-  var toScaleScreen = new Screen( toScaleString, new Image( toScaleIcon ),
+  var toScaleScreen = new Screen( toScaleString, new Image( toScaleMipmap ),
     function() { return new ToScaleModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
     { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
