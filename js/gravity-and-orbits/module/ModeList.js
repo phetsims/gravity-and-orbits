@@ -32,7 +32,7 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // images
-  var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.gif' );
+  var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.png' );
   var moonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon.png' );
   var spaceStationMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/space-station.png' );
 
