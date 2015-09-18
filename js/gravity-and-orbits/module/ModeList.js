@@ -32,9 +32,9 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // images
-  var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.gif' );
-  var moonImage = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
-  var spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
+  var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.png' );
+  var moonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon.png' );
+  var spaceStationMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/space-station.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model
@@ -206,7 +206,7 @@ define( function( require ) {
         earthSpaceStation.spaceStation.mass,
         Color.gray,
         Color.white,
-        getImageRenderer( spaceStationImage ),
+        getImageRenderer( spaceStationMipmap ),
         ( -Math.PI / 4),
         true,
         maxPathLength,
@@ -234,7 +234,7 @@ define( function( require ) {
         body.mass,
         Color.magenta,
         Color.white, //putting this number too large makes a kink or curly-q in the moon trajectory, which should be avoided
-        getRenderer( moonImage, body.mass ),
+        getRenderer( moonMipmap, body.mass ),
         ( -3 * Math.PI / 4 ),
         massSettable,
         maxPathLength,
@@ -278,7 +278,7 @@ define( function( require ) {
         body.mass,
         Color.gray,
         Color.lightGray,
-        getRenderer( earthImage, body.mass ),
+        getRenderer( earthMipmap, body.mass ),
         ( -Math.PI / 4 ),
         true,
         maxPathLength,
@@ -455,9 +455,9 @@ define( function( require ) {
       createIconImage: function( sun, earth, moon, spaceStation ) {
         var children = [
           new Circle( 12.5, { fill: new BodyRenderer.SphereRenderer.getSphericalGradient( 25, 'white', 'yellow' ), visible: sun  } ),
-          new Image( earthImage, { visible: earth } ),
-          new Image( moonImage, { visible: moon } ),
-          new Image( spaceStationImage, { visible: spaceStation} )
+          new Image( earthMipmap, { visible: earth } ),
+          new Image( moonMipmap, { visible: moon } ),
+          new Image( spaceStationMipmap, { visible: spaceStation} )
         ];
 
         for ( var i = 1; i < children.length; i++ ) {
