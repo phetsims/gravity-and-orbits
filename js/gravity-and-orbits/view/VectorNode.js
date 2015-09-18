@@ -53,7 +53,9 @@ define( function( require ) {
       fill: fill,
       stroke: outline,
       pickable: false,
-      boundsMethod: 'none'
+      boundsMethod: 'none',
+      isHeadDynamic: true,
+      scaleTailToo: true
     } );
 
     Property.multilink( [ visibleProperty, vectorProperty, body.getPositionProperty(), transformProperty ],

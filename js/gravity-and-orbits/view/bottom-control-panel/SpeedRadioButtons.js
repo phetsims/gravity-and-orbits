@@ -50,7 +50,7 @@ define( function( require ) {
       { property: speedProperty, value: STARTING_VALUE * 0.25, node: slowText }
     ], options );
 
-    GravityAndOrbitsColors.link( 'speedRadioButtonsText', function( color ) {
+    GravityAndOrbitsColors.link( 'bottomControlText', function( color ) {
       fastText.fill = color;
       normalText.fill = color;
       slowText.fill = color;

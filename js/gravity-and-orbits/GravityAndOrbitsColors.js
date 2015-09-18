@@ -27,7 +27,7 @@ define( function( require ) {
         default: WHITE,
         projector: BLACK
       },
-      speedRadioButtonsText: {
+      bottomControlText: {
         default: WHITE,
         projector: BLACK
       }
