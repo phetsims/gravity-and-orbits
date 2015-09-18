@@ -39,27 +39,27 @@ define( function( require ) {
     // day text counter
     var dayText = new Text( '', { font: FONT, fill: '#fff' } );
 
+    var clearButton = new TextPushButton( clearString, {
+      font: FONT,
+      listener: function() {
+        clock.setSimulationTime( 0 );
+      }
+    } );
+
     GravityAndOrbitsColors.link( 'bottomControlText', function( color ) {
       dayText.fill = color;
     } );
 
     // update text representation of day
-    clock.simulationTimeProperty.link( function() {
-      dayText.setText( timeFormatter( clock.getSimulationTime() ) );
+    clock.simulationTimeProperty.link( function( time ) {
+      dayText.setText( timeFormatter( time ) );
+      clearButton.enabled = ( time !== 0 );
     } );
 
     var box = new VBox( {
       resize: false, spacing: 4, children: [
-        // add day text counter
         dayText,
-
-        // add clear button
-        new TextPushButton( clearString, {
-          font: FONT,
-          listener: function() {
-            clock.setSimulationTime( 0 );
-          }
-        } )
+        clearButton
       ]
     } );
 
