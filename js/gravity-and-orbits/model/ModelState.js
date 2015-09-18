@@ -26,25 +26,7 @@ define( function( require ) {
    * @constructor
    */
   function ModelState( bodyStates ) {
-
-    var self = this;
-
     this.bodyStates = bodyStates;
-
-    this.workingCopyBodyStates = []; // {Array.<BodyState>}
-
-    // TODO: bodyState is supposed to be immutable
-    // but I'll edit this working copy for my own purposes
-    // not very kosher
-    this.bodyStates.forEach( function( bodyState ) {
-      self.workingCopyBodyStates.push( new BodyState(
-        bodyState.position,
-        bodyState.velocity,
-        bodyState.acceleration,
-        bodyState.mass,
-        bodyState.exploded
-      ) );
-    } );
   }
 
   return inherit( Object, ModelState, {
@@ -78,9 +60,12 @@ define( function( require ) {
      * @param {dt} number
      */
     updatePositions: function( dt ) {
-      this.workingCopyBodyStates.forEach( function( bodyState ) {
-        bodyState.position.add( bodyState.velocity.timesScalar( dt ) );
-      } );
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
+        if ( !bodyState.exploded ) {
+          bodyState.position.add( bodyState.velocity.timesScalar( dt ) );
+        }
+      }
     },
 
     /**
@@ -90,9 +75,12 @@ define( function( require ) {
      */
     updateVelocities: function( dt ) {
       this.updateAccelerations();
-      this.workingCopyBodyStates.forEach( function( bodyState ) {
-        bodyState.velocity.add( bodyState.acceleration.multiplyScalar( dt ) );
-      } );
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
+        if ( !bodyState.exploded ) {
+          bodyState.velocity.add( bodyState.acceleration.multiplyScalar( dt ) );
+        }
+      }
     },
 
     /**
@@ -100,10 +88,12 @@ define( function( require ) {
      * @private
      */
     updateAccelerations: function() {
-      var self = this;
-      this.workingCopyBodyStates.forEach( function( bodyState ) {
-        bodyState.acceleration = self.getNetForce( bodyState ).divideScalar( bodyState.mass );
-      } );
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
+        if ( !bodyState.exploded ) {
+          bodyState.acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
+        }
+      }
     },
 
     /**
@@ -111,9 +101,9 @@ define( function( require ) {
      * @private
      */
     setAccelerationToZero: function() {
-      this.workingCopyBodyStates.forEach( function( bodyState ) {
-        bodyState.acceleration = Vector2.ZERO;
-      } );
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        this.bodyStates[ i ].acceleration = Vector2.ZERO;
+      }
     },
 
     /**
@@ -127,11 +117,13 @@ define( function( require ) {
       // use netForce to keep track of the net force, initialize to zero.
       var netForce = new Vector2();
 
-      for ( var j = 0; j < this.workingCopyBodyStates.length; j++ ) {
-        if ( bodyState !== this.workingCopyBodyStates[ j ] ) // an object cannot act on itself
-        {
+      for ( var j = 0; j < this.bodyStates.length; j++ ) {
+
+        // an object cannot act on itself
+        if ( bodyState !== this.bodyStates[ j ] ) {
+
           // netForce is a mutable vector
-          netForce.add( this.getTwoBodyForce( bodyState, this.workingCopyBodyStates[ j ] ) );
+          netForce.add( this.getTwoBodyForce( bodyState, this.bodyStates[ j ] ) );
         }
       }
       return netForce;
@@ -146,12 +138,14 @@ define( function( require ) {
      */
     getTwoBodyForce: function( source, target ) {
       if ( source.position.equals( target.position ) ) {
-        //TODO: limit distance so forces don't become too large, perhaps we could compare it to the radius of the bodies
-        //If they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
+
+        // TODO: limit distance so forces don't become too large, perhaps we could compare it to the radius of the bodies
+        // If they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
         return Vector2.ZERO;
       }
       else if ( source.exploded ) {
-        //ignore in the computation if that body has exploded
+
+        // ignore in the computation if that body has exploded
         return Vector2.ZERO;
       }
       else {
@@ -179,7 +173,7 @@ define( function( require ) {
 
       // copy our workingCopy to generate a new ModelState
       var newState = [];// {Array.<BodyState>}
-      this.workingCopyBodyStates.forEach( function( bodyState ) {
+      this.bodyStates.forEach( function( bodyState ) {
         newState.push( new BodyState(
           new Vector2( bodyState.position.x, bodyState.position.y ),
           bodyState.velocity,
