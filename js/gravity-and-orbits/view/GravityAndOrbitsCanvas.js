@@ -59,11 +59,8 @@ define( function( require ) {
     var bodies = model.getBodies();
     var i;
 
-    this.paths = []; // @private - used in step to step the paths
     for ( i = 0; i < bodies.length; i++ ) {
-      var path = new PathNode( bodies[ i ], mode.transformProperty, module.showPathProperty, bodies[ i ].getColor(), STAGE_SIZE );
-      this.paths.push( path );
-      this.addChild( path );
+      this.addChild( new PathNode( bodies[ i ], mode.transformProperty, module.showPathProperty, bodies[ i ].getColor(), STAGE_SIZE ) );
     }
 
     var forceVectorColorFill = new Color( 50, 130, 215 );
@@ -171,13 +168,7 @@ define( function( require ) {
     this.addChild( scaleSlider );
   }
 
-  return inherit( Rectangle, GravityAndOrbitsCanvas, {
-    step: function( dt ) {
-      for ( var i = 0; i < this.paths.length; i++ ) {
-        this.paths[ i ].step( dt );
-      }
-    }
-  }, {
+  return inherit( Rectangle, GravityAndOrbitsCanvas, {}, {
     STAGE_SIZE: STAGE_SIZE,
     buttonBackgroundColor: buttonBackgroundColor
   } );

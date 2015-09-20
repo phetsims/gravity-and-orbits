@@ -52,10 +52,5 @@ define( function( require ) {
     this.addChild( resetAllButton );
   }
 
-  return inherit( ScreenView, GravityAndOrbitsScreenView, {
-
-    step: function( dt ) {
-      this.module.getMode().getCanvas().step( dt );
-    }
-  } );
+  return inherit( ScreenView, GravityAndOrbitsScreenView );
 } );
