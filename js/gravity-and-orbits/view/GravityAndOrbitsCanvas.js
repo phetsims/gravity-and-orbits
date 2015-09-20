@@ -59,7 +59,7 @@ define( function( require ) {
     var bodies = model.getBodies();
     var i;
 
-    this.paths = [];
+    this.paths = []; // @private - used in step to step the paths
     for ( i = 0; i < bodies.length; i++ ) {
       var path = new PathNode( bodies[ i ], mode.transformProperty, module.showPathProperty, bodies[ i ].getColor(), STAGE_SIZE );
       this.paths.push( path );
@@ -143,7 +143,7 @@ define( function( require ) {
 
     // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
     for ( i = 0; i < bodies.length; i++ ) {
-      bodies[i].getBounds().set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
+      bodies[ i ].getBounds().set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
     }
 
     // If any body is out of bounds, show a "return object" button
@@ -171,9 +171,14 @@ define( function( require ) {
     this.addChild( scaleSlider );
   }
 
-  return inherit( Rectangle, GravityAndOrbitsCanvas, {},
-    {
-      STAGE_SIZE: STAGE_SIZE,
-      buttonBackgroundColor: buttonBackgroundColor
-    } );
+  return inherit( Rectangle, GravityAndOrbitsCanvas, {
+    step: function( dt ) {
+      for ( var i = 0; i < this.paths.length; i++ ) {
+        this.paths[ i ].step( dt );
+      }
+    }
+  }, {
+    STAGE_SIZE: STAGE_SIZE,
+    buttonBackgroundColor: buttonBackgroundColor
+  } );
 } );

@@ -55,10 +55,7 @@ define( function( require ) {
   return inherit( ScreenView, GravityAndOrbitsScreenView, {
 
     step: function( dt ) {
-      var paths = this.module.getMode().getCanvas().paths;
-      for ( var i = 0; i < paths.length; i++ ) {
-        paths[ i ].step();
-      }
+      this.module.getMode().getCanvas().step( dt );
     }
   } );
 } );
