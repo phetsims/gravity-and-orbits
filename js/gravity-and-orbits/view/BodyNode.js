@@ -44,8 +44,14 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     var dragHandler = new MovableDragHandler( this.body.positionProperty, {
+      startDrag: function() {
+        body.userControlled = true;
+      },
       onDrag: function() {
         body.notifyUserModifiedPosition();
+      },
+      endDrag: function() {
+        body.userControlled = false;
       }
     } );
     this.addInputListener( dragHandler );

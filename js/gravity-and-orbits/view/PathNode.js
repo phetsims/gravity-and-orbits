@@ -54,7 +54,7 @@ define( function( require ) {
       pointAdded: function( point ) {
         var pt = transformProperty.get().modelToViewPosition( point );
         thisNode.points.push( pt );
-        if ( thisNode.visibleProperty ) {
+        if ( thisNode.visibleProperty.get() ) {
           thisNode.invalidatePaint();
         }
       },
@@ -118,12 +118,7 @@ define( function( require ) {
         context.lineTo( this.points[ i ].x, this.points[ i ].y );
         context.stroke();
       }
-    },
-
-    step: function( dt ) {
-      if ( this.visibleProperty.get() ) {
-        this.invalidatePaint();
-      }
     }
+
   } );
 } );
