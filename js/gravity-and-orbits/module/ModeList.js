@@ -26,7 +26,6 @@ define( function( require ) {
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
@@ -35,6 +34,8 @@ define( function( require ) {
   var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.png' );
   var moonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon.png' );
   var spaceStationMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/space-station.png' );
+  var bodyMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/body.png' );
+  var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model
@@ -153,7 +154,7 @@ define( function( require ) {
   var getRenderer = function( image, targetMass ) {
     //the mass for which to use the image
     return function( body, viewDiameter ) {
-      return new BodyRenderer.SwitchableBodyRenderer( body, targetMass, new BodyRenderer.ImageRenderer( body, viewDiameter, image ), new BodyRenderer.SphereRenderer( body, viewDiameter ) );
+      return new BodyRenderer.SwitchableBodyRenderer( body, targetMass, new BodyRenderer.ImageRenderer( body, viewDiameter, image ), new BodyRenderer.ImageRenderer( body, viewDiameter, bodyMipmap ) );
     };
   };
 
@@ -298,7 +299,7 @@ define( function( require ) {
       // Function for rendering the sun
       // @private
       var SUN_RENDERER = function( body, viewDiameter ) {
-        return new BodyRenderer.SphereRenderer( body, viewDiameter );
+        return new BodyRenderer.ImageRenderer( body, viewDiameter, sunMipmap );
       };
 
       Body.call(
@@ -371,8 +372,8 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       p ) );
 
-    this.modes[0].addBody( new Sun( this.modes[0].getMaxPathLength(), sunEarth.sun ) );
-    this.modes[0].addBody( new Earth( this.modes[0].getMaxPathLength(), sunEarth.earth ) );
+    this.modes[ 0 ].addBody( new Sun( this.modes[ 0 ].getMaxPathLength(), sunEarth.sun ) );
+    this.modes[ 0 ].addBody( new Earth( this.modes[ 0 ].getMaxPathLength(), sunEarth.earth ) );
 
     this.modes.push( new GravityAndOrbitsMode(
       sunEarthMoon.forceScale,
@@ -390,10 +391,10 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       p ) );
 
-    this.modes[1].addBody( new Sun( this.modes[1].getMaxPathLength(), sunEarthMoon.sun ) );
-    this.modes[1].addBody( new Earth( this.modes[1].getMaxPathLength(), sunEarthMoon.earth ) );
-    this.modes[1].addBody( new Moon( // no room for the slider
-      false, this.modes[1].getMaxPathLength(), false, // so it doesn't intersect with earth mass readout
+    this.modes[ 1 ].addBody( new Sun( this.modes[ 1 ].getMaxPathLength(), sunEarthMoon.sun ) );
+    this.modes[ 1 ].addBody( new Earth( this.modes[ 1 ].getMaxPathLength(), sunEarthMoon.earth ) );
+    this.modes[ 1 ].addBody( new Moon( // no room for the slider
+      false, this.modes[ 1 ].getMaxPathLength(), false, // so it doesn't intersect with earth mass readout
       sunEarthMoon.moon ) );
 
     var SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
@@ -413,8 +414,8 @@ define( function( require ) {
       new Vector2( earthMoon.earth.x, 0 ),
       p ) );
 
-    this.modes[2].addBody( new Earth( this.modes[2].getMaxPathLength(), earthMoon.earth ) );
-    this.modes[2].addBody( new Moon( true, this.modes[2].getMaxPathLength(), true, earthMoon.moon ) );
+    this.modes[ 2 ].addBody( new Earth( this.modes[ 2 ].getMaxPathLength(), earthMoon.earth ) );
+    this.modes[ 2 ].addBody( new Moon( true, this.modes[ 2 ].getMaxPathLength(), true, earthMoon.moon ) );
 
     var spaceStationMassReadoutFactory = function( bodyNode, visible ) {
       return new SpaceStationMassReadoutNode( bodyNode, visible );
@@ -436,11 +437,11 @@ define( function( require ) {
       new Vector2( earthSpaceStation.earth.x, 0 ),
       p ) );
 
-    this.modes[3].addBody( new Earth( this.modes[3].getMaxPathLength(), earthSpaceStation.earth ) );
-    this.modes[3].addBody( new SpaceStation( earthSpaceStation, this.modes[3].getMaxPathLength() ) );
+    this.modes[ 3 ].addBody( new Earth( this.modes[ 3 ].getMaxPathLength(), earthSpaceStation.earth ) );
+    this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, this.modes[ 3 ].getMaxPathLength() ) );
   }
 
-   inherit( Object, ModeList, {
+  inherit( Object, ModeList, {
 
       /**
        * @private
@@ -454,14 +455,14 @@ define( function( require ) {
        */
       createIconImage: function( sun, earth, moon, spaceStation ) {
         var children = [
-          new Circle( 12.5, { fill: new BodyRenderer.SphereRenderer.getSphericalGradient( 25, 'white', 'yellow' ), visible: sun  } ),
+          new Image( sunMipmap, { visible: sun } ),
           new Image( earthMipmap, { visible: earth } ),
           new Image( moonMipmap, { visible: moon } ),
-          new Image( spaceStationMipmap, { visible: spaceStation} )
+          new Image( spaceStationMipmap, { visible: spaceStation } )
         ];
 
-        for ( var i = 1; i < children.length; i++ ) {
-          children[i].setScaleMagnitude( 25 / children[i].width );
+        for ( var i = 0; i < children.length; i++ ) {
+          children[ i ].setScaleMagnitude( 25 / children[ i ].width );
         }
 
         return new HBox( { children: children, spacing: 20 } );
