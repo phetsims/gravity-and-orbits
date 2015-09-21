@@ -24,6 +24,9 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Matrix3 = require( 'DOT/Matrix3' );
 
+  // images
+  var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
+
   function BodyRenderer( body ) {
 
     Node.call( this );
@@ -43,7 +46,7 @@ define( function( require ) {
     },
     {
       SwitchableBodyRenderer: SwitchableBodyRenderer,
-      SphereRenderer: SphereRenderer,
+      //SphereRenderer: SphereRenderer,
       ImageRenderer: ImageRenderer,
       SunRenderer: SunRenderer
     } );
@@ -118,46 +121,6 @@ define( function( require ) {
   } );
 
   /**
-   * Adds triangle edges to the sun to make it look more recognizable
-   *
-   * @param {Body} body
-   * @param {number} viewDiameter
-   * @param {number} numSegments
-   * @param {function} twinkleRadius
-   * @constructor
-   */
-  function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
-
-    // @private
-    this.twinkles = new Path( null, { fill: 'yellow' } );
-
-    SphereRenderer.call( this, body, viewDiameter );
-    this.numSegments = numSegments;
-    this.twinkleRadius = twinkleRadius;
-    this.addChild( this.twinkles );
-    this.twinkles.moveToBack();
-    this.setDiameter( viewDiameter );
-  }
-
-  inherit( SphereRenderer, SunRenderer, {
-    setDiameter: function( viewDiameter ) {
-      SphereRenderer.prototype.setDiameter.call( this, viewDiameter );
-      var angle = 0;
-      var deltaAngle = Math.PI * 2 / this.numSegments;
-      var radius = viewDiameter / 2;
-      var shape = new Shape();
-      shape.moveTo( 0, 0 );
-      for ( var i = 0; i < this.numSegments + 1; i++ ) {
-        var myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
-        var target = Vector2.createPolar( myRadius, angle );
-        shape.lineToPoint( target );
-        angle += deltaAngle;
-      }
-      this.twinkles.setShape( shape );
-    }
-  } );
-
-  /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
    */
   function ImageRenderer( body, viewDiameter, imageName ) {
@@ -185,6 +148,46 @@ define( function( require ) {
 
       // Make sure the image is centered on the body's center
       this.imageNode.translate( -this.imageNode.width / 2 / scale, -this.imageNode.height / 2 / scale );
+    }
+  } );
+
+  /**
+   * Adds triangle edges to the sun to make it look more recognizable
+   *
+   * @param {Body} body
+   * @param {number} viewDiameter
+   * @param {number} numSegments
+   * @param {function} twinkleRadius
+   * @constructor
+   */
+  function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
+
+    // @private
+    this.twinkles = new Path( null, { fill: 'yellow' } );
+
+    ImageRenderer.call( this, body, viewDiameter, sunMipmap );
+    this.numSegments = numSegments;
+    this.twinkleRadius = twinkleRadius;
+    this.addChild( this.twinkles );
+    this.twinkles.moveToBack();
+    this.setDiameter( viewDiameter );
+  }
+
+  inherit( ImageRenderer, SunRenderer, {
+    setDiameter: function( viewDiameter ) {
+      ImageRenderer.prototype.setDiameter.call( this, viewDiameter );
+      var angle = 0;
+      var deltaAngle = Math.PI * 2 / this.numSegments;
+      var radius = viewDiameter / 2;
+      var shape = new Shape();
+      shape.moveTo( 0, 0 );
+      for ( var i = 0; i < this.numSegments + 1; i++ ) {
+        var myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
+        var target = Vector2.createPolar( myRadius, angle );
+        shape.lineToPoint( target );
+        angle += deltaAngle;
+      }
+      this.twinkles.setShape( shape );
     }
   } );
 
