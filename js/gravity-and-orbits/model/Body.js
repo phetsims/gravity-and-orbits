@@ -49,7 +49,7 @@ define( function( require ) {
 
     PropertySet.call( this, {
       acceleration: new Vector2(),
-      force: new Vector2(),
+      //force: new Vector2(),
       diameter: diameter, // number
       clockTicksSinceExplosion: 0,
       bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
@@ -74,6 +74,7 @@ define( function( require ) {
     this.labelAngle = labelAngle;
     this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) );
     this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) );
+    this.forceProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() );
     this.massProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, mass );
     this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false );
     this.density = mass / this.getVolume();
@@ -101,11 +102,13 @@ define( function( require ) {
     var rewindValueChangeListener = function() {
       thisBody.positionProperty.storeRewindValueNoNotify();
       thisBody.velocityProperty.storeRewindValueNoNotify();
+      thisBody.forceProperty.storeRewindValueNoNotify();
       thisBody.massProperty.storeRewindValueNoNotify();
       thisBody.collidedProperty.storeRewindValueNoNotify();
     };
     this.positionProperty.addRewindValueChangeListener( rewindValueChangeListener );
     this.velocityProperty.addRewindValueChangeListener( rewindValueChangeListener );
+    this.forceProperty.addRewindValueChangeListener( rewindValueChangeListener );
     this.massProperty.addRewindValueChangeListener( rewindValueChangeListener );
     this.collidedProperty.addRewindValueChangeListener( rewindValueChangeListener );
   }
@@ -512,6 +515,7 @@ define( function( require ) {
     rewind: function() {
       this.positionProperty.rewind();
       this.velocityProperty.rewind();
+      this.forceProperty.rewind();
       this.massProperty.rewind();
       this.collidedProperty.rewind();
       this.clearPath();
