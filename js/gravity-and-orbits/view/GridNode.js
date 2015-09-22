@@ -16,7 +16,7 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
 
   // constants
-  var NUM_GRID_LINES = 10;
+  var NUM_GRID_LINES = 14;
 
   /**
    *
