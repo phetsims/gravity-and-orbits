@@ -94,12 +94,6 @@ define( function( require ) {
     } );
 
     // If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
-
-    // Relates to this problem reported by NP:
-    // NP: odd behavior with rewind: Open sim and press play, let the planet move to directly left of the sun.
-    //   Pause, then move the planet closer to sun. Press play, planet will move CCW. Then pause and hit rewind.
-    //   Press play again, the planet will start to move in the opposite direction (CW).
-    // SR: reproduced this in 0.0.14, perhaps the velocity is not being reset?
     var rewindValueChangeListener = function() {
       thisBody.positionProperty.storeRewindValueNoNotify();
       thisBody.velocityProperty.storeRewindValueNoNotify();
@@ -222,15 +216,6 @@ define( function( require ) {
       for ( var i = 0; i < this.pathListeners.length; i++ ) {
         this.pathListeners[ i ].cleared();
       }
-    },
-
-    /**
-     * @param mass
-     */
-    setMass: function( mass ) {
-      this.massProperty.set( mass );
-      var radius = Math.pow( 3 * mass / 4 / Math.PI / this.density, 1.0 / 3.0 ); // derived from: density = mass/volume, and volume = 4/3 pi r r r
-      this.diameterProperty.set( radius * 2 );
     },
 
     resetAll: function() {
