@@ -54,8 +54,8 @@ define( function( require ) {
     // @private
     this.gravityEnabledProperty = gravityEnabledProperty;
 
-    this.clock = clock;
-    this.bodies = []; // Contains the sun, moon, earth, satellite
+    this.clock = clock; // @public
+    this.bodies = []; // @public - contains the sun, moon, earth, satellite
     this.modelStepListeners = []; // SimpleObservers TODO: Convert to trigger
 
     var thisModel = this;
@@ -180,10 +180,6 @@ define( function( require ) {
        */
       getBodies: function() {
         return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
-      },
-
-      getClock: function() {
-        return this.clock;
       },
 
       resetBodies: function() {

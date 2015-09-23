@@ -31,7 +31,7 @@ define( function( require ) {
     module.modeProperty.link( function( mode ) {
       thisNode.removeAllChildren();
       thisNode.addChild( hStrut );
-      var bodies = mode.getModel().getBodies();
+      var bodies = mode.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
         var body = bodies[ i ];
         if ( body.massSettable ) {

@@ -32,7 +32,7 @@ define( function( require ) {
     var playPauseButton = new PlayPauseButton( playProperty );
 
     var stepButton = new StepButton( function() {
-      module.getMode().getModel().getClock().stepClockWhilePaused();
+      module.getMode().getClock().stepClockWhilePaused();
     }, playProperty );
 
     var rewindButton = new RewindButton( function() {

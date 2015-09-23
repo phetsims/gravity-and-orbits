@@ -95,7 +95,7 @@ define( function( require ) {
     for ( i = 0; i < bodies.length; i++ ) {
       if ( !bodies[ i ].fixed ) {
         this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty,
-          bodies[ i ].velocityProperty, mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline,
+          bodies[ i ].velocityProperty, mode.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
           'V' ) );  // TODO: i18n of "V", also recommended to trim to 1 char
       }
     }
@@ -106,7 +106,7 @@ define( function( require ) {
     }
 
     // Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
-    var gridNode = new GridNode( mode.transformProperty, mode.getGridSpacing(), mode.getGridCenter() );
+    var gridNode = new GridNode( mode.transformProperty, mode.gridSpacing, mode.gridCenter );
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 

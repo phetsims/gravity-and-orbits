@@ -53,11 +53,11 @@ define( function( require ) {
    */
   function GravityAndOrbitsMode( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
 
-    // public Properties from the java version
+    // @public
     PropertySet.call( this, {
-      active: active, // boolean
+      active: active, // @public {boolean}
 
-      // private
+      // @private
       deviatedFromDefaults: false, // Flag to indicate whether any value has deviated from the original value (which was originally used for showing a reset button, but not anymore)
       measuringTapeStartPoint: initialMeasuringTapeLocation.p1,
       measuringTapeEndPoint: initialMeasuringTapeLocation.p2,
@@ -66,25 +66,24 @@ define( function( require ) {
 
     var thisMode = this;
 
-    //private
-    this.canvas = null;
+    this.canvas = null; // @public
 
-    this.dt = dt; // private
+    this.dt = dt; // @private
     this.p = p;
-    this.forceScale = forceScale; // private
-    this.iconImage = iconImage; // private
+    this.forceScale = forceScale; // @private
+    this.iconImage = iconImage; // @private
 
     // Precomputed value for the orbital period under default conditions (i.e. no other changes),
     // for purposes of determining the path length (about 2 orbits)
-    this.defaultOrbitalPeriod = defaultOrbitalPeriod; // private
+    this.defaultOrbitalPeriod = defaultOrbitalPeriod; // @private
 
     // How much to scale (shrink or grow) the velocity vectors; a mapping from meters/second to stage coordinates
-    this.velocityVectorScale = velocityVectorScale; // private
-    this.gridSpacing = gridSpacing; // in meters, private
-    this.gridCenter = gridCenter; // private
+    this.velocityVectorScale = velocityVectorScale; // @public
+    this.gridSpacing = gridSpacing; // @public - in meters
+    this.gridCenter = gridCenter; // @public
     this.rewindingProperty = p.rewinding; // save a reference to the rewinding property of p
-    this.timeSpeedScaleProperty = p.timeSpeedScale;
-    this.timeFormatter = timeFormatter; // private
+    this.timeSpeedScaleProperty = p.timeSpeedScale; // @public
+    this.timeFormatter = timeFormatter; // @public
 
     // Function that creates a PNode to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
@@ -96,18 +95,18 @@ define( function( require ) {
       thisMode.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
-    // private
+    // @private
     this.model = new GravityAndOrbitsModel( new GravityAndOrbitsClock( dt, p.stepping, this.timeSpeedScaleProperty ), p.gravityEnabled );
 
     // When the user pauses the clock, assume they will change some other parameters as well, and set a new rewind point
-    this.rewindClockTime = 0; // private
+    this.rewindClockTime = 0; // @private
 
     this.getClock().runningProperty.onValue( false, function() {
       thisMode.rewindClockTime = thisMode.getClock().getSimulationTime();
     } );
 
     Property.multilink( [ p.playButtonPressed, this.activeProperty ], function( playButtonPressed, active ) {
-      thisMode.model.getClock().setRunning( playButtonPressed && active );
+      thisMode.model.clock.setRunning( playButtonPressed && active );
     } );
   }
 
@@ -149,13 +148,22 @@ define( function( require ) {
      * Gets the number of points that should be used to draw a trace, should be enough so that two periods for the default orbit are visible.
      */
     getMaxPathLength: function() {
-      //couldn't use 2 as requested because it caused an awkward looking behavior for the lunar orbit
+
+      // couldn't use 2 as requested because it caused an awkward looking behavior for the lunar orbit
       var numberOfPathPeriods = 1.5;
       return (Math.ceil( numberOfPathPeriods * this.defaultOrbitalPeriod / this.dt ));
     },
 
     getClock: function() {
-      return this.model.getClock();
+      return this.model.clock;
+    },
+
+    getBodies: function() {
+      return this.model.getBodies();
+    },
+
+    addModelSteppedListener: function( simpleObserver ) {
+      this.model.addModelSteppedListener( simpleObserver );
     },
 
     /**
@@ -173,22 +181,14 @@ define( function( require ) {
       body.addUserModifiedVelocityListener( update );
     },
 
-    getModel: function() {
-      return this.model;
-    },
-
     reset: function() {
       // reset the clock
-      this.model.getClock().resetSimulationTime();
+      this.model.clock.resetSimulationTime();
       this.model.resetAll();
       this.deviatedFromDefaultsProperty.reset();
       this.measuringTapeStartPointProperty.reset();
       this.measuringTapeEndPointProperty.reset();
       this.zoomLevelProperty.reset();
-    },
-
-    getCanvas: function() {
-      return this.canvas;
     },
 
     /**
@@ -197,14 +197,6 @@ define( function( require ) {
      */
     init: function( module ) {
       this.canvas = new GravityAndOrbitsCanvas( this.model, module, this, this.forceScale );
-    },
-
-    /**
-     *
-     * @returns {*}
-     */
-    getTimeFormatter: function() {
-      return this.timeFormatter;
     },
 
     /**
@@ -218,14 +210,6 @@ define( function( require ) {
     },
 
     /**
-     *
-     * @returns {*}
-     */
-    getVelocityVectorScale: function() {
-      return this.velocityVectorScale;
-    },
-
-    /**
      * Restore the last set of initial conditions that were set while the sim was paused.
      */
     rewind: function() {
@@ -236,14 +220,7 @@ define( function( require ) {
         bodies[ i ].rewind();
       }
       this.rewindingProperty.set( false );
-    },
-
-    getGridSpacing: function() {
-      return this.gridSpacing;
-    },
-
-    getGridCenter: function() {
-      return this.gridCenter;
     }
+
   } );
 } );
