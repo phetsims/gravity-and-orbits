@@ -47,8 +47,8 @@ define( function( require ) {
 
     // update the location of this node when the body changes, unless the body is collided
     body.positionProperty.link( function() {
-      if ( !body.isCollided() ) { // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
-        thisNode.translation = modelViewTransformProperty.get().modelToViewPosition( body.getPosition() );
+      if ( !body.collidedProperty.get() ) { // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
+        thisNode.translation = modelViewTransformProperty.get().modelToViewPosition( body.positionProperty.get() );
       }
     } );
   }
@@ -82,7 +82,7 @@ define( function( require ) {
 
       // @private
       getMaxViewDiameter: function( body, modelViewTransformProperty ) {
-        return modelViewTransformProperty.get().modelToViewDeltaX( body.getDiameter() ) * 2;
+        return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
       }
     },
     {

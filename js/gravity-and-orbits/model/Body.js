@@ -47,9 +47,10 @@ define( function( require ) {
   function Body( name, x, y, diameter, vx, vy, mass, color, highlight, renderer,// way to associate the graphical representation directly instead of later with conditional logic or map
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel, playButtonPressedProperty, steppingProperty, rewindingProperty, fixed ) {
 
+    // @public
     PropertySet.call( this, {
       acceleration: new Vector2(),
-      diameter: diameter, // number
+      diameter: diameter, // {number}
       clockTicksSinceExplosion: 0,
       bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
     } );
@@ -126,21 +127,7 @@ define( function( require ) {
      * @return {number}
      */
     getRadius: function() {
-      return this.getDiameter() / 2;
-    },
-
-    /**
-     * @return {Vector2}
-     */
-    getPosition: function() {
-      return this.positionProperty.get();
-    },
-
-    /**
-     * @return {number}
-     */
-    getDiameter: function() {
-      return this.diameterProperty.get();
+      return this.diameterProperty.get() / 2;
     },
 
     //TODO:
@@ -157,11 +144,11 @@ define( function( require ) {
         dx = dx.x;
         dy = dx.y;
       }
-      this.positionProperty.set( new Vector2( this.getX() + dx, this.getY() + dy ) );
+      this.positionProperty.set( new Vector2( this.positionProperty.get().x + dx, this.positionProperty.get().y + dy ) );
 
       // Only add to the path if the object hasn't collided
       // NOTE: this check was not originally in the 2 param translate method
-      if ( !this.isCollided() && !this.userControlled ) {
+      if ( !this.collidedProperty.get() && !this.userControlled ) {
         this.addPathPoint();
       }
     },
@@ -172,28 +159,12 @@ define( function( require ) {
      * @return {BodyState}
      */
     toBodyState: function() {
-      return new BodyState( this.getPosition(), this.getVelocity(), this.getAcceleration(), this.getMass(), this.collidedProperty.get() );
-    },
-
-    /**
-     * @return {number}
-     */
-    getMass: function() {
-      return this.massProperty.get();
-    },
-
-    /**
-     * @return {Vector2}
-     */
-    getAcceleration: function() {
-      return this.accelerationProperty.get();
-    },
-
-    /**
-     * @return {Vector2}
-     */
-    getVelocity: function() {
-      return this.velocityProperty.get();
+      return new BodyState(
+        this.positionProperty.get(),
+        this.velocityProperty.get(),
+        this.accelerationProperty.get(),
+        this.massProperty.get(),
+        this.collidedProperty.get() );
     },
 
     /**
@@ -238,7 +209,7 @@ define( function( require ) {
           this.pathListeners[ i ].pointRemoved();
         }
       }
-      var pathPoint = this.getPosition();
+      var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
 
       for ( i = 0; i < this.pathListeners.length; i++ ) {
@@ -258,7 +229,7 @@ define( function( require ) {
      */
     setMass: function( mass ) {
       this.massProperty.set( mass );
-      var radius = Math.pow( 3 * mass / 4 / Math.PI / this.density, 1.0 / 3.0 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
+      var radius = Math.pow( 3 * mass / 4 / Math.PI / this.density, 1.0 / 3.0 ); // derived from: density = mass/volume, and volume = 4/3 pi r r r
       this.diameterProperty.set( radius * 2 );
     },
 
@@ -286,34 +257,6 @@ define( function( require ) {
       this.pathListeners.push( listener );
     },
 
-    /**
-     * @param {Vector2} velocity
-     */
-    setVelocity: function( velocity ) {
-      this.velocityProperty.set( velocity );
-    },
-
-    /**
-     * @param {number} x
-     * @param {number} y
-     */
-    setPosition: function( x, y ) {
-      this.positionProperty.set( new Vector2( x, y ) );
-    },
-
-    /**
-     * @param {Vector2} acceleration
-     */
-    setAcceleration: function( acceleration ) {
-      this.accelerationProperty.set( acceleration );
-    },
-
-    /**
-     * @param {Vector2} force
-     */
-    setForce: function( force ) {
-      this.forceProperty.set( force );
-    },
 
     /**
      * @return {BodyRenderer}
@@ -334,16 +277,9 @@ define( function( require ) {
      * @return {boolean}
      */
     collidesWidth: function( body ) {
-      var distance = this.getPosition().minus( body.getPosition() ).magnitude();
-      var radiiSum = this.getDiameter() / 2 + body.getDiameter() / 2;
+      var distance = this.positionProperty.get().minus( body.positionProperty.get() ).magnitude();
+      var radiiSum = this.diameterProperty.get() / 2 + body.diameterProperty.get() / 2;
       return distance < radiiSum;
-    },
-
-    /**
-     * @param {boolean} b
-     */
-    setCollided: function( b ) {
-      this.collidedProperty.set( b );
     },
 
     /**
@@ -397,7 +333,7 @@ define( function( require ) {
      * @param {GravityAndOrbitsModel} model
      */
     returnBody: function( model ) {
-      if ( this.collidedProperty.get() || !this.bounds.containsPoint( this.getPosition() ) ) {
+      if ( this.collidedProperty.get() || !this.bounds.containsPoint( this.positionProperty.get() ) ) {
         this.setCollided( false );
         this.clearPath(); // so there is no sudden jump in path from old to new location
         this.doReturnBody( model );
@@ -415,17 +351,10 @@ define( function( require ) {
     },
 
     /**
-     * @return {boolean}
-     */
-    isCollided: function() {
-      return this.collidedProperty.get();
-    },
-
-    /**
      * @return {string}
      */
     toString: function() {
-      return "name = " + this.name + ", mass = " + this.getMass();
+      return "name = " + this.name + ", mass = " + this.massProperty.get();
     }
 
   } );

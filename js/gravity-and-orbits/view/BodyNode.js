@@ -110,12 +110,12 @@ define( function( require ) {
 
     // @private
     getPosition: function( modelViewTransformProperty, body ) {
-      return modelViewTransformProperty.get().modelToView( body.getPosition() );
+      return modelViewTransformProperty.get().modelToView( body.positionProperty.get() );
     },
 
     // @private
     getViewDiameter: function() {
-      var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.getDiameter() );
+      var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
       return Math.max( viewDiameter, 2 );
     },
 

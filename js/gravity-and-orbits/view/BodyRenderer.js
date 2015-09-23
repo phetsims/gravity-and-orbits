@@ -75,7 +75,7 @@ define( function( require ) {
 
     body.massProperty.link( function() {
       thisRenderer.removeAllChildren();
-      thisRenderer.addChild( ( body.getMass() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
+      thisRenderer.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
     } );
   }
 

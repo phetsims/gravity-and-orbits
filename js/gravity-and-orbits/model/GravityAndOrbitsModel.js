@@ -32,7 +32,7 @@ define( function( require ) {
    * @return {Body} the smaller body
    */
   function getSmaller( other, body ) {
-    if ( other.getMass() < body.getMass() ) {
+    if ( other.massProperty.get() < body.massProperty.get() ) {
       return other;
     }
     else {
@@ -114,7 +114,7 @@ define( function( require ) {
             var other = this.bodies[ k ];
             if ( other !== body ) {
               if ( other.collidesWidth( body ) ) {
-                getSmaller( other, body ).setCollided( true );
+                getSmaller( other, body ).collidedProperty.set( true );
               }
             }
           }
@@ -133,7 +133,7 @@ define( function( require ) {
         if ( star === null || planet === null ) {
           return NaN;
         }
-        return star.getPosition().distance( planet.getPosition() );
+        return star.positionProperty.get().distance( planet.positionProperty.get() );
       },
 
       resetAll: function() {
@@ -171,7 +171,7 @@ define( function( require ) {
        * Without this block of code, the force vectors would be zero on sim startup until the clock is started.
        */
       updateForceVectors: function() {
-        this.step( 0.0 );//the effect of stepping the model is to update the force vectors
+        this.step( 0 ); // the effect of stepping the model is to update the force vectors
       },
 
       /**

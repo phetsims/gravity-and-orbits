@@ -270,9 +270,9 @@ define( function( require ) {
         // Restore the moon near the earth and with the same relative velocity vector
         if ( earth ) {
           var relativePosition = this.positionProperty.initialValue.minus( earth.positionProperty.initialValue );
-          this.positionProperty.set( earth.getPosition().plus( relativePosition ) );
+          this.positionProperty.set( earth.positionProperty.get().plus( relativePosition ) );
           var relativeVelocity = this.velocityProperty.initialValue.minus( earth.velocityProperty.initialValue );
-          this.velocityProperty.set( earth.getVelocity().plus( relativeVelocity ) );
+          this.velocityProperty.set( earth.velocityProperty.get().plus( relativeVelocity ) );
         }
         else {
           throw new Error( 'Couldn\'t find planet.' );
@@ -343,13 +343,15 @@ define( function( require ) {
 
     inherit( Body, Sun, {
       updateBodyStateFromModel: function( bodyState ) {
+
         // store the original position in case it must be restored
-        var position = this.getPosition();
+        var position = this.positionProperty.get();
         Body.prototype.updateBodyStateFromModel.call( this, bodyState );
+
         // Sun shouldn't move in cartoon modes
         if ( this.body.fixed ) {
-          this.setPosition( position.x, position.y );
-          this.setVelocity( new Vector2() );
+          this.positionProperty.set( position );
+          this.velocityProperty.set( new Vector2() );
         }
       }
     } );
