@@ -108,8 +108,8 @@ define( function( require ) {
 
     // @private
     createPaint: function( diameter ) {
-      var highlight = ( this.body ) ? this.body.getHighlight() : 'white';
-      var color = ( this.body ) ? this.body.getColor() : 'yellow';
+      var highlight = ( this.body ) ? this.body.highlight : 'white';
+      var color = ( this.body ) ? this.body.color : 'yellow';
       return BodyRenderer.SphereRenderer.getSphericalGradient( diameter, highlight, color );
     }
   }, {

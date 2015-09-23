@@ -210,7 +210,7 @@ define( function( require ) {
         for ( var i = 0; i < this.bodies.length; i++ ) {
           var body = this.bodies[ i ];
 
-          if ( body.getName() === name ) {
+          if ( body.name === name ) {
             return body;
           }
         }

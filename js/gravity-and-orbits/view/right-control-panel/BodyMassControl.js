@@ -41,7 +41,7 @@ define( function( require ) {
    */
   function BodyMassControl( body, min, max, labelValue, valueLabel ) {
 
-    var label = new Text( body.getName(), {
+    var label = new Text( body.name, {
       font: CONTROL_FONT,
       fill: 'white',
       fontWeight: 'bold'

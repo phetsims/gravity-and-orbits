@@ -21,7 +21,7 @@ define( function( require ) {
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
 
   /**
-   *
+   * Constructor for Body
    * @param {string} name
    * @param {number} x
    * @param {number} y
@@ -49,7 +49,6 @@ define( function( require ) {
 
     PropertySet.call( this, {
       acceleration: new Vector2(),
-      //force: new Vector2(),
       diameter: diameter, // number
       clockTicksSinceExplosion: 0,
       bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
@@ -60,18 +59,19 @@ define( function( require ) {
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
-    this.massReadoutBelow = massReadoutBelow;
-    this.tickValue = tickValue; // value that this body's mass should be identified with, for 'planet' this will be the earth's mass
-    this.tickLabel = tickLabel; // name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
-    this.fixed = fixed; // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
+    this.massReadoutBelow = massReadoutBelow; // @public (read-only)
+    this.tickValue = tickValue; // @public (read-only) - value that this body's mass should be identified with, for 'planet' this will be the earth's mass
+    this.tickLabel = tickLabel; // @public (read-only) - name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
+    this.fixed = fixed; // @public (read-only) true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
+    this.name = name; // @public (read-only)
+    this.color = color; // @public (read-only)
+    this.highlight = highlight; // @public (read-only)
+
     assert && assert( renderer !== null );
-    this.name = name;
-    this.color = color;
-    this.highlight = highlight;
     this.renderer = renderer; // function that creates a Node for this Body.
 
     // This is in the model so we can associate the graphical representation directly instead of later with conditional logic or map
-    this.labelAngle = labelAngle;
+    this.labelAngle = labelAngle; // @public
     this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) );
     this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) );
     this.forceProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() );
@@ -134,20 +134,6 @@ define( function( require ) {
      */
     getRadius: function() {
       return this.getDiameter() / 2;
-    },
-
-    /**
-     * @return {Color}
-     */
-    getColor: function() {
-      return this.color;
-    },
-
-    /**
-     * @return {Color}
-     */
-    getHighlight: function() {
-      return this.highlight;
     },
 
     /**
@@ -216,13 +202,6 @@ define( function( require ) {
     },
 
     /**
-     * @return {string}
-     */
-    getName: function() {
-      return this.name;
-    },
-
-    /**
      * @param {number} value
      */
     setDiameter: function( value ) {
@@ -257,13 +236,6 @@ define( function( require ) {
      */
     getVelocity: function() {
       return this.velocityProperty.get();
-    },
-
-    /**
-     * @return {number}
-     */
-    getTickValue: function() {
-      return this.tickValue;
     },
 
     /**
@@ -437,22 +409,8 @@ define( function( require ) {
     /**
      * @return {number}
      */
-    getLabelAngle: function() {
-      return this.labelAngle;
-    },
-
-    /**
-     * @return {number}
-     */
     getMaxPathLength: function() {
       return this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS;
-    },
-
-    /**
-     * @return {boolean}
-     */
-    isMassReadoutBelow: function() {
-      return this.massReadoutBelow;
     },
 
     /**
@@ -477,13 +435,6 @@ define( function( require ) {
      */
     setCollided: function( b ) {
       this.collidedProperty.set( b );
-    },
-
-    /**
-     * @return {string}
-     */
-    getTickLabel: function() {
-      return this.tickLabel;
     },
 
     /**
@@ -565,7 +516,7 @@ define( function( require ) {
      * @return {string}
      */
     toString: function() {
-      return "name = " + this.getName() + ", mass = " + this.getMass();
+      return "name = " + this.name + ", mass = " + this.getMass();
     },
 
     /**

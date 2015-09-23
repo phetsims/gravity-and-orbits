@@ -89,7 +89,7 @@ define( function( require ) {
       var tail = northEastVector.times( 50 ).plus( viewCenter );
 
       node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: 'yellow' } ) );
-      var text = new Text( body.getName(), {
+      var text = new Text( body.name, {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
         y: tail.y - this.height - 10,

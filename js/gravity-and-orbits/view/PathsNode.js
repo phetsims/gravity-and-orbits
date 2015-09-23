@@ -104,13 +104,12 @@ define( function( require ) {
       // draw the path for each body one by one
       for ( var i = 0; i < this.bodies.length; i++ ) {
         var body = this.bodies[ i ];
-        var color = body.getColor();
         var points = this.points[ i ];
 
         var numSolidPoints = Math.min( body.getMaxPathLength() - NUM_FADE_POINTS, points.length );
         var numTransparentPoints = points.length - numSolidPoints;
 
-        context.strokeStyle = color.toCSS();
+        context.strokeStyle = body.color.toCSS();
         context.lineWidth = STROKE_WIDTH;
         context.lineCap = 'round';
         context.lineJoin = 'round';
@@ -128,7 +127,7 @@ define( function( require ) {
         // Draw the faded out part
         context.lineCap = 'butt';
 
-        var faded = color;
+        var faded = body.color;
         for ( j = numTransparentPoints - 1; j >= 0; j-- ) {
 
           // fade out a little bit each segment

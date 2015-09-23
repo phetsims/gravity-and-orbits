@@ -58,12 +58,8 @@ define( function( require ) {
       // @private
       getExplosionEdgeGraphic: function( body, getDiameter ) {
         var yellowAndWhite = {
-          getHighlight: function() {
-            return 'white';
-          },
-          getColor: function() {
-            return 'yellow';
-          }
+          highlight: 'white',
+          color: 'yellow'
         };
         var getDoubleRadius = function( radius ) {
           return radius * 2;

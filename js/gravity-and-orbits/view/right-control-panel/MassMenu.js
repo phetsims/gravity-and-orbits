@@ -37,7 +37,7 @@ define( function( require ) {
         if ( body.isMassSettable() ) {
           thisNode.addChild(
             new BodyMassControl( body, body.getMassProperty().getInitialValue() / 2, body.getMassProperty().getInitialValue() * 2,
-              body.getTickValue(), body.getTickLabel() ) );
+              body.tickValue, body.tickLabel ) );
         }
       }
       thisNode.updateLayout();
