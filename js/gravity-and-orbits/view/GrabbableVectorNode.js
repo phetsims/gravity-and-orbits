@@ -58,7 +58,7 @@ define( function( require ) {
     this.addChild( text );
 
     //Center the grab area on the tip (see getTip()) when any of its dependencies change
-    Property.multilink( [ vectorProperty, body.getPositionProperty(), transformProperty ],
+    Property.multilink( [ vectorProperty, body.positionProperty, transformProperty ],
       function() {
         var tip = thisNode.getTip();
         grabArea.center = tip;

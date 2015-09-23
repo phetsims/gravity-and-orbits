@@ -88,14 +88,14 @@ define( function( require ) {
     // Add gravity force vector nodes
     for ( i = 0; i < bodies.length; i++ ) {
       this.addChild( new VectorNode( bodies[ i ], mode.transformProperty, module.showGravityForceProperty,
-        bodies[ i ].getForceProperty(), forceScale, forceVectorColorFill, forceVectorColorOutline ) );
+        bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline ) );
     }
 
     // Add velocity vector nodes
     for ( i = 0; i < bodies.length; i++ ) {
       if ( !bodies[ i ].fixed ) {
         this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty,
-          bodies[ i ].getVelocityProperty(), mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline,
+          bodies[ i ].velocityProperty, mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline,
           'V' ) );  // TODO: i18n of "V", also recommended to trim to 1 char
       }
     }
@@ -141,7 +141,7 @@ define( function( require ) {
 
     // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
     for ( i = 0; i < bodies.length; i++ ) {
-      bodies[ i ].getBounds().set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
+      bodies[ i ].boundsProperty.set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
     }
 
     // If any body is out of bounds, show a "return object" button

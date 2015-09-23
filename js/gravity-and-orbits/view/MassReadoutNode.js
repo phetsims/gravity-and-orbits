@@ -39,13 +39,13 @@ define( function( require ) {
       }
     };
 
-    bodyNode.getBody().getMassProperty().link( function() {
+    bodyNode.getBody().massProperty.link( function() {
       readoutText.setText( thisNode.createText() );
       updateLocation();
     } );
 
     visibleProperty.link( function( visible ) {
-      if ( !bodyNode.getBody().getCollidedProperty().get() ) {
+      if ( !bodyNode.getBody().collidedProperty.get() ) {
         thisNode.visible = visible;
         updateLocation();
       }

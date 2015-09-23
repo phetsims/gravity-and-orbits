@@ -168,7 +168,7 @@ define( function( require ) {
       var update = function() {
         thisMode.deviatedFromDefaultsProperty.set( true );
       };
-      body.getMassProperty().link( update );
+      body.massProperty.link( update );
       body.addUserModifiedPositionListener( update );
       body.addUserModifiedVelocityListener( update );
     },

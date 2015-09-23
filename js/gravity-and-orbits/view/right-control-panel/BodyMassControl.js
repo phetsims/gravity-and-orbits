@@ -60,7 +60,7 @@ define( function( require ) {
     }
     var tickBox = new HBox( { children: ticks, spacing: SPACING } );
 
-    var slider = new HSlider( body.getMassProperty(), { min: min, max: max }, {
+    var slider = new HSlider( body.massProperty, { min: min, max: max }, {
       trackSize: new Dimension2( WIDTH, 2 ),
       thumbSize: THUMB_SIZE,
 
@@ -73,7 +73,7 @@ define( function( require ) {
 
     Node.call( this, { children: [ content, smallLabel, sliderWithTicksNode ] } );
 
-    body.getMassProperty().link( function( mass ) {
+    body.massProperty.link( function( mass ) {
 
       // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
       // the mass itself is set by the slider in this case.
@@ -82,7 +82,7 @@ define( function( require ) {
 
       // snap to default value if close
       if ( Math.abs( mass - labelValue ) / labelValue < SNAP_TOLERANCE ) {
-        body.getMassProperty().set( labelValue );
+        body.massProperty.set( labelValue );
       }
     } );
   }

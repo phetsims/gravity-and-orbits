@@ -66,7 +66,7 @@ define( function( require ) {
         };
         var explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
-        var explodedProperty = new DerivedProperty( [ body.getCollidedProperty(), body.clockTicksSinceExplosionProperty ],
+        var explodedProperty = new DerivedProperty( [ body.collidedProperty, body.clockTicksSinceExplosionProperty ],
           function( collided, clockTicks ) {
             return collided && clockTicks <= NUM_STEPS_FOR_ANIMATION;
           } );

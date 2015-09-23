@@ -54,8 +54,8 @@ define( function( require ) {
       bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
     } );
 
-    this.massSettable = massSettable;
-    this.maxPathLength = maxPathLength; // Number of samples in the path before it starts erasing (fading out from the back)
+    this.massSettable = massSettable; // @public (read-only)
+    this.maxPathLength = maxPathLength; // @public (read-only) - number of samples in the path before it starts erasing (fading out from the back)
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
@@ -72,16 +72,16 @@ define( function( require ) {
 
     // This is in the model so we can associate the graphical representation directly instead of later with conditional logic or map
     this.labelAngle = labelAngle; // @public
-    this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) );
-    this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) );
-    this.forceProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() );
-    this.massProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, mass );
-    this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false );
-    this.density = mass / this.getVolume();
+    this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) ); // @public
+    this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) ); // @public
+    this.forceProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() ); // @public
+    this.massProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, mass ); // @public
+    this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false ); // @public
+    this.density = mass / this.getVolume(); // @public
 
-    this.userControlled = false; // True if the user is currently controlling the position of the body with the mouse
+    this.userControlled = false; // @public - true if the user is currently controlling the position of the body with the mouse
     this.pathListeners = []; // {Array.<PathListener>}
-    this.path = []; // {Array.<Vector2>}
+    this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // list of listeners that are notified when the user drags the object, so that we know when certain properties need to be updated
     this.userModifiedPositionListeners = [];
@@ -116,13 +116,6 @@ define( function( require ) {
   return inherit( PropertySet, Body, {
 
     /**
-     * @return {Property<number>}
-     */
-    getClockTicksSinceExplosion: function() {
-      return this.clockTicksSinceExplosionProperty;
-    },
-
-    /**
      * @return {number}
      */
     getVolume: function() {
@@ -137,24 +130,10 @@ define( function( require ) {
     },
 
     /**
-     * @return {RewindableProperty<Vector2>}
-     */
-    getPositionProperty: function() {
-      return this.positionProperty;
-    },
-
-    /**
      * @return {Vector2}
      */
     getPosition: function() {
       return this.positionProperty.get();
-    },
-
-    /**
-     * @return {Property<Double> }
-     */
-    getDiameterProperty: function() {
-      return this.diameterProperty;
     },
 
     /**
@@ -185,27 +164,6 @@ define( function( require ) {
       if ( !this.isCollided() && !this.userControlled ) {
         this.addPathPoint();
       }
-    },
-
-    /**
-     * @return {number}
-     */
-    getY: function() {
-      return this.positionProperty.get().y;
-    },
-
-    /**
-     * @return {number}
-     */
-    getX: function() {
-      return this.positionProperty.get().x;
-    },
-
-    /**
-     * @param {number} value
-     */
-    setDiameter: function( value ) {
-      this.diameterProperty.set( value );
     },
 
     /**
@@ -248,7 +206,7 @@ define( function( require ) {
         this.clockTicksSinceExplosionProperty.value += 1;
       }
       else {
-        if ( !this.isUserControlled() ) {
+        if ( !this.userControlled ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
         }
@@ -263,7 +221,7 @@ define( function( require ) {
 
       // Only add to the path if the user isn't dragging it
       // But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
-      if ( !this.isUserControlled() ) {
+      if ( !this.userControlled ) {
         this.addPathPoint();
       }
     },
@@ -296,13 +254,6 @@ define( function( require ) {
     },
 
     /**
-     * @return {Property<Vector2>}
-     */
-    getForceProperty: function() {
-      return this.forceProperty;
-    },
-
-    /**
      * @param mass
      */
     setMass: function( mass ) {
@@ -321,34 +272,6 @@ define( function( require ) {
       this.collidedProperty.reset();
       this.clockTicksSinceExplosionProperty.reset();
       this.clearPath();
-    },
-
-    /**
-     * @return {RewindableProperty<Vector2>}
-     */
-    getVelocityProperty: function() {
-      return this.velocityProperty;
-    },
-
-    /**
-     * @return {RewindableProperty<number>}
-     */
-    getMassProperty: function() {
-      return this.massProperty;
-    },
-
-    /**
-     * @return {boolean}
-     */
-    isUserControlled: function() {
-      return this.userControlled;
-    },
-
-    /**
-     * @param {boolean} b
-     */
-    setUserControlled: function( b ) {
-      this.userControlled = b;
     },
 
     /**
@@ -393,13 +316,6 @@ define( function( require ) {
     },
 
     /**
-     * @return {boolean}
-     */
-    isMassSettable: function() {
-      return this.massSettable;
-    },
-
-    /**
      * @return {BodyRenderer}
      */
     createRenderer: function( viewDiameter ) {
@@ -411,13 +327,6 @@ define( function( require ) {
      */
     getMaxPathLength: function() {
       return this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS;
-    },
-
-    /**
-     * @return {Property<boolean>}
-     */
-    getCollidedProperty: function() {
-      return this.collidedProperty;
     },
 
     /**
@@ -517,13 +426,6 @@ define( function( require ) {
      */
     toString: function() {
       return "name = " + this.name + ", mass = " + this.getMass();
-    },
-
-    /**
-     * @return {Property<Rectangle>}
-     */
-    getBounds: function() {
-      return this.boundsProperty;
     }
 
   } );

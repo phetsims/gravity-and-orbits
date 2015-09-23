@@ -34,9 +34,9 @@ define( function( require ) {
       var bodies = mode.getModel().getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
         var body = bodies[ i ];
-        if ( body.isMassSettable() ) {
+        if ( body.massSettable ) {
           thisNode.addChild(
-            new BodyMassControl( body, body.getMassProperty().getInitialValue() / 2, body.getMassProperty().getInitialValue() * 2,
+            new BodyMassControl( body, body.massProperty.getInitialValue() / 2, body.massProperty.getInitialValue() * 2,
               body.tickValue, body.tickLabel ) );
         }
       }

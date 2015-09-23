@@ -73,7 +73,7 @@ define( function( require ) {
     //private
     this.defaultBodyRenderer = defaultBodyRenderer;
 
-    body.getMassProperty().link( function() {
+    body.massProperty.link( function() {
       thisRenderer.removeAllChildren();
       thisRenderer.addChild( ( body.getMass() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
     } );

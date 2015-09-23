@@ -157,7 +157,7 @@ define( function( require ) {
         body.addUserModifiedPositionListener( function() {
           if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
         } );
-        body.getMassProperty().link( function() {
+        body.massProperty.link( function() {
           if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
         } );
         this.updateForceVectors();
