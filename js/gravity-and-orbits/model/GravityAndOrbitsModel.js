@@ -15,7 +15,11 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/ModelState' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
+
+  // strings
+  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+
 
   // Subdivide DT intervals by this factor to improve smoothing, otherwise some orbits look too non-smooth (you can see their corners), see #3050
   var SMOOTHING_STEPS = 1; // TODO: this was 5 in the java version but kills performance in HTML5. Perhaps is it not needed.
@@ -124,8 +128,8 @@ define( function( require ) {
 
       // For debugging the stability of the integration rule
       getSunEarthDistance: function() {
-        var star = this.getBody( GAOStrings.STAR );
-        var planet = this.getBody( GAOStrings.PLANET );
+        var star = this.getBody( starString );
+        var planet = this.getBody( planetString );
         if ( star === null || planet === null ) {
           return NaN;
         }

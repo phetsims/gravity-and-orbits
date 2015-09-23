@@ -12,8 +12,12 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MassReadoutNode' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var Util = require( 'DOT/Util' );
+
+  // strings
+  var billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
+  var spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
+  var patternValueUnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
 
   // constants
   var SPACE_STATION_MASS = 369914; // TODO: duplicate from ModeList
@@ -29,10 +33,10 @@ define( function( require ) {
 
       // Show the readout in terms of space station masses (or billions of billions of space station masses)
       var value;
-      var units = GAOStrings.SPACE_STATION_MASS;
+      var units = spaceStationMassString;
       if ( spaceStationMasses > 1E18 ) {
         value = Util.toFixed( spaceStationMasses / 1E18 , 0 );
-        units = GAOStrings.BILLION_BILLION_SPACE_STATION_MASSES;
+        units = billionBillionSpaceStationMassesString;
       }
       else if ( Math.abs( spaceStationMasses - 1 ) < 1E-2 ) {
         value = "1";
@@ -44,7 +48,7 @@ define( function( require ) {
         // use one less decimal point here
         value = Util.toFixed( spaceStationMasses, 2 );
       }
-      return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value, units );
+      return StringUtils.format( patternValueUnitsString, value, units );
     }
   } );
 } );

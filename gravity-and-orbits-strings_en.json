@@ -32,9 +32,6 @@
   "billionBillionSpaceStationMasses": {
     "value": "billion billion Space Station masses"
   },
-  "physics": {
-    "value": "Physics"
-  },
   "zoomOut": {
     "value": "-"
   },
@@ -62,17 +59,11 @@
   "pattern.0value.1units": {
     "value": "{0} {1}"
   },
-  "show": {
-    "value": "Show"
-  },
   "clear": {
     "value": "Clear"
   },
   "spaceStation": {
     "value": "Space Station"
-  },
-  "pattern.0label": {
-    "value": "{0}:"
   },
   "satellite": {
     "value": "Satellite"
@@ -82,9 +73,6 @@
   },
   "gravity": {
     "value": "Gravity"
-  },
-  "reset": {
-    "value": "Reset"
   },
   "grid": {
     "value": "Grid"
@@ -136,9 +124,6 @@
   },
   "ourEarth": {
     "value": "Our Earth"
-  },
-  "force": {
-    "value": "Force"
   },
   "options.whiteBackground": {
     "value": "White Background"

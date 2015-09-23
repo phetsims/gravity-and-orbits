@@ -29,11 +29,10 @@ define( function( require ) {
   var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
 
   // strings
-  var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
-  var forceString = require( 'string!GRAVITY_AND_ORBITS/force' );
+  var gravityForceString = require( 'string!GRAVITY_AND_ORBITS/gravityForce' );
   var velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' );
   var pathString = require( 'string!GRAVITY_AND_ORBITS/path' );
-  var tapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
+  var measuringTapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
   var massString = require( 'string!GRAVITY_AND_ORBITS/mass' );
   var gridString = require( 'string!GRAVITY_AND_ORBITS/grid' );
 
@@ -57,7 +56,7 @@ define( function( require ) {
     children.push( new CheckBox( new HBox( {
         spacing: 10,
         children: [
-          new Text( gravityString + ' ' + forceString, TEXT_OPTIONS ),
+          new Text( gravityForceString, TEXT_OPTIONS ),
           new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
         ]
       } ),
@@ -120,7 +119,7 @@ define( function( require ) {
       children.push( new CheckBox( new HBox( {
         spacing: 10,
         children: [
-          new Text( tapeString, TEXT_OPTIONS ),
+          new Text( measuringTapeString, TEXT_OPTIONS ),
           measuringTapeIcon
         ]
       } ), module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );

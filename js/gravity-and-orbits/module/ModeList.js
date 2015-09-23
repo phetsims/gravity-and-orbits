@@ -15,7 +15,6 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Vector2 = require( 'DOT/Vector2' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var Body = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/Body' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
   var BodyConfiguration = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/BodyConfiguration' );
@@ -29,6 +28,21 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
+
+  // strings
+  var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
+  var earthDayString = require( 'string!GRAVITY_AND_ORBITS/earthDay' );
+  var patternValueUnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  var earthMinuteString = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
+  var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
+  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
+  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
+  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
+  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
 
   // images
   var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.png' );
@@ -166,8 +180,8 @@ define( function( require ) {
   var scaledDays = function( scale ) {
     return function( time ) {
       var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
-      var units = (value === 1) ? GAOStrings.EARTH_DAY : GAOStrings.EARTH_DAYS;
-      return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, Util.toFixed( value, 0 ), units );
+      var units = (value === 1) ? earthDayString : earthDaysString;
+      return StringUtils.format( patternValueUnitsString, Util.toFixed( value, 0 ), units );
     };
   };
 
@@ -178,8 +192,8 @@ define( function( require ) {
    */
   var formatMinutes = function( time ) {
     var value = (time / SECONDS_PER_MINUTE);
-    var units = (value === 1) ? GAOStrings.EARTH_MINUTE : GAOStrings.EARTH_MINUTES;
-    return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, Util.toFixed( value, 0 ), units );
+    var units = (value === 1) ? earthMinuteString : earthMinutesString;
+    return StringUtils.format( patternValueUnitsString, Util.toFixed( value, 0 ), units );
   };
 
   /**
@@ -198,7 +212,7 @@ define( function( require ) {
     function SpaceStation( earthSpaceStation, maxPathLength ) {
       Body.call(
         this,
-        GAOStrings.SATELLITE,
+        satelliteString,
         earthSpaceStation.spaceStation.x,
         earthSpaceStation.spaceStation.y,
         ( earthSpaceStation.spaceStation.radius * 2000 ),
@@ -213,7 +227,7 @@ define( function( require ) {
         maxPathLength,
         true,
         earthSpaceStation.spaceStation.mass,
-        GAOStrings.SPACE_STATION,
+        spaceStationString,
         p.playButtonPressed,
         p.stepping,
         p.rewinding,
@@ -226,7 +240,7 @@ define( function( require ) {
     function Moon( massSettable, maxPathLength, massReadoutBelow, body ) {
       Body.call(
         this,
-        GAOStrings.MOON,
+        moonString,
         body.x,
         body.y,
         ( body.radius * 2 ),
@@ -241,7 +255,7 @@ define( function( require ) {
         maxPathLength,
         massReadoutBelow,
         body.mass,
-        GAOStrings.OUR_MOON,
+        ourMoonString,
         p.playButtonPressed,
         p.stepping,
         p.rewinding,
@@ -251,7 +265,7 @@ define( function( require ) {
     inherit( Body, Moon, {
       doReturnBody: function( model ) {
         Body.prototype.doReturnBody.call( this, model );
-        var earth = model.getBody( GAOStrings.PLANET );
+        var earth = model.getBody( planetString );
 
         // Restore the moon near the earth and with the same relative velocity vector
         if ( earth ) {
@@ -270,7 +284,7 @@ define( function( require ) {
     function Earth( maxPathLength, body ) {
       Body.call(
         this,
-        GAOStrings.PLANET,
+        planetString,
         body.x,
         body.y,
         ( body.radius * 2 ),
@@ -285,7 +299,7 @@ define( function( require ) {
         maxPathLength,
         true,
         body.mass,
-        GAOStrings.EARTH,
+        earthString,
         p.playButtonPressed,
         p.stepping,
         p.rewinding,
@@ -304,7 +318,7 @@ define( function( require ) {
 
       Body.call(
         this,
-        GAOStrings.STAR,
+        starString,
         body.x,
         body.y,
         ( body.radius * 2 ),
@@ -319,7 +333,7 @@ define( function( require ) {
         maxPathLength,
         true,
         body.mass,
-        GAOStrings.OUR_SUN,
+        ourSunString,
         p.playButtonPressed,
         p.stepping,
         p.rewinding,

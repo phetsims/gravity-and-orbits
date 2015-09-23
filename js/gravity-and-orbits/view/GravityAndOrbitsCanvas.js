@@ -21,7 +21,6 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GrabbableVectorNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -32,6 +31,10 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/TimeControlPanel' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+
+  // strings
+  var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
+  var returnObjectString = require( 'string!GRAVITY_AND_ORBITS/returnObject' );
 
   // constants
   var SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
@@ -121,7 +124,7 @@ define( function( require ) {
     this.addChild( timeControlPanel );
 
     // Add measuring tape
-    var unitsProperty = new Property( { name: GAOStrings.THOUSAND_MILES, multiplier: THOUSAND_MILES_MULTIPLIER } );
+    var unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
     var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
@@ -146,7 +149,7 @@ define( function( require ) {
       return _.any( arguments, _.identity );
     } );
 
-    var returnButton = new TextPushButton( GAOStrings.RETURN_OBJECT, {
+    var returnButton = new TextPushButton( returnObjectString, {
       font: new PhetFont( 16 ),
       textFill: 'white',
       x: 100,
