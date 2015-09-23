@@ -28,6 +28,7 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   // strings
   var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
@@ -56,7 +57,7 @@ define( function( require ) {
   var SUN_RADIUS = 6.955E8;
   var SUN_MASS = 1.989E30;
   var EARTH_RADIUS = 6.371E6;
-  var EARTH_MASS = 5.9736E24;
+  var EARTH_MASS = GravityAndOrbitsConstants.EARTH_MASS;
   var EARTH_PERIHELION = 147098290E3;
   var EARTH_ORBITAL_SPEED_AT_PERIHELION = 30300;
   var MOON_MASS = 7.3477E22;
@@ -66,9 +67,10 @@ define( function( require ) {
   var MOON_PERIGEE = 391370E3;
   var MOON_X = EARTH_PERIHELION;
   var MOON_Y = MOON_PERIGEE;
+
   // see http://en.wikipedia.org/wiki/International_Space_Station
   var SPACE_STATION_RADIUS = 109;
-  var SPACE_STATION_MASS = 369914;
+  var SPACE_STATION_MASS = GravityAndOrbitsConstants.SPACE_STATION_MASS;
   var SPACE_STATION_SPEED = 7706;
   var SPACE_STATION_PERIGEE = 347000;
 
@@ -459,52 +461,31 @@ define( function( require ) {
 
   inherit( Object, ModeList, {
 
-      /**
-       * @private
-       *
-       * Creates an image that can be used for the mode icon, showing the nodes of each body in the mode.
-       * @param {boolean} sun
-       * @param {boolean} earth
-       * @param {boolean} moon
-       * @param {boolean} spaceStation
-       * @returns {Image}
-       */
-      createIconImage: function( sun, earth, moon, spaceStation ) {
-        var children = [
-          new Image( sunMipmap, { visible: sun } ),
-          new Image( earthMipmap, { visible: earth } ),
-          new Image( moonMipmap, { visible: moon } ),
-          new Image( spaceStationMipmap, { visible: spaceStation } )
-        ];
+    /**
+     * @private
+     *
+     * Creates an image that can be used for the mode icon, showing the nodes of each body in the mode.
+     * @param {boolean} sun
+     * @param {boolean} earth
+     * @param {boolean} moon
+     * @param {boolean} spaceStation
+     * @returns {Image}
+     */
+    createIconImage: function( sun, earth, moon, spaceStation ) {
+      var children = [
+        new Image( sunMipmap, { visible: sun } ),
+        new Image( earthMipmap, { visible: earth } ),
+        new Image( moonMipmap, { visible: moon } ),
+        new Image( spaceStationMipmap, { visible: spaceStation } )
+      ];
 
-        for ( var i = 0; i < children.length; i++ ) {
-          children[ i ].setScaleMagnitude( 25 / children[ i ].width );
-        }
-
-        return new HBox( { children: children, spacing: 20 } );
+      for ( var i = 0; i < children.length; i++ ) {
+        children[ i ].setScaleMagnitude( 25 / children[ i ].width );
       }
-    },
 
-    //statics
-    {
-      SUN_RADIUS: SUN_RADIUS,
-      SUN_MASS: SUN_MASS,
-      EARTH_RADIUS: EARTH_RADIUS,
-      EARTH_MASS: EARTH_MASS,
-      EARTH_PERIHELION: EARTH_PERIHELION,
-      EARTH_ORBITAL_SPEED_AT_PERIHELION: EARTH_ORBITAL_SPEED_AT_PERIHELION,
-      MOON_MASS: MOON_MASS,
-      MOON_RADIUS: MOON_RADIUS,
-      MOON_EARTH_SPEED: MOON_EARTH_SPEED,
-      MOON_SPEED: MOON_SPEED,
-      MOON_PERIGEE: MOON_PERIGEE,
-      MOON_X: MOON_X,
-      MOON_Y: MOON_Y,
-      SPACE_STATION_RADIUS: SPACE_STATION_RADIUS,
-      SPACE_STATION_MASS: SPACE_STATION_MASS,
-      SPACE_STATION_SPEED: SPACE_STATION_SPEED,
-      SPACE_STATION_PERIGEE: SPACE_STATION_PERIGEE
-    } );
+      return new HBox( { children: children, spacing: 20 } );
+    }
+  } );
 
   return {
     ModeList: ModeList, // the original Java class

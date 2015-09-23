@@ -12,6 +12,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MassReadoutNode' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
 
@@ -21,9 +22,6 @@ define( function( require ) {
   var earthMassString = require( 'string!GRAVITY_AND_ORBITS/earthMass' );
   var patternValueUnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
 
-  // constants
-  var EARTH_MASS = 5.9736E24; // TODO: duplicated in ModeList
-
   function EarthMassReadoutNode( bodyNode, visible ) {
     MassReadoutNode.call( this, bodyNode, visible );
   }
@@ -31,8 +29,9 @@ define( function( require ) {
   return inherit( MassReadoutNode, EarthMassReadoutNode, {
     createText: function() {
       var massKG = this.bodyNode.getBody().massProperty.get();
-      var earthMasses = massKG / EARTH_MASS;
-      //Show the value in terms of earth masses (or thousands of earth masses)
+      var earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
+
+      // Show the value in terms of earth masses (or thousands of earth masses)
       var value, units;
       if ( earthMasses > 1E3 ) {
         value = Util.toFixed( Util.roundSymmetric( earthMasses / 1E3 ), 0 );
@@ -47,6 +46,7 @@ define( function( require ) {
         units = earthMassesString;
       }
       else {
+
         // Handle showing exactly "1 earth mass" instead of "1 earth masses"
         value = Util.toFixed( earthMasses, 2 );
         units = (earthMasses === 1) ? earthMassString : earthMassesString;
