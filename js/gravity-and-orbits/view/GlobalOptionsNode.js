@@ -16,7 +16,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var CheckBox = require( 'SUN/CheckBox' );
   var OptionsDialog = require( 'JOIST/OptionsDialog' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // strings
   var whiteBackgroundString = require( 'string!GRAVITY_AND_ORBITS/options.whiteBackground' );
@@ -27,10 +27,10 @@ define( function( require ) {
     var projectorModeProperty = new Property( false );
     projectorModeProperty.link( function( projectorMode ) {
       if ( projectorMode ) {
-        GravityAndOrbitsColors.profileNameProperty.set( 'projector' );
+        GravityAndOrbitsColorProfile.profileNameProperty.set( 'projector' );
       }
       else {
-        GravityAndOrbitsColors.profileNameProperty.set( 'default' );
+        GravityAndOrbitsColorProfile.profileNameProperty.set( 'default' );
       }
     } );
 

@@ -19,7 +19,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var Line = require( 'SCENERY/nodes/Line' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   /**
    * Constructor for BodyNode
@@ -97,7 +97,7 @@ define( function( require ) {
       } );
       node.addChild( text );
 
-      GravityAndOrbitsColors.bodyNodeTextProperty.link( function( color ) {
+      GravityAndOrbitsColorProfile.bodyNodeTextProperty.link( function( color ) {
         text.fill = color;
       } );
 

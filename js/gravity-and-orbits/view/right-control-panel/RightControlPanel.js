@@ -17,7 +17,7 @@ define( function( require ) {
   var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/GravityModeMenu' );
   var MassMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/MassMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/SpaceObjectsPropertyCheckbox' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -67,7 +67,7 @@ define( function( require ) {
     }
 
     var thisPanel = this;
-    GravityAndOrbitsColors.panelBackgroundProperty.link( function( color ) {
+    GravityAndOrbitsColorProfile.panelBackgroundProperty.link( function( color ) {
       thisPanel.fill = color;
     } );
   }

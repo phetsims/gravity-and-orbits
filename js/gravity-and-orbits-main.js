@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
   var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
   var GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GlobalOptionsNode' );
@@ -71,16 +71,16 @@ define( function( require ) {
   var cartoonScreen = new Screen( cartoonString, new Image( cartoonMipmap ),
     function() { return new CartoonModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
+    { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
   );
 
   var toScaleScreen = new Screen( toScaleString, new Image( toScaleMipmap ),
     function() { return new ToScaleModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
+    { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
   );
 
-  GravityAndOrbitsColors.backgroundProperty.link( function( color ) {
+  GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {
     cartoonScreen.backgroundColor = color;
     toScaleScreen.backgroundColor = color;
   } );

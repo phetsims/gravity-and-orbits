@@ -18,7 +18,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var VBox = require( 'SCENERY/nodes/VBox' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // strings
   var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
@@ -46,7 +46,7 @@ define( function( require ) {
       }
     } );
 
-    GravityAndOrbitsColors.bottomControlTextProperty.link( function( color ) {
+    GravityAndOrbitsColorProfile.bottomControlTextProperty.link( function( color ) {
       dayText.fill = color;
     } );
 
