@@ -15,7 +15,11 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/ModelState' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
+
+  // strings
+  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+
 
   // Subdivide DT intervals by this factor to improve smoothing, otherwise some orbits look too non-smooth (you can see their corners), see #3050
   var SMOOTHING_STEPS = 1; // TODO: this was 5 in the java version but kills performance in HTML5. Perhaps is it not needed.
@@ -28,7 +32,7 @@ define( function( require ) {
    * @return {Body} the smaller body
    */
   function getSmaller( other, body ) {
-    if ( other.getMass() < body.getMass() ) {
+    if ( other.massProperty.get() < body.massProperty.get() ) {
       return other;
     }
     else {
@@ -50,8 +54,8 @@ define( function( require ) {
     // @private
     this.gravityEnabledProperty = gravityEnabledProperty;
 
-    this.clock = clock;
-    this.bodies = []; // Contains the sun, moon, earth, satellite
+    this.clock = clock; // @public
+    this.bodies = []; // @public - contains the sun, moon, earth, satellite
     this.modelStepListeners = []; // SimpleObservers TODO: Convert to trigger
 
     var thisModel = this;
@@ -110,7 +114,7 @@ define( function( require ) {
             var other = this.bodies[ k ];
             if ( other !== body ) {
               if ( other.collidesWidth( body ) ) {
-                getSmaller( other, body ).setCollided( true );
+                getSmaller( other, body ).collidedProperty.set( true );
               }
             }
           }
@@ -124,12 +128,12 @@ define( function( require ) {
 
       // For debugging the stability of the integration rule
       getSunEarthDistance: function() {
-        var star = this.getBody( GAOStrings.STAR );
-        var planet = this.getBody( GAOStrings.PLANET );
+        var star = this.getBody( starString );
+        var planet = this.getBody( planetString );
         if ( star === null || planet === null ) {
           return NaN;
         }
-        return star.getPosition().distance( planet.getPosition() );
+        return star.positionProperty.get().distance( planet.positionProperty.get() );
       },
 
       resetAll: function() {
@@ -153,7 +157,7 @@ define( function( require ) {
         body.addUserModifiedPositionListener( function() {
           if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
         } );
-        body.getMassProperty().link( function() {
+        body.massProperty.link( function() {
           if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
         } );
         this.updateForceVectors();
@@ -167,7 +171,7 @@ define( function( require ) {
        * Without this block of code, the force vectors would be zero on sim startup until the clock is started.
        */
       updateForceVectors: function() {
-        this.step( 0.0 );//the effect of stepping the model is to update the force vectors
+        this.step( 0 ); // the effect of stepping the model is to update the force vectors
       },
 
       /**
@@ -176,10 +180,6 @@ define( function( require ) {
        */
       getBodies: function() {
         return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
-      },
-
-      getClock: function() {
-        return this.clock;
       },
 
       resetBodies: function() {
@@ -206,7 +206,7 @@ define( function( require ) {
         for ( var i = 0; i < this.bodies.length; i++ ) {
           var body = this.bodies[ i ];
 
-          if ( body.getName() === name ) {
+          if ( body.name === name ) {
             return body;
           }
         }

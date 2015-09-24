@@ -21,7 +21,6 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GrabbableVectorNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -32,6 +31,10 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/TimeControlPanel' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+
+  // strings
+  var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
+  var returnObjectString = require( 'string!GRAVITY_AND_ORBITS/returnObject' );
 
   // constants
   var SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
@@ -69,7 +72,7 @@ define( function( require ) {
     // Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, bodies[ i ].getLabelAngle() );
+      var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, bodies[ i ].labelAngle );
       var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
       thisNode.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
@@ -85,14 +88,14 @@ define( function( require ) {
     // Add gravity force vector nodes
     for ( i = 0; i < bodies.length; i++ ) {
       this.addChild( new VectorNode( bodies[ i ], mode.transformProperty, module.showGravityForceProperty,
-        bodies[ i ].getForceProperty(), forceScale, forceVectorColorFill, forceVectorColorOutline ) );
+        bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline ) );
     }
 
     // Add velocity vector nodes
     for ( i = 0; i < bodies.length; i++ ) {
       if ( !bodies[ i ].fixed ) {
         this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty,
-          bodies[ i ].getVelocityProperty(), mode.getVelocityVectorScale(), velocityVectorColorFill, velocityVectorColorOutline,
+          bodies[ i ].velocityProperty, mode.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
           'V' ) );  // TODO: i18n of "V", also recommended to trim to 1 char
       }
     }
@@ -103,7 +106,7 @@ define( function( require ) {
     }
 
     // Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
-    var gridNode = new GridNode( mode.transformProperty, mode.getGridSpacing(), mode.getGridCenter() );
+    var gridNode = new GridNode( mode.transformProperty, mode.gridSpacing, mode.gridCenter );
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
@@ -121,7 +124,7 @@ define( function( require ) {
     this.addChild( timeControlPanel );
 
     // Add measuring tape
-    var unitsProperty = new Property( { name: GAOStrings.THOUSAND_MILES, multiplier: THOUSAND_MILES_MULTIPLIER } );
+    var unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
     var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
@@ -138,7 +141,7 @@ define( function( require ) {
 
     // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
     for ( i = 0; i < bodies.length; i++ ) {
-      bodies[ i ].getBounds().set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
+      bodies[ i ].boundsProperty.set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
     }
 
     // If any body is out of bounds, show a "return object" button
@@ -146,7 +149,7 @@ define( function( require ) {
       return _.any( arguments, _.identity );
     } );
 
-    var returnButton = new TextPushButton( GAOStrings.RETURN_OBJECT, {
+    var returnButton = new TextPushButton( returnObjectString, {
       font: new PhetFont( 16 ),
       textFill: 'white',
       x: 100,

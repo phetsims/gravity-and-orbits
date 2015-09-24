@@ -31,7 +31,7 @@ define( function( require ) {
     // Add the canvases, one for each of the four modes
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
-      var gaoCanvas = modes[ i ].getCanvas();
+      var gaoCanvas = modes[ i ].canvas;
       this.addChild( gaoCanvas );
       if ( modes[ i ] !== module.getMode() ) {
         gaoCanvas.visible = false;

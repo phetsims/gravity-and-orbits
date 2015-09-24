@@ -31,13 +31,13 @@ define( function( require ) {
     module.modeProperty.link( function( mode ) {
       thisNode.removeAllChildren();
       thisNode.addChild( hStrut );
-      var bodies = mode.getModel().getBodies();
+      var bodies = mode.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
         var body = bodies[ i ];
-        if ( body.isMassSettable() ) {
+        if ( body.massSettable ) {
           thisNode.addChild(
-            new BodyMassControl( body, body.getMassProperty().getInitialValue() / 2, body.getMassProperty().getInitialValue() * 2,
-              body.getTickValue(), body.getTickLabel() ) );
+            new BodyMassControl( body, body.massProperty.getInitialValue() / 2, body.massProperty.getInitialValue() * 2,
+              body.tickValue, body.tickLabel ) );
         }
       }
       thisNode.updateLayout();

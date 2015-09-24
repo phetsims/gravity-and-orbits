@@ -58,7 +58,7 @@ define( function( require ) {
     this.addChild( text );
 
     //Center the grab area on the tip (see getTip()) when any of its dependencies change
-    Property.multilink( [ vectorProperty, body.getPositionProperty(), transformProperty ],
+    Property.multilink( [ vectorProperty, body.positionProperty, transformProperty ],
       function() {
         var tip = thisNode.getTip();
         grabArea.center = tip;
@@ -69,7 +69,7 @@ define( function( require ) {
     grabArea.addInputListener( new SimpleDragHandler( {
       translate: function( event ) {
         var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
-        body.setVelocity( body.getVelocity().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
+        body.setVelocity( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
         body.notifyUserModifiedVelocity();
       }
     } ) );

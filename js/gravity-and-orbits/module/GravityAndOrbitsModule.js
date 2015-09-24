@@ -72,9 +72,9 @@ define( function( require ) {
     // Make sure only one canvas is visible at a time
     this.modeProperty.link( function( mode ) {
       for ( var i = 0; i < thisModule.modeList.modes.length; i++ ) {
-        thisModule.modeList.modes[ i ].getCanvas().visible = false;
+        thisModule.modeList.modes[ i ].canvas.visible = false;
       }
-      mode.getCanvas().visible = true;
+      mode.canvas.visible = true;
       thisModule.updateActiveModule();
     } );
 
@@ -84,7 +84,7 @@ define( function( require ) {
   return inherit( PropertySet, GravityAndOrbitsModule, {
       step: function( dt ) {
         if ( this.playButtonPressedProperty.value ) {
-          this.getMode().getModel().getClock().step( dt );
+          this.getMode().getClock().step( dt );
         }
       },
 
@@ -123,7 +123,7 @@ define( function( require ) {
 
       addModelSteppedListener: function( simpleObserver ) {
         for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes[ i ].getModel().addModelSteppedListener( simpleObserver );
+          this.modes[ i ].addModelSteppedListener( simpleObserver );
         }
       }
     },
