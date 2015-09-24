@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.0.0-experimental.2 Fri Sep 18 2015 10:38:45 GMT-0600 (MDT)",
+  "comment": "# gravity-and-orbits 1.0.0-experimental.2 Tue Sep 22 2015 13:54:03 GMT-0600 (MDT)",
   "assert": {
     "sha": "858e65ac477bf1861883ce06eed56d9fdefa5027",
     "branch": "master"
@@ -13,19 +13,19 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "330853ba86a33dee1fa587a2d9cdd71a567cbde7",
+    "sha": "9723adb96cf2b11741cbc1e4e6bb409d19141afd",
     "branch": "master"
   },
   "dot": {
-    "sha": "c67d2a58648e5fa8ffdf58a2d9c312d190423cb5",
+    "sha": "99e564e7f37352d956c6df32a341abeb3b89b4d8",
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "2302d6d417ad6e1100ba860e3401d35227afd550",
+    "sha": "4043e2847a758e6cd600e32b0ababb151b0f5133",
     "branch": "exponentialDecompositionAlgorithm"
   },
   "joist": {
-    "sha": "5d8a883ca36b8ee1e4894ff3951021e9b7a8d80e",
+    "sha": "79243153d5db57390f0e7be005653ba8130668e0",
     "branch": "master"
   },
   "kite": {
@@ -41,11 +41,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "f2100a6746d3e487b7e789c1147e4de8e8f421c7",
+    "sha": "67dce082a2e44f0348791029150c4a2a7924f686",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "21ed4257319b695b932a70f924f363463a090f67",
+    "sha": "6936d39ec5cf8589ee6f0656ebb17368998a2b38",
     "branch": "master"
   },
   "sherpa": {
@@ -53,7 +53,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "e12545e4407fc7a696bbd79cf1e85af0fc0ed9dd",
+    "sha": "2d4c4158c7fff01b37b055aef62f0fbc810d1ceb",
     "branch": "master"
   }
 }
