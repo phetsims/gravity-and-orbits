@@ -69,7 +69,7 @@ define( function( require ) {
     grabArea.addInputListener( new SimpleDragHandler( {
       translate: function( event ) {
         var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
-        body.setVelocity( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
+        body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
         body.notifyUserModifiedVelocity();
       }
     } ) );

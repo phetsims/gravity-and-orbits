@@ -18,7 +18,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var VBox = require( 'SCENERY/nodes/VBox' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // strings
   var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
@@ -37,7 +37,7 @@ define( function( require ) {
     Node.call( this );
 
     // day text counter
-    var dayText = new Text( '', { font: FONT, fill: '#fff' } );
+    var dayText = new Text( '', { font: FONT } );
 
     var clearButton = new TextPushButton( clearString, {
       font: FONT,
@@ -46,7 +46,7 @@ define( function( require ) {
       }
     } );
 
-    GravityAndOrbitsColors.link( 'bottomControlText', function( color ) {
+    GravityAndOrbitsColorProfile.bottomControlTextProperty.link( function( color ) {
       dayText.fill = color;
     } );
 
