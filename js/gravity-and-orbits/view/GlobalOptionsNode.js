@@ -11,19 +11,31 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Property = require( 'AXON/Property' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var Text = require( 'SCENERY/nodes/Text' );
   var CheckBox = require( 'SUN/CheckBox' );
   var OptionsDialog = require( 'JOIST/OptionsDialog' );
+  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
 
   // strings
   var whiteBackgroundString = require( 'string!GRAVITY_AND_ORBITS/options.whiteBackground' );
 
-  function GlobalOptionsNode( whiteBackgroundProperty ) {
+  function GlobalOptionsNode() {
     var children = [];
 
+    var projectorModeProperty = new Property( false );
+    projectorModeProperty.link( function( projectorMode ) {
+      if ( projectorMode ) {
+        GravityAndOrbitsColors.profileNameProperty.set( 'projector' );
+      }
+      else {
+        GravityAndOrbitsColors.profileNameProperty.set( 'default' );
+      }
+    } );
+
     children.push( new CheckBox( new Text( whiteBackgroundString, { font: OptionsDialog.DEFAULT_FONT } ),
-      whiteBackgroundProperty, {} ) );
+      projectorModeProperty, {} ) );
 
     VBox.call( this, _.extend( {
       children: children,

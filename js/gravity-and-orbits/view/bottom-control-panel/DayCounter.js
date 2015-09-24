@@ -37,7 +37,7 @@ define( function( require ) {
     Node.call( this );
 
     // day text counter
-    var dayText = new Text( '', { font: FONT, fill: '#fff' } );
+    var dayText = new Text( '', { font: FONT } );
 
     var clearButton = new TextPushButton( clearString, {
       font: FONT,
@@ -46,7 +46,7 @@ define( function( require ) {
       }
     } );
 
-    GravityAndOrbitsColors.link( 'bottomControlText', function( color ) {
+    GravityAndOrbitsColors.bottomControlTextProperty.link( function( color ) {
       dayText.fill = color;
     } );
 

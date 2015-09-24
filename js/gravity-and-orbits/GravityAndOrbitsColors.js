@@ -30,6 +30,9 @@ define( function( require ) {
       bottomControlText: {
         default: WHITE,
         projector: BLACK
+      },
+      panelBackground: {
+        default: BLACK
       }
     } );
   }
@@ -37,5 +40,4 @@ define( function( require ) {
   inherit( ColorProfile, GravityAndOrbitsColors );
 
   return new GravityAndOrbitsColors();
-
 } );

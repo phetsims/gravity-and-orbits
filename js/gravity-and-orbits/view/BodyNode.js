@@ -97,7 +97,7 @@ define( function( require ) {
       } );
       node.addChild( text );
 
-      GravityAndOrbitsColors.link( 'bodyNodeText', function( color ) {
+      GravityAndOrbitsColors.bodyNodeTextProperty.link( function( color ) {
         text.fill = color;
       } );
 

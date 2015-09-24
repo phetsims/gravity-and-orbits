@@ -17,6 +17,7 @@ define( function( require ) {
   var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/GravityModeMenu' );
   var MassMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/MassMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/SpaceObjectsPropertyCheckbox' );
+  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
 
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -33,7 +34,6 @@ define( function( require ) {
   function RightControlPanel( module, options ) {
 
     options = _.extend( {
-      fill: '#030085',
       stroke: STROKE,
       lineWidth: 2,
       cornerRadius: 2,
@@ -65,6 +65,11 @@ define( function( require ) {
     for ( var i = 0; i < 3; i++ ) {
       sections[ i * 2 + 1 ].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
     }
+
+    var thisPanel = this;
+    GravityAndOrbitsColors.panelBackgroundProperty.link( function( color ) {
+      thisPanel.fill = color;
+    } );
   }
 
   return inherit( Panel, RightControlPanel );

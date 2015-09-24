@@ -19,7 +19,6 @@ define( function( require ) {
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var Screen = require( 'JOIST/Screen' );
-  var Property = require( 'AXON/Property' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   // images
@@ -56,8 +55,6 @@ define( function( require ) {
 
   inherit( GravityAndOrbitsModule, CartoonModule );
 
-  var whiteBackgroundProperty = new Property( false );
-
   var simOptions = {
     credits: {
       //TODO fill in proper credits, all of these fields are optional, see joist.AboutDialog
@@ -68,7 +65,7 @@ define( function( require ) {
       graphicArts: '',
       thanks: ''
     },
-    optionsNode: new GlobalOptionsNode( whiteBackgroundProperty )
+    optionsNode: new GlobalOptionsNode()
   };
 
   var cartoonScreen = new Screen( cartoonString, new Image( cartoonMipmap ),
@@ -83,16 +80,7 @@ define( function( require ) {
     { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
   );
 
-  whiteBackgroundProperty.link( function( useProjectorColors ) {
-    if ( useProjectorColors ) {
-      GravityAndOrbitsColors.applyProfile( 'projector' );
-    }
-    else {
-      GravityAndOrbitsColors.applyProfile( 'default' );
-    }
-  } );
-
-  GravityAndOrbitsColors.link( 'background', function( color ) {
+  GravityAndOrbitsColors.backgroundProperty.link( function( color ) {
     cartoonScreen.backgroundColor = color;
     toScaleScreen.backgroundColor = color;
   } );
