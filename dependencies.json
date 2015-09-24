@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.0.0-experimental.2 Tue Sep 22 2015 13:54:03 GMT-0600 (MDT)",
+  "comment": "# gravity-and-orbits 1.0.0-experimental.3 Wed Sep 23 2015 20:08:55 GMT-0600 (MDT)",
   "assert": {
     "sha": "858e65ac477bf1861883ce06eed56d9fdefa5027",
     "branch": "master"
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "4043e2847a758e6cd600e32b0ababb151b0f5133",
+    "sha": "7111263848632a0cf826e3966c159478c5cfe14e",
     "branch": "exponentialDecompositionAlgorithm"
   },
   "joist": {
