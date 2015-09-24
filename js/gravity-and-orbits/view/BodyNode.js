@@ -92,8 +92,7 @@ define( function( require ) {
       var text = new Text( body.name, {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
-        y: tail.y - this.height - 10,
-        fill: 'white'
+        y: tail.y - this.height - 10
       } );
       node.addChild( text );
 

@@ -39,7 +39,7 @@ define( function( require ) {
       radius: 10
     }, options );
 
-    var textOption = { font: new PhetFont( 22 ), fill: '#fff', pickable: false, y: -7 };
+    var textOption = { font: new PhetFont( 22 ), pickable: false, y: -7 };
     var fastText = new Text( fastForwardString, textOption );
     var normalText = new Text( normalString, textOption );
     var slowText = new Text( slowMotionString, textOption );

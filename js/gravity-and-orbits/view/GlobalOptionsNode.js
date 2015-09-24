@@ -19,7 +19,7 @@ define( function( require ) {
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // strings
-  var whiteBackgroundString = require( 'string!GRAVITY_AND_ORBITS/options.whiteBackground' );
+  var projectorModeString = require( 'string!GRAVITY_AND_ORBITS/options.projectorMode' );
 
   function GlobalOptionsNode() {
     var children = [];
@@ -34,7 +34,7 @@ define( function( require ) {
       }
     } );
 
-    children.push( new CheckBox( new Text( whiteBackgroundString, { font: OptionsDialog.DEFAULT_FONT } ),
+    children.push( new CheckBox( new Text( projectorModeString, { font: OptionsDialog.DEFAULT_FONT } ),
       projectorModeProperty, {} ) );
 
     VBox.call( this, _.extend( {
