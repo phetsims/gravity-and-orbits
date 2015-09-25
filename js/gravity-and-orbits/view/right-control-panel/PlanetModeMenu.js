@@ -18,6 +18,7 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // images
   var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
@@ -28,6 +29,7 @@ define( function( require ) {
    * @constructor
    */
   function PlanetModeResetButton( mode, options ) {
+
     // create button
     RectangularPushButton.call( this,
       {
@@ -87,6 +89,11 @@ define( function( require ) {
         deselectedOpacity: 1,
         cornerRadius: 5
       } );
+
+    // TODO: RadioButtonGroup doesn't support changing the selectedStroke
+    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
+      buttonGroup.selectedStroke = color;
+    } );
 
     this.addChild( buttonGroup );
     this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 12, y: 5 } ) );

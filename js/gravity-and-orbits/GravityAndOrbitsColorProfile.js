@@ -32,7 +32,12 @@ define( function( require ) {
         projector: BLACK
       },
       panelBackground: {
-        default: BLACK
+        default: BLACK,
+        projector: new Color( 238, 238, 238 )
+      },
+      panelText: {
+        default: WHITE,
+        projector: BLACK
       }
     } );
   }
