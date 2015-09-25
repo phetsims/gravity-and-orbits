@@ -84,12 +84,8 @@ define( function( require ) {
   return inherit( PropertySet, GravityAndOrbitsModule, {
       step: function( dt ) {
         if ( this.playButtonPressedProperty.value ) {
-          this.getMode().getClock().step( dt );
+          this.modeProperty.get().getClock().step( dt );
         }
-      },
-
-      getMode: function() {
-        return this.modeProperty.get();
       },
 
       getModes: function() {
@@ -99,7 +95,7 @@ define( function( require ) {
       // @private
       updateActiveModule: function() {
         for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.getMode() );
+          this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.get() );
         }
       },
 
