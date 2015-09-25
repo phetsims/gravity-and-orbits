@@ -14,8 +14,8 @@ define( function( require ) {
   var EventTimer = require( 'PHET_CORE/EventTimer' );
 
   // constants
-  var CLOCK_FRAME_RATE = 25; // fps, frames per second (wall time)
-  var DAYS_PER_TICK = 1;
+  var CLOCK_FRAME_RATE = 60; // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
+  var DAYS_PER_TICK = 1 / ( 60 / 25 ); // was 1 in the Java version, but changed to account for modification of CLOCK_FRAME_RATE
   var SECONDS_PER_DAY = 86400;
   var DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
