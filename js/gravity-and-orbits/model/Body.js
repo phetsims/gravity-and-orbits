@@ -19,6 +19,7 @@ define( function( require ) {
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   /**
    * Constructor for Body
@@ -81,7 +82,6 @@ define( function( require ) {
     this.density = mass / this.getVolume(); // @public
 
     this.userControlled = false; // @public - true if the user is currently controlling the position of the body with the mouse
-    this.pathListeners = []; // {Array.<PathListener>}
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // list of listeners that are notified when the user drags the object, so that we know when certain properties need to be updated
@@ -192,30 +192,21 @@ define( function( require ) {
     },
 
     addPathPoint: function() {
-      var i;
 
       // start removing data after 2 orbits of the default system
       // account for the point that will be added
       while ( this.path.length + 1 > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {
         this.path.shift();
-
-        for ( i = 0; i < this.pathListeners.length; i++ ) {
-          this.pathListeners[ i ].pointRemoved();
-        }
+        this.trigger0( GravityAndOrbitsConstants.POINT_REMOVED );
       }
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
-
-      for ( i = 0; i < this.pathListeners.length; i++ ) {
-        this.pathListeners[ i ].pointAdded( pathPoint );
-      }
+      this.trigger1( GravityAndOrbitsConstants.POINT_ADDED, pathPoint );
     },
 
     clearPath: function() {
       this.path = [];
-      for ( var i = 0; i < this.pathListeners.length; i++ ) {
-        this.pathListeners[ i ].cleared();
-      }
+      this.trigger0( GravityAndOrbitsConstants.CLEARED );
     },
 
     resetAll: function() {
@@ -229,19 +220,6 @@ define( function( require ) {
       this.clockTicksSinceExplosionProperty.reset();
       this.clearPath();
     },
-
-    /**
-     * Add a listener for getting callbacks when the path has changed, for displaying the path with picclo
-     * TODO: Should this be rewritten using trigger?
-     * @param {PathListener} listener
-     */
-    addPathListener: function( listener ) {
-
-      // assert that it has all the right parts
-      assert && assert( !!listener.pointAdded && !!listener.pointRemoved && !!listener.cleared );
-      this.pathListeners.push( listener );
-    },
-
 
     /**
      * @return {BodyRenderer}
