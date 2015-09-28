@@ -33,7 +33,7 @@ define( function( require ) {
     for ( var i = 0; i < modes.length; i++ ) {
       var gaoCanvas = modes[ i ].canvas;
       this.addChild( gaoCanvas );
-      if ( modes[ i ] !== module.getMode() ) {
+      if ( modes[ i ] !== module.modeProperty.get() ) {
         gaoCanvas.visible = false;
       }
     }

@@ -17,6 +17,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Color = require( 'SCENERY/util/Color' );
   var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   // constants
   var STROKE_WIDTH = 3;
@@ -59,30 +60,28 @@ define( function( require ) {
       (function( i ) {
         var body = bodies[ i ];
 
-        // Update when the Body path changes
-        var listener = {
-          pointAdded: function( point ) {
-            var pt = transformProperty.get().modelToViewPosition( point );
-            thisNode.points[ i ].push( pt );
-            if ( visibleProperty.get() ) {
-              thisNode.invalidatePaint();
-            }
-          },
-          pointRemoved: function() {
-            if ( thisNode.points[ i ].length > 0 ) {
-              thisNode.points[ i ].shift();
-            }
-            if ( visibleProperty.get() ) {
-              thisNode.invalidatePaint();
-            }
-          },
-          cleared: function() {
-            while ( thisNode.points[ i ].length ) { thisNode.points[ i ].pop(); }
+        body.on( GravityAndOrbitsConstants.POINT_ADDED, function( point ) {
+          var pt = transformProperty.get().modelToViewPosition( point );
+          thisNode.points[ i ].push( pt );
+          if ( visibleProperty.get() ) {
             thisNode.invalidatePaint();
           }
-        };
+        } );
 
-        body.addPathListener( listener );
+        body.on( GravityAndOrbitsConstants.POINT_REMOVED, function() {
+          if ( thisNode.points[ i ].length > 0 ) {
+            thisNode.points[ i ].shift();
+          }
+          if ( visibleProperty.get() ) {
+            thisNode.invalidatePaint();
+          }
+        } );
+
+        body.on( GravityAndOrbitsConstants.CLEARED, function() {
+          while ( thisNode.points[ i ].length ) { thisNode.points[ i ].pop(); }
+          thisNode.invalidatePaint();
+        } );
+
       })( i );
     }
 

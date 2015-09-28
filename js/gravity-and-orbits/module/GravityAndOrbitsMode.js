@@ -162,10 +162,6 @@ define( function( require ) {
       return this.model.getBodies();
     },
 
-    addModelSteppedListener: function( simpleObserver ) {
-      this.model.addModelSteppedListener( simpleObserver );
-    },
-
     /**
      *
      * @param body

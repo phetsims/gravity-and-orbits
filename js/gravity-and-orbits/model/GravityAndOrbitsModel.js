@@ -56,7 +56,6 @@ define( function( require ) {
 
     this.clock = clock; // @public
     this.bodies = []; // @public - contains the sun, moon, earth, satellite
-    this.modelStepListeners = []; // SimpleObservers TODO: Convert to trigger
 
     var thisModel = this;
     this.clock.addEventTimer( function( dt ) {
@@ -77,12 +76,6 @@ define( function( require ) {
         // Break up the update into discrete steps to make the orbits look smoother, see #3050
         for ( i = 0; i < SMOOTHING_STEPS; i++ ) {
           this.performSubStep( dt / SMOOTHING_STEPS );
-        }
-
-        // TODO: Change to a trigger
-        for ( i = 0; i < this.modelStepListeners.length; i++ ) {
-          var modelStepListener = this.modelStepListeners[ i ];
-          modelStepListener.update();
         }
       },
 
@@ -141,10 +134,6 @@ define( function( require ) {
         this.resetBodies();
         this.clock.resetSimulationTime();
         this.updateForceVectors();
-      },
-
-      addModelSteppedListener: function( simpleObserver ) {
-        this.modelStepListeners.push( simpleObserver );
       },
 
       // Adds a body and updates the body's force vectors

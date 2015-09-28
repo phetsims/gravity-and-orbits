@@ -3,7 +3,7 @@
 /**
  * Container for gravity mode menu.
  *
- * @author Andrey Zelenkov (Mlearner)
+ * @author Aaron Davis
  */
 
 define( function( require ) {
@@ -17,6 +17,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // strings
   var onString = require( 'string!GRAVITY_AND_ORBITS/on' );
@@ -24,6 +25,8 @@ define( function( require ) {
 
   // constants
   var FONT = new PhetFont( 14 );
+  var TEXT_OPTIONS = { font: FONT };
+  var RADIO_OPTIONS = { radius: 7 };
 
   /**
    * @param {GravityAndOrbitsModule} module
@@ -33,13 +36,23 @@ define( function( require ) {
   function GravityModeMenu( module, options ) {
     Node.call( this, options );
 
+    var gravityTextNode = new Text( gravityString + ':', TEXT_OPTIONS );
+    var onTextNode = new Text( onString + ':', TEXT_OPTIONS );
+    var offTextNode = new Text( offString + ':', TEXT_OPTIONS );
+
     this.addChild( new HBox( {
       spacing: 10, bottom: 2, children: [
-        new Text( gravityString + ':', { font: FONT, fill: '#fff', pickable: false } ),
-        new AquaRadioButton( module.gravityEnabledProperty, true, new Text( onString, { font: FONT, fill: '#fff', pickable: false } ), { radius: 7 } ),
-        new AquaRadioButton( module.gravityEnabledProperty, false, new Text( offString, { font: FONT, fill: '#fff', pickable: false } ), { radius: 7 } )
+        gravityTextNode,
+        new AquaRadioButton( module.gravityEnabledProperty, true, onTextNode, RADIO_OPTIONS ),
+        new AquaRadioButton( module.gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
       ]
     } ) );
+
+    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
+      gravityTextNode.fill = color;
+      onTextNode.fill = color;
+      offTextNode.fill = color;
+    } );
   }
 
   return inherit( Node, GravityModeMenu );
