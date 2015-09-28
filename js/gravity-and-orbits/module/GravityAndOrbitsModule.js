@@ -115,13 +115,8 @@ define( function( require ) {
         this.steppingProperty.reset();
         this.rewindingProperty.reset();
         this.modeProperty.reset();
-      },
-
-      addModelSteppedListener: function( simpleObserver ) {
-        for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes[ i ].addModelSteppedListener( simpleObserver );
-        }
       }
+
     },
 
     {
