@@ -142,7 +142,18 @@ define( function( require ) {
       pathTextNode.fill = color;
       gridTextNode.fill = color;
       measuringTapeTextNode.fill = color;
+
+      children.forEach( function( checkbox ) {
+        checkbox.checkBoxColor = color;
+      } );
     } );
+
+    GravityAndOrbitsColorProfile.panelBackgroundProperty.link( function( color ) {
+      children.forEach( function( checkbox ) {
+        checkbox.checkBoxColorBackground = color;
+      } );
+    } );
+
   }
 
   return inherit( VBox, SpaceObjectsPropertyCheckbox );
