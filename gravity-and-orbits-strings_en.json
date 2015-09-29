@@ -125,6 +125,9 @@
   "ourEarth": {
     "value": "Our Earth"
   },
+  "v": {
+    "value": "V"
+  },
   "options.projectorMode": {
     "value": "Projector Mode"
   }

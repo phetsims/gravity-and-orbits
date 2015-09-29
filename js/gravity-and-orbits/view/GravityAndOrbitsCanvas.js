@@ -35,6 +35,7 @@ define( function( require ) {
   // strings
   var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
   var returnObjectString = require( 'string!GRAVITY_AND_ORBITS/returnObject' );
+  var vString = require( 'string!GRAVITY_AND_ORBITS/v' );
 
   // constants
   var SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
@@ -96,7 +97,7 @@ define( function( require ) {
       if ( !bodies[ i ].fixed ) {
         this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty,
           bodies[ i ].velocityProperty, mode.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-          'V' ) );  // TODO: i18n of "V", also recommended to trim to 1 char
+          vString ) );
       }
     }
 
