@@ -55,8 +55,8 @@ define( function( require ) {
     var smallLabel = new Text( valueLabel, { top: content.bottom, centerX: SPACING, font: new PhetFont( 11 ) } );
 
     var ticks = [];
-    for( var i = 0; i < NUM_TICKS; i++ ) {
-      ticks.push( new Line( 0, 0, 0, 10, { stroke: 'white', lineWidth: 1 } ) );
+    for ( var i = 0; i < NUM_TICKS; i++ ) {
+      ticks.push( new Line( 0, 0, 0, 10, { lineWidth: 1 } ) );
     }
     var tickBox = new HBox( { children: ticks, spacing: SPACING } );
 
@@ -89,6 +89,10 @@ define( function( require ) {
     GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
       label.fill = color;
       smallLabel.fill = color;
+
+      ticks.forEach( function( tick ) {
+        tick.stroke = color;
+      } );
     } );
   }
 
