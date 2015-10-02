@@ -1,11 +1,11 @@
 {
-  "comment": "# gravity-and-orbits 1.0.0-experimental.3 Wed Sep 23 2015 20:08:55 GMT-0600 (MDT)",
+  "comment": "# gravity-and-orbits 1.0.0-dev.21 Wed Sep 30 2015 09:53:33 GMT-0600 (MDT)",
   "assert": {
     "sha": "858e65ac477bf1861883ce06eed56d9fdefa5027",
     "branch": "master"
   },
   "axon": {
-    "sha": "1591786f5c5aef0c57bf5a3efa905dc1f2c9f4e0",
+    "sha": "90798ec999e173af728776cd7ec9b876b8560b06",
     "branch": "master"
   },
   "brand": {
@@ -13,23 +13,23 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "9723adb96cf2b11741cbc1e4e6bb409d19141afd",
+    "sha": "d8ca9061f09505a984b9d88243ba8f91ac16e9ae",
     "branch": "master"
   },
   "dot": {
-    "sha": "99e564e7f37352d956c6df32a341abeb3b89b4d8",
+    "sha": "428a983665ebd0bbd93cebe30c51111490809c9a",
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "7111263848632a0cf826e3966c159478c5cfe14e",
-    "branch": "exponentialDecompositionAlgorithm"
+    "sha": "49bd1098d0ee014dd5c4596a54ef03a523a58035",
+    "branch": "master"
   },
   "joist": {
-    "sha": "79243153d5db57390f0e7be005653ba8130668e0",
+    "sha": "4a72198b2e875e091ffe88db0cd2f5b4a7eab648",
     "branch": "master"
   },
   "kite": {
-    "sha": "3a1a5d34d7d4e45e9af7c2fc43652e8a4a182b86",
+    "sha": "fe8d3c5c241c304cc315b8c1723554d9e659547e",
     "branch": "master"
   },
   "phet-core": {
@@ -41,11 +41,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "67dce082a2e44f0348791029150c4a2a7924f686",
+    "sha": "317e459d74f14438d53661dd0cfc9970a0d03a23",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "6936d39ec5cf8589ee6f0656ebb17368998a2b38",
+    "sha": "52fab037eabc990dc88bfb0a635c1dd728d8f84f",
     "branch": "master"
   },
   "sherpa": {
@@ -53,7 +53,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "2d4c4158c7fff01b37b055aef62f0fbc810d1ceb",
+    "sha": "1c6d9199a624d0ad09de913bba4c8ba81f02edbf",
     "branch": "master"
   }
 }
