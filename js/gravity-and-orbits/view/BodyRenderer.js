@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * This is the Node that renders the content of a physical body, such as a planet or space station.  This component is separate from

@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * This control allows the user to view and change the mass of certain Body instances, which also changes the radius.

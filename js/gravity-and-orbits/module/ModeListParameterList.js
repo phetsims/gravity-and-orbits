@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Parameter object pattern, compositing multiple parameters that are passed to multiple modes.
@@ -24,9 +24,11 @@ define( function( require ) {
   function ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
     this.playButtonPressed = playButtonPressed;
     this.gravityEnabled = gravityEnabled;
-    //True if the user is pressing the "step" button, to support storing states for the rewind feature
+
+    // True if the user is pressing the "step" button, to support storing states for the rewind feature
     this.stepping = stepping;
-    //Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
+
+    // Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
     this.rewinding = rewinding;
     this.timeSpeedScale = timeSpeedScale;
   }

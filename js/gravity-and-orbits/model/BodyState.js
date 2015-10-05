@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Immutable state returned by the physics engine update algorithm, it is applied to the mutable Body.
@@ -36,8 +36,8 @@ define( function( require ) {
     },
 
     toString: function() {
-      return "BodyState{" + "position=" + this.position + ", velocity=" + this.velocity + ", acceleration=" + this.acceleration +
-             ", mass=" + this.mass + '}';
+      return 'BodyState{' + 'position=' + this.position + ', velocity=' + this.velocity + ', acceleration=' + this.acceleration +
+             ', mass=' + this.mass + '}';
     }
   } );
 } );

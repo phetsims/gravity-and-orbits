@@ -1,4 +1,5 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
+
 /**
  * Shows the mass of a Body in terms of space station masses.
  *
@@ -37,7 +38,7 @@ define( function( require ) {
         units = billionBillionSpaceStationMassesString;
       }
       else if ( Math.abs( spaceStationMasses - 1 ) < 1E-2 ) {
-        value = "1";
+        value = '1';
       }
       else if ( spaceStationMasses < 1 ) {
         value = Util.toFixed( spaceStationMasses, 3 );

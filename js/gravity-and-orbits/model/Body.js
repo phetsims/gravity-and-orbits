@@ -317,7 +317,7 @@ define( function( require ) {
      * @return {string}
      */
     toString: function() {
-      return "name = " + this.name + ", mass = " + this.massProperty.get();
+      return 'name = ' + this.name + ', mass = ' + this.massProperty.get();
     }
 
   } );

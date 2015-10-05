@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * ModelState represents an immutable representation of the entire physical state and code for performing the numerical integration which produces the next ModelState.
