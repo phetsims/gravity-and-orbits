@@ -36,8 +36,8 @@ define( function( require ) {
     },
 
     toString: function() {
-      return "BodyState{" + "position=" + this.position + ", velocity=" + this.velocity + ", acceleration=" + this.acceleration +
-             ", mass=" + this.mass + '}';
+      return 'BodyState{' + 'position=' + this.position + ', velocity=' + this.velocity + ', acceleration=' + this.acceleration +
+             ', mass=' + this.mass + '}';
     }
   } );
 } );
