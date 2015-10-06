@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Configuration for setting up a particular GravityAndOrbitsMode, enumerated in ModeList
