@@ -49,7 +49,8 @@ define( function( require ) {
     var text = new Text( labelText, {
       font: new PhetFont( 22 ),
       fontWeight: 'bold',
-      fill: Color.gray
+      fill: Color.gray,
+      maxWidth: 25
     } );
     text.center = tip;
     grabArea.center = tip;
