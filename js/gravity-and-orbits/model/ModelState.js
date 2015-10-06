@@ -35,19 +35,17 @@ define( function( require ) {
      * Updates the model, producing the next ModelState
      * @public
      * @param {number} dt
-     * @param {number} numSteps
      * @param {Property.<Boolean>} gravityEnabledProperty
      * @returns {ModelState}
      */
-    getNextState: function( dt, numSteps, gravityEnabledProperty ) {
+    getNextState: function( dt, gravityEnabledProperty ) {
       var state = this;
 
       if ( gravityEnabledProperty.get() ) {
-        for ( var i = 0; i < numSteps; i++ ) {
-          state = state.getNextInteractingState( dt / numSteps );
-        }
+        state = state.getNextInteractingState( dt );
       }
       else {
+
         // gravity is not active, bodies are coasting;
         return this.getNextCoastingState( dt );
       }

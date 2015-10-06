@@ -20,10 +20,6 @@ define( function( require ) {
   var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
   var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
 
-
-  // Subdivide DT intervals by this factor to improve smoothing, otherwise some orbits look too non-smooth (you can see their corners), see #3050
-  var SMOOTHING_STEPS = 1; // TODO: this was 5 in the java version but kills performance in HTML5. Perhaps is it not needed.
-
   /**
    * Return the smaller of two Body instances, for determining which survives a collision.
    *
@@ -69,142 +65,119 @@ define( function( require ) {
 
   return inherit( PropertySet, GravityAndOrbitsModel, {
 
-      // Called by the animation loop. Optional, so if your model has no animation, you can omit this.
-      step: function( dt ) {
-        var i;
+    step: function( dt ) {
+      var i;
+      // Compute the next state for each body based on the current state of all bodies in the system.
+      var bodyStates = this.bodies.map( function( body ) {return body.toBodyState();} );
+      var newState = new ModelState( bodyStates ).getNextState( dt, this.gravityEnabledProperty );
 
-        // Break up the update into discrete steps to make the orbits look smoother, see #3050
-        for ( i = 0; i < SMOOTHING_STEPS; i++ ) {
-          this.performSubStep( dt / SMOOTHING_STEPS );
-        }
-      },
-
-      // Perform one of several steps and update body paths in each iteration to smooth out the orbits
-      performSubStep: function( dt ) {
-
-        var i;
-        // Compute the next state for each body based on the current state of all bodies in the system.
-        var bodyStates = this.bodies.map( function( body ) {return body.toBodyState();} );
-        var newState = new ModelState( bodyStates ).getNextState(
-          dt,
-          1 / SMOOTHING_STEPS, // 1000 looks great, 50 starts to look awkward for sun+earth+moon, but 100 seems okay.
-          // Update: 100 is poor for sun/earth/moon system in "to scale" because the orbit is gradually expanding.
-          // Tests suggest 400 is a good performance/precision tradeoff
-          this.gravityEnabledProperty
-        );
-
-        // Set each body to its computed next state.
-        // assumes that ModelState.getBodyState returns states in the same order as the container (ArrayList) used for
-        // bodies. A possible future improvement would be
-        // to switch to use ModelState.getState(Body), which would be safer.
-        for ( i = 0; i < this.bodies.length; i++ ) {
-          this.bodies[ i ].updateBodyStateFromModel( newState.getBodyState( i ) );
-        }
-        // when two bodies collide, destroy the smaller
-        for ( var j = 0; j < this.bodies.length; j++ ) {
-          var body = this.bodies[ j ];
-          for ( var k = 0; k < this.bodies.length; k++ ) {
-            var other = this.bodies[ k ];
-            if ( other !== body ) {
-              if ( other.collidesWidth( body ) ) {
-                getSmaller( other, body ).collidedProperty.set( true );
-              }
+      // Set each body to its computed next state.
+      // assumes that ModelState.getBodyState returns states in the same order as the container (ArrayList) used for
+      // bodies. A possible future improvement would be
+      // to switch to use ModelState.getState(Body), which would be safer.
+      for ( i = 0; i < this.bodies.length; i++ ) {
+        this.bodies[ i ].updateBodyStateFromModel( newState.getBodyState( i ) );
+      }
+      // when two bodies collide, destroy the smaller
+      for ( var j = 0; j < this.bodies.length; j++ ) {
+        var body = this.bodies[ j ];
+        for ( var k = 0; k < this.bodies.length; k++ ) {
+          var other = this.bodies[ k ];
+          if ( other !== body ) {
+            if ( other.collidesWidth( body ) ) {
+              getSmaller( other, body ).collidedProperty.set( true );
             }
           }
         }
+      }
 
-        // Signify that the model completed an entire step so that any batch operations may be invoked
-        for ( i = 0; i < this.bodies.length; i++ ) {
-          this.bodies[ i ].allBodiesUpdated();
-        }
-      },
-
-      // For debugging the stability of the integration rule
-      getSunEarthDistance: function() {
-        var star = this.getBody( starString );
-        var planet = this.getBody( planetString );
-        if ( star === null || planet === null ) {
-          return NaN;
-        }
-        return star.positionProperty.get().distance( planet.positionProperty.get() );
-      },
-
-      resetAll: function() {
-        PropertySet.prototype.reset.call( this ); // Resets the simulation time
-        this.resetBodies();
-        this.clock.resetSimulationTime();
-        this.updateForceVectors();
-      },
-
-      // Adds a body and updates the body's force vectors
-      addBody: function( body ) {
-        var gravityAndOrbitsModel = this;
-        this.bodies.push( body );
-
-        // If the user modifies the position, and the sim is paused, we must update the force vectors manually since
-        // the model will not update them for us.
-        body.addUserModifiedPositionListener( function() {
-          if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
-        } );
-        body.massProperty.link( function() {
-          if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
-        } );
-        this.updateForceVectors();
-      },
-
-      /*
-       * Since we haven't (yet?) rewritten the gravity forces to auto-update when dependencies change, we update when necessary
-       * (1) when a new body is added or (2) when reset is pressed.
-       * This update is done by running the physics engine for dt=0.0 then applying the computed forces to the bodies.
-       * <p/>
-       * Without this block of code, the force vectors would be zero on sim startup until the clock is started.
-       */
-      updateForceVectors: function() {
-        this.step( 0 ); // the effect of stepping the model is to update the force vectors
-      },
-
-      /**
-       * Returns a defensive copy of the bodies.
-       * @return {Array<Body>}
-       */
-      getBodies: function() {
-        return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
-      },
-
-      resetBodies: function() {
-        for ( var i = 0; i < this.bodies.length; i++ ) {
-          this.bodies[ i ].resetAll();
-        }
-        this.updateForceVectors(); // has to be done separately since physics is computed as a batch
-      },
-
-      // Unexplodes and returns objects to the stage
-      returnBodies: function() {
-
-        for ( var i = 0; i < this.bodies.length; i++ ) {
-          var body = this.bodies[ i ];
-          body.returnBody( this );
-        }
-
-        // Fixes: "Return object" should recalculate the gravity force vectors and update them even when paused ... right
-        // now it displays the force vectors of the prior situation before it moved the moon or planet.
-        this.updateForceVectors();
-      },
-
-      getBody: function( name ) {
-        for ( var i = 0; i < this.bodies.length; i++ ) {
-          var body = this.bodies[ i ];
-
-          if ( body.name === name ) {
-            return body;
-          }
-        }
-        return null;
+      // Signify that the model completed an entire step so that any batch operations may be invoked
+      for ( i = 0; i < this.bodies.length; i++ ) {
+        this.bodies[ i ].allBodiesUpdated();
       }
     },
 
-    // Statics
-    {
-      SMOOTHING_STEPS: SMOOTHING_STEPS
-    } );
+    // For debugging the stability of the integration rule
+    getSunEarthDistance: function() {
+      var star = this.getBody( starString );
+      var planet = this.getBody( planetString );
+      if ( star === null || planet === null ) {
+        return NaN;
+      }
+      return star.positionProperty.get().distance( planet.positionProperty.get() );
+    },
+
+    resetAll: function() {
+      PropertySet.prototype.reset.call( this ); // Resets the simulation time
+      this.resetBodies();
+      this.clock.resetSimulationTime();
+      this.updateForceVectors();
+    },
+
+    // Adds a body and updates the body's force vectors
+    addBody: function( body ) {
+      var gravityAndOrbitsModel = this;
+      this.bodies.push( body );
+
+      // If the user modifies the position, and the sim is paused, we must update the force vectors manually since
+      // the model will not update them for us.
+      body.addUserModifiedPositionListener( function() {
+        if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
+      } );
+      body.massProperty.link( function() {
+        if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
+      } );
+      this.updateForceVectors();
+    },
+
+    /*
+     * Since we haven't (yet?) rewritten the gravity forces to auto-update when dependencies change, we update when necessary
+     * (1) when a new body is added or (2) when reset is pressed.
+     * This update is done by running the physics engine for dt=0.0 then applying the computed forces to the bodies.
+     * <p/>
+     * Without this block of code, the force vectors would be zero on sim startup until the clock is started.
+     */
+    updateForceVectors: function() {
+      this.step( 0 ); // the effect of stepping the model is to update the force vectors
+    },
+
+    /**
+     * Returns a defensive copy of the bodies.
+     * @return {Array<Body>}
+     */
+    getBodies: function() {
+      return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
+    },
+
+    resetBodies: function() {
+      for ( var i = 0; i < this.bodies.length; i++ ) {
+        this.bodies[ i ].resetAll();
+      }
+      this.updateForceVectors(); // has to be done separately since physics is computed as a batch
+    },
+
+    // Unexplodes and returns objects to the stage
+    returnBodies: function() {
+
+      for ( var i = 0; i < this.bodies.length; i++ ) {
+        var body = this.bodies[ i ];
+        body.returnBody( this );
+      }
+
+      // Fixes: "Return object" should recalculate the gravity force vectors and update them even when paused ... right
+      // now it displays the force vectors of the prior situation before it moved the moon or planet.
+      this.updateForceVectors();
+    },
+
+    getBody: function( name ) {
+      for ( var i = 0; i < this.bodies.length; i++ ) {
+        var body = this.bodies[ i ];
+
+        if ( body.name === name ) {
+          return body;
+        }
+      }
+      return null;
+    }
+  } );
 } );

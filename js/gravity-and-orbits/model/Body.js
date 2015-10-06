@@ -17,7 +17,6 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var PropertySet = require( 'AXON/PropertySet' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
-  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
@@ -195,7 +194,7 @@ define( function( require ) {
 
       // start removing data after 2 orbits of the default system
       // account for the point that will be added
-      while ( this.path.length + 1 > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {
+      while ( this.path.length + 1 > this.maxPathLength ) {
         this.path.shift();
         this.trigger0( GravityAndOrbitsConstants.POINT_REMOVED );
       }
@@ -232,7 +231,7 @@ define( function( require ) {
      * @return {number}
      */
     getMaxPathLength: function() {
-      return this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS;
+      return this.maxPathLength;
     },
 
     /**
