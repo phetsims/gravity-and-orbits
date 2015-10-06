@@ -6,17 +6,23 @@
  *
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
+ * @author Martin Veillette (Berea College)
  */
 define( function( require ) {
   'use strict';
 
+  var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
-  var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
-  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
+
+  // constants
+  var GRAVITATION_CONSTANT = 6.67428E-11;
+  var XI = 0.1786178958448091;
+  var LAMBDA = -0.2123418310626054;
+  var CHI = -0.06626458266981849;
 
   /**
-   * @param {Array<BodyState>} bodyStates
+   * @param {Array.<BodyState>} bodyStates
    * @constructor
    */
   function ModelState( bodyStates ) {
@@ -27,110 +33,248 @@ define( function( require ) {
 
     /**
      * Updates the model, producing the next ModelState
+     * @public
      * @param {number} dt
      * @param {number} numSteps
-     * @param {Property<Boolean>} gravityEnabledProperty
-     * @return {Object}
+     * @param {Property.<Boolean>} gravityEnabledProperty
+     * @returns {ModelState}
      */
     getNextState: function( dt, numSteps, gravityEnabledProperty ) {
       var state = this;
-      for ( var i = 0; i < numSteps; i++ ) {
-        state = state._getNextState( dt / numSteps, gravityEnabledProperty );
+
+      if ( gravityEnabledProperty.get() ) {
+        for ( var i = 0; i < numSteps; i++ ) {
+          state = state.getNextInteractingState( dt / numSteps );
+        }
+      }
+      else {
+        // gravity is not active, bodies are coasting;
+        return this.getNextCoastingState( dt );
       }
       return state;
     },
 
     /**
-     * Updates the model, producing the next ModelState
-     * @param {number} dt
-     * @param {Property<Boolean>} gravityEnabledProperty
-     * @return {ModelState}
+     * Finds the positions of the bodies after a time dt
      * @private
+     * @param {dt} number
      */
-    _getNextState: function( dt, gravityEnabledProperty ) {
-
-      //See http://www.fisica.uniud.it/~ercolessi/md/md/node21.html
-      var newState = [];
+    updatePositions: function( dt ) {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
         var bodyState = this.bodyStates[ i ];
-
-        var dtSquaredOver2 = dt * dt / 2;
-        var dtOver2 = dt / 2;
-
-        //Velocity Verlet (see svn history for Euler)
-        var newPosition = new Vector2(
-          bodyState.position.x + ( bodyState.velocity.x * dt ) + ( bodyState.acceleration.x * dtSquaredOver2 ),
-          bodyState.position.y + ( bodyState.velocity.y * dt ) + ( bodyState.acceleration.y * dtSquaredOver2 ) );
-
-        var velocityHalfX = bodyState.velocity.x + bodyState.acceleration.x * dtOver2;
-        var velocityHalfY = bodyState.velocity.y + bodyState.acceleration.y * dtOver2;
-
-        var force = this.getForce( bodyState, bodyState.position, gravityEnabledProperty );
-        var newAcceleration = new Vector2(
-          force.x * ( -1 / bodyState.mass ),
-          force.y * ( -1 / bodyState.mass ) );
-
-        var newVelocity = new Vector2(
-          velocityHalfX + bodyState.acceleration.x * dtOver2,
-          velocityHalfY + bodyState.acceleration.y * dtOver2 );
-
-        newState.push( new BodyState( newPosition, newVelocity, newAcceleration, bodyState.mass, bodyState.exploded ) );
+        if ( !bodyState.exploded ) {
+          bodyState.position.add( bodyState.velocity.timesScalar( dt ) );
+        }
       }
-      return new ModelState( newState );
     },
 
-    //TODO: limit distance so forces don't become infinite
     /**
-     *
-     * @param {BodyState} source
-     * @param {BodyState} target
-     * @param {Vector2} newTargetPosition
-     * @returns {*}
+     * Finds the velocities of the bodies after a time dt
+     * @private
+     * @param {number} dt
+     */
+    updateVelocities: function( dt ) {
+      this.updateAccelerations();
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
+        if ( !bodyState.exploded ) {
+          bodyState.velocity.add( bodyState.acceleration.multiplyScalar( dt ) );
+        }
+      }
+    },
+
+    /**
+     * Finds the current values of the accelerations
      * @private
      */
-    _getForce: function( source, target, newTargetPosition ) {
-      if ( source.position.equals( newTargetPosition ) ) {
+    updateAccelerations: function() {
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
+        if ( !bodyState.exploded ) {
+          bodyState.acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
+        }
+      }
+    },
 
-        //If they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
-        return new Vector2();
+    /**
+     * Sets all the accelerations to zero, useful when gravity is turned off
+     * @private
+     */
+    setAccelerationToZero: function() {
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        this.bodyStates[ i ].acceleration = Vector2.ZERO;
+      }
+    },
+
+    /**
+     * Gets the net force on the bodyState due to the other bodies
+     * @private
+     * @param {BodyState} bodyState
+     * @returns {Vector2}
+     */
+    getNetForce: function( bodyState ) {
+
+      // use netForce to keep track of the net force, initialize to zero.
+      var netForce = new Vector2();
+
+      for ( var j = 0; j < this.bodyStates.length; j++ ) {
+
+        // an object cannot act on itself
+        if ( bodyState !== this.bodyStates[ j ] ) {
+
+          // netForce is a mutable vector
+          netForce.add( this.getTwoBodyForce( bodyState, this.bodyStates[ j ] ) );
+        }
+      }
+      return netForce;
+    },
+
+    /**
+     * Returns the force on the body source due to the body target
+     * @private
+     * @param {BodyState} source
+     * @param {BodyState} target
+     * @returns {Vector2}
+     */
+    getTwoBodyForce: function( source, target ) {
+      if ( source.position.equals( target.position ) ) {
+
+        // TODO: limit distance so forces don't become too large, perhaps we could compare it to the radius of the bodies
+        // If they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
+        return Vector2.ZERO;
       }
       else if ( source.exploded ) {
 
-        //ignore in the computation if that body has exploded
-        return new Vector2();
+        // ignore in the computation if that body has exploded
+        return Vector2.ZERO;
       }
       else {
-        return this.getUnitVector( source, newTargetPosition ).times( GravityAndOrbitsModule.G * source.mass * target.mass / source.distanceSquared( newTargetPosition ) );
+        var relativePosition = target.position.minus( source.position );
+        var multiplicativeFactor = GRAVITATION_CONSTANT * source.mass * target.mass / Math.pow( source.position.distanceSquared( target.position ), 1.5 );
+        return relativePosition.multiplyScalar( multiplicativeFactor );
       }
-    },
-
-    getUnitVector: function( source, newPosition ) {
-      return newPosition.minus( source.position ).normalized();
     },
 
     /**
-     * Get the force on body at its proposed new position, unconventional but necessary for velocity verlet.
-     * @param {BodyState} target
-     * @param {Vector2} newTargetPosition
-     * @param {Property<boolean>} gravityEnabledProperty
-     * @returns {Vector2}
+     * Updates the model, producing the next ModelState when gravity is present
+     * @private
+     * @param {number} dt
+     * @return {ModelState}
      */
-    getForce: function( target, newTargetPosition, gravityEnabledProperty ) {
+    getNextCoastingState: function( dt ) {
 
-      // zero vector, for no gravity
-      var sum = new Vector2();
-      if ( gravityEnabledProperty.get() ) {
-        for ( var i = 0; i < this.bodyStates.length; i++ ) {
-          var source = this.bodyStates[ i ];
-          if ( source !== target ) {
-            sum = sum.plus( this._getForce( source, target, newTargetPosition ) );
-          }
-        }
-      }
-      return sum;
+      // update Positions
+      this.updatePositions( dt );
+
+      // update to Velocities are unnecessary since they stay constant
+
+      // set the acceleration to zero.
+      this.setAccelerationToZero();
+
+      // copy our workingCopy to generate a new ModelState
+      var newState = [];// {Array.<BodyState>}
+      this.bodyStates.forEach( function( bodyState ) {
+        newState.push( new BodyState(
+          new Vector2( bodyState.position.x, bodyState.position.y ),
+          bodyState.velocity,
+          bodyState.acceleration,
+          bodyState.mass,
+          bodyState.exploded
+        ) );
+      } );
+
+      return new ModelState( newState );
     },
 
-    //Get the BodyState for the specified index--future work could change this signature to getState(Body body) since it would be safer. See usage in GravityAndOrbitsModel constructor.
+
+    /**
+     * Updates the model, producing the next ModelState when gravity is present
+     * @private
+     * @param {number} dt
+     * @returns {ModelState}
+     */
+    getNextInteractingState: function( dt ) {
+
+      //-------------
+      // Step One
+      //--------------
+
+      // update Positions
+      this.updatePositions( XI * dt );  // net time: XI dt
+
+      // update Velocities
+      this.updateVelocities( (1 - 2 * LAMBDA) * dt / 2 );// net time: (1 - 2 * LAMBDA) * dt / 2
+
+      //-------------
+      // Step Two
+      //--------------
+
+      // update Positions
+      this.updatePositions( CHI * dt ); // net time: (XI+CHI) dt
+
+      // update Velocities
+      this.updateVelocities( LAMBDA * dt ); // net time: dt / 2
+
+      //-------------
+      // Step Three
+      //--------------
+
+      // update Positions
+      this.updatePositions( (1 - 2 * (CHI + XI)) * dt ); // net time: (1-(XI+CHI)) dt
+
+      // update Velocities
+      this.updateVelocities( LAMBDA * dt ); // net time: (1/2 + LAMBDA) dt
+
+      //-------------
+      // Step Four
+      //--------------
+
+      // update Positions
+      this.updatePositions( CHI * dt ); // net time: (1-(XI)) dt
+
+      // update Velocities
+      // no update in velocities // net time: (1/2 + LAMBDA) dt
+
+      //-------------
+      // Step Five: last step, these are the final positions and velocities i.e. r(t+dt) and v(t+dt)
+      //--------------
+
+      // IMPORTANT: we need to update the velocities first
+
+      // update Velocities
+      this.updateVelocities( (1 - 2 * LAMBDA) * dt / 2 ); // net time:  dt;
+
+      // update Positions
+      this.updatePositions( XI * dt ); // net time:  dt
+
+      //-------------
+      // Update the new acceleration
+      //-------------
+      this.updateAccelerations();
+
+      // copy our workingCopy to generate a new ModelState
+      var newState = [];// {Array.<BodyState>}
+      this.bodyStates.forEach( function( bodyState ) {
+        newState.push( new BodyState(
+          new Vector2( bodyState.position.x, bodyState.position.y ),
+          new Vector2( bodyState.velocity.x, bodyState.velocity.y ),
+          new Vector2( bodyState.acceleration.x, bodyState.acceleration.y ),
+          bodyState.mass,
+          bodyState.exploded
+        ) );
+      } );
+
+      return new ModelState( newState );
+    },
+
+    /**
+     *  Get the BodyState for the specified index--future work could
+     *  change this signature to getState(Body body) since it would be safer.
+     *  See usage in GravityAndOrbitsModel constructor.
+     * @public
+     * @param {number} index
+     * @returns {Array.<BodyState>}
+     */
     getBodyState: function( index ) {
       return this.bodyStates[ index ];
     }
