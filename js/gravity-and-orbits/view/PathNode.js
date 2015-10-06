@@ -84,7 +84,7 @@ define( function( require ) {
     // @param {CanvasContextWrapper} wrapper
     paintCanvas: function( wrapper ) {
       var context = wrapper.context;
-      var numSolidPoints = Math.min( this.body.getMaxPathLength() - NUM_FADE_POINTS, this.points.length );
+      var numSolidPoints = Math.min( this.body.maxPathLength - NUM_FADE_POINTS, this.points.length );
       var numTransparentPoints = this.points.length - numSolidPoints;
       var i;
 

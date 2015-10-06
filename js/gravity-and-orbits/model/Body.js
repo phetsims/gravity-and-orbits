@@ -228,13 +228,6 @@ define( function( require ) {
     },
 
     /**
-     * @return {number}
-     */
-    getMaxPathLength: function() {
-      return this.maxPathLength;
-    },
-
-    /**
      * @param {Body} body
      * @return {boolean}
      */

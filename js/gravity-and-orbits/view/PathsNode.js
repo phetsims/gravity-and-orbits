@@ -105,7 +105,7 @@ define( function( require ) {
         var body = this.bodies[ i ];
         var points = this.points[ i ];
 
-        var numSolidPoints = Math.min( body.getMaxPathLength() - NUM_FADE_POINTS, points.length );
+        var numSolidPoints = Math.min( body.maxPathLength - NUM_FADE_POINTS, points.length );
         var numTransparentPoints = points.length - numSolidPoints;
 
         context.strokeStyle = body.color.toCSS();
