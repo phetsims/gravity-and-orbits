@@ -60,9 +60,7 @@ define( function( require ) {
     updatePositions: function( dt ) {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
         var bodyState = this.bodyStates[ i ];
-        if ( !bodyState.exploded ) {
-          bodyState.position.add( bodyState.velocity.timesScalar( dt ) );
-        }
+        bodyState.position.add( bodyState.velocity.timesScalar( dt ) );
       }
     },
 
@@ -75,9 +73,7 @@ define( function( require ) {
       this.updateAccelerations();
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
         var bodyState = this.bodyStates[ i ];
-        if ( !bodyState.exploded ) {
-          bodyState.velocity.add( bodyState.acceleration.multiplyScalar( dt ) );
-        }
+        bodyState.velocity.add( bodyState.acceleration.multiplyScalar( dt ) );
       }
     },
 
@@ -88,9 +84,7 @@ define( function( require ) {
     updateAccelerations: function() {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
         var bodyState = this.bodyStates[ i ];
-        if ( !bodyState.exploded ) {
-          bodyState.acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
-        }
+        bodyState.acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
       }
     },
 
@@ -141,7 +135,7 @@ define( function( require ) {
         // If they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
         return Vector2.ZERO;
       }
-      else if ( source.exploded ) {
+      else if ( source.exploded || target.exploded ) {
 
         // ignore in the computation if that body has exploded
         return Vector2.ZERO;

@@ -123,29 +123,6 @@ define( function( require ) {
       return this.diameterProperty.get() / 2;
     },
 
-    //TODO:
-    //   Clients are required to call notifyUserModifiedPosition if this translation was done by the user.
-    //   That's not at all clear (not documented here), it's error prone and it introduces order dependency.
-    //   Recommend making notifyUserModifiedPosition private and adding another public variant of translate,
-    //   i.e. public void translate(Point2D delta,boolean userModified) {...}
-    /**
-     * @param {Vector2} dx
-     * @param {Vector2} dy
-     */
-    translate: function( dx, dy ) {
-      if ( dx instanceof Vector2 ) {
-        dx = dx.x;
-        dy = dx.y;
-      }
-      this.positionProperty.set( new Vector2( this.positionProperty.get().x + dx, this.positionProperty.get().y + dy ) );
-
-      // Only add to the path if the object hasn't collided
-      // NOTE: this check was not originally in the 2 param translate method
-      if ( !this.collidedProperty.get() && !this.userControlled ) {
-        this.addPathPoint();
-      }
-    },
-
     /**
      * create an immutable representation of this body for use in the physics engine
      *
@@ -183,9 +160,8 @@ define( function( require ) {
     // so that the path can be updated
     allBodiesUpdated: function() {
 
-      // Only add to the path if the user isn't dragging it
-      // But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
-      if ( !this.userControlled ) {
+      // Only add to the path if the user isn't dragging it and if the body is not exploded
+      if ( !this.userControlled && !this.collidedProperty.get() ) {
         this.addPathPoint();
       }
     },
