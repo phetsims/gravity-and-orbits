@@ -40,7 +40,8 @@ define( function( require ) {
 
     var tip = this.getTip();
 
-    //a circle with text (a character) in the center, to help indicate what it represents ("v" for velocity in this sim)
+    // a circle with text (a character) in the center, to help indicate what it represents
+    // ("v" for velocity in this sim)
     var ellipse = Shape.ellipse( 0, 0, 18, 18, 0 );
     var grabArea = new Path( ellipse, {
       lineWidth: 3,
@@ -60,15 +61,17 @@ define( function( require ) {
     this.addChild( grabArea );
     this.addChild( text );
 
-    //Center the grab area on the tip (see getTip()) when any of its dependencies change
-    Property.multilink( [ vectorProperty, body.positionProperty, transformProperty ],
-      function() {
-        var tip = thisNode.getTip();
-        grabArea.center = tip;
-        text.center = tip;
+    // Center the grab area on the tip (see getTip()) when any of its dependencies change
+    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ],
+      function( visible ) {
+        if ( visible ) {
+          var tip = thisNode.getTip();
+          grabArea.center = tip;
+          text.center = tip;
+        }
       } );
 
-    //Add the drag handler
+    // Add the drag handler
     grabArea.addInputListener( new SimpleDragHandler( {
       translate: function( event ) {
         var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
@@ -77,7 +80,7 @@ define( function( require ) {
       }
     } ) );
 
-    //move behind the geometry created by the superclass
+    // move behind the geometry created by the superclass
     grabArea.moveToBack();
     text.moveToBack();
   }
