@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Abstract class provides functionality for displaying the mass readout (in text) of a Body node.
@@ -31,7 +31,7 @@ define( function( require ) {
       var bounds = bodyNode.getBodyRenderer().getBounds();
 
       thisNode.x = bounds.centerX - thisNode.width / 2;
-      if ( bodyNode.getBody().isMassReadoutBelow() ) {
+      if ( bodyNode.getBody().massReadoutBelow ) {
         thisNode.y = bounds.maxX + thisNode.height;
       }
       else {
@@ -39,13 +39,13 @@ define( function( require ) {
       }
     };
 
-    bodyNode.getBody().getMassProperty().link( function() {
+    bodyNode.getBody().massProperty.link( function() {
       readoutText.setText( thisNode.createText() );
       updateLocation();
     } );
 
     visibleProperty.link( function( visible ) {
-      if ( !bodyNode.getBody().getCollidedProperty().get() ) {
+      if ( !bodyNode.getBody().collidedProperty.get() ) {
         thisNode.visible = visible;
         updateLocation();
       }

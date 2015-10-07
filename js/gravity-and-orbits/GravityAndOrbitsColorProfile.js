@@ -17,7 +17,7 @@ define( function( require ) {
   var BLACK = new Color( 0, 0, 0 );
   var WHITE = new Color( 255, 255, 255 );
 
-  function GravityAndOrbitsColors() {
+  function GravityAndOrbitsColorProfile() {
     ColorProfile.call( this, {
       background: {
         default: BLACK,
@@ -30,12 +30,19 @@ define( function( require ) {
       bottomControlText: {
         default: WHITE,
         projector: BLACK
+      },
+      panelBackground: {
+        default: BLACK,
+        projector: new Color( 238, 238, 238 )
+      },
+      panelText: {
+        default: WHITE,
+        projector: BLACK
       }
     } );
   }
 
-  inherit( ColorProfile, GravityAndOrbitsColors );
+  inherit( ColorProfile, GravityAndOrbitsColorProfile );
 
-  return new GravityAndOrbitsColors();
-
+  return new GravityAndOrbitsColorProfile();
 } );

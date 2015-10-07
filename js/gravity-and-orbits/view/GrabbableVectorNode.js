@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 /**
  * Used to show the draggable velocity vectors.
  *
@@ -49,7 +49,8 @@ define( function( require ) {
     var text = new Text( labelText, {
       font: new PhetFont( 22 ),
       fontWeight: 'bold',
-      fill: Color.gray
+      fill: Color.gray,
+      maxWidth: 25
     } );
     text.center = tip;
     grabArea.center = tip;
@@ -58,7 +59,7 @@ define( function( require ) {
     this.addChild( text );
 
     //Center the grab area on the tip (see getTip()) when any of its dependencies change
-    Property.multilink( [ vectorProperty, body.getPositionProperty(), transformProperty ],
+    Property.multilink( [ vectorProperty, body.positionProperty, transformProperty ],
       function() {
         var tip = thisNode.getTip();
         grabArea.center = tip;
@@ -69,7 +70,7 @@ define( function( require ) {
     grabArea.addInputListener( new SimpleDragHandler( {
       translate: function( event ) {
         var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
-        body.setVelocity( body.getVelocity().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
+        body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
         body.notifyUserModifiedVelocity();
       }
     } ) );

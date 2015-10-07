@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Shows the "trail" left behind by a Body as it moves over time, which disappears after about 2 orbits
@@ -54,7 +54,7 @@ define( function( require ) {
       pointAdded: function( point ) {
         var pt = transformProperty.get().modelToViewPosition( point );
         thisNode.points.push( pt );
-        if ( thisNode.visibleProperty ) {
+        if ( thisNode.visibleProperty.get() ) {
           thisNode.invalidatePaint();
         }
       },
@@ -84,7 +84,7 @@ define( function( require ) {
     // @param {CanvasContextWrapper} wrapper
     paintCanvas: function( wrapper ) {
       var context = wrapper.context;
-      var numSolidPoints = Math.min( this.body.getMaxPathLength() - NUM_FADE_POINTS, this.points.length );
+      var numSolidPoints = Math.min( this.body.maxPathLength - NUM_FADE_POINTS, this.points.length );
       var numTransparentPoints = this.points.length - numSolidPoints;
       var i;
 
@@ -118,12 +118,7 @@ define( function( require ) {
         context.lineTo( this.points[ i ].x, this.points[ i ].y );
         context.stroke();
       }
-    },
-
-    step: function( dt ) {
-      if ( this.visibleProperty.get() ) {
-        this.invalidatePaint();
-      }
     }
+
   } );
 } );

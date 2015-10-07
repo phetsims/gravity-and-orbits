@@ -23,17 +23,17 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // images
   var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' );
   var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
 
   // strings
-  var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
-  var forceString = require( 'string!GRAVITY_AND_ORBITS/force' );
+  var gravityForceString = require( 'string!GRAVITY_AND_ORBITS/gravityForce' );
   var velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' );
   var pathString = require( 'string!GRAVITY_AND_ORBITS/path' );
-  var tapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
+  var measuringTapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
   var massString = require( 'string!GRAVITY_AND_ORBITS/mass' );
   var gridString = require( 'string!GRAVITY_AND_ORBITS/grid' );
 
@@ -42,7 +42,7 @@ define( function( require ) {
   var GRID_LINE_OPTIONS = { stroke: 'gray', lineWidth: 1.5 };
   var ARROW_Y_COORDINATE = -10;
   var CHECKBOX_OPTIONS = { scale: 0.8 };
-  var TEXT_OPTIONS = { font: FONT, fill: 'white', pickable: false };
+  var TEXT_OPTIONS = { font: FONT };
 
   /**
    * @param {GravityAndOrbitsModel} module - Contains set of properties. Instance of PropertySet class. General module for the whole application.
@@ -53,11 +53,18 @@ define( function( require ) {
 
     var children = [];
 
+    var gravityForceTextNode = new Text( gravityForceString, TEXT_OPTIONS );
+    var velocityTextNode = new Text( velocityString, TEXT_OPTIONS );
+    var massTextNode = new Text( massString, TEXT_OPTIONS );
+    var pathTextNode = new Text( pathString, TEXT_OPTIONS );
+    var gridTextNode = new Text( gridString, TEXT_OPTIONS );
+    var measuringTapeTextNode = new Text( measuringTapeString, TEXT_OPTIONS );
+
     // gravity force checkbox
     children.push( new CheckBox( new HBox( {
         spacing: 10,
         children: [
-          new Text( gravityString + ' ' + forceString, TEXT_OPTIONS ),
+          gravityForceTextNode,
           new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
         ]
       } ),
@@ -67,7 +74,7 @@ define( function( require ) {
     children.push( new CheckBox( new HBox( {
         spacing: 10,
         children: [
-          new Text( velocityString, TEXT_OPTIONS ),
+          velocityTextNode,
           new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: '#ED1C24' } )
         ]
       } ),
@@ -78,7 +85,7 @@ define( function( require ) {
       children.push( new CheckBox( new HBox( {
           spacing: 10,
           children: [
-            new Text( massString, TEXT_OPTIONS ),
+            massTextNode,
             new Image( iconMassImg, { scale: 0.8 } )
           ]
         } ),
@@ -89,7 +96,7 @@ define( function( require ) {
     children.push( new CheckBox( new HBox( {
         spacing: 10,
         children: [
-          new Text( pathString, TEXT_OPTIONS ),
+          pathTextNode,
           new Image( iconPathImg, { scale: 0.9 } )
         ]
       } ),
@@ -99,7 +106,7 @@ define( function( require ) {
     children.push( new CheckBox( new HBox( {
         spacing: 10,
         children: [
-          new Text( gridString, TEXT_OPTIONS ),
+          gridTextNode,
           new Node( {
             children: [
               new Path( Shape.lineSegment( 0, 0, 20, 0 ), GRID_LINE_OPTIONS ),
@@ -120,13 +127,33 @@ define( function( require ) {
       children.push( new CheckBox( new HBox( {
         spacing: 10,
         children: [
-          new Text( tapeString, TEXT_OPTIONS ),
+          measuringTapeTextNode,
           measuringTapeIcon
         ]
       } ), module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
     }
 
     VBox.call( this, _.extend( { children: children, resize: false, spacing: 10, align: 'left', bottom: -12 }, options ) );
+
+    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
+      gravityForceTextNode.fill = color;
+      velocityTextNode.fill = color;
+      massTextNode.fill = color;
+      pathTextNode.fill = color;
+      gridTextNode.fill = color;
+      measuringTapeTextNode.fill = color;
+
+      children.forEach( function( checkbox ) {
+        checkbox.checkBoxColor = color;
+      } );
+    } );
+
+    GravityAndOrbitsColorProfile.panelBackgroundProperty.link( function( color ) {
+      children.forEach( function( checkbox ) {
+        checkbox.checkBoxColorBackground = color;
+      } );
+    } );
+
   }
 
   return inherit( VBox, SpaceObjectsPropertyCheckbox );

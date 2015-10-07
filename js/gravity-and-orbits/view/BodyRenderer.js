@@ -1,4 +1,4 @@
-// Copyright 2002-2014, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * This is the Node that renders the content of a physical body, such as a planet or space station.  This component is separate from
@@ -24,6 +24,9 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Matrix3 = require( 'DOT/Matrix3' );
 
+  // images
+  var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
+
   function BodyRenderer( body ) {
 
     Node.call( this );
@@ -43,7 +46,7 @@ define( function( require ) {
     },
     {
       SwitchableBodyRenderer: SwitchableBodyRenderer,
-      SphereRenderer: SphereRenderer,
+      //SphereRenderer: SphereRenderer,
       ImageRenderer: ImageRenderer,
       SunRenderer: SunRenderer
     } );
@@ -70,9 +73,9 @@ define( function( require ) {
     //private
     this.defaultBodyRenderer = defaultBodyRenderer;
 
-    body.getMassProperty().link( function() {
+    body.massProperty.link( function() {
       thisRenderer.removeAllChildren();
-      thisRenderer.addChild( ( body.getMass() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
+      thisRenderer.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
     } );
   }
 
@@ -105,8 +108,8 @@ define( function( require ) {
 
     // @private
     createPaint: function( diameter ) {
-      var highlight = ( this.body ) ? this.body.getHighlight() : 'white';
-      var color = ( this.body ) ? this.body.getColor() : 'yellow';
+      var highlight = ( this.body ) ? this.body.highlight : 'white';
+      var color = ( this.body ) ? this.body.color : 'yellow';
       return BodyRenderer.SphereRenderer.getSphericalGradient( diameter, highlight, color );
     }
   }, {
@@ -114,46 +117,6 @@ define( function( require ) {
       return new RadialGradient( diameter / 8, -diameter / 8, 0, diameter / 4, diameter / 4, diameter )
         .addColorStop( 0, highlight )
         .addColorStop( 0.5, color );
-    }
-  } );
-
-  /**
-   * Adds triangle edges to the sun to make it look more recognizable
-   *
-   * @param {Body} body
-   * @param {number} viewDiameter
-   * @param {number} numSegments
-   * @param {function} twinkleRadius
-   * @constructor
-   */
-  function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
-
-    // @private
-    this.twinkles = new Path( null, { fill: 'yellow' } );
-
-    SphereRenderer.call( this, body, viewDiameter );
-    this.numSegments = numSegments;
-    this.twinkleRadius = twinkleRadius;
-    this.addChild( this.twinkles );
-    this.twinkles.moveToBack();
-    this.setDiameter( viewDiameter );
-  }
-
-  inherit( SphereRenderer, SunRenderer, {
-    setDiameter: function( viewDiameter ) {
-      SphereRenderer.prototype.setDiameter.call( this, viewDiameter );
-      var angle = 0;
-      var deltaAngle = Math.PI * 2 / this.numSegments;
-      var radius = viewDiameter / 2;
-      var shape = new Shape();
-      shape.moveTo( 0, 0 );
-      for ( var i = 0; i < this.numSegments + 1; i++ ) {
-        var myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
-        var target = Vector2.createPolar( myRadius, angle );
-        shape.lineToPoint( target );
-        angle += deltaAngle;
-      }
-      this.twinkles.setShape( shape );
     }
   } );
 
@@ -185,6 +148,46 @@ define( function( require ) {
 
       // Make sure the image is centered on the body's center
       this.imageNode.translate( -this.imageNode.width / 2 / scale, -this.imageNode.height / 2 / scale );
+    }
+  } );
+
+  /**
+   * Adds triangle edges to the sun to make it look more recognizable
+   *
+   * @param {Body} body
+   * @param {number} viewDiameter
+   * @param {number} numSegments
+   * @param {function} twinkleRadius
+   * @constructor
+   */
+  function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
+
+    // @private
+    this.twinkles = new Path( null, { fill: 'yellow' } );
+
+    ImageRenderer.call( this, body, viewDiameter, sunMipmap );
+    this.numSegments = numSegments;
+    this.twinkleRadius = twinkleRadius;
+    this.addChild( this.twinkles );
+    this.twinkles.moveToBack();
+    this.setDiameter( viewDiameter );
+  }
+
+  inherit( ImageRenderer, SunRenderer, {
+    setDiameter: function( viewDiameter ) {
+      ImageRenderer.prototype.setDiameter.call( this, viewDiameter );
+      var angle = 0;
+      var deltaAngle = Math.PI * 2 / this.numSegments;
+      var radius = viewDiameter / 2;
+      var shape = new Shape();
+      shape.moveTo( 0, 0 );
+      for ( var i = 0; i < this.numSegments + 1; i++ ) {
+        var myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
+        var target = Vector2.createPolar( myRadius, angle );
+        shape.lineToPoint( target );
+        angle += deltaAngle;
+      }
+      this.twinkles.setShape( shape );
     }
   } );
 

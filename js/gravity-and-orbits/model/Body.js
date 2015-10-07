@@ -17,11 +17,11 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var PropertySet = require( 'AXON/PropertySet' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/RewindableProperty' );
-  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   /**
-   *
+   * Constructor for Body
    * @param {string} name
    * @param {number} x
    * @param {number} y
@@ -47,40 +47,41 @@ define( function( require ) {
   function Body( name, x, y, diameter, vx, vy, mass, color, highlight, renderer,// way to associate the graphical representation directly instead of later with conditional logic or map
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel, playButtonPressedProperty, steppingProperty, rewindingProperty, fixed ) {
 
+    // @public
     PropertySet.call( this, {
       acceleration: new Vector2(),
-      force: new Vector2(),
-      diameter: diameter, // number
+      diameter: diameter, // {number}
       clockTicksSinceExplosion: 0,
       bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
     } );
 
-    this.massSettable = massSettable;
-    this.maxPathLength = maxPathLength; // Number of samples in the path before it starts erasing (fading out from the back)
+    this.massSettable = massSettable; // @public (read-only)
+    this.maxPathLength = maxPathLength; // @public (read-only) - number of samples in the path before it starts erasing (fading out from the back)
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
-    this.massReadoutBelow = massReadoutBelow;
-    this.tickValue = tickValue; // value that this body's mass should be identified with, for 'planet' this will be the earth's mass
-    this.tickLabel = tickLabel; // name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
-    this.fixed = fixed; // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
+    this.massReadoutBelow = massReadoutBelow; // @public (read-only)
+    this.tickValue = tickValue; // @public (read-only) - value that this body's mass should be identified with, for 'planet' this will be the earth's mass
+    this.tickLabel = tickLabel; // @public (read-only) - name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
+    this.fixed = fixed; // @public (read-only) true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
+    this.name = name; // @public (read-only)
+    this.color = color; // @public (read-only)
+    this.highlight = highlight; // @public (read-only)
+
     assert && assert( renderer !== null );
-    this.name = name;
-    this.color = color;
-    this.highlight = highlight;
     this.renderer = renderer; // function that creates a Node for this Body.
 
     // This is in the model so we can associate the graphical representation directly instead of later with conditional logic or map
-    this.labelAngle = labelAngle;
-    this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) );
-    this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) );
-    this.massProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, mass );
-    this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false );
-    this.density = mass / this.getVolume();
+    this.labelAngle = labelAngle; // @public
+    this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) ); // @public
+    this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) ); // @public
+    this.forceProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() ); // @public
+    this.massProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, mass ); // @public
+    this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false ); // @public
+    this.density = mass / this.getVolume(); // @public
 
-    this.userControlled = false; // True if the user is currently controlling the position of the body with the mouse
-    this.pathListeners = []; // {Array.<PathListener>}
-    this.path = []; // {Array.<Vector2>}
+    this.userControlled = false; // @public - true if the user is currently controlling the position of the body with the mouse
+    this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // list of listeners that are notified when the user drags the object, so that we know when certain properties need to be updated
     this.userModifiedPositionListeners = [];
@@ -92,32 +93,21 @@ define( function( require ) {
     } );
 
     // If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
-
-    // Relates to this problem reported by NP:
-    // NP: odd behavior with rewind: Open sim and press play, let the planet move to directly left of the sun.
-    //   Pause, then move the planet closer to sun. Press play, planet will move CCW. Then pause and hit rewind.
-    //   Press play again, the planet will start to move in the opposite direction (CW).
-    // SR: reproduced this in 0.0.14, perhaps the velocity is not being reset?
     var rewindValueChangeListener = function() {
       thisBody.positionProperty.storeRewindValueNoNotify();
       thisBody.velocityProperty.storeRewindValueNoNotify();
+      thisBody.forceProperty.storeRewindValueNoNotify();
       thisBody.massProperty.storeRewindValueNoNotify();
       thisBody.collidedProperty.storeRewindValueNoNotify();
     };
     this.positionProperty.addRewindValueChangeListener( rewindValueChangeListener );
     this.velocityProperty.addRewindValueChangeListener( rewindValueChangeListener );
+    this.forceProperty.addRewindValueChangeListener( rewindValueChangeListener );
     this.massProperty.addRewindValueChangeListener( rewindValueChangeListener );
     this.collidedProperty.addRewindValueChangeListener( rewindValueChangeListener );
   }
 
   return inherit( PropertySet, Body, {
-
-    /**
-     * @return {Property<number>}
-     */
-    getClockTicksSinceExplosion: function() {
-      return this.clockTicksSinceExplosionProperty;
-    },
 
     /**
      * @return {number}
@@ -130,49 +120,7 @@ define( function( require ) {
      * @return {number}
      */
     getRadius: function() {
-      return this.getDiameter() / 2;
-    },
-
-    /**
-     * @return {Color}
-     */
-    getColor: function() {
-      return this.color;
-    },
-
-    /**
-     * @return {Color}
-     */
-    getHighlight: function() {
-      return this.highlight;
-    },
-
-    /**
-     * @return {RewindableProperty<Vector2>}
-     */
-    getPositionProperty: function() {
-      return this.positionProperty;
-    },
-
-    /**
-     * @return {Vector2}
-     */
-    getPosition: function() {
-      return this.positionProperty.get();
-    },
-
-    /**
-     * @return {Property<Double> }
-     */
-    getDiameterProperty: function() {
-      return this.diameterProperty;
-    },
-
-    /**
-     * @return {number}
-     */
-    getDiameter: function() {
-      return this.diameterProperty.get();
+      return this.diameterProperty.get() / 2;
     },
 
     //TODO:
@@ -189,41 +137,13 @@ define( function( require ) {
         dx = dx.x;
         dy = dx.y;
       }
-      this.positionProperty.set( new Vector2( this.getX() + dx, this.getY() + dy ) );
+      this.positionProperty.set( new Vector2( this.positionProperty.get().x + dx, this.positionProperty.get().y + dy ) );
 
       // Only add to the path if the object hasn't collided
       // NOTE: this check was not originally in the 2 param translate method
-      if ( !this.isCollided() && !this.userControlled ) {
+      if ( !this.collidedProperty.get() && !this.userControlled ) {
         this.addPathPoint();
       }
-    },
-
-    /**
-     * @return {number}
-     */
-    getY: function() {
-      return this.positionProperty.get().y;
-    },
-
-    /**
-     * @return {number}
-     */
-    getX: function() {
-      return this.positionProperty.get().x;
-    },
-
-    /**
-     * @return {string}
-     */
-    getName: function() {
-      return this.name;
-    },
-
-    /**
-     * @param {number} value
-     */
-    setDiameter: function( value ) {
-      this.diameterProperty.set( value );
     },
 
     /**
@@ -232,35 +152,12 @@ define( function( require ) {
      * @return {BodyState}
      */
     toBodyState: function() {
-      return new BodyState( this.getPosition(), this.getVelocity(), this.getAcceleration(), this.getMass(), this.collidedProperty.get() );
-    },
-
-    /**
-     * @return {number}
-     */
-    getMass: function() {
-      return this.massProperty.get();
-    },
-
-    /**
-     * @return {Vector2}
-     */
-    getAcceleration: function() {
-      return this.accelerationProperty.get();
-    },
-
-    /**
-     * @return {Vector2}
-     */
-    getVelocity: function() {
-      return this.velocityProperty.get();
-    },
-
-    /**
-     * @return {number}
-     */
-    getTickValue: function() {
-      return this.tickValue;
+      return new BodyState(
+        this.positionProperty.get(),
+        this.velocityProperty.get(),
+        this.accelerationProperty.get(),
+        this.massProperty.get(),
+        this.collidedProperty.get() );
     },
 
     /**
@@ -273,7 +170,7 @@ define( function( require ) {
         this.clockTicksSinceExplosionProperty.value += 1;
       }
       else {
-        if ( !this.isUserControlled() ) {
+        if ( !this.userControlled ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
         }
@@ -288,52 +185,27 @@ define( function( require ) {
 
       // Only add to the path if the user isn't dragging it
       // But do add to the path even if the object is collided at the same location so the path will still grow in size and fade at the right time
-      if ( !this.isUserControlled() ) {
+      if ( !this.userControlled ) {
         this.addPathPoint();
       }
     },
 
     addPathPoint: function() {
-      var i;
 
       // start removing data after 2 orbits of the default system
       // account for the point that will be added
-      while ( this.path.length + 1 > this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS ) {
+      while ( this.path.length + 1 > this.maxPathLength ) {
         this.path.shift();
-
-        for ( i = 0; i < this.pathListeners.length; i++ ) {
-          this.pathListeners[ i ].pointRemoved();
-        }
+        this.trigger0( GravityAndOrbitsConstants.POINT_REMOVED );
       }
-      var pathPoint = this.getPosition();
+      var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
-
-      for ( i = 0; i < this.pathListeners.length; i++ ) {
-        this.pathListeners[ i ].pointAdded( pathPoint );
-      }
+      this.trigger1( GravityAndOrbitsConstants.POINT_ADDED, pathPoint );
     },
 
     clearPath: function() {
       this.path = [];
-      for ( var i = 0; i < this.pathListeners.length; i++ ) {
-        this.pathListeners[ i ].cleared();
-      }
-    },
-
-    /**
-     * @return {Property<Vector2>}
-     */
-    getForceProperty: function() {
-      return this.forceProperty;
-    },
-
-    /**
-     * @param mass
-     */
-    setMass: function( mass ) {
-      this.massProperty.set( mass );
-      var radius = Math.pow( 3 * mass / 4 / Math.PI / this.density, 1.0 / 3.0 ); //derived from: density = mass/volume, and volume = 4/3 pi r r r
-      this.diameterProperty.set( radius * 2 );
+      this.trigger0( GravityAndOrbitsConstants.CLEARED );
     },
 
     resetAll: function() {
@@ -349,82 +221,6 @@ define( function( require ) {
     },
 
     /**
-     * @return {RewindableProperty<Vector2>}
-     */
-    getVelocityProperty: function() {
-      return this.velocityProperty;
-    },
-
-    /**
-     * @return {RewindableProperty<number>}
-     */
-    getMassProperty: function() {
-      return this.massProperty;
-    },
-
-    /**
-     * @return {boolean}
-     */
-    isUserControlled: function() {
-      return this.userControlled;
-    },
-
-    /**
-     * @param {boolean} b
-     */
-    setUserControlled: function( b ) {
-      this.userControlled = b;
-    },
-
-    /**
-     * Add a listener for getting callbacks when the path has changed, for displaying the path with picclo
-     * TODO: Should this be rewritten using trigger?
-     * @param {PathListener} listener
-     */
-    addPathListener: function( listener ) {
-
-      // assert that it has all the right parts
-      assert && assert( !!listener.pointAdded && !!listener.pointRemoved && !!listener.cleared );
-      this.pathListeners.push( listener );
-    },
-
-    /**
-     * @param {Vector2} velocity
-     */
-    setVelocity: function( velocity ) {
-      this.velocityProperty.set( velocity );
-    },
-
-    /**
-     * @param {number} x
-     * @param {number} y
-     */
-    setPosition: function( x, y ) {
-      this.positionProperty.set( new Vector2( x, y ) );
-    },
-
-    /**
-     * @param {Vector2} acceleration
-     */
-    setAcceleration: function( acceleration ) {
-      this.accelerationProperty.set( acceleration );
-    },
-
-    /**
-     * @param {Vector2} force
-     */
-    setForce: function( force ) {
-      this.forceProperty.set( force );
-    },
-
-    /**
-     * @return {boolean}
-     */
-    isMassSettable: function() {
-      return this.massSettable;
-    },
-
-    /**
      * @return {BodyRenderer}
      */
     createRenderer: function( viewDiameter ) {
@@ -432,55 +228,13 @@ define( function( require ) {
     },
 
     /**
-     * @return {number}
-     */
-    getLabelAngle: function() {
-      return this.labelAngle;
-    },
-
-    /**
-     * @return {number}
-     */
-    getMaxPathLength: function() {
-      return this.maxPathLength * GravityAndOrbitsModel.SMOOTHING_STEPS;
-    },
-
-    /**
-     * @return {boolean}
-     */
-    isMassReadoutBelow: function() {
-      return this.massReadoutBelow;
-    },
-
-    /**
-     * @return {Property<boolean>}
-     */
-    getCollidedProperty: function() {
-      return this.collidedProperty;
-    },
-
-    /**
      * @param {Body} body
      * @return {boolean}
      */
     collidesWidth: function( body ) {
-      var distance = this.getPosition().minus( body.getPosition() ).magnitude();
-      var radiiSum = this.getDiameter() / 2 + body.getDiameter() / 2;
+      var distance = this.positionProperty.get().minus( body.positionProperty.get() ).magnitude();
+      var radiiSum = this.diameterProperty.get() / 2 + body.diameterProperty.get() / 2;
       return distance < radiiSum;
-    },
-
-    /**
-     * @param {boolean} b
-     */
-    setCollided: function( b ) {
-      this.collidedProperty.set( b );
-    },
-
-    /**
-     * @return {string}
-     */
-    getTickLabel: function() {
-      return this.tickLabel;
     },
 
     /**
@@ -512,6 +266,7 @@ define( function( require ) {
     rewind: function() {
       this.positionProperty.rewind();
       this.velocityProperty.rewind();
+      this.forceProperty.rewind();
       this.massProperty.rewind();
       this.collidedProperty.rewind();
       this.clearPath();
@@ -533,8 +288,8 @@ define( function( require ) {
      * @param {GravityAndOrbitsModel} model
      */
     returnBody: function( model ) {
-      if ( this.collidedProperty.get() || !this.bounds.containsPoint( this.getPosition() ) ) {
-        this.setCollided( false );
+      if ( this.collidedProperty.get() || !this.bounds.containsPoint( this.positionProperty.get() ) ) {
+        this.collidedProperty.set( false );
         this.clearPath(); // so there is no sudden jump in path from old to new location
         this.doReturnBody( model );
       }
@@ -551,24 +306,10 @@ define( function( require ) {
     },
 
     /**
-     * @return {boolean}
-     */
-    isCollided: function() {
-      return this.collidedProperty.get();
-    },
-
-    /**
      * @return {string}
      */
     toString: function() {
-      return "name = " + this.getName() + ", mass = " + this.getMass();
-    },
-
-    /**
-     * @return {Property<Rectangle>}
-     */
-    getBounds: function() {
-      return this.boundsProperty;
+      return 'name = ' + this.name + ', mass = ' + this.massProperty.get();
     }
 
   } );

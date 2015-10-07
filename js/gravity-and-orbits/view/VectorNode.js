@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * Draws a vector for a Body, such as a force vector or velocity vector.
@@ -42,7 +42,7 @@ define( function( require ) {
     this.scale = scale; // @private
 
     // Only show if the body hasn't collided
-    new DerivedProperty( [ visibleProperty, body.getCollidedProperty() ], function( visible, collided ) {
+    new DerivedProperty( [ visibleProperty, body.collidedProperty ], function( visible, collided ) {
       return visible && !collided;
     } ).linkAttribute( this, 'visible' );
 
@@ -58,7 +58,7 @@ define( function( require ) {
       scaleTailToo: true
     } );
 
-    Property.multilink( [ visibleProperty, vectorProperty, body.getPositionProperty(), transformProperty ],
+    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ],
       function( visible ) {
         if ( visible ) {
           var tail = thisNode.getTail();
@@ -74,7 +74,7 @@ define( function( require ) {
 
     // @private
     getTail: function() {
-      return this.transformProperty.get().modelToViewPosition( this.body.getPositionProperty().get() );
+      return this.transformProperty.get().modelToViewPosition( this.body.positionProperty.get() );
     },
 
     getTip: function( tail ) {

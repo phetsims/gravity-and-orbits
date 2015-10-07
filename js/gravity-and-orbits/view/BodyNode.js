@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable, which changes
@@ -19,7 +19,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var Line = require( 'SCENERY/nodes/Line' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   /**
    * Constructor for BodyNode
@@ -44,8 +44,14 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     var dragHandler = new MovableDragHandler( this.body.positionProperty, {
+      startDrag: function() {
+        body.userControlled = true;
+      },
       onDrag: function() {
         body.notifyUserModifiedPosition();
+      },
+      endDrag: function() {
+        body.userControlled = false;
       }
     } );
     this.addInputListener( dragHandler );
@@ -83,15 +89,14 @@ define( function( require ) {
       var tail = northEastVector.times( 50 ).plus( viewCenter );
 
       node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: 'yellow' } ) );
-      var text = new Text( body.getName(), {
+      var text = new Text( body.name, {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
-        y: tail.y - this.height - 10,
-        fill: 'white'
+        y: tail.y - this.height - 10
       } );
       node.addChild( text );
 
-      GravityAndOrbitsColors.link( 'bodyNodeText', function( color ) {
+      GravityAndOrbitsColorProfile.bodyNodeTextProperty.link( function( color ) {
         text.fill = color;
       } );
 
@@ -104,12 +109,12 @@ define( function( require ) {
 
     // @private
     getPosition: function( modelViewTransformProperty, body ) {
-      return modelViewTransformProperty.get().modelToView( body.getPosition() );
+      return modelViewTransformProperty.get().modelToView( body.positionProperty.get() );
     },
 
     // @private
     getViewDiameter: function() {
-      var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.getDiameter() );
+      var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
       return Math.max( viewDiameter, 2 );
     },
 

@@ -17,7 +17,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // constants
   var STARTING_VALUE = GravityAndOrbitsModule.STARTING_SPEED_SCALE;
@@ -39,7 +39,7 @@ define( function( require ) {
       radius: 10
     }, options );
 
-    var textOption = { font: new PhetFont( 22 ), fill: '#fff', pickable: false, y: -7 };
+    var textOption = { font: new PhetFont( 22 ), pickable: false, y: -7 };
     var fastText = new Text( fastForwardString, textOption );
     var normalText = new Text( normalString, textOption );
     var slowText = new Text( slowMotionString, textOption );
@@ -50,7 +50,7 @@ define( function( require ) {
       { property: speedProperty, value: STARTING_VALUE * 0.25, node: slowText }
     ], options );
 
-    GravityAndOrbitsColors.link( 'bottomControlText', function( color ) {
+    GravityAndOrbitsColorProfile.bottomControlTextProperty.link( function( color ) {
       fastText.fill = color;
       normalText.fill = color;
       slowText.fill = color;

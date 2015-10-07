@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * The GravityAndOrbitsModule has a set of "modes", one mode for each configuration of bodies (eg, Sun + Planet).
@@ -72,9 +72,9 @@ define( function( require ) {
     // Make sure only one canvas is visible at a time
     this.modeProperty.link( function( mode ) {
       for ( var i = 0; i < thisModule.modeList.modes.length; i++ ) {
-        thisModule.modeList.modes[ i ].getCanvas().visible = false;
+        thisModule.modeList.modes[ i ].canvas.visible = false;
       }
-      mode.getCanvas().visible = true;
+      mode.canvas.visible = true;
       thisModule.updateActiveModule();
     } );
 
@@ -84,12 +84,8 @@ define( function( require ) {
   return inherit( PropertySet, GravityAndOrbitsModule, {
       step: function( dt ) {
         if ( this.playButtonPressedProperty.value ) {
-          this.getMode().getModel().getClock().step( dt );
+          this.modeProperty.get().getClock().step( dt );
         }
-      },
-
-      getMode: function() {
-        return this.modeProperty.get();
       },
 
       getModes: function() {
@@ -99,7 +95,7 @@ define( function( require ) {
       // @private
       updateActiveModule: function() {
         for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.getMode() );
+          this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.get() );
         }
       },
 
@@ -119,13 +115,8 @@ define( function( require ) {
         this.steppingProperty.reset();
         this.rewindingProperty.reset();
         this.modeProperty.reset();
-      },
-
-      addModelSteppedListener: function( simpleObserver ) {
-        for ( var i = 0; i < this.modes.length; i++ ) {
-          this.modes[ i ].getModel().addModelSteppedListener( simpleObserver );
-        }
       }
+
     },
 
     {

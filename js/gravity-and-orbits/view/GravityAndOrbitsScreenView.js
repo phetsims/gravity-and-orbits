@@ -31,9 +31,9 @@ define( function( require ) {
     // Add the canvases, one for each of the four modes
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
-      var gaoCanvas = modes[ i ].getCanvas();
+      var gaoCanvas = modes[ i ].canvas;
       this.addChild( gaoCanvas );
-      if ( modes[ i ] !== module.getMode() ) {
+      if ( modes[ i ] !== module.modeProperty.get() ) {
         gaoCanvas.visible = false;
       }
     }
@@ -52,13 +52,5 @@ define( function( require ) {
     this.addChild( resetAllButton );
   }
 
-  return inherit( ScreenView, GravityAndOrbitsScreenView, {
-
-    step: function( dt ) {
-      var paths = this.module.getMode().getCanvas().paths;
-      for ( var i = 0; i < paths.length; i++ ) {
-        paths[ i ].step();
-      }
-    }
-  } );
+  return inherit( ScreenView, GravityAndOrbitsScreenView );
 } );

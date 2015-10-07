@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/GravityAndOrbitsModule' );
   var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsScreenView' );
-  var GravityAndOrbitsColors = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColors' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
   var CartoonModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/CartoonModeList' );
   var RealModeList = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/module/RealModeList' );
   var GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GlobalOptionsNode' );
@@ -19,7 +19,6 @@ define( function( require ) {
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var Screen = require( 'JOIST/Screen' );
-  var Property = require( 'AXON/Property' );
   var Image = require( 'SCENERY/nodes/Image' );
 
   // images
@@ -56,8 +55,6 @@ define( function( require ) {
 
   inherit( GravityAndOrbitsModule, CartoonModule );
 
-  var whiteBackgroundProperty = new Property( false );
-
   var simOptions = {
     credits: {
       //TODO fill in proper credits, all of these fields are optional, see joist.AboutDialog
@@ -68,31 +65,22 @@ define( function( require ) {
       graphicArts: '',
       thanks: ''
     },
-    optionsNode: new GlobalOptionsNode( whiteBackgroundProperty )
+    optionsNode: new GlobalOptionsNode()
   };
 
   var cartoonScreen = new Screen( cartoonString, new Image( cartoonMipmap ),
     function() { return new CartoonModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
+    { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
   );
 
   var toScaleScreen = new Screen( toScaleString, new Image( toScaleMipmap ),
     function() { return new ToScaleModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: GravityAndOrbitsColors.background.toCSS() }
+    { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
   );
 
-  whiteBackgroundProperty.link( function( useProjectorColors ) {
-    if ( useProjectorColors ) {
-      GravityAndOrbitsColors.applyProfile( 'projector' );
-    }
-    else {
-      GravityAndOrbitsColors.applyProfile( 'default' );
-    }
-  } );
-
-  GravityAndOrbitsColors.link( 'background', function( color ) {
+  GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {
     cartoonScreen.backgroundColor = color;
     toScaleScreen.backgroundColor = color;
   } );

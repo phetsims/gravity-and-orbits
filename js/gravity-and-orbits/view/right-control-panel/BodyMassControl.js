@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * This control allows the user to view and change the mass of certain Body instances, which also changes the radius.
@@ -19,6 +19,7 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // constants
   var CONTROL_FONT = new PhetFont( 14 );
@@ -41,9 +42,8 @@ define( function( require ) {
    */
   function BodyMassControl( body, min, max, labelValue, valueLabel ) {
 
-    var label = new Text( body.getName(), {
+    var label = new Text( body.name, {
       font: CONTROL_FONT,
-      fill: 'white',
       fontWeight: 'bold'
     } );
 
@@ -52,15 +52,15 @@ define( function( require ) {
     // Top component that shows the body's name and icon
     var content = new HBox( { centerX: SPACING, children: [ label, image ], spacing: 10 } );
 
-    var smallLabel = new Text( valueLabel, { top: content.bottom, centerX: SPACING, font: new PhetFont( 11 ), fill: 'white', pickable: false } );
+    var smallLabel = new Text( valueLabel, { top: content.bottom, centerX: SPACING, font: new PhetFont( 11 ) } );
 
     var ticks = [];
-    for( var i = 0; i < NUM_TICKS; i++ ) {
-      ticks.push( new Line( 0, 0, 0, 10, { stroke: 'white', lineWidth: 1 } ) );
+    for ( var i = 0; i < NUM_TICKS; i++ ) {
+      ticks.push( new Line( 0, 0, 0, 10, { lineWidth: 1 } ) );
     }
     var tickBox = new HBox( { children: ticks, spacing: SPACING } );
 
-    var slider = new HSlider( body.getMassProperty(), { min: min, max: max }, {
+    var slider = new HSlider( body.massProperty, { min: min, max: max }, {
       trackSize: new Dimension2( WIDTH, 2 ),
       thumbSize: THUMB_SIZE,
 
@@ -73,7 +73,7 @@ define( function( require ) {
 
     Node.call( this, { children: [ content, smallLabel, sliderWithTicksNode ] } );
 
-    body.getMassProperty().link( function( mass ) {
+    body.massProperty.link( function( mass ) {
 
       // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
       // the mass itself is set by the slider in this case.
@@ -82,8 +82,17 @@ define( function( require ) {
 
       // snap to default value if close
       if ( Math.abs( mass - labelValue ) / labelValue < SNAP_TOLERANCE ) {
-        body.getMassProperty().set( labelValue );
+        body.massProperty.set( labelValue );
       }
+    } );
+
+    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
+      label.fill = color;
+      smallLabel.fill = color;
+
+      ticks.forEach( function( tick ) {
+        tick.stroke = color;
+      } );
     } );
   }
 

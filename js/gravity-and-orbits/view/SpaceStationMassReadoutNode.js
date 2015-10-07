@@ -1,4 +1,5 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
+
 /**
  * Shows the mass of a Body in terms of space station masses.
  *
@@ -12,11 +13,13 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/MassReadoutNode' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var GAOStrings = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GAOStrings' );
   var Util = require( 'DOT/Util' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
-  // constants
-  var SPACE_STATION_MASS = 369914; // TODO: duplicate from ModeList
+  // strings
+  var billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
+  var spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
+  var patternValueUnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
 
   function SpaceStationMassReadoutNode( bodyNode, visible ) {
     MassReadoutNode.call( this, bodyNode, visible );
@@ -24,27 +27,26 @@ define( function( require ) {
 
   return inherit( MassReadoutNode, SpaceStationMassReadoutNode, {
     createText: function() {
-      var massKG = this.bodyNode.getBody().getMass();
-      var spaceStationMasses = massKG / SPACE_STATION_MASS;
+      var massKG = this.bodyNode.getBody().massProperty.get();
+      var spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;
 
       // Show the readout in terms of space station masses (or billions of billions of space station masses)
       var value;
-      var units = GAOStrings.SPACE_STATION_MASS;
+      var units = spaceStationMassString;
       if ( spaceStationMasses > 1E18 ) {
-        value = Util.toFixed( spaceStationMasses / 1E18 , 0 );
-        units = GAOStrings.BILLION_BILLION_SPACE_STATION_MASSES;
+        value = Util.toFixed( spaceStationMasses / 1E18, 0 );
+        units = billionBillionSpaceStationMassesString;
       }
       else if ( Math.abs( spaceStationMasses - 1 ) < 1E-2 ) {
-        value = "1";
+        value = '1';
       }
       else if ( spaceStationMasses < 1 ) {
         value = Util.toFixed( spaceStationMasses, 3 );
       }
       else {
-        // use one less decimal point here
-        value = Util.toFixed( spaceStationMasses, 2 );
+        value = Util.toFixed( spaceStationMasses, 2 ); // use one less decimal point here
       }
-      return StringUtils.format( GAOStrings.PATTERN_VALUE_UNITS, value, units );
+      return StringUtils.format( patternValueUnitsString, value, units );
     }
   } );
 } );

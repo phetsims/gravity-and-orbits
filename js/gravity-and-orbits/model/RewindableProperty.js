@@ -1,4 +1,5 @@
-// Copyright 2002-2011, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
+
 /**
  * This is a property that can be rewound, and when rewound it goes back
  * to the value that was last set while the clock was paused.

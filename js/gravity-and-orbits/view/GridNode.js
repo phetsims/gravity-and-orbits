@@ -1,4 +1,4 @@
-// Copyright 2002-2015, University of Colorado
+// Copyright 2002-2015, University of Colorado Boulder
 
 /**
  * When enabled, shows a grid across the play area that helps the user to make quantitative comparisons between distances.
@@ -15,8 +15,8 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
 
-  //private
-  var NUM_GRID_LINES = 10;
+  // constants
+  var NUM_GRID_LINES = 14;
 
   /**
    *
@@ -32,14 +32,16 @@ define( function( require ) {
     transformProperty.link( function() {
       thisNode.removeAllChildren();
       var i;
-      //horizontal lines
+
+      // horizontal lines
       for ( i = -NUM_GRID_LINES; i <= NUM_GRID_LINES; i++ ) {
         var y = i * spacing + center.y;
         var x1 = NUM_GRID_LINES * spacing + center.x;
         var x2 = -NUM_GRID_LINES * spacing + center.x;
         thisNode.addGridLine( Shape.lineSegment( x1, y, x2, y ), transformProperty );
       }
-      //vertical lines
+
+      // vertical lines
       for ( i = -NUM_GRID_LINES; i <= NUM_GRID_LINES; i++ ) {
         var x = i * spacing + center.x;
         var y1 = NUM_GRID_LINES * spacing + center.y;
@@ -51,7 +53,7 @@ define( function( require ) {
 
   return inherit( Node, GridNode, {
 
-    //private
+    // @private
     addGridLine: function( line, transformProperty ) {
       var path = new Path( transformProperty.get().modelToViewShape( line ), { lineWidth: 1, stroke: 'gray' } );
       this.addChild( path );
