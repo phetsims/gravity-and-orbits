@@ -263,9 +263,9 @@ define( function( require ) {
     },
 
     /**
-     *  Get the BodyState for the specified index--future work could
-     *  change this signature to getState(Body body) since it would be safer.
-     *  See usage in GravityAndOrbitsModel constructor.
+     * Get the BodyState for the specified index--future work could
+     * change this signature to getState(Body body) since it would be safer.
+     * See usage in GravityAndOrbitsModel constructor.
      * @public
      * @param {number} index
      * @returns {Array.<BodyState>}
