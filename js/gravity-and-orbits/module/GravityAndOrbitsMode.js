@@ -27,6 +27,7 @@ define( function( require ) {
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsModel' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   // the play area only takes up the left side of the canvas; the control panel is on the right side
 //  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width * 0.60;
@@ -183,8 +184,8 @@ define( function( require ) {
         thisMode.deviatedFromDefaultsProperty.set( true );
       };
       body.massProperty.link( update );
-      body.addUserModifiedPositionListener( update );
-      body.addUserModifiedVelocityListener( update );
+      body.on( GravityAndOrbitsConstants.USER_MODIFIED_POSITION, update );
+      body.on( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY, update );
     },
 
     reset: function() {

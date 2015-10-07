@@ -20,6 +20,7 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   /**
    * Constructor for BodyNode
@@ -49,7 +50,7 @@ define( function( require ) {
         body.userControlled = true;
       },
       onDrag: function() {
-        body.notifyUserModifiedPosition();
+        body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_POSITION );
       },
       endDrag: function() {
         body.userControlled = false;

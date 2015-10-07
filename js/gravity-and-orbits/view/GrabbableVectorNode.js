@@ -19,6 +19,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   /**
    * Constructor for GrabbableVectorNode
@@ -76,7 +77,7 @@ define( function( require ) {
       translate: function( event ) {
         var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
         body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
-        body.notifyUserModifiedVelocity();
+        body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY );
       }
     } ) );
 

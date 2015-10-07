@@ -17,6 +17,8 @@ define( function( require ) {
     // event names
     POINT_ADDED: 'pointAdded',
     POINT_REMOVED: 'pointRemoved',
-    CLEARED: 'cleared'
+    CLEARED: 'cleared',
+    USER_MODIFIED_POSITION: 'userModifiedPosition',
+    USER_MODIFIED_VELOCITY: 'userModifiedVelocity'
   };
 } );

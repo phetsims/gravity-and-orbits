@@ -103,11 +103,6 @@ define( function( require ) {
     this.userControlled = false; // @public
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
-    // list of listeners that are notified when the user drags the object, so that we know when certain properties
-    // need to be updated
-    this.userModifiedPositionListeners = [];
-    this.userModifiedVelocityListeners = [];
-
     var thisBody = this;
     this.collidedProperty.onValue( true, function() {
       thisBody.clockTicksSinceExplosionProperty.set( 0 );
@@ -233,32 +228,6 @@ define( function( require ) {
       var distance = this.positionProperty.get().minus( body.positionProperty.get() ).magnitude();
       var radiiSum = this.diameterProperty.get() / 2 + body.diameterProperty.get() / 2;
       return distance < radiiSum;
-    },
-
-    /**
-     * @param {function} listener
-     */
-    addUserModifiedPositionListener: function( listener ) {
-      this.userModifiedPositionListeners.push( listener );
-    },
-
-    notifyUserModifiedPosition: function() {
-      for ( var i = 0; i < this.userModifiedPositionListeners.length; i++ ) {
-        this.userModifiedPositionListeners[ i ].call( this );
-      }
-    },
-
-    /**
-     * @param {function} listener
-     */
-    addUserModifiedVelocityListener: function( listener ) {
-      this.userModifiedVelocityListeners.push( listener );
-    },
-
-    notifyUserModifiedVelocity: function() {
-      for ( var i = 0; i < this.userModifiedVelocityListeners.length; i++ ) {
-        this.userModifiedVelocityListeners[ i ].call( this );
-      }
     },
 
     rewind: function() {

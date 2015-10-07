@@ -16,6 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/ModelState' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
   // strings
   var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
@@ -122,7 +123,7 @@ define( function( require ) {
 
       // If the user modifies the position, and the sim is paused, we must update the force vectors manually since
       // the model will not update them for us.
-      body.addUserModifiedPositionListener( function() {
+      body.on( GravityAndOrbitsConstants.USER_MODIFIED_POSITION, function() {
         if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
       } );
       body.massProperty.link( function() {
