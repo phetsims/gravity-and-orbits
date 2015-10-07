@@ -137,7 +137,7 @@ define( function( require ) {
         // semi-realistic behavior.
         return Vector2.ZERO;
       }
-      else if ( source.exploded ) {
+      else if ( source.exploded || target.exploded ) {
 
         // ignore in the computation if that body has exploded
         return Vector2.ZERO;
