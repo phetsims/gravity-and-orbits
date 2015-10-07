@@ -59,37 +59,34 @@ define( function( require ) {
 
   return inherit( Node, ExplosionNode, {
 
-      // @private
-      getExplosionEdgeGraphic: function( body, getDiameter ) {
-        var yellowAndWhite = {
-          highlight: 'white',
-          color: 'yellow'
-        };
-        var getDoubleRadius = function( radius ) {
-          return radius * 2;
-        };
-        var explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
+    // @private
+    getExplosionEdgeGraphic: function( body, getDiameter ) {
+      var yellowAndWhite = {
+        highlight: 'white',
+        color: 'yellow'
+      };
+      var getDoubleRadius = function( radius ) {
+        return radius * 2;
+      };
+      var explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
-        var explodedProperty = new DerivedProperty( [ body.collidedProperty, body.clockTicksSinceExplosionProperty ],
-          function( collided, clockTicks ) {
-            return collided && clockTicks <= NUM_STEPS_FOR_ANIMATION;
-          } );
-
-        explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
-
-        body.clockTicksSinceExplosionProperty.lazyLink( function( clockTicks ) {
-          explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) );
+      var explodedProperty = new DerivedProperty( [ body.collidedProperty, body.clockTicksSinceExplosionProperty ],
+        function( collided, clockTicks ) {
+          return collided && clockTicks <= NUM_STEPS_FOR_ANIMATION;
         } );
 
-        return explosionEdgeGraphic;
-      },
+      explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
 
-      // @private
-      getMaxViewDiameter: function( body, modelViewTransformProperty ) {
-        return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
-      }
+      body.clockTicksSinceExplosionProperty.lazyLink( function( clockTicks ) {
+        explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) );
+      } );
+
+      return explosionEdgeGraphic;
     },
-    {
-      NUM_STEPS_FOR_ANIMATION: NUM_STEPS_FOR_ANIMATION
-    } );
+
+    // @private
+    getMaxViewDiameter: function( body, modelViewTransformProperty ) {
+      return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
+    }
+  } );
 } );
