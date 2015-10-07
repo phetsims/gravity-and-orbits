@@ -94,7 +94,8 @@ define( function( require ) {
       context.lineJoin = 'round';
       context.beginPath();
 
-      // Create and render the solid part as a path. New points are added at the tail of the list, so easiest to render backwards for fade-out.
+      // Create and render the solid part as a path. New points are added at the tail of the list,
+      // so easiest to render backwards for fade-out.
       if ( this.points.length > 0 ) {
         context.moveTo( this.points[ this.points.length - 1 ].x, this.points[ this.points.length - 1 ].y );
       }

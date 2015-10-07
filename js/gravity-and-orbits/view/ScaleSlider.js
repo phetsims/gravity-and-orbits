@@ -57,7 +57,9 @@ define( function( require ) {
       xMargin: 0,
       yMargin: 0,
       listener: function() {
-        scaleProperty.value = Math.max( Math.min( scaleProperty.value + (isIncrease ? step : -step), range.max ), range.min );
+        scaleProperty.value = Math.max(
+          Math.min( scaleProperty.value + (isIncrease ? step : -step), range.max ),
+          range.min );
       }
     } );
     this.addChild( button );
@@ -76,11 +78,16 @@ define( function( require ) {
       } );
     }
 
-    // Increase the touch area in all directions except toward the slider knob, so that they won't interfere too much on touch devices
+    // Increase the touch area in all directions except toward the slider knob,
+    // so that they won't interfere too much on touch devices
     var dilationSize = 15;
     var dilateTop = ( isIncrease ) ? dilationSize : 0;
     var dilateBottom = ( isIncrease ) ? 0 : dilationSize;
-    this.touchArea = Shape.bounds( new Bounds2( this.localBounds.minX - dilationSize, this.localBounds.minY - dilateTop, this.localBounds.maxX + dilationSize, this.localBounds.maxY + dilateBottom ) );
+    this.touchArea = Shape.bounds( new Bounds2(
+      this.localBounds.minX - dilationSize,
+      this.localBounds.minY - dilateTop,
+      this.localBounds.maxX + dilationSize,
+      this.localBounds.maxY + dilateBottom ) );
   }
 
   inherit( Node, SliderButton );

@@ -45,8 +45,8 @@ define( function( require ) {
   var TEXT_OPTIONS = { font: FONT };
 
   /**
-   * @param {GravityAndOrbitsModel} module - Contains set of properties. Instance of PropertySet class. General module for the whole application.
-   * @param {Object} [options] - Custom options for VBox contains checkboxes.
+   * @param {GravityAndOrbitsModule} module
+   * @param {Object} [options]
    * @constructor
    */
   function SpaceObjectsPropertyCheckbox( module, options ) {
@@ -133,7 +133,13 @@ define( function( require ) {
       } ), module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
     }
 
-    VBox.call( this, _.extend( { children: children, resize: false, spacing: 10, align: 'left', bottom: -12 }, options ) );
+    VBox.call( this, _.extend( {
+      children: children,
+      resize: false,
+      spacing: 10,
+      align: 'left',
+      bottom: -12
+    }, options ) );
 
     GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
       gravityForceTextNode.fill = color;

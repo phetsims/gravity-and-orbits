@@ -16,9 +16,9 @@ define( function( require ) {
   var RightControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/RightControlPanel' );
 
   /**
-   * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module object as
-   * a parameter instead of a model. This seemed like the easiest way to port the Java version, which has one module for each
-   * screen. This is the ScreenView for both screens in this sim.
+   * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module
+   * object as a parameter instead of a model. This seemed like the easiest way to port the Java version, which has
+   * one module for each screen. This is the ScreenView for both screens in this sim.
    *
    * @param {GravityAndOrbitsModule} module
    * @constructor
@@ -38,7 +38,11 @@ define( function( require ) {
       }
     }
 
-    var controlPanelNode = new RightControlPanel( module, { right: this.layoutBounds.maxX, top: this.layoutBounds.top + 5, width: 200 } );
+    var controlPanelNode = new RightControlPanel( module, {
+      right: this.layoutBounds.maxX,
+      top: this.layoutBounds.top + 5,
+      width: 200
+    } );
     this.addChild( controlPanelNode );
 
     // Create and add the Reset All Button in the bottom right, which resets the model

@@ -129,7 +129,9 @@ define( function( require ) {
     var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
-      significantFigures: ( bodies[ 1 ].name === 'Satellite' ) ? 1 : 0 // space station gets 1 sig fig, the other bodies have 0
+
+      // space station gets 1 sig fig, the other bodies have 0
+      significantFigures: ( bodies[ 1 ].name === 'Satellite' ) ? 1 : 0
     } );
 
     mode.transformProperty.link( function( transform ) {

@@ -1,7 +1,8 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * When enabled, shows a grid across the play area that helps the user to make quantitative comparisons between distances.
+ * When enabled, shows a grid across the play area that helps the user to make quantitative comparisons
+ * between distances.
  *
  * @author Sam Reid
  * @author Aaron Davis
