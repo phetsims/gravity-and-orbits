@@ -146,14 +146,15 @@ define( function( require ) {
 
     /**
      * create an immutable representation of this body for use in the physics engine
+     * use copy() for Vector2 so that the properties don't get mutated
      *
      * @return {BodyState}
      */
     toBodyState: function() {
       return new BodyState(
-        this.positionProperty.get(),
-        this.velocityProperty.get(),
-        this.accelerationProperty.get(),
+        this.positionProperty.get().copy(),
+        this.velocityProperty.get().copy(),
+        this.accelerationProperty.get().copy(),
         this.massProperty.get(),
         this.collidedProperty.get() );
     },
