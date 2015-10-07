@@ -31,7 +31,8 @@ define( function( require ) {
    * @param {number} mass
    * @param {Color} color
    * @param {Color} highlight
-   * @param {function<Body, number, BodyRenderer>} renderer
+   * @param {function<Body, number, BodyRenderer>} renderer - way to associate the graphical representation directly
+   *                                                          instead of later with conditional logic or map
    * @param {number} labelAngle
    * @param {boolean} massSettable
    * @param {number} maxPathLength
@@ -44,46 +45,66 @@ define( function( require ) {
    * @param {boolean} fixed
    * @constructor
    */
-  function Body( name, x, y, diameter, vx, vy, mass, color, highlight, renderer,// way to associate the graphical representation directly instead of later with conditional logic or map
-                 labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel, playButtonPressedProperty, steppingProperty, rewindingProperty, fixed ) {
+  function Body( name, x, y, diameter, vx, vy, mass, color, highlight, renderer,
+                 labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
+                 playButtonPressedProperty, steppingProperty, rewindingProperty, fixed ) {
 
     // @public
     PropertySet.call( this, {
       acceleration: new Vector2(),
       diameter: diameter, // {number}
       clockTicksSinceExplosion: 0,
-      bounds: new Bounds2( 0, 0, 0, 0 ) // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
+
+      // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
+      bounds: new Bounds2( 0, 0, 0, 0 )
     } );
 
     this.massSettable = massSettable; // @public (read-only)
-    this.maxPathLength = maxPathLength; // @public (read-only) - number of samples in the path before it starts erasing (fading out from the back)
+
+    // number of samples in the path before it starts erasing (fading out from the back)
+    this.maxPathLength = maxPathLength; // @public (read-only)
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
     this.massReadoutBelow = massReadoutBelow; // @public (read-only)
-    this.tickValue = tickValue; // @public (read-only) - value that this body's mass should be identified with, for 'planet' this will be the earth's mass
-    this.tickLabel = tickLabel; // @public (read-only) - name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
-    this.fixed = fixed; // @public (read-only) true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
+
+    // value that this body's mass should be identified with, for 'planet' this will be the earth's mass
+    this.tickValue = tickValue; // @public (read-only)
+
+    // name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
+    this.tickLabel = tickLabel; // @public (read-only)
+
+    // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
+    this.fixed = fixed; // @public (read-only)
     this.name = name; // @public (read-only)
     this.color = color; // @public (read-only)
     this.highlight = highlight; // @public (read-only)
 
     assert && assert( renderer !== null );
-    this.renderer = renderer; // function that creates a Node for this Body.
 
-    // This is in the model so we can associate the graphical representation directly instead of later with conditional logic or map
+    // Function that creates a Node for this Body. This is in the model so we can associate the graphical
+    // representation directly instead of later with conditional logic or map
+    this.renderer = renderer; // @private
+
     this.labelAngle = labelAngle; // @public
-    this.positionProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) ); // @public
-    this.velocityProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) ); // @public
-    this.forceProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() ); // @public
-    this.massProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, mass ); // @public
-    this.collidedProperty = new RewindableProperty( playButtonPressedProperty, steppingProperty, rewindingProperty, false ); // @public
+    this.positionProperty = new RewindableProperty(
+      playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) ); // @public
+    this.velocityProperty = new RewindableProperty(
+      playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) ); // @public
+    this.forceProperty = new RewindableProperty(
+      playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() ); // @public
+    this.massProperty = new RewindableProperty(
+      playButtonPressedProperty, steppingProperty, rewindingProperty, mass ); // @public
+    this.collidedProperty = new RewindableProperty(
+      playButtonPressedProperty, steppingProperty, rewindingProperty, false ); // @public
     this.density = mass / this.getVolume(); // @public
 
-    this.userControlled = false; // @public - true if the user is currently controlling the position of the body with the mouse
+    // true if the user is currently controlling the position of the body with the mouse
+    this.userControlled = false; // @public
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
-    // list of listeners that are notified when the user drags the object, so that we know when certain properties need to be updated
+    // list of listeners that are notified when the user drags the object, so that we know when certain properties
+    // need to be updated
     this.userModifiedPositionListeners = [];
     this.userModifiedVelocityListeners = [];
 
@@ -252,7 +273,8 @@ define( function( require ) {
      * @returns {DerivedProperty}
      */
     anyPropertyDifferent: function() {
-      var properties = [ this.positionProperty.different(), this.velocityProperty.different(), this.massProperty.different(), this.collidedProperty.different() ];
+      var properties = [ this.positionProperty.different(), this.velocityProperty.different(),
+        this.massProperty.different(), this.collidedProperty.different() ];
       return new DerivedProperty( properties, function() {
         return _.any( arguments, _.identity );
       } );
@@ -273,10 +295,8 @@ define( function( require ) {
 
     /**
      * Unexplodes and returns objects to the stage
-     *
-     * @param {GravityAndOrbitsModel} model (why is the model passed here? was ported from the Java, should probably be removed)
      */
-    doReturnBody: function( model ) {
+    doReturnBody: function() {
       this.positionProperty.reset();
       this.velocityProperty.reset();
     },

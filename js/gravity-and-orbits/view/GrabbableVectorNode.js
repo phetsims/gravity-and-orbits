@@ -32,7 +32,8 @@ define( function( require ) {
    * @param {string} labelText
    * @constructor
    */
-  function GrabbableVectorNode( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, labelText ) {
+  function GrabbableVectorNode( body, transformProperty, visibleProperty, vectorProperty, scale, fill,
+                                outline, labelText ) {
 
     VectorNode.call( this, body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline );
     var thisNode = this;

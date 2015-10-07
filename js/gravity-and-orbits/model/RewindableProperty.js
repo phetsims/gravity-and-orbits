@@ -29,7 +29,7 @@ define( function( require ) {
     this.isSteppingProperty = isSteppingProperty;
 
     // if the clock is paused and the user pressed 'rewind', do not store a rewind point
-    this.isRewindingProperty= isRewindingProperty;
+    this.isRewindingProperty = isRewindingProperty;
 
     // the "initial condition" tha the property can be rewound to
     this.rewindValue = value;
@@ -45,18 +45,20 @@ define( function( require ) {
     set: function( value ) {
       Property.prototype.set.call( this, value );
 
-      // If the user changed the initial conditions (as opposed to the state changing through model stepping), then store the new initial conditions, which can be rewound to
+      // If the user changed the initial conditions (as opposed to the state changing through model stepping),
+      // then store the new initial conditions, which can be rewound to
       if ( !this.playButtonPressedProperty.get() && !this.isSteppingProperty.get() && !this.isRewindingProperty.get() ) {
         this.storeRewindValueNoNotify();
 
         for ( var i = 0; i < this.rewindValueChangedListeners.length; i++ ) {
-          this.rewindValueChangedListeners[i]();
+          this.rewindValueChangedListeners[ i ]();
         }
       }
       this.differentProperty.set( !this.equalsRewindPoint() );
     },
 
-    // Store the new value as the initial condition which can be rewound to.  We have to skip notifications sometimes or the wrong initial conditions get stored.
+    // Store the new value as the initial condition which can be rewound to. We have to skip notifications sometimes
+    // or the wrong initial conditions get stored.
     storeRewindValueNoNotify: function() {
       this.rewindValue = this.get();
     },

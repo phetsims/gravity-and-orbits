@@ -3,8 +3,8 @@
 /**
  * The clock for this simulation.
  * The simulation time change (dt) on each clock tick is constant,
- * regardless of when (in wall time) the ticks actually happen.  This class works together with RewindableProperty, which has to know whether the simulation is stepping
- * to know whether to store a "save point" which can be restored.
+ * regardless of when (in wall time) the ticks actually happen. This class works together with RewindableProperty,
+ * which has to know whether the simulation is stepping to know whether to store a "save point" which can be restored.
  */
 define( function( require ) {
   'use strict';
@@ -15,8 +15,11 @@ define( function( require ) {
   var EventTimer = require( 'PHET_CORE/EventTimer' );
 
   // constants
-  var CLOCK_FRAME_RATE = 60; // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
-  var DAYS_PER_TICK = 1 / ( 60 / 25 ); // was 1 in the Java version, but changed to account for modification of CLOCK_FRAME_RATE
+  // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
+  var CLOCK_FRAME_RATE = 60;
+
+  // was 1 in the Java version, but changed to account for modification of CLOCK_FRAME_RATE
+  var DAYS_PER_TICK = 1 / ( 60 / 25 );
   var SECONDS_PER_DAY = 86400;
   var DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
@@ -43,7 +46,8 @@ define( function( require ) {
   return inherit( Object, GravityAndOrbitsClock, {
     stepClockWhilePaused: function() {
 
-      // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for application specific logic
+      // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
+      // application specific logic
       this.steppingProperty.set( true );
       this.step( 1 / CLOCK_FRAME_RATE );
       this.steppingProperty.set( false );

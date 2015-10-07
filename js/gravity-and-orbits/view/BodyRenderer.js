@@ -1,11 +1,12 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * This is the Node that renders the content of a physical body, such as a planet or space station.  This component is separate from
- * BodyNode since it is used to create icons.  It is also used to be able to switch between rendering types (i.e. image vs cartoon sphere) without
- * changing any other characteristics of the Node.
+ * This is the Node that renders the content of a physical body, such as a planet or space station.  This component
+ * is separate from BodyNode since it is used to create icons.  It is also used to be able to switch between rendering
+ * types (i.e. image vs cartoon sphere) without changing any other characteristics of the Node.
  *
- * The classes SwitchableBodyRenderer, SphereRenderer, ImageRenderer, and SunRenderer were static classes in the Java code
+ * The classes SwitchableBodyRenderer, SphereRenderer, ImageRenderer, and SunRenderer were static classes in the Java
+ * version.
  *
  * @author Sam Reid
  * @author Aaron Davis
@@ -35,7 +36,7 @@ define( function( require ) {
     this.body = body;
   }
 
-  // this needs to be called before the static classes are defined, otherwise the inheritance does work right
+  // this needs to be called before the static classes are defined, otherwise the inheritance doesn't work right
   // this jshint warning notifies if a variable is used before it is defined
   /* jshint -W003 */
   var renderer = inherit( Node, BodyRenderer, {
@@ -53,9 +54,9 @@ define( function( require ) {
   /* jshint -W003 */
 
   /**
-   * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different renderer
-   * otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to earth mass
-   * or otherwise drawn as a sphere with a gradient paint.
+   * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different
+   * renderer otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to
+   * earth mass or otherwise drawn as a sphere with a gradient paint.
    *
    * @param body
    * @param targetMass

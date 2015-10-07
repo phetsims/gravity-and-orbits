@@ -1,7 +1,8 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Class that facilitates configuration of body instances for a GravityAndOrbitsMode; a data structure that describes a body's parameters.
+ * Class that facilitates configuration of body instances for a GravityAndOrbitsMode; a data structure that describes
+ * a body's parameters.
  *
  * @author Sam Reid
  * @author Aaron Davis

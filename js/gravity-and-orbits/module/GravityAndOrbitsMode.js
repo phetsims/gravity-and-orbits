@@ -1,14 +1,15 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * A GravityAndOrbitsMode behaves like a module, it has its own model, control panel, canvas, and remembers its state when you leave and come back.  It is created with defaults from ModeList.Mode.
+ * A GravityAndOrbitsMode behaves like a module, it has its own model, control panel, canvas, and remembers its state
+ * when you leave and come back. It is created with defaults from ModeList.Mode.
  * <p/>
  * The sim was designed this way so that objects are replaced instead of mutated.
- * For instance, when switching from Mode 1 to Mode 2, instead of removing Mode 1 bodies from the model, storing their state, and replacing with the Mode 2 bodies,
- * this paradigm just replaces the entire model instance.
+ * For instance, when switching from Mode 1 to Mode 2, instead of removing Mode 1 bodies from the model,
+ * storing their state, and replacing with the Mode 2 bodies, this paradigm just replaces the entire model instance.
  * <p/>
- * The advantage of this approach is that model states, canvas states and control panels are always correct, and it is impossible to end up with a bug in which you have
- * a mixture of components from multiple modes.
+ * The advantage of this approach is that model states, canvas states and control panels are always correct,
+ * and it is impossible to end up with a bug in which you have a mixture of components from multiple modes.
  *
  * @author Sam Reid
  * @author Aaron Davis
@@ -51,14 +52,16 @@ define( function( require ) {
    * @param {ModeListParameterList} p
    * @constructor
    */
-  function GravityAndOrbitsMode( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod, velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation, defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
+  function GravityAndOrbitsMode( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod,
+                                 velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
+                                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
 
     // @public
     PropertySet.call( this, {
       active: active, // @public {boolean}
 
-      // @private
-      deviatedFromDefaults: false, // Flag to indicate whether any value has deviated from the original value (which was originally used for showing a reset button, but not anymore)
+      // Flag to indicate whether any value has deviated from the original value
+      deviatedFromDefaults: false, // @private
       measuringTapeStartPoint: initialMeasuringTapeLocation.p1,
       measuringTapeEndPoint: initialMeasuringTapeLocation.p2,
       zoomLevel: 1 // additional scale factor on top of defaultZoomScale
@@ -69,7 +72,7 @@ define( function( require ) {
     this.canvas = null; // @public
 
     this.dt = dt; // @private
-    this.p = p;
+    this.p = p; // @private
     this.forceScale = forceScale; // @private
     this.iconImage = iconImage; // @private
 
@@ -85,7 +88,7 @@ define( function( require ) {
     this.timeSpeedScaleProperty = p.timeSpeedScale; // @public
     this.timeFormatter = timeFormatter; // @public
 
-    // Function that creates a PNode to readout the mass for the specified body node (with the specified visibility flag)
+    // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
     this.modelBoundsProperty = new Property(); // not in the Java version, needed for movableDragHandler bounds
@@ -96,7 +99,8 @@ define( function( require ) {
     } );
 
     // @private
-    this.model = new GravityAndOrbitsModel( new GravityAndOrbitsClock( dt, p.stepping, this.timeSpeedScaleProperty ), p.gravityEnabled );
+    this.model = new GravityAndOrbitsModel(
+      new GravityAndOrbitsClock( dt, p.stepping, this.timeSpeedScaleProperty ), p.gravityEnabled );
 
     // When the user pauses the clock, assume they will change some other parameters as well, and set a new rewind point
     this.rewindClockTime = 0; // @private
@@ -128,7 +132,8 @@ define( function( require ) {
       var maxY = targetRectangle.y + targetRectangle.height;
       var modelBounds = new Bounds2( minX, minY, maxX, maxY );
       this.modelBoundsProperty.set( modelBounds );
-      return ModelViewTransform2.createRectangleInvertedYMapping( modelBounds, new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
+      return ModelViewTransform2.createRectangleInvertedYMapping(
+        modelBounds, new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
     },
 
     /**
@@ -141,11 +146,16 @@ define( function( require ) {
       var z = targetScale * 1.5E-9;
       var modelWidth = PLAY_AREA_WIDTH / z;
       var modelHeight = PLAY_AREA_HEIGHT / z;
-      return new Rectangle( -modelWidth / 2 + targetCenterModelPoint.x, -modelHeight / 2 + targetCenterModelPoint.y, modelWidth, modelHeight );
+      return new Rectangle(
+        -modelWidth / 2 + targetCenterModelPoint.x,
+        -modelHeight / 2 + targetCenterModelPoint.y,
+        modelWidth,
+        modelHeight );
     },
 
     /**
-     * Gets the number of points that should be used to draw a trace, should be enough so that two periods for the default orbit are visible.
+     * Gets the number of points that should be used to draw a trace, should be enough so that two periods for the
+     * default orbit are visible.
      */
     getMaxPathLength: function() {
 

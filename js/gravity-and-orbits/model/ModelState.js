@@ -1,7 +1,8 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * ModelState represents an immutable representation of the entire physical state and code for performing the numerical integration which produces the next ModelState.
+ * ModelState represents an immutable representation of the entire physical state and code for performing the
+ * numerical integration which produces the next ModelState.
  * It is used by the GravityAndOrbitsModel to update the physics.
  *
  * @author Sam Reid (PhET Interactive Simulations)
@@ -131,8 +132,9 @@ define( function( require ) {
     getTwoBodyForce: function( source, target ) {
       if ( source.position.equals( target.position ) ) {
 
-        // TODO: limit distance so forces don't become too large, perhaps we could compare it to the radius of the bodies
-        // If they are on top of each other, force should be infinite, but ignore it since we want to have semi-realistic behavior
+        // TODO: limit distance so forces don't become too large, perhaps we could compare it to the radius of
+        // the bodies. If they are on top of each other, force should be infinite, but ignore it since we want to have
+        // semi-realistic behavior.
         return Vector2.ZERO;
       }
       else if ( source.exploded || target.exploded ) {
@@ -142,7 +144,8 @@ define( function( require ) {
       }
       else {
         var relativePosition = target.position.minus( source.position );
-        var multiplicativeFactor = GRAVITATION_CONSTANT * source.mass * target.mass / Math.pow( source.position.distanceSquared( target.position ), 1.5 );
+        var multiplicativeFactor = GRAVITATION_CONSTANT * source.mass * target.mass /
+                                   Math.pow( source.position.distanceSquared( target.position ), 1.5 );
         return relativePosition.multiplyScalar( multiplicativeFactor );
       }
     },

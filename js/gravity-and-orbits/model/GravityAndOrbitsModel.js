@@ -1,7 +1,8 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * This is the model for Gravity and Orbits; there is one GravityAndOrbitsModel per each GravityAndOrbitsMode, and it uses ModelState to update the physics.
+ * This is the model for Gravity and Orbits; there is one GravityAndOrbitsModel per each GravityAndOrbitsMode, and it
+ * uses ModelState to update the physics.
  *
  * Ported from the Java version
  *
@@ -131,7 +132,8 @@ define( function( require ) {
     },
 
     /*
-     * Since we haven't (yet?) rewritten the gravity forces to auto-update when dependencies change, we update when necessary
+     * Since we haven't (yet?) rewritten the gravity forces to auto-update when dependencies change, we update when
+     * necessary
      * (1) when a new body is added or (2) when reset is pressed.
      * This update is done by running the physics engine for dt=0.0 then applying the computed forces to the bodies.
      * <p/>

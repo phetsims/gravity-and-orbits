@@ -1,8 +1,8 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable, which changes
- * the location of the Body.
+ * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable,
+ * which changes the location of the Body.
  *
  * @author Sam Reid
  * @author Aaron Davis
@@ -25,7 +25,8 @@ define( function( require ) {
    * Constructor for BodyNode
    * @param {Body} body
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
-   * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they don't overlap too much
+   * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
+   *                              don't overlap too much
    * @constructor
    */
   function BodyNode( body, modelViewTransformProperty, labelAngle ) {
@@ -56,26 +57,29 @@ define( function( require ) {
     } );
     this.addInputListener( dragHandler );
 
-    Property.multilink( [ this.body.positionProperty, modelViewTransformProperty ], function( position, modelViewTransform ) {
-      thisNode.translation = modelViewTransform.modelToViewPosition( position );
-    } );
+    Property.multilink( [ this.body.positionProperty, modelViewTransformProperty ],
+      function( position, modelViewTransform ) {
+        thisNode.translation = modelViewTransform.modelToViewPosition( position );
+      } );
 
-    Property.multilink( [ this.body.diameterProperty, modelViewTransformProperty ], function( diameter, modelViewTransform ) {
-      thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
-    } );
+    Property.multilink( [ this.body.diameterProperty, modelViewTransformProperty ],
+      function( diameter, modelViewTransform ) {
+        thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+      } );
 
     this.modelViewTransformProperty.link( function( modelViewTransform ) {
       dragHandler.setModelViewTransform( modelViewTransform );
     } );
 
-    // Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
+    // Points to the sphere with a text indicator and line when it is too small to see (in modes with realistic units)
     this.addChild( this.createArrowIndicator( this.body, labelAngle ) );
   }
 
   return inherit( Node, BodyNode, {
 
     /**
-     * Points to the sphere with a text indicator and line, for when it is too small to see (in modes with realistic units)
+     * Return a Node that points to the sphere with a text indicator and line when it is too small to see (in modes
+     * with realistic units)
      * @param body
      * @param labelAngle
      * @private

@@ -1,9 +1,10 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Cartoon mode list makes the radii of all objects much larger than the true physical values to make them visible on the same scale.
- * Configuration file for setting up the cartoon mode parameters.  This is typically done by multiplying the real values by the desired scales.
- * SunEarth and SunEarthMoon should be as similar as possible (aside from the addition of the moon)
+ * Cartoon mode list makes the radii of all objects much larger than the true physical values to make them visible on
+ * the same scale. Configuration file for setting up the cartoon mode parameters. This is typically done by
+ * multiplying the real values by the desired scales. SunEarth and SunEarthMoon should be as similar as possible
+ * (aside from the addition of the moon).
  *
  * @author Sam Reid
  * @author Aaron Davis
@@ -27,10 +28,12 @@ define( function( require ) {
     var earthMassScaleFactor = 10200;
     this.earth.mass *= earthMassScaleFactor;
 
-    // to balance increased mass and so that forces are 1/2 grid cell in default conditions, hand tuned by checking that reducing the distance by a factor of 2 increases the force arrow by a factor of 4
+    // to balance increased mass and so that forces are 1/2 grid cell in default conditions, hand tuned by checking
+    // that reducing the distance by a factor of 2 increases the force arrow by a factor of 4
     this.forceScale *= 0.573 / earthMassScaleFactor;
 
-    // Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct periods since masses are nonphysical
+    // Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct
+    // periods since masses are nonphysical
     this.timeScale = 365.0 / 334.0;
 
     // Sun shouldn't move in cartoon modes
@@ -56,7 +59,8 @@ define( function( require ) {
     // to balance increased mass and so that forces are 1/2 grid cell in default conditions
     this.forceScale *= 0.573 / earthMassScaleFactor;
 
-    // Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct periods since masses are nonphysical
+    // Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct
+    // periods since masses are nonphysical
     this.timeScale = 365.0 / 334.0;
 
     // Sun shouldn't move in cartoon modes
@@ -98,8 +102,12 @@ define( function( require ) {
    * @constructor
    */
   function CartoonModeList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
-    ModeList.ModeList.call( this, new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
-      new SunEarthModeConfig(), new SunEarthMoonModeConfig(), new EarthMoonModeConfig(), new EarthSpaceStationModeConfig() );
+    ModeList.ModeList.call( this,
+      new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
+      new SunEarthModeConfig(),
+      new SunEarthMoonModeConfig(),
+      new EarthMoonModeConfig(),
+      new EarthSpaceStationModeConfig() );
   }
 
   return inherit( ModeList.ModeList, CartoonModeList );

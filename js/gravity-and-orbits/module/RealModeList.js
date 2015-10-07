@@ -24,8 +24,12 @@ define( function( require ) {
    * @constructor
    */
   function RealModeList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
-    ModeList.ModeList.call( this, new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
-      new ModeList.SunEarthModeConfig(), new ModeList.SunEarthMoonModeConfig(), new ModeList.EarthMoonModeConfig(), new ModeList.EarthSpaceStationModeConfig() );
+    ModeList.ModeList.call( this,
+      new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
+      new ModeList.SunEarthModeConfig(),
+      new ModeList.SunEarthMoonModeConfig(),
+      new ModeList.EarthMoonModeConfig(),
+      new ModeList.EarthSpaceStationModeConfig() );
   }
 
   return inherit( ModeList.ModeList, RealModeList );
