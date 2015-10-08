@@ -83,6 +83,10 @@ define( function( require ) {
 
   return inherit( PropertySet, GravityAndOrbitsModule, {
       step: function( dt ) {
+
+        // limit dt to 1 so there are no large jumps
+        dt = Math.min( 1, dt );
+
         if ( this.playButtonPressedProperty.value ) {
           this.modeProperty.get().getClock().step( dt );
         }
