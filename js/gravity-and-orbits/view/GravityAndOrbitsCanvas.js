@@ -57,7 +57,7 @@ define( function( require ) {
   function GravityAndOrbitsCanvas( model, module, mode, forceScale ) {
 
     //Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { fill: 'rgba(220,220,220,0.3)', scale: SCALE } );
-    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE } );
+    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: true } );
     var thisNode = this;
 
     var bodies = model.getBodies();
