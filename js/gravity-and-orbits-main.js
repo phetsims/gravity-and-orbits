@@ -57,9 +57,10 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
-      //TODO fill in proper credits, all of these fields are optional, see joist.AboutDialog
-      leadDesign: '',
-      softwareDevelopment: '',
+      // TODO fill in proper credits, all of these fields are optional, see joist.AboutDialog
+      // Design Team: Kathy Perkins, Trish Loeblein Interviews: Noah Podolefsky, Emily Moore
+      leadDesign: 'Noah Podolefsky, Emily Moore',
+      softwareDevelopment: 'Aaron Davis, Sam Reid, Jon Olson',
       team: '',
       qualityAssurance: '',
       graphicArts: '',
