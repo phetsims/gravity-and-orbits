@@ -29,17 +29,19 @@ define( function( require ) {
   function GridNode( transformProperty, spacing, center ) {
 
     Node.call( this );
-    var thisNode = this;
+    var path = new Path( null, { lineWidth: 1, stroke: 'gray' } );
+    this.addChild( path );
+
     transformProperty.link( function() {
-      thisNode.removeAllChildren();
       var i;
+      var shape = new Shape();
 
       // horizontal lines
       for ( i = -NUM_GRID_LINES; i <= NUM_GRID_LINES; i++ ) {
         var y = i * spacing + center.y;
         var x1 = NUM_GRID_LINES * spacing + center.x;
         var x2 = -NUM_GRID_LINES * spacing + center.x;
-        thisNode.addGridLine( Shape.lineSegment( x1, y, x2, y ), transformProperty );
+        shape.moveTo( x1, y ).lineTo( x2, y );
       }
 
       // vertical lines
@@ -47,17 +49,13 @@ define( function( require ) {
         var x = i * spacing + center.x;
         var y1 = NUM_GRID_LINES * spacing + center.y;
         var y2 = -NUM_GRID_LINES * spacing + center.y;
-        thisNode.addGridLine( Shape.lineSegment( x, y1, x, y2 ), transformProperty );
+        shape.moveTo( x, y1 ).lineTo( x, y2 );
       }
+
+      path.shape = transformProperty.get().modelToViewShape( shape );
     } );
+
   }
 
-  return inherit( Node, GridNode, {
-
-    // @private
-    addGridLine: function( line, transformProperty ) {
-      var path = new Path( transformProperty.get().modelToViewShape( line ), { lineWidth: 1, stroke: 'gray' } );
-      this.addChild( path );
-    }
-  } );
+  return inherit( Node, GridNode );
 } );
