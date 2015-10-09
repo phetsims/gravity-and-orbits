@@ -12,7 +12,6 @@
 define( function( require ) {
   'use strict';
 
-  var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
 
@@ -22,8 +21,10 @@ define( function( require ) {
   var LAMBDA = -0.2123418310626054;
   var CHI = -0.06626458266981849;
 
-  // reduce Vector2 allocation by reusing this Vector2 in getTwoBodyForce computation
-  var relativePosition = new Vector2();
+  // reduce Vector2 allocation by reusing these Vector2 in computations
+  var relativePosition = new Vector2(); // used in getTwoBodyForce()
+  var velocity = new Vector2(); // used in updatePositions()
+  var netForce = new Vector2(); // used in getNetForce()
 
   /**
    * @param {Array.<BodyState>} bodyStates
@@ -64,7 +65,8 @@ define( function( require ) {
     updatePositions: function( dt ) {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
         var bodyState = this.bodyStates[ i ];
-        bodyState.position.add( bodyState.velocity.timesScalar( dt ) );
+        velocity.setXY( bodyState.velocity.x * dt, bodyState.velocity.y * dt );
+        bodyState.position.add( velocity );
       }
     },
 
@@ -88,7 +90,8 @@ define( function( require ) {
     updateAccelerations: function() {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
         var bodyState = this.bodyStates[ i ];
-        bodyState.acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
+        var acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
+        bodyState.acceleration.setXY( acceleration.x, acceleration.y );
       }
     },
 
@@ -111,7 +114,7 @@ define( function( require ) {
     getNetForce: function( bodyState ) {
 
       // use netForce to keep track of the net force, initialize to zero.
-      var netForce = new Vector2();
+      netForce.setXY( 0, 0 );
 
       for ( var j = 0; j < this.bodyStates.length; j++ ) {
 
