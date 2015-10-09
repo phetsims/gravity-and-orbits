@@ -20,6 +20,9 @@ define( function( require ) {
   var BodyState = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/BodyState' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
+  // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
+  var tempVector = new Vector2();
+
   /**
    * Constructor for Body
    * @param {string} name
@@ -225,7 +228,14 @@ define( function( require ) {
      * @return {boolean}
      */
     collidesWidth: function( body ) {
-      var distance = this.positionProperty.get().minus( body.positionProperty.get() ).magnitude();
+      var position1 = this.positionProperty.get();
+      var position2 = body.positionProperty.get();
+
+      // reuse tempVector to reduce Vector2 allocations
+      tempVector.x = position1.x - position2.x;
+      tempVector.y = position1.y - position2.y;
+
+      var distance = tempVector.magnitude();
       var radiiSum = this.diameterProperty.get() / 2 + body.diameterProperty.get() / 2;
       return distance < radiiSum;
     },

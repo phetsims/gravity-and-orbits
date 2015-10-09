@@ -22,6 +22,9 @@ define( function( require ) {
   var LAMBDA = -0.2123418310626054;
   var CHI = -0.06626458266981849;
 
+  // reduce Vector2 allocation by reusing this Vector2 in getTwoBodyForce computation
+  var relativePosition = new Vector2();
+
   /**
    * @param {Array.<BodyState>} bodyStates
    * @constructor
@@ -143,7 +146,11 @@ define( function( require ) {
         return Vector2.ZERO;
       }
       else {
-        var relativePosition = target.position.minus( source.position );
+
+        // reuse relativePosition as an intermediary value to reduce Vector2 allocations
+        relativePosition.x = target.position.x - source.position.x;
+        relativePosition.y = target.position.y - source.position.y;
+
         var multiplicativeFactor = GRAVITATION_CONSTANT * source.mass * target.mass /
                                    Math.pow( source.position.distanceSquared( target.position ), 1.5 );
         return relativePosition.multiplyScalar( multiplicativeFactor );
