@@ -175,7 +175,8 @@ define( function( require ) {
 
       // copy our workingCopy to generate a new ModelState
       var newState = [];// {Array.<BodyState>}
-      this.bodyStates.forEach( function( bodyState ) {
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
         newState.push( new BodyState(
           new Vector2( bodyState.position.x, bodyState.position.y ),
           bodyState.velocity,
@@ -183,7 +184,7 @@ define( function( require ) {
           bodyState.mass,
           bodyState.exploded
         ) );
-      } );
+      }
 
       return new ModelState( newState );
     },
@@ -256,7 +257,8 @@ define( function( require ) {
 
       // copy our workingCopy to generate a new ModelState
       var newState = [];// {Array.<BodyState>}
-      this.bodyStates.forEach( function( bodyState ) {
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
         newState.push( new BodyState(
           new Vector2( bodyState.position.x, bodyState.position.y ),
           new Vector2( bodyState.velocity.x, bodyState.velocity.y ),
@@ -264,7 +266,7 @@ define( function( require ) {
           bodyState.mass,
           bodyState.exploded
         ) );
-      } );
+      }
 
       return new ModelState( newState );
     },
