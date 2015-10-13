@@ -29,8 +29,7 @@ define( function( require ) {
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GravityAndOrbitsCanvas' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsConstants' );
 
-  // the play area only takes up the left side of the canvas; the control panel is on the right side
-//  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width * 0.60;
+  // constants
   var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width;
   var PLAY_AREA_HEIGHT = GravityAndOrbitsCanvas.STAGE_SIZE.height;
 
@@ -212,7 +211,6 @@ define( function( require ) {
     resetMode: function() {
       this.model.resetBodies();
       this.deviatedFromDefaultsProperty.set( false );
-      //Same as pressing "clear" in the FloatingClockControlNode
       this.getClock().setSimulationTime( 0.0 );
     },
 
