@@ -14,6 +14,7 @@ define( function( require ) {
   var ScreenView = require( 'JOIST/ScreenView' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var RightControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/RightControlPanel' );
+  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/SpeedRadioButtons' );
 
   /**
    * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module
@@ -44,6 +45,10 @@ define( function( require ) {
       width: 200
     } );
     this.addChild( controlPanelNode );
+
+    // Add the speed control slider.
+    this.addChild( new SpeedRadioButtons( module.timeSpeedScaleProperty,
+      { bottom: this.layoutBounds.bottom - 5, left: this.layoutBounds.left + 5, scale: 1.2 } ) );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {

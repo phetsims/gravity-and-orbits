@@ -25,7 +25,6 @@ define( function( require ) {
   var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GrabbableVectorNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ExplosionNode' );
-  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/SpeedRadioButtons' );
   var DayCounter = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/DayCounter' );
   var ScaleSlider = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
@@ -111,9 +110,6 @@ define( function( require ) {
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
-    // Add the speed control slider.
-    this.addChild( new SpeedRadioButtons( mode.timeSpeedScaleProperty,
-      { bottom: STAGE_SIZE.bottom - 5, left: STAGE_SIZE.left + 5, scale: 1.2 } ) );
     this.addChild( new DayCounter( mode.timeFormatter, model.clock,
       { bottom: STAGE_SIZE.bottom - 20, right: STAGE_SIZE.right - 30, scale: 1.2 } ) );
 

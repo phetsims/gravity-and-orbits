@@ -36,10 +36,10 @@ define( function( require ) {
 
     options = _.extend( {
       spacing: 1,
-      radius: 10
+      radius: 8
     }, options );
 
-    var textOption = { font: new PhetFont( 22 ), pickable: false, y: -7 };
+    var textOption = { font: new PhetFont( 18 ) };
     var fastText = new Text( fastForwardString, textOption );
     var normalText = new Text( normalString, textOption );
     var slowText = new Text( slowMotionString, textOption );
