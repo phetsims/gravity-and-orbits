@@ -62,7 +62,7 @@ define( function( require ) {
       leadDesign: 'Noah Podolefsky, Emily Moore',
       softwareDevelopment: 'Aaron Davis, Sam Reid, Jon Olson',
       team: '',
-      qualityAssurance: '',
+      qualityAssurance: 'Steele Dalton, Elise Morgan, Oliver Orejola, Bryan Yoelin',
       graphicArts: '',
       thanks: ''
     },
