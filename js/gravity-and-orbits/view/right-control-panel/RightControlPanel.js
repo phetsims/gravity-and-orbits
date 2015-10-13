@@ -39,7 +39,8 @@ define( function( require ) {
       cornerRadius: 2,
       resize: false,
       xMargin: PANEL_X_MARGIN,
-      scale: 1.05
+      scale: 1.05,
+      fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
     }, options );
 
     var makeSeparatorRectangle = function() {
@@ -65,11 +66,6 @@ define( function( require ) {
     for ( var i = 0; i < 3; i++ ) {
       sections[ i * 2 + 1 ].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
     }
-
-    var thisPanel = this;
-    GravityAndOrbitsColorProfile.panelBackgroundProperty.link( function( color ) {
-      thisPanel.fill = color;
-    } );
   }
 
   return inherit( Panel, RightControlPanel );

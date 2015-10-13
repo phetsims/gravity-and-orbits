@@ -97,13 +97,10 @@ define( function( require ) {
       var text = new Text( body.name, {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
-        y: tail.y - this.height - 10
+        y: tail.y - this.height - 10,
+        fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
       } );
       node.addChild( text );
-
-      GravityAndOrbitsColorProfile.bodyNodeTextProperty.link( function( color ) {
-        text.fill = color;
-      } );
 
       this.body.diameterProperty.link( function() {
         node.visible = thisNode.getViewDiameter() <= 10;

@@ -44,7 +44,8 @@ define( function( require ) {
 
     var label = new Text( body.name, {
       font: CONTROL_FONT,
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      fill: GravityAndOrbitsColorProfile.panelTextProperty
     } );
 
     var image = body.createRenderer( 14 );
@@ -52,11 +53,16 @@ define( function( require ) {
     // Top component that shows the body's name and icon
     var content = new HBox( { centerX: SPACING, children: [ label, image ], spacing: 10 } );
 
-    var smallLabel = new Text( valueLabel, { top: content.bottom, centerX: SPACING, font: new PhetFont( 11 ) } );
+    var smallLabel = new Text( valueLabel, {
+      top: content.bottom,
+      centerX: SPACING,
+      font: new PhetFont( 11 ),
+      fill: GravityAndOrbitsColorProfile.panelTextProperty
+    } );
 
     var ticks = [];
     for ( var i = 0; i < NUM_TICKS; i++ ) {
-      ticks.push( new Line( 0, 0, 0, 10, { lineWidth: 1 } ) );
+      ticks.push( new Line( 0, 0, 0, 10, { lineWidth: 1, stroke: GravityAndOrbitsColorProfile.panelTextProperty } ) );
     }
     var tickBox = new HBox( { children: ticks, spacing: SPACING } );
 
@@ -90,15 +96,6 @@ define( function( require ) {
       if ( Math.abs( mass - labelValue ) / labelValue < SNAP_TOLERANCE ) {
         body.massProperty.set( labelValue );
       }
-    } );
-
-    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
-      label.fill = color;
-      smallLabel.fill = color;
-
-      ticks.forEach( function( tick ) {
-        tick.stroke = color;
-      } );
     } );
   }
 

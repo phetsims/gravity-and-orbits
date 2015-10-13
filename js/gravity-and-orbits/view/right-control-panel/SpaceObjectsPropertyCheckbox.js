@@ -41,8 +41,13 @@ define( function( require ) {
   var FONT = new PhetFont( 18 );
   var GRID_LINE_OPTIONS = { stroke: 'gray', lineWidth: 1.5 };
   var ARROW_Y_COORDINATE = -10;
-  var CHECKBOX_OPTIONS = { scale: 0.8 };
-  var TEXT_OPTIONS = { font: FONT };
+  var CHECKBOX_OPTIONS = {
+    scale: 0.8,
+    checkBoxColor: GravityAndOrbitsColorProfile.panelTextProperty,
+    checkBoxColorBackground: GravityAndOrbitsColorProfile.panelBackgroundProperty
+  };
+  var TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty };
+  var SPACING = 10;
 
   /**
    * @param {GravityAndOrbitsModule} module
@@ -62,7 +67,7 @@ define( function( require ) {
 
     // gravity force checkbox
     children.push( new CheckBox( new HBox( {
-        spacing: 10,
+        spacing: SPACING,
         children: [
           gravityForceTextNode,
           new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
@@ -72,7 +77,7 @@ define( function( require ) {
 
     // velocity checkbox
     children.push( new CheckBox( new HBox( {
-        spacing: 10,
+        spacing: SPACING,
         children: [
           velocityTextNode,
           new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: '#ED1C24' } )
@@ -83,7 +88,7 @@ define( function( require ) {
     // mass checkbox
     if ( module.showMassCheckBox ) {
       children.push( new CheckBox( new HBox( {
-          spacing: 10,
+          spacing: SPACING,
           children: [
             massTextNode,
             new Image( iconMassImg, { scale: 0.8 } )
@@ -94,7 +99,7 @@ define( function( require ) {
 
     // path checkbox
     children.push( new CheckBox( new HBox( {
-        spacing: 10,
+        spacing: SPACING,
         children: [
           pathTextNode,
           new Image( iconPathImg, { scale: 0.9 } )
@@ -104,7 +109,7 @@ define( function( require ) {
 
     // grid checkbox
     children.push( new CheckBox( new HBox( {
-        spacing: 10,
+        spacing: SPACING,
         children: [
           gridTextNode,
           new Node( {
@@ -125,7 +130,7 @@ define( function( require ) {
     if ( module.showMeasuringTape ) {
       var measuringTapeIcon = MeasuringTape.createMeasuringTapeIcon( { scale: 0.4 } );
       children.push( new CheckBox( new HBox( {
-        spacing: 10,
+        spacing: SPACING,
         children: [
           measuringTapeTextNode,
           measuringTapeIcon
@@ -136,30 +141,10 @@ define( function( require ) {
     VBox.call( this, _.extend( {
       children: children,
       resize: false,
-      spacing: 10,
+      spacing: SPACING,
       align: 'left',
       bottom: -12
     }, options ) );
-
-    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
-      gravityForceTextNode.fill = color;
-      velocityTextNode.fill = color;
-      massTextNode.fill = color;
-      pathTextNode.fill = color;
-      gridTextNode.fill = color;
-      measuringTapeTextNode.fill = color;
-
-      children.forEach( function( checkbox ) {
-        checkbox.checkBoxColor = color;
-      } );
-    } );
-
-    GravityAndOrbitsColorProfile.panelBackgroundProperty.link( function( color ) {
-      children.forEach( function( checkbox ) {
-        checkbox.checkBoxColorBackground = color;
-      } );
-    } );
-
   }
 
   return inherit( VBox, SpaceObjectsPropertyCheckbox );

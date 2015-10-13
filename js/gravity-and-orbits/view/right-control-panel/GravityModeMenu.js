@@ -25,7 +25,7 @@ define( function( require ) {
 
   // constants
   var FONT = new PhetFont( 14 );
-  var TEXT_OPTIONS = { font: FONT };
+  var TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty };
   var RADIO_OPTIONS = { radius: 7 };
 
   /**
@@ -47,12 +47,6 @@ define( function( require ) {
         new AquaRadioButton( module.gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
       ]
     } ) );
-
-    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
-      gravityTextNode.fill = color;
-      onTextNode.fill = color;
-      offTextNode.fill = color;
-    } );
   }
 
   return inherit( Node, GravityModeMenu );

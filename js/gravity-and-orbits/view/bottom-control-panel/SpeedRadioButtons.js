@@ -39,7 +39,7 @@ define( function( require ) {
       radius: 8
     }, options );
 
-    var textOption = { font: new PhetFont( 18 ) };
+    var textOption = { font: new PhetFont( 18 ), fill: GravityAndOrbitsColorProfile.bottomControlTextProperty };
     var fastText = new Text( fastForwardString, textOption );
     var normalText = new Text( normalString, textOption );
     var slowText = new Text( slowMotionString, textOption );
@@ -49,12 +49,6 @@ define( function( require ) {
       { property: speedProperty, value: STARTING_VALUE, node: normalText },
       { property: speedProperty, value: STARTING_VALUE * 0.25, node: slowText }
     ], options );
-
-    GravityAndOrbitsColorProfile.bottomControlTextProperty.link( function( color ) {
-      fastText.fill = color;
-      normalText.fill = color;
-      slowText.fill = color;
-    } );
   }
 
   return inherit( VerticalAquaRadioButtonGroup, SpeedRadioButtons );
