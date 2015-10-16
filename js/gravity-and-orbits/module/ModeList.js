@@ -363,11 +363,7 @@ define( function( require ) {
       this.body = body;
     }
 
-    inherit( Body, Sun, {
-      updateBodyStateFromModel: function( bodyState ) {
-        Body.prototype.updateBodyStateFromModel.call( this, bodyState );
-      }
-    } );
+    inherit( Body, Sun );
 
     // @private
     this.p = p;
