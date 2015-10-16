@@ -167,7 +167,7 @@ define( function( require ) {
         this.clockTicksSinceExplosionProperty.value += 1;
       }
       else {
-        if ( !this.userControlled ) {
+        if ( !this.fixed && !this.userControlled ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
         }

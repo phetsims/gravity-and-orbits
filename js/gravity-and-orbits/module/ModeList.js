@@ -365,16 +365,7 @@ define( function( require ) {
 
     inherit( Body, Sun, {
       updateBodyStateFromModel: function( bodyState ) {
-
-        // store the original position in case it must be restored
-        var position = this.positionProperty.get();
         Body.prototype.updateBodyStateFromModel.call( this, bodyState );
-
-        // Sun shouldn't move in cartoon modes
-        if ( this.body.fixed ) {
-          this.positionProperty.set( position );
-          this.velocityProperty.set( new Vector2() );
-        }
       }
     } );
 
