@@ -172,7 +172,7 @@ define( function( require ) {
           this.velocityProperty.set( bodyState.velocity );
         }
         this.accelerationProperty.set( bodyState.acceleration );
-        this.forceProperty.set( bodyState.acceleration.times( bodyState.mass ) );
+        this.forceProperty.set( bodyState.acceleration.multiplyScalar( bodyState.mass ) );
       }
     },
 
