@@ -25,18 +25,18 @@ define( function( require ) {
   var STROKE = '#8E9097';
   var MENU_SECTION_OPTIONS = { x: 5 };
   var PANEL_X_MARGIN = 5;
-  var H_STRUT = new HStrut( 220 );
+  var H_STRUT_WIDTH = 220;
 
   function MassSliderBox() {
-    VBox.call( this );
+    VBox.call( this, { spacing: 5 } );
   }
 
   inherit( VBox, MassSliderBox, {
     setBodyMassControl: function( bodyMassControl ) {
       this.removeAllChildren();
-      this.addChild( H_STRUT );
+      this.addChild( new HStrut( H_STRUT_WIDTH ) );
       this.addChild( bodyMassControl );
-      this.updateLayout();
+      this.addChild( new HStrut( H_STRUT_WIDTH ) );
     }
   } );
 
