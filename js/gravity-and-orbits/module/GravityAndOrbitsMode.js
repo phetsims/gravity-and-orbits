@@ -225,6 +225,17 @@ define( function( require ) {
         bodies[ i ].rewind();
       }
       this.rewindingProperty.set( false );
+    },
+
+    getMassSettableBodies: function() {
+      var bodies = this.getBodies();
+      var massSettableBodies = [];
+      for ( var i = 0; i < bodies.length; i++ ) {
+        if ( bodies[ i ].massSettable ) {
+          massSettableBodies.push( bodies[ i ] );
+        }
+      }
+      return massSettableBodies;
     }
 
   } );

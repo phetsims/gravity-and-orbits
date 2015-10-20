@@ -15,16 +15,30 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/PlanetModeMenu' );
   var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/GravityModeMenu' );
-  var MassMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/MassMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/SpaceObjectsPropertyCheckbox' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
-
+  var HStrut = require( 'SCENERY/nodes/HStrut' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/BodyMassControl' );
 
   // constants
   var STROKE = '#8E9097';
   var MENU_SECTION_OPTIONS = { x: 5 };
   var PANEL_X_MARGIN = 5;
+  var H_STRUT = new HStrut( 220 );
+
+  function MassSliderBox() {
+    VBox.call( this );
+  }
+
+  inherit( VBox, MassSliderBox, {
+    setBodyMassControl: function( bodyMassControl ) {
+      this.removeAllChildren();
+      this.addChild( H_STRUT );
+      this.addChild( bodyMassControl );
+      this.updateLayout();
+    }
+  } );
 
   /**
    * @param {GravityAndOrbitsModule} module
@@ -55,15 +69,33 @@ define( function( require ) {
       makeSeparatorRectangle(),
       new SpaceObjectsPropertyCheckbox( module, MENU_SECTION_OPTIONS ),
       makeSeparatorRectangle(),
-      new MassMenu( module, MENU_SECTION_OPTIONS )
+      new MassSliderBox(),
+      makeSeparatorRectangle(),
+      new MassSliderBox()
     ];
+
+    module.modeProperty.link( function( mode ) {
+      var massSettableBodies = mode.getMassSettableBodies();
+      sections[ 6 ].setBodyMassControl( new BodyMassControl(
+        massSettableBodies[ 0 ],
+        massSettableBodies[ 0 ].massProperty.getInitialValue() / 2,
+        massSettableBodies[ 0 ].massProperty.getInitialValue() * 2,
+        massSettableBodies[ 0 ].tickValue,
+        massSettableBodies[ 0 ].tickLabel ) );
+      sections[ 8 ].setBodyMassControl( new BodyMassControl(
+        massSettableBodies[ 1 ],
+        massSettableBodies[ 1 ].massProperty.getInitialValue() / 2,
+        massSettableBodies[ 1 ].massProperty.getInitialValue() * 2,
+        massSettableBodies[ 1 ].tickValue,
+        massSettableBodies[ 1 ].tickLabel ) );
+    } );
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vbox, options );
 
     // resize the separators to allow them to go inside the panel margins
     var separatorWidth = vbox.width + 2 * PANEL_X_MARGIN;
-    for ( var i = 0; i < 3; i++ ) {
+    for ( var i = 0; i < Math.floor( sections.length / 2 ); i++ ) {
       sections[ i * 2 + 1 ].setRect( -PANEL_X_MARGIN, 0, separatorWidth, 2 );
     }
   }
