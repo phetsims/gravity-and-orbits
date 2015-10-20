@@ -39,6 +39,16 @@ define( function( require ) {
   }
 
   /**
+   * For use inside a map call, factored out here for performance
+   * @param body
+   * @returns {BodyState}
+   */
+  function getBodyState( body ) {
+    return body.toBodyState();
+  }
+
+
+  /**
    * Main constructor for GravityAndOrbitsModel, which contains all of the model logic for the entire sim screen.
    * @param {GravityAndOrbitsClock} clock
    * @param {Property<Boolean>} gravityEnabledProperty flag to indicate whether gravity is on or off.
@@ -69,8 +79,9 @@ define( function( require ) {
 
     step: function( dt ) {
       var i;
+
       // Compute the next state for each body based on the current state of all bodies in the system.
-      var bodyStates = this.bodies.map( function( body ) {return body.toBodyState();} );
+      var bodyStates = this.bodies.map( getBodyState );
       var newState = new ModelState( bodyStates ).getNextState( dt, this.gravityEnabledProperty );
 
       // Set each body to its computed next state.
