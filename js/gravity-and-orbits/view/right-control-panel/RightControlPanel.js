@@ -13,30 +13,57 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var Node = require( 'SCENERY/nodes/Node' );
   var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/PlanetModeMenu' );
   var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/GravityModeMenu' );
   var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/SpaceObjectsPropertyCheckbox' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
   var HStrut = require( 'SCENERY/nodes/HStrut' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
   var BodyMassControl = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/BodyMassControl' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   // constants
   var STROKE = '#8E9097';
   var MENU_SECTION_OPTIONS = { x: 5 };
   var PANEL_X_MARGIN = 5;
-  var H_STRUT_WIDTH = 220;
+  var CONTROL_FONT = new PhetFont( 14 );
 
   function MassSliderBox() {
-    VBox.call( this, { spacing: 5 } );
+    Node.call( this );
   }
 
-  inherit( VBox, MassSliderBox, {
-    setBodyMassControl: function( bodyMassControl ) {
+  inherit( Node, MassSliderBox, {
+    setBodyMassControl: function( massSettableBody ) {
       this.removeAllChildren();
-      this.addChild( new HStrut( H_STRUT_WIDTH ) );
-      this.addChild( bodyMassControl );
-      this.addChild( new HStrut( H_STRUT_WIDTH ) );
+
+      var label = new Text( massSettableBody.name, {
+        font: CONTROL_FONT,
+        fontWeight: 'bold',
+        fill: GravityAndOrbitsColorProfile.panelTextProperty
+      } );
+
+      var image = massSettableBody.createRenderer( 14 );
+
+      // Top component that shows the body's name and icon
+      var content = new HBox( { children: [ label, image ], spacing: 10 } );
+
+      this.addChild( content );
+
+      this.addChild( new VBox( {
+        top: content.bottom + 10,
+        children: [
+          new HStrut( 220 ),
+          new BodyMassControl(
+            massSettableBody,
+            massSettableBody.massProperty.getInitialValue() / 2,
+            massSettableBody.massProperty.getInitialValue() * 2,
+            massSettableBody.tickValue,
+            massSettableBody.tickLabel )
+        ]
+      } ) );
     }
   } );
 
@@ -78,18 +105,8 @@ define( function( require ) {
       var massSettableBodies = mode.getMassSettableBodies();
       assert && assert( massSettableBodies.length === 2, 'There should be 2 mass settable bodies per mode' );
 
-      sections[ 6 ].setBodyMassControl( new BodyMassControl(
-        massSettableBodies[ 0 ],
-        massSettableBodies[ 0 ].massProperty.getInitialValue() / 2,
-        massSettableBodies[ 0 ].massProperty.getInitialValue() * 2,
-        massSettableBodies[ 0 ].tickValue,
-        massSettableBodies[ 0 ].tickLabel ) );
-      sections[ 8 ].setBodyMassControl( new BodyMassControl(
-        massSettableBodies[ 1 ],
-        massSettableBodies[ 1 ].massProperty.getInitialValue() / 2,
-        massSettableBodies[ 1 ].massProperty.getInitialValue() * 2,
-        massSettableBodies[ 1 ].tickValue,
-        massSettableBodies[ 1 ].tickLabel ) );
+      sections[ 6 ].setBodyMassControl( massSettableBodies[ 0 ] );
+      sections[ 8 ].setBodyMassControl( massSettableBodies[ 1 ] );
     } );
 
     assert && assert( sections.length === 9, 'There should be 9 sections in the RightControlPanel' );

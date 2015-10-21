@@ -22,7 +22,6 @@ define( function( require ) {
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // constants
-  var CONTROL_FONT = new PhetFont( 14 );
   var VIEW_MIN = 0;
   var VIEW_MAX = 100000; // max value that the slider can take internally (i.e. the resolution of the slider)
   var SNAP_TOLERANCE = 0.03;
@@ -42,19 +41,8 @@ define( function( require ) {
    */
   function BodyMassControl( body, min, max, labelValue, valueLabel ) {
 
-    var label = new Text( body.name, {
-      font: CONTROL_FONT,
-      fontWeight: 'bold',
-      fill: GravityAndOrbitsColorProfile.panelTextProperty
-    } );
-
-    var image = body.createRenderer( 14 );
-
-    // Top component that shows the body's name and icon
-    var content = new HBox( { centerX: SPACING, children: [ label, image ], spacing: 10 } );
-
     var smallLabel = new Text( valueLabel, {
-      top: content.bottom,
+      top: 10,
       centerX: SPACING,
       font: new PhetFont( 11 ),
       fill: GravityAndOrbitsColorProfile.panelTextProperty
@@ -75,14 +63,14 @@ define( function( require ) {
       thumbFillHighlighted: '#B3D3E2'
     } );
 
-    var sliderWithTicksNode = new VBox( {
+    this.sliderWithTicksNode = new VBox( {
       children: [ tickBox, slider ],
       spacing: -5,
       resize: false,
       top: smallLabel.bottom + 5
     } );
 
-    Node.call( this, { children: [ content, smallLabel, sliderWithTicksNode ] } );
+    Node.call( this, { children: [ smallLabel, this.sliderWithTicksNode ] } );
 
     body.massProperty.link( function( mass ) {
 
