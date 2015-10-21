@@ -95,9 +95,8 @@ define( function( require ) {
 
   return inherit( CanvasNode, PathsNode, {
 
-    // @param {CanvasContextWrapper} wrapper
-    paintCanvas: function( wrapper ) {
-      var context = wrapper.context;
+    // @param {CanvasRenderingContext2D} context
+    paintCanvas: function( context ) {
       var j;
 
       // draw the path for each body one by one

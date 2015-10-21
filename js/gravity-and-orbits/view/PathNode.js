@@ -81,9 +81,8 @@ define( function( require ) {
 
   return inherit( CanvasNode, PathNode, {
 
-    // @param {CanvasContextWrapper} wrapper
-    paintCanvas: function( wrapper ) {
-      var context = wrapper.context;
+    // @param {CanvasRenderingContext2D} context
+    paintCanvas: function( context ) {
       var numSolidPoints = Math.min( this.body.maxPathLength - NUM_FADE_POINTS, this.points.length );
       var numTransparentPoints = this.points.length - numSolidPoints;
       var i;
