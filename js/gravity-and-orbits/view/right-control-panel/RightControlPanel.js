@@ -76,6 +76,8 @@ define( function( require ) {
 
     module.modeProperty.link( function( mode ) {
       var massSettableBodies = mode.getMassSettableBodies();
+      assert && assert( massSettableBodies.length === 2, 'There should be 2 mass settable bodies per mode' );
+
       sections[ 6 ].setBodyMassControl( new BodyMassControl(
         massSettableBodies[ 0 ],
         massSettableBodies[ 0 ].massProperty.getInitialValue() / 2,
@@ -89,6 +91,8 @@ define( function( require ) {
         massSettableBodies[ 1 ].tickValue,
         massSettableBodies[ 1 ].tickLabel ) );
     } );
+
+    assert && assert( sections.length === 9, 'There should be 9 sections in the RightControlPanel' );
 
     var vbox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vbox, options );
