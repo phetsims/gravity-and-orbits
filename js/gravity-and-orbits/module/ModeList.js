@@ -25,6 +25,7 @@ define( function( require ) {
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var Image = require( 'SCENERY/nodes/Image' );
+  var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
@@ -49,8 +50,6 @@ define( function( require ) {
   var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.png' );
   var moonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon.png' );
   var spaceStationMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/space-station.png' );
-  var bodyMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/body.png' );
-  var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model
@@ -187,9 +186,10 @@ define( function( require ) {
   var getRenderer = function( image, targetMass ) {
     //the mass for which to use the image
     return function( body, viewDiameter ) {
-      return new BodyRenderer.SwitchableBodyRenderer( body, targetMass,
-        new BodyRenderer.ImageRenderer( body, viewDiameter, image ),
-        new BodyRenderer.ImageRenderer( body, viewDiameter, bodyMipmap ) );
+      return new BodyRenderer.SwitchableBodyRenderer(
+        body,
+        targetMass,
+        new BodyRenderer.ImageRenderer( body, viewDiameter, image ), new BodyRenderer.SphereRenderer( body, viewDiameter ) );
     };
   };
 
@@ -335,7 +335,7 @@ define( function( require ) {
       // Function for rendering the sun
       // @private
       var SUN_RENDERER = function( body, viewDiameter ) {
-        return new BodyRenderer.ImageRenderer( body, viewDiameter, sunMipmap );
+        return new BodyRenderer.SphereRenderer( body, viewDiameter );
       };
 
       Body.call(
@@ -480,13 +480,16 @@ define( function( require ) {
      */
     createIconImage: function( sun, earth, moon, spaceStation ) {
       var children = [
-        new Image( sunMipmap, { visible: sun } ),
+        new Circle( 12.5, {
+          fill: new BodyRenderer.SphereRenderer.getSphericalGradient( 25, 'white', 'yellow' ),
+          visible: sun
+        } ),
         new Image( earthMipmap, { visible: earth } ),
         new Image( moonMipmap, { visible: moon } ),
         new Image( spaceStationMipmap, { visible: spaceStation } )
       ];
 
-      for ( var i = 0; i < children.length; i++ ) {
+      for ( var i = 1; i < children.length; i++ ) {
         children[ i ].setScaleMagnitude( 25 / children[ i ].width );
       }
 
