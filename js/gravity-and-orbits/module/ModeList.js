@@ -184,7 +184,8 @@ define( function( require ) {
    * @returns {*}
    */
   var getRenderer = function( image, targetMass ) {
-    //the mass for which to use the image
+
+    // the mass for which to use the image
     return function( body, viewDiameter ) {
       return new BodyRenderer.SwitchableBodyRenderer(
         body,
