@@ -54,6 +54,7 @@ define( function( require ) {
 
       this.addChild( new VBox( {
         top: content.bottom + 10,
+        resize: false,
         children: [
           new HStrut( 220 ),
           new BodyMassControl(
