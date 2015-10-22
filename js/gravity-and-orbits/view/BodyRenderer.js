@@ -18,7 +18,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var RadialGradient = require( 'SCENERY/util/RadialGradient' );
   var Circle = require( 'SCENERY/nodes/Circle' );
-  var ShadedSphereNode = require( 'SCENERY_PHET/ShadedSphereNode' );
   var Vector2 = require( 'DOT/Vector2' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Image = require( 'SCENERY/nodes/Image' );
@@ -69,7 +68,7 @@ define( function( require ) {
 
     this.targetBodyRenderer = targetBodyRenderer;
 
-    //private
+    // @private
     this.defaultBodyRenderer = defaultBodyRenderer;
 
     body.massProperty.link( function() {
@@ -95,24 +94,24 @@ define( function( require ) {
     BodyRenderer.call( this, body );
     var sphereNode = new Circle( viewDiameter / 2 );
     sphereNode.fill = this.createPaint( viewDiameter );
-    this.sphereNode = sphereNode;
 
-    var imageNode = new Node( { children: [ sphereNode ] } );
+    var imageRendererNode = new Node( { children: [ sphereNode ] } );
 
-    sphereNode.toImage( function( image, x, y ) {
-      imageNode.children = [ new Image( image, { x: -x, y: -y } ) ];
+    var thisNode = this;
+    sphereNode.toImage( function( image ) {
+      thisNode.imageRenderer = new ImageRenderer( body, viewDiameter, image );
+      imageRendererNode.children = [ thisNode.imageRenderer ];
     }, viewDiameter / 2, viewDiameter / 2, viewDiameter, viewDiameter );
-    this.addChild( imageNode );
-
-    this.imageNode = imageNode;
-    //this.addChild( sphereNode );
+    this.addChild( imageRendererNode );
   }
 
   inherit( BodyRenderer, SphereRenderer, {
     setDiameter: function( viewDiameter ) {
-      //this.sphereIconNode.setScaleMagnitude( viewDiameter );
-      //this.sphereNode.radius = viewDiameter / 2;
-      //this.sphereNode.fill = this.createPaint( viewDiameter );
+
+      // imageRenderer might not exist yet since it is created from the asynchronous toImage call
+      if ( this.imageRenderer ) {
+        this.imageRenderer.setDiameter( viewDiameter );
+      }
       return this;
     },
 
