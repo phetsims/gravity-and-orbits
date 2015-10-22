@@ -18,6 +18,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var RadialGradient = require( 'SCENERY/util/RadialGradient' );
   var Circle = require( 'SCENERY/nodes/Circle' );
+  var ShadedSphereNode = require( 'SCENERY_PHET/ShadedSphereNode' );
   var Vector2 = require( 'DOT/Vector2' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Image = require( 'SCENERY/nodes/Image' );
@@ -92,15 +93,26 @@ define( function( require ) {
    */
   function SphereRenderer( body, viewDiameter ) {
     BodyRenderer.call( this, body );
-    this.sphereNode = new Circle( viewDiameter / 2 );
-    this.setDiameter( viewDiameter );
-    this.addChild( this.sphereNode );
+    var sphereNode = new Circle( viewDiameter / 2 );
+    sphereNode.fill = this.createPaint( viewDiameter );
+    this.sphereNode = sphereNode;
+
+    var imageNode = new Node( { children: [ sphereNode ] } );
+
+    sphereNode.toImage( function( image, x, y ) {
+      imageNode.children = [ new Image( image, { x: -x, y: -y } ) ];
+    }, viewDiameter / 2, viewDiameter / 2, viewDiameter, viewDiameter );
+    this.addChild( imageNode );
+
+    this.imageNode = imageNode;
+    //this.addChild( sphereNode );
   }
 
   inherit( BodyRenderer, SphereRenderer, {
     setDiameter: function( viewDiameter ) {
-      this.sphereNode.radius = viewDiameter / 2;
-      this.sphereNode.fill = this.createPaint( viewDiameter );
+      //this.sphereIconNode.setScaleMagnitude( viewDiameter );
+      //this.sphereNode.radius = viewDiameter / 2;
+      //this.sphereNode.fill = this.createPaint( viewDiameter );
       return this;
     },
 
