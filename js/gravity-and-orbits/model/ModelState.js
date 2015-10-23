@@ -101,7 +101,7 @@ define( function( require ) {
      */
     setAccelerationToZero: function() {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
-        this.bodyStates[ i ].acceleration = Vector2.ZERO;
+        this.bodyStates[ i ].acceleration = new Vector2();
       }
     },
 
