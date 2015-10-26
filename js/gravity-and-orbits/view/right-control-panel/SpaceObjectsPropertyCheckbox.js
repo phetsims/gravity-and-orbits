@@ -26,7 +26,7 @@ define( function( require ) {
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // images
-  var iconPathImg = require( 'image!GRAVITY_AND_ORBITS/icon_path.png' );
+  var pathIconImg = require( 'image!GRAVITY_AND_ORBITS/path_icon.png' );
   var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
 
   // strings
@@ -102,7 +102,7 @@ define( function( require ) {
         spacing: SPACING,
         children: [
           pathTextNode,
-          new Image( iconPathImg, { scale: 0.9 } )
+          new Image( pathIconImg, { scale: 0.25 } )
         ]
       } ),
       module.showPathProperty, CHECKBOX_OPTIONS ) );
