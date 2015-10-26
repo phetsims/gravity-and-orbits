@@ -25,7 +25,7 @@ define( function( require ) {
   var VIEW_MIN = 0;
   var VIEW_MAX = 100000; // max value that the slider can take internally (i.e. the resolution of the slider)
   var SNAP_TOLERANCE = 0.03;
-  var THUMB_SIZE = new Dimension2( 15, 20 );
+  var THUMB_SIZE = new Dimension2( 14, 24 );
   var NUM_TICKS = 4;
   var WIDTH = 180;
   var SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );

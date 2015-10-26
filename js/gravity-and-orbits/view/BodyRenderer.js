@@ -92,9 +92,8 @@ define( function( require ) {
    */
   function SphereRenderer( body, viewDiameter ) {
     BodyRenderer.call( this, body );
-    var sphereNode = new Circle( viewDiameter );
-    var doubleDiameter = viewDiameter * 2;
-    sphereNode.fill = this.createPaint( doubleDiameter );
+    var sphereNode = new Circle( viewDiameter / 2 );
+    sphereNode.fill = this.createPaint( viewDiameter );
 
     var imageRendererNode = new Node( { children: [ sphereNode ] } );
 
@@ -102,7 +101,7 @@ define( function( require ) {
     sphereNode.toImage( function( image ) {
       thisNode.imageRenderer = new ImageRenderer( body, viewDiameter, image );
       imageRendererNode.children = [ thisNode.imageRenderer ];
-    }, viewDiameter, viewDiameter, doubleDiameter, doubleDiameter );
+    }, viewDiameter / 2, viewDiameter / 2, viewDiameter, viewDiameter );
     this.addChild( imageRendererNode );
   }
 
