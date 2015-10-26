@@ -33,10 +33,14 @@ define( function( require ) {
       },
       panelBackground: {
         default: BLACK,
-        projector: new Color( 238, 238, 238 )
+        projector: new Color( 193, 217, 255 )
       },
       panelText: {
         default: WHITE,
+        projector: BLACK
+      },
+      arrowIndicator: {
+        default: new Color( 255, 255, 0 ),
         projector: BLACK
       }
     } );

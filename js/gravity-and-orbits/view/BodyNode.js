@@ -93,7 +93,7 @@ define( function( require ) {
       var tip = northEastVector.times( 10 ).plus( viewCenter );
       var tail = northEastVector.times( 50 ).plus( viewCenter );
 
-      node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: 'yellow' } ) );
+      node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: GravityAndOrbitsColorProfile.arrowIndicatorProperty } ) );
       var text = new Text( body.name, {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
