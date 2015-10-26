@@ -20,7 +20,7 @@ define( function( require ) {
    *
    * @param {Property.<ModelViewTransform>} transformProperty
    * @param {number} spacing - spacing between grid lines
-   * @param {Vector2} center - centr of the grid
+   * @param {Vector2} center - center of the grid
    * @param {number} numGridLines - number grid lines on each side of the center, defaults to 14
    * @constructor
    */
