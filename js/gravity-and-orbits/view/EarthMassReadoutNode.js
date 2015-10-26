@@ -32,7 +32,8 @@ define( function( require ) {
       var earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
 
       // Show the value in terms of earth masses (or thousands of earth masses)
-      var value, units;
+      var value;
+      var units;
       if ( earthMasses > 1E3 ) {
         value = Util.toFixed( Util.roundSymmetric( earthMasses / 1E3 ), 0 );
         units = thousandEarthMassesString;
