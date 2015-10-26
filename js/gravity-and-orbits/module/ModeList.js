@@ -181,23 +181,6 @@ define( function( require ) {
 
   /**
    * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
-   * @param {string} image
-   * @param {number} targetMass
-   * @returns {*}
-   */
-  var getRenderer = function( image, targetMass ) {
-
-    // the mass for which to use the image
-    return function( body, viewDiameter ) {
-      return new BodyRenderer.SwitchableBodyRenderer(
-        body,
-        targetMass,
-        new BodyRenderer.ImageRenderer( body, viewDiameter, image ), new BodyRenderer.SphereRenderer( body, viewDiameter ) );
-    };
-  };
-
-  /**
-   * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
    * @param {image|mipmap} image1
    * @param {image|mipmap} image2
    * @param {number} targetMass
