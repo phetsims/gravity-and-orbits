@@ -49,18 +49,18 @@ define( function( require ) {
     // update text representation of day
     clock.simulationTimeProperty.link( function( time ) {
       dayText.setText( timeFormatter( time ) );
+      dayText.centerX = clearButton.centerX;
       clearButton.enabled = ( time !== 0 );
     } );
 
-    var box = new VBox( {
-      resize: false, spacing: 4, children: [
+    this.addChild( new VBox( {
+      resize: false,
+      spacing: 4,
+      children: [
         dayText,
         clearButton
       ]
-    } );
-
-    this.addChild( box );
-    box.updateLayout(); // update layout view to center clear button
+    } ) );
 
     this.mutate( options );
   }

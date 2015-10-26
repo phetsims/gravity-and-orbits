@@ -111,7 +111,7 @@ define( function( require ) {
     this.addChild( gridNode );
 
     this.addChild( new DayCounter( mode.timeFormatter, model.clock,
-      { bottom: STAGE_SIZE.bottom - 20, right: STAGE_SIZE.right - 30, scale: 1.2 } ) );
+      { bottom: STAGE_SIZE.bottom - 20, right: STAGE_SIZE.right - 50, scale: 1.2 } ) );
 
     // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
