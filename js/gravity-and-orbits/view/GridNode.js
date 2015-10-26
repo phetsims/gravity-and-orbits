@@ -21,15 +21,19 @@ define( function( require ) {
    * @param {Property.<ModelViewTransform>} transformProperty
    * @param {number} spacing - spacing between grid lines
    * @param {Vector2} center - center of the grid
-   * @param {number} numGridLines - number grid lines on each side of the center, defaults to 14
+   * @param {number} numGridLines - number grid lines on each side of the center
+   * @param {Obejct} [options]
    * @constructor
    */
-  function GridNode( transformProperty, spacing, center, numGridLines ) {
+  function GridNode( transformProperty, spacing, center, numGridLines, options ) {
 
-    numGridLines = numGridLines || 14; // default to 14, overridden for making the grid icon
+    options = _.extend( {
+      lineWidth: 1,
+      stroke: 'gray'
+    }, options );
 
     Node.call( this );
-    var path = new Path( null, { lineWidth: 1, stroke: 'gray' } );
+    var path = new Path( null, options );
     this.addChild( path );
 
     transformProperty.link( function() {

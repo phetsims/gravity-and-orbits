@@ -42,6 +42,10 @@ define( function( require ) {
       arrowIndicator: {
         default: new Color( 255, 255, 0 ),
         projector: BLACK
+      },
+      gridIcon: {
+        default: 'gray',
+        projector: BLACK
       }
     } );
   }

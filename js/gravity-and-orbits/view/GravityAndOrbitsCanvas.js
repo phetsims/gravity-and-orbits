@@ -106,7 +106,7 @@ define( function( require ) {
     }
 
     // Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
-    var gridNode = new GridNode( mode.transformProperty, mode.gridSpacing, mode.gridCenter );
+    var gridNode = new GridNode( mode.transformProperty, mode.gridSpacing, mode.gridCenter, 14 );
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
