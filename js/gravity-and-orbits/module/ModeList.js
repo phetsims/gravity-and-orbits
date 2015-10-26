@@ -25,7 +25,6 @@ define( function( require ) {
   var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/SpaceStationMassReadoutNode' );
   var VectorNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/VectorNode' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
@@ -47,8 +46,11 @@ define( function( require ) {
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
 
   // images
+  var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
   var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.png' );
   var moonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon.png' );
+  var genericPlanetMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/planet_generic.png' );
+  var genericMoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon_generic.png' );
   var spaceStationMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/space-station.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
@@ -195,6 +197,24 @@ define( function( require ) {
   };
 
   /**
+   * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
+   * @param {image|mipmap} image1
+   * @param {image|mipmap} image2
+   * @param {number} targetMass
+   * @returns {*}
+   */
+  var getSwitchableRenderer = function( image1, image2, targetMass ) {
+
+    // the mass for which to use the image
+    return function( body, viewDiameter ) {
+      return new BodyRenderer.SwitchableBodyRenderer(
+        body,
+        targetMass,
+        new BodyRenderer.ImageRenderer( body, viewDiameter, image1 ), new BodyRenderer.ImageRenderer( body, viewDiameter, image2 ) );
+    };
+  };
+
+  /**
    * Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct periods
    * @param scale
    * @returns {*}
@@ -272,7 +292,7 @@ define( function( require ) {
         body.mass,
         Color.magenta,
         Color.white,
-        getRenderer( moonMipmap, body.mass ),
+        getSwitchableRenderer( moonMipmap, genericMoonMipmap, body.mass ),
         ( -3 * Math.PI / 4 ),
         massSettable,
         maxPathLength,
@@ -316,7 +336,7 @@ define( function( require ) {
         body.mass,
         Color.gray,
         Color.lightGray,
-        getRenderer( earthMipmap, body.mass ),
+        getSwitchableRenderer( earthMipmap, genericPlanetMipmap, body.mass ),
         ( -Math.PI / 4 ),
         true,
         maxPathLength,
@@ -333,12 +353,6 @@ define( function( require ) {
 
     // non-static inner class: Sun
     function Sun( maxPathLength, body ) {
-      // Function for rendering the sun
-      // @private
-      var SUN_RENDERER = function( body, viewDiameter ) {
-        return new BodyRenderer.SphereRenderer( body, viewDiameter );
-      };
-
       Body.call(
         this,
         starString,
@@ -350,7 +364,7 @@ define( function( require ) {
         body.mass,
         Color.yellow,
         Color.white,
-        SUN_RENDERER,
+        getImageRenderer( sunMipmap ),
         ( -Math.PI / 4 ),
         true,
         maxPathLength,
@@ -481,16 +495,13 @@ define( function( require ) {
      */
     createIconImage: function( sun, earth, moon, spaceStation ) {
       var children = [
-        new Circle( 12.5, {
-          fill: new BodyRenderer.SphereRenderer.getSphericalGradient( 25, 'white', 'yellow' ),
-          visible: sun
-        } ),
+        new Image( sunMipmap, { visible: sun } ),
         new Image( earthMipmap, { visible: earth } ),
         new Image( moonMipmap, { visible: moon } ),
         new Image( spaceStationMipmap, { visible: spaceStation } )
       ];
 
-      for ( var i = 1; i < children.length; i++ ) {
+      for ( var i = 0; i < children.length; i++ ) {
         children[ i ].setScaleMagnitude( 25 / children[ i ].width );
       }
 
