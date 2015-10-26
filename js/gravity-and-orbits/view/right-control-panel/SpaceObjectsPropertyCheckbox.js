@@ -28,6 +28,7 @@ define( function( require ) {
 
   // images
   var pathIconImg = require( 'image!GRAVITY_AND_ORBITS/path_icon.png' );
+  var pathIconProjectorImg = require( 'image!GRAVITY_AND_ORBITS/path_icon_projector.png' );
   var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
 
   // strings
@@ -97,12 +98,18 @@ define( function( require ) {
         module.showMassProperty, CHECKBOX_OPTIONS ) );
     }
 
+    var pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
+    GravityAndOrbitsColorProfile.profileNameProperty.lazyLink( function( profileName ) {
+      assert && assert( profileName === 'default' || profileName === 'projector' );
+      pathIconImageNode.setImage( profileName === 'projector' ? pathIconProjectorImg : pathIconImg );
+    } );
+
     // path checkbox
     children.push( new CheckBox( new HBox( {
         spacing: SPACING,
         children: [
           pathTextNode,
-          new Image( pathIconImg, { scale: 0.25 } )
+          pathIconImageNode
         ]
       } ),
       module.showPathProperty, CHECKBOX_OPTIONS ) );
