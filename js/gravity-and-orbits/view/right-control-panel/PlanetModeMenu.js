@@ -13,10 +13,10 @@ define( function( require ) {
   // modules
   var Node = require( 'SCENERY/nodes/Node' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var Color = require( 'SCENERY/util/Color' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
   var Image = require( 'SCENERY/nodes/Image' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
@@ -40,6 +40,7 @@ define( function( require ) {
         } ),
         xMargin: 5,
         yMargin: 3,
+        baseColor: new Color( 220, 220, 220 ),
         listener: function() {
           mode.resetMode();
         }
