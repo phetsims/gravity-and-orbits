@@ -36,9 +36,9 @@ define( function( require ) {
   function GravityModeMenu( module, options ) {
     Node.call( this, options );
 
-    var gravityTextNode = new Text( gravityString + ':', TEXT_OPTIONS );
-    var onTextNode = new Text( onString + ':', TEXT_OPTIONS );
-    var offTextNode = new Text( offString + ':', TEXT_OPTIONS );
+    var gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
+    var onTextNode = new Text( onString, TEXT_OPTIONS );
+    var offTextNode = new Text( offString, TEXT_OPTIONS );
 
     this.addChild( new HBox( {
       spacing: 10, bottom: 2, children: [
