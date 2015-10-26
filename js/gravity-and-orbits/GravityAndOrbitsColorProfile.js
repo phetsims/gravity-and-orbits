@@ -46,6 +46,10 @@ define( function( require ) {
       gridIcon: {
         default: 'gray',
         projector: BLACK
+      },
+      checkBoxFill: {
+        default: BLACK,
+        projector: WHITE
       }
     } );
   }
