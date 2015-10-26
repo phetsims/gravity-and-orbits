@@ -11,12 +11,13 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Node = require( 'SCENERY/nodes/Node' );
+  var GridNode = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/GridNode' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  var Property = require( 'AXON/Property' );
+  var Vector2 = require( 'DOT/Vector2' );
   var CheckBox = require( 'SUN/CheckBox' );
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var Shape = require( 'KITE/Shape' );
-  var Path = require( 'SCENERY/nodes/Path' );
   var Image = require( 'SCENERY/nodes/Image' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -39,7 +40,6 @@ define( function( require ) {
 
   // constants
   var FONT = new PhetFont( 18 );
-  var GRID_LINE_OPTIONS = { stroke: 'gray', lineWidth: 1.5 };
   var ARROW_Y_COORDINATE = -10;
   var CHECKBOX_OPTIONS = {
     scale: 0.8,
@@ -112,16 +112,7 @@ define( function( require ) {
         spacing: SPACING,
         children: [
           gridTextNode,
-          new Node( {
-            children: [
-              new Path( Shape.lineSegment( 0, 0, 20, 0 ), GRID_LINE_OPTIONS ),
-              new Path( Shape.lineSegment( 20, 0, 20, 20 ), GRID_LINE_OPTIONS ),
-              new Path( Shape.lineSegment( 20, 20, 0, 20 ), GRID_LINE_OPTIONS ),
-              new Path( Shape.lineSegment( 0, 20, 0, 0 ), GRID_LINE_OPTIONS ),
-              new Path( Shape.lineSegment( 10, 0, 10, 20 ), GRID_LINE_OPTIONS ),
-              new Path( Shape.lineSegment( 0, 10, 20, 10 ), GRID_LINE_OPTIONS )
-            ]
-          } )
+          new GridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2(), 1 )
         ]
       } ),
       module.showGridProperty, CHECKBOX_OPTIONS ) );
