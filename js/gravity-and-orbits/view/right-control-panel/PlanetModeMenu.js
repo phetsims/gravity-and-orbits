@@ -35,12 +35,11 @@ define( function( require ) {
       {
         content: new Node( {
           children: [
-            new Rectangle( 0, 0, 25, 25, 5, 5, { fill: '#fff' } ),
-            new Image( resetArrowImg, { x: 2, y: 1 } )
+            new Image( resetArrowImg, { scale: 0.3 } )
           ]
         } ),
-        xMargin: 0,
-        yMargin: 0,
+        xMargin: 5,
+        yMargin: 3,
         listener: function() {
           mode.resetMode();
         }
@@ -96,7 +95,7 @@ define( function( require ) {
     } );
 
     this.addChild( buttonGroup );
-    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 4.5, spacing: 12, y: 5 } ) );
+    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 10, spacing: 5, y: 2 } ) );
   }
 
   return inherit( Node, PlanetModeMenu );
