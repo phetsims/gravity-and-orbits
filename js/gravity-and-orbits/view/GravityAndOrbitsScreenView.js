@@ -15,6 +15,7 @@ define( function( require ) {
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var RightControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/RightControlPanel' );
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/SpeedRadioButtons' );
+  var MassControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/MassControlPanel' );
 
   /**
    * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module
@@ -29,22 +30,42 @@ define( function( require ) {
     ScreenView.call( this );
     this.module = module;
 
+    // Add the right control panel
+    var controlPanelNode = new RightControlPanel( module, {
+      top: this.layoutBounds.top + 5,
+      right: this.layoutBounds.maxX
+    } );
+    this.addChild( controlPanelNode );
+
     // Add the canvases, one for each of the four modes
     var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
       var gaoCanvas = modes[ i ].canvas;
+      var massControlPanel = new MassControlPanel( modes[ i ].getMassSettableBodies(), {
+        top: controlPanelNode.bottom + 5,
+        right: this.layoutBounds.maxX
+      } );
+      modes[ i ].massControlPanel = massControlPanel;
+
       this.addChild( gaoCanvas );
+      this.addChild( massControlPanel );
+
       if ( modes[ i ] !== module.modeProperty.get() ) {
         gaoCanvas.visible = false;
+        massControlPanel.visible = false;
       }
     }
 
-    var controlPanelNode = new RightControlPanel( module, {
-      right: this.layoutBounds.maxX,
-      top: this.layoutBounds.top + 5,
-      width: 200
+    // Make sure only one canvas is visible at a time
+    module.modeProperty.link( function( mode ) {
+      for ( var i = 0; i < module.modeList.modes.length; i++ ) {
+        module.modeList.modes[ i ].canvas.visible = false;
+        module.modeList.modes[ i ].massControlPanel.visible = false;
+      }
+      mode.canvas.visible = true;
+      mode.massControlPanel.visible = true;
+      module.updateActiveModule();
     } );
-    this.addChild( controlPanelNode );
 
     // Add the speed control slider.
     this.addChild( new SpeedRadioButtons( module.timeSpeedScaleProperty,

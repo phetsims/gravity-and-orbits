@@ -19,6 +19,7 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
+  var HStrut = require( 'SCENERY/nodes/HStrut' );
 
   // images
   var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
@@ -97,6 +98,7 @@ define( function( require ) {
 
     this.addChild( buttonGroup );
     this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 10, spacing: 5, y: 2 } ) );
+    this.addChild( new HStrut( 219 ) );
   }
 
   return inherit( Node, PlanetModeMenu );

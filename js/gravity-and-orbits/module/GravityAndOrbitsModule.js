@@ -34,7 +34,6 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsModule( showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
-    var thisModule = this;
 
     // Properties that are common to all "modes" should live here.
     PropertySet.call( this, {
@@ -68,15 +67,6 @@ define( function( require ) {
     for ( var i = 0; i < this.modeList.modes.length; i++ ) {
       this.modeList.modes[ i ].init( this );
     }
-
-    // Make sure only one canvas is visible at a time
-    this.modeProperty.link( function( mode ) {
-      for ( var i = 0; i < thisModule.modeList.modes.length; i++ ) {
-        thisModule.modeList.modes[ i ].canvas.visible = false;
-      }
-      mode.canvas.visible = true;
-      thisModule.updateActiveModule();
-    } );
 
     this.reset();
   }
