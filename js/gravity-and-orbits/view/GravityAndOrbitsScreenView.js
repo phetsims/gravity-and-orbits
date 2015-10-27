@@ -28,7 +28,6 @@ define( function( require ) {
   function GravityAndOrbitsScreenView( module ) {
 
     ScreenView.call( this );
-    this.module = module;
 
     // Add the right control panel
     var controlPanelNode = new RightControlPanel( module, {
