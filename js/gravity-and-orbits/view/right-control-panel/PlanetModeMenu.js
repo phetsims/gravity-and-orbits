@@ -80,7 +80,7 @@ define( function( require ) {
     var buttonGroup = new RadioButtonGroup( module.modeProperty, content,
       {
         alignVertically: true,
-        selectedStroke: 'white',
+        selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
         selectedLineWidth: 2,
         baseColor: 'rgba(0,0,0,0)',
         deselectedLineWidth: 0,
@@ -90,11 +90,6 @@ define( function( require ) {
         deselectedOpacity: 1,
         cornerRadius: 5
       } );
-
-    // TODO: RadioButtonGroup doesn't support changing the selectedStroke
-    GravityAndOrbitsColorProfile.panelTextProperty.link( function( color ) {
-      buttonGroup.selectedStroke = color;
-    } );
 
     this.addChild( buttonGroup );
     this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 10, spacing: 5, y: 2 } ) );
