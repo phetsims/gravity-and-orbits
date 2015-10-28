@@ -72,49 +72,47 @@ define( function( require ) {
   }
 
   return inherit( PropertySet, GravityAndOrbitsModule, {
-      step: function( dt ) {
+    step: function( dt ) {
 
-        // limit dt to 1 so there are no large jumps
-        dt = Math.min( 1, dt );
+      // limit dt to 1 so there are no large jumps
+      dt = Math.min( 1, dt );
 
-        if ( this.playButtonPressedProperty.value ) {
-          this.modeProperty.get().getClock().step( dt );
-        }
-      },
-
-      getModes: function() {
-        return this.modeList.modes.slice( 0 );
-      },
-
-      // @private
-      updateActiveModule: function() {
-        for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.get() );
-        }
-      },
-
-      reset: function() {
-        for ( var i = 0; i < this.modeList.modes.length; i++ ) {
-          this.modeList.modes[ i ].reset();
-        }
-        this.showGravityForceProperty.reset();
-        this.showPathProperty.reset();
-        this.showGridProperty.reset();
-        this.showVelocityProperty.reset();
-        this.showMassProperty.reset();
-        this.playButtonPressedProperty.reset();
-        this.timeSpeedScaleProperty.reset();
-        this.measuringTapeVisibleProperty.reset();
-        this.gravityEnabledProperty.reset();
-        this.steppingProperty.reset();
-        this.rewindingProperty.reset();
-        this.modeProperty.reset();
+      if ( this.playButtonPressedProperty.value ) {
+        this.modeProperty.get().getClock().step( dt );
       }
-
     },
 
-    {
-      G: G,
-      STARTING_SPEED_SCALE: STARTING_SPEED_SCALE
-    } );
+    getModes: function() {
+      return this.modeList.modes.slice( 0 );
+    },
+
+    // @private
+    updateActiveModule: function() {
+      for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+        this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.get() );
+      }
+    },
+
+    reset: function() {
+      for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+        this.modeList.modes[ i ].reset();
+      }
+      this.showGravityForceProperty.reset();
+      this.showPathProperty.reset();
+      this.showGridProperty.reset();
+      this.showVelocityProperty.reset();
+      this.showMassProperty.reset();
+      this.playButtonPressedProperty.reset();
+      this.timeSpeedScaleProperty.reset();
+      this.measuringTapeVisibleProperty.reset();
+      this.gravityEnabledProperty.reset();
+      this.steppingProperty.reset();
+      this.rewindingProperty.reset();
+      this.modeProperty.reset();
+    }
+
+  }, {
+    G: G,
+    STARTING_SPEED_SCALE: STARTING_SPEED_SCALE
+  } );
 } );
