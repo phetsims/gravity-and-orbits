@@ -25,7 +25,7 @@ define( function( require ) {
     CONTROL_PANEL_OPTIONS: {
       stroke: CONTROL_PANEL_STROKE,
       lineWidth: 2,
-      cornerRadius: 2,
+      cornerRadius: 5,
       resize: false,
       xMargin: PANEL_X_MARGIN,
       scale: 1.05,

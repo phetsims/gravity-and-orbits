@@ -48,13 +48,15 @@ define( function( require ) {
 
     var ticks = [];
     for ( var i = 0; i < NUM_TICKS; i++ ) {
-      ticks.push( new Line( 0, 0, 0, 10, { lineWidth: 1, stroke: GravityAndOrbitsColorProfile.panelTextProperty } ) );
+      ticks.push( new Line( 0, 0, 0, 17, { lineWidth: 1, stroke: GravityAndOrbitsColorProfile.panelTextProperty } ) );
     }
     var tickBox = new HBox( { children: ticks, spacing: SPACING } );
 
     var slider = new HSlider( body.massProperty, { min: min, max: max }, {
-      trackSize: new Dimension2( WIDTH, 2 ),
+      trackSize: new Dimension2( WIDTH, 1 ),
       thumbSize: THUMB_SIZE,
+      trackLineWidth: 0,
+      trackFill: GravityAndOrbitsColorProfile.panelTextProperty,
 
       // custom thumb
       thumbFillEnabled: '#98BECF',
@@ -63,7 +65,7 @@ define( function( require ) {
 
     this.sliderWithTicksNode = new VBox( {
       children: [ tickBox, slider ],
-      spacing: -5,
+      spacing: -12,
       resize: false,
       top: smallLabel.bottom + 5
     } );
