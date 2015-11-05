@@ -22,8 +22,6 @@ define( function( require ) {
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // constants
-  var VIEW_MIN = 0;
-  var VIEW_MAX = 100000; // max value that the slider can take internally (i.e. the resolution of the slider)
   var SNAP_TOLERANCE = 0.03;
   var THUMB_SIZE = new Dimension2( 14, 24 );
   var NUM_TICKS = 4;
@@ -87,11 +85,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Node, BodyMassControl, {},
-
-    // statics
-    {
-      VIEW_MIN: VIEW_MIN,
-      VIEW_MAX: VIEW_MAX
-    } );
+  return inherit( Node, BodyMassControl );
 } );
