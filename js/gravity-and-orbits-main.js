@@ -28,7 +28,7 @@ define( function( require ) {
   // strings
   var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
   var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
-  var simTitle = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
+  var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
 
   /**
@@ -86,6 +86,6 @@ define( function( require ) {
 
   SimLauncher.launch( function() {
     // create and start the sim
-    new Sim( simTitle, [ cartoonScreen, toScaleScreen ], simOptions ).start();
+    new Sim( gravityAndOrbitsTitleString, [ cartoonScreen, toScaleScreen ], simOptions ).start();
   } );
 } );
