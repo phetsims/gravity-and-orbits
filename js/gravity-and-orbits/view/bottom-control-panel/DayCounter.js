@@ -37,7 +37,11 @@ define( function( require ) {
     Node.call( this );
 
     // day text counter
-    var dayText = new Text( '', { font: FONT, fill: GravityAndOrbitsColorProfile.bottomControlTextProperty } );
+    var dayText = new Text( '', {
+      font: FONT,
+      fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
+      maxWidth: 200
+    } );
 
     var clearButton = new TextPushButton( clearString, {
       font: FONT,
