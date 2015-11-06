@@ -34,7 +34,6 @@ define( function( require ) {
       top: this.layoutBounds.top + 5,
       right: this.layoutBounds.maxX
     } );
-    this.addChild( controlPanelNode );
 
     // Add the canvases, one for each of the four modes
     var modes = module.getModes();
@@ -54,6 +53,9 @@ define( function( require ) {
         massControlPanel.visible = false;
       }
     }
+
+    // add the control panel on top of the canvases
+    this.addChild( controlPanelNode );
 
     // Make sure only one canvas is visible at a time
     module.modeProperty.link( function( mode ) {
