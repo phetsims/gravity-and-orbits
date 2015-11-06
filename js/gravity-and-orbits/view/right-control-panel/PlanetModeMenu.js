@@ -88,7 +88,8 @@ define( function( require ) {
         buttonContentYMargin: 5,
         spacing: 0,
         deselectedOpacity: 1,
-        cornerRadius: 5
+        cornerRadius: 5,
+        yTouchExpansion: 0 // reduce to 0 to prevent overlap between buttons
       } );
 
     this.addChild( buttonGroup );
