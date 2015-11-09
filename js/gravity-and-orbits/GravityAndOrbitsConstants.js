@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
+  // constants
   var CONTROL_PANEL_STROKE = '#8E9097';
   var PANEL_X_MARGIN = 5;
 

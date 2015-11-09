@@ -13,7 +13,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
 
-  // contants
+  // constants
   var DEFAULT_DT = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/model/GravityAndOrbitsClock' ).DEFAULT_DT;
 
   /**
