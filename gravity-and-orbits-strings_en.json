@@ -128,7 +128,7 @@
   "v": {
     "value": "V"
   },
-  "options.projectorMode": {
+  "projectorMode": {
     "value": "Projector Mode"
   }
 }

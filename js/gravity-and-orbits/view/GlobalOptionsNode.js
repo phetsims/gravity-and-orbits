@@ -19,7 +19,7 @@ define( function( require ) {
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/GravityAndOrbitsColorProfile' );
 
   // strings
-  var projectorModeString = require( 'string!GRAVITY_AND_ORBITS/options.projectorMode' );
+  var projectorModeString = require( 'string!GRAVITY_AND_ORBITS/projectorMode' );
 
   function GlobalOptionsNode() {
     var children = [];

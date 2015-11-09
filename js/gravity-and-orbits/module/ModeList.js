@@ -33,7 +33,7 @@ define( function( require ) {
   // strings
   var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
   var earthDayString = require( 'string!GRAVITY_AND_ORBITS/earthDay' );
-  var patternValueUnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
   var earthMinuteString = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
   var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
@@ -206,7 +206,7 @@ define( function( require ) {
     return function( time ) {
       var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
       var units = (value === 1) ? earthDayString : earthDaysString;
-      return StringUtils.format( patternValueUnitsString, Util.toFixed( value, 0 ), units );
+      return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
     };
   };
 
@@ -219,7 +219,7 @@ define( function( require ) {
   var formatMinutes = function( time ) {
     var value = (time / SECONDS_PER_MINUTE);
     var units = (value === 1) ? earthMinuteString : earthMinutesString;
-    return StringUtils.format( patternValueUnitsString, Util.toFixed( value, 0 ), units );
+    return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
   };
 
   /**

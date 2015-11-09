@@ -14,7 +14,7 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
 
   // strings
-  var gravityAndOrbitsSimString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
+  var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
   /**
    * @constructor
@@ -25,7 +25,7 @@ define( function( require ) {
     //If there are multiple screens, then the icon must be provided here.
     var icon = null;
 
-    Screen.call( this, gravityAndOrbitsSimString, icon,
+    Screen.call( this, gravityAndOrbitsTitleString, icon,
       function() { return new GravityAndOrbitsModel(); },
       function( model ) { return new GravityAndOrbitsScreenView( model ); },
       { backgroundColor: 'white' }

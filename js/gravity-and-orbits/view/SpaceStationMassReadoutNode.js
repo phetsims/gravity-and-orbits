@@ -19,7 +19,7 @@ define( function( require ) {
   // strings
   var billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
   var spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
-  var patternValueUnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
 
   function SpaceStationMassReadoutNode( bodyNode, visible ) {
     MassReadoutNode.call( this, bodyNode, visible );
@@ -46,7 +46,7 @@ define( function( require ) {
       else {
         value = Util.toFixed( spaceStationMasses, 2 ); // use one less decimal point here
       }
-      return StringUtils.format( patternValueUnitsString, value, units );
+      return StringUtils.format( pattern0Value1UnitsString, value, units );
     }
   } );
 } );

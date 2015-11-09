@@ -20,7 +20,7 @@ define( function( require ) {
   var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
   var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
   var earthMassString = require( 'string!GRAVITY_AND_ORBITS/earthMass' );
-  var patternValueUnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
 
   function EarthMassReadoutNode( bodyNode, visible ) {
     MassReadoutNode.call( this, bodyNode, visible );
@@ -52,7 +52,7 @@ define( function( require ) {
         value = Util.toFixed( earthMasses, 2 );
         units = (earthMasses === 1) ? earthMassString : earthMassesString;
       }
-      return StringUtils.format( patternValueUnitsString, value, units );
+      return StringUtils.format( pattern0Value1UnitsString, value, units );
     }
   } );
 } );
