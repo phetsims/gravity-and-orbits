@@ -36,8 +36,8 @@ define( function( require ) {
       var deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
       var bodies = this.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
-        bodies[i].vx += deltaVelocity.x;
-        bodies[i].vy += deltaVelocity.y;
+        bodies[ i ].vx += deltaVelocity.x;
+        bodies[ i ].vy += deltaVelocity.y;
       }
     },
 
@@ -51,7 +51,7 @@ define( function( require ) {
       var totalMomentum = new Vector2();
       var bodies = this.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
-        totalMomentum = totalMomentum.plus( bodies[i].getMomentum() );
+        totalMomentum = totalMomentum.plus( bodies[ i ].getMomentum() );
       }
       return totalMomentum;
     },
@@ -64,7 +64,7 @@ define( function( require ) {
       var totalMass = 0.0;
       var bodies = this.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
-        totalMass += bodies[i].mass;
+        totalMass += bodies[ i ].mass;
       }
       return totalMass;
     },
