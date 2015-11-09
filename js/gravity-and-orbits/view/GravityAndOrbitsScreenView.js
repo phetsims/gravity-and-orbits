@@ -17,6 +17,9 @@ define( function( require ) {
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/bottom-control-panel/SpeedRadioButtons' );
   var MassControlPanel = require( 'GRAVITY_AND_ORBITS/gravity-and-orbits/view/right-control-panel/MassControlPanel' );
 
+  // constants
+  var MARGIN = 5;
+
   /**
    * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module
    * object as a parameter instead of a model. This seemed like the easiest way to port the Java version, which has
@@ -31,8 +34,8 @@ define( function( require ) {
 
     // Add the right control panel
     var controlPanelNode = new RightControlPanel( module, {
-      top: this.layoutBounds.top + 5,
-      right: this.layoutBounds.maxX
+      top: this.layoutBounds.top + MARGIN,
+      right: this.layoutBounds.right - MARGIN
     } );
 
     // Add the canvases, one for each of the four modes
@@ -40,8 +43,8 @@ define( function( require ) {
     for ( var i = 0; i < modes.length; i++ ) {
       var gaoCanvas = modes[ i ].canvas;
       var massControlPanel = new MassControlPanel( modes[ i ].getMassSettableBodies(), {
-        top: controlPanelNode.bottom + 5,
-        right: this.layoutBounds.maxX
+        top: controlPanelNode.bottom + MARGIN,
+        right: this.layoutBounds.right - MARGIN
       } );
       modes[ i ].massControlPanel = massControlPanel;
 
@@ -70,15 +73,15 @@ define( function( require ) {
 
     // Add the speed control slider.
     this.addChild( new SpeedRadioButtons( module.timeSpeedScaleProperty,
-      { bottom: this.layoutBounds.bottom - 5, left: this.layoutBounds.left + 5, scale: 1.2 } ) );
+      { bottom: this.layoutBounds.bottom - MARGIN, left: this.layoutBounds.left + MARGIN, scale: 1.2 } ) );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {
       listener: function() {
         module.reset();
       },
-      right: this.layoutBounds.right,
-      bottom: this.layoutBounds.bottom - 5
+      right: this.layoutBounds.right - MARGIN,
+      bottom: this.layoutBounds.bottom - MARGIN
     } );
     this.addChild( resetAllButton );
   }
