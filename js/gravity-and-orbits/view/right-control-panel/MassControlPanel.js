@@ -39,7 +39,8 @@ define( function( require ) {
       var label = new Text( massSettableBody.name, {
         font: CONTROL_FONT,
         fontWeight: 'bold',
-        fill: GravityAndOrbitsColorProfile.panelTextProperty
+        fill: GravityAndOrbitsColorProfile.panelTextProperty,
+        maxWidth: 175
       } );
 
       var icon = massSettableBody.createRenderer( 14 );

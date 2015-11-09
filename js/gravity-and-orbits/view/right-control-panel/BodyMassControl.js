@@ -43,7 +43,8 @@ define( function( require ) {
       top: 10,
       centerX: SPACING,
       font: new PhetFont( 11 ),
-      fill: GravityAndOrbitsColorProfile.panelTextProperty
+      fill: GravityAndOrbitsColorProfile.panelTextProperty,
+      maxWidth: 110
     } );
 
     var ticks = [];

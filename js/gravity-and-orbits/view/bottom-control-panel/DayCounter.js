@@ -47,7 +47,8 @@ define( function( require ) {
       font: FONT,
       listener: function() {
         clock.setSimulationTime( 0 );
-      }
+      },
+      maxWidth: 200
     } );
 
     // update text representation of day

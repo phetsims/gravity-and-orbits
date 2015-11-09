@@ -25,7 +25,7 @@ define( function( require ) {
 
   // constants
   var FONT = new PhetFont( 14 );
-  var TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty };
+  var TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty, maxWidth: 50 };
   var RADIO_OPTIONS = { radius: 7 };
 
   /**

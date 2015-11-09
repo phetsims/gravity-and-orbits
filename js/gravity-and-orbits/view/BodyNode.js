@@ -98,7 +98,8 @@ define( function( require ) {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
         y: tail.y - this.height - 10,
-        fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
+        fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty,
+        maxWidth: 75
       } );
       node.addChild( text );
 

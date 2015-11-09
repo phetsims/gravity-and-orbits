@@ -45,7 +45,8 @@ define( function( require ) {
   var CHECKBOX_OPTIONS = {
     scale: 0.8,
     checkBoxColor: GravityAndOrbitsColorProfile.panelTextProperty,
-    checkBoxColorBackground: GravityAndOrbitsColorProfile.checkBoxFillProperty
+    checkBoxColorBackground: GravityAndOrbitsColorProfile.checkBoxFillProperty,
+    maxWidth: 250
   };
   var TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty };
   var SPACING = 10;

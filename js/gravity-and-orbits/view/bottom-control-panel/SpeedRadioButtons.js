@@ -39,10 +39,14 @@ define( function( require ) {
       radius: 8
     }, options );
 
-    var textOption = { font: new PhetFont( 18 ), fill: GravityAndOrbitsColorProfile.bottomControlTextProperty };
-    var fastText = new Text( fastForwardString, textOption );
-    var normalText = new Text( normalString, textOption );
-    var slowText = new Text( slowMotionString, textOption );
+    var textOptions = {
+      font: new PhetFont( 18 ),
+      fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
+      maxWidth: 200
+    };
+    var fastText = new Text( fastForwardString, textOptions );
+    var normalText = new Text( normalString, textOptions );
+    var slowText = new Text( slowMotionString, textOptions );
 
     VerticalAquaRadioButtonGroup.call( this, [
       { property: speedProperty, value: STARTING_VALUE * 1.75, node: fastText },
