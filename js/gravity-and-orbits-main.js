@@ -30,7 +30,6 @@ define( function( require ) {
   var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
   var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
-
   /**
    * ToScaleModule
    * @constructor
