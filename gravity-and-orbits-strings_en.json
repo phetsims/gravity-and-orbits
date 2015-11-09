@@ -32,9 +32,6 @@
   "billionBillionSpaceStationMasses": {
     "value": "billion billion Space Station masses"
   },
-  "zoomOut": {
-    "value": "-"
-  },
   "spaceStationMass": {
     "value": "Space Station mass"
   },
@@ -46,9 +43,6 @@
   },
   "moon": {
     "value": "Moon"
-  },
-  "zoomIn": {
-    "value": "+"
   },
   "thousandEarthMasses": {
     "value": "thousand Earth masses"
