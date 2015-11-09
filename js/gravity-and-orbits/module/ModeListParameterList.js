@@ -33,6 +33,5 @@ define( function( require ) {
     this.timeSpeedScale = timeSpeedScale;
   }
 
-  return inherit( Object, ModeListParameterList, {
-  } );
+  return inherit( Object, ModeListParameterList );
 } );
