@@ -14,7 +14,7 @@ earth + satellite, etc.). Each mode has its own GravityAndOrbitsModel associated
 each of these models must be remembered independently. The configuration for each mode can be found in the file
 ModeConfig.
 
-## Memory Managemnet
+## Memory Management
 
 All observer/observable relationships exist for the lifetime of the sim. So there is no need to call the various
 memory-management functions associated with objects (unlink, dispose, detach, etc.)
