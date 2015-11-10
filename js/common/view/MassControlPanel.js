@@ -18,7 +18,7 @@ define( function( require ) {
   var HStrut = require( 'SCENERY/nodes/HStrut' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
-  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/common/view/right-control-panel/BodyMassControl' );
+  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/common/view/BodyMassControl' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 

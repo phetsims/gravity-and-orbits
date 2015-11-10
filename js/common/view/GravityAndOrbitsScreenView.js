@@ -13,9 +13,9 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var RightControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/right-control-panel/RightControlPanel' );
-  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/common/view/bottom-control-panel/SpeedRadioButtons' );
-  var MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/right-control-panel/MassControlPanel' );
+  var RightControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/RightControlPanel' );
+  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/common/view/SpeedRadioButtons' );
+  var MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/MassControlPanel' );
 
   // constants
   var MARGIN = 5;

@@ -25,10 +25,10 @@ define( function( require ) {
   var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/common/view/GrabbableVectorNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/common/view/ExplosionNode' );
-  var DayCounter = require( 'GRAVITY_AND_ORBITS/common/view/bottom-control-panel/DayCounter' );
+  var DayCounter = require( 'GRAVITY_AND_ORBITS/common/view/DayCounter' );
   var ScaleSlider = require( 'GRAVITY_AND_ORBITS/common/view/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
-  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/bottom-control-panel/TimeControlPanel' );
+  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
 
   // strings

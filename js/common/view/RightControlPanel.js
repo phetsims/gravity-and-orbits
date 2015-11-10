@@ -13,9 +13,9 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/right-control-panel/PlanetModeMenu' );
-  var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/right-control-panel/GravityModeMenu' );
-  var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/common/view/right-control-panel/SpaceObjectsPropertyCheckbox' );
+  var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/PlanetModeMenu' );
+  var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/GravityModeMenu' );
+  var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/common/view/SpaceObjectsPropertyCheckbox' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
