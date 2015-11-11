@@ -36,7 +36,6 @@ define( function( require ) {
    * @constructor
    */
   function SliderButton( scaleProperty, range, step, isIncrease ) {
-    Node.call( this );
 
     // create default view
     var sample = new Node( {
@@ -51,8 +50,7 @@ define( function( require ) {
       sample.addChild( new Rectangle( BUTTON_SIZE / 2 - 1, 4, 2, BUTTON_SIZE - 8, { fill: 'black' } ) );
     }
 
-    // create button
-    var button = new RectangularPushButton( {
+    RectangularPushButton.call( this, {
       content: sample,
       xMargin: 0,
       yMargin: 0,
@@ -62,19 +60,20 @@ define( function( require ) {
           range.min );
       }
     } );
-    this.addChild( button );
+
+    var thisButton = this;
 
     // add disabling effect for buttons
     if ( isIncrease ) {
       // plus button
       scaleProperty.link( function( scaleValue ) {
-        button.enabled = (scaleValue !== range.max);
+        thisButton.enabled = (scaleValue !== range.max);
       } );
     }
     else {
       // minus button
       scaleProperty.link( function( scaleValue ) {
-        button.enabled = (scaleValue !== range.min);
+        thisButton.enabled = (scaleValue !== range.min);
       } );
     }
 
@@ -90,7 +89,7 @@ define( function( require ) {
       this.localBounds.maxY + dilateBottom ) );
   }
 
-  inherit( Node, SliderButton );
+  inherit( RectangularPushButton, SliderButton );
 
   /**
    * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
