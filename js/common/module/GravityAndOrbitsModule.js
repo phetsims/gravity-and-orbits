@@ -47,11 +47,13 @@ define( function( require ) {
       measuringTapeVisible: false,
       gravityEnabled: true,
       stepping: false,
-      rewinding: false,
-      showMeasuringTape: false
+      rewinding: false
     } );
 
-    this.showMassCheckBox = showMassCheckBox;
+    // these two booleans indicate whethor or not to show the checkbox for measuring tape and mass.
+    // they are false for the cartoon screen and true for the toScale screen
+    this.showMassCheckBox = showMassCheckBox; // @public
+    this.showMeasuringTape = showMeasuringTape; // @public
 
     // @private {ModeList}
     this.modeList = createModes( new ModeListParameterList(
@@ -62,8 +64,6 @@ define( function( require ) {
       this.timeSpeedScaleProperty ) );
 
     this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
-    this.showMeasuringTape = showMeasuringTape;
-
     for ( var i = 0; i < this.modeList.modes.length; i++ ) {
       this.modeList.modes[ i ].init( this );
     }
