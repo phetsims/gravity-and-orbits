@@ -21,22 +21,23 @@ define( function( require ) {
   var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
 
   /**
-   * @param {GravityAndOrbitsModule} module
+   * @param {Property.<GravityAndOrbitsMode>} modeProperty
+   * @param {Property.<boolean>} playButtonPressedProperty
    * @param {Array.<Body>} bodies
    * @param {Object} [options]
    * @constructor
    */
-  function TimeControlPanel( module, bodies, options ) {
-    var playProperty = module.playButtonPressedProperty;
+  function TimeControlPanel( modeProperty, playButtonPressedProperty, bodies, options ) {
+    var playProperty = playButtonPressedProperty;
 
     var playPauseButton = new PlayPauseButton( playProperty );
 
     var stepButton = new StepButton( function() {
-      module.modeProperty.get().getClock().stepClockWhilePaused();
+      modeProperty.get().getClock().stepClockWhilePaused();
     }, playProperty );
 
     var rewindButton = new RewindButton( function() {
-      module.modeProperty.get().rewind();
+      modeProperty.get().rewind();
     }, new Property( false ) );
 
     var anyPropertyDifferentProperties = [];

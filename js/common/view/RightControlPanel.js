@@ -37,9 +37,9 @@ define( function( require ) {
 
     // menu sections and separators
     var sections = [
-      new PlanetModeMenu( module, MENU_SECTION_OPTIONS ),
+      new PlanetModeMenu( module.modeProperty, module.getModes(), MENU_SECTION_OPTIONS ),
       makeSeparatorRectangle(),
-      new GravityModeMenu( module, MENU_SECTION_OPTIONS ),
+      new GravityModeMenu( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
       makeSeparatorRectangle(),
       new SpaceObjectsPropertyCheckbox( module, MENU_SECTION_OPTIONS )
     ];

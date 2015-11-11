@@ -29,11 +29,11 @@ define( function( require ) {
   var RADIO_OPTIONS = { radius: 7 };
 
   /**
-   * @param {GravityAndOrbitsModule} module
+   * @param {Property.<boolean>} gravityEnabledProperty
    * @param {Object} [options] - This object contains options for main node of gravity mode menu.
    * @constructor
    */
-  function GravityModeMenu( module, options ) {
+  function GravityModeMenu( gravityEnabledProperty, options ) {
     Node.call( this, options );
 
     var gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
@@ -43,8 +43,8 @@ define( function( require ) {
     this.addChild( new HBox( {
       spacing: 10, bottom: 2, children: [
         gravityTextNode,
-        new AquaRadioButton( module.gravityEnabledProperty, true, onTextNode, RADIO_OPTIONS ),
-        new AquaRadioButton( module.gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
+        new AquaRadioButton( gravityEnabledProperty, true, onTextNode, RADIO_OPTIONS ),
+        new AquaRadioButton( gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
       ]
     } ) );
   }

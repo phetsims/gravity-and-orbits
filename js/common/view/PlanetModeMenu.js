@@ -53,16 +53,16 @@ define( function( require ) {
   inherit( RectangularPushButton, PlanetModeResetButton );
 
   /**
-   * @param {GravityAndOrbitsModule} module
+   * @param {Property.<GravityAndOrbitsMode>} modeProperty
+   * @param {Array.<GravityAndOrbitsMode>} modes
    * @param {Object} [options] - This object contains options for main node of planet mode menu.
    * @constructor
    */
-  function PlanetModeMenu( module, options ) {
+  function PlanetModeMenu( modeProperty, modes, options ) {
     Node.call( this, options );
 
     var content = []; // for radio buttons
     var resetButtons = [];
-    var modes = module.getModes();
     for ( var i = 0; i < modes.length; i++ ) {
       content.push( { value: modes[ i ], node: modes[ i ].iconImage } );
 
@@ -70,14 +70,14 @@ define( function( require ) {
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
       (function( currentMode, resetButton ) {
-        module.modeProperty.link( function( mode ) {
+        modeProperty.link( function( mode ) {
           resetButton.visible = ( mode === currentMode );
         } );
       })( modes[ i ], resetButton );
 
       resetButtons.push( resetButton );
     }
-    var buttonGroup = new RadioButtonGroup( module.modeProperty, content,
+    var buttonGroup = new RadioButtonGroup( modeProperty, content,
       {
         alignVertically: true,
         selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,

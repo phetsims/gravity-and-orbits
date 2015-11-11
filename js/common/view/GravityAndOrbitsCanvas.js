@@ -116,7 +116,7 @@ define( function( require ) {
     // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
     // Add play/pause, rewind, and step buttons
-    var timeControlPanel = new TimeControlPanel( module, bodies,
+    var timeControlPanel = new TimeControlPanel( module.modeProperty, module.playButtonPressedProperty, bodies,
       { bottom: STAGE_SIZE.bottom - 10, centerX: STAGE_SIZE.centerX, scale: 1.5 } );
     this.addChild( timeControlPanel );
 
