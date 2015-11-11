@@ -17,7 +17,6 @@ define( function( require ) {
   var DEFAULT_DT = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' ).DEFAULT_DT;
 
   /**
-   *
    * @param {number} zoom
    * @constructor
    */
@@ -32,6 +31,7 @@ define( function( require ) {
 
   return inherit( Object, ModeConfig, {
 
+    // @public
     center: function() {
       var deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
       var bodies = this.getBodies();
@@ -43,7 +43,6 @@ define( function( require ) {
 
     /**
      * @private
-     *
      * Compute the total momentum for purposes of centering the camera on the center of momentum frame
      * @returns {Vector2}
      */
@@ -69,8 +68,9 @@ define( function( require ) {
       return totalMass;
     },
 
-    // abstract
     /**
+     * @protected
+     * @abstract
      * @returns {Array<BodyConfiguration}
      */
     getBodies: function() {}

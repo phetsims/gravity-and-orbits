@@ -129,6 +129,7 @@ define( function( require ) {
   return inherit( PropertySet, Body, {
 
     /**
+     * @public
      * @return {number}
      */
     getVolume: function() {
@@ -136,6 +137,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * @return {number}
      */
     getRadius: function() {
@@ -143,6 +145,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * create an immutable representation of this body for use in the physics engine
      * use copy() for Vector2 so that the properties don't get mutated
      *
@@ -158,6 +161,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * Take the updated BodyState from the physics engine and update the state of this body based on it.
      *
      * @param {BodyState} bodyState
@@ -176,8 +180,11 @@ define( function( require ) {
       }
     },
 
-    // This method is called after all bodies have been updated by the physics engine (must be done as a batch),
-    // so that the path can be updated
+    /**
+     * @public
+     * This method is called after all bodies have been updated by the physics engine (must be done as a batch),
+     * so that the path can be updated
+     */
     allBodiesUpdated: function() {
 
       // Only add to the path if the user isn't dragging it and if the body is not exploded
@@ -186,6 +193,7 @@ define( function( require ) {
       }
     },
 
+    // @public
     addPathPoint: function() {
 
       // start removing data after 2 orbits of the default system
@@ -199,11 +207,13 @@ define( function( require ) {
       this.trigger1( GravityAndOrbitsConstants.POINT_ADDED, pathPoint );
     },
 
+    // @public
     clearPath: function() {
       this.path = [];
       this.trigger0( GravityAndOrbitsConstants.CLEARED );
     },
 
+    // @public
     resetAll: function() {
       this.positionProperty.reset();
       this.velocityProperty.reset();
@@ -217,6 +227,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * @return {BodyRenderer}
      */
     createRenderer: function( viewDiameter ) {
@@ -224,6 +235,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * @param {Body} body
      * @return {boolean}
      */
@@ -240,6 +252,7 @@ define( function( require ) {
       return distance < radiiSum;
     },
 
+    // @public
     rewind: function() {
       this.positionProperty.rewind();
       this.velocityProperty.rewind();
@@ -250,6 +263,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * @returns {DerivedProperty}
      */
     anyPropertyDifferent: function() {
@@ -261,8 +275,8 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * Unexplodes and returns objects to the stage
-     *
      * @param {GravityAndOrbitsModel} model
      */
     returnBody: function( model ) {
@@ -274,6 +288,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * Unexplodes and returns objects to the stage
      */
     doReturnBody: function() {
@@ -282,6 +297,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * @return {string}
      */
     toString: function() {

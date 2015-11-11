@@ -77,6 +77,7 @@ define( function( require ) {
       return this.transformProperty.get().modelToViewPosition( this.body.positionProperty.get() );
     },
 
+    // @protected
     getTip: function( tail ) {
       if ( typeof tail === 'undefined' ) {
         tail = this.getTail();

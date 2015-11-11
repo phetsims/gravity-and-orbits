@@ -34,7 +34,7 @@ define( function( require ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     this.modelViewTransformProperty = modelViewTransformProperty; // @private
-    this.body = body; // @private
+    this.body = body; // @public
 
     var thisNode = this;
 
@@ -42,7 +42,7 @@ define( function( require ) {
       thisNode.visible = !isCollided;
     } );
 
-    this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() );
+    this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
     this.addChild( this.bodyRenderer );
 
     var dragHandler = new MovableDragHandler( this.body.positionProperty, {
@@ -119,14 +119,7 @@ define( function( require ) {
     getViewDiameter: function() {
       var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
       return Math.max( viewDiameter, 2 );
-    },
-
-    getBody: function() {
-      return this.body;
-    },
-
-    getBodyRenderer: function() {
-      return this.bodyRenderer;
     }
+
   } );
 } );

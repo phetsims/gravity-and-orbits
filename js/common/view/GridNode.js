@@ -17,7 +17,7 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
 
   /**
-   *
+   * Constructor for GridNode
    * @param {Property.<ModelViewTransform>} transformProperty
    * @param {number} spacing - spacing between grid lines
    * @param {Vector2} center - center of the grid

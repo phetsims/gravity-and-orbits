@@ -31,10 +31,12 @@ define( function( require ) {
 
   return inherit( Object, BodyState, {
 
+    // @public
     distanceSquared: function( position ) {
       return this.position.minus( position ).magnitudeSquared();
     },
 
+    // @public
     toString: function() {
       return 'BodyState{' + 'position=' + this.position + ', velocity=' + this.velocity +
              ', acceleration=' + this.acceleration + ', mass=' + this.mass + '}';

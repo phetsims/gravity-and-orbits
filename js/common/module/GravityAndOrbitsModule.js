@@ -72,6 +72,8 @@ define( function( require ) {
   }
 
   return inherit( PropertySet, GravityAndOrbitsModule, {
+
+    // @public
     step: function( dt ) {
 
       // limit dt to 1 so there are no large jumps
@@ -82,6 +84,7 @@ define( function( require ) {
       }
     },
 
+    // @public
     getModes: function() {
       return this.modeList.modes.slice( 0 );
     },
@@ -93,6 +96,7 @@ define( function( require ) {
       }
     },
 
+    // @public
     reset: function() {
       for ( var i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].reset();

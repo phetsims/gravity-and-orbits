@@ -35,7 +35,6 @@ define( function( require ) {
 
   /**
    * Create a new GravityAndOrbitsMode that shares ModeListParameterList values with other modes
-   *
    * @param {number} forceScale
    * @param {boolean} active
    * @param {number} dt
@@ -118,7 +117,6 @@ define( function( require ) {
 
     /**
      * @private
-     *
      * Create the transform from model coordinates to stage coordinates
      * @param defaultZoomScale
      * @param zoomOffset
@@ -137,6 +135,7 @@ define( function( require ) {
     },
 
     /**
+     * @private
      * Find the rectangle that should be viewed in the model
      * @param targetScale
      * @param targetCenterModelPoint
@@ -154,6 +153,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * Gets the number of points that should be used to draw a trace, should be enough so that two periods for the
      * default orbit are visible.
      */
@@ -164,16 +164,18 @@ define( function( require ) {
       return (Math.ceil( numberOfPathPeriods * this.defaultOrbitalPeriod / this.dt ));
     },
 
+    // @public
     getClock: function() {
       return this.model.clock;
     },
 
+    // @public
     getBodies: function() {
       return this.model.getBodies();
     },
 
     /**
-     *
+     * @public
      * @param body
      */
     addBody: function( body ) {
@@ -187,7 +189,9 @@ define( function( require ) {
       body.on( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY, update );
     },
 
+    // @public
     reset: function() {
+
       // reset the clock
       this.model.clock.resetSimulationTime();
       this.model.resetAll();
@@ -198,7 +202,7 @@ define( function( require ) {
     },
 
     /**
-     *
+     * @public
      * @param module
      */
     init: function( module ) {
@@ -206,6 +210,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * Return the bodies to their original states when the user presses "reset" (not "reset all")
      */
     resetMode: function() {
@@ -215,6 +220,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * Restore the last set of initial conditions that were set while the sim was paused.
      */
     rewind: function() {
@@ -227,6 +233,10 @@ define( function( require ) {
       this.rewindingProperty.set( false );
     },
 
+    /**
+     * @public
+     * @returns {Array.<Body>} - All bodies in the mode for which the mass can be changed
+     */
     getMassSettableBodies: function() {
       var bodies = this.getBodies();
       var massSettableBodies = [];

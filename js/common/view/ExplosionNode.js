@@ -20,7 +20,6 @@ define( function( require ) {
   var NUM_STEPS_FOR_ANIMATION = 10;
 
   /**
-   *
    * @param {Body} body
    * @param {Property<ModelViewTransform>} modelViewTransformProperty
    * @constructor

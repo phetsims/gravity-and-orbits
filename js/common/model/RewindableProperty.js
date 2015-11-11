@@ -15,7 +15,6 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
 
   /**
-   *
    * @param {Property.<boolean>} playButtonPressedProperty
    * @param {Property.<boolean>} isSteppingProperty
    * @param {Property.<boolean>} isRewindingProperty
@@ -43,6 +42,7 @@ define( function( require ) {
 
   return inherit( Property, RewindableProperty, {
 
+    // @public
     set: function( value ) {
       Property.prototype.set.call( this, value );
 
@@ -58,31 +58,44 @@ define( function( require ) {
       this.differentProperty.set( !this.equalsRewindPoint() );
     },
 
-    // Store the new value as the initial condition which can be rewound to. We have to skip notifications sometimes
-    // or the wrong initial conditions get stored.
+    /**
+     * @public
+     * Store the new value as the initial condition which can be rewound to. We have to skip notifications sometimes
+     * or the wrong initial conditions get stored.
+     */
     storeRewindValueNoNotify: function() {
       this.rewindValue = this.get();
     },
 
-    // Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
+    /**
+     * @public
+     * Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
+     * @param listener
+     */
     addRewindValueChangeListener: function( listener ) {
       this.rewindValueChangedListeners.push( listener );
     },
 
+    // @public
     equalsRewindPoint: function() {
       return this.rewindValue === this.get();
     },
 
+    // @public
     rewind: function() {
       this.set( this.rewindValue );
     },
 
-    // Convenient access to whether the value has deviated from the initial condition
+    /**
+     * @public
+     * Convenient access to whether the value has deviated from the initial condition
+     */
     different: function() {
       return this.differentProperty;
     },
 
     /**
+     * @public
      * Makes this public for use in gravity and orbits.
      */
     getInitialValue: function() {

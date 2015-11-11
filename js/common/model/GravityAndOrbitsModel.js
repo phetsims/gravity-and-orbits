@@ -24,7 +24,6 @@ define( function( require ) {
 
   /**
    * Return the smaller of two Body instances, for determining which survives a collision.
-   *
    * @param {Body} other
    * @param {Body} body
    * @return {Body} the smaller body
@@ -77,6 +76,7 @@ define( function( require ) {
 
   return inherit( PropertySet, GravityAndOrbitsModel, {
 
+    // @public
     step: function( dt ) {
       var i;
 
@@ -110,7 +110,10 @@ define( function( require ) {
       }
     },
 
-    // For debugging the stability of the integration rule
+    /**
+     * @private
+     * For debugging the stability of the integration rule
+     */
     getSunEarthDistance: function() {
       var star = this.getBody( starString );
       var planet = this.getBody( planetString );
@@ -120,6 +123,7 @@ define( function( require ) {
       return star.positionProperty.get().distance( planet.positionProperty.get() );
     },
 
+    // @public
     resetAll: function() {
       PropertySet.prototype.reset.call( this ); // Resets the simulation time
       this.resetBodies();
@@ -127,7 +131,11 @@ define( function( require ) {
       this.updateForceVectors();
     },
 
-    // Adds a body and updates the body's force vectors
+    /**
+     * @public
+     * Adds a body and updates the body's force vectors
+     * @param body
+     */
     addBody: function( body ) {
       var gravityAndOrbitsModel = this;
       this.bodies.push( body );
@@ -143,7 +151,8 @@ define( function( require ) {
       this.updateForceVectors();
     },
 
-    /*
+    /**
+     * @private
      * Since we haven't (yet?) rewritten the gravity forces to auto-update when dependencies change, we update when
      * necessary
      * (1) when a new body is added or (2) when reset is pressed.
@@ -156,6 +165,7 @@ define( function( require ) {
     },
 
     /**
+     * @public
      * Returns a defensive copy of the bodies.
      * @return {Array<Body>}
      */
@@ -163,6 +173,7 @@ define( function( require ) {
       return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
     },
 
+    // @public
     resetBodies: function() {
       for ( var i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].resetAll();
@@ -170,7 +181,10 @@ define( function( require ) {
       this.updateForceVectors(); // has to be done separately since physics is computed as a batch
     },
 
-    // Unexplodes and returns objects to the stage
+    /**
+     * @public
+     * Unexplodes and returns objects to the stage
+     */
     returnBodies: function() {
 
       for ( var i = 0; i < this.bodies.length; i++ ) {
@@ -183,6 +197,7 @@ define( function( require ) {
       this.updateForceVectors();
     },
 
+    // @public
     getBody: function( name ) {
       for ( var i = 0; i < this.bodies.length; i++ ) {
         var body = this.bodies[ i ];

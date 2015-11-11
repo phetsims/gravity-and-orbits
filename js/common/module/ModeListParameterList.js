@@ -13,7 +13,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
-   *
    * @param {Property<boolean>} playButtonPressed
    * @param {Property<boolean>} gravityEnabled
    * @param {Property<boolean>} stepping

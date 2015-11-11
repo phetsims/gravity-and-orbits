@@ -44,6 +44,8 @@ define( function( require ) {
   }
 
   return inherit( Object, GravityAndOrbitsClock, {
+
+    // @public
     stepClockWhilePaused: function() {
 
       // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
@@ -53,32 +55,39 @@ define( function( require ) {
       this.steppingProperty.set( false );
     },
 
+    // @public
     stepClockBackWhilePaused: function() {
       this.steppingProperty.set( true );
       this.step( -1 / CLOCK_FRAME_RATE );
       this.steppingProperty.set( false );
     },
 
+    // @public
     setRunning: function( running ) {
       this.runningProperty.set( running );
     },
 
+    // @public
     setSimulationTime: function( time ) {
       this.simulationTimeProperty.set( time );
     },
 
+    // @public
     getSimulationTime: function() {
       return this.simulationTimeProperty.get();
     },
 
+    // @public
     resetSimulationTime: function() {
       this.simulationTimeProperty.reset();
     },
 
+    // @public
     addEventTimer: function( stepFunction ) {
       this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
     },
 
+    // @public
     step: function( dt ) {
       this.eventTimer.step( dt );
     }

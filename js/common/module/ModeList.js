@@ -103,6 +103,8 @@ define( function( require ) {
   }
 
   inherit( ModeConfig, SunEarthModeConfig, {
+
+    // @protected
     getBodies: function() {
       return [ this.sun, this.earth ];
     }
@@ -126,6 +128,8 @@ define( function( require ) {
   }
 
   inherit( ModeConfig, SunEarthMoonModeConfig, {
+
+    // @protected
     getBodies: function() {
       return [ this.sun, this.earth, this.moon ];
     }
@@ -145,6 +149,8 @@ define( function( require ) {
   }
 
   inherit( ModeConfig, EarthMoonModeConfig, {
+
+    // @protected
     getBodies: function() {
       return [ this.earth, this.moon ];
     }
@@ -163,6 +169,8 @@ define( function( require ) {
   }
 
   inherit( ModeConfig, EarthSpaceStationModeConfig, {
+
+    // @protected
     getBodies: function() {
       return [ this.earth, this.spaceStation ];
     }
@@ -289,6 +297,8 @@ define( function( require ) {
     }
 
     inherit( Body, Moon, {
+
+      // @public
       doReturnBody: function( model ) {
         Body.prototype.doReturnBody.call( this, model );
         var earth = model.getBody( planetString );
@@ -468,7 +478,6 @@ define( function( require ) {
 
     /**
      * @private
-     *
      * Creates an image that can be used for the mode icon, showing the nodes of each body in the mode.
      * @param {boolean} sun
      * @param {boolean} earth

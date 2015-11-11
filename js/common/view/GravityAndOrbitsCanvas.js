@@ -46,7 +46,7 @@ define( function( require ) {
   var THOUSAND_MILES_MULTIPLIER = METERS_PER_MILE / 1000;
 
   /**
-   *
+   * Constructor for GravityAndOrbitsCanvas
    * @param {GravityAndOrbitsModel} model
    * @param {GravityAndOrbitsModule} module
    * @param {GravityAndOrbitsMode} mode

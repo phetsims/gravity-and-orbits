@@ -27,7 +27,7 @@ define( function( require ) {
 
   return inherit( MassReadoutNode, SpaceStationMassReadoutNode, {
     createText: function() {
-      var massKG = this.bodyNode.getBody().massProperty.get();
+      var massKG = this.bodyNode.body.massProperty.get();
       var spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;
 
       // Show the readout in terms of space station masses (or billions of billions of space station masses)

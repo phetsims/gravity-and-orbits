@@ -28,10 +28,10 @@ define( function( require ) {
     this.addChild( readoutText );
 
     var updateLocation = function() {
-      var bounds = bodyNode.getBodyRenderer().getBounds();
+      var bounds = bodyNode.bodyRenderer.getBounds();
 
       thisNode.x = bounds.centerX - thisNode.width / 2;
-      if ( bodyNode.getBody().massReadoutBelow ) {
+      if ( bodyNode.body.massReadoutBelow ) {
         thisNode.y = bounds.maxX + thisNode.height;
       }
       else {
@@ -39,13 +39,13 @@ define( function( require ) {
       }
     };
 
-    bodyNode.getBody().massProperty.link( function() {
+    bodyNode.body.massProperty.link( function() {
       readoutText.setText( thisNode.createText() );
       updateLocation();
     } );
 
     visibleProperty.link( function( visible ) {
-      if ( !bodyNode.getBody().collidedProperty.get() ) {
+      if ( !bodyNode.body.collidedProperty.get() ) {
         thisNode.visible = visible;
         updateLocation();
       }

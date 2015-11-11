@@ -15,7 +15,6 @@ define( function( require ) {
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   /**
-   *
    * @param {Property<boolean>} playButtonPressed
    * @param {Property<boolean>} gravityEnabled
    * @param {Property<boolean>} stepping

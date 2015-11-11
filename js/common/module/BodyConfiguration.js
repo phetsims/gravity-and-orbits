@@ -15,7 +15,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   *
    * @param{number} mass
    * @param{number} radius
    * @param{number} x
@@ -25,7 +24,8 @@ define( function( require ) {
    * @constructor
    */
   function BodyConfiguration( mass, radius, x, y, vx, vy ) {
-    //True if the object doesn't move when the clock ticks
+
+    // True if the object doesn't move when the clock ticks
     this.fixed = false;
     this.mass = mass;
     this.radius = radius;
@@ -36,6 +36,8 @@ define( function( require ) {
   }
 
   return inherit( Object, BodyConfiguration, {
+
+    // @public
     getMomentum: function() {
       return new Vector2( this.vx * this.mass, this.vy * this.mass );
     }

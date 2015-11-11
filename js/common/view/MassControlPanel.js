@@ -25,6 +25,13 @@ define( function( require ) {
   // constants
   var CONTROL_FONT = new PhetFont( 14 );
 
+  /**
+   * Constructor for MassControlPanel. This is the panel in the lower right section of the screen that holds sliders
+   * for adjusting the mass of bodies.
+   * @param massSettableBodies
+   * @param options
+   * @constructor
+   */
   function MassControlPanel( massSettableBodies, options ) {
 
     options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );

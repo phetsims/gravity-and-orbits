@@ -28,7 +28,7 @@ define( function( require ) {
 
   return inherit( MassReadoutNode, EarthMassReadoutNode, {
     createText: function() {
-      var massKG = this.bodyNode.getBody().massProperty.get();
+      var massKG = this.bodyNode.body.massProperty.get();
       var earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
 
       // Show the value in terms of earth masses (or thousands of earth masses)

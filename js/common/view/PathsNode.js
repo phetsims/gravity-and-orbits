@@ -95,7 +95,10 @@ define( function( require ) {
 
   return inherit( CanvasNode, PathsNode, {
 
-    // @param {CanvasRenderingContext2D} context
+    /**
+     * @private
+     * @param {CanvasRenderingContext2D} context
+     */
     paintCanvas: function( context ) {
       var j;
 
