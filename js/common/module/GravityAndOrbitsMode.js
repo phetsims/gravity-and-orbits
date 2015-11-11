@@ -90,11 +90,11 @@ define( function( require ) {
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
-    this.modelBoundsProperty = new Property(); // not in the Java version, needed for movableDragHandler bounds
-    this.transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+    this.modelBoundsProperty = new Property(); // @public - not in the Java version, needed for movableDragHandler bounds
+    var transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) ); // @public
 
     this.zoomLevelProperty.link( function() {
-      thisMode.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+      transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
     // @private
@@ -189,16 +189,16 @@ define( function( require ) {
       body.on( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY, update );
     },
 
-    // @public
+    /**
+     * @public
+     * @override
+     */
     reset: function() {
+      PropertySet.prototype.reset.call( this );
 
       // reset the clock
       this.model.clock.resetSimulationTime();
       this.model.resetAll();
-      this.deviatedFromDefaultsProperty.reset();
-      this.measuringTapeStartPointProperty.reset();
-      this.measuringTapeEndPointProperty.reset();
-      this.zoomLevelProperty.reset();
     },
 
     /**

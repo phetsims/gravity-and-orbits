@@ -96,23 +96,16 @@ define( function( require ) {
       }
     },
 
-    // @public
+    /**
+     * @public
+     * @override
+     */
     reset: function() {
+      PropertySet.prototype.reset.call( this );
+      this.modeProperty.reset();
       for ( var i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].reset();
       }
-      this.showGravityForceProperty.reset();
-      this.showPathProperty.reset();
-      this.showGridProperty.reset();
-      this.showVelocityProperty.reset();
-      this.showMassProperty.reset();
-      this.playButtonPressedProperty.reset();
-      this.timeSpeedScaleProperty.reset();
-      this.measuringTapeVisibleProperty.reset();
-      this.gravityEnabledProperty.reset();
-      this.steppingProperty.reset();
-      this.rewindingProperty.reset();
-      this.modeProperty.reset();
     }
 
   }, {

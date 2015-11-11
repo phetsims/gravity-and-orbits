@@ -42,7 +42,10 @@ define( function( require ) {
 
   return inherit( Property, RewindableProperty, {
 
-    // @public
+    /**
+     * @public
+     * @override
+     */
     set: function( value ) {
       Property.prototype.set.call( this, value );
 
