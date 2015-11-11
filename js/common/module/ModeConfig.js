@@ -1,7 +1,9 @@
 // Copyright 2014-2015, University of Colorado Boulder
 
 /**
- * Configuration for setting up a particular GravityAndOrbitsMode, enumerated in ModeList
+ * Configuration for setting up a particular GravityAndOrbitsMode, enumerated in ModeList.
+ * This is an abstract class, and is intended only to be used by sub-types.
+ * @abstract
  *
  * @author Sam Reid
  * @author Aaron Davis
@@ -69,10 +71,12 @@ define( function( require ) {
     },
 
     /**
-     * @protected
+     * @returns {BodyConfiguration[]}
+     * @public
      * @abstract
-     * @returns {Array<BodyConfiguration}
      */
-    getBodies: function() {}
+    getBodies: function() {
+      throw new Error( 'must be implemented by subtype' );
+    }
   } );
 } );
