@@ -28,7 +28,7 @@ define( function( require ) {
 
   /**
    * @param {boolean} showMeasuringTape
-   * @param {function<ModeListParameterList, Array<GravityAndOrbitsMode>>} createModes
+   * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsMode>>} createModes
    * @param {number} initialModeIndex
    * @param {boolean} showMassCheckBox
    * @constructor

@@ -94,11 +94,11 @@ define( function( require ) {
 
   /**
    *
-   * @param {Property<boolean>} playButtonPressed
-   * @param {Property<boolean>} gravityEnabled
-   * @param {Property<boolean>} stepping
-   * @param {Property<boolean>} rewinding
-   * @param {Property<number>} timeSpeedScale
+   * @param {Property.<boolean>} playButtonPressed
+   * @param {Property.<boolean>} gravityEnabled
+   * @param {Property.<boolean>} stepping
+   * @param {Property.<boolean>} rewinding
+   * @param {Property.<number>} timeSpeedScale
    * @constructor
    */
   function CartoonModeList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {

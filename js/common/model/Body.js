@@ -34,7 +34,7 @@ define( function( require ) {
    * @param {number} mass
    * @param {Color} color
    * @param {Color} highlight
-   * @param {function<Body, number, BodyRenderer>} renderer - way to associate the graphical representation directly
+   * @param {function.<Body, number, BodyRenderer>} renderer - way to associate the graphical representation directly
    *                                                          instead of later with conditional logic or map
    * @param {number} labelAngle
    * @param {boolean} massSettable
@@ -42,9 +42,9 @@ define( function( require ) {
    * @param {boolean} massReadoutBelow
    * @param {number} tickValue
    * @param {string} tickLabel
-   * @param {Property<boolean>} playButtonPressedProperty
-   * @param {Property<boolean>} steppingProperty
-   * @param {Property<boolean>} rewindingProperty
+   * @param {Property.<boolean>} playButtonPressedProperty
+   * @param {Property.<boolean>} steppingProperty
+   * @param {Property.<boolean>} rewindingProperty
    * @param {boolean} fixed
    * @constructor
    */

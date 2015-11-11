@@ -41,7 +41,7 @@ define( function( require ) {
      * Updates the model, producing the next ModelState
      * @public
      * @param {number} dt
-     * @param {Property.<Boolean>} gravityEnabledProperty
+     * @param {Property.<boolean>} gravityEnabledProperty
      * @returns {ModelState}
      */
     getNextState: function( dt, gravityEnabledProperty ) {

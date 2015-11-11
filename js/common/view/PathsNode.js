@@ -26,8 +26,8 @@ define( function( require ) {
   /**
    *
    * @param {Body} bodies
-   * @param {Property<ModelViewTransform2>} transformProperty
-   * @param {Property<boolean>} visibleProperty
+   * @param {Property.<ModelViewTransform2>} transformProperty
+   * @param {Property.<boolean>} visibleProperty
    * @param {Color} color
    * @param {Bounds2} canvasBounds
    * @constructor

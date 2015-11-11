@@ -38,11 +38,11 @@ define( function( require ) {
    * @param {number} forceScale
    * @param {boolean} active
    * @param {number} dt
-   * @param {function<number, string>} timeFormatter
+   * @param {function.<number, string>} timeFormatter
    * @param {Node} iconImage
    * @param {number} defaultOrbitalPeriod
    * @param {number} velocityVectorScale
-   * @param {function<BodyNode, Property<boolean>, Node>} massReadoutFactory
+   * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory
    * @param {Line} initialMeasuringTapeLocation
    * @param {number} defaultZoomScale
    * @param {Vector2} zoomOffset

@@ -21,7 +21,7 @@ define( function( require ) {
 
   /**
    * @param {Body} body
-   * @param {Property<ModelViewTransform>} modelViewTransformProperty
+   * @param {Property.<ModelViewTransform>} modelViewTransformProperty
    * @constructor
    */
   function ExplosionNode( body, modelViewTransformProperty ) {

@@ -26,8 +26,8 @@ define( function( require ) {
   /**
    *
    * @param {number} baseDTValue (multiplied by scale to obtain true dt)
-   * @param {Property<boolean>} stepping
-   * @param {Property<number>} timeSpeedScale
+   * @param {Property.<boolean>} stepping
+   * @param {Property.<number>} timeSpeedScale
    * @constructor
    */
   function GravityAndOrbitsClock( baseDTValue, stepping, timeSpeedScale ) {

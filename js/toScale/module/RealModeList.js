@@ -15,11 +15,11 @@ define( function( require ) {
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   /**
-   * @param {Property<boolean>} playButtonPressed
-   * @param {Property<boolean>} gravityEnabled
-   * @param {Property<boolean>} stepping
-   * @param {Property<boolean>} rewinding
-   * @param {Property<number>} timeSpeedScale
+   * @param {Property.<boolean>} playButtonPressed
+   * @param {Property.<boolean>} gravityEnabled
+   * @param {Property.<boolean>} stepping
+   * @param {Property.<boolean>} rewinding
+   * @param {Property.<number>} timeSpeedScale
    * @constructor
    */
   function RealModeList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {

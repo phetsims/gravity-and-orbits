@@ -13,11 +13,11 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
-   * @param {Property<boolean>} playButtonPressed
-   * @param {Property<boolean>} gravityEnabled
-   * @param {Property<boolean>} stepping
-   * @param {Property<boolean>} rewinding
-   * @param {Property<number>} timeSpeedScale
+   * @param {Property.<boolean>} playButtonPressed
+   * @param {Property.<boolean>} gravityEnabled
+   * @param {Property.<boolean>} stepping
+   * @param {Property.<boolean>} rewinding
+   * @param {Property.<number>} timeSpeedScale
    * @constructor
    */
   function ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
