@@ -15,7 +15,7 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/PlanetModeMenu' );
   var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/GravityModeMenu' );
-  var SpaceObjectsPropertyCheckbox = require( 'GRAVITY_AND_ORBITS/common/view/SpaceObjectsPropertyCheckbox' );
+  var CheckboxPanel = require( 'GRAVITY_AND_ORBITS/common/view/CheckboxPanel' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -41,7 +41,7 @@ define( function( require ) {
       makeSeparatorRectangle(),
       new GravityModeMenu( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
       makeSeparatorRectangle(),
-      new SpaceObjectsPropertyCheckbox( module, MENU_SECTION_OPTIONS )
+      new CheckboxPanel( module, MENU_SECTION_OPTIONS )
     ];
 
     assert && assert( sections.length === 5, 'There should be 5 sections in the RightControlPanel' );

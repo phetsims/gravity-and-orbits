@@ -56,7 +56,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function SpaceObjectsPropertyCheckbox( module, options ) {
+  function CheckboxPanel( module, options ) {
 
     var children = [];
 
@@ -149,5 +149,5 @@ define( function( require ) {
     }, options ) );
   }
 
-  return inherit( VBox, SpaceObjectsPropertyCheckbox );
+  return inherit( VBox, CheckboxPanel );
 } );
