@@ -58,7 +58,7 @@ define( function( require ) {
    * @param {Object} [options] - This object contains options for main node of planet mode menu.
    * @constructor
    */
-  function PlanetModeMenu( modeProperty, modes, options ) {
+  function ModeControl( modeProperty, modes, options ) {
     Node.call( this, options );
 
     var content = []; // for radio buttons
@@ -97,5 +97,5 @@ define( function( require ) {
     this.addChild( new HStrut( 219 ) );
   }
 
-  return inherit( Node, PlanetModeMenu );
+  return inherit( Node, ModeControl );
 } );
