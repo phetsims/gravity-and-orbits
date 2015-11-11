@@ -7,7 +7,7 @@ This document describes the model for the Gravity and Orbits simulation.
 
 The model uses an algorithm based on exponential decompositions from this paper: http://arxiv.org/pdf/cond-mat/0110585v1.pdf, equation 22.
 
-Here is the algorithm for stepping from time *t* to *t + h*:
+Here is the algorithm for stepping from time *t* to *t + h* for a given body (i.e. a planet, star, space station, etc.):
 
 r<sub>1</sub> = r(t) + v(t)ξh
 
@@ -34,4 +34,16 @@ where
 λ = −0.2123418310626054E+00
 
 χ = −0.6626458266981849E−01
+
+f = the net force on the body due to other bodies
+
+h = the time delta
+
+m = the body's mass
+
+r = the body's position
+
+t = time
+
+v = the body's velocity
 
