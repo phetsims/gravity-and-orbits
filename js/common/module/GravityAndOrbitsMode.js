@@ -91,10 +91,10 @@ define( function( require ) {
     this.massReadoutFactory = massReadoutFactory;
 
     this.modelBoundsProperty = new Property(); // @public - not in the Java version, needed for movableDragHandler bounds
-    var transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) ); // @public
+    this.transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) ); // @public
 
     this.zoomLevelProperty.link( function() {
-      transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+      this.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
     // @private
