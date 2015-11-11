@@ -94,7 +94,7 @@ define( function( require ) {
     this.transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) ); // @public
 
     this.zoomLevelProperty.link( function() {
-      this.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+      thisMode.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
     // @private
