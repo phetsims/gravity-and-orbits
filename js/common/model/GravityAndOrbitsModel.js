@@ -54,6 +54,8 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsModel( clock, gravityEnabledProperty ) {
+
+    // @public
     PropertySet.call( this, {
       paused: true
     } );

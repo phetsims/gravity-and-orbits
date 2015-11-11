@@ -32,7 +32,7 @@ define( function( require ) {
    * @constructor
    */
   function ModelState( bodyStates ) {
-    this.bodyStates = bodyStates;
+    this.bodyStates = bodyStates; // @private
   }
 
   return inherit( Object, ModelState, {

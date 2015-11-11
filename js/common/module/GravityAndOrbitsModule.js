@@ -36,6 +36,7 @@ define( function( require ) {
   function GravityAndOrbitsModule( showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
 
     // Properties that are common to all "modes" should live here.
+    // @public
     PropertySet.call( this, {
       showGravityForce: false,
       showPath: false,

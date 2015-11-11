@@ -26,6 +26,7 @@ define( function( require ) {
   // images
   var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
 
+  // @abstract
   function BodyRenderer( body ) {
 
     Node.call( this );
@@ -35,20 +36,25 @@ define( function( require ) {
   }
 
   // this needs to be called before the static classes are defined, otherwise the inheritance doesn't work right
-  // this jshint warning notifies if a variable is used before it is defined
-  /* jshint -W003 */
   var renderer = inherit( Node, BodyRenderer, {
-      getBody: function() {
-        return this.body;
-      },
-      setDiameter: function( viewDiameter ) {}
+
+    // @public
+    getBody: function() {
+      return this.body;
     },
-    {
-      SwitchableBodyRenderer: SwitchableBodyRenderer,
-      ImageRenderer: ImageRenderer,
-      SunRenderer: SunRenderer
-    } );
-  /* jshint -W003 */
+
+    /**
+     * @public
+     * @abstract
+     */
+    setDiameter: function( viewDiameter ) {
+      throw new Error( 'must be implemented by subtype' );
+    }
+  }, {
+    SwitchableBodyRenderer: SwitchableBodyRenderer,
+    ImageRenderer: ImageRenderer,
+    SunRenderer: SunRenderer
+  } );
 
   /**
    * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different
@@ -66,10 +72,8 @@ define( function( require ) {
     BodyRenderer.call( this, body );
     var thisRenderer = this;
 
-    this.targetBodyRenderer = targetBodyRenderer;
-
-    // @private
-    this.defaultBodyRenderer = defaultBodyRenderer;
+    this.targetBodyRenderer = targetBodyRenderer; // @private
+    this.defaultBodyRenderer = defaultBodyRenderer; // @private
 
     body.massProperty.link( function() {
       thisRenderer.removeAllChildren();
@@ -78,6 +82,8 @@ define( function( require ) {
   }
 
   inherit( BodyRenderer, SwitchableBodyRenderer, {
+
+    // @public
     setDiameter: function( viewDiameter ) {
       this.targetBodyRenderer.setDiameter( viewDiameter );
       this.defaultBodyRenderer.setDiameter( viewDiameter );
@@ -91,14 +97,16 @@ define( function( require ) {
 
     BodyRenderer.call( this, body );
 
-    this.imageNode = new Image( imageName );
-    this.viewDiameter = viewDiameter;
+    this.imageNode = new Image( imageName ); // @private
+    this.viewDiameter = viewDiameter; // @private
     this.addChild( this.imageNode );
 
     this.updateViewDiameter();
   }
 
   inherit( BodyRenderer, ImageRenderer, {
+
+    // @public
     setDiameter: function( viewDiameter ) {
       this.viewDiameter = viewDiameter;
       this.updateViewDiameter();
@@ -126,12 +134,11 @@ define( function( require ) {
    */
   function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
 
-    // @private
-    this.twinkles = new Path( null, { fill: 'yellow' } );
+    this.twinkles = new Path( null, { fill: 'yellow' } ); // @private
+    this.numSegments = numSegments; // @private
+    this.twinkleRadius = twinkleRadius; // @private
 
     ImageRenderer.call( this, body, viewDiameter, sunMipmap );
-    this.numSegments = numSegments;
-    this.twinkleRadius = twinkleRadius;
     this.addChild( this.twinkles );
     this.twinkles.moveToBack();
     this.setDiameter( viewDiameter );

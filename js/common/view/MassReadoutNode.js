@@ -18,7 +18,7 @@ define( function( require ) {
   function MassReadoutNode( bodyNode, visibleProperty ) {
     Node.call( this );
     var thisNode = this;
-    this.bodyNode = bodyNode;
+    this.bodyNode = bodyNode; // @protected
 
     var readoutText = new Text( this.createText(), {
       pickable: false,

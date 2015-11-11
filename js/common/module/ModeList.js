@@ -89,6 +89,8 @@ define( function( require ) {
 
   // static class: SunEarthModeConfig
   function SunEarthModeConfig() {
+
+    // all fields are @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.earth = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
@@ -112,6 +114,8 @@ define( function( require ) {
 
   // static class: SunEarthMoonModeConfig
   function SunEarthMoonModeConfig() {
+
+    // all fields are @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.earth = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
@@ -137,6 +141,8 @@ define( function( require ) {
 
   // static class: EarthMoonModeConfig
   function EarthMoonModeConfig() {
+
+    // all fields are @public
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0 );
     ModeConfig.call( this, 400 );
@@ -158,6 +164,8 @@ define( function( require ) {
 
   // static class: EarthSpaceStationModeConfig
   function EarthSpaceStationModeConfig() {
+
+    // all fields are @public
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
     this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
       SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED );
@@ -373,9 +381,8 @@ define( function( require ) {
 
     inherit( Body, Sun );
 
-    // @private
-    this.p = p;
-    this.modes = []; // in the java version this class extended ArrayList
+    this.p = p; // @private
+    this.modes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
 
     sunEarth.center();
     sunEarthMoon.center();

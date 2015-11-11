@@ -21,6 +21,8 @@ define( function( require ) {
    * @constructor
    */
   function ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
+
+    // all fields are @public
     this.playButtonPressed = playButtonPressed;
     this.gravityEnabled = gravityEnabled;
 

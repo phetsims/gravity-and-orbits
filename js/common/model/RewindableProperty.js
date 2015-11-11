@@ -23,6 +23,8 @@ define( function( require ) {
    */
   function RewindableProperty( playButtonPressedProperty, isSteppingProperty, isRewindingProperty, value ) {
     Property.call( this, value );
+
+    // all fields are @private
     this.playButtonPressedProperty = playButtonPressedProperty;
 
     // if the clock is paused and the user pressed 'step', do not store a rewind point

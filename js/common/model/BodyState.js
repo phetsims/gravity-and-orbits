@@ -13,7 +13,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
-   *
    * @param {Vector2} position
    * @param {Vector2} velocity
    * @param {Vector2} acceleration
@@ -22,6 +21,8 @@ define( function( require ) {
    * @constructor
    */
   function BodyState( position, velocity, acceleration, mass, exploded ) {
+
+    // all fields are @public
     this.position = position;
     this.velocity = velocity;
     this.acceleration = acceleration;

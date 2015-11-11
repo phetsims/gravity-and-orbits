@@ -15,18 +15,18 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   * @param{number} mass
-   * @param{number} radius
-   * @param{number} x
-   * @param{number} y
-   * @param{number} vx
-   * @param{number} vy
+   * @param {number} mass
+   * @param {number} radius
+   * @param {number} x
+   * @param {number} y
+   * @param {number} vx
+   * @param {number} vy
    * @constructor
    */
   function BodyConfiguration( mass, radius, x, y, vx, vy ) {
 
-    // True if the object doesn't move when the clock ticks
-    this.fixed = false;
+    // all fields are @public
+    this.fixed = false; // True if the object doesn't move when the clock ticks
     this.mass = mass;
     this.radius = radius;
     this.x = x;

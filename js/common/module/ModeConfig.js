@@ -23,12 +23,10 @@ define( function( require ) {
    * @constructor
    */
   function ModeConfig( zoom ) {
-    this.dt = DEFAULT_DT;
-    this.zoom = zoom;
-
-    // private members from java that weren't initialized in the constructor
-    this.forceScale = null;
-    this.initialMeasuringTapeLocation = null;
+    this.dt = DEFAULT_DT; // @public
+    this.zoom = zoom; // @public
+    this.initialMeasuringTapeLocation = null; // @public
+    this.forceScale = null; // @protected
   }
 
   return inherit( Object, ModeConfig, {
