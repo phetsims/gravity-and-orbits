@@ -14,7 +14,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var PlanetModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/PlanetModeMenu' );
-  var GravityModeMenu = require( 'GRAVITY_AND_ORBITS/common/view/GravityModeMenu' );
+  var GravityControl = require( 'GRAVITY_AND_ORBITS/common/view/GravityControl' );
   var CheckboxPanel = require( 'GRAVITY_AND_ORBITS/common/view/CheckboxPanel' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -39,7 +39,7 @@ define( function( require ) {
     var sections = [
       new PlanetModeMenu( module.modeProperty, module.getModes(), MENU_SECTION_OPTIONS ),
       makeSeparatorRectangle(),
-      new GravityModeMenu( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
+      new GravityControl( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
       makeSeparatorRectangle(),
       new CheckboxPanel( module, MENU_SECTION_OPTIONS )
     ];

@@ -33,7 +33,7 @@ define( function( require ) {
    * @param {Object} [options] - This object contains options for main node of gravity mode menu.
    * @constructor
    */
-  function GravityModeMenu( gravityEnabledProperty, options ) {
+  function GravityControl( gravityEnabledProperty, options ) {
     Node.call( this, options );
 
     var gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
@@ -49,5 +49,5 @@ define( function( require ) {
     } ) );
   }
 
-  return inherit( Node, GravityModeMenu );
+  return inherit( Node, GravityControl );
 } );
