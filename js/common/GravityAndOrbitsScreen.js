@@ -14,7 +14,7 @@ define( function( require ) {
   var Screen = require( 'JOIST/Screen' );
 
   // strings
-  var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/common.title' );
+  var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
   /**
    * @constructor
