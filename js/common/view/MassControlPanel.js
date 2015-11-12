@@ -64,8 +64,8 @@ define( function( require ) {
           new HStrut( 220 ),
           new BodyMassControl(
             massSettableBody,
-            massSettableBody.massProperty.getInitialValue() / 2,
-            massSettableBody.massProperty.getInitialValue() * 2,
+            massSettableBody.massProperty.getRewindValue() / 2,
+            massSettableBody.massProperty.getRewindValue() * 2,
             massSettableBody.tickValue,
             massSettableBody.tickLabel )
         ]

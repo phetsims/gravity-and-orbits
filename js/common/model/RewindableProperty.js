@@ -2,7 +2,7 @@
 
 /**
  * This is a property that can be rewound, and when rewound it goes back
- * to the value that was last set while the clock was paused.
+ * to the value that was last set by storeRewindValueNoNotify.
  *
  * @author Sam Reid
  * @author Aaron Davis
@@ -15,31 +15,20 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
 
   /**
-   * @param {Property.<boolean>} playButtonPressedProperty
-   * @param {Property.<boolean>} isSteppingProperty
-   * @param {Property.<boolean>} isRewindingProperty
+   * @param {Property.<boolean>} changeRewindValueProperty
    * @param {*} value
    * @constructor
    */
-  function RewindableProperty( playButtonPressedProperty, isSteppingProperty, isRewindingProperty, value ) {
+  function RewindableProperty( changeRewindValueProperty, value ) {
     Property.call( this, value );
 
-    // all fields are @private
-    this.playButtonPressedProperty = playButtonPressedProperty;
-
-    // if the clock is paused and the user pressed 'step', do not store a rewind point
-    this.isSteppingProperty = isSteppingProperty;
-
-    // if the clock is paused and the user pressed 'rewind', do not store a rewind point
-    this.isRewindingProperty = isRewindingProperty;
-
-    // the "initial condition" tha the property can be rewound to
-    this.rewindValue = value;
+    // @private
+    this.rewindValue = value; // the "initial condition" tha the property can be rewound to
+    this.changeRewindValueProperty = changeRewindValueProperty;
 
     // true when the rewind point value is different than the property's value
-    this.differentProperty = new Property( !this.equalsRewindPoint() );
-
-    this.rewindValueChangedListeners = [];
+    this.differentProperty = new Property( !this.equalsRewindPoint() ); // @private
+    this.rewindValueChangedListeners = []; // @private
   }
 
   return inherit( Property, RewindableProperty, {
@@ -53,7 +42,7 @@ define( function( require ) {
 
       // If the user changed the initial conditions (as opposed to the state changing through model stepping),
       // then store the new initial conditions, which can be rewound to
-      if ( !this.playButtonPressedProperty.get() && !this.isSteppingProperty.get() && !this.isRewindingProperty.get() ) {
+      if ( this.changeRewindValueProperty.get() ) {
         this.storeRewindValueNoNotify();
 
         for ( var i = 0; i < this.rewindValueChangedListeners.length; i++ ) {
@@ -103,7 +92,7 @@ define( function( require ) {
      * @public
      * Makes this public for use in gravity and orbits.
      */
-    getInitialValue: function() {
+    getRewindValue: function() {
       return this.rewindValue;
     }
   } );

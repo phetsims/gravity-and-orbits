@@ -90,16 +90,18 @@ define( function( require ) {
     this.renderer = renderer; // @private
 
     this.labelAngle = labelAngle; // @public
-    this.positionProperty = new RewindableProperty(
-      playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( x, y ) ); // @public
-    this.velocityProperty = new RewindableProperty(
-      playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2( vx, vy ) ); // @public
-    this.forceProperty = new RewindableProperty(
-      playButtonPressedProperty, steppingProperty, rewindingProperty, new Vector2() ); // @public
-    this.massProperty = new RewindableProperty(
-      playButtonPressedProperty, steppingProperty, rewindingProperty, mass ); // @public
-    this.collidedProperty = new RewindableProperty(
-      playButtonPressedProperty, steppingProperty, rewindingProperty, false ); // @public
+    var changeRewindValueProperty = new DerivedProperty(
+      [ playButtonPressedProperty, steppingProperty, rewindingProperty ],
+      function( playButtonPressed, stepping, rewinding ) {
+        return !playButtonPressed && !stepping && !rewinding;
+      }
+    );
+    this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( x, y ) ); // @public
+    this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( vx, vy ) ); // @public
+    this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2() ); // @public
+    this.massProperty = new RewindableProperty( changeRewindValueProperty, mass ); // @public
+    this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
+
     this.density = mass / this.getVolume(); // @public
 
     // true if the user is currently controlling the position of the body with the mouse
