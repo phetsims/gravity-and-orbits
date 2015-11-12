@@ -18,7 +18,6 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
   var PropertySet = require( 'AXON/PropertySet' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
@@ -64,7 +63,7 @@ define( function( require ) {
       this.rewindingProperty,
       this.timeSpeedScaleProperty ) );
 
-    this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
+    this.addProperty( 'mode', this.modeList.modes[ initialModeIndex ] );
     for ( var i = 0; i < this.modeList.modes.length; i++ ) {
       this.modeList.modes[ i ].init( this );
     }
@@ -103,7 +102,6 @@ define( function( require ) {
      */
     reset: function() {
       PropertySet.prototype.reset.call( this );
-      this.modeProperty.reset();
       for ( var i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].reset();
       }
