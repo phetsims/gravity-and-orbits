@@ -83,8 +83,8 @@ define( function( require ) {
     this.velocityVectorScale = velocityVectorScale; // @public
     this.gridSpacing = gridSpacing; // @public - in meters
     this.gridCenter = gridCenter; // @public
-    this.rewindingProperty = p.rewinding; // save a reference to the rewinding property of p
-    this.timeSpeedScaleProperty = p.timeSpeedScale; // @public
+    this.rewindingProperty = p.rewindingProperty; // save a reference to the rewinding property of p
+    this.timeSpeedScaleProperty = p.timeSpeedScaleProperty; // @public
     this.timeFormatter = timeFormatter; // @public
 
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
@@ -99,7 +99,7 @@ define( function( require ) {
 
     // @private
     this.model = new GravityAndOrbitsModel(
-      new GravityAndOrbitsClock( dt, p.stepping, this.timeSpeedScaleProperty ), p.gravityEnabled );
+      new GravityAndOrbitsClock( dt, p.steppingProperty, this.timeSpeedScaleProperty ), p.gravityEnabledProperty );
 
     // When the user pauses the clock, assume they will change some other parameters as well, and set a new rewind point
     this.rewindClockTime = 0; // @private
@@ -108,7 +108,7 @@ define( function( require ) {
       thisMode.rewindClockTime = thisMode.getClock().getSimulationTime();
     } );
 
-    Property.multilink( [ p.playButtonPressed, this.activeProperty ], function( playButtonPressed, active ) {
+    Property.multilink( [ p.playButtonPressedProperty, this.activeProperty ], function( playButtonPressed, active ) {
       thisMode.model.clock.setRunning( playButtonPressed && active );
     } );
   }

@@ -13,25 +13,25 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
-   * @param {Property.<boolean>} playButtonPressed
-   * @param {Property.<boolean>} gravityEnabled
-   * @param {Property.<boolean>} stepping
-   * @param {Property.<boolean>} rewinding
-   * @param {Property.<number>} timeSpeedScale
+   * @param {Property.<boolean>} playButtonPressedProperty
+   * @param {Property.<boolean>} gravityEnabledProperty
+   * @param {Property.<boolean>} steppingProperty
+   * @param {Property.<boolean>} rewindingProperty
+   * @param {Property.<number>} timeSpeedScaleProperty
    * @constructor
    */
-  function ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
+  function ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
 
     // all fields are @public
-    this.playButtonPressed = playButtonPressed;
-    this.gravityEnabled = gravityEnabled;
+    this.playButtonPressedProperty = playButtonPressedProperty;
+    this.gravityEnabledProperty = gravityEnabledProperty;
 
     // True if the user is pressing the "step" button, to support storing states for the rewind feature
-    this.stepping = stepping;
+    this.steppingProperty = steppingProperty;
 
     // Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
-    this.rewinding = rewinding;
-    this.timeSpeedScale = timeSpeedScale;
+    this.rewindingProperty = rewindingProperty;
+    this.timeSpeedScaleProperty = timeSpeedScaleProperty;
   }
 
   return inherit( Object, ModeListParameterList );

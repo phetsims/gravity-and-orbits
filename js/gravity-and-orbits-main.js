@@ -36,7 +36,7 @@ define( function( require ) {
    */
   function ToScaleModule() {
     GravityAndOrbitsModule.call( this, true, function( p ) {
-      return new RealModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
+      return new RealModeList( p.playButtonPressedProperty, p.gravityEnabledProperty, p.steppingProperty, p.rewindingProperty, p.timeSpeedScaleProperty );
     }, 0, true );
   }
 
@@ -48,7 +48,7 @@ define( function( require ) {
    */
   function CartoonModule() {
     GravityAndOrbitsModule.call( this, false, function( p ) {
-      return new CartoonModeList( p.playButtonPressed, p.gravityEnabled, p.stepping, p.rewinding, p.timeSpeedScale );
+      return new CartoonModeList( p.playButtonPressedProperty, p.gravityEnabledProperty, p.steppingProperty, p.rewindingProperty, p.timeSpeedScaleProperty );
     }, 0, false );
   }
 

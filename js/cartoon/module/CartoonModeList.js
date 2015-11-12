@@ -93,17 +93,16 @@ define( function( require ) {
   inherit( ModeList.EarthSpaceStationModeConfig, EarthSpaceStationModeConfig );
 
   /**
-   *
-   * @param {Property.<boolean>} playButtonPressed
-   * @param {Property.<boolean>} gravityEnabled
-   * @param {Property.<boolean>} stepping
-   * @param {Property.<boolean>} rewinding
-   * @param {Property.<number>} timeSpeedScale
+   * @param {Property.<boolean>} playButtonPressedProperty
+   * @param {Property.<boolean>} gravityEnabledProperty
+   * @param {Property.<boolean>} steppingProperty
+   * @param {Property.<boolean>} rewindingProperty
+   * @param {Property.<number>} timeSpeedScaleProperty
    * @constructor
    */
-  function CartoonModeList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ) {
+  function CartoonModeList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
     ModeList.ModeList.call( this,
-      new ModeListParameterList( playButtonPressed, gravityEnabled, stepping, rewinding, timeSpeedScale ),
+      new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ),
       new SunEarthModeConfig(),
       new SunEarthMoonModeConfig(),
       new EarthMoonModeConfig(),

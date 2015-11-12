@@ -26,21 +26,21 @@ define( function( require ) {
   /**
    *
    * @param {number} baseDTValue (multiplied by scale to obtain true dt)
-   * @param {Property.<boolean>} stepping
-   * @param {Property.<number>} timeSpeedScale
+   * @param {Property.<boolean>} steppingProperty
+   * @param {Property.<number>} timeSpeedScaleProperty
    * @constructor
    */
-  function GravityAndOrbitsClock( baseDTValue, stepping, timeSpeedScale ) {
+  function GravityAndOrbitsClock( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
     var thisClock = this;
 
     // all fields are @public
     this.runningProperty = new Property( false );
     this.simulationTimeProperty = new Property( 0 );
-    this.dt = baseDTValue * timeSpeedScale.get();
-    this.steppingProperty = stepping;
+    this.dt = baseDTValue * timeSpeedScaleProperty.get();
+    this.steppingProperty = steppingProperty;
 
-    timeSpeedScale.link( function() {
-      thisClock.dt = baseDTValue * timeSpeedScale.get();
+    timeSpeedScaleProperty.link( function( timeSpeedScale ) {
+      thisClock.dt = baseDTValue * timeSpeedScale;
     } );
   }
 
