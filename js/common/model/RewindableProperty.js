@@ -2,7 +2,8 @@
 
 /**
  * This is a property that can be rewound, and when rewound it goes back
- * to the value that was last set by storeRewindValueNoNotify.
+ * to the value that was last set by storeRewindValueNoNotify. In this sim, the rewind value is
+ * stored whenever at the initial configuration of a mode, or when a user modifies the position of a body.
  *
  * @author Sam Reid
  * @author Aaron Davis
