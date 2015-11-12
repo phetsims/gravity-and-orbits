@@ -51,7 +51,7 @@ define( function( require ) {
       rewinding: false
     } );
 
-    // these two booleans indicate whethor or not to show the checkbox for measuring tape and mass.
+    // these two booleans indicate whether or not to show the checkbox for measuring tape and mass.
     // they are false for the cartoon screen and true for the toScale screen
     this.showMassCheckBox = showMassCheckBox; // @public
     this.showMeasuringTape = showMeasuringTape; // @public
