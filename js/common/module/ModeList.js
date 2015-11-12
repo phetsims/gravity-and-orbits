@@ -90,7 +90,7 @@ define( function( require ) {
   // static class: SunEarthModeConfig
   function SunEarthModeConfig() {
 
-    // all fields are @public
+    // @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.earth = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
@@ -115,7 +115,7 @@ define( function( require ) {
   // static class: SunEarthMoonModeConfig
   function SunEarthMoonModeConfig() {
 
-    // all fields are @public
+    // @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.earth = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
@@ -142,7 +142,7 @@ define( function( require ) {
   // static class: EarthMoonModeConfig
   function EarthMoonModeConfig() {
 
-    // all fields are @public
+    // @public
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0 );
     ModeConfig.call( this, 400 );
@@ -165,12 +165,13 @@ define( function( require ) {
   // static class: EarthSpaceStationModeConfig
   function EarthSpaceStationModeConfig() {
 
-    // all fields are @public
+    // @public
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
     this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
       SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED );
     ModeConfig.call( this, 21600 );
 
+    // @public
     // Sampled at runtime from MeasuringTape
     this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
     this.forceScale = FORCE_SCALE * 3E13;

@@ -22,13 +22,14 @@ define( function( require ) {
    */
   function ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
 
-    // all fields are @public
+    // @public
     this.playButtonPressedProperty = playButtonPressedProperty;
     this.gravityEnabledProperty = gravityEnabledProperty;
 
-    // True if the user is pressing the "step" button, to support storing states for the rewind feature
+    // @public True if the user is pressing the "step" button, to support storing states for the rewind feature
     this.steppingProperty = steppingProperty;
 
+    // @public
     // Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
     this.rewindingProperty = rewindingProperty;
     this.timeSpeedScaleProperty = timeSpeedScaleProperty;

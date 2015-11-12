@@ -33,7 +33,7 @@ define( function( require ) {
   function GravityAndOrbitsClock( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
     var thisClock = this;
 
-    // all fields are @public
+    // @public
     this.runningProperty = new Property( false );
     this.simulationTimeProperty = new Property( 0 );
     this.dt = baseDTValue * timeSpeedScaleProperty.get();

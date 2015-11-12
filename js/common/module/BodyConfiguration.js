@@ -25,7 +25,7 @@ define( function( require ) {
    */
   function BodyConfiguration( mass, radius, x, y, vx, vy ) {
 
-    // all fields are @public
+    // @public
     this.fixed = false; // True if the object doesn't move when the clock ticks
     this.mass = mass;
     this.radius = radius;

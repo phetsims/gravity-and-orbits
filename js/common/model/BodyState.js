@@ -22,7 +22,7 @@ define( function( require ) {
    */
   function BodyState( position, velocity, acceleration, mass, exploded ) {
 
-    // all fields are @public
+    // @public
     this.position = position;
     this.velocity = velocity;
     this.acceleration = acceleration;
