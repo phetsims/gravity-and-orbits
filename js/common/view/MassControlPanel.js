@@ -1,7 +1,7 @@
 // Copyright 2015, University of Colorado Boulder
 
 /**
- * Container for right control panel.
+ * Control panel used to change the mass of the various bodies.
  *
  * @author Aaron Davis
  */
