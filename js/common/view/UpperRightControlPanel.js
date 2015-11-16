@@ -1,7 +1,7 @@
 // Copyright 2013-2015, University of Colorado Boulder
 
 /**
- * Container for right control panel.
+ * Control panel at upper right.
  *
  * @author Aaron Davis
  */
