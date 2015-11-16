@@ -31,7 +31,7 @@ define( function( require ) {
 
   /*
    * Have to artificially scale up the time readout so that SunEarthMode and SunEarthMoonMode modes have a stable
-   * orbits with correct periods since masses are nonphysical
+   * orbits with correct periods since masses are nonphysical. 365 is days in a year.
    */
   var SUN_EARTH_MODE_TIME_SCALE = 365.0 / 334.0;
 
