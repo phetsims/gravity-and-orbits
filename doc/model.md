@@ -47,3 +47,14 @@ t = time
 
 v = the body's velocity
 
+##Units
+
+Numbers in the model use the following units:
+
+Distance: km
+
+Mass: kg
+
+Velocity: m/s
+
+Acceleration: m/s<sup>2</sup>

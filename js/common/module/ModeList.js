@@ -54,18 +54,18 @@ define( function( require ) {
   var spaceStationMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/space-station.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
-  // so we keep them here instead of the model
-  var SUN_RADIUS = 6.955E8;
-  var SUN_MASS = 1.989E30;
+  // so we keep them here instead of the model.
+  var SUN_RADIUS = 6.955E8; // km
+  var SUN_MASS = 1.989E30; // kg
   var EARTH_RADIUS = 6.371E6;
   var EARTH_MASS = GravityAndOrbitsConstants.EARTH_MASS;
-  var EARTH_PERIHELION = 147098290E3;
-  var EARTH_ORBITAL_SPEED_AT_PERIHELION = 30300;
+  var EARTH_PERIHELION = 147098290E3; // km, distance from the sun at the closest point
+  var EARTH_ORBITAL_SPEED_AT_PERIHELION = 30300; // m/s
   var MOON_MASS = 7.3477E22;
   var MOON_RADIUS = 1737.1E3;
   var MOON_EARTH_SPEED = -1.01E3;
   var MOON_SPEED = MOON_EARTH_SPEED;
-  var MOON_PERIGEE = 391370E3;
+  var MOON_PERIGEE = 391370E3; // km, distance from earth at closet point
   var MOON_X = EARTH_PERIHELION;
   var MOON_Y = MOON_PERIGEE;
 
