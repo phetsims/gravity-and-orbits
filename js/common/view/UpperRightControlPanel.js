@@ -27,7 +27,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function RightControlPanel( module, options ) {
+  function UpperRightControlPanel( module, options ) {
 
     options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
@@ -44,7 +44,7 @@ define( function( require ) {
       new CheckboxPanel( module, MENU_SECTION_OPTIONS )
     ];
 
-    assert && assert( sections.length === 5, 'There should be 5 sections in the RightControlPanel' );
+    assert && assert( sections.length === 5, 'There should be 5 sections in the UpperRightControlPanel' );
 
     var vBox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vBox, options );
@@ -56,5 +56,5 @@ define( function( require ) {
     }
   }
 
-  return inherit( Panel, RightControlPanel );
+  return inherit( Panel, UpperRightControlPanel );
 } );
