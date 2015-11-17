@@ -13,6 +13,7 @@ define( function( require ) {
   // modules
   var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Shape = require( 'KITE/Shape' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Property = require( 'AXON/Property' );
   var Vector2 = require( 'DOT/Vector2' );
@@ -138,6 +139,14 @@ define( function( require ) {
           measuringTapeIcon
         ]
       } ), module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
+    }
+
+    // increase the touch area of the checkboxes
+    var touchAreaHeight = 32;
+    for ( var i = 0; i < children.length; i++ ) {
+      var checkboxNode = children[ i ];
+      var bounds = checkboxNode.parentToLocalBounds( checkboxNode.bounds );
+      checkboxNode.touchArea = Shape.rectangle( -5, bounds.centerY - touchAreaHeight / 2, bounds.width + 10, touchAreaHeight );
     }
 
     VBox.call( this, _.extend( {
