@@ -26,7 +26,7 @@ define( function( require ) {
   var toScaleMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/to_scale_icon.png' );
 
   // strings
-  var cartoonString = require( 'string!GRAVITY_AND_ORBITS/cartoon' );
+  var modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
   var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
   var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
@@ -66,7 +66,7 @@ define( function( require ) {
     optionsNode: new GlobalOptionsNode()
   };
 
-  var cartoonScreen = new Screen( cartoonString, new Image( cartoonMipmap ),
+  var cartoonScreen = new Screen( modelString, new Image( cartoonMipmap ),
     function() { return new CartoonModule(); },
     function( model ) { return new GravityAndOrbitsScreenView( model ); },
     { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }

@@ -38,8 +38,8 @@
   "gravityForce": {
     "value": "Gravity Force"
   },
-  "cartoon": {
-    "value": "Cartoon"
+  "model": {
+    "value": "Model"
   },
   "moon": {
     "value": "Moon"
