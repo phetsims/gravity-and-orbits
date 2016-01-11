@@ -8,9 +8,6 @@
   "earthMasses": {
     "value": "Earth masses"
   },
-  "millionEarthMasses": {
-    "value": "million Earth masses"
-  },
   "ourSun": {
     "value": "Our Sun"
   },
@@ -95,9 +92,6 @@
   "thousandMiles": {
     "value": "thousand miles"
   },
-  "thousandKilometers": {
-    "value": "thousand kilometers"
-  },
   "earthMass": {
     "value": "Earth mass"
   },
@@ -112,12 +106,6 @@
   },
   "slowMotion": {
     "value": "Slow Motion"
-  },
-  "satelliteMasses": {
-    "value": "Satellite masses"
-  },
-  "ourEarth": {
-    "value": "Our Earth"
   },
   "v": {
     "value": "V"
