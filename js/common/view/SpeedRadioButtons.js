@@ -36,7 +36,8 @@ define( function( require ) {
 
     options = _.extend( {
       spacing: 1,
-      radius: 8
+      radius: 8,
+      touchXPadding: 5
     }, options );
 
     var textOptions = {
