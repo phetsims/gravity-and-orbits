@@ -66,24 +66,25 @@ define( function( require ) {
     optionsNode: new GlobalOptionsNode()
   };
 
-  var cartoonScreen = new Screen( modelString, new Image( cartoonMipmap ),
-    function() { return new CartoonModule(); },
-    function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
-  );
-
-  var toScaleScreen = new Screen( toScaleString, new Image( toScaleMipmap ),
-    function() { return new ToScaleModule(); },
-    function( model ) { return new GravityAndOrbitsScreenView( model ); },
-    { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
-  );
-
-  GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {
-    cartoonScreen.backgroundColor = color;
-    toScaleScreen.backgroundColor = color;
-  } );
-
   SimLauncher.launch( function() {
+
+    var cartoonScreen = new Screen( modelString, new Image( cartoonMipmap ),
+      function() { return new CartoonModule(); },
+      function( model ) { return new GravityAndOrbitsScreenView( model ); },
+      { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
+    );
+
+    var toScaleScreen = new Screen( toScaleString, new Image( toScaleMipmap ),
+      function() { return new ToScaleModule(); },
+      function( model ) { return new GravityAndOrbitsScreenView( model ); },
+      { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
+    );
+
+    GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {
+      cartoonScreen.backgroundColor = color;
+      toScaleScreen.backgroundColor = color;
+    } );
+
     // create and start the sim
     new Sim( gravityAndOrbitsTitleString, [ cartoonScreen, toScaleScreen ], simOptions ).start();
   } );
