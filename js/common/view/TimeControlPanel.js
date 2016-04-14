@@ -36,9 +36,12 @@ define( function( require ) {
       modeProperty.get().getClock().stepClockWhilePaused();
     }, playProperty );
 
-    var rewindButton = new RewindButton( function() {
-      modeProperty.get().rewind();
-    }, new Property( false ) );
+    var rewindButton = new RewindButton( {
+      enabled: false,
+      listener: function() {
+        modeProperty.get().rewind();
+      }
+    } );
 
     var anyPropertyDifferentProperties = [];
     for ( var i = 0; i < bodies.length; i++ ) {
