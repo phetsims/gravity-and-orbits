@@ -17,7 +17,7 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
-  var StepButton = require( 'SCENERY_PHET/buttons/StepButton' );
+  var StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
   var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
 
   /**
@@ -32,7 +32,7 @@ define( function( require ) {
 
     var playPauseButton = new PlayPauseButton( playProperty );
 
-    var stepButton = new StepButton( function() {
+    var stepButton = new StepForwardButton( function() {
       modeProperty.get().getClock().stepClockWhilePaused();
     }, playProperty );
 
