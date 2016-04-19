@@ -13,7 +13,6 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
