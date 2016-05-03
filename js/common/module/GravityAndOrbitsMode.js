@@ -28,6 +28,7 @@ define( function( require ) {
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsCanvas' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width;
@@ -113,6 +114,8 @@ define( function( require ) {
     } );
   }
 
+  gravityAndOrbits.register( 'GravityAndOrbitsMode', GravityAndOrbitsMode );
+  
   return inherit( PropertySet, GravityAndOrbitsMode, {
 
     /**

@@ -15,6 +15,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   
   // constants
   var DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
@@ -30,6 +31,8 @@ define( function( require ) {
     this.forceScale = null; // @protected
   }
 
+  gravityAndOrbits.register( 'ModeConfig', ModeConfig );
+  
   return inherit( Object, ModeConfig, {
 
     // @public

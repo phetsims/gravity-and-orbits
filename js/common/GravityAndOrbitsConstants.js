@@ -10,12 +10,13 @@ define( function( require ) {
 
   // modules
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var CONTROL_PANEL_STROKE = '#8E9097';
   var PANEL_X_MARGIN = 5;
 
-  return {
+  var GravityAndOrbitsConstants = {
 
     // these constants were originally in ModeList, but needed to be factor out because of a circular dependency
     EARTH_MASS: 5.9736E24,
@@ -40,4 +41,8 @@ define( function( require ) {
     USER_MODIFIED_POSITION: 'userModifiedPosition',
     USER_MODIFIED_VELOCITY: 'userModifiedVelocity'
   };
+
+  gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
+  
+  return GravityAndOrbitsConstants;
 } );

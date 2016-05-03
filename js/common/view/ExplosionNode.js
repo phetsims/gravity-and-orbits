@@ -15,6 +15,7 @@ define( function( require ) {
   var LinearFunction = require( 'DOT/LinearFunction' );
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var NUM_STEPS_FOR_ANIMATION = 10;
@@ -56,6 +57,8 @@ define( function( require ) {
     } );
   }
 
+  gravityAndOrbits.register( 'ExplosionNode', ExplosionNode );
+  
   return inherit( Node, ExplosionNode, {
 
     // @private

@@ -18,6 +18,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var STARTING_VALUE = GravityAndOrbitsModule.STARTING_SPEED_SCALE;
@@ -56,5 +57,7 @@ define( function( require ) {
     ], options );
   }
 
+  gravityAndOrbits.register( 'SpeedRadioButtons', SpeedRadioButtons );
+  
   return inherit( VerticalAquaRadioButtonGroup, SpeedRadioButtons );
 } );

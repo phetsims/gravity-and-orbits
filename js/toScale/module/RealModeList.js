@@ -13,6 +13,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * @param {Property.<boolean>} playButtonPressedProperty
@@ -30,6 +31,8 @@ define( function( require ) {
       new ModeList.EarthMoonModeConfig(),
       new ModeList.EarthSpaceStationModeConfig() );
   }
+
+  gravityAndOrbits.register( 'RealModeList', RealModeList );
 
   return inherit( ModeList.ModeList, RealModeList );
 } );

@@ -19,6 +19,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
   var clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
@@ -70,5 +71,7 @@ define( function( require ) {
     this.mutate( options );
   }
 
+  gravityAndOrbits.register( 'DayCounter', DayCounter );
+  
   return inherit( Node, DayCounter );
 } );

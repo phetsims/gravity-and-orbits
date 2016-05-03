@@ -26,6 +26,7 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // images
   var pathIconImg = require( 'image!GRAVITY_AND_ORBITS/path_icon.png' );
@@ -158,5 +159,7 @@ define( function( require ) {
     }, options ) );
   }
 
+  gravityAndOrbits.register( 'CheckboxPanel', CheckboxPanel );
+  
   return inherit( VBox, CheckboxPanel );
 } );

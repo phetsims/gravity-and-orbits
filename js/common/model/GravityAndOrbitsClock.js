@@ -13,6 +13,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
   var EventTimer = require( 'PHET_CORE/EventTimer' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
@@ -44,6 +45,8 @@ define( function( require ) {
     } );
   }
 
+  gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
+  
   return inherit( Object, GravityAndOrbitsClock, {
 
     // @public

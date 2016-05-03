@@ -18,6 +18,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
   var onString = require( 'string!GRAVITY_AND_ORBITS/on' );
@@ -49,5 +50,7 @@ define( function( require ) {
     } ) );
   }
 
+  gravityAndOrbits.register( 'GravityControl', GravityControl );
+  
   return inherit( Node, GravityControl );
 } );

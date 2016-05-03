@@ -30,6 +30,7 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
   var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
@@ -168,6 +169,8 @@ define( function( require ) {
     this.addChild( scaleSlider );
   }
 
+  gravityAndOrbits.register( 'GravityAndOrbitsCanvas', GravityAndOrbitsCanvas );
+  
   return inherit( Rectangle, GravityAndOrbitsCanvas, {}, {
     STAGE_SIZE: STAGE_SIZE,
     buttonBackgroundColor: buttonBackgroundColor

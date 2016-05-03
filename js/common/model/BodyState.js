@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * @param {Vector2} position
@@ -30,6 +31,8 @@ define( function( require ) {
     this.exploded = exploded;
   }
 
+  gravityAndOrbits.register( 'BodyState', BodyState );
+  
   return inherit( Object, BodyState, {
 
     // @public

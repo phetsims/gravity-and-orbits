@@ -20,6 +20,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var G = 6.67428E-11;
@@ -71,6 +72,8 @@ define( function( require ) {
     this.reset();
   }
 
+  gravityAndOrbits.register( 'GravityAndOrbitsModule', GravityAndOrbitsModule );
+  
   return inherit( PropertySet, GravityAndOrbitsModule, {
 
     // @public

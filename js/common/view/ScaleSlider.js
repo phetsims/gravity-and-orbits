@@ -20,6 +20,7 @@ define( function( require ) {
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var Shape = require( 'KITE/Shape' );
   var Bounds2 = require( 'DOT/Bounds2' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var TRACK_SIZE = new Dimension2( 140, 3 );
@@ -27,6 +28,52 @@ define( function( require ) {
   var RANGE = { max: 1.5, min: 0.5 };
   var STEP = 0.1;
   var BUTTON_SIZE = 25;
+
+  /**
+   * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
+   * @param {Object} [options]
+   * @constructor
+   */
+  function ScaleSlider( scaleProperty, options ) {
+
+    options = _.extend( { scale: 0.8 }, options );
+
+    Node.call( this );
+
+    var verticalSlider = new HSlider( scaleProperty, RANGE, {
+      trackSize: TRACK_SIZE,
+      thumbSize: THUMB_SIZE,
+
+      // custom thumb colors
+      thumbFillEnabled: '#98BECF',
+      thumbFillHighlighted: '#B3D3E2'
+    } );
+
+    verticalSlider.rotate( -Math.PI / 2 );
+    verticalSlider.translate( -TRACK_SIZE.width - THUMB_SIZE.width - 17, -TRACK_SIZE.height / 2 );
+
+    // add slide line
+    this.addChild( verticalSlider );
+
+    //Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
+
+    // add plus button
+    var plusButton = new SliderButton( scaleProperty, RANGE, STEP, true );
+    plusButton.x = -BUTTON_SIZE / 2;
+    this.addChild( plusButton );
+
+    // add minus button
+    var minusButton = new SliderButton( scaleProperty, RANGE, STEP, false );
+    minusButton.x = -BUTTON_SIZE / 2;
+    minusButton.y = 190;
+    this.addChild( minusButton );
+
+    this.mutate( options );
+  }
+
+  gravityAndOrbits.register( 'ScaleSlider', ScaleSlider );
+
+  inherit( Node, ScaleSlider );
 
   /**
    * @param {Property.<number>} scaleProperty - Scale property for updating.
@@ -89,49 +136,9 @@ define( function( require ) {
       this.localBounds.maxY + dilateBottom ) );
   }
 
+  gravityAndOrbits.register( 'ScaleSlider.Sliderbutton', SliderButton );
+
   inherit( RectangularPushButton, SliderButton );
 
-  /**
-   * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
-   * @param {Object} [options]
-   * @constructor
-   */
-  function ScaleSlider( scaleProperty, options ) {
-
-    options = _.extend( { scale: 0.8 }, options );
-
-    Node.call( this );
-
-    var verticalSlider = new HSlider( scaleProperty, RANGE, {
-      trackSize: TRACK_SIZE,
-      thumbSize: THUMB_SIZE,
-
-      // custom thumb colors
-      thumbFillEnabled: '#98BECF',
-      thumbFillHighlighted: '#B3D3E2'
-    } );
-
-    verticalSlider.rotate( -Math.PI / 2 );
-    verticalSlider.translate( -TRACK_SIZE.width - THUMB_SIZE.width - 17, -TRACK_SIZE.height / 2 );
-
-    // add slide line
-    this.addChild( verticalSlider );
-
-    //Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
-
-    // add plus button
-    var plusButton = new SliderButton( scaleProperty, RANGE, STEP, true );
-    plusButton.x = -BUTTON_SIZE / 2;
-    this.addChild( plusButton );
-
-    // add minus button
-    var minusButton = new SliderButton( scaleProperty, RANGE, STEP, false );
-    minusButton.x = -BUTTON_SIZE / 2;
-    minusButton.y = 190;
-    this.addChild( minusButton );
-
-    this.mutate( options );
-  }
-
-  return inherit( Node, ScaleSlider );
+  return ScaleSlider;
 } );

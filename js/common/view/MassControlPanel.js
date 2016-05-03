@@ -21,6 +21,7 @@ define( function( require ) {
   var BodyMassControl = require( 'GRAVITY_AND_ORBITS/common/view/BodyMassControl' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var CONTROL_FONT = new PhetFont( 14 );
@@ -78,5 +79,7 @@ define( function( require ) {
     Panel.call( this, vBox, options );
   }
 
+  gravityAndOrbits.register( 'MassControlPanel', MassControlPanel );
+  
   return inherit( Panel, MassControlPanel );
 } );

@@ -18,6 +18,7 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var STROKE_WIDTH = 3;
@@ -93,6 +94,8 @@ define( function( require ) {
 
   }
 
+  gravityAndOrbits.register( 'PathsNode', PathsNode );
+  
   return inherit( CanvasNode, PathsNode, {
 
     /**

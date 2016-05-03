@@ -16,6 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
@@ -35,6 +36,27 @@ define( function( require ) {
    */
   var SUN_EARTH_MODE_TIME_SCALE = 365.0 / 334.0;
 
+  /**
+   * @param {Property.<boolean>} playButtonPressedProperty
+   * @param {Property.<boolean>} gravityEnabledProperty
+   * @param {Property.<boolean>} steppingProperty
+   * @param {Property.<boolean>} rewindingProperty
+   * @param {Property.<number>} timeSpeedScaleProperty
+   * @constructor
+   */
+  function CartoonModeList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
+    ModeList.ModeList.call( this,
+      new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ),
+      new SunEarthModeConfig(),
+      new SunEarthMoonModeConfig(),
+      new EarthMoonModeConfig(),
+      new EarthSpaceStationModeConfig() );
+  }
+
+  gravityAndOrbits.register( 'CartoonModeList', CartoonModeList );
+
+  inherit( ModeList.ModeList, CartoonModeList );
+
   function SunEarthModeConfig() {
 
     ModeList.SunEarthModeConfig.call( this );
@@ -48,6 +70,8 @@ define( function( require ) {
     // Sun shouldn't move in cartoon modes
     this.sun.fixed = true;
   }
+
+  gravityAndOrbits.register( 'SunEarthModeConfig', SunEarthModeConfig );
 
   inherit( ModeList.SunEarthModeConfig, SunEarthModeConfig );
 
@@ -70,6 +94,8 @@ define( function( require ) {
     this.sun.fixed = true;
   }
 
+  gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
+
   inherit( ModeList.SunEarthMoonModeConfig, SunEarthMoonModeConfig );
 
   function EarthMoonModeConfig() {
@@ -84,6 +110,8 @@ define( function( require ) {
     this.forceScale *= 0.77;
   }
 
+  gravityAndOrbits.register( 'EarthMoonModeConfig', EarthMoonModeConfig );
+
   inherit( ModeList.EarthMoonModeConfig, EarthMoonModeConfig );
 
   function EarthSpaceStationModeConfig() {
@@ -95,24 +123,10 @@ define( function( require ) {
     this.spaceStation.radius *= 8;
   }
 
+  gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
+  
   inherit( ModeList.EarthSpaceStationModeConfig, EarthSpaceStationModeConfig );
 
-  /**
-   * @param {Property.<boolean>} playButtonPressedProperty
-   * @param {Property.<boolean>} gravityEnabledProperty
-   * @param {Property.<boolean>} steppingProperty
-   * @param {Property.<boolean>} rewindingProperty
-   * @param {Property.<number>} timeSpeedScaleProperty
-   * @constructor
-   */
-  function CartoonModeList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
-    ModeList.ModeList.call( this,
-      new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ),
-      new SunEarthModeConfig(),
-      new SunEarthMoonModeConfig(),
-      new EarthMoonModeConfig(),
-      new EarthSpaceStationModeConfig() );
-  }
+  return CartoonModeList;
 
-  return inherit( ModeList.ModeList, CartoonModeList );
 } );

@@ -18,6 +18,7 @@ define( function( require ) {
   var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
   var StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
   var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * @param {Property.<GravityAndOrbitsMode>} modeProperty
@@ -58,5 +59,7 @@ define( function( require ) {
     HBox.call( this, _.extend( { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
   }
 
+  gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );
+  
   return inherit( HBox, TimeControlPanel );
 } );

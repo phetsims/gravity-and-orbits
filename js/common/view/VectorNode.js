@@ -16,6 +16,7 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var FORCE_SCALE = 76.0 / 5.179E15;
@@ -70,6 +71,8 @@ define( function( require ) {
     this.addChild( arrowNode );
   }
 
+  gravityAndOrbits.register( 'VectorNode', VectorNode );
+  
   return inherit( Node, VectorNode, {
 
     // @private

@@ -12,12 +12,13 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var ColorProfile = require( 'SCENERY_PHET/ColorProfile' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var BLACK = new Color( 0, 0, 0 );
   var WHITE = new Color( 255, 255, 255 );
 
-  function GravityAndOrbitsColorProfile() {
+  function Profile() {
     ColorProfile.call( this, {
       background: {
         default: BLACK,
@@ -54,7 +55,11 @@ define( function( require ) {
     } );
   }
 
-  inherit( ColorProfile, GravityAndOrbitsColorProfile );
+  inherit( ColorProfile, Profile );
 
-  return new GravityAndOrbitsColorProfile();
+  var GravityAndOrbitsColorProfile = new Profile();
+
+  gravityAndOrbits.register( 'GravityAndOrbitsColorProfile', GravityAndOrbitsColorProfile );
+
+  return GravityAndOrbitsColorProfile;
 } );

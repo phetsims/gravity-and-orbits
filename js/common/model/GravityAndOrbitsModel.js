@@ -17,6 +17,7 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
   var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
@@ -76,6 +77,8 @@ define( function( require ) {
     this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
   }
 
+  gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
+  
   return inherit( PropertySet, GravityAndOrbitsModel, {
 
     // @public

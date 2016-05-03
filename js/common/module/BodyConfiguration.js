@@ -13,6 +13,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * @param {number} mass
@@ -35,6 +36,8 @@ define( function( require ) {
     this.vy = vy;
   }
 
+  gravityAndOrbits.register( 'BodyConfiguration', BodyConfiguration );
+  
   return inherit( Object, BodyConfiguration, {
 
     // @public

@@ -18,6 +18,7 @@ define( function( require ) {
   var CheckboxPanel = require( 'GRAVITY_AND_ORBITS/common/view/CheckboxPanel' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var MENU_SECTION_OPTIONS = { x: 5 };
@@ -56,5 +57,7 @@ define( function( require ) {
     }
   }
 
+  gravityAndOrbits.register( 'UpperRightControlPanel', UpperRightControlPanel );
+  
   return inherit( Panel, UpperRightControlPanel );
 } );

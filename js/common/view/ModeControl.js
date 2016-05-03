@@ -20,37 +20,10 @@ define( function( require ) {
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var HStrut = require( 'SCENERY/nodes/HStrut' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // images
   var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
-
-  /**
-   * @param {GravityAndOrbitsMode} mode
-   * @param {Object} [options]
-   * @constructor
-   */
-  function PlanetModeResetButton( mode, options ) {
-
-    // create button
-    RectangularPushButton.call( this,
-      {
-        content: new Node( {
-          children: [
-            new Image( resetArrowImg, { scale: 0.3 } )
-          ]
-        } ),
-        xMargin: 5,
-        yMargin: 3,
-        baseColor: new Color( 220, 220, 220 ),
-        listener: function() {
-          mode.resetMode();
-        }
-      } );
-
-    this.mutate( options );
-  }
-
-  inherit( RectangularPushButton, PlanetModeResetButton );
 
   /**
    * @param {Property.<GravityAndOrbitsMode>} modeProperty
@@ -97,5 +70,39 @@ define( function( require ) {
     this.addChild( new HStrut( 219 ) );
   }
 
-  return inherit( Node, ModeControl );
+  gravityAndOrbits.register( 'ModeControl', ModeControl );
+
+  inherit( Node, ModeControl );
+
+  /**
+   * @param {GravityAndOrbitsMode} mode
+   * @param {Object} [options]
+   * @constructor
+   */
+  function PlanetModeResetButton( mode, options ) {
+
+    // create button
+    RectangularPushButton.call( this,
+      {
+        content: new Node( {
+          children: [
+            new Image( resetArrowImg, { scale: 0.3 } )
+          ]
+        } ),
+        xMargin: 5,
+        yMargin: 3,
+        baseColor: new Color( 220, 220, 220 ),
+        listener: function() {
+          mode.resetMode();
+        }
+      } );
+
+    this.mutate( options );
+  }
+
+  gravityAndOrbits.register( 'ModeControl.PlanetModeResetButton', PlanetModeResetButton );
+
+  inherit( RectangularPushButton, PlanetModeResetButton );
+
+  return ModeControl;
 } );

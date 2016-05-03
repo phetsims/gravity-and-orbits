@@ -15,6 +15,7 @@ define( function( require ) {
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
   var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
@@ -26,6 +27,8 @@ define( function( require ) {
     MassReadoutNode.call( this, bodyNode, visible );
   }
 
+  gravityAndOrbits.register( 'EarthMassReadoutNode', EarthMassReadoutNode );
+  
   return inherit( MassReadoutNode, EarthMassReadoutNode, {
     createText: function() {
       var massKG = this.bodyNode.body.massProperty.get();

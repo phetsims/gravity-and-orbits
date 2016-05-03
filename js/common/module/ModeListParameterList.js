@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * @param {Property.<boolean>} playButtonPressedProperty
@@ -35,5 +36,7 @@ define( function( require ) {
     this.timeSpeedScaleProperty = timeSpeedScaleProperty;
   }
 
+  gravityAndOrbits.register( 'ModeListParameterList', ModeListParameterList );
+  
   return inherit( Object, ModeListParameterList );
 } );

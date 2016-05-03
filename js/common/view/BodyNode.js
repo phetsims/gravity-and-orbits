@@ -21,6 +21,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * Constructor for BodyNode
@@ -76,6 +77,8 @@ define( function( require ) {
     this.addChild( this.createArrowIndicator( this.body, labelAngle ) );
   }
 
+  gravityAndOrbits.register( 'BodyNode', BodyNode );
+  
   return inherit( Node, BodyNode, {
 
     /**

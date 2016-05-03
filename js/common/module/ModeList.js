@@ -29,6 +29,7 @@ define( function( require ) {
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
   var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
@@ -83,164 +84,21 @@ define( function( require ) {
 
   var DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
-  function milesToMeters( modelDistance ) {
-    return modelDistance / METERS_PER_MILE;
-  }
+  var ModeList = {
+    ModeList: ModeListModule, // the original Java class
 
-  // static class: SunEarthModeConfig
-  function SunEarthModeConfig() {
-
-    // @public
-    this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
-    this.earth = new BodyConfiguration(
-      EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.timeScale = 1;
-    ModeConfig.call( this, 1.25 );
-    this.initialMeasuringTapeLocation = new Line(
-      (this.sun.x + this.earth.x) / 3,
-      -this.earth.x / 2,
-      (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ),
-      -this.earth.x / 2 );
-    this.forceScale = FORCE_SCALE * 120;
-  }
-
-  inherit( ModeConfig, SunEarthModeConfig, {
-
-    // @protected
-    getBodies: function() {
-      return [ this.sun, this.earth ];
-    }
-  } );
-
-  // static class: SunEarthMoonModeConfig
-  function SunEarthMoonModeConfig() {
-
-    // @public
-    this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
-    this.earth = new BodyConfiguration(
-      EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.moon = new BodyConfiguration(
-      MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.timeScale = 1;
-    ModeConfig.call( this, 1.25 );
-    this.initialMeasuringTapeLocation = new Line(
-      (this.sun.x + this.earth.x) / 3,
-      -this.earth.x / 2,
-      (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ),
-      -this.earth.x / 2 );
-    this.forceScale = FORCE_SCALE * 120;
-  }
-
-  inherit( ModeConfig, SunEarthMoonModeConfig, {
-
-    // @protected
-    getBodies: function() {
-      return [ this.sun, this.earth, this.moon ];
-    }
-  } );
-
-  // static class: EarthMoonModeConfig
-  function EarthMoonModeConfig() {
-
-    // @public
-    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
-    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0 );
-    ModeConfig.call( this, 400 );
-    this.initialMeasuringTapeLocation = new Line(
-      this.earth.x + this.earth.radius * 2,
-      -this.moon.y * 0.7,
-      this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ),
-      -this.moon.y * 0.7 );
-    this.forceScale = FORCE_SCALE * 45;
-  }
-
-  inherit( ModeConfig, EarthMoonModeConfig, {
-
-    // @protected
-    getBodies: function() {
-      return [ this.earth, this.moon ];
-    }
-  } );
-
-  // static class: EarthSpaceStationModeConfig
-  function EarthSpaceStationModeConfig() {
-
-    // @public
-    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
-    this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
-      SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED );
-    ModeConfig.call( this, 21600 );
-
-    // @public
-    // Sampled at runtime from MeasuringTape
-    this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
-    this.forceScale = FORCE_SCALE * 3E13;
-  }
-
-  inherit( ModeConfig, EarthSpaceStationModeConfig, {
-
-    // @protected
-    getBodies: function() {
-      return [ this.earth, this.spaceStation ];
-    }
-  } );
-
-  /**
-   * Creates a BodyRenderer that just shows the specified image
-   * @param {string} image
-   * @returns {*}
-   */
-  var getImageRenderer = function( image ) {
-    return function( body, viewDiameter ) {
-      return new BodyRenderer.ImageRenderer( body, viewDiameter, image );
-    };
+    // These were public static inner classes
+    SunEarthModeConfig: SunEarthModeConfig,
+    SunEarthMoonModeConfig: SunEarthMoonModeConfig,
+    EarthMoonModeConfig: EarthMoonModeConfig,
+    EarthSpaceStationModeConfig: EarthSpaceStationModeConfig
   };
 
-  /**
-   * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
-   * @param {image|mipmap} image1
-   * @param {image|mipmap} image2
-   * @param {number} targetMass
-   * @returns {*}
-   */
-  var getSwitchableRenderer = function( image1, image2, targetMass ) {
-
-    // the mass for which to use the image
-    return function( body, viewDiameter ) {
-      return new BodyRenderer.SwitchableBodyRenderer(
-        body,
-        targetMass,
-        new BodyRenderer.ImageRenderer( body, viewDiameter, image1 ), new BodyRenderer.ImageRenderer( body, viewDiameter, image2 ) );
-    };
-  };
+  gravityAndOrbits.register( 'ModeList', ModeList );
 
   /**
-   * Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct periods
-   * @param scale
-   * @returns {*}
-   */
-  var scaledDays = function( scale ) {
-    return function( time ) {
-      var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
-      var units = (value === 1) ? earthDayString : earthDaysString;
-      return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
-    };
-  };
-
-  /**
-   * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
-   * elapsed clock readout
-   * @param time
-   * @returns {*}
-   */
-  var formatMinutes = function( time ) {
-    var value = (time / SECONDS_PER_MINUTE);
-    var units = (value === 1) ? earthMinuteString : earthMinutesString;
-    return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
-  };
-
-  /**
-   *
+   * Constructor for ModeListModule.
+   * 
    * @param {ModeListParameterList} p
    * @param {SunEarthModeConfig} sunEarth
    * @param {SunEarthMoonModeConfig} sunEarthMoon
@@ -249,7 +107,7 @@ define( function( require ) {
    * @returns {*}
    * @constructor
    */
-  function ModeList( p, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation ) {
+  function ModeListModule( p, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation ) {
 
     // non-static inner class: SpaceStation
     function SpaceStation( earthSpaceStation, maxPathLength ) {
@@ -482,7 +340,9 @@ define( function( require ) {
     this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, this.modes[ 3 ].getMaxPathLength() ) );
   }
 
-  inherit( Object, ModeList, {
+  gravityAndOrbits.register( 'ModeList.ModeListModule', ModeListModule );
+
+  inherit( Object, ModeListModule, {
 
     /**
      * @private
@@ -509,13 +369,162 @@ define( function( require ) {
     }
   } );
 
-  return {
-    ModeList: ModeList, // the original Java class
+  function milesToMeters( modelDistance ) {
+    return modelDistance / METERS_PER_MILE;
+  }
 
-    // These were public static inner classes
-    SunEarthModeConfig: SunEarthModeConfig,
-    SunEarthMoonModeConfig: SunEarthMoonModeConfig,
-    EarthMoonModeConfig: EarthMoonModeConfig,
-    EarthSpaceStationModeConfig: EarthSpaceStationModeConfig
+  // static class: SunEarthModeConfig
+  function SunEarthModeConfig() {
+
+    // @public
+    this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
+    this.earth = new BodyConfiguration(
+      EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
+    this.timeScale = 1;
+    ModeConfig.call( this, 1.25 );
+    this.initialMeasuringTapeLocation = new Line(
+      (this.sun.x + this.earth.x) / 3,
+      -this.earth.x / 2,
+      (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ),
+      -this.earth.x / 2 );
+    this.forceScale = FORCE_SCALE * 120;
+  }
+
+  inherit( ModeConfig, SunEarthModeConfig, {
+
+    // @protected
+    getBodies: function() {
+      return [ this.sun, this.earth ];
+    }
+  } );
+
+  // static class: SunEarthMoonModeConfig
+  function SunEarthMoonModeConfig() {
+
+    // @public
+    this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
+    this.earth = new BodyConfiguration(
+      EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
+    this.moon = new BodyConfiguration(
+      MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
+    this.timeScale = 1;
+    ModeConfig.call( this, 1.25 );
+    this.initialMeasuringTapeLocation = new Line(
+      (this.sun.x + this.earth.x) / 3,
+      -this.earth.x / 2,
+      (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ),
+      -this.earth.x / 2 );
+    this.forceScale = FORCE_SCALE * 120;
+  }
+
+  inherit( ModeConfig, SunEarthMoonModeConfig, {
+
+    // @protected
+    getBodies: function() {
+      return [ this.sun, this.earth, this.moon ];
+    }
+  } );
+
+  // static class: EarthMoonModeConfig
+  function EarthMoonModeConfig() {
+
+    // @public
+    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
+    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0 );
+    ModeConfig.call( this, 400 );
+    this.initialMeasuringTapeLocation = new Line(
+      this.earth.x + this.earth.radius * 2,
+      -this.moon.y * 0.7,
+      this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ),
+      -this.moon.y * 0.7 );
+    this.forceScale = FORCE_SCALE * 45;
+  }
+
+  inherit( ModeConfig, EarthMoonModeConfig, {
+
+    // @protected
+    getBodies: function() {
+      return [ this.earth, this.moon ];
+    }
+  } );
+
+  // static class: EarthSpaceStationModeConfig
+  function EarthSpaceStationModeConfig() {
+
+    // @public
+    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
+    this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
+      SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED );
+    ModeConfig.call( this, 21600 );
+
+    // @public
+    // Sampled at runtime from MeasuringTape
+    this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
+    this.forceScale = FORCE_SCALE * 3E13;
+  }
+
+  inherit( ModeConfig, EarthSpaceStationModeConfig, {
+
+    // @protected
+    getBodies: function() {
+      return [ this.earth, this.spaceStation ];
+    }
+  } );
+
+  /**
+   * Creates a BodyRenderer that just shows the specified image
+   * @param {string} image
+   * @returns {*}
+   */
+  var getImageRenderer = function( image ) {
+    return function( body, viewDiameter ) {
+      return new BodyRenderer.ImageRenderer( body, viewDiameter, image );
+    };
   };
+
+  /**
+   * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
+   * @param {image|mipmap} image1
+   * @param {image|mipmap} image2
+   * @param {number} targetMass
+   * @returns {*}
+   */
+  var getSwitchableRenderer = function( image1, image2, targetMass ) {
+
+    // the mass for which to use the image
+    return function( body, viewDiameter ) {
+      return new BodyRenderer.SwitchableBodyRenderer(
+        body,
+        targetMass,
+        new BodyRenderer.ImageRenderer( body, viewDiameter, image1 ), new BodyRenderer.ImageRenderer( body, viewDiameter, image2 ) );
+    };
+  };
+
+  /**
+   * Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct periods
+   * @param scale
+   * @returns {*}
+   */
+  var scaledDays = function( scale ) {
+    return function( time ) {
+      var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
+      var units = (value === 1) ? earthDayString : earthDaysString;
+      return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
+    };
+  };
+
+  /**
+   * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
+   * elapsed clock readout
+   * @param time
+   * @returns {*}
+   */
+  var formatMinutes = function( time ) {
+    var value = (time / SECONDS_PER_MINUTE);
+    var units = (value === 1) ? earthMinuteString : earthMinutesString;
+    return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
+  };
+
+  return ModeList;
+
 } );

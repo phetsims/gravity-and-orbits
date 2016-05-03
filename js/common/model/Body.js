@@ -19,6 +19,7 @@ define( function( require ) {
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
   var tempVector = new Vector2();
@@ -128,6 +129,8 @@ define( function( require ) {
     this.collidedProperty.addRewindValueChangeListener( rewindValueChangeListener );
   }
 
+  gravityAndOrbits.register( 'Body', Body );
+  
   return inherit( PropertySet, Body, {
 
     /**

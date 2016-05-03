@@ -20,6 +20,7 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * Constructor for GrabbableVectorNode
@@ -86,6 +87,8 @@ define( function( require ) {
     text.moveToBack();
   }
 
+  gravityAndOrbits.register( 'GrabbableVectorNode', GrabbableVectorNode );
+  
   return inherit( VectorNode, GrabbableVectorNode );
 } );
 

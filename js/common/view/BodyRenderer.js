@@ -22,6 +22,7 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
   var Matrix3 = require( 'DOT/Matrix3' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // images
   var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
@@ -34,6 +35,8 @@ define( function( require ) {
     // @private
     this.body = body;
   }
+
+  gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
   // this needs to be called before the static classes are defined, otherwise the inheritance doesn't work right
   var renderer = inherit( Node, BodyRenderer, {
@@ -81,6 +84,8 @@ define( function( require ) {
     } );
   }
 
+  gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
+
   inherit( BodyRenderer, SwitchableBodyRenderer, {
 
     // @public
@@ -103,6 +108,8 @@ define( function( require ) {
 
     this.updateViewDiameter();
   }
+
+  gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
 
   inherit( BodyRenderer, ImageRenderer, {
 
@@ -144,6 +151,8 @@ define( function( require ) {
     this.setDiameter( viewDiameter );
   }
 
+  gravityAndOrbits.register( 'SunRenderer', SunRenderer );
+  
   inherit( ImageRenderer, SunRenderer, {
     setDiameter: function( viewDiameter ) {
       ImageRenderer.prototype.setDiameter.call( this, viewDiameter );

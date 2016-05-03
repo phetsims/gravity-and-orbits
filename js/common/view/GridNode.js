@@ -15,6 +15,7 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * Constructor for GridNode
@@ -61,5 +62,7 @@ define( function( require ) {
 
   }
 
+  gravityAndOrbits.register( 'GridNode', GridNode );
+  
   return inherit( Node, GridNode );
 } );

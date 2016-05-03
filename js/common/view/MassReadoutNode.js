@@ -14,6 +14,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   function MassReadoutNode( bodyNode, visibleProperty ) {
     Node.call( this );
@@ -52,5 +53,7 @@ define( function( require ) {
     } );
   }
 
+  gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );
+  
   return inherit( Node, MassReadoutNode );
 } );

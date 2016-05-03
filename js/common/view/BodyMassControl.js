@@ -20,6 +20,7 @@ define( function( require ) {
   var HSlider = require( 'SUN/HSlider' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var SNAP_TOLERANCE = 0.03;
@@ -88,5 +89,7 @@ define( function( require ) {
     } );
   }
 
+  gravityAndOrbits.register( 'BodyMassControl', BodyMassControl );
+  
   return inherit( Node, BodyMassControl );
 } );

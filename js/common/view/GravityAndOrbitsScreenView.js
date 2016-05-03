@@ -16,6 +16,7 @@ define( function( require ) {
   var UpperRightControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/UpperRightControlPanel' );
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/common/view/SpeedRadioButtons' );
   var MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/MassControlPanel' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var MARGIN = 5;
@@ -86,5 +87,7 @@ define( function( require ) {
     this.addChild( resetAllButton );
   }
 
+  gravityAndOrbits.register( 'GravityAndOrbitsScreenView', GravityAndOrbitsScreenView );
+  
   return inherit( ScreenView, GravityAndOrbitsScreenView );
 } );
