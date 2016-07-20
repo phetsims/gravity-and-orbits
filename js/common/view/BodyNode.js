@@ -23,6 +23,9 @@ define( function( require ) {
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
+  // constants
+  var TOUCH_DILATION = 15; // dilation factor, produces touch bounds which are easy to drag
+
   /**
    * Constructor for BodyNode
    * @param {Body} body
@@ -67,6 +70,10 @@ define( function( require ) {
     Property.multilink( [ this.body.diameterProperty, modelViewTransformProperty ],
       function( diameter, modelViewTransform ) {
         thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+
+        // touch areas need to change with diameter
+        thisNode.touchArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+        thisNode.mouseArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
       } );
 
     this.modelViewTransformProperty.link( function( modelViewTransform ) {
@@ -78,7 +85,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'BodyNode', BodyNode );
-  
+
   return inherit( Node, BodyNode, {
 
     /**
