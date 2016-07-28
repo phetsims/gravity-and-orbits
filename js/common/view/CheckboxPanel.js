@@ -132,9 +132,10 @@ define( function( require ) {
 
     // measuring tape checkbox
     if ( module.showMeasuringTape ) {
-      var measuringTapeIcon = MeasuringTape.createMeasuringTapeIcon( { scale: 0.4 } );
+      var measuringTapeIcon = MeasuringTape.createIcon( { scale: 0.4 } );
       children.push( new CheckBox( new HBox( {
         spacing: SPACING,
+        align: 'top',
         children: [
           measuringTapeTextNode,
           measuringTapeIcon
