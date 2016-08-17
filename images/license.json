@@ -73,11 +73,11 @@
   },
   "space-station.png": {
     "text": [
-      "Copyright NASA"
+      "Copyright 2002-2016 University of Colorado Boulder"
     ],
-    "projectURL": "http://www.nasa.gov/images/content/323090main_s119e009793_hires.jpg",
-    "license": "NASA",
-    "notes": "linked from http://www.nasa.gov/mission_pages/station/multimedia/iss_sts119_images.html"
+    "projectURL": "http://phet.colorado.edu",
+    "license": "contact phethelp@colorado.edu",
+    "notes": "created by Mariah Hermsmeyer"
   },
   "sun.png": {
     "text": [
