@@ -58,7 +58,7 @@ define( function( require ) {
       trackSize: new Dimension2( WIDTH, 1 ),
       thumbSize: THUMB_SIZE,
       trackLineWidth: 0,
-      trackFill: GravityAndOrbitsColorProfile.panelTextProperty,
+      trackStroke: GravityAndOrbitsColorProfile.panelTextProperty,
 
       // custom thumb
       thumbFillEnabled: '#98BECF',
@@ -90,6 +90,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'BodyMassControl', BodyMassControl );
-  
+
   return inherit( Node, BodyMassControl );
 } );
