@@ -34,7 +34,7 @@ define( function( require ) {
       },
       panelBackground: {
         default: BLACK,
-        projector: new Color( 193, 217, 255 )
+        projector: new Color( 222, 234, 255 )
       },
       panelText: {
         default: WHITE,
