@@ -151,7 +151,7 @@ define( function( require ) {
 
     var returnButton = new TextPushButton( returnObjectString, {
       font: new PhetFont( 16 ),
-      textFill: 'white',
+      textFill: 'black',
       x: 100,
       y: 100,
       listener: function() {
@@ -170,7 +170,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'GravityAndOrbitsCanvas', GravityAndOrbitsCanvas );
-  
+
   return inherit( Rectangle, GravityAndOrbitsCanvas, {}, {
     STAGE_SIZE: STAGE_SIZE,
     buttonBackgroundColor: buttonBackgroundColor
