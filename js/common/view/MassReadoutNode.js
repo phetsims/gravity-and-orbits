@@ -14,6 +14,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   function MassReadoutNode( bodyNode, visibleProperty ) {
@@ -24,7 +25,7 @@ define( function( require ) {
     var readoutText = new Text( this.createText(), {
       pickable: false,
       font: new PhetFont( 18 ),
-      fill: 'white'
+      fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
     } );
     this.addChild( readoutText );
 
@@ -54,6 +55,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );
-  
+
   return inherit( Node, MassReadoutNode );
 } );
