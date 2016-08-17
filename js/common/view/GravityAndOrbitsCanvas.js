@@ -30,6 +30,7 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
@@ -137,6 +138,9 @@ define( function( require ) {
     mode.modelBoundsProperty.link( function( bounds ) {
       measuringTape.setDragBounds( bounds );
     } );
+
+    // measuring tape text should change with color Profile
+    GravityAndOrbitsColorProfile.measuringTapeTextProperty.linkAttribute( measuringTape, 'textColor' );
     this.addChild( measuringTape );
 
     // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds

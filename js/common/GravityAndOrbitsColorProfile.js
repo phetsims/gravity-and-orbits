@@ -28,6 +28,10 @@ define( function( require ) {
         default: WHITE,
         projector: BLACK
       },
+      measuringTapeText: {
+        default: WHITE,
+        projector: BLACK
+      },
       bottomControlText: {
         default: WHITE,
         projector: BLACK
