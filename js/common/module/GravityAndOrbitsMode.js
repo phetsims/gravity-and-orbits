@@ -102,13 +102,6 @@ define( function( require ) {
     this.model = new GravityAndOrbitsModel(
       new GravityAndOrbitsClock( dt, p.steppingProperty, this.timeSpeedScaleProperty ), p.gravityEnabledProperty );
 
-    // When the user pauses the clock, assume they will change some other parameters as well, and set a new rewind point
-    this.rewindClockTime = 0; // @private
-
-    this.getClock().runningProperty.onValue( false, function() {
-      thisMode.rewindClockTime = thisMode.getClock().getSimulationTime();
-    } );
-
     Property.multilink( [ p.playButtonPressedProperty, this.activeProperty ], function( playButtonPressed, active ) {
       thisMode.model.clock.setRunning( playButtonPressed && active );
     } );
@@ -200,8 +193,6 @@ define( function( require ) {
     reset: function() {
       PropertySet.prototype.reset.call( this );
 
-      // reset the clock
-      this.rewindClockTime = 0;
       this.model.clock.resetSimulationTime();
 
       this.model.resetAll();
@@ -222,7 +213,6 @@ define( function( require ) {
     resetMode: function() {
       this.model.resetBodies();
       this.deviatedFromDefaultsProperty.set( false );
-      this.rewindClockTime = 0;
       this.getClock().setSimulationTime( 0.0 );
     },
 
@@ -232,7 +222,7 @@ define( function( require ) {
      */
     rewind: function() {
       this.rewindingProperty.set( true );
-      this.getClock().setSimulationTime( this.rewindClockTime );
+      this.getClock().setSimulationTime( 0.0 );
       var bodies = this.model.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
         bodies[ i ].rewind();
