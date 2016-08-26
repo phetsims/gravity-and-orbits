@@ -201,7 +201,9 @@ define( function( require ) {
       PropertySet.prototype.reset.call( this );
 
       // reset the clock
+      this.rewindClockTime = 0;
       this.model.clock.resetSimulationTime();
+
       this.model.resetAll();
     },
 
@@ -220,6 +222,7 @@ define( function( require ) {
     resetMode: function() {
       this.model.resetBodies();
       this.deviatedFromDefaultsProperty.set( false );
+      this.rewindClockTime = 0;
       this.getClock().setSimulationTime( 0.0 );
     },
 

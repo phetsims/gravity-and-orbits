@@ -61,6 +61,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );
-  
+
   return inherit( HBox, TimeControlPanel );
 } );
