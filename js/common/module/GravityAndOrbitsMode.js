@@ -115,7 +115,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'GravityAndOrbitsMode', GravityAndOrbitsMode );
-  
+
   return inherit( PropertySet, GravityAndOrbitsMode, {
 
     /**
@@ -159,12 +159,13 @@ define( function( require ) {
      * @public
      * Gets the number of points that should be used to draw a trace, should be enough so that two periods for the
      * default orbit are visible.
+     * TODO: Remove this, it makes more sense for the maxPathLength to be computed in view coordinates
      */
     getMaxPathLength: function() {
 
       // couldn't use 2 as requested because it caused an awkward looking behavior for the lunar orbit
       var numberOfPathPeriods = 1.5;
-      return (Math.ceil( numberOfPathPeriods * this.defaultOrbitalPeriod / this.dt ));
+      return ( Math.ceil( numberOfPathPeriods * this.defaultOrbitalPeriod / this.dt ) );
     },
 
     // @public

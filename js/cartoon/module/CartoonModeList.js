@@ -50,7 +50,9 @@ define( function( require ) {
       new SunEarthModeConfig(),
       new SunEarthMoonModeConfig(),
       new EarthMoonModeConfig(),
-      new EarthSpaceStationModeConfig() );
+      new EarthSpaceStationModeConfig(), {
+        adjustMoonPathLength: true // adjust the moon path length in cartoon mode
+      } );
   }
 
   gravityAndOrbits.register( 'CartoonModeList', CartoonModeList );
@@ -124,7 +126,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
-  
+
   inherit( ModeList.EarthSpaceStationModeConfig, EarthSpaceStationModeConfig );
 
   return CartoonModeList;

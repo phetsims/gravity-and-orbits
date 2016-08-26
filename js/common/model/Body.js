@@ -47,11 +47,12 @@ define( function( require ) {
    * @param {Property.<boolean>} steppingProperty
    * @param {Property.<boolean>} rewindingProperty
    * @param {boolean} fixed
+   * @param {object} [options]
    * @constructor
    */
   function Body( name, x, y, diameter, vx, vy, mass, color, highlight, renderer,
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
-                 playButtonPressedProperty, steppingProperty, rewindingProperty, fixed ) {
+                 playButtonPressedProperty, steppingProperty, rewindingProperty, fixed, options ) {
 
     // @public
     PropertySet.call( this, {
@@ -61,12 +62,18 @@ define( function( require ) {
 
       // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
       bounds: new Bounds2( 0, 0, 0, 0 )
+
     } );
+
+    options = _.extend( {
+      pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
+    }, options );
+    this.pathLengthBuffer = options.pathLengthBuffer; // @public (read-only)
 
     this.massSettable = massSettable; // @public (read-only)
 
-    // number of samples in the path before it starts erasing (fading out from the back)
-    this.maxPathLength = maxPathLength; // @public (read-only)
+    // @public number of samples in the path before it starts erasing (fading out from the back)
+    this.maxPathLength = 0;
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
@@ -130,7 +137,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'Body', Body );
-  
+
   return inherit( PropertySet, Body, {
 
     /**
@@ -203,10 +210,11 @@ define( function( require ) {
 
       // start removing data after 2 orbits of the default system
       // account for the point that will be added
-      while ( this.path.length + 1 > this.maxPathLength ) {
-        this.path.shift();
-        this.trigger0( GravityAndOrbitsConstants.POINT_REMOVED );
-      }
+      // TODO: This should no longer necessary, but verify before removing
+      // while ( this.path.length + 1 > this.maxPathLength ) {
+      //   this.path.shift();
+      //   this.trigger0( GravityAndOrbitsConstants.POINT_REMOVED );
+      // }
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
       this.trigger1( GravityAndOrbitsConstants.POINT_ADDED, pathPoint );

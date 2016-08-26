@@ -98,7 +98,7 @@ define( function( require ) {
 
   /**
    * Constructor for ModeListModule.
-   * 
+   *
    * @param {ModeListParameterList} p
    * @param {SunEarthModeConfig} sunEarth
    * @param {SunEarthMoonModeConfig} sunEarthMoon
@@ -107,7 +107,11 @@ define( function( require ) {
    * @returns {*}
    * @constructor
    */
-  function ModeListModule( p, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation ) {
+  function ModeListModule( p, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
+
+    options = _.extend( {
+      adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
+    }, options );
 
     // non-static inner class: SpaceStation
     function SpaceStation( earthSpaceStation, maxPathLength ) {
@@ -138,7 +142,12 @@ define( function( require ) {
     inherit( Body, SpaceStation );
 
     // non-static inner class: Moon
-    function Moon( massSettable, maxPathLength, massReadoutBelow, body ) {
+    function Moon( massSettable, maxPathLength, massReadoutBelow, body, options ) {
+
+      options = _.extend( {
+        pathLengthBuffer: 0 // adjustment to moon path length so that it matches other traces at default settings
+      }, options );
+
       Body.call(
         this,
         moonString,
@@ -160,7 +169,8 @@ define( function( require ) {
         p.playButtonPressedProperty,
         p.steppingProperty,
         p.rewindingProperty,
-        body.fixed );
+        body.fixed,
+        options );
     }
 
     inherit( Body, Moon, {
@@ -290,11 +300,15 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       p ) );
 
+    // increase moon path length so that it matches other traces at default settings
+    var pathLengthBuffer = options.adjustMoonPathLength ? 150 : 0;
     this.modes[ 1 ].addBody( new Sun( this.modes[ 1 ].getMaxPathLength(), sunEarthMoon.sun ) );
     this.modes[ 1 ].addBody( new Earth( this.modes[ 1 ].getMaxPathLength(), sunEarthMoon.earth ) );
     this.modes[ 1 ].addBody( new Moon( // no room for the slider
       false, this.modes[ 1 ].getMaxPathLength(), false, // so it doesn't intersect with earth mass readout
-      sunEarthMoon.moon ) );
+      sunEarthMoon.moon, {
+        pathLengthBuffer: pathLengthBuffer
+      } ) );
 
     var SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
     this.modes.push( new GravityAndOrbitsMode(

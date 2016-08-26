@@ -17,12 +17,12 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Color = require( 'SCENERY/util/Color' );
   var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
+  var Util = require( 'DOT/Util' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var STROKE_WIDTH = 3;
-  var NUM_FADE_POINTS = 25;
 
   /**
    *
@@ -31,10 +31,16 @@ define( function( require ) {
    * @param {Property.<boolean>} visibleProperty
    * @param {Color} color
    * @param {Bounds2} canvasBounds
+   * @param {object} [options]
    * @constructor
    */
-  function PathsNode( bodies, transformProperty, visibleProperty, canvasBounds ) {
+  function PathsNode( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
 
+    options = _.extend( {
+      maxPathLength: 1150 // max path length for the trace that follows the planets
+    }, options );
+
+    assert && assert( canvasBounds, 'Paths canvas must define bounds' );
     CanvasNode.call( this, { canvasBounds: canvasBounds } );
     var thisNode = this;
     var i;
@@ -44,6 +50,15 @@ define( function( require ) {
     for ( i = 0; i < bodies.length; i++ ) {
       this.points[ i ] = [];
     }
+
+    // set the path length for the body so that the length is ~85% of the orbit, relative to the center
+    // of the canvas bounds (and therefore the central body)
+    bodies.forEach( function( body ) {
+      var initialPosition = transformProperty.get().modelToViewPosition( body.positionProperty.initialValue );
+      var distToCenter = canvasBounds.center.minus( initialPosition ).magnitude();
+      var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
+      body.maxPathLength = Math.max( maxPathLength, options.maxPathLength );
+    } );
 
     this.bodies = bodies; // @private
 
@@ -95,7 +110,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'PathsNode', PathsNode );
-  
+
   return inherit( CanvasNode, PathsNode, {
 
     /**
@@ -110,8 +125,8 @@ define( function( require ) {
         var body = this.bodies[ i ];
         var points = this.points[ i ];
 
-        var numSolidPoints = Math.min( body.maxPathLength - NUM_FADE_POINTS, points.length );
-        var numTransparentPoints = points.length - numSolidPoints;
+        var maxPathLength = body.maxPathLength;
+        var fadePathLength = body.maxPathLength * 0.15; // fade length is ~15% of the path
 
         context.strokeStyle = body.color.toCSS();
         context.lineWidth = STROKE_WIDTH;
@@ -124,25 +139,52 @@ define( function( require ) {
         if ( points.length > 0 ) {
           context.moveTo( points[ points.length - 1 ].x, points[ points.length - 1 ].y );
         }
-        for ( j = points.length - 2; j >= numTransparentPoints; j-- ) {
+
+        j = points.length - 1;
+        this.pathLength = 0;
+        var segDifX;
+        var segDifY;
+        var segLength;
+        while ( this.pathLength < maxPathLength - fadePathLength && j > 0 ) {
           context.lineTo( points[ j ].x, points[ j ].y );
+          if ( j > 1 ) {
+            // incrememnt the path length by the length of the added segment
+            segDifX = points[ j ].x - points[ j - 1 ].x;
+            segDifY = points[ j ].y - points[ j - 1 ].y;
+
+            // avoid using vector2 to prevent excess object allocation
+            segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
+            this.pathLength += segLength;
+          }
+          j--;
         }
         context.stroke();
 
         // Draw the faded out part
         context.lineCap = 'butt';
-
         var faded = body.color;
-        for ( j = numTransparentPoints - 1; j >= 0; j-- ) {
+
+        while ( this.pathLength < maxPathLength && j > 0 ) {
+          assert && assert( this.pathLength > maxPathLength - fadePathLength, 'the path length is too small to start fading' );
 
           // fade out a little bit each segment
-          var a = (faded.a - 1 / NUM_FADE_POINTS);
-          faded = new Color( faded.r, faded.g, faded.b, Math.max( 0, a ) );
-          context.strokeStyle = faded.toCSS();
+          var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, this.pathLength );
+          var fade = new Color( faded.r, faded.g, faded.b, alpha ); // todo - there is some overhead here
+
           context.beginPath();
           context.moveTo( points[ j + 1 ].x, points[ j + 1 ].y );
           context.lineTo( points[ j ].x, points[ j ].y );
+          context.strokeStyle = fade.toCSS();
           context.stroke();
+
+          // incrememnt the path length by the length of the added segment
+          segDifX = points[ j ].x - points[ j - 1 ].x;
+          segDifY = points[ j ].y - points[ j - 1 ].y;
+
+          // avoid using vector2 to prevent excess object allocation
+          segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
+          this.pathLength += segLength;
+          j--;
         }
       }
     }

@@ -78,7 +78,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
-  
+
   return inherit( PropertySet, GravityAndOrbitsModel, {
 
     // @public
