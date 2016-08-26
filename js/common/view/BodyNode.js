@@ -32,9 +32,11 @@ define( function( require ) {
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
    *                              don't overlap too much
+   * @param {GravityAndOrbitsClock} clock
+   * @param {Property.<boolean>} playButtonPressedProperty is the simulation playing?
    * @constructor
    */
-  function BodyNode( body, modelViewTransformProperty, labelAngle ) {
+  function BodyNode( body, modelViewTransformProperty, labelAngle, clock, playButtonPressedProperty ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     this.modelViewTransformProperty = modelViewTransformProperty; // @private
@@ -58,6 +60,11 @@ define( function( require ) {
       },
       endDrag: function() {
         body.userControlled = false;
+
+        // reset the simulation time when the planet is released
+        if ( playButtonPressedProperty.value !== true ) {
+          clock.setSimulationTime( 0.0 );
+        }
       }
     } );
     this.addInputListener( dragHandler );

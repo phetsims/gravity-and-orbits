@@ -73,7 +73,7 @@ define( function( require ) {
     // Use canvas coordinates to determine whether something has left the visible area
     var returnable = [];
     for ( i = 0; i < bodies.length; i++ ) {
-      var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, bodies[ i ].labelAngle );
+      var bodyNode = new BodyNode( bodies[ i ], mode.transformProperty, bodies[ i ].labelAngle, mode.getClock(), module.playButtonPressedProperty );
       var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
       thisNode.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );

@@ -72,6 +72,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'DayCounter', DayCounter );
-  
+
   return inherit( Node, DayCounter );
 } );
