@@ -20,7 +20,6 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
@@ -29,17 +28,19 @@ define( function( require ) {
   /**
    * Constructor for BodyNode
    * @param {Body} body
-   * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
    *                              don't overlap too much
-   * @param {GravityAndOrbitsClock} clock
    * @param {Property.<boolean>} playButtonPressedProperty is the simulation playing?
+   * @param {GravityAndORbtisMode} mode
    * @constructor
    */
-  function BodyNode( body, modelViewTransformProperty, labelAngle, clock, playButtonPressedProperty, dragBoundsProperty ) {
+  function BodyNode( body, labelAngle, playButtonPressedProperty, mode ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
-    this.modelViewTransformProperty = modelViewTransformProperty; // @private
+    var modelBoundsProperty = mode.modelBoundsProperty;
+    var clock = mode.getClock();
+
+    this.modelViewTransformProperty = mode.transformProperty; // @private
     this.body = body; // @public
 
     var thisNode = this;
@@ -52,14 +53,14 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     var dragHandler = new MovableDragHandler( this.body.positionProperty, {
-      dragBounds:dragBoundsProperty.value,
-      modelViewTransform: modelViewTransformProperty.value,
+      dragBounds:modelBoundsProperty.value,
+      modelViewTransform: thisNode.modelViewTransformProperty.value,
       startDrag: function() {
         body.userControlled = true;
       },
       onDrag: function() {
         body.userModifiedPositionEmitter.emit();
-        body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_POSITION );
+        // body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_POSITION );
       },
       endDrag: function() {
         body.userControlled = false;
@@ -72,12 +73,12 @@ define( function( require ) {
     } );
     this.addInputListener( dragHandler );
 
-    Property.multilink( [ this.body.positionProperty, modelViewTransformProperty ],
+    Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ],
       function( position, modelViewTransform ) {
         thisNode.translation = modelViewTransform.modelToViewPosition( position );
       } );
 
-    Property.multilink( [ this.body.diameterProperty, modelViewTransformProperty ],
+    Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ],
       function( diameter, modelViewTransform ) {
         thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
 
@@ -90,7 +91,7 @@ define( function( require ) {
       dragHandler.setModelViewTransform( modelViewTransform );
     } );
 
-    dragBoundsProperty.link( function( dragBounds ) {
+    modelBoundsProperty.link( function( dragBounds ) {
       dragHandler.setDragBounds( dragBounds );
     } );
 
