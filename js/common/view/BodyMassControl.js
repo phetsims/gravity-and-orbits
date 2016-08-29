@@ -57,6 +57,8 @@ define( function( require ) {
     var slider = new HSlider( body.massProperty, { min: min, max: max }, {
       trackSize: new Dimension2( WIDTH, 1 ),
       thumbSize: THUMB_SIZE,
+      thumbTouchAreaXDilation: THUMB_SIZE.width,
+      thumbTouchAreaYDilation: THUMB_SIZE.height,
       trackLineWidth: 0,
       trackStroke: GravityAndOrbitsColorProfile.panelTextProperty,
 
