@@ -25,7 +25,7 @@ define( function( require ) {
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // images
-  var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
+  var sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
 
   // @abstract
   function BodyRenderer( body ) {
@@ -145,14 +145,14 @@ define( function( require ) {
     this.numSegments = numSegments; // @private
     this.twinkleRadius = twinkleRadius; // @private
 
-    ImageRenderer.call( this, body, viewDiameter, sunMipmap );
+    ImageRenderer.call( this, body, viewDiameter, sunImage );
     this.addChild( this.twinkles );
     this.twinkles.moveToBack();
     this.setDiameter( viewDiameter );
   }
 
   gravityAndOrbits.register( 'SunRenderer', SunRenderer );
-  
+
   inherit( ImageRenderer, SunRenderer, {
     setDiameter: function( viewDiameter ) {
       ImageRenderer.prototype.setDiameter.call( this, viewDiameter );
@@ -173,4 +173,3 @@ define( function( require ) {
 
   return renderer;
 } );
-

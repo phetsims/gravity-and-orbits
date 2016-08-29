@@ -47,12 +47,12 @@ define( function( require ) {
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
 
   // images
-  var sunMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/sun.png' );
-  var earthMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/earth.png' );
-  var moonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon.png' );
-  var genericPlanetMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/planet_generic.png' );
-  var genericMoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/moon_generic.png' );
-  var spaceStationMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/space-station.png' );
+  var sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
+  var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.png' );
+  var moonImage = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
+  var genericPlanetImage = require( 'image!GRAVITY_AND_ORBITS/planet_generic.png' );
+  var genericMoonImage = require( 'image!GRAVITY_AND_ORBITS/moon_generic.png' );
+  var spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model.
@@ -126,7 +126,7 @@ define( function( require ) {
         earthSpaceStation.spaceStation.mass,
         Color.gray,
         Color.white,
-        getImageRenderer( spaceStationMipmap ),
+        getImageRenderer( spaceStationImage ),
         ( -Math.PI / 4),
         true,
         maxPathLength,
@@ -159,7 +159,7 @@ define( function( require ) {
         body.mass,
         Color.magenta,
         Color.white,
-        getSwitchableRenderer( moonMipmap, genericMoonMipmap, body.mass ),
+        getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
         ( -3 * Math.PI / 4 ),
         massSettable,
         maxPathLength,
@@ -206,7 +206,7 @@ define( function( require ) {
         body.mass,
         Color.gray,
         Color.lightGray,
-        getSwitchableRenderer( earthMipmap, genericPlanetMipmap, body.mass ),
+        getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
         ( -Math.PI / 4 ),
         true,
         maxPathLength,
@@ -234,7 +234,7 @@ define( function( require ) {
         body.mass,
         Color.yellow,
         Color.white,
-        getImageRenderer( sunMipmap ),
+        getImageRenderer( sunImage ),
         ( -Math.PI / 4 ),
         true,
         maxPathLength,
@@ -369,10 +369,10 @@ define( function( require ) {
      */
     createIconImage: function( sun, earth, moon, spaceStation ) {
       var children = [
-        new Image( sunMipmap, { visible: sun } ),
-        new Image( earthMipmap, { visible: earth } ),
-        new Image( moonMipmap, { visible: moon } ),
-        new Image( spaceStationMipmap, { visible: spaceStation } )
+        new Image( sunImage, { visible: sun } ),
+        new Image( earthImage, { visible: earth } ),
+        new Image( moonImage, { visible: moon } ),
+        new Image( spaceStationImage, { visible: spaceStation } )
       ];
 
       for ( var i = 0; i < children.length; i++ ) {
