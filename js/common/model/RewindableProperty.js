@@ -34,8 +34,21 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'RewindableProperty', RewindableProperty );
-  
+
   return inherit( Property, RewindableProperty, {
+
+    /**
+     * Reset both the value and the rewind value.
+     *
+     * @public
+     * @override
+     */
+    reset: function() {
+      Property.prototype.reset.call( this );
+
+      // reset the rewind value as well
+      this.rewindValue = this.value;
+    },
 
     /**
      * @public
