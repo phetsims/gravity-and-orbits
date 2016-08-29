@@ -33,7 +33,7 @@ define( function( require ) {
    * @param {object} [options]
    * @constructor
    */
-  function PathsNode( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
+  function PathsCanvasNode( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
 
     options = _.extend( {
       maxPathLength: 1150 // max path length for the trace that follows the planets
@@ -108,9 +108,9 @@ define( function( require ) {
 
   }
 
-  gravityAndOrbits.register( 'PathsNode', PathsNode );
+  gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
-  return inherit( CanvasNode, PathsNode, {
+  return inherit( CanvasNode, PathsCanvasNode, {
 
     /**
      * @private

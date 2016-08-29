@@ -12,7 +12,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var PathsNode = require( 'GRAVITY_AND_ORBITS/common/view/PathsNode' );
+  var PathsCanvasNode = require( 'GRAVITY_AND_ORBITS/common/view/PathsCanvasNode' );
   var BodyNode = require( 'GRAVITY_AND_ORBITS/common/view/BodyNode' );
   var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
   var Color = require( 'SCENERY/util/Color' );
@@ -63,7 +63,7 @@ define( function( require ) {
     var bodies = model.getBodies();
     var i;
 
-    this.addChild( new PathsNode( bodies, mode.transformProperty, module.showPathProperty, STAGE_SIZE ) );
+    this.addChild( new PathsCanvasNode( bodies, mode.transformProperty, module.showPathProperty, STAGE_SIZE ) );
 
     var forceVectorColorFill = new Color( 50, 130, 215 );
     var forceVectorColorOutline = new Color( 64, 64, 64 );
