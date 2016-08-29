@@ -36,7 +36,7 @@ define( function( require ) {
    * @param {Property.<boolean>} playButtonPressedProperty is the simulation playing?
    * @constructor
    */
-  function BodyNode( body, modelViewTransformProperty, labelAngle, clock, playButtonPressedProperty ) {
+  function BodyNode( body, modelViewTransformProperty, labelAngle, clock, playButtonPressedProperty, dragBoundsProperty ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
     this.modelViewTransformProperty = modelViewTransformProperty; // @private
@@ -52,6 +52,8 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     var dragHandler = new MovableDragHandler( this.body.positionProperty, {
+      dragBounds:dragBoundsProperty.value,
+      modelViewTransform: modelViewTransformProperty.value,
       startDrag: function() {
         body.userControlled = true;
       },
@@ -85,6 +87,10 @@ define( function( require ) {
 
     this.modelViewTransformProperty.link( function( modelViewTransform ) {
       dragHandler.setModelViewTransform( modelViewTransform );
+    } );
+
+    dragBoundsProperty.link( function( dragBounds ) {
+      dragHandler.setDragBounds( dragBounds );
     } );
 
     // Points to the sphere with a text indicator and line when it is too small to see (in modes with realistic units)
