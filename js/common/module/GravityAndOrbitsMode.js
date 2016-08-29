@@ -26,12 +26,12 @@ define( function( require ) {
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
-  var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsCanvas' );
+  var GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
-  var PLAY_AREA_WIDTH = GravityAndOrbitsCanvas.STAGE_SIZE.width;
-  var PLAY_AREA_HEIGHT = GravityAndOrbitsCanvas.STAGE_SIZE.height;
+  var PLAY_AREA_WIDTH = GravityAndOrbitsPlayArea.STAGE_SIZE.width;
+  var PLAY_AREA_HEIGHT = GravityAndOrbitsPlayArea.STAGE_SIZE.height;
 
   /**
    * Create a new GravityAndOrbitsMode that shares ModeListParameterList values with other modes
@@ -202,7 +202,7 @@ define( function( require ) {
      * @param module
      */
     init: function( module ) {
-      this.canvas = new GravityAndOrbitsCanvas( this.model, module, this, this.forceScale );
+      this.canvas = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale );
     },
 
     /**

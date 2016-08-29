@@ -48,14 +48,14 @@ define( function( require ) {
   var THOUSAND_MILES_MULTIPLIER = METERS_PER_MILE / 1000;
 
   /**
-   * Constructor for GravityAndOrbitsCanvas
+   * Constructor for GravityAndOrbitsPlayArea
    * @param {GravityAndOrbitsModel} model
    * @param {GravityAndOrbitsModule} module
    * @param {GravityAndOrbitsMode} mode
    * @param {number} forceScale
    * @constructor
    */
-  function GravityAndOrbitsCanvas( model, module, mode, forceScale ) {
+  function GravityAndOrbitsPlayArea( model, module, mode, forceScale ) {
 
     Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: true } );
     var thisNode = this;
@@ -172,9 +172,9 @@ define( function( require ) {
     this.addChild( scaleSlider );
   }
 
-  gravityAndOrbits.register( 'GravityAndOrbitsCanvas', GravityAndOrbitsCanvas );
+  gravityAndOrbits.register( 'GravityAndOrbitsPlayArea', GravityAndOrbitsPlayArea );
 
-  return inherit( Rectangle, GravityAndOrbitsCanvas, {}, {
+  return inherit( Rectangle, GravityAndOrbitsPlayArea, {}, {
     STAGE_SIZE: STAGE_SIZE,
     buttonBackgroundColor: buttonBackgroundColor
   } );
