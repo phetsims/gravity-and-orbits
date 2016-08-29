@@ -60,6 +60,7 @@ define( function( require ) {
         buttonContentXMargin: 5,
         buttonContentYMargin: 5,
         spacing: 0,
+        resize: false,
         deselectedOpacity: 1,
         cornerRadius: 5,
         touchAreaYDilation: 0 // reduce to 0 to prevent overlap between buttons

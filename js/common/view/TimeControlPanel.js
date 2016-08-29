@@ -57,7 +57,7 @@ define( function( require ) {
       rewindButton.enabled = changed;
     } );
 
-    HBox.call( this, _.extend( { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
+    HBox.call( this, _.extend( { resize: false, spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
   }
 
   gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );

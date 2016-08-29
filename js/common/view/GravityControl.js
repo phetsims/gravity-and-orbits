@@ -42,7 +42,7 @@ define( function( require ) {
     var offTextNode = new Text( offString, TEXT_OPTIONS );
 
     this.addChild( new HBox( {
-      spacing: 10, bottom: 2, children: [
+      spacing: 10, bottom: 2, resize: false, children: [
         gravityTextNode,
         new AquaRadioButton( gravityEnabledProperty, true, onTextNode, RADIO_OPTIONS ),
         new AquaRadioButton( gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
@@ -51,6 +51,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'GravityControl', GravityControl );
-  
+
   return inherit( Node, GravityControl );
 } );

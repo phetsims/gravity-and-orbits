@@ -48,7 +48,8 @@ define( function( require ) {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColorProfile.panelTextProperty,
-        maxWidth: 175
+        maxWidth: 175,
+        resize: false
       } );
 
       var icon = massSettableBody.createRenderer( 14 );
@@ -80,6 +81,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'MassControlPanel', MassControlPanel );
-  
+
   return inherit( Panel, MassControlPanel );
 } );
