@@ -57,9 +57,7 @@ define( function( require ) {
   function GravityAndOrbitsModel( clock, gravityEnabledProperty ) {
 
     // @public
-    PropertySet.call( this, {
-      paused: true
-    } );
+    PropertySet.call( this, {} );
 
     // @private
     this.gravityEnabledProperty = gravityEnabledProperty;
@@ -145,13 +143,12 @@ define( function( require ) {
       var gravityAndOrbitsModel = this;
       this.bodies.push( body );
 
-      // If the user modifies the position, and the sim is paused, we must update the force vectors manually since
-      // the model will not update them for us.
+      // update the force vectors when the position or mass changes
       body.on( GravityAndOrbitsConstants.USER_MODIFIED_POSITION, function() {
-        if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
+        gravityAndOrbitsModel.updateForceVectors();
       } );
       body.massProperty.link( function() {
-        if ( gravityAndOrbitsModel.paused ) { gravityAndOrbitsModel.updateForceVectors(); }
+        gravityAndOrbitsModel.updateForceVectors();
       } );
       this.updateForceVectors();
     },
