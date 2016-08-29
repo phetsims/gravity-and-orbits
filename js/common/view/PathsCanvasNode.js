@@ -40,7 +40,10 @@ define( function( require ) {
     }, options );
 
     assert && assert( canvasBounds, 'Paths canvas must define bounds' );
-    CanvasNode.call( this, { canvasBounds: canvasBounds } );
+    CanvasNode.call( this, {
+      canvasBounds: canvasBounds,
+      preventFit: true
+    } );
     var thisNode = this;
     var i;
 
