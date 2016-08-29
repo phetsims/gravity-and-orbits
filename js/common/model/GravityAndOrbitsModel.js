@@ -16,7 +16,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
@@ -144,7 +143,7 @@ define( function( require ) {
       this.bodies.push( body );
 
       // update the force vectors when the position or mass changes
-      body.on( GravityAndOrbitsConstants.USER_MODIFIED_POSITION, function() {
+      body.userModifiedPositionEmitter.addListener( function() {
         gravityAndOrbitsModel.updateForceVectors();
       } );
       body.massProperty.link( function() {

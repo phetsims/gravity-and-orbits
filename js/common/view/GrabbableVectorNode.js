@@ -19,7 +19,6 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
@@ -78,7 +77,8 @@ define( function( require ) {
       translate: function( event ) {
         var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
         body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
-        body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY );
+        body.userModifiedVelocityEmitter.emit();
+        // body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY );
       }
     } ) );
 
@@ -88,7 +88,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'GrabbableVectorNode', GrabbableVectorNode );
-  
+
   return inherit( VectorNode, GrabbableVectorNode );
 } );
-

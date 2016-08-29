@@ -27,7 +27,6 @@ define( function( require ) {
   var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   var GravityAndOrbitsCanvas = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsCanvas' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
@@ -182,8 +181,8 @@ define( function( require ) {
         thisMode.deviatedFromDefaultsProperty.set( true );
       };
       body.massProperty.link( update );
-      body.on( GravityAndOrbitsConstants.USER_MODIFIED_POSITION, update );
-      body.on( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY, update );
+      body.userModifiedPositionEmitter.addListener( update );
+      body.userModifiedVelocityEmitter.addListener( update );
     },
 
     /**

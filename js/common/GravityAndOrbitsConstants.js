@@ -32,17 +32,10 @@ define( function( require ) {
       xMargin: PANEL_X_MARGIN,
       scale: 1.05,
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
-    },
-
-    // event names
-    POINT_ADDED: 'pointAdded',
-    POINT_REMOVED: 'pointRemoved',
-    CLEARED: 'cleared',
-    USER_MODIFIED_POSITION: 'userModifiedPosition',
-    USER_MODIFIED_VELOCITY: 'userModifiedVelocity'
+    }
   };
 
   gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
-  
+
   return GravityAndOrbitsConstants;
 } );

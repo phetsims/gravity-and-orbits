@@ -18,8 +18,8 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var Emitter = require( 'AXON/Emitter' );
 
   // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
   var tempVector = new Vector2();
@@ -115,6 +115,12 @@ define( function( require ) {
     // true if the user is currently controlling the position of the body with the mouse
     this.userControlled = false; // @public
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
+
+    // @public - emitters for various events
+    this.pointAddedEmitter = new Emitter();
+    this.clearedEmitter = new Emitter();
+    this.userModifiedPositionEmitter = new Emitter();
+    this.userModifiedVelocityEmitter = new Emitter();
 
     var thisBody = this;
     this.collidedProperty.onValue( true, function() {
@@ -217,13 +223,15 @@ define( function( require ) {
       // }
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
-      this.trigger1( GravityAndOrbitsConstants.POINT_ADDED, pathPoint );
+      this.pointAddedEmitter.emit1( pathPoint );
+      // this.trigger1( GravityAndOrbitsConstants.POINT_ADDED, pathPoint );
     },
 
     // @public
     clearPath: function() {
       this.path = [];
-      this.trigger0( GravityAndOrbitsConstants.CLEARED );
+      this.clearedEmitter.emit();
+      // this.trigger0( GravityAndOrbitsConstants.CLEARED );
     },
 
     // @public

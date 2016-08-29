@@ -58,6 +58,7 @@ define( function( require ) {
         body.userControlled = true;
       },
       onDrag: function() {
+        body.userModifiedPositionEmitter.emit();
         body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_POSITION );
       },
       endDrag: function() {

@@ -18,7 +18,6 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
   var Util = require( 'DOT/Util' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
@@ -76,7 +75,7 @@ define( function( require ) {
       (function( i ) {
         var body = bodies[ i ];
 
-        body.on( GravityAndOrbitsConstants.POINT_ADDED, function( point ) {
+        body.pointAddedEmitter.addListener( function( point ) {
           var pt = transformProperty.get().modelToViewPosition( point );
           thisNode.points[ i ].push( pt );
           if ( visibleProperty.get() ) {
@@ -84,16 +83,16 @@ define( function( require ) {
           }
         } );
 
-        body.on( GravityAndOrbitsConstants.POINT_REMOVED, function() {
-          if ( thisNode.points[ i ].length > 0 ) {
-            thisNode.points[ i ].shift();
-          }
-          if ( visibleProperty.get() ) {
-            thisNode.invalidatePaint();
-          }
-        } );
+        // body.on( GravityAndOrbitsConstants.POINT_REMOVED, function() {
+        //   if ( thisNode.points[ i ].length > 0 ) {
+        //     thisNode.points[ i ].shift();
+        //   }
+        //   if ( visibleProperty.get() ) {
+        //     thisNode.invalidatePaint();
+        //   }
+        // } );
 
-        body.on( GravityAndOrbitsConstants.CLEARED, function() {
+        body.clearedEmitter.addListener( function() {
           while ( thisNode.points[ i ].length ) { thisNode.points[ i ].pop(); }
           thisNode.invalidatePaint();
         } );
