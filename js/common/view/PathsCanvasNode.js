@@ -15,10 +15,10 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Color = require( 'SCENERY/util/Color' );
   var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
   var Util = require( 'DOT/Util' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
 
   // constants
   var STROKE_WIDTH = 3;
@@ -171,12 +171,15 @@ define( function( require ) {
 
           // fade out a little bit each segment
           var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, this.pathLength );
-          var fade = new Color( faded.r, faded.g, faded.b, alpha ); // todo - there is some overhead here
+
+          // formate without Color to avoid unnecessary allocation
+          var fadePattern = 'rgba({0},{1},{2},{3})';
+          var fade = StringUtils.format( fadePattern, faded.r, faded.g, faded.b, alpha );
 
           context.beginPath();
+          context.strokeStyle = fade;
           context.moveTo( points[ j + 1 ].x, points[ j + 1 ].y );
           context.lineTo( points[ j ].x, points[ j ].y );
-          context.strokeStyle = fade.toCSS();
           context.stroke();
 
           // incrememnt the path length by the length of the added segment
