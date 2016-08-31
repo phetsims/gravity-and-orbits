@@ -18,7 +18,6 @@ define( function( require ) {
   var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
   var Util = require( 'DOT/Util' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
 
   // constants
   var STROKE_WIDTH = 3;
@@ -173,8 +172,7 @@ define( function( require ) {
           var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, this.pathLength );
 
           // formate without Color to avoid unnecessary allocation
-          var fadePattern = 'rgba({0},{1},{2},{3})';
-          var fade = StringUtils.format( fadePattern, faded.r, faded.g, faded.b, alpha );
+          var fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )'
 
           context.beginPath();
           context.strokeStyle = fade;
