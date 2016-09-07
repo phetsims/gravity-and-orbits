@@ -46,7 +46,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
-  
+
   return inherit( Object, GravityAndOrbitsClock, {
 
     // @public

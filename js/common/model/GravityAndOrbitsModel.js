@@ -146,9 +146,7 @@ define( function( require ) {
       body.userModifiedPositionEmitter.addListener( function() {
         gravityAndOrbitsModel.updateForceVectors();
       } );
-      body.massProperty.link( function() {
-        gravityAndOrbitsModel.updateForceVectors();
-      } );
+      body.massProperty.link( gravityAndOrbitsModel.updateForceVectors.bind( this ) );
       this.updateForceVectors();
     },
 
