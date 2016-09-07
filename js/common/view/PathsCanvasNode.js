@@ -85,14 +85,14 @@ define( function( require ) {
           }
         } );
 
-        // body.on( GravityAndOrbitsConstants.POINT_REMOVED, function() {
-        //   if ( thisNode.points[ i ].length > 0 ) {
-        //     thisNode.points[ i ].shift();
-        //   }
-        //   if ( visibleProperty.get() ) {
-        //     thisNode.invalidatePaint();
-        //   }
-        // } );
+        body.pointRemovedEmitter.addListener( function() {
+          if ( thisNode.points[ i ].length > 0 ) {
+            thisNode.points[ i ].shift();
+          }
+          if ( visibleProperty.get() ) {
+            thisNode.invalidatePaint();
+          }
+        } );
 
         body.clearedEmitter.addListener( function() {
           while ( thisNode.points[ i ].length ) { thisNode.points[ i ].pop(); }

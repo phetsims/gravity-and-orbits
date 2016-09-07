@@ -55,7 +55,6 @@ define( function( require ) {
 
     // @private
     this.propertyChangedListener = function( changed ) {
-      console.log( changed );
       rewindButton.enabled = changed;
     };
     anyPropertyChanged.link( this.propertyChangedListener );

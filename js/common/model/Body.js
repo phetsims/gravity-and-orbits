@@ -118,6 +118,7 @@ define( function( require ) {
 
     // @public - emitters for various events
     this.pointAddedEmitter = new Emitter();
+    this.pointRemovedEmitter = new Emitter();
     this.clearedEmitter = new Emitter();
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
@@ -216,11 +217,10 @@ define( function( require ) {
 
       // start removing data after 2 orbits of the default system
       // account for the point that will be added
-      // TODO: This should no longer necessary, but verify before removing
-      // while ( this.path.length + 1 > this.maxPathLength ) {
-      //   this.path.shift();
-      //   this.trigger0( GravityAndOrbitsConstants.POINT_REMOVED );
-      // }
+      while ( this.path.length > this.maxPathLength ) {
+        this.path.shift();
+        this.pointRemovedEmitter.emit();
+      }
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
       this.pointAddedEmitter.emit1( pathPoint );
