@@ -73,27 +73,32 @@ define( function( require ) {
     } );
     this.addInputListener( dragHandler );
 
-    Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ],
-      function( position, modelViewTransform ) {
-        thisNode.translation = modelViewTransform.modelToViewPosition( position );
-      } );
+    // create position and diameter listeners so that they can be unlinked
+    // for garbage collectiona and so that anonymous closures are not necessary
+    // through multilink
+    this.positionListener = function( position, modelViewTransform ) {
+      thisNode.translation = modelViewTransform.modelToViewPosition( position );
+    };
+    Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
-    Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ],
-      function( diameter, modelViewTransform ) {
-        thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+    this.diameterListener = function( position, modelViewTransform ) {
+      thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
 
-        // touch areas need to change with diameter
-        thisNode.touchArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
-        thisNode.mouseArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
-      } );
+      // touch areas need to change with diameter
+      thisNode.touchArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+      thisNode.mouseArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+    };
+    Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
-    this.modelViewTransformProperty.link( function( modelViewTransform ) {
+    this.modelViewTransformListener = function( modelViewTransform ) {
       dragHandler.setModelViewTransform( modelViewTransform );
-    } );
+    };
+    this.modelViewTransformProperty.link( this.modelViewTransformListener );
 
-    modelBoundsProperty.link( function( dragBounds ) {
+    this.modelBoundsListener = function( dragBounds ) {
       dragHandler.setDragBounds( dragBounds );
-    } );
+    };
+    modelBoundsProperty.link( this.modelBoundsListener );
 
     // Points to the sphere with a text indicator and line when it is too small to see (in modes with realistic units)
     this.addChild( this.createArrowIndicator( this.body, labelAngle ) );
