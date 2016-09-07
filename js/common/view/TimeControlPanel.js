@@ -53,9 +53,12 @@ define( function( require ) {
       return _.any( arguments, _.identity );
     } );
 
-    anyPropertyChanged.link( function( changed ) {
+    // @private
+    this.propertyChangedListener = function( changed ) {
+      console.log( changed );
       rewindButton.enabled = changed;
-    } );
+    };
+    anyPropertyChanged.link( this.propertyChangedListener );
 
     HBox.call( this, _.extend( { resize: false, spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
   }
