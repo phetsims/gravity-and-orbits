@@ -63,14 +63,14 @@ define( function( require ) {
     this.addChild( text );
 
     // Center the grab area on the tip (see getTip()) when any of its dependencies change
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ],
-      function( visible ) {
-        if ( visible ) {
-          var tip = thisNode.getTip();
-          grabArea.center = tip;
-          text.center = tip;
-        }
-      } );
+    var propertyListener = function( visible ) {
+      if ( visible ) {
+        var tip = thisNode.getTip();
+        grabArea.center = tip;
+        text.center = tip;
+      }
+    };
+    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );
 
     // Add the drag handler
     grabArea.addInputListener( new SimpleDragHandler( {
@@ -78,7 +78,6 @@ define( function( require ) {
         var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
         body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
         body.userModifiedVelocityEmitter.emit();
-        // body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_VELOCITY );
       }
     } ) );
 
