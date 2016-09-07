@@ -76,8 +76,7 @@ define( function( require ) {
 
     Node.call( this, { children: [ smallLabel, this.sliderWithTicksNode ] } );
 
-    body.massProperty.link( function( mass ) {
-
+    var massListener = function( mass ) {
       // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
       // the mass itself is set by the slider in this case.
       // derived from: density = mass/volume, and volume = 4/3 pi r r r
@@ -88,7 +87,8 @@ define( function( require ) {
       if ( Math.abs( mass - labelValue ) / labelValue < SNAP_TOLERANCE ) {
         body.massProperty.set( labelValue );
       }
-    } );
+    };
+    body.massProperty.link( massListener );
   }
 
   gravityAndOrbits.register( 'BodyMassControl', BodyMassControl );
