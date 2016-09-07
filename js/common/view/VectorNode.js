@@ -59,20 +59,20 @@ define( function( require ) {
       scaleTailToo: true
     } );
 
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ],
-      function( visible ) {
-        if ( visible ) {
-          var tail = thisNode.getTail();
-          var tip = thisNode.getTip( tail );
-          arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
-        }
-      } );
+    this.propertyListener = function( visible ) {
+      if ( visible ) {
+        var tail = thisNode.getTail();
+        var tip = thisNode.getTip( tail );
+        arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
+      }
+    };
+    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], thisNode.propertyListener );
 
     this.addChild( arrowNode );
   }
 
   gravityAndOrbits.register( 'VectorNode', VectorNode );
-  
+
   return inherit( Node, VectorNode, {
 
     // @private
