@@ -172,7 +172,7 @@ define( function( require ) {
           var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, this.pathLength );
 
           // formate without Color to avoid unnecessary allocation
-          var fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )'
+          var fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )';
 
           context.beginPath();
           context.strokeStyle = fade;
