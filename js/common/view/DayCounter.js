@@ -53,11 +53,12 @@ define( function( require ) {
     } );
 
     // update text representation of day
-    clock.simulationTimeProperty.link( function( time ) {
+    this.timeListener = function( time ) {
       dayText.setText( timeFormatter( time ) );
       dayText.centerX = clearButton.centerX;
       clearButton.enabled = ( time !== 0 );
-    } );
+    };
+    clock.simulationTimeProperty.link( this.timeListener );
 
     this.addChild( new VBox( {
       resize: false,

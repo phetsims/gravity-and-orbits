@@ -73,15 +73,17 @@ define( function( require ) {
   function SwitchableBodyRenderer( body, targetMass, targetBodyRenderer, defaultBodyRenderer ) {
 
     BodyRenderer.call( this, body );
-    var thisRenderer = this;
 
     this.targetBodyRenderer = targetBodyRenderer; // @private
     this.defaultBodyRenderer = defaultBodyRenderer; // @private
 
-    body.massProperty.link( function() {
-      thisRenderer.removeAllChildren();
-      thisRenderer.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
-    } );
+    // @private - so new closure need not be defined
+    this.massListener = function() {
+      // this defined by bound
+      this.removeAllChildren();
+      this.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
+    };
+    body.massProperty.link( this.massListener.bind( this ) );
   }
 
   gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
