@@ -170,19 +170,27 @@ define( function( require ) {
       return this.model.getBodies();
     },
 
+
+    /**
+     * Set the deviated from defaults property - stored on the mode
+     * so that we don't have to use a closure for performance.
+     *
+     * @private
+     */
+    setDeviatedFromDefaults: function() {
+      this.deviatedFromDefaultsProperty.set( true );
+    },
+
     /**
      * @public
      * @param body
      */
     addBody: function( body ) {
       this.model.addBody( body );
-      var thisMode = this;
-      var update = function() {
-        thisMode.deviatedFromDefaultsProperty.set( true );
-      };
-      body.massProperty.link( update );
-      body.userModifiedPositionEmitter.addListener( update );
-      body.userModifiedVelocityEmitter.addListener( update );
+
+      body.massProperty.link( this.setDeviatedFromDefaults.bind( this ) );
+      body.userModifiedPositionEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) );
+      body.userModifiedVelocityEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) ) ;
     },
 
     /**
