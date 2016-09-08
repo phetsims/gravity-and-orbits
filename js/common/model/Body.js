@@ -219,19 +219,17 @@ define( function( require ) {
       // account for the point that will be added
       while ( this.path.length > this.maxPathLength ) {
         this.path.shift();
-        this.pointRemovedEmitter.emit();
+        this.pointRemovedEmitter.emit1( this.name );
       }
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
-      this.pointAddedEmitter.emit1( pathPoint );
-      // this.trigger1( GravityAndOrbitsConstants.POINT_ADDED, pathPoint );
+      this.pointAddedEmitter.emit2( pathPoint, this.name );
     },
 
     // @public
     clearPath: function() {
       this.path = [];
-      this.clearedEmitter.emit();
-      // this.trigger0( GravityAndOrbitsConstants.CLEARED );
+      this.clearedEmitter.emit1( this.name );
     },
 
     // @public
