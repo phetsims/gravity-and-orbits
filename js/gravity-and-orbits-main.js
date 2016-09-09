@@ -68,16 +68,24 @@ define( function( require ) {
 
   SimLauncher.launch( function() {
 
-    var cartoonScreen = new Screen( modelString, new Image( cartoonMipmap ),
+    var cartoonScreen = new Screen(
       function() { return new CartoonModule(); },
       function( model ) { return new GravityAndOrbitsScreenView( model ); },
-      { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
+      {
+        name: modelString,
+        backgroundColor: GravityAndOrbitsColorProfile.background.toCSS(),
+        homeScreenIcon: new Image( cartoonMipmap )
+      }
     );
 
-    var toScaleScreen = new Screen( toScaleString, new Image( toScaleMipmap ),
+    var toScaleScreen = new Screen(
       function() { return new ToScaleModule(); },
       function( model ) { return new GravityAndOrbitsScreenView( model ); },
-      { backgroundColor: GravityAndOrbitsColorProfile.background.toCSS() }
+      {
+        name: toScaleString,
+        backgroundColor: GravityAndOrbitsColorProfile.background.toCSS(),
+        homeScreenIcon: new Image( toScaleMipmap )
+      }
     );
 
     GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {

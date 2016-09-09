@@ -13,19 +13,11 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
 
-  // strings
-  var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
-
   /**
    * @constructor
    */
   function GravityAndOrbitsScreen() {
-
-    //If this is a single-screen sim, then no icon is necessary.
-    //If there are multiple screens, then the icon must be provided here.
-    var icon = null;
-
-    Screen.call( this, gravityAndOrbitsTitleString, icon,
+    Screen.call( this,
       function() { return new GravityAndOrbitsModel(); },
       function( model ) { return new GravityAndOrbitsScreenView( model ); },
       { backgroundColor: 'white' }
