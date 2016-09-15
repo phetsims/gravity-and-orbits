@@ -27,7 +27,6 @@ define( function( require ) {
    * @param {Body} bodies
    * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {Property.<boolean>} visibleProperty
-   * @param {Color} color
    * @param {Bounds2} canvasBounds
    * @param {object} [options]
    * @constructor
@@ -102,7 +101,7 @@ define( function( require ) {
     };
 
     // @private - listener for when date is cleared, bound by thisNode
-    // created to avoid exccess closures every time date is cleared
+    // created to avoid excess closures every time date is cleared
     // @param {string} bodyName - used to look up points associated with the desired body's trail
     this.clearedListener = function( bodyName ) {
 
@@ -189,7 +188,7 @@ define( function( require ) {
         while ( this.pathLength < maxPathLength - fadePathLength && j > 0 ) {
           context.lineTo( points[ j ].x, points[ j ].y );
           if ( j > 1 ) {
-            // incrememnt the path length by the length of the added segment
+            // increment the path length by the length of the added segment
             segDifX = points[ j ].x - points[ j - 1 ].x;
             segDifY = points[ j ].y - points[ j - 1 ].y;
 
@@ -211,7 +210,7 @@ define( function( require ) {
           // fade out a little bit each segment
           var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, this.pathLength );
 
-          // formate without Color to avoid unnecessary allocation
+          // format without Color to avoid unnecessary allocation
           var fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )';
 
           context.beginPath();
@@ -220,7 +219,7 @@ define( function( require ) {
           context.lineTo( points[ j ].x, points[ j ].y );
           context.stroke();
 
-          // incrememnt the path length by the length of the added segment
+          // increment the path length by the length of the added segment
           segDifX = points[ j ].x - points[ j - 1 ].x;
           segDifY = points[ j ].y - points[ j - 1 ].y;
 
