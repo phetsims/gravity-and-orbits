@@ -34,7 +34,7 @@ define( function( require ) {
    */
   function VectorNode( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline ) {
     Node.call( this );
-    var thisNode = this;
+    var self = this;
 
     this.body = body; // @private
     this.vectorProperty = vectorProperty; // @private
@@ -61,12 +61,12 @@ define( function( require ) {
 
     this.propertyListener = function( visible ) {
       if ( visible ) {
-        var tail = thisNode.getTail();
-        var tip = thisNode.getTip( tail );
+        var tail = self.getTail();
+        var tip = self.getTip( tail );
         arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
       }
     };
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], thisNode.propertyListener );
+    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], self.propertyListener );
 
     this.addChild( arrowNode );
   }

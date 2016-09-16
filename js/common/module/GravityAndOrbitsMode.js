@@ -66,7 +66,7 @@ define( function( require ) {
       zoomLevel: 1 // additional scale factor on top of defaultZoomScale
     } );
 
-    var thisMode = this;
+    var self = this;
 
     this.canvas = null; // @public
 
@@ -91,10 +91,10 @@ define( function( require ) {
     this.massReadoutFactory = massReadoutFactory;
 
     this.modelBoundsProperty = new Property(); // @public - not in the Java version, needed for movableDragHandler bounds
-    this.transformProperty = new Property( thisMode.createTransform( defaultZoomScale, zoomOffset ) ); // @public
+    this.transformProperty = new Property( self.createTransform( defaultZoomScale, zoomOffset ) ); // @public
 
     this.zoomLevelProperty.link( function() {
-      thisMode.transformProperty.set( thisMode.createTransform( defaultZoomScale, zoomOffset ) );
+      self.transformProperty.set( self.createTransform( defaultZoomScale, zoomOffset ) );
     } );
 
     // @private
@@ -102,7 +102,7 @@ define( function( require ) {
       new GravityAndOrbitsClock( dt, p.steppingProperty, this.timeSpeedScaleProperty ), p.gravityEnabledProperty );
 
     Property.multilink( [ p.playButtonPressedProperty, this.activeProperty ], function( playButtonPressed, active ) {
-      thisMode.model.clock.setRunning( playButtonPressed && active );
+      self.model.clock.setRunning( playButtonPressed && active );
     } );
   }
 

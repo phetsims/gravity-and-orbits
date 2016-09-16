@@ -64,10 +64,10 @@ define( function( require ) {
     this.clock = clock; // @public
     this.bodies = []; // @public - contains the sun, moon, earth, satellite
 
-    var thisModel = this;
+    var self = this;
     this.clock.addEventTimer( function( dt ) {
-      thisModel.clock.setSimulationTime( thisModel.clock.dt + thisModel.clock.getSimulationTime() );
-      thisModel.step( thisModel.clock.dt );
+      self.clock.setSimulationTime( self.clock.dt + self.clock.getSimulationTime() );
+      self.step( self.clock.dt );
     }.bind( this ) );
 
     // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
@@ -139,14 +139,14 @@ define( function( require ) {
      * @param body
      */
     addBody: function( body ) {
-      var gravityAndOrbitsModel = this;
+      var self = this;
       this.bodies.push( body );
 
       // update the force vectors when the position or mass changes
       body.userModifiedPositionEmitter.addListener( function() {
-        gravityAndOrbitsModel.updateForceVectors();
+        self.updateForceVectors();
       } );
-      body.massProperty.link( gravityAndOrbitsModel.updateForceVectors.bind( this ) );
+      body.massProperty.link( self.updateForceVectors.bind( this ) );
       this.updateForceVectors();
     },
 

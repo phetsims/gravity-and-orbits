@@ -123,18 +123,18 @@ define( function( require ) {
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
-    var thisBody = this;
+    var self = this;
     this.collidedProperty.onValue( true, function() {
-      thisBody.clockTicksSinceExplosionProperty.set( 0 );
+      self.clockTicksSinceExplosionProperty.set( 0 );
     } );
 
     // If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
     var rewindValueChangeListener = function() {
-      thisBody.positionProperty.storeRewindValueNoNotify();
-      thisBody.velocityProperty.storeRewindValueNoNotify();
-      thisBody.forceProperty.storeRewindValueNoNotify();
-      thisBody.massProperty.storeRewindValueNoNotify();
-      thisBody.collidedProperty.storeRewindValueNoNotify();
+      self.positionProperty.storeRewindValueNoNotify();
+      self.velocityProperty.storeRewindValueNoNotify();
+      self.forceProperty.storeRewindValueNoNotify();
+      self.massProperty.storeRewindValueNoNotify();
+      self.collidedProperty.storeRewindValueNoNotify();
     };
     this.positionProperty.addRewindValueChangeListener( rewindValueChangeListener );
     this.velocityProperty.addRewindValueChangeListener( rewindValueChangeListener );

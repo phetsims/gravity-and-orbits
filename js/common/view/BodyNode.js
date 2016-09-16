@@ -43,10 +43,10 @@ define( function( require ) {
     this.modelViewTransformProperty = mode.transformProperty; // @private
     this.body = body; // @public
 
-    var thisNode = this;
+    var self = this;
 
     this.body.collidedProperty.link( function( isCollided ) {
-      thisNode.visible = !isCollided;
+      self.visible = !isCollided;
     } );
 
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
@@ -54,7 +54,7 @@ define( function( require ) {
 
     var dragHandler = new MovableDragHandler( this.body.positionProperty, {
       dragBounds:modelBoundsProperty.value,
-      modelViewTransform: thisNode.modelViewTransformProperty.value,
+      modelViewTransform: self.modelViewTransformProperty.value,
       startDrag: function() {
         body.userControlled = true;
       },
@@ -77,16 +77,16 @@ define( function( require ) {
     // for garbage collectiona and so that anonymous closures are not necessary
     // through multilink
     this.positionListener = function( position, modelViewTransform ) {
-      thisNode.translation = modelViewTransform.modelToViewPosition( position );
+      self.translation = modelViewTransform.modelToViewPosition( position );
     };
     Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
     this.diameterListener = function( position, modelViewTransform ) {
-      thisNode.bodyRenderer.setDiameter( thisNode.getViewDiameter() );
+      self.bodyRenderer.setDiameter( self.getViewDiameter() );
 
       // touch areas need to change with diameter
-      thisNode.touchArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
-      thisNode.mouseArea = thisNode.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+      self.touchArea = self.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+      self.mouseArea = self.bodyRenderer.bounds.dilated( TOUCH_DILATION );
     };
     Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
@@ -116,7 +116,7 @@ define( function( require ) {
      * @private
      */
     createArrowIndicator: function( body, labelAngle ) {
-      var thisNode = this;
+      var self = this;
       var node = new Node();
       var viewCenter = new Vector2( 0, 0 );
       var northEastVector = Vector2.createPolar( 1, labelAngle );
@@ -134,7 +134,7 @@ define( function( require ) {
       node.addChild( text );
 
       this.body.diameterProperty.link( function() {
-        node.visible = thisNode.getViewDiameter() <= 10;
+        node.visible = self.getViewDiameter() <= 10;
       } );
 
       return node;

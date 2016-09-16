@@ -37,7 +37,7 @@ define( function( require ) {
                                 outline, labelText ) {
 
     VectorNode.call( this, body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline );
-    var thisNode = this;
+    var self = this;
 
     var tip = this.getTip();
 
@@ -65,7 +65,7 @@ define( function( require ) {
     // Center the grab area on the tip (see getTip()) when any of its dependencies change
     var propertyListener = function( visible ) {
       if ( visible ) {
-        var tip = thisNode.getTip();
+        var tip = self.getTip();
         grabArea.center = tip;
         text.center = tip;
       }

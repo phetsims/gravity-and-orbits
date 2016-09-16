@@ -27,17 +27,17 @@ define( function( require ) {
    */
   function ExplosionNode( body, modelViewTransformProperty ) {
     Node.call( this );
-    var thisNode = this;
+    var self = this;
 
     // Function that computes the diameter as a function of the animation step
     var getDiameter = function( numClockTicksSinceExplosion ) {
       if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
         return new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2,
-          1, thisNode.getMaxViewDiameter( body, modelViewTransformProperty ) )( numClockTicksSinceExplosion );
+          1, self.getMaxViewDiameter( body, modelViewTransformProperty ) )( numClockTicksSinceExplosion );
       }
       else if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION ) {
         return new LinearFunction( NUM_STEPS_FOR_ANIMATION / 2, NUM_STEPS_FOR_ANIMATION,
-          thisNode.getMaxViewDiameter( body, modelViewTransformProperty ), 1 )( numClockTicksSinceExplosion );
+          self.getMaxViewDiameter( body, modelViewTransformProperty ), 1 )( numClockTicksSinceExplosion );
       }
       else {
         return 1.0;
@@ -52,7 +52,7 @@ define( function( require ) {
 
       // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
       if ( !body.collidedProperty.get() ) {
-        thisNode.translation = modelViewTransformProperty.get().modelToViewPosition( body.positionProperty.get() );
+        self.translation = modelViewTransformProperty.get().modelToViewPosition( body.positionProperty.get() );
       }
     } );
   }

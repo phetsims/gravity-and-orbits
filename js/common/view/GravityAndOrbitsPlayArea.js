@@ -58,7 +58,7 @@ define( function( require ) {
   function GravityAndOrbitsPlayArea( model, module, mode, forceScale ) {
 
     Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: true } );
-    var thisNode = this;
+    var self = this;
 
     var bodies = model.getBodies();
     var i;
@@ -75,7 +75,7 @@ define( function( require ) {
     for ( i = 0; i < bodies.length; i++ ) {
       var bodyNode = new BodyNode( bodies[ i ], bodies[ i ].labelAngle, module.playButtonPressedProperty, mode );
       var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
-      thisNode.addChild( bodyNode );
+      self.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
 
       (function( bodyNode ) {

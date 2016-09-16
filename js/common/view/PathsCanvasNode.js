@@ -42,7 +42,7 @@ define( function( require ) {
       canvasBounds: canvasBounds,
       preventFit: true
     } );
-    var thisNode = this;
+    var self = this;
     var i;
 
     // points in view space - an array of arrays where each sub-array is the path points for a given body
@@ -63,12 +63,12 @@ define( function( require ) {
     this.bodies = bodies; // @private
 
     visibleProperty.link( function( isVisible ) {
-      thisNode.visible = isVisible;
+      self.visible = isVisible;
       for ( i = 0; i < bodies.length; i++ ) {
-        thisNode.namedPoints[ i ].points = [];
-        thisNode.bodies[ i ].clearPath();
+        self.namedPoints[ i ].points = [];
+        self.bodies[ i ].clearPath();
       }
-      thisNode.invalidatePaint();
+      self.invalidatePaint();
     } );
 
     // @private - listener for when a point is added, bound by thisNode
@@ -115,14 +115,14 @@ define( function( require ) {
     for ( i = 0; i < bodies.length; i++ ) {
       var body = bodies[ i ];
 
-      body.pointAddedEmitter.addListener( thisNode.pointAddedListener.bind( thisNode ) );
-      body.pointRemovedEmitter.addListener( thisNode.pointRemovedListener.bind( thisNode ) );
-      body.clearedEmitter.addListener( thisNode.clearedListener.bind( thisNode ) );
+      body.pointAddedEmitter.addListener( self.pointAddedListener.bind( self ) );
+      body.pointRemovedEmitter.addListener( self.pointRemovedListener.bind( self ) );
+      body.clearedEmitter.addListener( self.clearedListener.bind( self ) );
     }
 
     transformProperty.link( function() {
       for ( i = 0; i < bodies.length; i++ ) {
-        thisNode.bodies[ i ].clearPath();
+        self.bodies[ i ].clearPath();
       }
     } );
 

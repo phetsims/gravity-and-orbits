@@ -108,19 +108,19 @@ define( function( require ) {
       }
     } );
 
-    var thisButton = this;
+    var self = this;
 
     // add disabling effect for buttons
     if ( isIncrease ) {
       // plus button
       scaleProperty.link( function( scaleValue ) {
-        thisButton.enabled = (scaleValue !== range.max);
+        self.enabled = (scaleValue !== range.max);
       } );
     }
     else {
       // minus button
       scaleProperty.link( function( scaleValue ) {
-        thisButton.enabled = (scaleValue !== range.min);
+        self.enabled = (scaleValue !== range.min);
       } );
     }
 

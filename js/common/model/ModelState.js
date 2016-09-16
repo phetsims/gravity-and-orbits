@@ -48,7 +48,7 @@ define( function( require ) {
      * @returns {ModelState}
      */
     getNextState: function( dt, gravityEnabledProperty ) {
-      var state = this;
+      var state = this; // eslint-disable-line consistent-this
 
       if ( gravityEnabledProperty.get() ) {
         state = state.getNextInteractingState( dt );
