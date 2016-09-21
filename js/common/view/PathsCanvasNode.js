@@ -136,8 +136,8 @@ define( function( require ) {
      * Get a set of points associated with a name of a body.  The returned points
      * are transformed to be in view coordinates.
      *
-     * @param  {type} name description
-     * @return {type}      description
+     * @param  {string} name
+     * @return {NamedPoints}
      */
     getPointsFromName: function( name ) {
       var points;
@@ -236,7 +236,7 @@ define( function( require ) {
    * Constructor.  Named points assigns an array of points a name so
    * that it can be looked up outside of a closure.
    *
-   * @param  {type} name description
+   * @param  {string} name
    * @constructor
    */
   function NamedPoints( name ) {
