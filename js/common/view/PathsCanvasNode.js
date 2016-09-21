@@ -45,10 +45,10 @@ define( function( require ) {
     var self = this;
     var i;
 
-    // points in view space - an array of arrays where each sub-array is the path points for a given body
-    this.namedPoints = []; // @private
+    // @private - a map tracking each body and its associated points
+    this.namedPoints = {}; // @private
     for ( i = 0; i < bodies.length; i++ ) {
-      this.namedPoints[ i ] = new NamedPoints( bodies[ i ].name );
+      this.namedPoints[ bodies[ i ].name ] = new NamedPoints( bodies[ i ].name );
     }
 
     // set the path length for the body so that the length is ~85% of the orbit, relative to the center
@@ -65,7 +65,7 @@ define( function( require ) {
     visibleProperty.link( function( isVisible ) {
       self.visible = isVisible;
       for ( i = 0; i < bodies.length; i++ ) {
-        self.namedPoints[ i ].points = [];
+        self.namedPoints[ bodies[ i ].name ].points = [];
         self.bodies[ i ].clearPath();
       }
       self.invalidatePaint();
@@ -78,7 +78,7 @@ define( function( require ) {
       var pt = transformProperty.get().modelToViewPosition( point );
 
       // 'this' is defined by bind in addListener
-      var namedPoints = this.getPointsFromName( bodyName );
+      var namedPoints = this.namedPoints[ bodyName ];
       namedPoints.points.push( pt );
       if ( visibleProperty.get() ) {
         this.invalidatePaint();
@@ -91,7 +91,7 @@ define( function( require ) {
     this.pointRemovedListener = function( bodyName ) {
 
       // 'this' defined by bind in addListener
-      var namedPoints = this.getPointsFromName( bodyName );
+      var namedPoints = this.namedPoints[ bodyName ];
       if ( namedPoints.points.length > 0 ) {
         namedPoints.points.shift();
       }
@@ -106,7 +106,7 @@ define( function( require ) {
     this.clearedListener = function( bodyName ) {
 
       // 'this' is defined by bind
-      var namedPoints = this.getPointsFromName( bodyName );
+      var namedPoints = this.namedPoints[ bodyName ];
       while ( namedPoints.points.length ) { namedPoints.points.pop(); }
       this.invalidatePaint();
     };
@@ -133,27 +133,6 @@ define( function( require ) {
   inherit( CanvasNode, PathsCanvasNode, {
 
     /**
-     * Get a set of points associated with a name of a body.  The returned points
-     * are transformed to be in view coordinates.
-     *
-     * @param  {string} name
-     * @return {NamedPoints}
-     */
-    getPointsFromName: function( name ) {
-      var points;
-      for ( var i = 0; i < this.namedPoints.length; i++ ) {
-        var namedPoints = this.namedPoints[ i ];
-        if ( namedPoints.name === name ) {
-          points = namedPoints;
-          break;
-        }
-      }
-      assert && assert( points, 'Could not find a set of named points for name ' + name );
-
-      return points;
-    },
-
-    /**
      * @private
      * @param {CanvasRenderingContext2D} context
      */
@@ -163,7 +142,7 @@ define( function( require ) {
       // draw the path for each body one by one
       for ( var i = 0; i < this.bodies.length; i++ ) {
         var body = this.bodies[ i ];
-        var points = this.namedPoints[ i ].points;
+        var points = this.namedPoints[ body.name ].points;
 
         var maxPathLength = body.maxPathLength;
         var fadePathLength = body.maxPathLength * 0.15; // fade length is ~15% of the path
