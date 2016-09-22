@@ -9,50 +9,15 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
-  var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
+  var CartoonScreen = require( 'GRAVITY_AND_ORBITS/cartoon/CartoonScreen' );
+  var ToScaleScreen = require( 'GRAVITY_AND_ORBITS/toScale/ToScaleScreen' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var CartoonModeList = require( 'GRAVITY_AND_ORBITS/cartoon/module/CartoonModeList' );
-  var RealModeList = require( 'GRAVITY_AND_ORBITS/toScale/module/RealModeList' );
   var GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/common/view/GlobalOptionsNode' );
-  var inherit = require( 'PHET_CORE/inherit' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
-  var Screen = require( 'JOIST/Screen' );
-  var Image = require( 'SCENERY/nodes/Image' );
-
-  // images
-  var cartoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/cartoon_icon.png' );
-  var toScaleMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/to_scale_icon.png' );
 
   // strings
-  var modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
-  var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
   var gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
-
-  /**
-   * ToScaleModule
-   * @constructor
-   */
-  function ToScaleModule() {
-    GravityAndOrbitsModule.call( this, true, function( p ) {
-      return new RealModeList( p.playButtonPressedProperty, p.gravityEnabledProperty, p.steppingProperty, p.rewindingProperty, p.timeSpeedScaleProperty );
-    }, 0, true );
-  }
-
-  inherit( GravityAndOrbitsModule, ToScaleModule );
-
-  /**
-   * CartoonModule
-   * @constructor
-   */
-  function CartoonModule() {
-    GravityAndOrbitsModule.call( this, false, function( p ) {
-      return new CartoonModeList( p.playButtonPressedProperty, p.gravityEnabledProperty, p.steppingProperty, p.rewindingProperty, p.timeSpeedScaleProperty );
-    }, 0, false );
-  }
-
-  inherit( GravityAndOrbitsModule, CartoonModule );
 
   var simOptions = {
     credits: {
@@ -68,29 +33,17 @@ define( function( require ) {
 
   SimLauncher.launch( function() {
 
-    var cartoonScreen = new Screen(
-      function() { return new CartoonModule(); },
-      function( model ) { return new GravityAndOrbitsScreenView( model ); },
-      {
-        name: modelString,
-        backgroundColor: GravityAndOrbitsColorProfile.background.toCSS(),
-        homeScreenIcon: new Image( cartoonMipmap )
-      }
-    );
+    var cartoonScreen = new CartoonScreen( {
+      backgroundColor: GravityAndOrbitsColorProfile.background.toCSS()
+    } );
 
-    var toScaleScreen = new Screen(
-      function() { return new ToScaleModule(); },
-      function( model ) { return new GravityAndOrbitsScreenView( model ); },
-      {
-        name: toScaleString,
-        backgroundColor: GravityAndOrbitsColorProfile.background.toCSS(),
-        homeScreenIcon: new Image( toScaleMipmap )
-      }
-    );
+    var toScaleScreen = new ToScaleScreen( {
+      backgroundColor: GravityAndOrbitsColorProfile.background.toCSS()
+    } );
 
     GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {
       cartoonScreen.backgroundColor = color;
-      toScaleScreen.backgroundColor = color;
+      // toScaleScreen.backgroundColor = color;
     } );
 
     // create and start the sim
