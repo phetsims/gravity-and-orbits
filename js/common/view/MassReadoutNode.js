@@ -47,10 +47,9 @@ define( function( require ) {
     } );
 
     visibleProperty.link( function( visible ) {
-      if ( !bodyNode.body.collidedProperty.get() ) {
-        self.visible = visible;
-        updateLocation();
-      }
+      // set visible and update location
+      self.visible = visible;
+      updateLocation();
     } );
   }
 
