@@ -330,8 +330,8 @@ define( function( require ) {
     this.modes[ 2 ].addBody( new Earth( this.modes[ 2 ].getMaxPathLength(), earthMoon.earth ) );
     this.modes[ 2 ].addBody( new Moon( true, this.modes[ 2 ].getMaxPathLength(), true, earthMoon.moon ) );
 
-    var spaceStationMassReadoutFactory = function( bodyNode, visible ) {
-      return new SpaceStationMassReadoutNode( bodyNode, visible );
+    var spaceStationMassReadoutFactory = function( bodyNode, visibleProperty ) {
+      return new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
     };
 
     this.modes.push( new GravityAndOrbitsMode(
