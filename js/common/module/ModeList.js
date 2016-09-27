@@ -258,8 +258,8 @@ define( function( require ) {
     earthMoon.center();
     earthSpaceStation.center();
 
-    var readoutInEarthMasses = function( bodyNode, visible ) {
-      return new EarthMassReadoutNode( bodyNode, visible );
+    var readoutInEarthMasses = function( bodyNode, visibleProperty ) {
+      return new EarthMassReadoutNode( bodyNode, visibleProperty );
     };
 
     // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
