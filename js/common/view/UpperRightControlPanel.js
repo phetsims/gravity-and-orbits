@@ -58,6 +58,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'UpperRightControlPanel', UpperRightControlPanel );
-  
+
   return inherit( Panel, UpperRightControlPanel );
 } );
