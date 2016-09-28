@@ -112,19 +112,6 @@ define( function( require ) {
       }
     },
 
-    /**
-     * @private
-     * For debugging the stability of the integration rule
-     */
-    getSunEarthDistance: function() {
-      var star = this.getBody( starString );
-      var planet = this.getBody( planetString );
-      if ( star === null || planet === null ) {
-        return NaN;
-      }
-      return star.positionProperty.get().distance( planet.positionProperty.get() );
-    },
-
     // @public
     resetAll: function() {
       PropertySet.prototype.reset.call( this ); // Resets the simulation time
