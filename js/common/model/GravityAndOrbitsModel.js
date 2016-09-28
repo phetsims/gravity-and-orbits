@@ -18,10 +18,6 @@ define( function( require ) {
   var ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  // strings
-  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
-  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
-
   /**
    * Return the smaller of two Body instances, for determining which survives a collision.
    * @param {Body} other
