@@ -30,6 +30,7 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
@@ -128,7 +129,7 @@ define( function( require ) {
       tipPositionProperty: mode.measuringTapeEndPointProperty,
 
       // space station gets 1 sig fig, the other bodies have 0
-      significantFigures: ( bodies[ 1 ].name === 'Satellite' ) ? 1 : 0
+      significantFigures: ( bodies[ 1 ].name === GAOBodiesEnum.SATELLITE ) ? 1 : 0
     } );
 
     mode.transformProperty.link( function( transform ) {

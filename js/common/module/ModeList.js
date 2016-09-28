@@ -28,6 +28,7 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
+  var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
@@ -117,6 +118,7 @@ define( function( require ) {
     function SpaceStation( earthSpaceStation, maxPathLength ) {
       Body.call(
         this,
+        GAOBodiesEnum.SATELLITE,
         satelliteString,
         earthSpaceStation.spaceStation.x,
         earthSpaceStation.spaceStation.y,
@@ -150,6 +152,7 @@ define( function( require ) {
 
       Body.call(
         this,
+        GAOBodiesEnum.MOON,
         moonString,
         body.x,
         body.y,
@@ -197,6 +200,7 @@ define( function( require ) {
     function Earth( maxPathLength, body ) {
       Body.call(
         this,
+        GAOBodiesEnum.PLANET,
         planetString,
         body.x,
         body.y,
@@ -225,6 +229,7 @@ define( function( require ) {
     function Sun( maxPathLength, body ) {
       Body.call(
         this,
+        GAOBodiesEnum.STAR,
         starString,
         body.x,
         body.y,

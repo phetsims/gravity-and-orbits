@@ -44,7 +44,7 @@ define( function( require ) {
 
       var massSettableBody = massSettableBodies[ i ];
 
-      var label = new Text( massSettableBody.name, {
+      var label = new Text( massSettableBody.labelString, {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColorProfile.panelTextProperty,

@@ -26,7 +26,8 @@ define( function( require ) {
 
   /**
    * Constructor for Body
-   * @param {string} name
+   * @param {string} name - unqique name for the body, one of GAOBodiesEnum
+   * @param {string} labelString - translatable string for the body, used for text labels
    * @param {number} x
    * @param {number} y
    * @param {number} diameter
@@ -50,7 +51,7 @@ define( function( require ) {
    * @param {object} [options]
    * @constructor
    */
-  function Body( name, x, y, diameter, vx, vy, mass, color, highlight, renderer,
+  function Body( name, labelString, x, y, diameter, vx, vy, mass, color, highlight, renderer,
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
                  playButtonPressedProperty, steppingProperty, rewindingProperty, fixed, options ) {
 
@@ -88,6 +89,7 @@ define( function( require ) {
     // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
     this.fixed = fixed; // @public (read-only)
     this.name = name; // @public (read-only)
+    this.labelString = labelString; // @public (read-only)
     this.color = color; // @public (read-only)
     this.highlight = highlight; // @public (read-only)
 
