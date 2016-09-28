@@ -181,7 +181,7 @@ define( function( require ) {
       // @public
       doReturnBody: function( model ) {
         Body.prototype.doReturnBody.call( this, model );
-        var earth = model.getBody( planetString );
+        var earth = model.getBody( GAOBodiesEnum.PLANET );
 
         // Restore the moon near the earth and with the same relative velocity vector
         if ( earth ) {

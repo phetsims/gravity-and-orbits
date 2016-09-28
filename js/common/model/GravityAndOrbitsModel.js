@@ -179,7 +179,13 @@ define( function( require ) {
       this.updateForceVectors();
     },
 
-    // @public
+
+    /**
+     * Get the body associated with the name.  The name must be one of GAOBodiesEnum.
+     *
+     * @param  {string} name
+     * @return {Body|null}
+     */
     getBody: function( name ) {
       for ( var i = 0; i < this.bodies.length; i++ ) {
         var body = this.bodies[ i ];
