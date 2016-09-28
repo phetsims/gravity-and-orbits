@@ -12,7 +12,7 @@ define( function( require ) {
 
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  var EnumName = {
+  var GAOBodiesEnum = {
     PLANET: 'PLANET',
     SATELLITE: 'SATELLITE',
     STAR: 'STAR',
@@ -20,9 +20,9 @@ define( function( require ) {
   };
 
   // verify that enum is immutable, without the runtime penalty in production code
-  if ( assert ) { Object.freeze( EnumName ); }
+  if ( assert ) { Object.freeze( GAOBodiesEnum ); }
 
-  gravityAndOrbits.register( 'EnumName', EnumName );
+  gravityAndOrbits.register( 'GAOBodiesEnum', GAOBodiesEnum );
 
-  return EnumName;
+  return GAOBodiesEnum;
 } );
