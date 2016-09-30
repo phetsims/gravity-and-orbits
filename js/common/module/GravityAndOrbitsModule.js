@@ -82,6 +82,15 @@ define( function( require ) {
       // limit dt to 1 so there are no large jumps
       dt = Math.min( 1, dt );
 
+      // collision animations should proceed outside of the model step
+      var bodies = this.modeProperty.get().model.bodies;
+      for ( var i = 0; i < bodies.length; i++ ) {
+        var body = bodies[ i ];
+        if ( body.collidedProperty.get() ) {
+          body.clockTicksSinceExplosionProperty.value += 1;
+        }
+      }
+
       if ( this.playButtonPressedProperty.value ) {
         this.modeProperty.get().getClock().step( dt );
       }

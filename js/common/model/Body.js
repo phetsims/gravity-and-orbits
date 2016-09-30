@@ -188,10 +188,7 @@ define( function( require ) {
      * @param {BodyState} bodyState
      */
     updateBodyStateFromModel: function( bodyState ) {
-      if ( this.collidedProperty.get() ) {
-        this.clockTicksSinceExplosionProperty.value += 1;
-      }
-      else {
+      if ( !this.collidedProperty.get() ) {
         if ( !this.fixed && !this.userControlled ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
