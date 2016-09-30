@@ -32,7 +32,9 @@ define( function( require ) {
       xMargin: PANEL_X_MARGIN,
       scale: 1.05,
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
-    }
+    },
+
+    STARTING_SPEED_SCALE: (0.1 + 2) / 4
   };
 
   gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );

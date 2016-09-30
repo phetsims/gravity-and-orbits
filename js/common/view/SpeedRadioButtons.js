@@ -15,13 +15,13 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
-  var STARTING_VALUE = GravityAndOrbitsModule.STARTING_SPEED_SCALE;
+  var STARTING_VALUE = GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
 
   // strings
   var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
@@ -58,6 +58,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'SpeedRadioButtons', SpeedRadioButtons );
-  
+
   return inherit( VerticalAquaRadioButtonGroup, SpeedRadioButtons );
 } );

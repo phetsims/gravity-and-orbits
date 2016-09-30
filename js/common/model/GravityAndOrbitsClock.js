@@ -13,6 +13,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
   var EventTimer = require( 'PHET_CORE/EventTimer' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
@@ -33,6 +34,10 @@ define( function( require ) {
    */
   function GravityAndOrbitsClock( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
     var self = this;
+
+    // @private
+    this.baseDTValue = baseDTValue;
+    this.steppingWhilePausedDT = baseDTValue * GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
 
     // @public
     this.runningProperty = new Property( false );
@@ -55,15 +60,32 @@ define( function( require ) {
       // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
       // application specific logic
       this.steppingProperty.set( true );
+
+      // dt should be scaled by the initial speed when manually stepping
+      var clockDT = this.dt; // store to revert after manual step
+      this.dt = this.steppingWhilePausedDT;
+
       this.step( 1 / CLOCK_FRAME_RATE );
       this.steppingProperty.set( false );
+
+      // revert dt
+      this.dt = clockDT;
     },
 
     // @public
     stepClockBackWhilePaused: function() {
       this.steppingProperty.set( true );
+
+      // dt should be scaled by the initial speed when manually stepping
+      var clockDT = this.dt; // store to revert after manual step
+      this.dt = this.steppingWhilePausedDT;
+
       this.step( -1 / CLOCK_FRAME_RATE );
       this.steppingProperty.set( false );
+
+
+      // revert dt
+      this.dt = clockDT;
     },
 
     // @public

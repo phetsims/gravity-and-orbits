@@ -20,11 +20,11 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // constants
   var G = 6.67428E-11;
-  var STARTING_SPEED_SCALE = (0.1 + 2) / 4; // one quarter of the way up between 1/10 and 2 scale factors
 
   /**
    * @param {boolean} showMeasuringTape
@@ -44,7 +44,7 @@ define( function( require ) {
       showVelocity: false,
       showMass: false,
       playButtonPressed: false,
-      timeSpeedScale: STARTING_SPEED_SCALE,
+      timeSpeedScale: GravityAndOrbitsConstants.STARTING_SPEED_SCALE,
       measuringTapeVisible: false,
       gravityEnabled: true,
       stepping: false,
@@ -73,7 +73,7 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'GravityAndOrbitsModule', GravityAndOrbitsModule );
-  
+
   return inherit( PropertySet, GravityAndOrbitsModule, {
 
     // @public
@@ -111,7 +111,6 @@ define( function( require ) {
     }
 
   }, {
-    G: G,
-    STARTING_SPEED_SCALE: STARTING_SPEED_SCALE
+    G: G
   } );
 } );
