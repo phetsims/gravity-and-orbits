@@ -23,8 +23,21 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
+  // strings
+  var planetMassString = require( 'string!GRAVITY_AND_ORBITS/planetMass' );
+  // var spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
+  var satelliteMassString = require( 'string!GRAVITY_AND_ORBITS/satelliteMass' );
+  var moonMassString = require( 'string!GRAVITY_AND_ORBITS/moonMass' );
+  var starMassString = require( 'string!GRAVITY_AND_ORBITS/starMass' );
+
   // constants
   var CONTROL_FONT = new PhetFont( 14 );
+  var LABEL_MAP = {
+    PLANET: planetMassString,
+    SATELLITE: satelliteMassString,
+    STAR: starMassString,
+    MOON: moonMassString
+  };
 
   /**
    * Constructor for MassControlPanel. This is the panel in the lower right section of the screen that holds sliders
@@ -44,7 +57,7 @@ define( function( require ) {
 
       var massSettableBody = massSettableBodies[ i ];
 
-      var label = new Text( massSettableBody.labelString, {
+      var label = new Text( LABEL_MAP[ massSettableBody.name ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColorProfile.panelTextProperty,
@@ -55,7 +68,7 @@ define( function( require ) {
       var icon = massSettableBody.createRenderer( 14 );
 
       // Top component that shows the body's name and icon
-      var labelHBox = new HBox( { children: [ label, icon ], spacing: 10 } );
+      var labelHBox = new HBox( { children: [ icon, label ], spacing: 10 } );
 
       sliderNode.addChild( labelHBox );
 

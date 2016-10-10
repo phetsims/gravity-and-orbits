@@ -17,6 +17,9 @@
   "planet": {
     "value": "Planet"
   },
+  "planetMass": {
+    "value": "Planet Mass"
+  },
   "velocity": {
     "value": "Velocity"
   },
@@ -41,6 +44,9 @@
   "moon": {
     "value": "Moon"
   },
+  "moonMass": {
+    "value": "Moon Mass"
+  },
   "thousandEarthMasses": {
     "value": "thousand Earth masses"
   },
@@ -56,8 +62,14 @@
   "spaceStation": {
     "value": "Space Station"
   },
+  "spaceStationMass":{
+    "value":"Space Station Mass"
+  },
   "satellite": {
     "value": "Satellite"
+  },
+  "satelliteMass": {
+    "value": "Satellite Mass"
   },
   "earthMinutes": {
     "value": "Earth Minutes"
@@ -88,6 +100,9 @@
   },
   "star": {
     "value": "Star"
+  },
+  "starMass": {
+    "value": "Star Mass"
   },
   "thousandMiles": {
     "value": "thousand miles"

@@ -58,16 +58,16 @@ define( function( require ) {
     var defaultLabel = new Text( valueLabel, {
       top: 10,
       centerX: SPACING,
-      font: new PhetFont( 11 ),
+      font: new PhetFont( 13 ),
       fill: GravityAndOrbitsColorProfile.panelTextProperty,
-      maxWidth: 110
+      maxWidth: 80
     } );
 
     // create a label for the default value
     // @param {string} - string for the label text
     var createNumberLabel = function( value ) {
       return new Text( value, {
-        font: new PhetFont( 11 ),
+        font: new PhetFont( 13 ),
         fill: GravityAndOrbitsColorProfile.panelTextProperty,
         maxWidth: 110
       } );
