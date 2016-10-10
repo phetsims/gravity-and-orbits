@@ -11,11 +11,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var Line = require( 'SCENERY/nodes/Line' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -34,27 +30,13 @@ define( function( require ) {
    * @param {Body} body
    * @param {number} min
    * @param {number} max
-   * @param {number} labelValue
+   * @param {number} defaultLabelValue
    * @param {string} valueLabel
    * @constructor
    */
-  function BodyMassControl( body, min, max, labelValue, valueLabel ) {
+  function BodyMassControl( body, min, max, defaultLabelValue, valueLabel ) {
 
-    var smallLabel = new Text( valueLabel, {
-      top: 10,
-      centerX: SPACING,
-      font: new PhetFont( 11 ),
-      fill: GravityAndOrbitsColorProfile.panelTextProperty,
-      maxWidth: 110
-    } );
-
-    var ticks = [];
-    for ( var i = 0; i < NUM_TICKS; i++ ) {
-      ticks.push( new Line( 0, 0, 0, 17, { lineWidth: 1, stroke: GravityAndOrbitsColorProfile.panelTextProperty } ) );
-    }
-    var tickBox = new HBox( { children: ticks, spacing: SPACING } );
-
-    var slider = new HSlider( body.massProperty, { min: min, max: max }, {
+    HSlider.call( this, body.massProperty, { min: min, max: max }, {
       trackSize: new Dimension2( WIDTH, 1 ),
       thumbSize: THUMB_SIZE,
       thumbTouchAreaXDilation: THUMB_SIZE.width,
@@ -62,19 +44,40 @@ define( function( require ) {
       trackLineWidth: 0,
       trackStroke: GravityAndOrbitsColorProfile.panelTextProperty,
 
+      // ticks
+      tickLabelSpacing: 5,
+      majorTickLength: 17,
+      majorTickStroke: GravityAndOrbitsColorProfile.panelTextProperty,
+
       // custom thumb
       thumbFillEnabled: '#98BECF',
       thumbFillHighlighted: '#B3D3E2'
     } );
 
-    this.sliderWithTicksNode = new VBox( {
-      children: [ tickBox, slider ],
-      spacing: -12,
-      resize: false,
-      top: smallLabel.bottom + 5
+    // add ticks and labels
+    var defaultLabel = new Text( valueLabel, {
+      top: 10,
+      centerX: SPACING,
+      font: new PhetFont( 11 ),
+      fill: GravityAndOrbitsColorProfile.panelTextProperty,
+      maxWidth: 110
     } );
 
-    Node.call( this, { children: [ smallLabel, this.sliderWithTicksNode ] } );
+    // create a label for the default value
+    // @param {string} - string for the label text
+    var createNumberLabel = function( value ) {
+      return new Text( value, {
+        font: new PhetFont( 11 ),
+        fill: GravityAndOrbitsColorProfile.panelTextProperty,
+        maxWidth: 110
+      } );
+    };
+
+    var labels = [ createNumberLabel( '0.5' ), defaultLabel, createNumberLabel( '1.5' ), createNumberLabel( '2.0' ) ];
+    for ( var i = 0; i < labels.length; i++ ) {
+      var tickValue = ( i + 1 ) / labels.length * max;
+      this.addMajorTick( tickValue, labels[ i ] );
+    }
 
     var massListener = function( mass ) {
       // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
@@ -84,8 +87,8 @@ define( function( require ) {
       body.diameterProperty.set( radius * 2 );
 
       // snap to default value if close
-      if ( Math.abs( mass - labelValue ) / labelValue < SNAP_TOLERANCE ) {
-        body.massProperty.set( labelValue );
+      if ( Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ) {
+        body.massProperty.set( defaultLabelValue );
       }
     };
     body.massProperty.link( massListener );
@@ -93,5 +96,5 @@ define( function( require ) {
 
   gravityAndOrbits.register( 'BodyMassControl', BodyMassControl );
 
-  return inherit( Node, BodyMassControl );
+  return inherit( HSlider, BodyMassControl );
 } );
