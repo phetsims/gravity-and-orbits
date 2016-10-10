@@ -137,16 +137,16 @@ define( function( require ) {
     } );
     mode.modelBoundsProperty.link( function( bounds ) {
       measuringTape.setDragBounds( bounds );
+
+      // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
+      for ( i = 0; i < bodies.length; i++ ) {
+        bodies[ i ].boundsProperty.set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
+      }
     } );
 
     // measuring tape text should change with color Profile
     GravityAndOrbitsColorProfile.measuringTapeTextProperty.linkAttribute( measuringTape, 'textColor' );
     this.addChild( measuringTape );
-
-    // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
-    for ( i = 0; i < bodies.length; i++ ) {
-      bodies[ i ].boundsProperty.set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
-    }
 
     // If any body is out of bounds, show a "return object" button
     var anythingReturnable = new DerivedProperty( returnable, function() {
