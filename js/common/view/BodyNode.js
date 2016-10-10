@@ -96,7 +96,12 @@ define( function( require ) {
     this.modelViewTransformProperty.link( this.modelViewTransformListener );
 
     this.modelBoundsListener = function( dragBounds ) {
+
+      // when changing the bounds, we want to set the bounds of the planet without modifying the position
+      // of the planets.  We store the position, and restore once drag bounds have been set.
+      var oldPosition = self.body.positionProperty.value;
       dragHandler.setDragBounds( dragBounds );
+      self.body.positionProperty.set( oldPosition );
     };
     modelBoundsProperty.link( this.modelBoundsListener );
 
