@@ -57,10 +57,12 @@ define( function( require ) {
       modelViewTransform: self.modelViewTransformProperty.value,
       startDrag: function() {
         body.userControlled = true;
+
+        // when the dragging starts, we want to clear the path
+        body.clearPath();
       },
       onDrag: function() {
         body.userModifiedPositionEmitter.emit();
-        // body.trigger0( GravityAndOrbitsConstants.USER_MODIFIED_POSITION );
       },
       endDrag: function() {
         body.userControlled = false;
