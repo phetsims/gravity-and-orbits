@@ -159,8 +159,10 @@ define( function( require ) {
       x: 100,
       y: 100,
       listener: function() {
+        // return bodies, pause the model, and reset the timer
         model.returnBodies();
         module.playButtonPressedProperty.set( false );
+        model.clock.setSimulationTime( 0.0 );
       }
     } );
     this.addChild( returnButton );
