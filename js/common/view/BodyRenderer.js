@@ -90,7 +90,11 @@ define( function( require ) {
 
   inherit( BodyRenderer, SwitchableBodyRenderer, {
 
-    // @public
+    /**
+     * Set the diameter for the renderer in view coordinates for both the current and default renderers.
+     *
+     * @param  {number} viewDiameter
+     */
     setDiameter: function( viewDiameter ) {
       this.targetBodyRenderer.setDiameter( viewDiameter );
       this.defaultBodyRenderer.setDiameter( viewDiameter );
@@ -99,6 +103,11 @@ define( function( require ) {
 
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
+   *
+   * @param {Body} body
+   * @param {number} viewDiameter
+   * @param {string} imageName - image from the plugin
+   * @constructor
    */
   function ImageRenderer( body, viewDiameter, imageName ) {
 
@@ -115,7 +124,11 @@ define( function( require ) {
 
   inherit( BodyRenderer, ImageRenderer, {
 
-    // @public
+    /**
+     * Set the diameter for the rednerer in view coordinates
+     *
+     * @param  {number} viewDiameter
+     */
     setDiameter: function( viewDiameter ) {
       this.viewDiameter = viewDiameter;
       this.updateViewDiameter();
@@ -156,6 +169,12 @@ define( function( require ) {
   gravityAndOrbits.register( 'SunRenderer', SunRenderer );
 
   inherit( ImageRenderer, SunRenderer, {
+
+    /**
+     * Set the diamater for the sun, based on view coordinates.
+     *
+     * @param  {number} viewDiameter
+     */
     setDiameter: function( viewDiameter ) {
       ImageRenderer.prototype.setDiameter.call( this, viewDiameter );
       var angle = 0;

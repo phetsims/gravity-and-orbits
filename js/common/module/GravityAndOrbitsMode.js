@@ -111,11 +111,12 @@ define( function( require ) {
   return inherit( PropertySet, GravityAndOrbitsMode, {
 
     /**
-     * @private
      * Create the transform from model coordinates to stage coordinates
+     *
      * @param defaultZoomScale
      * @param zoomOffset
      * @returns {*}
+     * @private
      */
     createTransform: function( defaultZoomScale, zoomOffset ) {
       var targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), zoomOffset );
@@ -130,11 +131,11 @@ define( function( require ) {
     },
 
     /**
-     * @private
      * Find the rectangle that should be viewed in the model
      * @param targetScale
      * @param targetCenterModelPoint
      * @returns {Rectangle}
+     * @private
      */
     getTargetRectangle: function( targetScale, targetCenterModelPoint ) {
       var z = targetScale * 1.5E-9;
@@ -148,10 +149,11 @@ define( function( require ) {
     },
 
     /**
-     * @public
      * Gets the number of points that should be used to draw a trace, should be enough so that two periods for the
      * default orbit are visible.
+     *
      * TODO: Remove this, it makes more sense for the maxPathLength to be computed in view coordinates
+     * @public
      */
     getMaxPathLength: function() {
 
@@ -206,16 +208,19 @@ define( function( require ) {
     },
 
     /**
-     * @public
+     * Initialize the view component for this mode.
+     *
      * @param module
+     * @public
      */
     init: function( module ) {
       this.canvas = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale );
     },
 
     /**
-     * @public
      * Return the bodies to their original states when the user presses "reset" (not "reset all")
+     *
+     * @public
      */
     resetMode: function() {
       this.model.resetBodies();
@@ -224,8 +229,9 @@ define( function( require ) {
     },
 
     /**
-     * @public
      * Restore the last set of initial conditions that were set while the sim was paused.
+     *
+     * @public
      */
     rewind: function() {
       this.rewindingProperty.set( true );

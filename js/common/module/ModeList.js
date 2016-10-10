@@ -179,8 +179,8 @@ define( function( require ) {
     inherit( Body, Moon, {
 
       // @public
-      doReturnBody: function( model ) {
-        Body.prototype.doReturnBody.call( this, model );
+      resetPositionAndVelocity: function( model ) {
+        Body.prototype.resetPositionAndVelocity.call( this, model );
         var earth = model.getBody( GAOBodiesEnum.PLANET );
 
         // Restore the moon near the earth and with the same relative velocity vector

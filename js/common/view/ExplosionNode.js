@@ -58,10 +58,16 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'ExplosionNode', ExplosionNode );
-  
+
   return inherit( Node, ExplosionNode, {
 
-    // @private
+    /**
+     * Get a graphic for the explosion, linking diameter to the time steps since a collision occured.
+     *
+     * @param  {Body} body        description
+     * @param  {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
+     * @return {type}             description
+     */
     getExplosionEdgeGraphic: function( body, getDiameter ) {
       var yellowAndWhite = {
         highlight: 'white',

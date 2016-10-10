@@ -166,10 +166,10 @@ define( function( require ) {
     },
 
     /**
-     * @public
-     * create an immutable representation of this body for use in the physics engine
+     * Create an immutable representation of this body for use in the physics engine
      * use copy() for Vector2 so that the properties don't get mutated
      *
+     * @public
      * @return {BodyState}
      */
     toBodyState: function() {
@@ -182,9 +182,9 @@ define( function( require ) {
     },
 
     /**
-     * @public
      * Take the updated BodyState from the physics engine and update the state of this body based on it.
      *
+     * @public
      * @param {BodyState} bodyState
      */
     updateBodyStateFromModel: function( bodyState ) {
@@ -199,9 +199,10 @@ define( function( require ) {
     },
 
     /**
-     * @public
      * This method is called after all bodies have been updated by the physics engine (must be done as a batch),
      * so that the path can be updated
+     *
+     * @public
      */
     allBodiesUpdated: function() {
 
@@ -211,7 +212,12 @@ define( function( require ) {
       }
     },
 
-    // @public
+    /**
+     * Add a point to the collection of points that follow the trajectory of a moving body.
+     * This also removes points when the path gets too long.
+     *
+     * @public
+     */
     addPathPoint: function() {
 
       // start removing data after 2 orbits of the default system
@@ -225,7 +231,11 @@ define( function( require ) {
       this.pointAddedEmitter.emit2( pathPoint, this.name );
     },
 
-    // @public
+    /**
+     * Clear the whole path of points tracking the body's trajectory.
+     *
+     * @return {type}  description
+     */
     clearPath: function() {
       this.path = [];
       this.clearedEmitter.emit1( this.name );
@@ -245,6 +255,8 @@ define( function( require ) {
     },
 
     /**
+     * Create an image renderer for this body.
+     *
      * @public
      * @return {BodyRenderer}
      */
@@ -253,6 +265,8 @@ define( function( require ) {
     },
 
     /**
+     * Check to see if this body collides with another.
+     *
      * @public
      * @param {Body} body
      * @return {boolean}
@@ -270,7 +284,11 @@ define( function( require ) {
       return distance < radiiSum;
     },
 
-    // @public
+    /**
+     * Rewind all rewindable properties to their values in the last time step.
+     *
+     * @public
+     */
     rewind: function() {
       this.positionProperty.rewind();
       this.velocityProperty.rewind();
@@ -281,6 +299,8 @@ define( function( require ) {
     },
 
     /**
+     * Create a derived property to see if position, velocity, mass, or collided properties have changed.
+     *
      * @public
      * @returns {DerivedProperty}
      */
@@ -293,15 +313,17 @@ define( function( require ) {
     },
 
     /**
+     * If the body has collided, or is about to collide, return, clear path, and reset positionProperty
+     * and velocity.
+     *
      * @public
-     * Unexplodes and returns objects to the stage
      * @param {GravityAndOrbitsModel} model
      */
     returnBody: function( model ) {
       if ( this.collidedProperty.get() || !this.bounds.containsPoint( this.positionProperty.get() ) ) {
         this.collidedProperty.set( false );
         this.clearPath(); // so there is no sudden jump in path from old to new location
-        this.doReturnBody( model );
+        this.resetPositionAndVelocity( model );
       }
     },
 
@@ -309,7 +331,7 @@ define( function( require ) {
      * @public
      * Unexplodes and returns objects to the stage
      */
-    doReturnBody: function() {
+    resetPositionAndVelocity: function() {
       this.positionProperty.reset();
       this.velocityProperty.reset();
     },

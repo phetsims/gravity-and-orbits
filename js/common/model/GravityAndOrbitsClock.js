@@ -54,7 +54,11 @@ define( function( require ) {
 
   return inherit( Object, GravityAndOrbitsClock, {
 
-    // @public
+    /**
+     * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
+     *
+     * @return {number}
+     */
     stepClockWhilePaused: function() {
 
       // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
@@ -68,11 +72,15 @@ define( function( require ) {
       this.step( 1 / CLOCK_FRAME_RATE );
       this.steppingProperty.set( false );
 
-      // revert dt
+      // revert dt to match the play speed
       this.dt = clockDT;
     },
 
-    // @public
+    /**
+     * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
+     *
+     * @return {number}
+     */
     stepClockBackWhilePaused: function() {
       this.steppingProperty.set( true );
 
@@ -88,12 +96,20 @@ define( function( require ) {
       this.dt = clockDT;
     },
 
-    // @public
+    /**
+     * Set whether or not the model should be running.
+     *
+     * @param  {boolean} running
+     */
     setRunning: function( running ) {
       this.runningProperty.set( running );
     },
 
-    // @public
+    /**
+     * Set the clock time.
+     *
+     * @param  {number} time description
+     */
     setSimulationTime: function( time ) {
       this.simulationTimeProperty.set( time );
     },
@@ -108,12 +124,21 @@ define( function( require ) {
       this.simulationTimeProperty.reset();
     },
 
-    // @public
+    /**
+     * Add an event callback to the event timer, called every time the animation frame changes.
+     *
+     * @param  {number} stepFunction
+     */
     addEventTimer: function( stepFunction ) {
       this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
     },
 
-    // @public
+    /**
+     * Step the simulation by dt
+     *
+     * @param  {number} dt
+     * @return {type}    description
+     */
     step: function( dt ) {
       this.eventTimer.step( dt );
     }

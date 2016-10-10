@@ -161,6 +161,6 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'CheckboxPanel', CheckboxPanel );
-  
+
   return inherit( VBox, CheckboxPanel );
 } );

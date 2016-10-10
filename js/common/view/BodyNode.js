@@ -140,12 +140,22 @@ define( function( require ) {
       return node;
     },
 
-    // @private
+    /**
+     * Get the position of this body node mased on a transform and the model element.
+     *
+     * @param  {Property.<ModelViewTransform2>} modelViewTransformProperty
+     * @param  {Body} body
+     * @return {Vector2}
+     */
     getPosition: function( modelViewTransformProperty, body ) {
       return modelViewTransformProperty.get().modelToView( body.positionProperty.get() );
     },
 
-    // @private
+    /**
+     * Get the diameter of the body in view coordinates.
+     *
+     * @return {number}
+     */
     getViewDiameter: function() {
       var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
       return Math.max( viewDiameter, 2 );

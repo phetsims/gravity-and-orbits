@@ -37,11 +37,12 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'ModelState', ModelState );
-  
+
   return inherit( Object, ModelState, {
 
     /**
      * Updates the model, producing the next ModelState
+     *
      * @public
      * @param {number} dt
      * @param {Property.<boolean>} gravityEnabledProperty
@@ -63,6 +64,7 @@ define( function( require ) {
 
     /**
      * Finds the positions of the bodies after a time dt
+     *
      * @private
      * @param {dt} number
      */
@@ -76,6 +78,7 @@ define( function( require ) {
 
     /**
      * Finds the velocities of the bodies after a time dt
+     *
      * @private
      * @param {number} dt
      */
@@ -89,6 +92,7 @@ define( function( require ) {
 
     /**
      * Finds the current values of the accelerations
+     *
      * @private
      */
     updateAccelerations: function() {
@@ -101,6 +105,7 @@ define( function( require ) {
 
     /**
      * Sets all the accelerations to zero, useful when gravity is turned off
+     *
      * @private
      */
     setAccelerationToZero: function() {
@@ -111,6 +116,7 @@ define( function( require ) {
 
     /**
      * Gets the net force on the bodyState due to the other bodies
+     * 
      * @private
      * @param {BodyState} bodyState
      * @returns {Vector2}

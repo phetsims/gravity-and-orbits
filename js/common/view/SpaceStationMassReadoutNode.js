@@ -27,8 +27,16 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'SpaceStationMassReadoutNode', SpaceStationMassReadoutNode );
-  
+
   return inherit( MassReadoutNode, SpaceStationMassReadoutNode, {
+
+    /**
+     * Create a text label for the space station, modified so that it will be quantitative
+     * or qualitative depending on the mass of the station.  For instance, if larger than
+     * a specific mass, the label will be in something like 'billions of station masses'.
+     *
+     * @return {string} - formatted string
+     */
     createText: function() {
       var massKG = this.bodyNode.body.massProperty.get();
       var spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;

@@ -74,7 +74,14 @@ define( function( require ) {
 
   return inherit( PropertySet, GravityAndOrbitsModel, {
 
-    // @public
+    /**
+     * Step function for the model.  This function creates state objects and calculates state values for this step
+     * based on the current state of the entire model.  Once doen, it applies the updated values to the body
+     * objects.  Finally, it checks for collisions between bodies.
+     *
+     * @param  {number} dt
+     */
+
     step: function( dt ) {
       var i;
 
@@ -117,8 +124,9 @@ define( function( require ) {
     },
 
     /**
-     * @public
      * Adds a body and updates the body's force vectors
+     *
+     * @public
      * @param body
      */
     addBody: function( body ) {
@@ -134,22 +142,24 @@ define( function( require ) {
     },
 
     /**
-     * @private
      * Since we haven't (yet?) rewritten the gravity forces to auto-update when dependencies change, we update when
-     * necessary
-     * (1) when a new body is added or (2) when reset is pressed.
+     * necessary:
+     * (1) when a new body is added or
+     * (2) when reset is pressed
      * This update is done by running the physics engine for dt=0.0 then applying the computed forces to the bodies.
-     * <p/>
      * Without this block of code, the force vectors would be zero on sim startup until the clock is started.
+     *
+     * @private
      */
     updateForceVectors: function() {
-      this.step( 0 ); // the effect of stepping the model is to update the force vectors
+      this.step( 0 );
     },
 
     /**
-     * @public
      * Returns a defensive copy of the bodies.
+     *
      * @return {Array<Body>}
+     * @public
      */
     getBodies: function() {
       return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
@@ -164,8 +174,9 @@ define( function( require ) {
     },
 
     /**
-     * @public
      * Unexplodes and returns objects to the stage
+     *
+     * @public
      */
     returnBodies: function() {
 
@@ -178,7 +189,6 @@ define( function( require ) {
       // now it displays the force vectors of the prior situation before it moved the moon or planet.
       this.updateForceVectors();
     },
-
 
     /**
      * Get the body associated with the name.  The name must be one of GAOBodiesEnum.

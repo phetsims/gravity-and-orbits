@@ -59,6 +59,11 @@ define( function( require ) {
 
   inherit( ModeList.ModeList, CartoonModeList );
 
+  /**
+   * Model configuration for a system with the sun and the earth.
+   *
+   * @constructor
+   */
   function SunEarthModeConfig() {
 
     ModeList.SunEarthModeConfig.call( this );
@@ -76,7 +81,11 @@ define( function( require ) {
   gravityAndOrbits.register( 'SunEarthModeConfig', SunEarthModeConfig );
 
   inherit( ModeList.SunEarthModeConfig, SunEarthModeConfig );
-
+  /**
+   * Model configuration for a system with the sun, earth and moon.
+   *
+   * @constructor
+   */
   function SunEarthMoonModeConfig() {
 
     ModeList.SunEarthMoonModeConfig.call( this );
@@ -116,6 +125,11 @@ define( function( require ) {
 
   inherit( ModeList.EarthMoonModeConfig, EarthMoonModeConfig );
 
+  /**
+   * Model configuration for a system with the earth and a space station.
+   *
+   * @constructor
+   */
   function EarthSpaceStationModeConfig() {
 
     ModeList.EarthSpaceStationModeConfig.call( this );

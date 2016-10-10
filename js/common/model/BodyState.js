@@ -32,15 +32,24 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'BodyState', BodyState );
-  
+
   return inherit( Object, BodyState, {
 
-    // @public
+    /**
+     * Get the distance squared from the body position to another.
+     *
+     * @param  {Vector2} position
+     * @return {number}
+     */
     distanceSquared: function( position ) {
       return this.position.minus( position ).magnitudeSquared();
     },
 
-    // @public
+    /**
+     * Useful for debugging - provides a string of documented property values.
+     *
+     * @return {string}
+     */
     toString: function() {
       return 'BodyState{' + 'position=' + this.position + ', velocity=' + this.velocity +
              ', acceleration=' + this.acceleration + ', mass=' + this.mass + '}';

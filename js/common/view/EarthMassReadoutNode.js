@@ -28,8 +28,15 @@ define( function( require ) {
   }
 
   gravityAndOrbits.register( 'EarthMassReadoutNode', EarthMassReadoutNode );
-  
+
   return inherit( MassReadoutNode, EarthMassReadoutNode, {
+
+    /**
+     * Create a label for the earth, but with rules to provide either exact or qualitive representations,
+     * and limitations so that the label looks good in the view.
+     *
+     * @return {type}  description
+     */
     createText: function() {
       var massKG = this.bodyNode.body.massProperty.get();
       var earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
