@@ -51,14 +51,30 @@ define( function( require ) {
       this.namedPoints[ bodies[ i ].name ] = new NamedPoints( bodies[ i ].name );
     }
 
-    // set the path length for the body so that the length is ~85% of the orbit, relative to the center
-    // of the canvas bounds (and therefore the central body)
-    bodies.forEach( function( body ) {
-      var initialPosition = transformProperty.get().modelToViewPosition( body.positionProperty.initialValue );
-      var distToCenter = canvasBounds.center.minus( initialPosition ).magnitude();
-      var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
-      body.maxPathLength = Math.max( maxPathLength, options.maxPathLength );
+    // when transform changes, update max path length so that the length is ~85% of the orbit, 
+    // relative to the center of the canvas bounds (and therefore the central body)
+    // disposal unnecessary, the canvas node exists for life of xim
+    transformProperty.link( function( transform ) {
+      for ( var i = 0; i < bodies.length; i++ ) {
+        var body = bodies[ i ];
+        var initialPosition = transform.modelToViewPosition( body.positionProperty.initialValue );
+        var distToCenter = canvasBounds.center.minus( initialPosition ).magnitude();
+        var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
+        // body.maxPathLength = Math.max( maxPathLength, options.maxPathLength );
+        body.maxPathLength = maxPathLength;
+      }
     } );
+
+    // // set the path length for the body so that the length is ~85% of the orbit, relative to the center
+    // // of the canvas bounds (and therefore the central body)
+    // // NOTE: this needs to update when zoom changes
+    // console.log( bodies[ 0 ] );
+    // bodies.forEach( function( body ) {
+    //   var initialPosition = transformProperty.get().modelToViewPosition( body.positionProperty.initialValue );
+    //   var distToCenter = canvasBounds.center.minus( initialPosition ).magnitude();
+    //   var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
+    //   body.maxPathLength = Math.max( maxPathLength, options.maxPathLength );
+    // } );
 
     this.bodies = bodies; // @private
 
