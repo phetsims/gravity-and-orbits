@@ -13,7 +13,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var UpperRightControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/UpperRightControlPanel' );
+  var ControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/ControlPanel' );
   var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/common/view/SpeedRadioButtons' );
   var MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/MassControlPanel' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
@@ -34,7 +34,7 @@ define( function( require ) {
     ScreenView.call( this );
 
     // Control panel in the upper right of the play area
-    var controlPanelNode = new UpperRightControlPanel( module, {
+    var controlPanelNode = new ControlPanel( module, {
       top: this.layoutBounds.top + MARGIN,
       right: this.layoutBounds.right - MARGIN
     } );

@@ -1,7 +1,8 @@
 // Copyright 2013-2015, University of Colorado Boulder
 
 /**
- * Control panel at upper right.
+ * Control panel containing the controls for orbital mode, gravity, and visibility of plantary path
+ * and vectors.
  *
  * @author Aaron Davis
  */
@@ -28,7 +29,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function UpperRightControlPanel( module, options ) {
+  function ControlPanel( module, options ) {
 
     options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
@@ -45,7 +46,7 @@ define( function( require ) {
       new CheckboxPanel( module, MENU_SECTION_OPTIONS )
     ];
 
-    assert && assert( sections.length === 5, 'There should be 5 sections in the UpperRightControlPanel' );
+    assert && assert( sections.length === 5, 'There should be 5 sections in the ControlPanel' );
 
     var vBox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vBox, options );
@@ -57,7 +58,7 @@ define( function( require ) {
     }
   }
 
-  gravityAndOrbits.register( 'UpperRightControlPanel', UpperRightControlPanel );
+  gravityAndOrbits.register( 'ControlPanel', ControlPanel );
 
-  return inherit( Panel, UpperRightControlPanel );
+  return inherit( Panel, ControlPanel );
 } );
