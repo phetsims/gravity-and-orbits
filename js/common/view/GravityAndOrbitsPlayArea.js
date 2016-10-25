@@ -58,7 +58,7 @@ define( function( require ) {
    */
   function GravityAndOrbitsPlayArea( model, module, mode, forceScale ) {
 
-    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE } );
+    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: true } );
     var self = this;
 
     var bodies = model.getBodies();

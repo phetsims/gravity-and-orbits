@@ -40,8 +40,8 @@ define( function( require ) {
     assert && assert( canvasBounds, 'Paths canvas must define bounds' );
     CanvasNode.call( this, {
       canvasBounds: canvasBounds,
-      preventFit: true,
-      excludeInvisible: true // when the canvas is invisible, it is removed from the DOM
+      preventFit: true
+     // when the canvas is invisible, it is removed from the DOM
     } );
     var self = this;
     var i;
