@@ -33,6 +33,7 @@ define( function( require ) {
   var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var platform = require( 'PHET_CORE/platform' );
 
   // strings
   var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
@@ -58,7 +59,12 @@ define( function( require ) {
    */
   function GravityAndOrbitsPlayArea( model, module, mode, forceScale ) {
 
-    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: true } );
+    // each orbit mode has its own play area with a CanvasNode for rendering paths
+    // each canvas should be excluded from the DOM when invisible, with the exception of iOS Safari,
+    // which performs worse in this case when toggling visibility
+    var excludeInvisible = !platform.mobileSafari;
+    
+    Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: excludeInvisible } );
     var self = this;
 
     var bodies = model.getBodies();
