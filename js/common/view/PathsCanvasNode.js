@@ -65,17 +65,6 @@ define( function( require ) {
       }
     } );
 
-    // // set the path length for the body so that the length is ~85% of the orbit, relative to the center
-    // // of the canvas bounds (and therefore the central body)
-    // // NOTE: this needs to update when zoom changes
-    // console.log( bodies[ 0 ] );
-    // bodies.forEach( function( body ) {
-    //   var initialPosition = transformProperty.get().modelToViewPosition( body.positionProperty.initialValue );
-    //   var distToCenter = canvasBounds.center.minus( initialPosition ).magnitude();
-    //   var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
-    //   body.maxPathLength = Math.max( maxPathLength, options.maxPathLength );
-    // } );
-
     this.bodies = bodies; // @private
 
     visibleProperty.link( function( isVisible ) {
