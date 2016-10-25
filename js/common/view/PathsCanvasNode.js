@@ -41,7 +41,6 @@ define( function( require ) {
     CanvasNode.call( this, {
       canvasBounds: canvasBounds,
       preventFit: true
-     // when the canvas is invisible, it is removed from the DOM
     } );
     var self = this;
     var i;
