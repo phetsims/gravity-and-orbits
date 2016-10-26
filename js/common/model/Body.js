@@ -36,7 +36,7 @@ define( function( require ) {
    * @param {number} mass
    * @param {Color} color
    * @param {Color} highlight
-   * @param {function.<Body, number, BodyRenderer>} renderer - way to associate the graphical representation directly
+   * @param {function.<Body, number, BodyRenderer>} BodyRenderer - way to associate the graphical representation directly
    *                                                          instead of later with conditional logic or map
    * @param {number} labelAngle
    * @param {boolean} massSettable
@@ -75,6 +75,9 @@ define( function( require ) {
 
     // @public number of samples in the path before it starts erasing (fading out from the back)
     this.maxPathLength = 0;
+
+    // @public - total length of the current path
+    this.pathLength = 0;
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
@@ -222,10 +225,21 @@ define( function( require ) {
 
       // start removing data after 2 orbits of the default system
       // account for the point that will be added
-      while ( this.path.length > this.maxPathLength ) {
-        this.path.shift();
-        this.pointRemovedEmitter.emit1( this.name );
-      }
+      // while ( this.pathLength > this.maxPathLength ) {
+      //   var removedPoint = this.path.shift();
+
+      //   // decrement the path length by the length of the removed segment
+      //   var segDifX = removedPoint.x - this.path[ 0 ].x;
+      //   var segDifY = removedPoint.y - this.path[ 0 ].y;
+
+      //   // avoid using vector2 to prevent excess object allocation
+      //   var segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
+      //   this.pathLength -= segLength;
+      //   debugger;
+      //   console.log( segLength );
+        
+      //   this.pointRemovedEmitter.emit1( this.name );
+      // }
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
       this.pointAddedEmitter.emit2( pathPoint, this.name );
@@ -238,6 +252,7 @@ define( function( require ) {
      */
     clearPath: function() {
       this.path = [];
+      this.pathLength = 0;
       this.clearedEmitter.emit1( this.name );
     },
 

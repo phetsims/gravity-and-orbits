@@ -51,6 +51,9 @@ define( function( require ) {
       this.namedPoints[ bodies[ i ].name ] = new NamedPoints( bodies[ i ].name );
     }
 
+    // @private
+    this.transformProperty = transformProperty;
+
     // when transform changes, update max path length so that the length is ~85% of the orbit, 
     // relative to the center of the canvas bounds (and therefore the central body)
     // disposal unnecessary, the canvas node exists for life of xim
@@ -165,11 +168,11 @@ define( function( require ) {
         }
 
         j = points.length - 1;
-        this.pathLength = 0;
+        body.pathLength = 0;
         var segDifX;
         var segDifY;
         var segLength;
-        while ( this.pathLength < maxPathLength - fadePathLength && j > 0 ) {
+        while ( body.pathLength < maxPathLength - fadePathLength && j > 0 ) {
           context.lineTo( points[ j ].x, points[ j ].y );
           if ( j > 1 ) {
             // increment the path length by the length of the added segment
@@ -178,7 +181,7 @@ define( function( require ) {
 
             // avoid using vector2 to prevent excess object allocation
             segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
-            this.pathLength += segLength;
+            body.pathLength += segLength;
           }
           j--;
         }
@@ -188,11 +191,11 @@ define( function( require ) {
         context.lineCap = 'butt';
         var faded = body.color;
 
-        while ( this.pathLength < maxPathLength && j > 0 ) {
-          assert && assert( this.pathLength > maxPathLength - fadePathLength, 'the path length is too small to start fading' );
+        while ( body.pathLength < maxPathLength && j > 0 ) {
+          assert && assert( body.pathLength > maxPathLength - fadePathLength, 'the path length is too small to start fading' );
 
           // fade out a little bit each segment
-          var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, this.pathLength );
+          var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, body.pathLength );
 
           // format without Color to avoid unnecessary allocation
           var fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )';
@@ -209,8 +212,17 @@ define( function( require ) {
 
           // avoid using vector2 to prevent excess object allocation
           segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
-          this.pathLength += segLength;
+          body.pathLength += segLength;
           j--;
+        }
+
+        // remove unused points
+        if ( body.pathLength > maxPathLength ) {
+          while ( j >= 0 ) {
+            body.path.shift();
+            points.shift();
+            j--;
+          }
         }
       }
     }
