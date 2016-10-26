@@ -70,6 +70,10 @@ define( function( require ) {
         // reset the simulation time when the planet is released
         if ( playButtonPressedProperty.value !== true ) {
           clock.setSimulationTime( 0.0 );
+
+          // if paused, on release, the state of the orbital system should be saved
+          // so that rewind will revert to the last placement of bodies
+          mode.saveState();
         }
       }
     } );
@@ -106,32 +110,6 @@ define( function( require ) {
       self.body.positionProperty.set( oldPosition );
     };
     modelBoundsProperty.link( this.modelBoundsListener );
-
-    // // when a point is added, make sure that the path is not larger than the max path length
-    // // the path length is calculated in view coordinates, so this must be handled in the 
-    // // view
-    // var transform = this.modelViewTransformProperty.get();
-    // this.pointAddedListener = function( point ) {
-    //   while ( body.pathLength > body.maxPathLength ) {
-    //     var removedPoint = body.path.shift();
-
-    //     // transform the removed point and the first point into view coords
-    //     var removedPointTransformed = transform.modelToViewPosition( removedPoint );
-    //     var firstPointTransformed = transform.modelToViewPosition( body.path[ 0 ] );
-
-    //     // decrement the path length by the length of the removed segment in view coordinates
-    //     var segDifX = removedPointTransformed.x - firstPointTransformed.x;
-    //     var segDifY = removedPointTransformed.y - firstPointTransformed.y;
-
-    //     // avoid using vector2 to prevent excess object allocation
-    //     var segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
-
-    //     // transform the segLength so that it is in view coorinates
-    //     body.pathLength -= segLength;        
-    //     body.pointRemovedEmitter.emit1( body.name );
-    //   }
-    // };
-    // body.pointAddedEmitter.addListener( this.pointAddedListener );
 
     // Points to the sphere with a text indicator and line when it is too small to see (in modes with realistic units)
     this.addChild( this.createArrowIndicator( this.body, labelAngle ) );

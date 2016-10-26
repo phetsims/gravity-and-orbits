@@ -102,6 +102,9 @@ define( function( require ) {
     // representation directly instead of later with conditional logic or map
     this.renderer = renderer; // @private
 
+    // @private
+    this.playButtonPressedProperty = playButtonPressedProperty;
+
     this.labelAngle = labelAngle; // @public
     var changeRewindValueProperty = new DerivedProperty(
       [ playButtonPressedProperty, steppingProperty, rewindingProperty ],
@@ -132,20 +135,6 @@ define( function( require ) {
     this.collidedProperty.onValue( true, function() {
       self.clockTicksSinceExplosionProperty.set( 0 );
     } );
-
-    // If any of the rewind properties changes while the clock is paused, set a rewind point for all of them.
-    var rewindValueChangeListener = function() {
-      self.positionProperty.storeRewindValueNoNotify();
-      self.velocityProperty.storeRewindValueNoNotify();
-      self.forceProperty.storeRewindValueNoNotify();
-      self.massProperty.storeRewindValueNoNotify();
-      self.collidedProperty.storeRewindValueNoNotify();
-    };
-    this.positionProperty.addRewindValueChangeListener( rewindValueChangeListener );
-    this.velocityProperty.addRewindValueChangeListener( rewindValueChangeListener );
-    this.forceProperty.addRewindValueChangeListener( rewindValueChangeListener );
-    this.massProperty.addRewindValueChangeListener( rewindValueChangeListener );
-    this.collidedProperty.addRewindValueChangeListener( rewindValueChangeListener );
   }
 
   gravityAndOrbits.register( 'Body', Body );
@@ -182,6 +171,20 @@ define( function( require ) {
         this.accelerationProperty.get().copy(),
         this.massProperty.get(),
         this.collidedProperty.get() );
+    },
+
+    /**
+     * Save the current state of the body by storing the values of all rewindable properties.  This should only
+     * be called when the clock is paused.
+     */
+    saveBodyState: function() {
+      assert && assert( !this.playButtonPressedProperty.get(), 'saveBodyState should only be called when sim is paused' );
+
+      this.positionProperty.storeRewindValueNoNotify();
+      this.velocityProperty.storeRewindValueNoNotify();
+      this.forceProperty.storeRewindValueNoNotify();
+      this.massProperty.storeRewindValueNoNotify();
+      this.collidedProperty.storeRewindValueNoNotify();
     },
 
     /**
@@ -222,24 +225,6 @@ define( function( require ) {
      * @public
      */
     addPathPoint: function() {
-
-      // start removing data after 2 orbits of the default system
-      // account for the point that will be added
-      // while ( this.pathLength > this.maxPathLength ) {
-      //   var removedPoint = this.path.shift();
-
-      //   // decrement the path length by the length of the removed segment
-      //   var segDifX = removedPoint.x - this.path[ 0 ].x;
-      //   var segDifY = removedPoint.y - this.path[ 0 ].y;
-
-      //   // avoid using vector2 to prevent excess object allocation
-      //   var segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
-      //   this.pathLength -= segLength;
-      //   debugger;
-      //   console.log( segLength );
-        
-      //   this.pointRemovedEmitter.emit1( this.name );
-      // }
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
       this.pointAddedEmitter.emit2( pathPoint, this.name );

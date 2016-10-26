@@ -75,6 +75,9 @@ define( function( require ) {
     this.forceScale = forceScale; // @private
     this.iconImage = iconImage; // @private
 
+    // @private
+    this.playButtonPressedProperty = p.playButtonPressedProperty;
+
     // Precomputed value for the orbital period under default conditions (i.e. no other changes),
     // for purposes of determining the path length (about 2 orbits)
     this.defaultOrbitalPeriod = defaultOrbitalPeriod; // @private
@@ -241,6 +244,19 @@ define( function( require ) {
         bodies[ i ].rewind();
       }
       this.rewindingProperty.set( false );
+    },
+
+    /**
+     * Save the state of the orbital system, which includes all rewindable properties
+     * of all bodies. This should only be called when the sim is paused.
+     */
+    saveState: function() {
+      assert && assert( !this.playButtonPressedProperty.get(), 'saveState should only be called when sim paused' );
+
+      var bodies = this.model.getBodies();
+      for ( var i = 0; i < bodies.length; i++ ) {
+        bodies[ i ].saveBodyState();
+      }
     },
 
     /**
