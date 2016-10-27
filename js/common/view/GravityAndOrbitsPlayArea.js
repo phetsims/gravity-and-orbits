@@ -133,6 +133,7 @@ define( function( require ) {
     var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
+      isTipDragBounded: false,
 
       // space station gets 1 sig fig, the other bodies have 0
       significantFigures: ( bodies[ 1 ].name === GAOBodiesEnum.SATELLITE ) ? 1 : 0

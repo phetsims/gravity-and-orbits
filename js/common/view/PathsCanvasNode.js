@@ -135,12 +135,26 @@ define( function( require ) {
       body.clearedEmitter.addListener( self.clearedListener.bind( self ) );
     }
 
+    // when the transform changes, we want to re-transform all points in a body
+    // path and then re paint the canvas
     transformProperty.link( function() {
       for ( i = 0; i < bodies.length; i++ ) {
-        self.bodies[ i ].clearPath();
-      }
-    } );
+        var body = bodies[ i ];
 
+        // clear the named points
+        self.namedPoints[ body.name ].points = [];
+
+        // re-transform each point in the body's path and add to the 
+        // named points array
+        for ( var j = 0; j < body.path.length; j++ ) {
+          var point = body.path[ j ];
+          var pt = transformProperty.get().modelToViewPosition( point );
+          self.namedPoints[ body.name ].points.push( pt );
+        }
+      }
+
+      self.invalidatePaint();
+    } );
   }
 
   gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
