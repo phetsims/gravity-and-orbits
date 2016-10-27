@@ -62,9 +62,16 @@ define( function( require ) {
         var body = bodies[ i ];
         var initialPosition = transform.modelToViewPosition( body.positionProperty.initialValue );
         var distToCenter = canvasBounds.center.minus( initialPosition ).magnitude();
-        var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
-        // body.maxPathLength = Math.max( maxPathLength, options.maxPathLength );
-        body.maxPathLength = maxPathLength;
+
+        // if the initial position is too close to the center,
+        // default path length is the width of the bounds
+        if ( distToCenter < 1 ) {
+          body.maxPathLength = canvasBounds.width;
+        }
+        else {
+          var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
+          body.maxPathLength = maxPathLength;
+        }
       }
     } );
 
