@@ -143,7 +143,16 @@ define( function( require ) {
       measuringTape.setModelViewTransform( transform );
     } );
     mode.modelBoundsProperty.link( function( bounds ) {
+      var basePosition = measuringTape.basePositionProperty.get();
       measuringTape.setDragBounds( bounds );
+
+      // if the position of the base has changed due to modifying the
+      // drag bounds, we want to subtract the difference from the position
+      // of the tip so that the measured value remains constant
+      if ( !measuringTape.basePositionProperty.get().equals( basePosition ) ) {
+        var difference = basePosition.minus( measuringTape.basePositionProperty.get() );
+        measuringTape.tipPositionProperty.set( measuringTape.tipPositionProperty.get().minus( difference ) );
+      }
 
       // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
       for ( i = 0; i < bodies.length; i++ ) {
