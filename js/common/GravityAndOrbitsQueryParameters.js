@@ -11,15 +11,11 @@ define( function( require ) {
   // modules
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  var getQueryParameter = phet.chipper.getQueryParameter;
+  var GravityAndOrbitsQueryParameters = QueryStringMachine.getAll( {
 
-  var GravityAndOrbitsQueryParameters = {
-
-    // enable projector mode by default for development and so the sim can be linked directly
-    // to projector mode
-    PROJECTOR_MODE: !!getQueryParameter( 'projectorMode' )
-
-  };
+    // enable projector mode by default for development and so the sim can be linked directly to projector mode
+    projectorMode: { type: 'flag' }
+  } );
 
   gravityAndOrbits.register( 'GravityAndOrbitsQueryParameters', GravityAndOrbitsQueryParameters );
 

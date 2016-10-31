@@ -26,7 +26,7 @@ define( function( require ) {
   function GlobalOptionsNode() {
     var children = [];
 
-    var projectorModeProperty = new Property( GravityAndOrbitsQueryParameters.PROJECTOR_MODE || false );
+    var projectorModeProperty = new Property( GravityAndOrbitsQueryParameters.projectorMode );
     projectorModeProperty.link( function( projectorMode ) {
       if ( projectorMode ) {
         GravityAndOrbitsColorProfile.profileNameProperty.set( 'projector' );
