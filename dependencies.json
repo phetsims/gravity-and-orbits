@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.0.0-dev.32 Thu Oct 27 2016 17:47:32 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.0.0-dev.33 Mon Oct 31 2016 16:05:18 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "845be6b591cb746b0b05b7023208aef2e49a8855",
     "branch": "master"
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "eb9912d60d274c3b92137e0792897b7dd5b11f34",
+    "sha": "089d4d20ac4f9c7db22958dbdd9e86f9906db916",
     "branch": "master"
   },
   "joist": {
