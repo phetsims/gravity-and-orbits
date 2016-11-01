@@ -26,7 +26,7 @@ define( function( require ) {
 
   /**
    * Constructor for Body
-   * @param {string} name - unqique name for the body, one of GAOBodiesEnum
+   * @param {string} name - unqique name for the body, one of GAOBodiesEnum, used for object identification
    * @param {string} labelString - translatable string for the body, used for text labels
    * @param {number} x
    * @param {number} y
