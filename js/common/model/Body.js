@@ -48,7 +48,7 @@ define( function( require ) {
    * @param {Property.<boolean>} steppingProperty
    * @param {Property.<boolean>} rewindingProperty
    * @param {boolean} fixed
-   * @param {object} [options]
+   * @param {Object} [options]
    * @constructor
    */
   function Body( name, labelString, x, y, diameter, vx, vy, mass, color, highlight, renderer,

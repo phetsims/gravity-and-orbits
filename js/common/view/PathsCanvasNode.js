@@ -28,7 +28,7 @@ define( function( require ) {
    * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {Property.<boolean>} visibleProperty
    * @param {Bounds2} canvasBounds
-   * @param {object} [options]
+   * @param {Object} [options]
    * @constructor
    */
   function PathsCanvasNode( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
@@ -54,7 +54,7 @@ define( function( require ) {
     // @private
     this.transformProperty = transformProperty;
 
-    // when transform changes, update max path length so that the length is ~85% of the orbit, 
+    // when transform changes, update max path length so that the length is ~85% of the orbit,
     // relative to the center of the canvas bounds (and therefore the central body)
     // disposal unnecessary, the canvas node exists for life of xim
     transformProperty.link( function( transform ) {
@@ -144,7 +144,7 @@ define( function( require ) {
         // clear the named points
         self.namedPoints[ body.name ].points = [];
 
-        // re-transform each point in the body's path and add to the 
+        // re-transform each point in the body's path and add to the
         // named points array
         for ( var j = 0; j < body.path.length; j++ ) {
           var point = body.path[ j ];
