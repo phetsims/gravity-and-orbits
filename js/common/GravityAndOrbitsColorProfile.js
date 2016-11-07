@@ -11,7 +11,6 @@ define( function( require ) {
   // modules
   var Color = require( 'SCENERY/util/Color' );
   var ColorProfile = require( 'SCENERY_PHET/ColorProfile' );
-  var inherit = require( 'PHET_CORE/inherit' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   var GravityAndOrbitsColorProfile = new ColorProfile( {
