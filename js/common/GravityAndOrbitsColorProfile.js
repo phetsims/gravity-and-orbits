@@ -1,4 +1,4 @@
-// Copyright 2015, University of Colorado Boulder
+// Copyright 2015-2016, University of Colorado Boulder
 
 /**
  * Location for most colors of the simulation (especially those that could be tweaked)
@@ -14,54 +14,44 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  // constants
-  var BLACK = new Color( 0, 0, 0 );
-  var WHITE = new Color( 255, 255, 255 );
-
-  function Profile() {
-    ColorProfile.call( this, {
-      background: {
-        default: BLACK,
-        projector: WHITE
-      },
-      bodyNodeText: {
-        default: WHITE,
-        projector: BLACK
-      },
-      measuringTapeText: {
-        default: WHITE,
-        projector: BLACK
-      },
-      bottomControlText: {
-        default: WHITE,
-        projector: BLACK
-      },
-      panelBackground: {
-        default: BLACK,
-        projector: new Color( 222, 234, 255 )
-      },
-      panelText: {
-        default: WHITE,
-        projector: BLACK
-      },
-      arrowIndicator: {
-        default: new Color( 255, 255, 0 ),
-        projector: BLACK
-      },
-      gridIcon: {
-        default: 'gray',
-        projector: BLACK
-      },
-      checkBoxFill: {
-        default: BLACK,
-        projector: WHITE
-      }
-    } );
-  }
-
-  inherit( ColorProfile, Profile );
-
-  var GravityAndOrbitsColorProfile = new Profile();
+  var GravityAndOrbitsColorProfile = new ColorProfile( {
+    background: {
+      default: 'black',
+      projector: 'white'
+    },
+    bodyNodeText: {
+      default: 'white',
+      projector: 'black'
+    },
+    measuringTapeText: {
+      default: 'white',
+      projector: 'black'
+    },
+    bottomControlText: {
+      default: 'white',
+      projector: 'black'
+    },
+    panelBackground: {
+      default: 'black',
+      projector: new Color( 222, 234, 255 )
+    },
+    panelText: {
+      default: 'white',
+      projector: 'black'
+    },
+    arrowIndicator: {
+      default: new Color( 255, 255, 0 ),
+      projector: 'black'
+    },
+    gridIcon: {
+      default: 'gray',
+      projector: 'black'
+    },
+    checkBoxFill: {
+      default: 'black',
+      projector: 'white'
+    }
+  } );
 
   gravityAndOrbits.register( 'GravityAndOrbitsColorProfile', GravityAndOrbitsColorProfile );
 
