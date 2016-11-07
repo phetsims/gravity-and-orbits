@@ -42,8 +42,8 @@ define( function( require ) {
     } );
 
     GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {
-      cartoonScreen.backgroundColor = color;
-      toScaleScreen.backgroundColor = color;
+      cartoonScreen.backgroundColorProperty.value = color;
+      toScaleScreen.backgroundColorProperty.value = color;
     } );
 
     // create and start the sim
