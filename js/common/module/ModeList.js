@@ -100,7 +100,7 @@ define( function( require ) {
   /**
    * Constructor for ModeListModule.
    *
-   * @param {ModeListParameterList} p
+   * @param {ModeListParameterList} parameterList
    * @param {SunEarthModeConfig} sunEarth
    * @param {SunEarthMoonModeConfig} sunEarthMoon
    * @param {EarthMoonModeConfig} earthMoon
@@ -108,7 +108,7 @@ define( function( require ) {
    * @returns {*}
    * @constructor
    */
-  function ModeListModule( p, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
+  function ModeListModule( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
 
     options = _.extend( {
       adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
@@ -135,9 +135,9 @@ define( function( require ) {
         true,
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
-        p.playButtonPressedProperty,
-        p.steppingProperty,
-        p.rewindingProperty,
+        parameterList.playButtonPressedProperty,
+        parameterList.steppingProperty,
+        parameterList.rewindingProperty,
         earthSpaceStation.spaceStation.fixed );
     }
 
@@ -169,9 +169,9 @@ define( function( require ) {
         massReadoutBelow,
         body.mass,
         ourMoonString,
-        p.playButtonPressedProperty,
-        p.steppingProperty,
-        p.rewindingProperty,
+        parameterList.playButtonPressedProperty,
+        parameterList.steppingProperty,
+        parameterList.rewindingProperty,
         body.fixed,
         options );
     }
@@ -199,9 +199,9 @@ define( function( require ) {
         true,
         body.mass,
         earthString,
-        p.playButtonPressedProperty,
-        p.steppingProperty,
-        p.rewindingProperty,
+        parameterList.playButtonPressedProperty,
+        parameterList.steppingProperty,
+        parameterList.rewindingProperty,
         body.fixed );
     }
 
@@ -228,16 +228,16 @@ define( function( require ) {
         true,
         body.mass,
         ourSunString,
-        p.playButtonPressedProperty,
-        p.steppingProperty,
-        p.rewindingProperty,
+        parameterList.playButtonPressedProperty,
+        parameterList.steppingProperty,
+        parameterList.rewindingProperty,
         body.fixed );
       this.body = body;
     }
 
     inherit( Body, Sun );
 
-    this.p = p; // @private
+    this.parameterList = parameterList; // @private
     this.modes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
 
     sunEarth.center();
@@ -266,7 +266,7 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       ( sunEarth.earth.x / 2 ),
       new Vector2( 0, 0 ),
-      p ) );
+      parameterList ) );
 
     this.modes[ 0 ].addBody( new Sun( this.modes[ 0 ].getMaxPathLength(), sunEarth.sun ) );
     this.modes[ 0 ].addBody( new Earth( this.modes[ 0 ].getMaxPathLength(), sunEarth.earth ) );
@@ -285,7 +285,7 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       ( sunEarthMoon.earth.x / 2 ),
       new Vector2( 0, 0 ),
-      p ) );
+      parameterList ) );
 
     // increase moon path length so that it matches other traces at default settings
     var pathLengthBuffer = options.adjustMoonPathLength ? 150 : 0;
@@ -312,7 +312,7 @@ define( function( require ) {
       new Vector2( earthMoon.earth.x, 0 ),
       ( earthMoon.moon.y / 2 ),
       new Vector2( earthMoon.earth.x, 0 ),
-      p ) );
+      parameterList ) );
 
     this.modes[ 2 ].addBody( new Earth( this.modes[ 2 ].getMaxPathLength(), earthMoon.earth ) );
     this.modes[ 2 ].addBody( new Moon( true, this.modes[ 2 ].getMaxPathLength(), true, earthMoon.moon ) );
@@ -335,7 +335,7 @@ define( function( require ) {
       new Vector2( earthSpaceStation.earth.x, 0 ),
       ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
       new Vector2( earthSpaceStation.earth.x, 0 ),
-      p ) );
+      parameterList ) );
 
     this.modes[ 3 ].addBody( new Earth( this.modes[ 3 ].getMaxPathLength(), earthSpaceStation.earth ) );
     this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, this.modes[ 3 ].getMaxPathLength() ) );
