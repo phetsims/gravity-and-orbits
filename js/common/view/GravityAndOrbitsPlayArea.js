@@ -175,10 +175,16 @@ define( function( require ) {
       x: 100,
       y: 100,
       listener: function() {
-        // return bodies, pause the model, and reset the timer
-        model.returnBodies();
-        module.playButtonPressedProperty.set( false );
-        model.clock.setSimulationTime( 0.0 );
+
+        // the return button should behave exactly like the rewind button
+        // all objects should be restored to their saved state, and then
+        // pause the orbital mode
+        mode.rewind();
+
+        // TODO: if the sim should pause once objects are returned,
+        // uncomment this line, see
+        // https://github.com/phetsims/gravity-and-orbits/issues/241
+        // mode.playButtonPressedProperty.set( false );
       }
     } );
     this.addChild( returnButton );

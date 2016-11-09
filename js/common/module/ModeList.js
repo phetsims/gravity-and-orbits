@@ -176,25 +176,7 @@ define( function( require ) {
         options );
     }
 
-    inherit( Body, Moon, {
-
-      // @public
-      resetPositionAndVelocity: function( model ) {
-        Body.prototype.resetPositionAndVelocity.call( this, model );
-        var earth = model.getBody( GAOBodiesEnum.PLANET );
-
-        // Restore the moon near the earth and with the same relative velocity vector
-        if ( earth ) {
-          var relativePosition = this.positionProperty.initialValue.minus( earth.positionProperty.initialValue );
-          this.positionProperty.set( earth.positionProperty.get().plus( relativePosition ) );
-          var relativeVelocity = this.velocityProperty.initialValue.minus( earth.velocityProperty.initialValue );
-          this.velocityProperty.set( earth.velocityProperty.get().plus( relativeVelocity ) );
-        }
-        else {
-          throw new Error( 'Couldn\'t find planet.' );
-        }
-      }
-    } );
+    inherit( Body, Moon );
 
     // non-static inner class: Earth
     function Earth( maxPathLength, body ) {

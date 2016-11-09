@@ -313,21 +313,6 @@ define( function( require ) {
     },
 
     /**
-     * If the body has collided, or is about to collide, return, clear path, and reset positionProperty
-     * and velocity.
-     *
-     * @public
-     * @param {GravityAndOrbitsModel} model
-     */
-    returnBody: function( model ) {
-      if ( this.collidedProperty.get() || !this.bounds.containsPoint( this.positionProperty.get() ) ) {
-        this.collidedProperty.set( false );
-        this.clearPath(); // so there is no sudden jump in path from old to new location
-        this.resetPositionAndVelocity( model );
-      }
-    },
-
-    /**
      * @public
      * Unexplodes and returns objects to the stage
      */

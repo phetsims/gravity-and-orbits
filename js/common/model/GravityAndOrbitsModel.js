@@ -174,23 +174,6 @@ define( function( require ) {
     },
 
     /**
-     * Unexplodes and returns objects to the stage
-     *
-     * @public
-     */
-    returnBodies: function() {
-
-      for ( var i = 0; i < this.bodies.length; i++ ) {
-        var body = this.bodies[ i ];
-        body.returnBody( this );
-      }
-
-      // Fixes: "Return object" should recalculate the gravity force vectors and update them even when paused ... right
-      // now it displays the force vectors of the prior situation before it moved the moon or planet.
-      this.updateForceVectors();
-    },
-
-    /**
      * Get the body associated with the name.  The name must be one of GAOBodiesEnum.
      *
      * @param  {string} name
