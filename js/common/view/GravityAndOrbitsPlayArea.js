@@ -37,7 +37,7 @@ define( function( require ) {
 
   // strings
   var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
-  var returnObjectString = require( 'string!GRAVITY_AND_ORBITS/returnObject' );
+  var returnObjectsString = require( 'string!GRAVITY_AND_ORBITS/returnObjects' );
   var vString = require( 'string!GRAVITY_AND_ORBITS/v' );
 
   // constants
@@ -169,7 +169,7 @@ define( function( require ) {
       return _.any( arguments, _.identity );
     } );
 
-    var returnButton = new TextPushButton( returnObjectString, {
+    var returnButton = new TextPushButton( returnObjectsString, {
       font: new PhetFont( 16 ),
       textFill: 'black',
       x: 100,

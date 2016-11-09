@@ -95,8 +95,8 @@
   "earthMinute": {
     "value": "Earth Minute"
   },
-  "returnObject": {
-    "value": "Return Object"
+  "returnObjects": {
+    "value": "Return Objects"
   },
   "star": {
     "value": "Star"
