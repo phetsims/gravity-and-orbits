@@ -48,12 +48,12 @@ define( function( require ) {
    * @param {Vector2} zoomOffset
    * @param {number} gridSpacing
    * @param {Vector2} gridCenter
-   * @param {ModeListParameterList} p
+   * @param {ModeListParameterList} parameterList
    * @constructor
    */
   function GravityAndOrbitsMode( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod,
                                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
-                                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, p ) {
+                                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList ) {
 
     // @public
     PropertySet.call( this, {
@@ -71,12 +71,12 @@ define( function( require ) {
     this.canvas = null; // @public
 
     this.dt = dt; // @private
-    this.p = p; // @private
+    this.parameterList = parameterList; // @`rivate
     this.forceScale = forceScale; // @private
     this.iconImage = iconImage; // @private
 
     // @private
-    this.playButtonPressedProperty = p.playButtonPressedProperty;
+    this.playButtonPressedProperty = parameterList.playButtonPressedProperty;
 
     // Precomputed value for the orbital period under default conditions (i.e. no other changes),
     // for purposes of determining the path length (about 2 orbits)
@@ -86,8 +86,8 @@ define( function( require ) {
     this.velocityVectorScale = velocityVectorScale; // @public
     this.gridSpacing = gridSpacing; // @public - in meters
     this.gridCenter = gridCenter; // @public
-    this.rewindingProperty = p.rewindingProperty; // save a reference to the rewinding property of p
-    this.timeSpeedScaleProperty = p.timeSpeedScaleProperty; // @public
+    this.rewindingProperty = parameterList.rewindingProperty; // save a reference to the rewinding property of p
+    this.timeSpeedScaleProperty = parameterList.timeSpeedScaleProperty; // @public
     this.timeFormatter = timeFormatter; // @public
 
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
@@ -102,9 +102,9 @@ define( function( require ) {
 
     // @private
     this.model = new GravityAndOrbitsModel(
-      new GravityAndOrbitsClock( dt, p.steppingProperty, this.timeSpeedScaleProperty ), p.gravityEnabledProperty );
+      new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.timeSpeedScaleProperty ), parameterList.gravityEnabledProperty );
 
-    Property.multilink( [ p.playButtonPressedProperty, this.activeProperty ], function( playButtonPressed, active ) {
+    Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ], function( playButtonPressed, active ) {
       self.model.clock.setRunning( playButtonPressed && active );
     } );
   }
