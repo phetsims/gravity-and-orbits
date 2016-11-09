@@ -42,7 +42,7 @@ define( function( require ) {
    * @param {Node} iconImage
    * @param {number} defaultOrbitalPeriod
    * @param {number} velocityVectorScale
-   * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory
+   * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory - returns a node for the representation
    * @param {Line} initialMeasuringTapeLocation
    * @param {number} defaultZoomScale
    * @param {Vector2} zoomOffset

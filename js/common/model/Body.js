@@ -44,16 +44,14 @@ define( function( require ) {
    * @param {boolean} massReadoutBelow
    * @param {number} tickValue
    * @param {string} tickLabel
-   * @param {Property.<boolean>} playButtonPressedProperty
-   * @param {Property.<boolean>} steppingProperty
-   * @param {Property.<boolean>} rewindingProperty
+   * @param {ModeListParameterList} parameterList - composition of Properties that determine body state
    * @param {boolean} fixed
    * @param {Object} [options]
    * @constructor
    */
   function Body( name, labelString, x, y, diameter, vx, vy, mass, color, highlight, renderer,
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
-                 playButtonPressedProperty, steppingProperty, rewindingProperty, fixed, options ) {
+                 parameterList, fixed, options ) {
 
     // @public
     PropertySet.call( this, {
@@ -103,11 +101,13 @@ define( function( require ) {
     this.renderer = renderer; // @private
 
     // @private
-    this.playButtonPressedProperty = playButtonPressedProperty;
+    this.playButtonPressedProperty = parameterList.playButtonPressedProperty;
+    var steppingProperty = parameterList.steppingProperty;
+    var rewindingProperty = parameterList.rewindingProperty;
 
     this.labelAngle = labelAngle; // @public
     var changeRewindValueProperty = new DerivedProperty(
-      [ playButtonPressedProperty, steppingProperty, rewindingProperty ],
+      [ this.playButtonPressedProperty, steppingProperty, rewindingProperty ],
       function( playButtonPressed, stepping, rewinding ) {
         return !playButtonPressed && !stepping && !rewinding;
       }

@@ -135,9 +135,7 @@ define( function( require ) {
         true,
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
-        parameterList.playButtonPressedProperty,
-        parameterList.steppingProperty,
-        parameterList.rewindingProperty,
+        parameterList,
         earthSpaceStation.spaceStation.fixed );
     }
 
@@ -169,9 +167,7 @@ define( function( require ) {
         massReadoutBelow,
         body.mass,
         ourMoonString,
-        parameterList.playButtonPressedProperty,
-        parameterList.steppingProperty,
-        parameterList.rewindingProperty,
+        parameterList,
         body.fixed,
         options );
     }
@@ -199,9 +195,7 @@ define( function( require ) {
         true,
         body.mass,
         earthString,
-        parameterList.playButtonPressedProperty,
-        parameterList.steppingProperty,
-        parameterList.rewindingProperty,
+        parameterList,
         body.fixed );
     }
 
@@ -228,9 +222,7 @@ define( function( require ) {
         true,
         body.mass,
         ourSunString,
-        parameterList.playButtonPressedProperty,
-        parameterList.steppingProperty,
-        parameterList.rewindingProperty,
+        parameterList,
         body.fixed );
       this.body = body;
     }
