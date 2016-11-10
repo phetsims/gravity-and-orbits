@@ -124,8 +124,6 @@ define( function( require ) {
         Color.white,
         getImageRenderer( spaceStationImage ),
         ( -Math.PI / 4),
-        true,
-        true,
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
         parameterList,
@@ -139,7 +137,9 @@ define( function( require ) {
     function Moon( massSettable, massReadoutBelow, body, options ) {
 
       options = _.extend( {
-        pathLengthBuffer: 0 // adjustment to moon path length so that it matches other traces at default settings
+        pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
+        massSettable: massSettable,
+        massReadoutBelow: massReadoutBelow
       }, options );
 
       Body.call(
@@ -150,8 +150,6 @@ define( function( require ) {
         Color.white,
         getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
         ( -3 * Math.PI / 4 ),
-        massSettable,
-        massReadoutBelow,
         body.mass,
         ourMoonString,
         parameterList,
@@ -170,8 +168,6 @@ define( function( require ) {
         Color.lightGray,
         getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
         ( -Math.PI / 4 ),
-        true,
-        true,
         body.mass,
         earthString,
         parameterList );
@@ -189,8 +185,6 @@ define( function( require ) {
         Color.white,
         getImageRenderer( sunImage ),
         ( -Math.PI / 4 ),
-        true,
-        true,
         body.mass,
         ourSunString,
         parameterList );

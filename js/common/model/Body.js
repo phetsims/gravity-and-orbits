@@ -48,28 +48,24 @@ define( function( require ) {
    * Constructor for Body
    * @param {string} name - unqique name for the body, one of GAOBodiesEnum, used for object identification
    * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
-   * @param {number} diameter
    * @param {Color} color
    * @param {Color} highlight
    * @param {function.<Body, number, BodyRenderer>} BodyRenderer - way to associate the graphical representation directly
    *                                                          instead of later with conditional logic or map
    * @param {number} labelAngle
-   * @param {boolean} massSettable
-   * @param {boolean} massReadoutBelow
-   * @param {number} tickValue
-   * @param {string} tickLabel
+   * @param {number} tickValue - default value for mass setting 
+   * @param {string} tickLabel - translatable label for the mass slider labeling the default value
    * @param {ModeListParameterList} parameterList - composition of Properties that determine body state
-   * @param {boolean} fixed
    * @param {Object} [options]
    * @constructor
    */
-  function Body( name, bodyConfiguration, color, highlight, renderer,
-                 labelAngle, massSettable, massReadoutBelow, tickValue, tickLabel,
-                 parameterList, options ) {
+  function Body( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, options ) {
 
     options = _.extend( {
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
-      diameterScale: 1 // scale factor applied to the diameter
+      diameterScale: 1, // scale factor applied to the diameter
+      massSettable: true, // can the mass of this body be set by the control panel?
+      massReadoutBelow: true // should the mass label appear below the body to prevent occlusion?
     }, options );
 
     var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
@@ -90,7 +86,7 @@ define( function( require ) {
     }, options );
     this.pathLengthBuffer = options.pathLengthBuffer; // @public (read-only)
 
-    this.massSettable = massSettable; // @public (read-only)
+    this.massSettable = options.massSettable; // @public (read-only)
 
     // @public number of samples in the path before it starts erasing (fading out from the back)
     this.maxPathLength = 0;
@@ -100,7 +96,7 @@ define( function( require ) {
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
-    this.massReadoutBelow = massReadoutBelow; // @public (read-only)
+    this.massReadoutBelow = options.massReadoutBelow; // @public (read-only)
 
     // value that this body's mass should be identified with, for 'planet' this will be the earth's mass
     this.tickValue = tickValue; // @public (read-only)
