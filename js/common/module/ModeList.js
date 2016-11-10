@@ -243,8 +243,9 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       parameterList ) );
 
-    // increase moon path length so that it matches other traces at default settings
-    var pathLengthBuffer = options.adjustMoonPathLength ? 150 : 0;
+    // increase moon path length so that it fades away with other bodies
+    // in model coordinates (at default orbit) 
+    var pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
     this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun ) );
     this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth ) );
     this.modes[ 1 ].addBody( new Moon( // no room for the slider

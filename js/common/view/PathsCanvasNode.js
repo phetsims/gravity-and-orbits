@@ -70,7 +70,11 @@ define( function( require ) {
           body.maxPathLength = canvasBounds.width;
         }
         else {
-          var maxPathLength = 2 * Math.PI * distToCenter * 0.85;
+          var pathLengthBuffer = 0;
+          if ( body.pathLengthBuffer > 0 ) {
+            pathLengthBuffer = transform.modelToViewDeltaX( body.pathLengthBuffer );
+          }
+          var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + pathLengthBuffer;
           body.maxPathLength = maxPathLength;
         }
 
