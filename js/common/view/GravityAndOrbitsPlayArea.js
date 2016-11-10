@@ -180,11 +180,7 @@ define( function( require ) {
         // all objects should be restored to their saved state, and then
         // pause the orbital mode
         mode.rewind();
-
-        // TODO: if the sim should pause once objects are returned,
-        // uncomment this line, see
-        // https://github.com/phetsims/gravity-and-orbits/issues/241
-        // mode.playButtonPressedProperty.set( false );
+        mode.playButtonPressedProperty.set( false );
       }
     } );
     this.addChild( returnButton );
