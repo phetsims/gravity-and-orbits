@@ -130,7 +130,6 @@ define( function( require ) {
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
         parameterList,
-        earthSpaceStation.spaceStation.fixed,
         { diameterScale: 1000 }
       );
     }
@@ -158,7 +157,6 @@ define( function( require ) {
         body.mass,
         ourMoonString,
         parameterList,
-        body.fixed,
         options );
     }
 
@@ -179,8 +177,7 @@ define( function( require ) {
         true,
         body.mass,
         earthString,
-        parameterList,
-        body.fixed );
+        parameterList );
     }
 
     inherit( Body, Earth );
@@ -200,8 +197,7 @@ define( function( require ) {
         true,
         body.mass,
         ourSunString,
-        parameterList,
-        body.fixed );
+        parameterList );
       this.body = body;
     }
 

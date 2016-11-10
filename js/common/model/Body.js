@@ -66,7 +66,7 @@ define( function( require ) {
    */
   function Body( name, bodyConfiguration, color, highlight, renderer,
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
-                 parameterList, fixed, options ) {
+                 parameterList, options ) {
 
     options = _.extend( {
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -110,7 +110,7 @@ define( function( require ) {
     this.tickLabel = tickLabel; // @public (read-only)
 
     // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
-    this.fixed = fixed; // @public (read-only)
+    this.fixed = bodyConfiguration.fixed; // @public (read-only)
     this.color = color; // @public (read-only)
     this.highlight = highlight; // @public (read-only)
     this.name = name; // @public (read-only)
