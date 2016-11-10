@@ -55,7 +55,6 @@ define( function( require ) {
    *                                                          instead of later with conditional logic or map
    * @param {number} labelAngle
    * @param {boolean} massSettable
-   * @param {number} maxPathLength
    * @param {boolean} massReadoutBelow
    * @param {number} tickValue
    * @param {string} tickLabel
@@ -65,7 +64,7 @@ define( function( require ) {
    * @constructor
    */
   function Body( name, bodyConfiguration, color, highlight, renderer,
-                 labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
+                 labelAngle, massSettable, massReadoutBelow, tickValue, tickLabel,
                  parameterList, options ) {
 
     options = _.extend( {

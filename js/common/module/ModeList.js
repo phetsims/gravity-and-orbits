@@ -115,7 +115,7 @@ define( function( require ) {
     }, options );
 
     // non-static inner class: SpaceStation
-    function SpaceStation( earthSpaceStation, maxPathLength ) {
+    function SpaceStation( earthSpaceStation ) {
       Body.call(
         this,
         GAOBodiesEnum.SATELLITE,
@@ -125,7 +125,6 @@ define( function( require ) {
         getImageRenderer( spaceStationImage ),
         ( -Math.PI / 4),
         true,
-        maxPathLength,
         true,
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
@@ -137,7 +136,7 @@ define( function( require ) {
     inherit( Body, SpaceStation );
 
     // non-static inner class: Moon
-    function Moon( massSettable, maxPathLength, massReadoutBelow, body, options ) {
+    function Moon( massSettable, massReadoutBelow, body, options ) {
 
       options = _.extend( {
         pathLengthBuffer: 0 // adjustment to moon path length so that it matches other traces at default settings
@@ -152,7 +151,6 @@ define( function( require ) {
         getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
         ( -3 * Math.PI / 4 ),
         massSettable,
-        maxPathLength,
         massReadoutBelow,
         body.mass,
         ourMoonString,
@@ -163,7 +161,7 @@ define( function( require ) {
     inherit( Body, Moon );
 
     // non-static inner class: Earth
-    function Earth( maxPathLength, body ) {
+    function Earth( body ) {
       Body.call(
         this,
         GAOBodiesEnum.PLANET,
@@ -173,7 +171,6 @@ define( function( require ) {
         getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
         ( -Math.PI / 4 ),
         true,
-        maxPathLength,
         true,
         body.mass,
         earthString,
@@ -183,7 +180,7 @@ define( function( require ) {
     inherit( Body, Earth );
 
     // non-static inner class: Sun
-    function Sun( maxPathLength, body ) {
+    function Sun( body ) {
       Body.call(
         this,
         GAOBodiesEnum.STAR,
@@ -193,7 +190,6 @@ define( function( require ) {
         getImageRenderer( sunImage ),
         ( -Math.PI / 4 ),
         true,
-        maxPathLength,
         true,
         body.mass,
         ourSunString,
@@ -234,8 +230,8 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       parameterList ) );
 
-    this.modes[ 0 ].addBody( new Sun( this.modes[ 0 ].getMaxPathLength(), sunEarth.sun ) );
-    this.modes[ 0 ].addBody( new Earth( this.modes[ 0 ].getMaxPathLength(), sunEarth.earth ) );
+    this.modes[ 0 ].addBody( new Sun( sunEarth.sun ) );
+    this.modes[ 0 ].addBody( new Earth( sunEarth.earth ) );
 
     this.modes.push( new GravityAndOrbitsMode(
       sunEarthMoon.forceScale,
@@ -255,10 +251,10 @@ define( function( require ) {
 
     // increase moon path length so that it matches other traces at default settings
     var pathLengthBuffer = options.adjustMoonPathLength ? 150 : 0;
-    this.modes[ 1 ].addBody( new Sun( this.modes[ 1 ].getMaxPathLength(), sunEarthMoon.sun ) );
-    this.modes[ 1 ].addBody( new Earth( this.modes[ 1 ].getMaxPathLength(), sunEarthMoon.earth ) );
+    this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun ) );
+    this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth ) );
     this.modes[ 1 ].addBody( new Moon( // no room for the slider
-      false, this.modes[ 1 ].getMaxPathLength(), false, // so it doesn't intersect with earth mass readout
+      false, false, // so it doesn't intersect with earth mass readout
       sunEarthMoon.moon, {
         pathLengthBuffer: pathLengthBuffer
       } ) );
@@ -280,8 +276,8 @@ define( function( require ) {
       new Vector2( earthMoon.earth.x, 0 ),
       parameterList ) );
 
-    this.modes[ 2 ].addBody( new Earth( this.modes[ 2 ].getMaxPathLength(), earthMoon.earth ) );
-    this.modes[ 2 ].addBody( new Moon( true, this.modes[ 2 ].getMaxPathLength(), true, earthMoon.moon ) );
+    this.modes[ 2 ].addBody( new Earth( earthMoon.earth ) );
+    this.modes[ 2 ].addBody( new Moon( true, true, earthMoon.moon ) );
 
     var spaceStationMassReadoutFactory = function( bodyNode, visibleProperty ) {
       return new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
@@ -303,8 +299,8 @@ define( function( require ) {
       new Vector2( earthSpaceStation.earth.x, 0 ),
       parameterList ) );
 
-    this.modes[ 3 ].addBody( new Earth( this.modes[ 3 ].getMaxPathLength(), earthSpaceStation.earth ) );
-    this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, this.modes[ 3 ].getMaxPathLength() ) );
+    this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth ) );
+    this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation ) );
   }
 
   gravityAndOrbits.register( 'ModeList.ModeListModule', ModeListModule );
