@@ -83,7 +83,6 @@ define( function( require ) {
           var pt = transformProperty.get().modelToViewPosition( point );
           self.namedPoints[ body.name ].points.push( pt );
         }
-        console.log( body.name + ' ' + self.namedPoints[ body.name ].points.length );
       }
 
       self.invalidatePaint();
@@ -230,10 +229,6 @@ define( function( require ) {
           j--;
         }
 
-        // remove unused points
-        if ( body.name === 'STAR' ) {
-          debugger;
-        }
         if ( body.pathLength > maxPathLength ) {
           while ( j >= 0 ) {
             body.path.shift();
