@@ -120,7 +120,6 @@ define( function( require ) {
         this,
         GAOBodiesEnum.SATELLITE,
         earthSpaceStation.spaceStation,
-        ( earthSpaceStation.spaceStation.radius * 2000 ),
         Color.gray,
         Color.white,
         getImageRenderer( spaceStationImage ),
@@ -131,7 +130,9 @@ define( function( require ) {
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
         parameterList,
-        earthSpaceStation.spaceStation.fixed );
+        earthSpaceStation.spaceStation.fixed,
+        { diameterScale: 1000 }
+      );
     }
 
     inherit( Body, SpaceStation );
@@ -147,7 +148,6 @@ define( function( require ) {
         this,
         GAOBodiesEnum.MOON,
         body,
-        ( body.radius * 2 ),
         Color.magenta,
         Color.white,
         getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
@@ -170,7 +170,6 @@ define( function( require ) {
         this,
         GAOBodiesEnum.PLANET,
         body,
-        ( body.radius * 2 ),
         Color.gray,
         Color.lightGray,
         getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
@@ -192,7 +191,6 @@ define( function( require ) {
         this,
         GAOBodiesEnum.STAR,
         body,
-        ( body.radius * 2 ),
         Color.yellow,
         Color.white,
         getImageRenderer( sunImage ),

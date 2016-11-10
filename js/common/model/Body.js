@@ -64,9 +64,16 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function Body( name, bodyConfiguration, diameter, color, highlight, renderer,
+  function Body( name, bodyConfiguration, color, highlight, renderer,
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
                  parameterList, fixed, options ) {
+
+    options = _.extend( {
+      pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
+      diameterScale: 1 // scale factor applied to the diameter
+    }, options );
+
+    var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
     // @public
     PropertySet.call( this, {
