@@ -69,7 +69,7 @@ define( function( require ) {
           body.maxPathLength = canvasBounds.width;
         }
         else {
-          var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + body.pathLengthBuffer;
+          var maxPathLength = 2 * Math.PI * distToCenter * 0.85;
           body.maxPathLength = maxPathLength;
         }
       }
