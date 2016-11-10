@@ -21,19 +21,34 @@ define( function( require ) {
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var Emitter = require( 'AXON/Emitter' );
 
+  // strings
+  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  // var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
+  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  // var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
+  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  // var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
+  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  // var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
+
+  // constants
+  // map the body identifier to the translatable label for the body
+  // must be one of GAOBodiesEnum
+  var LABEL_MAP = {
+    PLANET: planetString,
+    SATELLITE: satelliteString,
+    STAR: starString,
+    MOON: moonString
+  };
+
   // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
   var tempVector = new Vector2();
 
   /**
    * Constructor for Body
    * @param {string} name - unqique name for the body, one of GAOBodiesEnum, used for object identification
-   * @param {string} labelString - translatable string for the body, used for text labels
-   * @param {number} x
-   * @param {number} y
+   * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
    * @param {number} diameter
-   * @param {number} vx
-   * @param {number} vy
-   * @param {number} mass
    * @param {Color} color
    * @param {Color} highlight
    * @param {function.<Body, number, BodyRenderer>} BodyRenderer - way to associate the graphical representation directly
@@ -49,7 +64,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function Body( name, labelString, x, y, diameter, vx, vy, mass, color, highlight, renderer,
+  function Body( name, bodyConfiguration, diameter, color, highlight, renderer,
                  labelAngle, massSettable, maxPathLength, massReadoutBelow, tickValue, tickLabel,
                  parameterList, fixed, options ) {
 
@@ -89,10 +104,13 @@ define( function( require ) {
 
     // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
     this.fixed = fixed; // @public (read-only)
-    this.name = name; // @public (read-only)
-    this.labelString = labelString; // @public (read-only)
     this.color = color; // @public (read-only)
     this.highlight = highlight; // @public (read-only)
+    this.name = name; // @public (read-only)
+
+    // @public (read-only) - passed to visual labels, must be translatable
+    this.labelString = LABEL_MAP[ this.name ];
+    assert && assert( this.labelString, 'no label found for body with identifier ' + this.name );
 
     assert && assert( renderer !== null );
 
@@ -112,13 +130,13 @@ define( function( require ) {
         return !playButtonPressed && !stepping && !rewinding;
       }
     );
-    this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( x, y ) ); // @public
-    this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( vx, vy ) ); // @public
+    this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public
+    this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2() ); // @public
-    this.massProperty = new RewindableProperty( changeRewindValueProperty, mass ); // @public
+    this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass ); // @public
     this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
 
-    this.density = mass / this.getVolume(); // @public
+    this.density = bodyConfiguration.mass / this.getVolume(); // @public
 
     // true if the user is currently controlling the position of the body with the mouse
     this.userControlled = false; // @public

@@ -38,13 +38,13 @@ define( function( require ) {
   var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
   var earthMinuteString = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
   var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
-  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  // var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
   var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
-  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  // var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
   var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
-  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  // var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
   var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
-  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  // var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
 
   // images
@@ -119,13 +119,8 @@ define( function( require ) {
       Body.call(
         this,
         GAOBodiesEnum.SATELLITE,
-        satelliteString,
-        earthSpaceStation.spaceStation.x,
-        earthSpaceStation.spaceStation.y,
+        earthSpaceStation.spaceStation,
         ( earthSpaceStation.spaceStation.radius * 2000 ),
-        earthSpaceStation.spaceStation.vx,
-        earthSpaceStation.spaceStation.vy,
-        earthSpaceStation.spaceStation.mass,
         Color.gray,
         Color.white,
         getImageRenderer( spaceStationImage ),
@@ -151,13 +146,8 @@ define( function( require ) {
       Body.call(
         this,
         GAOBodiesEnum.MOON,
-        moonString,
-        body.x,
-        body.y,
+        body,
         ( body.radius * 2 ),
-        body.vx,
-        body.vy,
-        body.mass,
         Color.magenta,
         Color.white,
         getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
@@ -179,13 +169,8 @@ define( function( require ) {
       Body.call(
         this,
         GAOBodiesEnum.PLANET,
-        planetString,
-        body.x,
-        body.y,
+        body,
         ( body.radius * 2 ),
-        body.vx,
-        body.vy,
-        body.mass,
         Color.gray,
         Color.lightGray,
         getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
@@ -206,13 +191,8 @@ define( function( require ) {
       Body.call(
         this,
         GAOBodiesEnum.STAR,
-        starString,
-        body.x,
-        body.y,
+        body,
         ( body.radius * 2 ),
-        body.vx,
-        body.vy,
-        body.mass,
         Color.yellow,
         Color.white,
         getImageRenderer( sunImage ),
