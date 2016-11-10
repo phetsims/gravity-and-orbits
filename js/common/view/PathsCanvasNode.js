@@ -55,8 +55,9 @@ define( function( require ) {
     this.transformProperty = transformProperty;
 
     // when transform changes, update max path length so that the length is ~85% of the orbit,
-    // relative to the center of the canvas bounds (and therefore the central body)
-    // disposal unnecessary, the canvas node exists for life of xim
+    // relative to the center of the canvas bounds (and therefore the central body) and
+    // transform all body points and re paint the canvas
+    // disposal unnecessary, the canvas node exists for life of sim
     transformProperty.link( function( transform ) {
       for ( var i = 0; i < bodies.length; i++ ) {
         var body = bodies[ i ];
@@ -72,7 +73,20 @@ define( function( require ) {
           var maxPathLength = 2 * Math.PI * distToCenter * 0.85;
           body.maxPathLength = maxPathLength;
         }
+
+        // when the transform changes, we want to re-transform all points in a body
+        // path and then re paint the canvas
+        self.namedPoints[ body.name ].points = [];
+
+        for ( var j = 0; j < body.path.length; j++ ) {
+          var point = body.path[ j ];
+          var pt = transformProperty.get().modelToViewPosition( point );
+          self.namedPoints[ body.name ].points.push( pt );
+        }
+        console.log( body.name + ' ' + self.namedPoints[ body.name ].points.length );
       }
+
+      self.invalidatePaint();
     } );
 
     this.bodies = bodies; // @private
@@ -134,27 +148,6 @@ define( function( require ) {
       body.pointRemovedEmitter.addListener( self.pointRemovedListener.bind( self ) );
       body.clearedEmitter.addListener( self.clearedListener.bind( self ) );
     }
-
-    // when the transform changes, we want to re-transform all points in a body
-    // path and then re paint the canvas
-    transformProperty.link( function() {
-      for ( i = 0; i < bodies.length; i++ ) {
-        var body = bodies[ i ];
-
-        // clear the named points
-        self.namedPoints[ body.name ].points = [];
-
-        // re-transform each point in the body's path and add to the
-        // named points array
-        for ( var j = 0; j < body.path.length; j++ ) {
-          var point = body.path[ j ];
-          var pt = transformProperty.get().modelToViewPosition( point );
-          self.namedPoints[ body.name ].points.push( pt );
-        }
-      }
-
-      self.invalidatePaint();
-    } );
   }
 
   gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
@@ -238,6 +231,9 @@ define( function( require ) {
         }
 
         // remove unused points
+        if ( body.name === 'STAR' ) {
+          debugger;
+        }
         if ( body.pathLength > maxPathLength ) {
           while ( j >= 0 ) {
             body.path.shift();
