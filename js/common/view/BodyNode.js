@@ -144,9 +144,12 @@ define( function( require ) {
       } );
       node.addChild( text );
 
-      this.body.diameterProperty.link( function() {
+      // when transform or mass changes diameter, check for visibility change of label
+      var labelVisibilityListener = function() {
         node.visible = self.getViewDiameter() <= 10;
-      } );
+      };
+      this.body.diameterProperty.link( labelVisibilityListener );
+      this.modelViewTransformProperty.link( labelVisibilityListener );
 
       return node;
     },
