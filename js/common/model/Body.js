@@ -233,7 +233,8 @@ define( function( require ) {
     allBodiesUpdated: function() {
 
       // Only add to the path if the user isn't dragging it and if the body is not exploded
-      if ( !this.userControlled && !this.collidedProperty.get() ) {
+      // and the body is not fixed
+      if ( !this.userControlled && !this.collidedProperty.get() && !this.fixed ) {
         this.addPathPoint();
       }
     },
