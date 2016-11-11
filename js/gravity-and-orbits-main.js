@@ -22,9 +22,9 @@ define( function( require ) {
   var simOptions = {
     credits: {
       leadDesign: 'Amy Rouinfar, Noah Podolefsky, Emily Moore',
-      softwareDevelopment: 'Aaron Davis, Sam Reid, Jon Olson',
+      softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Sam Reid, Jon Olson',
       team: 'Kathy Perkins, Trish Loeblein',
-      qualityAssurance: 'Steele Dalton, Elise Morgan, Oliver Orejola, Bryan Yoelin',
+      qualityAssurance: 'Steele Dalton, Ethan Johnson, Elise Morgan, \n\tOliver Orejola, Ben Roberts, Bryan Yoelin',
       graphicArts: '',
       thanks: ''
     },
