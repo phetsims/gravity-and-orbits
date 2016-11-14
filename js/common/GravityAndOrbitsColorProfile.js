@@ -50,7 +50,7 @@ define( function( require ) {
       default: 'black',
       projector: 'white'
     }
-  } );
+  }, [ 'default', 'projector' ] );
 
   gravityAndOrbits.register( 'GravityAndOrbitsColorProfile', GravityAndOrbitsColorProfile );
 

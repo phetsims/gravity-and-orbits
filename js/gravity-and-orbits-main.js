@@ -34,11 +34,11 @@ define( function( require ) {
   SimLauncher.launch( function() {
 
     var cartoonScreen = new CartoonScreen( {
-      backgroundColor: GravityAndOrbitsColorProfile.background.toCSS()
+      backgroundColor: GravityAndOrbitsColorProfile.backgroundProperty.value.toCSS()
     } );
 
     var toScaleScreen = new ToScaleScreen( {
-      backgroundColor: GravityAndOrbitsColorProfile.background.toCSS()
+      backgroundColor: GravityAndOrbitsColorProfile.backgroundProperty.value.toCSS()
     } );
 
     GravityAndOrbitsColorProfile.backgroundProperty.link( function( color ) {
