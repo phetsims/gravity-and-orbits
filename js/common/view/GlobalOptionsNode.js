@@ -17,7 +17,6 @@ define( function( require ) {
   var CheckBox = require( 'SUN/CheckBox' );
   var OptionsDialog = require( 'JOIST/OptionsDialog' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var GravityAndOrbitsQueryParameters = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsQueryParameters' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   // strings
@@ -26,7 +25,7 @@ define( function( require ) {
   function GlobalOptionsNode() {
     var children = [];
 
-    var projectorModeProperty = new Property( GravityAndOrbitsQueryParameters.projectorMode );
+    var projectorModeProperty = new Property( phet.chipper.queryParameters.colorProfile === 'projector' );
     projectorModeProperty.link( function( projectorMode ) {
       if ( projectorMode ) {
         GravityAndOrbitsColorProfile.profileNameProperty.set( 'projector' );
