@@ -23,13 +23,9 @@ define( function( require ) {
 
   // strings
   var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
-  // var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
   var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
-  // var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
   var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
-  // var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
   var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
-  // var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
 
   // constants
   // map the body identifier to the translatable label for the body
