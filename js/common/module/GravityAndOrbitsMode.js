@@ -229,6 +229,10 @@ define( function( require ) {
       for ( var i = 0; i < bodies.length; i++ ) {
         bodies[ i ].rewind();
       }
+
+      // update the force vectors accordingly
+      this.model.updateForceVectors();
+      
       this.rewindingProperty.set( false );
     },
 
