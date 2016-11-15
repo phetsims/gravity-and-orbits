@@ -87,7 +87,11 @@ define( function( require ) {
 
       (function( bodyNode ) {
         var property = new DerivedProperty( [ bodies[ i ].positionProperty ], function() {
-          return !STAGE_SIZE.intersectsBounds( bodyNode.bounds );
+
+          // the return objects button should be visible when a body is out of bounds
+          // and not at the rewind position
+          var atRewindPosition = bodyNode.body.positionProperty.equalsRewindPoint();
+          return !STAGE_SIZE.intersectsBounds( bodyNode.bounds ) && !atRewindPosition;
         } );
         returnable.push( property );
       })( bodyNode );
