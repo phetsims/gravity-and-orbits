@@ -16,6 +16,7 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var PropertySet = require( 'AXON/PropertySet' );
+  var Property = require( 'AXON/Property' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
@@ -125,11 +126,14 @@ define( function( require ) {
     var steppingProperty = parameterList.steppingProperty;
     var rewindingProperty = parameterList.rewindingProperty;
 
+    // @public - force freeze all changes to the rewind values for rewindable Property
+    this.freezeRewindChangeProperty = new Property( false );
+
     this.labelAngle = labelAngle; // @public
     var changeRewindValueProperty = new DerivedProperty(
-      [ this.playButtonPressedProperty, steppingProperty, rewindingProperty ],
-      function( playButtonPressed, stepping, rewinding ) {
-        return !playButtonPressed && !stepping && !rewinding;
+      [ this.playButtonPressedProperty, steppingProperty, rewindingProperty, this.freezeRewindChangeProperty ],
+      function( playButtonPressed, stepping, rewinding, freezeRewind ) {
+        return !playButtonPressed && !stepping && !rewinding && !freezeRewind;
       }
     );
     this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public

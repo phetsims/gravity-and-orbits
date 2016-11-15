@@ -104,10 +104,16 @@ define( function( require ) {
     this.modelBoundsListener = function( dragBounds ) {
 
       // when changing the bounds, we want to set the bounds of the planet without modifying the position
-      // of the planets.  We store the position, and restore once drag bounds have been set.
+      // of the planets.  We store the position, and restore once drag bounds have been set
+      // these changes should never set rewindable values of the body Properties
+      self.body.freezeRewindChangeProperty.set( true );
       var oldPosition = self.body.positionProperty.value;
       dragHandler.setDragBounds( dragBounds );
       self.body.positionProperty.set( oldPosition );
+
+      // now unfreeze the Property rewindValues
+      self.body.freezeRewindChangeProperty.set( false );
+      
     };
     modelBoundsProperty.link( this.modelBoundsListener );
 
