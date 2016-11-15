@@ -86,7 +86,7 @@ define( function( require ) {
       bodyNode.addChild( massReadoutNode );
 
       (function( bodyNode ) {
-        var property = new DerivedProperty( [ bodies[ i ].positionProperty ], function() {
+        var property = new DerivedProperty( [ bodies[ i ].positionProperty, mode.zoomLevelProperty ], function() {
 
           // the return objects button should be visible when a body is out of bounds
           // and not at the rewind position
