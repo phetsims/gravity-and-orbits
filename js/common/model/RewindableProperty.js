@@ -87,9 +87,21 @@ define( function( require ) {
       this.rewindValueChangedListeners.push( listener );
     },
 
-    // @public
+    /**
+     * Check for equality between current and rewind values.  Supported types are number, boolean
+     * and Vector2.
+     *
+     * @public
+     * @return {boolean}
+     */
     equalsRewindPoint: function() {
-      return this.rewindValue === this.get();
+      // if an object, must call unique function to check for equality
+      if ( this.rewindValue.equals ) {
+        return this.rewindValue.equals( this.get() );
+      }
+      else {
+        return this.rewindValue === this.get();
+      }
     },
 
     // @public
