@@ -59,7 +59,11 @@ define( function( require ) {
     };
     anyPropertyChanged.link( this.propertyChangedListener );
 
-    HBox.call( this, _.extend( { resize: false, spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
+    HBox.call( this, _.extend( { spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
+
+    // temporary workaround for https://github.com/phetsims/scenery/issues/585
+    // once adressed, can be added to options
+    this.resize = false;
   }
 
   gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );
