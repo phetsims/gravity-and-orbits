@@ -141,6 +141,16 @@ define( function( require ) {
      */
     step: function( dt ) {
       this.eventTimer.step( dt );
+    },
+
+    /**
+     * Get the time step for the slowest speed of this clock.  Useful for
+     * normalizing time step in the model.
+     * 
+     * @return {number}
+     */
+    getSmallestTimeStep: function() {
+      return this.baseDTValue * GravityAndOrbitsConstants.SLOW_SPEED_SCALE;
     }
 
   }, {

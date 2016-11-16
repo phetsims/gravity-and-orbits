@@ -20,9 +20,6 @@ define( function( require ) {
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  // constants
-  var STARTING_VALUE = GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
-
   // strings
   var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
   var slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' );
@@ -51,9 +48,9 @@ define( function( require ) {
     var slowText = new Text( slowMotionString, textOptions );
 
     VerticalAquaRadioButtonGroup.call( this, [
-      { property: speedProperty, value: STARTING_VALUE * 1.75, node: fastText },
-      { property: speedProperty, value: STARTING_VALUE, node: normalText },
-      { property: speedProperty, value: STARTING_VALUE * 0.25, node: slowText }
+      { property: speedProperty, value: GravityAndOrbitsConstants.FAST_SPEED_SCALE, node: fastText },
+      { property: speedProperty, value: GravityAndOrbitsConstants.STARTING_SPEED_SCALE, node: normalText },
+      { property: speedProperty, value: GravityAndOrbitsConstants.SLOW_SPEED_SCALE, node: slowText }
     ], options );
   }
 
