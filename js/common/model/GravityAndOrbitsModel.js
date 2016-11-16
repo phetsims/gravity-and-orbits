@@ -63,7 +63,9 @@ define( function( require ) {
     var self = this;
     this.clock.addEventTimer( function( dt ) {
       self.clock.setSimulationTime( self.clock.dt + self.clock.getSimulationTime() );
-      self.step( self.clock.dt );
+
+      self.stepModel( self.clock.dt );
+      // self.step( self.clock.dt );
     }.bind( this ) );
 
     // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
@@ -73,6 +75,37 @@ define( function( require ) {
   gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
 
   return inherit( PropertySet, GravityAndOrbitsModel, {
+
+
+    /**
+     * Standardize the time step so that the play speed has no impact on the model.
+     * For a large time step, we break apart the change in time into a series of time
+     * steps.  This ensures that this.step and the next model state is calculated
+     * with consistent changes in time.
+     * 
+     * @param {number} dt
+     */
+    stepModel: function( dt ) {
+
+      // standardized time step - based on the slowest time step for the given orbital mode
+      var smallestTimeStep = this.clock.getSmallestTimeStep();
+
+      // get the number of times we will need to step the model based on the dt passed in
+      var numberOfSteps = dt / smallestTimeStep;
+
+      // get the remainder - we must step the model by this at the end so full dt is captured
+      var remainder = dt % smallestTimeStep;
+
+      // step the model by the smallest standard time step for the orbital mode
+      for ( var i = 0; i < numberOfSteps; i++ ) {
+        this.step( smallestTimeStep );
+      }
+
+      // if there is a remainder, step by that
+      if ( remainder > 0 ) {
+        this.step( remainder );
+      }
+    },
 
     /**
      * Step function for the model.  This function creates state objects and calculates state values for this step

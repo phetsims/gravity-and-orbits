@@ -15,6 +15,7 @@ define( function( require ) {
   // constants
   var CONTROL_PANEL_STROKE = '#8E9097';
   var PANEL_X_MARGIN = 5;
+  var STARTING_SPEED_SCALE = ( 0.1 + 2 ) / 4;
 
   var GravityAndOrbitsConstants = {
 
@@ -34,7 +35,10 @@ define( function( require ) {
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
     },
 
-    STARTING_SPEED_SCALE: (0.1 + 2) / 4
+    STARTING_SPEED_SCALE: STARTING_SPEED_SCALE,
+    FAST_SPEED_SCALE: STARTING_SPEED_SCALE * 1.75,
+    SLOW_SPEED_SCALE: STARTING_SPEED_SCALE * 0.25
+
   };
 
   gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
