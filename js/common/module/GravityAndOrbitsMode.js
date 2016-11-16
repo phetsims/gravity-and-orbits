@@ -181,7 +181,17 @@ define( function( require ) {
 
       body.massProperty.link( this.setDeviatedFromDefaults.bind( this ) );
       body.userModifiedPositionEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) );
-      body.userModifiedVelocityEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) ) ;
+      // body.userModifiedVelocityEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) ) ;
+
+      // if the user modifies velocity, save state while paused
+      var self = this;
+      body.userModifiedVelocityEmitter.addListener( function() {
+        self.setDeviatedFromDefaults();
+        
+        if ( !self.playButtonPressedProperty.get() ) {
+          self.saveState();
+        }
+      } );
     },
 
     /**
