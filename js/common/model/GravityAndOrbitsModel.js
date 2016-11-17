@@ -64,8 +64,10 @@ define( function( require ) {
     this.clock.addEventTimer( function( dt ) {
       self.clock.setSimulationTime( self.clock.dt + self.clock.getSimulationTime() );
 
-      self.stepModel( self.clock.dt );
-      // self.step( self.clock.dt );
+      // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253
+      // but introduces performance issues
+      // self.stepModel( self.clock.dt );
+      self.step( self.clock.dt );
     }.bind( this ) );
 
     // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
@@ -82,6 +84,10 @@ define( function( require ) {
      * For a large time step, we break apart the change in time into a series of time
      * steps.  This ensures that this.step and the next model state is calculated
      * with consistent changes in time.
+     *
+     * NOTE: This function is currently not used, but it fixes https://github.com/phetsims/gravity-and-orbits/issues/253
+     * However, it introduces performance issues because it increase the model computations by ~8x.
+     * If work continues in #253, this is a good place to start
      * 
      * @param {number} dt
      */
