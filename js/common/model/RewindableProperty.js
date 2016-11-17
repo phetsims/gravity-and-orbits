@@ -76,6 +76,7 @@ define( function( require ) {
      */
     storeRewindValueNoNotify: function() {
       this.rewindValue = this.get();
+      this.differentProperty.set( !this.equalsRewindPoint() );
     },
 
     /**
