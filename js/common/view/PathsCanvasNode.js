@@ -54,29 +54,11 @@ define( function( require ) {
     // @private
     this.transformProperty = transformProperty;
 
-    // when transform changes, update max path length so that the length is ~85% of the orbit,
-    // relative to the center of the canvas bounds (and therefore the central body) and
     // transform all body points and re paint the canvas
     // disposal unnecessary, the canvas node exists for life of sim
     transformProperty.link( function( transform ) {
       for ( var i = 0; i < bodies.length; i++ ) {
         var body = bodies[ i ];
-        var initialPosition = transform.modelToViewPosition( body.positionProperty.initialValue );
-        var distToCenter = canvasBounds.center.minus( initialPosition ).magnitude();
-
-        // if the initial position is too close to the center,
-        // default path length is the width of the bounds
-        if ( distToCenter < 1 ) {
-          body.maxPathLength = canvasBounds.width;
-        }
-        else {
-          var pathLengthBuffer = 0;
-          if ( body.pathLengthBuffer > 0 ) {
-            pathLengthBuffer = transform.modelToViewDeltaX( body.pathLengthBuffer );
-          }
-          var maxPathLength = 2 * Math.PI * distToCenter * 0.85 + pathLengthBuffer;
-          body.maxPathLength = maxPathLength;
-        }
 
         // when the transform changes, we want to re-transform all points in a body
         // path and then re paint the canvas
@@ -169,8 +151,9 @@ define( function( require ) {
         var body = this.bodies[ i ];
         var points = this.namedPoints[ body.name ].points;
 
-        var maxPathLength = body.maxPathLength;
-        var fadePathLength = body.maxPathLength * 0.15; // fade length is ~15% of the path
+        // max path length in view coordinates
+        var maxPathLength = this.transformProperty.get().modelToViewDeltaX( body.maxPathLength );
+        var fadePathLength = maxPathLength * 0.15; // fade length is ~15% of the path
 
         context.strokeStyle = body.color.toCSS();
         context.lineWidth = STROKE_WIDTH;
@@ -182,6 +165,10 @@ define( function( require ) {
         // so easiest to render backwards for fade-out.
         if ( points.length > 0 ) {
           context.moveTo( points[ points.length - 1 ].x, points[ points.length - 1 ].y );
+        }
+
+        if ( body.name === 'PLANET' ) {
+          // debugger;
         }
 
         j = points.length - 1;
@@ -235,7 +222,6 @@ define( function( require ) {
 
         if ( body.pathLength > maxPathLength ) {
           while ( j >= 0 ) {
-            body.path.shift();
             points.shift();
             j--;
           }

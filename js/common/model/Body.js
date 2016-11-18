@@ -53,16 +53,20 @@ define( function( require ) {
    * @param {number} tickValue - default value for mass setting 
    * @param {string} tickLabel - translatable label for the mass slider labeling the default value
    * @param {ModeListParameterList} parameterList - composition of Properties that determine body state
+   * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {Object} [options]
    * @constructor
    */
-  function Body( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, options ) {
+  function Body( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, transformProperty, options ) {
 
     options = _.extend( {
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
       diameterScale: 1, // scale factor applied to the diameter
       massSettable: true, // can the mass of this body be set by the control panel?
-      massReadoutBelow: true // should the mass label appear below the body to prevent occlusion?
+      massReadoutBelow: true, // should the mass label appear below the body to prevent occlusion?
+      orbitalCenter: new Vector2( 0, 0 ), // orbital center for the body
+      maxPathLength: 1400000000, // max path length for the body in km (should only be used if the body is too close to the center)
+      pathLengthLimit: 6000 // limit on the number of points in the path
     }, options );
 
     var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
@@ -90,6 +94,12 @@ define( function( require ) {
 
     // @public - total length of the current path
     this.pathLength = 0;
+
+    // @private - limit on the number of segments in the path
+    this.pathLengthLimit = options.pathLengthLimit;
+
+    // @public - total length of the current path in model coordinates
+    this.modelPathLength = 0;
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
@@ -155,6 +165,19 @@ define( function( require ) {
     this.collidedProperty.onValue( true, function() {
       self.clockTicksSinceExplosionProperty.set( 0 );
     } );
+
+    var initialPosition = self.positionProperty.initialValue.minus( options.orbitalCenter );
+    var distToCenter = initialPosition.magnitude();
+
+    // determine the max path length for the body in model coordinates
+    if ( distToCenter < 1000 ) {
+      // if too close to the center, use this optional length
+      self.maxPathLength = options.maxPathLength;
+    }
+    else {
+      // max path length is ~0.85 of a full orbit
+      self.maxPathLength = 0.85 * 2 * Math.PI * distToCenter + this.pathLengthBuffer;
+    }
   }
 
   gravityAndOrbits.register( 'Body', Body );
@@ -249,6 +272,27 @@ define( function( require ) {
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
       this.pointAddedEmitter.emit2( pathPoint, this.name );
+
+      // add the length to the tracked path length
+      if ( this.path.length > 2 ) {
+        var difference = this.path[ this.path.length - 1 ].minus( this.path[ this.path.length - 2 ] );
+        var addedMagnitude = difference.magnitude();
+
+        this.modelPathLength += addedMagnitude;
+      }
+
+      // remvove points from the path as the path gets too long
+      // if the path grows more than ~6000 points, start removing points
+      while ( this.modelPathLength  > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
+        var loss = this.path[ 1 ].minus( this.path[ 0 ] );
+        var lossMagnitude = loss.magnitude();
+
+        this.path.shift();
+        this.pointRemovedEmitter.emit2( this.name );
+
+        this.modelPathLength -= lossMagnitude;
+      }
+
     },
 
     /**
@@ -259,6 +303,7 @@ define( function( require ) {
     clearPath: function() {
       this.path = [];
       this.pathLength = 0;
+      this.modelPathLength = 0;
       this.clearedEmitter.emit1( this.name );
     },
 
