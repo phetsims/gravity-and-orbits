@@ -74,6 +74,7 @@ define( function( require ) {
 
       var sliderVBox = new VBox( {
         top: labelHBox.bottom + 10,
+        resize: false,
         children: [
           new HStrut( 220 ),
           new BodyMassControl(
@@ -84,10 +85,6 @@ define( function( require ) {
             massSettableBody.tickLabel )
         ]
       } );
-
-      // temporary workaround for https://github.com/phetsims/gravity-and-orbits/issues/251
-      // once adressed, resize can be moved back to options
-      sliderVBox.resize = false;
 
       sliderNode.addChild( sliderVBox );
       children.push( sliderNode );
