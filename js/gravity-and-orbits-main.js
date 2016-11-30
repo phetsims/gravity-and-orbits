@@ -23,7 +23,7 @@ define( function( require ) {
     credits: {
       leadDesign: 'Emily Moore, Noah Podolefsky, Amy Rouinfar',
       softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Jon Olson, Sam Reid',
-      team: 'Kathy Perkins, Trish Loeblein',
+      team: 'Trish Loeblein, Ariel Paul, Kathy Perkins',
       qualityAssurance: 'Steele Dalton, Ethan Johnson, Elise Morgan, \n\tOliver Orejola, Ben Roberts, Bryan Yoelin',
       graphicArts: '',
       thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
