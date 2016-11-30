@@ -22,6 +22,7 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
@@ -84,7 +85,7 @@ define( function( require ) {
         spacing: SPACING,
         children: [
           velocityTextNode,
-          new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: '#ED1C24' } )
+          new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.RED_COLORBLIND } )
         ]
       } ),
       module.showVelocityProperty, CHECKBOX_OPTIONS ) );
