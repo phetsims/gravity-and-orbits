@@ -45,8 +45,8 @@ define( function( require ) {
       trackStroke: GravityAndOrbitsColorProfile.panelTextProperty,
 
       // ticks
-      tickLabelSpacing: 5,
-      majorTickLength: 17,
+      tickLabelSpacing: 3,
+      majorTickLength: 13,
       majorTickStroke: GravityAndOrbitsColorProfile.panelTextProperty,
 
       // custom thumb
