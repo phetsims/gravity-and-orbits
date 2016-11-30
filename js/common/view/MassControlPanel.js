@@ -90,7 +90,7 @@ define( function( require ) {
       children.push( sliderNode );
     }
 
-    var vBox = new VBox( { children: children, spacing: 25, y: 5, resize: false, align: 'left' } );
+    var vBox = new VBox( { children: children, spacing: 15, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vBox, options );
   }
 

@@ -33,16 +33,24 @@ define( function( require ) {
 
     options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
-    var makeSeparatorRectangle = function() {
-      return new Rectangle( 0, 0, 0, 2, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
+    // top separator rectangle for the gravity control section
+    var makeTopSeparatorRectangle = function() {
+      return new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
+    };
+
+    // make bottom separator rectangle for the gravity control
+    // slightly taller - the vertical draw of the 'y' in gravity creates the illusion that
+    // the top has more space
+    var makeBottomSeparatorRectangle = function() {
+      return new Rectangle( 0, 0, 0, 4, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
     };
 
     // menu sections and separators
     var sections = [
       new ModeControl( module.modeProperty, module.getModes(), MENU_SECTION_OPTIONS ),
-      makeSeparatorRectangle(),
+      makeTopSeparatorRectangle(),
       new GravityControl( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
-      makeSeparatorRectangle(),
+      makeBottomSeparatorRectangle(),
       new CheckboxPanel( module, MENU_SECTION_OPTIONS )
     ];
 
