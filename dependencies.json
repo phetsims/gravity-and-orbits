@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.1.0-dev.1 Wed Nov 30 2016 13:02:46 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.1.0-dev.2 Wed Nov 30 2016 14:04:44 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "47c12d191b9697389f0ad0e9ca7b48e276bfb79f",
     "branch": "master"
@@ -13,7 +13,7 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "524e18a7d5aa3922966c6c8e6dd2b0416a898d37",
+    "sha": "e680a7340798a0894cbe64f4e6c89e3f92fb1be6",
     "branch": "master"
   },
   "dot": {
@@ -21,11 +21,11 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "a5375e6b1a9b0be55413a2d80a8b9b454921d4c7",
+    "sha": "441a4fcc79a1c562a22e9220619fd75e6b22fcc9",
     "branch": "master"
   },
   "joist": {
-    "sha": "abfc1bdc3ef5fd07f35e2359be8e2a8ade6034f1",
+    "sha": "1a2eb2526e7cfcf3f39311e2280e810781a388a1",
     "branch": "master"
   },
   "kite": {
@@ -49,7 +49,7 @@
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "a3ccf91d85c2da3a6c5160d7c2a4c03e5338e573",
+    "sha": "226f5a1c5967a8d2db5e60ab9d5d53636411f8e0",
     "branch": "master"
   },
   "sherpa": {
