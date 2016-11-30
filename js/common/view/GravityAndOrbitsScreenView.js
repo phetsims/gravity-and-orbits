@@ -82,7 +82,7 @@ define( function( require ) {
         module.reset();
       },
       right: this.layoutBounds.right - MARGIN,
-      bottom: this.layoutBounds.bottom - MARGIN
+      bottom: this.layoutBounds.bottom - MARGIN - 4 // slight difference centers below panels
     } );
     this.addChild( resetAllButton );
   }
