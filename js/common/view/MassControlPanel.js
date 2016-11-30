@@ -73,7 +73,7 @@ define( function( require ) {
       sliderNode.addChild( labelHBox );
 
       var sliderVBox = new VBox( {
-        top: labelHBox.bottom + 10,
+        top: labelHBox.bottom + 8,
         resize: false,
         children: [
           new HStrut( 220 ),
@@ -90,7 +90,7 @@ define( function( require ) {
       children.push( sliderNode );
     }
 
-    var vBox = new VBox( { children: children, spacing: 4, y: 5, resize: false, align: 'left' } );
+    var vBox = new VBox( { children: children, spacing: 25, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vBox, options );
   }
 
