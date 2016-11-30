@@ -26,7 +26,7 @@ define( function( require ) {
       team: 'Kathy Perkins, Trish Loeblein',
       qualityAssurance: 'Steele Dalton, Ethan Johnson, Elise Morgan, \n\tOliver Orejola, Ben Roberts, Bryan Yoelin',
       graphicArts: '',
-      thanks: ''
+      thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to HTML5.'
     },
     optionsNode: new GlobalOptionsNode()
   };
