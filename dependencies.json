@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.0.1 Tue Dec 06 2016 13:05:23 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.0.2-rc.2 Tue Dec 06 2016 15:20:58 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "845be6b591cb746b0b05b7023208aef2e49a8855",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "4aa8455dd21972b654256aa4693fb650cf3a1f2d",
+    "sha": "3ce79b5147585197e904f3ee582ad9a1c6cd9ae3",
     "branch": "1.0"
   },
   "joist": {
@@ -38,7 +38,7 @@
   },
   "phetcommon": {
     "sha": "4083a8965523cd0a05065cfaaf95ebcc0ddac724",
-    "branch": "gravity-and-orbits-1.0"
+    "branch": "HEAD"
   },
   "query-string-machine": {
     "sha": "13ba45df40a07ab84f4942ce3797607ac179b28b",
