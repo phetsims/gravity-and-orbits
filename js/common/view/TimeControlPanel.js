@@ -50,7 +50,7 @@ define( function( require ) {
     }
 
     var anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
-      return _.any( arguments, _.identity );
+      return _.some( arguments, _.identity );
     } );
 
     // @private

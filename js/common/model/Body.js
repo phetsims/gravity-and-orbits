@@ -374,7 +374,7 @@ define( function( require ) {
       var properties = [ this.positionProperty.different(), this.velocityProperty.different(),
         this.massProperty.different(), this.collidedProperty.different() ];
       return new DerivedProperty( properties, function() {
-        return _.any( arguments, _.identity );
+        return _.some( arguments, _.identity );
       } );
     },
 

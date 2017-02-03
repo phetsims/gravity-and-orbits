@@ -170,7 +170,7 @@ define( function( require ) {
 
     // If any body is out of bounds, show a "return object" button
     var anythingReturnable = new DerivedProperty( returnable, function() {
-      return _.any( arguments, _.identity );
+      return _.some( arguments, _.identity );
     } );
 
     var returnButton = new TextPushButton( returnObjectsString, {
