@@ -79,6 +79,10 @@ define( function( require ) {
     } );
     this.addInputListener( dragHandler );
 
+    // rotate the node with the rotation property
+    var rotationListener = function( rotation ) { self.rotation = rotation; };
+    body.rotationProperty.link( rotationListener );
+
     // create position and diameter listeners so that they can be unlinked
     // for garbage collectiona and so that anonymous closures are not necessary
     // through multilink

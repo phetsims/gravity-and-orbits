@@ -37,6 +37,17 @@ define( function( require ) {
   var SUN_EARTH_MODE_TIME_SCALE = 365.0 / 334.0;
 
   /**
+   * Convenience function that converts days to seconds, using
+   *   days * hoursPerDay * minutesPerHour * secondsPerMinue
+   *   
+   * @param  {number} days
+   * @return {number}
+   */
+  function daysToSeconds( days ) {
+    return days * 24 * 60 * 60;
+  }
+
+  /**
    * @param {Property.<boolean>} playButtonPressedProperty
    * @param {Property.<boolean>} gravityEnabledProperty
    * @param {Property.<boolean>} steppingProperty
@@ -111,7 +122,12 @@ define( function( require ) {
 
   function EarthMoonModeConfig() {
 
-    ModeList.EarthMoonModeConfig.call( this );
+    // moon rotation period is 27.322 days
+    var moonRotationPeriod = daysToSeconds( 27.322 ); 
+
+    ModeList.EarthMoonModeConfig.call( this, {
+      moonRotationPeriod: moonRotationPeriod
+    } );
 
     var radiusMultiplier = 15; // tuned by hand
     this.earth.radius *= radiusMultiplier;

@@ -14,14 +14,16 @@ define( function( require ) {
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
-   * @param {Vector2} position
-   * @param {Vector2} velocity
-   * @param {Vector2} acceleration
-   * @param {number} mass
+   * @param {Vector2} position - in m
+   * @param {Vector2} velocity - in m/s
+   * @param {Vector2} acceleration - in m/s^2
+   * @param {number} mass - in kg
    * @param {boolean} exploded
+   * @param {number} rotation - in seconds
+   * @param {number} rotationPeriod - in seconds
    * @constructor
    */
-  function BodyState( position, velocity, acceleration, mass, exploded ) {
+  function BodyState( position, velocity, acceleration, mass, exploded, rotation, rotationPeriod ) {
 
     // @public
     this.position = position;
@@ -29,6 +31,8 @@ define( function( require ) {
     this.acceleration = acceleration;
     this.mass = mass;
     this.exploded = exploded;
+    this.rotation = rotation;
+    this.rotationPeriod = rotationPeriod;
   }
 
   gravityAndOrbits.register( 'BodyState', BodyState );

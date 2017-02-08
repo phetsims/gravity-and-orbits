@@ -22,9 +22,14 @@ define( function( require ) {
    * @param {number} y
    * @param {number} vx
    * @param {number} vy
+   * @param {Object} [options]
    * @constructor
    */
-  function BodyConfiguration( mass, radius, x, y, vx, vy ) {
+  function BodyConfiguration( mass, radius, x, y, vx, vy, options ) {
+
+    options = _.extend( {
+      rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
+    }, options );
 
     // @public
     this.fixed = false; // True if the object doesn't move when the clock ticks
@@ -34,6 +39,7 @@ define( function( require ) {
     this.y = y;
     this.vx = vx;
     this.vy = vy;
+    this.rotationPeriod = options.rotationPeriod;
   }
 
   gravityAndOrbits.register( 'BodyConfiguration', BodyConfiguration );

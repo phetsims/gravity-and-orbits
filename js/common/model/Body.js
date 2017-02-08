@@ -66,7 +66,8 @@ define( function( require ) {
       massReadoutBelow: true, // should the mass label appear below the body to prevent occlusion?
       orbitalCenter: new Vector2( 0, 0 ), // orbital center for the body
       maxPathLength: 1400000000, // max path length for the body in km (should only be used if the body is too close to the center)
-      pathLengthLimit: 6000 // limit on the number of points in the path
+      pathLengthLimit: 6000, // limit on the number of points in the path
+      rotationPeriod: null, // period of body rotation, in seconds - null rotation period will prevent rotation
     }, options );
 
     var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
@@ -117,6 +118,9 @@ define( function( require ) {
     this.highlight = highlight; // @public (read-only)
     this.name = name; // @public (read-only)
 
+    // @public (read-only) - period of rotation for the body in seconds
+    this.rotationPeriod = options.rotationPeriod;
+
     // @public (read-only) - passed to visual labels, must be translatable
     this.labelString = LABEL_MAP[ this.name ];
     assert && assert( this.labelString, 'no label found for body with identifier ' + this.name );
@@ -142,11 +146,14 @@ define( function( require ) {
         return !playButtonPressed && !stepping && !rewinding && !freezeRewind;
       }
     );
+
+    // rewindable properties - body states can be rewound, and these properties can have saved states to support this
     this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2() ); // @public
     this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass ); // @public
     this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
+    this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0 ); // @public
 
     this.density = bodyConfiguration.mass / this.getVolume(); // @public
 
@@ -208,12 +215,16 @@ define( function( require ) {
      * @return {BodyState}
      */
     toBodyState: function() {
+
       return new BodyState(
         this.positionProperty.get().copy(),
         this.velocityProperty.get().copy(),
         this.accelerationProperty.get().copy(),
         this.massProperty.get(),
-        this.collidedProperty.get() );
+        this.collidedProperty.get(),
+        this.rotationProperty.get(),
+        this.rotationPeriod
+      );
     },
 
     /**
@@ -244,6 +255,7 @@ define( function( require ) {
         }
         this.accelerationProperty.set( bodyState.acceleration );
         this.forceProperty.set( bodyState.acceleration.multiplyScalar( bodyState.mass ) );
+        this.rotationProperty.set( bodyState.rotation );
       }
     },
 

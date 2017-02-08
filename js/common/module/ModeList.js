@@ -145,7 +145,8 @@ define( function( require ) {
       options = _.extend( {
         pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
         massSettable: massSettable,
-        massReadoutBelow: massReadoutBelow
+        massReadoutBelow: massReadoutBelow,
+        rotationPeriod: null // rotation period in seconds, null means no rotation
       }, options );
 
       Body.call(
@@ -293,8 +294,10 @@ define( function( require ) {
     this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, {
       orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
     } ) );
+
     this.modes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, {
-      orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
+      orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
+      rotationPeriod: earthMoon.moon.rotationPeriod
     } ) );
 
     var spaceStationMassReadoutFactory = function( bodyNode, visibleProperty ) {
@@ -409,12 +412,22 @@ define( function( require ) {
     }
   } );
 
-  // static class: EarthMoonModeConfig
-  function EarthMoonModeConfig() {
+  /**
+   * Configuration for the Earh+Moon system.
+   * @param {Object} [options]
+   */
+  function EarthMoonModeConfig( options ) {
+
+    options = _.extend( {
+      moonRotationPeriod: null // rotation period for the moon in seconds, null means no rotation
+    }, options );
 
     // @public
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
-    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0 );
+    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0, {
+      rotationPeriod: options.moonRotationPeriod
+    } );
+
     ModeConfig.call( this, 400 );
     this.initialMeasuringTapeLocation = new Line(
       this.earth.x + this.earth.radius * 2,

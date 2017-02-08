@@ -126,7 +126,7 @@ define( function( require ) {
 
       // Compute the next state for each body based on the current state of all bodies in the system.
       var bodyStates = this.bodies.map( getBodyState );
-      var newState = new ModelState( bodyStates ).getNextState( dt, this.gravityEnabledProperty );
+      var newState = new ModelState( bodyStates, this.clock ).getNextState( dt, this.gravityEnabledProperty );
 
       // Set each body to its computed next state.
       // assumes that ModelState.getBodyState returns states in the same order as the container (ArrayList) used for

@@ -30,10 +30,12 @@ define( function( require ) {
 
   /**
    * @param {Array.<BodyState>} bodyStates
+   * @param {GravityAndOrbitsClock} clock
    * @constructor
    */
-  function ModelState( bodyStates ) {
+  function ModelState( bodyStates, clock ) {
     this.bodyStates = bodyStates; // @private
+    this.clock = clock; // @private
   }
 
   gravityAndOrbits.register( 'ModelState', ModelState );
@@ -101,6 +103,36 @@ define( function( require ) {
         var acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
         bodyState.acceleration.setXY( acceleration.x, acceleration.y );
       }
+    },
+
+    /**
+     * Update rotations of all bodies in the sim. Some bodies need to rotate so that during orbital motion they 
+     * always point toward the earth. Only some bodies require rotation.
+     * @private
+     */
+    updateRotations: function() {
+      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+        var bodyState = this.bodyStates[ i ];
+
+        // only rotate if necessary
+        if ( bodyState.rotationPeriod !== null ) {
+          var rotation = this.getRotation( bodyState.rotationPeriod );
+          bodyState.rotation = rotation; 
+        }
+      }
+    },
+
+    /**
+     * Get rotation of the body, based on the body's rotation period and the elapsed sim time.
+     * @param {number} rotationPeriod
+     * @private
+     */
+    getElapsedRotation: function( rotationPeriod ) {
+      var timeElapsed = this.clock.simulationTimeProperty.get();
+      var elapsedRotation = ( timeElapsed % rotationPeriod ) / rotationPeriod;
+
+      // negative one so that rotation is counter clockwise (with orbital motion)
+      return ( -1 ) * elapsedRotation * 2 * Math.PI;
     },
 
     /**
@@ -186,10 +218,12 @@ define( function( require ) {
       // set the acceleration to zero.
       this.setAccelerationToZero();
 
+      // update the body rotations
+      this.updateRotations();
+
       // return this ModelState mutated instead of a new ModelState with new Vector2 for performance reasons
       return this;
     },
-
 
     /**
      * Updates the model, producing the next ModelState when gravity is present
@@ -255,6 +289,9 @@ define( function( require ) {
       // Update the new acceleration
       //-------------
       this.updateAccelerations();
+
+      // update the body rotations
+      this.updateRotations();
 
       // return this ModelState mutated instead of a new ModelState with new Vector2 for performance reasons
       return this;
