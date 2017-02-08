@@ -116,7 +116,7 @@ define( function( require ) {
 
         // only rotate if necessary
         if ( bodyState.rotationPeriod !== null ) {
-          var rotation = this.getRotation( bodyState.rotationPeriod );
+          var rotation = this.getElapsedRotation( bodyState.rotationPeriod );
           bodyState.rotation = rotation; 
         }
       }

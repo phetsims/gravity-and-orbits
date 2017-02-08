@@ -324,7 +324,9 @@ define( function( require ) {
     this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, {
       maxPathLength: 35879455 // in km
     } ) );
-    this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty ) );
+    this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, {
+      rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
+    } ) );
   }
 
   gravityAndOrbits.register( 'ModeList.ModeListModule', ModeListModule );
@@ -446,12 +448,18 @@ define( function( require ) {
   } );
 
   // static class: EarthSpaceStationModeConfig
-  function EarthSpaceStationModeConfig() {
+  function EarthSpaceStationModeConfig( options ) {
+
+    options = _.extend( {
+      spaceStationRotationPeriod: null // rotation period in seconds, null means no rotation
+    }, options );
 
     // @public
     this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
     this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
-      SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED );
+      SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
+        rotationPeriod: options.spaceStationRotationPeriod
+      } );
     ModeConfig.call( this, 21600 );
 
     // @public
