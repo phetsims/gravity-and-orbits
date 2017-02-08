@@ -24,12 +24,19 @@ define( function( require ) {
    * @constructor
    */
   function RealModeList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
+
+    // satellite takes ~90 minutes to make a full rotation
+    var spaceStationRotationPeriod = 91.667 * 60;
+    var earthSpaceStationModeList = new ModeList.EarthSpaceStationModeConfig( {
+      spaceStationRotationPeriod: spaceStationRotationPeriod
+    } );
+
     ModeList.ModeList.call( this,
       new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ),
       new ModeList.SunEarthModeConfig(),
       new ModeList.SunEarthMoonModeConfig(),
       new ModeList.EarthMoonModeConfig(),
-      new ModeList.EarthSpaceStationModeConfig() );
+      earthSpaceStationModeList );
   }
 
   gravityAndOrbits.register( 'RealModeList', RealModeList );

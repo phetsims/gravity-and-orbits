@@ -80,7 +80,7 @@ define( function( require ) {
     this.addInputListener( dragHandler );
 
     // rotate the node with the rotation property
-    var rotationListener = function( rotation ) { self.rotation = rotation; };
+    var rotationListener = function( rotation ) { self.bodyRenderer.rotation = rotation; };
     body.rotationProperty.link( rotationListener );
 
     // create position and diameter listeners so that they can be unlinked
