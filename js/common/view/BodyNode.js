@@ -53,7 +53,6 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     // images rotate the target body with the rotation property
-    var self = this;
     var rotationListener = function( rotation ) {
 
       // if the body has a 'target mass' representation, only rotate that one
