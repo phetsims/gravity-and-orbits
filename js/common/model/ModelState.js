@@ -129,7 +129,6 @@ define( function( require ) {
      */
     getElapsedRotation: function( rotationPeriod ) {
       var timeElapsed = this.clock.simulationTimeProperty.get();
-      console.log( timeElapsed );
       var elapsedRotation = ( timeElapsed % rotationPeriod ) / rotationPeriod;
 
       // negative one so that rotation is counter clockwise (with orbital motion)
