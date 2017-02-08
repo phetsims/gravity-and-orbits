@@ -52,6 +52,20 @@ define( function( require ) {
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
     this.addChild( this.bodyRenderer );
 
+    // images rotate the target body with the rotation property
+    var self = this;
+    var rotationListener = function( rotation ) {
+
+      // if the body has a 'target mass' representation, only rotate that one
+      if ( self.bodyRenderer.targetBodyRenderer ) {
+        self.bodyRenderer.targetBodyRenderer.rotation = rotation;
+      }
+      else {
+        self.bodyRenderer.rotation = rotation;
+      }
+    };
+    body.rotationProperty.link( rotationListener );
+
     var dragHandler = new MovableDragHandler( this.body.positionProperty, {
       dragBounds:modelBoundsProperty.value,
       modelViewTransform: self.modelViewTransformProperty.value,
@@ -80,8 +94,11 @@ define( function( require ) {
     this.addInputListener( dragHandler );
 
     // rotate the node with the rotation property
-    var rotationListener = function( rotation ) { self.bodyRenderer.rotation = rotation; };
-    body.rotationProperty.link( rotationListener );
+    // var rotationListener = function( rotation ) {
+    //   if ( self.body.mass)
+    //   self.bodyRenderer.rotation = rotation;
+    // };
+    // body.rotationProperty.link( rotationListener );
 
     // create position and diameter listeners so that they can be unlinked
     // for garbage collectiona and so that anonymous closures are not necessary

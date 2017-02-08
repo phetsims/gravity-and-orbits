@@ -74,8 +74,9 @@ define( function( require ) {
 
     BodyRenderer.call( this, body );
 
-    this.targetBodyRenderer = targetBodyRenderer; // @private
-    this.defaultBodyRenderer = defaultBodyRenderer; // @private
+    // @public (read only)
+    this.targetBodyRenderer = targetBodyRenderer;
+    this.defaultBodyRenderer = defaultBodyRenderer;
 
     // @private - so new closure need not be defined
     this.massListener = function() {
@@ -84,6 +85,7 @@ define( function( require ) {
       this.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
     };
     body.massProperty.link( this.massListener.bind( this ) );
+
   }
 
   gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
