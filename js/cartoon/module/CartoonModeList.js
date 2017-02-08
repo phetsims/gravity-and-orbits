@@ -149,7 +149,7 @@ define( function( require ) {
   function EarthSpaceStationModeConfig() {
 
     // satellite takes ~90 minutes to make a full rotation
-    var spaceStationRotationPeriod = 91.667 * 60;
+    var spaceStationRotationPeriod = 91.4 * 60;
 
     ModeList.EarthSpaceStationModeConfig.call( this, {
       spaceStationRotationPeriod: spaceStationRotationPeriod

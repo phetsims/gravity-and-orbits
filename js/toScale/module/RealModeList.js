@@ -26,7 +26,7 @@ define( function( require ) {
   function RealModeList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
 
     // satellite takes ~90 minutes to make a full rotation
-    var spaceStationRotationPeriod = 91.667 * 60;
+    var spaceStationRotationPeriod = 91.4 * 60;
     var earthSpaceStationModeList = new ModeList.EarthSpaceStationModeConfig( {
       spaceStationRotationPeriod: spaceStationRotationPeriod
     } );

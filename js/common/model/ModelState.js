@@ -109,15 +109,17 @@ define( function( require ) {
      * Update rotations of all bodies in the sim. Some bodies need to rotate so that during orbital motion they 
      * always point toward the earth. Only some bodies require rotation.
      * @private
+     *
+     * @param {number} dt (seconds)
      */
-    updateRotations: function() {
+    updateRotations: function( dt ) {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
         var bodyState = this.bodyStates[ i ];
 
         // only rotate if necessary
         if ( bodyState.rotationPeriod !== null ) {
-          var rotation = this.getElapsedRotation( bodyState.rotationPeriod );
-          bodyState.rotation = rotation; 
+          var rotation = this.getDeltaRotation( bodyState.rotationPeriod, dt );
+          bodyState.rotation = bodyState.rotation + rotation;
         }
       }
     },
@@ -125,14 +127,14 @@ define( function( require ) {
     /**
      * Get rotation of the body, based on the body's rotation period and the elapsed sim time.
      * @param {number} rotationPeriod
+     * @param {number} dt - delta time (seconds)
      * @private
      */
-    getElapsedRotation: function( rotationPeriod ) {
-      var timeElapsed = this.clock.simulationTimeProperty.get();
-      var elapsedRotation = ( timeElapsed % rotationPeriod ) / rotationPeriod;
+    getDeltaRotation: function( rotationPeriod, dt ) {
 
+      // convert delta time to rotation in orbit
       // negative one so that rotation is counter clockwise (with orbital motion)
-      return ( -1 ) * elapsedRotation * 2 * Math.PI;
+      return ( ( -1 ) * Math.PI * 2 * dt ) / rotationPeriod;
     },
 
     /**
@@ -219,7 +221,7 @@ define( function( require ) {
       this.setAccelerationToZero();
 
       // update the body rotations
-      this.updateRotations();
+      this.updateRotations( dt );
 
       // return this ModelState mutated instead of a new ModelState with new Vector2 for performance reasons
       return this;
@@ -291,7 +293,7 @@ define( function( require ) {
       this.updateAccelerations();
 
       // update the body rotations
-      this.updateRotations();
+      this.updateRotations( dt );
 
       // return this ModelState mutated instead of a new ModelState with new Vector2 for performance reasons
       return this;
