@@ -23,6 +23,9 @@ define( function( require ) {
   var EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
   var EARTH_MASS_SCALE_FACTOR = 10200; // tuned by hand so there are 12 cartoon lunar orbits in one cartoon earth orbit
 
+  // in days - actual period is 27.322 days, but this sim's model produces a period of 27.6 days (by inspection)
+  var MOON_ORBITAL_PERIOD = 27.6;
+
   /*
    * force scale for SunEarthMode and SunEarthMoonMode.
    * balances increased mass and so that forces are 1/2 grid cell in default conditions, hand tuned by checking
@@ -122,9 +125,7 @@ define( function( require ) {
 
   function EarthMoonModeConfig() {
 
-    // moon rotation period is 27.322 days
-    var moonRotationPeriod = daysToSeconds( 27.322 ); 
-
+    var moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD ); 
     ModeList.EarthMoonModeConfig.call( this, {
       moonRotationPeriod: moonRotationPeriod
     } );
@@ -148,12 +149,7 @@ define( function( require ) {
    */
   function EarthSpaceStationModeConfig() {
 
-    // satellite takes ~90 minutes to make a full rotation
-    var spaceStationRotationPeriod = 91.4 * 60;
-
-    ModeList.EarthSpaceStationModeConfig.call( this, {
-      spaceStationRotationPeriod: spaceStationRotationPeriod
-    } );
+    ModeList.EarthSpaceStationModeConfig.call( this );
 
     // tuned by hand
     this.earth.radius *= 0.8;

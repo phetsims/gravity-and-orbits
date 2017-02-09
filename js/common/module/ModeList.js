@@ -77,6 +77,10 @@ define( function( require ) {
   var SPACE_STATION_SPEED = 7706;
   var SPACE_STATION_PERIGEE = 347000;
 
+  // orbital period of the space station, in seconds
+  // orbit determined to be 91.4 days, by inspection
+  var SPACE_STATION_ORBITAL_PERIOD = 91.4 * 60;
+
   var SECONDS_PER_MINUTE = 60;
   var FORCE_SCALE = VectorNode.FORCE_SCALE;
 
@@ -447,11 +451,14 @@ define( function( require ) {
     }
   } );
 
-  // static class: EarthSpaceStationModeConfig
+  /**
+   * Static class.
+   * @param {Object} options
+   */
   function EarthSpaceStationModeConfig( options ) {
 
     options = _.extend( {
-      spaceStationRotationPeriod: null // rotation period in seconds, null means no rotation
+      spaceStationRotationPeriod: SPACE_STATION_ORBITAL_PERIOD // rotation period in seconds
     }, options );
 
     // @public

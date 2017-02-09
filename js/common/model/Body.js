@@ -329,6 +329,7 @@ define( function( require ) {
       this.diameterProperty.reset();
       this.collidedProperty.reset();
       this.clockTicksSinceExplosionProperty.reset();
+      this.rotationProperty.reset();
       this.clearPath();
     },
 
@@ -373,6 +374,7 @@ define( function( require ) {
       this.forceProperty.rewind();
       this.massProperty.rewind();
       this.collidedProperty.rewind();
+      this.rotationProperty.rewind();
       this.clearPath();
     },
 
