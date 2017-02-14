@@ -1,11 +1,11 @@
 {
-  "comment": "# gravity-and-orbits 1.1.0-dev.3 Wed Feb 08 2017 17:33:05 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.1.0-rc.1 Tue Feb 14 2017 11:28:25 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "master"
   },
   "axon": {
-    "sha": "5a451ec3e0a3f03bdd413bf438ecb4954326d5b2",
+    "sha": "03e252e3f7252c9853e6080ab9b2cf5369f50580",
     "branch": "master"
   },
   "brand": {
@@ -13,7 +13,7 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "01bfbbe6ee9508194c5370fb8eacb7154214a0d4",
+    "sha": "72a9db00c170ce439e4207e71639823e9cb5f3ef",
     "branch": "master"
   },
   "dot": {
@@ -21,11 +21,11 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "f05a6e16790beadac6b23f74d89b229f93528b2f",
-    "branch": "master"
+    "sha": "94a8f15d8b01ab10e56df47b96cf0693a15ad620",
+    "branch": "1.1"
   },
   "joist": {
-    "sha": "a6a9957ac0429e56c95b6bfe3e8b7e3f200d8530",
+    "sha": "09c7e0f2e9b8beb74d3f415963a3665570f4edb2",
     "branch": "master"
   },
   "kite": {
@@ -45,11 +45,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "a30a31dc0eaf7f7320ca6bc7c8e831f135d99a3b",
+    "sha": "f94936d1ceafe2abf09ee7235b6f6bc0ba07639d",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "eb40aa6055a3d1ae7f1cc844f47360a9e4926e43",
+    "sha": "9233aff82ac8e9366d444e72d40603e59a261493",
     "branch": "master"
   },
   "sherpa": {
@@ -57,7 +57,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "d7e040ac297a718aadf7a8160e7af5a9e674c26e",
+    "sha": "9c5de75906c0fa05d8535b83d394bc41374f5851",
     "branch": "master"
   },
   "tandem": {
