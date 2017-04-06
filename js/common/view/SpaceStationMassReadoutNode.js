@@ -35,7 +35,7 @@ define( function( require ) {
      * or qualitative depending on the mass of the station.  For instance, if larger than
      * a specific mass, the label will be in something like 'billions of station masses'.
      *
-     * @return {string} - formatted string
+     * @returns {string} - formatted string
      */
     createText: function() {
       var massKG = this.bodyNode.body.massProperty.get();

@@ -43,7 +43,7 @@ define( function( require ) {
      * Get the distance squared from the body position to another.
      *
      * @param  {Vector2} position
-     * @return {number}
+     * @returns {number}
      */
     distanceSquared: function( position ) {
       return this.position.minus( position ).magnitudeSquared();
@@ -52,7 +52,7 @@ define( function( require ) {
     /**
      * Useful for debugging - provides a string of documented property values.
      *
-     * @return {string}
+     * @returns {string}
      */
     toString: function() {
       return 'BodyState{' + 'position=' + this.position + ', velocity=' + this.velocity +

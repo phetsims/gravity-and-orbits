@@ -208,7 +208,7 @@ define( function( require ) {
      * Updates the model, producing the next ModelState when gravity is present
      * @private
      * @param {number} dt
-     * @return {ModelState}
+     * @returns {ModelState}
      */
     getNextCoastingState: function( dt ) {
 

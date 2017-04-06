@@ -66,7 +66,7 @@ define( function( require ) {
      *
      * @param  {Body} body        description
      * @param  {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
-     * @return {type}             description
+     * @returns {type}             description
      */
     getExplosionEdgeGraphic: function( body, getDiameter ) {
       var yellowAndWhite = {

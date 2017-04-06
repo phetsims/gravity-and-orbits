@@ -57,7 +57,7 @@ define( function( require ) {
     /**
      * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
      *
-     * @return {number}
+     * @returns {number}
      */
     stepClockWhilePaused: function() {
 
@@ -79,7 +79,7 @@ define( function( require ) {
     /**
      * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
      *
-     * @return {number}
+     * @returns {number}
      */
     stepClockBackWhilePaused: function() {
       this.steppingProperty.set( true );
@@ -137,7 +137,7 @@ define( function( require ) {
      * Step the simulation by dt
      *
      * @param  {number} dt
-     * @return {type}    description
+     * @returns {type}    description
      */
     step: function( dt ) {
       this.eventTimer.step( dt );
@@ -147,7 +147,7 @@ define( function( require ) {
      * Get the time step for the slowest speed of this clock.  Useful for
      * normalizing time step in the model.
      * 
-     * @return {number}
+     * @returns {number}
      */
     getSmallestTimeStep: function() {
       return this.baseDTValue * GravityAndOrbitsConstants.SLOW_SPEED_SCALE;

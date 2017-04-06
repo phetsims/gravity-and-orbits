@@ -22,7 +22,7 @@ define( function( require ) {
    * Return the smaller of two Body instances, for determining which survives a collision.
    * @param {Body} other
    * @param {Body} body
-   * @return {Body} the smaller body
+   * @returns {Body} the smaller body
    */
   function getSmaller( other, body ) {
     if ( other.massProperty.get() < body.massProperty.get() ) {
@@ -197,7 +197,7 @@ define( function( require ) {
     /**
      * Returns a defensive copy of the bodies.
      *
-     * @return {Array<Body>}
+     * @returns {Array<Body>}
      * @public
      */
     getBodies: function() {
@@ -216,7 +216,7 @@ define( function( require ) {
      * Get the body associated with the name.  The name must be one of GAOBodiesEnum.
      *
      * @param  {string} name
-     * @return {Body|null}
+     * @returns {Body|null}
      */
     getBody: function( name ) {
       for ( var i = 0; i < this.bodies.length; i++ ) {

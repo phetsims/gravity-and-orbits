@@ -185,7 +185,7 @@ define( function( require ) {
      *
      * @param  {Property.<ModelViewTransform2>} modelViewTransformProperty
      * @param  {Body} body
-     * @return {Vector2}
+     * @returns {Vector2}
      */
     getPosition: function( modelViewTransformProperty, body ) {
       return modelViewTransformProperty.get().modelToView( body.positionProperty.get() );
@@ -194,7 +194,7 @@ define( function( require ) {
     /**
      * Get the diameter of the body in view coordinates.
      *
-     * @return {number}
+     * @returns {number}
      */
     getViewDiameter: function() {
       var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );

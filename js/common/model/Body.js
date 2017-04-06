@@ -193,7 +193,7 @@ define( function( require ) {
 
     /**
      * @public
-     * @return {number}
+     * @returns {number}
      */
     getVolume: function() {
       return 4.0 / 3.0 * Math.PI * Math.pow( this.getRadius(), 3 );
@@ -201,7 +201,7 @@ define( function( require ) {
 
     /**
      * @public
-     * @return {number}
+     * @returns {number}
      */
     getRadius: function() {
       return this.diameterProperty.get() / 2;
@@ -212,7 +212,7 @@ define( function( require ) {
      * use copy() for Vector2 so that the properties don't get mutated
      *
      * @public
-     * @return {BodyState}
+     * @returns {BodyState}
      */
     toBodyState: function() {
 
@@ -310,7 +310,7 @@ define( function( require ) {
     /**
      * Clear the whole path of points tracking the body's trajectory.
      *
-     * @return {type}  description
+     * @returns {type}  description
      */
     clearPath: function() {
       this.path = [];
@@ -337,7 +337,7 @@ define( function( require ) {
      * Create an image renderer for this body.
      *
      * @public
-     * @return {BodyRenderer}
+     * @returns {BodyRenderer}
      */
     createRenderer: function( viewDiameter ) {
       return this.renderer( this, viewDiameter );
@@ -348,7 +348,7 @@ define( function( require ) {
      *
      * @public
      * @param {Body} body
-     * @return {boolean}
+     * @returns {boolean}
      */
     collidesWidth: function( body ) {
       var position1 = this.positionProperty.get();
@@ -403,7 +403,7 @@ define( function( require ) {
 
     /**
      * @public
-     * @return {string}
+     * @returns {string}
      */
     toString: function() {
       return 'name = ' + this.name + ', mass = ' + this.massProperty.get();

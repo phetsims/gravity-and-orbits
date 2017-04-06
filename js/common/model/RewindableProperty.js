@@ -93,7 +93,7 @@ define( function( require ) {
      * and Vector2.
      *
      * @public
-     * @return {boolean}
+     * @returns {boolean}
      */
     equalsRewindPoint: function() {
       // if an object, must call unique function to check for equality

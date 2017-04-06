@@ -44,7 +44,7 @@ define( function( require ) {
    *   days * hoursPerDay * minutesPerHour * secondsPerMinue
    *   
    * @param  {number} days
-   * @return {number}
+   * @returns {number}
    */
   function daysToSeconds( days ) {
     return days * 24 * 60 * 60;
