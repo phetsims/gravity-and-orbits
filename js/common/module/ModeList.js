@@ -109,7 +109,6 @@ define( function( require ) {
    * @param {SunEarthMoonModeConfig} sunEarthMoon
    * @param {EarthMoonModeConfig} earthMoon
    * @param {EarthSpaceStationModeConfig} earthSpaceStation
-   * @returns {*}
    * @constructor
    */
   function ModeListModule( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
@@ -486,7 +485,7 @@ define( function( require ) {
   /**
    * Creates a BodyRenderer that just shows the specified image
    * @param {string} image
-   * @returns {*}
+   * @returns {function}
    */
   var getImageRenderer = function( image ) {
     return function( body, viewDiameter ) {
@@ -499,7 +498,7 @@ define( function( require ) {
    * @param {image|mipmap} image1
    * @param {image|mipmap} image2
    * @param {number} targetMass
-   * @returns {*}
+   * @returns {function}
    */
   var getSwitchableRenderer = function( image1, image2, targetMass ) {
 
@@ -515,7 +514,7 @@ define( function( require ) {
   /**
    * Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct periods
    * @param scale
-   * @returns {*}
+   * @returns {function}
    */
   var scaledDays = function( scale ) {
     return function( time ) {
@@ -529,7 +528,7 @@ define( function( require ) {
    * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
    * elapsed clock readout
    * @param time
-   * @returns {*}
+   * @returns {string}
    */
   var formatMinutes = function( time ) {
     var value = (time / SECONDS_PER_MINUTE);

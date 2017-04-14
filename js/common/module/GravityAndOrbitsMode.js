@@ -118,7 +118,7 @@ define( function( require ) {
      *
      * @param defaultZoomScale
      * @param zoomOffset
-     * @returns {*}
+     * @returns {ModelViewTransform2}
      * @private
      */
     createTransform: function( defaultZoomScale, zoomOffset ) {
