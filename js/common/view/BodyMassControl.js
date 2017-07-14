@@ -41,7 +41,6 @@ define( function( require ) {
       thumbSize: THUMB_SIZE,
       thumbTouchAreaXDilation: THUMB_SIZE.width,
       thumbTouchAreaYDilation: THUMB_SIZE.height,
-      trackLineWidth: 0,
       trackStroke: GravityAndOrbitsColorProfile.panelTextProperty,
 
       // ticks
