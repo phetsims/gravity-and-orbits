@@ -25,7 +25,7 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
-  var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
@@ -133,7 +133,7 @@ define( function( require ) {
 
     // measuring tape checkbox
     if ( module.showMeasuringTape ) {
-      var measuringTapeIcon = MeasuringTape.createIcon( { scale: 0.4 } );
+      var measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
       children.push( new CheckBox( new HBox( {
         spacing: SPACING,
         align: 'top',

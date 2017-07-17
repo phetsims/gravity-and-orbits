@@ -29,7 +29,7 @@ define( function( require ) {
   var ScaleSlider = require( 'GRAVITY_AND_ORBITS/common/view/ScaleSlider' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
-  var MeasuringTape = require( 'SCENERY_PHET/MeasuringTape' );
+  var MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
   var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
@@ -134,7 +134,7 @@ define( function( require ) {
 
     // Add measuring tape
     var unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
-    var measuringTape = new MeasuringTape( unitsProperty, module.measuringTapeVisibleProperty, {
+    var measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
       isTipDragBounded: false,
@@ -144,18 +144,18 @@ define( function( require ) {
     } );
 
     mode.transformProperty.link( function( transform ) {
-      measuringTape.setModelViewTransform( transform );
+      measuringTapeNode.setModelViewTransform( transform );
     } );
     mode.modelBoundsProperty.link( function( bounds ) {
-      var basePosition = measuringTape.basePositionProperty.get();
-      measuringTape.setDragBounds( bounds );
+      var basePosition = measuringTapeNode.basePositionProperty.get();
+      measuringTapeNode.setDragBounds( bounds );
 
       // if the position of the base has changed due to modifying the
       // drag bounds, we want to subtract the difference from the position
       // of the tip so that the measured value remains constant
-      if ( !measuringTape.basePositionProperty.get().equals( basePosition ) ) {
-        var difference = basePosition.minus( measuringTape.basePositionProperty.get() );
-        measuringTape.tipPositionProperty.set( measuringTape.tipPositionProperty.get().minus( difference ) );
+      if ( !measuringTapeNode.basePositionProperty.get().equals( basePosition ) ) {
+        var difference = basePosition.minus( measuringTapeNode.basePositionProperty.get() );
+        measuringTapeNode.tipPositionProperty.set( measuringTapeNode.tipPositionProperty.get().minus( difference ) );
       }
 
       // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
@@ -165,8 +165,8 @@ define( function( require ) {
     } );
 
     // measuring tape text should change with color Profile
-    GravityAndOrbitsColorProfile.measuringTapeTextProperty.linkAttribute( measuringTape, 'textColor' );
-    this.addChild( measuringTape );
+    GravityAndOrbitsColorProfile.measuringTapeTextProperty.linkAttribute( measuringTapeNode, 'textColor' );
+    this.addChild( measuringTapeNode );
 
     // If any body is out of bounds, show a "return object" button
     var anythingReturnable = new DerivedProperty( returnable, function() {
