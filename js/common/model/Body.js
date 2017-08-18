@@ -15,7 +15,6 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var PropertySet = require( 'AXON/PropertySet' );
   var Property = require( 'AXON/Property' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   var BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
@@ -72,16 +71,10 @@ define( function( require ) {
 
     var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
-    // @public
-    PropertySet.call( this, {
-      acceleration: new Vector2(),
-      diameter: diameter, // {number}
-      clockTicksSinceExplosion: 0,
-
-      // if the object leaves these model bounds, then it can be "returned" using a return button on the canvas
-      bounds: new Bounds2( 0, 0, 0, 0 )
-
-    } );
+    this.accelerationProperty = new Property( new Vector2() );
+    this.diameterProperty = new Property( diameter );
+    this.clockTicksSinceExplosionProperty = new Property( 0 );
+    this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0) );
 
     options = _.extend( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
@@ -189,7 +182,7 @@ define( function( require ) {
 
   gravityAndOrbits.register( 'Body', Body );
 
-  return inherit( PropertySet, Body, {
+  return inherit( Object, Body, {
 
     /**
      * @public
@@ -215,7 +208,7 @@ define( function( require ) {
      * @returns {BodyState}
      */
     toBodyState: function() {
-
+      // var a = this.accelerationProperty;
       return new BodyState(
         this.positionProperty.get().copy(),
         this.velocityProperty.get().copy(),
@@ -253,7 +246,7 @@ define( function( require ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
         }
-        this.accelerationProperty.set( bodyState.acceleration );
+        this.accelerationProperty.value = bodyState.acceleration;
         this.forceProperty.set( bodyState.acceleration.multiplyScalar( bodyState.mass ) );
         this.rotationProperty.set( bodyState.rotation );
       }

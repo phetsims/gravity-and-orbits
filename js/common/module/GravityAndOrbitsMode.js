@@ -18,8 +18,8 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
   var Rectangle = require( 'DOT/Rectangle' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var Property = require( 'AXON/Property' );
@@ -55,16 +55,11 @@ define( function( require ) {
                                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                                  defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList ) {
 
-    // @public
-    PropertySet.call( this, {
-      active: active, // @public {boolean}
-
-      // Flag to indicate whether any value has deviated from the original value
-      deviatedFromDefaults: false, // @private
-      measuringTapeStartPoint: initialMeasuringTapeLocation.p1,
-      measuringTapeEndPoint: initialMeasuringTapeLocation.p2,
-      zoomLevel: 1 // additional scale factor on top of defaultZoomScale
-    } );
+    this.activeProperty = new Property( active );
+    this.deviatedFromDefaultsProperty = new BooleanProperty( false );
+    this.measuringTapeStartPointProperty = new Property( initialMeasuringTapeLocation.p1 );
+    this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
+    this.zoomLevelProperty = new Property( 1 );
 
     var self = this;
 
@@ -111,7 +106,7 @@ define( function( require ) {
 
   gravityAndOrbits.register( 'GravityAndOrbitsMode', GravityAndOrbitsMode );
 
-  return inherit( PropertySet, GravityAndOrbitsMode, {
+  return inherit( Object, GravityAndOrbitsMode, {
 
     /**
      * Create the transform from model coordinates to stage coordinates
@@ -199,8 +194,11 @@ define( function( require ) {
      * @override
      */
     reset: function() {
-      PropertySet.prototype.reset.call( this );
-
+      this.activeProperty.reset();
+      this.deviatedFromDefaultsProperty.reset();
+      this.measuringTapeStartPointProperty.reset();
+      this.measuringTapeEndPointProperty.reset();
+      this.zoomLevelProperty.reset();
       this.model.clock.resetSimulationTime();
 
       this.model.resetAll();

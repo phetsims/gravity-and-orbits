@@ -17,8 +17,9 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
+  var Property = require( 'AXON/Property' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
@@ -36,20 +37,17 @@ define( function( require ) {
   function GravityAndOrbitsModule( showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
 
     // Properties that are common to all "modes" should live here.
-    // @public
-    PropertySet.call( this, {
-      showGravityForce: false,
-      showPath: false,
-      showGrid: false,
-      showVelocity: false,
-      showMass: false,
-      playButtonPressed: false,
-      timeSpeedScale: GravityAndOrbitsConstants.STARTING_SPEED_SCALE,
-      measuringTapeVisible: false,
-      gravityEnabled: true,
-      stepping: false,
-      rewinding: false
-    } );
+    this.showGravityForceProperty = new BooleanProperty( false );
+    this.showPathProperty = new BooleanProperty( false );
+    this.showGridProperty = new BooleanProperty( false );
+    this.showVelocityProperty = new BooleanProperty( false );
+    this.showMassProperty = new BooleanProperty( false );
+    this.playButtonPressedProperty = new BooleanProperty( false );
+    this.timeSpeedScaleProperty = new Property( GravityAndOrbitsConstants.STARTING_SPEED_SCALE );
+    this.measuringTapeVisibleProperty = new BooleanProperty( false );
+    this.gravityEnabledProperty = new BooleanProperty( true );
+    this.steppingProperty = new BooleanProperty( false );
+    this.rewindingProperty = new BooleanProperty( false );
 
     // these two booleans indicate whether or not to show the checkbox for measuring tape and mass.
     // they are false for the cartoon screen and true for the toScale screen
@@ -64,7 +62,7 @@ define( function( require ) {
       this.rewindingProperty,
       this.timeSpeedScaleProperty ) );
 
-    this.addProperty( 'mode', this.modeList.modes[ initialModeIndex ] );
+    this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
     for ( var i = 0; i < this.modeList.modes.length; i++ ) {
       this.modeList.modes[ i ].init( this );
     }
@@ -74,7 +72,7 @@ define( function( require ) {
 
   gravityAndOrbits.register( 'GravityAndOrbitsModule', GravityAndOrbitsModule );
 
-  return inherit( PropertySet, GravityAndOrbitsModule, {
+  return inherit( Object, GravityAndOrbitsModule, {
 
     // @public
     step: function( dt ) {
@@ -113,7 +111,18 @@ define( function( require ) {
      * @override
      */
     reset: function() {
-      PropertySet.prototype.reset.call( this );
+      this.showGravityForceProperty.reset();
+      this.showPathProperty.reset();
+      this.showGridProperty.reset();
+      this.showVelocityProperty.reset();
+      this.showMassProperty.reset();
+      this.playButtonPressedProperty.reset();
+      this.timeSpeedScaleProperty.reset();
+      this.measuringTapeVisibleProperty.reset();
+      this.gravityEnabledProperty.reset();
+      this.steppingProperty.reset();
+      this.rewindingProperty.reset();
+      this.modeProperty.reset();
       for ( var i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].reset();
       }

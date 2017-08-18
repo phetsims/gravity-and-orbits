@@ -14,7 +14,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
+  var Property = require( 'AXON/Property' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
@@ -51,9 +51,6 @@ define( function( require ) {
    */
   function GravityAndOrbitsModel( clock, gravityEnabledProperty ) {
 
-    // @public
-    PropertySet.call( this, {} );
-
     // @private
     this.gravityEnabledProperty = gravityEnabledProperty;
 
@@ -76,7 +73,7 @@ define( function( require ) {
 
   gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
 
-  return inherit( PropertySet, GravityAndOrbitsModel, {
+  return inherit( Object, GravityAndOrbitsModel, {
 
 
     /**
@@ -156,7 +153,6 @@ define( function( require ) {
 
     // @public
     resetAll: function() {
-      PropertySet.prototype.reset.call( this ); // Resets the simulation time
       this.resetBodies();
       this.clock.resetSimulationTime();
       this.updateForceVectors();
