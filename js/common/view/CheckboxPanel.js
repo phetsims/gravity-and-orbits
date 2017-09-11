@@ -11,36 +11,36 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Shape = require( 'KITE/Shape' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-  var Property = require( 'AXON/Property' );
-  var Vector2 = require( 'DOT/Vector2' );
-  var CheckBox = require( 'SUN/CheckBox' );
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var Image = require( 'SCENERY/nodes/Image' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var CheckBox = require( 'SUN/CheckBox' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
+  var Image = require( 'SCENERY/nodes/Image' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var Property = require( 'AXON/Property' );
+  var Shape = require( 'KITE/Shape' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   // images
+  var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
   var pathIconImg = require( 'image!GRAVITY_AND_ORBITS/path_icon.png' );
   var pathIconProjectorImg = require( 'image!GRAVITY_AND_ORBITS/path_icon_projector.png' );
-  var iconMassImg = require( 'image!GRAVITY_AND_ORBITS/icon_mass.png' );
 
   // strings
   var gravityForceString = require( 'string!GRAVITY_AND_ORBITS/gravityForce' );
-  var velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' );
-  var pathString = require( 'string!GRAVITY_AND_ORBITS/path' );
-  var measuringTapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
-  var massString = require( 'string!GRAVITY_AND_ORBITS/mass' );
   var gridString = require( 'string!GRAVITY_AND_ORBITS/grid' );
+  var massString = require( 'string!GRAVITY_AND_ORBITS/mass' );
+  var measuringTapeString = require( 'string!GRAVITY_AND_ORBITS/measuringTape' );
+  var pathString = require( 'string!GRAVITY_AND_ORBITS/path' );
+  var velocityString = require( 'string!GRAVITY_AND_ORBITS/velocity' );
 
   // constants
   var FONT = new PhetFont( 18 );

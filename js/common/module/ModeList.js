@@ -11,49 +11,49 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Color = require( 'SCENERY/util/Color' );
-  var Line = require( 'SCENERY/nodes/Line' );
-  var Vector2 = require( 'DOT/Vector2' );
   var Body = require( 'GRAVITY_AND_ORBITS/common/model/Body' );
-  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   var BodyConfiguration = require( 'GRAVITY_AND_ORBITS/common/module/BodyConfiguration' );
-  var ModeConfig = require( 'GRAVITY_AND_ORBITS/common/module/ModeConfig' );
-  var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsMode' );
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
+  var Color = require( 'SCENERY/util/Color' );
   var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/EarthMassReadoutNode' );
-  var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
-  var Image = require( 'SCENERY/nodes/Image' );
+  var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsMode' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var Image = require( 'SCENERY/nodes/Image' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Line = require( 'SCENERY/nodes/Line' );
+  var ModeConfig = require( 'GRAVITY_AND_ORBITS/common/module/ModeConfig' );
+  var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Util = require( 'DOT/Util' );
-  var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
   // strings
+  // var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  // var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  // var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  // var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
   var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
   var earthDayString = require( 'string!GRAVITY_AND_ORBITS/earthDay' );
-  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
-  var earthMinuteString = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
   var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
-  // var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
-  var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
-  // var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
-  var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
-  // var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  var earthMinuteString = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
   var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
-  // var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
   var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
+  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
 
   // images
-  var sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
   var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.png' );
-  var moonImage = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
-  var genericPlanetImage = require( 'image!GRAVITY_AND_ORBITS/planet_generic.png' );
   var genericMoonImage = require( 'image!GRAVITY_AND_ORBITS/moon_generic.png' );
+  var genericPlanetImage = require( 'image!GRAVITY_AND_ORBITS/planet_generic.png' );
+  var moonImage = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
   var spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
+  var sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model.

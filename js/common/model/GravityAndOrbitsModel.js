@@ -13,9 +13,9 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
   /**
    * Return the smaller of two Body instances, for determining which survives a collision.

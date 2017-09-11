@@ -10,24 +10,24 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Panel = require( 'SUN/Panel' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
+  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/common/view/BodyMassControl' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var HStrut = require( 'SCENERY/nodes/HStrut' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
-  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/common/view/BodyMassControl' );
-  var Text = require( 'SCENERY/nodes/Text' );
+  var HStrut = require( 'SCENERY/nodes/HStrut' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var Panel = require( 'SUN/Panel' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  var planetMassString = require( 'string!GRAVITY_AND_ORBITS/planetMass' );
   // var spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
-  var satelliteMassString = require( 'string!GRAVITY_AND_ORBITS/satelliteMass' );
   var moonMassString = require( 'string!GRAVITY_AND_ORBITS/moonMass' );
+  var planetMassString = require( 'string!GRAVITY_AND_ORBITS/planetMass' );
+  var satelliteMassString = require( 'string!GRAVITY_AND_ORBITS/satelliteMass' );
   var starMassString = require( 'string!GRAVITY_AND_ORBITS/starMass' );
 
   // constants

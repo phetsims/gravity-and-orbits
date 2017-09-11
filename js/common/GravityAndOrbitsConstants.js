@@ -9,8 +9,8 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
 
   // constants
   var CONTROL_PANEL_STROKE = '#8E9097';

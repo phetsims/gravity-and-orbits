@@ -12,13 +12,13 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
-  var StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
-  var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
+  var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
+  var StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
 
   /**
    * @param {Property.<GravityAndOrbitsMode>} modeProperty

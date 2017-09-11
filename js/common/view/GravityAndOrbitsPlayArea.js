@@ -11,33 +11,33 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' );
-  var PathsCanvasNode = require( 'GRAVITY_AND_ORBITS/common/view/PathsCanvasNode' );
   var BodyNode = require( 'GRAVITY_AND_ORBITS/common/view/BodyNode' );
-  var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
-  var Color = require( 'SCENERY/util/Color' );
   var Bounds2 = require( 'DOT/Bounds2' );
-  var Property = require( 'AXON/Property' );
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var TextPushButton = require( 'SUN/buttons/TextPushButton' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
-  var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/common/view/GrabbableVectorNode' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var ExplosionNode = require( 'GRAVITY_AND_ORBITS/common/view/ExplosionNode' );
+  var Color = require( 'SCENERY/util/Color' );
   var DayCounter = require( 'GRAVITY_AND_ORBITS/common/view/DayCounter' );
-  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/common/view/ScaleSlider' );
-  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
-  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
-  var MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var ExplosionNode = require( 'GRAVITY_AND_ORBITS/common/view/ExplosionNode' );
   var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/common/view/GrabbableVectorNode' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
+  var PathsCanvasNode = require( 'GRAVITY_AND_ORBITS/common/view/PathsCanvasNode' );
+  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var platform = require( 'PHET_CORE/platform' );
+  var Property = require( 'AXON/Property' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/common/view/ScaleSlider' );
+  var TextPushButton = require( 'SUN/buttons/TextPushButton' );
+  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
+  var VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
   // strings
-  var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
   var returnObjectsString = require( 'string!GRAVITY_AND_ORBITS/returnObjects' );
+  var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
   var vString = require( 'string!GRAVITY_AND_ORBITS/v' );
 
   // constants

@@ -11,15 +11,15 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Panel = require( 'SUN/Panel' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var ModeControl = require( 'GRAVITY_AND_ORBITS/common/view/ModeControl' );
-  var GravityControl = require( 'GRAVITY_AND_ORBITS/common/view/GravityControl' );
   var CheckboxPanel = require( 'GRAVITY_AND_ORBITS/common/view/CheckboxPanel' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var GravityControl = require( 'GRAVITY_AND_ORBITS/common/view/GravityControl' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var ModeControl = require( 'GRAVITY_AND_ORBITS/common/view/ModeControl' );
+  var Panel = require( 'SUN/Panel' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   // constants
   var MENU_SECTION_OPTIONS = { x: 5 };

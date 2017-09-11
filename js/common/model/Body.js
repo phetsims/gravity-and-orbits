@@ -11,20 +11,20 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Vector2 = require( 'DOT/Vector2' );
+  var BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
   var Bounds2 = require( 'DOT/Bounds2' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var Emitter = require( 'AXON/Emitter' );
+  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var inherit = require( 'PHET_CORE/inherit' );
   var Property = require( 'AXON/Property' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
-  var BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var Emitter = require( 'AXON/Emitter' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   // strings
-  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
   var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
   var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
   var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
 
   // constants

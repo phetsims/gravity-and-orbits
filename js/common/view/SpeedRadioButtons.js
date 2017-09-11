@@ -12,18 +12,18 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var inherit = require( 'PHET_CORE/inherit' );
-  var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  var inherit = require( 'PHET_CORE/inherit' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
 
   // strings
+  var fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
   var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
   var slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' );
-  var fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
 
   /**
    * @param {Property.<number>} speedProperty - The rate of flow of time.
