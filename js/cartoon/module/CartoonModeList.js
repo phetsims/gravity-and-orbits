@@ -1,4 +1,4 @@
-// Copyright 2014-2015, University of Colorado Boulder
+// Copyright 2014-2017, University of Colorado Boulder
 
 /**
  * Cartoon mode list makes the radii of all objects much larger than the true physical values to make them visible on
