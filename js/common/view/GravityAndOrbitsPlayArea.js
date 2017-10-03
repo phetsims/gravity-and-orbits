@@ -138,6 +138,7 @@ define( function( require ) {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
       isTipDragBounded: false,
+      textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
 
       // space station gets 1 sig fig, the other bodies have 0
       significantFigures: ( bodies[ 1 ].name === GAOBodiesEnum.SATELLITE ) ? 1 : 0
