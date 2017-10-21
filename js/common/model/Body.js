@@ -49,7 +49,7 @@ define( function( require ) {
    * @param {function.<Body, number, BodyRenderer>} BodyRenderer - way to associate the graphical representation directly
    *                                                          instead of later with conditional logic or map
    * @param {number} labelAngle
-   * @param {number} tickValue - default value for mass setting 
+   * @param {number} tickValue - default value for mass setting
    * @param {string} tickLabel - translatable label for the mass slider labeling the default value
    * @param {ModeListParameterList} parameterList - composition of Properties that determine body state
    * @param {Property.<ModelViewTransform2>} transformProperty
@@ -162,8 +162,10 @@ define( function( require ) {
     this.userModifiedVelocityEmitter = new Emitter();
 
     var self = this;
-    this.collidedProperty.onValue( true, function() {
-      self.clockTicksSinceExplosionProperty.set( 0 );
+    this.collidedProperty.link( function( collided ) {
+      if ( collided ) {
+        self.clockTicksSinceExplosionProperty.set( 0 );
+      }
     } );
 
     var initialPosition = self.positionProperty.initialValue.minus( options.orbitalCenter );
