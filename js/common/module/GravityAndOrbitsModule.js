@@ -31,10 +31,10 @@ define( function( require ) {
    * @param {boolean} showMeasuringTape
    * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsMode>>} createModes
    * @param {number} initialModeIndex
-   * @param {boolean} showMassCheckBox
+   * @param {boolean} showMassCheckbox
    * @constructor
    */
-  function GravityAndOrbitsModule( showMeasuringTape, createModes, initialModeIndex, showMassCheckBox ) {
+  function GravityAndOrbitsModule( showMeasuringTape, createModes, initialModeIndex, showMassCheckbox ) {
 
     // Properties that are common to all "modes" should live here.
     this.showGravityForceProperty = new BooleanProperty( false );
@@ -51,7 +51,7 @@ define( function( require ) {
 
     // these two booleans indicate whether or not to show the checkbox for measuring tape and mass.
     // they are false for the cartoon screen and true for the toScale screen
-    this.showMassCheckBox = showMassCheckBox; // @public
+    this.showMassCheckbox = showMassCheckbox; // @public
     this.showMeasuringTape = showMeasuringTape; // @public
 
     // @private {ModeList}

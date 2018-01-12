@@ -12,7 +12,7 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var CheckBox = require( 'SUN/CheckBox' );
+  var Checkbox = require( 'SUN/Checkbox' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
@@ -47,8 +47,8 @@ define( function( require ) {
   var ARROW_Y_COORDINATE = -10;
   var CHECKBOX_OPTIONS = {
     scale: 0.8,
-    checkBoxColor: GravityAndOrbitsColorProfile.panelTextProperty,
-    checkBoxColorBackground: GravityAndOrbitsColorProfile.checkBoxFillProperty,
+    checkboxColor: GravityAndOrbitsColorProfile.panelTextProperty,
+    checkboxColorBackground: GravityAndOrbitsColorProfile.checkboxFillProperty,
     maxWidth: 250
   };
   var TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty };
@@ -71,7 +71,7 @@ define( function( require ) {
     var measuringTapeTextNode = new Text( measuringTapeString, TEXT_OPTIONS );
 
     // gravity force checkbox
-    children.push( new CheckBox( new HBox( {
+    children.push( new Checkbox( new HBox( {
         spacing: SPACING,
         children: [
           gravityForceTextNode,
@@ -81,7 +81,7 @@ define( function( require ) {
       module.showGravityForceProperty, CHECKBOX_OPTIONS ) );
 
     // velocity checkbox
-    children.push( new CheckBox( new HBox( {
+    children.push( new Checkbox( new HBox( {
         spacing: SPACING,
         children: [
           velocityTextNode,
@@ -91,8 +91,8 @@ define( function( require ) {
       module.showVelocityProperty, CHECKBOX_OPTIONS ) );
 
     // mass checkbox
-    if ( module.showMassCheckBox ) {
-      children.push( new CheckBox( new HBox( {
+    if ( module.showMassCheckbox ) {
+      children.push( new Checkbox( new HBox( {
           spacing: SPACING,
           children: [
             massTextNode,
@@ -109,7 +109,7 @@ define( function( require ) {
     } );
 
     // path checkbox
-    children.push( new CheckBox( new HBox( {
+    children.push( new Checkbox( new HBox( {
         spacing: SPACING,
         children: [
           pathTextNode,
@@ -119,7 +119,7 @@ define( function( require ) {
       module.showPathProperty, CHECKBOX_OPTIONS ) );
 
     // grid checkbox
-    children.push( new CheckBox( new HBox( {
+    children.push( new Checkbox( new HBox( {
         spacing: SPACING,
         children: [
           gridTextNode,
@@ -134,7 +134,7 @@ define( function( require ) {
     // measuring tape checkbox
     if ( module.showMeasuringTape ) {
       var measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
-      children.push( new CheckBox( new HBox( {
+      children.push( new Checkbox( new HBox( {
         spacing: SPACING,
         align: 'top',
         children: [

@@ -46,7 +46,7 @@ define( function( require ) {
       default: 'gray',
       projector: 'black'
     },
-    checkBoxFill: {
+    checkboxFill: {
       default: 'black',
       projector: 'white'
     }

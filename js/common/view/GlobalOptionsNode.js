@@ -10,7 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var CheckBox = require( 'SUN/CheckBox' );
+  var Checkbox = require( 'SUN/Checkbox' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -35,7 +35,7 @@ define( function( require ) {
       }
     } );
 
-    children.push( new CheckBox( new Text( projectorModeString, { font: OptionsDialog.DEFAULT_FONT } ),
+    children.push( new Checkbox( new Text( projectorModeString, { font: OptionsDialog.DEFAULT_FONT } ),
       projectorModeProperty, {} ) );
 
     VBox.call( this, _.extend( {
