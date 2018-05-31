@@ -74,7 +74,7 @@ define( function( require ) {
 
     BodyRenderer.call( this, body );
 
-    // @public (read only)
+    // @public (read-only)
     this.targetBodyRenderer = targetBodyRenderer;
     this.defaultBodyRenderer = defaultBodyRenderer;
 
