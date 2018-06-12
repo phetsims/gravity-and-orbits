@@ -66,7 +66,7 @@ define( function( require ) {
       orbitalCenter: new Vector2( 0, 0 ), // orbital center for the body
       maxPathLength: 1400000000, // max path length for the body in km (should only be used if the body is too close to the center)
       pathLengthLimit: 6000, // limit on the number of points in the path
-      rotationPeriod: null, // period of body rotation, in seconds - null rotation period will prevent rotation
+      rotationPeriod: null // period of body rotation, in seconds - null rotation period will prevent rotation
     }, options );
 
     var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
