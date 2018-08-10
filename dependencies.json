@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.1.4 Wed Aug 08 2018 13:50:52 GMT-0600 (MDT)",
+  "comment": "# gravity-and-orbits 1.1.4 Thu Aug 09 2018 23:37:33 GMT-0600 (MDT)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "HEAD"
@@ -13,15 +13,15 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "1e5761335b8dce5a6132ce6b746ab5e45065c9b6",
-    "branch": "HEAD"
+    "sha": "9ce04fdab06b53531d069ce3c3148a98e27be90b",
+    "branch": "gravity-and-orbits-1.1"
   },
   "dot": {
     "sha": "9b3b950fd8f8a5c1efcef537ea066db7b23173d6",
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "8598f786bb5f6ed1963e4a4ded498257de70b8a3",
+    "sha": "915e9f9b0e9d389cbe6478b7a04613fb2f47f7a0",
     "branch": "1.1"
   },
   "joist": {
@@ -37,8 +37,8 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "573803951eef9249c977b73790d41283d864fe8a",
-    "branch": "HEAD"
+    "sha": "fe5a0caf8972a0bebef9a55dc9ea5c973473b123",
+    "branch": "gravity-and-orbits-1.1"
   },
   "query-string-machine": {
     "sha": "d8a4ff18a12aff003e4896213c1dfed5a79c1a30",
