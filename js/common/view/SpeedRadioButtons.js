@@ -34,8 +34,8 @@ define( function( require ) {
 
     options = _.extend( {
       spacing: 1,
-      radius: 8,
-      touchAreaXDilation: 5
+      touchAreaXDilation: 5,
+      radioButtonOptions: { radius: 8 }
     }, options );
 
     var textOptions = {
