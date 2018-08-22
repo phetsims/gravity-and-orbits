@@ -19,10 +19,11 @@ define( function( require ) {
   /**
    * @param {Property.<boolean>} changeRewindValueProperty
    * @param {*} value
+   * @param {Object} options
    * @constructor
    */
-  function RewindableProperty( changeRewindValueProperty, value ) {
-    Property.call( this, value );
+  function RewindableProperty( changeRewindValueProperty, value, options ) {
+    Property.call( this, value, options );
 
     // @private
     this.rewindValue = value; // the "initial condition" tha the property can be rewound to

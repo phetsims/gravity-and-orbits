@@ -74,7 +74,7 @@ define( function( require ) {
     this.accelerationProperty = new Property( new Vector2() );
     this.diameterProperty = new Property( diameter );
     this.clockTicksSinceExplosionProperty = new Property( 0 );
-    this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0) );
+    this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
 
     options = _.extend( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
@@ -144,7 +144,7 @@ define( function( require ) {
     this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2() ); // @public
-    this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass ); // @public
+    this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, { reentrant: true } ); // @public
     this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
     this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0 ); // @public
 
@@ -290,7 +290,7 @@ define( function( require ) {
 
       // remvove points from the path as the path gets too long
       // if the path grows more than ~6000 points, start removing points
-      while ( this.modelPathLength  > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
+      while ( this.modelPathLength > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
         var loss = this.path[ 1 ].minus( this.path[ 0 ] );
         var lossMagnitude = loss.magnitude();
 
