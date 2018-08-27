@@ -33,7 +33,7 @@ define( function( require ) {
     var playPauseButton = new PlayPauseButton( playProperty );
 
     var stepButton = new StepForwardButton( {
-      playingProperty: playProperty,
+      isPlayingProperty: playProperty,
       listener: function() { modeProperty.get().getClock().stepClockWhilePaused(); }
     } );
 
