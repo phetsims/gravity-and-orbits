@@ -8,7 +8,7 @@
  *
  * @author Sam Reid
  * @author Jon Olson
- * @author Chris Malley
+ * @author Chris Malley (PixelZoom, Inc.)
  * @author John Blanco
  * @author Aaron Davis
  * @see GravityAndOrbitsModel
