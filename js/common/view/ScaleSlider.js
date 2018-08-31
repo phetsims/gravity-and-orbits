@@ -1,4 +1,4 @@
-// Copyright 2013-2017, University of Colorado Boulder
+// Copyright 2018, University of Colorado Boulder
 
 /**
  * Container for scale slider. This file is not a direct port from the Java version.
@@ -15,12 +15,12 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var Shape = require( 'KITE/Shape' );
+  var VSlider = require( 'SUN/VSlider' );
 
   // constants
   var TRACK_SIZE = new Dimension2( 140, 3 );
@@ -40,7 +40,7 @@ define( function( require ) {
 
     Node.call( this );
 
-    var verticalSlider = new HSlider( scaleProperty, RANGE, {
+    var verticalSlider = new VSlider( scaleProperty, RANGE, {
       trackSize: TRACK_SIZE,
       thumbSize: THUMB_SIZE,
 
@@ -49,7 +49,6 @@ define( function( require ) {
       thumbFillHighlighted: '#B3D3E2'
     } );
 
-    verticalSlider.rotate( -Math.PI / 2 );
     verticalSlider.translate( -TRACK_SIZE.width - THUMB_SIZE.width - 17, -TRACK_SIZE.height / 2 );
 
     // add slide line
