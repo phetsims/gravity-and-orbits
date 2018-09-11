@@ -10,23 +10,21 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Checkbox = require( 'SUN/Checkbox' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   var inherit = require( 'PHET_CORE/inherit' );
   var OptionsDialog = require( 'JOIST/OptionsDialog' );
-  var Property = require( 'AXON/Property' );
-  var Text = require( 'SCENERY/nodes/Text' );
+  var ProjectorModeCheckbox = require( 'JOIST/ProjectorModeCheckbox' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
-  // strings
-  var projectorModeString = require( 'string!GRAVITY_AND_ORBITS/projectorMode' );
-
+  /**
+   * @constructor
+   */
   function GlobalOptionsNode() {
-    var children = [];
 
-    var projectorModeProperty = new Property( phet.chipper.queryParameters.colorProfile === 'projector' );
-    projectorModeProperty.link( function( projectorMode ) {
+    // add support for setting projector mode
+    var projectorModeCheckbox = new ProjectorModeCheckbox();
+    projectorModeCheckbox.projectorModeEnabledProperty.link( function( projectorMode ) {
       if ( projectorMode ) {
         GravityAndOrbitsColorProfile.profileNameProperty.set( 'projector' );
       }
@@ -35,11 +33,9 @@ define( function( require ) {
       }
     } );
 
-    children.push( new Checkbox( new Text( projectorModeString, { font: OptionsDialog.DEFAULT_FONT } ),
-      projectorModeProperty, {} ) );
-
+    // VBox is used to make it easy to add additional options
     VBox.call( this, _.extend( {
-      children: children,
+      children: [ projectorModeCheckbox ],
       spacing: OptionsDialog.DEFAULT_SPACING,
       align: 'left'
     } ) );
