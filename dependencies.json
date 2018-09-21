@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.1.5 Wed Aug 15 2018 13:55:54 GMT-0600 (MDT)",
+  "comment": "# gravity-and-orbits 1.1.5 Fri Sep 21 2018 17:12:37 GMT-0600 (MDT)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "HEAD"
@@ -13,15 +13,15 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "9ce04fdab06b53531d069ce3c3148a98e27be90b",
-    "branch": "HEAD"
+    "sha": "1ef1836916d97b7e6977190d5bd399e4d6335103",
+    "branch": "gravity-and-orbits-1.1"
   },
   "dot": {
     "sha": "9b3b950fd8f8a5c1efcef537ea066db7b23173d6",
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "89277abebf460ff35195941ab834839559fac986",
+    "sha": "323ca97feee1ed36053d0d7303b5fe25a5590cfa",
     "branch": "1.1"
   },
   "joist": {
