@@ -16,6 +16,7 @@ define( function( require ) {
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  var Range = require( 'DOT/Range' );
   var Text = require( 'SCENERY/nodes/Text' );
 
   // constants
@@ -36,7 +37,7 @@ define( function( require ) {
    */
   function BodyMassControl( body, min, max, defaultLabelValue, valueLabel ) {
 
-    HSlider.call( this, body.massProperty, { min: min, max: max }, {
+    HSlider.call( this, body.massProperty, new Range( min, max ), {
       trackSize: new Dimension2( WIDTH, 1 ),
       thumbSize: THUMB_SIZE,
       thumbTouchAreaXDilation: THUMB_SIZE.width,
