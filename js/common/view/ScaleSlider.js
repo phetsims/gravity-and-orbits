@@ -17,6 +17,7 @@ define( function( require ) {
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Range = require( 'DOT/Range' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var Shape = require( 'KITE/Shape' );
@@ -25,7 +26,7 @@ define( function( require ) {
   // constants
   var TRACK_SIZE = new Dimension2( 140, 3 );
   var THUMB_SIZE = new Dimension2( 20, 28 );
-  var RANGE = { max: 1.5, min: 0.5 };
+  var RANGE = new Range( 0.5, 1.5 );
   var STEP = 0.1;
   var BUTTON_SIZE = 25;
 
