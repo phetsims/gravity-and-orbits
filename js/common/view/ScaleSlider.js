@@ -77,7 +77,7 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} scaleProperty - Scale property for updating.
-   * @param {Object} range - Working range of slider.
+   * @param {Range} range - Working range of slider.
    * @param {number} step step of scale changes
    * @param {boolean} isIncrease flag for defining type of button
    * @constructor
