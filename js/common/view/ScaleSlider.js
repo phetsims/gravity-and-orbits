@@ -55,17 +55,16 @@ define( function( require ) {
     // add slide line
     this.addChild( verticalSlider );
 
-    //Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
+    // Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
 
     // add plus button
     var plusButton = new SliderButton( scaleProperty, RANGE, STEP, true );
-    plusButton.x = -BUTTON_SIZE / 2;
+    plusButton.centerBottom = verticalSlider.centerTop;
     this.addChild( plusButton );
 
     // add minus button
     var minusButton = new SliderButton( scaleProperty, RANGE, STEP, false );
-    minusButton.x = -BUTTON_SIZE / 2;
-    minusButton.y = 190;
+    minusButton.centerTop = verticalSlider.centerBottom;
     this.addChild( minusButton );
 
     this.mutate( options );
