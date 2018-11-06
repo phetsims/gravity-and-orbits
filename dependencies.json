@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.1.7-rc.1 Tue Oct 30 2018 16:22:18 GMT-0600 (MDT)",
+  "comment": "# gravity-and-orbits 1.1.7 Tue Nov 06 2018 13:58:52 GMT-0700 (MST)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "3f1e8158556d7c220d9adf385cdfb2600e8d4a72",
+    "sha": "ff3bb91cb3ae129dc4e66800b8d06565b8c79c78",
     "branch": "1.1"
   },
   "joist": {
