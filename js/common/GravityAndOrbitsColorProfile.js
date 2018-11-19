@@ -13,7 +13,7 @@ define( function( require ) {
   var ColorProfile = require( 'SCENERY_PHET/ColorProfile' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  var GravityAndOrbitsColorProfile = new ColorProfile( {
+  var GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' ], {
     background: {
       default: 'black',
       projector: 'white'
@@ -50,7 +50,7 @@ define( function( require ) {
       default: 'black',
       projector: 'white'
     }
-  }, [ 'default', 'projector' ] );
+  } );
 
   gravityAndOrbits.register( 'GravityAndOrbitsColorProfile', GravityAndOrbitsColorProfile );
 
