@@ -10,10 +10,15 @@
 define( ( require ) => {
   'use strict';
 
+  // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const Enumeration = require( 'PHET_CORE/Enumeration' );
 
-  const GravityAndOrbitsBodies = new Enumeration( [ 'PLANET', 'SATELLITE', 'STAR', 'MOON' ] );
+  const GravityAndOrbitsBodies = new Enumeration( [ 'PLANET',
+    'SATELLITE',
+    'STAR',
+    'MOON'
+  ] );
 
   return gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
 } );
