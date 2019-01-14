@@ -16,7 +16,7 @@ define( function( require ) {
   var BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
   var Color = require( 'SCENERY/util/Color' );
   var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/EarthMassReadoutNode' );
-  var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
+  var GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
@@ -126,7 +126,7 @@ define( function( require ) {
 
       Body.call(
         this,
-        GAOBodiesEnum.SATELLITE,
+        GravityAndOrbitsBodies.SATELLITE,
         earthSpaceStation.spaceStation,
         Color.gray,
         Color.white,
@@ -154,7 +154,7 @@ define( function( require ) {
 
       Body.call(
         this,
-        GAOBodiesEnum.MOON,
+        GravityAndOrbitsBodies.MOON,
         body,
         Color.magenta,
         Color.white,
@@ -173,7 +173,7 @@ define( function( require ) {
     function Earth( body, transformProperty, options ) {
       Body.call(
         this,
-        GAOBodiesEnum.PLANET,
+        GravityAndOrbitsBodies.PLANET,
         body,
         Color.gray,
         Color.lightGray,
@@ -192,7 +192,7 @@ define( function( require ) {
     function Sun( body, transformProperty, options ) {
       Body.call(
         this,
-        GAOBodiesEnum.STAR,
+        GravityAndOrbitsBodies.STAR,
         body,
         Color.yellow,
         Color.white,

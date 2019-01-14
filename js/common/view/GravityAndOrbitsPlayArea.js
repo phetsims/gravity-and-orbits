@@ -17,7 +17,7 @@ define( function( require ) {
   var DayCounter = require( 'GRAVITY_AND_ORBITS/common/view/DayCounter' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var ExplosionNode = require( 'GRAVITY_AND_ORBITS/common/view/ExplosionNode' );
-  var GAOBodiesEnum = require( 'GRAVITY_AND_ORBITS/common/model/GAOBodiesEnum' );
+  var GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/common/view/GrabbableVectorNode' );
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
@@ -141,7 +141,7 @@ define( function( require ) {
       textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
 
       // space station gets 1 sig fig, the other bodies have 0
-      significantFigures: ( bodies[ 1 ].name === GAOBodiesEnum.SATELLITE ) ? 1 : 0
+      significantFigures: ( bodies[ 1 ].name === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0
     } );
 
     mode.transformProperty.link( function( transform ) {

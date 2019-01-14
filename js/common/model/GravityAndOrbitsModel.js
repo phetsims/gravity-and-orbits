@@ -208,7 +208,7 @@ define( function( require ) {
     },
 
     /**
-     * Get the body associated with the name.  The name must be one of GAOBodiesEnum.
+     * Get the body associated with the name.  The name must be one of GravityAndOrbitsBodies.
      *
      * @param  {string} name
      * @returns {Body|null}

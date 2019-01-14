@@ -29,7 +29,7 @@ define( function( require ) {
 
   // constants
   // map the body identifier to the translatable label for the body
-  // must be one of GAOBodiesEnum
+  // must be one of GravityAndOrbitsBodies
   var LABEL_MAP = {
     PLANET: planetString,
     SATELLITE: satelliteString,
@@ -42,7 +42,7 @@ define( function( require ) {
 
   /**
    * Constructor for Body
-   * @param {string} name - unqique name for the body, one of GAOBodiesEnum, used for object identification
+   * @param {string} name - unqique name for the body, one of GravityAndOrbitsBodies, used for object identification
    * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
    * @param {Color} color
    * @param {Color} highlight

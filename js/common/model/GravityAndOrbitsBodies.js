@@ -10,9 +10,9 @@
 define( ( require ) => {
   'use strict';
 
-    const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-    const GAOBodiesEnum = {
+  const GravityAndOrbitsBodies = {
     PLANET: 'PLANET',
     SATELLITE: 'SATELLITE',
     STAR: 'STAR',
@@ -20,9 +20,9 @@ define( ( require ) => {
   };
 
   // verify that enum is immutable, without the runtime penalty in production code
-  if ( assert ) { Object.freeze( GAOBodiesEnum ); }
+  if ( assert ) { Object.freeze( GravityAndOrbitsBodies ); }
 
-  gravityAndOrbits.register( 'GAOBodiesEnum', GAOBodiesEnum );
+  gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
 
-  return GAOBodiesEnum;
+  return GravityAndOrbitsBodies;
 } );
