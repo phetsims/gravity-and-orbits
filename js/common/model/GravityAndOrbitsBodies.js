@@ -11,18 +11,9 @@ define( ( require ) => {
   'use strict';
 
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const Enumeration = require( 'PHET_CORE/Enumeration' );
 
-  const GravityAndOrbitsBodies = {
-    PLANET: 'PLANET',
-    SATELLITE: 'SATELLITE',
-    STAR: 'STAR',
-    MOON: 'MOON'
-  };
+  const GravityAndOrbitsBodies = new Enumeration( [ 'PLANET', 'SATELLITE', 'STAR', 'MOON' ] );
 
-  // verify that enum is immutable, without the runtime penalty in production code
-  if ( assert ) { Object.freeze( GravityAndOrbitsBodies ); }
-
-  gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
-
-  return GravityAndOrbitsBodies;
+  return gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
 } );
