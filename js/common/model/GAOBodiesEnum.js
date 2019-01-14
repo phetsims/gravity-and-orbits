@@ -7,12 +7,12 @@
  *
  * @author Jesse Greenberg
  */
-define( function( require ) {
+define( ( require ) => {
   'use strict';
 
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+    const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  var GAOBodiesEnum = {
+    const GAOBodiesEnum = {
     PLANET: 'PLANET',
     SATELLITE: 'SATELLITE',
     STAR: 'STAR',
