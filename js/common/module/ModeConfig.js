@@ -51,7 +51,7 @@ define( function( require ) {
      * @returns {Vector2}
      */
     getTotalMomentum: function() {
-      var totalMomentum = new Vector2();
+      var totalMomentum = new Vector2( 0, 0 );
       var bodies = this.getBodies();
       for ( var i = 0; i < bodies.length; i++ ) {
         totalMomentum = totalMomentum.plus( bodies[ i ].getMomentum() );

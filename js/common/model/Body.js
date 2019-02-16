@@ -38,7 +38,7 @@ define( function( require ) {
   };
 
   // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
-  var tempVector = new Vector2();
+  var tempVector = new Vector2( 0, 0 );
 
   /**
    * Constructor for Body
@@ -71,7 +71,7 @@ define( function( require ) {
 
     var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
-    this.accelerationProperty = new Property( new Vector2() );
+    this.accelerationProperty = new Property( new Vector2( 0, 0 ) );
     this.diameterProperty = new Property( diameter );
     this.clockTicksSinceExplosionProperty = new Property( 0 );
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
@@ -143,7 +143,7 @@ define( function( require ) {
     // rewindable properties - body states can be rewound, and these properties can have saved states to support this
     this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
-    this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2() ); // @public
+    this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ) ); // @public
     this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, { reentrant: true } ); // @public
     this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
     this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0 ); // @public

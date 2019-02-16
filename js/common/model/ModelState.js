@@ -24,9 +24,9 @@ define( function( require ) {
   var CHI = -0.06626458266981849;
 
   // reduce Vector2 allocation by reusing these Vector2 in computations
-  var relativePosition = new Vector2(); // used in getTwoBodyForce()
-  var velocity = new Vector2(); // used in updatePositions()
-  var netForce = new Vector2(); // used in getNetForce()
+  var relativePosition = new Vector2( 0, 0 ); // used in getTwoBodyForce()
+  var velocity = new Vector2( 0, 0 ); // used in updatePositions()
+  var netForce = new Vector2( 0, 0 ); // used in getNetForce()
 
   /**
    * @param {Array.<BodyState>} bodyStates
@@ -144,7 +144,7 @@ define( function( require ) {
      */
     setAccelerationToZero: function() {
       for ( var i = 0; i < this.bodyStates.length; i++ ) {
-        this.bodyStates[ i ].acceleration = new Vector2();
+        this.bodyStates[ i ].acceleration = new Vector2( 0, 0 );
       }
     },
 

@@ -123,7 +123,7 @@ define( function( require ) {
         spacing: SPACING,
         children: [
           gridTextNode,
-          new GridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2(), 1, {
+          new GridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
             stroke: GravityAndOrbitsColorProfile.gridIconProperty,
             lineWidth: 1.5
           } )
