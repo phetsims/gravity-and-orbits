@@ -1,4 +1,4 @@
-// Copyright 2016, University of Colorado Boulder
+// Copyright 2016-2019, University of Colorado Boulder
 
 /**
  * An enumerable that defines the various types of bodies that can exist in gravity-and-orbits.
