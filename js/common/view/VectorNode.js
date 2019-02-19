@@ -89,8 +89,8 @@ define( function( require ) {
       var minArrowLength = 10;
       var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
 
-      if ( force.magnitude() < minArrowLength && force.magnitude() > 1E-12 ) {
-        force = force.times( minArrowLength / force.magnitude() );
+      if ( force.magnitude < minArrowLength && force.magnitude > 1E-12 ) {
+        force = force.times( minArrowLength / force.magnitude );
       }
       return new Vector2( force.x + tail.x, force.y + tail.y );
     }

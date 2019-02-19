@@ -169,7 +169,7 @@ define( function( require ) {
     } );
 
     var initialPosition = self.positionProperty.initialValue.minus( options.orbitalCenter );
-    var distToCenter = initialPosition.magnitude();
+    var distToCenter = initialPosition.magnitude;
 
     // determine the max path length for the body in model coordinates
     if ( distToCenter < 1000 ) {
@@ -283,7 +283,7 @@ define( function( require ) {
       // add the length to the tracked path length
       if ( this.path.length > 2 ) {
         var difference = this.path[ this.path.length - 1 ].minus( this.path[ this.path.length - 2 ] );
-        var addedMagnitude = difference.magnitude();
+        var addedMagnitude = difference.magnitude;
 
         this.modelPathLength += addedMagnitude;
       }
@@ -292,7 +292,7 @@ define( function( require ) {
       // if the path grows more than ~6000 points, start removing points
       while ( this.modelPathLength > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
         var loss = this.path[ 1 ].minus( this.path[ 0 ] );
-        var lossMagnitude = loss.magnitude();
+        var lossMagnitude = loss.magnitude;
 
         this.path.shift();
         this.pointRemovedEmitter.emit2( this.name );
@@ -353,7 +353,7 @@ define( function( require ) {
       tempVector.x = position1.x - position2.x;
       tempVector.y = position1.y - position2.y;
 
-      var distance = tempVector.magnitude();
+      var distance = tempVector.magnitude;
       var radiiSum = this.diameterProperty.get() / 2 + body.diameterProperty.get() / 2;
       return distance < radiiSum;
     },
