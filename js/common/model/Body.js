@@ -157,7 +157,7 @@ define( function( require ) {
     // @public - emitters for various events
     this.pointAddedEmitter = new Emitter( { validationEnabled: false } );
     this.pointRemovedEmitter = new Emitter( { validationEnabled: false } );
-    this.clearedEmitter = new Emitter();
+    this.clearedEmitter = new Emitter( { validationEnabled: false } );
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
@@ -311,7 +311,7 @@ define( function( require ) {
       this.path = [];
       this.pathLength = 0;
       this.modelPathLength = 0;
-      this.clearedEmitter.emit1( this.name );
+      this.clearedEmitter.emit( this.name );
     },
 
     // @public
