@@ -155,8 +155,8 @@ define( function( require ) {
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // @public - emitters for various events
-    this.pointAddedEmitter = new Emitter();
-    this.pointRemovedEmitter = new Emitter();
+    this.pointAddedEmitter = new Emitter( { validationEnabled: false } );
+    this.pointRemovedEmitter = new Emitter( { validationEnabled: false } );
     this.clearedEmitter = new Emitter();
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
@@ -278,7 +278,7 @@ define( function( require ) {
     addPathPoint: function() {
       var pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
-      this.pointAddedEmitter.emit2( pathPoint, this.name );
+      this.pointAddedEmitter.emit( pathPoint, this.name );
 
       // add the length to the tracked path length
       if ( this.path.length > 2 ) {
@@ -295,7 +295,7 @@ define( function( require ) {
         var lossMagnitude = loss.magnitude;
 
         this.path.shift();
-        this.pointRemovedEmitter.emit2( this.name );
+        this.pointRemovedEmitter.emit( this.name );
 
         this.modelPathLength -= lossMagnitude;
       }
