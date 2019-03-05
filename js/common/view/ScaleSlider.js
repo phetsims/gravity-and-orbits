@@ -46,7 +46,7 @@ define( function( require ) {
       thumbSize: THUMB_SIZE,
 
       // custom thumb colors
-      thumbFillEnabled: '#98BECF',
+      thumbFill: '#98BECF',
       thumbFillHighlighted: '#B3D3E2'
     } );
 

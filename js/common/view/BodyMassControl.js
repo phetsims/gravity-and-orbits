@@ -50,7 +50,7 @@ define( function( require ) {
       majorTickStroke: GravityAndOrbitsColorProfile.panelTextProperty,
 
       // custom thumb
-      thumbFillEnabled: '#98BECF',
+      thumbFill: '#98BECF',
       thumbFillHighlighted: '#B3D3E2'
     } );
 
