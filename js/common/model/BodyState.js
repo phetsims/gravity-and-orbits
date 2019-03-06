@@ -46,7 +46,7 @@ define( function( require ) {
      * @returns {number}
      */
     distanceSquared: function( position ) {
-      return this.position.minus( position ).magnitudeSquared();
+      return this.position.minus( position ).magnitudeSquared;
     },
 
     /**
