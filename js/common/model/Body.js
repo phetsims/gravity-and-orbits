@@ -20,6 +20,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   var Vector2 = require( 'DOT/Vector2' );
+  var Vector2Property = require( 'DOT/Vector2Property' );
 
   // strings
   var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
@@ -71,7 +72,7 @@ define( function( require ) {
 
     var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
-    this.accelerationProperty = new Property( new Vector2( 0, 0 ) );
+    this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
     this.diameterProperty = new Property( diameter );
     this.clockTicksSinceExplosionProperty = new Property( 0 );
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
