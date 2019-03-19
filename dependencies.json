@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.1.7 Tue Mar 19 2019 15:04:06 GMT-0400 (EDT)",
+  "comment": "# gravity-and-orbits 1.1.7 Tue Mar 19 2019 16:50:31 GMT-0400 (EDT)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "HEAD"
@@ -10,23 +10,23 @@
   },
   "brand": {
     "sha": "de12d19115c1b0fb5412b5ffb0b00f6f8f6a534e",
-    "branch": "gravity-and-orbits-1.1"
+    "branch": "HEAD"
   },
   "chipper": {
-    "sha": "1ef1836916d97b7e6977190d5bd399e4d6335103",
-    "branch": "HEAD"
+    "sha": "08cecaead5a258ae68482a114c27d65435ed35af",
+    "branch": "gravity-and-orbits-1.1"
   },
   "dot": {
     "sha": "9b3b950fd8f8a5c1efcef537ea066db7b23173d6",
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "ad2fc7480a1b605ffe7504cbbc5dec9f3fbeb975",
+    "sha": "dd77c35be8525762f633132fcbf274c3e3fed649",
     "branch": "1.1"
   },
   "joist": {
     "sha": "4a93977b96bcbfed7e5de23131e37781f82673f1",
-    "branch": "gravity-and-orbits-1.1"
+    "branch": "HEAD"
   },
   "kite": {
     "sha": "f4c67cff6e24693f66b58fcea16069be3dbd8e88",
@@ -38,6 +38,10 @@
   },
   "phetcommon": {
     "sha": "fe5a0caf8972a0bebef9a55dc9ea5c973473b123",
+    "branch": "HEAD"
+  },
+  "phetmarks": {
+    "sha": "3a5691551b8be942d4b0534c82e86701882529f9",
     "branch": "HEAD"
   },
   "query-string-machine": {
@@ -63,9 +67,5 @@
   "tandem": {
     "sha": "4ac1125441b04a890088f9704314879aba5dead0",
     "branch": "HEAD"
-  },
-  "phetmarks": {
-    "branch": "master",
-    "sha": "3a5691551b8be942d4b0534c82e86701882529f9"
   }
 }
