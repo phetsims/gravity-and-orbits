@@ -135,8 +135,6 @@ define( function( require ) {
       this.localBounds.maxY + dilateBottom ) );
   }
 
-  gravityAndOrbits.register( 'ScaleSlider.SliderButton', SliderButton );
-
   inherit( RectangularPushButton, SliderButton );
 
   return ScaleSlider;

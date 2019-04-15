@@ -101,8 +101,6 @@ define( function( require ) {
     this.mutate( options );
   }
 
-  gravityAndOrbits.register( 'ModeControl.PlanetModeResetButton', PlanetModeResetButton );
-
   inherit( RectangularPushButton, PlanetModeResetButton );
 
   return ModeControl;

@@ -332,8 +332,6 @@ define( function( require ) {
     } ) );
   }
 
-  gravityAndOrbits.register( 'ModeList.ModeListModule', ModeListModule );
-
   inherit( Object, ModeListModule, {
 
     /**
