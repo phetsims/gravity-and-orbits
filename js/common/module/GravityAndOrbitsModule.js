@@ -23,9 +23,10 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
   var Property = require( 'AXON/Property' );
+  var PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
 
   // constants
-  var G = 6.67428E-11;
+  var G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
   /**
    * @param {boolean} showMeasuringTape

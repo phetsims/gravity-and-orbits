@@ -15,10 +15,10 @@ define( function( require ) {
   // modules
   var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
   var Vector2 = require( 'DOT/Vector2' );
 
   // constants
-  var GRAVITATION_CONSTANT = 6.67428E-11;
   var XI = 0.1786178958448091;
   var LAMBDA = -0.2123418310626054;
   var CHI = -0.06626458266981849;
@@ -106,7 +106,7 @@ define( function( require ) {
     },
 
     /**
-     * Update rotations of all bodies in the sim. Some bodies need to rotate so that during orbital motion they 
+     * Update rotations of all bodies in the sim. Some bodies need to rotate so that during orbital motion they
      * always point toward the earth. Only some bodies require rotation.
      * @private
      *
@@ -150,7 +150,7 @@ define( function( require ) {
 
     /**
      * Gets the net force on the bodyState due to the other bodies
-     * 
+     *
      * @private
      * @param {BodyState} bodyState
      * @returns {Vector2}
@@ -198,7 +198,7 @@ define( function( require ) {
         relativePosition.x = target.position.x - source.position.x;
         relativePosition.y = target.position.y - source.position.y;
 
-        var multiplicativeFactor = GRAVITATION_CONSTANT * source.mass * target.mass /
+        var multiplicativeFactor = PhysicalConstants.GRAVITATIONAL_CONSTANT * source.mass * target.mass /
                                    Math.pow( source.position.distanceSquared( target.position ), 1.5 );
         return relativePosition.multiplyScalar( multiplicativeFactor );
       }
@@ -243,7 +243,7 @@ define( function( require ) {
       this.updatePositions( XI * dt );  // net time: XI dt
 
       // update Velocities
-      this.updateVelocities( (1 - 2 * LAMBDA) * dt / 2 );// net time: (1 - 2 * LAMBDA) * dt / 2
+      this.updateVelocities( ( 1 - 2 * LAMBDA ) * dt / 2 );// net time: (1 - 2 * LAMBDA) * dt / 2
 
       //-------------
       // Step Two
@@ -260,7 +260,7 @@ define( function( require ) {
       //--------------
 
       // update Positions
-      this.updatePositions( (1 - 2 * (CHI + XI)) * dt ); // net time: (1-(XI+CHI)) dt
+      this.updatePositions( ( 1 - 2 * ( CHI + XI ) ) * dt ); // net time: (1-(XI+CHI)) dt
 
       // update Velocities
       this.updateVelocities( LAMBDA * dt ); // net time: (1/2 + LAMBDA) dt
@@ -282,7 +282,7 @@ define( function( require ) {
       // IMPORTANT: we need to update the velocities first
 
       // update Velocities
-      this.updateVelocities( (1 - 2 * LAMBDA) * dt / 2 ); // net time:  dt;
+      this.updateVelocities( ( 1 - 2 * LAMBDA ) * dt / 2 ); // net time:  dt;
 
       // update Positions
       this.updatePositions( XI * dt ); // net time:  dt
