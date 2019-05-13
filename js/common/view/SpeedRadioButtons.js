@@ -47,10 +47,10 @@ define( function( require ) {
     var normalText = new Text( normalString, textOptions );
     var slowText = new Text( slowMotionString, textOptions );
 
-    VerticalAquaRadioButtonGroup.call( this, [
-      { property: speedProperty, value: GravityAndOrbitsConstants.FAST_SPEED_SCALE, node: fastText },
-      { property: speedProperty, value: GravityAndOrbitsConstants.STARTING_SPEED_SCALE, node: normalText },
-      { property: speedProperty, value: GravityAndOrbitsConstants.SLOW_SPEED_SCALE, node: slowText }
+    VerticalAquaRadioButtonGroup.call( this, speedProperty, [
+      { value: GravityAndOrbitsConstants.FAST_SPEED_SCALE, node: fastText },
+      { value: GravityAndOrbitsConstants.STARTING_SPEED_SCALE, node: normalText },
+      { value: GravityAndOrbitsConstants.SLOW_SPEED_SCALE, node: slowText }
     ], options );
   }
 
