@@ -1,4 +1,4 @@
-// Copyright 2013-2018, University of Colorado Boulder
+// Copyright 2013-2019, University of Colorado Boulder
 
 /**
  * Visual representation of speed radio buttons.
@@ -7,54 +7,53 @@
  * @author Andrey Zelenkov (Mlearner)
  * @author Aaron Davis (PhET)
  */
-
 define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
 
   // strings
-  var fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
-  var normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
-  var slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' );
+  const fastForwardString = require( 'string!GRAVITY_AND_ORBITS/fastForward' );
+  const normalString = require( 'string!GRAVITY_AND_ORBITS/normal' );
+  const slowMotionString = require( 'string!GRAVITY_AND_ORBITS/slowMotion' );
 
-  /**
-   * @param {Property.<number>} speedProperty - The rate of flow of time.
-   * @param [options]
-   * @constructor
-   */
-  function SpeedRadioButtons( speedProperty, options ) {
+  class SpeedRadioButtons extends VerticalAquaRadioButtonGroup {
 
-    options = _.extend( {
-      spacing: 1,
-      touchAreaXDilation: 5,
-      radioButtonOptions: { radius: 8 }
-    }, options );
+    /**
+     * @param {Property.<number>} speedProperty - The rate of flow of time.
+     * @param {Object} [options]
+     * @constructor
+     */
+    constructor( speedProperty, options ) {
 
-    var textOptions = {
-      font: new PhetFont( 18 ),
-      fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
-      maxWidth: 200
-    };
-    var fastText = new Text( fastForwardString, textOptions );
-    var normalText = new Text( normalString, textOptions );
-    var slowText = new Text( slowMotionString, textOptions );
+      options = _.extend( {
+        spacing: 1,
+        touchAreaXDilation: 5,
+        radioButtonOptions: { radius: 8 }
+      }, options );
 
-    VerticalAquaRadioButtonGroup.call( this, speedProperty, [
-      { value: GravityAndOrbitsConstants.FAST_SPEED_SCALE, node: fastText },
-      { value: GravityAndOrbitsConstants.STARTING_SPEED_SCALE, node: normalText },
-      { value: GravityAndOrbitsConstants.SLOW_SPEED_SCALE, node: slowText }
-    ], options );
+      const textOptions = {
+        font: new PhetFont( 18 ),
+        fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
+        maxWidth: 200
+      };
+      const fastText = new Text( fastForwardString, textOptions );
+      const normalText = new Text( normalString, textOptions );
+      const slowText = new Text( slowMotionString, textOptions );
+
+      super( speedProperty, [
+        { value: GravityAndOrbitsConstants.FAST_SPEED_SCALE, node: fastText },
+        { value: GravityAndOrbitsConstants.STARTING_SPEED_SCALE, node: normalText },
+        { value: GravityAndOrbitsConstants.SLOW_SPEED_SCALE, node: slowText }
+      ], options );
+    }
   }
 
-  gravityAndOrbits.register( 'SpeedRadioButtons', SpeedRadioButtons );
-
-  return inherit( VerticalAquaRadioButtonGroup, SpeedRadioButtons );
+  return gravityAndOrbits.register( 'SpeedRadioButtons', SpeedRadioButtons );
 } );
