@@ -73,8 +73,12 @@ define( function( require ) {
     } );
 
     // Add the speed control slider.
-    this.addChild( new SpeedRadioButtons( module.timeSpeedScaleProperty,
-      { bottom: this.layoutBounds.bottom - MARGIN, left: this.layoutBounds.left + MARGIN, scale: 1.2 } ) );
+    this.addChild( new SpeedRadioButtons( module.timeSpeedScaleProperty, {
+        bottom: this.layoutBounds.bottom - MARGIN,
+        left: this.layoutBounds.left + MARGIN,
+        scale: 1.2
+      } )
+    );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {
