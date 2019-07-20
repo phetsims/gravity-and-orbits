@@ -23,15 +23,7 @@ define( function( require ) {
   function GlobalOptionsNode() {
 
     // add support for setting projector mode
-    var projectorModeCheckbox = new ProjectorModeCheckbox();
-    projectorModeCheckbox.projectorModeEnabledProperty.link( function( projectorMode ) {
-      if ( projectorMode ) {
-        GravityAndOrbitsColorProfile.profileNameProperty.set( 'projector' );
-      }
-      else {
-        GravityAndOrbitsColorProfile.profileNameProperty.set( 'default' );
-      }
-    } );
+    var projectorModeCheckbox = new ProjectorModeCheckbox( GravityAndOrbitsColorProfile );
 
     // VBox is used to make it easy to add additional options
     VBox.call( this, _.extend( {
