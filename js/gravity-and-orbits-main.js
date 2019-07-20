@@ -29,7 +29,9 @@ define( function( require ) {
       thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
               'HTML5.'
     },
-    optionsNode: new GlobalOptionsNode()
+
+    // Creates content for the Options dialog
+    createOptionsDialogContent: () => new GlobalOptionsNode()
   };
 
   SimLauncher.launch( function() {
