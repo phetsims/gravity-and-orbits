@@ -157,12 +157,12 @@ define( function( require ) {
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // @public - emitters for various events
-    this.pointAddedEmitter = new Emitter( { validators: [
+    this.pointAddedEmitter = new Emitter( { parameters: [
       { valueType: Vector2 },
       { validValues: GravityAndOrbitsBodies.VALUES }
     ] } );
-    this.pointRemovedEmitter = new Emitter( { validators: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
-    this.clearedEmitter = new Emitter( { validators: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
+    this.pointRemovedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
+    this.clearedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
