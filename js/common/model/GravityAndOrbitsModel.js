@@ -43,7 +43,6 @@ define( function( require ) {
 
 
   /**
-   * Main constructor for GravityAndOrbitsModel, which contains all of the model logic for the entire sim screen.
    * @param {GravityAndOrbitsClock} clock
    * @param {Property.<boolean>} gravityEnabledProperty flag to indicate whether gravity is on or off.
    * @constructor
