@@ -6,7 +6,6 @@
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-
 define( require => {
   'use strict';
 
@@ -15,7 +14,6 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const GravityControl = require( 'GRAVITY_AND_ORBITS/common/view/GravityControl' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const ModeControl = require( 'GRAVITY_AND_ORBITS/common/view/ModeControl' );
   const Panel = require( 'SUN/Panel' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -24,45 +22,45 @@ define( require => {
   // constants
   const MENU_SECTION_OPTIONS = { x: 5 };
 
-  /**
-   * @param {GravityAndOrbitsModule} module
-   * @param {Object} [options]
-   * @constructor
-   */
-  function ControlPanel( module, options ) {
+  class ControlPanel extends Panel {
 
-    options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
+    /**
+     * @param {GravityAndOrbitsModule} module
+     * @param {Object} [options]
+     */
+    constructor( module, options ) {
 
-    // top separator rectangle for the gravity control section
-    const makeTopSeparatorRectangle = () => new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
+      options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
-    // make bottom separator rectangle for the gravity control
-    // slightly taller - the vertical draw of the 'y' in gravity creates the illusion that
-    // the top has more space
-    const makeBottomSeparatorRectangle = () => new Rectangle( 0, 0, 0, 4, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
+      // top separator rectangle for the gravity control section
+      const makeTopSeparatorRectangle = () => new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
 
-    // menu sections and separators
-    const sections = [
-      new ModeControl( module.modeProperty, module.getModes(), MENU_SECTION_OPTIONS ),
-      makeTopSeparatorRectangle(),
-      new GravityControl( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
-      makeBottomSeparatorRectangle(),
-      new CheckboxPanel( module, MENU_SECTION_OPTIONS )
-    ];
+      // make bottom separator rectangle for the gravity control
+      // slightly taller - the vertical draw of the 'y' in gravity creates the illusion that
+      // the top has more space
+      const makeBottomSeparatorRectangle = () => new Rectangle( 0, 0, 0, 4, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
 
-    assert && assert( sections.length === 5, 'There should be 5 sections in the ControlPanel' );
+      // menu sections and separators
+      const sections = [
+        new ModeControl( module.modeProperty, module.getModes(), MENU_SECTION_OPTIONS ),
+        makeTopSeparatorRectangle(),
+        new GravityControl( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
+        makeBottomSeparatorRectangle(),
+        new CheckboxPanel( module, MENU_SECTION_OPTIONS )
+      ];
 
-    const vBox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
-    Panel.call( this, vBox, options );
+      assert && assert( sections.length === 5, 'There should be 5 sections in the ControlPanel' );
 
-    // resize the separators to allow them to go inside the panel margins
-    const separatorWidth = vBox.width + 2 * GravityAndOrbitsConstants.PANEL_X_MARGIN;
-    for ( let i = 0; i < Math.floor( sections.length / 2 ); i++ ) {
-      sections[ i * 2 + 1 ].setRect( -GravityAndOrbitsConstants.PANEL_X_MARGIN, 0, separatorWidth, 2 );
+      const vBox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
+      super( vBox, options );
+
+      // resize the separators to allow them to go inside the panel margins
+      const separatorWidth = vBox.width + 2 * GravityAndOrbitsConstants.PANEL_X_MARGIN;
+      for ( let i = 0; i < Math.floor( sections.length / 2 ); i++ ) {
+        sections[ i * 2 + 1 ].setRect( -GravityAndOrbitsConstants.PANEL_X_MARGIN, 0, separatorWidth, 2 );
+      }
     }
   }
 
-  gravityAndOrbits.register( 'ControlPanel', ControlPanel );
-
-  return inherit( Panel, ControlPanel );
+  return gravityAndOrbits.register( 'ControlPanel', ControlPanel );
 } );

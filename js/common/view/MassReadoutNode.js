@@ -12,48 +12,47 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Node = require( 'SCENERY/nodes/Node' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Text = require( 'SCENERY/nodes/Text' );
 
-  function MassReadoutNode( bodyNode, visibleProperty ) {
-    Node.call( this );
-    const self = this;
-    this.bodyNode = bodyNode; // @protected
+  class MassReadoutNode extends Node {
+    constructor( bodyNode, visibleProperty ) {
+      super();
+      const self = this;
+      this.bodyNode = bodyNode; // @protected
 
-    const readoutText = new Text( this.createText(), {
-      pickable: false,
-      font: new PhetFont( 18 ),
-      fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
-    } );
-    this.addChild( readoutText );
+      const readoutText = new Text( this.createText(), {
+        pickable: false,
+        font: new PhetFont( 18 ),
+        fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
+      } );
+      this.addChild( readoutText );
 
-    const updateLocation = () => {
-      const bounds = bodyNode.bodyRenderer.getBounds();
+      const updateLocation = () => {
+        const bounds = bodyNode.bodyRenderer.getBounds();
 
-      self.x = bounds.centerX - self.width / 2;
-      if ( bodyNode.body.massReadoutBelow ) {
-        self.y = bounds.maxX + self.height;
-      }
-      else {
-        self.y = bounds.minY - self.height;
-      }
-    };
+        self.x = bounds.centerX - self.width / 2;
+        if ( bodyNode.body.massReadoutBelow ) {
+          self.y = bounds.maxX + self.height;
+        }
+        else {
+          self.y = bounds.minY - self.height;
+        }
+      };
 
-    bodyNode.body.massProperty.link( () => {
-      readoutText.setText( self.createText() );
-      updateLocation();
-    } );
+      bodyNode.body.massProperty.link( () => {
+        readoutText.setText( self.createText() );
+        updateLocation();
+      } );
 
-    visibleProperty.link( visible => {
-      // set visible and update location
-      self.visible = visible;
-      updateLocation();
-    } );
+      visibleProperty.link( visible => {
+        // set visible and update location
+        self.visible = visible;
+        updateLocation();
+      } );
+    }
   }
 
-  gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );
-
-  return inherit( Node, MassReadoutNode );
+  return gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );
 } );

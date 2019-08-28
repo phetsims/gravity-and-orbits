@@ -16,133 +16,128 @@ define( require => {
   // modules
   const CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Util = require( 'DOT/Util' );
 
   // constants
   const STROKE_WIDTH = 3;
 
-  /**
-   *
-   * @param {Body} bodies
-   * @param {Property.<ModelViewTransform2>} transformProperty
-   * @param {Property.<boolean>} visibleProperty
-   * @param {Bounds2} canvasBounds
-   * @param {Object} [options]
-   * @constructor
-   */
-  function PathsCanvasNode( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
+  class PathsCanvasNode extends CanvasNode {
+    /**
+     *
+     * @param {Body} bodies
+     * @param {Property.<ModelViewTransform2>} transformProperty
+     * @param {Property.<boolean>} visibleProperty
+     * @param {Bounds2} canvasBounds
+     * @param {Object} [options]
+     */
+    constructor( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
 
-    options = _.extend( {
-      maxPathLength: 1150 // max path length for the trace that follows the planets
-    }, options );
+      options = _.extend( {
+        maxPathLength: 1150 // max path length for the trace that follows the planets
+      }, options );
 
-    assert && assert( canvasBounds, 'Paths canvas must define bounds' );
-    CanvasNode.call( this, {
-      canvasBounds: canvasBounds,
-      preventFit: true
-    } );
-    const self = this;
+      assert && assert( canvasBounds, 'Paths canvas must define bounds' );
+      super( {
+        canvasBounds: canvasBounds,
+        preventFit: true
+      } );
+      const self = this;
 
-    // @private - a map tracking each body and its associated points
-    this.namedPoints = {}; // @private
-    for ( let i = 0; i < bodies.length; i++ ) {
-      this.namedPoints[ bodies[ i ].name ] = new NamedPoints( bodies[ i ].name );
-    }
+      // @private - a map tracking each body and its associated points
+      this.namedPoints = {}; // @private
+      for ( let i = 0; i < bodies.length; i++ ) {
+        this.namedPoints[ bodies[ i ].name ] = new NamedPoints( bodies[ i ].name );
+      }
 
-    // @private
-    this.transformProperty = transformProperty;
+      // @private
+      this.transformProperty = transformProperty;
 
-    // transform all body points and re paint the canvas
-    // disposal unnecessary, the canvas node exists for life of sim
-    transformProperty.link( transform => {
+      // transform all body points and re paint the canvas
+      // disposal unnecessary, the canvas node exists for life of sim
+      transformProperty.link( transform => {
+        for ( let i = 0; i < bodies.length; i++ ) {
+          const body = bodies[ i ];
+
+          // when the transform changes, we want to re-transform all points in a body
+          // path and then re paint the canvas
+          self.namedPoints[ body.name ].points = [];
+
+          for ( let j = 0; j < body.path.length; j++ ) {
+            const point = body.path[ j ];
+            const pt = transformProperty.get().modelToViewPosition( point );
+            self.namedPoints[ body.name ].points.push( pt );
+          }
+        }
+
+        self.invalidatePaint();
+      } );
+
+      this.bodies = bodies; // @private
+
+      visibleProperty.link( isVisible => {
+        self.visible = isVisible;
+        for ( let i = 0; i < bodies.length; i++ ) {
+          self.namedPoints[ bodies[ i ].name ].points = [];
+          self.bodies[ i ].clearPath();
+        }
+        self.invalidatePaint();
+      } );
+
+      // @private - listener for when a point is added, bound by thisNode
+      // created to avoid excess closures every time a point is removed
+      // @param {string} bodyName - used to look up points associated with the desired body's trail
+      this.pointAddedListener = ( point, bodyName ) => {
+        const pt = transformProperty.get().modelToViewPosition( point );
+
+        // 'this' is defined by bind in addListener
+        const namedPoints = this.namedPoints[ bodyName ];
+        namedPoints.points.push( pt );
+        if ( visibleProperty.get() ) {
+          this.invalidatePaint();
+        }
+      };
+
+      // @private - listener for when a point is removed, bound by thisNode
+      // created to avoid excess closures every time a point is removed
+      // @param {string} bodyName - used to look up points associated with the desired body's trail
+      this.pointRemovedListener = bodyName => {
+
+        // 'this' defined by bind in addListener
+        const namedPoints = this.namedPoints[ bodyName ];
+        if ( namedPoints.points.length > 0 ) {
+          namedPoints.points.shift();
+        }
+        if ( visibleProperty.get() ) {
+          this.invalidatePaint();
+        }
+      };
+
+      // @private - listener for when date is cleared, bound by thisNode
+      // created to avoid excess closures every time date is cleared
+      // @param {string} bodyName - used to look up points associated with the desired body's trail
+      this.clearedListener = bodyName => {
+
+        // 'this' is defined by bind
+        const namedPoints = this.namedPoints[ bodyName ];
+        while ( namedPoints.points.length ) { namedPoints.points.pop(); }
+        this.invalidatePaint();
+      };
+
+      // add listeners to each body
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
 
-        // when the transform changes, we want to re-transform all points in a body
-        // path and then re paint the canvas
-        self.namedPoints[ body.name ].points = [];
-
-        for ( let j = 0; j < body.path.length; j++ ) {
-          const point = body.path[ j ];
-          const pt = transformProperty.get().modelToViewPosition( point );
-          self.namedPoints[ body.name ].points.push( pt );
-        }
+        body.pointAddedEmitter.addListener( self.pointAddedListener.bind( self ) );
+        body.pointRemovedEmitter.addListener( self.pointRemovedListener.bind( self ) );
+        body.clearedEmitter.addListener( self.clearedListener.bind( self ) );
       }
-
-      self.invalidatePaint();
-    } );
-
-    this.bodies = bodies; // @private
-
-    visibleProperty.link( isVisible => {
-      self.visible = isVisible;
-      for ( let i = 0; i < bodies.length; i++ ) {
-        self.namedPoints[ bodies[ i ].name ].points = [];
-        self.bodies[ i ].clearPath();
-      }
-      self.invalidatePaint();
-    } );
-
-    // @private - listener for when a point is added, bound by thisNode
-    // created to avoid excess closures every time a point is removed
-    // @param {string} bodyName - used to look up points associated with the desired body's trail
-    this.pointAddedListener = ( point, bodyName ) => {
-      const pt = transformProperty.get().modelToViewPosition( point );
-
-      // 'this' is defined by bind in addListener
-      const namedPoints = this.namedPoints[ bodyName ];
-      namedPoints.points.push( pt );
-      if ( visibleProperty.get() ) {
-        this.invalidatePaint();
-      }
-    };
-
-    // @private - listener for when a point is removed, bound by thisNode
-    // created to avoid excess closures every time a point is removed
-    // @param {string} bodyName - used to look up points associated with the desired body's trail
-    this.pointRemovedListener = bodyName => {
-
-      // 'this' defined by bind in addListener
-      const namedPoints = this.namedPoints[ bodyName ];
-      if ( namedPoints.points.length > 0 ) {
-        namedPoints.points.shift();
-      }
-      if ( visibleProperty.get() ) {
-        this.invalidatePaint();
-      }
-    };
-
-    // @private - listener for when date is cleared, bound by thisNode
-    // created to avoid excess closures every time date is cleared
-    // @param {string} bodyName - used to look up points associated with the desired body's trail
-    this.clearedListener = bodyName => {
-
-      // 'this' is defined by bind
-      const namedPoints = this.namedPoints[ bodyName ];
-      while ( namedPoints.points.length ) { namedPoints.points.pop(); }
-      this.invalidatePaint();
-    };
-
-    // add listeners to each body
-    for ( let i = 0; i < bodies.length; i++ ) {
-      const body = bodies[ i ];
-
-      body.pointAddedEmitter.addListener( self.pointAddedListener.bind( self ) );
-      body.pointRemovedEmitter.addListener( self.pointRemovedListener.bind( self ) );
-      body.clearedEmitter.addListener( self.clearedListener.bind( self ) );
     }
-  }
-
-  gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
-
-  inherit( CanvasNode, PathsCanvasNode, {
 
     /**
      * @private
      * @param {CanvasRenderingContext2D} context
      */
-    paintCanvas: function( context ) {
+    paintCanvas( context ) {
       let j;
 
       // draw the path for each body one by one
@@ -224,23 +219,26 @@ define( require => {
         }
       }
     }
-  } );
+  }
 
-  /**
-   * Constructor.  Named points assigns an array of points a name so
-   * that it can be looked up outside of a closure.
-   *
-   * @param  {string} name
-   * @constructor
-   */
-  function NamedPoints( name ) {
-    this.name = name;
-    this.points = [];
+  gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
+
+
+  class NamedPoints {
+
+    /**
+     * Named points assigns an array of points a name so that it can be looked up outside of a closure.
+     *
+     * @param  {string} name
+     */
+    constructor( name ) {
+      this.name = name;
+      this.points = [];
+    }
+
   }
 
   gravityAndOrbits.register( 'NamedPoints', NamedPoints );
-
-  inherit( Object, NamedPoints );
 
   return PathsCanvasNode;
 } );

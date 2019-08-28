@@ -14,7 +14,6 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
@@ -42,7 +41,7 @@ define( require => {
   /**
    * Convenience function that converts days to seconds, using
    *   days * hoursPerDay * minutesPerHour * secondsPerMinue
-   *   
+   *
    * @param  {number} days
    * @returns {number}
    */
@@ -50,116 +49,104 @@ define( require => {
     return days * 24 * 60 * 60;
   }
 
-  /**
-   * @param {Property.<boolean>} playButtonPressedProperty
-   * @param {Property.<boolean>} gravityEnabledProperty
-   * @param {Property.<boolean>} steppingProperty
-   * @param {Property.<boolean>} rewindingProperty
-   * @param {Property.<number>} timeSpeedScaleProperty
-   * @constructor
-   */
-  function CartoonModeList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
-    ModeList.ModeList.call( this,
-      new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ),
-      new SunEarthModeConfig(),
-      new SunEarthMoonModeConfig(),
-      new EarthMoonModeConfig(),
-      new EarthSpaceStationModeConfig(), {
-        adjustMoonPathLength: true // adjust the moon path length in cartoon mode
-      } );
+  class CartoonModeList extends ModeList.ModeList {
+
+    /**
+     * @param {Property.<boolean>} playButtonPressedProperty
+     * @param {Property.<boolean>} gravityEnabledProperty
+     * @param {Property.<boolean>} steppingProperty
+     * @param {Property.<boolean>} rewindingProperty
+     * @param {Property.<number>} timeSpeedScaleProperty
+     */
+    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
+      super(
+        new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ),
+        new SunEarthModeConfig(),
+        new SunEarthMoonModeConfig(),
+        new EarthMoonModeConfig(),
+        new EarthSpaceStationModeConfig(), {
+          adjustMoonPathLength: true // adjust the moon path length in cartoon mode
+        } );
+    }
   }
 
   gravityAndOrbits.register( 'CartoonModeList', CartoonModeList );
 
-  inherit( ModeList.ModeList, CartoonModeList );
-
   /**
    * Model configuration for a system with the sun and the earth.
-   *
-   * @constructor
    */
-  function SunEarthModeConfig() {
+  class SunEarthModeConfig extends ModeList.SunEarthModeConfig {
+    constructor() {
+      super();
+      this.sun.radius *= SUN_RADIUS_MULTIPLIER;
+      this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+      this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
+      this.forceScale *= FORCE_SCALE;
+      this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
-    ModeList.SunEarthModeConfig.call( this );
-
-    this.sun.radius *= SUN_RADIUS_MULTIPLIER;
-    this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
-    this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
-    this.forceScale *= FORCE_SCALE;
-    this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
-
-    // Sun shouldn't move in cartoon modes
-    this.sun.fixed = true;
+      // Sun shouldn't move in cartoon modes
+      this.sun.fixed = true;
+    }
   }
 
   gravityAndOrbits.register( 'SunEarthModeConfig', SunEarthModeConfig );
 
-  inherit( ModeList.SunEarthModeConfig, SunEarthModeConfig );
   /**
    * Model configuration for a system with the sun, earth and moon.
-   *
-   * @constructor
    */
-  function SunEarthMoonModeConfig() {
+  class SunEarthMoonModeConfig extends ModeList.SunEarthMoonModeConfig {
+    constructor() {
+      super();
+      this.sun.radius *= SUN_RADIUS_MULTIPLIER;
+      this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+      this.moon.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
 
-    ModeList.SunEarthMoonModeConfig.call( this );
+      this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
+      this.moon.vx *= 21;
+      this.moon.y = this.earth.radius * 1.7;
 
-    this.sun.radius *= SUN_RADIUS_MULTIPLIER;
-    this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
-    this.moon.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+      this.forceScale *= FORCE_SCALE;
+      this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
-    this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
-    this.moon.vx *= 21;
-    this.moon.y = this.earth.radius * 1.7;
+      // Sun shouldn't move in cartoon modes
+      this.sun.fixed = true;
+    }
 
-    this.forceScale *= FORCE_SCALE;
-    this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
-
-    // Sun shouldn't move in cartoon modes
-    this.sun.fixed = true;
   }
 
   gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
 
-  inherit( ModeList.SunEarthMoonModeConfig, SunEarthMoonModeConfig );
+  class EarthMoonModeConfig extends ModeList.EarthMoonModeConfig {
+    constructor() {
 
-  function EarthMoonModeConfig() {
+      const moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD );
+      super( { moonRotationPeriod: moonRotationPeriod } );
 
-    const moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD );
-    ModeList.EarthMoonModeConfig.call( this, {
-      moonRotationPeriod: moonRotationPeriod
-    } );
+      const radiusMultiplier = 15; // tuned by hand
+      this.earth.radius *= radiusMultiplier;
+      this.moon.radius *= radiusMultiplier;
 
-    const radiusMultiplier = 15; // tuned by hand
-    this.earth.radius *= radiusMultiplier;
-    this.moon.radius *= radiusMultiplier;
-
-    // so that default gravity force takes up 1/2 cell in grid
-    this.forceScale *= 0.77;
+      // so that default gravity force takes up 1/2 cell in grid
+      this.forceScale *= 0.77;
+    }
   }
 
   gravityAndOrbits.register( 'EarthMoonModeConfig', EarthMoonModeConfig );
 
-  inherit( ModeList.EarthMoonModeConfig, EarthMoonModeConfig );
-
   /**
    * Model configuration for a system with the earth and a space station.
-   *
-   * @constructor
    */
-  function EarthSpaceStationModeConfig() {
+  class EarthSpaceStationModeConfig extends ModeList.EarthSpaceStationModeConfig {
+    constructor() {
+      super();
 
-    ModeList.EarthSpaceStationModeConfig.call( this );
-
-    // tuned by hand
-    this.earth.radius *= 0.8;
-    this.spaceStation.radius *= 8;
+      // tuned by hand
+      this.earth.radius *= 0.8;
+      this.spaceStation.radius *= 8;
+    }
   }
 
   gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
 
-  inherit( ModeList.EarthSpaceStationModeConfig, EarthSpaceStationModeConfig );
-
   return CartoonModeList;
-
 } );

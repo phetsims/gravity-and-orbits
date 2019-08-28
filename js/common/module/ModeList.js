@@ -23,7 +23,6 @@ define( require => {
   const GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsMode' );
   const HBox = require( 'SCENERY/nodes/HBox' );
   const Image = require( 'SCENERY/nodes/Image' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'SCENERY/nodes/Line' );
   const ModeConfig = require( 'GRAVITY_AND_ORBITS/common/module/ModeConfig' );
   const SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
@@ -33,6 +32,7 @@ define( require => {
   const VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
   // strings
+  // REVIEW why are these commented out?
   // const moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
   // const planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
   // const satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
@@ -89,248 +89,233 @@ define( require => {
 
   const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
-  const ModeList = {
+  class ModeListModule {
 
-    // REVIEW: it is too confusing to have ModeList.ModeList.  What is happening here?
-    ModeList: ModeListModule, // the original Java class
-
-    // These were public static inner classes
-    SunEarthModeConfig: SunEarthModeConfig,
-    SunEarthMoonModeConfig: SunEarthMoonModeConfig,
-    EarthMoonModeConfig: EarthMoonModeConfig,
-    EarthSpaceStationModeConfig: EarthSpaceStationModeConfig
-  };
-
-  gravityAndOrbits.register( 'ModeList', ModeList );
-
-  /**
-   * Constructor for ModeListModule.
-   *
-   * @param {ModeListParameterList} parameterList
-   * @param {SunEarthModeConfig} sunEarth
-   * @param {SunEarthMoonModeConfig} sunEarthMoon
-   * @param {EarthMoonModeConfig} earthMoon
-   * @param {EarthSpaceStationModeConfig} earthSpaceStation
-   * @constructor
-   */
-  function ModeListModule( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
-
-    options = _.extend( {
-      adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
-    }, options );
-
-    // non-static inner class: SpaceStation
-    function SpaceStation( earthSpaceStation, transformProperty, options ) {
+    /**
+     * Constructor for ModeListModule.
+     *
+     * @param {ModeListParameterList} parameterList
+     * @param {SunEarthModeConfig} sunEarth
+     * @param {SunEarthMoonModeConfig} sunEarthMoon
+     * @param {EarthMoonModeConfig} earthMoon
+     * @param {EarthSpaceStationModeConfig} earthSpaceStation
+     * @param {Object} [options]
+     */
+    constructor( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
 
       options = _.extend( {
-        diameterScale: 1000
+        adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
       }, options );
 
-      Body.call(
-        this,
-        GravityAndOrbitsBodies.SATELLITE,
-        earthSpaceStation.spaceStation,
-        Color.gray,
-        Color.white,
-        getImageRenderer( spaceStationImage ),
-        ( -Math.PI / 4 ),
-        earthSpaceStation.spaceStation.mass,
-        spaceStationString,
-        parameterList,
-        transformProperty,
-        options
-      );
-    }
+      // non-static inner class: SpaceStation
+      // REVIEW: why is this inside the constructor?
+      class SpaceStation extends Body {
+        constructor( earthSpaceStation, transformProperty, options ) {
 
-    inherit( Body, SpaceStation );
+          options = _.extend( {
+            diameterScale: 1000
+          }, options );
 
-    // non-static inner class: Moon
-    function Moon( massSettable, massReadoutBelow, body, transformProperty, options ) {
+          super(
+            GravityAndOrbitsBodies.SATELLITE,
+            earthSpaceStation.spaceStation,
+            Color.gray,
+            Color.white,
+            getImageRenderer( spaceStationImage ),
+            ( -Math.PI / 4 ),
+            earthSpaceStation.spaceStation.mass,
+            spaceStationString,
+            parameterList,
+            transformProperty,
+            options
+          );
+        }
+      }
 
-      options = _.extend( {
-        pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
-        massSettable: massSettable,
-        massReadoutBelow: massReadoutBelow,
-        rotationPeriod: null // rotation period in seconds, null means no rotation
-      }, options );
+      // non-static inner class: Moon
+      class Moon extends Body {
+        constructor( massSettable, massReadoutBelow, body, transformProperty, options ) {
 
-      Body.call(
-        this,
-        GravityAndOrbitsBodies.MOON,
-        body,
-        Color.magenta,
-        Color.white,
-        getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
-        ( -3 * Math.PI / 4 ),
-        body.mass,
-        ourMoonString,
-        parameterList,
-        transformProperty,
-        options );
-    }
+          options = _.extend( {
+            pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
+            massSettable: massSettable,
+            massReadoutBelow: massReadoutBelow,
+            rotationPeriod: null // rotation period in seconds, null means no rotation
+          }, options );
 
-    inherit( Body, Moon );
+          super(
+            GravityAndOrbitsBodies.MOON,
+            body,
+            Color.magenta,
+            Color.white,
+            getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
+            ( -3 * Math.PI / 4 ),
+            body.mass,
+            ourMoonString,
+            parameterList,
+            transformProperty,
+            options
+          );
+        }
+      }
 
-    // non-static inner class: Earth
-    function Earth( body, transformProperty, options ) {
-      Body.call(
-        this,
-        GravityAndOrbitsBodies.PLANET,
-        body,
-        Color.gray,
-        Color.lightGray,
-        getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
-        ( -Math.PI / 4 ),
-        body.mass,
-        earthString,
-        parameterList,
-        transformProperty,
-        options );
-    }
+      // non-static inner class: Earth
+      class Earth extends Body {
+        constructor( body, transformProperty, options ) {
+          super(
+            GravityAndOrbitsBodies.PLANET,
+            body,
+            Color.gray,
+            Color.lightGray,
+            getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
+            ( -Math.PI / 4 ),
+            body.mass,
+            earthString,
+            parameterList,
+            transformProperty,
+            options
+          );
+        }
+      }
 
-    inherit( Body, Earth );
+      // non-static inner class: Sun
+      class Sun extends Body {
+        constructor( body, transformProperty, options ) {
+          super(
+            GravityAndOrbitsBodies.STAR,
+            body, // REVIEW: why does Body take Body argument?
+            Color.yellow,
+            Color.white,
+            getImageRenderer( sunImage ),
+            ( -Math.PI / 4 ),
+            body.mass,
+            ourSunString,
+            parameterList,
+            transformProperty,
+            options );
+          this.body = body;
+        }
+      }
 
-    // non-static inner class: Sun
-    function Sun( body, transformProperty, options ) {
-      Body.call(
-        this,
-        GravityAndOrbitsBodies.STAR,
-        body,
-        Color.yellow,
-        Color.white,
-        getImageRenderer( sunImage ),
-        ( -Math.PI / 4 ),
-        body.mass,
-        ourSunString,
-        parameterList,
-        transformProperty,
-        options );
-      this.body = body;
-    }
+      this.parameterList = parameterList; // @private
+      this.modes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
 
-    inherit( Body, Sun );
+      sunEarth.center();
+      sunEarthMoon.center();
+      earthMoon.center();
+      earthSpaceStation.center();
 
-    this.parameterList = parameterList; // @private
-    this.modes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
+      const readoutInEarthMasses = ( bodyNode, visibleProperty ) => new EarthMassReadoutNode( bodyNode, visibleProperty );
 
-    sunEarth.center();
-    sunEarthMoon.center();
-    earthMoon.center();
-    earthSpaceStation.center();
+      // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
+      const SEC_PER_YEAR = 365 * 24 * 60 * 60;
+      const SUN_MODES_VELOCITY_SCALE = 4.48E6;
+      this.modes.push( new GravityAndOrbitsMode(
+        sunEarth.forceScale,
+        false,
+        sunEarth.dt,
+        scaledDays( sunEarth.timeScale ),
+        this.createIconImage( true, true, false, false ),
+        SEC_PER_YEAR,
+        SUN_MODES_VELOCITY_SCALE,
+        readoutInEarthMasses,
+        sunEarth.initialMeasuringTapeLocation,
+        sunEarth.zoom,
+        new Vector2( 0, 0 ),
+        ( sunEarth.earth.x / 2 ),
+        new Vector2( 0, 0 ),
+        parameterList ) );
 
-    const readoutInEarthMasses = ( bodyNode, visibleProperty ) => new EarthMassReadoutNode( bodyNode, visibleProperty );
+      const sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
+      this.modes[ 0 ].addBody( new Sun( sunEarth.sun, sunEarthTransformProperty, {
+        maxPathLength: 345608942000 // in km
+      } ) );
+      this.modes[ 0 ].addBody( new Earth( sunEarth.earth, sunEarthTransformProperty ) );
 
-    // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
-    const SEC_PER_YEAR = 365 * 24 * 60 * 60;
-    const SUN_MODES_VELOCITY_SCALE = 4.48E6;
-    this.modes.push( new GravityAndOrbitsMode(
-      sunEarth.forceScale,
-      false,
-      sunEarth.dt,
-      scaledDays( sunEarth.timeScale ),
-      this.createIconImage( true, true, false, false ),
-      SEC_PER_YEAR,
-      SUN_MODES_VELOCITY_SCALE,
-      readoutInEarthMasses,
-      sunEarth.initialMeasuringTapeLocation,
-      sunEarth.zoom,
-      new Vector2( 0, 0 ),
-      ( sunEarth.earth.x / 2 ),
-      new Vector2( 0, 0 ),
-      parameterList ) );
+      this.modes.push( new GravityAndOrbitsMode(
+        sunEarthMoon.forceScale,
+        false,
+        sunEarthMoon.dt,
+        scaledDays( sunEarthMoon.timeScale ),
+        this.createIconImage( true, true, true, false ),
+        SEC_PER_YEAR,
+        SUN_MODES_VELOCITY_SCALE,
+        readoutInEarthMasses,
+        sunEarthMoon.initialMeasuringTapeLocation,
+        sunEarthMoon.zoom,
+        new Vector2( 0, 0 ),
+        ( sunEarthMoon.earth.x / 2 ),
+        new Vector2( 0, 0 ),
+        parameterList ) );
 
-    const sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
-    this.modes[ 0 ].addBody( new Sun( sunEarth.sun, sunEarthTransformProperty, {
-      maxPathLength: 345608942000 // in km
-    } ) );
-    this.modes[ 0 ].addBody( new Earth( sunEarth.earth, sunEarthTransformProperty ) );
+      // increase moon path length so that it fades away with other bodies
+      // in model coordinates (at default orbit)
+      const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
+      const sunEarthMoonTransformProperty = this.modes[ 1 ].sunEarthMoonTransformProperty;
+      this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun, sunEarthMoonTransformProperty, {
+        maxPathLength: 345608942000 // in km
+      } ) );
+      this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth, sunEarthMoonTransformProperty ) );
+      this.modes[ 1 ].addBody( new Moon( // no room for the slider
+        false, false, // so it doesn't intersect with earth mass readout
+        sunEarthMoon.moon,
+        sunEarthMoonTransformProperty, {
+          pathLengthBuffer: pathLengthBuffer
+        } ) );
 
-    this.modes.push( new GravityAndOrbitsMode(
-      sunEarthMoon.forceScale,
-      false,
-      sunEarthMoon.dt,
-      scaledDays( sunEarthMoon.timeScale ),
-      this.createIconImage( true, true, true, false ),
-      SEC_PER_YEAR,
-      SUN_MODES_VELOCITY_SCALE,
-      readoutInEarthMasses,
-      sunEarthMoon.initialMeasuringTapeLocation,
-      sunEarthMoon.zoom,
-      new Vector2( 0, 0 ),
-      ( sunEarthMoon.earth.x / 2 ),
-      new Vector2( 0, 0 ),
-      parameterList ) );
+      const SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
+      this.modes.push( new GravityAndOrbitsMode(
+        earthMoon.forceScale,
+        false,
+        ( DEFAULT_DT / 3 ), // actual days
+        scaledDays( 1.0 ),
+        this.createIconImage( false, true, true, false ),
+        SEC_PER_MOON_ORBIT,
+        ( SUN_MODES_VELOCITY_SCALE * 0.06 ),
+        readoutInEarthMasses,
+        earthMoon.initialMeasuringTapeLocation,
+        earthMoon.zoom,
+        new Vector2( earthMoon.earth.x, 0 ),
+        ( earthMoon.moon.y / 2 ),
+        new Vector2( earthMoon.earth.x, 0 ),
+        parameterList ) );
 
-    // increase moon path length so that it fades away with other bodies
-    // in model coordinates (at default orbit) 
-    const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
-    const sunEarthMoonTransformProperty = this.modes[ 1 ].sunEarthMoonTransformProperty;
-    this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun, sunEarthMoonTransformProperty, {
-      maxPathLength: 345608942000 // in km
-    } ) );
-    this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth, sunEarthMoonTransformProperty ) );
-    this.modes[ 1 ].addBody( new Moon( // no room for the slider
-      false, false, // so it doesn't intersect with earth mass readout
-      sunEarthMoon.moon,
-      sunEarthMoonTransformProperty, {
-        pathLengthBuffer: pathLengthBuffer
+      const earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
+      this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, {
+        orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
       } ) );
 
-    const SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
-    this.modes.push( new GravityAndOrbitsMode(
-      earthMoon.forceScale,
-      false,
-      ( DEFAULT_DT / 3 ), // actual days
-      scaledDays( 1.0 ),
-      this.createIconImage( false, true, true, false ),
-      SEC_PER_MOON_ORBIT,
-      ( SUN_MODES_VELOCITY_SCALE * 0.06 ),
-      readoutInEarthMasses,
-      earthMoon.initialMeasuringTapeLocation,
-      earthMoon.zoom,
-      new Vector2( earthMoon.earth.x, 0 ),
-      ( earthMoon.moon.y / 2 ),
-      new Vector2( earthMoon.earth.x, 0 ),
-      parameterList ) );
+      this.modes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, {
+        orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
+        rotationPeriod: earthMoon.moon.rotationPeriod
+      } ) );
 
-    const earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
-    this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, {
-      orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
-    } ) );
+      const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
 
-    this.modes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, {
-      orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
-      rotationPeriod: earthMoon.moon.rotationPeriod
-    } ) );
+      this.modes.push( new GravityAndOrbitsMode(
+        earthSpaceStation.forceScale,
+        false,
+        ( DEFAULT_DT * 9E-4 ),
+        formatMinutes,
+        this.createIconImage( false, true, false, true ),
+        5400,
+        ( SUN_MODES_VELOCITY_SCALE / 10000 ),
+        spaceStationMassReadoutFactory,
+        earthSpaceStation.initialMeasuringTapeLocation,
+        earthSpaceStation.zoom,
+        new Vector2( earthSpaceStation.earth.x, 0 ),
+        ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
+        new Vector2( earthSpaceStation.earth.x, 0 ),
+        parameterList ) );
 
-    const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
-
-    this.modes.push( new GravityAndOrbitsMode(
-      earthSpaceStation.forceScale,
-      false,
-      ( DEFAULT_DT * 9E-4 ),
-      formatMinutes,
-      this.createIconImage( false, true, false, true ),
-      5400,
-      ( SUN_MODES_VELOCITY_SCALE / 10000 ),
-      spaceStationMassReadoutFactory,
-      earthSpaceStation.initialMeasuringTapeLocation,
-      earthSpaceStation.zoom,
-      new Vector2( earthSpaceStation.earth.x, 0 ),
-      ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
-      new Vector2( earthSpaceStation.earth.x, 0 ),
-      parameterList ) );
-
-    const earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
-    this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, {
-      maxPathLength: 35879455 // in km
-    } ) );
-    this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, {
-      rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
-    } ) );
-  }
-
-  inherit( Object, ModeListModule, {
+      const earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
+      this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, {
+        maxPathLength: 35879455 // in km
+      } ) );
+      this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, {
+        rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
+      } ) );
+    }
 
     /**
      * @private
@@ -341,7 +326,7 @@ define( require => {
      * @param {boolean} spaceStation
      * @returns {Image}
      */
-    createIconImage: function( sun, earth, moon, spaceStation ) {
+    createIconImage( sun, earth, moon, spaceStation ) {
       const children = [
         new Image( sunImage, { visible: sun } ),
         new Image( earthImage, { visible: earth } ),
@@ -355,128 +340,125 @@ define( require => {
 
       return new HBox( { children: children, spacing: 20 } );
     }
-  } );
+  }
 
   function milesToMeters( modelDistance ) {
     return modelDistance / METERS_PER_MILE;
   }
 
-  // static class: SunEarthModeConfig
-  function SunEarthModeConfig() {
+  class SunEarthModeConfig extends ModeConfig {
+    constructor() {
 
-    // @public
-    this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
-    this.earth = new BodyConfiguration(
-      EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.timeScale = 1;
-    ModeConfig.call( this, 1.25 );
-    this.initialMeasuringTapeLocation = new Line(
-      ( this.sun.x + this.earth.x ) / 3,
-      -this.earth.x / 2,
-      ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
-      -this.earth.x / 2 );
-    this.forceScale = FORCE_SCALE * 120;
-  }
-
-  inherit( ModeConfig, SunEarthModeConfig, {
+      super( 1.25 );
+      // @public
+      this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
+      this.earth = new BodyConfiguration(
+        EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
+      this.timeScale = 1;
+      this.initialMeasuringTapeLocation = new Line(
+        ( this.sun.x + this.earth.x ) / 3,
+        -this.earth.x / 2,
+        ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
+        -this.earth.x / 2 );
+      this.forceScale = FORCE_SCALE * 120;
+    }
 
     // @protected
-    getBodies: function() {
+    getBodies() {
       return [ this.sun, this.earth ];
     }
-  } );
+  }
 
   // static class: SunEarthMoonModeConfig
-  function SunEarthMoonModeConfig() {
+  class SunEarthMoonModeConfig extends ModeConfig {
+    constructor() {
 
-    // @public
-    this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
-    this.earth = new BodyConfiguration(
-      EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.moon = new BodyConfiguration(
-      MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.timeScale = 1;
-    ModeConfig.call( this, 1.25 );
-    this.initialMeasuringTapeLocation = new Line(
-      ( this.sun.x + this.earth.x ) / 3,
-      -this.earth.x / 2,
-      ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
-      -this.earth.x / 2 );
-    this.forceScale = FORCE_SCALE * 120;
-  }
-
-  inherit( ModeConfig, SunEarthMoonModeConfig, {
+      super( 1.25 );
+      // @public
+      this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
+      this.earth = new BodyConfiguration(
+        EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
+      this.moon = new BodyConfiguration(
+        MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
+      this.timeScale = 1;
+      this.initialMeasuringTapeLocation = new Line(
+        ( this.sun.x + this.earth.x ) / 3,
+        -this.earth.x / 2,
+        ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
+        -this.earth.x / 2 );
+      this.forceScale = FORCE_SCALE * 120;
+    }
 
     // @protected
-    getBodies: function() {
+    getBodies() {
       return [ this.sun, this.earth, this.moon ];
     }
-  } );
-
-  /**
-   * Configuration for the Earh+Moon system.
-   * @param {Object} [options]
-   */
-  function EarthMoonModeConfig( options ) {
-
-    options = _.extend( {
-      moonRotationPeriod: null // rotation period for the moon in seconds, null means no rotation
-    }, options );
-
-    // @public
-    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
-    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0, {
-      rotationPeriod: options.moonRotationPeriod
-    } );
-
-    ModeConfig.call( this, 400 );
-    this.initialMeasuringTapeLocation = new Line(
-      this.earth.x + this.earth.radius * 2,
-      -this.moon.y * 0.7,
-      this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ),
-      -this.moon.y * 0.7 );
-    this.forceScale = FORCE_SCALE * 45;
   }
 
-  inherit( ModeConfig, EarthMoonModeConfig, {
+  class EarthMoonModeConfig extends ModeConfig {
+
+    /**
+     * Configuration for the Earh+Moon system.
+     * @param {Object} [options]
+     */
+    constructor( options ) {
+
+      options = _.extend( {
+        moonRotationPeriod: null // rotation period for the moon in seconds, null means no rotation
+      }, options );
+
+      super( 400 );
+
+      // @public
+      this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
+      this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0, {
+        rotationPeriod: options.moonRotationPeriod
+      } );
+      this.initialMeasuringTapeLocation = new Line(
+        this.earth.x + this.earth.radius * 2,
+        -this.moon.y * 0.7,
+        this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ),
+        -this.moon.y * 0.7 );
+      this.forceScale = FORCE_SCALE * 45;
+    }
 
     // @protected
-    getBodies: function() {
+    getBodies() {
       return [ this.earth, this.moon ];
     }
-  } );
-
-  /**
-   * Static class.
-   * @param {Object} options
-   */
-  function EarthSpaceStationModeConfig( options ) {
-
-    options = _.extend( {
-      spaceStationRotationPeriod: SPACE_STATION_ORBITAL_PERIOD // rotation period in seconds
-    }, options );
-
-    // @public
-    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
-    this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
-      SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
-        rotationPeriod: options.spaceStationRotationPeriod
-      } );
-    ModeConfig.call( this, 21600 );
-
-    // @public
-    // Sampled at runtime from MeasuringTape
-    this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
-    this.forceScale = FORCE_SCALE * 3E13;
   }
 
-  inherit( ModeConfig, EarthSpaceStationModeConfig, {
+  class EarthSpaceStationModeConfig extends ModeConfig {
+    /**
+     * Static class.
+     * @param {Object} options
+     */
+    constructor( options ) {
+
+      options = _.extend( {
+        spaceStationRotationPeriod: SPACE_STATION_ORBITAL_PERIOD // rotation period in seconds
+      }, options );
+
+      super( 21600 );
+
+      // @public
+      this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
+      this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
+        SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
+          rotationPeriod: options.spaceStationRotationPeriod
+        } );
+
+      // @public
+      // Sampled at runtime from MeasuringTape
+      this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
+      this.forceScale = FORCE_SCALE * 3E13;
+    }
 
     // @protected
-    getBodies: function() {
+    getBodies() {
       return [ this.earth, this.spaceStation ];
     }
-  } );
+  }
 
   /**
    * Creates a BodyRenderer that just shows the specified image
@@ -528,5 +510,17 @@ define( require => {
     return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
   };
 
-  return ModeList;
+  const ModeList = {
+
+    // REVIEW: it is too confusing to have ModeList.ModeList.  What is happening here?
+    ModeList: ModeListModule, // the original Java class
+
+    // These were public static inner classes
+    SunEarthModeConfig: SunEarthModeConfig,
+    SunEarthMoonModeConfig: SunEarthMoonModeConfig,
+    EarthMoonModeConfig: EarthMoonModeConfig,
+    EarthSpaceStationModeConfig: EarthSpaceStationModeConfig
+  };
+
+  return gravityAndOrbits.register( 'ModeList', ModeList );
 } );

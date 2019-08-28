@@ -12,7 +12,6 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Util = require( 'DOT/Util' );
@@ -23,21 +22,21 @@ define( require => {
   const pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
   const thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
 
-  function EarthMassReadoutNode( bodyNode, visible ) {
-    MassReadoutNode.call( this, bodyNode, visible );
-  }
+  class EarthMassReadoutNode extends MassReadoutNode {
 
-  gravityAndOrbits.register( 'EarthMassReadoutNode', EarthMassReadoutNode );
-
-  return inherit( MassReadoutNode, EarthMassReadoutNode, {
+    // REVIEW: is this pass-through constructor needed?  Probably not.
+    constructor( bodyNode, visible ) {
+      super( bodyNode, visible );
+    }
 
     /**
      * Create a label for the earth, but with rules to provide either exact or qualitive representations,
      * and limitations so that the label looks good in the view.
      *
      * @returns {type}  description
+     * REVIEW private/public
      */
-    createText: function() {
+    createText() {
       const massKG = this.bodyNode.body.massProperty.get();
       const earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
 
@@ -60,9 +59,11 @@ define( require => {
 
         // Handle showing exactly "1 earth mass" instead of "1 earth masses"
         value = Util.toFixed( earthMasses, 2 );
-        units = (earthMasses === 1) ? earthMassString : earthMassesString;
+        units = ( earthMasses === 1 ) ? earthMassString : earthMassesString;
       }
       return StringUtils.format( pattern0Value1UnitsString, value, units );
     }
-  } );
+  }
+
+  return gravityAndOrbits.register( 'EarthMassReadoutNode', EarthMassReadoutNode );
 } );

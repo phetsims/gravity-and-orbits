@@ -13,53 +13,49 @@ define( require => {
   const BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const LinearFunction = require( 'DOT/LinearFunction' );
   const Node = require( 'SCENERY/nodes/Node' );
 
   // constants
   const NUM_STEPS_FOR_ANIMATION = 10;
 
-  /**
-   * @param {Body} body
-   * @param {Property.<ModelViewTransform>} modelViewTransformProperty
-   * @constructor
-   */
-  function ExplosionNode( body, modelViewTransformProperty ) {
-    Node.call( this );
-    const self = this;
+  class ExplosionNode extends Node {
 
-    // Function that computes the diameter as a function of the animation step
-    const getDiameter = numClockTicksSinceExplosion => {
-      if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
-        return new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2,
-          1, self.getMaxViewDiameter( body, modelViewTransformProperty ) )( numClockTicksSinceExplosion );
-      }
-      else if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION ) {
-        return new LinearFunction( NUM_STEPS_FOR_ANIMATION / 2, NUM_STEPS_FOR_ANIMATION,
-          self.getMaxViewDiameter( body, modelViewTransformProperty ), 1 )( numClockTicksSinceExplosion );
-      }
-      else {
-        return 1.0;
-      }
-    };
+    /**
+     * @param {Body} body
+     * @param {Property.<ModelViewTransform>} modelViewTransformProperty
+     */
+    constructor( body, modelViewTransformProperty ) {
+      super();
+      const self = this;
 
-    // Add the graphic that shows the explosion, uses the twinkle graphics from the cartoon sun
-    this.addChild( this.getExplosionEdgeGraphic( body, getDiameter ) );
+      // Function that computes the diameter as a function of the animation step
+      const getDiameter = numClockTicksSinceExplosion => {
+        if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
+          return new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2,
+            1, self.getMaxViewDiameter( body, modelViewTransformProperty ) )( numClockTicksSinceExplosion );
+        }
+        else if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION ) {
+          return new LinearFunction( NUM_STEPS_FOR_ANIMATION / 2, NUM_STEPS_FOR_ANIMATION,
+            self.getMaxViewDiameter( body, modelViewTransformProperty ), 1 )( numClockTicksSinceExplosion );
+        }
+        else {
+          return 1.0;
+        }
+      };
 
-    // update the location of this node when the body changes, unless the body is collided
-    body.positionProperty.link( () => {
+      // Add the graphic that shows the explosion, uses the twinkle graphics from the cartoon sun
+      this.addChild( this.getExplosionEdgeGraphic( body, getDiameter ) );
 
-      // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
-      if ( !body.collidedProperty.get() ) {
-        self.translation = modelViewTransformProperty.get().modelToViewPosition( body.positionProperty.get() );
-      }
-    } );
-  }
+      // update the location of this node when the body changes, unless the body is collided
+      body.positionProperty.link( () => {
 
-  gravityAndOrbits.register( 'ExplosionNode', ExplosionNode );
-
-  return inherit( Node, ExplosionNode, {
+        // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
+        if ( !body.collidedProperty.get() ) {
+          self.translation = modelViewTransformProperty.get().modelToViewPosition( body.positionProperty.get() );
+        }
+      } );
+    }
 
     /**
      * Get a graphic for the explosion, linking diameter to the time steps since a collision occured.
@@ -67,8 +63,9 @@ define( require => {
      * @param  {Body} body        description
      * @param  {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
      * @returns {type}             description
+     * REVIEW public/private
      */
-    getExplosionEdgeGraphic: function( body, getDiameter ) {
+    getExplosionEdgeGraphic( body, getDiameter ) {
       const yellowAndWhite = {
         highlight: 'white',
         color: 'yellow'
@@ -84,11 +81,13 @@ define( require => {
       body.clockTicksSinceExplosionProperty.lazyLink( clockTicks => explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) ) );
 
       return explosionEdgeGraphic;
-    },
+    }
 
     // @private
-    getMaxViewDiameter: function( body, modelViewTransformProperty ) {
+    getMaxViewDiameter( body, modelViewTransformProperty ) {
       return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
     }
-  } );
+  }
+
+  return gravityAndOrbits.register( 'ExplosionNode', ExplosionNode );
 } );

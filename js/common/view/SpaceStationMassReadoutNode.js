@@ -12,7 +12,6 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Util = require( 'DOT/Util' );
@@ -22,13 +21,11 @@ define( require => {
   const pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
   const spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
 
-  function SpaceStationMassReadoutNode( bodyNode, visible ) {
-    MassReadoutNode.call( this, bodyNode, visible );
-  }
+  class SpaceStationMassReadoutNode extends MassReadoutNode {
 
-  gravityAndOrbits.register( 'SpaceStationMassReadoutNode', SpaceStationMassReadoutNode );
-
-  return inherit( MassReadoutNode, SpaceStationMassReadoutNode, {
+    constructor( bodyNode, visible ) { // REVIEW unused
+      super( bodyNode, visible );
+    }
 
     /**
      * Create a text label for the space station, modified so that it will be quantitative
@@ -36,8 +33,9 @@ define( require => {
      * a specific mass, the label will be in something like 'billions of station masses'.
      *
      * @returns {string} - formatted string
+     * REVIEW public/private
      */
-    createText: function() {
+    createText() {
       const massKG = this.bodyNode.body.massProperty.get();
       const spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;
 
@@ -59,5 +57,7 @@ define( require => {
       }
       return StringUtils.format( pattern0Value1UnitsString, value, units );
     }
-  } );
+  }
+
+  return gravityAndOrbits.register( 'SpaceStationMassReadoutNode', SpaceStationMassReadoutNode );
 } );

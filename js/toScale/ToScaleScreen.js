@@ -12,7 +12,6 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
   const Image = require( 'SCENERY/nodes/Image' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Screen = require( 'JOIST/Screen' );
   const ToScaleModule = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleModule' );
 
@@ -22,24 +21,20 @@ define( require => {
   // images
   const toScaleMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/to_scale_icon.png' );
 
-  /**
-   * @constructor
-   */
-  function ToScaleScreen( options ) {
+  class ToScaleScreen extends Screen {
+    constructor( options ) {
+      options = _.extend( {
+        name: toScaleString,
+        homeScreenIcon: new Image( toScaleMipmap )
+      }, options );
 
-    options = _.extend( {
-      name: toScaleString,
-      homeScreenIcon: new Image( toScaleMipmap )
-    }, options );
-
-    Screen.call( this,
-      () => new ToScaleModule(),
-      model => new GravityAndOrbitsScreenView( model ),
-      options
-    );
+      super(
+        () => new ToScaleModule(),
+        model => new GravityAndOrbitsScreenView( model ),
+        options
+      );
+    }
   }
 
-  gravityAndOrbits.register( 'ToScaleScreen', ToScaleScreen );
-
-  return inherit( Screen, ToScaleScreen );
+  return gravityAndOrbits.register( 'ToScaleScreen', ToScaleScreen );
 } );

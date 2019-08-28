@@ -12,43 +12,41 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Vector2 = require( 'DOT/Vector2' );
 
-  /**
-   * @param {number} mass
-   * @param {number} radius
-   * @param {number} x
-   * @param {number} y
-   * @param {number} vx
-   * @param {number} vy
-   * @param {Object} [options]
-   * @constructor
-   */
-  function BodyConfiguration( mass, radius, x, y, vx, vy, options ) {
+  class BodyConfiguration {
 
-    options = _.extend( {
-      rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
-    }, options );
+    /**
+     * @param {number} mass
+     * @param {number} radius
+     * @param {number} x
+     * @param {number} y
+     * @param {number} vx
+     * @param {number} vy
+     * @param {Object} [options]
+     */
+    constructor( mass, radius, x, y, vx, vy, options ) {
 
-    // @public
-    this.fixed = false; // True if the object doesn't move when the clock ticks
-    this.mass = mass;
-    this.radius = radius;
-    this.x = x;
-    this.y = y;
-    this.vx = vx;
-    this.vy = vy;
-    this.rotationPeriod = options.rotationPeriod;
-  }
+      options = _.extend( {
+        rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
+      }, options );
 
-  gravityAndOrbits.register( 'BodyConfiguration', BodyConfiguration );
-  
-  return inherit( Object, BodyConfiguration, {
+      // @public
+      this.fixed = false; // True if the object doesn't move when the clock ticks
+      this.mass = mass;
+      this.radius = radius;
+      this.x = x;
+      this.y = y;
+      this.vx = vx;
+      this.vy = vy;
+      this.rotationPeriod = options.rotationPeriod;
+    }
 
     // @public
-    getMomentum: function() {
+    getMomentum() {
       return new Vector2( this.vx * this.mass, this.vy * this.mass );
     }
-  } );
+  }
+
+  return gravityAndOrbits.register( 'BodyConfiguration', BodyConfiguration );
 } );

@@ -14,7 +14,6 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
   const Image = require( 'SCENERY/nodes/Image' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Screen = require( 'JOIST/Screen' );
 
   // strings
@@ -23,24 +22,21 @@ define( require => {
   // images
   const cartoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/cartoon_icon.png' );
 
-  /**
-   * @constructor
-   */
-  function CartoonScreen( options ) {
+  class CartoonScreen extends Screen {
+    constructor( options ) {
 
-    options = _.extend( {
-      name: modelString,
-      homeScreenIcon: new Image( cartoonMipmap )
-    }, options );
+      options = _.extend( {
+        name: modelString,
+        homeScreenIcon: new Image( cartoonMipmap )
+      }, options );
 
-    Screen.call( this,
-      () => new CartoonModule(),
-      model => new GravityAndOrbitsScreenView( model ),
-      options
-    );
+      super(
+        () => new CartoonModule(),
+        model => new GravityAndOrbitsScreenView( model ),
+        options
+      );
+    }
   }
 
-  gravityAndOrbits.register( 'CartoonScreen', CartoonScreen );
-
-  return inherit( Screen, CartoonScreen );
+  return gravityAndOrbits.register( 'CartoonScreen', CartoonScreen );
 } );

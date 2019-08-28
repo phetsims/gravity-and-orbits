@@ -14,7 +14,6 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
 
   /**
@@ -41,37 +40,32 @@ define( require => {
     return body.toBodyState();
   }
 
+  class GravityAndOrbitsModel {
 
-  /**
-   * @param {GravityAndOrbitsClock} clock
-   * @param {Property.<boolean>} gravityEnabledProperty flag to indicate whether gravity is on or off.
-   * @constructor
-   */
-  function GravityAndOrbitsModel( clock, gravityEnabledProperty ) {
+    /**
+     * @param {GravityAndOrbitsClock} clock
+     * @param {Property.<boolean>} gravityEnabledProperty flag to indicate whether gravity is on or off.
+     */
+    constructor( clock, gravityEnabledProperty ) {
 
-    // @private
-    this.gravityEnabledProperty = gravityEnabledProperty;
+      // @private
+      this.gravityEnabledProperty = gravityEnabledProperty;
 
-    this.clock = clock; // @public
-    this.bodies = []; // @public - contains the sun, moon, earth, satellite
+      this.clock = clock; // @public
+      this.bodies = []; // @public - contains the sun, moon, earth, satellite
 
-    this.clock.addEventTimer( dt => {
-      this.clock.setSimulationTime( this.clock.dt + this.clock.getSimulationTime() );
+      this.clock.addEventTimer( dt => {
+        this.clock.setSimulationTime( this.clock.dt + this.clock.getSimulationTime() );
 
-      // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253
-      // but introduces performance issues
-      // this.stepModel( this.clock.dt );
-      this.step( this.clock.dt );
-    } );
+        // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253
+        // but introduces performance issues
+        // this.stepModel( this.clock.dt );
+        this.step( this.clock.dt );
+      } );
 
-    // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
-    this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
-  }
-
-  gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
-
-  return inherit( Object, GravityAndOrbitsModel, {
-
+      // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
+      this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
+    }
 
     /**
      * Standardize the time step so that the play speed has no impact on the model.
@@ -85,7 +79,7 @@ define( require => {
      *
      * @param {number} dt
      */
-    stepModel: function( dt ) {
+    stepModel( dt ) {
 
       // standardized time step - based on the slowest time step for the given orbital mode
       const smallestTimeStep = this.clock.getSmallestTimeStep();
@@ -105,17 +99,16 @@ define( require => {
       if ( remainder > 0 ) {
         this.step( remainder );
       }
-    },
+    }
 
     /**
      * Step function for the model.  This function creates state objects and calculates state values for this step
      * based on the current state of the entire model.  Once doen, it applies the updated values to the body
      * objects.  Finally, it checks for collisions between bodies.
      *
-     * @param  {number} dt
+     * @param {number} dt
      */
-
-    step: function( dt ) {
+    step( dt ) {
 
       // Compute the next state for each body based on the current state of all bodies in the system.
       const bodyStates = this.bodies.map( getBodyState );
@@ -145,14 +138,14 @@ define( require => {
       for ( let i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].allBodiesUpdated();
       }
-    },
+    }
 
     // @public
-    resetAll: function() {
+    resetAll() {
       this.resetBodies();
       this.clock.resetSimulationTime();
       this.updateForceVectors();
-    },
+    }
 
     /**
      * Adds a body and updates the body's force vectors
@@ -160,7 +153,7 @@ define( require => {
      * @public
      * @param body
      */
-    addBody: function( body ) {
+    addBody( body ) {
       const self = this;
       this.bodies.push( body );
 
@@ -168,7 +161,7 @@ define( require => {
       body.userModifiedPositionEmitter.addListener( () => self.updateForceVectors() );
       body.massProperty.link( () => self.updateForceVectors() );
       this.updateForceVectors();
-    },
+    }
 
     /**
      * Since we haven't (yet?) rewritten the gravity forces to auto-update when dependencies change, we update when
@@ -180,9 +173,9 @@ define( require => {
      *
      * @private
      */
-    updateForceVectors: function() {
+    updateForceVectors() {
       this.step( 0 );
-    },
+    }
 
     /**
      * Returns a defensive copy of the bodies.
@@ -190,17 +183,17 @@ define( require => {
      * @returns {Array<Body>}
      * @public
      */
-    getBodies: function() {
+    getBodies() {
       return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
-    },
+    }
 
     // @public
-    resetBodies: function() {
+    resetBodies() {
       for ( let i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].resetAll();
       }
       this.updateForceVectors(); // has to be done separately since physics is computed as a batch
-    },
+    }
 
     /**
      * Get the body associated with the name.  The name must be one of GravityAndOrbitsBodies.
@@ -208,7 +201,7 @@ define( require => {
      * @param  {string} name
      * @returns {Body|null}
      */
-    getBody: function( name ) {
+    getBody( name ) {
       for ( let i = 0; i < this.bodies.length; i++ ) {
         const body = this.bodies[ i ];
 
@@ -218,5 +211,7 @@ define( require => {
       }
       return null;
     }
-  } );
+  }
+
+  return gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
 } );

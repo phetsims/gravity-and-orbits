@@ -13,7 +13,6 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Node = require( 'SCENERY/nodes/Node' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Text = require( 'SCENERY/nodes/Text' );
@@ -26,50 +25,49 @@ define( require => {
   // constants
   const FONT = new PhetFont( 22 );
 
-  /**
-   *
-   * @param {function} timeFormatter
-   * @param {GravityAndOrbitsClock} clock
-   * @param [options]
-   * @constructor
-   */
-  function DayCounter( timeFormatter, clock, options ) {
-    Node.call( this );
+  class DayCounter extends Node {
 
-    // day text counter
-    const dayText = new Text( '', {
-      font: FONT,
-      fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
-      maxWidth: 200
-    } );
+    /**
+     * @param {function} timeFormatter
+     * @param {GravityAndOrbitsClock} clock
+     * @param [options]
+     */
+    constructor( timeFormatter, clock, options ) {
+      super();
 
-    const clearButton = new TextPushButton( clearString, {
-      font: FONT,
-      listener: () => clock.setSimulationTime( 0 ),
-      maxWidth: 200
-    } );
+      // day text counter
+      const dayText = new Text( '', {
+        font: FONT,
+        fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
+        maxWidth: 200
+      } );
 
-    // update text representation of day
-    this.timeListener = time => {
-      dayText.setText( timeFormatter( time ) );
-      dayText.centerX = clearButton.centerX;
-      clearButton.enabled = ( time !== 0 );
-    };
-    clock.simulationTimeProperty.link( this.timeListener );
+      const clearButton = new TextPushButton( clearString, {
+        font: FONT,
+        listener: () => clock.setSimulationTime( 0 ),
+        maxWidth: 200
+      } );
 
-    this.addChild( new VBox( {
-      resize: false,
-      spacing: 4,
-      children: [
-        dayText,
-        clearButton
-      ]
-    } ) );
+      // update text representation of day
+      this.timeListener = time => {
+        dayText.setText( timeFormatter( time ) );
+        dayText.centerX = clearButton.centerX;
+        clearButton.enabled = ( time !== 0 );
+      };
+      clock.simulationTimeProperty.link( this.timeListener );
 
-    this.mutate( options );
+      this.addChild( new VBox( {
+        resize: false,
+        spacing: 4,
+        children: [
+          dayText,
+          clearButton
+        ]
+      } ) );
+
+      this.mutate( options );
+    }
   }
 
-  gravityAndOrbits.register( 'DayCounter', DayCounter );
-
-  return inherit( Node, DayCounter );
+  return gravityAndOrbits.register( 'DayCounter', DayCounter );
 } );

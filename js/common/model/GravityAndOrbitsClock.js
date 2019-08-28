@@ -13,7 +13,6 @@ define( require => {
   const EventTimer = require( 'PHET_CORE/EventTimer' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Property = require( 'AXON/Property' );
 
   // constants
@@ -25,41 +24,37 @@ define( require => {
   const SECONDS_PER_DAY = 86400;
   const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
-  /**
-   *
-   * @param {number} baseDTValue (multiplied by scale to obtain true dt)
-   * @param {Property.<boolean>} steppingProperty
-   * @param {Property.<number>} timeSpeedScaleProperty
-   * @constructor
-   */
-  function GravityAndOrbitsClock( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
-    const self = this;
+  class GravityAndOrbitsClock {
+    /**
+     *
+     * @param {number} baseDTValue (multiplied by scale to obtain true dt)
+     * @param {Property.<boolean>} steppingProperty
+     * @param {Property.<number>} timeSpeedScaleProperty
+     */
+    constructor( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
+      const self = this;
 
-    // @private
-    this.baseDTValue = baseDTValue;
-    this.steppingWhilePausedDT = baseDTValue * GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
+      // @private
+      this.baseDTValue = baseDTValue;
+      this.steppingWhilePausedDT = baseDTValue * GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
 
-    // @public
-    this.runningProperty = new Property( false );
-    this.simulationTimeProperty = new Property( 0 );
-    this.dt = baseDTValue * timeSpeedScaleProperty.get();
-    this.steppingProperty = steppingProperty;
+      // @public
+      this.runningProperty = new Property( false );
+      this.simulationTimeProperty = new Property( 0 );
+      this.dt = baseDTValue * timeSpeedScaleProperty.get();
+      this.steppingProperty = steppingProperty;
 
-    timeSpeedScaleProperty.link( timeSpeedScale => {
-      self.dt = baseDTValue * timeSpeedScale;
-    } );
-  }
-
-  gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
-
-  return inherit( Object, GravityAndOrbitsClock, {
+      timeSpeedScaleProperty.link( timeSpeedScale => {
+        self.dt = baseDTValue * timeSpeedScale;
+      } );
+    }
 
     /**
      * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
      *
      * @returns {number}
      */
-    stepClockWhilePaused: function() {
+    stepClockWhilePaused() {
 
       // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
       // application specific logic
@@ -74,14 +69,14 @@ define( require => {
 
       // revert dt to match the play speed
       this.dt = clockDT;
-    },
+    }
 
     /**
      * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
      *
      * @returns {number}
      */
-    stepClockBackWhilePaused: function() {
+    stepClockBackWhilePaused() {
       this.steppingProperty.set( true );
 
       // dt should be scaled by the initial speed when manually stepping
@@ -94,54 +89,54 @@ define( require => {
 
       // revert dt
       this.dt = clockDT;
-    },
+    }
 
     /**
      * Set whether or not the model should be running.
      *
      * @param  {boolean} running
      */
-    setRunning: function( running ) {
+    setRunning( running ) {
       this.runningProperty.set( running );
-    },
+    }
 
     /**
      * Set the clock time.
      *
      * @param  {number} time description
      */
-    setSimulationTime: function( time ) {
+    setSimulationTime( time ) {
       this.simulationTimeProperty.set( time );
-    },
+    }
 
     // @public
-    getSimulationTime: function() {
+    getSimulationTime() {
       return this.simulationTimeProperty.get();
-    },
+    }
 
     // @public
-    resetSimulationTime: function() {
+    resetSimulationTime() {
       this.simulationTimeProperty.reset();
-    },
+    }
 
     /**
      * Add an event callback to the event timer, called every time the animation frame changes.
      *
      * @param  {number} stepFunction
      */
-    addEventTimer: function( stepFunction ) {
+    addEventTimer( stepFunction ) {
       this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
-    },
+    }
 
     /**
      * Step the simulation by dt
      *
      * @param  {number} dt
-     * @returns {type}    description
+     * @returns {type} description
      */
-    step: function( dt ) {
+    step( dt ) {
       this.eventTimer.step( dt );
-    },
+    }
 
     /**
      * Get the time step for the slowest speed of this clock.  Useful for
@@ -149,14 +144,16 @@ define( require => {
      *
      * @returns {number}
      */
-    getSmallestTimeStep: function() {
+    getSmallestTimeStep() {
       return this.baseDTValue * GravityAndOrbitsConstants.SLOW_SPEED_SCALE;
     }
+  }
 
-  }, {
-    CLOCK_FRAME_RATE: CLOCK_FRAME_RATE,
-    DAYS_PER_TICK: DAYS_PER_TICK,
-    SECONDS_PER_DAY: SECONDS_PER_DAY,
-    DEFAULT_DT: DEFAULT_DT
-  } );
+  // statics
+  GravityAndOrbitsClock.CLOCK_FRAME_RATE = CLOCK_FRAME_RATE;
+  GravityAndOrbitsClock.DAYS_PER_TICK = DAYS_PER_TICK;
+  GravityAndOrbitsClock.SECONDS_PER_DAY = SECONDS_PER_DAY;
+  GravityAndOrbitsClock.DEFAULT_DT = DEFAULT_DT;
+
+  return gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
 } );

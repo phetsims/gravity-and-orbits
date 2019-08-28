@@ -13,7 +13,6 @@ define( require => {
   const ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Property = require( 'AXON/Property' );
   const Vector2 = require( 'DOT/Vector2' );
@@ -21,65 +20,61 @@ define( require => {
   // constants
   const FORCE_SCALE = 76.0 / 5.179E15;
 
-  /**
-   * Constructor for VectorNode
-   * @param {Body} body
-   * @param {Property.<ModelViewTransform>} transformProperty
-   * @param {Property.<boolean>} visibleProperty
-   * @param {Property.<Vector2>} vectorProperty
-   * @param {number} scale
-   * @param {Color} fill
-   * @param {Color} outline
-   * @constructor
-   */
-  function VectorNode( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline ) {
-    Node.call( this );
-    const self = this;
+  class VectorNode extends Node {
 
-    this.body = body; // @private
-    this.vectorProperty = vectorProperty; // @private
-    this.body = body; // @private
-    this.transformProperty = transformProperty; // @private
-    this.scale = scale; // @private
+    /**
+     * @param {Body} body
+     * @param {Property.<ModelViewTransform>} transformProperty
+     * @param {Property.<boolean>} visibleProperty
+     * @param {Property.<Vector2>} vectorProperty
+     * @param {number} scale
+     * @param {Color} fill
+     * @param {Color} outline
+     */
+    constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline ) {
+      super();
+      const self = this;
 
-    // Only show if the body hasn't collided
-    new DerivedProperty( [ visibleProperty, body.collidedProperty ], ( visible, collided ) => visible && !collided ).linkAttribute( this, 'visible' );
+      this.body = body; // @private
+      this.vectorProperty = vectorProperty; // @private
+      this.body = body; // @private
+      this.transformProperty = transformProperty; // @private
+      this.scale = scale; // @private
 
-    const arrowNode = new ArrowNode( 0, 0, 0, 0, {
-      headHeight: 15,
-      headWidth: 15,
-      tailWidth: 5,
-      fill: fill,
-      stroke: outline,
-      pickable: false,
-      boundsMethod: 'none',
-      isHeadDynamic: true,
-      scaleTailToo: true
-    } );
+      // Only show if the body hasn't collided
+      new DerivedProperty( [ visibleProperty, body.collidedProperty ], ( visible, collided ) => visible && !collided ).linkAttribute( this, 'visible' );
 
-    this.propertyListener = visible => {
-      if ( visible ) {
-        const tail = self.getTail();
-        const tip = self.getTip( tail );
-        arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
-      }
-    };
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], self.propertyListener );
+      const arrowNode = new ArrowNode( 0, 0, 0, 0, {
+        headHeight: 15,
+        headWidth: 15,
+        tailWidth: 5,
+        fill: fill,
+        stroke: outline,
+        pickable: false,
+        boundsMethod: 'none',
+        isHeadDynamic: true,
+        scaleTailToo: true
+      } );
 
-    this.addChild( arrowNode );
-  }
+      this.propertyListener = visible => {
+        if ( visible ) {
+          const tail = self.getTail();
+          const tip = self.getTip( tail );
+          arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
+        }
+      };
+      Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], self.propertyListener );
 
-  gravityAndOrbits.register( 'VectorNode', VectorNode );
-
-  return inherit( Node, VectorNode, {
+      this.addChild( arrowNode );
+    }
 
     // @private
-    getTail: function() {
+    getTail() {
       return this.transformProperty.get().modelToViewPosition( this.body.positionProperty.get() );
-    },
+    }
 
     // @protected
-    getTip: function( tail ) {
+    getTip( tail ) {
       if ( typeof tail === 'undefined' ) {
         tail = this.getTail();
       }
@@ -92,7 +87,10 @@ define( require => {
       }
       return new Vector2( force.x + tail.x, force.y + tail.y );
     }
-  }, {
-    FORCE_SCALE: FORCE_SCALE
-  } );
+
+  }
+
+  VectorNode.FORCE_SCALE = FORCE_SCALE;
+  return gravityAndOrbits.register( 'VectorNode', VectorNode );
+
 } );

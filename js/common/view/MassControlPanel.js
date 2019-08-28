@@ -16,7 +16,6 @@ define( require => {
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const HBox = require( 'SCENERY/nodes/HBox' );
   const HStrut = require( 'SCENERY/nodes/HStrut' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Panel = require( 'SUN/Panel' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -39,62 +38,62 @@ define( require => {
     MOON: moonMassString
   };
 
-  /**
-   * Constructor for MassControlPanel. This is the panel in the lower right section of the screen that holds sliders
-   * for adjusting the mass of bodies.
-   * @param massSettableBodies
-   * @param options
-   * @constructor
-   */
-  function MassControlPanel( massSettableBodies, options ) {
+  class MassControlPanel extends Panel {
 
-    options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
+    /**
+     * Constructor for MassControlPanel. This is the panel in the lower right section of the screen that holds sliders
+     * for adjusting the mass of bodies.
+     * @param massSettableBodies
+     * @param options
+     */
+    constructor( massSettableBodies, options ) {
 
-    const children = [];
+      options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
-    for ( let i = 0; i < massSettableBodies.length; i++ ) {
-      const sliderNode = new Node();
+      const children = [];
 
-      const massSettableBody = massSettableBodies[ i ];
+      for ( let i = 0; i < massSettableBodies.length; i++ ) {
+        const sliderNode = new Node();
 
-      const label = new Text( LABEL_MAP[ massSettableBody.name ], {
-        font: CONTROL_FONT,
-        fontWeight: 'bold',
-        fill: GravityAndOrbitsColorProfile.panelTextProperty,
-        maxWidth: 175,
-        resize: false
-      } );
+        const massSettableBody = massSettableBodies[ i ];
 
-      const icon = massSettableBody.createRenderer( 14 );
+        const label = new Text( LABEL_MAP[ massSettableBody.name ], {
+          font: CONTROL_FONT,
+          fontWeight: 'bold',
+          fill: GravityAndOrbitsColorProfile.panelTextProperty,
+          maxWidth: 175,
+          resize: false
+        } );
 
-      // Top component that shows the body's name and icon
-      const labelHBox = new HBox( { children: [ icon, label ], spacing: 10 } );
+        const icon = massSettableBody.createRenderer( 14 );
 
-      sliderNode.addChild( labelHBox );
+        // Top component that shows the body's name and icon
+        const labelHBox = new HBox( { children: [ icon, label ], spacing: 10 } );
 
-      const sliderVBox = new VBox( {
-        top: labelHBox.bottom + 8,
-        resize: false,
-        children: [
-          new HStrut( 220 ),
-          new BodyMassControl(
-            massSettableBody,
-            massSettableBody.massProperty.getRewindValue() / 2,
-            massSettableBody.massProperty.getRewindValue() * 2,
-            massSettableBody.tickValue,
-            massSettableBody.tickLabel )
-        ]
-      } );
+        sliderNode.addChild( labelHBox );
 
-      sliderNode.addChild( sliderVBox );
-      children.push( sliderNode );
+        const sliderVBox = new VBox( {
+          top: labelHBox.bottom + 8,
+          resize: false,
+          children: [
+            new HStrut( 220 ),
+            new BodyMassControl(
+              massSettableBody,
+              massSettableBody.massProperty.getRewindValue() / 2,
+              massSettableBody.massProperty.getRewindValue() * 2,
+              massSettableBody.tickValue,
+              massSettableBody.tickLabel )
+          ]
+        } );
+
+        sliderNode.addChild( sliderVBox );
+        children.push( sliderNode );
+      }
+
+      const vBox = new VBox( { children: children, spacing: 15, y: 5, resize: false, align: 'left' } );
+      super( vBox, options );
     }
-
-    const vBox = new VBox( { children: children, spacing: 15, y: 5, resize: false, align: 'left' } );
-    Panel.call( this, vBox, options );
   }
 
-  gravityAndOrbits.register( 'MassControlPanel', MassControlPanel );
-
-  return inherit( Panel, MassControlPanel );
+  return gravityAndOrbits.register( 'MassControlPanel', MassControlPanel );
 } );

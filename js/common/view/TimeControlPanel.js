@@ -15,55 +15,56 @@ define( require => {
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const HBox = require( 'SCENERY/nodes/HBox' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
   const RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
   const StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
 
-  /**
-   * @param {Property.<GravityAndOrbitsMode>} modeProperty
-   * @param {Property.<boolean>} playButtonPressedProperty
-   * @param {Array.<Body>} bodies
-   * @param {Object} [options]
-   * @constructor
-   */
-  function TimeControlPanel( modeProperty, playButtonPressedProperty, bodies, options ) {
-    const playProperty = playButtonPressedProperty;
+  class TimeControlPanel extends HBox {
 
-    const playPauseButton = new PlayPauseButton( playProperty );
+    /**
+     * @param {Property.<GravityAndOrbitsMode>} modeProperty
+     * @param {Property.<boolean>} playButtonPressedProperty
+     * @param {Array.<Body>} bodies
+     * @param {Object} [options]
+     */
+    constructor( modeProperty, playButtonPressedProperty, bodies, options ) {
+      const playProperty = playButtonPressedProperty;
 
-    const stepButton = new StepForwardButton( {
-      isPlayingProperty: playProperty,
-      listener: () => modeProperty.get().getClock().stepClockWhilePaused()
-    } );
+      const playPauseButton = new PlayPauseButton( playProperty );
 
-    const rewindButton = new RewindButton( {
-      enabled: false,
-      listener: () => modeProperty.get().rewind()
-    } );
+      const stepButton = new StepForwardButton( {
+        isPlayingProperty: playProperty,
+        listener: () => modeProperty.get().getClock().stepClockWhilePaused()
+      } );
 
-    const anyPropertyDifferentProperties = [];
-    for ( let i = 0; i < bodies.length; i++ ) {
-      anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
+      const rewindButton = new RewindButton( {
+        enabled: false,
+        listener: () => modeProperty.get().rewind()
+      } );
+
+      const anyPropertyDifferentProperties = [];
+      for ( let i = 0; i < bodies.length; i++ ) {
+        anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
+      }
+
+      super( _.extend( {
+        resize: false,
+        spacing: 10,
+        children: [ rewindButton, playPauseButton, stepButton ]
+      }, options ) );
+
+
+      // REVIEW this seems duplicated elsewhere.  Also, what is happening here?
+      const anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
+        return _.some( arguments, _.identity );
+      } );
+
+      // @private
+      this.propertyChangedListener = changed => rewindButton.setEnabled( changed );
+      anyPropertyChanged.link( this.propertyChangedListener );
     }
 
-    // REVIEW this seems duplicated elsewhere.  Also, what is happening here?
-    const anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
-      return _.some( arguments, _.identity );
-    } );
-
-    // @private
-    this.propertyChangedListener = changed => rewindButton.setEnabled( changed );
-    anyPropertyChanged.link( this.propertyChangedListener );
-
-    HBox.call( this, _.extend( {
-      resize: false,
-      spacing: 10,
-      children: [ rewindButton, playPauseButton, stepButton ]
-    }, options ) );
   }
 
-  gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );
-
-  return inherit( HBox, TimeControlPanel );
+  return gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );
 } );

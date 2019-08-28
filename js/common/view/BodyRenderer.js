@@ -17,7 +17,6 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const Image = require( 'SCENERY/nodes/Image' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Matrix3 = require( 'DOT/Matrix3' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Path = require( 'SCENERY/nodes/Path' );
@@ -27,118 +26,109 @@ define( require => {
   // images
   const sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
 
-  // @abstract
-  function BodyRenderer( body ) {
-
-    Node.call( this );
-
-    // @private
-    this.body = body;
-  }
-
-  gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
-
   // this needs to be called before the static classes are defined, otherwise the inheritance doesn't work right
-  const renderer = inherit( Node, BodyRenderer, {
+  // REVIEW: is that comment still applicable?
+  class BodyRenderer extends Node {
+    // @abstract
+    constructor( body ) {
+
+      super();
+
+      // @private
+      this.body = body;
+    }
 
     // @public
-    getBody: function() {
+    getBody() {
       return this.body;
-    },
+    }
 
     /**
      * @public
      * @abstract
      */
-    setDiameter: function( viewDiameter ) {
+    setDiameter( viewDiameter ) {
       throw new Error( 'must be implemented by subtype' );
     }
-  }, {
-    SwitchableBodyRenderer: SwitchableBodyRenderer,
-    ImageRenderer: ImageRenderer,
-    SunRenderer: SunRenderer
-  } );
-
-  /**
-   * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different
-   * renderer otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to
-   * earth mass or otherwise drawn as a sphere with a gradient paint.
-   *
-   * @param body
-   * @param targetMass
-   * @param targetBodyRenderer
-   * @param defaultBodyRenderer
-   * @constructor
-   */
-  function SwitchableBodyRenderer( body, targetMass, targetBodyRenderer, defaultBodyRenderer ) {
-
-    BodyRenderer.call( this, body );
-
-    // @public (read-only)
-    this.targetBodyRenderer = targetBodyRenderer;
-    this.defaultBodyRenderer = defaultBodyRenderer;
-
-    // @private - so new closure need not be defined
-    this.massListener = () => {
-
-      // this defined by bound
-      this.removeAllChildren();
-      this.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
-    };
-    body.massProperty.link( this.massListener.bind( this ) );
-
   }
 
-  gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
+  gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
-  inherit( BodyRenderer, SwitchableBodyRenderer, {
+  class SwitchableBodyRenderer extends BodyRenderer {
+    /**
+     * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different
+     * renderer otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to
+     * earth mass or otherwise drawn as a sphere with a gradient paint.
+     *
+     * @param body
+     * @param targetMass
+     * @param targetBodyRenderer
+     * @param defaultBodyRenderer
+     */
+    constructor( body, targetMass, targetBodyRenderer, defaultBodyRenderer ) {
+
+      super( body );
+
+      // @public (read-only)
+      this.targetBodyRenderer = targetBodyRenderer;
+      this.defaultBodyRenderer = defaultBodyRenderer;
+
+      // @private - so new closure need not be defined
+      this.massListener = () => {
+
+        // this defined by bound
+        this.removeAllChildren();
+        this.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
+      };
+      body.massProperty.link( this.massListener.bind( this ) );
+
+    }
 
     /**
      * Set the diameter for the renderer in view coordinates for both the current and default renderers.
      *
      * @param  {number} viewDiameter
+     * REVIEW: public or private?
      */
-    setDiameter: function( viewDiameter ) {
+    setDiameter( viewDiameter ) {
       this.targetBodyRenderer.setDiameter( viewDiameter );
       this.defaultBodyRenderer.setDiameter( viewDiameter );
     }
-  } );
-
-  /**
-   * Renders the body using the specified image and the specified diameter in view coordinates.
-   *
-   * @param {Body} body
-   * @param {number} viewDiameter
-   * @param {string} imageName - image from the plugin
-   * @constructor
-   */
-  function ImageRenderer( body, viewDiameter, imageName ) {
-
-    BodyRenderer.call( this, body );
-
-    this.imageNode = new Image( imageName ); // @private
-    this.viewDiameter = viewDiameter; // @private
-    this.addChild( this.imageNode );
-
-    this.updateViewDiameter();
   }
 
-  gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
+  gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
 
-  inherit( BodyRenderer, ImageRenderer, {
+  class ImageRenderer extends BodyRenderer {
+    /**
+     * Renders the body using the specified image and the specified diameter in view coordinates.
+     *
+     * @param {Body} body
+     * @param {number} viewDiameter
+     * @param {string} imageName - image from the plugin
+     */
+    constructor( body, viewDiameter, imageName ) {
+
+      super( body );
+
+      this.imageNode = new Image( imageName ); // @private
+      this.viewDiameter = viewDiameter; // @private
+      this.addChild( this.imageNode );
+
+      this.updateViewDiameter();
+    }
 
     /**
      * Set the diameter for the rednerer in view coordinates
      *
      * @param  {number} viewDiameter
      */
-    setDiameter: function( viewDiameter ) {
+    setDiameter( viewDiameter ) {
       this.viewDiameter = viewDiameter;
       this.updateViewDiameter();
-    },
+    }
 
     // @private
-    updateViewDiameter: function() {
+    updateViewDiameter() {
       this.imageNode.matrix = new Matrix3();
       const scale = this.viewDiameter / this.imageNode.width;
       this.imageNode.setScaleMagnitude( scale );
@@ -146,40 +136,36 @@ define( require => {
       // Make sure the image is centered on the body's center
       this.imageNode.translate( -this.imageNode.width / 2 / scale, -this.imageNode.height / 2 / scale );
     }
-  } );
-
-  /**
-   * Adds triangle edges to the sun to make it look more recognizable
-   *
-   * @param {Body} body
-   * @param {number} viewDiameter
-   * @param {number} numSegments
-   * @param {function} twinkleRadius
-   * @constructor
-   */
-  function SunRenderer( body, viewDiameter, numSegments, twinkleRadius ) {
-
-    this.twinkles = new Path( null, { fill: 'yellow' } ); // @private
-    this.numSegments = numSegments; // @private
-    this.twinkleRadius = twinkleRadius; // @private
-
-    ImageRenderer.call( this, body, viewDiameter, sunImage );
-    this.addChild( this.twinkles );
-    this.twinkles.moveToBack();
-    this.setDiameter( viewDiameter );
   }
 
-  gravityAndOrbits.register( 'SunRenderer', SunRenderer );
+  gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
 
-  inherit( ImageRenderer, SunRenderer, {
+  class SunRenderer extends ImageRenderer {
+    /**
+     * Adds triangle edges to the sun to make it look more recognizable
+     *
+     * @param {Body} body
+     * @param {number} viewDiameter
+     * @param {number} numSegments
+     * @param {function} twinkleRadius
+     */
+    constructor( body, viewDiameter, numSegments, twinkleRadius ) {
+      super( body, viewDiameter, sunImage );
+      this.twinkles = new Path( null, { fill: 'yellow' } ); // @private
+      this.numSegments = numSegments; // @private
+      this.twinkleRadius = twinkleRadius; // @private
+      this.addChild( this.twinkles );
+      this.twinkles.moveToBack();
+      this.setDiameter( viewDiameter );
+    }
 
     /**
      * Set the diamater for the sun, based on view coordinates.
      *
      * @param  {number} viewDiameter
      */
-    setDiameter: function( viewDiameter ) {
-      ImageRenderer.prototype.setDiameter.call( this, viewDiameter );
+    setDiameter( viewDiameter ) {
+      super.setDiameter( viewDiameter );
       let angle = 0;
       const deltaAngle = Math.PI * 2 / this.numSegments;
       const radius = viewDiameter / 2;
@@ -193,6 +179,13 @@ define( require => {
       }
       this.twinkles.setShape( shape );
     }
-  } );
-  return renderer;
+  }
+
+  gravityAndOrbits.register( 'SunRenderer', SunRenderer );
+
+  BodyRenderer.SwitchableBodyRenderer = SwitchableBodyRenderer;
+  BodyRenderer.ImageRenderer = ImageRenderer;
+  BodyRenderer.SunRenderer = SunRenderer;
+
+  return BodyRenderer;
 } );

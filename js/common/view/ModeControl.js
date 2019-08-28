@@ -16,7 +16,6 @@ define( require => {
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   const HStrut = require( 'SCENERY/nodes/HStrut' );
   const Image = require( 'SCENERY/nodes/Image' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Node = require( 'SCENERY/nodes/Node' );
   const RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
   const RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
@@ -25,64 +24,64 @@ define( require => {
   // images
   const resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
 
-  /**
-   * @param {Property.<GravityAndOrbitsMode>} modeProperty
-   * @param {Array.<GravityAndOrbitsMode>} modes
-   * @param {Object} [options] - This object contains options for main node of planet mode menu.
-   * @constructor
-   */
-  function ModeControl( modeProperty, modes, options ) {
-    Node.call( this, options );
+  class ModeControl extends Node {
 
-    const content = []; // for radio buttons
-    const resetButtons = [];
-    for ( let i = 0; i < modes.length; i++ ) {
-      content.push( { value: modes[ i ], node: modes[ i ].iconImage } );
+    /**
+     * @param {Property.<GravityAndOrbitsMode>} modeProperty
+     * @param {Array.<GravityAndOrbitsMode>} modes
+     * @param {Object} [options] - This object contains options for main node of planet mode menu.
+     */
+    constructor( modeProperty, modes, options ) {
+      super( options );
 
-      const resetButton = new PlanetModeResetButton( modes[ i ] );
+      const content = []; // for radio buttons
+      const resetButtons = [];
+      for ( let i = 0; i < modes.length; i++ ) {
+        content.push( { value: modes[ i ], node: modes[ i ].iconImage } );
 
-      // link reset buttons so that only the reset button next to the selected radio button is visible
-      ( ( currentMode, resetButton ) => {
-        modeProperty.link( mode => resetButton.setVisible( mode === currentMode ) );
-      } )( modes[ i ], resetButton );
+        const resetButton = new PlanetModeResetButton( modes[ i ] );
 
-      resetButtons.push( resetButton );
+        // link reset buttons so that only the reset button next to the selected radio button is visible
+        ( ( currentMode, resetButton ) => {
+          modeProperty.link( mode => resetButton.setVisible( mode === currentMode ) );
+        } )( modes[ i ], resetButton );
+
+        resetButtons.push( resetButton );
+      }
+      const buttonGroup = new RadioButtonGroup( modeProperty, content,
+        {
+          alignVertically: true,
+          selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
+          selectedLineWidth: 2,
+          baseColor: 'rgba(0,0,0,0)',
+          deselectedLineWidth: 0,
+          buttonContentXMargin: 5,
+          buttonContentYMargin: 5,
+          spacing: 0,
+          resize: false,
+          deselectedOpacity: 1,
+          cornerRadius: 5,
+          touchAreaYDilation: 0 // reduce to 0 to prevent overlap between buttons
+        } );
+
+      this.addChild( buttonGroup );
+      this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 10, spacing: 5, y: 2 } ) );
+      this.addChild( new HStrut( 219 ) );
     }
-    const buttonGroup = new RadioButtonGroup( modeProperty, content,
-      {
-        alignVertically: true,
-        selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
-        selectedLineWidth: 2,
-        baseColor: 'rgba(0,0,0,0)',
-        deselectedLineWidth: 0,
-        buttonContentXMargin: 5,
-        buttonContentYMargin: 5,
-        spacing: 0,
-        resize: false,
-        deselectedOpacity: 1,
-        cornerRadius: 5,
-        touchAreaYDilation: 0 // reduce to 0 to prevent overlap between buttons
-      } );
 
-    this.addChild( buttonGroup );
-    this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 10, spacing: 5, y: 2 } ) );
-    this.addChild( new HStrut( 219 ) );
   }
 
   gravityAndOrbits.register( 'ModeControl', ModeControl );
 
-  inherit( Node, ModeControl );
+  class PlanetModeResetButton extends RectangularPushButton {
+    /**
+     * @param {GravityAndOrbitsMode} mode
+     * @param {Object} [options]
+     */
+    constructor( mode, options ) {
 
-  /**
-   * @param {GravityAndOrbitsMode} mode
-   * @param {Object} [options]
-   * @constructor
-   */
-  function PlanetModeResetButton( mode, options ) {
-
-    // create button
-    RectangularPushButton.call( this,
-      {
+      // create button
+      super( {
         content: new Node( {
           children: [
             new Image( resetArrowImg, { scale: 0.3 } )
@@ -94,10 +93,11 @@ define( require => {
         listener: () => mode.resetMode()
       } );
 
-    this.mutate( options );
+      this.mutate( options );
+    }
   }
 
-  inherit( RectangularPushButton, PlanetModeResetButton );
+  gravityAndOrbits.register( 'PlanetModeResetButton', PlanetModeResetButton );
 
   return ModeControl;
 } );

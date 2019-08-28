@@ -11,32 +11,31 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
 
-  /**
-   * @param {Property.<boolean>} playButtonPressedProperty
-   * @param {Property.<boolean>} gravityEnabledProperty
-   * @param {Property.<boolean>} steppingProperty
-   * @param {Property.<boolean>} rewindingProperty
-   * @param {Property.<number>} timeSpeedScaleProperty
-   * @constructor
-   */
-  function ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
+  class ModeListParameterList {
 
-    // @public
-    this.playButtonPressedProperty = playButtonPressedProperty;
-    this.gravityEnabledProperty = gravityEnabledProperty;
+    /**
+     * @param {Property.<boolean>} playButtonPressedProperty
+     * @param {Property.<boolean>} gravityEnabledProperty
+     * @param {Property.<boolean>} steppingProperty
+     * @param {Property.<boolean>} rewindingProperty
+     * @param {Property.<number>} timeSpeedScaleProperty
+     */
+    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
 
-    // @public True if the user is pressing the "step" button, to support storing states for the rewind feature
-    this.steppingProperty = steppingProperty;
+      // @public
+      this.playButtonPressedProperty = playButtonPressedProperty;
+      this.gravityEnabledProperty = gravityEnabledProperty;
 
-    // @public
-    // Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
-    this.rewindingProperty = rewindingProperty;
-    this.timeSpeedScaleProperty = timeSpeedScaleProperty;
+      // @public True if the user is pressing the "step" button, to support storing states for the rewind feature
+      this.steppingProperty = steppingProperty;
+
+      // @public
+      // Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
+      this.rewindingProperty = rewindingProperty;
+      this.timeSpeedScaleProperty = timeSpeedScaleProperty;
+    }
   }
 
-  gravityAndOrbits.register( 'ModeListParameterList', ModeListParameterList );
-  
-  return inherit( Object, ModeListParameterList );
+  return gravityAndOrbits.register( 'ModeListParameterList', ModeListParameterList );
 } );

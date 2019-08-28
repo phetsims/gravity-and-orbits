@@ -15,7 +15,6 @@ define( require => {
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   const gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
   const HBox = require( 'SCENERY/nodes/HBox' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Node = require( 'SCENERY/nodes/Node' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Text = require( 'SCENERY/nodes/Text' );
@@ -29,28 +28,28 @@ define( require => {
   const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty, maxWidth: 50 };
   const RADIO_OPTIONS = { radius: 7 };
 
-  /**
-   * @param {Property.<boolean>} gravityEnabledProperty
-   * @param {Object} [options] - This object contains options for main node of gravity mode menu.
-   * @constructor
-   */
-  function GravityControl( gravityEnabledProperty, options ) {
-    Node.call( this, options );
+  class GravityControl extends Node {
 
-    const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
-    const onTextNode = new Text( onString, TEXT_OPTIONS );
-    const offTextNode = new Text( offString, TEXT_OPTIONS );
+    /**
+     * @param {Property.<boolean>} gravityEnabledProperty
+     * @param {Object} [options] - This object contains options for main node of gravity mode menu.
+     */
+    constructor( gravityEnabledProperty, options ) {
+      super( options );
 
-    this.addChild( new HBox( {
-      spacing: 10, bottom: 2, resize: false, children: [
-        gravityTextNode,
-        new AquaRadioButton( gravityEnabledProperty, true, onTextNode, RADIO_OPTIONS ),
-        new AquaRadioButton( gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
-      ]
-    } ) );
+      const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
+      const onTextNode = new Text( onString, TEXT_OPTIONS );
+      const offTextNode = new Text( offString, TEXT_OPTIONS );
+
+      this.addChild( new HBox( {
+        spacing: 10, bottom: 2, resize: false, children: [
+          gravityTextNode,
+          new AquaRadioButton( gravityEnabledProperty, true, onTextNode, RADIO_OPTIONS ),
+          new AquaRadioButton( gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
+        ]
+      } ) );
+    }
   }
 
-  gravityAndOrbits.register( 'GravityControl', GravityControl );
-
-  return inherit( Node, GravityControl );
+  return gravityAndOrbits.register( 'GravityControl', GravityControl );
 } );

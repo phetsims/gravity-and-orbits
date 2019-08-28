@@ -14,7 +14,6 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
   const Vector2 = require( 'DOT/Vector2' );
 
@@ -28,19 +27,16 @@ define( require => {
   const velocity = new Vector2( 0, 0 ); // used in updatePositions()
   const netForce = new Vector2( 0, 0 ); // used in getNetForce()
 
-  /**
-   * @param {Array.<BodyState>} bodyStates
-   * @param {GravityAndOrbitsClock} clock
-   * @constructor
-   */
-  function ModelState( bodyStates, clock ) {
-    this.bodyStates = bodyStates; // @private
-    this.clock = clock; // @private
-  }
+  class ModelState {
 
-  gravityAndOrbits.register( 'ModelState', ModelState );
-
-  return inherit( Object, ModelState, {
+    /**
+     * @param {Array.<BodyState>} bodyStates
+     * @param {GravityAndOrbitsClock} clock
+     */
+    constructor( bodyStates, clock ) {
+      this.bodyStates = bodyStates; // @private
+      this.clock = clock; // @private
+    }
 
     /**
      * Updates the model, producing the next ModelState
@@ -50,7 +46,7 @@ define( require => {
      * @param {Property.<boolean>} gravityEnabledProperty
      * @returns {ModelState}
      */
-    getNextState: function( dt, gravityEnabledProperty ) {
+    getNextState( dt, gravityEnabledProperty ) {
 
       if ( gravityEnabledProperty.get() ) {
         return this.getNextInteractingState( dt );
@@ -60,7 +56,7 @@ define( require => {
         // gravity is not active, bodies are coasting;
         return this.getNextCoastingState( dt );
       }
-    },
+    }
 
     /**
      * Finds the positions of the bodies after a time dt
@@ -68,13 +64,13 @@ define( require => {
      * @private
      * @param {number} dt
      */
-    updatePositions: function( dt ) {
+    updatePositions( dt ) {
       for ( let i = 0; i < this.bodyStates.length; i++ ) {
         const bodyState = this.bodyStates[ i ];
         velocity.setXY( bodyState.velocity.x * dt, bodyState.velocity.y * dt );
         bodyState.position.add( velocity );
       }
-    },
+    }
 
     /**
      * Finds the velocities of the bodies after a time dt
@@ -82,26 +78,26 @@ define( require => {
      * @private
      * @param {number} dt
      */
-    updateVelocities: function( dt ) {
+    updateVelocities( dt ) {
       this.updateAccelerations();
       for ( let i = 0; i < this.bodyStates.length; i++ ) {
         const bodyState = this.bodyStates[ i ];
         bodyState.velocity.add( bodyState.acceleration.multiplyScalar( dt ) );
       }
-    },
+    }
 
     /**
      * Finds the current values of the accelerations
      *
      * @private
      */
-    updateAccelerations: function() {
+    updateAccelerations() {
       for ( let i = 0; i < this.bodyStates.length; i++ ) {
         const bodyState = this.bodyStates[ i ];
         const acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
         bodyState.acceleration.setXY( acceleration.x, acceleration.y );
       }
-    },
+    }
 
     /**
      * Update rotations of all bodies in the sim. Some bodies need to rotate so that during orbital motion they
@@ -110,7 +106,7 @@ define( require => {
      *
      * @param {number} dt (seconds)
      */
-    updateRotations: function( dt ) {
+    updateRotations( dt ) {
       for ( let i = 0; i < this.bodyStates.length; i++ ) {
         const bodyState = this.bodyStates[ i ];
 
@@ -120,7 +116,7 @@ define( require => {
           bodyState.rotation = bodyState.rotation + rotation;
         }
       }
-    },
+    }
 
     /**
      * Get rotation of the body, based on the body's rotation period and the elapsed sim time.
@@ -128,23 +124,23 @@ define( require => {
      * @param {number} dt - delta time (seconds)
      * @private
      */
-    getDeltaRotation: function( rotationPeriod, dt ) {
+    getDeltaRotation( rotationPeriod, dt ) {
 
       // convert delta time to rotation in orbit
       // negative one so that rotation is counter clockwise (with orbital motion)
       return ( ( -1 ) * Math.PI * 2 * dt ) / rotationPeriod;
-    },
+    }
 
     /**
      * Sets all the accelerations to zero, useful when gravity is turned off
      *
      * @private
      */
-    setAccelerationToZero: function() {
+    setAccelerationToZero() {
       for ( let i = 0; i < this.bodyStates.length; i++ ) {
         this.bodyStates[ i ].acceleration = new Vector2( 0, 0 );
       }
-    },
+    }
 
     /**
      * Gets the net force on the bodyState due to the other bodies
@@ -153,7 +149,7 @@ define( require => {
      * @param {BodyState} bodyState
      * @returns {Vector2}
      */
-    getNetForce: function( bodyState ) {
+    getNetForce( bodyState ) {
 
       // use netForce to keep track of the net force, initialize to zero.
       netForce.setXY( 0, 0 );
@@ -168,7 +164,7 @@ define( require => {
         }
       }
       return netForce;
-    },
+    }
 
     /**
      * Returns the force on the body source due to the body target
@@ -177,7 +173,7 @@ define( require => {
      * @param {BodyState} target
      * @returns {Vector2}
      */
-    getTwoBodyForce: function( source, target ) {
+    getTwoBodyForce( source, target ) {
       if ( source.position.equals( target.position ) ) {
 
         // TODO: limit distance so forces don't become too large, perhaps we could compare it to the radius of
@@ -200,7 +196,7 @@ define( require => {
                                      Math.pow( source.position.distanceSquared( target.position ), 1.5 );
         return relativePosition.multiplyScalar( multiplicativeFactor );
       }
-    },
+    }
 
     /**
      * Updates the model, producing the next ModelState when gravity is present
@@ -208,7 +204,7 @@ define( require => {
      * @param {number} dt
      * @returns {ModelState}
      */
-    getNextCoastingState: function( dt ) {
+    getNextCoastingState( dt ) {
 
       // update Positions
       this.updatePositions( dt );
@@ -223,7 +219,7 @@ define( require => {
 
       // return this ModelState mutated instead of a new ModelState with new Vector2 for performance reasons
       return this;
-    },
+    }
 
     /**
      * Updates the model, producing the next ModelState when gravity is present
@@ -231,7 +227,7 @@ define( require => {
      * @param {number} dt
      * @returns {ModelState}
      */
-    getNextInteractingState: function( dt ) {
+    getNextInteractingState( dt ) {
 
       //-------------
       // Step One
@@ -295,7 +291,7 @@ define( require => {
 
       // return this ModelState mutated instead of a new ModelState with new Vector2 for performance reasons
       return this;
-    },
+    }
 
     /**
      * Get the BodyState for the specified index--future work could
@@ -305,8 +301,10 @@ define( require => {
      * @param {number} index
      * @returns {Array.<BodyState>}
      */
-    getBodyState: function( index ) {
+    getBodyState( index ) {
       return this.bodyStates[ index ];
     }
-  } );
+  }
+
+  return gravityAndOrbits.register( 'ModelState', ModelState );
 } );
