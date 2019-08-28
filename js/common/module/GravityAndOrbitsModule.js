@@ -7,9 +7,9 @@
  * showing the gravitational force).
  *
  * @author Sam Reid (PhET Interactive Simulations)
- * @author Jon Olson
+ * @author Jonathan Olson (PhET Interactive Simulations)
  * @author Chris Malley (PixelZoom, Inc.)
- * @author John Blanco
+ * @author John Blanco (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
  * @see GravityAndOrbitsModel
  */

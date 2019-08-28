@@ -537,5 +537,4 @@ define( require => {
   };
 
   return ModeList;
-
 } );

@@ -17,9 +17,13 @@ define( require => {
    * @constructor
    */
   function CartoonModule() {
-    GravityAndOrbitsModule.call( this, false, function( p ) {
-      return new CartoonModeList( p.playButtonPressedProperty, p.gravityEnabledProperty, p.steppingProperty, p.rewindingProperty, p.timeSpeedScaleProperty );
-    }, 0, false );
+    GravityAndOrbitsModule.call( this, false, p => new CartoonModeList(
+      p.playButtonPressedProperty,
+      p.gravityEnabledProperty,
+      p.steppingProperty,
+      p.rewindingProperty,
+      p.timeSpeedScaleProperty
+    ), 0, false );
   }
 
   gravityAndOrbits.register( 'CartoonModule', CartoonModule );

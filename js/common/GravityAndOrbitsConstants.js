@@ -34,11 +34,9 @@ define( require => {
       scale: 1.05,
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
     },
-
     STARTING_SPEED_SCALE: STARTING_SPEED_SCALE,
     FAST_SPEED_SCALE: STARTING_SPEED_SCALE * 1.75,
     SLOW_SPEED_SCALE: STARTING_SPEED_SCALE * 0.25
-
   };
 
   gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );

@@ -271,6 +271,5 @@ define( require => {
       }
       return massSettableBodies;
     }
-
   } );
 } );

@@ -193,6 +193,5 @@ define( require => {
       this.twinkles.setShape( shape );
     }
   } );
-
   return renderer;
 } );

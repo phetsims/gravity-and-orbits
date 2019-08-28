@@ -200,6 +200,5 @@ define( require => {
       const viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
       return Math.max( viewDiameter, 2 );
     }
-
   } );
 } );

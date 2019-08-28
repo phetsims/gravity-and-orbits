@@ -6,7 +6,7 @@
  * It is used by the GravityAndOrbitsModel to update the physics.
  *
  * @author Sam Reid (PhET Interactive Simulations)
- * @author Aaron Davis (PhET Interactive Simulations) (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  * @author Martin Veillette (Berea College)
  */
 define( require => {

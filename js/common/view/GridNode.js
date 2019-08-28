@@ -58,7 +58,6 @@ define( require => {
 
       path.shape = transformProperty.get().modelToViewShape( shape );
     } );
-
   }
 
   gravityAndOrbits.register( 'GridNode', GridNode );

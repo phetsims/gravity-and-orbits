@@ -243,5 +243,4 @@ define( require => {
   inherit( Object, NamedPoints );
 
   return PathsCanvasNode;
-
 } );

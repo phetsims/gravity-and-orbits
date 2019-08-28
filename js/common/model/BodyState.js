@@ -4,7 +4,7 @@
  * Immutable state returned by the physics engine update algorithm, it is applied to the mutable Body.
  *
  * @author Sam Reid (PhET Interactive Simulations)
- * @author Aaron Davis (PhET Interactive Simulations) (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( require => {
   'use strict';
