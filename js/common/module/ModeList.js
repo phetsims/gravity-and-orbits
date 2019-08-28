@@ -90,6 +90,8 @@ define( function( require ) {
   const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
   const ModeList = {
+
+    // REVIEW: it is too confusing to have ModeList.ModeList.  What is happening here?
     ModeList: ModeListModule, // the original Java class
 
     // These were public static inner classes
@@ -131,7 +133,7 @@ define( function( require ) {
         Color.gray,
         Color.white,
         getImageRenderer( spaceStationImage ),
-        ( -Math.PI / 4),
+        ( -Math.PI / 4 ),
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
         parameterList,
@@ -271,7 +273,7 @@ define( function( require ) {
     this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth, sunEarthMoonTransformProperty ) );
     this.modes[ 1 ].addBody( new Moon( // no room for the slider
       false, false, // so it doesn't intersect with earth mass readout
-      sunEarthMoon.moon, 
+      sunEarthMoon.moon,
       sunEarthMoonTransformProperty, {
         pathLengthBuffer: pathLengthBuffer
       } ) );
@@ -373,9 +375,9 @@ define( function( require ) {
     this.timeScale = 1;
     ModeConfig.call( this, 1.25 );
     this.initialMeasuringTapeLocation = new Line(
-      (this.sun.x + this.earth.x) / 3,
+      ( this.sun.x + this.earth.x ) / 3,
       -this.earth.x / 2,
-      (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ),
+      ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
       -this.earth.x / 2 );
     this.forceScale = FORCE_SCALE * 120;
   }
@@ -400,9 +402,9 @@ define( function( require ) {
     this.timeScale = 1;
     ModeConfig.call( this, 1.25 );
     this.initialMeasuringTapeLocation = new Line(
-      (this.sun.x + this.earth.x) / 3,
+      ( this.sun.x + this.earth.x ) / 3,
       -this.earth.x / 2,
-      (this.sun.x + this.earth.x) / 3 + milesToMeters( 50000000 ),
+      ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
       -this.earth.x / 2 );
     this.forceScale = FORCE_SCALE * 120;
   }
