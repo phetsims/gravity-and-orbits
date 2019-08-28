@@ -4,7 +4,7 @@
  * Visual representation of space object's property checkbox.
  *
  * @author Andrey Zelenkov (Mlearner)
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 
 define( function( require ) {

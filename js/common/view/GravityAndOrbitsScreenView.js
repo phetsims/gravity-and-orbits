@@ -4,7 +4,7 @@
  * GravityAndOrbitsScreenView. This file was not in the original Java code, but was created to have the sim follow the
  * PhET HTML5 sim conventions.
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

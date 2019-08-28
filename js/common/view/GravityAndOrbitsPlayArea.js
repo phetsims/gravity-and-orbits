@@ -3,8 +3,8 @@
 /**
  * Provides the play area for a single GravityAndOrbitsMode.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  * @see GravityAndOrbitsMode
  */
 define( function( require ) {

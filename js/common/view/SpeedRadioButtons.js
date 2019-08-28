@@ -5,7 +5,7 @@
  * Three different modes: slow/normal/fast motion.
  *
  * @author Andrey Zelenkov (Mlearner)
- * @author Aaron Davis (PhET)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

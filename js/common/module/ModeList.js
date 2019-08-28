@@ -4,8 +4,8 @@
  * ModeList enumerates and declares the possible modes in the GravityAndOrbitsModule, such as 'Sun & Earth' mode.
  * Models (and the bodies they contain) are created in ModeList.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

@@ -3,8 +3,8 @@
 /**
  * Shows the mass of a Body in terms of space station masses.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

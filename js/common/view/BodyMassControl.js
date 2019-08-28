@@ -3,8 +3,8 @@
 /**
  * This control allows the user to view and change the mass of certain Body instances, which also changes the radius.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

@@ -3,7 +3,7 @@
 /**
  * Main entry point for the sim.
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

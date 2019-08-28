@@ -3,7 +3,7 @@
 /**
  * Global options shown in the "Options" dialog from the PhET Menu
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  * @author Jonathan Olson <jonathan.olson@colorado.edu>
  */
 define( function( require ) {

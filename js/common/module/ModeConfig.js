@@ -5,8 +5,8 @@
  * This is an abstract class, and is intended only to be used by sub-types.
  * @abstract
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

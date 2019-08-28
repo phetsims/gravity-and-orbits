@@ -4,8 +4,8 @@
  * Visual representation of speed control buttons.
  *
  * @author Andrey Zelenkov (Mlearner)
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 
 define( function( require ) {

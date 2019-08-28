@@ -4,7 +4,7 @@
  * Container for planet mode menu.
  *
  * @author Andrey Zelenkov (Mlearner)
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 
 define( function( require ) {

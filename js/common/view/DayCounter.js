@@ -5,9 +5,8 @@
  * Contains clear button and numeric counter.
  *
  * @author Andrey Zelenkov (Mlearner)
- * @author Aaron Davis (PhET)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
-
 define( function( require ) {
   'use strict';
 

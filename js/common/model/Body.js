@@ -5,7 +5,7 @@
  * This class also keeps track of body-related data such as the path.
  *
  * @author Sam Reid (PhET Interactive Simulations)
- * @author Aaron Davis (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations) (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

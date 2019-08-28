@@ -5,8 +5,8 @@
  * to the value that was last set by storeRewindValueNoNotify. In this sim, the rewind value is
  * stored at the initial configuration of a mode, or when a user modifies the position of a body.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( require => {
   'use strict';

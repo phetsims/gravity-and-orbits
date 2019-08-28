@@ -3,8 +3,8 @@
 /**
  * Draws a vector for a Body, such as a force vector or velocity vector.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

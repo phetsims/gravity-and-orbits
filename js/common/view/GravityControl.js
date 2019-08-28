@@ -3,7 +3,7 @@
 /**
  * Container for gravity mode menu.
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 
 define( function( require ) {

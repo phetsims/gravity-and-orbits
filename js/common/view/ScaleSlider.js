@@ -4,7 +4,7 @@
  * Container for scale slider. This file is not a direct port from the Java version.
  *
  * @author Andrey Zelenkov (Mlearner)
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 
 

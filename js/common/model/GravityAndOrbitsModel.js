@@ -7,7 +7,7 @@
  * Ported from the Java version
  *
  * @author Sam Reid (PhET Interactive Simulations)
- * @author Aaron Davis (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations) (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

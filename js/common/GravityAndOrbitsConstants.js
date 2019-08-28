@@ -3,7 +3,7 @@
 /**
  * Constants for this simulation.
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

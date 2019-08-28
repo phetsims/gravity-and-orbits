@@ -3,8 +3,8 @@
 /**
  * Provides a textual readout of a Body's mass in "earth masses"
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

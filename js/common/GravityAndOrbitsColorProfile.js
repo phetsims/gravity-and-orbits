@@ -3,7 +3,7 @@
 /**
  * Location for most colors of the simulation (especially those that could be tweaked)
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

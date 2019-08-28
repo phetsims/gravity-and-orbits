@@ -4,8 +4,8 @@
  * Class that facilitates configuration of body instances for a GravityAndOrbitsMode; a data structure that describes
  * a body's parameters.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

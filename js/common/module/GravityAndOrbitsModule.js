@@ -6,11 +6,11 @@
  * The module contains information that is shared across all modes, such as whether certain features are shown (such as
  * showing the gravitational force).
  *
- * @author Sam Reid
+ * @author Sam Reid (PhET Interactive Simulations)
  * @author Jon Olson
  * @author Chris Malley (PixelZoom, Inc.)
  * @author John Blanco
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  * @see GravityAndOrbitsModel
  */
 define( function( require ) {

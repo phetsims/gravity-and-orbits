@@ -4,7 +4,7 @@
  * Control panel containing the controls for orbital mode, gravity, and visibility of plantary path
  * and vectors.
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 
 define( function( require ) {

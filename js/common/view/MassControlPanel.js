@@ -3,7 +3,7 @@
 /**
  * Control panel used to change the mass of the various bodies.
  *
- * @author Aaron Davis
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 
 define( function( require ) {

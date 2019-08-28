@@ -3,8 +3,8 @@
 /**
  * Configuration file for "real" tab modes, uses physically accurate parameters.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

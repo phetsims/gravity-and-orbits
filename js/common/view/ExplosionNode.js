@@ -3,8 +3,8 @@
 /**
  * Shows an explosion for a smaller Body when it crashes into a larger Body.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

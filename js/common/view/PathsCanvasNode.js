@@ -7,8 +7,8 @@
  * Note: In the Java sim this was PathNode and there was one Node for each body. For performance reasons, it
  * has been changed so that there is just one CanvasNode shared between all of the bodies.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

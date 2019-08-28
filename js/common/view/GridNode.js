@@ -4,8 +4,8 @@
  * When enabled, shows a grid across the play area that helps the user to make quantitative comparisons
  * between distances.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

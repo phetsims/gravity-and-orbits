@@ -6,8 +6,8 @@
  * multiplying the real values by the desired scales. SunEarth and SunEarthMoon should be as similar as possible
  * (aside from the addition of the moon).
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

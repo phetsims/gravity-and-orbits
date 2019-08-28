@@ -11,8 +11,8 @@
  * The advantage of this approach is that model states, canvas states and control panels are always correct,
  * and it is impossible to end up with a bug in which you have a mixture of components from multiple modes.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

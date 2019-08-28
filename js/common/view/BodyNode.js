@@ -4,8 +4,8 @@
  * BodyNode renders one piccolo PNode for a Body, which can be at cartoon or real scale.  It is also draggable,
  * which changes the location of the Body.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';

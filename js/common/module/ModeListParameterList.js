@@ -3,8 +3,8 @@
 /**
  * Parameter object pattern, compositing multiple parameters that are passed to multiple modes.
  *
- * @author Sam Reid
- * @author Aaron Davis
+ * @author Sam Reid (PhET Interactive Simulations)
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( function( require ) {
   'use strict';
