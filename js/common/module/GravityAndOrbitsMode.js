@@ -18,20 +18,20 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
-  var Bounds2 = require( 'DOT/Bounds2' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
-  var GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
-  var GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
-  var Property = require( 'AXON/Property' );
-  var Rectangle = require( 'DOT/Rectangle' );
+  const BooleanProperty = require( 'AXON/BooleanProperty' );
+  const Bounds2 = require( 'DOT/Bounds2' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
+  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
+  const GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  const Property = require( 'AXON/Property' );
+  const Rectangle = require( 'DOT/Rectangle' );
 
   // constants
-  var PLAY_AREA_WIDTH = GravityAndOrbitsPlayArea.STAGE_SIZE.width;
-  var PLAY_AREA_HEIGHT = GravityAndOrbitsPlayArea.STAGE_SIZE.height;
+  const PLAY_AREA_WIDTH = GravityAndOrbitsPlayArea.STAGE_SIZE.width;
+  const PLAY_AREA_HEIGHT = GravityAndOrbitsPlayArea.STAGE_SIZE.height;
 
   /**
    * Create a new GravityAndOrbitsMode that shares ModeListParameterList values with other modes
@@ -61,7 +61,7 @@ define( function( require ) {
     this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
     this.zoomLevelProperty = new Property( 1 );
 
-    var self = this;
+    const self = this;
 
     this.canvas = null; // @public
 
@@ -117,12 +117,12 @@ define( function( require ) {
      * @private
      */
     createTransform: function( defaultZoomScale, zoomOffset ) {
-      var targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), zoomOffset );
-      var minX = targetRectangle.x;
-      var minY = targetRectangle.y;
-      var maxX = targetRectangle.x + targetRectangle.width;
-      var maxY = targetRectangle.y + targetRectangle.height;
-      var modelBounds = new Bounds2( minX, minY, maxX, maxY );
+      const targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), zoomOffset );
+      const minX = targetRectangle.x;
+      const minY = targetRectangle.y;
+      const maxX = targetRectangle.x + targetRectangle.width;
+      const maxY = targetRectangle.y + targetRectangle.height;
+      const modelBounds = new Bounds2( minX, minY, maxX, maxY );
       this.modelBoundsProperty.set( modelBounds );
       return ModelViewTransform2.createRectangleInvertedYMapping(
         modelBounds, new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
@@ -136,9 +136,9 @@ define( function( require ) {
      * @private
      */
     getTargetRectangle: function( targetScale, targetCenterModelPoint ) {
-      var z = targetScale * 1.5E-9;
-      var modelWidth = PLAY_AREA_WIDTH / z;
-      var modelHeight = PLAY_AREA_HEIGHT / z;
+      const z = targetScale * 1.5E-9;
+      const modelWidth = PLAY_AREA_WIDTH / z;
+      const modelHeight = PLAY_AREA_HEIGHT / z;
       return new Rectangle(
         -modelWidth / 2 + targetCenterModelPoint.x,
         -modelHeight / 2 + targetCenterModelPoint.y,
@@ -179,7 +179,7 @@ define( function( require ) {
       // body.userModifiedVelocityEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) ) ;
 
       // if the user modifies velocity, save state while paused
-      var self = this;
+      const self = this;
       body.userModifiedVelocityEmitter.addListener( function() {
         self.setDeviatedFromDefaults();
         
@@ -233,8 +233,8 @@ define( function( require ) {
     rewind: function() {
       this.rewindingProperty.set( true );
       this.getClock().setSimulationTime( 0.0 );
-      var bodies = this.model.getBodies();
-      for ( var i = 0; i < bodies.length; i++ ) {
+      const bodies = this.model.getBodies();
+      for ( let i = 0; i < bodies.length; i++ ) {
         bodies[ i ].rewind();
       }
 
@@ -251,8 +251,8 @@ define( function( require ) {
     saveState: function() {
       assert && assert( !this.playButtonPressedProperty.get(), 'saveState should only be called when sim paused' );
 
-      var bodies = this.model.getBodies();
-      for ( var i = 0; i < bodies.length; i++ ) {
+      const bodies = this.model.getBodies();
+      for ( let i = 0; i < bodies.length; i++ ) {
         bodies[ i ].saveBodyState();
       }
     },
@@ -262,9 +262,9 @@ define( function( require ) {
      * @returns {Array.<Body>} - All bodies in the mode for which the mass can be changed
      */
     getMassSettableBodies: function() {
-      var bodies = this.getBodies();
-      var massSettableBodies = [];
-      for ( var i = 0; i < bodies.length; i++ ) {
+      const bodies = this.getBodies();
+      const massSettableBodies = [];
+      for ( let i = 0; i < bodies.length; i++ ) {
         if ( bodies[ i ].massSettable ) {
           massSettableBodies.push( bodies[ i ] );
         }

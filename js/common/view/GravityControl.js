@@ -10,24 +10,24 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var AquaRadioButton = require( 'SUN/AquaRadioButton' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Text = require( 'SCENERY/nodes/Text' );
+  const AquaRadioButton = require( 'SUN/AquaRadioButton' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const Text = require( 'SCENERY/nodes/Text' );
 
   // strings
-  var offString = require( 'string!GRAVITY_AND_ORBITS/off' );
-  var onString = require( 'string!GRAVITY_AND_ORBITS/on' );
+  const offString = require( 'string!GRAVITY_AND_ORBITS/off' );
+  const onString = require( 'string!GRAVITY_AND_ORBITS/on' );
 
   // constants
-  var FONT = new PhetFont( 14 );
-  var TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty, maxWidth: 50 };
-  var RADIO_OPTIONS = { radius: 7 };
+  const FONT = new PhetFont( 14 );
+  const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty, maxWidth: 50 };
+  const RADIO_OPTIONS = { radius: 7 };
 
   /**
    * @param {Property.<boolean>} gravityEnabledProperty
@@ -37,9 +37,9 @@ define( function( require ) {
   function GravityControl( gravityEnabledProperty, options ) {
     Node.call( this, options );
 
-    var gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
-    var onTextNode = new Text( onString, TEXT_OPTIONS );
-    var offTextNode = new Text( offString, TEXT_OPTIONS );
+    const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
+    const onTextNode = new Text( onString, TEXT_OPTIONS );
+    const offTextNode = new Text( offString, TEXT_OPTIONS );
 
     this.addChild( new HBox( {
       spacing: 10, bottom: 2, resize: false, children: [

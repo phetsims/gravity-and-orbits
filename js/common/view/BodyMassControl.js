@@ -10,21 +10,21 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var HSlider = require( 'SUN/HSlider' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Range = require( 'DOT/Range' );
-  var Text = require( 'SCENERY/nodes/Text' );
+  const Dimension2 = require( 'DOT/Dimension2' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const HSlider = require( 'SUN/HSlider' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const Range = require( 'DOT/Range' );
+  const Text = require( 'SCENERY/nodes/Text' );
 
   // constants
-  var SNAP_TOLERANCE = 0.03;
-  var THUMB_SIZE = new Dimension2( 14, 24 );
-  var NUM_TICKS = 4;
-  var WIDTH = 180;
-  var SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
+  const SNAP_TOLERANCE = 0.03;
+  const THUMB_SIZE = new Dimension2( 14, 24 );
+  const NUM_TICKS = 4;
+  const WIDTH = 180;
+  const SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
 
   /**
    *
@@ -55,7 +55,7 @@ define( function( require ) {
     } );
 
     // add ticks and labels
-    var defaultLabel = new Text( valueLabel, {
+    const defaultLabel = new Text( valueLabel, {
       top: 10,
       centerX: SPACING,
       font: new PhetFont( 13 ),
@@ -65,7 +65,7 @@ define( function( require ) {
 
     // create a label for the default value
     // @param {string} - string for the label text
-    var createNumberLabel = function( value ) {
+    const createNumberLabel = function( value ) {
       return new Text( value, {
         font: new PhetFont( 13 ),
         fill: GravityAndOrbitsColorProfile.panelTextProperty,
@@ -73,17 +73,17 @@ define( function( require ) {
       } );
     };
 
-    var labels = [ createNumberLabel( '0.5' ), defaultLabel, createNumberLabel( '1.5' ), createNumberLabel( '2.0' ) ];
-    for ( var i = 0; i < labels.length; i++ ) {
-      var tickValue = ( i + 1 ) / labels.length * max;
+    const labels = [ createNumberLabel( '0.5' ), defaultLabel, createNumberLabel( '1.5' ), createNumberLabel( '2.0' ) ];
+    for ( let i = 0; i < labels.length; i++ ) {
+      const tickValue = ( i + 1 ) / labels.length * max;
       this.addMajorTick( tickValue, labels[ i ] );
     }
 
-    var massListener = function( mass ) {
+    const massListener = function( mass ) {
       // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
       // the mass itself is set by the slider in this case.
       // derived from: density = mass/volume, and volume = 4/3 pi r r r
-      var radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1 / 3 );
+      const radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1 / 3 );
       body.diameterProperty.set( radius * 2 );
 
       // snap to default value if close

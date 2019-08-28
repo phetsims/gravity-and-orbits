@@ -10,16 +10,16 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var ControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/ControlPanel' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/MassControlPanel' );
-  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var ScreenView = require( 'JOIST/ScreenView' );
-  var SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/common/view/SpeedRadioButtons' );
+  const ControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/ControlPanel' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/MassControlPanel' );
+  const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  const ScreenView = require( 'JOIST/ScreenView' );
+  const SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/common/view/SpeedRadioButtons' );
 
   // constants
-  var MARGIN = 5;
+  const MARGIN = 5;
 
   /**
    * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module
@@ -34,16 +34,16 @@ define( function( require ) {
     ScreenView.call( this );
 
     // Control panel in the upper right of the play area
-    var controlPanelNode = new ControlPanel( module, {
+    const controlPanelNode = new ControlPanel( module, {
       top: this.layoutBounds.top + MARGIN,
       right: this.layoutBounds.right - MARGIN
     } );
 
     // Add the canvases, one for each of the four modes
-    var modes = module.getModes();
-    for ( var i = 0; i < modes.length; i++ ) {
-      var gaoCanvas = modes[ i ].canvas;
-      var massControlPanel = new MassControlPanel( modes[ i ].getMassSettableBodies(), {
+    const modes = module.getModes();
+    for ( let i = 0; i < modes.length; i++ ) {
+      const gaoCanvas = modes[ i ].canvas;
+      const massControlPanel = new MassControlPanel( modes[ i ].getMassSettableBodies(), {
         top: controlPanelNode.bottom + MARGIN,
         right: this.layoutBounds.right - MARGIN
       } );
@@ -63,7 +63,7 @@ define( function( require ) {
 
     // Make sure only one canvas is visible at a time
     module.modeProperty.link( function( mode ) {
-      for ( var i = 0; i < module.modeList.modes.length; i++ ) {
+      for ( let i = 0; i < module.modeList.modes.length; i++ ) {
         module.modeList.modes[ i ].canvas.visible = false;
         module.modeList.modes[ i ].massControlPanel.visible = false;
       }
@@ -81,7 +81,7 @@ define( function( require ) {
     );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
-    var resetAllButton = new ResetAllButton( {
+    const resetAllButton = new ResetAllButton( {
       listener: function() {
         module.reset();
       },

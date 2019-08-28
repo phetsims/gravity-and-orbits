@@ -10,16 +10,16 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Color = require( 'SCENERY/util/Color' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Property = require( 'AXON/Property' );
-  var Shape = require( 'KITE/Shape' );
-  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
+  const Color = require( 'SCENERY/util/Color' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Path = require( 'SCENERY/nodes/Path' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const Property = require( 'AXON/Property' );
+  const Shape = require( 'KITE/Shape' );
+  const SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
   /**
    * Constructor for GrabbableVectorNode
@@ -37,20 +37,20 @@ define( function( require ) {
                                 outline, labelText ) {
 
     VectorNode.call( this, body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline );
-    var self = this;
+    const self = this;
 
-    var tip = this.getTip();
+    const tip = this.getTip();
 
     // a circle with text (a character) in the center, to help indicate what it represents
     // ("v" for velocity in this sim)
-    var ellipse = Shape.ellipse( 0, 0, 18, 18, 0 );
-    var grabArea = new Path( ellipse, {
+    const ellipse = Shape.ellipse( 0, 0, 18, 18, 0 );
+    const grabArea = new Path( ellipse, {
       lineWidth: 3,
       stroke: Color.lightGray,
       cursor: 'pointer'
     } );
 
-    var text = new Text( labelText, {
+    const text = new Text( labelText, {
       font: new PhetFont( 22 ),
       fontWeight: 'bold',
       fill: Color.gray,
@@ -63,9 +63,9 @@ define( function( require ) {
     this.addChild( text );
 
     // Center the grab area on the tip (see getTip()) when any of its dependencies change
-    var propertyListener = function( visible ) {
+    const propertyListener = function( visible ) {
       if ( visible ) {
-        var tip = self.getTip();
+        const tip = self.getTip();
         grabArea.center = tip;
         text.center = tip;
       }
@@ -75,7 +75,7 @@ define( function( require ) {
     // Add the drag handler
     grabArea.addInputListener( new SimpleDragHandler( {
       translate: function( event ) {
-        var modelDelta = transformProperty.get().viewToModelDelta( event.delta );
+        const modelDelta = transformProperty.get().viewToModelDelta( event.delta );
         body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
         body.userModifiedVelocityEmitter.emit();
       }

@@ -10,27 +10,27 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Text = require( 'SCENERY/nodes/Text' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const Text = require( 'SCENERY/nodes/Text' );
 
   function MassReadoutNode( bodyNode, visibleProperty ) {
     Node.call( this );
-    var self = this;
+    const self = this;
     this.bodyNode = bodyNode; // @protected
 
-    var readoutText = new Text( this.createText(), {
+    const readoutText = new Text( this.createText(), {
       pickable: false,
       font: new PhetFont( 18 ),
       fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
     } );
     this.addChild( readoutText );
 
-    var updateLocation = function() {
-      var bounds = bodyNode.bodyRenderer.getBounds();
+    const updateLocation = function() {
+      const bounds = bodyNode.bodyRenderer.getBounds();
 
       self.x = bounds.centerX - self.width / 2;
       if ( bodyNode.body.massReadoutBelow ) {

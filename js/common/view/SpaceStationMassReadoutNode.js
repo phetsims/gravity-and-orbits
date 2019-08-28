@@ -10,17 +10,17 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var Util = require( 'DOT/Util' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
+  const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  const Util = require( 'DOT/Util' );
 
   // strings
-  var billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
-  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
-  var spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
+  const billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
+  const pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  const spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
 
   function SpaceStationMassReadoutNode( bodyNode, visible ) {
     MassReadoutNode.call( this, bodyNode, visible );
@@ -38,12 +38,12 @@ define( function( require ) {
      * @returns {string} - formatted string
      */
     createText: function() {
-      var massKG = this.bodyNode.body.massProperty.get();
-      var spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;
+      const massKG = this.bodyNode.body.massProperty.get();
+      const spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;
 
       // Show the readout in terms of space station masses (or billions of billions of space station masses)
-      var value;
-      var units = spaceStationMassString;
+      let value;
+      let units = spaceStationMassString;
       if ( spaceStationMasses > 1E18 ) {
         value = Util.toFixed( spaceStationMasses / 1E18, 0 );
         units = billionBillionSpaceStationMassesString;

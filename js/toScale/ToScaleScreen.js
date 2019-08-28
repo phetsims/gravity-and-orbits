@@ -9,18 +9,18 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
-  var Image = require( 'SCENERY/nodes/Image' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Screen = require( 'JOIST/Screen' );
-  var ToScaleModule = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleModule' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
+  const Image = require( 'SCENERY/nodes/Image' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Screen = require( 'JOIST/Screen' );
+  const ToScaleModule = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleModule' );
 
   // strings
-  var toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
+  const toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
 
   // images
-  var toScaleMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/to_scale_icon.png' );
+  const toScaleMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/to_scale_icon.png' );
 
   /**
    * @constructor

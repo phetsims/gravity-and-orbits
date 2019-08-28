@@ -10,12 +10,12 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var OptionsDialog = require( 'JOIST/OptionsDialog' );
-  var ProjectorModeCheckbox = require( 'JOIST/ProjectorModeCheckbox' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const OptionsDialog = require( 'JOIST/OptionsDialog' );
+  const ProjectorModeCheckbox = require( 'JOIST/ProjectorModeCheckbox' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
    * @constructor
@@ -23,7 +23,7 @@ define( function( require ) {
   function GlobalOptionsNode() {
 
     // add support for setting projector mode
-    var projectorModeCheckbox = new ProjectorModeCheckbox( GravityAndOrbitsColorProfile );
+    const projectorModeCheckbox = new ProjectorModeCheckbox( GravityAndOrbitsColorProfile );
 
     // VBox is used to make it easy to add additional options
     VBox.call( this, _.extend( {

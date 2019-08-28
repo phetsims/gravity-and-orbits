@@ -13,9 +13,9 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
 
   /**
    * Return the smaller of two Body instances, for determining which survives a collision.
@@ -55,7 +55,7 @@ define( function( require ) {
     this.clock = clock; // @public
     this.bodies = []; // @public - contains the sun, moon, earth, satellite
 
-    var self = this;
+    const self = this;
     this.clock.addEventTimer( function( dt ) {
       self.clock.setSimulationTime( self.clock.dt + self.clock.getSimulationTime() );
 
@@ -83,22 +83,22 @@ define( function( require ) {
      * NOTE: This function is currently not used, but it fixes https://github.com/phetsims/gravity-and-orbits/issues/253
      * However, it introduces performance issues because it increase the model computations by ~8x.
      * If work continues in #253, this is a good place to start
-     * 
+     *
      * @param {number} dt
      */
     stepModel: function( dt ) {
 
       // standardized time step - based on the slowest time step for the given orbital mode
-      var smallestTimeStep = this.clock.getSmallestTimeStep();
+      const smallestTimeStep = this.clock.getSmallestTimeStep();
 
       // get the number of times we will need to step the model based on the dt passed in
-      var numberOfSteps = dt / smallestTimeStep;
+      const numberOfSteps = dt / smallestTimeStep;
 
       // get the remainder - we must step the model by this at the end so full dt is captured
-      var remainder = dt % smallestTimeStep;
+      const remainder = dt % smallestTimeStep;
 
       // step the model by the smallest standard time step for the orbital mode
-      for ( var i = 0; i < numberOfSteps; i++ ) {
+      for ( let i = 0; i < numberOfSteps; i++ ) {
         this.step( smallestTimeStep );
       }
 
@@ -117,24 +117,23 @@ define( function( require ) {
      */
 
     step: function( dt ) {
-      var i;
 
       // Compute the next state for each body based on the current state of all bodies in the system.
-      var bodyStates = this.bodies.map( getBodyState );
-      var newState = new ModelState( bodyStates, this.clock ).getNextState( dt, this.gravityEnabledProperty );
+      const bodyStates = this.bodies.map( getBodyState );
+      const newState = new ModelState( bodyStates, this.clock ).getNextState( dt, this.gravityEnabledProperty );
 
       // Set each body to its computed next state.
       // assumes that ModelState.getBodyState returns states in the same order as the container (ArrayList) used for
       // bodies. A possible future improvement would be
       // to switch to use ModelState.getState(Body), which would be safer.
-      for ( i = 0; i < this.bodies.length; i++ ) {
+      for ( let i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].updateBodyStateFromModel( newState.getBodyState( i ) );
       }
       // when two bodies collide, destroy the smaller
-      for ( var j = 0; j < this.bodies.length; j++ ) {
-        var body = this.bodies[ j ];
-        for ( var k = 0; k < this.bodies.length; k++ ) {
-          var other = this.bodies[ k ];
+      for ( let j = 0; j < this.bodies.length; j++ ) {
+        const body = this.bodies[ j ];
+        for ( let k = 0; k < this.bodies.length; k++ ) {
+          const other = this.bodies[ k ];
           if ( other !== body ) {
             if ( other.collidesWidth( body ) ) {
               getSmaller( other, body ).collidedProperty.set( true );
@@ -144,7 +143,7 @@ define( function( require ) {
       }
 
       // Signify that the model completed an entire step so that any batch operations may be invoked
-      for ( i = 0; i < this.bodies.length; i++ ) {
+      for ( let i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].allBodiesUpdated();
       }
     },
@@ -163,7 +162,7 @@ define( function( require ) {
      * @param body
      */
     addBody: function( body ) {
-      var self = this;
+      const self = this;
       this.bodies.push( body );
 
       // update the force vectors when the position or mass changes
@@ -200,7 +199,7 @@ define( function( require ) {
 
     // @public
     resetBodies: function() {
-      for ( var i = 0; i < this.bodies.length; i++ ) {
+      for ( let i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].resetAll();
       }
       this.updateForceVectors(); // has to be done separately since physics is computed as a batch
@@ -213,8 +212,8 @@ define( function( require ) {
      * @returns {Body|null}
      */
     getBody: function( name ) {
-      for ( var i = 0; i < this.bodies.length; i++ ) {
-        var body = this.bodies[ i ];
+      for ( let i = 0; i < this.bodies.length; i++ ) {
+        const body = this.bodies[ i ];
 
         if ( body.name === name ) {
           return body;

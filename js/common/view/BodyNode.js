@@ -11,19 +11,19 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'SCENERY/nodes/Line' );
-  var MovableDragHandler = require( 'SCENERY_PHET/input/MovableDragHandler' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Property = require( 'AXON/Property' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var Vector2 = require( 'DOT/Vector2' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Line = require( 'SCENERY/nodes/Line' );
+  const MovableDragHandler = require( 'SCENERY_PHET/input/MovableDragHandler' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const Property = require( 'AXON/Property' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const Vector2 = require( 'DOT/Vector2' );
 
   // constants
-  var TOUCH_DILATION = 15; // dilation factor, produces touch bounds which are easy to drag
+  const TOUCH_DILATION = 15; // dilation factor, produces touch bounds which are easy to drag
 
   /**
    * Constructor for BodyNode
@@ -37,13 +37,13 @@ define( function( require ) {
   function BodyNode( body, labelAngle, playButtonPressedProperty, mode ) {
     Node.call( this, { pickable: true, cursor: 'pointer' } );
 
-    var modelBoundsProperty = mode.modelBoundsProperty;
-    var clock = mode.getClock();
+    const modelBoundsProperty = mode.modelBoundsProperty;
+    const clock = mode.getClock();
 
     this.modelViewTransformProperty = mode.transformProperty; // @private
     this.body = body; // @public
 
-    var self = this;
+    const self = this;
 
     this.body.collidedProperty.link( function( isCollided ) {
       self.visible = !isCollided;
@@ -53,7 +53,7 @@ define( function( require ) {
     this.addChild( this.bodyRenderer );
 
     // images rotate the target body with the rotation property
-    var rotationListener = function( rotation ) {
+    const rotationListener = function( rotation ) {
 
       // if the body has a 'target mass' representation, only rotate that one
       if ( self.bodyRenderer.targetBodyRenderer ) {
@@ -65,7 +65,7 @@ define( function( require ) {
     };
     body.rotationProperty.link( rotationListener );
 
-    var dragHandler = new MovableDragHandler( this.body.positionProperty, {
+    const dragHandler = new MovableDragHandler( this.body.positionProperty, {
       dragBounds:modelBoundsProperty.value,
       modelViewTransform: self.modelViewTransformProperty.value,
       startDrag: function() {
@@ -93,7 +93,7 @@ define( function( require ) {
     this.addInputListener( dragHandler );
 
     // rotate the node with the rotation property
-    // var rotationListener = function( rotation ) {
+    // const rotationListener = function( rotation ) {
     //   if ( self.body.mass)
     //   self.bodyRenderer.rotation = rotation;
     // };
@@ -127,7 +127,7 @@ define( function( require ) {
       // of the planets.  We store the position, and restore once drag bounds have been set
       // these changes should never set rewindable values of the body Properties
       self.body.freezeRewindChangeProperty.set( true );
-      var oldPosition = self.body.positionProperty.value;
+      const oldPosition = self.body.positionProperty.value;
       dragHandler.setDragBounds( dragBounds );
       self.body.positionProperty.set( oldPosition );
 
@@ -153,15 +153,15 @@ define( function( require ) {
      * @private
      */
     createArrowIndicator: function( body, labelAngle ) {
-      var self = this;
-      var node = new Node();
-      var viewCenter = new Vector2( 0, 0 );
-      var northEastVector = Vector2.createPolar( 1, labelAngle );
-      var tip = northEastVector.times( 10 ).plus( viewCenter );
-      var tail = northEastVector.times( 50 ).plus( viewCenter );
+      const self = this;
+      const node = new Node();
+      const viewCenter = new Vector2( 0, 0 );
+      const northEastVector = Vector2.createPolar( 1, labelAngle );
+      const tip = northEastVector.times( 10 ).plus( viewCenter );
+      const tail = northEastVector.times( 50 ).plus( viewCenter );
 
       node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: GravityAndOrbitsColorProfile.arrowIndicatorProperty } ) );
-      var text = new Text( body.labelString, {
+      const text = new Text( body.labelString, {
         font: new PhetFont( 18 ),
         x: tail.x - this.width / 2 - 5,
         y: tail.y - this.height - 10,
@@ -171,7 +171,7 @@ define( function( require ) {
       node.addChild( text );
 
       // when transform or mass changes diameter, check for visibility change of label
-      var labelVisibilityListener = function() {
+      const labelVisibilityListener = function() {
         node.visible = self.getViewDiameter() <= 10;
       };
       this.body.diameterProperty.link( labelVisibilityListener );
@@ -197,7 +197,7 @@ define( function( require ) {
      * @returns {number}
      */
     getViewDiameter: function() {
-      var viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
+      const viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
       return Math.max( viewDiameter, 2 );
     }
 

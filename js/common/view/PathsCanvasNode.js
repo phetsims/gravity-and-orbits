@@ -14,13 +14,13 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Util = require( 'DOT/Util' );
+  const CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Util = require( 'DOT/Util' );
 
   // constants
-  var STROKE_WIDTH = 3;
+  const STROKE_WIDTH = 3;
 
   /**
    *
@@ -42,12 +42,11 @@ define( function( require ) {
       canvasBounds: canvasBounds,
       preventFit: true
     } );
-    var self = this;
-    var i;
+    const self = this;
 
     // @private - a map tracking each body and its associated points
     this.namedPoints = {}; // @private
-    for ( i = 0; i < bodies.length; i++ ) {
+    for ( let i = 0; i < bodies.length; i++ ) {
       this.namedPoints[ bodies[ i ].name ] = new NamedPoints( bodies[ i ].name );
     }
 
@@ -57,16 +56,16 @@ define( function( require ) {
     // transform all body points and re paint the canvas
     // disposal unnecessary, the canvas node exists for life of sim
     transformProperty.link( function( transform ) {
-      for ( var i = 0; i < bodies.length; i++ ) {
-        var body = bodies[ i ];
+      for ( let i = 0; i < bodies.length; i++ ) {
+        const body = bodies[ i ];
 
         // when the transform changes, we want to re-transform all points in a body
         // path and then re paint the canvas
         self.namedPoints[ body.name ].points = [];
 
-        for ( var j = 0; j < body.path.length; j++ ) {
-          var point = body.path[ j ];
-          var pt = transformProperty.get().modelToViewPosition( point );
+        for ( let j = 0; j < body.path.length; j++ ) {
+          const point = body.path[ j ];
+          const pt = transformProperty.get().modelToViewPosition( point );
           self.namedPoints[ body.name ].points.push( pt );
         }
       }
@@ -78,7 +77,7 @@ define( function( require ) {
 
     visibleProperty.link( function( isVisible ) {
       self.visible = isVisible;
-      for ( i = 0; i < bodies.length; i++ ) {
+      for ( let i = 0; i < bodies.length; i++ ) {
         self.namedPoints[ bodies[ i ].name ].points = [];
         self.bodies[ i ].clearPath();
       }
@@ -89,10 +88,10 @@ define( function( require ) {
     // created to avoid excess closures every time a point is removed
     // @param {string} bodyName - used to look up points associated with the desired body's trail
     this.pointAddedListener = function( point, bodyName ) {
-      var pt = transformProperty.get().modelToViewPosition( point );
+      const pt = transformProperty.get().modelToViewPosition( point );
 
       // 'this' is defined by bind in addListener
-      var namedPoints = this.namedPoints[ bodyName ];
+      const namedPoints = this.namedPoints[ bodyName ];
       namedPoints.points.push( pt );
       if ( visibleProperty.get() ) {
         this.invalidatePaint();
@@ -105,7 +104,7 @@ define( function( require ) {
     this.pointRemovedListener = function( bodyName ) {
 
       // 'this' defined by bind in addListener
-      var namedPoints = this.namedPoints[ bodyName ];
+      const namedPoints = this.namedPoints[ bodyName ];
       if ( namedPoints.points.length > 0 ) {
         namedPoints.points.shift();
       }
@@ -120,14 +119,14 @@ define( function( require ) {
     this.clearedListener = function( bodyName ) {
 
       // 'this' is defined by bind
-      var namedPoints = this.namedPoints[ bodyName ];
+      const namedPoints = this.namedPoints[ bodyName ];
       while ( namedPoints.points.length ) { namedPoints.points.pop(); }
       this.invalidatePaint();
     };
 
     // add listeners to each body
-    for ( i = 0; i < bodies.length; i++ ) {
-      var body = bodies[ i ];
+    for ( let i = 0; i < bodies.length; i++ ) {
+      const body = bodies[ i ];
 
       body.pointAddedEmitter.addListener( self.pointAddedListener.bind( self ) );
       body.pointRemovedEmitter.addListener( self.pointRemovedListener.bind( self ) );
@@ -144,16 +143,16 @@ define( function( require ) {
      * @param {CanvasRenderingContext2D} context
      */
     paintCanvas: function( context ) {
-      var j;
+      let j;
 
       // draw the path for each body one by one
-      for ( var i = 0; i < this.bodies.length; i++ ) {
-        var body = this.bodies[ i ];
-        var points = this.namedPoints[ body.name ].points;
+      for ( let i = 0; i < this.bodies.length; i++ ) {
+        const body = this.bodies[ i ];
+        const points = this.namedPoints[ body.name ].points;
 
         // max path length in view coordinates
-        var maxPathLength = this.transformProperty.get().modelToViewDeltaX( body.maxPathLength );
-        var fadePathLength = maxPathLength * 0.15; // fade length is ~15% of the path
+        const maxPathLength = this.transformProperty.get().modelToViewDeltaX( body.maxPathLength );
+        const fadePathLength = maxPathLength * 0.15; // fade length is ~15% of the path
 
         context.strokeStyle = body.color.toCSS();
         context.lineWidth = STROKE_WIDTH;
@@ -173,18 +172,15 @@ define( function( require ) {
 
         j = points.length - 1;
         body.pathLength = 0;
-        var segDifX;
-        var segDifY;
-        var segLength;
         while ( body.pathLength < maxPathLength - fadePathLength && j > 0 ) {
           context.lineTo( points[ j ].x, points[ j ].y );
           if ( j > 1 ) {
             // increment the path length by the length of the added segment
-            segDifX = points[ j ].x - points[ j - 1 ].x;
-            segDifY = points[ j ].y - points[ j - 1 ].y;
+            const segDifX = points[ j ].x - points[ j - 1 ].x;
+            const segDifY = points[ j ].y - points[ j - 1 ].y;
 
             // avoid using vector2 to prevent excess object allocation
-            segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
+            const segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
             body.pathLength += segLength;
           }
           j--;
@@ -193,16 +189,16 @@ define( function( require ) {
 
         // Draw the faded out part
         context.lineCap = 'butt';
-        var faded = body.color;
+        const faded = body.color;
 
         while ( body.pathLength < maxPathLength && j > 0 ) {
           assert && assert( body.pathLength > maxPathLength - fadePathLength, 'the path length is too small to start fading' );
 
           // fade out a little bit each segment
-          var alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1 , 0, body.pathLength );
+          const alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1, 0, body.pathLength );
 
           // format without Color to avoid unnecessary allocation
-          var fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )';
+          const fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )';
 
           context.beginPath();
           context.strokeStyle = fade;
@@ -211,11 +207,11 @@ define( function( require ) {
           context.stroke();
 
           // increment the path length by the length of the added segment
-          segDifX = points[ j ].x - points[ j - 1 ].x;
-          segDifY = points[ j ].y - points[ j - 1 ].y;
+          const segDifX = points[ j ].x - points[ j - 1 ].x;
+          const segDifY = points[ j ].y - points[ j - 1 ].y;
 
           // avoid using vector2 to prevent excess object allocation
-          segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
+          const segLength = Math.sqrt( segDifX * segDifX + segDifY * segDifY );
           body.pathLength += segLength;
           j--;
         }

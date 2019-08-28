@@ -10,20 +10,20 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var EventTimer = require( 'PHET_CORE/EventTimer' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
+  const EventTimer = require( 'PHET_CORE/EventTimer' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Property = require( 'AXON/Property' );
 
   // constants
   // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
-  var CLOCK_FRAME_RATE = 60;
+  const CLOCK_FRAME_RATE = 60;
 
   // was 1 in the Java version, but changed to account for modification of CLOCK_FRAME_RATE
-  var DAYS_PER_TICK = 1 / ( 60 / 25 );
-  var SECONDS_PER_DAY = 86400;
-  var DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
+  const DAYS_PER_TICK = 1 / ( 60 / 25 );
+  const SECONDS_PER_DAY = 86400;
+  const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
   /**
    *
@@ -33,7 +33,7 @@ define( function( require ) {
    * @constructor
    */
   function GravityAndOrbitsClock( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
-    var self = this;
+    const self = this;
 
     // @private
     this.baseDTValue = baseDTValue;
@@ -66,7 +66,7 @@ define( function( require ) {
       this.steppingProperty.set( true );
 
       // dt should be scaled by the initial speed when manually stepping
-      var clockDT = this.dt; // store to revert after manual step
+      const clockDT = this.dt; // store to revert after manual step
       this.dt = this.steppingWhilePausedDT;
 
       this.step( 1 / CLOCK_FRAME_RATE );
@@ -85,7 +85,7 @@ define( function( require ) {
       this.steppingProperty.set( true );
 
       // dt should be scaled by the initial speed when manually stepping
-      var clockDT = this.dt; // store to revert after manual step
+      const clockDT = this.dt; // store to revert after manual step
       this.dt = this.steppingWhilePausedDT;
 
       this.step( -1 / CLOCK_FRAME_RATE );

@@ -12,13 +12,13 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
-  var RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
-  var StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
+  const DerivedProperty = require( 'AXON/DerivedProperty' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
+  const RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
+  const StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
 
   /**
    * @param {Property.<GravityAndOrbitsMode>} modeProperty
@@ -28,28 +28,28 @@ define( function( require ) {
    * @constructor
    */
   function TimeControlPanel( modeProperty, playButtonPressedProperty, bodies, options ) {
-    var playProperty = playButtonPressedProperty;
+    const playProperty = playButtonPressedProperty;
 
-    var playPauseButton = new PlayPauseButton( playProperty );
+    const playPauseButton = new PlayPauseButton( playProperty );
 
-    var stepButton = new StepForwardButton( {
+    const stepButton = new StepForwardButton( {
       isPlayingProperty: playProperty,
       listener: function() { modeProperty.get().getClock().stepClockWhilePaused(); }
     } );
 
-    var rewindButton = new RewindButton( {
+    const rewindButton = new RewindButton( {
       enabled: false,
       listener: function() {
         modeProperty.get().rewind();
       }
     } );
 
-    var anyPropertyDifferentProperties = [];
-    for ( var i = 0; i < bodies.length; i++ ) {
+    const anyPropertyDifferentProperties = [];
+    for ( let i = 0; i < bodies.length; i++ ) {
       anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
     }
 
-    var anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
+    const anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
       return _.some( arguments, _.identity );
     } );
 

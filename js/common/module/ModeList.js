@@ -11,85 +11,85 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Body = require( 'GRAVITY_AND_ORBITS/common/model/Body' );
-  var BodyConfiguration = require( 'GRAVITY_AND_ORBITS/common/module/BodyConfiguration' );
-  var BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
-  var Color = require( 'SCENERY/util/Color' );
-  var EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/EarthMassReadoutNode' );
-  var GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsMode' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var Image = require( 'SCENERY/nodes/Image' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'SCENERY/nodes/Line' );
-  var ModeConfig = require( 'GRAVITY_AND_ORBITS/common/module/ModeConfig' );
-  var SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var Util = require( 'DOT/Util' );
-  var Vector2 = require( 'DOT/Vector2' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
+  const Body = require( 'GRAVITY_AND_ORBITS/common/model/Body' );
+  const BodyConfiguration = require( 'GRAVITY_AND_ORBITS/common/module/BodyConfiguration' );
+  const BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
+  const Color = require( 'SCENERY/util/Color' );
+  const EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/EarthMassReadoutNode' );
+  const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsMode' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const Image = require( 'SCENERY/nodes/Image' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Line = require( 'SCENERY/nodes/Line' );
+  const ModeConfig = require( 'GRAVITY_AND_ORBITS/common/module/ModeConfig' );
+  const SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
+  const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  const Util = require( 'DOT/Util' );
+  const Vector2 = require( 'DOT/Vector2' );
+  const VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
   // strings
-  // var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
-  // var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
-  // var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
-  // var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
-  var earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
-  var earthDayString = require( 'string!GRAVITY_AND_ORBITS/earthDay' );
-  var earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
-  var earthMinuteString = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
-  var earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
-  var ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
-  var ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
-  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
-  var spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
+  // const moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  // const planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  // const satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  // const starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  const earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
+  const earthDayString = require( 'string!GRAVITY_AND_ORBITS/earthDay' );
+  const earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
+  const earthMinuteString = require( 'string!GRAVITY_AND_ORBITS/earthMinute' );
+  const earthString = require( 'string!GRAVITY_AND_ORBITS/earth' );
+  const ourMoonString = require( 'string!GRAVITY_AND_ORBITS/ourMoon' );
+  const ourSunString = require( 'string!GRAVITY_AND_ORBITS/ourSun' );
+  const pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  const spaceStationString = require( 'string!GRAVITY_AND_ORBITS/spaceStation' );
 
   // images
-  var earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.png' );
-  var genericMoonImage = require( 'image!GRAVITY_AND_ORBITS/moon_generic.png' );
-  var genericPlanetImage = require( 'image!GRAVITY_AND_ORBITS/planet_generic.png' );
-  var moonImage = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
-  var spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
-  var sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
+  const earthImage = require( 'image!GRAVITY_AND_ORBITS/earth.png' );
+  const genericMoonImage = require( 'image!GRAVITY_AND_ORBITS/moon_generic.png' );
+  const genericPlanetImage = require( 'image!GRAVITY_AND_ORBITS/planet_generic.png' );
+  const moonImage = require( 'image!GRAVITY_AND_ORBITS/moon.png' );
+  const spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
+  const sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
 
   // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
   // so we keep them here instead of the model.
-  var SUN_RADIUS = 6.955E8; // km
-  var SUN_MASS = 1.989E30; // kg
-  var EARTH_RADIUS = 6.371E6;
-  var EARTH_MASS = GravityAndOrbitsConstants.EARTH_MASS;
-  var EARTH_PERIHELION = 147098290E3; // km, distance from the sun at the closest point
-  var EARTH_ORBITAL_SPEED_AT_PERIHELION = 30300; // m/s
-  var MOON_MASS = 7.3477E22;
-  var MOON_RADIUS = 1737.1E3;
-  var MOON_EARTH_SPEED = -1.01E3;
-  var MOON_SPEED = MOON_EARTH_SPEED;
-  var MOON_PERIGEE = 391370E3; // km, distance from earth at closet point
-  var MOON_X = EARTH_PERIHELION;
-  var MOON_Y = MOON_PERIGEE;
+  const SUN_RADIUS = 6.955E8; // km
+  const SUN_MASS = 1.989E30; // kg
+  const EARTH_RADIUS = 6.371E6;
+  const EARTH_MASS = GravityAndOrbitsConstants.EARTH_MASS;
+  const EARTH_PERIHELION = 147098290E3; // km, distance from the sun at the closest point
+  const EARTH_ORBITAL_SPEED_AT_PERIHELION = 30300; // m/s
+  const MOON_MASS = 7.3477E22;
+  const MOON_RADIUS = 1737.1E3;
+  const MOON_EARTH_SPEED = -1.01E3;
+  const MOON_SPEED = MOON_EARTH_SPEED;
+  const MOON_PERIGEE = 391370E3; // km, distance from earth at closet point
+  const MOON_X = EARTH_PERIHELION;
+  const MOON_Y = MOON_PERIGEE;
 
   // see http://en.wikipedia.org/wiki/International_Space_Station
-  var SPACE_STATION_RADIUS = 109;
-  var SPACE_STATION_MASS = GravityAndOrbitsConstants.SPACE_STATION_MASS;
-  var SPACE_STATION_SPEED = 7706;
-  var SPACE_STATION_PERIGEE = 347000;
+  const SPACE_STATION_RADIUS = 109;
+  const SPACE_STATION_MASS = GravityAndOrbitsConstants.SPACE_STATION_MASS;
+  const SPACE_STATION_SPEED = 7706;
+  const SPACE_STATION_PERIGEE = 347000;
 
   // orbital period of the space station, in seconds
   // orbit determined to be 91.4 days, by inspection
-  var SPACE_STATION_ORBITAL_PERIOD = 91.4 * 60;
+  const SPACE_STATION_ORBITAL_PERIOD = 91.4 * 60;
 
-  var SECONDS_PER_MINUTE = 60;
-  var FORCE_SCALE = VectorNode.FORCE_SCALE;
+  const SECONDS_PER_MINUTE = 60;
+  const FORCE_SCALE = VectorNode.FORCE_SCALE;
 
   // not originally in this file
-  var METERS_PER_MILE = 0.000621371192;
+  const METERS_PER_MILE = 0.000621371192;
 
-  var DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
+  const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
-  var ModeList = {
+  const ModeList = {
     ModeList: ModeListModule, // the original Java class
 
     // These were public static inner classes
@@ -216,13 +216,13 @@ define( function( require ) {
     earthMoon.center();
     earthSpaceStation.center();
 
-    var readoutInEarthMasses = function( bodyNode, visibleProperty ) {
+    const readoutInEarthMasses = function( bodyNode, visibleProperty ) {
       return new EarthMassReadoutNode( bodyNode, visibleProperty );
     };
 
     // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
-    var SEC_PER_YEAR = 365 * 24 * 60 * 60;
-    var SUN_MODES_VELOCITY_SCALE = 4.48E6;
+    const SEC_PER_YEAR = 365 * 24 * 60 * 60;
+    const SUN_MODES_VELOCITY_SCALE = 4.48E6;
     this.modes.push( new GravityAndOrbitsMode(
       sunEarth.forceScale,
       false,
@@ -239,7 +239,7 @@ define( function( require ) {
       new Vector2( 0, 0 ),
       parameterList ) );
 
-    var sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
+    const sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
     this.modes[ 0 ].addBody( new Sun( sunEarth.sun, sunEarthTransformProperty, {
       maxPathLength: 345608942000 // in km
     } ) );
@@ -263,8 +263,8 @@ define( function( require ) {
 
     // increase moon path length so that it fades away with other bodies
     // in model coordinates (at default orbit) 
-    var pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
-    var sunEarthMoonTransformProperty = this.modes[ 1 ].sunEarthMoonTransformProperty;
+    const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
+    const sunEarthMoonTransformProperty = this.modes[ 1 ].sunEarthMoonTransformProperty;
     this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun, sunEarthMoonTransformProperty, {
       maxPathLength: 345608942000 // in km
     } ) );
@@ -276,7 +276,7 @@ define( function( require ) {
         pathLengthBuffer: pathLengthBuffer
       } ) );
 
-    var SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
+    const SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
     this.modes.push( new GravityAndOrbitsMode(
       earthMoon.forceScale,
       false,
@@ -293,7 +293,7 @@ define( function( require ) {
       new Vector2( earthMoon.earth.x, 0 ),
       parameterList ) );
 
-    var earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
+    const earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
     this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, {
       orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
     } ) );
@@ -303,7 +303,7 @@ define( function( require ) {
       rotationPeriod: earthMoon.moon.rotationPeriod
     } ) );
 
-    var spaceStationMassReadoutFactory = function( bodyNode, visibleProperty ) {
+    const spaceStationMassReadoutFactory = function( bodyNode, visibleProperty ) {
       return new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
     };
 
@@ -323,7 +323,7 @@ define( function( require ) {
       new Vector2( earthSpaceStation.earth.x, 0 ),
       parameterList ) );
 
-    var earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
+    const earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
     this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, {
       maxPathLength: 35879455 // in km
     } ) );
@@ -344,14 +344,14 @@ define( function( require ) {
      * @returns {Image}
      */
     createIconImage: function( sun, earth, moon, spaceStation ) {
-      var children = [
+      const children = [
         new Image( sunImage, { visible: sun } ),
         new Image( earthImage, { visible: earth } ),
         new Image( moonImage, { visible: moon } ),
         new Image( spaceStationImage, { visible: spaceStation } )
       ];
 
-      for ( var i = 0; i < children.length; i++ ) {
+      for ( let i = 0; i < children.length; i++ ) {
         children[ i ].setScaleMagnitude( 25 / children[ i ].width );
       }
 
@@ -485,7 +485,7 @@ define( function( require ) {
    * @param {string} image
    * @returns {function}
    */
-  var getImageRenderer = function( image ) {
+  const getImageRenderer = function( image ) {
     return function( body, viewDiameter ) {
       return new BodyRenderer.ImageRenderer( body, viewDiameter, image );
     };
@@ -498,7 +498,7 @@ define( function( require ) {
    * @param {number} targetMass
    * @returns {function}
    */
-  var getSwitchableRenderer = function( image1, image2, targetMass ) {
+  const getSwitchableRenderer = function( image1, image2, targetMass ) {
 
     // the mass for which to use the image
     return function( body, viewDiameter ) {
@@ -514,10 +514,10 @@ define( function( require ) {
    * @param scale
    * @returns {function}
    */
-  var scaledDays = function( scale ) {
+  const scaledDays = function( scale ) {
     return function( time ) {
-      var value = (time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale);
-      var units = (value === 1) ? earthDayString : earthDaysString;
+      const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale );
+      const units = ( value === 1 ) ? earthDayString : earthDaysString;
       return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
     };
   };
@@ -528,9 +528,9 @@ define( function( require ) {
    * @param time
    * @returns {string}
    */
-  var formatMinutes = function( time ) {
-    var value = (time / SECONDS_PER_MINUTE);
-    var units = (value === 1) ? earthMinuteString : earthMinutesString;
+  const formatMinutes = function( time ) {
+    const value = ( time / SECONDS_PER_MINUTE );
+    const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
     return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
   };
 

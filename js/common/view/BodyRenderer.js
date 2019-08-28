@@ -15,17 +15,17 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var Image = require( 'SCENERY/nodes/Image' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Matrix3 = require( 'DOT/Matrix3' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var Shape = require( 'KITE/Shape' );
-  var Vector2 = require( 'DOT/Vector2' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const Image = require( 'SCENERY/nodes/Image' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Matrix3 = require( 'DOT/Matrix3' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const Path = require( 'SCENERY/nodes/Path' );
+  const Shape = require( 'KITE/Shape' );
+  const Vector2 = require( 'DOT/Vector2' );
 
   // images
-  var sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
+  const sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
 
   // @abstract
   function BodyRenderer( body ) {
@@ -39,7 +39,7 @@ define( function( require ) {
   gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
   // this needs to be called before the static classes are defined, otherwise the inheritance doesn't work right
-  var renderer = inherit( Node, BodyRenderer, {
+  const renderer = inherit( Node, BodyRenderer, {
 
     // @public
     getBody: function() {
@@ -139,7 +139,7 @@ define( function( require ) {
     // @private
     updateViewDiameter: function() {
       this.imageNode.matrix = new Matrix3();
-      var scale = this.viewDiameter / this.imageNode.width;
+      const scale = this.viewDiameter / this.imageNode.width;
       this.imageNode.setScaleMagnitude( scale );
 
       // Make sure the image is centered on the body's center
@@ -179,14 +179,14 @@ define( function( require ) {
      */
     setDiameter: function( viewDiameter ) {
       ImageRenderer.prototype.setDiameter.call( this, viewDiameter );
-      var angle = 0;
-      var deltaAngle = Math.PI * 2 / this.numSegments;
-      var radius = viewDiameter / 2;
-      var shape = new Shape();
+      let angle = 0;
+      const deltaAngle = Math.PI * 2 / this.numSegments;
+      const radius = viewDiameter / 2;
+      const shape = new Shape();
       shape.moveTo( 0, 0 );
-      for ( var i = 0; i < this.numSegments + 1; i++ ) {
-        var myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
-        var target = Vector2.createPolar( myRadius, angle );
+      for ( let i = 0; i < this.numSegments + 1; i++ ) {
+        const myRadius = ( i % 2 === 0 ) ? this.twinkleRadius( radius ) : radius;
+        const target = Vector2.createPolar( myRadius, angle );
         shape.lineToPoint( target );
         angle += deltaAngle;
       }

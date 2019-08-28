@@ -10,16 +10,16 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Property = require( 'AXON/Property' );
-  var Vector2 = require( 'DOT/Vector2' );
+  const ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  const DerivedProperty = require( 'AXON/DerivedProperty' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const Property = require( 'AXON/Property' );
+  const Vector2 = require( 'DOT/Vector2' );
 
   // constants
-  var FORCE_SCALE = 76.0 / 5.179E15;
+  const FORCE_SCALE = 76.0 / 5.179E15;
 
   /**
    * Constructor for VectorNode
@@ -34,7 +34,7 @@ define( function( require ) {
    */
   function VectorNode( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline ) {
     Node.call( this );
-    var self = this;
+    const self = this;
 
     this.body = body; // @private
     this.vectorProperty = vectorProperty; // @private
@@ -47,7 +47,7 @@ define( function( require ) {
       return visible && !collided;
     } ).linkAttribute( this, 'visible' );
 
-    var arrowNode = new ArrowNode( 0, 0, 0, 0, {
+    const arrowNode = new ArrowNode( 0, 0, 0, 0, {
       headHeight: 15,
       headWidth: 15,
       tailWidth: 5,
@@ -61,8 +61,8 @@ define( function( require ) {
 
     this.propertyListener = function( visible ) {
       if ( visible ) {
-        var tail = self.getTail();
-        var tip = self.getTip( tail );
+        const tail = self.getTail();
+        const tip = self.getTip( tail );
         arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
       }
     };
@@ -86,8 +86,8 @@ define( function( require ) {
         tail = this.getTail();
       }
 
-      var minArrowLength = 10;
-      var force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
+      const minArrowLength = 10;
+      let force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
 
       if ( force.magnitude < minArrowLength && force.magnitude > 1E-12 ) {
         force = force.times( minArrowLength / force.magnitude );

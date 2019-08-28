@@ -11,11 +11,11 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var Shape = require( 'KITE/Shape' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const Path = require( 'SCENERY/nodes/Path' );
+  const Shape = require( 'KITE/Shape' );
 
   /**
    * Constructor for GridNode
@@ -34,26 +34,25 @@ define( function( require ) {
     }, options );
 
     Node.call( this );
-    var path = new Path( null, options );
+    const path = new Path( null, options );
     this.addChild( path );
 
     transformProperty.link( function() {
-      var i;
-      var shape = new Shape();
+      const shape = new Shape();
 
       // horizontal lines
-      for ( i = -numGridLines; i <= numGridLines; i++ ) {
-        var y = i * spacing + center.y;
-        var x1 = numGridLines * spacing + center.x;
-        var x2 = -numGridLines * spacing + center.x;
+      for ( let i = -numGridLines; i <= numGridLines; i++ ) {
+        const y = i * spacing + center.y;
+        const x1 = numGridLines * spacing + center.x;
+        const x2 = -numGridLines * spacing + center.x;
         shape.moveTo( x1, y ).lineTo( x2, y );
       }
 
       // vertical lines
-      for ( i = -numGridLines; i <= numGridLines; i++ ) {
-        var x = i * spacing + center.x;
-        var y1 = numGridLines * spacing + center.y;
-        var y2 = -numGridLines * spacing + center.y;
+      for ( let i = -numGridLines; i <= numGridLines; i++ ) {
+        const x = i * spacing + center.x;
+        const y1 = numGridLines * spacing + center.y;
+        const y2 = -numGridLines * spacing + center.y;
         shape.moveTo( x, y1 ).lineTo( x, y2 );
       }
 

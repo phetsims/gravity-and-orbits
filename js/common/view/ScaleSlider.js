@@ -12,23 +12,23 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Bounds2 = require( 'DOT/Bounds2' );
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Range = require( 'DOT/Range' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
-  var Shape = require( 'KITE/Shape' );
-  var VSlider = require( 'SUN/VSlider' );
+  const Bounds2 = require( 'DOT/Bounds2' );
+  const Dimension2 = require( 'DOT/Dimension2' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const Range = require( 'DOT/Range' );
+  const Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  const RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  const Shape = require( 'KITE/Shape' );
+  const VSlider = require( 'SUN/VSlider' );
 
   // constants
-  var TRACK_SIZE = new Dimension2( 140, 3 );
-  var THUMB_SIZE = new Dimension2( 20, 28 );
-  var RANGE = new Range( 0.5, 1.5 );
-  var STEP = 0.1;
-  var BUTTON_SIZE = 25;
+  const TRACK_SIZE = new Dimension2( 140, 3 );
+  const THUMB_SIZE = new Dimension2( 20, 28 );
+  const RANGE = new Range( 0.5, 1.5 );
+  const STEP = 0.1;
+  const BUTTON_SIZE = 25;
 
   /**
    * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
@@ -41,7 +41,7 @@ define( function( require ) {
 
     Node.call( this );
 
-    var verticalSlider = new VSlider( scaleProperty, RANGE, {
+    const verticalSlider = new VSlider( scaleProperty, RANGE, {
       trackSize: TRACK_SIZE,
       thumbSize: THUMB_SIZE,
 
@@ -58,12 +58,12 @@ define( function( require ) {
     // Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
 
     // add plus button
-    var plusButton = new SliderButton( scaleProperty, RANGE, STEP, true );
+    const plusButton = new SliderButton( scaleProperty, RANGE, STEP, true );
     plusButton.centerBottom = verticalSlider.centerTop;
     this.addChild( plusButton );
 
     // add minus button
-    var minusButton = new SliderButton( scaleProperty, RANGE, STEP, false );
+    const minusButton = new SliderButton( scaleProperty, RANGE, STEP, false );
     minusButton.centerTop = verticalSlider.centerBottom;
     this.addChild( minusButton );
 
@@ -84,7 +84,7 @@ define( function( require ) {
   function SliderButton( scaleProperty, range, step, isIncrease ) {
 
     // create default view
-    var sample = new Node( {
+    const sample = new Node( {
       children: [
         new Rectangle( 0, 0, BUTTON_SIZE, BUTTON_SIZE, 2, 2, { fill: '#DBD485' } ),
         new Rectangle( 4, BUTTON_SIZE / 2 - 1, BUTTON_SIZE - 8, 2, { fill: 'black' } )
@@ -107,7 +107,7 @@ define( function( require ) {
       }
     } );
 
-    var self = this;
+    const self = this;
 
     // add disabling effect for buttons
     if ( isIncrease ) {
@@ -125,9 +125,9 @@ define( function( require ) {
 
     // Increase the touch area in all directions except toward the slider knob,
     // so that they won't interfere too much on touch devices
-    var dilationSize = 15;
-    var dilateTop = ( isIncrease ) ? dilationSize : 0;
-    var dilateBottom = ( isIncrease ) ? 0 : dilationSize;
+    const dilationSize = 15;
+    const dilateTop = ( isIncrease ) ? dilationSize : 0;
+    const dilateBottom = ( isIncrease ) ? 0 : dilationSize;
     this.touchArea = Shape.bounds( new Bounds2(
       this.localBounds.minX - dilationSize,
       this.localBounds.minY - dilateTop,

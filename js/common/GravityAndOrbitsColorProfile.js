@@ -9,11 +9,11 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Color = require( 'SCENERY/util/Color' );
-  var ColorProfile = require( 'SCENERY_PHET/ColorProfile' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const Color = require( 'SCENERY/util/Color' );
+  const ColorProfile = require( 'SCENERY_PHET/ColorProfile' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  var GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' ], {
+  const GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' ], {
     background: {
       default: 'black',
       projector: 'white'

@@ -10,29 +10,29 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BodyMassControl = require( 'GRAVITY_AND_ORBITS/common/view/BodyMassControl' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var HStrut = require( 'SCENERY/nodes/HStrut' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Panel = require( 'SUN/Panel' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const BodyMassControl = require( 'GRAVITY_AND_ORBITS/common/view/BodyMassControl' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const HStrut = require( 'SCENERY/nodes/HStrut' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const Panel = require( 'SUN/Panel' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  // var spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
-  var moonMassString = require( 'string!GRAVITY_AND_ORBITS/moonMass' );
-  var planetMassString = require( 'string!GRAVITY_AND_ORBITS/planetMass' );
-  var satelliteMassString = require( 'string!GRAVITY_AND_ORBITS/satelliteMass' );
-  var starMassString = require( 'string!GRAVITY_AND_ORBITS/starMass' );
+  // const spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
+  const moonMassString = require( 'string!GRAVITY_AND_ORBITS/moonMass' );
+  const planetMassString = require( 'string!GRAVITY_AND_ORBITS/planetMass' );
+  const satelliteMassString = require( 'string!GRAVITY_AND_ORBITS/satelliteMass' );
+  const starMassString = require( 'string!GRAVITY_AND_ORBITS/starMass' );
 
   // constants
-  var CONTROL_FONT = new PhetFont( 14 );
-  var LABEL_MAP = {
+  const CONTROL_FONT = new PhetFont( 14 );
+  const LABEL_MAP = {
     PLANET: planetMassString,
     SATELLITE: satelliteMassString,
     STAR: starMassString,
@@ -50,14 +50,14 @@ define( function( require ) {
 
     options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
-    var children = [];
+    const children = [];
 
-    for ( var i = 0; i < massSettableBodies.length; i++ ) {
-      var sliderNode = new Node();
+    for ( let i = 0; i < massSettableBodies.length; i++ ) {
+      const sliderNode = new Node();
 
-      var massSettableBody = massSettableBodies[ i ];
+      const massSettableBody = massSettableBodies[ i ];
 
-      var label = new Text( LABEL_MAP[ massSettableBody.name ], {
+      const label = new Text( LABEL_MAP[ massSettableBody.name ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColorProfile.panelTextProperty,
@@ -65,14 +65,14 @@ define( function( require ) {
         resize: false
       } );
 
-      var icon = massSettableBody.createRenderer( 14 );
+      const icon = massSettableBody.createRenderer( 14 );
 
       // Top component that shows the body's name and icon
-      var labelHBox = new HBox( { children: [ icon, label ], spacing: 10 } );
+      const labelHBox = new HBox( { children: [ icon, label ], spacing: 10 } );
 
       sliderNode.addChild( labelHBox );
 
-      var sliderVBox = new VBox( {
+      const sliderVBox = new VBox( {
         top: labelHBox.bottom + 8,
         resize: false,
         children: [
@@ -90,7 +90,7 @@ define( function( require ) {
       children.push( sliderNode );
     }
 
-    var vBox = new VBox( { children: children, spacing: 15, y: 5, resize: false, align: 'left' } );
+    const vBox = new VBox( { children: children, spacing: 15, y: 5, resize: false, align: 'left' } );
     Panel.call( this, vBox, options );
   }
 

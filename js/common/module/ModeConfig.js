@@ -12,13 +12,13 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Vector2 = require( 'DOT/Vector2' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Vector2 = require( 'DOT/Vector2' );
   
   // constants
-  var DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
+  const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
   /**
    * @param {number} zoom
@@ -37,9 +37,9 @@ define( function( require ) {
 
     // @public
     center: function() {
-      var deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
-      var bodies = this.getBodies();
-      for ( var i = 0; i < bodies.length; i++ ) {
+      const deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
+      const bodies = this.getBodies();
+      for ( let i = 0; i < bodies.length; i++ ) {
         bodies[ i ].vx += deltaVelocity.x;
         bodies[ i ].vy += deltaVelocity.y;
       }
@@ -51,9 +51,9 @@ define( function( require ) {
      * @returns {Vector2}
      */
     getTotalMomentum: function() {
-      var totalMomentum = new Vector2( 0, 0 );
-      var bodies = this.getBodies();
-      for ( var i = 0; i < bodies.length; i++ ) {
+      let totalMomentum = new Vector2( 0, 0 );
+      const bodies = this.getBodies();
+      for ( let i = 0; i < bodies.length; i++ ) {
         totalMomentum = totalMomentum.plus( bodies[ i ].getMomentum() );
       }
       return totalMomentum;
@@ -64,9 +64,9 @@ define( function( require ) {
      * @returns {number}
      */
     getTotalMass: function() {
-      var totalMass = 0.0;
-      var bodies = this.getBodies();
-      for ( var i = 0; i < bodies.length; i++ ) {
+      let totalMass = 0.0;
+      const bodies = this.getBodies();
+      for ( let i = 0; i < bodies.length; i++ ) {
         totalMass += bodies[ i ].mass;
       }
       return totalMass;

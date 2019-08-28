@@ -13,20 +13,20 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
-  var Vector2 = require( 'DOT/Vector2' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
+  const Vector2 = require( 'DOT/Vector2' );
 
   // constants
-  var XI = 0.1786178958448091;
-  var LAMBDA = -0.2123418310626054;
-  var CHI = -0.06626458266981849;
+  const XI = 0.1786178958448091;
+  const LAMBDA = -0.2123418310626054;
+  const CHI = -0.06626458266981849;
 
   // reduce Vector2 allocation by reusing these Vector2 in computations
-  var relativePosition = new Vector2( 0, 0 ); // used in getTwoBodyForce()
-  var velocity = new Vector2( 0, 0 ); // used in updatePositions()
-  var netForce = new Vector2( 0, 0 ); // used in getNetForce()
+  const relativePosition = new Vector2( 0, 0 ); // used in getTwoBodyForce()
+  const velocity = new Vector2( 0, 0 ); // used in updatePositions()
+  const netForce = new Vector2( 0, 0 ); // used in getNetForce()
 
   /**
    * @param {Array.<BodyState>} bodyStates
@@ -51,17 +51,15 @@ define( function( require ) {
      * @returns {ModelState}
      */
     getNextState: function( dt, gravityEnabledProperty ) {
-      var state = this; // eslint-disable-line consistent-this
 
       if ( gravityEnabledProperty.get() ) {
-        state = state.getNextInteractingState( dt );
+        return this.getNextInteractingState( dt );
       }
       else {
 
         // gravity is not active, bodies are coasting;
         return this.getNextCoastingState( dt );
       }
-      return state;
     },
 
     /**
@@ -71,8 +69,8 @@ define( function( require ) {
      * @param {dt} number
      */
     updatePositions: function( dt ) {
-      for ( var i = 0; i < this.bodyStates.length; i++ ) {
-        var bodyState = this.bodyStates[ i ];
+      for ( let i = 0; i < this.bodyStates.length; i++ ) {
+        const bodyState = this.bodyStates[ i ];
         velocity.setXY( bodyState.velocity.x * dt, bodyState.velocity.y * dt );
         bodyState.position.add( velocity );
       }
@@ -86,8 +84,8 @@ define( function( require ) {
      */
     updateVelocities: function( dt ) {
       this.updateAccelerations();
-      for ( var i = 0; i < this.bodyStates.length; i++ ) {
-        var bodyState = this.bodyStates[ i ];
+      for ( let i = 0; i < this.bodyStates.length; i++ ) {
+        const bodyState = this.bodyStates[ i ];
         bodyState.velocity.add( bodyState.acceleration.multiplyScalar( dt ) );
       }
     },
@@ -98,9 +96,9 @@ define( function( require ) {
      * @private
      */
     updateAccelerations: function() {
-      for ( var i = 0; i < this.bodyStates.length; i++ ) {
-        var bodyState = this.bodyStates[ i ];
-        var acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
+      for ( let i = 0; i < this.bodyStates.length; i++ ) {
+        const bodyState = this.bodyStates[ i ];
+        const acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
         bodyState.acceleration.setXY( acceleration.x, acceleration.y );
       }
     },
@@ -113,12 +111,12 @@ define( function( require ) {
      * @param {number} dt (seconds)
      */
     updateRotations: function( dt ) {
-      for ( var i = 0; i < this.bodyStates.length; i++ ) {
-        var bodyState = this.bodyStates[ i ];
+      for ( let i = 0; i < this.bodyStates.length; i++ ) {
+        const bodyState = this.bodyStates[ i ];
 
         // only rotate if necessary
         if ( bodyState.rotationPeriod !== null ) {
-          var rotation = this.getDeltaRotation( bodyState.rotationPeriod, dt );
+          const rotation = this.getDeltaRotation( bodyState.rotationPeriod, dt );
           bodyState.rotation = bodyState.rotation + rotation;
         }
       }
@@ -143,7 +141,7 @@ define( function( require ) {
      * @private
      */
     setAccelerationToZero: function() {
-      for ( var i = 0; i < this.bodyStates.length; i++ ) {
+      for ( let i = 0; i < this.bodyStates.length; i++ ) {
         this.bodyStates[ i ].acceleration = new Vector2( 0, 0 );
       }
     },
@@ -160,7 +158,7 @@ define( function( require ) {
       // use netForce to keep track of the net force, initialize to zero.
       netForce.setXY( 0, 0 );
 
-      for ( var j = 0; j < this.bodyStates.length; j++ ) {
+      for ( let j = 0; j < this.bodyStates.length; j++ ) {
 
         // an object cannot act on itself
         if ( bodyState !== this.bodyStates[ j ] ) {
@@ -198,8 +196,8 @@ define( function( require ) {
         relativePosition.x = target.position.x - source.position.x;
         relativePosition.y = target.position.y - source.position.y;
 
-        var multiplicativeFactor = PhysicalConstants.GRAVITATIONAL_CONSTANT * source.mass * target.mass /
-                                   Math.pow( source.position.distanceSquared( target.position ), 1.5 );
+        const multiplicativeFactor = PhysicalConstants.GRAVITATIONAL_CONSTANT * source.mass * target.mass /
+                                     Math.pow( source.position.distanceSquared( target.position ), 1.5 );
         return relativePosition.multiplyScalar( multiplicativeFactor );
       }
     },

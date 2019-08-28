@@ -9,15 +9,15 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
 
   // constants
-  var CONTROL_PANEL_STROKE = '#8E9097';
-  var PANEL_X_MARGIN = 5;
-  var STARTING_SPEED_SCALE = ( 0.1 + 2 ) / 4;
+  const CONTROL_PANEL_STROKE = '#8E9097';
+  const PANEL_X_MARGIN = 5;
+  const STARTING_SPEED_SCALE = ( 0.1 + 2 ) / 4;
 
-  var GravityAndOrbitsConstants = {
+  const GravityAndOrbitsConstants = {
 
     // these constants were originally in ModeList, but needed to be factor out because of a circular dependency
     EARTH_MASS: 5.9736E24,

@@ -11,19 +11,19 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Color = require( 'SCENERY/util/Color' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var HStrut = require( 'SCENERY/nodes/HStrut' );
-  var Image = require( 'SCENERY/nodes/Image' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
-  var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const Color = require( 'SCENERY/util/Color' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const HStrut = require( 'SCENERY/nodes/HStrut' );
+  const Image = require( 'SCENERY/nodes/Image' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
+  const RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   // images
-  var resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
+  const resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
 
   /**
    * @param {Property.<GravityAndOrbitsMode>} modeProperty
@@ -34,12 +34,12 @@ define( function( require ) {
   function ModeControl( modeProperty, modes, options ) {
     Node.call( this, options );
 
-    var content = []; // for radio buttons
-    var resetButtons = [];
-    for ( var i = 0; i < modes.length; i++ ) {
+    const content = []; // for radio buttons
+    const resetButtons = [];
+    for ( let i = 0; i < modes.length; i++ ) {
       content.push( { value: modes[ i ], node: modes[ i ].iconImage } );
 
-      var resetButton = new PlanetModeResetButton( modes[ i ] );
+      const resetButton = new PlanetModeResetButton( modes[ i ] );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
       (function( currentMode, resetButton ) {
@@ -50,7 +50,7 @@ define( function( require ) {
 
       resetButtons.push( resetButton );
     }
-    var buttonGroup = new RadioButtonGroup( modeProperty, content,
+    const buttonGroup = new RadioButtonGroup( modeProperty, content,
       {
         alignVertically: true,
         selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,

@@ -17,16 +17,16 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
-  var Property = require( 'AXON/Property' );
-  var PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
+  const BooleanProperty = require( 'AXON/BooleanProperty' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  const Property = require( 'AXON/Property' );
+  const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
 
   // constants
-  var G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
+  const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
   /**
    * @param {boolean} showMeasuringTape
@@ -64,7 +64,7 @@ define( function( require ) {
       this.timeSpeedScaleProperty ) );
 
     this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
-    for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+    for ( let i = 0; i < this.modeList.modes.length; i++ ) {
       this.modeList.modes[ i ].init( this );
     }
 
@@ -82,9 +82,9 @@ define( function( require ) {
       dt = Math.min( 1, dt );
 
       // collision animations should proceed outside of the model step
-      var bodies = this.modeProperty.get().model.bodies;
-      for ( var i = 0; i < bodies.length; i++ ) {
-        var body = bodies[ i ];
+      const bodies = this.modeProperty.get().model.bodies;
+      for ( let i = 0; i < bodies.length; i++ ) {
+        const body = bodies[ i ];
         if ( body.collidedProperty.get() ) {
           body.clockTicksSinceExplosionProperty.value += 1;
         }
@@ -102,7 +102,7 @@ define( function( require ) {
 
     // @private
     updateActiveModule: function() {
-      for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+      for ( let i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.get() );
       }
     },
@@ -124,7 +124,7 @@ define( function( require ) {
       this.steppingProperty.reset();
       this.rewindingProperty.reset();
       this.modeProperty.reset();
-      for ( var i = 0; i < this.modeList.modes.length; i++ ) {
+      for ( let i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].reset();
       }
     }

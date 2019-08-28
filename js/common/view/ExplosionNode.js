@@ -10,15 +10,15 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var LinearFunction = require( 'DOT/LinearFunction' );
-  var Node = require( 'SCENERY/nodes/Node' );
+  const BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
+  const DerivedProperty = require( 'AXON/DerivedProperty' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const LinearFunction = require( 'DOT/LinearFunction' );
+  const Node = require( 'SCENERY/nodes/Node' );
 
   // constants
-  var NUM_STEPS_FOR_ANIMATION = 10;
+  const NUM_STEPS_FOR_ANIMATION = 10;
 
   /**
    * @param {Body} body
@@ -27,10 +27,10 @@ define( function( require ) {
    */
   function ExplosionNode( body, modelViewTransformProperty ) {
     Node.call( this );
-    var self = this;
+    const self = this;
 
     // Function that computes the diameter as a function of the animation step
-    var getDiameter = function( numClockTicksSinceExplosion ) {
+    const getDiameter = function( numClockTicksSinceExplosion ) {
       if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
         return new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2,
           1, self.getMaxViewDiameter( body, modelViewTransformProperty ) )( numClockTicksSinceExplosion );
@@ -69,16 +69,16 @@ define( function( require ) {
      * @returns {type}             description
      */
     getExplosionEdgeGraphic: function( body, getDiameter ) {
-      var yellowAndWhite = {
+      const yellowAndWhite = {
         highlight: 'white',
         color: 'yellow'
       };
-      var getDoubleRadius = function( radius ) {
+      const getDoubleRadius = function( radius ) {
         return radius * 2;
       };
-      var explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
+      const explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
-      var explodedProperty = new DerivedProperty( [ body.collidedProperty, body.clockTicksSinceExplosionProperty ],
+      const explodedProperty = new DerivedProperty( [ body.collidedProperty, body.clockTicksSinceExplosionProperty ],
         function( collided, clockTicks ) {
           return collided && clockTicks <= NUM_STEPS_FOR_ANIMATION;
         } );

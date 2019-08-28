@@ -13,31 +13,31 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
-  var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
+  const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   // constants
-  var SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
-  var EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
-  var EARTH_MASS_SCALE_FACTOR = 10200; // tuned by hand so there are 12 cartoon lunar orbits in one cartoon earth orbit
+  const SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
+  const EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
+  const EARTH_MASS_SCALE_FACTOR = 10200; // tuned by hand so there are 12 cartoon lunar orbits in one cartoon earth orbit
 
   // in days - actual period is 27.322 days, but this sim's model produces a period of 27.6 days (by inspection)
-  var MOON_ORBITAL_PERIOD = 27.6;
+  const MOON_ORBITAL_PERIOD = 27.6;
 
   /*
    * force scale for SunEarthMode and SunEarthMoonMode.
    * balances increased mass and so that forces are 1/2 grid cell in default conditions, hand tuned by checking
    * that reducing the distance by a factor of 2 increases the force arrow by a factor of 4
    */
-  var FORCE_SCALE = 0.573 / EARTH_MASS_SCALE_FACTOR;
+  const FORCE_SCALE = 0.573 / EARTH_MASS_SCALE_FACTOR;
 
   /*
    * Have to artificially scale up the time readout so that SunEarthMode and SunEarthMoonMode modes have a stable
    * orbits with correct periods since masses are nonphysical. 365 is days in a year.
    */
-  var SUN_EARTH_MODE_TIME_SCALE = 365.0 / 334.0;
+  const SUN_EARTH_MODE_TIME_SCALE = 365.0 / 334.0;
 
   /**
    * Convenience function that converts days to seconds, using
@@ -125,12 +125,12 @@ define( function( require ) {
 
   function EarthMoonModeConfig() {
 
-    var moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD ); 
+    const moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD );
     ModeList.EarthMoonModeConfig.call( this, {
       moonRotationPeriod: moonRotationPeriod
     } );
 
-    var radiusMultiplier = 15; // tuned by hand
+    const radiusMultiplier = 15; // tuned by hand
     this.earth.radius *= radiusMultiplier;
     this.moon.radius *= radiusMultiplier;
 

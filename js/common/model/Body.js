@@ -11,28 +11,28 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
-  var Bounds2 = require( 'DOT/Bounds2' );
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var Emitter = require( 'AXON/Emitter' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
-  var RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
-  var Vector2 = require( 'DOT/Vector2' );
-  var Vector2Property = require( 'DOT/Vector2Property' );
+  const BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
+  const Bounds2 = require( 'DOT/Bounds2' );
+  const DerivedProperty = require( 'AXON/DerivedProperty' );
+  const Emitter = require( 'AXON/Emitter' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Property = require( 'AXON/Property' );
+  const RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
+  const Vector2 = require( 'DOT/Vector2' );
+  const Vector2Property = require( 'DOT/Vector2Property' );
 
   // strings
-  var moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
-  var planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
-  var satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
-  var starString = require( 'string!GRAVITY_AND_ORBITS/star' );
+  const moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
+  const planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
+  const satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
+  const starString = require( 'string!GRAVITY_AND_ORBITS/star' );
 
   // constants
   // map the body identifier to the translatable label for the body
   // must be one of GravityAndOrbitsBodies
-  var LABEL_MAP = {
+  const LABEL_MAP = {
     PLANET: planetString,
     SATELLITE: satelliteString,
     STAR: starString,
@@ -40,7 +40,7 @@ define( function( require ) {
   };
 
   // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
-  var tempVector = new Vector2( 0, 0 );
+  const tempVector = new Vector2( 0, 0 );
 
   /**
    * Constructor for Body
@@ -71,7 +71,7 @@ define( function( require ) {
       rotationPeriod: null // period of body rotation, in seconds - null rotation period will prevent rotation
     }, options );
 
-    var diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
+    const diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
     this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
     this.diameterProperty = new Property( diameter );
@@ -128,14 +128,14 @@ define( function( require ) {
 
     // @private
     this.playButtonPressedProperty = parameterList.playButtonPressedProperty;
-    var steppingProperty = parameterList.steppingProperty;
-    var rewindingProperty = parameterList.rewindingProperty;
+    const steppingProperty = parameterList.steppingProperty;
+    const rewindingProperty = parameterList.rewindingProperty;
 
     // @public - force freeze all changes to the rewind values for rewindable Property
     this.freezeRewindChangeProperty = new Property( false );
 
     this.labelAngle = labelAngle; // @public
-    var changeRewindValueProperty = new DerivedProperty(
+    const changeRewindValueProperty = new DerivedProperty(
       [ this.playButtonPressedProperty, steppingProperty, rewindingProperty, this.freezeRewindChangeProperty ],
       function( playButtonPressed, stepping, rewinding, freezeRewind ) {
         return !playButtonPressed && !stepping && !rewinding && !freezeRewind;
@@ -166,15 +166,15 @@ define( function( require ) {
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
-    var self = this;
+    const self = this;
     this.collidedProperty.link( function( collided ) {
       if ( collided ) {
         self.clockTicksSinceExplosionProperty.set( 0 );
       }
     } );
 
-    var initialPosition = self.positionProperty.initialValue.minus( options.orbitalCenter );
-    var distToCenter = initialPosition.magnitude;
+    const initialPosition = self.positionProperty.initialValue.minus( options.orbitalCenter );
+    const distToCenter = initialPosition.magnitude;
 
     // determine the max path length for the body in model coordinates
     if ( distToCenter < 1000 ) {
@@ -215,7 +215,7 @@ define( function( require ) {
      * @returns {BodyState}
      */
     toBodyState: function() {
-      // var a = this.accelerationProperty;
+      // const a = this.accelerationProperty;
       return new BodyState(
         this.positionProperty.get().copy(),
         this.velocityProperty.get().copy(),
@@ -281,14 +281,14 @@ define( function( require ) {
      * @public
      */
     addPathPoint: function() {
-      var pathPoint = this.positionProperty.get();
+      const pathPoint = this.positionProperty.get();
       this.path.push( pathPoint );
       this.pointAddedEmitter.emit( pathPoint, this.name );
 
       // add the length to the tracked path length
       if ( this.path.length > 2 ) {
-        var difference = this.path[ this.path.length - 1 ].minus( this.path[ this.path.length - 2 ] );
-        var addedMagnitude = difference.magnitude;
+        const difference = this.path[ this.path.length - 1 ].minus( this.path[ this.path.length - 2 ] );
+        const addedMagnitude = difference.magnitude;
 
         this.modelPathLength += addedMagnitude;
       }
@@ -296,8 +296,8 @@ define( function( require ) {
       // remvove points from the path as the path gets too long
       // if the path grows more than ~6000 points, start removing points
       while ( this.modelPathLength > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
-        var loss = this.path[ 1 ].minus( this.path[ 0 ] );
-        var lossMagnitude = loss.magnitude;
+        const loss = this.path[ 1 ].minus( this.path[ 0 ] );
+        const lossMagnitude = loss.magnitude;
 
         this.path.shift();
         this.pointRemovedEmitter.emit( this.name );
@@ -351,15 +351,15 @@ define( function( require ) {
      * @returns {boolean}
      */
     collidesWidth: function( body ) {
-      var position1 = this.positionProperty.get();
-      var position2 = body.positionProperty.get();
+      const position1 = this.positionProperty.get();
+      const position2 = body.positionProperty.get();
 
       // reuse tempVector to reduce Vector2 allocations
       tempVector.x = position1.x - position2.x;
       tempVector.y = position1.y - position2.y;
 
-      var distance = tempVector.magnitude;
-      var radiiSum = this.diameterProperty.get() / 2 + body.diameterProperty.get() / 2;
+      const distance = tempVector.magnitude;
+      const radiiSum = this.diameterProperty.get() / 2 + body.diameterProperty.get() / 2;
       return distance < radiiSum;
     },
 
@@ -385,7 +385,7 @@ define( function( require ) {
      * @returns {DerivedProperty}
      */
     anyPropertyDifferent: function() {
-      var properties = [ this.positionProperty.different(), this.velocityProperty.different(),
+      const properties = [ this.positionProperty.different(), this.velocityProperty.different(),
         this.massProperty.different(), this.collidedProperty.different() ];
       return new DerivedProperty( properties, function() {
         return _.some( arguments, _.identity );

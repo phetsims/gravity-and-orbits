@@ -11,43 +11,43 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BodyNode = require( 'GRAVITY_AND_ORBITS/common/view/BodyNode' );
-  var Bounds2 = require( 'DOT/Bounds2' );
-  var Color = require( 'SCENERY/util/Color' );
-  var DayCounter = require( 'GRAVITY_AND_ORBITS/common/view/DayCounter' );
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var ExplosionNode = require( 'GRAVITY_AND_ORBITS/common/view/ExplosionNode' );
-  var GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
-  var GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/common/view/GrabbableVectorNode' );
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  var GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
-  var PathsCanvasNode = require( 'GRAVITY_AND_ORBITS/common/view/PathsCanvasNode' );
-  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var platform = require( 'PHET_CORE/platform' );
-  var Property = require( 'AXON/Property' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var ScaleSlider = require( 'GRAVITY_AND_ORBITS/common/view/ScaleSlider' );
-  var TextPushButton = require( 'SUN/buttons/TextPushButton' );
-  var TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
-  var VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
+  const BodyNode = require( 'GRAVITY_AND_ORBITS/common/view/BodyNode' );
+  const Bounds2 = require( 'DOT/Bounds2' );
+  const Color = require( 'SCENERY/util/Color' );
+  const DayCounter = require( 'GRAVITY_AND_ORBITS/common/view/DayCounter' );
+  const DerivedProperty = require( 'AXON/DerivedProperty' );
+  const ExplosionNode = require( 'GRAVITY_AND_ORBITS/common/view/ExplosionNode' );
+  const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
+  const GrabbableVectorNode = require( 'GRAVITY_AND_ORBITS/common/view/GrabbableVectorNode' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const GridNode = require( 'GRAVITY_AND_ORBITS/common/view/GridNode' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
+  const PathsCanvasNode = require( 'GRAVITY_AND_ORBITS/common/view/PathsCanvasNode' );
+  const PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const platform = require( 'PHET_CORE/platform' );
+  const Property = require( 'AXON/Property' );
+  const Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  const ScaleSlider = require( 'GRAVITY_AND_ORBITS/common/view/ScaleSlider' );
+  const TextPushButton = require( 'SUN/buttons/TextPushButton' );
+  const TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
+  const VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
   // strings
-  var returnObjectsString = require( 'string!GRAVITY_AND_ORBITS/returnObjects' );
-  var thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
-  var vString = require( 'string!GRAVITY_AND_ORBITS/v' );
+  const returnObjectsString = require( 'string!GRAVITY_AND_ORBITS/returnObjects' );
+  const thousandMilesString = require( 'string!GRAVITY_AND_ORBITS/thousandMiles' );
+  const vString = require( 'string!GRAVITY_AND_ORBITS/v' );
 
   // constants
-  var SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
-  var WIDTH = 790 * ( 1 / SCALE );
-  var HEIGHT = 618 * ( 1 / SCALE );
-  var STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
-  var buttonBackgroundColor = new Color( 255, 250, 125 );
-  var METERS_PER_MILE = 0.000621371192;
-  var THOUSAND_MILES_MULTIPLIER = METERS_PER_MILE / 1000;
+  const SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
+  const WIDTH = 790 * ( 1 / SCALE );
+  const HEIGHT = 618 * ( 1 / SCALE );
+  const STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
+  const buttonBackgroundColor = new Color( 255, 250, 125 );
+  const METERS_PER_MILE = 0.000621371192;
+  const THOUSAND_MILES_MULTIPLIER = METERS_PER_MILE / 1000;
 
   /**
    * Constructor for GravityAndOrbitsPlayArea
@@ -62,35 +62,34 @@ define( function( require ) {
     // each orbit mode has its own play area with a CanvasNode for rendering paths
     // each canvas should be excluded from the DOM when invisible, with the exception of iOS Safari,
     // which performs worse in this case when toggling visibility
-    var excludeInvisible = !platform.mobileSafari;
+    const excludeInvisible = !platform.mobileSafari;
     
     Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: excludeInvisible } );
-    var self = this;
+    const self = this;
 
-    var bodies = model.getBodies();
-    var i;
+    const bodies = model.getBodies();
 
     this.addChild( new PathsCanvasNode( bodies, mode.transformProperty, module.showPathProperty, STAGE_SIZE ) );
 
-    var forceVectorColorFill = new Color( 50, 130, 215 );
-    var forceVectorColorOutline = new Color( 64, 64, 64 );
-    var velocityVectorColorFill = PhetColorScheme.RED_COLORBLIND;
-    var velocityVectorColorOutline = new Color( 64, 64, 64 );
+    const forceVectorColorFill = new Color( 50, 130, 215 );
+    const forceVectorColorOutline = new Color( 64, 64, 64 );
+    const velocityVectorColorFill = PhetColorScheme.RED_COLORBLIND;
+    const velocityVectorColorOutline = new Color( 64, 64, 64 );
 
     // Use canvas coordinates to determine whether something has left the visible area
-    var returnable = [];
-    for ( i = 0; i < bodies.length; i++ ) {
-      var bodyNode = new BodyNode( bodies[ i ], bodies[ i ].labelAngle, module.playButtonPressedProperty, mode );
-      var massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
+    const returnable = [];
+    for ( let i = 0; i < bodies.length; i++ ) {
+      const bodyNode = new BodyNode( bodies[ i ], bodies[ i ].labelAngle, module.playButtonPressedProperty, mode );
+      const massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
       self.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
 
       (function( bodyNode ) {
-        var property = new DerivedProperty( [ bodies[ i ].positionProperty, mode.zoomLevelProperty ], function() {
+        const property = new DerivedProperty( [ bodies[ i ].positionProperty, mode.zoomLevelProperty ], function() {
 
           // the return objects button should be visible when a body is out of bounds
           // and not at the rewind position
-          var atRewindPosition = bodyNode.body.positionProperty.equalsRewindPoint();
+          const atRewindPosition = bodyNode.body.positionProperty.equalsRewindPoint();
           return !STAGE_SIZE.intersectsBounds( bodyNode.bounds ) && !atRewindPosition;
         } );
         returnable.push( property );
@@ -98,13 +97,13 @@ define( function( require ) {
     }
 
     // Add gravity force vector nodes
-    for ( i = 0; i < bodies.length; i++ ) {
+    for ( let i = 0; i < bodies.length; i++ ) {
       this.addChild( new VectorNode( bodies[ i ], mode.transformProperty, module.showGravityForceProperty,
         bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline ) );
     }
 
     // Add velocity vector nodes
-    for ( i = 0; i < bodies.length; i++ ) {
+    for ( let i = 0; i < bodies.length; i++ ) {
       if ( !bodies[ i ].fixed ) {
         this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty,
           bodies[ i ].velocityProperty, mode.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
@@ -113,12 +112,12 @@ define( function( require ) {
     }
 
     // Add explosion nodes, which are always in the scene graph but only visible during explosions
-    for ( i = 0; i < bodies.length; i++ ) {
+    for ( let i = 0; i < bodies.length; i++ ) {
       this.addChild( new ExplosionNode( bodies[ i ], mode.transformProperty ) );
     }
 
     // Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
-    var gridNode = new GridNode( mode.transformProperty, mode.gridSpacing, mode.gridCenter, 28 );
+    const gridNode = new GridNode( mode.transformProperty, mode.gridSpacing, mode.gridCenter, 28 );
     module.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
@@ -128,13 +127,13 @@ define( function( require ) {
     // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
     // Add play/pause, rewind, and step buttons
-    var timeControlPanel = new TimeControlPanel( module.modeProperty, module.playButtonPressedProperty, bodies,
+    const timeControlPanel = new TimeControlPanel( module.modeProperty, module.playButtonPressedProperty, bodies,
       { bottom: STAGE_SIZE.bottom - 10, centerX: STAGE_SIZE.centerX, scale: 1.5 } );
     this.addChild( timeControlPanel );
 
     // Add measuring tape
-    var unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
-    var measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.measuringTapeVisibleProperty, {
+    const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
+    const measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.measuringTapeVisibleProperty, {
       basePositionProperty: mode.measuringTapeStartPointProperty,
       tipPositionProperty: mode.measuringTapeEndPointProperty,
       isTipDragBounded: false,
@@ -148,19 +147,19 @@ define( function( require ) {
       measuringTapeNode.setModelViewTransform( transform );
     } );
     mode.modelBoundsProperty.link( function( bounds ) {
-      var basePosition = measuringTapeNode.basePositionProperty.get();
+      const basePosition = measuringTapeNode.basePositionProperty.get();
       measuringTapeNode.setDragBounds( bounds );
 
       // if the position of the base has changed due to modifying the
       // drag bounds, we want to subtract the difference from the position
       // of the tip so that the measured value remains constant
       if ( !measuringTapeNode.basePositionProperty.get().equals( basePosition ) ) {
-        var difference = basePosition.minus( measuringTapeNode.basePositionProperty.get() );
+        const difference = basePosition.minus( measuringTapeNode.basePositionProperty.get() );
         measuringTapeNode.tipPositionProperty.set( measuringTapeNode.tipPositionProperty.get().minus( difference ) );
       }
 
       // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
-      for ( i = 0; i < bodies.length; i++ ) {
+      for ( let i = 0; i < bodies.length; i++ ) {
         bodies[ i ].boundsProperty.set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
       }
     } );
@@ -170,11 +169,11 @@ define( function( require ) {
     this.addChild( measuringTapeNode );
 
     // If any body is out of bounds, show a "return object" button
-    var anythingReturnable = new DerivedProperty( returnable, function() {
+    const anythingReturnable = new DerivedProperty( returnable, function() {
       return _.some( arguments, _.identity );
     } );
 
-    var returnButton = new TextPushButton( returnObjectsString, {
+    const returnButton = new TextPushButton( returnObjectsString, {
       font: new PhetFont( 16 ),
       textFill: 'black',
       x: 100,
@@ -193,7 +192,7 @@ define( function( require ) {
     anythingReturnable.linkAttribute( returnButton, 'visible' );
 
     // Zoom controls
-    var scaleSlider = new ScaleSlider( mode.zoomLevelProperty, { top: STAGE_SIZE.top + 10 } );
+    const scaleSlider = new ScaleSlider( mode.zoomLevelProperty, { top: STAGE_SIZE.top + 10 } );
     scaleSlider.left = scaleSlider.width / 2;
     this.addChild( scaleSlider );
   }

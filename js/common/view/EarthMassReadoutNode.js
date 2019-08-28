@@ -10,18 +10,18 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var Util = require( 'DOT/Util' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
+  const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  const Util = require( 'DOT/Util' );
 
   // strings
-  var earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
-  var earthMassString = require( 'string!GRAVITY_AND_ORBITS/earthMass' );
-  var pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
-  var thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
+  const earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
+  const earthMassString = require( 'string!GRAVITY_AND_ORBITS/earthMass' );
+  const pattern0Value1UnitsString = require( 'string!GRAVITY_AND_ORBITS/pattern.0value.1units' );
+  const thousandEarthMassesString = require( 'string!GRAVITY_AND_ORBITS/thousandEarthMasses' );
 
   function EarthMassReadoutNode( bodyNode, visible ) {
     MassReadoutNode.call( this, bodyNode, visible );
@@ -38,12 +38,12 @@ define( function( require ) {
      * @returns {type}  description
      */
     createText: function() {
-      var massKG = this.bodyNode.body.massProperty.get();
-      var earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
+      const massKG = this.bodyNode.body.massProperty.get();
+      const earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
 
       // Show the value in terms of earth masses (or thousands of earth masses)
-      var value;
-      var units;
+      let value;
+      let units;
       if ( earthMasses > 1E3 ) {
         value = Util.toFixed( Util.roundSymmetric( earthMasses / 1E3 ), 0 );
         units = thousandEarthMassesString;

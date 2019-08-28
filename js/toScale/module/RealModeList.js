@@ -10,10 +10,10 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
-  var ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
+  const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   /**
    * @param {Property.<boolean>} playButtonPressedProperty
