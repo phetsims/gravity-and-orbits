@@ -104,18 +104,16 @@ define( require => {
         }
       } );
 
-      const self = this;
-
       // add disabling effect for buttons
       if ( isIncrease ) {
 
         // plus button
-        scaleProperty.link( scaleValue => self.setEnabled( scaleValue !== range.max ) );
+        scaleProperty.link( scaleValue => this.setEnabled( scaleValue !== range.max ) );
       }
       else {
 
         // minus button
-        scaleProperty.link( scaleValue => self.setEnabled( scaleValue !== range.min ) );
+        scaleProperty.link( scaleValue => this.setEnabled( scaleValue !== range.min ) );
       }
 
       // Increase the touch area in all directions except toward the slider knob,

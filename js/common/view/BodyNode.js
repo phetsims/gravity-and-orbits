@@ -43,9 +43,7 @@ define( require => {
       this.modelViewTransformProperty = mode.transformProperty; // @private
       this.body = body; // @public
 
-      const self = this;
-
-      this.body.collidedProperty.link( isCollided => self.setVisible( !isCollided ) );
+      this.body.collidedProperty.link( isCollided => this.setVisible( !isCollided ) );
 
       this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
       this.addChild( this.bodyRenderer );
@@ -54,18 +52,18 @@ define( require => {
       const rotationListener = rotation => {
 
         // if the body has a 'target mass' representation, only rotate that one
-        if ( self.bodyRenderer.targetBodyRenderer ) {
-          self.bodyRenderer.targetBodyRenderer.rotation = rotation;
+        if ( this.bodyRenderer.targetBodyRenderer ) {
+          this.bodyRenderer.targetBodyRenderer.rotation = rotation;
         }
         else {
-          self.bodyRenderer.rotation = rotation;
+          this.bodyRenderer.rotation = rotation;
         }
       };
       body.rotationProperty.link( rotationListener );
 
       const dragHandler = new MovableDragHandler( this.body.positionProperty, {
         dragBounds: modelBoundsProperty.value,
-        modelViewTransform: self.modelViewTransformProperty.value,
+        modelViewTransform: this.modelViewTransformProperty.value,
         startDrag: () => {
           body.userControlled = true;
 
@@ -93,8 +91,8 @@ define( require => {
       // REVIEW: What's all this commented code about?
       // rotate the node with the rotation property
       // const rotationListener = function( rotation ) {
-      //   if ( self.body.mass)
-      //   self.bodyRenderer.rotation = rotation;
+      //   if ( this.body.mass)
+      //   this.bodyRenderer.rotation = rotation;
       // };
       // body.rotationProperty.link( rotationListener );
 
@@ -102,15 +100,15 @@ define( require => {
       // for garbage collectiona and so that anonymous closures are not necessary
       // through multilink
       this.positionListener = ( position, modelViewTransform ) =>
-        self.setTranslation( modelViewTransform.modelToViewPosition( position ) );
+        this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
       Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
       this.diameterListener = ( position, modelViewTransform ) => {
-        self.bodyRenderer.setDiameter( self.getViewDiameter() );
+        this.bodyRenderer.setDiameter( this.getViewDiameter() );
 
         // touch areas need to change with diameter
-        self.touchArea = self.bodyRenderer.bounds.dilated( TOUCH_DILATION );
-        self.mouseArea = self.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+        this.touchArea = this.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+        this.mouseArea = this.bodyRenderer.bounds.dilated( TOUCH_DILATION );
       };
       Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
@@ -122,13 +120,13 @@ define( require => {
         // when changing the bounds, we want to set the bounds of the planet without modifying the position
         // of the planets.  We store the position, and restore once drag bounds have been set
         // these changes should never set rewindable values of the body Properties
-        self.body.freezeRewindChangeProperty.set( true );
-        const oldPosition = self.body.positionProperty.value;
+        this.body.freezeRewindChangeProperty.set( true );
+        const oldPosition = this.body.positionProperty.value;
         dragHandler.setDragBounds( dragBounds );
-        self.body.positionProperty.set( oldPosition );
+        this.body.positionProperty.set( oldPosition );
 
         // now unfreeze the Property rewindValues
-        self.body.freezeRewindChangeProperty.set( false );
+        this.body.freezeRewindChangeProperty.set( false );
 
       };
       modelBoundsProperty.link( this.modelBoundsListener );
@@ -145,7 +143,6 @@ define( require => {
      * @private
      */
     createArrowIndicator( body, labelAngle ) {
-      const self = this;
       const node = new Node();
       const viewCenter = new Vector2( 0, 0 );
       const northEastVector = Vector2.createPolar( 1, labelAngle );
@@ -163,7 +160,7 @@ define( require => {
       node.addChild( text );
 
       // when transform or mass changes diameter, check for visibility change of label
-      const labelVisibilityListener = () => node.setVisible( self.getViewDiameter() <= 10 );
+      const labelVisibilityListener = () => node.setVisible( this.getViewDiameter() <= 10 );
       this.body.diameterProperty.link( labelVisibilityListener );
       this.modelViewTransformProperty.link( labelVisibilityListener );
 

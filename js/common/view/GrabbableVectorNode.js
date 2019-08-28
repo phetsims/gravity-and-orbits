@@ -38,7 +38,6 @@ define( require => {
                  outline, labelText ) {
 
       super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline );
-      const self = this;
 
       const tip = this.getTip();
 
@@ -66,7 +65,7 @@ define( require => {
       // Center the grab area on the tip (see getTip()) when any of its dependencies change
       const propertyListener = visible => {
         if ( visible ) {
-          const tip = self.getTip();
+          const tip = this.getTip();
           grabArea.center = tip;
           text.center = tip;
         }

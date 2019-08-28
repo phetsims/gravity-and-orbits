@@ -154,12 +154,11 @@ define( require => {
      * @param body
      */
     addBody( body ) {
-      const self = this;
       this.bodies.push( body );
 
       // update the force vectors when the position or mass changes
-      body.userModifiedPositionEmitter.addListener( () => self.updateForceVectors() );
-      body.massProperty.link( () => self.updateForceVectors() );
+      body.userModifiedPositionEmitter.addListener( () => this.updateForceVectors() );
+      body.massProperty.link( () => this.updateForceVectors() );
       this.updateForceVectors();
     }
 

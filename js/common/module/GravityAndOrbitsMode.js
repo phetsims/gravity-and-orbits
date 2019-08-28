@@ -61,8 +61,6 @@ define( require => {
       this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
       this.zoomLevelProperty = new Property( 1 );
 
-      const self = this;
-
       this.canvas = null; // @public
 
       this.dt = dt; // @private
@@ -89,9 +87,9 @@ define( require => {
       this.massReadoutFactory = massReadoutFactory;
 
       this.modelBoundsProperty = new Property(); // @public - not in the Java version, needed for movableDragHandler bounds
-      this.transformProperty = new Property( self.createTransform( defaultZoomScale, zoomOffset ) ); // @public
+      this.transformProperty = new Property( this.createTransform( defaultZoomScale, zoomOffset ) ); // @public
 
-      this.zoomLevelProperty.link( () => self.transformProperty.set( self.createTransform( defaultZoomScale, zoomOffset ) ) );
+      this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, zoomOffset ) ) );
 
       // @private
       this.model = new GravityAndOrbitsModel(
@@ -99,7 +97,7 @@ define( require => {
 
       Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ],
         ( playButtonPressed, active ) =>
-          self.model.clock.setRunning( playButtonPressed && active ) );
+          this.model.clock.setRunning( playButtonPressed && active ) );
     }
 
     /**
@@ -172,12 +170,10 @@ define( require => {
       // body.userModifiedVelocityEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) ) ;
 
       // if the user modifies velocity, save state while paused
-      const self = this;
-      body.userModifiedVelocityEmitter.addListener( function() {
-        self.setDeviatedFromDefaults();
-
-        if ( !self.playButtonPressedProperty.get() ) {
-          self.saveState();
+      body.userModifiedVelocityEmitter.addListener( () => {
+        this.setDeviatedFromDefaults();
+        if ( !this.playButtonPressedProperty.get() ) {
+          this.saveState();
         }
       } );
     }

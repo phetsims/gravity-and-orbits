@@ -33,7 +33,6 @@ define( require => {
      */
     constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline ) {
       super();
-      const self = this;
 
       this.body = body; // @private
       this.vectorProperty = vectorProperty; // @private
@@ -58,12 +57,12 @@ define( require => {
 
       this.propertyListener = visible => {
         if ( visible ) {
-          const tail = self.getTail();
-          const tip = self.getTip( tail );
+          const tail = this.getTail();
+          const tip = this.getTip( tail );
           arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
         }
       };
-      Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], self.propertyListener );
+      Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], this.propertyListener );
 
       this.addChild( arrowNode );
     }

@@ -32,7 +32,6 @@ define( require => {
      * @param {Property.<number>} timeSpeedScaleProperty
      */
     constructor( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
-      const self = this;
 
       // @private
       this.baseDTValue = baseDTValue;
@@ -45,7 +44,7 @@ define( require => {
       this.steppingProperty = steppingProperty;
 
       timeSpeedScaleProperty.link( timeSpeedScale => {
-        self.dt = baseDTValue * timeSpeedScale;
+        this.dt = baseDTValue * timeSpeedScale;
       } );
     }
 

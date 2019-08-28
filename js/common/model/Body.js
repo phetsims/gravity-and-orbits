@@ -166,24 +166,23 @@ define( require => {
       this.userModifiedPositionEmitter = new Emitter();
       this.userModifiedVelocityEmitter = new Emitter();
 
-      const self = this;
       this.collidedProperty.link( collided => {
         if ( collided ) {
-          self.clockTicksSinceExplosionProperty.set( 0 );
+          this.clockTicksSinceExplosionProperty.set( 0 );
         }
       } );
 
-      const initialPosition = self.positionProperty.initialValue.minus( options.orbitalCenter );
+      const initialPosition = this.positionProperty.initialValue.minus( options.orbitalCenter );
       const distToCenter = initialPosition.magnitude;
 
       // determine the max path length for the body in model coordinates
       if ( distToCenter < 1000 ) {
         // if too close to the center, use this optional length
-        self.maxPathLength = options.maxPathLength;
+        this.maxPathLength = options.maxPathLength;
       }
       else {
         // max path length is ~0.85 of a full orbit
-        self.maxPathLength = 0.85 * 2 * Math.PI * distToCenter + this.pathLengthBuffer;
+        this.maxPathLength = 0.85 * 2 * Math.PI * distToCenter + this.pathLengthBuffer;
       }
     }
 

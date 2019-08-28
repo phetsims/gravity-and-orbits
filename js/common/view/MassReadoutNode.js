@@ -19,7 +19,6 @@ define( require => {
   class MassReadoutNode extends Node {
     constructor( bodyNode, visibleProperty ) {
       super();
-      const self = this;
       this.bodyNode = bodyNode; // @protected
 
       const readoutText = new Text( this.createText(), {
@@ -32,23 +31,22 @@ define( require => {
       const updateLocation = () => {
         const bounds = bodyNode.bodyRenderer.getBounds();
 
-        self.x = bounds.centerX - self.width / 2;
+        this.x = bounds.centerX - this.width / 2;
         if ( bodyNode.body.massReadoutBelow ) {
-          self.y = bounds.maxX + self.height;
+          this.y = bounds.maxX + this.height;
         }
         else {
-          self.y = bounds.minY - self.height;
+          this.y = bounds.minY - this.height;
         }
       };
 
       bodyNode.body.massProperty.link( () => {
-        readoutText.setText( self.createText() );
+        readoutText.setText( this.createText() );
         updateLocation();
       } );
 
       visibleProperty.link( visible => {
-        // set visible and update location
-        self.visible = visible;
+        this.visible = visible;
         updateLocation();
       } );
     }

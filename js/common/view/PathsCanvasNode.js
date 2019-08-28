@@ -41,7 +41,6 @@ define( require => {
         canvasBounds: canvasBounds,
         preventFit: true
       } );
-      const self = this;
 
       // @private - a map tracking each body and its associated points
       this.namedPoints = {}; // @private
@@ -60,27 +59,27 @@ define( require => {
 
           // when the transform changes, we want to re-transform all points in a body
           // path and then re paint the canvas
-          self.namedPoints[ body.name ].points = [];
+          this.namedPoints[ body.name ].points = [];
 
           for ( let j = 0; j < body.path.length; j++ ) {
             const point = body.path[ j ];
             const pt = transformProperty.get().modelToViewPosition( point );
-            self.namedPoints[ body.name ].points.push( pt );
+            this.namedPoints[ body.name ].points.push( pt );
           }
         }
 
-        self.invalidatePaint();
+        this.invalidatePaint();
       } );
 
       this.bodies = bodies; // @private
 
       visibleProperty.link( isVisible => {
-        self.visible = isVisible;
+        this.visible = isVisible;
         for ( let i = 0; i < bodies.length; i++ ) {
-          self.namedPoints[ bodies[ i ].name ].points = [];
-          self.bodies[ i ].clearPath();
+          this.namedPoints[ bodies[ i ].name ].points = [];
+          this.bodies[ i ].clearPath();
         }
-        self.invalidatePaint();
+        this.invalidatePaint();
       } );
 
       // @private - listener for when a point is added, bound by thisNode
@@ -127,9 +126,9 @@ define( require => {
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
 
-        body.pointAddedEmitter.addListener( self.pointAddedListener.bind( self ) );
-        body.pointRemovedEmitter.addListener( self.pointRemovedListener.bind( self ) );
-        body.clearedEmitter.addListener( self.clearedListener.bind( self ) );
+        body.pointAddedEmitter.addListener( this.pointAddedListener.bind( this ) );
+        body.pointRemovedEmitter.addListener( this.pointRemovedListener.bind( this ) );
+        body.clearedEmitter.addListener( this.clearedListener.bind( this ) );
       }
     }
 

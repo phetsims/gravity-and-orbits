@@ -65,7 +65,6 @@ define( require => {
       const excludeInvisible = !platform.mobileSafari;
 
       super( 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: excludeInvisible } );
-      const self = this;
 
       const bodies = model.getBodies();
 
@@ -81,7 +80,7 @@ define( require => {
       for ( let i = 0; i < bodies.length; i++ ) {
         const bodyNode = new BodyNode( bodies[ i ], bodies[ i ].labelAngle, module.playButtonPressedProperty, mode );
         const massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
-        self.addChild( bodyNode );
+        this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
 
         ( bodyNode => {
