@@ -29,7 +29,7 @@ define( require => {
     } );
     this.addChild( readoutText );
 
-    const updateLocation = function() {
+    const updateLocation = () => {
       const bounds = bodyNode.bodyRenderer.getBounds();
 
       self.x = bounds.centerX - self.width / 2;
@@ -41,12 +41,12 @@ define( require => {
       }
     };
 
-    bodyNode.body.massProperty.link( function() {
+    bodyNode.body.massProperty.link( () => {
       readoutText.setText( self.createText() );
       updateLocation();
     } );
 
-    visibleProperty.link( function( visible ) {
+    visibleProperty.link( visible => {
       // set visible and update location
       self.visible = visible;
       updateLocation();

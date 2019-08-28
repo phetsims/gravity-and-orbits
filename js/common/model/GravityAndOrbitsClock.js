@@ -45,7 +45,7 @@ define( require => {
     this.dt = baseDTValue * timeSpeedScaleProperty.get();
     this.steppingProperty = steppingProperty;
 
-    timeSpeedScaleProperty.link( function( timeSpeedScale ) {
+    timeSpeedScaleProperty.link( timeSpeedScale => {
       self.dt = baseDTValue * timeSpeedScale;
     } );
   }
@@ -146,7 +146,7 @@ define( require => {
     /**
      * Get the time step for the slowest speed of this clock.  Useful for
      * normalizing time step in the model.
-     * 
+     *
      * @returns {number}
      */
     getSmallestTimeStep: function() {

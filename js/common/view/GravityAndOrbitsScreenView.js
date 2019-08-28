@@ -62,7 +62,7 @@ define( require => {
     this.addChild( controlPanelNode );
 
     // Make sure only one canvas is visible at a time
-    module.modeProperty.link( function( mode ) {
+    module.modeProperty.link( mode => {
       for ( let i = 0; i < module.modeList.modes.length; i++ ) {
         module.modeList.modes[ i ].canvas.visible = false;
         module.modeList.modes[ i ].massControlPanel.visible = false;
@@ -82,9 +82,7 @@ define( require => {
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {
-      listener: function() {
-        module.reset();
-      },
+      listener: () => module.reset(),
       right: this.layoutBounds.right - MARGIN,
       bottom: this.layoutBounds.bottom - MARGIN - 4 // slight difference centers below panels
     } );
@@ -92,6 +90,6 @@ define( require => {
   }
 
   gravityAndOrbits.register( 'GravityAndOrbitsScreenView', GravityAndOrbitsScreenView );
-  
+
   return inherit( ScreenView, GravityAndOrbitsScreenView );
 } );

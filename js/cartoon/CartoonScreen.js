@@ -34,8 +34,8 @@ define( require => {
     }, options );
 
     Screen.call( this,
-      function() { return new CartoonModule(); },
-      function( model ) { return new GravityAndOrbitsScreenView( model ); },
+      () => new CartoonModule(),
+      model => new GravityAndOrbitsScreenView( model ),
       options
     );
   }

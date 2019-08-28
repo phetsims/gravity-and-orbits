@@ -137,9 +137,8 @@ define( require => {
     this.labelAngle = labelAngle; // @public
     const changeRewindValueProperty = new DerivedProperty(
       [ this.playButtonPressedProperty, steppingProperty, rewindingProperty, this.freezeRewindChangeProperty ],
-      function( playButtonPressed, stepping, rewinding, freezeRewind ) {
-        return !playButtonPressed && !stepping && !rewinding && !freezeRewind;
-      }
+      ( playButtonPressed, stepping, rewinding, freezeRewind ) =>
+        !playButtonPressed && !stepping && !rewinding && !freezeRewind
     );
 
     // rewindable properties - body states can be rewound, and these properties can have saved states to support this
@@ -157,17 +156,19 @@ define( require => {
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // @public - emitters for various events
-    this.pointAddedEmitter = new Emitter( { parameters: [
-      { valueType: Vector2 },
-      { validValues: GravityAndOrbitsBodies.VALUES }
-    ] } );
+    this.pointAddedEmitter = new Emitter( {
+      parameters: [
+        { valueType: Vector2 },
+        { validValues: GravityAndOrbitsBodies.VALUES }
+      ]
+    } );
     this.pointRemovedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
     this.clearedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
     const self = this;
-    this.collidedProperty.link( function( collided ) {
+    this.collidedProperty.link( collided => {
       if ( collided ) {
         self.clockTicksSinceExplosionProperty.set( 0 );
       }
@@ -384,6 +385,7 @@ define( require => {
      * @public
      * @returns {DerivedProperty}
      */
+    // REVIEW: what is this for, could it be optimized away?
     anyPropertyDifferent: function() {
       const properties = [ this.positionProperty.different(), this.velocityProperty.different(),
         this.massProperty.different(), this.collidedProperty.different() ];

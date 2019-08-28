@@ -34,16 +34,12 @@ define( require => {
     options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
     // top separator rectangle for the gravity control section
-    const makeTopSeparatorRectangle = function() {
-      return new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
-    };
+    const makeTopSeparatorRectangle = () => new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
 
     // make bottom separator rectangle for the gravity control
     // slightly taller - the vertical draw of the 'y' in gravity creates the illusion that
     // the top has more space
-    const makeBottomSeparatorRectangle = function() {
-      return new Rectangle( 0, 0, 0, 4, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
-    };
+    const makeBottomSeparatorRectangle = () => new Rectangle( 0, 0, 0, 4, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
 
     // menu sections and separators
     const sections = [

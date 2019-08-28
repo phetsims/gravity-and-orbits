@@ -45,14 +45,12 @@ define( require => {
 
     const clearButton = new TextPushButton( clearString, {
       font: FONT,
-      listener: function() {
-        clock.setSimulationTime( 0 );
-      },
+      listener: () => clock.setSimulationTime( 0 ),
       maxWidth: 200
     } );
 
     // update text representation of day
-    this.timeListener = function( time ) {
+    this.timeListener = time => {
       dayText.setText( timeFormatter( time ) );
       dayText.centerX = clearButton.centerX;
       clearButton.enabled = ( time !== 0 );

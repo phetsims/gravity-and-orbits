@@ -17,9 +17,13 @@ define( require => {
    * @constructor
    */
   function ToScaleModule() {
-    GravityAndOrbitsModule.call( this, true, function( p ) {
-      return new RealModeList( p.playButtonPressedProperty, p.gravityEnabledProperty, p.steppingProperty, p.rewindingProperty, p.timeSpeedScaleProperty );
-    }, 0, true );
+    GravityAndOrbitsModule.call( this, true, p => new RealModeList(
+      p.playButtonPressedProperty,
+      p.gravityEnabledProperty,
+      p.steppingProperty,
+      p.rewindingProperty,
+      p.timeSpeedScaleProperty
+    ), 0, true );
   }
 
   gravityAndOrbits.register( 'ToScaleModule', ToScaleModule );

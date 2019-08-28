@@ -34,7 +34,7 @@ define( require => {
     createOptionsDialogContent: () => new GlobalOptionsNode()
   };
 
-  SimLauncher.launch( function() {
+  SimLauncher.launch( () => {
 
     const cartoonScreen = new CartoonScreen( {
       backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty

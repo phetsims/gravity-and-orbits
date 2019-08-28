@@ -63,7 +63,7 @@ define( require => {
     // each canvas should be excluded from the DOM when invisible, with the exception of iOS Safari,
     // which performs worse in this case when toggling visibility
     const excludeInvisible = !platform.mobileSafari;
-    
+
     Rectangle.call( this, 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: excludeInvisible } );
     const self = this;
 
@@ -84,8 +84,8 @@ define( require => {
       self.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
 
-      (function( bodyNode ) {
-        const property = new DerivedProperty( [ bodies[ i ].positionProperty, mode.zoomLevelProperty ], function() {
+      ( bodyNode => {
+        const property = new DerivedProperty( [ bodies[ i ].positionProperty, mode.zoomLevelProperty ], () => {
 
           // the return objects button should be visible when a body is out of bounds
           // and not at the rewind position
@@ -93,7 +93,7 @@ define( require => {
           return !STAGE_SIZE.intersectsBounds( bodyNode.bounds ) && !atRewindPosition;
         } );
         returnable.push( property );
-      })( bodyNode );
+      } )( bodyNode );
     }
 
     // Add gravity force vector nodes
@@ -143,10 +143,8 @@ define( require => {
       significantFigures: ( bodies[ 1 ].name === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0
     } );
 
-    mode.transformProperty.link( function( transform ) {
-      measuringTapeNode.setModelViewTransform( transform );
-    } );
-    mode.modelBoundsProperty.link( function( bounds ) {
+    mode.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
+    mode.modelBoundsProperty.link( bounds => {
       const basePosition = measuringTapeNode.basePositionProperty.get();
       measuringTapeNode.setDragBounds( bounds );
 
@@ -169,6 +167,7 @@ define( require => {
     this.addChild( measuringTapeNode );
 
     // If any body is out of bounds, show a "return object" button
+    // REVIEW: why does this need arguments.  Should there be a better pattern here?
     const anythingReturnable = new DerivedProperty( returnable, function() {
       return _.some( arguments, _.identity );
     } );
@@ -178,7 +177,7 @@ define( require => {
       textFill: 'black',
       x: 100,
       y: 100,
-      listener: function() {
+      listener: () => {
 
         // the return button should behave exactly like the rewind button
         // all objects should be restored to their saved state, and then

@@ -100,9 +100,9 @@ define( require => {
       content: sample,
       xMargin: 0,
       yMargin: 0,
-      listener: function() {
+      listener: () => {
         scaleProperty.value = Math.max(
-          Math.min( scaleProperty.value + (isIncrease ? step : -step), range.max ),
+          Math.min( scaleProperty.value + ( isIncrease ? step : -step ), range.max ),
           range.min );
       }
     } );
@@ -111,16 +111,14 @@ define( require => {
 
     // add disabling effect for buttons
     if ( isIncrease ) {
+
       // plus button
-      scaleProperty.link( function( scaleValue ) {
-        self.enabled = (scaleValue !== range.max);
-      } );
+      scaleProperty.link( scaleValue => self.setEnabled( scaleValue !== range.max ) );
     }
     else {
+
       // minus button
-      scaleProperty.link( function( scaleValue ) {
-        self.enabled = (scaleValue !== range.min);
-      } );
+      scaleProperty.link( scaleValue => self.setEnabled( scaleValue !== range.min ) );
     }
 
     // Increase the touch area in all directions except toward the slider knob,

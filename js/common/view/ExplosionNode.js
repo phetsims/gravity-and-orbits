@@ -30,7 +30,7 @@ define( require => {
     const self = this;
 
     // Function that computes the diameter as a function of the animation step
-    const getDiameter = function( numClockTicksSinceExplosion ) {
+    const getDiameter = numClockTicksSinceExplosion => {
       if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
         return new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2,
           1, self.getMaxViewDiameter( body, modelViewTransformProperty ) )( numClockTicksSinceExplosion );
@@ -48,7 +48,7 @@ define( require => {
     this.addChild( this.getExplosionEdgeGraphic( body, getDiameter ) );
 
     // update the location of this node when the body changes, unless the body is collided
-    body.positionProperty.link( function() {
+    body.positionProperty.link( () => {
 
       // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
       if ( !body.collidedProperty.get() ) {
@@ -73,21 +73,15 @@ define( require => {
         highlight: 'white',
         color: 'yellow'
       };
-      const getDoubleRadius = function( radius ) {
-        return radius * 2;
-      };
+      const getDoubleRadius = radius => radius * 2;
       const explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
       const explodedProperty = new DerivedProperty( [ body.collidedProperty, body.clockTicksSinceExplosionProperty ],
-        function( collided, clockTicks ) {
-          return collided && clockTicks <= NUM_STEPS_FOR_ANIMATION;
-        } );
+        ( collided, clockTicks ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
 
       explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
 
-      body.clockTicksSinceExplosionProperty.lazyLink( function( clockTicks ) {
-        explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) );
-      } );
+      body.clockTicksSinceExplosionProperty.lazyLink( clockTicks => explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) ) );
 
       return explosionEdgeGraphic;
     },

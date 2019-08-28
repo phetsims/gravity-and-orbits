@@ -103,7 +103,7 @@ define( require => {
     }
 
     const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
-    GravityAndOrbitsColorProfile.profileNameProperty.lazyLink( function( profileName ) {
+    GravityAndOrbitsColorProfile.profileNameProperty.lazyLink( profileName => {
       assert && assert( profileName === 'default' || profileName === 'projector' );
       pathIconImageNode.setImage( profileName === 'projector' ? pathIconProjectorImg : pathIconImg );
     } );

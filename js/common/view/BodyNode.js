@@ -45,15 +45,13 @@ define( require => {
 
     const self = this;
 
-    this.body.collidedProperty.link( function( isCollided ) {
-      self.visible = !isCollided;
-    } );
+    this.body.collidedProperty.link( isCollided => self.setVisible( !isCollided ) );
 
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
     this.addChild( this.bodyRenderer );
 
     // images rotate the target body with the rotation property
-    const rotationListener = function( rotation ) {
+    const rotationListener = rotation => {
 
       // if the body has a 'target mass' representation, only rotate that one
       if ( self.bodyRenderer.targetBodyRenderer ) {
@@ -66,18 +64,18 @@ define( require => {
     body.rotationProperty.link( rotationListener );
 
     const dragHandler = new MovableDragHandler( this.body.positionProperty, {
-      dragBounds:modelBoundsProperty.value,
+      dragBounds: modelBoundsProperty.value,
       modelViewTransform: self.modelViewTransformProperty.value,
-      startDrag: function() {
+      startDrag: () => {
         body.userControlled = true;
 
         // when the dragging starts, we want to clear the path
         body.clearPath();
       },
-      onDrag: function() {
+      onDrag: () => {
         body.userModifiedPositionEmitter.emit();
       },
-      endDrag: function() {
+      endDrag: () => {
         body.userControlled = false;
 
         // reset the simulation time when the planet is released
@@ -92,6 +90,7 @@ define( require => {
     } );
     this.addInputListener( dragHandler );
 
+    // REVIEW: What's all this commented code about?
     // rotate the node with the rotation property
     // const rotationListener = function( rotation ) {
     //   if ( self.body.mass)
@@ -102,12 +101,11 @@ define( require => {
     // create position and diameter listeners so that they can be unlinked
     // for garbage collectiona and so that anonymous closures are not necessary
     // through multilink
-    this.positionListener = function( position, modelViewTransform ) {
-      self.translation = modelViewTransform.modelToViewPosition( position );
-    };
+    this.positionListener = ( position, modelViewTransform ) =>
+      self.setTranslation( modelViewTransform.modelToViewPosition( position ) );
     Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
-    this.diameterListener = function( position, modelViewTransform ) {
+    this.diameterListener = ( position, modelViewTransform ) => {
       self.bodyRenderer.setDiameter( self.getViewDiameter() );
 
       // touch areas need to change with diameter
@@ -116,12 +114,10 @@ define( require => {
     };
     Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
-    this.modelViewTransformListener = function( modelViewTransform ) {
-      dragHandler.setModelViewTransform( modelViewTransform );
-    };
+    this.modelViewTransformListener = modelViewTransform => dragHandler.setModelViewTransform( modelViewTransform );
     this.modelViewTransformProperty.link( this.modelViewTransformListener );
 
-    this.modelBoundsListener = function( dragBounds ) {
+    this.modelBoundsListener = dragBounds => {
 
       // when changing the bounds, we want to set the bounds of the planet without modifying the position
       // of the planets.  We store the position, and restore once drag bounds have been set
@@ -133,7 +129,7 @@ define( require => {
 
       // now unfreeze the Property rewindValues
       self.body.freezeRewindChangeProperty.set( false );
-      
+
     };
     modelBoundsProperty.link( this.modelBoundsListener );
 
@@ -171,9 +167,7 @@ define( require => {
       node.addChild( text );
 
       // when transform or mass changes diameter, check for visibility change of label
-      const labelVisibilityListener = function() {
-        node.visible = self.getViewDiameter() <= 10;
-      };
+      const labelVisibilityListener = () => node.setVisible( self.getViewDiameter() <= 10 );
       this.body.diameterProperty.link( labelVisibilityListener );
       this.modelViewTransformProperty.link( labelVisibilityListener );
 

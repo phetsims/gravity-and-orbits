@@ -218,9 +218,7 @@ define( require => {
     earthMoon.center();
     earthSpaceStation.center();
 
-    const readoutInEarthMasses = function( bodyNode, visibleProperty ) {
-      return new EarthMassReadoutNode( bodyNode, visibleProperty );
-    };
+    const readoutInEarthMasses = ( bodyNode, visibleProperty ) => new EarthMassReadoutNode( bodyNode, visibleProperty );
 
     // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
     const SEC_PER_YEAR = 365 * 24 * 60 * 60;
@@ -305,9 +303,7 @@ define( require => {
       rotationPeriod: earthMoon.moon.rotationPeriod
     } ) );
 
-    const spaceStationMassReadoutFactory = function( bodyNode, visibleProperty ) {
-      return new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
-    };
+    const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
 
     this.modes.push( new GravityAndOrbitsMode(
       earthSpaceStation.forceScale,
@@ -488,9 +484,7 @@ define( require => {
    * @returns {function}
    */
   const getImageRenderer = function( image ) {
-    return function( body, viewDiameter ) {
-      return new BodyRenderer.ImageRenderer( body, viewDiameter, image );
-    };
+    return ( body, viewDiameter ) => new BodyRenderer.ImageRenderer( body, viewDiameter, image );
   };
 
   /**
@@ -503,12 +497,10 @@ define( require => {
   const getSwitchableRenderer = function( image1, image2, targetMass ) {
 
     // the mass for which to use the image
-    return function( body, viewDiameter ) {
-      return new BodyRenderer.SwitchableBodyRenderer(
-        body,
-        targetMass,
-        new BodyRenderer.ImageRenderer( body, viewDiameter, image1 ), new BodyRenderer.ImageRenderer( body, viewDiameter, image2 ) );
-    };
+    return ( body, viewDiameter ) => new BodyRenderer.SwitchableBodyRenderer(
+      body,
+      targetMass,
+      new BodyRenderer.ImageRenderer( body, viewDiameter, image1 ), new BodyRenderer.ImageRenderer( body, viewDiameter, image2 ) );
   };
 
   /**
@@ -517,7 +509,7 @@ define( require => {
    * @returns {function}
    */
   const scaledDays = function( scale ) {
-    return function( time ) {
+    return time => {
       const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale );
       const units = ( value === 1 ) ? earthDayString : earthDaysString;
       return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );

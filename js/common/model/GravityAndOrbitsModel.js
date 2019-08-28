@@ -55,15 +55,14 @@ define( require => {
     this.clock = clock; // @public
     this.bodies = []; // @public - contains the sun, moon, earth, satellite
 
-    const self = this;
-    this.clock.addEventTimer( function( dt ) {
-      self.clock.setSimulationTime( self.clock.dt + self.clock.getSimulationTime() );
+    this.clock.addEventTimer( dt => {
+      this.clock.setSimulationTime( this.clock.dt + this.clock.getSimulationTime() );
 
       // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253
       // but introduces performance issues
-      // self.stepModel( self.clock.dt );
-      self.step( self.clock.dt );
-    }.bind( this ) );
+      // this.stepModel( this.clock.dt );
+      this.step( this.clock.dt );
+    } );
 
     // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
     this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
@@ -166,10 +165,8 @@ define( require => {
       this.bodies.push( body );
 
       // update the force vectors when the position or mass changes
-      body.userModifiedPositionEmitter.addListener( function() {
-        self.updateForceVectors();
-      } );
-      body.massProperty.link( self.updateForceVectors.bind( this ) );
+      body.userModifiedPositionEmitter.addListener( () => self.updateForceVectors() );
+      body.massProperty.link( () => self.updateForceVectors() );
       this.updateForceVectors();
     },
 

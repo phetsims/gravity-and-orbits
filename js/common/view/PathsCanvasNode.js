@@ -55,7 +55,7 @@ define( require => {
 
     // transform all body points and re paint the canvas
     // disposal unnecessary, the canvas node exists for life of sim
-    transformProperty.link( function( transform ) {
+    transformProperty.link( transform => {
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
 
@@ -75,7 +75,7 @@ define( require => {
 
     this.bodies = bodies; // @private
 
-    visibleProperty.link( function( isVisible ) {
+    visibleProperty.link( isVisible => {
       self.visible = isVisible;
       for ( let i = 0; i < bodies.length; i++ ) {
         self.namedPoints[ bodies[ i ].name ].points = [];
@@ -87,7 +87,7 @@ define( require => {
     // @private - listener for when a point is added, bound by thisNode
     // created to avoid excess closures every time a point is removed
     // @param {string} bodyName - used to look up points associated with the desired body's trail
-    this.pointAddedListener = function( point, bodyName ) {
+    this.pointAddedListener = ( point, bodyName ) => {
       const pt = transformProperty.get().modelToViewPosition( point );
 
       // 'this' is defined by bind in addListener
@@ -101,7 +101,7 @@ define( require => {
     // @private - listener for when a point is removed, bound by thisNode
     // created to avoid excess closures every time a point is removed
     // @param {string} bodyName - used to look up points associated with the desired body's trail
-    this.pointRemovedListener = function( bodyName ) {
+    this.pointRemovedListener = bodyName => {
 
       // 'this' defined by bind in addListener
       const namedPoints = this.namedPoints[ bodyName ];
@@ -116,7 +116,7 @@ define( require => {
     // @private - listener for when date is cleared, bound by thisNode
     // created to avoid excess closures every time date is cleared
     // @param {string} bodyName - used to look up points associated with the desired body's trail
-    this.clearedListener = function( bodyName ) {
+    this.clearedListener = bodyName => {
 
       // 'this' is defined by bind
       const namedPoints = this.namedPoints[ bodyName ];

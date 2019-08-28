@@ -66,7 +66,7 @@ define( require => {
      * Finds the positions of the bodies after a time dt
      *
      * @private
-     * @param {dt} number
+     * @param {number} dt
      */
     updatePositions: function( dt ) {
       for ( let i = 0; i < this.bodyStates.length; i++ ) {

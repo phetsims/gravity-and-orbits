@@ -91,17 +91,15 @@ define( require => {
     this.modelBoundsProperty = new Property(); // @public - not in the Java version, needed for movableDragHandler bounds
     this.transformProperty = new Property( self.createTransform( defaultZoomScale, zoomOffset ) ); // @public
 
-    this.zoomLevelProperty.link( function() {
-      self.transformProperty.set( self.createTransform( defaultZoomScale, zoomOffset ) );
-    } );
+    this.zoomLevelProperty.link( () => self.transformProperty.set( self.createTransform( defaultZoomScale, zoomOffset ) ) );
 
     // @private
     this.model = new GravityAndOrbitsModel(
       new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.timeSpeedScaleProperty ), parameterList.gravityEnabledProperty );
 
-    Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ], function( playButtonPressed, active ) {
-      self.model.clock.setRunning( playButtonPressed && active );
-    } );
+    Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ],
+      ( playButtonPressed, active ) =>
+        self.model.clock.setRunning( playButtonPressed && active ) );
   }
 
   gravityAndOrbits.register( 'GravityAndOrbitsMode', GravityAndOrbitsMode );
@@ -156,7 +154,6 @@ define( require => {
       return this.model.getBodies();
     },
 
-
     /**
      * Set the deviated from defaults property - stored on the mode
      * so that we don't have to use a closure for performance.
@@ -182,7 +179,7 @@ define( require => {
       const self = this;
       body.userModifiedVelocityEmitter.addListener( function() {
         self.setDeviatedFromDefaults();
-        
+
         if ( !self.playButtonPressedProperty.get() ) {
           self.saveState();
         }
@@ -240,7 +237,7 @@ define( require => {
 
       // update the force vectors accordingly
       this.model.updateForceVectors();
-      
+
       this.rewindingProperty.set( false );
     },
 

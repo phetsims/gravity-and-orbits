@@ -33,8 +33,8 @@ define( require => {
     }, options );
 
     Screen.call( this,
-      function() { return new ToScaleModule(); },
-      function( model ) { return new GravityAndOrbitsScreenView( model ); },
+      () => new ToScaleModule(),
+      model => new GravityAndOrbitsScreenView( model ),
       options
     );
   }

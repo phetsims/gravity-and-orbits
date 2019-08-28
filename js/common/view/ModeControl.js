@@ -42,11 +42,9 @@ define( require => {
       const resetButton = new PlanetModeResetButton( modes[ i ] );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
-      (function( currentMode, resetButton ) {
-        modeProperty.link( function( mode ) {
-          resetButton.visible = ( mode === currentMode );
-        } );
-      })( modes[ i ], resetButton );
+      ( ( currentMode, resetButton ) => {
+        modeProperty.link( mode => resetButton.setVisible( mode === currentMode ) );
+      } )( modes[ i ], resetButton );
 
       resetButtons.push( resetButton );
     }
@@ -93,9 +91,7 @@ define( require => {
         xMargin: 5,
         yMargin: 3,
         baseColor: new Color( 220, 220, 220 ),
-        listener: function() {
-          mode.resetMode();
-        }
+        listener: () => mode.resetMode()
       } );
 
     this.mutate( options );

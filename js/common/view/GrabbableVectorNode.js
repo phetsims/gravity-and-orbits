@@ -63,7 +63,7 @@ define( require => {
     this.addChild( text );
 
     // Center the grab area on the tip (see getTip()) when any of its dependencies change
-    const propertyListener = function( visible ) {
+    const propertyListener = visible => {
       if ( visible ) {
         const tip = self.getTip();
         grabArea.center = tip;
@@ -74,7 +74,7 @@ define( require => {
 
     // Add the drag handler
     grabArea.addInputListener( new SimpleDragHandler( {
-      translate: function( event ) {
+      translate: event => {
         const modelDelta = transformProperty.get().viewToModelDelta( event.delta );
         body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
         body.userModifiedVelocityEmitter.emit();

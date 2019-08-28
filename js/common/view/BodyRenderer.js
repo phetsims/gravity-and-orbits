@@ -79,7 +79,8 @@ define( require => {
     this.defaultBodyRenderer = defaultBodyRenderer;
 
     // @private - so new closure need not be defined
-    this.massListener = function() {
+    this.massListener = () => {
+
       // this defined by bound
       this.removeAllChildren();
       this.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );

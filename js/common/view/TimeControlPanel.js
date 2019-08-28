@@ -34,14 +34,12 @@ define( require => {
 
     const stepButton = new StepForwardButton( {
       isPlayingProperty: playProperty,
-      listener: function() { modeProperty.get().getClock().stepClockWhilePaused(); }
+      listener: () => modeProperty.get().getClock().stepClockWhilePaused()
     } );
 
     const rewindButton = new RewindButton( {
       enabled: false,
-      listener: function() {
-        modeProperty.get().rewind();
-      }
+      listener: () => modeProperty.get().rewind()
     } );
 
     const anyPropertyDifferentProperties = [];
@@ -49,17 +47,20 @@ define( require => {
       anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
     }
 
+    // REVIEW this seems duplicated elsewhere.  Also, what is happening here?
     const anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
       return _.some( arguments, _.identity );
     } );
 
     // @private
-    this.propertyChangedListener = function( changed ) {
-      rewindButton.enabled = changed;
-    };
+    this.propertyChangedListener = changed => rewindButton.setEnabled( changed );
     anyPropertyChanged.link( this.propertyChangedListener );
 
-    HBox.call( this, _.extend( { resize: false, spacing: 10, children: [ rewindButton, playPauseButton, stepButton ] }, options ) );
+    HBox.call( this, _.extend( {
+      resize: false,
+      spacing: 10,
+      children: [ rewindButton, playPauseButton, stepButton ]
+    }, options ) );
   }
 
   gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );

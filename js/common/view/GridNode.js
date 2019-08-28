@@ -37,7 +37,7 @@ define( require => {
     const path = new Path( null, options );
     this.addChild( path );
 
-    transformProperty.link( function() {
+    transformProperty.link( () => {
       const shape = new Shape();
 
       // horizontal lines
