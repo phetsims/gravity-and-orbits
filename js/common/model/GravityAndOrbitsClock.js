@@ -6,7 +6,7 @@
  * regardless of when (in wall time) the ticks actually happen. This class works together with RewindableProperty,
  * which has to know whether the simulation is stepping to know whether to store a "save point" which can be restored.
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules

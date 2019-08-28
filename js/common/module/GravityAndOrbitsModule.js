@@ -13,7 +13,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  * @see GravityAndOrbitsModel
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
