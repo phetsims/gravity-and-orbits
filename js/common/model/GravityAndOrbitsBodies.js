@@ -5,7 +5,7 @@
  * In this simulation, bodies are referenced by name, so this keeps track of the different bodies
  * without using translatable names.
  *
- * @author Jesse Greenberg
+ * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 define( ( require ) => {
   'use strict';
