@@ -1,4 +1,4 @@
-// Copyright 2014-2017, University of Colorado Boulder
+// Copyright 2014-2019, University of Colorado Boulder
 
 /**
  * Class that facilitates configuration of body instances for a GravityAndOrbitsMode; a data structure that describes
