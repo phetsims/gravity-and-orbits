@@ -186,7 +186,6 @@ define( require => {
       }
     }
 
-
     /**
      * @public
      * @returns {number}
