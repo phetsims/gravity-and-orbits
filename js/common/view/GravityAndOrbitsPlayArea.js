@@ -137,6 +137,10 @@ define( require => {
         tipPositionProperty: mode.measuringTapeEndPointProperty,
         textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
 
+        // allows distances to be measured if the planets go outside of model bounds,
+        // see https://github.com/phetsims/gravity-and-orbits/issues/281
+        isTipDragBounded: false,
+
         // space station gets 1 sig fig, the other bodies have 0
         significantFigures: ( bodies[ 1 ].name === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0
       } );
