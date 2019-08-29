@@ -135,7 +135,6 @@ define( require => {
       const measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.measuringTapeVisibleProperty, {
         basePositionProperty: mode.measuringTapeStartPointProperty,
         tipPositionProperty: mode.measuringTapeEndPointProperty,
-        isTipDragBounded: false,
         textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
 
         // space station gets 1 sig fig, the other bodies have 0
