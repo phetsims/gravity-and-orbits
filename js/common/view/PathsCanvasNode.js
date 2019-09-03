@@ -192,7 +192,7 @@ define( require => {
           const alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1, 0, body.pathLength );
 
           // format without Color to avoid unnecessary allocation
-          const fade = 'rgba( ' + faded.r + ', ' + faded.g + ', ' + faded.b + ', ' + alpha + ' )';
+          const fade = `rgba( ${faded.r}, ${faded.g}, ${faded.b}, ${alpha} )`;
 
           context.beginPath();
           context.strokeStyle = fade;
