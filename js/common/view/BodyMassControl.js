@@ -64,13 +64,11 @@ define( require => {
 
       // create a label for the default value
       // @param {string} - string for the label text
-      const createNumberLabel = function( value ) {
-        return new Text( value, {
-          font: new PhetFont( 13 ),
-          fill: GravityAndOrbitsColorProfile.panelTextProperty,
-          maxWidth: 110
-        } );
-      };
+      const createNumberLabel = value => new Text( value, {
+        font: new PhetFont( 13 ),
+        fill: GravityAndOrbitsColorProfile.panelTextProperty,
+        maxWidth: 110
+      } );
 
       const labels = [ createNumberLabel( '0.5' ), defaultLabel, createNumberLabel( '1.5' ), createNumberLabel( '2.0' ) ];
       for ( let i = 0; i < labels.length; i++ ) {
@@ -78,7 +76,7 @@ define( require => {
         this.addMajorTick( tickValue, labels[ i ] );
       }
 
-      const massListener = function( mass ) {
+      const massListener = mass => {
         // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
         // the mass itself is set by the slider in this case.
         // derived from: density = mass/volume, and volume = 4/3 pi r r r

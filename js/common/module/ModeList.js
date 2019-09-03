@@ -465,7 +465,7 @@ define( require => {
    * @param {string} image
    * @returns {function}
    */
-  const getImageRenderer = function( image ) {
+  const getImageRenderer = image => {
     return ( body, viewDiameter ) => new BodyRenderer.ImageRenderer( body, viewDiameter, image );
   };
 
@@ -504,7 +504,7 @@ define( require => {
    * @param time
    * @returns {string}
    */
-  const formatMinutes = function( time ) {
+  const formatMinutes = time => {
     const value = ( time / SECONDS_PER_MINUTE );
     const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
     return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
