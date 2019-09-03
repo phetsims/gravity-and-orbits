@@ -97,7 +97,7 @@ define( require => {
       // body.rotationProperty.link( rotationListener );
 
       // create position and diameter listeners so that they can be unlinked
-      // for garbage collectiona and so that anonymous closures are not necessary
+      // for garbage collection and so that anonymous closures are not necessary
       // through multilink
       this.positionListener = ( position, modelViewTransform ) =>
         this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
