@@ -7,7 +7,7 @@
  *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
-define( ( require ) => {
+define( require => {
   'use strict';
 
   // modules
