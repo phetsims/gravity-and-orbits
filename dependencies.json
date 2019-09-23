@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.1.13 Thu Sep 19 2019 02:03:32 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.1.13 Mon Sep 23 2019 15:54:30 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "35127c3914cafe314e5812be246cd88de720167f",
+    "sha": "722090b60f178ddad1913f432e25d964a2c59900",
     "branch": "1.1"
   },
   "joist": {
@@ -49,8 +49,8 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "70ca9547aa3aa19dff9cdb20463fadb80f92ce79",
-    "branch": "HEAD"
+    "sha": "fee2666d354b8d9bbf4d6afe72462dc72cfb94a9",
+    "branch": "gravity-and-orbits-1.1"
   },
   "scenery-phet": {
     "sha": "63b55289c1819e7f492b376b6870bf2309ac5ab7",
