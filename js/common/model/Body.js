@@ -144,7 +144,7 @@ define( require => {
       this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public
       this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
       this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ) ); // @public
-      this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, { reentrant: true } ); // @public
+      this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass ); // @public
       this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
       this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0 ); // @public
 
@@ -288,7 +288,7 @@ define( require => {
         this.modelPathLength += addedMagnitude;
       }
 
-      // remvove points from the path as the path gets too long
+      // remove points from the path as the path gets too long
       // if the path grows more than ~6000 points, start removing points
       while ( this.modelPathLength > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
         const loss = this.path[ 1 ].minus( this.path[ 0 ] );

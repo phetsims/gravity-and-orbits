@@ -75,8 +75,6 @@ define( require => {
                             this.clock.speedTypeProperty.value === SpeedType.FAST_FORWARD ? 7 :
                             null;
 
-      console.log( numberOfSteps );
-
       // step the model by the smallest standard time step for the orbital mode
       for ( let i = 0; i < numberOfSteps; i++ ) {
         this.step( smallestTimeStep );

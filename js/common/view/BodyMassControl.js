@@ -50,7 +50,10 @@ define( require => {
 
         // custom thumb
         thumbFill: '#98BECF',
-        thumbFillHighlighted: '#B3D3E2'
+        thumbFillHighlighted: '#B3D3E2',
+
+        // snap to default value if close
+        constrainValue: mass => Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ? defaultLabelValue : mass
       } );
 
       // add ticks and labels
@@ -76,17 +79,12 @@ define( require => {
         this.addMajorTick( tickValue, labels[ i ] );
       }
 
+      // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
+      // the mass itself is set by the slider in this case.
+      // derived from: density = mass/volume, and volume = 4/3 pi r r r
       const massListener = mass => {
-        // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
-        // the mass itself is set by the slider in this case.
-        // derived from: density = mass/volume, and volume = 4/3 pi r r r
         const radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1 / 3 );
-        body.diameterProperty.set( radius * 2 );
-
-        // snap to default value if close
-        if ( Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ) {
-          body.massProperty.set( defaultLabelValue );
-        }
+        body.diameterProperty.set( 2 * radius );
       };
       body.massProperty.link( massListener );
     }
