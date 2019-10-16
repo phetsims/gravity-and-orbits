@@ -31,7 +31,6 @@ define( require => {
 
       // true when the rewind point value is different than the property's value
       this.differentProperty = new Property( !this.equalsRewindPoint() ); // @private
-      this.rewindValueChangedListeners = []; // @private
     }
 
 
@@ -59,10 +58,6 @@ define( require => {
       // then store the new initial conditions, which can be rewound to
       if ( this.changeRewindValueProperty.get() ) {
         this.storeRewindValueNoNotify();
-
-        for ( let i = 0; i < this.rewindValueChangedListeners.length; i++ ) {
-          this.rewindValueChangedListeners[ i ]();
-        }
       }
       this.differentProperty.set( !this.equalsRewindPoint() );
     }
@@ -75,15 +70,6 @@ define( require => {
     storeRewindValueNoNotify() {
       this.rewindValue = this.get();
       this.differentProperty.set( !this.equalsRewindPoint() );
-    }
-
-    /**
-     * @public
-     * Adds a listener that is notified when the user changes the initial conditions, which can be rewound to
-     * @param listener
-     */
-    addRewindValueChangeListener( listener ) {
-      this.rewindValueChangedListeners.push( listener );
     }
 
     /**
