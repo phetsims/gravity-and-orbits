@@ -33,6 +33,7 @@ define( require => {
       // @public
       // Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
       this.rewindingProperty = rewindingProperty;
+
       this.timeSpeedScaleProperty = timeSpeedScaleProperty;
     }
   }
