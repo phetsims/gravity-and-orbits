@@ -134,10 +134,13 @@ define( require => {
       this.freezeRewindChangeProperty = new Property( false );
 
       this.labelAngle = labelAngle; // @public
-      const changeRewindValueProperty = new DerivedProperty(
-        [ this.playButtonPressedProperty, steppingProperty, rewindingProperty, this.freezeRewindChangeProperty ],
-        ( playButtonPressed, stepping, rewinding, freezeRewind ) =>
-          !playButtonPressed && !stepping && !rewinding && !freezeRewind
+      const changeRewindValueProperty = new DerivedProperty( [
+          this.playButtonPressedProperty,
+          steppingProperty,
+          rewindingProperty,
+          this.freezeRewindChangeProperty
+        ], ( playButtonPressed, stepping, rewinding, freezeRewind ) =>
+        !playButtonPressed && !stepping && !rewinding && !freezeRewind
       );
 
       // rewindable properties - body states can be rewound, and these properties can have saved states to support this
@@ -380,8 +383,12 @@ define( require => {
      */
     // REVIEW: what is this for, could it be optimized away?
     anyPropertyDifferent() {
-      const properties = [ this.positionProperty.different(), this.velocityProperty.different(),
-        this.massProperty.different(), this.collidedProperty.different() ];
+      const properties = [
+        this.positionProperty.differentProperty,
+        this.velocityProperty.differentProperty,
+        this.massProperty.differentProperty,
+        this.collidedProperty.differentProperty
+      ];
       return new DerivedProperty( properties, function() {
         return _.some( arguments, _.identity );
       } );

@@ -88,7 +88,7 @@ define( require => {
 
             // the return objects button should be visible when a body is out of bounds
             // and not at the rewind position
-            const atRewindPosition = bodyNode.body.positionProperty.equalsRewindPoint();
+            const atRewindPosition = bodyNode.body.positionProperty.equalsRewindValue();
             return !STAGE_SIZE.intersectsBounds( bodyNode.bounds ) && !atRewindPosition;
           } );
           returnable.push( property );

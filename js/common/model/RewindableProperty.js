@@ -1,9 +1,9 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * This is a property that can be rewound, and when rewound it goes back
- * to the value that was last set by storeRewindValueNoNotify. In this sim, the rewind value is
- * stored at the initial configuration of a mode, or when a user modifies the position of a body.
+ * This is a property that can be rewound, and when rewound it goes back to the value that was last set by
+ * storeRewindValueNoNotify. In this sim, the rewind value is stored at the initial configuration of a mode, or when a
+ * user modifies the position of a body.
  *
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
@@ -16,8 +16,9 @@ define( require => {
   const Property = require( 'AXON/Property' );
 
   class RewindableProperty extends Property {
+
     /**
-     * @param {Property.<boolean>} changeRewindValueProperty
+     * @param {Property.<boolean>} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
      * @param {*} value
      * @param {Object} options
      * @constructor
@@ -25,14 +26,15 @@ define( require => {
     constructor( changeRewindValueProperty, value, options ) {
       super( value, options );
 
-      // @private
-      this.rewindValue = value; // the "initial condition" tha the property can be rewound to
+      // @private - the "initial condition" the property can be rewound to, different than the overall "reset" value
+      this.rewindValue = value;
+
+      // @private - see above
       this.changeRewindValueProperty = changeRewindValueProperty;
 
-      // true when the rewind point value is different than the property's value
-      this.differentProperty = new Property( !this.equalsRewindPoint() ); // @private
+      // @public (read-only) true when the rewind point value is different than the property's current value
+      this.differentProperty = new Property( !this.equalsRewindValue() );
     }
-
 
     /**
      * Reset both the value and the rewind value.
@@ -59,17 +61,17 @@ define( require => {
       if ( this.changeRewindValueProperty.get() ) {
         this.storeRewindValueNoNotify();
       }
-      this.differentProperty.set( !this.equalsRewindPoint() );
+      this.differentProperty.set( !this.equalsRewindValue() );
     }
 
     /**
-     * @public
      * Store the new value as the initial condition which can be rewound to. We have to skip notifications sometimes
      * or the wrong initial conditions get stored.
+     * @public
      */
     storeRewindValueNoNotify() {
       this.rewindValue = this.get();
-      this.differentProperty.set( !this.equalsRewindPoint() );
+      this.differentProperty.set( !this.equalsRewindValue() );
     }
 
     /**
@@ -79,7 +81,8 @@ define( require => {
      * @public
      * @returns {boolean}
      */
-    equalsRewindPoint() {
+    equalsRewindValue() {
+
       // if an object, must call unique function to check for equality
       if ( this.rewindValue.equals ) {
         return this.rewindValue.equals( this.get() );
@@ -89,25 +92,12 @@ define( require => {
       }
     }
 
-    // @public
+    /**
+     * Set the value to match the last recorded rewindValue
+     * @public
+     */
     rewind() {
       this.set( this.rewindValue );
-    }
-
-    /**
-     * @public
-     * Convenient access to whether the value has deviated from the initial condition
-     */
-    different() {
-      return this.differentProperty;
-    }
-
-    /**
-     * @public
-     * Makes this public for use in gravity and orbits.
-     */
-    getRewindValue() {
-      return this.rewindValue;
     }
   }
 

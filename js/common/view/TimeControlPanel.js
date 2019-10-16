@@ -53,7 +53,6 @@ define( require => {
         children: [ rewindButton, playPauseButton, stepButton ]
       }, options ) );
 
-
       // REVIEW this seems duplicated elsewhere.  Also, what is happening here?
       const anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
         return _.some( arguments, _.identity );
@@ -63,7 +62,6 @@ define( require => {
       this.propertyChangedListener = changed => rewindButton.setEnabled( changed );
       anyPropertyChanged.link( this.propertyChangedListener );
     }
-
   }
 
   return gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );
