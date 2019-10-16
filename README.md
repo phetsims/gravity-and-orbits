@@ -1,13 +1,13 @@
-Gravity And Orbits
+Gravity and Orbits
 =============
-"Gravity And Orbits" is an educational simulation in HTML5, by <a href="https://phet.colorado.edu/" target="_blank">PhET Interactive Simulations</a>
+"Gravity and Orbits" is an educational simulation in HTML5, by <a href="https://phet.colorado.edu/" target="_blank">PhET Interactive Simulations</a>
 at the University of Colorado Boulder.
 For a description of this simulation, associated resources, and a link to the published version,
 <a href="https://phet.colorado.edu/en/simulation/gravity-and-orbits" target="_blank">visit the simulation's web page</a>.
 
 ### Try it!
 
-<a href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_en.html" target="_blank">Click here to run "Gravity And Orbits".</a>
+<a href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_en.html" target="_blank">Click here to run "Gravity and Orbits".</a>
 
 <a href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_en.html" target="_blank">
 <img src="https://raw.githubusercontent.com/phetsims/gravity-and-orbits/master/assets/gravity-and-orbits-screenshot.png" alt="Screenshot" style="width: 400px;"/>
