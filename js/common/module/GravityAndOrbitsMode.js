@@ -92,8 +92,8 @@ define( require => {
       this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, zoomOffset ) ) );
 
       // @private
-      this.model = new GravityAndOrbitsModel(
-        new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.timeSpeedScaleProperty ), parameterList.gravityEnabledProperty );
+      const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.timeSpeedScaleProperty );
+      this.model = new GravityAndOrbitsModel( clock, parameterList.gravityEnabledProperty );
 
       Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ],
         ( playButtonPressed, active ) =>

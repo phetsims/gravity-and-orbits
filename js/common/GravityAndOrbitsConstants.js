@@ -15,7 +15,6 @@ define( require => {
   // constants
   const CONTROL_PANEL_STROKE = '#8E9097';
   const PANEL_X_MARGIN = 5;
-  const STARTING_SPEED_SCALE = ( 0.1 + 2 ) / 4;
 
   const GravityAndOrbitsConstants = {
 
@@ -33,10 +32,7 @@ define( require => {
       xMargin: PANEL_X_MARGIN,
       scale: 1.05,
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
-    },
-    STARTING_SPEED_SCALE: STARTING_SPEED_SCALE,
-    FAST_SPEED_SCALE: STARTING_SPEED_SCALE * 1.75,
-    SLOW_SPEED_SCALE: STARTING_SPEED_SCALE * 0.25
+    }
   };
 
   gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );

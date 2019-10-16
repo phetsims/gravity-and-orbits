@@ -13,8 +13,8 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
   const Text = require( 'SCENERY/nodes/Text' );
   const VerticalAquaRadioButtonGroup = require( 'SUN/VerticalAquaRadioButtonGroup' );
 
@@ -48,9 +48,9 @@ define( require => {
       const slowText = new Text( slowMotionString, textOptions );
 
       super( speedProperty, [
-        { value: GravityAndOrbitsConstants.FAST_SPEED_SCALE, node: fastText },
-        { value: GravityAndOrbitsConstants.STARTING_SPEED_SCALE, node: normalText },
-        { value: GravityAndOrbitsConstants.SLOW_SPEED_SCALE, node: slowText }
+        { value: SpeedType.FAST_FORWARD, node: fastText },
+        { value: SpeedType.NORMAL, node: normalText },
+        { value: SpeedType.SLOW_MOTION, node: slowText }
       ], options );
     }
   }

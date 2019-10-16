@@ -4,8 +4,6 @@
  * This is the model for Gravity and Orbits; there is one GravityAndOrbitsModel per each GravityAndOrbitsMode, and it
  * uses ModelState to update the physics.
  *
- * Ported from the Java version
- *
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
  */
@@ -15,6 +13,7 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
+  const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
 
   /**
    * Return the smaller of two Body instances, for determining which survives a collision.
@@ -22,23 +21,13 @@ define( require => {
    * @param {Body} body
    * @returns {Body} the smaller body
    */
-  function getSmaller( other, body ) {
-    if ( other.massProperty.get() < body.massProperty.get() ) {
-      return other;
-    }
-    else {
-      return body;
-    }
-  }
-
+  const getSmaller = ( other, body ) => other.massProperty.get() < body.massProperty.get() ? other : body;
   /**
    * For use inside a map call, factored out here for performance
    * @param body
    * @returns {BodyState}
    */
-  function getBodyState( body ) {
-    return body.toBodyState();
-  }
+  const getBodyState = body => body.toBodyState();
 
   class GravityAndOrbitsModel {
 
@@ -59,8 +48,7 @@ define( require => {
 
         // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253
         // but introduces performance issues
-        // this.stepModel( this.clock.dt );
-        this.step( this.clock.dt );
+        this.stepModel();
       } );
 
       // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
@@ -73,31 +61,30 @@ define( require => {
      * steps.  This ensures that this.step and the next model state is calculated
      * with consistent changes in time.
      *
-     * NOTE: This function is currently not used, but it fixes https://github.com/phetsims/gravity-and-orbits/issues/253
-     * However, it introduces performance issues because it increase the model computations by ~8x.
-     * If work continues in #253, this is a good place to start
-     *
      * @param {number} dt
+     * @private
      */
     stepModel( dt ) {
 
       // standardized time step - based on the slowest time step for the given orbital mode
-      const smallestTimeStep = this.clock.getSmallestTimeStep();
+      const smallestTimeStep = this.clock.baseDTValue * 0.13125;
 
       // get the number of times we will need to step the model based on the dt passed in
-      const numberOfSteps = dt / smallestTimeStep;
+      const numberOfSteps = this.clock.timeSpeedScaleProperty.value === SpeedType.SLOW_MOTION ? 1 :
+                            this.clock.timeSpeedScaleProperty.value === SpeedType.NORMAL ? 4 :
+                            this.clock.timeSpeedScaleProperty.value === SpeedType.FAST_FORWARD ? 7 :
+                            null;
 
-      // get the remainder - we must step the model by this at the end so full dt is captured
-      const remainder = dt % smallestTimeStep;
+      console.log( numberOfSteps );
 
       // step the model by the smallest standard time step for the orbital mode
       for ( let i = 0; i < numberOfSteps; i++ ) {
         this.step( smallestTimeStep );
       }
 
-      // if there is a remainder, step by that
-      if ( remainder > 0 ) {
-        this.step( remainder );
+      // Signify that the model completed an entire step so that any batch operations may be invoked
+      for ( let i = 0; i < this.bodies.length; i++ ) {
+        this.bodies[ i ].allBodiesUpdated();
       }
     }
 
@@ -132,11 +119,6 @@ define( require => {
             }
           }
         }
-      }
-
-      // Signify that the model completed an entire step so that any batch operations may be invoked
-      for ( let i = 0; i < this.bodies.length; i++ ) {
-        this.bodies[ i ].allBodiesUpdated();
       }
     }
 

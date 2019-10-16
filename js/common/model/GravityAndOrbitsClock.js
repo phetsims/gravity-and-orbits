@@ -33,19 +33,19 @@ define( require => {
      */
     constructor( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
 
-      // @private
+      // @public (read-only)
       this.baseDTValue = baseDTValue;
+
       this.steppingWhilePausedDT = baseDTValue * GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
 
       // @public
       this.runningProperty = new Property( false );
       this.simulationTimeProperty = new Property( 0 );
-      this.dt = baseDTValue * timeSpeedScaleProperty.get();
+      this.dt = baseDTValue;
       this.steppingProperty = steppingProperty;
 
-      timeSpeedScaleProperty.link( timeSpeedScale => {
-        this.dt = baseDTValue * timeSpeedScale;
-      } );
+      // @public
+      this.timeSpeedScaleProperty = timeSpeedScaleProperty;
     }
 
     /**
@@ -135,16 +135,6 @@ define( require => {
      */
     step( dt ) {
       this.eventTimer.step( dt );
-    }
-
-    /**
-     * Get the time step for the slowest speed of this clock.  Useful for
-     * normalizing time step in the model.
-     *
-     * @returns {number}
-     */
-    getSmallestTimeStep() {
-      return this.baseDTValue * GravityAndOrbitsConstants.SLOW_SPEED_SCALE;
     }
   }
 

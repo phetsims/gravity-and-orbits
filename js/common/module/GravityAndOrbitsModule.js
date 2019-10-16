@@ -18,11 +18,12 @@ define( require => {
 
   // modules
   const BooleanProperty = require( 'AXON/BooleanProperty' );
+  const EnumerationProperty = require( 'AXON/EnumerationProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
-  const Property = require( 'AXON/Property' );
   const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
+  const Property = require( 'AXON/Property' );
+  const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
 
   // constants
   const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
@@ -44,7 +45,7 @@ define( require => {
       this.showVelocityProperty = new BooleanProperty( false );
       this.showMassProperty = new BooleanProperty( false );
       this.playButtonPressedProperty = new BooleanProperty( false );
-      this.timeSpeedScaleProperty = new Property( GravityAndOrbitsConstants.STARTING_SPEED_SCALE );
+      this.timeSpeedScaleProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL ); // TODO: Rename
       this.measuringTapeVisibleProperty = new BooleanProperty( false );
       this.gravityEnabledProperty = new BooleanProperty( true );
       this.steppingProperty = new BooleanProperty( false );
