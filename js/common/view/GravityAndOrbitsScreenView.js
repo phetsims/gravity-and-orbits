@@ -83,7 +83,7 @@ define( require => {
       // Create and add the Reset All Button in the bottom right, which resets the model
       const resetAllButton = new ResetAllButton( {
         listener: () => module.reset(),
-        right: this.layoutBounds.right - MARGIN,
+        right: this.layoutBounds.right - MARGIN - 4,
         bottom: this.layoutBounds.bottom - MARGIN - 4 // slight difference centers below panels
       } );
       this.addChild( resetAllButton );
