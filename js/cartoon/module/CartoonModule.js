@@ -19,7 +19,7 @@ define( require => {
         p.gravityEnabledProperty,
         p.steppingProperty,
         p.rewindingProperty,
-        p.timeSpeedScaleProperty
+        p.speedTypeProperty
       ), 0, false );
     }
   }

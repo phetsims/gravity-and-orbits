@@ -56,11 +56,11 @@ define( require => {
      * @param {Property.<boolean>} gravityEnabledProperty
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<boolean>} rewindingProperty
-     * @param {Property.<number>} timeSpeedScaleProperty
+     * @param {Property.<number>} speedTypeProperty
      */
-    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
+    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ) {
       super(
-        new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ),
+        new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ),
         new SunEarthModeConfig(),
         new SunEarthMoonModeConfig(),
         new EarthMoonModeConfig(),

@@ -45,7 +45,7 @@ define( require => {
       this.showVelocityProperty = new BooleanProperty( false );
       this.showMassProperty = new BooleanProperty( false );
       this.playButtonPressedProperty = new BooleanProperty( false );
-      this.timeSpeedScaleProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL ); // TODO: Rename
+      this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL );
       this.measuringTapeVisibleProperty = new BooleanProperty( false );
       this.gravityEnabledProperty = new BooleanProperty( true );
       this.steppingProperty = new BooleanProperty( false );
@@ -62,7 +62,7 @@ define( require => {
         this.gravityEnabledProperty,
         this.steppingProperty,
         this.rewindingProperty,
-        this.timeSpeedScaleProperty ) );
+        this.speedTypeProperty ) );
 
       this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
       for ( let i = 0; i < this.modeList.modes.length; i++ ) {
@@ -115,7 +115,7 @@ define( require => {
       this.showVelocityProperty.reset();
       this.showMassProperty.reset();
       this.playButtonPressedProperty.reset();
-      this.timeSpeedScaleProperty.reset();
+      this.speedTypeProperty.reset();
       this.measuringTapeVisibleProperty.reset();
       this.gravityEnabledProperty.reset();
       this.steppingProperty.reset();

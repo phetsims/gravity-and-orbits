@@ -70,9 +70,9 @@ define( require => {
       const smallestTimeStep = this.clock.baseDTValue * 0.13125;
 
       // get the number of times we will need to step the model based on the dt passed in
-      const numberOfSteps = this.clock.timeSpeedScaleProperty.value === SpeedType.SLOW_MOTION ? 1 :
-                            this.clock.timeSpeedScaleProperty.value === SpeedType.NORMAL ? 4 :
-                            this.clock.timeSpeedScaleProperty.value === SpeedType.FAST_FORWARD ? 7 :
+      const numberOfSteps = this.clock.speedTypeProperty.value === SpeedType.SLOW_MOTION ? 1 :
+                            this.clock.speedTypeProperty.value === SpeedType.NORMAL ? 4 :
+                            this.clock.speedTypeProperty.value === SpeedType.FAST_FORWARD ? 7 :
                             null;
 
       console.log( numberOfSteps );

@@ -19,9 +19,9 @@ define( require => {
      * @param {Property.<boolean>} gravityEnabledProperty
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<boolean>} rewindingProperty
-     * @param {Property.<number>} timeSpeedScaleProperty
+     * @param {Property.<number>} speedTypeProperty
      */
-    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, timeSpeedScaleProperty ) {
+    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ) {
 
       // @public
       this.playButtonPressedProperty = playButtonPressedProperty;
@@ -34,7 +34,7 @@ define( require => {
       // Flag to indicate if a "rewind" event is taking place, to support storing states for the rewind feature
       this.rewindingProperty = rewindingProperty;
 
-      this.timeSpeedScaleProperty = timeSpeedScaleProperty;
+      this.speedTypeProperty = speedTypeProperty;
     }
   }
 

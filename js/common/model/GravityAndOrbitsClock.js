@@ -29,9 +29,9 @@ define( require => {
      *
      * @param {number} baseDTValue (multiplied by scale to obtain true dt)
      * @param {Property.<boolean>} steppingProperty
-     * @param {Property.<number>} timeSpeedScaleProperty
+     * @param {Property.<number>} speedTypeProperty
      */
-    constructor( baseDTValue, steppingProperty, timeSpeedScaleProperty ) {
+    constructor( baseDTValue, steppingProperty, speedTypeProperty ) {
 
       // @public (read-only)
       this.baseDTValue = baseDTValue;
@@ -45,7 +45,7 @@ define( require => {
       this.steppingProperty = steppingProperty;
 
       // @public
-      this.timeSpeedScaleProperty = timeSpeedScaleProperty;
+      this.speedTypeProperty = speedTypeProperty;
     }
 
     /**

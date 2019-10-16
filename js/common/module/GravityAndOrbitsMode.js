@@ -80,7 +80,7 @@ define( require => {
       this.gridSpacing = gridSpacing; // @public - in meters
       this.gridCenter = gridCenter; // @public
       this.rewindingProperty = parameterList.rewindingProperty; // save a reference to the rewinding property of p
-      this.timeSpeedScaleProperty = parameterList.timeSpeedScaleProperty; // @public
+      this.speedTypeProperty = parameterList.speedTypeProperty; // @public
       this.timeFormatter = timeFormatter; // @public
 
       // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
@@ -92,7 +92,7 @@ define( require => {
       this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, zoomOffset ) ) );
 
       // @private
-      const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.timeSpeedScaleProperty );
+      const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.speedTypeProperty );
       this.model = new GravityAndOrbitsModel( clock, parameterList.gravityEnabledProperty );
 
       Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ],
