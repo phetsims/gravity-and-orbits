@@ -16,14 +16,15 @@ define( require => {
   const BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
   const Color = require( 'SCENERY/util/Color' );
   const EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/EarthMassReadoutNode' );
-  const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsMode' );
   const HBox = require( 'SCENERY/nodes/HBox' );
   const Image = require( 'SCENERY/nodes/Image' );
   const Line = require( 'SCENERY/nodes/Line' );
+  const merge = require( 'PHET_CORE/merge' );
   const ModeConfig = require( 'GRAVITY_AND_ORBITS/common/module/ModeConfig' );
   const SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
@@ -103,7 +104,7 @@ define( require => {
      */
     constructor( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
 
-      options = _.extend( {
+      options = merge( {
         adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
       }, options );
 
@@ -112,7 +113,7 @@ define( require => {
       class SpaceStation extends Body {
         constructor( earthSpaceStation, transformProperty, options ) {
 
-          options = _.extend( {
+          options = merge( {
             diameterScale: 1000
           }, options );
 
@@ -136,7 +137,7 @@ define( require => {
       class Moon extends Body {
         constructor( massSettable, massReadoutBelow, body, transformProperty, options ) {
 
-          options = _.extend( {
+          options = merge( {
             pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
             massSettable: massSettable,
             massReadoutBelow: massReadoutBelow,
@@ -401,7 +402,7 @@ define( require => {
      */
     constructor( options ) {
 
-      options = _.extend( {
+      options = merge( {
         moonRotationPeriod: null // rotation period for the moon in seconds, null means no rotation
       }, options );
 
@@ -433,7 +434,7 @@ define( require => {
      */
     constructor( options ) {
 
-      options = _.extend( {
+      options = merge( {
         spaceStationRotationPeriod: SPACE_STATION_ORBITAL_PERIOD // rotation period in seconds
       }, options );
 

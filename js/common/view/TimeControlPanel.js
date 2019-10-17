@@ -15,6 +15,7 @@ define( require => {
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const HBox = require( 'SCENERY/nodes/HBox' );
+  const merge = require( 'PHET_CORE/merge' );
   const PlayPauseButton = require( 'SCENERY_PHET/buttons/PlayPauseButton' );
   const RewindButton = require( 'SCENERY_PHET/buttons/RewindButton' );
   const StepForwardButton = require( 'SCENERY_PHET/buttons/StepForwardButton' );
@@ -47,7 +48,7 @@ define( require => {
         anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
       }
 
-      super( _.extend( {
+      super( merge( {
         resize: false,
         spacing: 10,
         children: [ rewindButton, playPauseButton, stepButton ]

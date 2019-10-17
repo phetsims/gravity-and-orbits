@@ -12,6 +12,7 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
   const Image = require( 'SCENERY/nodes/Image' );
+  const merge = require( 'PHET_CORE/merge' );
   const Screen = require( 'JOIST/Screen' );
   const ToScaleModule = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleModule' );
 
@@ -23,7 +24,7 @@ define( require => {
 
   class ToScaleScreen extends Screen {
     constructor( options ) {
-      options = _.extend( {
+      options = merge( {
         name: toScaleString,
         homeScreenIcon: new Image( toScaleMipmap )
       }, options );

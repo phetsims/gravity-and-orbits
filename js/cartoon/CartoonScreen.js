@@ -14,6 +14,7 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
   const Image = require( 'SCENERY/nodes/Image' );
+  const merge = require( 'PHET_CORE/merge' );
   const Screen = require( 'JOIST/Screen' );
 
   // strings
@@ -25,7 +26,7 @@ define( require => {
   class CartoonScreen extends Screen {
     constructor( options ) {
 
-      options = _.extend( {
+      options = merge( {
         name: modelString,
         homeScreenIcon: new Image( cartoonMipmap )
       }, options );

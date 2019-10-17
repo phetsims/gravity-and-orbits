@@ -16,6 +16,7 @@ define( require => {
   // modules
   const CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const merge = require( 'PHET_CORE/merge' );
   const Util = require( 'DOT/Util' );
 
   // constants
@@ -32,7 +33,7 @@ define( require => {
      */
     constructor( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
 
-      options = _.extend( {
+      options = merge( {
         maxPathLength: 1150 // max path length for the trace that follows the planets
       }, options );
 

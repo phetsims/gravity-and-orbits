@@ -13,6 +13,7 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const merge = require( 'PHET_CORE/merge' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
   const Text = require( 'SCENERY/nodes/Text' );
@@ -32,7 +33,7 @@ define( require => {
      */
     constructor( speedProperty, options ) {
 
-      options = _.extend( {
+      options = merge( {
         spacing: 1,
         touchAreaXDilation: 5,
         radioButtonOptions: { radius: 8 }

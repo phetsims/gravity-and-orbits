@@ -12,6 +12,7 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Path = require( 'SCENERY/nodes/Path' );
   const Shape = require( 'KITE/Shape' );
@@ -29,7 +30,7 @@ define( require => {
      */
     constructor( transformProperty, spacing, center, numGridLines, options ) {
 
-      options = _.extend( {
+      options = merge( {
         lineWidth: 1,
         stroke: 'gray'
       }, options );

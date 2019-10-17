@@ -16,6 +16,7 @@ define( require => {
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const HBox = require( 'SCENERY/nodes/HBox' );
   const HStrut = require( 'SCENERY/nodes/HStrut' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Panel = require( 'SUN/Panel' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -48,7 +49,7 @@ define( require => {
      */
     constructor( massSettableBodies, options ) {
 
-      options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
+      options = merge( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
       const children = [];
 

@@ -12,6 +12,7 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const merge = require( 'PHET_CORE/merge' );
   const Vector2 = require( 'DOT/Vector2' );
 
   class BodyConfiguration {
@@ -27,7 +28,7 @@ define( require => {
      */
     constructor( mass, radius, x, y, vx, vy, options ) {
 
-      options = _.extend( {
+      options = merge( {
         rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
       }, options );
 

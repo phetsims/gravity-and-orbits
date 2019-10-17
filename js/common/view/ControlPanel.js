@@ -14,6 +14,7 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const GravityControl = require( 'GRAVITY_AND_ORBITS/common/view/GravityControl' );
+  const merge = require( 'PHET_CORE/merge' );
   const ModeControl = require( 'GRAVITY_AND_ORBITS/common/view/ModeControl' );
   const Panel = require( 'SUN/Panel' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -30,7 +31,7 @@ define( require => {
      */
     constructor( module, options ) {
 
-      options = _.extend( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
+      options = merge( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
 
       // top separator rectangle for the gravity control section
       const makeTopSeparatorRectangle = () => new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );

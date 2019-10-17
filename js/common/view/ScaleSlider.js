@@ -13,6 +13,7 @@ define( require => {
   const Bounds2 = require( 'DOT/Bounds2' );
   const Dimension2 = require( 'DOT/Dimension2' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Range = require( 'DOT/Range' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -35,7 +36,7 @@ define( require => {
      */
     constructor( scaleProperty, options ) {
 
-      options = _.extend( { scale: 0.8 }, options );
+      options = merge( { scale: 0.8 }, options );
 
       super();
 

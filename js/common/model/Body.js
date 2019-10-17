@@ -17,6 +17,7 @@ define( require => {
   const Emitter = require( 'AXON/Emitter' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
+  const merge = require( 'PHET_CORE/merge' );
   const Property = require( 'AXON/Property' );
   const RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   const Vector2 = require( 'DOT/Vector2' );
@@ -59,7 +60,7 @@ define( require => {
      */
     constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, transformProperty, options ) {
 
-      options = _.extend( {
+      options = merge( {
         pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
         diameterScale: 1, // scale factor applied to the diameter
         massSettable: true, // can the mass of this body be set by the control panel?
@@ -77,7 +78,7 @@ define( require => {
       this.clockTicksSinceExplosionProperty = new Property( 0 );
       this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
 
-      options = _.extend( {
+      options = merge( {
         pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
       }, options );
       this.pathLengthBuffer = options.pathLengthBuffer; // @public (read-only)

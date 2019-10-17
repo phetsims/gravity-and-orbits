@@ -19,6 +19,7 @@ define( require => {
   const HBox = require( 'SCENERY/nodes/HBox' );
   const Image = require( 'SCENERY/nodes/Image' );
   const MeasuringTapeNode = require( 'SCENERY_PHET/MeasuringTapeNode' );
+  const merge = require( 'PHET_CORE/merge' );
   const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   const PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -152,7 +153,7 @@ define( require => {
         checkboxNode.touchArea = Shape.rectangle( -5, bounds.centerY - touchAreaHeight / 2, bounds.width + 10, touchAreaHeight );
       }
 
-      super( _.extend( {
+      super( merge( {
         children: children,
         resize: false,
         spacing: SPACING,
