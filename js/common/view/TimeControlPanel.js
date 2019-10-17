@@ -54,9 +54,7 @@ define( require => {
       }, options ) );
 
       // REVIEW this seems duplicated elsewhere.  Also, what is happening here?
-      const anyPropertyChanged = new DerivedProperty( anyPropertyDifferentProperties, function() {
-        return _.some( arguments, _.identity );
-      } );
+      const anyPropertyChanged = DerivedProperty.or( anyPropertyDifferentProperties );
 
       // @private
       this.propertyChangedListener = changed => rewindButton.setEnabled( changed );

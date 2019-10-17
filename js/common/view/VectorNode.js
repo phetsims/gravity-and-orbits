@@ -41,7 +41,10 @@ define( require => {
       this.scale = scale; // @private
 
       // Only show if the body hasn't collided
-      new DerivedProperty( [ visibleProperty, body.collidedProperty ], ( visible, collided ) => visible && !collided ).linkAttribute( this, 'visible' );
+      const shouldBeShownProperty = new DerivedProperty(
+        [ visibleProperty, body.collidedProperty ], ( visible, collided ) => visible && !collided
+      );
+      shouldBeShownProperty.linkAttribute( this, 'visible' );
 
       const arrowNode = new ArrowNode( 0, 0, 0, 0, {
         headHeight: 15,

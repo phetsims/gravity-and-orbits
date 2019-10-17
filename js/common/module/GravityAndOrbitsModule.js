@@ -69,7 +69,7 @@ define( require => {
         this.modeList.modes[ i ].init( this );
       }
 
-      this.reset();
+      this.reset(); // TODO: is this necessary?  If so, why?
     }
 
     // @public

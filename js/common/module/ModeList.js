@@ -342,9 +342,7 @@ define( require => {
     }
   }
 
-  function milesToMeters( modelDistance ) {
-    return modelDistance / METERS_PER_MILE;
-  }
+  const milesToMeters = modelDistance => modelDistance / METERS_PER_MILE;
 
   class SunEarthModeConfig extends ModeConfig {
     constructor() {
@@ -476,7 +474,7 @@ define( require => {
    * @param {number} targetMass
    * @returns {function}
    */
-  const getSwitchableRenderer = function( image1, image2, targetMass ) {
+  const getSwitchableRenderer = ( image1, image2, targetMass ) => {
 
     // the mass for which to use the image
     return ( body, viewDiameter ) => new BodyRenderer.SwitchableBodyRenderer(
@@ -490,7 +488,7 @@ define( require => {
    * @param scale
    * @returns {function}
    */
-  const scaledDays = function( scale ) {
+  const scaledDays = scale => {
     return time => {
       const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale );
       const units = ( value === 1 ) ? earthDayString : earthDaysString;

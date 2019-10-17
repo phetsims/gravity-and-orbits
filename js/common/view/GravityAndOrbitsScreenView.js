@@ -42,18 +42,18 @@ define( require => {
       // Add the canvases, one for each of the four modes
       const modes = module.getModes();
       for ( let i = 0; i < modes.length; i++ ) {
-        const gaoCanvas = modes[ i ].canvas;
+        const playAreaNode = modes[ i ].playAreaNode;
         const massControlPanel = new MassControlPanel( modes[ i ].getMassSettableBodies(), {
           top: controlPanelNode.bottom + MARGIN,
           right: this.layoutBounds.right - MARGIN
         } );
         modes[ i ].massControlPanel = massControlPanel;
 
-        this.addChild( gaoCanvas );
+        this.addChild( playAreaNode );
         this.addChild( massControlPanel );
 
         if ( modes[ i ] !== module.modeProperty.get() ) {
-          gaoCanvas.visible = false;
+          playAreaNode.visible = false;
           massControlPanel.visible = false;
         }
       }
@@ -64,10 +64,10 @@ define( require => {
       // Make sure only one canvas is visible at a time
       module.modeProperty.link( mode => {
         for ( let i = 0; i < module.modeList.modes.length; i++ ) {
-          module.modeList.modes[ i ].canvas.visible = false;
+          module.modeList.modes[ i ].playAreaNode.visible = false;
           module.modeList.modes[ i ].massControlPanel.visible = false;
         }
-        mode.canvas.visible = true;
+        mode.playAreaNode.visible = true;
         mode.massControlPanel.visible = true;
         module.updateActiveModule();
       } );

@@ -40,14 +40,12 @@ define( require => {
 
   /**
    * Convenience function that converts days to seconds, using
-   *   days * hoursPerDay * minutesPerHour * secondsPerMinue
+   * days * hoursPerDay * minutesPerHour * secondsPerMinute
    *
    * @param  {number} days
    * @returns {number}
    */
-  function daysToSeconds( days ) {
-    return days * 24 * 60 * 60;
-  }
+  const daysToSeconds = days => days * 24 * 60 * 60;
 
   class CartoonModeList extends ModeList.ModeList {
 

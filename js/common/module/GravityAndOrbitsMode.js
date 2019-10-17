@@ -61,7 +61,7 @@ define( require => {
       this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
       this.zoomLevelProperty = new Property( 1 );
 
-      this.canvas = null; // @public
+      this.playAreaNode = null; // @public
 
       this.dt = dt; // @private
       this.parameterList = parameterList; // @`rivate
@@ -196,11 +196,11 @@ define( require => {
     /**
      * Initialize the view component for this mode.
      *
-     * @param module
+     * @param {GravityAndOrbitsModule} module
      * @public
      */
     init( module ) {
-      this.canvas = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale );
+      this.playAreaNode = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale );
     }
 
     /**

@@ -83,6 +83,7 @@ define( require => {
         this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
 
+        // TODO: This likely could be eliminated by using forEach above
         ( bodyNode => {
           const property = new DerivedProperty( [ bodies[ i ].positionProperty, mode.zoomLevelProperty ], () => {
 
@@ -169,10 +170,7 @@ define( require => {
       this.addChild( measuringTapeNode );
 
       // If any body is out of bounds, show a "return object" button
-      // REVIEW: why does this need arguments.  Should there be a better pattern here?
-      const anythingReturnable = new DerivedProperty( returnable, function() {
-        return _.some( arguments, _.identity );
-      } );
+      const anythingReturnable = DerivedProperty.or( returnable );
 
       const returnButton = new TextPushButton( returnObjectsString, {
         font: new PhetFont( 16 ),

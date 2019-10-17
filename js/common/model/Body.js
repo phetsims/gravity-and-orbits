@@ -383,21 +383,15 @@ define( require => {
      */
     // REVIEW: what is this for, could it be optimized away?
     anyPropertyDifferent() {
-      const properties = [
+      return DerivedProperty.or( [
         this.positionProperty.differentProperty,
         this.velocityProperty.differentProperty,
         this.massProperty.differentProperty,
         this.collidedProperty.differentProperty
-      ];
-      return new DerivedProperty( properties, function() {
-        return _.some( arguments, _.identity );
-      } );
+      ] );
     }
 
-    /**
-     * @public
-     * Unexplodes and returns objects to the stage
-     */
+    // @public
     resetPositionAndVelocity() {
       this.positionProperty.reset();
       this.velocityProperty.reset();
