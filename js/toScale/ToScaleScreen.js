@@ -30,7 +30,7 @@ define( require => {
       }, options );
 
       super(
-        () => new ToScaleModule( options.tandem.createTandem( 'toScaleModel' ) ),
+        () => new ToScaleModule( options.tandem.createTandem( 'model' ) ),
         model => new GravityAndOrbitsScreenView( model ),
         options
       );

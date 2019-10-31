@@ -142,7 +142,7 @@ define( require => {
             measuringTapeTextNode,
             measuringTapeIcon
           ]
-        } ), module.measuringTapeVisibleProperty, CHECKBOX_OPTIONS ) );
+        } ), module.showMeasuringTapeProperty, CHECKBOX_OPTIONS ) );
       }
 
       // increase the touch area of the checkboxes

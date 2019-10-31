@@ -133,7 +133,7 @@ define( require => {
 
       // Add measuring tape
       const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
-      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.measuringTapeVisibleProperty, {
+      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.showMeasuringTapeProperty, {
         basePositionProperty: mode.measuringTapeStartPointProperty,
         tipPositionProperty: mode.measuringTapeEndPointProperty,
         textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',

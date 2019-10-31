@@ -41,13 +41,16 @@ define( require => {
 
       // Properties that are common to all "modes" should live here.
       this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );
-      this.showPathProperty = new BooleanProperty( false );
-      this.showGridProperty = new BooleanProperty( false );
-      this.showVelocityProperty = new BooleanProperty( false );
-      this.showMassProperty = new BooleanProperty( false );
+      this.showVelocityProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showVelocityProperty' ) } );
+      this.showMassProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showMassProperty' ) } );
+      this.showPathProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showPathProperty' ) } );
+      this.showGridProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGridProperty' ) } );
+      this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showMeasuringTapeProperty' ) } );
+
+
       this.playButtonPressedProperty = new BooleanProperty( false );
       this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL );
-      this.measuringTapeVisibleProperty = new BooleanProperty( false );
+
       this.gravityEnabledProperty = new BooleanProperty( true );
       this.steppingProperty = new BooleanProperty( false );
       this.rewindingProperty = new BooleanProperty( false );
@@ -117,7 +120,7 @@ define( require => {
       this.showMassProperty.reset();
       this.playButtonPressedProperty.reset();
       this.speedTypeProperty.reset();
-      this.measuringTapeVisibleProperty.reset();
+      this.showMeasuringTapeProperty.reset();
       this.gravityEnabledProperty.reset();
       this.steppingProperty.reset();
       this.rewindingProperty.reset();
