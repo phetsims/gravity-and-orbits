@@ -14,8 +14,9 @@
     "requirejsNamespace": "GRAVITY_AND_ORBITS",
     "runnable": true,
     "supportedBrands": [
+      "adapted-from-phet",
       "phet",
-      "adapted-from-phet"
+      "phet-io"
     ],
     "simulation": true
   },
