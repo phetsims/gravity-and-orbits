@@ -1,7 +1,8 @@
 // Copyright 2013-2019, University of Colorado Boulder
 
 /**
- * Control panel containing the controls for orbital mode, gravity, and visibility of plantary path
+ * TODO: better name?
+ * Control panel containing the controls for orbital mode, gravity, and visibility of planetary path
  * and vectors.
  *
  * @author Aaron Davis (PhET Interactive Simulations)
@@ -31,7 +32,7 @@ define( require => {
      */
     constructor( module, options ) {
 
-      options = merge( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
+      options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options );
 
       // top separator rectangle for the gravity control section
       const makeTopSeparatorRectangle = () => new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
@@ -43,7 +44,7 @@ define( require => {
 
       // menu sections and separators
       const sections = [
-        new ModeControl( module.modeProperty, module.getModes(), MENU_SECTION_OPTIONS ),
+        new ModeControl( module.modeProperty, module.getModes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeTopSeparatorRectangle(),
         new GravityControl( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
         makeBottomSeparatorRectangle(),

@@ -37,38 +37,38 @@ define( require => {
       const content = []; // for radio buttons
       const resetButtons = [];
       for ( let i = 0; i < modes.length; i++ ) {
-        content.push( { value: modes[ i ], node: modes[ i ].iconImage } );
+        content.push( { value: modes[ i ], node: modes[ i ].iconImage, tandemName: modes[ i ].tandemName } );
 
         const resetButton = new PlanetModeResetButton( modes[ i ] );
 
         // link reset buttons so that only the reset button next to the selected radio button is visible
+        // TODO: use forEach above instead of this IIFE
         ( ( currentMode, resetButton ) => {
           modeProperty.link( mode => resetButton.setVisible( mode === currentMode ) );
         } )( modes[ i ], resetButton );
 
         resetButtons.push( resetButton );
       }
-      const buttonGroup = new RadioButtonGroup( modeProperty, content,
-        {
-          alignVertically: true,
-          selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
-          selectedLineWidth: 2,
-          baseColor: 'rgba(0,0,0,0)',
-          deselectedLineWidth: 0,
-          buttonContentXMargin: 5,
-          buttonContentYMargin: 5,
-          spacing: 0,
-          resize: false,
-          deselectedOpacity: 1,
-          cornerRadius: 5,
-          touchAreaYDilation: 0 // reduce to 0 to prevent overlap between buttons
-        } );
+      const radioButtonGroup = new RadioButtonGroup( modeProperty, content, {
+        alignVertically: true,
+        selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
+        selectedLineWidth: 2,
+        baseColor: 'rgba(0,0,0,0)',
+        deselectedLineWidth: 0,
+        buttonContentXMargin: 5,
+        buttonContentYMargin: 5,
+        spacing: 0,
+        resize: false,
+        deselectedOpacity: 1,
+        cornerRadius: 5,
+        touchAreaYDilation: 0, // reduce to 0 to prevent overlap between buttons
+        tandem: options.tandem.createTandem( 'radioButtonGroup' )
+      } );
 
-      this.addChild( buttonGroup );
-      this.addChild( new VBox( { children: resetButtons, left: buttonGroup.right + 10, spacing: 5, y: 2 } ) );
+      this.addChild( radioButtonGroup );
+      this.addChild( new VBox( { children: resetButtons, left: radioButtonGroup.right + 10, spacing: 5, y: 2 } ) );
       this.addChild( new HStrut( 219 ) );
     }
-
   }
 
   gravityAndOrbits.register( 'ModeControl', ModeControl );

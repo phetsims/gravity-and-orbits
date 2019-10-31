@@ -225,7 +225,9 @@ define( require => {
         new Vector2( 0, 0 ),
         ( sunEarth.earth.x / 2 ),
         new Vector2( 0, 0 ),
-        parameterList ) );
+        parameterList,
+        'sunEarthSceneButton' // TODO rename mode to scene for types and vars?
+      ) );
 
       const sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
       this.modes[ 0 ].addBody( new Sun( sunEarth.sun, sunEarthTransformProperty, {
@@ -247,7 +249,9 @@ define( require => {
         new Vector2( 0, 0 ),
         ( sunEarthMoon.earth.x / 2 ),
         new Vector2( 0, 0 ),
-        parameterList ) );
+        parameterList,
+        'sunEarthMoonSceneButton'
+      ) );
 
       // increase moon path length so that it fades away with other bodies
       // in model coordinates (at default orbit)
@@ -279,7 +283,9 @@ define( require => {
         new Vector2( earthMoon.earth.x, 0 ),
         ( earthMoon.moon.y / 2 ),
         new Vector2( earthMoon.earth.x, 0 ),
-        parameterList ) );
+        parameterList,
+        'earthMoonSceneButton'
+      ) );
 
       const earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
       this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, {
@@ -307,7 +313,9 @@ define( require => {
         new Vector2( earthSpaceStation.earth.x, 0 ),
         ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
         new Vector2( earthSpaceStation.earth.x, 0 ),
-        parameterList ) );
+        parameterList,
+        'earthSpaceStationScreenButton'
+      ) );
 
       const earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
       this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, {

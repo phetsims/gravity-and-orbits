@@ -49,7 +49,7 @@ define( require => {
      */
     constructor( massSettableBodies, options ) {
 
-      options = merge( _.clone( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ), options );
+      options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options );
 
       const children = [];
 

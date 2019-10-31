@@ -27,19 +27,20 @@ define( require => {
      * object as a parameter instead of a model. This seemed like the easiest way to port the Java version, which has
      * one module for each screen. This is the ScreenView for both screens in this sim.
      *
-     * @param {GravityAndOrbitsModule} module
+     * @param {GravityAndOrbitsModule} module // TODO: Rename to model
      */
-    constructor( module ) {
+    constructor( module, tandem ) {
 
       super();
 
       // Control panel in the upper right of the play area
       const controlPanelNode = new ControlPanel( module, {
         top: this.layoutBounds.top + MARGIN,
-        right: this.layoutBounds.right - MARGIN
+        right: this.layoutBounds.right - MARGIN,
+        tandem: tandem.createTandem( 'controlPanelNode' ) // TODO: name?
       } );
 
-      // Add the canvases, one for each of the four modes
+      // Add the mode selection controls, one for each of the four modes
       const modes = module.getModes();
       for ( let i = 0; i < modes.length; i++ ) {
         const playAreaNode = modes[ i ].playAreaNode;
@@ -52,6 +53,7 @@ define( require => {
         this.addChild( playAreaNode );
         this.addChild( massControlPanel );
 
+        // TODO: I think these can be deleted
         if ( modes[ i ] !== module.modeProperty.get() ) {
           playAreaNode.visible = false;
           massControlPanel.visible = false;

@@ -53,7 +53,7 @@ define( require => {
      */
     constructor( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
-                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList ) {
+                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList, tandemName ) {
 
       this.activeProperty = new Property( active );
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );
@@ -62,6 +62,7 @@ define( require => {
       this.zoomLevelProperty = new Property( 1 );
 
       this.playAreaNode = null; // @public
+      this.tandemName = tandemName; // @public (read-only)
 
       this.dt = dt; // @private
       this.parameterList = parameterList; // @`rivate

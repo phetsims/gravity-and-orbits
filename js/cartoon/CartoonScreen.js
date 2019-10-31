@@ -32,7 +32,7 @@ define( require => {
 
       super(
         () => new CartoonModule( options.tandem.createTandem( 'model' ) ),
-        model => new GravityAndOrbitsScreenView( model ),
+        model => new GravityAndOrbitsScreenView( model, options.tandem.createTandem( 'view' ) ),
         options
       );
     }
