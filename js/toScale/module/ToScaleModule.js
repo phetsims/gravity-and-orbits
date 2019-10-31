@@ -1,7 +1,7 @@
 // Copyright 2016-2019, University of Colorado Boulder
 
 /**
- * //REVIEW Docs
+ * // TODO Docs
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 define( require => {
@@ -13,14 +13,18 @@ define( require => {
   const RealModeList = require( 'GRAVITY_AND_ORBITS/toScale/module/RealModeList' );
 
   class ToScaleModule extends GravityAndOrbitsModule {
-    constructor() {
+
+    /**
+     * @param {Tandem} tandem
+     */
+    constructor( tandem ) {
       super( true, p => new RealModeList(
         p.playButtonPressedProperty,
         p.gravityEnabledProperty,
         p.steppingProperty,
         p.rewindingProperty,
         p.speedTypeProperty
-      ), 0, true );
+      ), 0, true, tandem );
     }
   }
 

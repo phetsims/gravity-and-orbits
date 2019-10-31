@@ -1,8 +1,7 @@
 // Copyright 2016-2019, University of Colorado Boulder
 
 /**
- * The 'Model' screen, though it is called 'Cartoon' throughout the code.  Possibly because 'ModelScreen' is
- * confusing.
+ * The 'Model' screen, though it is called 'Cartoon' throughout the code because 'ModelScreen' is confusing.
  *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
@@ -32,7 +31,7 @@ define( require => {
       }, options );
 
       super(
-        () => new CartoonModule(),
+        () => new CartoonModule( options.tandem.createTandem( 'cartoonModel' ) ),
         model => new GravityAndOrbitsScreenView( model ),
         options
       );

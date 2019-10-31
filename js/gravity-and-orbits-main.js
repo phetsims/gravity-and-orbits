@@ -14,6 +14,7 @@ define( require => {
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   const Sim = require( 'JOIST/Sim' );
   const SimLauncher = require( 'JOIST/SimLauncher' );
+  const Tandem = require( 'TANDEM/Tandem' );
   const ToScaleScreen = require( 'GRAVITY_AND_ORBITS/toScale/ToScaleScreen' );
 
   // strings
@@ -25,7 +26,6 @@ define( require => {
       softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Jon Olson, Sam Reid',
       team: 'Trish Loeblein, Ariel Paul, Kathy Perkins',
       qualityAssurance: 'Steele Dalton, Ethan Johnson, Elise Morgan, Oliver Orejola, Ben Roberts, Bryan Yoelin',
-      graphicArts: '',
       thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
               'HTML5.'
     },
@@ -36,15 +36,15 @@ define( require => {
 
   SimLauncher.launch( () => {
 
+    // TODO: Rename to ModelScreen
     const cartoonScreen = new CartoonScreen( {
-      backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty
+      backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
+      tandem: Tandem.rootTandem.createTandem( 'modelScreen' )
     } );
-
     const toScaleScreen = new ToScaleScreen( {
-      backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty
+      backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
+      tandem: Tandem.rootTandem.createTandem( 'toScaleScreen' )
     } );
-
-    // create and start the sim
     new Sim( gravityAndOrbitsTitleString, [ cartoonScreen, toScaleScreen ], simOptions ).start();
   } );
 } );

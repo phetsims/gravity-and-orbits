@@ -35,11 +35,12 @@ define( require => {
      * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsMode>>} createModes
      * @param {number} initialModeIndex
      * @param {boolean} showMassCheckbox
+     * @param {Tandem} tandem
      */
-    constructor( showMeasuringTape, createModes, initialModeIndex, showMassCheckbox ) {
+    constructor( showMeasuringTape, createModes, initialModeIndex, showMassCheckbox, tandem ) {
 
       // Properties that are common to all "modes" should live here.
-      this.showGravityForceProperty = new BooleanProperty( false );
+      this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );
       this.showPathProperty = new BooleanProperty( false );
       this.showGridProperty = new BooleanProperty( false );
       this.showVelocityProperty = new BooleanProperty( false );

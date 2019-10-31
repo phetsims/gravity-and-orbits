@@ -13,14 +13,14 @@ define( require => {
   const GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
 
   class CartoonModule extends GravityAndOrbitsModule {
-    constructor() {
+    constructor( tandem ) {
       super( false, p => new CartoonModeList(
         p.playButtonPressedProperty,
         p.gravityEnabledProperty,
         p.steppingProperty,
         p.rewindingProperty,
         p.speedTypeProperty
-      ), 0, false );
+      ), 0, false, tandem );
     }
   }
 
