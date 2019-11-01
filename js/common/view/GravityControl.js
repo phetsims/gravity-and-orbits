@@ -15,6 +15,7 @@ define( require => {
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   const gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
   const HBox = require( 'SCENERY/nodes/HBox' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Text = require( 'SCENERY/nodes/Text' );
@@ -44,8 +45,8 @@ define( require => {
       this.addChild( new HBox( {
         spacing: 10, bottom: 2, resize: false, children: [
           gravityTextNode,
-          new AquaRadioButton( gravityEnabledProperty, true, onTextNode, RADIO_OPTIONS ),
-          new AquaRadioButton( gravityEnabledProperty, false, offTextNode, RADIO_OPTIONS )
+          new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: options.tandem.createTandem( 'enableGravityRadioButton' ) }, RADIO_OPTIONS ) ),
+          new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: options.tandem.createTandem( 'disableGravityRadioButton' ) }, RADIO_OPTIONS ) )
         ]
       } ) );
     }

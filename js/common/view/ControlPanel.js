@@ -46,9 +46,9 @@ define( require => {
       const sections = [
         new ModeControl( module.modeProperty, module.getModes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeTopSeparatorRectangle(),
-        new GravityControl( module.gravityEnabledProperty, MENU_SECTION_OPTIONS ),
+        new GravityControl( module.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeBottomSeparatorRectangle(),
-        new CheckboxPanel( module, MENU_SECTION_OPTIONS )
+        new CheckboxPanel( module, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
       ];
 
       assert && assert( sections.length === 5, 'There should be 5 sections in the ControlPanel' );

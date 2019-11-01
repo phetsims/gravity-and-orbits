@@ -2,7 +2,7 @@
 
 /**
  * A GravityAndOrbitsMode behaves like a module, it has its own model, control panel, canvas, and remembers its state
- * when you leave and come back. It is created with defaults from ModeList.Mode.
+ * when you leave and come back. It is created with defaults from ModeListModel.Mode.
  * <p/>
  * The sim was designed this way so that objects are replaced instead of mutated.
  * For instance, when switching from Mode 1 to Mode 2, instead of removing Mode 1 bodies from the model,
@@ -25,6 +25,7 @@ define( require => {
   const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
   const GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
   const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  const NumberProperty = require( 'AXON/NumberProperty' );
   const Property = require( 'AXON/Property' );
   const Rectangle = require( 'DOT/Rectangle' );
 
@@ -50,18 +51,25 @@ define( require => {
      * @param {number} gridSpacing
      * @param {Vector2} gridCenter
      * @param {ModeListParameterList} parameterList
+     * @param {string} radioButtonTandemName
+     * @param {string} resetButtonTandemName
+     * @param {string} tandemName
+     * @param {Tandem} tandem
      */
     constructor( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
-                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList, tandemName ) {
+                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList, radioButtonTandemName, resetButtonTandemName,
+                 tandemName, tandem ) {
 
-      this.activeProperty = new Property( active );
+      this.activeProperty = new BooleanProperty( active );
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );
       this.measuringTapeStartPointProperty = new Property( initialMeasuringTapeLocation.p1 );
       this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
-      this.zoomLevelProperty = new Property( 1 );
+      this.zoomLevelProperty = new NumberProperty( 1, { tandem: tandem.createTandem( 'zoomLevelProperty' ) } );
 
       this.playAreaNode = null; // @public
+      this.radioButtonTandemName = radioButtonTandemName; // @public (read-only)
+      this.resetButtonTandemName = resetButtonTandemName; // @public (read-only)
       this.tandemName = tandemName; // @public (read-only)
 
       this.dt = dt; // @private
@@ -198,10 +206,11 @@ define( require => {
      * Initialize the view component for this mode.
      *
      * @param {GravityAndOrbitsModule} module
+     * @public {Tandem} tandem
      * @public
      */
-    init( module ) {
-      this.playAreaNode = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale );
+    init( module, tandem ) {
+      this.playAreaNode = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale, tandem.createTandem( 'playArea' ) );
     }
 
     /**

@@ -17,10 +17,12 @@ define( require => {
   const VBox = require( 'SCENERY/nodes/VBox' );
 
   class GlobalOptionsNode extends VBox {
-    constructor() {
+    constructor( tandem ) {
 
       // add support for setting projector mode
-      const projectorModeCheckbox = new ProjectorModeCheckbox( GravityAndOrbitsColorProfile );
+      const projectorModeCheckbox = new ProjectorModeCheckbox( GravityAndOrbitsColorProfile, {
+        tandem: tandem.createTandem( 'projectorModeCheckbox' )
+      } );
 
       // VBox is used to make it easy to add additional options
       super( {

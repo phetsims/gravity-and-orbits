@@ -19,7 +19,8 @@ define( require => {
         p.gravityEnabledProperty,
         p.steppingProperty,
         p.rewindingProperty,
-        p.speedTypeProperty
+        p.speedTypeProperty,
+        tandem.createTandem( 'modeList' ) // TODO(phet-io design): tandem sharing is risky, is it warranted here to avoid extra nodes?
       ), 0, false, tandem );
     }
   }

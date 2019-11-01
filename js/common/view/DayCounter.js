@@ -32,7 +32,7 @@ define( require => {
      * @param {GravityAndOrbitsClock} clock
      * @param [options]
      */
-    constructor( timeFormatter, clock, options ) {
+    constructor( timeFormatter, clock, tandem, options ) {
       super();
 
       // day text counter
@@ -45,7 +45,8 @@ define( require => {
       const clearButton = new TextPushButton( clearString, {
         font: FONT,
         listener: () => clock.setSimulationTime( 0 ),
-        maxWidth: 200
+        maxWidth: 200,
+        tandem: tandem.createTandem( 'clearButton' )
       } );
 
       // update text representation of day

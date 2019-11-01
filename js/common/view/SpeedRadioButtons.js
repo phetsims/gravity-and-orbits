@@ -49,9 +49,9 @@ define( require => {
       const slowText = new Text( slowMotionString, textOptions );
 
       super( speedProperty, [
-        { value: SpeedType.FAST_FORWARD, node: fastText },
-        { value: SpeedType.NORMAL, node: normalText },
-        { value: SpeedType.SLOW_MOTION, node: slowText }
+        { value: SpeedType.FAST_FORWARD, node: fastText, tandemName: 'fastForwardRadioButton' },
+        { value: SpeedType.NORMAL, node: normalText, tandemName: 'normalSpeedRadioButton' },
+        { value: SpeedType.SLOW_MOTION, node: slowText, tandemName: 'slowMotionRadioButton' }
       ], options );
     }
   }

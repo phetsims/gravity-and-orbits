@@ -14,7 +14,7 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
+  const ModeListModel = require( 'GRAVITY_AND_ORBITS/common/module/ModeListModel' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   // constants
@@ -47,7 +47,7 @@ define( require => {
    */
   const daysToSeconds = days => days * 24 * 60 * 60;
 
-  class CartoonModeList extends ModeList.ModeList {
+  class CartoonModeList extends ModeListModel {
 
     /**
      * @param {Property.<boolean>} playButtonPressedProperty
@@ -55,14 +55,16 @@ define( require => {
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<boolean>} rewindingProperty
      * @param {Property.<number>} speedTypeProperty
+     * @param {Tandem} tandem
      */
-    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ) {
+    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty, tandem ) {
       super(
         new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ),
         new SunEarthModeConfig(),
         new SunEarthMoonModeConfig(),
         new EarthMoonModeConfig(),
-        new EarthSpaceStationModeConfig(), {
+        new EarthSpaceStationModeConfig(),
+        tandem, {
           adjustMoonPathLength: true // adjust the moon path length in cartoon mode
         } );
     }
@@ -73,7 +75,7 @@ define( require => {
   /**
    * Model configuration for a system with the sun and the earth.
    */
-  class SunEarthModeConfig extends ModeList.SunEarthModeConfig {
+  class SunEarthModeConfig extends ModeListModel.SunEarthModeConfig {
     constructor() {
       super();
       this.sun.radius *= SUN_RADIUS_MULTIPLIER;
@@ -92,7 +94,7 @@ define( require => {
   /**
    * Model configuration for a system with the sun, earth and moon.
    */
-  class SunEarthMoonModeConfig extends ModeList.SunEarthMoonModeConfig {
+  class SunEarthMoonModeConfig extends ModeListModel.SunEarthMoonModeConfig {
     constructor() {
       super();
       this.sun.radius *= SUN_RADIUS_MULTIPLIER;
@@ -114,7 +116,7 @@ define( require => {
 
   gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
 
-  class EarthMoonModeConfig extends ModeList.EarthMoonModeConfig {
+  class EarthMoonModeConfig extends ModeListModel.EarthMoonModeConfig {
     constructor() {
 
       const moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD );
@@ -134,7 +136,7 @@ define( require => {
   /**
    * Model configuration for a system with the earth and a space station.
    */
-  class EarthSpaceStationModeConfig extends ModeList.EarthSpaceStationModeConfig {
+  class EarthSpaceStationModeConfig extends ModeListModel.EarthSpaceStationModeConfig {
     constructor() {
       super();
 

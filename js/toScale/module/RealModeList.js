@@ -11,24 +11,26 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const ModeList = require( 'GRAVITY_AND_ORBITS/common/module/ModeList' );
+  const ModeListModel = require( 'GRAVITY_AND_ORBITS/common/module/ModeListModel' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
-  class RealModeList extends ModeList.ModeList {
+  class RealModeList extends ModeListModel {
     /**
      * @param {Property.<boolean>} playButtonPressedProperty
      * @param {Property.<boolean>} gravityEnabledProperty
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<boolean>} rewindingProperty
      * @param {Property.<number>} speedTypeProperty
+     * @param {Tandem} tandem
      */
-    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ) {
+    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty, tandem ) {
       super(
         new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ),
-        new ModeList.SunEarthModeConfig(),
-        new ModeList.SunEarthMoonModeConfig(),
-        new ModeList.EarthMoonModeConfig(),
-        new ModeList.EarthSpaceStationModeConfig()
+        new ModeListModel.SunEarthModeConfig(),
+        new ModeListModel.SunEarthMoonModeConfig(),
+        new ModeListModel.EarthMoonModeConfig(),
+        new ModeListModel.EarthSpaceStationModeConfig(),
+        tandem
       );
     }
   }

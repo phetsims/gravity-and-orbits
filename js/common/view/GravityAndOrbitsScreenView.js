@@ -28,6 +28,7 @@ define( require => {
      * one module for each screen. This is the ScreenView for both screens in this sim.
      *
      * @param {GravityAndOrbitsModule} module // TODO: Rename to model
+     * @param {Tandem} tandem
      */
     constructor( module, tandem ) {
 
@@ -46,7 +47,8 @@ define( require => {
         const playAreaNode = modes[ i ].playAreaNode;
         const massControlPanel = new MassControlPanel( modes[ i ].getMassSettableBodies(), {
           top: controlPanelNode.bottom + MARGIN,
-          right: this.layoutBounds.right - MARGIN
+          right: this.layoutBounds.right - MARGIN,
+          tandem: tandem.createTandem( 'massControlPanel' + i )// TODO don't index like this
         } );
         modes[ i ].massControlPanel = massControlPanel;
 
@@ -78,7 +80,8 @@ define( require => {
       this.addChild( new SpeedRadioButtons( module.speedTypeProperty, {
           bottom: this.layoutBounds.bottom - MARGIN,
           left: this.layoutBounds.left + MARGIN,
-          scale: 1.2
+        scale: 1.2,
+        tandem: tandem.createTandem( 'speedRadioButtonGroup' )
         } )
       );
 
@@ -86,7 +89,8 @@ define( require => {
       const resetAllButton = new ResetAllButton( {
         listener: () => module.reset(),
         right: this.layoutBounds.right - MARGIN - 4,
-        bottom: this.layoutBounds.bottom - MARGIN - 4 // slight difference centers below panels
+        bottom: this.layoutBounds.bottom - MARGIN - 4, // slight difference centers below panels
+        tandem: tandem.createTandem( 'resetAllButton' )
       } );
       this.addChild( resetAllButton );
     }

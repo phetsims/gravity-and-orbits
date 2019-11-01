@@ -33,8 +33,9 @@ define( require => {
      * @param {number} max
      * @param {number} defaultLabelValue
      * @param {string} valueLabel
+     * @param {Tandem} tandem
      */
-    constructor( body, min, max, defaultLabelValue, valueLabel ) {
+    constructor( body, min, max, defaultLabelValue, valueLabel, tandem ) {
 
       super( body.massProperty, new Range( min, max ), {
         trackSize: new Dimension2( WIDTH, 1 ),
@@ -53,7 +54,8 @@ define( require => {
         thumbFillHighlighted: '#B3D3E2',
 
         // snap to default value if close
-        constrainValue: mass => Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ? defaultLabelValue : mass
+        constrainValue: mass => Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ? defaultLabelValue : mass,
+        tandem: tandem
       } );
 
       // add ticks and labels

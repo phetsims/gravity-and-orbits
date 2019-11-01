@@ -26,21 +26,26 @@ define( require => {
      * @param {Property.<GravityAndOrbitsMode>} modeProperty
      * @param {Property.<boolean>} playButtonPressedProperty
      * @param {Array.<Body>} bodies
+     * @param {Tandem} tandem
      * @param {Object} [options]
      */
-    constructor( modeProperty, playButtonPressedProperty, bodies, options ) {
+    constructor( modeProperty, playButtonPressedProperty, bodies, tandem, options ) {
       const playProperty = playButtonPressedProperty;
 
-      const playPauseButton = new PlayPauseButton( playProperty );
+      const playPauseButton = new PlayPauseButton( playProperty, {
+        tandem: tandem.createTandem( 'playPauseButton' )
+      } );
 
       const stepButton = new StepForwardButton( {
         isPlayingProperty: playProperty,
-        listener: () => modeProperty.get().getClock().stepClockWhilePaused()
+        listener: () => modeProperty.get().getClock().stepClockWhilePaused(),
+        tandem: tandem.createTandem( 'stepButton' )
       } );
 
       const rewindButton = new RewindButton( {
         enabled: false,
-        listener: () => modeProperty.get().rewind()
+        listener: () => modeProperty.get().rewind(),
+        tandem: tandem.createTandem( 'rewindButton' )
       } );
 
       const anyPropertyDifferentProperties = [];

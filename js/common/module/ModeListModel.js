@@ -1,8 +1,8 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * ModeList enumerates and declares the possible modes in the GravityAndOrbitsModule, such as 'Sun & Earth' mode.
- * Models (and the bodies they contain) are created in ModeList.
+ * ModeListModel enumerates and declares the possible modes in the GravityAndOrbitsModule, such as 'Sun & Earth' mode.
+ * Models (and the bodies they contain) are created in ModeListModel.
  *
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
@@ -56,7 +56,7 @@ define( require => {
   const spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
   const sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
 
-  // These constants are only used in ModeList, and ModeList is used to create the specific model instantiations,
+  // These constants are only used in ModeListModel, and ModeListModel is used to create the specific model instantiations,
   // so we keep them here instead of the model.
   const SUN_RADIUS = 6.955E8; // km
   const SUN_MASS = 1.989E30; // kg
@@ -90,19 +90,20 @@ define( require => {
 
   const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
-  class ModeListModule {
+  class ModeListModel {
 
     /**
-     * Constructor for ModeListModule.
+     * Constructor for ModeListModel.
      *
      * @param {ModeListParameterList} parameterList
      * @param {SunEarthModeConfig} sunEarth
      * @param {SunEarthMoonModeConfig} sunEarthMoon
      * @param {EarthMoonModeConfig} earthMoon
      * @param {EarthSpaceStationModeConfig} earthSpaceStation
+     * @param {Tandem} tandem
      * @param {Object} [options]
      */
-    constructor( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, options ) {
+    constructor( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, tandem, options ) {
 
       options = merge( {
         adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
@@ -111,7 +112,7 @@ define( require => {
       // non-static inner class: SpaceStation
       // REVIEW: why is this inside the constructor?
       class SpaceStation extends Body {
-        constructor( earthSpaceStation, transformProperty, options ) {
+        constructor( earthSpaceStation, transformProperty, tandem, options ) {
 
           options = merge( {
             diameterScale: 1000
@@ -128,6 +129,8 @@ define( require => {
             spaceStationString,
             parameterList,
             transformProperty,
+            'spaceStationMassControl',
+            tandem,
             options
           );
         }
@@ -135,7 +138,7 @@ define( require => {
 
       // non-static inner class: Moon
       class Moon extends Body {
-        constructor( massSettable, massReadoutBelow, body, transformProperty, options ) {
+        constructor( massSettable, massReadoutBelow, body, transformProperty, tandem, options ) {
 
           options = merge( {
             pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
@@ -155,14 +158,16 @@ define( require => {
             ourMoonString,
             parameterList,
             transformProperty,
+            'moonMassControl',
+            tandem,
             options
           );
         }
       }
 
-      // non-static inner class: Earth
+      // non-static inner class: Earth.  TODO: rename planet
       class Earth extends Body {
-        constructor( body, transformProperty, options ) {
+        constructor( body, transformProperty, tandem, options ) {
           super(
             GravityAndOrbitsBodies.PLANET,
             body,
@@ -174,14 +179,16 @@ define( require => {
             earthString,
             parameterList,
             transformProperty,
+            'planetMassControl',
+            tandem,
             options
           );
         }
       }
 
-      // non-static inner class: Sun
+      // non-static inner class: Sun.  TODO: rename Star
       class Sun extends Body {
-        constructor( body, transformProperty, options ) {
+        constructor( body, transformProperty, tandem, options ) {
           super(
             GravityAndOrbitsBodies.STAR,
             body, // REVIEW: why does Body take Body argument?
@@ -193,7 +200,10 @@ define( require => {
             ourSunString,
             parameterList,
             transformProperty,
-            options );
+            'starMassControl',
+            tandem,
+            options
+          );
           this.body = body;
         }
       }
@@ -226,14 +236,18 @@ define( require => {
         ( sunEarth.earth.x / 2 ),
         new Vector2( 0, 0 ),
         parameterList,
-        'sunEarthSceneButton' // TODO rename mode to scene for types and vars?
+        'sunEarthSceneButton', // TODO rename mode to scene for types and vars?
+        'sunEarthSceneResetButton',
+        'sunEarthScene',
+        tandem.createTandem( 'sunEarthScene' )
       ) );
 
       const sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
-      this.modes[ 0 ].addBody( new Sun( sunEarth.sun, sunEarthTransformProperty, {
+      const sunEarthTandem = tandem.createTandem( 'sunEarthScene' );
+      this.modes[ 0 ].addBody( new Sun( sunEarth.sun, sunEarthTransformProperty, sunEarthTandem.createTandem( 'sun' ), { // TODO: sun vs star?
         maxPathLength: 345608942000 // in km
       } ) );
-      this.modes[ 0 ].addBody( new Earth( sunEarth.earth, sunEarthTransformProperty ) );
+      this.modes[ 0 ].addBody( new Earth( sunEarth.earth, sunEarthTransformProperty, sunEarthTandem.createTandem( 'earth' ) ) );// TODO: earth vs planet?
 
       this.modes.push( new GravityAndOrbitsMode(
         sunEarthMoon.forceScale,
@@ -250,23 +264,29 @@ define( require => {
         ( sunEarthMoon.earth.x / 2 ),
         new Vector2( 0, 0 ),
         parameterList,
-        'sunEarthMoonSceneButton'
+        'sunEarthMoonSceneButton',
+        'sunEarthMoonSceneResetButton',
+        'sunEarthMoonScene',
+        tandem.createTandem( 'sunEarthMoonScene' )
       ) );
 
       // increase moon path length so that it fades away with other bodies
       // in model coordinates (at default orbit)
       const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
       const sunEarthMoonTransformProperty = this.modes[ 1 ].sunEarthMoonTransformProperty;
-      this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun, sunEarthMoonTransformProperty, {
+      const sunEarthMoonSceneTandem = tandem.createTandem( 'sunEarthMoonScene' );
+      this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
         maxPathLength: 345608942000 // in km
       } ) );
-      this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth, sunEarthMoonTransformProperty ) );
+      this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ) );
       this.modes[ 1 ].addBody( new Moon( // no room for the slider
         false, false, // so it doesn't intersect with earth mass readout
         sunEarthMoon.moon,
-        sunEarthMoonTransformProperty, {
+        sunEarthMoonTransformProperty,
+        sunEarthMoonSceneTandem.createTandem( 'moon' ), {
           pathLengthBuffer: pathLengthBuffer
-        } ) );
+        }
+      ) );
 
       const SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
       this.modes.push( new GravityAndOrbitsMode(
@@ -284,21 +304,24 @@ define( require => {
         ( earthMoon.moon.y / 2 ),
         new Vector2( earthMoon.earth.x, 0 ),
         parameterList,
-        'earthMoonSceneButton'
+        'earthMoonSceneButton',
+        'earthMoonSceneResetButton',
+        'earthMoonScene',
+        tandem.createTandem( 'earthMoonScene' )
       ) );
 
       const earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
-      this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, {
+      const earthMoonSceneTandem = tandem.createTandem( 'earthMoonScene' );
+      this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
         orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
       } ) );
 
-      this.modes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, {
+      this.modes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'moon' ), {
         orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
         rotationPeriod: earthMoon.moon.rotationPeriod
       } ) );
 
       const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
-
       this.modes.push( new GravityAndOrbitsMode(
         earthSpaceStation.forceScale,
         false,
@@ -314,14 +337,18 @@ define( require => {
         ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
         new Vector2( earthSpaceStation.earth.x, 0 ),
         parameterList,
-        'earthSpaceStationScreenButton'
+        'earthSpaceStationScreenButton',
+        'earthSpaceStationScreenResetButton',
+        'earthSpaceStationScreen',
+        tandem.createTandem( 'earthSpaceStationScreen' )
       ) );
 
+      const earthSpaceStationTandem = tandem.createTandem( 'earthSpaceStationScene' );
       const earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
-      this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, {
+      this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
         maxPathLength: 35879455 // in km
       } ) );
-      this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, {
+      this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
         rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
       } ) );
     }
@@ -517,17 +544,10 @@ define( require => {
     return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
   };
 
-  const ModeList = {
+  ModeListModel.SunEarthModeConfig = SunEarthModeConfig;
+  ModeListModel.SunEarthMoonModeConfig = SunEarthMoonModeConfig;
+  ModeListModel.EarthMoonModeConfig = EarthMoonModeConfig;
+  ModeListModel.EarthSpaceStationModeConfig = EarthSpaceStationModeConfig;
 
-    // REVIEW: it is too confusing to have ModeList.ModeList.  What is happening here?
-    ModeList: ModeListModule, // the original Java class
-
-    // These were public static inner classes
-    SunEarthModeConfig: SunEarthModeConfig,
-    SunEarthMoonModeConfig: SunEarthMoonModeConfig,
-    EarthMoonModeConfig: EarthMoonModeConfig,
-    EarthSpaceStationModeConfig: EarthSpaceStationModeConfig
-  };
-
-  return gravityAndOrbits.register( 'ModeList', ModeList );
+  return gravityAndOrbits.register( 'ModeListModel', ModeListModel );
 } );

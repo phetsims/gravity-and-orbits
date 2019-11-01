@@ -32,9 +32,10 @@ define( require => {
      * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
      *                              don't overlap too much
      * @param {Property.<boolean>} playButtonPressedProperty is the simulation playing?
-     * @param {GravityAndORbtisMode} mode
+     * @param {GravityAndOrbitsMode} mode
+     * @param {Tandem} tandem
      */
-    constructor( body, labelAngle, playButtonPressedProperty, mode ) {
+    constructor( body, labelAngle, playButtonPressedProperty, mode, tandem ) {
       super( { pickable: true, cursor: 'pointer' } );
 
       const modelBoundsProperty = mode.modelBoundsProperty;
@@ -84,7 +85,8 @@ define( require => {
             // so that rewind will revert to the last placement of bodies
             mode.saveState();
           }
-        }
+        },
+        tandem: tandem.createTandem( 'dragHandler' )
       } );
       this.addInputListener( dragHandler );
 

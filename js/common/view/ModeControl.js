@@ -16,6 +16,7 @@ define( require => {
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   const HStrut = require( 'SCENERY/nodes/HStrut' );
   const Image = require( 'SCENERY/nodes/Image' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
   const RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
@@ -37,9 +38,12 @@ define( require => {
       const content = []; // for radio buttons
       const resetButtons = [];
       for ( let i = 0; i < modes.length; i++ ) {
-        content.push( { value: modes[ i ], node: modes[ i ].iconImage, tandemName: modes[ i ].tandemName } );
+        content.push( { value: modes[ i ], node: modes[ i ].iconImage, tandemName: modes[ i ].radioButtonTandemName } );
 
-        const resetButton = new PlanetModeResetButton( modes[ i ] );
+        // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated
+        const resetButton = new PlanetModeResetButton( modes[ i ], {
+          tandem: options.tandem.createTandem( modes[ i ].resetButtonTandemName )
+        } );
 
         // link reset buttons so that only the reset button next to the selected radio button is visible
         // TODO: use forEach above instead of this IIFE
@@ -79,9 +83,7 @@ define( require => {
      * @param {Object} [options]
      */
     constructor( mode, options ) {
-
-      // create button
-      super( {
+      options = merge( {
         content: new Node( {
           children: [
             new Image( resetArrowImg, { scale: 0.3 } )
@@ -91,9 +93,9 @@ define( require => {
         yMargin: 3,
         baseColor: new Color( 220, 220, 220 ),
         listener: () => mode.resetMode()
-      } );
+      }, options );
 
-      this.mutate( options );
+      super( options );
     }
   }
 

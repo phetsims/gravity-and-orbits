@@ -32,10 +32,11 @@ define( require => {
      * @param {Color} fill
      * @param {Color} outline
      * @param {string} labelText
+     * @param {Tandem} tandem
      * @constructor
      */
     constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill,
-                 outline, labelText ) {
+                 outline, labelText, tandem ) {
 
       super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline );
 
@@ -78,7 +79,8 @@ define( require => {
           const modelDelta = transformProperty.get().viewToModelDelta( event.delta );
           body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
           body.userModifiedVelocityEmitter.emit();
-        }
+        },
+        tandem: tandem.createTandem( 'dragHandler' )
       } ) );
 
       // move behind the geometry created by the superclass

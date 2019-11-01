@@ -56,8 +56,9 @@ define( require => {
      * @param {GravityAndOrbitsModule} module
      * @param {GravityAndOrbitsMode} mode
      * @param {number} forceScale
+     * @param {Tandem} tandem TODO: make sure this is view-ish not model-ish
      */
-    constructor( model, module, mode, forceScale ) {
+    constructor( model, module, mode, forceScale, tandem ) {
 
       // each orbit mode has its own play area with a CanvasNode for rendering paths
       // each canvas should be excluded from the DOM when invisible, with the exception of iOS Safari,
@@ -78,7 +79,8 @@ define( require => {
       // Use canvas coordinates to determine whether something has left the visible area
       const returnable = [];
       for ( let i = 0; i < bodies.length; i++ ) {
-        const bodyNode = new BodyNode( bodies[ i ], bodies[ i ].labelAngle, module.playButtonPressedProperty, mode );
+        const body = bodies[ i ];
+        const bodyNode = new BodyNode( body, body.labelAngle, module.playButtonPressedProperty, mode, tandem.createTandem( 'body' + i ) );// TODO: specific name for things
         const massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
         this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
@@ -107,7 +109,7 @@ define( require => {
         if ( !bodies[ i ].fixed ) {
           this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty,
             bodies[ i ].velocityProperty, mode.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-            vString ) );
+            vString, tandem.createTandem( 'vectorNode' + i ) ) );
         }
       }
 
@@ -121,14 +123,20 @@ define( require => {
       module.showGridProperty.linkAttribute( gridNode, 'visible' );
       this.addChild( gridNode );
 
-      this.addChild( new DayCounter( mode.timeFormatter, model.clock,
-        { bottom: STAGE_SIZE.bottom - 20, right: STAGE_SIZE.right - 50, scale: 1.2 } ) );
+      this.addChild( new DayCounter( mode.timeFormatter, model.clock, tandem.createTandem( 'dayCounter' ), {
+        bottom: STAGE_SIZE.bottom - 20,
+        right: STAGE_SIZE.right - 50,
+        scale: 1.2
+      } ) );
 
       // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
       // Add play/pause, rewind, and step buttons
-      const timeControlPanel = new TimeControlPanel( module.modeProperty, module.playButtonPressedProperty, bodies,
-        { bottom: STAGE_SIZE.bottom - 10, centerX: STAGE_SIZE.centerX, scale: 1.5 } );
+      const timeControlPanel = new TimeControlPanel( module.modeProperty, module.playButtonPressedProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
+        bottom: STAGE_SIZE.bottom - 10,
+        centerX: STAGE_SIZE.centerX,
+        scale: 1.5,
+      } );
       this.addChild( timeControlPanel );
 
       // Add measuring tape
@@ -184,14 +192,17 @@ define( require => {
           // pause the orbital mode
           mode.rewind();
           mode.playButtonPressedProperty.set( false );
-        }
+        },
+        tandem: tandem.createTandem( 'returnButton' )
       } );
       this.addChild( returnButton );
 
       anythingReturnable.linkAttribute( returnButton, 'visible' );
 
       // Zoom controls
-      const scaleSlider = new ScaleSlider( mode.zoomLevelProperty, { top: STAGE_SIZE.top + 10 } );
+      const scaleSlider = new ScaleSlider( mode.zoomLevelProperty, tandem.createTandem( 'scaleSlider' ), {
+        top: STAGE_SIZE.top + 10
+      } );
       scaleSlider.left = scaleSlider.width / 2;
       this.addChild( scaleSlider );
     }

@@ -31,7 +31,7 @@ define( require => {
     },
 
     // Creates content for the Options dialog
-    createOptionsDialogContent: () => new GlobalOptionsNode()
+    createOptionsDialogContent: () => new GlobalOptionsNode( Tandem.rootTandem.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) )
   };
 
   SimLauncher.launch( () => {

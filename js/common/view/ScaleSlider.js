@@ -32,38 +32,44 @@ define( require => {
 
     /**
      * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
+     * @param {Tandem} tandem
      * @param {Object} [options]
      */
-    constructor( scaleProperty, options ) {
+    constructor( scaleProperty, tandem, options ) {
 
       options = merge( { scale: 0.8 }, options );
 
       super();
 
-      const verticalSlider = new VSlider( scaleProperty, RANGE, {
+      const slider = new VSlider( scaleProperty, RANGE, {
         trackSize: TRACK_SIZE,
         thumbSize: THUMB_SIZE,
 
         // custom thumb colors
         thumbFill: '#98BECF',
-        thumbFillHighlighted: '#B3D3E2'
+        thumbFillHighlighted: '#B3D3E2',
+        tandem: tandem.createTandem( 'slider' )
       } );
 
-      verticalSlider.translate( -TRACK_SIZE.width - THUMB_SIZE.width - 17, -TRACK_SIZE.height / 2 );
+      slider.translate( -TRACK_SIZE.width - THUMB_SIZE.width - 17, -TRACK_SIZE.height / 2 );
 
       // add slide line
-      this.addChild( verticalSlider );
+      this.addChild( slider );
 
       // Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
 
       // add plus button
-      const plusButton = new SliderButton( scaleProperty, RANGE, STEP, true );
-      plusButton.centerBottom = verticalSlider.centerTop;
+      const plusButton = new SliderButton( scaleProperty, RANGE, STEP, true, {
+        tandem: tandem.createTandem( 'plusButton' )
+      } );
+      plusButton.centerBottom = slider.centerTop;
       this.addChild( plusButton );
 
       // add minus button
-      const minusButton = new SliderButton( scaleProperty, RANGE, STEP, false );
-      minusButton.centerTop = verticalSlider.centerBottom;
+      const minusButton = new SliderButton( scaleProperty, RANGE, STEP, false, {
+        tandem: tandem.createTandem( 'minusButton' )
+      } );
+      minusButton.centerTop = slider.centerBottom;
       this.addChild( minusButton );
 
       this.mutate( options );
@@ -78,8 +84,9 @@ define( require => {
      * @param {Range} range - Working range of slider.
      * @param {number} step step of scale changes
      * @param {boolean} isIncrease flag for defining type of button
+     * @param {Object} [options]
      */
-    constructor( scaleProperty, range, step, isIncrease ) {
+    constructor( scaleProperty, range, step, isIncrease, options ) {
 
       // create default view
       const sample = new Node( {
@@ -94,7 +101,7 @@ define( require => {
         sample.addChild( new Rectangle( BUTTON_SIZE / 2 - 1, 4, 2, BUTTON_SIZE - 8, { fill: 'black' } ) );
       }
 
-      super( {
+      super( merge( {
         content: sample,
         xMargin: 0,
         yMargin: 0,
@@ -103,7 +110,7 @@ define( require => {
             Math.min( scaleProperty.value + ( isIncrease ? step : -step ), range.max ),
             range.min );
         }
-      } );
+      }, options ) );
 
       // add disabling effect for buttons
       if ( isIncrease ) {

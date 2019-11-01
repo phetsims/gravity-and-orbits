@@ -47,11 +47,10 @@ define( require => {
       this.showGridProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGridProperty' ) } );
       this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showMeasuringTapeProperty' ) } );
 
-
-      this.playButtonPressedProperty = new BooleanProperty( false );
+      this.playButtonPressedProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'isPlayingProperty' ) } ); // TODO: Rename isPlayingProperty
       this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL );
 
-      this.gravityEnabledProperty = new BooleanProperty( true );
+      this.gravityEnabledProperty = new BooleanProperty( true, { tandem: tandem.createTandem( 'gravityEnabledProperty' ) } );
       this.steppingProperty = new BooleanProperty( false );
       this.rewindingProperty = new BooleanProperty( false );
 
@@ -60,7 +59,7 @@ define( require => {
       this.showMassCheckbox = showMassCheckbox; // @public
       this.showMeasuringTape = showMeasuringTape; // @public
 
-      // @private {ModeList}
+      // @private {ModeListModel}
       this.modeList = createModes( new ModeListParameterList(
         this.playButtonPressedProperty,
         this.gravityEnabledProperty,
@@ -70,7 +69,7 @@ define( require => {
 
       this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
       for ( let i = 0; i < this.modeList.modes.length; i++ ) {
-        this.modeList.modes[ i ].init( this );
+        this.modeList.modes[ i ].init( this, tandem.createTandem( this.modeList.modes[ i ].tandemName ) );
       }
 
       this.reset(); // TODO: is this necessary?  If so, why?

@@ -18,7 +18,9 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   const merge = require( 'PHET_CORE/merge' );
+  const NumberIO = require( 'TANDEM/types/NumberIO' );
   const Property = require( 'AXON/Property' );
+  const PropertyIO = require( 'AXON/PropertyIO' );
   const RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   const Vector2 = require( 'DOT/Vector2' );
   const Vector2Property = require( 'DOT/Vector2Property' );
@@ -45,7 +47,7 @@ define( require => {
   class Body {
     /**
      * Constructor for Body
-     * @param {string} name - unqique name for the body, one of GravityAndOrbitsBodies, used for object identification
+     * @param {string} name - unique name for the body, one of GravityAndOrbitsBodies, used for object identification
      * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
      * @param {Color} color
      * @param {Color} highlight
@@ -56,9 +58,12 @@ define( require => {
      * @param {string} tickLabel - translatable label for the mass slider labeling the default value
      * @param {ModeListParameterList} parameterList - composition of Properties that determine body state
      * @param {Property.<ModelViewTransform2>} transformProperty
+     * @param {string} bodyMassControlTandemName
+     * @param {Tandem} tandem
      * @param {Object} [options]
      */
-    constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, transformProperty, options ) {
+    constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, transformProperty,
+                 bodyMassControlTandemName, tandem, options ) {
 
       options = merge( {
         pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -77,6 +82,7 @@ define( require => {
       this.diameterProperty = new Property( diameter );
       this.clockTicksSinceExplosionProperty = new Property( 0 );
       this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
+      this.bodyMassControlTandemName = bodyMassControlTandemName; // @public (read-only)
 
       options = merge( {
         pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
@@ -148,7 +154,12 @@ define( require => {
       this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public
       this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
       this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ) ); // @public
-      this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass ); // @public
+
+      // @public
+      this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, {
+        tandem: tandem.createTandem( 'massProperty' ),
+        phetioType: PropertyIO( NumberIO )
+      } );
       this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
       this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0 ); // @public
 

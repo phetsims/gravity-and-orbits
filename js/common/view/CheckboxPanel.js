@@ -25,6 +25,7 @@ define( require => {
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Property = require( 'AXON/Property' );
   const Shape = require( 'KITE/Shape' );
+  const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
   const VBox = require( 'SCENERY/nodes/VBox' );
   const Vector2 = require( 'DOT/Vector2' );
@@ -71,6 +72,8 @@ define( require => {
       const gridTextNode = new Text( gridString, TEXT_OPTIONS );
       const measuringTapeTextNode = new Text( measuringTapeString, TEXT_OPTIONS );
 
+      const optionsWithTandem = tandemName => merge( { tandem: options.tandem.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
+
       // gravity force checkbox
       children.push( new Checkbox( new HBox( {
           spacing: SPACING,
@@ -79,7 +82,7 @@ define( require => {
             new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
           ]
         } ),
-        module.showGravityForceProperty, CHECKBOX_OPTIONS ) );
+        module.showGravityForceProperty, optionsWithTandem( 'gravityForceCheckbox' ) ) );
 
       // velocity checkbox
       children.push( new Checkbox( new HBox( {
@@ -89,7 +92,7 @@ define( require => {
             new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.RED_COLORBLIND } )
           ]
         } ),
-        module.showVelocityProperty, CHECKBOX_OPTIONS ) );
+        module.showVelocityProperty, optionsWithTandem( 'velocityCheckbox' ) ) );
 
       // mass checkbox
       if ( module.showMassCheckbox ) {
@@ -100,7 +103,7 @@ define( require => {
               new Image( iconMassImg, { scale: 0.8 } )
             ]
           } ),
-          module.showMassProperty, CHECKBOX_OPTIONS ) );
+          module.showMassProperty, optionsWithTandem( 'massCheckbox' ) ) );
       }
 
       const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
@@ -117,7 +120,7 @@ define( require => {
             pathIconImageNode
           ]
         } ),
-        module.showPathProperty, CHECKBOX_OPTIONS ) );
+        module.showPathProperty, optionsWithTandem( 'pathCheckbox' ) ) );
 
       // grid checkbox
       children.push( new Checkbox( new HBox( {
@@ -130,7 +133,7 @@ define( require => {
             } )
           ]
         } ),
-        module.showGridProperty, CHECKBOX_OPTIONS ) );
+        module.showGridProperty, optionsWithTandem( 'gridCheckbox' ) ) );
 
       // measuring tape checkbox
       if ( module.showMeasuringTape ) {
@@ -142,7 +145,7 @@ define( require => {
             measuringTapeTextNode,
             measuringTapeIcon
           ]
-        } ), module.showMeasuringTapeProperty, CHECKBOX_OPTIONS ) );
+        } ), module.showMeasuringTapeProperty, optionsWithTandem( 'measuringTapeCheckbox' ) ) );
       }
 
       // increase the touch area of the checkboxes
@@ -158,7 +161,8 @@ define( require => {
         resize: false,
         spacing: SPACING,
         align: 'left',
-        bottom: -12
+        bottom: -12,
+        tandem: Tandem.required
       }, options ) );
     }
   }

@@ -1,7 +1,8 @@
 // Copyright 2015-2019, University of Colorado Boulder
 
 /**
- * Control panel used to change the mass of the various bodies.
+ * Control panel used to change the mass of the various bodies. This is the panel in the lower right section of the screen that holds sliders
+ * for adjusting the mass of bodies.
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
@@ -24,6 +25,7 @@ define( require => {
   const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
+  // TODO: why is this line unused?
   // const spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
   const moonMassString = require( 'string!GRAVITY_AND_ORBITS/moonMass' );
   const planetMassString = require( 'string!GRAVITY_AND_ORBITS/planetMass' );
@@ -42,8 +44,6 @@ define( require => {
   class MassControlPanel extends Panel {
 
     /**
-     * Constructor for MassControlPanel. This is the panel in the lower right section of the screen that holds sliders
-     * for adjusting the mass of bodies.
      * @param massSettableBodies
      * @param options
      */
@@ -83,7 +83,9 @@ define( require => {
               massSettableBody.massProperty.value / 2,
               massSettableBody.massProperty.value * 2,
               massSettableBody.tickValue,
-              massSettableBody.tickLabel )
+              massSettableBody.tickLabel,
+              options.tandem.createTandem( massSettableBody.bodyMassControlTandemName )
+            )
           ]
         } );
 
