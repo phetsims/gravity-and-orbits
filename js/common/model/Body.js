@@ -12,6 +12,7 @@ define( require => {
 
   // modules
   const BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
+  const BooleanIO = require( 'TANDEM/types/BooleanIO' );
   const BooleanProperty = require( 'AXON/BooleanProperty' );
   const Bounds2 = require( 'DOT/Bounds2' );
   const DerivedProperty = require( 'AXON/DerivedProperty' );
@@ -20,6 +21,7 @@ define( require => {
   const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   const merge = require( 'PHET_CORE/merge' );
   const NumberIO = require( 'TANDEM/types/NumberIO' );
+  const NumberProperty = require( 'AXON/NumberProperty' );
   const Property = require( 'AXON/Property' );
   const PropertyIO = require( 'AXON/PropertyIO' );
   const RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
@@ -89,10 +91,14 @@ define( require => {
       this.bodyNodeTandemName = bodyNodeTandemName;
 
       this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
-      this.diameterProperty = new Property( diameter );
+      this.diameterProperty = new NumberProperty( diameter, {
+        tandem: tandem.createTandem( 'diameterProperty' )
+      } );
       this.clockTicksSinceExplosionProperty = new Property( 0 );
       this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
-      this.bodyMassControlTandemName = bodyMassControlTandemName; // @public (read-only)
+
+      // @public (read-only)
+      this.bodyMassControlTandemName = bodyMassControlTandemName;
 
       options = merge( {
         pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
@@ -167,16 +173,36 @@ define( require => {
         phetioType: PropertyIO( Vector2IO ),
         tandem: tandem.createTandem( 'positionProperty' )
       } );
-      this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
-      this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ) ); // @public
+
+      // @public
+      this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ), {
+        phetioType: PropertyIO( Vector2IO ),
+        tandem: tandem.createTandem( 'velocityProperty' )
+      } );
+
+      // @public
+      this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
+        phetioType: PropertyIO( Vector2IO ),
+        tandem: tandem.createTandem( 'forceProperty' )
+      } );
 
       // @public
       this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, {
         tandem: tandem.createTandem( 'massProperty' ),
         phetioType: PropertyIO( NumberIO )
       } );
-      this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
-      this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0 ); // @public
+
+      // @public
+      this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false, { // TODO: rename isCollidedProperty
+        tandem: tandem.createTandem( 'isCollidedProperty' ),
+        phetioType: PropertyIO( BooleanIO )
+      } );
+
+      // @public
+      this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0, {
+        tandem: tandem.createTandem( 'rotationProperty' ),
+        phetioType: PropertyIO( NumberIO )
+      } );
 
       // @public (read-only)
       this.isMovableProperty = new BooleanProperty( true, {
@@ -212,10 +238,12 @@ define( require => {
 
       // determine the max path length for the body in model coordinates
       if ( distToCenter < 1000 ) {
+
         // if too close to the center, use this optional length
         this.maxPathLength = options.maxPathLength;
       }
       else {
+
         // max path length is ~0.85 of a full orbit
         this.maxPathLength = 0.85 * 2 * Math.PI * distToCenter + this.pathLengthBuffer;
       }
