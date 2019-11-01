@@ -134,7 +134,7 @@ define( require => {
       modelBoundsProperty.link( this.modelBoundsListener );
 
       // Points to the sphere with a text indicator and line when it is too small to see (in modes with realistic units)
-      this.addChild( this.createArrowIndicator( this.body, labelAngle ) );
+      this.addChild( this.createArrowIndicator( this.body, labelAngle, tandem.createTandem( 'indicatorNode' ) ) );
     }
 
     /**
@@ -144,7 +144,7 @@ define( require => {
      * @param labelAngle
      * @private
      */
-    createArrowIndicator( body, labelAngle ) {
+    createArrowIndicator( body, labelAngle, tandem ) {
       const node = new Node();
       const viewCenter = new Vector2( 0, 0 );
       const northEastVector = Vector2.createPolar( 1, labelAngle );
@@ -152,14 +152,20 @@ define( require => {
       const tail = northEastVector.times( 50 ).plus( viewCenter );
 
       node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: GravityAndOrbitsColorProfile.arrowIndicatorProperty } ) );
-      const text = new Text( body.labelString, {
+      const labelNode = new Text( body.labelString, {
         font: new PhetFont( 18 ),
-        x: tail.x - this.width / 2 - 5,
+        centerX: tail.x,
         y: tail.y - this.height - 10,
         fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty,
-        maxWidth: 75
+        maxWidth: 75,
+        tandem: tandem.createTandem( 'labelNode' )
       } );
-      node.addChild( text );
+
+      // For PhET-iO, re-center the node after the text changes size
+      labelNode.on( 'bounds', () => {
+        labelNode.centerX = tail.x;
+      } );
+      node.addChild( labelNode );
 
       // when transform or mass changes diameter, check for visibility change of label
       const labelVisibilityListener = () => node.setVisible( this.getViewDiameter() <= 10 );

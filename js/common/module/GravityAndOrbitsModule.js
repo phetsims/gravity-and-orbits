@@ -28,6 +28,7 @@ define( require => {
   // constants
   const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
+  // TODO: Rename to "Model"
   class GravityAndOrbitsModule {
 
     /**
