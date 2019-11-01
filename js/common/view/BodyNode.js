@@ -140,8 +140,9 @@ define( require => {
     /**
      * Return a Node that points to the sphere with a text indicator and line when it is too small to see (in modes
      * with realistic units)
-     * @param body
-     * @param labelAngle
+     * @param {Body} body
+     * @param {number} labelAngle
+     * @param {Tandem} tandem
      * @private
      */
     createArrowIndicator( body, labelAngle, tandem ) {
