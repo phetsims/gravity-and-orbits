@@ -48,7 +48,7 @@ define( require => {
         // link reset buttons so that only the reset button next to the selected radio button is visible
         // TODO: use forEach above instead of this IIFE
         ( ( currentMode, resetButton ) => {
-          modeIndexProperty.link( mode => resetButton.setVisible( mode === currentMode ) );
+          modeIndexProperty.link( modeIndex => resetButton.setVisible( modes[ modeIndex ] === currentMode ) );
         } )( modes[ i ], resetButton );
 
         resetButtons.push( resetButton );
@@ -78,6 +78,7 @@ define( require => {
   gravityAndOrbits.register( 'ModeControl', ModeControl );
 
   class PlanetModeResetButton extends RectangularPushButton {
+
     /**
      * @param {GravityAndOrbitsMode} mode
      * @param {Object} [options]
