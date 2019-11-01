@@ -5,15 +5,18 @@
  * The simulation time change (dt) on each clock tick is constant,
  * regardless of when (in wall time) the ticks actually happen. This class works together with RewindableProperty,
  * which has to know whether the simulation is stepping to know whether to store a "save point" which can be restored.
+ *
+ * @author Aaron Davis (PhET Interactive Simulations)
  */
 define( require => {
   'use strict';
 
   // modules
+  const BooleanProperty = require( 'AXON/BooleanProperty' );
   const EventTimer = require( 'PHET_CORE/EventTimer' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  const Property = require( 'AXON/Property' );
+  const NumberProperty = require( 'AXON/NumberProperty' );
 
   // constants
   // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
@@ -25,13 +28,14 @@ define( require => {
   const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
   class GravityAndOrbitsClock {
+
     /**
-     *
      * @param {number} baseDTValue (multiplied by scale to obtain true dt)
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<number>} speedTypeProperty
+     * @param {Tandem} tandem
      */
-    constructor( baseDTValue, steppingProperty, speedTypeProperty ) {
+    constructor( baseDTValue, steppingProperty, speedTypeProperty, tandem ) {
 
       // @public (read-only)
       this.baseDTValue = baseDTValue;
@@ -39,8 +43,12 @@ define( require => {
       this.steppingWhilePausedDT = baseDTValue * GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
 
       // @public
-      this.runningProperty = new Property( false );
-      this.simulationTimeProperty = new Property( 0 );
+      this.runningProperty = new BooleanProperty( false, { // TODO: rename to isRunningProperty
+        tandem: tandem.createTandem( 'isRunningProperty' )
+      } );
+      this.simulationTimeProperty = new NumberProperty( 0, { // TODO: rename to timeProperty
+        tandem: tandem.createTandem( 'timeProperty' )
+      } );
       this.dt = baseDTValue;
       this.steppingProperty = steppingProperty;
 

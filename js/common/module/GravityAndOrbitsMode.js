@@ -101,12 +101,12 @@ define( require => {
       this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, zoomOffset ) ) );
 
       // @private
-      const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.speedTypeProperty );
+      const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.speedTypeProperty, tandem.createTandem( 'clock' ) ); // TODO: do we need the 'clock' level here?
       this.model = new GravityAndOrbitsModel( clock, parameterList.gravityEnabledProperty );
 
-      Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ],
-        ( playButtonPressed, active ) =>
-          this.model.clock.setRunning( playButtonPressed && active ) );
+      Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ], ( playButtonPressed, active ) =>
+        this.model.clock.setRunning( playButtonPressed && active )
+      );
     }
 
     /**

@@ -24,6 +24,7 @@ define( require => {
   const PropertyIO = require( 'AXON/PropertyIO' );
   const RewindableProperty = require( 'GRAVITY_AND_ORBITS/common/model/RewindableProperty' );
   const Vector2 = require( 'DOT/Vector2' );
+  const Vector2IO = require( 'DOT/Vector2IO' );
   const Vector2Property = require( 'DOT/Vector2Property' );
 
   // strings
@@ -162,7 +163,10 @@ define( require => {
       // rewindable properties - body states can be rewound, and these properties can have saved states to support this
 
       // @public
-      this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) );
+      this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
+        phetioType: PropertyIO( Vector2IO ),
+        tandem: tandem.createTandem( 'positionProperty' )
+      } );
       this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
       this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ) ); // @public
 

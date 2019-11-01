@@ -18,11 +18,12 @@ define( require => {
 
   // modules
   const BooleanProperty = require( 'AXON/BooleanProperty' );
+  const DerivedProperty = require( 'AXON/DerivedProperty' );
   const EnumerationProperty = require( 'AXON/EnumerationProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
+  const NumberProperty = require( 'AXON/NumberProperty' );
   const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
-  const Property = require( 'AXON/Property' );
   const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
 
   // constants
@@ -67,9 +68,13 @@ define( require => {
         this.gravityEnabledProperty,
         this.steppingProperty,
         this.rewindingProperty,
-        this.speedTypeProperty ) );
+        this.speedTypeProperty
+      ) );
 
-      this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
+      this.modeIndexProperty = new NumberProperty( initialModeIndex, {
+        tandem: tandem.createTandem( 'modeIndexProperty' )
+      } );
+      this.modeProperty = new DerivedProperty( [ this.modeIndexProperty ], modeIndex => this.modeList.modes[ modeIndex ] );
       for ( let i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].init( this, viewTandem.createTandem( this.modeList.modes[ i ].tandemName ) );
       }
@@ -93,7 +98,7 @@ define( require => {
       }
 
       if ( this.playButtonPressedProperty.value ) {
-        this.modeProperty.get().getClock().step( dt );
+        this.modeProperty.value.getClock().step( dt );
       }
     }
 
@@ -105,7 +110,7 @@ define( require => {
     // @private
     updateActiveModule() {
       for ( let i = 0; i < this.modeList.modes.length; i++ ) {
-        this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.get() );
+        this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.value );
       }
     }
 
@@ -125,7 +130,7 @@ define( require => {
       this.gravityEnabledProperty.reset();
       this.steppingProperty.reset();
       this.rewindingProperty.reset();
-      this.modeProperty.reset();
+      this.modeIndexProperty.reset();
       for ( let i = 0; i < this.modeList.modes.length; i++ ) {
         this.modeList.modes[ i ].reset();
       }

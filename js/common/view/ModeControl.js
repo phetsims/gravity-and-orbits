@@ -28,17 +28,17 @@ define( require => {
   class ModeControl extends Node {
 
     /**
-     * @param {Property.<GravityAndOrbitsMode>} modeProperty
+     * @param {Property.<GravityAndOrbitsMode>} modeIndexProperty
      * @param {Array.<GravityAndOrbitsMode>} modes
      * @param {Object} [options] - This object contains options for main node of planet mode menu.
      */
-    constructor( modeProperty, modes, options ) {
+    constructor( modeIndexProperty, modes, options ) {
       super( options );
 
       const content = []; // for radio buttons
       const resetButtons = [];
       for ( let i = 0; i < modes.length; i++ ) {
-        content.push( { value: modes[ i ], node: modes[ i ].iconImage, tandemName: modes[ i ].radioButtonTandemName } );
+        content.push( { value: i, node: modes[ i ].iconImage, tandemName: modes[ i ].radioButtonTandemName } );
 
         // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated
         const resetButton = new PlanetModeResetButton( modes[ i ], {
@@ -48,12 +48,12 @@ define( require => {
         // link reset buttons so that only the reset button next to the selected radio button is visible
         // TODO: use forEach above instead of this IIFE
         ( ( currentMode, resetButton ) => {
-          modeProperty.link( mode => resetButton.setVisible( mode === currentMode ) );
+          modeIndexProperty.link( mode => resetButton.setVisible( mode === currentMode ) );
         } )( modes[ i ], resetButton );
 
         resetButtons.push( resetButton );
       }
-      const radioButtonGroup = new RadioButtonGroup( modeProperty, content, {
+      const radioButtonGroup = new RadioButtonGroup( modeIndexProperty, content, {
         alignVertically: true,
         selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
         selectedLineWidth: 2,
