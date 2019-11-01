@@ -12,6 +12,7 @@ define( require => {
 
   // modules
   const BodyState = require( 'GRAVITY_AND_ORBITS/common/model/BodyState' );
+  const BooleanProperty = require( 'AXON/BooleanProperty' );
   const Bounds2 = require( 'DOT/Bounds2' );
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const Emitter = require( 'AXON/Emitter' );
@@ -61,10 +62,11 @@ define( require => {
      * @param {string} bodyMassControlTandemName
      * @param {Tandem} tandem
      * @param {string} labelTandemName
+     * @param {string} bodyNodeTandemName
      * @param {Object} [options]
      */
     constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, transformProperty,
-                 bodyMassControlTandemName, tandem, labelTandemName, options ) {
+                 bodyMassControlTandemName, tandem, labelTandemName, bodyNodeTandemName, options ) {
 
       options = merge( {
         pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -81,6 +83,9 @@ define( require => {
 
       // @public (read-only) {string}
       this.labelTandemName = labelTandemName;
+
+      // @public (read-only) {string}
+      this.bodyNodeTandemName = bodyNodeTandemName;
 
       this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
       this.diameterProperty = new Property( diameter );
@@ -155,7 +160,9 @@ define( require => {
       );
 
       // rewindable properties - body states can be rewound, and these properties can have saved states to support this
-      this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) ); // @public
+
+      // @public
+      this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ) );
       this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ) ); // @public
       this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ) ); // @public
 
@@ -166,6 +173,11 @@ define( require => {
       } );
       this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false ); // @public
       this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0 ); // @public
+
+      // @public (read-only)
+      this.isMovableProperty = new BooleanProperty( true, {
+        tandem: tandem.createTandem( 'isMovableProperty' )
+      } );
 
       this.density = bodyConfiguration.mass / this.getVolume(); // @public
 
@@ -262,7 +274,7 @@ define( require => {
      * @param {BodyState} bodyState
      */
     updateBodyStateFromModel( bodyState ) {
-      if ( !this.collidedProperty.get() ) {
+      if ( !this.collidedProperty.value && this.isMovableProperty.value ) {
         if ( !this.fixed && !this.userControlled ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );

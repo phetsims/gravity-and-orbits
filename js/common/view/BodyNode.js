@@ -36,7 +36,7 @@ define( require => {
      * @param {Tandem} tandem
      */
     constructor( body, labelAngle, playButtonPressedProperty, mode, tandem ) {
-      super( { pickable: true, cursor: 'pointer' } );
+      super( { pickable: true, cursor: 'pointer', tandem: tandem } );
 
       const modelBoundsProperty = mode.modelBoundsProperty;
       const clock = mode.getClock();

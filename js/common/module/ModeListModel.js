@@ -132,6 +132,7 @@ define( require => {
             'spaceStationMassControl',
             tandem,
             'spaceStationMassLabel',
+            'spaceStationNode',
             options
           );
         }
@@ -162,6 +163,7 @@ define( require => {
             'moonMassControl',
             tandem,
             'moonMassLabel',
+            'moonNode',
             options
           );
         }
@@ -184,6 +186,7 @@ define( require => {
             'planetMassControl',
             tandem,
             'planetMassLabel',
+            'planetNode',
             options
           );
         }
@@ -206,6 +209,7 @@ define( require => {
             'starMassControl',
             tandem,
             'starMassLabel',
+            'starNode',
             options
           );
           this.body = body;

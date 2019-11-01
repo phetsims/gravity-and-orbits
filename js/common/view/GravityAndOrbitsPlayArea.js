@@ -80,7 +80,7 @@ define( require => {
       const returnable = [];
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
-        const bodyNode = new BodyNode( body, body.labelAngle, module.playButtonPressedProperty, mode, tandem.createTandem( 'body' + i ) );// TODO: specific name for things
+        const bodyNode = new BodyNode( body, body.labelAngle, module.playButtonPressedProperty, mode, tandem.createTandem( body.bodyNodeTandemName ) );
         const massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
         this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
@@ -135,7 +135,7 @@ define( require => {
       const timeControlPanel = new TimeControlPanel( module.modeProperty, module.playButtonPressedProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
         bottom: STAGE_SIZE.bottom - 10,
         centerX: STAGE_SIZE.centerX,
-        scale: 1.5,
+        scale: 1.5
       } );
       this.addChild( timeControlPanel );
 
