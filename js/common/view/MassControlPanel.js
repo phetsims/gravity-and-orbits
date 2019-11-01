@@ -58,12 +58,14 @@ define( require => {
 
         const massSettableBody = massSettableBodies[ i ];
 
+        // TODO: embed label as child of control
         const label = new Text( LABEL_MAP[ massSettableBody.name ], {
           font: CONTROL_FONT,
           fontWeight: 'bold',
           fill: GravityAndOrbitsColorProfile.panelTextProperty,
           maxWidth: 175,
-          resize: false
+          resize: false,
+          tandem: options.tandem.createTandem( massSettableBody.labelTandemName )
         } );
 
         const icon = massSettableBody.createRenderer( 14 );

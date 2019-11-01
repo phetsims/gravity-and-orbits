@@ -13,7 +13,7 @@ define( require => {
   const GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
 
   class CartoonModule extends GravityAndOrbitsModule {
-    constructor( tandem ) {
+    constructor( tandem, viewTandem ) {
       super( false, p => new CartoonModeList(
         p.playButtonPressedProperty,
         p.gravityEnabledProperty,
@@ -21,7 +21,7 @@ define( require => {
         p.rewindingProperty,
         p.speedTypeProperty,
         tandem.createTandem( 'modeList' ) // TODO(phet-io design): tandem sharing is risky, is it warranted here to avoid extra nodes?
-      ), 0, false, tandem );
+      ), 0, false, tandem, viewTandem );// TODO: how to deal with viewTandem
     }
   }
 

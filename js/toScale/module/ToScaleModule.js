@@ -16,8 +16,9 @@ define( require => {
 
     /**
      * @param {Tandem} tandem
+     * @param {Tandem} viewTandem
      */
-    constructor( tandem ) {
+    constructor( tandem, viewTandem ) {
       super( true, p => new RealModeList(
         p.playButtonPressedProperty,
         p.gravityEnabledProperty,
@@ -25,7 +26,7 @@ define( require => {
         p.rewindingProperty,
         p.speedTypeProperty,
         tandem.createTandem( 'modeList' ) // TODO: Like in CartoonModule, it is risky to share tandem
-      ), 0, true, tandem );
+      ), 0, true, tandem, viewTandem );
     }
   }
 

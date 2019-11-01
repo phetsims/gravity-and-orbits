@@ -131,6 +131,7 @@ define( require => {
             transformProperty,
             'spaceStationMassControl',
             tandem,
+            'spaceStationMassLabel',
             options
           );
         }
@@ -160,6 +161,7 @@ define( require => {
             transformProperty,
             'moonMassControl',
             tandem,
+            'moonMassLabel',
             options
           );
         }
@@ -181,6 +183,7 @@ define( require => {
             transformProperty,
             'planetMassControl',
             tandem,
+            'planetMassLabel',
             options
           );
         }
@@ -202,6 +205,7 @@ define( require => {
             transformProperty,
             'starMassControl',
             tandem,
+            'starMassLabel',
             options
           );
           this.body = body;
@@ -221,7 +225,7 @@ define( require => {
       // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
       const SEC_PER_YEAR = 365 * 24 * 60 * 60;
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
-      this.modes.push( new GravityAndOrbitsMode(
+      this.modes.push( new GravityAndOrbitsMode( // TODO: Rename mode => scene
         sunEarth.forceScale,
         false,
         sunEarth.dt,

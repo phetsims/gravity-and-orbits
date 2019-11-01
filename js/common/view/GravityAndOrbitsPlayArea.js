@@ -200,11 +200,11 @@ define( require => {
       anythingReturnable.linkAttribute( returnButton, 'visible' );
 
       // Zoom controls
-      const scaleSlider = new ScaleSlider( mode.zoomLevelProperty, tandem.createTandem( 'scaleSlider' ), {
+      const scaleControl = new ScaleSlider( mode.zoomLevelProperty, tandem.createTandem( 'scaleControl' ), { // TODO: Rename class to ScaleControl
         top: STAGE_SIZE.top + 10
       } );
-      scaleSlider.left = scaleSlider.width / 2;
-      this.addChild( scaleSlider );
+      scaleControl.left = scaleControl.width / 2;
+      this.addChild( scaleControl );
     }
   }
 

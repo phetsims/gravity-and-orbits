@@ -36,8 +36,9 @@ define( require => {
      * @param {number} initialModeIndex
      * @param {boolean} showMassCheckbox
      * @param {Tandem} tandem
+     * @param {Tandem} viewTandem
      */
-    constructor( showMeasuringTape, createModes, initialModeIndex, showMassCheckbox, tandem ) {
+    constructor( showMeasuringTape, createModes, initialModeIndex, showMassCheckbox, tandem, viewTandem ) {
 
       // Properties that are common to all "modes" should live here.
       this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );
@@ -48,7 +49,7 @@ define( require => {
       this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showMeasuringTapeProperty' ) } );
 
       this.playButtonPressedProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'isPlayingProperty' ) } ); // TODO: Rename isPlayingProperty
-      this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL );
+      this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL, { tandem: tandem.createTandem( 'speedTypeProperty' ) } );
 
       this.gravityEnabledProperty = new BooleanProperty( true, { tandem: tandem.createTandem( 'gravityEnabledProperty' ) } );
       this.steppingProperty = new BooleanProperty( false );
@@ -69,7 +70,7 @@ define( require => {
 
       this.modeProperty = new Property( this.modeList.modes[ initialModeIndex ] );
       for ( let i = 0; i < this.modeList.modes.length; i++ ) {
-        this.modeList.modes[ i ].init( this, tandem.createTandem( this.modeList.modes[ i ].tandemName ) );
+        this.modeList.modes[ i ].init( this, viewTandem.createTandem( this.modeList.modes[ i ].tandemName ) );
       }
 
       this.reset(); // TODO: is this necessary?  If so, why?

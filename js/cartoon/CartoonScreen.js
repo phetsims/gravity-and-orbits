@@ -30,9 +30,10 @@ define( require => {
         homeScreenIcon: new Image( cartoonMipmap )
       }, options );
 
+      const viewTandem = options.tandem.createTandem( 'view' );
       super(
-        () => new CartoonModule( options.tandem.createTandem( 'model' ) ),
-        model => new GravityAndOrbitsScreenView( model, options.tandem.createTandem( 'view' ) ),
+        () => new CartoonModule( options.tandem.createTandem( 'model' ), viewTandem ),
+        model => new GravityAndOrbitsScreenView( model, viewTandem ),
         options
       );
     }

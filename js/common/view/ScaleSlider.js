@@ -37,7 +37,10 @@ define( require => {
      */
     constructor( scaleProperty, tandem, options ) {
 
-      options = merge( { scale: 0.8 }, options );
+      options = merge( {
+        scale: 0.8,
+        tandem: tandem
+      }, options );
 
       super();
 

@@ -60,10 +60,11 @@ define( require => {
      * @param {Property.<ModelViewTransform2>} transformProperty
      * @param {string} bodyMassControlTandemName
      * @param {Tandem} tandem
+     * @param {string} labelTandemName
      * @param {Object} [options]
      */
     constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, transformProperty,
-                 bodyMassControlTandemName, tandem, options ) {
+                 bodyMassControlTandemName, tandem, labelTandemName, options ) {
 
       options = merge( {
         pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -77,6 +78,9 @@ define( require => {
       }, options );
 
       const diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
+
+      // @public (read-only) {string}
+      this.labelTandemName = labelTandemName;
 
       this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
       this.diameterProperty = new Property( diameter );

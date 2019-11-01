@@ -13,6 +13,7 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Text = require( 'SCENERY/nodes/Text' );
@@ -30,6 +31,7 @@ define( require => {
     /**
      * @param {function} timeFormatter
      * @param {GravityAndOrbitsClock} clock
+     * @param {Tandem} tandem
      * @param [options]
      */
     constructor( timeFormatter, clock, tandem, options ) {
@@ -66,7 +68,7 @@ define( require => {
         ]
       } ) );
 
-      this.mutate( options );
+      this.mutate( merge( { tandem: tandem }, options ) );
     }
   }
 

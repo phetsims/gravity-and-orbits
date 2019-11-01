@@ -203,14 +203,15 @@ define( require => {
     }
 
     /**
+     * TODO: playAreaNode should not be created here in the model.
      * Initialize the view component for this mode.
      *
      * @param {GravityAndOrbitsModule} module
-     * @public {Tandem} tandem
+     * @param {Tandem} viewTandem
      * @public
      */
-    init( module, tandem ) {
-      this.playAreaNode = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale, tandem.createTandem( 'playArea' ) );
+    init( module, viewTandem ) {
+      this.playAreaNode = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale, viewTandem.createTandem( 'playArea' ) );
     }
 
     /**

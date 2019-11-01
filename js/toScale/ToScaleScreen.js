@@ -29,9 +29,10 @@ define( require => {
         homeScreenIcon: new Image( toScaleMipmap )
       }, options );
 
+      const viewTandem = options.tandem.createTandem( 'view' );
       super(
-        () => new ToScaleModule( options.tandem.createTandem( 'model' ) ),
-        model => new GravityAndOrbitsScreenView( model, options.tandem.createTandem( 'view' ) ),
+        () => new ToScaleModule( options.tandem.createTandem( 'model' ), viewTandem ),
+        model => new GravityAndOrbitsScreenView( model, viewTandem ),
         options
       );
     }

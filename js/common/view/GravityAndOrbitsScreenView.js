@@ -77,7 +77,7 @@ define( require => {
       } );
 
       // Add the speed control slider.
-      this.addChild( new SpeedRadioButtons( module.speedTypeProperty, {
+      this.addChild( new SpeedRadioButtons( module.speedTypeProperty, { // Rename module => model
           bottom: this.layoutBounds.bottom - MARGIN,
           left: this.layoutBounds.left + MARGIN,
         scale: 1.2,
