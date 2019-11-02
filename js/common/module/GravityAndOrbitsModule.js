@@ -51,7 +51,7 @@ define( require => {
       this.showGridProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGridProperty' ) } );
       this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showMeasuringTapeProperty' ) } );
 
-      this.isPlayingProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'isPlayingProperty' ) } ); // TODO: Rename isPlayingProperty
+      this.isPlayingProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'isPlayingProperty' ) } );
       this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL, { tandem: tandem.createTandem( 'speedTypeProperty' ) } );
 
       this.gravityEnabledProperty = new BooleanProperty( true, { tandem: tandem.createTandem( 'gravityEnabledProperty' ) } );
