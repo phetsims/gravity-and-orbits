@@ -10,7 +10,7 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModel' );
-  const RealModeList = require( 'GRAVITY_AND_ORBITS/toScale/module/RealModeList' );
+  const ToScaleSceneFactory = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleSceneFactory' );
 
   class ToScaleModule extends GravityAndOrbitsModel {
 
@@ -19,7 +19,7 @@ define( require => {
      * @param {Tandem} viewTandem
      */
     constructor( tandem, viewTandem ) {
-      super( true, p => new RealModeList(
+      super( true, p => new ToScaleSceneFactory(
         p.isPlayingProperty,
         p.gravityEnabledProperty,
         p.steppingProperty,

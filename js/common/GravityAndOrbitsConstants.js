@@ -18,7 +18,7 @@ define( require => {
 
   const GravityAndOrbitsConstants = {
 
-    // these constants were originally in ModeListModel, but needed to be factor out because of a circular dependency
+    // these constants were originally in SceneFactory, but needed to be factor out because of a circular dependency
     EARTH_MASS: 5.9736E24,
     SPACE_STATION_MASS: 369914,
 

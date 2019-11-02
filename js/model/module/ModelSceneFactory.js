@@ -14,7 +14,7 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const ModeListModel = require( 'GRAVITY_AND_ORBITS/common/module/ModeListModel' );
+  const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/module/SceneFactory' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   // constants
@@ -47,7 +47,7 @@ define( require => {
    */
   const daysToSeconds = days => days * 24 * 60 * 60;
 
-  class ModelModeList extends ModeListModel {
+  class ModelSceneFactory extends SceneFactory {
 
     /**
      * @param {Property.<boolean>} isPlayingProperty
@@ -70,12 +70,12 @@ define( require => {
     }
   }
 
-  gravityAndOrbits.register( 'ModelModeList', ModelModeList );
+  gravityAndOrbits.register( 'ModelSceneFactory', ModelSceneFactory );
 
   /**
    * Model configuration for a system with the sun and the earth.
    */
-  class SunEarthModeConfig extends ModeListModel.SunEarthModeConfig {
+  class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
     constructor() {
       super();
       this.sun.radius *= SUN_RADIUS_MULTIPLIER;
@@ -94,7 +94,7 @@ define( require => {
   /**
    * Model configuration for a system with the sun, earth and moon.
    */
-  class SunEarthMoonModeConfig extends ModeListModel.SunEarthMoonModeConfig {
+  class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
     constructor() {
       super();
       this.sun.radius *= SUN_RADIUS_MULTIPLIER;
@@ -115,7 +115,7 @@ define( require => {
 
   gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
 
-  class EarthMoonModeConfig extends ModeListModel.EarthMoonModeConfig {
+  class EarthMoonModeConfig extends SceneFactory.EarthMoonModeConfig {
     constructor() {
 
       const moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD );
@@ -135,7 +135,7 @@ define( require => {
   /**
    * Model configuration for a system with the earth and a space station.
    */
-  class EarthSpaceStationModeConfig extends ModeListModel.EarthSpaceStationModeConfig {
+  class EarthSpaceStationModeConfig extends SceneFactory.EarthSpaceStationModeConfig {
     constructor() {
       super();
 
@@ -147,5 +147,5 @@ define( require => {
 
   gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
 
-  return ModelModeList;
+  return ModelSceneFactory;
 } );

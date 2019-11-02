@@ -8,13 +8,13 @@ define( require => {
   'use strict';
 
   // modules
-  const ModelModeList = require( 'GRAVITY_AND_ORBITS/model/module/ModelModeList' );
+  const ModelSceneFactory = require( 'GRAVITY_AND_ORBITS/model/module/ModelSceneFactory' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModel' );
 
   class ModelModel extends GravityAndOrbitsModel {
     constructor( tandem, viewTandem ) {
-      super( false, p => new ModelModeList(
+      super( false, p => new ModelSceneFactory(
         p.isPlayingProperty,
         p.gravityEnabledProperty,
         p.steppingProperty,

@@ -2,7 +2,7 @@
 
 /**
  * A GravityAndOrbitsScene behaves like a screen, it has its own model, control panel, canvas, and remembers its state
- * when you leave and come back. It is created with defaults from ModeListModel.Mode.
+ * when you leave and come back. It is created with defaults from SceneFactory.Mode.
  * <p/>
  * The sim was designed this way so that objects are replaced instead of mutated.
  * For instance, when switching from Mode 1 to Mode 2, instead of removing Mode 1 bodies from the model,

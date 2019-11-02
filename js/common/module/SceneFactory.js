@@ -1,8 +1,8 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * ModeListModel enumerates and declares the possible modes in the GravityAndOrbitsModel, such as 'Star + Planet' scene.
- * Models (and the bodies they contain) are created in ModeListModel.
+ * SceneFactory enumerates and declares the possible modes in the GravityAndOrbitsModel, such as 'Star + Planet' scene.
+ * Models (and the bodies they contain) are created in SceneFactory.
  *
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
@@ -33,11 +33,6 @@ define( require => {
   const VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
   // strings
-  // REVIEW why are these commented out?
-  // const moonString = require( 'string!GRAVITY_AND_ORBITS/moon' );
-  // const planetString = require( 'string!GRAVITY_AND_ORBITS/planet' );
-  // const satelliteString = require( 'string!GRAVITY_AND_ORBITS/satellite' );
-  // const starString = require( 'string!GRAVITY_AND_ORBITS/star' );
   const earthDaysString = require( 'string!GRAVITY_AND_ORBITS/earthDays' );
   const earthDayString = require( 'string!GRAVITY_AND_ORBITS/earthDay' );
   const earthMinutesString = require( 'string!GRAVITY_AND_ORBITS/earthMinutes' );
@@ -56,7 +51,7 @@ define( require => {
   const spaceStationImage = require( 'image!GRAVITY_AND_ORBITS/space-station.png' );
   const sunImage = require( 'image!GRAVITY_AND_ORBITS/sun.png' );
 
-  // These constants are only used in ModeListModel, and ModeListModel is used to create the specific model instantiations,
+  // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
   // so we keep them here instead of the model.
   const SUN_RADIUS = 6.955E8; // km
   const SUN_MASS = 1.989E30; // kg
@@ -90,11 +85,9 @@ define( require => {
 
   const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
-  class ModeListModel {
+  class SceneFactory {
 
     /**
-     * Constructor for ModeListModel.
-     *
      * @param {ModeListParameterList} parameterList
      * @param {SunEarthModeConfig} planetStar
      * @param {SunEarthMoonModeConfig} sunEarthMoon
@@ -111,6 +104,7 @@ define( require => {
 
       // non-static inner class: SpaceStation
       // REVIEW: why is this inside the constructor?
+      // TODO: search // REVIEW comments
       class SpaceStation extends Body {
         constructor( earthSpaceStation, transformProperty, tandem, options ) {
 
@@ -391,6 +385,7 @@ define( require => {
     constructor() {
 
       super( 1.25 );
+
       // @public
       this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
       this.earth = new BodyConfiguration(
@@ -551,10 +546,10 @@ define( require => {
     return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
   };
 
-  ModeListModel.SunEarthModeConfig = SunEarthModeConfig;
-  ModeListModel.SunEarthMoonModeConfig = SunEarthMoonModeConfig;
-  ModeListModel.EarthMoonModeConfig = EarthMoonModeConfig;
-  ModeListModel.EarthSpaceStationModeConfig = EarthSpaceStationModeConfig;
+  SceneFactory.SunEarthModeConfig = SunEarthModeConfig;
+  SceneFactory.SunEarthMoonModeConfig = SunEarthMoonModeConfig;
+  SceneFactory.EarthMoonModeConfig = EarthMoonModeConfig;
+  SceneFactory.EarthSpaceStationModeConfig = EarthSpaceStationModeConfig;
 
-  return gravityAndOrbits.register( 'ModeListModel', ModeListModel );
+  return gravityAndOrbits.register( 'SceneFactory', SceneFactory );
 } );

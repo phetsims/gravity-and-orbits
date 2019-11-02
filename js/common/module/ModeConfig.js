@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * Configuration for setting up a particular GravityAndOrbitsScene, enumerated in ModeListModel.
+ * Configuration for setting up a particular GravityAndOrbitsScene, enumerated in SceneFactory.
  * This is an abstract class, and is intended only to be used by sub-types.
  * @abstract
  *

@@ -61,7 +61,7 @@ define( require => {
       this.showMassCheckbox = showMassCheckbox; // @public
       this.showMeasuringTape = showMeasuringTape; // @public
 
-      // @private {ModeListModel}
+      // @private {SceneFactory}
       this.sceneList = createModes( new ModeListParameterList(
         this.isPlayingProperty,
         this.gravityEnabledProperty,
