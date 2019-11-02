@@ -13,9 +13,12 @@ define( require => {
   const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
 
   class ModelModel extends GravityAndOrbitsModel {
-    constructor( modelTandem, viewTandem ) {
 
-      // TODO(phet-io design): tandem sharing is risky, is it warranted here to avoid extra nodes?
+    /**
+     * @param {Tandem} modelTandem
+     * @param {Tandem} viewTandem - needed to create the scene views
+     */
+    constructor( modelTandem, viewTandem ) {
       super(
         false,
         model => new ModelSceneFactory( model, modelTandem, viewTandem ),

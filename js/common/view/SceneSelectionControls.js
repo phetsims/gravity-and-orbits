@@ -39,7 +39,7 @@ define( require => {
       const resetButtons = modes.map( ( scene, i ) => {
         content.push( { value: i, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 
-        // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated
+        // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated.  Worth it?
         const resetButton = new PlanetModeResetButton( scene, {
           tandem: options.tandem.createTandem( scene.resetButtonTandemName )
         } );

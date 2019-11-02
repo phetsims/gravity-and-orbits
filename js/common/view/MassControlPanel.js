@@ -56,7 +56,7 @@ define( require => {
 
         const massSettableBody = massSettableBodies[ i ];
 
-        // TODO(phet-io design): embed label as child of control
+        // TODO(phet-io design): embed label as child of control?
         const label = new Text( LABEL_MAP[ massSettableBody.name ], {
           font: CONTROL_FONT,
           fontWeight: 'bold',

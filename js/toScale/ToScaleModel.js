@@ -16,7 +16,7 @@ define( require => {
 
     /**
      * @param {Tandem} modelTandem
-     * @param {Tandem} viewTandem
+     * @param {Tandem} viewTandem - needed so we can create the scenes and corresponding views
      */
     constructor( modelTandem, viewTandem ) {
       super(
@@ -24,7 +24,7 @@ define( require => {
         model => new ToScaleSceneFactory( model, modelTandem, viewTandem ),
         0,
         true,
-        modelTandem // TODO: Like in ModelModel, it is risky to share tandem with above
+        modelTandem
       );
     }
   }
