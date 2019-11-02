@@ -80,7 +80,7 @@ define( require => {
       const returnable = [];
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
-        const bodyNode = new BodyNode( body, body.labelAngle, module.playButtonPressedProperty, mode, tandem.createTandem( body.bodyNodeTandemName ) );
+        const bodyNode = new BodyNode( body, body.labelAngle, module.isPlayingProperty, mode, tandem.createTandem( body.bodyNodeTandemName ) );
         const massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
         this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
@@ -132,7 +132,7 @@ define( require => {
       // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
       // Add play/pause, rewind, and step buttons
-      const timeControlPanel = new TimeControlPanel( module.modeProperty, module.playButtonPressedProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
+      const timeControlPanel = new TimeControlPanel( module.modeProperty, module.isPlayingProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
         bottom: STAGE_SIZE.bottom - 10,
         centerX: STAGE_SIZE.centerX,
         scale: 1.5
@@ -191,7 +191,7 @@ define( require => {
           // all objects should be restored to their saved state, and then
           // pause the orbital mode
           mode.rewind();
-          mode.playButtonPressedProperty.set( false );
+          mode.isPlayingProperty.set( false );
         },
         tandem: tandem.createTandem( 'returnButton' )
       } );

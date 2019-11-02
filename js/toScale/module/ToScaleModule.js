@@ -20,7 +20,7 @@ define( require => {
      */
     constructor( tandem, viewTandem ) {
       super( true, p => new RealModeList(
-        p.playButtonPressedProperty,
+        p.isPlayingProperty,
         p.gravityEnabledProperty,
         p.steppingProperty,
         p.rewindingProperty,

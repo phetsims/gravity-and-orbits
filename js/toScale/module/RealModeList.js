@@ -16,16 +16,16 @@ define( require => {
 
   class RealModeList extends ModeListModel {
     /**
-     * @param {Property.<boolean>} playButtonPressedProperty
+     * @param {Property.<boolean>} isPlayingProperty
      * @param {Property.<boolean>} gravityEnabledProperty
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<boolean>} rewindingProperty
      * @param {Property.<number>} speedTypeProperty
      * @param {Tandem} tandem
      */
-    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty, tandem ) {
+    constructor( isPlayingProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty, tandem ) {
       super(
-        new ModeListParameterList( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ),
+        new ModeListParameterList( isPlayingProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ),
         new ModeListModel.SunEarthModeConfig(),
         new ModeListModel.SunEarthMoonModeConfig(),
         new ModeListModel.EarthMoonModeConfig(),

@@ -15,7 +15,7 @@ define( require => {
   class ModelModule extends GravityAndOrbitsModule {
     constructor( tandem, viewTandem ) {
       super( false, p => new ModelModeList(
-        p.playButtonPressedProperty,
+        p.isPlayingProperty,
         p.gravityEnabledProperty,
         p.steppingProperty,
         p.rewindingProperty,

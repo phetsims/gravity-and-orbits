@@ -78,7 +78,7 @@ define( require => {
       this.iconImage = iconImage; // @private
 
       // @private
-      this.playButtonPressedProperty = parameterList.playButtonPressedProperty;
+      this.isPlayingProperty = parameterList.isPlayingProperty;
 
       // Precomputed value for the orbital period under default conditions (i.e. no other changes),
       // for purposes of determining the path length (about 2 orbits)
@@ -104,11 +104,11 @@ define( require => {
       const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.speedTypeProperty, tandem.createTandem( 'clock' ) ); // TODO(phet-io design): do we need the 'clock' level here?
       this.model = new GravityAndOrbitsModel( clock, parameterList.gravityEnabledProperty );
 
-      Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ], ( playButtonPressed, active ) =>
+      Property.multilink( [ parameterList.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
         this.model.clock.setRunning( playButtonPressed && active )
       );
 
-      // @public {Node} - scenery node that depicts the play area for this.  TODO: don't have this be in the view
+      // @public {Node} - scenery node that depicts the play area for this.  TODO: Move this out of the model
       this.playAreaNode = null;
     }
 
@@ -184,7 +184,7 @@ define( require => {
       // if the user modifies velocity, save state while paused
       body.userModifiedVelocityEmitter.addListener( () => {
         this.setDeviatedFromDefaults();
-        if ( !this.playButtonPressedProperty.get() ) {
+        if ( !this.isPlayingProperty.get() ) {
           this.saveState();
         }
       } );
@@ -240,7 +240,7 @@ define( require => {
      * of all bodies. This should only be called when the sim is paused.
      */
     saveState() {
-      assert && assert( !this.playButtonPressedProperty.get(), 'saveState should only be called when sim paused' );
+      assert && assert( !this.isPlayingProperty.get(), 'saveState should only be called when sim paused' );
 
       const bodies = this.model.getBodies();
       for ( let i = 0; i < bodies.length; i++ ) {

@@ -24,13 +24,13 @@ define( require => {
 
     /**
      * @param {Property.<GravityAndOrbitsMode>} modeProperty
-     * @param {Property.<boolean>} playButtonPressedProperty
+     * @param {Property.<boolean>} isPlayingProperty
      * @param {Array.<Body>} bodies
      * @param {Tandem} tandem
      * @param {Object} [options]
      */
-    constructor( modeProperty, playButtonPressedProperty, bodies, tandem, options ) {
-      const playProperty = playButtonPressedProperty;
+    constructor( modeProperty, isPlayingProperty, bodies, tandem, options ) {
+      const playProperty = isPlayingProperty;
 
       const playPauseButton = new PlayPauseButton( playProperty, {
         tandem: tandem.createTandem( 'playPauseButton' )

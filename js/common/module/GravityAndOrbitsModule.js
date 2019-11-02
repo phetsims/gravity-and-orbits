@@ -51,7 +51,7 @@ define( require => {
       this.showGridProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGridProperty' ) } );
       this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showMeasuringTapeProperty' ) } );
 
-      this.playButtonPressedProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'isPlayingProperty' ) } ); // TODO: Rename isPlayingProperty
+      this.isPlayingProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'isPlayingProperty' ) } ); // TODO: Rename isPlayingProperty
       this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL, { tandem: tandem.createTandem( 'speedTypeProperty' ) } );
 
       this.gravityEnabledProperty = new BooleanProperty( true, { tandem: tandem.createTandem( 'gravityEnabledProperty' ) } );
@@ -65,7 +65,7 @@ define( require => {
 
       // @private {ModeListModel}
       this.modeList = createModes( new ModeListParameterList(
-        this.playButtonPressedProperty,
+        this.isPlayingProperty,
         this.gravityEnabledProperty,
         this.steppingProperty,
         this.rewindingProperty,
@@ -99,7 +99,7 @@ define( require => {
         }
       }
 
-      if ( this.playButtonPressedProperty.value ) {
+      if ( this.isPlayingProperty.value ) {
         this.modeProperty.value.getClock().step( dt );
       }
     }
@@ -126,7 +126,7 @@ define( require => {
       this.showGridProperty.reset();
       this.showVelocityProperty.reset();
       this.showMassProperty.reset();
-      this.playButtonPressedProperty.reset();
+      this.isPlayingProperty.reset();
       this.speedTypeProperty.reset();
       this.showMeasuringTapeProperty.reset();
       this.gravityEnabledProperty.reset();

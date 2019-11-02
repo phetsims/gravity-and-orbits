@@ -15,16 +15,16 @@ define( require => {
   class ModeListParameterList {
 
     /**
-     * @param {Property.<boolean>} playButtonPressedProperty
+     * @param {Property.<boolean>} isPlayingProperty
      * @param {Property.<boolean>} gravityEnabledProperty
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<boolean>} rewindingProperty
      * @param {Property.<number>} speedTypeProperty
      */
-    constructor( playButtonPressedProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ) {
+    constructor( isPlayingProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ) {
 
       // @public
-      this.playButtonPressedProperty = playButtonPressedProperty;
+      this.isPlayingProperty = isPlayingProperty;
       this.gravityEnabledProperty = gravityEnabledProperty;
 
       // @public True if the user is pressing the "step" button, to support storing states for the rewind feature

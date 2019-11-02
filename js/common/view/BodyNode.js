@@ -31,11 +31,11 @@ define( require => {
      * @param {Body} body
      * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
      *                              don't overlap too much
-     * @param {Property.<boolean>} playButtonPressedProperty is the simulation playing?
+     * @param {Property.<boolean>} isPlayingProperty is the simulation playing?
      * @param {GravityAndOrbitsMode} mode
      * @param {Tandem} tandem
      */
-    constructor( body, labelAngle, playButtonPressedProperty, mode, tandem ) {
+    constructor( body, labelAngle, isPlayingProperty, mode, tandem ) {
       super( { pickable: true, cursor: 'pointer', tandem: tandem } );
 
       const modelBoundsProperty = mode.modelBoundsProperty;
@@ -78,7 +78,7 @@ define( require => {
           body.userControlled = false;
 
           // reset the simulation time when the planet is released
-          if ( playButtonPressedProperty.value !== true ) {
+          if ( isPlayingProperty.value !== true ) {
             clock.setSimulationTime( 0.0 );
 
             // if paused, on release, the state of the orbital system should be saved

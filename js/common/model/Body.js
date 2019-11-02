@@ -149,7 +149,7 @@ define( require => {
       this.renderer = renderer; // @private
 
       // @private
-      this.playButtonPressedProperty = parameterList.playButtonPressedProperty;
+      this.isPlayingProperty = parameterList.isPlayingProperty;
       const steppingProperty = parameterList.steppingProperty;
       const rewindingProperty = parameterList.rewindingProperty;
 
@@ -158,7 +158,7 @@ define( require => {
 
       this.labelAngle = labelAngle; // @public
       const changeRewindValueProperty = new DerivedProperty( [
-          this.playButtonPressedProperty,
+        this.isPlayingProperty,
           steppingProperty,
           rewindingProperty,
           this.freezeRewindChangeProperty
@@ -290,7 +290,7 @@ define( require => {
      * be called when the clock is paused.
      */
     saveBodyState() {
-      assert && assert( !this.playButtonPressedProperty.get(), 'saveBodyState should only be called when sim is paused' );
+      assert && assert( !this.isPlayingProperty.get(), 'saveBodyState should only be called when sim is paused' );
 
       this.positionProperty.storeRewindValueNoNotify();
       this.velocityProperty.storeRewindValueNoNotify();
