@@ -40,7 +40,8 @@ define( require => {
       // @public (read-only)
       this.baseDTValue = baseDTValue;
 
-      this.steppingWhilePausedDT = baseDTValue * 0.525; // TODO: will these be replicable?  I thought it needed to be an integral number of steps, like in https://github.com/phetsims/gravity-and-orbits/issues/253
+      // Use integer number of dts for replicable trajectories, see https://github.com/phetsims/gravity-and-orbits/issues/253
+      this.steppingWhilePausedDT = baseDTValue;
       assert && assert( !isNaN( this.steppingWhilePausedDT ), 'this.steppingWhilePausedDT should be a number' );
 
       // @public
