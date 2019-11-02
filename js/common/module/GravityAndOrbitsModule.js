@@ -35,7 +35,7 @@ define( require => {
 
     /**
      * @param {boolean} showMeasuringTape
-     * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsMode>>} createModes
+     * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsScene>>} createModes
      * @param {number} initialModeIndex
      * @param {boolean} showMassCheckbox
      * @param {Tandem} tandem

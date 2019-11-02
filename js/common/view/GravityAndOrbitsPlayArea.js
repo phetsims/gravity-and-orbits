@@ -1,11 +1,11 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * Provides the play area for a single GravityAndOrbitsMode.
+ * Provides the play area for a single GravityAndOrbitsScene.
  *
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
- * @see GravityAndOrbitsMode
+ * @see GravityAndOrbitsScene
  */
 define( require => {
   'use strict';
@@ -52,7 +52,7 @@ define( require => {
 
     /**
      * Constructor for GravityAndOrbitsPlayArea
-     * @param {GravityAndOrbitsMode} mode
+     * @param {GravityAndOrbitsScene} mode
      * @param {GravityAndOrbitsModule} module
      * @param {Tandem} tandem TODO: make sure this is view-ish not model-ish
      */

@@ -32,7 +32,7 @@ define( require => {
      * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
      *                              don't overlap too much
      * @param {Property.<boolean>} isPlayingProperty is the simulation playing?
-     * @param {GravityAndOrbitsMode} mode
+     * @param {GravityAndOrbitsScene} mode
      * @param {Tandem} tandem
      */
     constructor( body, labelAngle, isPlayingProperty, mode, tandem ) {

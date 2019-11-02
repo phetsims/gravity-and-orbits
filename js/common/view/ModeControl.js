@@ -28,8 +28,8 @@ define( require => {
   class ModeControl extends Node {
 
     /**
-     * @param {Property.<GravityAndOrbitsMode>} modeIndexProperty
-     * @param {Array.<GravityAndOrbitsMode>} modes
+     * @param {Property.<GravityAndOrbitsScene>} modeIndexProperty
+     * @param {Array.<GravityAndOrbitsScene>} modes
      * @param {Object} [options] - This object contains options for main node of planet mode menu.
      */
     constructor( modeIndexProperty, modes, options ) {
@@ -76,7 +76,7 @@ define( require => {
   class PlanetModeResetButton extends RectangularPushButton {
 
     /**
-     * @param {GravityAndOrbitsMode} mode
+     * @param {GravityAndOrbitsScene} mode
      * @param {Object} [options]
      */
     constructor( mode, options ) {

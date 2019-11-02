@@ -23,7 +23,7 @@ define( require => {
   class TimeControlPanel extends HBox {
 
     /**
-     * @param {Property.<GravityAndOrbitsMode>} modeProperty
+     * @param {Property.<GravityAndOrbitsScene>} modeProperty
      * @param {Property.<boolean>} isPlayingProperty
      * @param {Array.<Body>} bodies
      * @param {Tandem} tandem

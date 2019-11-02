@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * This is the model for Gravity and Orbits; there is one GravityAndOrbitsModel per each GravityAndOrbitsMode, and it
+ * This is the model for Gravity and Orbits; there is one GravityAndOrbitsModel per each GravityAndOrbitsScene, and it
  * uses ModelState to update the physics.
  *
  * @author Sam Reid (PhET Interactive Simulations)

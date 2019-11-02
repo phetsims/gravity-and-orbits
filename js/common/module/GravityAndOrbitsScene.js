@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * A GravityAndOrbitsMode behaves like a module, it has its own model, control panel, canvas, and remembers its state
+ * A GravityAndOrbitsScene behaves like a module, it has its own model, control panel, canvas, and remembers its state
  * when you leave and come back. It is created with defaults from ModeListModel.Mode.
  * <p/>
  * The sim was designed this way so that objects are replaced instead of mutated.
@@ -33,10 +33,10 @@ define( require => {
   const PLAY_AREA_WIDTH = GravityAndOrbitsPlayArea.STAGE_SIZE.width;
   const PLAY_AREA_HEIGHT = GravityAndOrbitsPlayArea.STAGE_SIZE.height;
 
-  class GravityAndOrbitsMode {
+  class GravityAndOrbitsScene {
 
     /**
-     * Create a new GravityAndOrbitsMode that shares ModeListParameterList values with other modes
+     * Create a new GravityAndOrbitsScene that shares ModeListParameterList values with other modes
      * @param {number} forceScale
      * @param {boolean} active
      * @param {number} dt
@@ -263,5 +263,5 @@ define( require => {
     }
   }
 
-  return gravityAndOrbits.register( 'GravityAndOrbitsMode', GravityAndOrbitsMode );
+  return gravityAndOrbits.register( 'GravityAndOrbitsScene', GravityAndOrbitsScene );
 } );

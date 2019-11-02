@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * Class that facilitates configuration of body instances for a GravityAndOrbitsMode; a data structure that describes
+ * Class that facilitates configuration of body instances for a GravityAndOrbitsScene; a data structure that describes
  * a body's parameters.
  *
  * @author Sam Reid (PhET Interactive Simulations)

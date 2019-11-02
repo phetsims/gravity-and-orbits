@@ -20,7 +20,7 @@ define( require => {
   const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  const GravityAndOrbitsMode = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsMode' );
+  const GravityAndOrbitsScene = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsScene' );
   const HBox = require( 'SCENERY/nodes/HBox' );
   const Image = require( 'SCENERY/nodes/Image' );
   const Line = require( 'SCENERY/nodes/Line' );
@@ -226,7 +226,7 @@ define( require => {
       // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
       const SEC_PER_YEAR = 365 * 24 * 60 * 60;
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
-      this.modes.push( new GravityAndOrbitsMode( // TODO: Rename mode => scene
+      this.modes.push( new GravityAndOrbitsScene( // TODO: Rename mode => scene
         sunEarth.forceScale,
         false,
         sunEarth.dt,
@@ -254,7 +254,7 @@ define( require => {
       } ) );
       this.modes[ 0 ].addBody( new Planet( sunEarth.earth, sunEarthTransformProperty, sunEarthTandem.createTandem( 'earth' ) ) );// TODO: earth vs planet?
 
-      this.modes.push( new GravityAndOrbitsMode(
+      this.modes.push( new GravityAndOrbitsScene(
         sunEarthMoon.forceScale,
         false,
         sunEarthMoon.dt,
@@ -294,7 +294,7 @@ define( require => {
       ) );
 
       const SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
-      this.modes.push( new GravityAndOrbitsMode(
+      this.modes.push( new GravityAndOrbitsScene(
         earthMoon.forceScale,
         false,
         ( DEFAULT_DT / 3 ), // actual days
@@ -327,7 +327,7 @@ define( require => {
       } ) );
 
       const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
-      this.modes.push( new GravityAndOrbitsMode(
+      this.modes.push( new GravityAndOrbitsScene(
         earthSpaceStation.forceScale,
         false,
         ( DEFAULT_DT * 9E-4 ),
