@@ -15,7 +15,6 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/module/SceneFactory' );
-  const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   // constants
   const SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
@@ -50,21 +49,18 @@ define( require => {
   class ModelSceneFactory extends SceneFactory {
 
     /**
-     * @param {Property.<boolean>} isPlayingProperty
-     * @param {Property.<boolean>} gravityEnabledProperty
-     * @param {Property.<boolean>} steppingProperty
-     * @param {Property.<boolean>} rewindingProperty
-     * @param {Property.<number>} speedTypeProperty
-     * @param {Tandem} tandem
+     * @param {GravityAndOrbitsModel} model
+     * @param {Tandem} modelTandem
+     * @param {Tandem} viewTandem
      */
-    constructor( isPlayingProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty, tandem ) {
+    constructor( model, modelTandem, viewTandem ) {
       super(
-        new ModeListParameterList( isPlayingProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ),
+        model,
         new SunEarthModeConfig(),
         new SunEarthMoonModeConfig(),
         new EarthMoonModeConfig(),
         new EarthSpaceStationModeConfig(),
-        tandem, {
+        modelTandem, viewTandem, {
           adjustMoonPathLength: true // adjust the moon path length in model
         } );
     }

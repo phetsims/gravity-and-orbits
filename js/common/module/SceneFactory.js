@@ -88,15 +88,16 @@ define( require => {
   class SceneFactory {
 
     /**
-     * @param {ModeListParameterList} parameterList
+     * @param {GravityAndOrbitsModel} model
      * @param {SunEarthModeConfig} planetStar
      * @param {SunEarthMoonModeConfig} sunEarthMoon
      * @param {EarthMoonModeConfig} earthMoon
      * @param {EarthSpaceStationModeConfig} earthSpaceStation
-     * @param {Tandem} tandem
+     * @param {Tandem} modelTandem
+     * @param {Tandem} viewTandem
      * @param {Object} [options]
      */
-    constructor( parameterList, planetStar, sunEarthMoon, earthMoon, earthSpaceStation, tandem, options ) {
+    constructor( model, planetStar, sunEarthMoon, earthMoon, earthSpaceStation, modelTandem, viewTandem, options ) {
 
       options = merge( {
         adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
@@ -121,7 +122,7 @@ define( require => {
             ( -Math.PI / 4 ),
             earthSpaceStation.spaceStation.mass,
             spaceStationString,
-            parameterList,
+            model,
             transformProperty,
             'spaceStationMassControl',
             tandem,
@@ -152,7 +153,7 @@ define( require => {
             ( -3 * Math.PI / 4 ),
             body.mass,
             ourMoonString,
-            parameterList,
+            model,
             transformProperty,
             'moonMassControl',
             tandem,
@@ -174,7 +175,7 @@ define( require => {
             ( -Math.PI / 4 ),
             body.mass,
             earthString,
-            parameterList,
+            model,
             transformProperty,
             'planetMassControl',
             tandem,
@@ -196,7 +197,7 @@ define( require => {
             ( -Math.PI / 4 ),
             body.mass,
             ourSunString,
-            parameterList,
+            model,
             transformProperty,
             'starMassControl',
             tandem,
@@ -232,21 +233,30 @@ define( require => {
         new Vector2( 0, 0 ),
         ( planetStar.earth.x / 2 ),
         new Vector2( 0, 0 ),
-        parameterList,// TODO: rename sun/earth to star/planet
+        model,
+
+        // TODO: rename sun/earth to star/planet
         'sunEarthSceneButton',
         'sunEarthSceneResetButton',
         'sunEarthScene',
         'sunEarthSceneMassControlPanel',
         'sunEarthSceneView',
-        tandem.createTandem( 'sunEarthScene' )
+        modelTandem.createTandem( 'sunEarthScene' ),
+        viewTandem.createTandem( 'sunEarthSceneView' ),
+        transformProperty => {
+          const starPlanetTandem = modelTandem.createTandem( 'starPlanetScene' );
+          return [
+            new Star( planetStar.sun, transformProperty, starPlanetTandem.createTandem( 'star' ), {
+              maxPathLength: 345608942000 // in km
+            } ),
+
+            // TODO: earth vs planet?
+            new Planet( planetStar.earth, transformProperty, starPlanetTandem.createTandem( 'planet' ) )
+          ];
+        }
       ) );
 
-      const starPlanetTransformProperty = this.scenes[ 0 ].transformProperty;
-      const starPlanetTandem = tandem.createTandem( 'starPlanetScene' );
-      this.scenes[ 0 ].addBody( new Star( planetStar.sun, starPlanetTransformProperty, starPlanetTandem.createTandem( 'star' ), {
-        maxPathLength: 345608942000 // in km
-      } ) );
-      this.scenes[ 0 ].addBody( new Planet( planetStar.earth, starPlanetTransformProperty, starPlanetTandem.createTandem( 'planet' ) ) );// TODO: earth vs planet?
+      // const starPlanetTransformProperty = this.scenes[ 0 ].transformProperty; // TODO: pass through in Scene constructor
 
       this.scenes.push( new GravityAndOrbitsScene(
         sunEarthMoon.forceScale,
@@ -261,30 +271,37 @@ define( require => {
         new Vector2( 0, 0 ),
         ( sunEarthMoon.earth.x / 2 ),
         new Vector2( 0, 0 ),
-        parameterList,
+        model,
         'sunEarthMoonSceneButton',
         'sunEarthMoonSceneResetButton',
         'sunEarthMoonScene',
         'sunEarthMoonSceneMassControlPanel',
         'sunEarthMoonSceneView',
-        tandem.createTandem( 'sunEarthMoonScene' )
-      ) );
+        modelTandem.createTandem( 'sunEarthMoonScene' ),
+        viewTandem.createTandem( 'sunEarthMoonSceneView' ),
+        transformProperty => {
 
-      // increase moon path length so that it fades away with other bodies
-      // in model coordinates (at default orbit)
-      const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
-      const sunEarthMoonTransformProperty = this.scenes[ 1 ].sunEarthMoonTransformProperty;
-      const sunEarthMoonSceneTandem = tandem.createTandem( 'sunEarthMoonScene' );
-      this.scenes[ 1 ].addBody( new Star( sunEarthMoon.sun, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
-        maxPathLength: 345608942000 // in km
-      } ) );
-      this.scenes[ 1 ].addBody( new Planet( sunEarthMoon.earth, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ) );
-      this.scenes[ 1 ].addBody( new Moon( // no room for the slider
-        false, false, // so it doesn't intersect with earth mass readout
-        sunEarthMoon.moon,
-        sunEarthMoonTransformProperty,
-        sunEarthMoonSceneTandem.createTandem( 'moon' ), {
-          pathLengthBuffer: pathLengthBuffer
+          // increase moon path length so that it fades away with other bodies
+          // in model coordinates (at default orbit)
+          const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
+
+          // TODO: How was this working before?
+          // const sunEarthMoonTransformProperty = this.scenes[ 1 ].sunEarthMoonTransformProperty; // TODO: clean up
+          const sunEarthMoonSceneTandem = modelTandem.createTandem( 'sunEarthMoonScene' );
+          return [
+            new Star( sunEarthMoon.sun, transformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
+              maxPathLength: 345608942000 // in km
+            } ),
+            new Planet( sunEarthMoon.earth, transformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ),
+            new Moon( // no room for the slider
+              false, false, // so it doesn't intersect with earth mass readout
+              sunEarthMoon.moon,
+              transformProperty,
+              sunEarthMoonSceneTandem.createTandem( 'moon' ), {
+                pathLengthBuffer: pathLengthBuffer
+              }
+            )
+          ];
         }
       ) );
 
@@ -301,25 +318,27 @@ define( require => {
         new Vector2( earthMoon.earth.x, 0 ),
         ( earthMoon.moon.y / 2 ),
         new Vector2( earthMoon.earth.x, 0 ),
-        parameterList,
+        model,
         'earthMoonSceneButton',
         'earthMoonSceneResetButton',
         'earthMoonScene',
         'earthMoonSceneMassControlPanel',
         'earthMoonSceneView',
-        tandem.createTandem( 'earthMoonScene' )
+        modelTandem.createTandem( 'earthMoonScene' ),
+        viewTandem.createTandem( 'earthMoonSceneView' ),
+        transformProperty => {
+          const earthMoonSceneTandem = modelTandem.createTandem( 'earthMoonScene' );
+          return [
+            new Planet( earthMoon.earth, transformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
+              orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
+            } ),
+            new Moon( true, true, earthMoon.moon, transformProperty, earthMoonSceneTandem.createTandem( 'moon' ), {
+              orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
+              rotationPeriod: earthMoon.moon.rotationPeriod
+            } )
+          ];
+        }
       ) );
-
-      const earthMoonTransformProperty = this.scenes[ 2 ].transformProperty;
-      const earthMoonSceneTandem = tandem.createTandem( 'earthMoonScene' );
-      this.scenes[ 2 ].addBody( new Planet( earthMoon.earth, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
-        orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
-      } ) );
-
-      this.scenes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'moon' ), {
-        orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
-        rotationPeriod: earthMoon.moon.rotationPeriod
-      } ) );
 
       const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
       this.scenes.push( new GravityAndOrbitsScene(
@@ -335,23 +354,26 @@ define( require => {
         new Vector2( earthSpaceStation.earth.x, 0 ),
         ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
         new Vector2( earthSpaceStation.earth.x, 0 ),
-        parameterList,
+        model,
         'earthSpaceStationSceneButton',
         'earthSpaceStationSceneResetButton',
         'earthSpaceStationScene',
         'earthSpaceStationSceneMassControlPanel',
         'earthSpaceStationSceneView',
-        tandem.createTandem( 'earthSpaceStationScene' )
+        modelTandem.createTandem( 'earthSpaceStationScene' ),
+        viewTandem.createTandem( 'earthSpaceStationSceneView' ),
+        transformProperty => {
+          const earthSpaceStationTandem = modelTandem.createTandem( 'earthSpaceStationScene' );
+          return [
+            new Planet( earthSpaceStation.earth, transformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
+              maxPathLength: 35879455 // in km
+            } ),
+            new SpaceStation( earthSpaceStation, transformProperty, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
+              rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
+            } )
+          ];
+        }
       ) );
-
-      const earthSpaceStationTandem = tandem.createTandem( 'earthSpaceStationScene' );
-      const earthSpaceStationTransformProperty = this.scenes[ 3 ].transformProperty;
-      this.scenes[ 3 ].addBody( new Planet( earthSpaceStation.earth, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
-        maxPathLength: 35879455 // in km
-      } ) );
-      this.scenes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
-        rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
-      } ) );
     }
 
     /**

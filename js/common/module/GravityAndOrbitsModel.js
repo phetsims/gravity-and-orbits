@@ -20,8 +20,6 @@ define( require => {
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const EnumerationProperty = require( 'AXON/EnumerationProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsSceneView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsSceneView' );
-  const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
   const NumberProperty = require( 'AXON/NumberProperty' );
   const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
   const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
@@ -61,23 +59,14 @@ define( require => {
       this.showMassCheckbox = showMassCheckbox; // @public
       this.showMeasuringTape = showMeasuringTape; // @public
 
-      // @private {SceneFactory}
-      this.sceneList = createModes( new ModeListParameterList(
-        this.isPlayingProperty,
-        this.gravityEnabledProperty,
-        this.steppingProperty,
-        this.rewindingProperty,
-        this.speedTypeProperty
-      ) );
-
       this.sceneIndexProperty = new NumberProperty( initialSceneIndex, {
         tandem: tandem.createTandem( 'sceneIndexProperty' )
       } );
+
+      // @private {SceneFactory}
+      this.sceneList = createModes( this );
+
       this.sceneProperty = new DerivedProperty( [ this.sceneIndexProperty ], modeIndex => this.sceneList.scenes[ modeIndex ] );
-      for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
-        const scene = this.sceneList.scenes[ i ];
-        scene.sceneView = new GravityAndOrbitsSceneView( scene, this, viewTandem.createTandem( scene.sceneViewTandemName ) );
-      }
     }
 
     // @public

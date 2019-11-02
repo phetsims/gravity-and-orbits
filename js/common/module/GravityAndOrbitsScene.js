@@ -49,18 +49,20 @@ define( require => {
      * @param {Vector2} zoomOffset
      * @param {number} gridSpacing
      * @param {Vector2} gridCenter
-     * @param {ModeListParameterList} parameterList
+     * @param {GravityAndOrbitsModel} model
      * @param {string} radioButtonTandemName
      * @param {string} resetButtonTandemName
      * @param {string} tandemName
      * @param {string} massControlPanelTandemName
      * @param {string} sceneViewTandemName
      * @param {Tandem} tandem
+     * @param {Tandem} viewTandem
+     * @param {function} createBodies: transformProperty=>Body[]
      */
     constructor( forceScale, active, dt, timeFormatter, iconImage,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
-                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList, radioButtonTandemName, resetButtonTandemName,
-                 tandemName, massControlPanelTandemName, sceneViewTandemName, tandem ) {
+                 defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
+                 tandemName, massControlPanelTandemName, sceneViewTandemName, tandem, viewTandem, createBodies ) {
 
       this.activeProperty = new BooleanProperty( active );
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );
@@ -79,34 +81,36 @@ define( require => {
       this.iconImage = iconImage; // @private
 
       // @private
-      this.isPlayingProperty = parameterList.isPlayingProperty;
+      this.isPlayingProperty = model.isPlayingProperty;
 
       // How much to scale (shrink or grow) the velocity vectors; a mapping from meters/second to stage coordinates
       this.velocityVectorScale = velocityVectorScale; // @public
       this.gridSpacing = gridSpacing; // @public - in meters
       this.gridCenter = gridCenter; // @public
-      this.rewindingProperty = parameterList.rewindingProperty; // save a reference to the rewinding property of p
-      this.speedTypeProperty = parameterList.speedTypeProperty; // @public
+      this.rewindingProperty = model.rewindingProperty; // save a reference to the rewinding property of p
+      this.speedTypeProperty = model.speedTypeProperty; // @public
       this.timeFormatter = timeFormatter; // @public
 
       // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
       this.massReadoutFactory = massReadoutFactory;
 
-      this.modelBoundsProperty = new Property(); // @public - not in the Java version, needed for movableDragHandler bounds
+      this.modelBoundsProperty = new Property(); // @public - needed for movableDragHandler bounds
       this.transformProperty = new Property( this.createTransform( defaultZoomScale, zoomOffset ) ); // @public
 
       this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, zoomOffset ) ) );
 
       // @private
-      const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.speedTypeProperty, tandem.createTandem( 'clock' ) ); // TODO(phet-io design): do we need the 'clock' level here?
-      this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, parameterList.gravityEnabledProperty );
+      const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.speedTypeProperty, tandem.createTandem( 'clock' ) ); // TODO(phet-io design): do we need the 'clock' level here?
+      this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty );
 
-      Property.multilink( [ parameterList.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
+      Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
         this.physicsEngine.clock.setRunning( playButtonPressed && active )
       );
 
-      // @public {Node} - scenery node that depicts the play area for this.  TODO: Move this out of the model
-      this.sceneView = null;
+      createBodies( this.transformProperty ).forEach( body => this.addBody( body ) );
+
+      // @public {Node} - scenery node that depicts the play area for this scene
+      this.sceneView = new GravityAndOrbitsSceneView( this, model, viewTandem.createTandem( this.sceneViewTandemName ) );
     }
 
     /**

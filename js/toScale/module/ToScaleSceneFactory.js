@@ -12,26 +12,23 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/module/SceneFactory' );
-  const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
 
   class ToScaleSceneFactory extends SceneFactory {
 
     /**
-     * @param {Property.<boolean>} isPlayingProperty
-     * @param {Property.<boolean>} gravityEnabledProperty
-     * @param {Property.<boolean>} steppingProperty
-     * @param {Property.<boolean>} rewindingProperty
-     * @param {Property.<number>} speedTypeProperty
-     * @param {Tandem} tandem
+     * @param {GravityAndOrbitsModel} model
+     * @param {Tandem} modelTandem
+     * @param {Tandem} viewTandem
      */
-    constructor( isPlayingProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty, tandem ) {
+    constructor( model, modelTandem, viewTandem ) {
       super(
-        new ModeListParameterList( isPlayingProperty, gravityEnabledProperty, steppingProperty, rewindingProperty, speedTypeProperty ),
+        model,
         new SceneFactory.SunEarthModeConfig(),
         new SceneFactory.SunEarthMoonModeConfig(),
         new SceneFactory.EarthMoonModeConfig(),
         new SceneFactory.EarthSpaceStationModeConfig(),
-        tandem
+        modelTandem,
+        viewTandem
       );
     }
   }

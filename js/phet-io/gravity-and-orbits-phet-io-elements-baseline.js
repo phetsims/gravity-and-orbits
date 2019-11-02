@@ -2692,6 +2692,500 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.earth.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.moon.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthMoonScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.earth.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.spaceStation.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.earthSpaceStationScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
     "gravityAndOrbits.modelScreen.model.gravityEnabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -2719,1098 +3213,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.sceneIndexProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.zoomLevelProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.zoomLevelProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.starPlanetScene.star.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.zoomLevelProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3913,6 +3315,604 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<EnumerationIO(SLOW_MOTION|NORMAL|FAST_FORWARD)>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.earth.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.moon.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.sun.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthMoonScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.sunEarthScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.view.controlPanel": {
       "phetioDocumentation": "",
@@ -6332,7 +6332,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6345,7 +6345,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6358,7 +6358,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6371,7 +6371,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6384,7 +6384,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6397,7 +6397,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6410,7 +6410,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6423,7 +6423,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6436,7 +6436,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6449,7 +6449,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6462,7 +6462,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6475,7 +6475,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6488,7 +6488,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6501,7 +6501,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6514,7 +6514,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6527,7 +6527,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6540,7 +6540,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6553,7 +6553,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6566,7 +6566,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6579,7 +6579,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6592,7 +6592,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6605,7 +6605,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6618,7 +6618,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6631,7 +6631,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6644,7 +6644,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6657,7 +6657,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6670,7 +6670,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6683,7 +6683,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6696,7 +6696,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6709,7 +6709,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6722,7 +6722,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.moonNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6735,7 +6735,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6748,7 +6748,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6761,7 +6761,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6774,7 +6774,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6787,7 +6787,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6800,7 +6800,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6813,7 +6813,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6826,7 +6826,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6839,7 +6839,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6852,7 +6852,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6865,7 +6865,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6878,7 +6878,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6891,7 +6891,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6904,7 +6904,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6917,7 +6917,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6930,7 +6930,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6943,7 +6943,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6956,7 +6956,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6969,7 +6969,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6982,7 +6982,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6995,7 +6995,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7008,7 +7008,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7021,7 +7021,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7034,7 +7034,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7047,7 +7047,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7060,7 +7060,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7073,7 +7073,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7086,7 +7086,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7099,7 +7099,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7112,7 +7112,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7125,7 +7125,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7138,7 +7138,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7151,7 +7151,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7164,7 +7164,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7177,7 +7177,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7190,7 +7190,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7203,7 +7203,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7216,7 +7216,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7229,7 +7229,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7242,7 +7242,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7255,7 +7255,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7268,7 +7268,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7281,7 +7281,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7294,7 +7294,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7307,7 +7307,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7320,7 +7320,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7333,7 +7333,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7346,7 +7346,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7359,7 +7359,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7372,7 +7372,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7385,7 +7385,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7398,7 +7398,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7411,7 +7411,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7424,7 +7424,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7437,7 +7437,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7450,7 +7450,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7463,7 +7463,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7476,7 +7476,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7489,7 +7489,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7502,7 +7502,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7515,7 +7515,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7528,7 +7528,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7541,7 +7541,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7554,7 +7554,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7567,7 +7567,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7580,7 +7580,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7593,7 +7593,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7606,7 +7606,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7619,7 +7619,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7632,7 +7632,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7645,7 +7645,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7658,7 +7658,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7671,7 +7671,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7684,7 +7684,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7697,7 +7697,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7710,7 +7710,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7723,7 +7723,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7736,7 +7736,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7749,7 +7749,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7762,7 +7762,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7775,7 +7775,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7788,7 +7788,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7801,7 +7801,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7814,7 +7814,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7827,7 +7827,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7840,7 +7840,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7853,7 +7853,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7866,7 +7866,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7879,7 +7879,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7892,7 +7892,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7905,7 +7905,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7918,7 +7918,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7931,7 +7931,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7944,7 +7944,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7957,7 +7957,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7970,7 +7970,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7983,7 +7983,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7996,7 +7996,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode0.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8009,7 +8009,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode0.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8022,7 +8022,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8035,7 +8035,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8048,7 +8048,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8061,7 +8061,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8074,7 +8074,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8087,7 +8087,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8100,7 +8100,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8113,7 +8113,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8854,7 +8854,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8867,7 +8867,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8880,7 +8880,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8893,7 +8893,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8906,7 +8906,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8919,7 +8919,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8932,7 +8932,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8945,7 +8945,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8958,7 +8958,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8971,7 +8971,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8984,7 +8984,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -8997,7 +8997,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9010,7 +9010,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9023,7 +9023,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9036,7 +9036,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9049,7 +9049,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9062,7 +9062,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9075,7 +9075,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9088,7 +9088,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9101,7 +9101,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9114,7 +9114,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9127,7 +9127,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9140,7 +9140,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9153,7 +9153,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9166,7 +9166,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9179,7 +9179,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9192,7 +9192,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9205,7 +9205,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9218,7 +9218,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9231,7 +9231,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9244,7 +9244,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9257,7 +9257,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9270,7 +9270,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9283,7 +9283,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9296,7 +9296,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9309,7 +9309,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9322,7 +9322,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9335,7 +9335,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9348,7 +9348,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9361,7 +9361,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9374,7 +9374,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9387,7 +9387,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9400,7 +9400,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9413,7 +9413,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9426,7 +9426,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9439,7 +9439,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9452,7 +9452,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9465,7 +9465,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9478,7 +9478,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9491,7 +9491,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9504,7 +9504,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9517,7 +9517,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9530,7 +9530,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9543,7 +9543,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9556,7 +9556,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9569,7 +9569,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9582,7 +9582,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9595,7 +9595,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9608,7 +9608,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9621,7 +9621,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9634,7 +9634,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9647,7 +9647,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9660,7 +9660,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9673,7 +9673,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9686,7 +9686,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9699,7 +9699,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9712,7 +9712,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9725,7 +9725,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9738,7 +9738,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9751,7 +9751,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9764,7 +9764,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9777,7 +9777,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9790,7 +9790,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9803,7 +9803,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9816,7 +9816,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9829,7 +9829,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9842,7 +9842,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9855,7 +9855,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9868,7 +9868,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9881,7 +9881,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9894,7 +9894,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9907,7 +9907,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9920,7 +9920,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9933,7 +9933,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9946,7 +9946,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9959,7 +9959,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9972,7 +9972,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9985,7 +9985,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9998,7 +9998,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10011,7 +10011,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10024,7 +10024,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10037,7 +10037,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10050,7 +10050,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10063,7 +10063,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10076,7 +10076,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10089,7 +10089,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10102,7 +10102,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10115,7 +10115,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10128,7 +10128,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.spaceStationNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10141,7 +10141,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10154,7 +10154,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10167,7 +10167,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10180,7 +10180,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10193,7 +10193,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10206,7 +10206,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10219,7 +10219,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10232,7 +10232,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10245,7 +10245,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10258,7 +10258,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10271,7 +10271,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10284,7 +10284,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10297,7 +10297,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10310,7 +10310,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10323,7 +10323,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10336,7 +10336,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10349,7 +10349,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10362,7 +10362,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10375,7 +10375,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10388,7 +10388,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10401,7 +10401,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10414,7 +10414,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10427,7 +10427,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10440,7 +10440,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10453,7 +10453,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10466,7 +10466,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10479,7 +10479,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10492,7 +10492,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10505,7 +10505,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10518,7 +10518,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10531,7 +10531,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10544,7 +10544,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10557,7 +10557,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10570,7 +10570,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10583,7 +10583,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10596,7 +10596,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10609,7 +10609,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10622,7 +10622,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -10635,7 +10635,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11896,7 +11896,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11909,7 +11909,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11922,7 +11922,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11935,7 +11935,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11948,7 +11948,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11961,7 +11961,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11974,7 +11974,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11987,7 +11987,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12000,7 +12000,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12013,7 +12013,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12026,7 +12026,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12039,7 +12039,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12052,7 +12052,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12065,7 +12065,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12078,7 +12078,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12091,7 +12091,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12104,7 +12104,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12117,7 +12117,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12130,7 +12130,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12143,7 +12143,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12156,7 +12156,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12169,7 +12169,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12182,7 +12182,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12195,7 +12195,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12208,7 +12208,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12221,7 +12221,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12234,7 +12234,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12247,7 +12247,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12260,7 +12260,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12273,7 +12273,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12286,7 +12286,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.moonNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12299,7 +12299,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12312,7 +12312,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12325,7 +12325,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12338,7 +12338,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12351,7 +12351,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12364,7 +12364,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12377,7 +12377,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12390,7 +12390,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12403,7 +12403,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12416,7 +12416,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12429,7 +12429,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12442,7 +12442,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12455,7 +12455,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12468,7 +12468,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12481,7 +12481,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12494,7 +12494,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12507,7 +12507,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12520,7 +12520,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12533,7 +12533,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12546,7 +12546,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12559,7 +12559,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12572,7 +12572,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12585,7 +12585,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12598,7 +12598,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12611,7 +12611,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12624,7 +12624,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12637,7 +12637,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12650,7 +12650,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12663,7 +12663,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12676,7 +12676,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12689,7 +12689,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12702,7 +12702,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12715,7 +12715,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12728,7 +12728,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12741,7 +12741,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12754,7 +12754,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12767,7 +12767,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12780,7 +12780,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12793,7 +12793,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12806,7 +12806,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12819,7 +12819,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12832,7 +12832,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12845,7 +12845,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12858,7 +12858,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12871,7 +12871,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12884,7 +12884,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12897,7 +12897,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12910,7 +12910,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12923,7 +12923,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12936,7 +12936,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12949,7 +12949,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12962,7 +12962,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12975,7 +12975,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12988,7 +12988,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13001,7 +13001,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13014,7 +13014,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13027,7 +13027,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13040,7 +13040,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13053,7 +13053,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13066,7 +13066,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13079,7 +13079,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13092,7 +13092,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13105,7 +13105,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13118,7 +13118,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13131,7 +13131,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13144,7 +13144,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13157,7 +13157,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13170,7 +13170,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13183,7 +13183,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13196,7 +13196,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13209,7 +13209,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13222,7 +13222,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13235,7 +13235,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13248,7 +13248,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13261,7 +13261,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13274,7 +13274,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13287,7 +13287,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13300,7 +13300,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13313,7 +13313,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13326,7 +13326,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13339,7 +13339,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13352,7 +13352,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.starNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13365,7 +13365,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13378,7 +13378,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13391,7 +13391,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13404,7 +13404,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13417,7 +13417,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13430,7 +13430,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13443,7 +13443,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13456,7 +13456,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13469,7 +13469,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13482,7 +13482,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13495,7 +13495,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13508,7 +13508,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13521,7 +13521,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13534,7 +13534,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13547,7 +13547,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13560,7 +13560,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13573,7 +13573,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13586,7 +13586,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13599,7 +13599,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13612,7 +13612,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13625,7 +13625,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13638,7 +13638,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13651,7 +13651,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13664,7 +13664,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13677,7 +13677,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13690,7 +13690,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13703,7 +13703,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13716,7 +13716,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13729,7 +13729,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13742,7 +13742,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13755,7 +13755,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13768,7 +13768,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13781,7 +13781,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13794,7 +13794,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13807,7 +13807,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13820,7 +13820,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13833,7 +13833,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13846,7 +13846,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -13859,7 +13859,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14600,7 +14600,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14613,7 +14613,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14626,7 +14626,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14639,7 +14639,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14652,7 +14652,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14665,7 +14665,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14678,7 +14678,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14691,7 +14691,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14704,7 +14704,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14717,7 +14717,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14730,7 +14730,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14743,7 +14743,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14756,7 +14756,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14769,7 +14769,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14782,7 +14782,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14795,7 +14795,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14808,7 +14808,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14821,7 +14821,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14834,7 +14834,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14847,7 +14847,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14860,7 +14860,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14873,7 +14873,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14886,7 +14886,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14899,7 +14899,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14912,7 +14912,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14925,7 +14925,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14938,7 +14938,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14951,7 +14951,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14964,7 +14964,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14977,7 +14977,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -14990,7 +14990,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15003,7 +15003,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15016,7 +15016,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15029,7 +15029,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15042,7 +15042,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15055,7 +15055,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15068,7 +15068,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15081,7 +15081,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15094,7 +15094,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15107,7 +15107,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15120,7 +15120,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15133,7 +15133,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15146,7 +15146,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15159,7 +15159,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15172,7 +15172,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15185,7 +15185,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15198,7 +15198,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15211,7 +15211,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15224,7 +15224,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15237,7 +15237,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15250,7 +15250,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15263,7 +15263,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15276,7 +15276,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15289,7 +15289,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15302,7 +15302,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15315,7 +15315,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15328,7 +15328,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15341,7 +15341,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15354,7 +15354,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15367,7 +15367,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15380,7 +15380,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15393,7 +15393,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15406,7 +15406,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15419,7 +15419,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15432,7 +15432,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15445,7 +15445,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15458,7 +15458,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15471,7 +15471,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15484,7 +15484,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15497,7 +15497,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15510,7 +15510,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15523,7 +15523,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15536,7 +15536,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15549,7 +15549,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15562,7 +15562,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15575,7 +15575,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15588,7 +15588,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15601,7 +15601,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15614,7 +15614,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15627,7 +15627,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15640,7 +15640,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15653,7 +15653,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15666,7 +15666,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15679,7 +15679,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15692,7 +15692,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15705,7 +15705,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15718,7 +15718,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15731,7 +15731,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15744,7 +15744,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15757,7 +15757,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15770,7 +15770,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15783,7 +15783,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15796,7 +15796,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15809,7 +15809,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15822,7 +15822,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15835,7 +15835,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15848,7 +15848,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15861,7 +15861,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15874,7 +15874,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.starNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15887,7 +15887,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15900,7 +15900,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15913,7 +15913,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15926,7 +15926,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15939,7 +15939,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15952,7 +15952,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15965,7 +15965,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15978,7 +15978,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15991,7 +15991,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16004,7 +16004,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16017,7 +16017,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16030,7 +16030,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16043,7 +16043,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16056,7 +16056,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16069,7 +16069,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16082,7 +16082,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16095,7 +16095,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16108,7 +16108,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16121,7 +16121,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16134,7 +16134,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16147,7 +16147,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16160,7 +16160,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16173,7 +16173,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16186,7 +16186,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16199,7 +16199,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16212,7 +16212,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16225,7 +16225,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16238,7 +16238,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16251,7 +16251,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16264,7 +16264,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16277,7 +16277,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16290,7 +16290,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16303,7 +16303,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16316,7 +16316,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16341,6 +16341,500 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.earth.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.moon.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthMoonScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.earth.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.spaceStation.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.earthSpaceStationScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.gravityEnabledProperty": {
       "phetioDocumentation": "",
@@ -16369,1098 +16863,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.sceneIndexProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.zoomLevelProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.zoomLevelProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.starPlanetScene.star.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.diameterProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.forceProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.isCollidedProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.isMovableProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.massProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.positionProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.rotationProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<NumberIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.velocityProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.zoomLevelProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.clock.timeProperty": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
-    },
-    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17563,6 +16965,604 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<EnumerationIO(SLOW_MOTION|NORMAL|FAST_FORWARD)>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.earth.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.moon.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.diameterProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.forceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.isCollidedProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.isMovableProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.massProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.positionProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.rotationProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.sun.velocityProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthMoonScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthScene.clock.isRunningProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthScene.clock.timeProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.sunEarthScene.zoomLevelProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.view.controlPanel": {
       "phetioDocumentation": "",
@@ -20164,7 +20164,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20177,7 +20177,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20190,7 +20190,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20203,7 +20203,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20216,7 +20216,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20229,7 +20229,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20242,7 +20242,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20255,7 +20255,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20268,7 +20268,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20281,7 +20281,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20294,7 +20294,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20307,7 +20307,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20320,7 +20320,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20333,7 +20333,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20346,7 +20346,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20359,7 +20359,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20372,7 +20372,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20385,7 +20385,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20398,7 +20398,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20411,7 +20411,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20424,7 +20424,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20437,7 +20437,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20450,7 +20450,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20463,7 +20463,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20476,7 +20476,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20489,7 +20489,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20502,7 +20502,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20515,7 +20515,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20528,7 +20528,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20541,7 +20541,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20554,7 +20554,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.moonNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.moonNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20567,7 +20567,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20580,7 +20580,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20593,7 +20593,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20606,7 +20606,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20619,7 +20619,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20632,7 +20632,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20645,7 +20645,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20658,7 +20658,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20671,7 +20671,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20684,7 +20684,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20697,7 +20697,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20710,7 +20710,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20723,7 +20723,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20736,7 +20736,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20749,7 +20749,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20762,7 +20762,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20775,7 +20775,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20788,7 +20788,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20801,7 +20801,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20814,7 +20814,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20827,7 +20827,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20840,7 +20840,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20853,7 +20853,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20866,7 +20866,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20879,7 +20879,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20892,7 +20892,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20905,7 +20905,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20918,7 +20918,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20931,7 +20931,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20944,7 +20944,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20957,7 +20957,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20970,7 +20970,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20983,7 +20983,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20996,7 +20996,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21009,7 +21009,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21022,7 +21022,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21035,7 +21035,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21048,7 +21048,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21061,7 +21061,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21074,7 +21074,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21087,7 +21087,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21100,7 +21100,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21113,7 +21113,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21126,7 +21126,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21139,7 +21139,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21152,7 +21152,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21165,7 +21165,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21178,7 +21178,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21191,7 +21191,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21204,7 +21204,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21217,7 +21217,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21230,7 +21230,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21243,7 +21243,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21256,7 +21256,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21269,7 +21269,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21282,7 +21282,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21295,7 +21295,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21308,7 +21308,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21321,7 +21321,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21334,7 +21334,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21347,7 +21347,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21360,7 +21360,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21373,7 +21373,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21386,7 +21386,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21399,7 +21399,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21412,7 +21412,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21425,7 +21425,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21438,7 +21438,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21451,7 +21451,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21464,7 +21464,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21477,7 +21477,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21490,7 +21490,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21503,7 +21503,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21516,7 +21516,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21529,7 +21529,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21542,7 +21542,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21555,7 +21555,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21568,7 +21568,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21581,7 +21581,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21594,7 +21594,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21607,7 +21607,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21620,7 +21620,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21633,7 +21633,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21646,7 +21646,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21659,7 +21659,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21672,7 +21672,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21685,7 +21685,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21698,7 +21698,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21711,7 +21711,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21724,7 +21724,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21737,7 +21737,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21750,7 +21750,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21763,7 +21763,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21776,7 +21776,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21789,7 +21789,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21802,7 +21802,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21815,7 +21815,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21828,7 +21828,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode0.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21841,7 +21841,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode0.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21854,7 +21854,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21867,7 +21867,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21880,7 +21880,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21893,7 +21893,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21906,7 +21906,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21919,7 +21919,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21932,7 +21932,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21945,7 +21945,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthMoonSceneView.earthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22686,7 +22686,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22699,7 +22699,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22712,7 +22712,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22725,7 +22725,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22738,7 +22738,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22751,7 +22751,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22764,7 +22764,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22777,7 +22777,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22790,7 +22790,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22803,7 +22803,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22816,7 +22816,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22829,7 +22829,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22842,7 +22842,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22855,7 +22855,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22868,7 +22868,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22881,7 +22881,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22894,7 +22894,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22907,7 +22907,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22920,7 +22920,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22933,7 +22933,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22946,7 +22946,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22959,7 +22959,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22972,7 +22972,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22985,7 +22985,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -22998,7 +22998,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23011,7 +23011,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23024,7 +23024,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23037,7 +23037,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23050,7 +23050,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23063,7 +23063,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23076,7 +23076,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23089,7 +23089,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23102,7 +23102,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23115,7 +23115,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23128,7 +23128,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23141,7 +23141,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23154,7 +23154,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23167,7 +23167,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23180,7 +23180,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23193,7 +23193,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23206,7 +23206,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23219,7 +23219,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23232,7 +23232,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23245,7 +23245,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23258,7 +23258,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23271,7 +23271,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23284,7 +23284,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23297,7 +23297,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23310,7 +23310,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23323,7 +23323,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23336,7 +23336,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23349,7 +23349,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23362,7 +23362,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23375,7 +23375,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23388,7 +23388,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23401,7 +23401,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23414,7 +23414,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23427,7 +23427,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23440,7 +23440,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23453,7 +23453,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23466,7 +23466,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23479,7 +23479,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23492,7 +23492,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23505,7 +23505,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23518,7 +23518,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23531,7 +23531,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23544,7 +23544,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23557,7 +23557,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23570,7 +23570,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23583,7 +23583,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23596,7 +23596,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23609,7 +23609,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23622,7 +23622,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23635,7 +23635,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23648,7 +23648,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23661,7 +23661,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23674,7 +23674,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23687,7 +23687,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23700,7 +23700,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23713,7 +23713,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23726,7 +23726,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23739,7 +23739,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23752,7 +23752,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23765,7 +23765,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23778,7 +23778,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23791,7 +23791,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23804,7 +23804,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23817,7 +23817,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23830,7 +23830,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23843,7 +23843,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23856,7 +23856,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23869,7 +23869,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23882,7 +23882,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23895,7 +23895,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23908,7 +23908,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23921,7 +23921,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23934,7 +23934,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23947,7 +23947,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23960,7 +23960,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.spaceStationNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.spaceStationNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23973,7 +23973,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23986,7 +23986,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23999,7 +23999,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24012,7 +24012,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24025,7 +24025,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24038,7 +24038,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24051,7 +24051,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24064,7 +24064,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24077,7 +24077,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24090,7 +24090,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24103,7 +24103,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24116,7 +24116,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24129,7 +24129,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24142,7 +24142,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24155,7 +24155,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24168,7 +24168,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24181,7 +24181,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24194,7 +24194,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24207,7 +24207,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24220,7 +24220,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24233,7 +24233,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24246,7 +24246,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24259,7 +24259,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24272,7 +24272,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24285,7 +24285,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24298,7 +24298,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24311,7 +24311,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24324,7 +24324,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24337,7 +24337,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24350,7 +24350,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24363,7 +24363,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24376,7 +24376,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24389,7 +24389,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24402,7 +24402,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode0.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode0.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24415,7 +24415,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24428,7 +24428,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24441,7 +24441,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24454,7 +24454,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -24467,7 +24467,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.earthSpaceStationSceneView.earthSpaceStationSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25728,7 +25728,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25741,7 +25741,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25754,7 +25754,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25767,7 +25767,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25780,7 +25780,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25793,7 +25793,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25806,7 +25806,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25819,7 +25819,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25832,7 +25832,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25845,7 +25845,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25858,7 +25858,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25871,7 +25871,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25884,7 +25884,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25897,7 +25897,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25910,7 +25910,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25923,7 +25923,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25936,7 +25936,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25949,7 +25949,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25962,7 +25962,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25975,7 +25975,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25988,7 +25988,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26001,7 +26001,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26014,7 +26014,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26027,7 +26027,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26040,7 +26040,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26053,7 +26053,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26066,7 +26066,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26079,7 +26079,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26092,7 +26092,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26105,7 +26105,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26118,7 +26118,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.moonNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.moonNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26131,7 +26131,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26144,7 +26144,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26157,7 +26157,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26170,7 +26170,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26183,7 +26183,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26196,7 +26196,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26209,7 +26209,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26222,7 +26222,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26235,7 +26235,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26248,7 +26248,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26261,7 +26261,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26274,7 +26274,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26287,7 +26287,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26300,7 +26300,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26313,7 +26313,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26326,7 +26326,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26339,7 +26339,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26352,7 +26352,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26365,7 +26365,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26378,7 +26378,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26391,7 +26391,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26404,7 +26404,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26417,7 +26417,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26430,7 +26430,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26443,7 +26443,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26456,7 +26456,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26469,7 +26469,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26482,7 +26482,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26495,7 +26495,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26508,7 +26508,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26521,7 +26521,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26534,7 +26534,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26547,7 +26547,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26560,7 +26560,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26573,7 +26573,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26586,7 +26586,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26599,7 +26599,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26612,7 +26612,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26625,7 +26625,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26638,7 +26638,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26651,7 +26651,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26664,7 +26664,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26677,7 +26677,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26690,7 +26690,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26703,7 +26703,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26716,7 +26716,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26729,7 +26729,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26742,7 +26742,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26755,7 +26755,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26768,7 +26768,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26781,7 +26781,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26794,7 +26794,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26807,7 +26807,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26820,7 +26820,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26833,7 +26833,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26846,7 +26846,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26859,7 +26859,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26872,7 +26872,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26885,7 +26885,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26898,7 +26898,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26911,7 +26911,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26924,7 +26924,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26937,7 +26937,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26950,7 +26950,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26963,7 +26963,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26976,7 +26976,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26989,7 +26989,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27002,7 +27002,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27015,7 +27015,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27028,7 +27028,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27041,7 +27041,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27054,7 +27054,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27067,7 +27067,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27080,7 +27080,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27093,7 +27093,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27106,7 +27106,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27119,7 +27119,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27132,7 +27132,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27145,7 +27145,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27158,7 +27158,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27171,7 +27171,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27184,7 +27184,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.starNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.starNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27197,7 +27197,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27210,7 +27210,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27223,7 +27223,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27236,7 +27236,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27249,7 +27249,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27262,7 +27262,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27275,7 +27275,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27288,7 +27288,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27301,7 +27301,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27314,7 +27314,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27327,7 +27327,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27340,7 +27340,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27353,7 +27353,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27366,7 +27366,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27379,7 +27379,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27392,7 +27392,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27405,7 +27405,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27418,7 +27418,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27431,7 +27431,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27444,7 +27444,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27457,7 +27457,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27470,7 +27470,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27483,7 +27483,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27496,7 +27496,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27509,7 +27509,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27522,7 +27522,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27535,7 +27535,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27548,7 +27548,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27561,7 +27561,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27574,7 +27574,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode0.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode0.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27587,7 +27587,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode0.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode0.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27600,7 +27600,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27613,7 +27613,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27626,7 +27626,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27639,7 +27639,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27652,7 +27652,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27665,7 +27665,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27678,7 +27678,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27691,7 +27691,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27704,7 +27704,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27717,7 +27717,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27730,7 +27730,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27743,7 +27743,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -27756,7 +27756,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.vectorNode2.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthMoonSceneView.sunEarthMoonSceneView.vectorNode2.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28497,7 +28497,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28510,7 +28510,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28523,7 +28523,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28536,7 +28536,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28549,7 +28549,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28562,7 +28562,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28575,7 +28575,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28588,7 +28588,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28601,7 +28601,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28614,7 +28614,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28627,7 +28627,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28640,7 +28640,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28653,7 +28653,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28666,7 +28666,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.clearButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.clearButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28679,7 +28679,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28692,7 +28692,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28705,7 +28705,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.dayCounter.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.dayCounter.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28718,7 +28718,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28731,7 +28731,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28744,7 +28744,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28757,7 +28757,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28770,7 +28770,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28783,7 +28783,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28796,7 +28796,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28809,7 +28809,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28822,7 +28822,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28835,7 +28835,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28848,7 +28848,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28861,7 +28861,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28874,7 +28874,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28887,7 +28887,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.planetNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.planetNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28900,7 +28900,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28913,7 +28913,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28926,7 +28926,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28939,7 +28939,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28952,7 +28952,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28965,7 +28965,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28978,7 +28978,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -28991,7 +28991,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29004,7 +29004,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29017,7 +29017,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29030,7 +29030,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29043,7 +29043,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29056,7 +29056,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.returnButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29069,7 +29069,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29082,7 +29082,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29095,7 +29095,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29108,7 +29108,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29121,7 +29121,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29134,7 +29134,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29147,7 +29147,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29160,7 +29160,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29173,7 +29173,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.minusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.minusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29186,7 +29186,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29199,7 +29199,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29212,7 +29212,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29225,7 +29225,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29238,7 +29238,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29251,7 +29251,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29264,7 +29264,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29277,7 +29277,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29290,7 +29290,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29303,7 +29303,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.plusButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.plusButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29316,7 +29316,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29329,7 +29329,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29342,7 +29342,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29355,7 +29355,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29368,7 +29368,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29381,7 +29381,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29394,7 +29394,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29407,7 +29407,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29420,7 +29420,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29433,7 +29433,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29446,7 +29446,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29459,7 +29459,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29472,7 +29472,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29485,7 +29485,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29498,7 +29498,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29511,7 +29511,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29524,7 +29524,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29537,7 +29537,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29550,7 +29550,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29563,7 +29563,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29576,7 +29576,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.slider.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29589,7 +29589,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.scaleControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.scaleControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29602,7 +29602,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29615,7 +29615,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29628,7 +29628,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29641,7 +29641,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29654,7 +29654,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29667,7 +29667,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29680,7 +29680,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29693,7 +29693,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29706,7 +29706,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29719,7 +29719,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29732,7 +29732,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29745,7 +29745,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29758,7 +29758,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29771,7 +29771,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.starNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.starNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29784,7 +29784,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29797,7 +29797,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29810,7 +29810,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29823,7 +29823,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29836,7 +29836,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29849,7 +29849,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29862,7 +29862,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.property": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29875,7 +29875,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29888,7 +29888,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29901,7 +29901,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29914,7 +29914,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29927,7 +29927,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29940,7 +29940,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.playPauseButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29953,7 +29953,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29966,7 +29966,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29979,7 +29979,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29992,7 +29992,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30005,7 +30005,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30018,7 +30018,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30031,7 +30031,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30044,7 +30044,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.rewindButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.rewindButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30057,7 +30057,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30070,7 +30070,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30083,7 +30083,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30096,7 +30096,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30109,7 +30109,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30122,7 +30122,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30135,7 +30135,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30148,7 +30148,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.timeControlPanel.stepButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.timeControlPanel.stepButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30161,7 +30161,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode0.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode0.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30174,7 +30174,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode0.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode0.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30187,7 +30187,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode0.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode0.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30200,7 +30200,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode0.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode0.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30213,7 +30213,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode0.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode0.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30226,7 +30226,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode1.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30239,7 +30239,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode1.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30252,7 +30252,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode1.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30265,7 +30265,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode1.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -30278,7 +30278,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.vectorNode1.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.sunEarthSceneView.sunEarthSceneView.vectorNode1.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,

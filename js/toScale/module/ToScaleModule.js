@@ -12,21 +12,24 @@ define( require => {
   const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModel' );
   const ToScaleSceneFactory = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleSceneFactory' );
 
+  // TODO: Rename ToScaleModel
   class ToScaleModule extends GravityAndOrbitsModel {
 
     /**
-     * @param {Tandem} tandem
+     * @param {Tandem} modelTandem
      * @param {Tandem} viewTandem
      */
-    constructor( tandem, viewTandem ) {
-      super( true, p => new ToScaleSceneFactory(
-        p.isPlayingProperty,
-        p.gravityEnabledProperty,
-        p.steppingProperty,
-        p.rewindingProperty,
-        p.speedTypeProperty,
-        tandem.createTandem( 'sceneList' ) // TODO: Like in ModelModel, it is risky to share tandem
-      ), 0, true, tandem, viewTandem );
+    constructor( modelTandem, viewTandem ) {
+      super(
+        true,
+        model => new ToScaleSceneFactory( model, modelTandem, viewTandem ),
+        0,
+        true,
+
+        // TODO: Like in ModelModel, it is risky to share tandem with above
+        modelTandem,
+        viewTandem
+      );
     }
   }
 
