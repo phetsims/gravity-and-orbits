@@ -176,9 +176,9 @@ define( require => {
     getTwoBodyForce( source, target ) {
       if ( source.position.equals( target.position ) ) {
 
-        // TODO: limit distance so forces don't become too large, perhaps we could compare it to the radius of
-        // the bodies. If they are on top of each other, force should be infinite, but ignore it since we want to have
-        // semi-realistic behavior.
+        // Two bodies at exactly the same position would feel an infinite force.  In the physics computation, this would
+        // appear as a divide by zero error.  Instead return a force of zero in this frame.  In the next frame they will
+        // likely no longer be at the same spot, so will feel large force but without a divide by zero error.
         return Vector2.ZERO;
       }
       else if ( source.exploded || target.exploded ) {
