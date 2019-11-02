@@ -1,8 +1,8 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * Cartoon mode list makes the radii of all objects much larger than the true physical values to make them visible on
- * the same scale. Configuration file for setting up the cartoon mode parameters. This is typically done by
+ * This type makes the radii of all objects much larger than the true physical values to make them visible on
+ * the same scale. Configuration file for setting up the model mode parameters. This is typically done by
  * multiplying the real values by the desired scales. SunEarth and SunEarthMoon should be as similar as possible
  * (aside from the addition of the moon).
  *
@@ -20,7 +20,7 @@ define( require => {
   // constants
   const SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
   const EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
-  const EARTH_MASS_SCALE_FACTOR = 10200; // tuned by hand so there are 12 cartoon lunar orbits in one cartoon earth orbit
+  const EARTH_MASS_SCALE_FACTOR = 10200; // tuned by hand so there are 12 model lunar orbits in one model earth orbit
 
   // in days - actual period is 27.322 days, but this sim's model produces a period of 27.6 days (by inspection)
   const MOON_ORBITAL_PERIOD = 27.6;
@@ -47,7 +47,7 @@ define( require => {
    */
   const daysToSeconds = days => days * 24 * 60 * 60;
 
-  class CartoonModeList extends ModeListModel {
+  class ModelModeList extends ModeListModel {
 
     /**
      * @param {Property.<boolean>} playButtonPressedProperty
@@ -65,12 +65,12 @@ define( require => {
         new EarthMoonModeConfig(),
         new EarthSpaceStationModeConfig(),
         tandem, {
-          adjustMoonPathLength: true // adjust the moon path length in cartoon mode
+          adjustMoonPathLength: true // adjust the moon path length in model mode
         } );
     }
   }
 
-  gravityAndOrbits.register( 'CartoonModeList', CartoonModeList );
+  gravityAndOrbits.register( 'ModelModeList', ModelModeList );
 
   /**
    * Model configuration for a system with the sun and the earth.
@@ -84,7 +84,7 @@ define( require => {
       this.forceScale *= FORCE_SCALE;
       this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
-      // Sun shouldn't move in cartoon modes
+      // Sun shouldn't move in model modes
       this.sun.fixed = true;
     }
   }
@@ -108,10 +108,9 @@ define( require => {
       this.forceScale *= FORCE_SCALE;
       this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
-      // Sun shouldn't move in cartoon modes
+      // Sun shouldn't move in model modes
       this.sun.fixed = true;
     }
-
   }
 
   gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
@@ -148,5 +147,5 @@ define( require => {
 
   gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
 
-  return CartoonModeList;
+  return ModelModeList;
 } );

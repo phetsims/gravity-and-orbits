@@ -58,7 +58,7 @@ define( require => {
       this.rewindingProperty = new BooleanProperty( false );
 
       // these two booleans indicate whether or not to show the checkbox for measuring tape and mass.
-      // they are false for the cartoon screen and true for the toScale screen
+      // they are false for the model screen and true for the toScale screen
       this.showMassCheckbox = showMassCheckbox; // @public
       this.showMeasuringTape = showMeasuringTape; // @public
 

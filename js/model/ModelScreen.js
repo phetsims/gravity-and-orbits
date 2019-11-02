@@ -1,7 +1,7 @@
 // Copyright 2016-2019, University of Colorado Boulder
 
 /**
- * The 'Model' screen, though it is called 'Cartoon' throughout the code because 'ModelScreen' is confusing.
+ * The 'Model' screen.
  *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
@@ -9,7 +9,7 @@ define( require => {
   'use strict';
 
   // modules
-  const CartoonModule = require( 'GRAVITY_AND_ORBITS/cartoon/module/CartoonModule' );
+  const ModelModule = require( 'GRAVITY_AND_ORBITS/model/module/ModelModule' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
   const Image = require( 'SCENERY/nodes/Image' );
@@ -20,9 +20,9 @@ define( require => {
   const modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
 
   // images
-  const cartoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/cartoon_icon.png' );
+  const cartoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/model_icon.png' );
 
-  class CartoonScreen extends Screen {
+  class ModelScreen extends Screen {
     constructor( options ) {
 
       options = merge( {
@@ -32,12 +32,12 @@ define( require => {
 
       const viewTandem = options.tandem.createTandem( 'view' );
       super(
-        () => new CartoonModule( options.tandem.createTandem( 'model' ), viewTandem ),
+        () => new ModelModule( options.tandem.createTandem( 'model' ), viewTandem ),
         model => new GravityAndOrbitsScreenView( model, viewTandem ),
         options
       );
     }
   }
 
-  return gravityAndOrbits.register( 'CartoonScreen', CartoonScreen );
+  return gravityAndOrbits.register( 'ModelScreen', ModelScreen );
 } );

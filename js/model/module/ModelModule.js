@@ -8,13 +8,13 @@ define( require => {
   'use strict';
 
   // modules
-  const CartoonModeList = require( 'GRAVITY_AND_ORBITS/cartoon/module/CartoonModeList' );
+  const ModelModeList = require( 'GRAVITY_AND_ORBITS/model/module/ModelModeList' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
 
-  class CartoonModule extends GravityAndOrbitsModule {
+  class ModelModule extends GravityAndOrbitsModule {
     constructor( tandem, viewTandem ) {
-      super( false, p => new CartoonModeList(
+      super( false, p => new ModelModeList(
         p.playButtonPressedProperty,
         p.gravityEnabledProperty,
         p.steppingProperty,
@@ -25,5 +25,5 @@ define( require => {
     }
   }
 
-  return gravityAndOrbits.register( 'CartoonModule', CartoonModule );
+  return gravityAndOrbits.register( 'ModelModule', ModelModule );
 } );

@@ -9,7 +9,7 @@ define( require => {
   'use strict';
 
   // modules
-  const CartoonScreen = require( 'GRAVITY_AND_ORBITS/cartoon/CartoonScreen' );
+  const ModelScreen = require( 'GRAVITY_AND_ORBITS/model/ModelScreen' );
   const GlobalOptionsNode = require( 'GRAVITY_AND_ORBITS/common/view/GlobalOptionsNode' );
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
   const Sim = require( 'JOIST/Sim' );
@@ -36,8 +36,7 @@ define( require => {
 
   SimLauncher.launch( () => {
 
-    // TODO: Rename to ModelScreen
-    const cartoonScreen = new CartoonScreen( {
+    const modelScreen = new ModelScreen( {
       backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
       tandem: Tandem.rootTandem.createTandem( 'modelScreen' )
     } );
@@ -45,6 +44,6 @@ define( require => {
       backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
       tandem: Tandem.rootTandem.createTandem( 'toScaleScreen' )
     } );
-    new Sim( gravityAndOrbitsTitleString, [ cartoonScreen, toScaleScreen ], simOptions ).start();
+    new Sim( gravityAndOrbitsTitleString, [ modelScreen, toScaleScreen ], simOptions ).start();
   } );
 } );

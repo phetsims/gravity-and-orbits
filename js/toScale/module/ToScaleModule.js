@@ -25,7 +25,7 @@ define( require => {
         p.steppingProperty,
         p.rewindingProperty,
         p.speedTypeProperty,
-        tandem.createTandem( 'modeList' ) // TODO: Like in CartoonModule, it is risky to share tandem
+        tandem.createTandem( 'modeList' ) // TODO: Like in ModelModule, it is risky to share tandem
       ), 0, true, tandem, viewTandem );
     }
   }
