@@ -15,7 +15,6 @@ define( require => {
   const BooleanProperty = require( 'AXON/BooleanProperty' );
   const EventTimer = require( 'PHET_CORE/EventTimer' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const NumberProperty = require( 'AXON/NumberProperty' );
 
   // constants
