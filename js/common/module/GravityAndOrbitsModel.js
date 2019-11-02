@@ -102,7 +102,7 @@ define( require => {
 
     // @public
     getScenes() {
-      return this.sceneList.scenes.slice( 0 ); // TODO: why defensive copy?
+      return this.sceneList.scenes;
     }
 
     // @private
