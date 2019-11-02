@@ -25,7 +25,7 @@ define( require => {
   // images
   const resetArrowImg = require( 'image!GRAVITY_AND_ORBITS/reset_arrow.png' );
 
-  class ModeControl extends Node {
+  class SceneSelectionControls extends Node {
 
     /**
      * @param {Property.<GravityAndOrbitsScene>} modeIndexProperty
@@ -71,7 +71,7 @@ define( require => {
     }
   }
 
-  gravityAndOrbits.register( 'ModeControl', ModeControl );
+  gravityAndOrbits.register( 'SceneSelectionControls', SceneSelectionControls );
 
   class PlanetModeResetButton extends RectangularPushButton {
 
@@ -98,5 +98,5 @@ define( require => {
 
   gravityAndOrbits.register( 'PlanetModeResetButton', PlanetModeResetButton );
 
-  return ModeControl;
+  return SceneSelectionControls;
 } );

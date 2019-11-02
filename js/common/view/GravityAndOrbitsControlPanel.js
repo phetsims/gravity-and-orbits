@@ -14,7 +14,7 @@ define( require => {
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const GravityControl = require( 'GRAVITY_AND_ORBITS/common/view/GravityControl' );
   const merge = require( 'PHET_CORE/merge' );
-  const ModeControl = require( 'GRAVITY_AND_ORBITS/common/view/ModeControl' );
+  const SceneSelectionControls = require( 'GRAVITY_AND_ORBITS/common/view/SceneSelectionControls' );
   const Panel = require( 'SUN/Panel' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
   const VBox = require( 'SCENERY/nodes/VBox' );
@@ -42,7 +42,7 @@ define( require => {
 
       // menu sections and separators
       const sections = [
-        new ModeControl( module.modeIndexProperty, module.getModes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
+        new SceneSelectionControls( module.modeIndexProperty, module.getModes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeTopSeparatorRectangle(),
         new GravityControl( module.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeBottomSeparatorRectangle(),
