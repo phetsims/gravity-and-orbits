@@ -224,7 +224,6 @@ define( require => {
       const readoutInEarthMasses = ( bodyNode, visibleProperty ) => new EarthMassReadoutNode( bodyNode, visibleProperty );
 
       // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
-      const SEC_PER_YEAR = 365 * 24 * 60 * 60;
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
       this.scenes.push( new GravityAndOrbitsScene(
         planetStar.forceScale,
@@ -232,7 +231,6 @@ define( require => {
         planetStar.dt,
         scaledDays( planetStar.timeScale ),
         this.createIconImage( true, true, false, false ),
-        SEC_PER_YEAR,
         SUN_MODES_VELOCITY_SCALE,
         readoutInEarthMasses,
         planetStar.initialMeasuringTapeLocation,
@@ -262,7 +260,6 @@ define( require => {
         sunEarthMoon.dt,
         scaledDays( sunEarthMoon.timeScale ),
         this.createIconImage( true, true, true, false ),
-        SEC_PER_YEAR,
         SUN_MODES_VELOCITY_SCALE,
         readoutInEarthMasses,
         sunEarthMoon.initialMeasuringTapeLocation,
@@ -297,14 +294,12 @@ define( require => {
         }
       ) );
 
-      const SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
       this.scenes.push( new GravityAndOrbitsScene(
         earthMoon.forceScale,
         false,
         ( DEFAULT_DT / 3 ), // actual days
         scaledDays( 1.0 ),
         this.createIconImage( false, true, true, false ),
-        SEC_PER_MOON_ORBIT,
         ( SUN_MODES_VELOCITY_SCALE * 0.06 ),
         readoutInEarthMasses,
         earthMoon.initialMeasuringTapeLocation,
@@ -339,7 +334,6 @@ define( require => {
         ( DEFAULT_DT * 9E-4 ),
         formatMinutes,
         this.createIconImage( false, true, false, true ),
-        5400,
         ( SUN_MODES_VELOCITY_SCALE / 10000 ),
         spaceStationMassReadoutFactory,
         earthSpaceStation.initialMeasuringTapeLocation,

@@ -42,7 +42,6 @@ define( require => {
      * @param {number} dt
      * @param {function.<number, string>} timeFormatter
      * @param {Node} iconImage
-     * @param {number} defaultOrbitalPeriod
      * @param {number} velocityVectorScale
      * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory - returns a node for the representation
      * @param {Line} initialMeasuringTapeLocation
@@ -55,9 +54,10 @@ define( require => {
      * @param {string} resetButtonTandemName
      * @param {string} tandemName
      * @param {string} massControlPanelTandemName
+     * @param {string} sceneViewTandemName
      * @param {Tandem} tandem
      */
-    constructor( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod,
+    constructor( forceScale, active, dt, timeFormatter, iconImage,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                  defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList, radioButtonTandemName, resetButtonTandemName,
                  tandemName, massControlPanelTandemName, sceneViewTandemName, tandem ) {
@@ -80,10 +80,6 @@ define( require => {
 
       // @private
       this.isPlayingProperty = parameterList.isPlayingProperty;
-
-      // Precomputed value for the orbital period under default conditions (i.e. no other changes),
-      // for purposes of determining the path length (about 2 orbits)
-      this.defaultOrbitalPeriod = defaultOrbitalPeriod; // @private
 
       // How much to scale (shrink or grow) the velocity vectors; a mapping from meters/second to stage coordinates
       this.velocityVectorScale = velocityVectorScale; // @public
