@@ -54,15 +54,14 @@ define( require => {
      * @param {string} resetButtonTandemName
      * @param {string} tandemName
      * @param {string} massControlPanelTandemName
-     * @param {string} sceneViewTandemName
      * @param {Tandem} tandem
-     * @param {Tandem} viewTandem
+     * @param {Tandem} sceneViewTandem
      * @param {Body[]} bodies
      */
     constructor( forceScale, active, dt, timeFormatter, iconImage,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                  defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
-                 tandemName, massControlPanelTandemName, sceneViewTandemName, tandem, viewTandem, bodies ) {
+                 tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies ) {
 
       this.activeProperty = new BooleanProperty( active );
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );
@@ -74,7 +73,6 @@ define( require => {
       this.resetButtonTandemName = resetButtonTandemName; // @public (read-only)
       this.tandemName = tandemName; // @public (read-only)
       this.massControlPanelTandemName = massControlPanelTandemName; // @public (read-only)
-      this.sceneViewTandemName = sceneViewTandemName; // @public (read-only)
 
       this.dt = dt; // @private
       this.forceScale = forceScale; // @private
@@ -110,7 +108,7 @@ define( require => {
       bodies.forEach( body => this.addBody( body ) );
 
       // @public {Node} - scenery node that depicts the play area for this scene
-      this.sceneView = new GravityAndOrbitsSceneView( this, model, viewTandem.createTandem( this.sceneViewTandemName ) );
+      this.sceneView = new GravityAndOrbitsSceneView( this, model, sceneViewTandem );
     }
 
     /**
