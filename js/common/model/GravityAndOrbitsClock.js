@@ -40,10 +40,6 @@ define( require => {
       // @public (read-only)
       this.baseDTValue = baseDTValue;
 
-      // Use integer number of dts for replicable trajectories, see https://github.com/phetsims/gravity-and-orbits/issues/253
-      this.steppingWhilePausedDT = baseDTValue;
-      assert && assert( !isNaN( this.steppingWhilePausedDT ), 'this.steppingWhilePausedDT should be a number' );
-
       // @public
       this.isRunningProperty = new BooleanProperty( false, {
         tandem: tandem.createTandem( 'isRunningProperty' )
@@ -69,15 +65,9 @@ define( require => {
       // application specific logic
       this.steppingProperty.set( true );
 
-      // dt should be scaled by the initial speed when manually stepping
-      const clockDT = this.dt; // store to revert after manual step
-      this.dt = this.steppingWhilePausedDT;
-
+      // Uses 1x dt for replicable trajectories, see https://github.com/phetsims/gravity-and-orbits/issues/253
       this.step( 1 / CLOCK_FRAME_RATE );
       this.steppingProperty.set( false );
-
-      // revert dt to match the play speed
-      this.dt = clockDT;
     }
 
     /**
