@@ -57,12 +57,12 @@ define( require => {
      * @param {string} sceneViewTandemName
      * @param {Tandem} tandem
      * @param {Tandem} viewTandem
-     * @param {function} createBodies: transformProperty=>Body[]
+     * @param {Body[]} bodies
      */
     constructor( forceScale, active, dt, timeFormatter, iconImage,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                  defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
-                 tandemName, massControlPanelTandemName, sceneViewTandemName, tandem, viewTandem, createBodies ) {
+                 tandemName, massControlPanelTandemName, sceneViewTandemName, tandem, viewTandem, bodies ) {
 
       this.activeProperty = new BooleanProperty( active );
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );
@@ -107,7 +107,7 @@ define( require => {
         this.physicsEngine.clock.setRunning( playButtonPressed && active )
       );
 
-      createBodies( this.transformProperty ).forEach( body => this.addBody( body ) );
+      bodies.forEach( body => this.addBody( body ) );
 
       // @public {Node} - scenery node that depicts the play area for this scene
       this.sceneView = new GravityAndOrbitsSceneView( this, model, viewTandem.createTandem( this.sceneViewTandemName ) );

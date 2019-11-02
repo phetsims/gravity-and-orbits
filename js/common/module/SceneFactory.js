@@ -107,7 +107,7 @@ define( require => {
       // REVIEW: why is this inside the constructor?
       // TODO: search // REVIEW comments
       class SpaceStation extends Body {
-        constructor( earthSpaceStation, transformProperty, tandem, options ) {
+        constructor( earthSpaceStation, tandem, options ) {
 
           options = merge( {
             diameterScale: 1000
@@ -123,7 +123,6 @@ define( require => {
             earthSpaceStation.spaceStation.mass,
             spaceStationString,
             model,
-            transformProperty,
             'spaceStationMassControl',
             tandem,
             'spaceStationMassLabel',
@@ -135,7 +134,7 @@ define( require => {
 
       // non-static inner class: Moon
       class Moon extends Body {
-        constructor( massSettable, massReadoutBelow, body, transformProperty, tandem, options ) {
+        constructor( massSettable, massReadoutBelow, body, tandem, options ) {
 
           options = merge( {
             pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
@@ -154,7 +153,6 @@ define( require => {
             body.mass,
             ourMoonString,
             model,
-            transformProperty,
             'moonMassControl',
             tandem,
             'moonMassLabel',
@@ -165,7 +163,7 @@ define( require => {
       }
 
       class Planet extends Body {
-        constructor( body, transformProperty, tandem, options ) {
+        constructor( body, tandem, options ) {
           super(
             GravityAndOrbitsBodies.PLANET,
             body,
@@ -176,7 +174,6 @@ define( require => {
             body.mass,
             earthString,
             model,
-            transformProperty,
             'planetMassControl',
             tandem,
             'planetMassLabel',
@@ -187,7 +184,7 @@ define( require => {
       }
 
       class Star extends Body {
-        constructor( body, transformProperty, tandem, options ) {
+        constructor( body, tandem, options ) {
           super(
             GravityAndOrbitsBodies.STAR,
             body, // REVIEW: why does Body take Body argument?
@@ -198,7 +195,6 @@ define( require => {
             body.mass,
             ourSunString,
             model,
-            transformProperty,
             'starMassControl',
             tandem,
             'starMassLabel',
@@ -220,6 +216,7 @@ define( require => {
 
       // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
+      const starPlanetTandem = modelTandem.createTandem( 'starPlanetScene' );
       this.scenes.push( new GravityAndOrbitsScene(
         planetStar.forceScale,
         false,
@@ -242,22 +239,19 @@ define( require => {
         'sunEarthSceneMassControlPanel',
         'sunEarthSceneView',
         modelTandem.createTandem( 'sunEarthScene' ),
-        viewTandem.createTandem( 'sunEarthSceneView' ),
-        transformProperty => {
-          const starPlanetTandem = modelTandem.createTandem( 'starPlanetScene' );
-          return [
-            new Star( planetStar.sun, transformProperty, starPlanetTandem.createTandem( 'star' ), {
-              maxPathLength: 345608942000 // in km
-            } ),
+        viewTandem.createTandem( 'sunEarthSceneView' ), [
+          new Star( planetStar.sun, starPlanetTandem.createTandem( 'star' ), {
+            maxPathLength: 345608942000 // in km
+          } ),
 
-            // TODO: earth vs planet?
-            new Planet( planetStar.earth, transformProperty, starPlanetTandem.createTandem( 'planet' ) )
-          ];
-        }
-      ) );
+          // TODO: earth vs planet?
+          new Planet( planetStar.earth, starPlanetTandem.createTandem( 'planet' ) )
+        ] ) );
 
-      // const starPlanetTransformProperty = this.scenes[ 0 ].transformProperty; // TODO: pass through in Scene constructor
-
+      // increase moon path length so that it fades away with other bodies
+      // in model coordinates (at default orbit)
+      const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
+      const sunEarthMoonSceneTandem = modelTandem.createTandem( 'sunEarthMoonScene' );
       this.scenes.push( new GravityAndOrbitsScene(
         sunEarthMoon.forceScale,
         false,
@@ -278,33 +272,21 @@ define( require => {
         'sunEarthMoonSceneMassControlPanel',
         'sunEarthMoonSceneView',
         modelTandem.createTandem( 'sunEarthMoonScene' ),
-        viewTandem.createTandem( 'sunEarthMoonSceneView' ),
-        transformProperty => {
+        viewTandem.createTandem( 'sunEarthMoonSceneView' ), [
+          new Star( sunEarthMoon.sun, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
+            maxPathLength: 345608942000 // in km
+          } ),
+          new Planet( sunEarthMoon.earth, sunEarthMoonSceneTandem.createTandem( 'earth' ) ),
+          new Moon( // no room for the slider
+            false, false, // so it doesn't intersect with earth mass readout
+            sunEarthMoon.moon,
+            sunEarthMoonSceneTandem.createTandem( 'moon' ), {
+              pathLengthBuffer: pathLengthBuffer
+            }
+          )
+        ] ) );
 
-          // increase moon path length so that it fades away with other bodies
-          // in model coordinates (at default orbit)
-          const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
-
-          // TODO: How was this working before?
-          // const sunEarthMoonTransformProperty = this.scenes[ 1 ].sunEarthMoonTransformProperty; // TODO: clean up
-          const sunEarthMoonSceneTandem = modelTandem.createTandem( 'sunEarthMoonScene' );
-          return [
-            new Star( sunEarthMoon.sun, transformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
-              maxPathLength: 345608942000 // in km
-            } ),
-            new Planet( sunEarthMoon.earth, transformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ),
-            new Moon( // no room for the slider
-              false, false, // so it doesn't intersect with earth mass readout
-              sunEarthMoon.moon,
-              transformProperty,
-              sunEarthMoonSceneTandem.createTandem( 'moon' ), {
-                pathLengthBuffer: pathLengthBuffer
-              }
-            )
-          ];
-        }
-      ) );
-
+      const earthMoonSceneTandem = modelTandem.createTandem( 'earthMoonScene' );
       this.scenes.push( new GravityAndOrbitsScene(
         earthMoon.forceScale,
         false,
@@ -325,22 +307,18 @@ define( require => {
         'earthMoonSceneMassControlPanel',
         'earthMoonSceneView',
         modelTandem.createTandem( 'earthMoonScene' ),
-        viewTandem.createTandem( 'earthMoonSceneView' ),
-        transformProperty => {
-          const earthMoonSceneTandem = modelTandem.createTandem( 'earthMoonScene' );
-          return [
-            new Planet( earthMoon.earth, transformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
-              orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
-            } ),
-            new Moon( true, true, earthMoon.moon, transformProperty, earthMoonSceneTandem.createTandem( 'moon' ), {
-              orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
-              rotationPeriod: earthMoon.moon.rotationPeriod
-            } )
-          ];
-        }
-      ) );
+        viewTandem.createTandem( 'earthMoonSceneView' ), [
+          new Planet( earthMoon.earth, earthMoonSceneTandem.createTandem( 'earth' ), {
+            orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
+          } ),
+          new Moon( true, true, earthMoon.moon, earthMoonSceneTandem.createTandem( 'moon' ), {
+            orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
+            rotationPeriod: earthMoon.moon.rotationPeriod
+          } )
+        ] ) );
 
       const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
+      const earthSpaceStationTandem = modelTandem.createTandem( 'earthSpaceStationScene' );
       this.scenes.push( new GravityAndOrbitsScene(
         earthSpaceStation.forceScale,
         false,
@@ -361,18 +339,14 @@ define( require => {
         'earthSpaceStationSceneMassControlPanel',
         'earthSpaceStationSceneView',
         modelTandem.createTandem( 'earthSpaceStationScene' ),
-        viewTandem.createTandem( 'earthSpaceStationSceneView' ),
-        transformProperty => {
-          const earthSpaceStationTandem = modelTandem.createTandem( 'earthSpaceStationScene' );
-          return [
-            new Planet( earthSpaceStation.earth, transformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
-              maxPathLength: 35879455 // in km
-            } ),
-            new SpaceStation( earthSpaceStation, transformProperty, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
-              rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
-            } )
-          ];
-        }
+        viewTandem.createTandem( 'earthSpaceStationSceneView' ), [
+          new Planet( earthSpaceStation.earth, earthSpaceStationTandem.createTandem( 'earth' ), {
+            maxPathLength: 35879455 // in km
+          } ),
+          new SpaceStation( earthSpaceStation, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
+            rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
+          } )
+        ]
       ) );
     }
 

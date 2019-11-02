@@ -49,8 +49,8 @@ define( require => {
   const tempVector = new Vector2( 0, 0 );
 
   class Body {
+
     /**
-     * Constructor for Body
      * @param {string} name - unique name for the body, one of GravityAndOrbitsBodies, used for object identification
      * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
      * @param {Color} color
@@ -60,15 +60,14 @@ define( require => {
      * @param {number} labelAngle
      * @param {number} tickValue - default value for mass setting
      * @param {string} tickLabel - translatable label for the mass slider labeling the default value
-     * @param {ModeListParameterList} parameterList - composition of Properties that determine body state
-     * @param {Property.<ModelViewTransform2>} transformProperty
+     * @param {GravityAndOrbitsModel} model
      * @param {string} bodyMassControlTandemName
      * @param {Tandem} tandem
      * @param {string} labelTandemName
      * @param {string} bodyNodeTandemName
      * @param {Object} [options]
      */
-    constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, parameterList, transformProperty,
+    constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
                  bodyMassControlTandemName, tandem, labelTandemName, bodyNodeTandemName, options ) {
 
       options = merge( {
@@ -149,9 +148,9 @@ define( require => {
       this.renderer = renderer; // @private
 
       // @private
-      this.isPlayingProperty = parameterList.isPlayingProperty;
-      const steppingProperty = parameterList.steppingProperty;
-      const rewindingProperty = parameterList.rewindingProperty;
+      this.isPlayingProperty = model.isPlayingProperty;
+      const steppingProperty = model.steppingProperty;
+      const rewindingProperty = model.rewindingProperty;
 
       // @public - force freeze all changes to the rewind values for rewindable Property
       this.freezeRewindChangeProperty = new Property( false );
