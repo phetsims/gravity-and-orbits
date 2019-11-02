@@ -80,8 +80,6 @@ define( require => {
         const mode = this.modeList.modes[ i ];
         mode.playAreaNode = new GravityAndOrbitsPlayArea( mode, this, viewTandem.createTandem( 'playArea' ) );
       }
-
-      this.reset(); // TODO: is this necessary?  If so, why?
     }
 
     // @public

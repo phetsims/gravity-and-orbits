@@ -73,7 +73,6 @@ define( require => {
       this.tandemName = tandemName; // @public (read-only)
 
       this.dt = dt; // @private
-      this.parameterList = parameterList; // @`rivate
       this.forceScale = forceScale; // @private
       this.iconImage = iconImage; // @private
 

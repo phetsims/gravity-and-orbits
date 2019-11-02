@@ -169,8 +169,7 @@ define( require => {
         }
       }
 
-      // non-static inner class: Earth.  TODO: rename planet
-      class Earth extends Body {
+      class Planet extends Body {
         constructor( body, transformProperty, tandem, options ) {
           super(
             GravityAndOrbitsBodies.PLANET,
@@ -192,8 +191,7 @@ define( require => {
         }
       }
 
-      // non-static inner class: Sun.  TODO: rename Star
-      class Sun extends Body {
+      class Star extends Body {
         constructor( body, transformProperty, tandem, options ) {
           super(
             GravityAndOrbitsBodies.STAR,
@@ -216,7 +214,6 @@ define( require => {
         }
       }
 
-      this.parameterList = parameterList; // @private
       this.modes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
 
       sunEarth.center();
@@ -252,10 +249,10 @@ define( require => {
 
       const sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
       const sunEarthTandem = tandem.createTandem( 'sunEarthScene' );
-      this.modes[ 0 ].addBody( new Sun( sunEarth.sun, sunEarthTransformProperty, sunEarthTandem.createTandem( 'sun' ), { // TODO: sun vs star?
+      this.modes[ 0 ].addBody( new Star( sunEarth.sun, sunEarthTransformProperty, sunEarthTandem.createTandem( 'sun' ), { // TODO: sun vs star?
         maxPathLength: 345608942000 // in km
       } ) );
-      this.modes[ 0 ].addBody( new Earth( sunEarth.earth, sunEarthTransformProperty, sunEarthTandem.createTandem( 'earth' ) ) );// TODO: earth vs planet?
+      this.modes[ 0 ].addBody( new Planet( sunEarth.earth, sunEarthTransformProperty, sunEarthTandem.createTandem( 'earth' ) ) );// TODO: earth vs planet?
 
       this.modes.push( new GravityAndOrbitsMode(
         sunEarthMoon.forceScale,
@@ -283,10 +280,10 @@ define( require => {
       const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
       const sunEarthMoonTransformProperty = this.modes[ 1 ].sunEarthMoonTransformProperty;
       const sunEarthMoonSceneTandem = tandem.createTandem( 'sunEarthMoonScene' );
-      this.modes[ 1 ].addBody( new Sun( sunEarthMoon.sun, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
+      this.modes[ 1 ].addBody( new Star( sunEarthMoon.sun, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
         maxPathLength: 345608942000 // in km
       } ) );
-      this.modes[ 1 ].addBody( new Earth( sunEarthMoon.earth, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ) );
+      this.modes[ 1 ].addBody( new Planet( sunEarthMoon.earth, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ) );
       this.modes[ 1 ].addBody( new Moon( // no room for the slider
         false, false, // so it doesn't intersect with earth mass readout
         sunEarthMoon.moon,
@@ -320,7 +317,7 @@ define( require => {
 
       const earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
       const earthMoonSceneTandem = tandem.createTandem( 'earthMoonScene' );
-      this.modes[ 2 ].addBody( new Earth( earthMoon.earth, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
+      this.modes[ 2 ].addBody( new Planet( earthMoon.earth, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
         orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
       } ) );
 
@@ -353,7 +350,7 @@ define( require => {
 
       const earthSpaceStationTandem = tandem.createTandem( 'earthSpaceStationScene' );
       const earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
-      this.modes[ 3 ].addBody( new Earth( earthSpaceStation.earth, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
+      this.modes[ 3 ].addBody( new Planet( earthSpaceStation.earth, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
         maxPathLength: 35879455 // in km
       } ) );
       this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
