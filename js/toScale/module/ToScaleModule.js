@@ -9,10 +9,10 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
+  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModel' );
   const RealModeList = require( 'GRAVITY_AND_ORBITS/toScale/module/RealModeList' );
 
-  class ToScaleModule extends GravityAndOrbitsModule {
+  class ToScaleModule extends GravityAndOrbitsModel {
 
     /**
      * @param {Tandem} tandem

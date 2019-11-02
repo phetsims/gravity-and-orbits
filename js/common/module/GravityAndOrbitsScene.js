@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * A GravityAndOrbitsScene behaves like a module, it has its own model, control panel, canvas, and remembers its state
+ * A GravityAndOrbitsScene behaves like a screen, it has its own model, control panel, canvas, and remembers its state
  * when you leave and come back. It is created with defaults from ModeListModel.Mode.
  * <p/>
  * The sim was designed this way so that objects are replaced instead of mutated.

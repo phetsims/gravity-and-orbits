@@ -58,10 +58,10 @@ define( require => {
   class CheckboxPanel extends VBox {
 
     /**
-     * @param {GravityAndOrbitsModule} module
+     * @param {GravityAndOrbitsModel} model
      * @param {Object} [options]
      */
-    constructor( module, options ) {
+    constructor( model, options ) {
 
       const children = [];
 
@@ -82,7 +82,7 @@ define( require => {
             new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
           ]
         } ),
-        module.showGravityForceProperty, optionsWithTandem( 'gravityForceCheckbox' ) ) );
+        model.showGravityForceProperty, optionsWithTandem( 'gravityForceCheckbox' ) ) );
 
       // velocity checkbox
       children.push( new Checkbox( new HBox( {
@@ -92,10 +92,10 @@ define( require => {
             new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.RED_COLORBLIND } )
           ]
         } ),
-        module.showVelocityProperty, optionsWithTandem( 'velocityCheckbox' ) ) );
+        model.showVelocityProperty, optionsWithTandem( 'velocityCheckbox' ) ) );
 
       // mass checkbox
-      if ( module.showMassCheckbox ) {
+      if ( model.showMassCheckbox ) {
         children.push( new Checkbox( new HBox( {
             spacing: SPACING,
             children: [
@@ -103,7 +103,7 @@ define( require => {
               new Image( iconMassImg, { scale: 0.8 } )
             ]
           } ),
-          module.showMassProperty, optionsWithTandem( 'massCheckbox' ) ) );
+          model.showMassProperty, optionsWithTandem( 'massCheckbox' ) ) );
       }
 
       const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
@@ -120,7 +120,7 @@ define( require => {
             pathIconImageNode
           ]
         } ),
-        module.showPathProperty, optionsWithTandem( 'pathCheckbox' ) ) );
+        model.showPathProperty, optionsWithTandem( 'pathCheckbox' ) ) );
 
       // grid checkbox
       children.push( new Checkbox( new HBox( {
@@ -133,10 +133,10 @@ define( require => {
             } )
           ]
         } ),
-        module.showGridProperty, optionsWithTandem( 'gridCheckbox' ) ) );
+        model.showGridProperty, optionsWithTandem( 'gridCheckbox' ) ) );
 
       // measuring tape checkbox
-      if ( module.showMeasuringTape ) {
+      if ( model.showMeasuringTape ) {
         const measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
         children.push( new Checkbox( new HBox( {
           spacing: SPACING,
@@ -145,7 +145,7 @@ define( require => {
             measuringTapeTextNode,
             measuringTapeIcon
           ]
-        } ), module.showMeasuringTapeProperty, optionsWithTandem( 'measuringTapeCheckbox' ) ) );
+        } ), model.showMeasuringTapeProperty, optionsWithTandem( 'measuringTapeCheckbox' ) ) );
       }
 
       // increase the touch area of the checkboxes

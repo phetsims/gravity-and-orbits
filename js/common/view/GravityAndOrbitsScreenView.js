@@ -23,26 +23,24 @@ define( require => {
   class GravityAndOrbitsScreenView extends ScreenView {
 
     /**
-     * Constructor for GravityAndOrbitsScreenView. Unlike most PhET ScreenView files, this ScreenView takes a module
-     * object as a parameter instead of a model. This seemed like the easiest way to port the Java version, which has
-     * one module for each screen. This is the ScreenView for both screens in this sim.
+     * Constructor for GravityAndOrbitsScreenView. This is the ScreenView for both screens in this sim.
      *
-     * @param {GravityAndOrbitsModule} module
+     * @param {GravityAndOrbitsModel} model
      * @param {Tandem} tandem
      */
-    constructor( module, tandem ) {
+    constructor( model, tandem ) {
 
       super();
 
       // Control panel in the upper right of the play area
-      const controlPanel = new GravityAndOrbitsControlPanel( module, {
+      const controlPanel = new GravityAndOrbitsControlPanel( model, {
         top: this.layoutBounds.top + MARGIN,
         right: this.layoutBounds.right - MARGIN,
         tandem: tandem.createTandem( 'controlPanel' )
       } );
 
       // Add the scene selection controls, one for each of the four modes
-      module.getScenes().forEach( scene => {
+      model.getScenes().forEach( scene => {
         const playAreaNode = scene.playAreaNode;
         const massControlPanel = new MassControlPanel( scene.getMassSettableBodies(), {
           top: controlPanel.bottom + MARGIN,
@@ -59,28 +57,28 @@ define( require => {
       this.addChild( controlPanel );
 
       // Make sure only one scene is visible at a time
-      module.sceneProperty.link( scene => {
-        for ( let i = 0; i < module.sceneList.scenes.length; i++ ) {
-          module.sceneList.scenes[ i ].playAreaNode.visible = false;
-          module.sceneList.scenes[ i ].massControlPanel.visible = false;
+      model.sceneProperty.link( scene => {
+        for ( let i = 0; i < model.sceneList.scenes.length; i++ ) {
+          model.sceneList.scenes[ i ].playAreaNode.visible = false;
+          model.sceneList.scenes[ i ].massControlPanel.visible = false;
         }
         scene.playAreaNode.visible = true;
         scene.massControlPanel.visible = true;
-        module.updateActiveModule();
+        model.updateActiveModule();
       } );
 
       // Add the speed control slider.
-      this.addChild( new SpeedRadioButtons( module.speedTypeProperty, { // Rename module => model
+      this.addChild( new SpeedRadioButtons( model.speedTypeProperty, {
           bottom: this.layoutBounds.bottom - MARGIN,
           left: this.layoutBounds.left + MARGIN,
-        scale: 1.2,
-        tandem: tandem.createTandem( 'speedRadioButtonGroup' )
+          scale: 1.2,
+          tandem: tandem.createTandem( 'speedRadioButtonGroup' )
         } )
       );
 
       // Create and add the Reset All Button in the bottom right, which resets the model
       const resetAllButton = new ResetAllButton( {
-        listener: () => module.reset(),
+        listener: () => model.reset(),
         right: this.layoutBounds.right - MARGIN - 4,
         bottom: this.layoutBounds.bottom - MARGIN - 4, // slight difference centers below panels
         tandem: tandem.createTandem( 'resetAllButton' )

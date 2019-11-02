@@ -25,10 +25,10 @@ define( require => {
   class GravityAndOrbitsControlPanel extends Panel {
 
     /**
-     * @param {GravityAndOrbitsModule} module
+     * @param {GravityAndOrbitsModel} model
      * @param {Object} [options]
      */
-    constructor( module, options ) {
+    constructor( model, options ) {
 
       options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options );
 
@@ -42,11 +42,11 @@ define( require => {
 
       // menu sections and separators
       const sections = [
-        new SceneSelectionControls( module.sceneIndexProperty, module.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
+        new SceneSelectionControls( model.sceneIndexProperty, model.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeTopSeparatorRectangle(),
-        new GravityControl( module.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
+        new GravityControl( model.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeBottomSeparatorRectangle(),
-        new CheckboxPanel( module, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
+        new CheckboxPanel( model, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
       ];
 
       assert && assert( sections.length === 5, 'There should be 5 sections in the GravityAndOrbitsControlPanel' );

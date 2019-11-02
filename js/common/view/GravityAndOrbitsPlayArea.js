@@ -53,11 +53,11 @@ define( require => {
     /**
      * Constructor for GravityAndOrbitsPlayArea
      * @param {GravityAndOrbitsScene} scene
-     * @param {GravityAndOrbitsModule} module
+     * @param {GravityAndOrbitsModel} model
      * @param {Tandem} tandem
      */
-    constructor( scene, module, tandem ) {
-      const model = scene.physicsEngine;
+    constructor( scene, model, tandem ) {
+      const physicsEngine = scene.physicsEngine;
       const forceScale = scene.forceScale;
 
       // each orbit mode has its own play area with a CanvasNode for rendering paths
@@ -67,9 +67,9 @@ define( require => {
 
       super( 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: excludeInvisible } );
 
-      const bodies = model.getBodies();
+      const bodies = physicsEngine.getBodies();
 
-      this.addChild( new PathsCanvasNode( bodies, scene.transformProperty, module.showPathProperty, STAGE_SIZE ) );
+      this.addChild( new PathsCanvasNode( bodies, scene.transformProperty, model.showPathProperty, STAGE_SIZE ) );
 
       const forceVectorColorFill = new Color( 50, 130, 215 );
       const forceVectorColorOutline = new Color( 64, 64, 64 );
@@ -79,8 +79,8 @@ define( require => {
       // Use canvas coordinates to determine whether something has left the visible area
       const isReturnableProperties = [];
       bodies.forEach( body => {
-        const bodyNode = new BodyNode( body, body.labelAngle, module.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
-        const massReadoutNode = scene.massReadoutFactory( bodyNode, module.showMassProperty );
+        const bodyNode = new BodyNode( body, body.labelAngle, model.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
+        const massReadoutNode = scene.massReadoutFactory( bodyNode, model.showMassProperty );
         this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
 
@@ -96,14 +96,14 @@ define( require => {
 
       // Add gravity force vector nodes
       for ( let i = 0; i < bodies.length; i++ ) {
-        this.addChild( new VectorNode( bodies[ i ], scene.transformProperty, module.showGravityForceProperty,
+        this.addChild( new VectorNode( bodies[ i ], scene.transformProperty, model.showGravityForceProperty,
           bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline ) );
       }
 
       // Add velocity vector nodes
       for ( let i = 0; i < bodies.length; i++ ) {
         if ( !bodies[ i ].fixed ) {
-          this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, module.showVelocityProperty,
+          this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
             bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
             vString, tandem.createTandem( 'vectorNode' + i ) ) );
         }
@@ -116,10 +116,10 @@ define( require => {
 
       // Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
       const gridNode = new GridNode( scene.transformProperty, scene.gridSpacing, scene.gridCenter, 28 );
-      module.showGridProperty.linkAttribute( gridNode, 'visible' );
+      model.showGridProperty.linkAttribute( gridNode, 'visible' );
       this.addChild( gridNode );
 
-      this.addChild( new DayCounter( scene.timeFormatter, model.clock, tandem.createTandem( 'dayCounter' ), {
+      this.addChild( new DayCounter( scene.timeFormatter, physicsEngine.clock, tandem.createTandem( 'dayCounter' ), {
         bottom: STAGE_SIZE.bottom - 20,
         right: STAGE_SIZE.right - 50,
         scale: 1.2
@@ -128,7 +128,7 @@ define( require => {
       // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
       // Add play/pause, rewind, and step buttons
-      const timeControlPanel = new TimeControlPanel( module.sceneProperty, module.isPlayingProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
+      const timeControlPanel = new TimeControlPanel( model.sceneProperty, model.isPlayingProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
         bottom: STAGE_SIZE.bottom - 10,
         centerX: STAGE_SIZE.centerX,
         scale: 1.5
@@ -137,7 +137,7 @@ define( require => {
 
       // Add measuring tape
       const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
-      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.showMeasuringTapeProperty, {
+      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
         basePositionProperty: scene.measuringTapeStartPointProperty,
         tipPositionProperty: scene.measuringTapeEndPointProperty,
         textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',

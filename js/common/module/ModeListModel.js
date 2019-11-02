@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * ModeListModel enumerates and declares the possible modes in the GravityAndOrbitsModule, such as 'Star + Planet' scene.
+ * ModeListModel enumerates and declares the possible modes in the GravityAndOrbitsModel, such as 'Star + Planet' scene.
  * Models (and the bodies they contain) are created in ModeListModel.
  *
  * @author Sam Reid (PhET Interactive Simulations)

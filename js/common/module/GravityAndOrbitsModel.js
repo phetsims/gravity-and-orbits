@@ -1,9 +1,9 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * The GravityAndOrbitsModule has an array of GravityAndOrbitsScenes, one scene for each configuration of bodies (e.g.,
+ * The GravityAndOrbitsModel has an array of GravityAndOrbitsScenes, one scene for each configuration of bodies (e.g.,
  * Star + Planet). Each scene has its own model, canvas, clock, etc, which are used in place of this Module's data.
- * The module contains information that is shared across all modes, such as whether certain features are shown (such as
+ * The model contains information that is shared across all modes, such as whether certain features are shown (such as
  * showing the gravitational force).
  *
  * @author Sam Reid (PhET Interactive Simulations)
@@ -29,8 +29,7 @@ define( require => {
   // constants
   const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
-  // TODO: Rename to "Model"
-  class GravityAndOrbitsModule {
+  class GravityAndOrbitsModel {
 
     /**
      * @param {boolean} showMeasuringTape
@@ -137,7 +136,7 @@ define( require => {
   }
 
   //statics
-  GravityAndOrbitsModule.G = G;
+  GravityAndOrbitsModel.G = G;
 
-  return gravityAndOrbits.register( 'GravityAndOrbitsModule', GravityAndOrbitsModule );
+  return gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
 } );
