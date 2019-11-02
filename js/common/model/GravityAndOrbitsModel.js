@@ -35,9 +35,8 @@ define( require => {
      * @param {number} initialSceneIndex
      * @param {boolean} showMassCheckbox
      * @param {Tandem} tandem
-     * @param {Tandem} viewTandem
      */
-    constructor( showMeasuringTape, createModes, initialSceneIndex, showMassCheckbox, tandem, viewTandem ) {
+    constructor( showMeasuringTape, createModes, initialSceneIndex, showMassCheckbox, tandem ) {
 
       // Properties that are common to all "modes" should live here.
       this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );

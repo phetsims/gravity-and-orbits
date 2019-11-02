@@ -21,9 +21,8 @@ define( require => {
         model => new ModelSceneFactory( model, modelTandem, viewTandem ),
         0,
         false,
-        modelTandem,
-        viewTandem
-      );// TODO: how to deal with viewTandem
+        modelTandem
+      );
     }
   }
 

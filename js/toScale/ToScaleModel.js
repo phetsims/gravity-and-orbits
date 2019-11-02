@@ -24,10 +24,7 @@ define( require => {
         model => new ToScaleSceneFactory( model, modelTandem, viewTandem ),
         0,
         true,
-
-        // TODO: Like in ModelModel, it is risky to share tandem with above
-        modelTandem,
-        viewTandem
+        modelTandem // TODO: Like in ModelModel, it is risky to share tandem with above
       );
     }
   }
