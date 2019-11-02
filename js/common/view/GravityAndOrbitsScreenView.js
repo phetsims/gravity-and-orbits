@@ -10,7 +10,7 @@ define( require => {
   'use strict';
 
   // modules
-  const ControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/ControlPanel' );
+  const GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsControlPanel' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/MassControlPanel' );
   const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
@@ -35,7 +35,7 @@ define( require => {
       super();
 
       // Control panel in the upper right of the play area
-      const controlPanelNode = new ControlPanel( module, {
+      const controlPanelNode = new GravityAndOrbitsControlPanel( module, {
         top: this.layoutBounds.top + MARGIN,
         right: this.layoutBounds.right - MARGIN,
         tandem: tandem.createTandem( 'controlPanelNode' ) // TODO: name?

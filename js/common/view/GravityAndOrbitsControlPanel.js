@@ -1,9 +1,7 @@
 // Copyright 2013-2019, University of Colorado Boulder
 
 /**
- * TODO: better name?
- * Control panel containing the controls for orbital mode, gravity, and visibility of planetary path
- * and vectors.
+ * Control panel containing the controls for orbital mode, gravity, and visibility of planetary path and vectors.
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
@@ -24,7 +22,7 @@ define( require => {
   // constants
   const MENU_SECTION_OPTIONS = { x: 5 };
 
-  class ControlPanel extends Panel {
+  class GravityAndOrbitsControlPanel extends Panel {
 
     /**
      * @param {GravityAndOrbitsModule} module
@@ -51,7 +49,7 @@ define( require => {
         new CheckboxPanel( module, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
       ];
 
-      assert && assert( sections.length === 5, 'There should be 5 sections in the ControlPanel' );
+      assert && assert( sections.length === 5, 'There should be 5 sections in the GravityAndOrbitsControlPanel' );
 
       const vBox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
       super( vBox, options );
@@ -64,5 +62,5 @@ define( require => {
     }
   }
 
-  return gravityAndOrbits.register( 'ControlPanel', ControlPanel );
+  return gravityAndOrbits.register( 'GravityAndOrbitsControlPanel', GravityAndOrbitsControlPanel );
 } );
