@@ -42,30 +42,24 @@ define( require => {
       } );
 
       // Add the mode selection controls, one for each of the four modes
-      const modes = module.getModes();
-      for ( let i = 0; i < modes.length; i++ ) {
-        const playAreaNode = modes[ i ].playAreaNode;
-        const massControlPanel = new MassControlPanel( modes[ i ].getMassSettableBodies(), {
+      const scenes = module.getScenes();
+      for ( let i = 0; i < scenes.length; i++ ) {
+        const playAreaNode = scenes[ i ].playAreaNode;
+        const massControlPanel = new MassControlPanel( scenes[ i ].getMassSettableBodies(), {
           top: controlPanelNode.bottom + MARGIN,
           right: this.layoutBounds.right - MARGIN,
           tandem: tandem.createTandem( 'massControlPanel' + i )// TODO don't index like this
         } );
-        modes[ i ].massControlPanel = massControlPanel;
+        scenes[ i ].massControlPanel = massControlPanel;
 
         this.addChild( playAreaNode );
         this.addChild( massControlPanel );
-
-        // TODO: I think these can be deleted
-        if ( modes[ i ] !== module.modeProperty.get() ) {
-          playAreaNode.visible = false;
-          massControlPanel.visible = false;
-        }
       }
 
       // add the control panel on top of the canvases
       this.addChild( controlPanelNode );
 
-      // Make sure only one canvas is visible at a time
+      // Make sure only one scene is visible at a time
       module.modeProperty.link( mode => {
         for ( let i = 0; i < module.modeList.modes.length; i++ ) {
           module.modeList.modes[ i ].playAreaNode.visible = false;

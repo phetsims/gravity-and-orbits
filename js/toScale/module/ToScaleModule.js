@@ -1,7 +1,7 @@
 // Copyright 2016-2019, University of Colorado Boulder
 
 /**
- * // TODO Docs
+ *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 define( require => {

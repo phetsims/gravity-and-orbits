@@ -25,8 +25,6 @@ define( require => {
   const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  // TODO: why is this line unused?
-  // const spaceStationMassString = require( 'string!GRAVITY_AND_ORBITS/spaceStationMass' );
   const moonMassString = require( 'string!GRAVITY_AND_ORBITS/moonMass' );
   const planetMassString = require( 'string!GRAVITY_AND_ORBITS/planetMass' );
   const satelliteMassString = require( 'string!GRAVITY_AND_ORBITS/satelliteMass' );
@@ -58,7 +56,7 @@ define( require => {
 
         const massSettableBody = massSettableBodies[ i ];
 
-        // TODO: embed label as child of control
+        // TODO(phet-io design): embed label as child of control
         const label = new Text( LABEL_MAP[ massSettableBody.name ], {
           font: CONTROL_FONT,
           fontWeight: 'bold',

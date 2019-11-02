@@ -67,7 +67,6 @@ define( require => {
       this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
       this.zoomLevelProperty = new NumberProperty( 1, { tandem: tandem.createTandem( 'zoomLevelProperty' ) } );
 
-      this.playAreaNode = null; // @public
       this.radioButtonTandemName = radioButtonTandemName; // @public (read-only)
       this.resetButtonTandemName = resetButtonTandemName; // @public (read-only)
       this.tandemName = tandemName; // @public (read-only)

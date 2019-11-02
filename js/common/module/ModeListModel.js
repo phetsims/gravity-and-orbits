@@ -96,14 +96,14 @@ define( require => {
      * Constructor for ModeListModel.
      *
      * @param {ModeListParameterList} parameterList
-     * @param {SunEarthModeConfig} sunEarth
+     * @param {SunEarthModeConfig} planetStar
      * @param {SunEarthMoonModeConfig} sunEarthMoon
      * @param {EarthMoonModeConfig} earthMoon
      * @param {EarthSpaceStationModeConfig} earthSpaceStation
      * @param {Tandem} tandem
      * @param {Object} [options]
      */
-    constructor( parameterList, sunEarth, sunEarthMoon, earthMoon, earthSpaceStation, tandem, options ) {
+    constructor( parameterList, planetStar, sunEarthMoon, earthMoon, earthSpaceStation, tandem, options ) {
 
       options = merge( {
         adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
@@ -216,7 +216,7 @@ define( require => {
 
       this.modes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
 
-      sunEarth.center();
+      planetStar.center();
       sunEarthMoon.center();
       earthMoon.center();
       earthSpaceStation.center();
@@ -227,18 +227,18 @@ define( require => {
       const SEC_PER_YEAR = 365 * 24 * 60 * 60;
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
       this.modes.push( new GravityAndOrbitsScene( // TODO: Rename mode => scene
-        sunEarth.forceScale,
+        planetStar.forceScale,
         false,
-        sunEarth.dt,
-        scaledDays( sunEarth.timeScale ),
+        planetStar.dt,
+        scaledDays( planetStar.timeScale ),
         this.createIconImage( true, true, false, false ),
         SEC_PER_YEAR,
         SUN_MODES_VELOCITY_SCALE,
         readoutInEarthMasses,
-        sunEarth.initialMeasuringTapeLocation,
-        sunEarth.zoom,
+        planetStar.initialMeasuringTapeLocation,
+        planetStar.zoom,
         new Vector2( 0, 0 ),
-        ( sunEarth.earth.x / 2 ),
+        ( planetStar.earth.x / 2 ),
         new Vector2( 0, 0 ),
         parameterList,
         'sunEarthSceneButton', // TODO rename mode to scene for types and vars?
@@ -247,12 +247,12 @@ define( require => {
         tandem.createTandem( 'sunEarthScene' )
       ) );
 
-      const sunEarthTransformProperty = this.modes[ 0 ].transformProperty;
-      const sunEarthTandem = tandem.createTandem( 'sunEarthScene' );
-      this.modes[ 0 ].addBody( new Star( sunEarth.sun, sunEarthTransformProperty, sunEarthTandem.createTandem( 'sun' ), { // TODO: sun vs star?
+      const starPlanetTransformProperty = this.modes[ 0 ].transformProperty;
+      const starPlanetTandem = tandem.createTandem( 'starPlanetScene' );
+      this.modes[ 0 ].addBody( new Star( planetStar.sun, starPlanetTransformProperty, starPlanetTandem.createTandem( 'star' ), {
         maxPathLength: 345608942000 // in km
       } ) );
-      this.modes[ 0 ].addBody( new Planet( sunEarth.earth, sunEarthTransformProperty, sunEarthTandem.createTandem( 'earth' ) ) );// TODO: earth vs planet?
+      this.modes[ 0 ].addBody( new Planet( planetStar.earth, starPlanetTransformProperty, starPlanetTandem.createTandem( 'planet' ) ) );// TODO: earth vs planet?
 
       this.modes.push( new GravityAndOrbitsScene(
         sunEarthMoon.forceScale,

@@ -1,8 +1,8 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * The GravityAndOrbitsModule has a set of "modes", one mode for each configuration of bodies (eg, Sun + Planet).
- * Each mode has its own model, canvas, clock, etc, which are used in place of this Module's data.
+ * The GravityAndOrbitsModule has an array of GravityAndOrbitsScenes, one scene for each configuration of bodies (e.g.,
+ * Star + Planet). Each mode has its own model, canvas, clock, etc, which are used in place of this Module's data.
  * The module contains information that is shared across all modes, such as whether certain features are shown (such as
  * showing the gravitational force).
  *
@@ -11,7 +11,6 @@
  * @author Chris Malley (PixelZoom, Inc.)
  * @author John Blanco (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
- * @see GravityAndOrbitsModel
  */
 define( require => {
   'use strict';
@@ -103,7 +102,7 @@ define( require => {
     }
 
     // @public
-    getModes() {
+    getScenes() {
       return this.modeList.modes.slice( 0 );
     }
 

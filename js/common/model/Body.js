@@ -204,7 +204,7 @@ define( require => {
         phetioType: PropertyIO( NumberIO )
       } );
 
-      // @public (read-only)
+      // @public (read-only) TODO: this was added before we knew about this.fixed.  Should one be eliminated?
       this.isMovableProperty = new BooleanProperty( true, {
         tandem: tandem.createTandem( 'isMovableProperty' )
       } );
