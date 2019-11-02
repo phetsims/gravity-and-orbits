@@ -23,13 +23,13 @@ define( require => {
   class TimeControlPanel extends HBox {
 
     /**
-     * @param {Property.<GravityAndOrbitsScene>} modeProperty
+     * @param {Property.<GravityAndOrbitsScene>} sceneProperty
      * @param {Property.<boolean>} isPlayingProperty
      * @param {Array.<Body>} bodies
      * @param {Tandem} tandem
      * @param {Object} [options]
      */
-    constructor( modeProperty, isPlayingProperty, bodies, tandem, options ) {
+    constructor( sceneProperty, isPlayingProperty, bodies, tandem, options ) {
       const playProperty = isPlayingProperty;
 
       const playPauseButton = new PlayPauseButton( playProperty, {
@@ -38,13 +38,13 @@ define( require => {
 
       const stepButton = new StepForwardButton( {
         isPlayingProperty: playProperty,
-        listener: () => modeProperty.get().getClock().stepClockWhilePaused(),
+        listener: () => sceneProperty.get().getClock().stepClockWhilePaused(),
         tandem: tandem.createTandem( 'stepButton' )
       } );
 
       const rewindButton = new RewindButton( {
         enabled: false,
-        listener: () => modeProperty.get().rewind(),
+        listener: () => sceneProperty.get().rewind(),
         tandem: tandem.createTandem( 'rewindButton' )
       } );
 

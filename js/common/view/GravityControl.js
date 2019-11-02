@@ -1,11 +1,10 @@
 // Copyright 2015-2019, University of Colorado Boulder
 
 /**
- * Container for gravity mode menu.
+ * Container for gravity on/off buttons.
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-
 define( require => {
   'use strict';
 
@@ -33,7 +32,7 @@ define( require => {
 
     /**
      * @param {Property.<boolean>} gravityEnabledProperty
-     * @param {Object} [options] - This object contains options for main node of gravity mode menu.
+     * @param {Object} [options] - This object contains options for main node of gravity menu.
      */
     constructor( gravityEnabledProperty, options ) {
       super( options );

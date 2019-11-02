@@ -2,7 +2,7 @@
 
 /**
  * The GravityAndOrbitsModule has an array of GravityAndOrbitsScenes, one scene for each configuration of bodies (e.g.,
- * Star + Planet). Each mode has its own model, canvas, clock, etc, which are used in place of this Module's data.
+ * Star + Planet). Each scene has its own model, canvas, clock, etc, which are used in place of this Module's data.
  * The module contains information that is shared across all modes, such as whether certain features are shown (such as
  * showing the gravitational force).
  *
@@ -35,12 +35,12 @@ define( require => {
     /**
      * @param {boolean} showMeasuringTape
      * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsScene>>} createModes
-     * @param {number} initialModeIndex
+     * @param {number} initialSceneIndex
      * @param {boolean} showMassCheckbox
      * @param {Tandem} tandem
      * @param {Tandem} viewTandem
      */
-    constructor( showMeasuringTape, createModes, initialModeIndex, showMassCheckbox, tandem, viewTandem ) {
+    constructor( showMeasuringTape, createModes, initialSceneIndex, showMassCheckbox, tandem, viewTandem ) {
 
       // Properties that are common to all "modes" should live here.
       this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );
@@ -63,7 +63,7 @@ define( require => {
       this.showMeasuringTape = showMeasuringTape; // @public
 
       // @private {ModeListModel}
-      this.modeList = createModes( new ModeListParameterList(
+      this.sceneList = createModes( new ModeListParameterList(
         this.isPlayingProperty,
         this.gravityEnabledProperty,
         this.steppingProperty,
@@ -71,13 +71,13 @@ define( require => {
         this.speedTypeProperty
       ) );
 
-      this.modeIndexProperty = new NumberProperty( initialModeIndex, {
-        tandem: tandem.createTandem( 'modeIndexProperty' )
+      this.sceneIndexProperty = new NumberProperty( initialSceneIndex, {
+        tandem: tandem.createTandem( 'sceneIndexProperty' )
       } );
-      this.modeProperty = new DerivedProperty( [ this.modeIndexProperty ], modeIndex => this.modeList.modes[ modeIndex ] );
-      for ( let i = 0; i < this.modeList.modes.length; i++ ) {
-        const mode = this.modeList.modes[ i ];
-        mode.playAreaNode = new GravityAndOrbitsPlayArea( mode, this, viewTandem.createTandem( 'playArea' ) );
+      this.sceneProperty = new DerivedProperty( [ this.sceneIndexProperty ], modeIndex => this.sceneList.scenes[ modeIndex ] );
+      for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
+        const scene = this.sceneList.scenes[ i ];
+        scene.playAreaNode = new GravityAndOrbitsPlayArea( scene, this, viewTandem.createTandem( 'playArea' ) );
       }
     }
 
@@ -88,7 +88,7 @@ define( require => {
       dt = Math.min( 1, dt );
 
       // collision animations should proceed outside of the model step
-      const bodies = this.modeProperty.get().model.bodies;
+      const bodies = this.sceneProperty.get().model.bodies;
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
         if ( body.isCollidedProperty.get() ) {
@@ -97,19 +97,19 @@ define( require => {
       }
 
       if ( this.isPlayingProperty.value ) {
-        this.modeProperty.value.getClock().step( dt );
+        this.sceneProperty.value.getClock().step( dt );
       }
     }
 
     // @public
     getScenes() {
-      return this.modeList.modes.slice( 0 );
+      return this.sceneList.scenes.slice( 0 );
     }
 
     // @private
     updateActiveModule() {
-      for ( let i = 0; i < this.modeList.modes.length; i++ ) {
-        this.modeList.modes[ i ].activeProperty.set( this.modeList.modes[ i ] === this.modeProperty.value );
+      for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
+        this.sceneList.scenes[ i ].activeProperty.set( this.sceneList.scenes[ i ] === this.sceneProperty.value );
       }
     }
 
@@ -129,9 +129,9 @@ define( require => {
       this.gravityEnabledProperty.reset();
       this.steppingProperty.reset();
       this.rewindingProperty.reset();
-      this.modeIndexProperty.reset();
-      for ( let i = 0; i < this.modeList.modes.length; i++ ) {
-        this.modeList.modes[ i ].reset();
+      this.sceneIndexProperty.reset();
+      for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
+        this.sceneList.scenes[ i ].reset();
       }
     }
   }

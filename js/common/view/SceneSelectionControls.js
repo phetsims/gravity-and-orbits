@@ -1,7 +1,7 @@
 // Copyright 2015-2019, University of Colorado Boulder
 
 /**
- * Container for planet mode menu.
+ * Container for scene selection controls.
  *
  * @author Andrey Zelenkov (Mlearner)
  * @author Aaron Davis (PhET Interactive Simulations)
@@ -28,28 +28,28 @@ define( require => {
   class SceneSelectionControls extends Node {
 
     /**
-     * @param {Property.<GravityAndOrbitsScene>} modeIndexProperty
+     * @param {Property.<GravityAndOrbitsScene>} sceneIndexProperty
      * @param {Array.<GravityAndOrbitsScene>} modes
-     * @param {Object} [options] - This object contains options for main node of planet mode menu.
+     * @param {Object} [options] - This object contains options for main node of planet menu.
      */
-    constructor( modeIndexProperty, modes, options ) {
+    constructor( sceneIndexProperty, modes, options ) {
       super( options );
 
       const content = []; // for radio buttons
-      const resetButtons = modes.map( ( mode, i ) => {
-        content.push( { value: i, node: mode.iconImage, tandemName: mode.radioButtonTandemName } );
+      const resetButtons = modes.map( ( scene, i ) => {
+        content.push( { value: i, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 
         // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated
-        const resetButton = new PlanetModeResetButton( mode, {
-          tandem: options.tandem.createTandem( mode.resetButtonTandemName )
+        const resetButton = new PlanetModeResetButton( scene, {
+          tandem: options.tandem.createTandem( scene.resetButtonTandemName )
         } );
 
         // link reset buttons so that only the reset button next to the selected radio button is visible
-        modeIndexProperty.link( modeIndex => resetButton.setVisible( modes[ modeIndex ] === mode ) );
+        sceneIndexProperty.link( modeIndex => resetButton.setVisible( modes[ modeIndex ] === scene ) );
 
         return resetButton;
       } );
-      const radioButtonGroup = new RadioButtonGroup( modeIndexProperty, content, {
+      const radioButtonGroup = new RadioButtonGroup( sceneIndexProperty, content, {
         alignVertically: true,
         selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
         selectedLineWidth: 2,
@@ -76,10 +76,10 @@ define( require => {
   class PlanetModeResetButton extends RectangularPushButton {
 
     /**
-     * @param {GravityAndOrbitsScene} mode
+     * @param {GravityAndOrbitsScene} scene
      * @param {Object} [options]
      */
-    constructor( mode, options ) {
+    constructor( scene, options ) {
       options = merge( {
         content: new Node( {
           children: [
@@ -89,7 +89,7 @@ define( require => {
         xMargin: 5,
         yMargin: 3,
         baseColor: new Color( 220, 220, 220 ),
-        listener: () => mode.resetMode()
+        listener: () => scene.resetScene()
       }, options );
 
       super( options );

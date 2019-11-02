@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * ModeListModel enumerates and declares the possible modes in the GravityAndOrbitsModule, such as 'Sun & Earth' mode.
+ * ModeListModel enumerates and declares the possible modes in the GravityAndOrbitsModule, such as 'Star + Planet' scene.
  * Models (and the bodies they contain) are created in ModeListModel.
  *
  * @author Sam Reid (PhET Interactive Simulations)
@@ -214,7 +214,7 @@ define( require => {
         }
       }
 
-      this.modes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
+      this.scenes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
 
       planetStar.center();
       sunEarthMoon.center();
@@ -226,7 +226,7 @@ define( require => {
       // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
       const SEC_PER_YEAR = 365 * 24 * 60 * 60;
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
-      this.modes.push( new GravityAndOrbitsScene( // TODO: Rename mode => scene
+      this.scenes.push( new GravityAndOrbitsScene(
         planetStar.forceScale,
         false,
         planetStar.dt,
@@ -241,20 +241,20 @@ define( require => {
         ( planetStar.earth.x / 2 ),
         new Vector2( 0, 0 ),
         parameterList,
-        'sunEarthSceneButton', // TODO rename mode to scene for types and vars?
+        'sunEarthSceneButton',
         'sunEarthSceneResetButton',
         'sunEarthScene',
         tandem.createTandem( 'sunEarthScene' )
       ) );
 
-      const starPlanetTransformProperty = this.modes[ 0 ].transformProperty;
+      const starPlanetTransformProperty = this.scenes[ 0 ].transformProperty;
       const starPlanetTandem = tandem.createTandem( 'starPlanetScene' );
-      this.modes[ 0 ].addBody( new Star( planetStar.sun, starPlanetTransformProperty, starPlanetTandem.createTandem( 'star' ), {
+      this.scenes[ 0 ].addBody( new Star( planetStar.sun, starPlanetTransformProperty, starPlanetTandem.createTandem( 'star' ), {
         maxPathLength: 345608942000 // in km
       } ) );
-      this.modes[ 0 ].addBody( new Planet( planetStar.earth, starPlanetTransformProperty, starPlanetTandem.createTandem( 'planet' ) ) );// TODO: earth vs planet?
+      this.scenes[ 0 ].addBody( new Planet( planetStar.earth, starPlanetTransformProperty, starPlanetTandem.createTandem( 'planet' ) ) );// TODO: earth vs planet?
 
-      this.modes.push( new GravityAndOrbitsScene(
+      this.scenes.push( new GravityAndOrbitsScene(
         sunEarthMoon.forceScale,
         false,
         sunEarthMoon.dt,
@@ -278,13 +278,13 @@ define( require => {
       // increase moon path length so that it fades away with other bodies
       // in model coordinates (at default orbit)
       const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
-      const sunEarthMoonTransformProperty = this.modes[ 1 ].sunEarthMoonTransformProperty;
+      const sunEarthMoonTransformProperty = this.scenes[ 1 ].sunEarthMoonTransformProperty;
       const sunEarthMoonSceneTandem = tandem.createTandem( 'sunEarthMoonScene' );
-      this.modes[ 1 ].addBody( new Star( sunEarthMoon.sun, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
+      this.scenes[ 1 ].addBody( new Star( sunEarthMoon.sun, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
         maxPathLength: 345608942000 // in km
       } ) );
-      this.modes[ 1 ].addBody( new Planet( sunEarthMoon.earth, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ) );
-      this.modes[ 1 ].addBody( new Moon( // no room for the slider
+      this.scenes[ 1 ].addBody( new Planet( sunEarthMoon.earth, sunEarthMoonTransformProperty, sunEarthMoonSceneTandem.createTandem( 'earth' ) ) );
+      this.scenes[ 1 ].addBody( new Moon( // no room for the slider
         false, false, // so it doesn't intersect with earth mass readout
         sunEarthMoon.moon,
         sunEarthMoonTransformProperty,
@@ -294,7 +294,7 @@ define( require => {
       ) );
 
       const SEC_PER_MOON_ORBIT = 28 * 24 * 60 * 60;
-      this.modes.push( new GravityAndOrbitsScene(
+      this.scenes.push( new GravityAndOrbitsScene(
         earthMoon.forceScale,
         false,
         ( DEFAULT_DT / 3 ), // actual days
@@ -315,19 +315,19 @@ define( require => {
         tandem.createTandem( 'earthMoonScene' )
       ) );
 
-      const earthMoonTransformProperty = this.modes[ 2 ].transformProperty;
+      const earthMoonTransformProperty = this.scenes[ 2 ].transformProperty;
       const earthMoonSceneTandem = tandem.createTandem( 'earthMoonScene' );
-      this.modes[ 2 ].addBody( new Planet( earthMoon.earth, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
+      this.scenes[ 2 ].addBody( new Planet( earthMoon.earth, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'earth' ), {
         orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
       } ) );
 
-      this.modes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'moon' ), {
+      this.scenes[ 2 ].addBody( new Moon( true, true, earthMoon.moon, earthMoonTransformProperty, earthMoonSceneTandem.createTandem( 'moon' ), {
         orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
         rotationPeriod: earthMoon.moon.rotationPeriod
       } ) );
 
       const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
-      this.modes.push( new GravityAndOrbitsScene(
+      this.scenes.push( new GravityAndOrbitsScene(
         earthSpaceStation.forceScale,
         false,
         ( DEFAULT_DT * 9E-4 ),
@@ -349,18 +349,18 @@ define( require => {
       ) );
 
       const earthSpaceStationTandem = tandem.createTandem( 'earthSpaceStationScene' );
-      const earthSpaceStationTransformProperty = this.modes[ 3 ].transformProperty;
-      this.modes[ 3 ].addBody( new Planet( earthSpaceStation.earth, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
+      const earthSpaceStationTransformProperty = this.scenes[ 3 ].transformProperty;
+      this.scenes[ 3 ].addBody( new Planet( earthSpaceStation.earth, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'earth' ), {
         maxPathLength: 35879455 // in km
       } ) );
-      this.modes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
+      this.scenes[ 3 ].addBody( new SpaceStation( earthSpaceStation, earthSpaceStationTransformProperty, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
         rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
       } ) );
     }
 
     /**
      * @private
-     * Creates an image that can be used for the mode icon, showing the nodes of each body in the mode.
+     * Creates an image that can be used for the scene icon, showing the nodes of each body in the mode.
      * @param {boolean} sun
      * @param {boolean} earth
      * @param {boolean} moon
@@ -525,7 +525,7 @@ define( require => {
   };
 
   /**
-   * Have to artificially scale up the time readout so that Sun/Earth/Moon mode has a stable orbit with correct periods
+   * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
    * @param scale
    * @returns {function}
    */

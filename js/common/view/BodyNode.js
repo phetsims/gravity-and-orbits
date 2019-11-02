@@ -32,16 +32,16 @@ define( require => {
      * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
      *                              don't overlap too much
      * @param {Property.<boolean>} isPlayingProperty is the simulation playing?
-     * @param {GravityAndOrbitsScene} mode
+     * @param {GravityAndOrbitsScene} scene
      * @param {Tandem} tandem
      */
-    constructor( body, labelAngle, isPlayingProperty, mode, tandem ) {
+    constructor( body, labelAngle, isPlayingProperty, scene, tandem ) {
       super( { pickable: true, cursor: 'pointer', tandem: tandem } );
 
-      const modelBoundsProperty = mode.modelBoundsProperty;
-      const clock = mode.getClock();
+      const modelBoundsProperty = scene.modelBoundsProperty;
+      const clock = scene.getClock();
 
-      this.modelViewTransformProperty = mode.transformProperty; // @private
+      this.modelViewTransformProperty = scene.transformProperty; // @private
       this.body = body; // @public
 
       this.body.isCollidedProperty.link( isCollided => this.setVisible( !isCollided ) );
@@ -83,7 +83,7 @@ define( require => {
 
             // if paused, on release, the state of the orbital system should be saved
             // so that rewind will revert to the last placement of bodies
-            mode.saveState();
+            scene.saveState();
           }
         },
         tandem: tandem.createTandem( 'dragHandler' )

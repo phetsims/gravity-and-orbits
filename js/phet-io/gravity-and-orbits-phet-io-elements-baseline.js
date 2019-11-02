@@ -2718,7 +2718,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeIndexProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneIndexProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2731,7 +2731,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.clock.isRunningProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2744,7 +2744,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.clock.timeProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2757,7 +2757,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2770,7 +2770,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2783,7 +2783,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2796,7 +2796,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2809,7 +2809,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2822,7 +2822,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2835,7 +2835,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2848,7 +2848,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.earth.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2861,7 +2861,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2874,7 +2874,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2887,7 +2887,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2900,7 +2900,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2913,7 +2913,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2926,7 +2926,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2939,7 +2939,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2952,7 +2952,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.moon.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2965,7 +2965,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthMoonScene.zoomLevelProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2978,7 +2978,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -2991,7 +2991,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3004,7 +3004,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3017,7 +3017,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3030,7 +3030,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3043,7 +3043,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3056,7 +3056,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3069,7 +3069,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.earth.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3082,7 +3082,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3095,7 +3095,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3108,7 +3108,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3121,7 +3121,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3134,7 +3134,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3147,7 +3147,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3160,7 +3160,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3173,7 +3173,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScene.spaceStation.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScene.spaceStation.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3186,7 +3186,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScreen.clock.isRunningProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScreen.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3199,7 +3199,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScreen.clock.timeProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScreen.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3212,7 +3212,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.earthSpaceStationScreen.zoomLevelProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.earthSpaceStationScreen.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3225,7 +3225,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.clock.isRunningProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3238,7 +3238,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.clock.timeProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3251,7 +3251,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3264,7 +3264,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3277,7 +3277,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3290,7 +3290,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3303,7 +3303,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3316,7 +3316,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3329,7 +3329,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3342,7 +3342,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.earth.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3355,7 +3355,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3368,7 +3368,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3381,7 +3381,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3394,7 +3394,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3407,7 +3407,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3420,7 +3420,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3433,7 +3433,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3446,7 +3446,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.moon.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3459,7 +3459,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3472,7 +3472,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3485,7 +3485,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3498,7 +3498,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3511,7 +3511,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3524,7 +3524,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3537,7 +3537,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3550,7 +3550,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.sun.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.sun.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3563,7 +3563,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthMoonScene.zoomLevelProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3576,7 +3576,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.clock.isRunningProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3589,7 +3589,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.clock.timeProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3602,7 +3602,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3615,7 +3615,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3628,7 +3628,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3641,7 +3641,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3654,7 +3654,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3667,7 +3667,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3680,7 +3680,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3693,7 +3693,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.earth.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3706,7 +3706,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.diameterProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3719,7 +3719,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.forceProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3732,7 +3732,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.isCollidedProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3745,7 +3745,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.isMovableProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3758,7 +3758,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.massProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3771,7 +3771,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.positionProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3784,7 +3784,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.rotationProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3797,7 +3797,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.sun.velocityProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.sun.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -3810,7 +3810,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.model.modeList.sunEarthScene.zoomLevelProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneList.sunEarthScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16368,7 +16368,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeIndexProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneIndexProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16381,7 +16381,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.clock.isRunningProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16394,7 +16394,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.clock.timeProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16407,7 +16407,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16420,7 +16420,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16433,7 +16433,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16446,7 +16446,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16459,7 +16459,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16472,7 +16472,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16485,7 +16485,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16498,7 +16498,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.earth.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16511,7 +16511,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16524,7 +16524,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16537,7 +16537,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16550,7 +16550,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16563,7 +16563,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16576,7 +16576,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16589,7 +16589,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16602,7 +16602,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.moon.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16615,7 +16615,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthMoonScene.zoomLevelProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16628,7 +16628,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16641,7 +16641,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16654,7 +16654,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16667,7 +16667,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16680,7 +16680,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16693,7 +16693,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16706,7 +16706,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16719,7 +16719,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.earth.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16732,7 +16732,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16745,7 +16745,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16758,7 +16758,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16771,7 +16771,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16784,7 +16784,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16797,7 +16797,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16810,7 +16810,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16823,7 +16823,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScene.spaceStation.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScene.spaceStation.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16836,7 +16836,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScreen.clock.isRunningProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScreen.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16849,7 +16849,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScreen.clock.timeProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScreen.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16862,7 +16862,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.earthSpaceStationScreen.zoomLevelProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.earthSpaceStationScreen.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16875,7 +16875,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.clock.isRunningProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16888,7 +16888,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.clock.timeProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16901,7 +16901,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16914,7 +16914,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16927,7 +16927,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16940,7 +16940,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16953,7 +16953,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16966,7 +16966,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16979,7 +16979,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -16992,7 +16992,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.earth.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17005,7 +17005,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17018,7 +17018,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17031,7 +17031,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17044,7 +17044,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17057,7 +17057,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17070,7 +17070,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17083,7 +17083,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17096,7 +17096,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.moon.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17109,7 +17109,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17122,7 +17122,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17135,7 +17135,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17148,7 +17148,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17161,7 +17161,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17174,7 +17174,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17187,7 +17187,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17200,7 +17200,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.sun.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.sun.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17213,7 +17213,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthMoonScene.zoomLevelProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17226,7 +17226,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.clock.isRunningProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17239,7 +17239,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.clock.timeProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.clock.timeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17252,7 +17252,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17265,7 +17265,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17278,7 +17278,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17291,7 +17291,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17304,7 +17304,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17317,7 +17317,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17330,7 +17330,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17343,7 +17343,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.earth.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.earth.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17356,7 +17356,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.diameterProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.diameterProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17369,7 +17369,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.forceProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.forceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17382,7 +17382,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.isCollidedProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.isCollidedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17395,7 +17395,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.isMovableProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.isMovableProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17408,7 +17408,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.massProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.massProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17421,7 +17421,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.positionProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.positionProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17434,7 +17434,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.rotationProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.rotationProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17447,7 +17447,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.sun.velocityProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.sun.velocityProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -17460,7 +17460,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.model.modeList.sunEarthScene.zoomLevelProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneList.sunEarthScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,

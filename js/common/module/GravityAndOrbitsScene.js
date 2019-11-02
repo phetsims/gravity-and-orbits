@@ -159,8 +159,7 @@ define( require => {
     }
 
     /**
-     * Set the deviated from defaults property - stored on the mode
-     * so that we don't have to use a closure for performance.
+     * Set the deviated from defaults property - stored on the scene so that we don't have to use a closure for performance.
      *
      * @private
      */
@@ -208,7 +207,7 @@ define( require => {
      *
      * @public
      */
-    resetMode() {
+    resetScene() {
       this.model.resetBodies();
       this.deviatedFromDefaultsProperty.set( false );
       this.getClock().setSimulationTime( 0.0 );
@@ -248,7 +247,7 @@ define( require => {
 
     /**
      * @public
-     * @returns {Array.<Body>} - All bodies in the mode for which the mass can be changed
+     * @returns {Array.<Body>} - All bodies in the scene for which the mass can be changed
      */
     getMassSettableBodies() {
       const bodies = this.getBodies();

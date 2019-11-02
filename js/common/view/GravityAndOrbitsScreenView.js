@@ -41,7 +41,7 @@ define( require => {
         tandem: tandem.createTandem( 'controlPanelNode' ) // TODO: name?
       } );
 
-      // Add the mode selection controls, one for each of the four modes
+      // Add the scene selection controls, one for each of the four modes
       const scenes = module.getScenes();
       for ( let i = 0; i < scenes.length; i++ ) {
         const playAreaNode = scenes[ i ].playAreaNode;
@@ -60,13 +60,13 @@ define( require => {
       this.addChild( controlPanelNode );
 
       // Make sure only one scene is visible at a time
-      module.modeProperty.link( mode => {
-        for ( let i = 0; i < module.modeList.modes.length; i++ ) {
-          module.modeList.modes[ i ].playAreaNode.visible = false;
-          module.modeList.modes[ i ].massControlPanel.visible = false;
+      module.sceneProperty.link( scene => {
+        for ( let i = 0; i < module.sceneList.scenes.length; i++ ) {
+          module.sceneList.scenes[ i ].playAreaNode.visible = false;
+          module.sceneList.scenes[ i ].massControlPanel.visible = false;
         }
-        mode.playAreaNode.visible = true;
-        mode.massControlPanel.visible = true;
+        scene.playAreaNode.visible = true;
+        scene.massControlPanel.visible = true;
         module.updateActiveModule();
       } );
 

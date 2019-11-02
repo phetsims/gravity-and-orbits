@@ -2,7 +2,7 @@
 
 /**
  * This type makes the radii of all objects much larger than the true physical values to make them visible on
- * the same scale. Configuration file for setting up the model mode parameters. This is typically done by
+ * the same scale. Configuration file for setting up the model scene parameters. This is typically done by
  * multiplying the real values by the desired scales. SunEarth and SunEarthMoon should be as similar as possible
  * (aside from the addition of the moon).
  *
@@ -65,7 +65,7 @@ define( require => {
         new EarthMoonModeConfig(),
         new EarthSpaceStationModeConfig(),
         tandem, {
-          adjustMoonPathLength: true // adjust the moon path length in model mode
+          adjustMoonPathLength: true // adjust the moon path length in model
         } );
     }
   }

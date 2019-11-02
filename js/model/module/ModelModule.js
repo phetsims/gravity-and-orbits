@@ -20,7 +20,7 @@ define( require => {
         p.steppingProperty,
         p.rewindingProperty,
         p.speedTypeProperty,
-        tandem.createTandem( 'modeList' ) // TODO(phet-io design): tandem sharing is risky, is it warranted here to avoid extra nodes?
+        tandem.createTandem( 'sceneList' ) // TODO(phet-io design): tandem sharing is risky, is it warranted here to avoid extra nodes?
       ), 0, false, tandem, viewTandem );// TODO: how to deal with viewTandem
     }
   }

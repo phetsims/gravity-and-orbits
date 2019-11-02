@@ -52,13 +52,13 @@ define( require => {
 
     /**
      * Constructor for GravityAndOrbitsPlayArea
-     * @param {GravityAndOrbitsScene} mode
+     * @param {GravityAndOrbitsScene} scene
      * @param {GravityAndOrbitsModule} module
      * @param {Tandem} tandem TODO: make sure this is view-ish not model-ish
      */
-    constructor( mode, module, tandem ) {
-      const model = mode.model;
-      const forceScale = mode.forceScale;
+    constructor( scene, module, tandem ) {
+      const model = scene.model;
+      const forceScale = scene.forceScale;
 
       // each orbit mode has its own play area with a CanvasNode for rendering paths
       // each canvas should be excluded from the DOM when invisible, with the exception of iOS Safari,
@@ -69,7 +69,7 @@ define( require => {
 
       const bodies = model.getBodies();
 
-      this.addChild( new PathsCanvasNode( bodies, mode.transformProperty, module.showPathProperty, STAGE_SIZE ) );
+      this.addChild( new PathsCanvasNode( bodies, scene.transformProperty, module.showPathProperty, STAGE_SIZE ) );
 
       const forceVectorColorFill = new Color( 50, 130, 215 );
       const forceVectorColorOutline = new Color( 64, 64, 64 );
@@ -80,14 +80,14 @@ define( require => {
       const returnable = [];
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
-        const bodyNode = new BodyNode( body, body.labelAngle, module.isPlayingProperty, mode, tandem.createTandem( body.bodyNodeTandemName ) );
-        const massReadoutNode = mode.massReadoutFactory( bodyNode, module.showMassProperty );
+        const bodyNode = new BodyNode( body, body.labelAngle, module.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
+        const massReadoutNode = scene.massReadoutFactory( bodyNode, module.showMassProperty );
         this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
 
         // TODO: This likely could be eliminated by using forEach above
         ( bodyNode => {
-          const property = new DerivedProperty( [ bodies[ i ].positionProperty, mode.zoomLevelProperty ], () => {
+          const property = new DerivedProperty( [ bodies[ i ].positionProperty, scene.zoomLevelProperty ], () => {
 
             // the return objects button should be visible when a body is out of bounds
             // and not at the rewind position
@@ -100,30 +100,30 @@ define( require => {
 
       // Add gravity force vector nodes
       for ( let i = 0; i < bodies.length; i++ ) {
-        this.addChild( new VectorNode( bodies[ i ], mode.transformProperty, module.showGravityForceProperty,
+        this.addChild( new VectorNode( bodies[ i ], scene.transformProperty, module.showGravityForceProperty,
           bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline ) );
       }
 
       // Add velocity vector nodes
       for ( let i = 0; i < bodies.length; i++ ) {
         if ( !bodies[ i ].fixed ) {
-          this.addChild( new GrabbableVectorNode( bodies[ i ], mode.transformProperty, module.showVelocityProperty,
-            bodies[ i ].velocityProperty, mode.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
+          this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, module.showVelocityProperty,
+            bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
             vString, tandem.createTandem( 'vectorNode' + i ) ) );
         }
       }
 
       // Add explosion nodes, which are always in the scene graph but only visible during explosions
       for ( let i = 0; i < bodies.length; i++ ) {
-        this.addChild( new ExplosionNode( bodies[ i ], mode.transformProperty ) );
+        this.addChild( new ExplosionNode( bodies[ i ], scene.transformProperty ) );
       }
 
       // Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
-      const gridNode = new GridNode( mode.transformProperty, mode.gridSpacing, mode.gridCenter, 28 );
+      const gridNode = new GridNode( scene.transformProperty, scene.gridSpacing, scene.gridCenter, 28 );
       module.showGridProperty.linkAttribute( gridNode, 'visible' );
       this.addChild( gridNode );
 
-      this.addChild( new DayCounter( mode.timeFormatter, model.clock, tandem.createTandem( 'dayCounter' ), {
+      this.addChild( new DayCounter( scene.timeFormatter, model.clock, tandem.createTandem( 'dayCounter' ), {
         bottom: STAGE_SIZE.bottom - 20,
         right: STAGE_SIZE.right - 50,
         scale: 1.2
@@ -132,7 +132,7 @@ define( require => {
       // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
       // Add play/pause, rewind, and step buttons
-      const timeControlPanel = new TimeControlPanel( module.modeProperty, module.isPlayingProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
+      const timeControlPanel = new TimeControlPanel( module.sceneProperty, module.isPlayingProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
         bottom: STAGE_SIZE.bottom - 10,
         centerX: STAGE_SIZE.centerX,
         scale: 1.5
@@ -142,8 +142,8 @@ define( require => {
       // Add measuring tape
       const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
       const measuringTapeNode = new MeasuringTapeNode( unitsProperty, module.showMeasuringTapeProperty, {
-        basePositionProperty: mode.measuringTapeStartPointProperty,
-        tipPositionProperty: mode.measuringTapeEndPointProperty,
+        basePositionProperty: scene.measuringTapeStartPointProperty,
+        tipPositionProperty: scene.measuringTapeEndPointProperty,
         textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
 
         // allows distances to be measured if the planets go outside of model bounds,
@@ -154,8 +154,8 @@ define( require => {
         significantFigures: ( bodies[ 1 ].name === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0
       } );
 
-      mode.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
-      mode.modelBoundsProperty.link( bounds => {
+      scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
+      scene.modelBoundsProperty.link( bounds => {
         const basePosition = measuringTapeNode.basePositionProperty.get();
         measuringTapeNode.setDragBounds( bounds );
 
@@ -169,7 +169,7 @@ define( require => {
 
         // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
         for ( let i = 0; i < bodies.length; i++ ) {
-          bodies[ i ].boundsProperty.set( mode.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
+          bodies[ i ].boundsProperty.set( scene.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
         }
       } );
 
@@ -190,8 +190,8 @@ define( require => {
           // the return button should behave exactly like the rewind button
           // all objects should be restored to their saved state, and then
           // pause the orbital mode
-          mode.rewind();
-          mode.isPlayingProperty.set( false );
+          scene.rewind();
+          scene.isPlayingProperty.set( false );
         },
         tandem: tandem.createTandem( 'returnButton' )
       } );
@@ -200,7 +200,7 @@ define( require => {
       anythingReturnable.linkAttribute( returnButton, 'visible' );
 
       // Zoom controls
-      const scaleControl = new ScaleSlider( mode.zoomLevelProperty, tandem.createTandem( 'scaleControl' ), { // TODO: Rename class to ScaleControl
+      const scaleControl = new ScaleSlider( scene.zoomLevelProperty, tandem.createTandem( 'scaleControl' ), { // TODO: Rename class to ScaleControl
         top: STAGE_SIZE.top + 10
       } );
       scaleControl.left = scaleControl.width / 2;
