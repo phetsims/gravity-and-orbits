@@ -28,7 +28,7 @@ define( require => {
   const STEP = 0.1;
   const BUTTON_SIZE = 25;
 
-  class ScaleSlider extends Node {
+  class ZoomControl extends Node {
 
     /**
      * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
@@ -79,7 +79,7 @@ define( require => {
     }
   }
 
-  gravityAndOrbits.register( 'ScaleSlider', ScaleSlider );
+  gravityAndOrbits.register( 'ZoomControl', ZoomControl );
 
   class SliderButton extends RectangularPushButton {
     /**
@@ -140,5 +140,5 @@ define( require => {
     }
   }
 
-  return ScaleSlider;
+  return ZoomControl;
 } );

@@ -108,7 +108,11 @@ define( require => {
       // TODO: search // REVIEW comments
       class SpaceStation extends Body {
 
-        // TODO: jsdoc
+        /**
+         * @param {EarthSpaceStationModeConfig} earthSpaceStation
+         * @param {Tandem} tandem
+         * @param {Object} [options]
+         */
         constructor( earthSpaceStation, tandem, options ) {
           options = merge( {
             diameterScale: 1000
@@ -136,9 +140,14 @@ define( require => {
       // non-static inner class: Moon
       class Moon extends Body {
 
-        // TODO: jsdoc
+        /**
+         * @param {boolean} massSettable
+         * @param {boolean} massReadoutBelow
+         * @param {BodyConfiguration} bodyConfiguration
+         * @param {Tandem} tandem
+         * @param {Object} [options]
+         */
         constructor( massSettable, massReadoutBelow, bodyConfiguration, tandem, options ) {
-
           options = merge( {
             pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
             massSettable: massSettable,
@@ -167,7 +176,11 @@ define( require => {
 
       class Planet extends Body {
 
-        // TODO: jsdoc
+        /**
+         * @param {BodyConfiguration} bodyConfiguration
+         * @param {Tandem} tandem
+         * @param {Object} [options]
+         */
         constructor( bodyConfiguration, tandem, options ) {
           super(
             GravityAndOrbitsBodies.PLANET,
@@ -190,7 +203,11 @@ define( require => {
 
       class Star extends Body {
 
-        // TODO: jsdoc
+        /**
+         * @param {BodyConfiguration} bodyConfiguration
+         * @param {Tandem} tandem
+         * @param {Object} [options]
+         */
         constructor( bodyConfiguration, tandem, options ) {
           super(
             GravityAndOrbitsBodies.STAR,
@@ -239,19 +256,16 @@ define( require => {
         new Vector2( 0, 0 ),
         model,
 
-        // TODO: rename sun/earth to star/planet
-        'sunEarthSceneButton',
-        'sunEarthSceneResetButton',
-        'sunEarthScene',
-        'sunEarthSceneMassControlPanel',
-        'sunEarthSceneView',
-        modelTandem.createTandem( 'sunEarthScene' ),
-        viewTandem.createTandem( 'sunEarthSceneView' ), [
+        'starPlanetSceneButton',
+        'starPlanetSceneResetButton',
+        'starPlanetScene',
+        'starPlanetSceneMassControlPanel',
+        'starPlanetSceneView',
+        modelTandem.createTandem( 'starPlanetScene' ),
+        viewTandem.createTandem( 'starPlanetSceneView' ), [
           new Star( planetStar.sun, starPlanetTandem.createTandem( 'star' ), {
             maxPathLength: 345608942000 // in km
           } ),
-
-          // TODO: earth vs planet?
           new Planet( planetStar.earth, starPlanetTandem.createTandem( 'planet' ) )
         ] ) );
 

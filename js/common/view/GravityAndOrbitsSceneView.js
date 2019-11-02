@@ -29,7 +29,7 @@ define( require => {
   const platform = require( 'PHET_CORE/platform' );
   const Property = require( 'AXON/Property' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  const ScaleSlider = require( 'GRAVITY_AND_ORBITS/common/view/ScaleSlider' );
+  const ZoomControl = require( 'GRAVITY_AND_ORBITS/common/view/ZoomControl' );
   const TextPushButton = require( 'SUN/buttons/TextPushButton' );
   const TimeControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/TimeControlPanel' );
   const VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
@@ -194,8 +194,7 @@ define( require => {
 
       anythingReturnable.linkAttribute( returnButton, 'visible' );
 
-      // Zoom controls
-      const scaleControl = new ScaleSlider( scene.zoomLevelProperty, tandem.createTandem( 'scaleControl' ), { // TODO: Rename class to ScaleControl
+      const scaleControl = new ZoomControl( scene.zoomLevelProperty, tandem.createTandem( 'zoomControl' ), {
         top: STAGE_SIZE.top + 10
       } );
       scaleControl.left = scaleControl.width / 2;
