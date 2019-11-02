@@ -1,12 +1,4 @@
 {
-  "cartoon_icon.png": {
-    "text": [
-      "Copyright 2002-2015 University of Colorado Boulder"
-    ],
-    "projectURL": "http://phet.colorado.edu",
-    "license": "contact phethelp@colorado.edu",
-    "notes": "created by Bryce Gruneich and Sharon Siman-Tov"
-  },
   "earth.png": {
     "text": [
       "Copyright NASA"
@@ -22,6 +14,14 @@
     "projectURL": "http://phet.colorado.edu",
     "license": "contact phethelp@colorado.edu",
     "notes": "created by Sharon Siman-Tov"
+  },
+  "model_icon.png": {
+    "text": [
+      "Copyright 2002-2015 University of Colorado Boulder"
+    ],
+    "projectURL": "http://phet.colorado.edu",
+    "license": "contact phethelp@colorado.edu",
+    "notes": "created by Bryce Gruneich and Sharon Siman-Tov"
   },
   "path_icon.png": {
     "text": [
