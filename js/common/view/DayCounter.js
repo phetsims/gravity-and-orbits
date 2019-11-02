@@ -53,6 +53,7 @@ define( require => {
 
       // update text representation of day
       this.timeListener = time => {
+        assert && assert( !isNaN( time ), 'time should be a number' );
         dayText.setText( timeFormatter( time ) );
         dayText.centerX = clearButton.centerX;
         clearButton.enabled = ( time !== 0 );

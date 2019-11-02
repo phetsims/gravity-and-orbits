@@ -40,7 +40,8 @@ define( require => {
       // @public (read-only)
       this.baseDTValue = baseDTValue;
 
-      this.steppingWhilePausedDT = baseDTValue * GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
+      this.steppingWhilePausedDT = baseDTValue * 0.525; // TODO: will these be replicable?  I thought it needed to be an integral number of steps, like in https://github.com/phetsims/gravity-and-orbits/issues/253
+      assert && assert( !isNaN( this.steppingWhilePausedDT ), 'this.steppingWhilePausedDT should be a number' );
 
       // @public
       this.isRunningProperty = new BooleanProperty( false, {
@@ -75,26 +76,6 @@ define( require => {
       this.steppingProperty.set( false );
 
       // revert dt to match the play speed
-      this.dt = clockDT;
-    }
-
-    /**
-     * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
-     *
-     * @returns {number}
-     */
-    stepClockBackWhilePaused() {
-      this.steppingProperty.set( true );
-
-      // dt should be scaled by the initial speed when manually stepping
-      const clockDT = this.dt; // store to revert after manual step
-      this.dt = this.steppingWhilePausedDT;
-
-      this.step( -1 / CLOCK_FRAME_RATE );
-      this.steppingProperty.set( false );
-
-
-      // revert dt
       this.dt = clockDT;
     }
 
