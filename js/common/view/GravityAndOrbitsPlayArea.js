@@ -54,7 +54,7 @@ define( require => {
      * Constructor for GravityAndOrbitsPlayArea
      * @param {GravityAndOrbitsScene} scene
      * @param {GravityAndOrbitsModule} module
-     * @param {Tandem} tandem TODO: make sure this is view-ish not model-ish
+     * @param {Tandem} tandem
      */
     constructor( scene, module, tandem ) {
       const model = scene.model;
