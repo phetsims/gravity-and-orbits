@@ -1,5 +1,6 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
+// TODO: search // REVIEW comments
 /**
  * SceneFactory enumerates and declares the possible modes in the GravityAndOrbitsModel, such as 'Star + Planet' scene.
  * Models (and the bodies they contain) are created in SceneFactory.
@@ -103,132 +104,6 @@ define( require => {
         adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
       }, options );
 
-      // non-static inner class: SpaceStation
-      // TODO: promote to static, with model parameter. Do for all extends Body
-      // TODO: search // REVIEW comments
-      class SpaceStation extends Body {
-
-        /**
-         * @param {EarthSpaceStationModeConfig} earthSpaceStation
-         * @param {Tandem} tandem
-         * @param {Object} [options]
-         */
-        constructor( earthSpaceStation, tandem, options ) {
-          options = merge( {
-            diameterScale: 1000
-          }, options );
-
-          super(
-            GravityAndOrbitsBodies.SATELLITE,
-            earthSpaceStation.spaceStation,
-            Color.gray,
-            Color.white,
-            getImageRenderer( spaceStationImage ),
-            ( -Math.PI / 4 ),
-            earthSpaceStation.spaceStation.mass,
-            spaceStationString,
-            model,
-            'spaceStationMassControl',
-            tandem,
-            'spaceStationMassLabel',
-            'spaceStationNode',
-            options
-          );
-        }
-      }
-
-      // non-static inner class: Moon
-      class Moon extends Body {
-
-        /**
-         * @param {boolean} massSettable
-         * @param {boolean} massReadoutBelow
-         * @param {BodyConfiguration} bodyConfiguration
-         * @param {Tandem} tandem
-         * @param {Object} [options]
-         */
-        constructor( massSettable, massReadoutBelow, bodyConfiguration, tandem, options ) {
-          options = merge( {
-            pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
-            massSettable: massSettable,
-            massReadoutBelow: massReadoutBelow,
-            rotationPeriod: null // rotation period in seconds, null means no rotation
-          }, options );
-
-          super(
-            GravityAndOrbitsBodies.MOON,
-            bodyConfiguration,
-            Color.magenta,
-            Color.white,
-            getSwitchableRenderer( moonImage, genericMoonImage, bodyConfiguration.mass ),
-            ( -3 * Math.PI / 4 ),
-            bodyConfiguration.mass,
-            ourMoonString,
-            model,
-            'moonMassControl',
-            tandem,
-            'moonMassLabel',
-            'moonNode',
-            options
-          );
-        }
-      }
-
-      class Planet extends Body {
-
-        /**
-         * @param {BodyConfiguration} bodyConfiguration
-         * @param {Tandem} tandem
-         * @param {Object} [options]
-         */
-        constructor( bodyConfiguration, tandem, options ) {
-          super(
-            GravityAndOrbitsBodies.PLANET,
-            bodyConfiguration,
-            Color.gray,
-            Color.lightGray,
-            getSwitchableRenderer( earthImage, genericPlanetImage, bodyConfiguration.mass ),
-            ( -Math.PI / 4 ),
-            bodyConfiguration.mass,
-            earthString,
-            model,
-            'planetMassControl',
-            tandem,
-            'planetMassLabel',
-            'planetNode',
-            options
-          );
-        }
-      }
-
-      class Star extends Body {
-
-        /**
-         * @param {BodyConfiguration} bodyConfiguration
-         * @param {Tandem} tandem
-         * @param {Object} [options]
-         */
-        constructor( bodyConfiguration, tandem, options ) {
-          super(
-            GravityAndOrbitsBodies.STAR,
-            bodyConfiguration,
-            Color.yellow,
-            Color.white,
-            getImageRenderer( sunImage ),
-            ( -Math.PI / 4 ),
-            bodyConfiguration.mass,
-            ourSunString,
-            model,
-            'starMassControl',
-            tandem,
-            'starMassLabel',
-            'starNode',
-            options
-          );
-          this.body = bodyConfiguration;
-        }
-      }
-
       this.scenes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
 
       planetStar.center();
@@ -263,10 +138,10 @@ define( require => {
         'starPlanetSceneView',
         modelTandem.createTandem( 'starPlanetScene' ),
         viewTandem.createTandem( 'starPlanetSceneView' ), [
-          new Star( planetStar.sun, starPlanetTandem.createTandem( 'star' ), {
+          new Star( model, planetStar.sun, starPlanetTandem.createTandem( 'star' ), {
             maxPathLength: 345608942000 // in km
           } ),
-          new Planet( planetStar.earth, starPlanetTandem.createTandem( 'planet' ) )
+          new Planet( model, planetStar.earth, starPlanetTandem.createTandem( 'planet' ) )
         ] ) );
 
       // increase moon path length so that it fades away with other bodies
@@ -294,12 +169,17 @@ define( require => {
         'sunEarthMoonSceneView',
         modelTandem.createTandem( 'sunEarthMoonScene' ),
         viewTandem.createTandem( 'sunEarthMoonSceneView' ), [
-          new Star( sunEarthMoon.sun, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
+          new Star( model, sunEarthMoon.sun, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
             maxPathLength: 345608942000 // in km
           } ),
-          new Planet( sunEarthMoon.earth, sunEarthMoonSceneTandem.createTandem( 'earth' ) ),
-          new Moon( // no room for the slider
-            false, false, // so it doesn't intersect with earth mass readout
+          new Planet( model, sunEarthMoon.earth, sunEarthMoonSceneTandem.createTandem( 'earth' ) ),
+          new Moon( model,
+
+            // no room for the slider
+            false,
+
+            // so it doesn't intersect with earth mass readout
+            false,
             sunEarthMoon.moon,
             sunEarthMoonSceneTandem.createTandem( 'moon' ), {
               pathLengthBuffer: pathLengthBuffer
@@ -322,17 +202,17 @@ define( require => {
         ( earthMoon.moon.y / 2 ),
         new Vector2( earthMoon.earth.x, 0 ),
         model,
-        'earthMoonSceneButton',
-        'earthMoonSceneResetButton',
-        'earthMoonScene',
-        'earthMoonSceneMassControlPanel',
-        'earthMoonSceneView',
-        modelTandem.createTandem( 'earthMoonScene' ),
-        viewTandem.createTandem( 'earthMoonSceneView' ), [
-          new Planet( earthMoon.earth, earthMoonSceneTandem.createTandem( 'earth' ), {
+        'planetMoonSceneButton',
+        'planetMoonSceneResetButton',
+        'planetMoonScene',
+        'planetMoonSceneMassControlPanel',
+        'planetMoonSceneView',
+        modelTandem.createTandem( 'planetMoonScene' ),
+        viewTandem.createTandem( 'planetMoonSceneView' ), [
+          new Planet( model, earthMoon.earth, earthMoonSceneTandem.createTandem( 'earth' ), {
             orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
           } ),
-          new Moon( true, true, earthMoon.moon, earthMoonSceneTandem.createTandem( 'moon' ), {
+          new Moon( model, true, true, earthMoon.moon, earthMoonSceneTandem.createTandem( 'moon' ), {
             orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
             rotationPeriod: earthMoon.moon.rotationPeriod
           } )
@@ -354,17 +234,17 @@ define( require => {
         ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
         new Vector2( earthSpaceStation.earth.x, 0 ),
         model,
-        'earthSpaceStationSceneButton',
-        'earthSpaceStationSceneResetButton',
-        'earthSpaceStationScene',
-        'earthSpaceStationSceneMassControlPanel',
-        'earthSpaceStationSceneView',
-        modelTandem.createTandem( 'earthSpaceStationScene' ),
-        viewTandem.createTandem( 'earthSpaceStationSceneView' ), [
-          new Planet( earthSpaceStation.earth, earthSpaceStationTandem.createTandem( 'earth' ), {
+        'planetSatelliteSceneButton',
+        'planetSatelliteSceneResetButton',
+        'planetSatelliteScene',
+        'planetSatelliteSceneMassControlPanel',
+        'planetSatelliteSceneView',
+        modelTandem.createTandem( 'planetSatelliteScene' ),
+        viewTandem.createTandem( 'planetSatelliteSceneView' ), [
+          new Planet( model, earthSpaceStation.earth, earthSpaceStationTandem.createTandem( 'earth' ), {
             maxPathLength: 35879455 // in km
           } ),
-          new SpaceStation( earthSpaceStation, earthSpaceStationTandem.createTandem( 'spaceStation' ), {
+          new Satellite( model, earthSpaceStation, earthSpaceStationTandem.createTandem( 'satellite' ), {
             rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
           } )
         ]
@@ -562,6 +442,132 @@ define( require => {
     const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
     return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
   };
+
+  class Satellite extends Body {
+
+    /**
+     * @param {GravityAndOrbitsModel} model
+     * @param {EarthSpaceStationModeConfig} earthSpaceStation
+     * @param {Tandem} tandem
+     * @param {Object} [options]
+     */
+    constructor( model, earthSpaceStation, tandem, options ) {
+      options = merge( {
+        diameterScale: 1000
+      }, options );
+
+      super(
+        GravityAndOrbitsBodies.SATELLITE,
+        earthSpaceStation.spaceStation,
+        Color.gray,
+        Color.white,
+        getImageRenderer( spaceStationImage ),
+        ( -Math.PI / 4 ),
+        earthSpaceStation.spaceStation.mass,
+        spaceStationString,
+        model,
+        'spaceStationMassControl',
+        tandem,
+        'spaceStationMassLabel',
+        'spaceStationNode',
+        options
+      );
+    }
+  }
+
+  class Moon extends Body {
+
+    /**
+     * @param {GravityAndOrbitsModel} model
+     * @param {boolean} massSettable
+     * @param {boolean} massReadoutBelow
+     * @param {BodyConfiguration} bodyConfiguration
+     * @param {Tandem} tandem
+     * @param {Object} [options]
+     */
+    constructor( model, massSettable, massReadoutBelow, bodyConfiguration, tandem, options ) {
+      options = merge( {
+        pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
+        massSettable: massSettable,
+        massReadoutBelow: massReadoutBelow,
+        rotationPeriod: null // rotation period in seconds, null means no rotation
+      }, options );
+
+      super(
+        GravityAndOrbitsBodies.MOON,
+        bodyConfiguration,
+        Color.magenta,
+        Color.white,
+        getSwitchableRenderer( moonImage, genericMoonImage, bodyConfiguration.mass ),
+        ( -3 * Math.PI / 4 ),
+        bodyConfiguration.mass,
+        ourMoonString,
+        model,
+        'moonMassControl',
+        tandem,
+        'moonMassLabel',
+        'moonNode',
+        options
+      );
+    }
+  }
+
+  class Planet extends Body {
+
+    /**
+     * @param {GravityAndOrbitsModel} model
+     * @param {BodyConfiguration} bodyConfiguration
+     * @param {Tandem} tandem
+     * @param {Object} [options]
+     */
+    constructor( model, bodyConfiguration, tandem, options ) {
+      super(
+        GravityAndOrbitsBodies.PLANET,
+        bodyConfiguration,
+        Color.gray,
+        Color.lightGray,
+        getSwitchableRenderer( earthImage, genericPlanetImage, bodyConfiguration.mass ),
+        ( -Math.PI / 4 ),
+        bodyConfiguration.mass,
+        earthString,
+        model,
+        'planetMassControl',
+        tandem,
+        'planetMassLabel',
+        'planetNode',
+        options
+      );
+    }
+  }
+
+  class Star extends Body {
+
+    /**
+     * @param {GravityAndOrbitsModel} model
+     * @param {BodyConfiguration} bodyConfiguration
+     * @param {Tandem} tandem
+     * @param {Object} [options]
+     */
+    constructor( model, bodyConfiguration, tandem, options ) {
+      super(
+        GravityAndOrbitsBodies.STAR,
+        bodyConfiguration,
+        Color.yellow,
+        Color.white,
+        getImageRenderer( sunImage ),
+        ( -Math.PI / 4 ),
+        bodyConfiguration.mass,
+        ourSunString,
+        model,
+        'starMassControl',
+        tandem,
+        'starMassLabel',
+        'starNode',
+        options
+      );
+      this.body = bodyConfiguration;
+    }
+  }
 
   SceneFactory.SunEarthModeConfig = SunEarthModeConfig;
   SceneFactory.SunEarthMoonModeConfig = SunEarthMoonModeConfig;
