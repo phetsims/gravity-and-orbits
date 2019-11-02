@@ -14,7 +14,7 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/module/SceneFactory' );
+  const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/SceneFactory' );
 
   // constants
   const SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand

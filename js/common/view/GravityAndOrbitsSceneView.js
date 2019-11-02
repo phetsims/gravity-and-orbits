@@ -113,7 +113,7 @@ define( require => {
         this.addChild( new ExplosionNode( bodies[ i ], scene.transformProperty ) );
       }
 
-      // Add the node for the overlay grid, setting its visibility based on the module.showGridProperty
+      // Add the node for the overlay grid, setting its visibility based on the model.showGridProperty
       const gridNode = new GridNode( scene.transformProperty, scene.gridSpacing, scene.gridCenter, 28 );
       model.showGridProperty.linkAttribute( gridNode, 'visible' );
       this.addChild( gridNode );

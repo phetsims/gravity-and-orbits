@@ -12,7 +12,7 @@ define( require => {
 
   // modules
   const Body = require( 'GRAVITY_AND_ORBITS/common/model/Body' );
-  const BodyConfiguration = require( 'GRAVITY_AND_ORBITS/common/module/BodyConfiguration' );
+  const BodyConfiguration = require( 'GRAVITY_AND_ORBITS/common/model/BodyConfiguration' );
   const BodyRenderer = require( 'GRAVITY_AND_ORBITS/common/view/BodyRenderer' );
   const Color = require( 'SCENERY/util/Color' );
   const EarthMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/EarthMassReadoutNode' );
@@ -20,12 +20,12 @@ define( require => {
   const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
   const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
-  const GravityAndOrbitsScene = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsScene' );
+  const GravityAndOrbitsScene = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsScene' );
   const HBox = require( 'SCENERY/nodes/HBox' );
   const Image = require( 'SCENERY/nodes/Image' );
   const Line = require( 'SCENERY/nodes/Line' );
   const merge = require( 'PHET_CORE/merge' );
-  const ModeConfig = require( 'GRAVITY_AND_ORBITS/common/module/ModeConfig' );
+  const ModeConfig = require( 'GRAVITY_AND_ORBITS/common/model/ModeConfig' );
   const SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Util = require( 'DOT/Util' );

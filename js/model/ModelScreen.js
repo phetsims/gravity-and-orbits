@@ -9,7 +9,7 @@ define( require => {
   'use strict';
 
   // modules
-  const ModelModel = require( 'GRAVITY_AND_ORBITS/model/module/ModelModel' );
+  const ModelModel = require( 'GRAVITY_AND_ORBITS/model/ModelModel' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
   const Image = require( 'SCENERY/nodes/Image' );

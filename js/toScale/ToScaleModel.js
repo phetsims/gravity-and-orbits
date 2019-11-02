@@ -9,11 +9,10 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModel' );
-  const ToScaleSceneFactory = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleSceneFactory' );
+  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
+  const ToScaleSceneFactory = require( 'GRAVITY_AND_ORBITS/toScale/ToScaleSceneFactory' );
 
-  // TODO: Rename ToScaleModel
-  class ToScaleModule extends GravityAndOrbitsModel {
+  class ToScaleModel extends GravityAndOrbitsModel {
 
     /**
      * @param {Tandem} modelTandem
@@ -33,5 +32,5 @@ define( require => {
     }
   }
 
-  return gravityAndOrbits.register( 'ToScaleModule', ToScaleModule );
+  return gravityAndOrbits.register( 'ToScaleModel', ToScaleModel );
 } );

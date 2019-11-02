@@ -11,7 +11,7 @@ define( require => {
 
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/module/SceneFactory' );
+  const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/SceneFactory' );
 
   class ToScaleSceneFactory extends SceneFactory {
 

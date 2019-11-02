@@ -14,7 +14,7 @@ define( require => {
   const Image = require( 'SCENERY/nodes/Image' );
   const merge = require( 'PHET_CORE/merge' );
   const Screen = require( 'JOIST/Screen' );
-  const ToScaleModule = require( 'GRAVITY_AND_ORBITS/toScale/module/ToScaleModule' );
+  const ToScaleModel = require( 'GRAVITY_AND_ORBITS/toScale/ToScaleModel' );
 
   // strings
   const toScaleString = require( 'string!GRAVITY_AND_ORBITS/toScale' );
@@ -31,7 +31,7 @@ define( require => {
 
       const viewTandem = options.tandem.createTandem( 'view' );
       super(
-        () => new ToScaleModule( options.tandem.createTandem( 'model' ), viewTandem ),
+        () => new ToScaleModel( options.tandem.createTandem( 'model' ), viewTandem ),
         model => new GravityAndOrbitsScreenView( model, viewTandem ),
         options
       );

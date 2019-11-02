@@ -8,9 +8,9 @@ define( require => {
   'use strict';
 
   // modules
-  const ModelSceneFactory = require( 'GRAVITY_AND_ORBITS/model/module/ModelSceneFactory' );
+  const ModelSceneFactory = require( 'GRAVITY_AND_ORBITS/model/ModelSceneFactory' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModel' );
+  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
 
   class ModelModel extends GravityAndOrbitsModel {
     constructor( modelTandem, viewTandem ) {
