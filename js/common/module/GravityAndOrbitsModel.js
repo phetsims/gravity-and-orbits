@@ -20,7 +20,7 @@ define( require => {
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const EnumerationProperty = require( 'AXON/EnumerationProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
+  const GravityAndOrbitsSceneView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsSceneView' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
   const NumberProperty = require( 'AXON/NumberProperty' );
   const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
@@ -76,7 +76,7 @@ define( require => {
       this.sceneProperty = new DerivedProperty( [ this.sceneIndexProperty ], modeIndex => this.sceneList.scenes[ modeIndex ] );
       for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
         const scene = this.sceneList.scenes[ i ];
-        scene.playAreaNode = new GravityAndOrbitsPlayArea( scene, this, viewTandem.createTandem( scene.sceneViewTandemName ) );
+        scene.sceneView = new GravityAndOrbitsSceneView( scene, this, viewTandem.createTandem( scene.sceneViewTandemName ) );
       }
     }
 

@@ -41,7 +41,7 @@ define( require => {
 
       // Add the scene selection controls, one for each of the four modes
       model.getScenes().forEach( scene => {
-        const playAreaNode = scene.playAreaNode;
+        const sceneView = scene.sceneView;
         const massControlPanel = new MassControlPanel( scene.getMassSettableBodies(), {
           top: controlPanel.bottom + MARGIN,
           right: this.layoutBounds.right - MARGIN,
@@ -49,7 +49,7 @@ define( require => {
         } );
         scene.massControlPanel = massControlPanel;
 
-        this.addChild( playAreaNode );
+        this.addChild( sceneView );
         this.addChild( massControlPanel );
       } );
 
@@ -59,10 +59,10 @@ define( require => {
       // Make sure only one scene is visible at a time
       model.sceneProperty.link( scene => {
         for ( let i = 0; i < model.sceneList.scenes.length; i++ ) {
-          model.sceneList.scenes[ i ].playAreaNode.visible = false;
+          model.sceneList.scenes[ i ].sceneView.visible = false;
           model.sceneList.scenes[ i ].massControlPanel.visible = false;
         }
-        scene.playAreaNode.visible = true;
+        scene.sceneView.visible = true;
         scene.massControlPanel.visible = true;
         model.updateActiveModule();
       } );

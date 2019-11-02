@@ -48,10 +48,10 @@ define( require => {
   const METERS_PER_MILE = 0.000621371192;
   const THOUSAND_MILES_MULTIPLIER = METERS_PER_MILE / 1000;
 
-  class GravityAndOrbitsPlayArea extends Rectangle {
+  class GravityAndOrbitsSceneView extends Rectangle {
 
     /**
-     * Constructor for GravityAndOrbitsPlayArea
+     * Constructor for GravityAndOrbitsSceneView
      * @param {GravityAndOrbitsScene} scene
      * @param {GravityAndOrbitsModel} model
      * @param {Tandem} tandem
@@ -205,8 +205,8 @@ define( require => {
   }
 
   // @static
-  GravityAndOrbitsPlayArea.STAGE_SIZE = STAGE_SIZE;
-  GravityAndOrbitsPlayArea.buttonBackgroundColor = buttonBackgroundColor;
+  GravityAndOrbitsSceneView.STAGE_SIZE = STAGE_SIZE;
+  GravityAndOrbitsSceneView.buttonBackgroundColor = buttonBackgroundColor;
 
-  return gravityAndOrbits.register( 'GravityAndOrbitsPlayArea', GravityAndOrbitsPlayArea );
+  return gravityAndOrbits.register( 'GravityAndOrbitsSceneView', GravityAndOrbitsSceneView );
 } );

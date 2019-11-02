@@ -23,15 +23,15 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
   const GravityAndOrbitsPhysicsEngine = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsPhysicsEngine' );
-  const GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
+  const GravityAndOrbitsSceneView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsSceneView' );
   const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   const NumberProperty = require( 'AXON/NumberProperty' );
   const Property = require( 'AXON/Property' );
   const Rectangle = require( 'DOT/Rectangle' );
 
   // constants
-  const PLAY_AREA_WIDTH = GravityAndOrbitsPlayArea.STAGE_SIZE.width;
-  const PLAY_AREA_HEIGHT = GravityAndOrbitsPlayArea.STAGE_SIZE.height;
+  const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
+  const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
 
   class GravityAndOrbitsScene {
 
@@ -110,7 +110,7 @@ define( require => {
       );
 
       // @public {Node} - scenery node that depicts the play area for this.  TODO: Move this out of the model
-      this.playAreaNode = null;
+      this.sceneView = null;
     }
 
     /**
