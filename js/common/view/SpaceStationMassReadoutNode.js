@@ -23,10 +23,6 @@ define( require => {
 
   class SpaceStationMassReadoutNode extends MassReadoutNode {
 
-    constructor( bodyNode, visible ) { // REVIEW unused
-      super( bodyNode, visible );
-    }
-
     /**
      * Create a text label for the space station, modified so that it will be quantitative
      * or qualitative depending on the mass of the station.  For instance, if larger than

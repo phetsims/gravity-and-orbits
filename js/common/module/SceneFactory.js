@@ -104,11 +104,12 @@ define( require => {
       }, options );
 
       // non-static inner class: SpaceStation
-      // REVIEW: why is this inside the constructor?
+      // TODO: promote to static, with model parameter. Do for all extends Body
       // TODO: search // REVIEW comments
       class SpaceStation extends Body {
-        constructor( earthSpaceStation, tandem, options ) {
 
+        // TODO: jsdoc
+        constructor( earthSpaceStation, tandem, options ) {
           options = merge( {
             diameterScale: 1000
           }, options );
@@ -134,7 +135,9 @@ define( require => {
 
       // non-static inner class: Moon
       class Moon extends Body {
-        constructor( massSettable, massReadoutBelow, body, tandem, options ) {
+
+        // TODO: jsdoc
+        constructor( massSettable, massReadoutBelow, bodyConfiguration, tandem, options ) {
 
           options = merge( {
             pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
@@ -145,12 +148,12 @@ define( require => {
 
           super(
             GravityAndOrbitsBodies.MOON,
-            body,
+            bodyConfiguration,
             Color.magenta,
             Color.white,
-            getSwitchableRenderer( moonImage, genericMoonImage, body.mass ),
+            getSwitchableRenderer( moonImage, genericMoonImage, bodyConfiguration.mass ),
             ( -3 * Math.PI / 4 ),
-            body.mass,
+            bodyConfiguration.mass,
             ourMoonString,
             model,
             'moonMassControl',
@@ -163,15 +166,17 @@ define( require => {
       }
 
       class Planet extends Body {
-        constructor( body, tandem, options ) {
+
+        // TODO: jsdoc
+        constructor( bodyConfiguration, tandem, options ) {
           super(
             GravityAndOrbitsBodies.PLANET,
-            body,
+            bodyConfiguration,
             Color.gray,
             Color.lightGray,
-            getSwitchableRenderer( earthImage, genericPlanetImage, body.mass ),
+            getSwitchableRenderer( earthImage, genericPlanetImage, bodyConfiguration.mass ),
             ( -Math.PI / 4 ),
-            body.mass,
+            bodyConfiguration.mass,
             earthString,
             model,
             'planetMassControl',
@@ -184,15 +189,17 @@ define( require => {
       }
 
       class Star extends Body {
-        constructor( body, tandem, options ) {
+
+        // TODO: jsdoc
+        constructor( bodyConfiguration, tandem, options ) {
           super(
             GravityAndOrbitsBodies.STAR,
-            body, // REVIEW: why does Body take Body argument?
+            bodyConfiguration,
             Color.yellow,
             Color.white,
             getImageRenderer( sunImage ),
             ( -Math.PI / 4 ),
-            body.mass,
+            bodyConfiguration.mass,
             ourSunString,
             model,
             'starMassControl',
@@ -201,7 +208,7 @@ define( require => {
             'starNode',
             options
           );
-          this.body = body;
+          this.body = bodyConfiguration;
         }
       }
 

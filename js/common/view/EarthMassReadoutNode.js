@@ -24,11 +24,6 @@ define( require => {
 
   class EarthMassReadoutNode extends MassReadoutNode {
 
-    // REVIEW: is this pass-through constructor needed?  Probably not.
-    constructor( bodyNode, visible ) {
-      super( bodyNode, visible );
-    }
-
     /**
      * Create a label for the earth, but with rules to provide either exact or qualitive representations,
      * and limitations so that the label looks good in the view.

@@ -20,6 +20,7 @@ define( require => {
   const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
   class ModeConfig {
+
     /**
      * @param {number} zoom
      * @constructor
