@@ -240,10 +240,12 @@ define( require => {
         new Vector2( 0, 0 ),
         ( planetStar.earth.x / 2 ),
         new Vector2( 0, 0 ),
-        parameterList,
+        parameterList,// TODO: rename sun/earth to star/planet
         'sunEarthSceneButton',
         'sunEarthSceneResetButton',
         'sunEarthScene',
+        'sunEarthSceneMassControlPanel',
+        'sunEarthSceneView',
         tandem.createTandem( 'sunEarthScene' )
       ) );
 
@@ -272,6 +274,8 @@ define( require => {
         'sunEarthMoonSceneButton',
         'sunEarthMoonSceneResetButton',
         'sunEarthMoonScene',
+        'sunEarthMoonSceneMassControlPanel',
+        'sunEarthMoonSceneView',
         tandem.createTandem( 'sunEarthMoonScene' )
       ) );
 
@@ -312,6 +316,8 @@ define( require => {
         'earthMoonSceneButton',
         'earthMoonSceneResetButton',
         'earthMoonScene',
+        'earthMoonSceneMassControlPanel',
+        'earthMoonSceneView',
         tandem.createTandem( 'earthMoonScene' )
       ) );
 
@@ -342,10 +348,12 @@ define( require => {
         ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
         new Vector2( earthSpaceStation.earth.x, 0 ),
         parameterList,
-        'earthSpaceStationScreenButton',
-        'earthSpaceStationScreenResetButton',
-        'earthSpaceStationScreen',
-        tandem.createTandem( 'earthSpaceStationScreen' )
+        'earthSpaceStationSceneButton',
+        'earthSpaceStationSceneResetButton',
+        'earthSpaceStationScene',
+        'earthSpaceStationSceneMassControlPanel',
+        'earthSpaceStationSceneView',
+        tandem.createTandem( 'earthSpaceStationScene' )
       ) );
 
       const earthSpaceStationTandem = tandem.createTandem( 'earthSpaceStationScene' );

@@ -657,11 +657,6 @@ window.phet.phetio.phetioTypes = assert &&
             "NumberIO"
           ],
           "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
-          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -964,11 +959,6 @@ window.phet.phetio.phetioTypes = assert &&
             "BooleanIO"
           ],
           "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
-          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -1012,11 +1002,6 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "EnumerationIO(SLOW_MOTION|NORMAL|FAST_FORWARD)"
           ],
-          "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },
@@ -1062,11 +1047,6 @@ window.phet.phetio.phetioTypes = assert &&
             "NullableIO<BooleanIO>"
           ],
           "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
-          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -1110,11 +1090,6 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "NullableIO<FocusIO>"
           ],
-          "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },
@@ -1160,11 +1135,6 @@ window.phet.phetio.phetioTypes = assert &&
             "NumberIO"
           ],
           "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
-          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -1208,11 +1178,6 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "RangeIO"
           ],
-          "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },
@@ -1258,11 +1223,6 @@ window.phet.phetio.phetioTypes = assert &&
             "StringIO"
           ],
           "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
-          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -1306,11 +1266,6 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "Vector2IO"
           ],
-          "returnType": "VoidIO"
-        },
-        "storeValueToInitialValue": {
-          "documentation": "Changes the initial value of the Property to match the current value.",
-          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },

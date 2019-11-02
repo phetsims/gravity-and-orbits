@@ -54,12 +54,13 @@ define( require => {
      * @param {string} radioButtonTandemName
      * @param {string} resetButtonTandemName
      * @param {string} tandemName
+     * @param {string} massControlPanelTandemName
      * @param {Tandem} tandem
      */
     constructor( forceScale, active, dt, timeFormatter, iconImage, defaultOrbitalPeriod,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                  defaultZoomScale, zoomOffset, gridSpacing, gridCenter, parameterList, radioButtonTandemName, resetButtonTandemName,
-                 tandemName, tandem ) {
+                 tandemName, massControlPanelTandemName, sceneViewTandemName, tandem ) {
 
       this.activeProperty = new BooleanProperty( active );
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );
@@ -70,6 +71,8 @@ define( require => {
       this.radioButtonTandemName = radioButtonTandemName; // @public (read-only)
       this.resetButtonTandemName = resetButtonTandemName; // @public (read-only)
       this.tandemName = tandemName; // @public (read-only)
+      this.massControlPanelTandemName = massControlPanelTandemName; // @public (read-only)
+      this.sceneViewTandemName = sceneViewTandemName; // @public (read-only)
 
       this.dt = dt; // @private
       this.forceScale = forceScale; // @private

@@ -27,7 +27,7 @@ define( require => {
      * object as a parameter instead of a model. This seemed like the easiest way to port the Java version, which has
      * one module for each screen. This is the ScreenView for both screens in this sim.
      *
-     * @param {GravityAndOrbitsModule} module // TODO: Rename to model
+     * @param {GravityAndOrbitsModule} module
      * @param {Tandem} tandem
      */
     constructor( module, tandem ) {
@@ -35,29 +35,28 @@ define( require => {
       super();
 
       // Control panel in the upper right of the play area
-      const controlPanelNode = new GravityAndOrbitsControlPanel( module, {
+      const controlPanel = new GravityAndOrbitsControlPanel( module, {
         top: this.layoutBounds.top + MARGIN,
         right: this.layoutBounds.right - MARGIN,
-        tandem: tandem.createTandem( 'controlPanelNode' ) // TODO: name?
+        tandem: tandem.createTandem( 'controlPanel' )
       } );
 
       // Add the scene selection controls, one for each of the four modes
-      const scenes = module.getScenes();
-      for ( let i = 0; i < scenes.length; i++ ) {
-        const playAreaNode = scenes[ i ].playAreaNode;
-        const massControlPanel = new MassControlPanel( scenes[ i ].getMassSettableBodies(), {
-          top: controlPanelNode.bottom + MARGIN,
+      module.getScenes().forEach( scene => {
+        const playAreaNode = scene.playAreaNode;
+        const massControlPanel = new MassControlPanel( scene.getMassSettableBodies(), {
+          top: controlPanel.bottom + MARGIN,
           right: this.layoutBounds.right - MARGIN,
-          tandem: tandem.createTandem( 'massControlPanel' + i )// TODO don't index like this
+          tandem: tandem.createTandem( scene.massControlPanelTandemName )
         } );
-        scenes[ i ].massControlPanel = massControlPanel;
+        scene.massControlPanel = massControlPanel;
 
         this.addChild( playAreaNode );
         this.addChild( massControlPanel );
-      }
+      } );
 
       // add the control panel on top of the canvases
-      this.addChild( controlPanelNode );
+      this.addChild( controlPanel );
 
       // Make sure only one scene is visible at a time
       module.sceneProperty.link( scene => {

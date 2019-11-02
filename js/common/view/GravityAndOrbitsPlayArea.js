@@ -77,26 +77,22 @@ define( require => {
       const velocityVectorColorOutline = new Color( 64, 64, 64 );
 
       // Use canvas coordinates to determine whether something has left the visible area
-      const returnable = [];
-      for ( let i = 0; i < bodies.length; i++ ) {
-        const body = bodies[ i ];
+      const isReturnableProperties = [];
+      bodies.forEach( body => {
         const bodyNode = new BodyNode( body, body.labelAngle, module.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
         const massReadoutNode = scene.massReadoutFactory( bodyNode, module.showMassProperty );
         this.addChild( bodyNode );
         bodyNode.addChild( massReadoutNode );
 
-        // TODO: This likely could be eliminated by using forEach above
-        ( bodyNode => {
-          const property = new DerivedProperty( [ bodies[ i ].positionProperty, scene.zoomLevelProperty ], () => {
+        const isReturnableProperty = new DerivedProperty( [ body.positionProperty, scene.zoomLevelProperty ], () => {
 
-            // the return objects button should be visible when a body is out of bounds
-            // and not at the rewind position
-            const atRewindPosition = bodyNode.body.positionProperty.equalsRewindValue();
-            return !STAGE_SIZE.intersectsBounds( bodyNode.bounds ) && !atRewindPosition;
-          } );
-          returnable.push( property );
-        } )( bodyNode );
-      }
+          // the return objects button should be visible when a body is out of bounds
+          // and not at the rewind position
+          const atRewindPosition = bodyNode.body.positionProperty.equalsRewindValue();
+          return !STAGE_SIZE.intersectsBounds( bodyNode.bounds ) && !atRewindPosition;
+        } );
+        isReturnableProperties.push( isReturnableProperty );
+      } );
 
       // Add gravity force vector nodes
       for ( let i = 0; i < bodies.length; i++ ) {
@@ -178,7 +174,7 @@ define( require => {
       this.addChild( measuringTapeNode );
 
       // If any body is out of bounds, show a "return object" button
-      const anythingReturnable = DerivedProperty.or( returnable );
+      const anythingReturnable = DerivedProperty.or( isReturnableProperties );
 
       const returnButton = new TextPushButton( returnObjectsString, {
         font: new PhetFont( 16 ),

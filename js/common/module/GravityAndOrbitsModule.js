@@ -77,7 +77,7 @@ define( require => {
       this.sceneProperty = new DerivedProperty( [ this.sceneIndexProperty ], modeIndex => this.sceneList.scenes[ modeIndex ] );
       for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
         const scene = this.sceneList.scenes[ i ];
-        scene.playAreaNode = new GravityAndOrbitsPlayArea( scene, this, viewTandem.createTandem( 'playArea' ) );
+        scene.playAreaNode = new GravityAndOrbitsPlayArea( scene, this, viewTandem.createTandem( scene.sceneViewTandemName ) );
       }
     }
 
@@ -103,7 +103,7 @@ define( require => {
 
     // @public
     getScenes() {
-      return this.sceneList.scenes.slice( 0 );
+      return this.sceneList.scenes.slice( 0 ); // TODO: why defensive copy?
     }
 
     // @private
