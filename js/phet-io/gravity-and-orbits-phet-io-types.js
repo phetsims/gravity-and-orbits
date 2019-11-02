@@ -477,6 +477,19 @@ window.phet.phetio.phetioTypes = assert &&
       "supertype": "ObjectIO",
       "typeName": "FunctionIO(StringIO,StringIO)=>VoidIO"
     },
+    "FunctionIO(Vector2IO,NullableIO<Vector2IO>)=>VoidIO": {
+      "documentation": "Wrapper for the built-in JS function type.<br><strong>Arguments:</strong> Vector2IO, NullableIO<Vector2IO><br><strong>Return Type:</strong> VoidIO",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "Vector2IO",
+        "NullableIO<Vector2IO>",
+        "VoidIO"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "FunctionIO(Vector2IO,NullableIO<Vector2IO>)=>VoidIO"
+    },
     "LinkedElementIO": {
       "documentation": "A LinkedElement",
       "events": [],
@@ -592,6 +605,17 @@ window.phet.phetio.phetioTypes = assert &&
       "supertype": "ObjectIO",
       "typeName": "NullableIO<StringIO>"
     },
+    "NullableIO<Vector2IO>": {
+      "documentation": "A wrapper to wrap another IOType, adding support for null.",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "Vector2IO"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "NullableIO<Vector2IO>"
+    },
     "NumberIO": {
       "documentation": "Wrapper for the built-in JS number type (floating point, but also represents integers)",
       "events": [],
@@ -632,6 +656,11 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "NumberIO"
           ],
+          "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },
@@ -935,6 +964,11 @@ window.phet.phetio.phetioTypes = assert &&
             "BooleanIO"
           ],
           "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
+          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -978,6 +1012,11 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "EnumerationIO(SLOW_MOTION|NORMAL|FAST_FORWARD)"
           ],
+          "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },
@@ -1023,6 +1062,11 @@ window.phet.phetio.phetioTypes = assert &&
             "NullableIO<BooleanIO>"
           ],
           "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
+          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -1066,6 +1110,11 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "NullableIO<FocusIO>"
           ],
+          "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },
@@ -1111,6 +1160,11 @@ window.phet.phetio.phetioTypes = assert &&
             "NumberIO"
           ],
           "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
+          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -1154,6 +1208,11 @@ window.phet.phetio.phetioTypes = assert &&
           "parameterTypes": [
             "RangeIO"
           ],
+          "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
           "returnType": "VoidIO"
         }
       },
@@ -1199,6 +1258,11 @@ window.phet.phetio.phetioTypes = assert &&
             "StringIO"
           ],
           "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
+          "returnType": "VoidIO"
         }
       },
       "parameterTypes": [
@@ -1206,6 +1270,55 @@ window.phet.phetio.phetioTypes = assert &&
       ],
       "supertype": "ObjectIO",
       "typeName": "PropertyIO<StringIO>"
+    },
+    "PropertyIO<Vector2IO>": {
+      "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",
+      "events": [
+        "changed"
+      ],
+      "methodOrder": [
+        "link",
+        "lazyLink"
+      ],
+      "methods": {
+        "getValue": {
+          "documentation": "Gets the current value.",
+          "parameterTypes": [],
+          "returnType": "Vector2IO"
+        },
+        "lazyLink": {
+          "documentation": "Adds a listener which will be called when the value changes. This method is like \"link\", but without the current-value callback on registration. The listener takes two arguments, the new value and the previous value.",
+          "parameterTypes": [
+            "FunctionIO(Vector2IO,NullableIO<Vector2IO>)=>VoidIO"
+          ],
+          "returnType": "VoidIO"
+        },
+        "link": {
+          "documentation": "Adds a listener which will be called when the value changes. On registration, the listener is also called with the current value. The listener takes two arguments, the new value and the previous value.",
+          "parameterTypes": [
+            "FunctionIO(Vector2IO,NullableIO<Vector2IO>)=>VoidIO"
+          ],
+          "returnType": "VoidIO"
+        },
+        "setValue": {
+          "documentation": "Sets the value of the Property. If the value differs from the previous value, listeners are notified with the new value.",
+          "invocableForReadOnlyElements": false,
+          "parameterTypes": [
+            "Vector2IO"
+          ],
+          "returnType": "VoidIO"
+        },
+        "storeValueToInitialValue": {
+          "documentation": "Changes the initial value of the Property to match the current value.",
+          "parameterTypes": [],
+          "returnType": "VoidIO"
+        }
+      },
+      "parameterTypes": [
+        "Vector2IO"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "PropertyIO<Vector2IO>"
     },
     "RangeIO": {
       "documentation": "A range with \"min\" and a \"max\" members.",
