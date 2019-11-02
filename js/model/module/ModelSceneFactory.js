@@ -81,7 +81,7 @@ define( require => {
       this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
       // Sun shouldn't move in model modes
-      this.sun.fixed = true;
+      this.sun.isMovable = false;
     }
   }
 
@@ -105,7 +105,7 @@ define( require => {
       this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
       // Sun shouldn't move in model modes
-      this.sun.fixed = true;
+      this.sun.isMovable = false;
     }
   }
 

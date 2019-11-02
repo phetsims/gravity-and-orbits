@@ -129,7 +129,6 @@ define( require => {
       this.tickLabel = tickLabel; // @public (read-only)
 
       // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
-      this.fixed = bodyConfiguration.fixed; // @public (read-only)
       this.color = color; // @public (read-only)
       this.highlight = highlight; // @public (read-only)
       this.name = name; // @public (read-only)
@@ -203,8 +202,8 @@ define( require => {
         phetioType: PropertyIO( NumberIO )
       } );
 
-      // @public (read-only) TODO: this was added before we knew about this.fixed.  Should one be eliminated?
-      this.isMovableProperty = new BooleanProperty( true, {
+      // @public (read-only)
+      this.isMovableProperty = new BooleanProperty( bodyConfiguration.isMovable, {
         tandem: tandem.createTandem( 'isMovableProperty' )
       } );
 
@@ -305,8 +304,8 @@ define( require => {
      * @param {BodyState} bodyState
      */
     updateBodyStateFromModel( bodyState ) {
-      if ( !this.isCollidedProperty.value && this.isMovableProperty.value ) {
-        if ( !this.fixed && !this.userControlled ) {
+      if ( !this.isCollidedProperty.value ) {
+        if ( this.isMovableProperty.value && !this.userControlled ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
         }
@@ -324,9 +323,8 @@ define( require => {
      */
     allBodiesUpdated() {
 
-      // Only add to the path if the user isn't dragging it and if the body is not exploded
-      // and the body is not fixed
-      if ( !this.userControlled && !this.isCollidedProperty.get() && !this.fixed ) {
+      // Only add to the path if the user isn't dragging it and if the body is not exploded and the body is movable
+      if ( !this.userControlled && !this.isCollidedProperty.get() && this.isMovableProperty.value ) {
         this.addPathPoint();
       }
     }

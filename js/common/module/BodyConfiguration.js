@@ -33,7 +33,7 @@ define( require => {
       }, options );
 
       // @public
-      this.fixed = false; // True if the object doesn't move when the clock ticks
+      this.isMovable = true; // True if the object moves based on physics (even non-isMovable things can be dragged though)
       this.mass = mass;
       this.radius = radius;
       this.x = x;

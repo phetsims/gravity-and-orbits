@@ -57,7 +57,6 @@ define( require => {
      * @param {Tandem} tandem
      */
     constructor( scene, model, tandem ) {
-      const physicsEngine = scene.physicsEngine;
       const forceScale = scene.forceScale;
 
       // each orbit mode has its own play area with a CanvasNode for rendering paths
@@ -67,7 +66,7 @@ define( require => {
 
       super( 0, 0, WIDTH, HEIGHT, { scale: SCALE, excludeInvisible: excludeInvisible } );
 
-      const bodies = physicsEngine.getBodies();
+      const bodies = scene.physicsEngine.getBodies();
 
       this.addChild( new PathsCanvasNode( bodies, scene.transformProperty, model.showPathProperty, STAGE_SIZE ) );
 
@@ -102,7 +101,7 @@ define( require => {
 
       // Add velocity vector nodes
       for ( let i = 0; i < bodies.length; i++ ) {
-        if ( !bodies[ i ].fixed ) {
+        if ( bodies[ i ].isMovableProperty.value ) {
           this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
             bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
             vString, tandem.createTandem( 'vectorNode' + i ) ) );
@@ -119,7 +118,7 @@ define( require => {
       model.showGridProperty.linkAttribute( gridNode, 'visible' );
       this.addChild( gridNode );
 
-      this.addChild( new DayCounter( scene.timeFormatter, physicsEngine.clock, tandem.createTandem( 'dayCounter' ), {
+      this.addChild( new DayCounter( scene.timeFormatter, scene.physicsEngine.clock, tandem.createTandem( 'dayCounter' ), {
         bottom: STAGE_SIZE.bottom - 20,
         right: STAGE_SIZE.right - 50,
         scale: 1.2
@@ -128,7 +127,7 @@ define( require => {
       // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
 
       // Add play/pause, rewind, and step buttons
-      const timeControlPanel = new TimeControlPanel( model.sceneProperty, model.isPlayingProperty, bodies, tandem.createTandem( 'timeControlPanel' ), {
+      const timeControlPanel = new TimeControlPanel( model, bodies, tandem.createTandem( 'timeControlPanel' ), {
         bottom: STAGE_SIZE.bottom - 10,
         centerX: STAGE_SIZE.centerX,
         scale: 1.5
