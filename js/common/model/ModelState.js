@@ -3,7 +3,7 @@
 /**
  * ModelState represents an immutable representation of the entire physical state and code for performing the
  * numerical integration which produces the next ModelState.
- * It is used by the GravityAndOrbitsModel to update the physics.
+ * It is used by the GravityAndOrbitsPhysicsEngine to update the physics.
  *
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
@@ -296,7 +296,7 @@ define( require => {
     /**
      * Get the BodyState for the specified index--future work could
      * change this signature to getState(Body body) since it would be safer.
-     * See usage in GravityAndOrbitsModel constructor.
+     * See usage in GravityAndOrbitsPhysicsEngine constructor.
      * @public
      * @param {number} index
      * @returns {Array.<BodyState>}

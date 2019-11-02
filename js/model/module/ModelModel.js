@@ -12,7 +12,7 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsModule = require( 'GRAVITY_AND_ORBITS/common/module/GravityAndOrbitsModule' );
 
-  class ModelModule extends GravityAndOrbitsModule {
+  class ModelModel extends GravityAndOrbitsModule {
     constructor( tandem, viewTandem ) {
       super( false, p => new ModelModeList(
         p.isPlayingProperty,
@@ -25,5 +25,5 @@ define( require => {
     }
   }
 
-  return gravityAndOrbits.register( 'ModelModule', ModelModule );
+  return gravityAndOrbits.register( 'ModelModel', ModelModel );
 } );

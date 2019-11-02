@@ -1,7 +1,7 @@
 // Copyright 2014-2019, University of Colorado Boulder
 
 /**
- * This is the model for Gravity and Orbits; there is one GravityAndOrbitsModel per each GravityAndOrbitsScene, and it
+ * This is the model for Gravity and Orbits; there is one GravityAndOrbitsPhysicsEngine per each GravityAndOrbitsScene, and it
  * uses ModelState to update the physics.
  *
  * @author Sam Reid (PhET Interactive Simulations)
@@ -29,7 +29,7 @@ define( require => {
    */
   const getBodyState = body => body.toBodyState();
 
-  class GravityAndOrbitsModel {
+  class GravityAndOrbitsPhysicsEngine {
 
     /**
      * @param {GravityAndOrbitsClock} clock
@@ -192,5 +192,5 @@ define( require => {
     }
   }
 
-  return gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
+  return gravityAndOrbits.register( 'GravityAndOrbitsPhysicsEngine', GravityAndOrbitsPhysicsEngine );
 } );

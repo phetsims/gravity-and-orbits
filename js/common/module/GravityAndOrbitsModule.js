@@ -88,7 +88,7 @@ define( require => {
       dt = Math.min( 1, dt );
 
       // collision animations should proceed outside of the model step
-      const bodies = this.sceneProperty.get().model.bodies;
+      const bodies = this.sceneProperty.get().physicsEngine.bodies;
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
         if ( body.isCollidedProperty.get() ) {

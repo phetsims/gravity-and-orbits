@@ -9,7 +9,7 @@ define( require => {
   'use strict';
 
   // modules
-  const ModelModule = require( 'GRAVITY_AND_ORBITS/model/module/ModelModule' );
+  const ModelModel = require( 'GRAVITY_AND_ORBITS/model/module/ModelModel' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
   const Image = require( 'SCENERY/nodes/Image' );
@@ -32,7 +32,7 @@ define( require => {
 
       const viewTandem = options.tandem.createTandem( 'view' );
       super(
-        () => new ModelModule( options.tandem.createTandem( 'model' ), viewTandem ),
+        () => new ModelModel( options.tandem.createTandem( 'model' ), viewTandem ),
         model => new GravityAndOrbitsScreenView( model, viewTandem ),
         options
       );

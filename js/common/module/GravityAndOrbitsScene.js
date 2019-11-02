@@ -22,7 +22,7 @@ define( require => {
   const Bounds2 = require( 'DOT/Bounds2' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
-  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
+  const GravityAndOrbitsPhysicsEngine = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsPhysicsEngine' );
   const GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
   const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   const NumberProperty = require( 'AXON/NumberProperty' );
@@ -103,10 +103,10 @@ define( require => {
 
       // @private
       const clock = new GravityAndOrbitsClock( dt, parameterList.steppingProperty, this.speedTypeProperty, tandem.createTandem( 'clock' ) ); // TODO(phet-io design): do we need the 'clock' level here?
-      this.model = new GravityAndOrbitsModel( clock, parameterList.gravityEnabledProperty );
+      this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, parameterList.gravityEnabledProperty );
 
       Property.multilink( [ parameterList.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
-        this.model.clock.setRunning( playButtonPressed && active )
+        this.physicsEngine.clock.setRunning( playButtonPressed && active )
       );
 
       // @public {Node} - scenery node that depicts the play area for this.  TODO: Move this out of the model
@@ -153,12 +153,12 @@ define( require => {
 
     // @public
     getClock() {
-      return this.model.clock;
+      return this.physicsEngine.clock;
     }
 
     // @public
     getBodies() {
-      return this.model.getBodies();
+      return this.physicsEngine.getBodies();
     }
 
     /**
@@ -175,7 +175,7 @@ define( require => {
      * @param body
      */
     addBody( body ) {
-      this.model.addBody( body );
+      this.physicsEngine.addBody( body );
 
       body.massProperty.link( this.setDeviatedFromDefaults.bind( this ) );
       body.userModifiedPositionEmitter.addListener( this.setDeviatedFromDefaults.bind( this ) );
@@ -200,9 +200,9 @@ define( require => {
       this.measuringTapeStartPointProperty.reset();
       this.measuringTapeEndPointProperty.reset();
       this.zoomLevelProperty.reset();
-      this.model.clock.resetSimulationTime();
+      this.physicsEngine.clock.resetSimulationTime();
 
-      this.model.resetAll();
+      this.physicsEngine.resetAll();
     }
 
     /**
@@ -211,7 +211,7 @@ define( require => {
      * @public
      */
     resetScene() {
-      this.model.resetBodies();
+      this.physicsEngine.resetBodies();
       this.deviatedFromDefaultsProperty.set( false );
       this.getClock().setSimulationTime( 0.0 );
     }
@@ -224,13 +224,13 @@ define( require => {
     rewind() {
       this.rewindingProperty.set( true );
       this.getClock().setSimulationTime( 0.0 );
-      const bodies = this.model.getBodies();
+      const bodies = this.physicsEngine.getBodies();
       for ( let i = 0; i < bodies.length; i++ ) {
         bodies[ i ].rewind();
       }
 
       // update the force vectors accordingly
-      this.model.updateForceVectors();
+      this.physicsEngine.updateForceVectors();
 
       this.rewindingProperty.set( false );
     }
@@ -242,7 +242,7 @@ define( require => {
     saveState() {
       assert && assert( !this.isPlayingProperty.get(), 'saveState should only be called when sim paused' );
 
-      const bodies = this.model.getBodies();
+      const bodies = this.physicsEngine.getBodies();
       for ( let i = 0; i < bodies.length; i++ ) {
         bodies[ i ].saveBodyState();
       }

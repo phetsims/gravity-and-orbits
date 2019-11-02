@@ -57,7 +57,7 @@ define( require => {
      * @param {Tandem} tandem
      */
     constructor( scene, module, tandem ) {
-      const model = scene.model;
+      const model = scene.physicsEngine;
       const forceScale = scene.forceScale;
 
       // each orbit mode has its own play area with a CanvasNode for rendering paths
