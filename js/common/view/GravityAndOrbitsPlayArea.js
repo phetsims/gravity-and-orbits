@@ -52,13 +52,13 @@ define( require => {
 
     /**
      * Constructor for GravityAndOrbitsPlayArea
-     * @param {GravityAndOrbitsModel} model
-     * @param {GravityAndOrbitsModule} module
      * @param {GravityAndOrbitsMode} mode
-     * @param {number} forceScale
+     * @param {GravityAndOrbitsModule} module
      * @param {Tandem} tandem TODO: make sure this is view-ish not model-ish
      */
-    constructor( model, module, mode, forceScale, tandem ) {
+    constructor( mode, module, tandem ) {
+      const model = mode.model;
+      const forceScale = mode.forceScale;
 
       // each orbit mode has its own play area with a CanvasNode for rendering paths
       // each canvas should be excluded from the DOM when invisible, with the exception of iOS Safari,

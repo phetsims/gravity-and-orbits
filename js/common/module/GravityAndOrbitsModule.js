@@ -21,6 +21,7 @@ define( require => {
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const EnumerationProperty = require( 'AXON/EnumerationProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsPlayArea = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsPlayArea' );
   const ModeListParameterList = require( 'GRAVITY_AND_ORBITS/common/module/ModeListParameterList' );
   const NumberProperty = require( 'AXON/NumberProperty' );
   const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
@@ -76,7 +77,8 @@ define( require => {
       } );
       this.modeProperty = new DerivedProperty( [ this.modeIndexProperty ], modeIndex => this.modeList.modes[ modeIndex ] );
       for ( let i = 0; i < this.modeList.modes.length; i++ ) {
-        this.modeList.modes[ i ].init( this, viewTandem.createTandem( this.modeList.modes[ i ].tandemName ) );
+        const mode = this.modeList.modes[ i ];
+        mode.playAreaNode = new GravityAndOrbitsPlayArea( mode, this, viewTandem.createTandem( 'playArea' ) );
       }
 
       this.reset(); // TODO: is this necessary?  If so, why?

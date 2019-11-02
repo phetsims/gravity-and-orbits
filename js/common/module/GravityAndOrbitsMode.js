@@ -107,6 +107,9 @@ define( require => {
       Property.multilink( [ parameterList.playButtonPressedProperty, this.activeProperty ], ( playButtonPressed, active ) =>
         this.model.clock.setRunning( playButtonPressed && active )
       );
+
+      // @public {Node} - scenery node that depicts the play area for this.  TODO: don't have this be in the view
+      this.playAreaNode = null;
     }
 
     /**
@@ -200,18 +203,6 @@ define( require => {
       this.model.clock.resetSimulationTime();
 
       this.model.resetAll();
-    }
-
-    /**
-     * TODO: playAreaNode should not be created here in the model.
-     * Initialize the view component for this mode.
-     *
-     * @param {GravityAndOrbitsModule} module
-     * @param {Tandem} viewTandem
-     * @public
-     */
-    init( module, viewTandem ) {
-      this.playAreaNode = new GravityAndOrbitsPlayArea( this.model, module, this, this.forceScale, viewTandem.createTandem( 'playArea' ) );
     }
 
     /**

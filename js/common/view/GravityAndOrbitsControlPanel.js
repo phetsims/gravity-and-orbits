@@ -1,7 +1,7 @@
 // Copyright 2013-2019, University of Colorado Boulder
 
 /**
- * Control panel containing the controls for orbital mode, gravity, and visibility of planetary path and vectors.
+ * Control panel containing the controls for orbital mode, gravity, and visibility of planetary path and vectors.
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
