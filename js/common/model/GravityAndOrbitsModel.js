@@ -113,7 +113,7 @@ define( require => {
           const other = this.bodies[ k ];
           if ( other !== body ) {
             if ( other.collidesWidth( body ) ) {
-              getSmaller( other, body ).collidedProperty.set( true );
+              getSmaller( other, body ).isCollidedProperty.set( true );
             }
           }
         }

@@ -92,7 +92,7 @@ define( require => {
       const bodies = this.modeProperty.get().model.bodies;
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
-        if ( body.collidedProperty.get() ) {
+        if ( body.isCollidedProperty.get() ) {
           body.clockTicksSinceExplosionProperty.value += 1;
         }
       }

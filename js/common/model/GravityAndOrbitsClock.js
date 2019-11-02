@@ -43,10 +43,10 @@ define( require => {
       this.steppingWhilePausedDT = baseDTValue * GravityAndOrbitsConstants.STARTING_SPEED_SCALE;
 
       // @public
-      this.runningProperty = new BooleanProperty( false, { // TODO: rename to isRunningProperty
+      this.isRunningProperty = new BooleanProperty( false, {
         tandem: tandem.createTandem( 'isRunningProperty' )
       } );
-      this.simulationTimeProperty = new NumberProperty( 0, { // TODO: rename to timeProperty
+      this.timeProperty = new NumberProperty( 0, {
         tandem: tandem.createTandem( 'timeProperty' )
       } );
       this.dt = baseDTValue;
@@ -104,7 +104,7 @@ define( require => {
      * @param  {boolean} running
      */
     setRunning( running ) {
-      this.runningProperty.set( running );
+      this.isRunningProperty.set( running );
     }
 
     /**
@@ -113,17 +113,17 @@ define( require => {
      * @param  {number} time description
      */
     setSimulationTime( time ) {
-      this.simulationTimeProperty.set( time );
+      this.timeProperty.set( time );
     }
 
     // @public
     getSimulationTime() {
-      return this.simulationTimeProperty.get();
+      return this.timeProperty.get();
     }
 
     // @public
     resetSimulationTime() {
-      this.simulationTimeProperty.reset();
+      this.timeProperty.reset();
     }
 
     /**

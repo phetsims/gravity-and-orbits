@@ -57,7 +57,7 @@ define( require => {
         dayText.centerX = clearButton.centerX;
         clearButton.enabled = ( time !== 0 );
       };
-      clock.simulationTimeProperty.link( this.timeListener );
+      clock.timeProperty.link( this.timeListener );
 
       this.addChild( new VBox( {
         resize: false,

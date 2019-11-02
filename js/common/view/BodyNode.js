@@ -44,7 +44,7 @@ define( require => {
       this.modelViewTransformProperty = mode.transformProperty; // @private
       this.body = body; // @public
 
-      this.body.collidedProperty.link( isCollided => this.setVisible( !isCollided ) );
+      this.body.isCollidedProperty.link( isCollided => this.setVisible( !isCollided ) );
 
       this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
       this.addChild( this.bodyRenderer );

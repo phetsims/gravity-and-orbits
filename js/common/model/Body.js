@@ -193,7 +193,7 @@ define( require => {
       } );
 
       // @public
-      this.collidedProperty = new RewindableProperty( changeRewindValueProperty, false, { // TODO: rename isCollidedProperty
+      this.isCollidedProperty = new RewindableProperty( changeRewindValueProperty, false, {
         tandem: tandem.createTandem( 'isCollidedProperty' ),
         phetioType: PropertyIO( BooleanIO )
       } );
@@ -227,7 +227,7 @@ define( require => {
       this.userModifiedPositionEmitter = new Emitter();
       this.userModifiedVelocityEmitter = new Emitter();
 
-      this.collidedProperty.link( collided => {
+      this.isCollidedProperty.link( collided => {
         if ( collided ) {
           this.clockTicksSinceExplosionProperty.set( 0 );
         }
@@ -279,7 +279,7 @@ define( require => {
         this.velocityProperty.get().copy(),
         this.accelerationProperty.get().copy(),
         this.massProperty.get(),
-        this.collidedProperty.get(),
+        this.isCollidedProperty.get(),
         this.rotationProperty.get(),
         this.rotationPeriod
       );
@@ -296,7 +296,7 @@ define( require => {
       this.velocityProperty.storeRewindValueNoNotify();
       this.forceProperty.storeRewindValueNoNotify();
       this.massProperty.storeRewindValueNoNotify();
-      this.collidedProperty.storeRewindValueNoNotify();
+      this.isCollidedProperty.storeRewindValueNoNotify();
     }
 
     /**
@@ -306,7 +306,7 @@ define( require => {
      * @param {BodyState} bodyState
      */
     updateBodyStateFromModel( bodyState ) {
-      if ( !this.collidedProperty.value && this.isMovableProperty.value ) {
+      if ( !this.isCollidedProperty.value && this.isMovableProperty.value ) {
         if ( !this.fixed && !this.userControlled ) {
           this.positionProperty.set( bodyState.position );
           this.velocityProperty.set( bodyState.velocity );
@@ -327,7 +327,7 @@ define( require => {
 
       // Only add to the path if the user isn't dragging it and if the body is not exploded
       // and the body is not fixed
-      if ( !this.userControlled && !this.collidedProperty.get() && !this.fixed ) {
+      if ( !this.userControlled && !this.isCollidedProperty.get() && !this.fixed ) {
         this.addPathPoint();
       }
     }
@@ -384,7 +384,7 @@ define( require => {
       this.forceProperty.reset();
       this.massProperty.reset();
       this.diameterProperty.reset();
-      this.collidedProperty.reset();
+      this.isCollidedProperty.reset();
       this.clockTicksSinceExplosionProperty.reset();
       this.rotationProperty.reset();
       this.clearPath();
@@ -430,7 +430,7 @@ define( require => {
       this.velocityProperty.rewind();
       this.forceProperty.rewind();
       this.massProperty.rewind();
-      this.collidedProperty.rewind();
+      this.isCollidedProperty.rewind();
       this.rotationProperty.rewind();
       this.clearPath();
     }
@@ -447,7 +447,7 @@ define( require => {
         this.positionProperty.differentProperty,
         this.velocityProperty.differentProperty,
         this.massProperty.differentProperty,
-        this.collidedProperty.differentProperty
+        this.isCollidedProperty.differentProperty
       ] );
     }
 

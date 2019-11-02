@@ -42,7 +42,7 @@ define( require => {
 
       // Only show if the body hasn't collided
       const shouldBeShownProperty = new DerivedProperty(
-        [ visibleProperty, body.collidedProperty ], ( visible, collided ) => visible && !collided
+        [ visibleProperty, body.isCollidedProperty ], ( visible, collided ) => visible && !collided
       );
       shouldBeShownProperty.linkAttribute( this, 'visible' );
 

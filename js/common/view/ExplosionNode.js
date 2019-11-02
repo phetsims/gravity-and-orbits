@@ -50,7 +50,7 @@ define( require => {
       body.positionProperty.link( () => {
 
         // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
-        if ( !body.collidedProperty.get() ) {
+        if ( !body.isCollidedProperty.get() ) {
           this.translation = modelViewTransformProperty.get().modelToViewPosition( body.positionProperty.get() );
         }
       } );
@@ -72,7 +72,7 @@ define( require => {
       const getDoubleRadius = radius => radius * 2;
       const explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
-      const explodedProperty = new DerivedProperty( [ body.collidedProperty, body.clockTicksSinceExplosionProperty ],
+      const explodedProperty = new DerivedProperty( [ body.isCollidedProperty, body.clockTicksSinceExplosionProperty ],
         ( collided, clockTicks ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
 
       explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
