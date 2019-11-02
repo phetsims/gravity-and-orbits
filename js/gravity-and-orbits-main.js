@@ -20,6 +20,9 @@ define( require => {
   // strings
   const gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
+  // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
+  const globalOptionsNode = new GlobalOptionsNode( Tandem.rootTandem.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
+
   const simOptions = {
     credits: {
       leadDesign: 'Emily B. Moore, Noah Podolefsky, Amy Rouinfar',
@@ -31,7 +34,7 @@ define( require => {
     },
 
     // Creates content for the Options dialog
-    createOptionsDialogContent: () => new GlobalOptionsNode( Tandem.rootTandem.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) )
+    createOptionsDialogContent: () => globalOptionsNode
   };
 
   SimLauncher.launch( () => {
