@@ -116,6 +116,8 @@ define( require => {
       // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
       const starPlanetTandem = modelTandem.createTandem( 'starPlanetScene' );
+
+      // TODO: Too many parameters, needs to be organized, pruned, and/or turned into config.
       this.scenes.push( new GravityAndOrbitsScene(
         planetStar.forceScale,
         false,
