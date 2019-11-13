@@ -1295,6 +1295,14 @@ window.phet.phetio.phetioTypes = assert &&
       "supertype": "NodeIO",
       "typeName": "ResetAllButtonIO"
     },
+    "RichTextIO": {
+      "documentation": "The tandem IO type for the scenery RichText node",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "supertype": "NodeIO",
+      "typeName": "RichTextIO"
+    },
     "SliderIO": {
       "documentation": "A traditional slider component, with a knob and possibly tick marks",
       "events": [],
