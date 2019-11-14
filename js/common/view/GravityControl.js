@@ -44,8 +44,8 @@ define( require => {
       this.addChild( new HBox( {
         spacing: 10, bottom: 2, resize: false, children: [
           gravityTextNode,
-          new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: options.tandem.createTandem( 'enableGravityRadioButton' ) }, RADIO_OPTIONS ) ),
-          new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: options.tandem.createTandem( 'disableGravityRadioButton' ) }, RADIO_OPTIONS ) )
+          new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOnRadioButton' ) }, RADIO_OPTIONS ) ),
+          new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOffRadioButton' ) }, RADIO_OPTIONS ) )
         ]
       } ) );
     }

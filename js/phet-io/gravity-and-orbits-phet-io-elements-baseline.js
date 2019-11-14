@@ -4551,7 +4551,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4564,7 +4564,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.enabledProperty": {
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4577,7 +4577,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.inputListener.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.inputListener.firedEmitter": {
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4590,7 +4590,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.inputListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4603,7 +4603,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.inputListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4616,7 +4616,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4629,7 +4629,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4642,7 +4642,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.property": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4655,7 +4655,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.disableGravityRadioButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4668,7 +4668,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4681,7 +4681,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.enabledProperty": {
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4694,7 +4694,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.inputListener.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.inputListener.firedEmitter": {
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4707,7 +4707,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.inputListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4720,7 +4720,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.inputListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4733,7 +4733,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4746,7 +4746,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4759,7 +4759,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.property": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -4772,7 +4772,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.enableGravityRadioButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOnRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5097,7 +5097,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5110,7 +5110,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5123,7 +5123,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5136,7 +5136,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5149,7 +5149,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5162,7 +5162,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5175,7 +5175,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5188,7 +5188,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5201,7 +5201,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5214,7 +5214,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5227,7 +5227,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5240,7 +5240,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5253,7 +5253,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5266,7 +5266,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5279,7 +5279,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5292,7 +5292,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5305,7 +5305,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5318,7 +5318,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5331,7 +5331,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5344,7 +5344,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5357,7 +5357,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5370,7 +5370,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5383,7 +5383,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5396,7 +5396,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5409,7 +5409,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5422,7 +5422,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5435,7 +5435,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5448,7 +5448,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5461,7 +5461,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5474,7 +5474,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5487,7 +5487,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5500,7 +5500,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5513,7 +5513,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5526,7 +5526,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5539,7 +5539,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -5552,7 +5552,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.radioButtonGroup.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18383,7 +18383,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18396,7 +18396,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.enabledProperty": {
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18409,7 +18409,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.inputListener.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.inputListener.firedEmitter": {
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18422,7 +18422,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.inputListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18435,7 +18435,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.inputListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18448,7 +18448,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18461,7 +18461,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18474,7 +18474,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.property": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18487,7 +18487,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.disableGravityRadioButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18500,7 +18500,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18513,7 +18513,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.enabledProperty": {
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18526,7 +18526,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.inputListener.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.inputListener.firedEmitter": {
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18539,7 +18539,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.inputListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18552,7 +18552,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.inputListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18565,7 +18565,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18578,7 +18578,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18591,7 +18591,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.property": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18604,7 +18604,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.enableGravityRadioButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOnRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18929,7 +18929,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18942,7 +18942,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18955,7 +18955,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18968,7 +18968,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18981,7 +18981,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -18994,7 +18994,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19007,7 +19007,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19020,7 +19020,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19033,7 +19033,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19046,7 +19046,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19059,7 +19059,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetMoonSceneButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetMoonSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19072,7 +19072,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19085,7 +19085,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19098,7 +19098,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19111,7 +19111,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19124,7 +19124,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19137,7 +19137,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19150,7 +19150,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19163,7 +19163,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.planetSatelliteSceneButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.planetSatelliteSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19176,7 +19176,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19189,7 +19189,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19202,7 +19202,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19215,7 +19215,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19228,7 +19228,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19241,7 +19241,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19254,7 +19254,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19267,7 +19267,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetMoonSceneButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetMoonSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19280,7 +19280,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19293,7 +19293,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19306,7 +19306,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.firedEmitter": {
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19319,7 +19319,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19332,7 +19332,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19345,7 +19345,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19358,7 +19358,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19371,7 +19371,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.starPlanetSceneButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.starPlanetSceneButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -19384,7 +19384,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.radioButtonGroup.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.sceneSelectionRadioButtonGroup.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,

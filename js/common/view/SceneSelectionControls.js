@@ -62,7 +62,7 @@ define( require => {
         deselectedOpacity: 1,
         cornerRadius: 5,
         touchAreaYDilation: 0, // reduce to 0 to prevent overlap between buttons
-        tandem: options.tandem.createTandem( 'radioButtonGroup' )
+        tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' )
       } );
 
       this.addChild( radioButtonGroup );
