@@ -147,7 +147,7 @@ define( require => {
       // increase moon path length so that it fades away with other bodies
       // in model coordinates (at default orbit)
       const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
-      const sunEarthMoonSceneTandem = modelTandem.createTandem( 'sunEarthMoonScene' );
+      const starPlanetMoonSceneTandem = modelTandem.createTandem( 'starPlanetMoonScene' );
       this.scenes.push( new GravityAndOrbitsScene(
         sunEarthMoon.forceScale,
         false,
@@ -162,16 +162,16 @@ define( require => {
         ( sunEarthMoon.earth.x / 2 ),
         new Vector2( 0, 0 ),
         model,
-        'sunEarthMoonSceneButton',
-        'sunEarthMoonSceneResetButton',
-        'sunEarthMoonScene',
-        'sunEarthMoonSceneMassControlPanel',
-        modelTandem.createTandem( 'sunEarthMoonScene' ),
-        viewTandem.createTandem( 'sunEarthMoonSceneView' ), [
-          new Star( model, sunEarthMoon.sun, sunEarthMoonSceneTandem.createTandem( 'sun' ), {
+        'starPlanetMoonSceneButton',
+        'starPlanetMoonSceneResetButton',
+        'starPlanetMoonScene',
+        'starPlanetMoonSceneMassControlPanel',
+        modelTandem.createTandem( 'starPlanetMoonScene' ),
+        viewTandem.createTandem( 'starPlanetMoonSceneView' ), [
+          new Star( model, sunEarthMoon.sun, starPlanetMoonSceneTandem.createTandem( 'star' ), {
             maxPathLength: 345608942000 // in km
           } ),
-          new Planet( model, sunEarthMoon.earth, sunEarthMoonSceneTandem.createTandem( 'earth' ) ),
+          new Planet( model, sunEarthMoon.earth, starPlanetMoonSceneTandem.createTandem( 'planet' ) ),
           new Moon( model,
 
             // no room for the slider
@@ -180,7 +180,7 @@ define( require => {
             // so it doesn't intersect with earth mass readout
             false,
             sunEarthMoon.moon,
-            sunEarthMoonSceneTandem.createTandem( 'moon' ), {
+            starPlanetMoonSceneTandem.createTandem( 'moon' ), {
               pathLengthBuffer: pathLengthBuffer
             }
           )
