@@ -132,7 +132,6 @@ define( require => {
         ( planetStar.earth.x / 2 ),
         new Vector2( 0, 0 ),
         model,
-
         'starPlanetSceneButton',
         'starPlanetSceneResetButton',
         'starPlanetScene',
