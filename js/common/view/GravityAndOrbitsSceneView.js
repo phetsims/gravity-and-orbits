@@ -175,7 +175,7 @@ define( require => {
       // If any body is out of bounds, show a "return object" button
       const anythingReturnable = DerivedProperty.or( isReturnableProperties );
 
-      const returnButton = new TextPushButton( returnObjectsString, {
+      const returnObjectsButton = new TextPushButton( returnObjectsString, {
         font: new PhetFont( 16 ),
         textFill: 'black',
         x: 100,
@@ -188,11 +188,11 @@ define( require => {
           scene.rewind();
           scene.isPlayingProperty.set( false );
         },
-        tandem: tandem.createTandem( 'returnButton' )
+        tandem: tandem.createTandem( 'returnObjectsButton' )
       } );
-      this.addChild( returnButton );
+      this.addChild( returnObjectsButton );
 
-      anythingReturnable.linkAttribute( returnButton, 'visible' );
+      anythingReturnable.linkAttribute( returnObjectsButton, 'visible' );
 
       const scaleControl = new ZoomControl( scene.zoomLevelProperty, tandem.createTandem( 'zoomControl' ), {
         top: STAGE_SIZE.top + 10
