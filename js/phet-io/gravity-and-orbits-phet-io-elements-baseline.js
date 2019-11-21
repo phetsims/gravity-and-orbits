@@ -714,7 +714,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "PhetioSingletonIO<DialogIO>"
+      "phetioTypeName": "PhetioCapsuleIO<DialogIO>"
     },
     "gravityAndOrbits.general.navigationBar.phetButton.phetMenu.aboutDialogSingleton.prototype": {
       "phetioDocumentation": "",
@@ -1182,7 +1182,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "PhetioSingletonIO<DialogIO>"
+      "phetioTypeName": "PhetioCapsuleIO<DialogIO>"
     },
     "gravityAndOrbits.general.navigationBar.phetButton.phetMenu.optionsDialogSingleton.prototype": {
       "phetioDocumentation": "",
@@ -7112,7 +7112,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7125,7 +7125,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7138,7 +7138,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7151,7 +7151,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7164,7 +7164,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7177,7 +7177,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7190,7 +7190,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7203,7 +7203,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7216,7 +7216,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7229,7 +7229,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7242,7 +7242,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7255,7 +7255,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7268,7 +7268,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.planetMoonSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9452,7 +9452,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9465,7 +9465,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9478,7 +9478,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9491,7 +9491,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9504,7 +9504,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9517,7 +9517,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9530,7 +9530,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9543,7 +9543,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9556,7 +9556,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9569,7 +9569,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9582,7 +9582,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9595,7 +9595,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9608,7 +9608,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.planetSatelliteSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12676,7 +12676,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12689,7 +12689,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12702,7 +12702,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12715,7 +12715,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12728,7 +12728,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12741,7 +12741,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12754,7 +12754,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12767,7 +12767,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12780,7 +12780,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12793,7 +12793,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12806,7 +12806,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12819,7 +12819,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -12832,7 +12832,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetMoonSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15198,7 +15198,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15211,7 +15211,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15224,7 +15224,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15237,7 +15237,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15250,7 +15250,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15263,7 +15263,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15276,7 +15276,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15289,7 +15289,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.textNode": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15302,7 +15302,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15315,7 +15315,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15328,7 +15328,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15341,7 +15341,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -15354,7 +15354,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.starPlanetSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20944,7 +20944,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20957,7 +20957,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20970,7 +20970,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20983,7 +20983,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20996,7 +20996,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21009,7 +21009,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21022,7 +21022,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21035,7 +21035,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21048,7 +21048,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21061,7 +21061,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21074,7 +21074,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21087,7 +21087,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21100,7 +21100,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetMoonSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23284,7 +23284,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23297,7 +23297,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23310,7 +23310,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23323,7 +23323,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23336,7 +23336,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23349,7 +23349,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23362,7 +23362,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23375,7 +23375,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23388,7 +23388,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23401,7 +23401,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23414,7 +23414,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23427,7 +23427,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23440,7 +23440,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.planetSatelliteSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26508,7 +26508,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26521,7 +26521,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26534,7 +26534,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26547,7 +26547,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26560,7 +26560,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26573,7 +26573,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26586,7 +26586,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26599,7 +26599,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26612,7 +26612,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26625,7 +26625,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26638,7 +26638,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26651,7 +26651,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -26664,7 +26664,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetMoonSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29095,7 +29095,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29108,7 +29108,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29121,7 +29121,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.firedEmitter": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29134,7 +29134,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29147,7 +29147,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29160,7 +29160,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.pressListener.pressAction": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29173,7 +29173,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<EventIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.pressListener.releaseAction": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29186,7 +29186,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.textNode": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.textNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29199,7 +29199,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.textNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.textNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29212,7 +29212,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.textNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29225,7 +29225,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.textNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.textNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29238,7 +29238,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.textNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.textNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -29251,7 +29251,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnButton.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.starPlanetSceneView.returnObjectsButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
