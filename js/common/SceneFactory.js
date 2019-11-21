@@ -463,10 +463,11 @@ define( require => {
         earthSpaceStation.spaceStation.mass,
         spaceStationString,
         model,
-        'spaceStationMassControl',
+        'satelliteMassControl',
         tandem,
-        'spaceStationMassLabel',
-        'spaceStationNode',
+        'satelliteMassLabel',
+        'satelliteNode',
+        'satelliteVectorNode',
         options
       );
     }
@@ -504,6 +505,7 @@ define( require => {
         tandem,
         'moonMassLabel',
         'moonNode',
+        'moonVectorNode',
         options
       );
     }
@@ -532,6 +534,7 @@ define( require => {
         tandem,
         'planetMassLabel',
         'planetNode',
+        'planetVectorNode',
         options
       );
     }
@@ -560,6 +563,7 @@ define( require => {
         tandem,
         'starMassLabel',
         'starNode',
+        'starVectorNode',
         options
       );
       this.body = bodyConfiguration;

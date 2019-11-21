@@ -6943,7 +6943,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6956,7 +6956,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6969,7 +6969,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6982,7 +6982,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -6995,7 +6995,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7008,7 +7008,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7021,7 +7021,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7034,7 +7034,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7047,7 +7047,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7060,7 +7060,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7073,7 +7073,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7086,7 +7086,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7099,7 +7099,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7112,7 +7112,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7125,7 +7125,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7138,7 +7138,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7151,7 +7151,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7164,7 +7164,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7177,7 +7177,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7190,7 +7190,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7203,7 +7203,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7216,7 +7216,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7229,7 +7229,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7242,7 +7242,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7255,7 +7255,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -7268,7 +7268,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -9205,6 +9205,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -9384,6 +9449,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -9930,136 +10060,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -10999,6 +10999,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -11168,7 +11233,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11181,7 +11246,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11194,7 +11259,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.dragAction": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11207,7 +11272,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11220,7 +11285,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11233,7 +11298,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11246,7 +11311,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11259,7 +11324,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11272,7 +11337,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11285,7 +11350,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11298,7 +11363,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11311,7 +11376,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11324,7 +11389,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11337,7 +11402,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -11347,6 +11412,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -11724,136 +11854,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -12793,6 +12793,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -12972,6 +13037,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -13700,136 +13830,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -14769,6 +14769,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -15494,71 +15559,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -20879,7 +20879,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20892,7 +20892,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20905,7 +20905,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.enabledRangeProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20918,7 +20918,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20931,7 +20931,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20944,7 +20944,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20957,7 +20957,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20970,7 +20970,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20983,7 +20983,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -20996,7 +20996,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21009,7 +21009,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21022,7 +21022,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21035,7 +21035,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21048,7 +21048,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21061,7 +21061,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21074,7 +21074,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21087,7 +21087,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21100,7 +21100,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21113,7 +21113,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21126,7 +21126,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21139,7 +21139,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21152,7 +21152,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21165,7 +21165,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21178,7 +21178,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21191,7 +21191,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -21204,7 +21204,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.spaceStationMassLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteMassLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -23141,6 +23141,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -23320,6 +23385,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -23866,136 +23996,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -24935,6 +24935,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -25104,7 +25169,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25117,7 +25182,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25130,7 +25195,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25143,7 +25208,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25156,7 +25221,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25169,7 +25234,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.dragHandler.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.dragHandler.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25182,7 +25247,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25195,7 +25260,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25208,7 +25273,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25221,7 +25286,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25234,7 +25299,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.indicatorNode.labelNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25247,7 +25312,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25260,7 +25325,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25273,7 +25338,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.spaceStationNode.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioDynamicElementPrototype": false,
@@ -25283,6 +25348,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -25660,136 +25790,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode0.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -26729,6 +26729,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -26908,6 +26973,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -27259,6 +27389,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -27636,201 +27831,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode0.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode0.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode0.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode0.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode0.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.vectorNode2.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -28770,6 +28770,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.returnObjectsButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -29118,6 +29183,71 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starVectorNode.dragHandler": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "USER",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starVectorNode.dragHandler.dragAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starVectorNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starVectorNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starVectorNode.dragHandler.isDraggingProperty": {
+      "phetioDocumentation": "Indicates whether the object is dragging",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
@@ -29495,136 +29625,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode0.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode0.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode0.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode0.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode0.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "USER",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ObjectIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.dragAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": true,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.dragEndAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.dragStartAction": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<Vector2IO>"
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.vectorNode1.dragHandler.isDraggingProperty": {
-      "phetioDocumentation": "Indicates whether the object is dragging",
-      "phetioDynamicElement": false,
-      "phetioDynamicElementPrototype": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },

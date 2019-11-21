@@ -104,7 +104,7 @@ define( require => {
         if ( bodies[ i ].isMovableProperty.value ) {
           this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
             bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-            vString, tandem.createTandem( 'vectorNode' + i ) ) );
+            vString, tandem.createTandem( bodies[ i ].vectorNodeTandemName ) ) );
         }
       }
 

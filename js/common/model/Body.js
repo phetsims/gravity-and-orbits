@@ -65,10 +65,11 @@ define( require => {
      * @param {Tandem} tandem
      * @param {string} labelTandemName
      * @param {string} bodyNodeTandemName
+     * @param {string} vectorNodeTandemName
      * @param {Object} [options]
      */
     constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
-                 bodyMassControlTandemName, tandem, labelTandemName, bodyNodeTandemName, options ) {
+                 bodyMassControlTandemName, tandem, labelTandemName, bodyNodeTandemName, vectorNodeTandemName, options ) {
 
       options = merge( {
         pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -82,6 +83,9 @@ define( require => {
       }, options );
 
       const diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
+
+      // @public (read-only) {string}
+      this.vectorNodeTandemName = vectorNodeTandemName;
 
       // @public (read-only) {string}
       this.labelTandemName = labelTandemName;
@@ -156,7 +160,7 @@ define( require => {
 
       this.labelAngle = labelAngle; // @public
       const changeRewindValueProperty = new DerivedProperty( [
-        this.isPlayingProperty,
+          this.isPlayingProperty,
           steppingProperty,
           rewindingProperty,
           this.freezeRewindChangeProperty
