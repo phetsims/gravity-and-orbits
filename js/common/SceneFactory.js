@@ -135,9 +135,9 @@ define( require => {
         'starPlanetSceneButton',
         'starPlanetSceneResetButton',
         'starPlanetScene',
-        'starPlanetSceneMassControlPanel',
+        'starPlanetSceneMassesControlPanel',
         modelTandem.createTandem( 'starPlanetScene' ),
-        viewTandem.createTandem( 'starPlanetSceneView' ), [
+        viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetSceneView' ), [
           new Star( model, planetStar.sun, starPlanetTandem.createTandem( 'star' ), {
             maxPathLength: 345608942000 // in km
           } ),
@@ -165,9 +165,9 @@ define( require => {
         'starPlanetMoonSceneButton',
         'starPlanetMoonSceneResetButton',
         'starPlanetMoonScene',
-        'starPlanetMoonSceneMassControlPanel',
+        'starPlanetMoonSceneMassesControlPanel',
         modelTandem.createTandem( 'starPlanetMoonScene' ),
-        viewTandem.createTandem( 'starPlanetMoonSceneView' ), [
+        viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetMoonSceneView' ), [
           new Star( model, sunEarthMoon.sun, starPlanetMoonSceneTandem.createTandem( 'star' ), {
             maxPathLength: 345608942000 // in km
           } ),
@@ -204,9 +204,9 @@ define( require => {
         'planetMoonSceneButton',
         'planetMoonSceneResetButton',
         'planetMoonScene',
-        'planetMoonSceneMassControlPanel',
+        'planetMoonSceneMassesControlPanel',
         modelTandem.createTandem( 'planetMoonScene' ),
-        viewTandem.createTandem( 'planetMoonSceneView' ), [
+        viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetMoonSceneView' ), [
           new Planet( model, earthMoon.earth, planetMoonSceneTandem.createTandem( 'planet' ), {
             orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
           } ),
@@ -235,9 +235,9 @@ define( require => {
         'planetSatelliteSceneButton',
         'planetSatelliteSceneResetButton',
         'planetSatelliteScene',
-        'planetSatelliteSceneMassControlPanel',
+        'planetSatelliteSceneMassesControlPanel',
         modelTandem.createTandem( 'planetSatelliteScene' ),
-        viewTandem.createTandem( 'planetSatelliteSceneView' ), [
+        viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetSatelliteSceneView' ), [
           new Planet( model, earthSpaceStation.earth, earthSpaceStationTandem.createTandem( 'planet' ), {
             maxPathLength: 35879455 // in km
           } ),

@@ -32,7 +32,8 @@ define( require => {
       xMargin: PANEL_X_MARGIN,
       scale: 1.05,
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
-    }
+    },
+    PLAY_AREA_TANDEM_NAME: 'playAreaNode'
   };
 
   gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
