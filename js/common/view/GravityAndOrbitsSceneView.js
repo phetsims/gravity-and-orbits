@@ -96,7 +96,7 @@ define( require => {
       // Add gravity force vector nodes
       for ( let i = 0; i < bodies.length; i++ ) {
         this.addChild( new VectorNode( bodies[ i ], scene.transformProperty, model.showGravityForceProperty,
-          bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline ) );
+          bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline, tandem.createTandem( bodies[ i ].gravityVectorNodeTandemName ) ) );
       }
 
       // Add velocity vector nodes
@@ -104,7 +104,7 @@ define( require => {
         if ( bodies[ i ].isMovableProperty.value ) {
           this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
             bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-            vString, tandem.createTandem( bodies[ i ].vectorNodeTandemName ) ) );
+            vString, tandem.createTandem( bodies[ i ].velocityVectorNodeTandemName ) ) );
         }
       }
 

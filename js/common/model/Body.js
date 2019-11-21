@@ -65,11 +65,13 @@ define( require => {
      * @param {Tandem} tandem
      * @param {string} labelTandemName
      * @param {string} bodyNodeTandemName
-     * @param {string} vectorNodeTandemName
+     * @param {string} gravityVectorNodeTandemName
+     * @param {string} velocityVectorNodeTandemName
      * @param {Object} [options]
      */
     constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
-                 bodyMassControlTandemName, tandem, labelTandemName, bodyNodeTandemName, vectorNodeTandemName, options ) {
+                 bodyMassControlTandemName, tandem, labelTandemName, bodyNodeTandemName, gravityVectorNodeTandemName,
+                 velocityVectorNodeTandemName, options ) {
 
       options = merge( {
         pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -85,7 +87,10 @@ define( require => {
       const diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
       // @public (read-only) {string}
-      this.vectorNodeTandemName = vectorNodeTandemName;
+      this.gravityVectorNodeTandemName = gravityVectorNodeTandemName;
+
+      // @public (read-only) {string}
+      this.velocityVectorNodeTandemName = velocityVectorNodeTandemName;
 
       // @public (read-only) {string}
       this.labelTandemName = labelTandemName;

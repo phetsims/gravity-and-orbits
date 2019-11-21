@@ -31,8 +31,8 @@ define( require => {
      * @param {Color} fill
      * @param {Color} outline
      */
-    constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline ) {
-      super();
+    constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem ) {
+      super( { tandem: tandem } );
 
       this.body = body; // @private
       this.vectorProperty = vectorProperty; // @private

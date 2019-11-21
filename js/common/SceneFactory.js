@@ -467,7 +467,8 @@ define( require => {
         tandem,
         'satelliteMassLabel',
         'satelliteNode',
-        'satelliteVectorNode',
+        'satelliteGravityVectorNode',
+        'satelliteVelocityVectorNode',
         options
       );
     }
@@ -505,7 +506,8 @@ define( require => {
         tandem,
         'moonMassLabel',
         'moonNode',
-        'moonVectorNode',
+        'moonGravityVectorNode',
+        'moonVelocityVectorNode',
         options
       );
     }
@@ -534,7 +536,8 @@ define( require => {
         tandem,
         'planetMassLabel',
         'planetNode',
-        'planetVectorNode',
+        'planetGravityVectorNode',
+        'planetVelocityVectorNode',
         options
       );
     }
@@ -563,7 +566,8 @@ define( require => {
         tandem,
         'starMassLabel',
         'starNode',
-        'starVectorNode',
+        'starGravityVectorNode',
+        'starVelocityVectorNode',
         options
       );
       this.body = bodyConfiguration;
