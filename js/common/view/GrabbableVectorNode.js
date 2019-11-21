@@ -38,7 +38,7 @@ define( require => {
     constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill,
                  outline, labelText, tandem ) {
 
-      super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline );
+      super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem );
 
       const tip = this.getTip();
 
@@ -86,6 +86,14 @@ define( require => {
       // move behind the geometry created by the superclass
       grabArea.moveToBack();
       text.moveToBack();
+
+      // For PhET-iO, when the node is made unpickable, don't show the drag circle
+      const updateGrabAreaAndTextVisibility = () => {
+        grabArea.visible = this.pickable !== false;
+        text.visible = this.pickable !== false;
+      };
+      this.on( 'pickability', updateGrabAreaAndTextVisibility );
+      updateGrabAreaAndTextVisibility();
     }
   }
 

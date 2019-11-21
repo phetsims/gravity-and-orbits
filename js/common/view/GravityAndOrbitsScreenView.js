@@ -10,9 +10,11 @@ define( require => {
   'use strict';
 
   // modules
-  const GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsControlPanel' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
+  const GravityAndOrbitsControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsControlPanel' );
   const MassControlPanel = require( 'GRAVITY_AND_ORBITS/common/view/MassControlPanel' );
+  const Node = require( 'SCENERY/nodes/Node' );
   const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   const ScreenView = require( 'JOIST/ScreenView' );
   const SpeedRadioButtons = require( 'GRAVITY_AND_ORBITS/common/view/SpeedRadioButtons' );
@@ -39,19 +41,36 @@ define( require => {
         tandem: tandem.createTandem( 'controlPanel' )
       } );
 
+      // Container so all mass control panels (for each scene) can be hidden/shown at once
+      const massesControlPanelTandem = tandem.createTandem( 'massesControlPanel' );
+      const massesControlPanel = new Node( {
+        tandem: massesControlPanelTandem
+      } );
+
+      // Container so all play areas (for each scene) can be hidden/shown at once
+      const playAreaNodeTandem = tandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME );
+      const playAreaNode = new Node( {
+        tandem: playAreaNodeTandem
+      } );
+
       // Add the scene selection controls, one for each of the four modes
       model.getScenes().forEach( scene => {
         const sceneView = scene.sceneView;
+
         const massControlPanel = new MassControlPanel( scene.getMassSettableBodies(), {
           top: controlPanel.bottom + MARGIN,
           right: this.layoutBounds.right - MARGIN,
-          tandem: tandem.createTandem( scene.massControlPanelTandemName )
+
+          // Nest under massesControlPanel, see https://github.com/phetsims/gravity-and-orbits/issues/284#issuecomment-554106611
+          tandem: massesControlPanelTandem.createTandem( scene.massControlPanelTandemName )
         } );
         scene.massControlPanel = massControlPanel;
 
-        this.addChild( sceneView );
-        this.addChild( massControlPanel );
+        playAreaNode.addChild( sceneView );
+        massesControlPanel.addChild( massControlPanel );
       } );
+      this.addChild( playAreaNode );
+      this.addChild( massesControlPanel );
 
       // add the control panel on top of the canvases
       this.addChild( controlPanel );
