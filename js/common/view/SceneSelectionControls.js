@@ -40,6 +40,8 @@ define( require => {
         content.push( { value: i, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 
         // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated.  Worth it?
+        // CONSENSUS: We will feature the radio button groups, and leave the reset buttons as they are.
+        // CONSENSUS: put the reset buttons under the same group if not too complicated, but don't fracture the code
         const resetButton = new PlanetModeResetButton( scene, {
           tandem: options.tandem.createTandem( scene.resetButtonTandemName )
         } );
