@@ -128,7 +128,7 @@ define( require => {
 
       // convert delta time to rotation in orbit
       // negative one so that rotation is counter clockwise (with orbital motion)
-      return ( ( -1 ) * Math.PI * 2 * dt ) / rotationPeriod;
+      return -Math.PI * 2 * dt / rotationPeriod;
     }
 
     /**
