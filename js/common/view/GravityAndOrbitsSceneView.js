@@ -14,7 +14,7 @@ define( require => {
   const BodyNode = require( 'GRAVITY_AND_ORBITS/common/view/BodyNode' );
   const Bounds2 = require( 'DOT/Bounds2' );
   const Color = require( 'SCENERY/util/Color' );
-  const DayCounter = require( 'GRAVITY_AND_ORBITS/common/view/DayCounter' );
+  const TimeCounter = require( 'GRAVITY_AND_ORBITS/common/view/TimeCounter' );
   const DerivedProperty = require( 'AXON/DerivedProperty' );
   const ExplosionNode = require( 'GRAVITY_AND_ORBITS/common/view/ExplosionNode' );
   const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
@@ -118,7 +118,7 @@ define( require => {
       model.showGridProperty.linkAttribute( gridNode, 'visible' );
       this.addChild( gridNode );
 
-      this.addChild( new DayCounter( scene.timeFormatter, scene.physicsEngine.clock, tandem.createTandem( 'dayCounter' ), {
+      this.addChild( new TimeCounter( scene.timeFormatter, scene.physicsEngine.clock, tandem.createTandem( 'timeCounter' ), {
         bottom: STAGE_SIZE.bottom - 20,
         right: STAGE_SIZE.right - 50,
         scale: 1.2

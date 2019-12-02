@@ -26,7 +26,7 @@ define( require => {
   // constants
   const FONT = new PhetFont( 22 );
 
-  class DayCounter extends Node {
+  class TimeCounter extends Node {
 
     /**
      * @param {function} timeFormatter
@@ -73,5 +73,5 @@ define( require => {
     }
   }
 
-  return gravityAndOrbits.register( 'DayCounter', DayCounter );
+  return gravityAndOrbits.register( 'TimeCounter', TimeCounter );
 } );
