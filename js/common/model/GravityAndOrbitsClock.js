@@ -44,7 +44,8 @@ define( require => {
         tandem: tandem.createTandem( 'isRunningProperty' )
       } );
       this.timeProperty = new NumberProperty( 0, {
-        tandem: tandem.createTandem( 'timeProperty' )
+        tandem: tandem.createTandem( 'timeProperty' ),
+        units: 'seconds'
       } );
       this.dt = baseDTValue;
       this.steppingProperty = steppingProperty;
