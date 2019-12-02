@@ -20,14 +20,14 @@ define( require => {
   const modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
 
   // images
-  const cartoonMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/model_icon.png' );
+  const modelMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/model_icon.png' );
 
   class ModelScreen extends Screen {
     constructor( options ) {
 
       options = merge( {
         name: modelString,
-        homeScreenIcon: new Image( cartoonMipmap )
+        homeScreenIcon: new Image( modelMipmap )
       }, options );
 
       const viewTandem = options.tandem.createTandem( 'view' );
