@@ -64,13 +64,14 @@ define( require => {
      * @param {string} bodyMassControlTandemName
      * @param {Tandem} tandem
      * @param {string} labelTandemName
+     * @param {string} iconTandemName
      * @param {string} bodyNodeTandemName
      * @param {string} gravityVectorNodeTandemName
      * @param {string} velocityVectorNodeTandemName
      * @param {Object} [options]
      */
     constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
-                 bodyMassControlTandemName, tandem, labelTandemName, bodyNodeTandemName, gravityVectorNodeTandemName,
+                 bodyMassControlTandemName, tandem, labelTandemName, iconTandemName, bodyNodeTandemName, gravityVectorNodeTandemName,
                  velocityVectorNodeTandemName, options ) {
 
       options = merge( {
@@ -94,6 +95,9 @@ define( require => {
 
       // @public (read-only) {string}
       this.labelTandemName = labelTandemName;
+
+      // @public (read-only) {string}
+      this.iconTandemName = iconTandemName;
 
       // @public (read-only) {string}
       this.bodyNodeTandemName = bodyNodeTandemName;

@@ -53,10 +53,7 @@ define( require => {
 
       for ( let i = 0; i < massSettableBodies.length; i++ ) {
         const sliderNode = new Node();
-
         const massSettableBody = massSettableBodies[ i ];
-
-        // TODO(phet-io design): embed label as child of control?  CONSENSUS: not necessary
         const label = new Text( LABEL_MAP[ massSettableBody.name ], {
           font: CONTROL_FONT,
           fontWeight: 'bold',
@@ -66,7 +63,10 @@ define( require => {
           tandem: options.tandem.createTandem( massSettableBody.labelTandemName )
         } );
 
-        const icon = massSettableBody.createRenderer( 14 );
+        const icon = new Node( {
+          children: [ massSettableBody.createRenderer( 14 ) ],
+          tandem: options.tandem.createTandem( massSettableBody.iconTandemName )
+        } );
 
         // Top component that shows the body's name and icon
         const labelHBox = new HBox( { children: [ icon, label ], spacing: 10 } );
