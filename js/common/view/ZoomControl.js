@@ -22,8 +22,8 @@ define( require => {
   const VSlider = require( 'SUN/VSlider' );
 
   // constants
-  const TRACK_SIZE = new Dimension2( 140, 3 );
-  const THUMB_SIZE = new Dimension2( 20, 28 );
+  const TRACK_SIZE = new Dimension2( 3, 140 );
+  const THUMB_SIZE = new Dimension2( 28, 20 );
   const RANGE = new Range( 0.5, 1.5 );
   const STEP = 0.1;
   const BUTTON_SIZE = 25;
@@ -54,7 +54,7 @@ define( require => {
         tandem: tandem.createTandem( 'slider' )
       } );
 
-      slider.translate( -TRACK_SIZE.width - THUMB_SIZE.width - 17, -TRACK_SIZE.height / 2 );
+      slider.translate( -TRACK_SIZE.height - THUMB_SIZE.height - 17, -TRACK_SIZE.width / 2 );
 
       // add slide line
       this.addChild( slider );
