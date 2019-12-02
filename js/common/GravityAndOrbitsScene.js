@@ -98,7 +98,7 @@ define( require => {
       this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, zoomOffset ) ) );
 
       // @private
-      const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.speedTypeProperty, tandem.createTandem( 'clock' ) ); // TODO(phet-io design): do we need the 'clock' level here?  CONSENSUS: restructure and eliminate clock itself
+      const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.speedTypeProperty, tandem.createTandem( 'clock' ) );
       this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty );
 
       Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
