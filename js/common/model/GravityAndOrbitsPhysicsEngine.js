@@ -43,12 +43,13 @@ define( require => {
       this.clock = clock; // @public
       this.bodies = []; // @public - contains the sun, moon, earth, satellite
 
+      // TODO: What is dt doing here?
       this.clock.addEventTimer( dt => {
-        this.clock.setSimulationTime( this.clock.dt + this.clock.getSimulationTime() );
 
         // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253
         // but introduces performance issues
-        this.stepModel();
+        const elapsedTime = this.stepModel();
+        this.clock.setSimulationTime( this.clock.getSimulationTime() + elapsedTime );
       } );
 
       // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
@@ -56,15 +57,14 @@ define( require => {
     }
 
     /**
-     * Standardize the time step so that the play speed has no impact on the model.
-     * For a large time step, we break apart the change in time into a series of time
-     * steps.  This ensures that this.step and the next model state is calculated
-     * with consistent changes in time.
+     * Standardize the time step so that the play speed has no impact on the model. For a large time step, we break
+     * apart the change in time into a series of time steps.  This ensures that this.step and the next model state is
+     * calculated with consistent changes in time.
      *
-     * @param {number} dt
+     * @returns {number} elapsed time
      * @private
      */
-    stepModel( dt ) {
+    stepModel() {
 
       // standardized time step - based on the slowest time step for the given orbital mode
       const smallestTimeStep = this.clock.baseDTValue * 0.13125;
@@ -84,12 +84,14 @@ define( require => {
       for ( let i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].allBodiesUpdated();
       }
+
+      return smallestTimeStep * numberOfSteps;
     }
 
     /**
-     * Step function for the model.  This function creates state objects and calculates state values for this step
-     * based on the current state of the entire model.  Once doen, it applies the updated values to the body
-     * objects.  Finally, it checks for collisions between bodies.
+     * Moves the model forward in time.  This function creates temporary state objects and calculates state values
+     * based on the current state of the entire model. Afterwards, it applies the updated values to the body objects.
+     * Finally, it checks for collisions between bodies.
      *
      * @param {number} dt
      */
