@@ -14,7 +14,7 @@ define( require => {
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const Enumeration = require( 'PHET_CORE/Enumeration' );
 
-  const GravityAndOrbitsBodies = new Enumeration( [ 'PLANET',
+  const GravityAndOrbitsBodies = Enumeration.byKeys( [ 'PLANET',
     'SATELLITE',
     'STAR',
     'MOON'

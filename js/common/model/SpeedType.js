@@ -12,7 +12,7 @@ define( require => {
   const Enumeration = require( 'PHET_CORE/Enumeration' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
 
-  return gravityAndOrbits.register( 'SpeedType', new Enumeration( [
+  return gravityAndOrbits.register( 'SpeedType', Enumeration.byKeys( [
     'SLOW_MOTION',
     'NORMAL',
     'FAST_FORWARD'
