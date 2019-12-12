@@ -21,7 +21,7 @@ define( require => {
   const gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
   // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
-  const globalOptionsNode = new GlobalOptionsNode( Tandem.rootTandem.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
+  const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
 
   const simOptions = {
     credits: {
@@ -41,11 +41,11 @@ define( require => {
 
     const modelScreen = new ModelScreen( {
       backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
-      tandem: Tandem.rootTandem.createTandem( 'modelScreen' )
+      tandem: Tandem.ROOT.createTandem( 'modelScreen' )
     } );
     const toScaleScreen = new ToScaleScreen( {
       backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
-      tandem: Tandem.rootTandem.createTandem( 'toScaleScreen' )
+      tandem: Tandem.ROOT.createTandem( 'toScaleScreen' )
     } );
     new Sim( gravityAndOrbitsTitleString, [ modelScreen, toScaleScreen ], simOptions ).start();
   } );

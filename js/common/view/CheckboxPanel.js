@@ -162,7 +162,7 @@ define( require => {
         spacing: SPACING,
         align: 'left',
         bottom: -12,
-        tandem: Tandem.required
+        tandem: Tandem.REQUIRED
       }, options ) );
     }
   }
