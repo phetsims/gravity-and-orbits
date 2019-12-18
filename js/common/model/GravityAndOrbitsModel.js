@@ -17,11 +17,12 @@ define( require => {
 
   // modules
   const BooleanProperty = require( 'AXON/BooleanProperty' );
-  const DerivedProperty = require( 'AXON/DerivedProperty' );
   const EnumerationProperty = require( 'AXON/EnumerationProperty' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const NumberProperty = require( 'AXON/NumberProperty' );
   const PhysicalConstants = require( 'PHET_CORE/PhysicalConstants' );
+  const Property = require( 'AXON/Property' );
+  const PropertyIO = require( 'AXON/PropertyIO' );
+  const ReferenceIO = require( 'TANDEM/types/ReferenceIO' );
   const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
 
   // constants
@@ -58,14 +59,14 @@ define( require => {
       this.showMassCheckbox = showMassCheckbox; // @public
       this.showMeasuringTape = showMeasuringTape; // @public
 
-      this.sceneIndexProperty = new NumberProperty( initialSceneIndex, {
-        tandem: tandem.createTandem( 'sceneIndexProperty' )
-      } );
-
       // @private {SceneFactory}
       this.sceneList = createModes( this );
 
-      this.sceneProperty = new DerivedProperty( [ this.sceneIndexProperty ], modeIndex => this.sceneList.scenes[ modeIndex ] );
+      this.sceneProperty = new Property( this.sceneList.scenes[ 0 ], {
+        tandem: tandem.createTandem( 'sceneProperty' ),
+        validValues: this.sceneList.scenes,
+        phetioType: PropertyIO( ReferenceIO )
+      } );
     }
 
     // @public
@@ -116,7 +117,7 @@ define( require => {
       this.gravityEnabledProperty.reset();
       this.steppingProperty.reset();
       this.rewindingProperty.reset();
-      this.sceneIndexProperty.reset();
+      this.sceneProperty.reset();
       for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
         this.sceneList.scenes[ i ].reset();
       }

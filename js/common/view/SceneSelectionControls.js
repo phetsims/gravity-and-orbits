@@ -28,16 +28,16 @@ define( require => {
   class SceneSelectionControls extends Node {
 
     /**
-     * @param {Property.<GravityAndOrbitsScene>} sceneIndexProperty
+     * @param {Property.<GravityAndOrbitsScene>} sceneProperty
      * @param {Array.<GravityAndOrbitsScene>} modes
      * @param {Object} [options] - This object contains options for main node of planet menu.
      */
-    constructor( sceneIndexProperty, modes, options ) {
+    constructor( sceneProperty, modes, options ) {
       super( options );
 
       const content = []; // for radio buttons
-      const resetButtons = modes.map( ( scene, i ) => {
-        content.push( { value: i, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
+      const resetButtons = modes.map( scene => {
+        content.push( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 
         // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated.  Worth it?
         // CONSENSUS: We will feature the radio button groups, and leave the reset buttons as they are.
@@ -47,11 +47,11 @@ define( require => {
         } );
 
         // link reset buttons so that only the reset button next to the selected radio button is visible
-        sceneIndexProperty.link( modeIndex => resetButton.setVisible( modes[ modeIndex ] === scene ) );
+        sceneProperty.link( selectedScene => resetButton.setVisible( selectedScene === scene ) );
 
         return resetButton;
       } );
-      const radioButtonGroup = new RadioButtonGroup( sceneIndexProperty, content, {
+      const radioButtonGroup = new RadioButtonGroup( sceneProperty, content, {
         alignVertically: true,
         selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
         selectedLineWidth: 2,

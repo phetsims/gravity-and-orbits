@@ -42,7 +42,7 @@ define( require => {
 
       // menu sections and separators
       const sections = [
-        new SceneSelectionControls( model.sceneIndexProperty, model.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
+        new SceneSelectionControls( model.sceneProperty, model.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeTopSeparatorRectangle(),
         new GravityControl( model.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
         makeBottomSeparatorRectangle(),

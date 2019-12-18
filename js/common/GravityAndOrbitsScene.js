@@ -26,14 +26,16 @@ define( require => {
   const GravityAndOrbitsSceneView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsSceneView' );
   const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   const NumberProperty = require( 'AXON/NumberProperty' );
+  const PhetioObject = require( 'TANDEM/PhetioObject' );
   const Property = require( 'AXON/Property' );
   const Rectangle = require( 'DOT/Rectangle' );
+  const ReferenceIO = require( 'TANDEM/types/ReferenceIO' );
 
   // constants
   const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
   const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
 
-  class GravityAndOrbitsScene {
+  class GravityAndOrbitsScene extends PhetioObject {
 
     /**
      * Create a new GravityAndOrbitsScene that shares ModeListParameterList values with other modes
@@ -62,6 +64,12 @@ define( require => {
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                  defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
                  tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies ) {
+
+      super( {
+        phetioDocumentation: 'A group of orbital masses which can be selected',
+        phetioType: ReferenceIO,
+        tandem: tandem
+      } );
 
       this.activeProperty = new BooleanProperty( active );
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );

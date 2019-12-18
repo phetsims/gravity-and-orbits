@@ -2121,7 +2121,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.homeScreen.activeProperty": {
-      "phetioDocumentation": "Indicates whether the screen is active.  For single-screen simulations, the screen is always active.",
+      "phetioDocumentation": "Indicates whether the screen is currently displayed in the simulation.  For single-screen simulations, there is only one screen and it is always active.",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -2875,7 +2875,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.activeProperty": {
-      "phetioDocumentation": "Indicates whether the screen is active.  For single-screen simulations, the screen is always active.",
+      "phetioDocumentation": "Indicates whether the screen is currently displayed in the simulation.  For single-screen simulations, there is only one screen and it is always active.",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -2912,6 +2912,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.planetMoonScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
@@ -3160,6 +3173,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.modelScreen.model.planetSatelliteScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
+    },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -3407,7 +3433,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.model.sceneIndexProperty": {
+    "gravityAndOrbits.modelScreen.model.sceneProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
@@ -3418,7 +3444,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
+      "phetioTypeName": "PropertyIO<ReferenceIO>"
     },
     "gravityAndOrbits.modelScreen.model.showGravityForceProperty": {
       "phetioDocumentation": "",
@@ -3510,6 +3536,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<EnumerationIO(SLOW_MOTION|NORMAL|FAST_FORWARD)>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
@@ -3861,6 +3900,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
@@ -17890,7 +17942,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.activeProperty": {
-      "phetioDocumentation": "Indicates whether the screen is active.  For single-screen simulations, the screen is always active.",
+      "phetioDocumentation": "Indicates whether the screen is currently displayed in the simulation.  For single-screen simulations, there is only one screen and it is always active.",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -17927,6 +17979,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.planetMoonScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
@@ -18175,6 +18240,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
+    },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -18422,7 +18500,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.model.sceneIndexProperty": {
+    "gravityAndOrbits.toScaleScreen.model.sceneProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
@@ -18433,7 +18511,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "NumberPropertyIO"
+      "phetioTypeName": "PropertyIO<ReferenceIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.showGravityForceProperty": {
       "phetioDocumentation": "",
@@ -18525,6 +18603,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<EnumerationIO(SLOW_MOTION|NORMAL|FAST_FORWARD)>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
@@ -18876,6 +18967,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene": {
+      "phetioDocumentation": "A group of orbital masses which can be selected",
+      "phetioDynamicElement": false,
+      "phetioDynamicElementArchetype": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.clock.isRunningProperty": {
       "phetioDocumentation": "",
