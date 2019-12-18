@@ -104,7 +104,9 @@ define( require => {
 
       this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
       this.diameterProperty = new NumberProperty( diameter, {
-        tandem: tandem.createTandem( 'diameterProperty' )
+        tandem: tandem.createTandem( 'diameterProperty' ),
+        units: 'm',
+        phetioDocumentation: 'The distance across the body'
       } );
       this.clockTicksSinceExplosionProperty = new Property( 0 );
       this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
@@ -182,42 +184,54 @@ define( require => {
       // @public
       this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
         phetioType: PropertyIO( Vector2IO ),
-        tandem: tandem.createTandem( 'positionProperty' )
+        tandem: tandem.createTandem( 'positionProperty' ),
+        units: 'm',
+        phetioDocumentation: 'The position of the body'
       } );
 
       // @public
       this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ), {
         phetioType: PropertyIO( Vector2IO ),
-        tandem: tandem.createTandem( 'velocityProperty' )
+        tandem: tandem.createTandem( 'velocityProperty' ),
+        units: 'm/s',
+        phetioDocumentation: 'The speed and direction of motion of the body'
       } );
 
       // @public
       this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
+        phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
         phetioType: PropertyIO( Vector2IO ),
-        tandem: tandem.createTandem( 'forceProperty' )
+        tandem: tandem.createTandem( 'forceProperty' ),
+        units: 'N'
       } );
 
       // @public
       this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, {
         tandem: tandem.createTandem( 'massProperty' ),
-        phetioType: PropertyIO( NumberIO )
+        phetioType: PropertyIO( NumberIO ),
+        units: 'kg',
+        phetioDocumentation: 'The mass of the body'
       } );
 
       // @public
       this.isCollidedProperty = new RewindableProperty( changeRewindValueProperty, false, {
         tandem: tandem.createTandem( 'isCollidedProperty' ),
-        phetioType: PropertyIO( BooleanIO )
+        phetioType: PropertyIO( BooleanIO ),
+        phetioDocumentation: 'True if the body has collided with another body'
       } );
 
       // @public
       this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0, {
         tandem: tandem.createTandem( 'rotationProperty' ),
-        phetioType: PropertyIO( NumberIO )
+        phetioType: PropertyIO( NumberIO ),
+        units: 'radians',
+        phetioDocumentation: 'The rotation of the body about its own origin'
       } );
 
       // @public (read-only)
       this.isMovableProperty = new BooleanProperty( bodyConfiguration.isMovable, {
-        tandem: tandem.createTandem( 'isMovableProperty' )
+        tandem: tandem.createTandem( 'isMovableProperty' ),
+        phetioDocumentation: 'True if the body can be dragged by the user'
       } );
 
       this.density = bodyConfiguration.mass / this.getVolume(); // @public
@@ -284,7 +298,6 @@ define( require => {
      * @returns {BodyState}
      */
     toBodyState() {
-      // const a = this.accelerationProperty;
       return new BodyState(
         this.positionProperty.get().copy(),
         this.velocityProperty.get().copy(),

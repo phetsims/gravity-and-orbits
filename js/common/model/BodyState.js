@@ -20,7 +20,7 @@ define( require => {
      * @param {Vector2} acceleration - in m/s^2
      * @param {number} mass - in kg
      * @param {boolean} exploded
-     * @param {number} rotation - in seconds
+     * @param {number} rotation - in seconds // TODO this is wrong
      * @param {number} rotationPeriod - in seconds
      */
     constructor( position, velocity, acceleration, mass, exploded, rotation, rotationPeriod ) {
