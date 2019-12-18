@@ -2953,7 +2953,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -2966,7 +2966,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -2979,7 +2979,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -2992,7 +2992,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3005,7 +3005,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3018,7 +3018,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3031,7 +3031,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3044,7 +3044,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3057,7 +3057,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3070,7 +3070,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3083,7 +3083,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3096,7 +3096,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3109,7 +3109,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3122,7 +3122,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3135,7 +3135,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3148,7 +3148,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3213,7 +3213,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3226,7 +3226,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3239,7 +3239,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3252,7 +3252,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3265,7 +3265,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3278,7 +3278,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3291,7 +3291,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3304,7 +3304,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3317,7 +3317,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3330,7 +3330,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3343,7 +3343,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3356,7 +3356,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3369,7 +3369,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3382,7 +3382,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3395,7 +3395,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3408,7 +3408,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3577,7 +3577,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3590,7 +3590,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3603,7 +3603,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3616,7 +3616,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3629,7 +3629,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3642,7 +3642,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3655,7 +3655,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3668,7 +3668,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3681,7 +3681,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3694,7 +3694,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3707,7 +3707,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3720,7 +3720,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3733,7 +3733,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3746,7 +3746,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3759,7 +3759,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3772,7 +3772,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3785,7 +3785,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3798,7 +3798,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3811,7 +3811,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3824,7 +3824,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3837,7 +3837,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3850,7 +3850,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3863,7 +3863,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3876,7 +3876,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3941,7 +3941,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3954,7 +3954,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3967,7 +3967,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3980,7 +3980,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -3993,7 +3993,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4006,7 +4006,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4019,7 +4019,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4032,7 +4032,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4045,7 +4045,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4058,7 +4058,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4071,7 +4071,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4084,7 +4084,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4097,7 +4097,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4110,7 +4110,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4123,7 +4123,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -4136,7 +4136,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18020,7 +18020,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18033,7 +18033,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18046,7 +18046,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18059,7 +18059,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18072,7 +18072,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18085,7 +18085,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18098,7 +18098,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18111,7 +18111,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18124,7 +18124,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18137,7 +18137,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18150,7 +18150,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18163,7 +18163,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18176,7 +18176,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18189,7 +18189,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18202,7 +18202,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18215,7 +18215,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18280,7 +18280,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18293,7 +18293,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18306,7 +18306,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18319,7 +18319,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18332,7 +18332,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18345,7 +18345,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18358,7 +18358,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18371,7 +18371,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18384,7 +18384,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18397,7 +18397,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18410,7 +18410,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18423,7 +18423,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18436,7 +18436,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18449,7 +18449,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18462,7 +18462,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18475,7 +18475,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18644,7 +18644,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18657,7 +18657,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18670,7 +18670,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18683,7 +18683,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18696,7 +18696,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18709,7 +18709,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18722,7 +18722,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18735,7 +18735,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18748,7 +18748,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18761,7 +18761,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18774,7 +18774,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18787,7 +18787,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18800,7 +18800,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18813,7 +18813,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18826,7 +18826,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18839,7 +18839,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18852,7 +18852,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18865,7 +18865,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18878,7 +18878,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18891,7 +18891,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18904,7 +18904,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18917,7 +18917,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18930,7 +18930,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -18943,7 +18943,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19008,7 +19008,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19021,7 +19021,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19034,7 +19034,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19047,7 +19047,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19060,7 +19060,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19073,7 +19073,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19086,7 +19086,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19099,7 +19099,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19112,7 +19112,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.diameterProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19125,7 +19125,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.forceProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19138,7 +19138,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.isCollidedProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body has collided with another body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19151,7 +19151,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.isMovableProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "True if the body can be dragged by the user",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19164,7 +19164,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.massProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The mass of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19177,7 +19177,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.positionProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The position of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19190,7 +19190,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.rotationProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The rotation of the body about its own origin",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
@@ -19203,7 +19203,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.velocityProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "MODEL",
