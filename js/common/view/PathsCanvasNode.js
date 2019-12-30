@@ -17,7 +17,7 @@ define( require => {
   const CanvasNode = require( 'SCENERY/nodes/CanvasNode' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const merge = require( 'PHET_CORE/merge' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // constants
   const STROKE_WIDTH = 3;
@@ -190,7 +190,7 @@ define( require => {
           assert && assert( body.pathLength > maxPathLength - fadePathLength, 'the path length is too small to start fading' );
 
           // fade out a little bit each segment
-          const alpha = Util.linear( maxPathLength - fadePathLength, maxPathLength, 1, 0, body.pathLength );
+          const alpha = Utils.linear( maxPathLength - fadePathLength, maxPathLength, 1, 0, body.pathLength );
 
           // format without Color to avoid unnecessary allocation
           const fade = `rgba( ${faded.r}, ${faded.g}, ${faded.b}, ${alpha} )`;

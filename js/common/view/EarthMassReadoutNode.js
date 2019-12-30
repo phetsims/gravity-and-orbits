@@ -14,7 +14,7 @@ define( require => {
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const earthMassesString = require( 'string!GRAVITY_AND_ORBITS/earthMasses' );
@@ -39,7 +39,7 @@ define( require => {
       let value;
       let units;
       if ( earthMasses > 1E3 ) {
-        value = Util.toFixed( Util.roundSymmetric( earthMasses / 1E3 ), 0 );
+        value = Utils.toFixed( Utils.roundSymmetric( earthMasses / 1E3 ), 0 );
         units = thousandEarthMassesString;
       }
       else if ( Math.abs( earthMasses - 1 ) < 1E-2 ) {
@@ -47,13 +47,13 @@ define( require => {
         units = earthMassString;
       }
       else if ( earthMasses < 1 ) {
-        value = Util.toFixed( earthMasses, 2 );
+        value = Utils.toFixed( earthMasses, 2 );
         units = earthMassesString;
       }
       else {
 
         // Handle showing exactly "1 earth mass" instead of "1 earth masses"
-        value = Util.toFixed( earthMasses, 2 );
+        value = Utils.toFixed( earthMasses, 2 );
         units = ( earthMasses === 1 ) ? earthMassString : earthMassesString;
       }
       return StringUtils.format( pattern0Value1UnitsString, value, units );

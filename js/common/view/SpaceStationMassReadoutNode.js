@@ -14,7 +14,7 @@ define( require => {
   const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const MassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/MassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const billionBillionSpaceStationMassesString = require( 'string!GRAVITY_AND_ORBITS/billionBillionSpaceStationMasses' );
@@ -39,17 +39,17 @@ define( require => {
       let value;
       let units = spaceStationMassString;
       if ( spaceStationMasses > 1E18 ) {
-        value = Util.toFixed( spaceStationMasses / 1E18, 0 );
+        value = Utils.toFixed( spaceStationMasses / 1E18, 0 );
         units = billionBillionSpaceStationMassesString;
       }
       else if ( Math.abs( spaceStationMasses - 1 ) < 1E-2 ) {
         value = '1';
       }
       else if ( spaceStationMasses < 1 ) {
-        value = Util.toFixed( spaceStationMasses, 3 );
+        value = Utils.toFixed( spaceStationMasses, 3 );
       }
       else {
-        value = Util.toFixed( spaceStationMasses, 2 ); // use one less decimal point here
+        value = Utils.toFixed( spaceStationMasses, 2 ); // use one less decimal point here
       }
       return StringUtils.format( pattern0Value1UnitsString, value, units );
     }

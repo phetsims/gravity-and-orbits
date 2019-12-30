@@ -29,7 +29,7 @@ define( require => {
   const ModeConfig = require( 'GRAVITY_AND_ORBITS/common/model/ModeConfig' );
   const SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
   const Vector2 = require( 'DOT/Vector2' );
   const VectorNode = require( 'GRAVITY_AND_ORBITS/common/view/VectorNode' );
 
@@ -424,7 +424,7 @@ define( require => {
     return time => {
       const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale );
       const units = ( value === 1 ) ? earthDayString : earthDaysString;
-      return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
+      return StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( value, 0 ), units );
     };
   };
 
@@ -437,7 +437,7 @@ define( require => {
   const formatMinutes = time => {
     const value = ( time / SECONDS_PER_MINUTE );
     const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
-    return StringUtils.format( pattern0Value1UnitsString, Util.toFixed( value, 0 ), units );
+    return StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( value, 0 ), units );
   };
 
   class Satellite extends Body {
