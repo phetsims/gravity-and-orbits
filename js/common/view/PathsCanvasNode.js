@@ -161,10 +161,6 @@ define( require => {
           context.moveTo( points[ points.length - 1 ].x, points[ points.length - 1 ].y );
         }
 
-        if ( body.name === 'PLANET' ) {
-          // debugger;
-        }
-
         j = points.length - 1;
         body.pathLength = 0;
         while ( body.pathLength < maxPathLength - fadePathLength && j > 0 ) {
