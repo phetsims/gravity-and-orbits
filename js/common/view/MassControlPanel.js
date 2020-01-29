@@ -47,7 +47,13 @@ define( require => {
      */
     constructor( massSettableBodies, options ) {
 
-      options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options );
+      options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+        phetioComponentOptions: {
+
+          // Managed by the simulation, can be buggy if independently controlled by studio
+          visibleProperty: { phetioReadOnly: true }
+        }
+      }, options );
 
       const children = [];
 
