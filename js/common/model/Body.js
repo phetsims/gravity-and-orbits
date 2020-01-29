@@ -217,6 +217,7 @@ define( require => {
       this.isCollidedProperty = new RewindableProperty( changeRewindValueProperty, false, {
         tandem: tandem.createTandem( 'isCollidedProperty' ),
         phetioType: PropertyIO( BooleanIO ),
+        phetioReadOnly: true,
         phetioDocumentation: 'True if the body has collided with another body'
       } );
 
