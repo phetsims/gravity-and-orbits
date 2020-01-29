@@ -13,9 +13,9 @@ define( require => {
   const Bounds2 = require( 'DOT/Bounds2' );
   const Dimension2 = require( 'DOT/Dimension2' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
-  const Range = require( 'DOT/Range' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
   const RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   const Shape = require( 'KITE/Shape' );
@@ -24,7 +24,6 @@ define( require => {
   // constants
   const TRACK_SIZE = new Dimension2( 3, 140 );
   const THUMB_SIZE = new Dimension2( 28, 20 );
-  const RANGE = new Range( 0.5, 1.5 );
   const STEP = 0.1;
   const BUTTON_SIZE = 25;
 
@@ -44,7 +43,7 @@ define( require => {
 
       super();
 
-      const slider = new VSlider( scaleProperty, RANGE, {
+      const slider = new VSlider( scaleProperty, GravityAndOrbitsConstants.ZOOM_RANGE, {
         trackSize: TRACK_SIZE,
         thumbSize: THUMB_SIZE,
 
@@ -62,14 +61,14 @@ define( require => {
       // Add buttons last so their hit areas will be in front for overlapping touch areas on touch devices
 
       // add plus button
-      const plusButton = new SliderButton( scaleProperty, RANGE, STEP, true, {
+      const plusButton = new SliderButton( scaleProperty, GravityAndOrbitsConstants.ZOOM_RANGE, STEP, true, {
         tandem: tandem.createTandem( 'plusButton' )
       } );
       plusButton.centerBottom = slider.centerTop;
       this.addChild( plusButton );
 
       // add minus button
-      const minusButton = new SliderButton( scaleProperty, RANGE, STEP, false, {
+      const minusButton = new SliderButton( scaleProperty, GravityAndOrbitsConstants.ZOOM_RANGE, STEP, false, {
         tandem: tandem.createTandem( 'minusButton' )
       } );
       minusButton.centerTop = slider.centerBottom;

@@ -11,6 +11,7 @@ define( require => {
   // modules
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
+  const Range = require( 'DOT/Range' );
 
   // constants
   const CONTROL_PANEL_STROKE = '#8E9097';
@@ -33,7 +34,8 @@ define( require => {
       scale: 1.05,
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
     },
-    PLAY_AREA_TANDEM_NAME: 'playAreaNode'
+    PLAY_AREA_TANDEM_NAME: 'playAreaNode',
+    ZOOM_RANGE: new Range( 0.5, 1.5 )
   };
 
   gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );

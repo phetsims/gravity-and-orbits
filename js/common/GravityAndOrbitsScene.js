@@ -22,6 +22,7 @@ define( require => {
   const Bounds2 = require( 'DOT/Bounds2' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsClock = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsClock' );
+  const GravityAndOrbitsConstants = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsConstants' );
   const GravityAndOrbitsPhysicsEngine = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsPhysicsEngine' );
   const GravityAndOrbitsSceneView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsSceneView' );
   const ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
@@ -75,7 +76,10 @@ define( require => {
       this.deviatedFromDefaultsProperty = new BooleanProperty( false );
       this.measuringTapeStartPointProperty = new Property( initialMeasuringTapeLocation.p1 );
       this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
-      this.zoomLevelProperty = new NumberProperty( 1, { tandem: tandem.createTandem( 'zoomLevelProperty' ) } );
+      this.zoomLevelProperty = new NumberProperty( 1, {
+        tandem: tandem.createTandem( 'zoomLevelProperty' ),
+        range: GravityAndOrbitsConstants.ZOOM_RANGE
+      } );
 
       this.radioButtonTandemName = radioButtonTandemName; // @public (read-only)
       this.resetButtonTandemName = resetButtonTandemName; // @public (read-only)
