@@ -11,6 +11,7 @@ define( require => {
   'use strict';
 
   // modules
+  const Emitter = require( 'AXON/Emitter' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const ModelState = require( 'GRAVITY_AND_ORBITS/common/model/ModelState' );
   const SpeedType = require( 'GRAVITY_AND_ORBITS/common/model/SpeedType' );
@@ -54,6 +55,8 @@ define( require => {
 
       // Have to update force vectors when gravity gets toggled on and off, otherwise displayed value won't update
       this.gravityEnabledProperty.link( this.updateForceVectors.bind( this ) );
+
+      this.stepCompleteEmitter = new Emitter();
     }
 
     /**
@@ -84,6 +87,8 @@ define( require => {
       for ( let i = 0; i < this.bodies.length; i++ ) {
         this.bodies[ i ].allBodiesUpdated();
       }
+
+      this.stepCompleteEmitter.emit();
 
       return smallestTimeStep * numberOfSteps;
     }

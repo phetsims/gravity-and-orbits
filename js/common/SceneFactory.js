@@ -27,6 +27,7 @@ define( require => {
   const Line = require( 'SCENERY/nodes/Line' );
   const merge = require( 'PHET_CORE/merge' );
   const ModeConfig = require( 'GRAVITY_AND_ORBITS/common/model/ModeConfig' );
+  const Pair = require( 'GRAVITY_AND_ORBITS/common/model/Pair' );
   const SpaceStationMassReadoutNode = require( 'GRAVITY_AND_ORBITS/common/view/SpaceStationMassReadoutNode' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Utils = require( 'DOT/Utils' );
@@ -115,7 +116,12 @@ define( require => {
 
       // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
       const SUN_MODES_VELOCITY_SCALE = 4.48E6;
-      const starPlanetTandem = modelTandem.createTandem( 'starPlanetScene' );
+      const starPlanetSceneTandem = modelTandem.createTandem( 'starPlanetScene' );
+
+      const star0 = new Star( model, planetStar.sun, starPlanetSceneTandem.createTandem( 'star' ), {
+        maxPathLength: 345608942000 // in km
+      } );
+      const planet0 = new Planet( model, planetStar.earth, starPlanetSceneTandem.createTandem( 'planet' ) );
 
       // TODO: Too many parameters, needs to be organized, pruned, and/or turned into config.
       this.scenes.push( new GravityAndOrbitsScene(
@@ -136,18 +142,34 @@ define( require => {
         'starPlanetSceneResetButton',
         'starPlanetScene',
         'starPlanetSceneMassesControlPanel',
-        modelTandem.createTandem( 'starPlanetScene' ),
+        starPlanetSceneTandem,
         viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetSceneView' ), [
-          new Star( model, planetStar.sun, starPlanetTandem.createTandem( 'star' ), {
-            maxPathLength: 345608942000 // in km
-          } ),
-          new Planet( model, planetStar.earth, starPlanetTandem.createTandem( 'planet' ) )
+          star0,
+          planet0
+        ], [
+          new Pair( star0, planet0, starPlanetSceneTandem.createTandem( 'starPlanetPair' ) )
         ] ) );
 
       // increase moon path length so that it fades away with other bodies
       // in model coordinates (at default orbit)
       const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
       const starPlanetMoonSceneTandem = modelTandem.createTandem( 'starPlanetMoonScene' );
+      const star1 = new Star( model, sunEarthMoon.sun, starPlanetMoonSceneTandem.createTandem( 'star' ), {
+        maxPathLength: 345608942000 // in km
+      } );
+      const planet1 = new Planet( model, sunEarthMoon.earth, starPlanetMoonSceneTandem.createTandem( 'planet' ) );
+      const moon1 = new Moon( model,
+
+        // no room for the slider
+        false,
+
+        // so it doesn't intersect with earth mass readout
+        false,
+        sunEarthMoon.moon,
+        starPlanetMoonSceneTandem.createTandem( 'moon' ), {
+          pathLengthBuffer: pathLengthBuffer
+        }
+      );
       this.scenes.push( new GravityAndOrbitsScene(
         sunEarthMoon.forceScale,
         false,
@@ -166,27 +188,25 @@ define( require => {
         'starPlanetMoonSceneResetButton',
         'starPlanetMoonScene',
         'starPlanetMoonSceneMassesControlPanel',
-        modelTandem.createTandem( 'starPlanetMoonScene' ),
+        starPlanetMoonSceneTandem,
         viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetMoonSceneView' ), [
-          new Star( model, sunEarthMoon.sun, starPlanetMoonSceneTandem.createTandem( 'star' ), {
-            maxPathLength: 345608942000 // in km
-          } ),
-          new Planet( model, sunEarthMoon.earth, starPlanetMoonSceneTandem.createTandem( 'planet' ) ),
-          new Moon( model,
-
-            // no room for the slider
-            false,
-
-            // so it doesn't intersect with earth mass readout
-            false,
-            sunEarthMoon.moon,
-            starPlanetMoonSceneTandem.createTandem( 'moon' ), {
-              pathLengthBuffer: pathLengthBuffer
-            }
-          )
+          star1,
+          planet1,
+          moon1
+        ], [
+          new Pair( star1, planet1, starPlanetMoonSceneTandem.createTandem( 'starPlanetPair' ) ),
+          new Pair( star1, moon1, starPlanetMoonSceneTandem.createTandem( 'starMoonPair' ) ),
+          new Pair( planet1, moon1, starPlanetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
         ] ) );
 
       const planetMoonSceneTandem = modelTandem.createTandem( 'planetMoonScene' );
+      const planet2 = new Planet( model, earthMoon.earth, planetMoonSceneTandem.createTandem( 'planet' ), {
+        orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
+      } );
+      const moon2 = new Moon( model, true, true, earthMoon.moon, planetMoonSceneTandem.createTandem( 'moon' ), {
+        orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
+        rotationPeriod: earthMoon.moon.rotationPeriod
+      } );
       this.scenes.push( new GravityAndOrbitsScene(
         earthMoon.forceScale,
         false,
@@ -205,19 +225,22 @@ define( require => {
         'planetMoonSceneResetButton',
         'planetMoonScene',
         'planetMoonSceneMassesControlPanel',
-        modelTandem.createTandem( 'planetMoonScene' ),
+        planetMoonSceneTandem,
         viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetMoonSceneView' ), [
-          new Planet( model, earthMoon.earth, planetMoonSceneTandem.createTandem( 'planet' ), {
-            orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
-          } ),
-          new Moon( model, true, true, earthMoon.moon, planetMoonSceneTandem.createTandem( 'moon' ), {
-            orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
-            rotationPeriod: earthMoon.moon.rotationPeriod
-          } )
+          planet2,
+          moon2
+        ], [
+          new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
         ] ) );
 
       const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
-      const earthSpaceStationTandem = modelTandem.createTandem( 'planetSatelliteScene' );
+      const planetSatelliteSceneTandem = modelTandem.createTandem( 'planetSatelliteScene' );
+      const planet3 = new Planet( model, earthSpaceStation.earth, planetSatelliteSceneTandem.createTandem( 'planet' ), {
+        maxPathLength: 35879455 // in km
+      } );
+      const satellite3 = new Satellite( model, earthSpaceStation, planetSatelliteSceneTandem.createTandem( 'satellite' ), {
+        rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
+      } );
       this.scenes.push( new GravityAndOrbitsScene(
         earthSpaceStation.forceScale,
         false,
@@ -236,14 +259,12 @@ define( require => {
         'planetSatelliteSceneResetButton',
         'planetSatelliteScene',
         'planetSatelliteSceneMassesControlPanel',
-        modelTandem.createTandem( 'planetSatelliteScene' ),
+        planetSatelliteSceneTandem,
         viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetSatelliteSceneView' ), [
-          new Planet( model, earthSpaceStation.earth, earthSpaceStationTandem.createTandem( 'planet' ), {
-            maxPathLength: 35879455 // in km
-          } ),
-          new Satellite( model, earthSpaceStation, earthSpaceStationTandem.createTandem( 'satellite' ), {
-            rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
-          } )
+          planet3,
+          satellite3
+        ], [
+          new Pair( planet3, satellite3, planetSatelliteSceneTandem.createTandem( 'planetSatellitePair' ) )
         ]
       ) );
     }

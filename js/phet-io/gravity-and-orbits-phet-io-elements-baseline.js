@@ -3394,6 +3394,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
+    "gravityAndOrbits.modelScreen.model.planetMoonScene.planetMoonPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -3575,6 +3588,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planetSatellitePair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -4096,6 +4122,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planetMoonPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
@@ -4225,6 +4264,32 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.starMoonPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.starPlanetPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
@@ -4537,6 +4602,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.starPlanetPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.zoomLevelProperty": {
       "phetioDocumentation": "",
@@ -18617,6 +18695,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
+    "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planetMoonPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -18798,6 +18889,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planetSatellitePair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -19345,6 +19449,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
     },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planetMoonPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
       "phetioDynamicElement": false,
@@ -19474,6 +19591,32 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.starMoonPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.starPlanetPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.zoomLevelProperty": {
       "phetioDocumentation": "",
@@ -19786,6 +19929,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<Vector2IO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.starPlanetPair.distanceProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.zoomLevelProperty": {
       "phetioDocumentation": "",

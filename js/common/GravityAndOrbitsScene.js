@@ -60,11 +60,12 @@ define( require => {
      * @param {Tandem} tandem
      * @param {Tandem} sceneViewTandem
      * @param {Body[]} bodies
+     * @param {Pair[]} pairs
      */
     constructor( forceScale, active, dt, timeFormatter, iconImage,
                  velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                  defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
-                 tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies ) {
+                 tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs ) {
 
       super( {
         phetioDocumentation: 'A group of orbital masses which can be selected',
@@ -121,6 +122,12 @@ define( require => {
 
       // @public {Node} - scenery node that depicts the play area for this scene
       this.sceneView = new GravityAndOrbitsSceneView( this, model, sceneViewTandem );
+
+      this.pairs = pairs;
+
+      // this.physicsEngine.stepCompleteEmitter.addListener( () => {
+      //   this.pairs.forEach( pair => pair.update() );
+      // } );
     }
 
     /**
