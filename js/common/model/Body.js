@@ -199,6 +199,14 @@ define( require => {
       } );
 
       // @public
+      this.speedProperty = new DerivedProperty( [ this.velocityProperty ], velocity => velocity.magnitude, {
+        phetioType: DerivedPropertyIO( NumberIO ),
+        tandem: tandem.createTandem( 'speedProperty' ),
+        units: 'm/s',
+        phetioDocumentation: 'The speed of the body'
+      } );
+
+      // @public
       this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
         phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
         phetioType: PropertyIO( Vector2IO ),

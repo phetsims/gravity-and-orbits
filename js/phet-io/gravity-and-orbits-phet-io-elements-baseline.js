@@ -3238,6 +3238,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -3354,6 +3367,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
@@ -3524,6 +3550,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -3640,6 +3679,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
@@ -3888,6 +3940,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -4005,6 +4070,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -4121,6 +4199,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
@@ -4291,6 +4382,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -4407,6 +4511,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
@@ -18344,6 +18461,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -18460,6 +18590,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
@@ -18630,6 +18773,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -18746,6 +18902,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
@@ -19020,6 +19189,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -19137,6 +19319,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -19253,6 +19448,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
@@ -19423,6 +19631,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
       "phetioDynamicElement": false,
@@ -19539,6 +19760,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NumberIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.speedProperty": {
+      "phetioDocumentation": "The speed of the body",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.velocityProperty": {
       "phetioDocumentation": "The speed and direction of motion of the body",
