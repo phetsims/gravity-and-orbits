@@ -16,6 +16,7 @@ define( require => {
   const BooleanProperty = require( 'AXON/BooleanProperty' );
   const Bounds2 = require( 'DOT/Bounds2' );
   const DerivedProperty = require( 'AXON/DerivedProperty' );
+  const DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
   const Emitter = require( 'AXON/Emitter' );
   const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
   const GravityAndOrbitsBodies = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsBodies' );
@@ -202,6 +203,14 @@ define( require => {
         phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
         phetioType: PropertyIO( Vector2IO ),
         tandem: tandem.createTandem( 'forceProperty' ),
+        units: 'N'
+      } );
+
+      // @private (only used for PhET-iO)
+      this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], force => force.magnitude, {
+        phetioDocumentation: 'The magnitude of the net force on this body by other bodies',
+        phetioType: DerivedPropertyIO( NumberIO ),
+        tandem: tandem.createTandem( 'forceMagnitudeProperty' ),
         units: 'N'
       } );
 

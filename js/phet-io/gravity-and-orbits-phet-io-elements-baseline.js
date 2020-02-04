@@ -3147,6 +3147,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -3250,6 +3263,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
@@ -3407,6 +3433,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -3510,6 +3549,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
@@ -3745,6 +3797,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -3849,6 +3914,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -3952,6 +4030,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
@@ -4109,6 +4200,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -4212,6 +4316,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.model.starPlanetScene.star.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
@@ -18136,6 +18253,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -18239,6 +18369,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
@@ -18396,6 +18539,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -18499,6 +18655,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
@@ -18760,6 +18929,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -18864,6 +19046,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -18967,6 +19162,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
@@ -19124,6 +19332,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
       "phetioDynamicElement": false,
@@ -19227,6 +19448,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.forceMagnitudeProperty": {
+      "phetioDocumentation": "The magnitude of the net force on this body by other bodies",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.forceProperty": {
       "phetioDocumentation": "The net force of gravity exerted on this body by other bodies",
