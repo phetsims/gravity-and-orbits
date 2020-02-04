@@ -123,11 +123,8 @@ define( require => {
       // @public {Node} - scenery node that depicts the play area for this scene
       this.sceneView = new GravityAndOrbitsSceneView( this, model, sceneViewTandem );
 
+      // @private (phet-io only)
       this.pairs = pairs;
-
-      // this.physicsEngine.stepCompleteEmitter.addListener( () => {
-      //   this.pairs.forEach( pair => pair.update() );
-      // } );
     }
 
     /**
