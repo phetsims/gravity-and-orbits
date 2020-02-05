@@ -146,7 +146,12 @@ define( require => {
         isTipDragBounded: false,
 
         // space station gets 1 sig fig, the other bodies have 0
-        significantFigures: ( bodies[ 1 ].name === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0
+        significantFigures: ( bodies[ 1 ].name === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0,
+
+        tandem: tandem.createTandem( 'measuringTapeNode' ),
+        phetioComponentOptions: {
+          visibleProperty: { phetioReadOnly: true } // controlled by a checkbox
+        }
       } );
 
       scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
