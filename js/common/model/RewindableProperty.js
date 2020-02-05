@@ -20,7 +20,7 @@ define( require => {
     /**
      * @param {Property.<boolean>} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
      * @param {*} value
-     * @param {Object} options
+     * @param {Object} [options]
      * @constructor
      */
     constructor( changeRewindValueProperty, value, options ) {

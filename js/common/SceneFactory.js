@@ -382,7 +382,7 @@ define( require => {
   class EarthSpaceStationModeConfig extends ModeConfig {
     /**
      * Static class.
-     * @param {Object} options
+     * @param {Object} [options]
      */
     constructor( options ) {
 
