@@ -1,4 +1,4 @@
-// Copyright 2014-2019, University of Colorado Boulder
+// Copyright 2014-2020, University of Colorado Boulder
 
 /**
  * This is the model for Gravity and Orbits; there is one GravityAndOrbitsPhysicsEngine per each GravityAndOrbitsScene, and it
