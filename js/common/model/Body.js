@@ -86,6 +86,9 @@ define( require => {
         rotationPeriod: null // period of body rotation, in seconds - null rotation period will prevent rotation
       }, options );
 
+      // Keep track of the time at the beginning of a time step, for interpolation
+      this.previousPosition = new Vector2( 0, 0 );
+
       const diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
       // @public (read-only) {string}
@@ -439,6 +442,15 @@ define( require => {
      */
     createRenderer( viewDiameter ) {
       return this.renderer( this, viewDiameter );
+    }
+
+    /**
+     * Keep track of the time at the beginning of a time step, for interpolation
+     * @public
+     */
+    storePreviousPosition() {
+      this.previousPosition.x = this.positionProperty.value.x;
+      this.previousPosition.y = this.positionProperty.value.y;
     }
 
     /**

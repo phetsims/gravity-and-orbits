@@ -69,6 +69,8 @@ define( require => {
      */
     stepModel() {
 
+      this.bodies.forEach( body => body.storePreviousPosition() );
+
       // standardized time step - based on the slowest time step for the given orbital mode
       const smallestTimeStep = this.clock.baseDTValue * 0.13125;
 

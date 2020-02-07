@@ -52,6 +52,9 @@ define( require => {
 
       // @public
       this.speedTypeProperty = speedTypeProperty;
+
+      // Fraction between old state=0 and new state=1
+      this.interpolationRatio = 1;
     }
 
     /**
@@ -104,6 +107,7 @@ define( require => {
      * @param  {number} stepFunction
      */
     addEventTimer( stepFunction ) {
+      assert && assert( !this.eventTimer, 'there can be only one event timer' );
       this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
     }
 
@@ -115,6 +119,7 @@ define( require => {
      */
     step( dt ) {
       this.eventTimer.step( dt );
+      this.interpolationRatio = this.eventTimer.getRatio();
     }
   }
 

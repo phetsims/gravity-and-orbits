@@ -101,8 +101,10 @@ define( require => {
       // create position and diameter listeners so that they can be unlinked
       // for garbage collection and so that anonymous closures are not necessary
       // through multilink
-      this.positionListener = ( position, modelViewTransform ) =>
-        this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
+      this.positionListener = ( position, modelViewTransform ) => {
+        const blended = body.previousPosition.blend( body.positionProperty.value, clock.interpolationRatio );
+        this.setTranslation( modelViewTransform.modelToViewPosition( blended ) );
+      };
       Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
       this.diameterListener = ( position, modelViewTransform ) => {
