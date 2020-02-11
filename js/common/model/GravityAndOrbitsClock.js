@@ -32,16 +32,18 @@ define( require => {
      * @param {number} baseDTValue (multiplied by scale to obtain true dt)
      * @param {Property.<boolean>} steppingProperty
      * @param {Property.<number>} speedTypeProperty
+     * @param {Tandem} sceneTandem
      * @param {Tandem} tandem
      */
-    constructor( baseDTValue, steppingProperty, speedTypeProperty, tandem ) {
+    constructor( baseDTValue, steppingProperty, speedTypeProperty, sceneTandem, tandem ) {
 
       // @public (read-only)
       this.baseDTValue = baseDTValue;
 
       // @public
       this.isRunningProperty = new BooleanProperty( false, {
-        tandem: tandem.createTandem( 'isRunningProperty' )
+        tandem: tandem.createTandem( 'isRunningProperty' ),
+        phetioDocumentation: `This value is true when '${sceneTandem.phetioID}' is the active scene AND the sim is playing (isPlayingProperty is 'true').`
       } );
       this.timeProperty = new NumberProperty( 0, {
         tandem: tandem.createTandem( 'timeProperty' ),

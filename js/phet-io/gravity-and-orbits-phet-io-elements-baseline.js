@@ -3109,7 +3109,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.planetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3434,7 +3434,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.planetSatelliteScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3837,7 +3837,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.starPlanetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -4318,7 +4318,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.starPlanetScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19138,7 +19138,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.planetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19463,7 +19463,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.planetSatelliteScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19892,7 +19892,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -20373,7 +20373,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.clock.isRunningProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.starPlanetScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
