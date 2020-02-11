@@ -15,15 +15,17 @@ define( require => {
   class ToScaleModel extends GravityAndOrbitsModel {
 
     /**
+     * @param {Tandem} screenTandem
      * @param {Tandem} modelTandem
      * @param {Tandem} viewTandem - needed so we can create the scenes and corresponding views
      */
-    constructor( modelTandem, viewTandem ) {
+    constructor( screenTandem, modelTandem, viewTandem ) {
       super(
         true,
         model => new ToScaleSceneFactory( model, modelTandem, viewTandem ),
         0,
         true,
+        screenTandem,
         modelTandem
       );
     }

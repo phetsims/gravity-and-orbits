@@ -32,7 +32,7 @@ define( require => {
 
       const viewTandem = options.tandem.createTandem( 'view' );
       super(
-        () => new ModelModel( options.tandem.createTandem( 'model' ), viewTandem ),
+        () => new ModelModel( options.tandem, options.tandem.createTandem( 'model' ), viewTandem ),
         model => new GravityAndOrbitsScreenView( model, viewTandem ),
         options
       );

@@ -36,9 +36,10 @@ define( require => {
      * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsScene>>} createModes
      * @param {number} initialSceneIndex
      * @param {boolean} showMassCheckbox
+     * @param {Tandem} screenTandem
      * @param {Tandem} tandem
      */
-    constructor( showMeasuringTape, createModes, initialSceneIndex, showMassCheckbox, tandem ) {
+    constructor( showMeasuringTape, createModes, initialSceneIndex, showMassCheckbox, screenTandem, tandem ) {
 
       // Properties that are common to all "modes" should live here.
       this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );
@@ -50,7 +51,10 @@ define( require => {
       this.showMassProperty = new BooleanProperty( false, { tandem: showMassCheckbox ? tandem.createTandem( 'showMassProperty' ) : Tandem.OPTIONAL } );
       this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: showMeasuringTape ? tandem.createTandem( 'showMeasuringTapeProperty' ) : Tandem.OPTIONAL } );
 
-      this.isPlayingProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'isPlayingProperty' ) } );
+      this.isPlayingProperty = new BooleanProperty( false, {
+        tandem: tandem.createTandem( 'isPlayingProperty' ),
+        phetioDocumentation: `This value is true if '${screenTandem.phetioID}' is the active screen AND the play/pause button is in play mode.`
+      } );
       this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL, { tandem: tandem.createTandem( 'speedTypeProperty' ) } );
 
       this.gravityEnabledProperty = new BooleanProperty( true, { tandem: tandem.createTandem( 'gravityEnabledProperty' ) } );

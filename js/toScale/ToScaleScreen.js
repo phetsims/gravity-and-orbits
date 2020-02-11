@@ -31,7 +31,7 @@ define( require => {
 
       const viewTandem = options.tandem.createTandem( 'view' );
       super(
-        () => new ToScaleModel( options.tandem.createTandem( 'model' ), viewTandem ),
+        () => new ToScaleModel( options.tandem, options.tandem.createTandem( 'model' ), viewTandem ),
         model => new GravityAndOrbitsScreenView( model, viewTandem ),
         options
       );
