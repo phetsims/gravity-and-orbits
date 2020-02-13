@@ -35,7 +35,7 @@ define( require => {
 
       options = merge( {
         spacing: 1,
-        touchAreaXDilation: 5,
+        touchAreaDilation: 5,
         radioButtonOptions: { radius: 8 }
       }, options );
 
