@@ -20,24 +20,24 @@ define( require => {
   // strings
   const gravityAndOrbitsTitleString = require( 'string!GRAVITY_AND_ORBITS/gravity-and-orbits.title' );
 
-  // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
-  const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
-
-  const simOptions = {
-    credits: {
-      leadDesign: 'Emily B. Moore, Noah Podolefsky, Amy Rouinfar',
-      softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Jon Olson, Sam Reid',
-      team: 'Trish Loeblein, Ariel Paul, Kathy Perkins',
-      qualityAssurance: 'Steele Dalton, Ethan Johnson, Elise Morgan, Oliver Orejola, Ben Roberts, Bryan Yoelin',
-      thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
-              'HTML5.'
-    },
-
-    // Creates content for the Options dialog
-    createOptionsDialogContent: () => globalOptionsNode
-  };
-
   SimLauncher.launch( () => {
+
+    // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
+    const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
+
+    const simOptions = {
+      credits: {
+        leadDesign: 'Emily B. Moore, Noah Podolefsky, Amy Rouinfar',
+        softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Jon Olson, Sam Reid',
+        team: 'Trish Loeblein, Ariel Paul, Kathy Perkins',
+        qualityAssurance: 'Steele Dalton, Ethan Johnson, Elise Morgan, Oliver Orejola, Ben Roberts, Bryan Yoelin',
+        thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
+                'HTML5.'
+      },
+
+      // Creates content for the Options dialog
+      createOptionsDialogContent: () => globalOptionsNode
+    };
 
     const modelScreen = new ModelScreen( {
       backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
