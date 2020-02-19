@@ -61,7 +61,6 @@ define( require => {
       clock.timeProperty.link( this.timeListener );
 
       this.addChild( new VBox( {
-        resize: false,
         spacing: 4,
         children: [
           dayText,

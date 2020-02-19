@@ -52,7 +52,6 @@ define( require => {
       }
 
       super( merge( {
-        resize: false,
         spacing: 10,
         children: [ rewindButton, playPauseButton, stepButton ]
       }, options ) );

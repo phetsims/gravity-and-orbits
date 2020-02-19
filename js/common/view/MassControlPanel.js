@@ -65,7 +65,6 @@ define( require => {
           fontWeight: 'bold',
           fill: GravityAndOrbitsColorProfile.panelTextProperty,
           maxWidth: 175,
-          resize: false,
           tandem: options.tandem.createTandem( massSettableBody.labelTandemName )
         } );
 
@@ -81,7 +80,6 @@ define( require => {
 
         const sliderVBox = new VBox( {
           top: labelHBox.bottom + 8,
-          resize: false,
           children: [
             new HStrut( 220 ),
             new BodyMassControl(
@@ -99,7 +97,7 @@ define( require => {
         children.push( sliderNode );
       }
 
-      const vBox = new VBox( { children: children, spacing: 15, y: 5, resize: false, align: 'left' } );
+      const vBox = new VBox( { children: children, spacing: 15, y: 5, align: 'left' } );
       super( vBox, options );
     }
   }

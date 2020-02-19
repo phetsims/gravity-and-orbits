@@ -51,7 +51,7 @@ define( require => {
 
       assert && assert( sections.length === 5, 'There should be 5 sections in the GravityAndOrbitsControlPanel' );
 
-      const vBox = new VBox( { children: sections, spacing: 4, y: 5, resize: false, align: 'left' } );
+      const vBox = new VBox( { children: sections, spacing: 4, y: 5, align: 'left' } );
       super( vBox, options );
 
       // resize the separators to allow them to go inside the panel margins

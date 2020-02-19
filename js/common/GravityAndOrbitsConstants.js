@@ -29,7 +29,6 @@ define( require => {
       stroke: CONTROL_PANEL_STROKE,
       lineWidth: 2,
       cornerRadius: 5,
-      resize: false,
       xMargin: PANEL_X_MARGIN,
       scale: 1.05,
       fill: GravityAndOrbitsColorProfile.panelBackgroundProperty

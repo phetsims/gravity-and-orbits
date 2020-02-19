@@ -158,7 +158,6 @@ define( require => {
 
       super( merge( {
         children: children,
-        resize: false,
         spacing: SPACING,
         align: 'left',
         bottom: -12,
