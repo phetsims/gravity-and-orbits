@@ -7,18 +7,15 @@
  *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const Enumeration = require( 'PHET_CORE/Enumeration' );
+import Enumeration from '../../../../phet-core/js/Enumeration.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-  const GravityAndOrbitsBodies = Enumeration.byKeys( [ 'PLANET',
-    'SATELLITE',
-    'STAR',
-    'MOON'
-  ] );
+const GravityAndOrbitsBodies = Enumeration.byKeys( [ 'PLANET',
+  'SATELLITE',
+  'STAR',
+  'MOON'
+] );
 
-  return gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
-} );
+gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
+export default GravityAndOrbitsBodies;

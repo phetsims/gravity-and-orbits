@@ -4,32 +4,29 @@
  *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
-  const ToScaleSceneFactory = require( 'GRAVITY_AND_ORBITS/toScale/ToScaleSceneFactory' );
+import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
+import gravityAndOrbits from '../gravityAndOrbits.js';
+import ToScaleSceneFactory from './ToScaleSceneFactory.js';
 
-  class ToScaleModel extends GravityAndOrbitsModel {
+class ToScaleModel extends GravityAndOrbitsModel {
 
-    /**
-     * @param {Tandem} screenTandem
-     * @param {Tandem} modelTandem
-     * @param {Tandem} viewTandem - needed so we can create the scenes and corresponding views
-     */
-    constructor( screenTandem, modelTandem, viewTandem ) {
-      super(
-        true,
-        model => new ToScaleSceneFactory( model, modelTandem, viewTandem ),
-        0,
-        true,
-        screenTandem,
-        modelTandem
-      );
-    }
+  /**
+   * @param {Tandem} screenTandem
+   * @param {Tandem} modelTandem
+   * @param {Tandem} viewTandem - needed so we can create the scenes and corresponding views
+   */
+  constructor( screenTandem, modelTandem, viewTandem ) {
+    super(
+      true,
+      model => new ToScaleSceneFactory( model, modelTandem, viewTandem ),
+      0,
+      true,
+      screenTandem,
+      modelTandem
+    );
   }
+}
 
-  return gravityAndOrbits.register( 'ToScaleModel', ToScaleModel );
-} );
+gravityAndOrbits.register( 'ToScaleModel', ToScaleModel );
+export default ToScaleModel;

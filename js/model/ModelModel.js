@@ -4,32 +4,29 @@
  * // REVIEW documentation
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const ModelSceneFactory = require( 'GRAVITY_AND_ORBITS/model/ModelSceneFactory' );
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsModel = require( 'GRAVITY_AND_ORBITS/common/model/GravityAndOrbitsModel' );
+import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
+import gravityAndOrbits from '../gravityAndOrbits.js';
+import ModelSceneFactory from './ModelSceneFactory.js';
 
-  class ModelModel extends GravityAndOrbitsModel {
+class ModelModel extends GravityAndOrbitsModel {
 
-    /**
-     * @param {Tandem} screenTandem
-     * @param {Tandem} modelTandem
-     * @param {Tandem} viewTandem - needed to create the scene views
-     */
-    constructor( screenTandem, modelTandem, viewTandem ) {
-      super(
-        false,
-        model => new ModelSceneFactory( model, modelTandem, viewTandem ),
-        0,
-        false,
-        screenTandem,
-        modelTandem
-      );
-    }
+  /**
+   * @param {Tandem} screenTandem
+   * @param {Tandem} modelTandem
+   * @param {Tandem} viewTandem - needed to create the scene views
+   */
+  constructor( screenTandem, modelTandem, viewTandem ) {
+    super(
+      false,
+      model => new ModelSceneFactory( model, modelTandem, viewTandem ),
+      0,
+      false,
+      screenTandem,
+      modelTandem
+    );
   }
+}
 
-  return gravityAndOrbits.register( 'ModelModel', ModelModel );
-} );
+gravityAndOrbits.register( 'ModelModel', ModelModel );
+export default ModelModel;

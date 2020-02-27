@@ -5,54 +5,50 @@
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const Color = require( 'SCENERY/util/Color' );
-  const ColorProfile = require( 'SCENERY_PHET/ColorProfile' );
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+import ColorProfile from '../../../scenery-phet/js/ColorProfile.js';
+import Color from '../../../scenery/js/util/Color.js';
+import gravityAndOrbits from '../gravityAndOrbits.js';
 
-  const GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' ], {
-    background: {
-      default: 'black',
-      projector: 'white'
-    },
-    bodyNodeText: {
-      default: 'white',
-      projector: 'black'
-    },
-    measuringTapeText: {
-      default: 'white',
-      projector: 'black'
-    },
-    bottomControlText: {
-      default: 'white',
-      projector: 'black'
-    },
-    panelBackground: {
-      default: 'black',
-      projector: new Color( 222, 234, 255 )
-    },
-    panelText: {
-      default: 'white',
-      projector: 'black'
-    },
-    arrowIndicator: {
-      default: new Color( 255, 255, 0 ),
-      projector: 'black'
-    },
-    gridIcon: {
-      default: 'gray',
-      projector: 'black'
-    },
-    checkboxFill: {
-      default: 'black',
-      projector: 'white'
-    }
-  } );
-
-  gravityAndOrbits.register( 'GravityAndOrbitsColorProfile', GravityAndOrbitsColorProfile );
-
-  return GravityAndOrbitsColorProfile;
+const GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' ], {
+  background: {
+    default: 'black',
+    projector: 'white'
+  },
+  bodyNodeText: {
+    default: 'white',
+    projector: 'black'
+  },
+  measuringTapeText: {
+    default: 'white',
+    projector: 'black'
+  },
+  bottomControlText: {
+    default: 'white',
+    projector: 'black'
+  },
+  panelBackground: {
+    default: 'black',
+    projector: new Color( 222, 234, 255 )
+  },
+  panelText: {
+    default: 'white',
+    projector: 'black'
+  },
+  arrowIndicator: {
+    default: new Color( 255, 255, 0 ),
+    projector: 'black'
+  },
+  gridIcon: {
+    default: 'gray',
+    projector: 'black'
+  },
+  checkboxFill: {
+    default: 'black',
+    projector: 'white'
+  }
 } );
+
+gravityAndOrbits.register( 'GravityAndOrbitsColorProfile', GravityAndOrbitsColorProfile );
+
+export default GravityAndOrbitsColorProfile;

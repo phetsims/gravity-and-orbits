@@ -5,39 +5,35 @@
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  const Range = require( 'DOT/Range' );
+import Range from '../../../dot/js/Range.js';
+import gravityAndOrbits from '../gravityAndOrbits.js';
+import GravityAndOrbitsColorProfile from './GravityAndOrbitsColorProfile.js';
 
-  // constants
-  const CONTROL_PANEL_STROKE = '#8E9097';
-  const PANEL_X_MARGIN = 5;
+// constants
+const CONTROL_PANEL_STROKE = '#8E9097';
+const PANEL_X_MARGIN = 5;
 
-  const GravityAndOrbitsConstants = {
+const GravityAndOrbitsConstants = {
 
-    // these constants were originally in SceneFactory, but needed to be factor out because of a circular dependency
-    EARTH_MASS: 5.9736E24,
-    SPACE_STATION_MASS: 369914,
+  // these constants were originally in SceneFactory, but needed to be factor out because of a circular dependency
+  EARTH_MASS: 5.9736E24,
+  SPACE_STATION_MASS: 369914,
 
-    CONTROL_PANEL_STROKE: CONTROL_PANEL_STROKE,
-    PANEL_X_MARGIN: PANEL_X_MARGIN,
-    CONTROL_PANEL_OPTIONS: {
-      stroke: CONTROL_PANEL_STROKE,
-      lineWidth: 2,
-      cornerRadius: 5,
-      xMargin: PANEL_X_MARGIN,
-      scale: 1.05,
-      fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
-    },
-    PLAY_AREA_TANDEM_NAME: 'playAreaNode',
-    ZOOM_RANGE: new Range( 0.5, 1.5 )
-  };
+  CONTROL_PANEL_STROKE: CONTROL_PANEL_STROKE,
+  PANEL_X_MARGIN: PANEL_X_MARGIN,
+  CONTROL_PANEL_OPTIONS: {
+    stroke: CONTROL_PANEL_STROKE,
+    lineWidth: 2,
+    cornerRadius: 5,
+    xMargin: PANEL_X_MARGIN,
+    scale: 1.05,
+    fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
+  },
+  PLAY_AREA_TANDEM_NAME: 'playAreaNode',
+  ZOOM_RANGE: new Range( 0.5, 1.5 )
+};
 
-  gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
+gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
 
-  return GravityAndOrbitsConstants;
-} );
+export default GravityAndOrbitsConstants;

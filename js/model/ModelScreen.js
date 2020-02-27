@@ -5,39 +5,35 @@
  *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const ModelModel = require( 'GRAVITY_AND_ORBITS/model/ModelModel' );
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsScreenView = require( 'GRAVITY_AND_ORBITS/common/view/GravityAndOrbitsScreenView' );
-  const Image = require( 'SCENERY/nodes/Image' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Screen = require( 'JOIST/Screen' );
+import Screen from '../../../joist/js/Screen.js';
+import merge from '../../../phet-core/js/merge.js';
+import Image from '../../../scenery/js/nodes/Image.js';
+import modelMipmap from '../../mipmaps/model_icon_png.js';
+import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
+import gravityAndOrbitsStrings from '../gravity-and-orbits-strings.js';
+import gravityAndOrbits from '../gravityAndOrbits.js';
+import ModelModel from './ModelModel.js';
 
-  // strings
-  const modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
+const modelString = gravityAndOrbitsStrings.model;
 
-  // images
-  const modelMipmap = require( 'mipmap!GRAVITY_AND_ORBITS/model_icon.png' );
 
-  class ModelScreen extends Screen {
-    constructor( options ) {
+class ModelScreen extends Screen {
+  constructor( options ) {
 
-      options = merge( {
-        name: modelString,
-        homeScreenIcon: new Image( modelMipmap )
-      }, options );
+    options = merge( {
+      name: modelString,
+      homeScreenIcon: new Image( modelMipmap )
+    }, options );
 
-      const viewTandem = options.tandem.createTandem( 'view' );
-      super(
-        () => new ModelModel( options.tandem, options.tandem.createTandem( 'model' ), viewTandem ),
-        model => new GravityAndOrbitsScreenView( model, viewTandem ),
-        options
-      );
-    }
+    const viewTandem = options.tandem.createTandem( 'view' );
+    super(
+      () => new ModelModel( options.tandem, options.tandem.createTandem( 'model' ), viewTandem ),
+      model => new GravityAndOrbitsScreenView( model, viewTandem ),
+      options
+    );
   }
+}
 
-  return gravityAndOrbits.register( 'ModelScreen', ModelScreen );
-} );
+gravityAndOrbits.register( 'ModelScreen', ModelScreen );
+export default ModelScreen;

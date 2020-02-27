@@ -7,70 +7,67 @@
  * @author Andrey Zelenkov (Mlearner)
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Node = require( 'SCENERY/nodes/Node' );
-  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  const Text = require( 'SCENERY/nodes/Text' );
-  const TextPushButton = require( 'SUN/buttons/TextPushButton' );
-  const VBox = require( 'SCENERY/nodes/VBox' );
+import merge from '../../../../phet-core/js/merge.js';
+import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import Node from '../../../../scenery/js/nodes/Node.js';
+import Text from '../../../../scenery/js/nodes/Text.js';
+import VBox from '../../../../scenery/js/nodes/VBox.js';
+import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
+import gravityAndOrbitsStrings from '../../gravity-and-orbits-strings.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
+import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
-  // strings
-  const clearString = require( 'string!GRAVITY_AND_ORBITS/clear' );
+const clearString = gravityAndOrbitsStrings.clear;
 
-  // constants
-  const FONT = new PhetFont( 22 );
+// constants
+const FONT = new PhetFont( 22 );
 
-  class TimeCounter extends Node {
+class TimeCounter extends Node {
 
-    /**
-     * @param {function} timeFormatter
-     * @param {GravityAndOrbitsClock} clock
-     * @param {Tandem} tandem
-     * @param [options]
-     */
-    constructor( timeFormatter, clock, tandem, options ) {
-      super();
+  /**
+   * @param {function} timeFormatter
+   * @param {GravityAndOrbitsClock} clock
+   * @param {Tandem} tandem
+   * @param [options]
+   */
+  constructor( timeFormatter, clock, tandem, options ) {
+    super();
 
-      // day text counter
-      const dayText = new Text( '', {
-        font: FONT,
-        fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
-        maxWidth: 200
-      } );
+    // day text counter
+    const dayText = new Text( '', {
+      font: FONT,
+      fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
+      maxWidth: 200
+    } );
 
-      const clearButton = new TextPushButton( clearString, {
-        font: FONT,
-        listener: () => clock.setSimulationTime( 0 ),
-        maxWidth: 200,
-        tandem: tandem.createTandem( 'clearButton' )
-      } );
+    const clearButton = new TextPushButton( clearString, {
+      font: FONT,
+      listener: () => clock.setSimulationTime( 0 ),
+      maxWidth: 200,
+      tandem: tandem.createTandem( 'clearButton' )
+    } );
 
-      // update text representation of day
-      this.timeListener = time => {
-        assert && assert( !isNaN( time ), 'time should be a number' );
-        dayText.setText( timeFormatter( time ) );
-        dayText.centerX = clearButton.centerX;
-        clearButton.enabled = ( time !== 0 );
-      };
-      clock.timeProperty.link( this.timeListener );
+    // update text representation of day
+    this.timeListener = time => {
+      assert && assert( !isNaN( time ), 'time should be a number' );
+      dayText.setText( timeFormatter( time ) );
+      dayText.centerX = clearButton.centerX;
+      clearButton.enabled = ( time !== 0 );
+    };
+    clock.timeProperty.link( this.timeListener );
 
-      this.addChild( new VBox( {
-        spacing: 4,
-        children: [
-          dayText,
-          clearButton
-        ]
-      } ) );
+    this.addChild( new VBox( {
+      spacing: 4,
+      children: [
+        dayText,
+        clearButton
+      ]
+    } ) );
 
-      this.mutate( merge( { tandem: tandem }, options ) );
-    }
+    this.mutate( merge( { tandem: tandem }, options ) );
   }
+}
 
-  return gravityAndOrbits.register( 'TimeCounter', TimeCounter );
-} );
+gravityAndOrbits.register( 'TimeCounter', TimeCounter );
+export default TimeCounter;

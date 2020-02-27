@@ -9,139 +9,135 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/SceneFactory' );
+import SceneFactory from '../common/SceneFactory.js';
+import gravityAndOrbits from '../gravityAndOrbits.js';
 
-  // constants
-  const SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
-  const EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
-  const EARTH_MASS_SCALE_FACTOR = 10200; // tuned by hand so there are 12 model lunar orbits in one model earth orbit
+// constants
+const SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
+const EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
+const EARTH_MASS_SCALE_FACTOR = 10200; // tuned by hand so there are 12 model lunar orbits in one model earth orbit
 
-  // in days - actual period is 27.322 days, but this sim's model produces a period of 27.6 days (by inspection)
-  const MOON_ORBITAL_PERIOD = 27.6;
+// in days - actual period is 27.322 days, but this sim's model produces a period of 27.6 days (by inspection)
+const MOON_ORBITAL_PERIOD = 27.6;
 
-  /*
-   * force scale for SunEarthMode and SunEarthMoonMode.
-   * balances increased mass and so that forces are 1/2 grid cell in default conditions, hand tuned by checking
-   * that reducing the distance by a factor of 2 increases the force arrow by a factor of 4
-   */
-  const FORCE_SCALE = 0.573 / EARTH_MASS_SCALE_FACTOR;
+/*
+ * force scale for SunEarthMode and SunEarthMoonMode.
+ * balances increased mass and so that forces are 1/2 grid cell in default conditions, hand tuned by checking
+ * that reducing the distance by a factor of 2 increases the force arrow by a factor of 4
+ */
+const FORCE_SCALE = 0.573 / EARTH_MASS_SCALE_FACTOR;
 
-  /*
-   * Have to artificially scale up the time readout so that SunEarthMode and SunEarthMoonMode modes have a stable
-   * orbits with correct periods since masses are nonphysical. 365 is days in a year.
-   */
-  const SUN_EARTH_MODE_TIME_SCALE = 365.0 / 334.0;
+/*
+ * Have to artificially scale up the time readout so that SunEarthMode and SunEarthMoonMode modes have a stable
+ * orbits with correct periods since masses are nonphysical. 365 is days in a year.
+ */
+const SUN_EARTH_MODE_TIME_SCALE = 365.0 / 334.0;
 
-  /**
-   * Convenience function that converts days to seconds, using
-   * days * hoursPerDay * minutesPerHour * secondsPerMinute
-   *
-   * @param  {number} days
-   * @returns {number}
-   */
-  const daysToSeconds = days => days * 24 * 60 * 60;
+/**
+ * Convenience function that converts days to seconds, using
+ * days * hoursPerDay * minutesPerHour * secondsPerMinute
+ *
+ * @param  {number} days
+ * @returns {number}
+ */
+const daysToSeconds = days => days * 24 * 60 * 60;
 
-  class ModelSceneFactory extends SceneFactory {
-
-    /**
-     * @param {GravityAndOrbitsModel} model
-     * @param {Tandem} modelTandem
-     * @param {Tandem} viewTandem
-     */
-    constructor( model, modelTandem, viewTandem ) {
-      super(
-        model,
-        new SunEarthModeConfig(),
-        new SunEarthMoonModeConfig(),
-        new EarthMoonModeConfig(),
-        new EarthSpaceStationModeConfig(),
-        modelTandem, viewTandem, {
-          adjustMoonPathLength: true // adjust the moon path length in model
-        } );
-    }
-  }
-
-  gravityAndOrbits.register( 'ModelSceneFactory', ModelSceneFactory );
+class ModelSceneFactory extends SceneFactory {
 
   /**
-   * Model configuration for a system with the sun and the earth.
+   * @param {GravityAndOrbitsModel} model
+   * @param {Tandem} modelTandem
+   * @param {Tandem} viewTandem
    */
-  class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
-    constructor() {
-      super();
-      this.sun.radius *= SUN_RADIUS_MULTIPLIER;
-      this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
-      this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
-      this.forceScale *= FORCE_SCALE;
-      this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
-
-      // Sun shouldn't move in model modes
-      this.sun.isMovable = false;
-    }
+  constructor( model, modelTandem, viewTandem ) {
+    super(
+      model,
+      new SunEarthModeConfig(),
+      new SunEarthMoonModeConfig(),
+      new EarthMoonModeConfig(),
+      new EarthSpaceStationModeConfig(),
+      modelTandem, viewTandem, {
+        adjustMoonPathLength: true // adjust the moon path length in model
+      } );
   }
+}
 
-  gravityAndOrbits.register( 'SunEarthModeConfig', SunEarthModeConfig );
+gravityAndOrbits.register( 'ModelSceneFactory', ModelSceneFactory );
 
-  /**
-   * Model configuration for a system with the sun, earth and moon.
-   */
-  class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
-    constructor() {
-      super();
-      this.sun.radius *= SUN_RADIUS_MULTIPLIER;
-      this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
-      this.moon.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+/**
+ * Model configuration for a system with the sun and the earth.
+ */
+class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
+  constructor() {
+    super();
+    this.sun.radius *= SUN_RADIUS_MULTIPLIER;
+    this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+    this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
+    this.forceScale *= FORCE_SCALE;
+    this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
-      this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
-      this.moon.vx *= 21;
-      this.moon.y = this.earth.radius * 1.7;
-
-      this.forceScale *= FORCE_SCALE;
-      this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
-
-      // Sun shouldn't move in model modes
-      this.sun.isMovable = false;
-    }
+    // Sun shouldn't move in model modes
+    this.sun.isMovable = false;
   }
+}
 
-  gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
+gravityAndOrbits.register( 'SunEarthModeConfig', SunEarthModeConfig );
 
-  class EarthMoonModeConfig extends SceneFactory.EarthMoonModeConfig {
-    constructor() {
+/**
+ * Model configuration for a system with the sun, earth and moon.
+ */
+class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
+  constructor() {
+    super();
+    this.sun.radius *= SUN_RADIUS_MULTIPLIER;
+    this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+    this.moon.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
 
-      const moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD );
-      super( { moonRotationPeriod: moonRotationPeriod } );
+    this.earth.mass *= EARTH_MASS_SCALE_FACTOR;
+    this.moon.vx *= 21;
+    this.moon.y = this.earth.radius * 1.7;
 
-      const radiusMultiplier = 15; // tuned by hand
-      this.earth.radius *= radiusMultiplier;
-      this.moon.radius *= radiusMultiplier;
+    this.forceScale *= FORCE_SCALE;
+    this.timeScale = SUN_EARTH_MODE_TIME_SCALE;
 
-      // so that default gravity force takes up 1/2 cell in grid
-      this.forceScale *= 0.77;
-    }
+    // Sun shouldn't move in model modes
+    this.sun.isMovable = false;
   }
+}
 
-  gravityAndOrbits.register( 'EarthMoonModeConfig', EarthMoonModeConfig );
+gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
 
-  /**
-   * Model configuration for a system with the earth and a space station.
-   */
-  class EarthSpaceStationModeConfig extends SceneFactory.EarthSpaceStationModeConfig {
-    constructor() {
-      super();
+class EarthMoonModeConfig extends SceneFactory.EarthMoonModeConfig {
+  constructor() {
 
-      // tuned by hand
-      this.earth.radius *= 0.8;
-      this.spaceStation.radius *= 8;
-    }
+    const moonRotationPeriod = daysToSeconds( MOON_ORBITAL_PERIOD );
+    super( { moonRotationPeriod: moonRotationPeriod } );
+
+    const radiusMultiplier = 15; // tuned by hand
+    this.earth.radius *= radiusMultiplier;
+    this.moon.radius *= radiusMultiplier;
+
+    // so that default gravity force takes up 1/2 cell in grid
+    this.forceScale *= 0.77;
   }
+}
 
-  gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
+gravityAndOrbits.register( 'EarthMoonModeConfig', EarthMoonModeConfig );
 
-  return ModelSceneFactory;
-} );
+/**
+ * Model configuration for a system with the earth and a space station.
+ */
+class EarthSpaceStationModeConfig extends SceneFactory.EarthSpaceStationModeConfig {
+  constructor() {
+    super();
+
+    // tuned by hand
+    this.earth.radius *= 0.8;
+    this.spaceStation.radius *= 8;
+  }
+}
+
+gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
+
+export default ModelSceneFactory;

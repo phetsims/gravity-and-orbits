@@ -7,47 +7,44 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Vector2 = require( 'DOT/Vector2' );
+import Vector2 from '../../../../dot/js/Vector2.js';
+import merge from '../../../../phet-core/js/merge.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-  class BodyConfiguration {
+class BodyConfiguration {
 
-    /**
-     * @param {number} mass
-     * @param {number} radius
-     * @param {number} x
-     * @param {number} y
-     * @param {number} vx
-     * @param {number} vy
-     * @param {Object} [options]
-     */
-    constructor( mass, radius, x, y, vx, vy, options ) {
+  /**
+   * @param {number} mass
+   * @param {number} radius
+   * @param {number} x
+   * @param {number} y
+   * @param {number} vx
+   * @param {number} vy
+   * @param {Object} [options]
+   */
+  constructor( mass, radius, x, y, vx, vy, options ) {
 
-      options = merge( {
-        rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
-      }, options );
-
-      // @public
-      this.isMovable = true; // True if the object moves based on physics (even non-isMovable things can be dragged though)
-      this.mass = mass;
-      this.radius = radius;
-      this.x = x;
-      this.y = y;
-      this.vx = vx;
-      this.vy = vy;
-      this.rotationPeriod = options.rotationPeriod;
-    }
+    options = merge( {
+      rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
+    }, options );
 
     // @public
-    getMomentum() {
-      return new Vector2( this.vx * this.mass, this.vy * this.mass );
-    }
+    this.isMovable = true; // True if the object moves based on physics (even non-isMovable things can be dragged though)
+    this.mass = mass;
+    this.radius = radius;
+    this.x = x;
+    this.y = y;
+    this.vx = vx;
+    this.vy = vy;
+    this.rotationPeriod = options.rotationPeriod;
   }
 
-  return gravityAndOrbits.register( 'BodyConfiguration', BodyConfiguration );
-} );
+  // @public
+  getMomentum() {
+    return new Vector2( this.vx * this.mass, this.vy * this.mass );
+  }
+}
+
+gravityAndOrbits.register( 'BodyConfiguration', BodyConfiguration );
+export default BodyConfiguration;

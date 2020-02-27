@@ -5,51 +5,50 @@
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const AquaRadioButton = require( 'SUN/AquaRadioButton' );
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const GravityAndOrbitsColorProfile = require( 'GRAVITY_AND_ORBITS/common/GravityAndOrbitsColorProfile' );
-  const gravityString = require( 'string!GRAVITY_AND_ORBITS/gravity' );
-  const HBox = require( 'SCENERY/nodes/HBox' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Node = require( 'SCENERY/nodes/Node' );
-  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  const Text = require( 'SCENERY/nodes/Text' );
+import merge from '../../../../phet-core/js/merge.js';
+import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import HBox from '../../../../scenery/js/nodes/HBox.js';
+import Node from '../../../../scenery/js/nodes/Node.js';
+import Text from '../../../../scenery/js/nodes/Text.js';
+import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
+import gravityAndOrbitsStrings from '../../gravity-and-orbits-strings.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
+import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
-  // strings
-  const offString = require( 'string!GRAVITY_AND_ORBITS/off' );
-  const onString = require( 'string!GRAVITY_AND_ORBITS/on' );
+const gravityString = gravityAndOrbitsStrings.gravity;
 
-  // constants
-  const FONT = new PhetFont( 14 );
-  const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty, maxWidth: 50 };
-  const RADIO_OPTIONS = { radius: 7 };
+// strings
+const offString = gravityAndOrbitsStrings.off;
+const onString = gravityAndOrbitsStrings.on;
 
-  class GravityControl extends Node {
+// constants
+const FONT = new PhetFont( 14 );
+const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty, maxWidth: 50 };
+const RADIO_OPTIONS = { radius: 7 };
 
-    /**
-     * @param {Property.<boolean>} gravityEnabledProperty
-     * @param {Object} [options] - This object contains options for main node of gravity menu.
-     */
-    constructor( gravityEnabledProperty, options ) {
-      super( options );
+class GravityControl extends Node {
 
-      const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
-      const onTextNode = new Text( onString, TEXT_OPTIONS );
-      const offTextNode = new Text( offString, TEXT_OPTIONS );
+  /**
+   * @param {Property.<boolean>} gravityEnabledProperty
+   * @param {Object} [options] - This object contains options for main node of gravity menu.
+   */
+  constructor( gravityEnabledProperty, options ) {
+    super( options );
 
-      this.addChild( new HBox( {
-        spacing: 10, bottom: 2, children: [
-          gravityTextNode,
-          new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOnRadioButton' ) }, RADIO_OPTIONS ) ),
-          new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOffRadioButton' ) }, RADIO_OPTIONS ) )
-        ]
-      } ) );
-    }
+    const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
+    const onTextNode = new Text( onString, TEXT_OPTIONS );
+    const offTextNode = new Text( offString, TEXT_OPTIONS );
+
+    this.addChild( new HBox( {
+      spacing: 10, bottom: 2, children: [
+        gravityTextNode,
+        new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOnRadioButton' ) }, RADIO_OPTIONS ) ),
+        new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOffRadioButton' ) }, RADIO_OPTIONS ) )
+      ]
+    } ) );
   }
+}
 
-  return gravityAndOrbits.register( 'GravityControl', GravityControl );
-} );
+gravityAndOrbits.register( 'GravityControl', GravityControl );
+export default GravityControl;

@@ -8,128 +8,125 @@
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const BooleanProperty = require( 'AXON/BooleanProperty' );
-  const EventTimer = require( 'PHET_CORE/EventTimer' );
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const NumberProperty = require( 'AXON/NumberProperty' );
+import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
+import NumberProperty from '../../../../axon/js/NumberProperty.js';
+import EventTimer from '../../../../phet-core/js/EventTimer.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-  // constants
-  // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
-  const CLOCK_FRAME_RATE = 60;
+// constants
+// frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
+const CLOCK_FRAME_RATE = 60;
 
-  // was 1 in the Java version, but changed to account for modification of CLOCK_FRAME_RATE
-  const DAYS_PER_TICK = 1 / ( 60 / 25 );
-  const SECONDS_PER_DAY = 86400;
-  const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
+// was 1 in the Java version, but changed to account for modification of CLOCK_FRAME_RATE
+const DAYS_PER_TICK = 1 / ( 60 / 25 );
+const SECONDS_PER_DAY = 86400;
+const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
-  class GravityAndOrbitsClock {
+class GravityAndOrbitsClock {
 
-    /**
-     * @param {number} baseDTValue (multiplied by scale to obtain true dt)
-     * @param {Property.<boolean>} steppingProperty
-     * @param {Property.<number>} speedTypeProperty
-     * @param {Tandem} sceneTandem
-     * @param {Tandem} tandem
-     */
-    constructor( baseDTValue, steppingProperty, speedTypeProperty, sceneTandem, tandem ) {
+  /**
+   * @param {number} baseDTValue (multiplied by scale to obtain true dt)
+   * @param {Property.<boolean>} steppingProperty
+   * @param {Property.<number>} speedTypeProperty
+   * @param {Tandem} sceneTandem
+   * @param {Tandem} tandem
+   */
+  constructor( baseDTValue, steppingProperty, speedTypeProperty, sceneTandem, tandem ) {
 
-      // @public (read-only)
-      this.baseDTValue = baseDTValue;
-
-      // @public
-      this.isRunningProperty = new BooleanProperty( false, {
-        tandem: tandem.createTandem( 'isRunningProperty' ),
-        phetioDocumentation: `This value is true when '${sceneTandem.phetioID}' is the active scene AND the sim is playing (isPlayingProperty is 'true').`
-      } );
-      this.timeProperty = new NumberProperty( 0, {
-        tandem: tandem.createTandem( 'timeProperty' ),
-        units: 'seconds'
-      } );
-      this.dt = baseDTValue;
-      this.steppingProperty = steppingProperty;
-
-      // @public
-      this.speedTypeProperty = speedTypeProperty;
-
-      // Fraction between old state=0 and new state=1
-      this.interpolationRatio = 1;
-    }
-
-    /**
-     * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
-     *
-     * @returns {number}
-     */
-    stepClockWhilePaused() {
-
-      // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
-      // application specific logic
-      this.steppingProperty.set( true );
-
-      // Uses 1x dt for replicable trajectories, see https://github.com/phetsims/gravity-and-orbits/issues/253
-      this.step( 1 / CLOCK_FRAME_RATE );
-      this.steppingProperty.set( false );
-    }
-
-    /**
-     * Set whether or not the model should be running.
-     *
-     * @param  {boolean} running
-     */
-    setRunning( running ) {
-      this.isRunningProperty.set( running );
-    }
-
-    /**
-     * Set the clock time.
-     *
-     * @param  {number} time description
-     */
-    setSimulationTime( time ) {
-      this.timeProperty.set( time );
-    }
+    // @public (read-only)
+    this.baseDTValue = baseDTValue;
 
     // @public
-    getSimulationTime() {
-      return this.timeProperty.get();
-    }
+    this.isRunningProperty = new BooleanProperty( false, {
+      tandem: tandem.createTandem( 'isRunningProperty' ),
+      phetioDocumentation: `This value is true when '${sceneTandem.phetioID}' is the active scene AND the sim is playing (isPlayingProperty is 'true').`
+    } );
+    this.timeProperty = new NumberProperty( 0, {
+      tandem: tandem.createTandem( 'timeProperty' ),
+      units: 'seconds'
+    } );
+    this.dt = baseDTValue;
+    this.steppingProperty = steppingProperty;
 
     // @public
-    resetSimulationTime() {
-      this.timeProperty.reset();
-    }
+    this.speedTypeProperty = speedTypeProperty;
 
-    /**
-     * Add an event callback to the event timer, called every time the animation frame changes.
-     *
-     * @param  {number} stepFunction
-     */
-    addEventTimer( stepFunction ) {
-      assert && assert( !this.eventTimer, 'there can be only one event timer' );
-      this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
-    }
-
-    /**
-     * Step the simulation by dt
-     *
-     * @param  {number} dt
-     * @returns {type} description
-     */
-    step( dt ) {
-      this.eventTimer.step( dt );
-      this.interpolationRatio = this.eventTimer.getRatio();
-    }
+    // Fraction between old state=0 and new state=1
+    this.interpolationRatio = 1;
   }
 
-  // statics
-  GravityAndOrbitsClock.CLOCK_FRAME_RATE = CLOCK_FRAME_RATE;
-  GravityAndOrbitsClock.DAYS_PER_TICK = DAYS_PER_TICK;
-  GravityAndOrbitsClock.SECONDS_PER_DAY = SECONDS_PER_DAY;
-  GravityAndOrbitsClock.DEFAULT_DT = DEFAULT_DT;
+  /**
+   * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
+   *
+   * @returns {number}
+   */
+  stepClockWhilePaused() {
 
-  return gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
-} );
+    // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
+    // application specific logic
+    this.steppingProperty.set( true );
+
+    // Uses 1x dt for replicable trajectories, see https://github.com/phetsims/gravity-and-orbits/issues/253
+    this.step( 1 / CLOCK_FRAME_RATE );
+    this.steppingProperty.set( false );
+  }
+
+  /**
+   * Set whether or not the model should be running.
+   *
+   * @param  {boolean} running
+   */
+  setRunning( running ) {
+    this.isRunningProperty.set( running );
+  }
+
+  /**
+   * Set the clock time.
+   *
+   * @param  {number} time description
+   */
+  setSimulationTime( time ) {
+    this.timeProperty.set( time );
+  }
+
+  // @public
+  getSimulationTime() {
+    return this.timeProperty.get();
+  }
+
+  // @public
+  resetSimulationTime() {
+    this.timeProperty.reset();
+  }
+
+  /**
+   * Add an event callback to the event timer, called every time the animation frame changes.
+   *
+   * @param  {number} stepFunction
+   */
+  addEventTimer( stepFunction ) {
+    assert && assert( !this.eventTimer, 'there can be only one event timer' );
+    this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
+  }
+
+  /**
+   * Step the simulation by dt
+   *
+   * @param  {number} dt
+   * @returns {type} description
+   */
+  step( dt ) {
+    this.eventTimer.step( dt );
+    this.interpolationRatio = this.eventTimer.getRatio();
+  }
+}
+
+// statics
+GravityAndOrbitsClock.CLOCK_FRAME_RATE = CLOCK_FRAME_RATE;
+GravityAndOrbitsClock.DAYS_PER_TICK = DAYS_PER_TICK;
+GravityAndOrbitsClock.SECONDS_PER_DAY = SECONDS_PER_DAY;
+GravityAndOrbitsClock.DEFAULT_DT = DEFAULT_DT;
+
+gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
+export default GravityAndOrbitsClock;

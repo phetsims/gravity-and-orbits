@@ -5,16 +5,12 @@
  *
  * @author Sam Reid (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const Enumeration = require( 'PHET_CORE/Enumeration' );
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
+import Enumeration from '../../../../phet-core/js/Enumeration.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-  return gravityAndOrbits.register( 'SpeedType', Enumeration.byKeys( [
-    'SLOW_MOTION',
-    'NORMAL',
-    'FAST_FORWARD'
-  ] ) );
-} );
+export default gravityAndOrbits.register( 'SpeedType', Enumeration.byKeys( [
+  'SLOW_MOTION',
+  'NORMAL',
+  'FAST_FORWARD'
+] ) );

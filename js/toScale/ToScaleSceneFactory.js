@@ -6,32 +6,29 @@
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const gravityAndOrbits = require( 'GRAVITY_AND_ORBITS/gravityAndOrbits' );
-  const SceneFactory = require( 'GRAVITY_AND_ORBITS/common/SceneFactory' );
+import SceneFactory from '../common/SceneFactory.js';
+import gravityAndOrbits from '../gravityAndOrbits.js';
 
-  class ToScaleSceneFactory extends SceneFactory {
+class ToScaleSceneFactory extends SceneFactory {
 
-    /**
-     * @param {GravityAndOrbitsModel} model
-     * @param {Tandem} modelTandem
-     * @param {Tandem} viewTandem
-     */
-    constructor( model, modelTandem, viewTandem ) {
-      super(
-        model,
-        new SceneFactory.SunEarthModeConfig(),
-        new SceneFactory.SunEarthMoonModeConfig(),
-        new SceneFactory.EarthMoonModeConfig(),
-        new SceneFactory.EarthSpaceStationModeConfig(),
-        modelTandem,
-        viewTandem
-      );
-    }
+  /**
+   * @param {GravityAndOrbitsModel} model
+   * @param {Tandem} modelTandem
+   * @param {Tandem} viewTandem
+   */
+  constructor( model, modelTandem, viewTandem ) {
+    super(
+      model,
+      new SceneFactory.SunEarthModeConfig(),
+      new SceneFactory.SunEarthMoonModeConfig(),
+      new SceneFactory.EarthMoonModeConfig(),
+      new SceneFactory.EarthSpaceStationModeConfig(),
+      modelTandem,
+      viewTandem
+    );
   }
+}
 
-  return gravityAndOrbits.register( 'ToScaleSceneFactory', ToScaleSceneFactory );
-} );
+gravityAndOrbits.register( 'ToScaleSceneFactory', ToScaleSceneFactory );
+export default ToScaleSceneFactory;
