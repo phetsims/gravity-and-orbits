@@ -274,32 +274,6 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<ScreenIO>"
     },
-    "gravityAndOrbits.general.model.soundManager.enabledProperty": {
-      "phetioDocumentation": "If the sim contains sound, then this Property will toggle whether sound is enabled or disabled.",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": true,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
-    "gravityAndOrbits.general.model.soundManager.enhancedSoundEnabledProperty": {
-      "phetioDocumentation": "If the sim contains sound, then this Property will toggle whether \"enhanced\" sound is enabled or disabled. Note that not all simulations that support sound also support enhanced sound.",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": true,
-      "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
-    },
     "gravityAndOrbits.general.model.stepSimulationAction": {
       "phetioDocumentation": "A function that steps time forward. The arguments are:<br/><ol><li>dt: NumberIO - The amount of time stepped in each call, in seconds.</li></ol>",
       "phetioDynamicElement": false,
@@ -2174,6 +2148,45 @@ window.phet.phetio.phetioElementsBaseline = assert &&
     },
     "gravityAndOrbits.general.view.navigationBar.toScaleScreenButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.general.view.soundManager": {
+      "phetioDocumentation": "Controls the simulation's sound. Note that this only applies to sims that support sound.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ObjectIO"
+    },
+    "gravityAndOrbits.general.view.soundManager.enabledProperty": {
+      "phetioDocumentation": "If the sim contains sound, then this Property will toggle whether sound is enabled or disabled.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": true,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.general.view.soundManager.enhancedSoundEnabledProperty": {
+      "phetioDocumentation": "If the sim contains sound, then this Property will toggle whether \"enhanced\" sound is enabled or disabled. Note that not all simulations that support sound also support enhanced sound.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
