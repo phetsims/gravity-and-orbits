@@ -99,8 +99,7 @@ class BodyNode extends Node {
     // for garbage collection and so that anonymous closures are not necessary
     // through multilink
     this.positionListener = ( position, modelViewTransform ) => {
-      const blended = body.previousPosition.blend( body.positionProperty.value, clock.interpolationRatio );
-      this.setTranslation( modelViewTransform.modelToViewPosition( blended ) );
+      this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
     };
     Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
