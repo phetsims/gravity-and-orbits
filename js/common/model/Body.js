@@ -187,6 +187,7 @@ class Body {
       phetioType: PropertyIO( Vector2IO ),
       tandem: tandem.createTandem( 'positionProperty' ),
       units: 'm',
+      phetioHighFrequency: true,
       phetioDocumentation: 'The position of the body'
     } );
 
@@ -195,6 +196,7 @@ class Body {
       phetioType: PropertyIO( Vector2IO ),
       tandem: tandem.createTandem( 'velocityProperty' ),
       units: 'm/s',
+      phetioHighFrequency: true,
       phetioDocumentation: 'The speed and direction of motion of the body'
     } );
 
@@ -203,6 +205,7 @@ class Body {
       phetioType: DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'speedProperty' ),
       units: 'm/s',
+      phetioHighFrequency: true,
       phetioDocumentation: 'The speed of the body'
     } );
 
@@ -211,6 +214,7 @@ class Body {
       phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
       phetioType: PropertyIO( Vector2IO ),
       tandem: tandem.createTandem( 'forceProperty' ),
+      phetioHighFrequency: true,
       units: 'N'
     } );
 
@@ -219,6 +223,7 @@ class Body {
       phetioDocumentation: 'The magnitude of the net force on this body by other bodies',
       phetioType: DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'forceMagnitudeProperty' ),
+      phetioHighFrequency: true,
       units: 'N'
     } );
 
@@ -243,6 +248,7 @@ class Body {
       tandem: tandem.createTandem( 'rotationProperty' ),
       phetioType: PropertyIO( NumberIO ),
       units: 'radians',
+      phetioHighFrequency: true,
       phetioDocumentation: 'The rotation of the body about its own origin'
     } );
 

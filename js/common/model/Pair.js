@@ -31,6 +31,7 @@ class Pair {
     ], ( body1Position, body2Position ) => body2Position.distance( body1Position ), {
       tandem: tandem.createTandem( 'distanceProperty' ),
       phetioType: DerivedPropertyIO( NumberIO ),
+      phetioHighFrequency: true,
       units: 'm'
     } );
   }

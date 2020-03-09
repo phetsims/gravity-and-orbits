@@ -44,6 +44,7 @@ class GravityAndOrbitsClock {
     } );
     this.timeProperty = new NumberProperty( 0, {
       tandem: tandem.createTandem( 'timeProperty' ),
+      phetioHighFrequency: true,
       units: 'seconds'
     } );
     this.dt = baseDTValue;
