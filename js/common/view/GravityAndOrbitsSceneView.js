@@ -27,7 +27,6 @@ import ExplosionNode from './ExplosionNode.js';
 import GrabbableVectorNode from './GrabbableVectorNode.js';
 import GridNode from './GridNode.js';
 import PathsCanvasNode from './PathsCanvasNode.js';
-import TimeControlPanel from './TimeControlPanel.js';
 import TimeCounter from './TimeCounter.js';
 import VectorNode from './VectorNode.js';
 import ZoomControl from './ZoomControl.js';
@@ -120,16 +119,6 @@ class GravityAndOrbitsSceneView extends Rectangle {
       right: STAGE_SIZE.right - 50,
       scale: 1.2
     } ) );
-
-    // Control Panel and reset all button are now added in the screen view to reduce the size of the screen graph
-
-    // Add play/pause, rewind, and step buttons
-    const timeControlPanel = new TimeControlPanel( model, bodies, tandem.createTandem( 'timeControlPanel' ), {
-      bottom: STAGE_SIZE.bottom - 10,
-      centerX: STAGE_SIZE.centerX,
-      scale: 1.5
-    } );
-    this.addChild( timeControlPanel );
 
     // Add measuring tape
     const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );

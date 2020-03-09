@@ -15,6 +15,7 @@ import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsControlPanel from './GravityAndOrbitsControlPanel.js';
 import MassControlPanel from './MassControlPanel.js';
 import SpeedRadioButtons from './SpeedRadioButtons.js';
+import TimeControlPanel from './TimeControlPanel.js';
 
 // constants
 const MARGIN = 5;
@@ -91,6 +92,15 @@ class GravityAndOrbitsScreenView extends ScreenView {
         tandem: tandem.createTandem( 'speedRadioButtonGroup' )
       } )
     );
+
+    // Add play/pause, rewind, and step buttons
+    const timeControlPanel = new TimeControlPanel( model, {
+      bottom: this.layoutBounds.bottom - MARGIN,
+      centerX: this.layoutBounds.centerX - 117,
+      tandem: tandem.createTandem( 'timeControlPanel' ),
+      scale: 1.2
+    } );
+    this.addChild( timeControlPanel );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {

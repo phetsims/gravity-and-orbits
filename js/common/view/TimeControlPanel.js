@@ -14,50 +14,52 @@ import PlayPauseButton from '../../../../scenery-phet/js/buttons/PlayPauseButton
 import RewindButton from '../../../../scenery-phet/js/buttons/RewindButton.js';
 import StepForwardButton from '../../../../scenery-phet/js/buttons/StepForwardButton.js';
 import HBox from '../../../../scenery/js/nodes/HBox.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 class TimeControlPanel extends HBox {
 
   /**
    * @param {GravityAndOrbitsModel} model
-   * @param {Array.<Body>} bodies
-   * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( model, bodies, tandem, options ) {
+  constructor( model, options ) {
+
+    options = merge( {
+      spacing: 10,
+      tandem: Tandem.REQUIRED
+    }, options );
 
     const playPauseButton = new PlayPauseButton( model.isPlayingProperty, {
-      tandem: tandem.createTandem( 'playPauseButton' )
+      tandem: options.tandem.createTandem( 'playPauseButton' )
     } );
 
     const stepButton = new StepForwardButton( {
       isPlayingProperty: model.isPlayingProperty,
       listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused(),
-      tandem: tandem.createTandem( 'stepButton' )
+      tandem: options.tandem.createTandem( 'stepButton' )
     } );
 
     const rewindButton = new RewindButton( {
       enabled: false,
       listener: () => model.sceneProperty.value.rewind(),
-      tandem: tandem.createTandem( 'rewindButton' )
+      tandem: options.tandem.createTandem( 'rewindButton' )
     } );
 
-    const anyPropertyDifferentProperties = [];
-    for ( let i = 0; i < bodies.length; i++ ) {
-      anyPropertyDifferentProperties.push( bodies[ i ].anyPropertyDifferent() );
-    }
+    // Enable/disable the rewind button based on whether any Property in that scene has changed.
+    let dependencies = [ model.sceneProperty ];
+    model.getScenes().forEach( scene => {
+      dependencies = dependencies.concat( scene.getBodies().map( b => b.anyPropertyDifferent() ) );
+    } );
+    const anyPropertyDifferentProperty = new DerivedProperty( dependencies, () => {
+      const changedArray = model.sceneProperty.value.getBodies().map( body => body.anyPropertyDifferent().value );
+      return _.some( changedArray );
+    } );
+    anyPropertyDifferentProperty.link( changed => rewindButton.setEnabled( changed ) );
 
     super( merge( {
-      spacing: 10,
       children: [ rewindButton, playPauseButton, stepButton ]
     }, options ) );
-
-    // REVIEW this seems duplicated elsewhere.  Also, what is happening here?
-    const anyPropertyChanged = DerivedProperty.or( anyPropertyDifferentProperties );
-
-    // @private
-    this.propertyChangedListener = changed => rewindButton.setEnabled( changed );
-    anyPropertyChanged.link( this.propertyChangedListener );
   }
 }
 
