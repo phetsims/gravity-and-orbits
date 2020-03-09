@@ -255,7 +255,7 @@ class Body {
     // @public (read-only)
     this.isMovableProperty = new BooleanProperty( bodyConfiguration.isMovable, {
       tandem: tandem.createTandem( 'isMovableProperty' ),
-      phetioDocumentation: 'True if the body can be dragged by the user'
+      phetioDocumentation: 'If true, the body can move during the physics update.'
     } );
 
     this.density = bodyConfiguration.mass / this.getVolume(); // @public

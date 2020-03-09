@@ -2927,7 +2927,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3057,7 +3057,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3252,7 +3252,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3395,7 +3395,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3655,7 +3655,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3785,7 +3785,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3928,7 +3928,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -4136,7 +4136,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -4266,7 +4266,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19073,7 +19073,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19203,7 +19203,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19398,7 +19398,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19541,7 +19541,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19827,7 +19827,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -19957,7 +19957,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -20100,7 +20100,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -20308,7 +20308,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -20438,7 +20438,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.isMovableProperty": {
-      "phetioDocumentation": "True if the body can be dragged by the user",
+      "phetioDocumentation": "If true, the body can move during the physics update.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
