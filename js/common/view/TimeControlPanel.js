@@ -10,9 +10,8 @@
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
-import PlayPauseButton from '../../../../scenery-phet/js/buttons/PlayPauseButton.js';
 import RewindButton from '../../../../scenery-phet/js/buttons/RewindButton.js';
-import StepForwardButton from '../../../../scenery-phet/js/buttons/StepForwardButton.js';
+import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
 import HBox from '../../../../scenery/js/nodes/HBox.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -30,14 +29,10 @@ class TimeControlPanel extends HBox {
       tandem: Tandem.REQUIRED
     }, options );
 
-    const playPauseButton = new PlayPauseButton( model.isPlayingProperty, {
-      tandem: options.tandem.createTandem( 'playPauseButton' )
-    } );
-
-    const stepButton = new StepForwardButton( {
-      isPlayingProperty: model.isPlayingProperty,
-      listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused(),
-      tandem: options.tandem.createTandem( 'stepButton' )
+    const timeControlNode = new TimeControlNode( model.isPlayingProperty, {
+      playPauseStepXSpacing: 10 / 1.4,
+      scale: 1.4,
+      tandem: options.tandem.createTandem( 'timeControlNode' )
     } );
 
     const rewindButton = new RewindButton( {
@@ -58,7 +53,7 @@ class TimeControlPanel extends HBox {
     anyPropertyDifferentProperty.link( changed => rewindButton.setEnabled( changed ) );
 
     super( merge( {
-      children: [ rewindButton, playPauseButton, stepButton ]
+      children: [ rewindButton, timeControlNode ]
     }, options ) );
   }
 }
