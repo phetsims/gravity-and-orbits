@@ -9543,6 +9543,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -9568,6 +9581,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",
@@ -11727,6 +11753,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -11752,6 +11791,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",
@@ -13911,6 +13963,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -13936,6 +14001,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",
@@ -16329,6 +16407,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -16354,6 +16445,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",
@@ -25793,6 +25897,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -25818,6 +25935,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",
@@ -27977,6 +28107,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -28002,6 +28145,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",
@@ -30161,6 +30317,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -30186,6 +30355,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",
@@ -32696,6 +32878,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.measuredDistanceProperty": {
+      "phetioDocumentation": "The distance measured by the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<NumberIO>"
+    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
@@ -32721,6 +32916,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.readoutTextProperty": {
+      "phetioDocumentation": "The text content of the readout on the measuring tape",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "DerivedPropertyIO<StringIO>"
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.tipDragHandler": {
       "phetioDocumentation": "",

@@ -285,6 +285,28 @@ window.phet.phetio.phetioTypes = assert &&
       "supertype": "PropertyIO<NumberIO>",
       "typeName": "DerivedPropertyIO<NumberIO>"
     },
+    "DerivedPropertyIO<StringIO>": {
+      "documentation": "Like PropertyIO, but not settable.  Instead it is derived from other DerivedPropertyIO or PropertyIO instances",
+      "events": [
+        "changed"
+      ],
+      "methodOrder": [],
+      "methods": {
+        "setValue": {
+          "documentation": "Errors out when you try to set a derived property.",
+          "invocableForReadOnlyElements": false,
+          "parameterTypes": [
+            "StringIO"
+          ],
+          "returnType": "VoidIO"
+        }
+      },
+      "parameterTypes": [
+        "StringIO"
+      ],
+      "supertype": "PropertyIO<StringIO>",
+      "typeName": "DerivedPropertyIO<StringIO>"
+    },
     "DialogIO": {
       "documentation": "A dialog panel",
       "events": [],

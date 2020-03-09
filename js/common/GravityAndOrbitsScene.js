@@ -72,8 +72,11 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     this.activeProperty = new BooleanProperty( active );
     this.deviatedFromDefaultsProperty = new BooleanProperty( false );
-    this.measuringTapeStartPointProperty = new Property( initialMeasuringTapeLocation.p1 );
-    this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2 );
+    const measuringTapePointOptions = {
+      units: 'm'
+    };
+    this.measuringTapeStartPointProperty = new Property( initialMeasuringTapeLocation.p1, measuringTapePointOptions );
+    this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2, measuringTapePointOptions );
     this.zoomLevelProperty = new NumberProperty( 1, {
       tandem: tandem.createTandem( 'zoomLevelProperty' ),
       range: GravityAndOrbitsConstants.ZOOM_RANGE
