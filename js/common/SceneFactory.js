@@ -144,12 +144,8 @@ class SceneFactory {
     } );
     const planet1 = new Planet( model, sunEarthMoon.earth, starPlanetMoonSceneTandem.createTandem( 'planet' ) );
     const moon1 = new Moon( model,
-
-      // no room for the slider
-      false,
-
-      // so it doesn't intersect with earth mass readout
-      false,
+      false, // no room for the slider
+      false, // so it doesn't intersect with earth mass readout
       sunEarthMoon.moon,
       starPlanetMoonSceneTandem.createTandem( 'moon' ), {
         pathLengthBuffer: pathLengthBuffer
