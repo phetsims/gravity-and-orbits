@@ -52,9 +52,8 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Pair[]} pairs
    * @param {Object} [options]
    */
-  constructor( model, modeConfig, timeFormatter, iconImage,
-               velocityVectorScale, massReadoutFactory,
-               gridSpacing, tandem, sceneViewTandem, bodies, pairs, options ) {
+  constructor( model, modeConfig, timeFormatter, iconImage, velocityVectorScale, massReadoutFactory, gridSpacing, tandem,
+               sceneViewTandem, bodies, pairs, options ) {
 
     const forceScale = modeConfig.forceScale;
     const initialMeasuringTapeLocation = modeConfig.initialMeasuringTapeLocation;
