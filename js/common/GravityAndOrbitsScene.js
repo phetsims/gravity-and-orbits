@@ -43,8 +43,6 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Node} iconImage
    * @param {number} velocityVectorScale
    * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory - returns a node for the representation
-   * @param {Line} initialMeasuringTapeLocation
-   * @param {number} defaultZoomScale
    * @param {Vector2} zoomOffset
    * @param {number} gridSpacing
    * @param {Vector2} gridCenter
@@ -59,11 +57,14 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Pair[]} pairs
    */
   constructor( modeConfig, dt, timeFormatter, iconImage,
-               velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
-               defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
+               velocityVectorScale, massReadoutFactory,
+               zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
                tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs ) {
 
     const forceScale = modeConfig.forceScale;
+    const initialMeasuringTapeLocation = modeConfig.initialMeasuringTapeLocation;
+    const defaultZoomScale = modeConfig.zoom;
+
     super( {
       phetioDocumentation: 'A group of orbital masses which can be selected',
       phetioType: ReferenceIO,
