@@ -312,7 +312,7 @@ class EarthMoonModeConfig extends ModeConfig {
       this.planet.x + this.planet.radius * 2 + milesToMeters( 100000 ),
       -this.moon.y * 0.7 );
     this.forceScale = FORCE_SCALE * 45;
-    this.dt = DEFAULT_DT / 3;  // actual days // TODO: put this value in options
+    this.dt = DEFAULT_DT / 3;  // actual days
   }
 
   // @protected
@@ -345,7 +345,7 @@ class EarthSpaceStationModeConfig extends ModeConfig {
     // Sampled at runtime from MeasuringTape
     this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
     this.forceScale = FORCE_SCALE * 3E13;
-    this.dt = DEFAULT_DT * 9E-4; // TODO: put this value in options
+    this.dt = DEFAULT_DT * 9E-4;
   }
 
   // @protected
