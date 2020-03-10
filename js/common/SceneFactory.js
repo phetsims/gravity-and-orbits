@@ -122,7 +122,6 @@ class SceneFactory {
     // TODO: Too many parameters, needs to be organized, pruned, and/or turned into config.
     this.scenes.push( new GravityAndOrbitsScene(
       planetStar.forceScale,
-      false,
       planetStar.dt,
       scaledDays( planetStar.timeScale ),
       this.createIconImage( true, true, false, false ),
@@ -168,7 +167,6 @@ class SceneFactory {
     );
     this.scenes.push( new GravityAndOrbitsScene(
       sunEarthMoon.forceScale,
-      false,
       sunEarthMoon.dt,
       scaledDays( sunEarthMoon.timeScale ),
       this.createIconImage( true, true, true, false ),
@@ -205,7 +203,6 @@ class SceneFactory {
     } );
     this.scenes.push( new GravityAndOrbitsScene(
       earthMoon.forceScale,
-      false,
       ( DEFAULT_DT / 3 ), // actual days
       scaledDays( 1.0 ),
       this.createIconImage( false, true, true, false ),
@@ -239,7 +236,6 @@ class SceneFactory {
     } );
     this.scenes.push( new GravityAndOrbitsScene(
       earthSpaceStation.forceScale,
-      false,
       ( DEFAULT_DT * 9E-4 ),
       formatMinutes,
       this.createIconImage( false, true, false, true ),

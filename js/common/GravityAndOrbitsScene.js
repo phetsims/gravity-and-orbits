@@ -38,7 +38,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * Create a new GravityAndOrbitsScene that shares ModeListParameterList values with other modes
    * @param {number} forceScale
-   * @param {boolean} active
    * @param {number} dt
    * @param {function.<number, string>} timeFormatter
    * @param {Node} iconImage
@@ -59,7 +58,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Body[]} bodies
    * @param {Pair[]} pairs
    */
-  constructor( forceScale, active, dt, timeFormatter, iconImage,
+  constructor( forceScale, dt, timeFormatter, iconImage,
                velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
                tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs ) {
@@ -70,7 +69,7 @@ class GravityAndOrbitsScene extends PhetioObject {
       tandem: tandem
     } );
 
-    this.activeProperty = new BooleanProperty( active );
+    this.activeProperty = new BooleanProperty( false );
     this.deviatedFromDefaultsProperty = new BooleanProperty( false );
     const measuringTapePointOptions = {
       units: 'm'
