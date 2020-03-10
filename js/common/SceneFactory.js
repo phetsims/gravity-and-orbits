@@ -194,7 +194,6 @@ class SceneFactory {
       ], [
         new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
       ], {
-        zoomOffset: new Vector2( earthMoon.earth.x, 0 ),
         gridCenter: new Vector2( earthMoon.earth.x, 0 ),
         dt: DEFAULT_DT / 3  // actual days // TODO: put this value in the modeConfig
       } ) );
@@ -219,8 +218,7 @@ class SceneFactory {
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetSatelliteSceneView' ),
       [ planet3, satellite3 ],
       [ new Pair( planet3, satellite3, planetSatelliteSceneTandem.createTandem( 'planetSatellitePair' ) ) ], {
-        zoomOffset: new Vector2( earthSpaceStation.earth.x, 0 ),
-        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 ), // TODO combine with prior parameter
+        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 ),
         dt: DEFAULT_DT * 9E-4 // TODO: put this value in the modeConfig
       } ) );
   }

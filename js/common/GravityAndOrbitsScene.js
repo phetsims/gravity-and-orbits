@@ -65,12 +65,11 @@ class GravityAndOrbitsScene extends PhetioObject {
     const massControlPanelTandemName = `${tandemName}MassesControlPanel`;
 
     options = merge( {
-      zoomOffset: new Vector2( 0, 0 ), // TODO: combine, they are always the same
       gridCenter: new Vector2( 0, 0 ),
       dt: modeConfig.dt
     }, options );
-    const zoomOffset = options.zoomOffset;
     const gridCenter = options.gridCenter;
+    const zoomOffset = options.gridCenter;// TODO: combine at usage sites
     const dt = options.dt;
 
     super( {
