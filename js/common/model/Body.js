@@ -35,7 +35,7 @@ const starString = gravityAndOrbitsStrings.star;
 
 // constants
 // map the body identifier to the translatable label for the body
-// must be one of GravityAndOrbitsBodies
+// must be one of GravityAndOrbitsBodies keys
 const LABEL_MAP = {
   PLANET: planetString,
   SATELLITE: satelliteString,
@@ -49,7 +49,7 @@ const tempVector = new Vector2( 0, 0 );
 class Body {
 
   /**
-   * @param {string} name - unique name for the body, one of GravityAndOrbitsBodies, used for object identification
+   * @param {GravityAndOrbitsBodies} type - one of GravityAndOrbitsBodies, used for object identification
    * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
    * @param {Color} color
    * @param {Color} highlight
@@ -68,7 +68,7 @@ class Body {
    * @param {string} velocityVectorNodeTandemName
    * @param {Object} [options]
    */
-  constructor( name, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
+  constructor( type, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
                bodyMassControlTandemName, tandem, labelTandemName, iconTandemName, bodyNodeTandemName, gravityVectorNodeTandemName,
                velocityVectorNodeTandemName, options ) {
 
@@ -147,14 +147,14 @@ class Body {
     // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
     this.color = color; // @public (read-only)
     this.highlight = highlight; // @public (read-only)
-    this.name = name; // @public (read-only)
+    this.type = type; // @public (read-only)
 
     // @public (read-only) - period of rotation for the body in seconds
     this.rotationPeriod = options.rotationPeriod;
 
     // @public (read-only) - passed to visual labels, must be translatable
-    this.labelString = LABEL_MAP[ this.name ];
-    assert && assert( this.labelString, 'no label found for body with identifier ' + this.name );
+    this.labelString = LABEL_MAP[ this.type.name ];
+    assert && assert( this.labelString, 'no label found for body with identifier ' + this.type.name );
 
     assert && assert( renderer !== null );
 
@@ -389,7 +389,7 @@ class Body {
   addPathPoint() {
     const pathPoint = this.positionProperty.get();
     this.path.push( pathPoint );
-    this.pointAddedEmitter.emit( pathPoint, this.name );
+    this.pointAddedEmitter.emit( pathPoint, this.type );
 
     // add the length to the tracked path length
     if ( this.path.length > 2 ) {
@@ -406,7 +406,7 @@ class Body {
       const lossMagnitude = loss.magnitude;
 
       this.path.shift();
-      this.pointRemovedEmitter.emit( this.name );
+      this.pointRemovedEmitter.emit( this.type );
 
       this.modelPathLength -= lossMagnitude;
     }
@@ -414,14 +414,12 @@ class Body {
 
   /**
    * Clear the whole path of points tracking the body's trajectory.
-   *
-   * @returns {type}  description
    */
   clearPath() {
     this.path = [];
     this.pathLength = 0;
     this.modelPathLength = 0;
-    this.clearedEmitter.emit( this.name );
+    this.clearedEmitter.emit( this.type );
   }
 
   // @public
@@ -517,7 +515,7 @@ class Body {
    * @returns {string}
    */
   toString() {
-    return 'name = ' + this.name + ', mass = ' + this.massProperty.get();
+    return 'name = ' + this.type.name + ', mass = ' + this.massProperty.get();
   }
 }
 

@@ -56,7 +56,7 @@ class MassControlPanel extends Panel {
     for ( let i = 0; i < massSettableBodies.length; i++ ) {
       const sliderNode = new Node();
       const massSettableBody = massSettableBodies[ i ];
-      const label = new Text( LABEL_MAP[ massSettableBody.name ], {
+      const label = new Text( LABEL_MAP[ massSettableBody.type.name ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColorProfile.panelTextProperty,

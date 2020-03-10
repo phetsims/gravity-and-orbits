@@ -190,14 +190,14 @@ class GravityAndOrbitsPhysicsEngine {
   /**
    * Get the body associated with the name.  The name must be one of GravityAndOrbitsBodies.
    *
-   * @param  {string} name
+   * @param {GravityAndOrbitsBodies} type
    * @returns {Body|null}
    */
-  getBody( name ) {
+  getBody( type ) {
     for ( let i = 0; i < this.bodies.length; i++ ) {
       const body = this.bodies[ i ];
 
-      if ( body.name === name ) {
+      if ( body.type === type ) {
         return body;
       }
     }

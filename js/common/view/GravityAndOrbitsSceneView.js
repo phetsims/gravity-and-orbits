@@ -132,7 +132,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
       isTipDragBounded: false,
 
       // space station gets 1 sig fig, the other bodies have 0
-      significantFigures: ( bodies[ 1 ].name === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0,
+      significantFigures: ( bodies[ 1 ].type === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0,
 
       tandem: tandem.createTandem( 'measuringTapeNode' ),
       phetioComponentOptions: {
