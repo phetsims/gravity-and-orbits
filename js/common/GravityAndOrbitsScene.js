@@ -37,7 +37,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    * Create a new GravityAndOrbitsScene that shares ModeListParameterList values with other modes
-   * @param {number} forceScale
+   * @param {ModeConfig} modeConfig
    * @param {number} dt
    * @param {function.<number, string>} timeFormatter
    * @param {Node} iconImage
@@ -58,11 +58,12 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Body[]} bodies
    * @param {Pair[]} pairs
    */
-  constructor( forceScale, dt, timeFormatter, iconImage,
+  constructor( modeConfig, dt, timeFormatter, iconImage,
                velocityVectorScale, massReadoutFactory, initialMeasuringTapeLocation,
                defaultZoomScale, zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
                tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs ) {
 
+    const forceScale = modeConfig.forceScale;
     super( {
       phetioDocumentation: 'A group of orbital masses which can be selected',
       phetioType: ReferenceIO,
