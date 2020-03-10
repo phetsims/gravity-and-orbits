@@ -127,9 +127,7 @@ class SceneFactory {
       this.createIconImage( true, true, false, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
-      new Vector2( 0, 0 ),
       ( planetStar.earth.x / 2 ),
-      new Vector2( 0, 0 ),
       model,
       'starPlanetSceneButton',
       'starPlanetSceneResetButton',
@@ -170,20 +168,15 @@ class SceneFactory {
       this.createIconImage( true, true, true, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
-      new Vector2( 0, 0 ),
       ( sunEarthMoon.earth.x / 2 ),
-      new Vector2( 0, 0 ),
       model,
       'starPlanetMoonSceneButton',
       'starPlanetMoonSceneResetButton',
       'starPlanetMoonScene',
       'starPlanetMoonSceneMassesControlPanel',
       starPlanetMoonSceneTandem,
-      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetMoonSceneView' ), [
-        star1,
-        planet1,
-        moon1
-      ], [
+      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetMoonSceneView' ),
+      [ star1, planet1, moon1 ], [
         new Pair( star1, planet1, starPlanetMoonSceneTandem.createTandem( 'starPlanetPair' ) ),
         new Pair( star1, moon1, starPlanetMoonSceneTandem.createTandem( 'starMoonPair' ) ),
         new Pair( planet1, moon1, starPlanetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
@@ -204,9 +197,7 @@ class SceneFactory {
       this.createIconImage( false, true, true, false ),
       ( SUN_MODES_VELOCITY_SCALE * 0.06 ),
       readoutInEarthMasses,
-      new Vector2( earthMoon.earth.x, 0 ),
       ( earthMoon.moon.y / 2 ),
-      new Vector2( earthMoon.earth.x, 0 ),
       model,
       'planetMoonSceneButton',
       'planetMoonSceneResetButton',
@@ -218,7 +209,10 @@ class SceneFactory {
         moon2
       ], [
         new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
-      ] ) );
+      ], {
+        zoomOffset: new Vector2( earthMoon.earth.x, 0 ),
+        gridCenter: new Vector2( earthMoon.earth.x, 0 )
+      } ) );
 
     const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
     const planetSatelliteSceneTandem = modelTandem.createTandem( 'planetSatelliteScene' );
@@ -235,22 +229,19 @@ class SceneFactory {
       this.createIconImage( false, true, false, true ),
       ( SUN_MODES_VELOCITY_SCALE / 10000 ),
       spaceStationMassReadoutFactory,
-      new Vector2( earthSpaceStation.earth.x, 0 ),
       ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
-      new Vector2( earthSpaceStation.earth.x, 0 ),
       model,
       'planetSatelliteSceneButton',
       'planetSatelliteSceneResetButton',
       'planetSatelliteScene',
       'planetSatelliteSceneMassesControlPanel',
       planetSatelliteSceneTandem,
-      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetSatelliteSceneView' ), [
-        planet3,
-        satellite3
-      ], [
-        new Pair( planet3, satellite3, planetSatelliteSceneTandem.createTandem( 'planetSatellitePair' ) )
-      ]
-    ) );
+      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetSatelliteSceneView' ),
+      [ planet3, satellite3 ],
+      [ new Pair( planet3, satellite3, planetSatelliteSceneTandem.createTandem( 'planetSatellitePair' ) ) ], {
+        zoomOffset: new Vector2( earthSpaceStation.earth.x, 0 ),
+        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 )
+      } ) );
   }
 
   /**

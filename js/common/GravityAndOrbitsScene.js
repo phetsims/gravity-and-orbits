@@ -20,6 +20,8 @@ import NumberProperty from '../../../axon/js/NumberProperty.js';
 import Property from '../../../axon/js/Property.js';
 import Bounds2 from '../../../dot/js/Bounds2.js';
 import Rectangle from '../../../dot/js/Rectangle.js';
+import Vector2 from '../../../dot/js/Vector2.js';
+import merge from '../../../phet-core/js/merge.js';
 import ModelViewTransform2 from '../../../phetcommon/js/view/ModelViewTransform2.js';
 import PhetioObject from '../../../tandem/js/PhetioObject.js';
 import ReferenceIO from '../../../tandem/js/types/ReferenceIO.js';
@@ -43,9 +45,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Node} iconImage
    * @param {number} velocityVectorScale
    * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory - returns a node for the representation
-   * @param {Vector2} zoomOffset
    * @param {number} gridSpacing
-   * @param {Vector2} gridCenter
    * @param {GravityAndOrbitsModel} model
    * @param {string} radioButtonTandemName
    * @param {string} resetButtonTandemName
@@ -55,15 +55,23 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Tandem} sceneViewTandem
    * @param {Body[]} bodies
    * @param {Pair[]} pairs
+   * @param {Object} [options]
    */
   constructor( modeConfig, dt, timeFormatter, iconImage,
                velocityVectorScale, massReadoutFactory,
-               zoomOffset, gridSpacing, gridCenter, model, radioButtonTandemName, resetButtonTandemName,
-               tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs ) {
+               gridSpacing, model, radioButtonTandemName, resetButtonTandemName,
+               tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs, options ) {
 
     const forceScale = modeConfig.forceScale;
     const initialMeasuringTapeLocation = modeConfig.initialMeasuringTapeLocation;
     const defaultZoomScale = modeConfig.zoom;
+
+    options = merge( {
+      zoomOffset: new Vector2( 0, 0 ), // TODO: combine, they are always the same
+      gridCenter: new Vector2( 0, 0 )
+    }, options );
+    const zoomOffset = options.zoomOffset;
+    const gridCenter = options.gridCenter;
 
     super( {
       phetioDocumentation: 'A group of orbital masses which can be selected',
