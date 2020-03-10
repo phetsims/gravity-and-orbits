@@ -69,7 +69,6 @@ class GravityAndOrbitsScene extends PhetioObject {
       adjustMoonOrbit: false
     }, options );
     const gridCenter = options.gridCenter;
-    const zoomOffset = options.gridCenter;// TODO: combine at usage sites
     const dt = options.dt;
 
     super( {
@@ -114,9 +113,9 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.massReadoutFactory = massReadoutFactory;
 
     this.modelBoundsProperty = new Property(); // @public - needed for movableDragHandler bounds
-    this.transformProperty = new Property( this.createTransform( defaultZoomScale, zoomOffset ) ); // @public
+    this.transformProperty = new Property( this.createTransform( defaultZoomScale, gridCenter ) ); // @public
 
-    this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, zoomOffset ) ) );
+    this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );
 
     // @private
     const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.speedTypeProperty, tandem, tandem.createTandem( 'clock' ) );
@@ -138,13 +137,13 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * Create the transform from model coordinates to stage coordinates
    *
-   * @param defaultZoomScale
-   * @param zoomOffset
+   * @param {number} defaultZoomScale
+   * @param {Vector2} gridCenter
    * @returns {ModelViewTransform2}
    * @private
    */
-  createTransform( defaultZoomScale, zoomOffset ) {
-    const targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), zoomOffset );
+  createTransform( defaultZoomScale, gridCenter ) {
+    const targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
     const minX = targetRectangle.x;
     const minY = targetRectangle.y;
     const maxX = targetRectangle.x + targetRectangle.width;
