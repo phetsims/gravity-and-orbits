@@ -128,12 +128,9 @@ class SceneFactory {
       readoutInEarthMasses,
       planetStar.earth.x / 2,
       starPlanetSceneTandem,
-      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetSceneView' ), [
-        star0,
-        planet0
-      ], [
-        new Pair( star0, planet0, starPlanetSceneTandem.createTandem( 'starPlanetPair' ) )
-      ] ) );
+      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetSceneView' ),
+      [ star0, planet0 ],
+      [ new Pair( star0, planet0, starPlanetSceneTandem.createTandem( 'starPlanetPair' ) ) ] ) );
 
     // increase moon path length so that it fades away with other bodies
     // in model coordinates (at default orbit)
@@ -184,12 +181,9 @@ class SceneFactory {
       readoutInEarthMasses,
       earthMoon.moon.y / 2,
       planetMoonSceneTandem,
-      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetMoonSceneView' ), [
-        planet2,
-        moon2
-      ], [
-        new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
-      ], {
+      viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetMoonSceneView' ),
+      [ planet2, moon2 ],
+      [ new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) ) ], {
         gridCenter: new Vector2( earthMoon.earth.x, 0 ),
         dt: DEFAULT_DT / 3  // actual days // TODO: put this value in the modeConfig
       } ) );
