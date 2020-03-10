@@ -18,7 +18,7 @@ const GravityAndOrbitsConstants = {
 
   // these constants were originally in SceneFactory, but needed to be factor out because of a circular dependency
   EARTH_MASS: 5.9736E24,
-  SPACE_STATION_MASS: 369914,
+  SPACE_STATION_MASS: 419725,
 
   CONTROL_PANEL_STROKE: CONTROL_PANEL_STROKE,
   PANEL_X_MARGIN: PANEL_X_MARGIN,

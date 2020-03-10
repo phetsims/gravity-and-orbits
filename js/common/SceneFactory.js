@@ -65,7 +65,7 @@ const MOON_X = EARTH_PERIHELION;
 const MOON_Y = MOON_PERIGEE;
 
 // see http://en.wikipedia.org/wiki/International_Space_Station
-const SPACE_STATION_RADIUS = 109;
+const SPACE_STATION_RADIUS = 91/2;
 const SPACE_STATION_MASS = GravityAndOrbitsConstants.SPACE_STATION_MASS;
 const SPACE_STATION_SPEED = 7706;
 const SPACE_STATION_PERIGEE = 347000;
@@ -336,8 +336,8 @@ class EarthSpaceStationModeConfig extends ModeConfig {
     super( 21600 );
 
     // @public
-    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
-    this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
+    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 ); // TODO: rename planet
+    this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS, // TODO: Rename satellite
       SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
         rotationPeriod: options.spaceStationRotationPeriod
       } );
@@ -415,7 +415,7 @@ class Satellite extends Body {
    */
   constructor( model, earthSpaceStation, tandem, options ) {
     options = merge( {
-      diameterScale: 1000
+      // diameterScale: 1000
     }, options );
 
     super(
