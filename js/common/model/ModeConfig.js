@@ -26,9 +26,11 @@ class ModeConfig {
     this.dt = DEFAULT_DT; // @public
     this.zoom = zoom; // @public
 
-    // TODO: explain these better or delete them
-    this.initialMeasuringTapeLocation = null; // @public
-    this.forceScale = null; // @protected
+    // @public {Line} - Initial start and end point of the measuring tape
+    this.initialMeasuringTapeLocation = null;
+
+    // @protected
+    this.forceScale = null;
   }
 
   // @public

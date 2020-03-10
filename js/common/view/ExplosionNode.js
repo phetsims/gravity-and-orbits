@@ -20,7 +20,7 @@ class ExplosionNode extends Node {
 
   /**
    * @param {Body} body
-   * @param {Property.<ModelViewTransform>} modelViewTransformProperty
+   * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    */
   constructor( body, modelViewTransformProperty ) {
     super();

@@ -19,7 +19,7 @@ class GridNode extends Node {
 
   /**
    * Constructor for GridNode
-   * @param {Property.<ModelViewTransform>} transformProperty
+   * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {number} spacing - spacing between grid lines
    * @param {Vector2} center - center of the grid
    * @param {number} numGridLines - number grid lines on each side of the center
@@ -58,7 +58,6 @@ class GridNode extends Node {
       path.shape = transformProperty.get().modelToViewShape( shape );
     } );
   }
-
 }
 
 gravityAndOrbits.register( 'GridNode', GridNode );

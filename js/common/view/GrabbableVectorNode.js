@@ -22,7 +22,7 @@ class GrabbableVectorNode extends VectorNode {
   /**
    * Constructor for GrabbableVectorNode
    * @param {Body} body
-   * @param {Property.<ModelViewTransform>} transformProperty
+   * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {Property.<boolean>} visibleProperty
    * @param {Property.<Vector2>} vectorProperty
    * @param {number} scale
