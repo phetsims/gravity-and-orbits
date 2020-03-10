@@ -48,7 +48,6 @@ const ourSunString = gravityAndOrbitsStrings.ourSun;
 const pattern0Value1UnitsString = gravityAndOrbitsStrings.pattern[ '0value' ][ '1units' ];
 const spaceStationString = gravityAndOrbitsStrings.spaceStation;
 
-
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.
 const SUN_RADIUS = 6.955E8; // km
@@ -122,7 +121,6 @@ class SceneFactory {
     // TODO: Too many parameters, needs to be organized, pruned, and/or turned into config.
     this.scenes.push( new GravityAndOrbitsScene(
       planetStar,
-      planetStar.dt,
       scaledDays( planetStar.timeScale ),
       this.createIconImage( true, true, false, false ),
       SUN_MODES_VELOCITY_SCALE,
@@ -163,7 +161,6 @@ class SceneFactory {
     );
     this.scenes.push( new GravityAndOrbitsScene(
       sunEarthMoon,
-      sunEarthMoon.dt,
       scaledDays( sunEarthMoon.timeScale ),
       this.createIconImage( true, true, true, false ),
       SUN_MODES_VELOCITY_SCALE,
@@ -192,7 +189,6 @@ class SceneFactory {
     } );
     this.scenes.push( new GravityAndOrbitsScene(
       earthMoon,
-      ( DEFAULT_DT / 3 ), // actual days
       scaledDays( 1.0 ),
       this.createIconImage( false, true, true, false ),
       ( SUN_MODES_VELOCITY_SCALE * 0.06 ),
@@ -211,7 +207,8 @@ class SceneFactory {
         new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
       ], {
         zoomOffset: new Vector2( earthMoon.earth.x, 0 ),
-        gridCenter: new Vector2( earthMoon.earth.x, 0 )
+        gridCenter: new Vector2( earthMoon.earth.x, 0 ),
+        dt: DEFAULT_DT / 3  // actual days // TODO: put this value in the modeConfig
       } ) );
 
     const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
@@ -224,7 +221,6 @@ class SceneFactory {
     } );
     this.scenes.push( new GravityAndOrbitsScene(
       earthSpaceStation,
-      ( DEFAULT_DT * 9E-4 ),
       formatMinutes,
       this.createIconImage( false, true, false, true ),
       ( SUN_MODES_VELOCITY_SCALE / 10000 ),
@@ -240,7 +236,8 @@ class SceneFactory {
       [ planet3, satellite3 ],
       [ new Pair( planet3, satellite3, planetSatelliteSceneTandem.createTandem( 'planetSatellitePair' ) ) ], {
         zoomOffset: new Vector2( earthSpaceStation.earth.x, 0 ),
-        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 )
+        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 ), // TODO combine with prior parameter
+        dt: DEFAULT_DT * 9E-4 // TODO: put this value in the modeConfig
       } ) );
   }
 
