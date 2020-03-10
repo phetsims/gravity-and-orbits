@@ -18,7 +18,7 @@ class BodyState {
    * @param {Vector2} acceleration - in m/s^2
    * @param {number} mass - in kg
    * @param {boolean} exploded
-   * @param {number} rotation - in seconds // TODO this is wrong
+   * @param {number} rotation - The rotation of the body about its own origin in radians
    * @param {number} rotationPeriod - in seconds
    */
   constructor( body, position, velocity, acceleration, mass, exploded, rotation, rotationPeriod ) {
