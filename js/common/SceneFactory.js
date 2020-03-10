@@ -335,8 +335,8 @@ class EarthSpaceStationModeConfig extends ModeConfig {
     super( 21600 );
 
     // @public
-    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 ); // TODO: rename planet
-    this.satellite = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS, // TODO: Rename satellite
+    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
+    this.satellite = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
       SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
         rotationPeriod: options.spaceStationRotationPeriod
       } );
