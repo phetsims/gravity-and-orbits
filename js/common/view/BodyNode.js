@@ -87,17 +87,8 @@ class BodyNode extends Node {
     } );
     this.addInputListener( dragHandler );
 
-    // TODO: What's all this commented code about?
-    // rotate the node with the rotation property
-    // const rotationListener = function( rotation ) {
-    //   if ( this.body.mass)
-    //   this.bodyRenderer.rotation = rotation;
-    // };
-    // body.rotationProperty.link( rotationListener );
-
-    // create position and diameter listeners so that they can be unlinked
-    // for garbage collection and so that anonymous closures are not necessary
-    // through multilink
+    // create position and diameter listeners so that they can be unlinked for garbage collection and so that anonymous
+    // closures are not necessary through multilink
     this.positionListener = ( position, modelViewTransform ) => {
       this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
     };
