@@ -55,7 +55,7 @@ class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
   constructor() {
     super();
     this.sun.radius *= SUN_RADIUS_MULTIPLIER;
-    this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+    this.planet.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
 
     // Sun shouldn't move in model modes
     this.sun.isMovable = false;
@@ -71,11 +71,11 @@ class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
   constructor() {
     super();
     this.sun.radius *= SUN_RADIUS_MULTIPLIER;
-    this.earth.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
+    this.planet.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
     this.moon.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
 
     this.moon.vx *= 21;
-    this.moon.y = this.earth.radius * 1.7;
+    this.moon.y = this.planet.radius * 1.7;
 
     // Sun shouldn't move in model modes
     this.sun.isMovable = false;
@@ -90,7 +90,7 @@ class EarthMoonModeConfig extends SceneFactory.EarthMoonModeConfig {
     super( { moonRotationPeriod: daysToSeconds( 27.322 ) } );
 
     const radiusMultiplier = 15; // tuned by hand
-    this.earth.radius *= radiusMultiplier;
+    this.planet.radius *= radiusMultiplier;
     this.moon.radius *= radiusMultiplier;
 
     // so that default gravity force takes up 1/2 cell in grid
@@ -108,8 +108,8 @@ class EarthSpaceStationModeConfig extends SceneFactory.EarthSpaceStationModeConf
     super();
 
     // tuned by hand
-    this.earth.radius *= 0.8;
-    this.spaceStation.radius *= 8;
+    this.planet.radius *= 0.8;
+    this.satellite.radius *= 8;
   }
 }
 

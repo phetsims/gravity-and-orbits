@@ -116,7 +116,7 @@ class SceneFactory {
     const star0 = new Star( model, planetStar.sun, starPlanetSceneTandem.createTandem( 'star' ), {
       maxPathLength: 345608942000 // in km
     } );
-    const planet0 = new Planet( model, planetStar.earth, starPlanetSceneTandem.createTandem( 'planet' ) );
+    const planet0 = new Planet( model, planetStar.planet, starPlanetSceneTandem.createTandem( 'planet' ) );
 
     this.scenes.push( new GravityAndOrbitsScene(
       model,
@@ -125,7 +125,7 @@ class SceneFactory {
       this.createIconImage( true, true, false, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
-      planetStar.earth.x / 2,
+      planetStar.planet.x / 2,
       starPlanetSceneTandem,
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetSceneView' ),
       [ star0, planet0 ],
@@ -138,7 +138,7 @@ class SceneFactory {
     const star1 = new Star( model, sunEarthMoon.sun, starPlanetMoonSceneTandem.createTandem( 'star' ), {
       maxPathLength: 345608942000 // in km
     } );
-    const planet1 = new Planet( model, sunEarthMoon.earth, starPlanetMoonSceneTandem.createTandem( 'planet' ) );
+    const planet1 = new Planet( model, sunEarthMoon.planet, starPlanetMoonSceneTandem.createTandem( 'planet' ) );
     const moon1 = new Moon( model,
       false, // no room for the slider
       false, // so it doesn't intersect with earth mass readout
@@ -154,7 +154,7 @@ class SceneFactory {
       this.createIconImage( true, true, true, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
-      sunEarthMoon.earth.x / 2,
+      sunEarthMoon.planet.x / 2,
       starPlanetMoonSceneTandem,
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetMoonSceneView' ),
       [ star1, planet1, moon1 ], [
@@ -166,11 +166,11 @@ class SceneFactory {
       } ) );
 
     const planetMoonSceneTandem = modelTandem.createTandem( 'planetMoonScene' );
-    const planet2 = new Planet( model, earthMoon.earth, planetMoonSceneTandem.createTandem( 'planet' ), {
-      orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y )
+    const planet2 = new Planet( model, earthMoon.planet, planetMoonSceneTandem.createTandem( 'planet' ), {
+      orbitalCenter: new Vector2( earthMoon.planet.x, earthMoon.planet.y )
     } );
     const moon2 = new Moon( model, true, true, earthMoon.moon, planetMoonSceneTandem.createTandem( 'moon' ), {
-      orbitalCenter: new Vector2( earthMoon.earth.x, earthMoon.earth.y ),
+      orbitalCenter: new Vector2( earthMoon.planet.x, earthMoon.planet.y ),
       rotationPeriod: earthMoon.moon.rotationPeriod
     } );
     this.scenes.push( new GravityAndOrbitsScene(
@@ -185,16 +185,16 @@ class SceneFactory {
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetMoonSceneView' ),
       [ planet2, moon2 ],
       [ new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) ) ], {
-        gridCenter: new Vector2( earthMoon.earth.x, 0 )
+        gridCenter: new Vector2( earthMoon.planet.x, 0 )
       } ) );
 
     const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
     const planetSatelliteSceneTandem = modelTandem.createTandem( 'planetSatelliteScene' );
-    const planet3 = new Planet( model, earthSpaceStation.earth, planetSatelliteSceneTandem.createTandem( 'planet' ), {
+    const planet3 = new Planet( model, earthSpaceStation.planet, planetSatelliteSceneTandem.createTandem( 'planet' ), {
       maxPathLength: 35879455 // in km
     } );
     const satellite3 = new Satellite( model, earthSpaceStation, planetSatelliteSceneTandem.createTandem( 'satellite' ), {
-      rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
+      rotationPeriod: earthSpaceStation.satellite.rotationPeriod
     } );
     this.scenes.push( new GravityAndOrbitsScene(
       model,
@@ -203,12 +203,12 @@ class SceneFactory {
       this.createIconImage( false, true, false, true ),
       SUN_MODES_VELOCITY_SCALE / 10000,
       spaceStationMassReadoutFactory,
-      earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x,
+      earthSpaceStation.satellite.x - earthSpaceStation.planet.x,
       planetSatelliteSceneTandem,
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetSatelliteSceneView' ),
       [ planet3, satellite3 ],
       [ new Pair( planet3, satellite3, planetSatelliteSceneTandem.createTandem( 'planetSatellitePair' ) ) ], {
-        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 )
+        gridCenter: new Vector2( earthSpaceStation.planet.x, 0 )
       } ) );
   }
 
@@ -246,19 +246,19 @@ class SunEarthModeConfig extends ModeConfig {
 
     // @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
-    this.earth = new BodyConfiguration(
+    this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.initialMeasuringTapeLocation = new Line(
-      ( this.sun.x + this.earth.x ) / 3,
-      -this.earth.x / 2,
-      ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
-      -this.earth.x / 2 );
+      ( this.sun.x + this.planet.x ) / 3,
+      -this.planet.x / 2,
+      ( this.sun.x + this.planet.x ) / 3 + milesToMeters( 50000000 ),
+      -this.planet.x / 2 );
     this.forceScale = FORCE_SCALE * 120;
   }
 
   // @protected
   getBodies() {
-    return [ this.sun, this.earth ];
+    return [ this.sun, this.planet ];
   }
 }
 
@@ -269,21 +269,21 @@ class SunEarthMoonModeConfig extends ModeConfig {
     super( 1.25 );
     // @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
-    this.earth = new BodyConfiguration(
+    this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.moon = new BodyConfiguration(
       MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.initialMeasuringTapeLocation = new Line(
-      ( this.sun.x + this.earth.x ) / 3,
-      -this.earth.x / 2,
-      ( this.sun.x + this.earth.x ) / 3 + milesToMeters( 50000000 ),
-      -this.earth.x / 2 );
+      ( this.sun.x + this.planet.x ) / 3,
+      -this.planet.x / 2,
+      ( this.sun.x + this.planet.x ) / 3 + milesToMeters( 50000000 ),
+      -this.planet.x / 2 );
     this.forceScale = FORCE_SCALE * 120;
   }
 
   // @protected
   getBodies() {
-    return [ this.sun, this.earth, this.moon ];
+    return [ this.sun, this.planet, this.moon ];
   }
 }
 
@@ -302,14 +302,14 @@ class EarthMoonModeConfig extends ModeConfig {
     super( 400 );
 
     // @public
-    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
+    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0, {
       rotationPeriod: options.moonRotationPeriod
     } );
     this.initialMeasuringTapeLocation = new Line(
-      this.earth.x + this.earth.radius * 2,
+      this.planet.x + this.planet.radius * 2,
       -this.moon.y * 0.7,
-      this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ),
+      this.planet.x + this.planet.radius * 2 + milesToMeters( 100000 ),
       -this.moon.y * 0.7 );
     this.forceScale = FORCE_SCALE * 45;
     this.dt = DEFAULT_DT / 3;  // actual days // TODO: put this value in options
@@ -317,7 +317,7 @@ class EarthMoonModeConfig extends ModeConfig {
 
   // @protected
   getBodies() {
-    return [ this.earth, this.moon ];
+    return [ this.planet, this.moon ];
   }
 }
 
@@ -335,8 +335,8 @@ class EarthSpaceStationModeConfig extends ModeConfig {
     super( 21600 );
 
     // @public
-    this.earth = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 ); // TODO: rename planet
-    this.spaceStation = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS, // TODO: Rename satellite
+    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 ); // TODO: rename planet
+    this.satellite = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS, // TODO: Rename satellite
       SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
         rotationPeriod: options.spaceStationRotationPeriod
       } );
@@ -350,7 +350,7 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 
   // @protected
   getBodies() {
-    return [ this.earth, this.spaceStation ];
+    return [ this.planet, this.satellite ];
   }
 }
 
@@ -418,12 +418,12 @@ class Satellite extends Body {
 
     super(
       GravityAndOrbitsBodies.SATELLITE,
-      earthSpaceStation.spaceStation,
+      earthSpaceStation.satellite,
       Color.gray,
       Color.white,
       getImageRenderer( spaceStationImage ),
       ( -Math.PI / 4 ),
-      earthSpaceStation.spaceStation.mass,
+      earthSpaceStation.satellite.mass,
       spaceStationString,
       model,
       'satelliteMassControl',
