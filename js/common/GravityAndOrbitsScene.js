@@ -46,10 +46,6 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {number} velocityVectorScale
    * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory - returns a node for the representation
    * @param {number} gridSpacing
-   * @param {string} radioButtonTandemName
-   * @param {string} resetButtonTandemName
-   * @param {string} tandemName
-   * @param {string} massControlPanelTandemName
    * @param {Tandem} tandem
    * @param {Tandem} sceneViewTandem
    * @param {Body[]} bodies
@@ -58,12 +54,15 @@ class GravityAndOrbitsScene extends PhetioObject {
    */
   constructor( model, modeConfig, timeFormatter, iconImage,
                velocityVectorScale, massReadoutFactory,
-               gridSpacing, radioButtonTandemName, resetButtonTandemName,
-               tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs, options ) {
+               gridSpacing, tandem, sceneViewTandem, bodies, pairs, options ) {
 
     const forceScale = modeConfig.forceScale;
     const initialMeasuringTapeLocation = modeConfig.initialMeasuringTapeLocation;
     const defaultZoomScale = modeConfig.zoom;
+    const tandemName = tandem.name;
+    const radioButtonTandemName = `${tandemName}Button`;
+    const resetButtonTandemName = `${tandemName}ResetButton`;
+    const massControlPanelTandemName = `${tandemName}MassesControlPanel`;
 
     options = merge( {
       zoomOffset: new Vector2( 0, 0 ), // TODO: combine, they are always the same
