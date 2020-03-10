@@ -59,6 +59,7 @@ class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
 
     // Sun shouldn't move in model modes
     this.sun.isMovable = false;
+    this.forceScale *= 0.58; // Tuned so the default force arrow takes 1/2 grid cell
   }
 }
 
@@ -79,6 +80,8 @@ class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
 
     // Sun shouldn't move in model modes
     this.sun.isMovable = false;
+
+    this.forceScale *= 0.58; // Tuned so the default force arrow takes 1/2 grid cell
   }
 }
 
@@ -94,7 +97,7 @@ class EarthMoonModeConfig extends SceneFactory.EarthMoonModeConfig {
     this.moon.radius *= radiusMultiplier;
 
     // so that default gravity force takes up 1/2 cell in grid
-    this.forceScale *= 0.77; // TODO: check this
+    this.forceScale *= 0.79;
   }
 }
 
