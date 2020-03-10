@@ -39,13 +39,13 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    * Create a new GravityAndOrbitsScene that shares ModeListParameterList values with other modes
+   * @param {GravityAndOrbitsModel} model
    * @param {ModeConfig} modeConfig
    * @param {function.<number, string>} timeFormatter
    * @param {Node} iconImage
    * @param {number} velocityVectorScale
    * @param {function.<BodyNode, Property.<boolean>, Node>} massReadoutFactory - returns a node for the representation
    * @param {number} gridSpacing
-   * @param {GravityAndOrbitsModel} model
    * @param {string} radioButtonTandemName
    * @param {string} resetButtonTandemName
    * @param {string} tandemName
@@ -56,9 +56,9 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Pair[]} pairs
    * @param {Object} [options]
    */
-  constructor( modeConfig, timeFormatter, iconImage,
+  constructor( model, modeConfig, timeFormatter, iconImage,
                velocityVectorScale, massReadoutFactory,
-               gridSpacing, model, radioButtonTandemName, resetButtonTandemName,
+               gridSpacing, radioButtonTandemName, resetButtonTandemName,
                tandemName, massControlPanelTandemName, tandem, sceneViewTandem, bodies, pairs, options ) {
 
     const forceScale = modeConfig.forceScale;

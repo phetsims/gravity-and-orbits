@@ -120,13 +120,13 @@ class SceneFactory {
 
     // TODO: Too many parameters, needs to be organized, pruned, and/or turned into config.
     this.scenes.push( new GravityAndOrbitsScene(
+      model,
       planetStar,
       scaledDays( planetStar.timeScale ),
       this.createIconImage( true, true, false, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
       ( planetStar.earth.x / 2 ),
-      model,
       'starPlanetSceneButton',
       'starPlanetSceneResetButton',
       'starPlanetScene',
@@ -160,13 +160,13 @@ class SceneFactory {
       }
     );
     this.scenes.push( new GravityAndOrbitsScene(
+      model,
       sunEarthMoon,
       scaledDays( sunEarthMoon.timeScale ),
       this.createIconImage( true, true, true, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
       ( sunEarthMoon.earth.x / 2 ),
-      model,
       'starPlanetMoonSceneButton',
       'starPlanetMoonSceneResetButton',
       'starPlanetMoonScene',
@@ -188,13 +188,13 @@ class SceneFactory {
       rotationPeriod: earthMoon.moon.rotationPeriod
     } );
     this.scenes.push( new GravityAndOrbitsScene(
+      model,
       earthMoon,
       scaledDays( 1.0 ),
       this.createIconImage( false, true, true, false ),
       ( SUN_MODES_VELOCITY_SCALE * 0.06 ),
       readoutInEarthMasses,
       ( earthMoon.moon.y / 2 ),
-      model,
       'planetMoonSceneButton',
       'planetMoonSceneResetButton',
       'planetMoonScene',
@@ -220,13 +220,13 @@ class SceneFactory {
       rotationPeriod: earthSpaceStation.spaceStation.rotationPeriod
     } );
     this.scenes.push( new GravityAndOrbitsScene(
+      model,
       earthSpaceStation,
       formatMinutes,
       this.createIconImage( false, true, false, true ),
       ( SUN_MODES_VELOCITY_SCALE / 10000 ),
       spaceStationMassReadoutFactory,
       ( earthSpaceStation.spaceStation.x - earthSpaceStation.earth.x ),
-      model,
       'planetSatelliteSceneButton',
       'planetSatelliteSceneResetButton',
       'planetSatelliteScene',
