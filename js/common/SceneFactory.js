@@ -184,8 +184,7 @@ class SceneFactory {
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetMoonSceneView' ),
       [ planet2, moon2 ],
       [ new Pair( planet2, moon2, planetMoonSceneTandem.createTandem( 'planetMoonPair' ) ) ], {
-        gridCenter: new Vector2( earthMoon.earth.x, 0 ),
-        dt: DEFAULT_DT / 3  // actual days // TODO: put this value in the modeConfig
+        gridCenter: new Vector2( earthMoon.earth.x, 0 )
       } ) );
 
     const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
@@ -208,8 +207,7 @@ class SceneFactory {
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'planetSatelliteSceneView' ),
       [ planet3, satellite3 ],
       [ new Pair( planet3, satellite3, planetSatelliteSceneTandem.createTandem( 'planetSatellitePair' ) ) ], {
-        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 ),
-        dt: DEFAULT_DT * 9E-4 // TODO: put this value in the modeConfig
+        gridCenter: new Vector2( earthSpaceStation.earth.x, 0 )
       } ) );
   }
 
@@ -315,6 +313,7 @@ class EarthMoonModeConfig extends ModeConfig {
       this.earth.x + this.earth.radius * 2 + milesToMeters( 100000 ),
       -this.moon.y * 0.7 );
     this.forceScale = FORCE_SCALE * 45;
+    this.dt = DEFAULT_DT / 3;  // actual days // TODO: put this value in options
   }
 
   // @protected
@@ -347,6 +346,7 @@ class EarthSpaceStationModeConfig extends ModeConfig {
     // Sampled at runtime from MeasuringTape
     this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
     this.forceScale = FORCE_SCALE * 3E13;
+    this.dt = DEFAULT_DT * 9E-4; // TODO: put this value in options
   }
 
   // @protected
