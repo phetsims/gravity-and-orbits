@@ -65,7 +65,8 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     options = merge( {
       gridCenter: new Vector2( 0, 0 ),
-      dt: modeConfig.dt
+      dt: modeConfig.dt,
+      adjustMoonOrbit: false
     }, options );
     const gridCenter = options.gridCenter;
     const zoomOffset = options.gridCenter;// TODO: combine at usage sites
@@ -119,7 +120,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     // @private
     const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.speedTypeProperty, tandem, tandem.createTandem( 'clock' ) );
-    this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty );
+    this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
 
     Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
       this.physicsEngine.clock.setRunning( playButtonPressed && active )

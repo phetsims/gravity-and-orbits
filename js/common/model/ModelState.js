@@ -20,7 +20,6 @@ const LAMBDA = -0.2123418310626054;
 const CHI = -0.06626458266981849;
 
 // reduce Vector2 allocation by reusing these Vector2 in computations
-const relativePosition = new Vector2( 0, 0 ); // used in getTwoBodyForce()
 const velocity = new Vector2( 0, 0 ); // used in updatePositions()
 const netForce = new Vector2( 0, 0 ); // used in getNetForce()
 
@@ -29,10 +28,12 @@ class ModelState {
   /**
    * @param {Array.<BodyState>} bodyStates
    * @param {GravityAndOrbitsClock} clock
+   * @param {boolean} adjustMoonOrbit
    */
-  constructor( bodyStates, clock ) {
+  constructor( bodyStates, clock, adjustMoonOrbit ) {
     this.bodyStates = bodyStates; // @private
     this.clock = clock; // @private
+    this.adjustMoonOrbit = adjustMoonOrbit; // @private
   }
 
   /**
@@ -185,13 +186,18 @@ class ModelState {
     }
     else {
 
-      // reuse relativePosition as an intermediary value to reduce Vector2 allocations
-      relativePosition.x = target.position.x - source.position.x;
-      relativePosition.y = target.position.y - source.position.y;
+      const relativePosition = target.position.minus( source.position );
+      const r = relativePosition.getMagnitude();
+      const unitVector = relativePosition.normalized();
 
-      const multiplicativeFactor = PhysicalConstants.GRAVITATIONAL_CONSTANT * source.mass * target.mass /
-                                   Math.pow( source.position.distanceSquared( target.position ), 1.5 );
-      return relativePosition.multiplyScalar( multiplicativeFactor );
+      const magnitude = PhysicalConstants.GRAVITATIONAL_CONSTANT * source.mass * target.mass / r / r;
+      let fudgeFactor = 1;
+
+      // TODO: body.name.name is odd
+      if ( this.adjustMoonOrbit && source.body.name.name === 'MOON' && target.body.name.name === 'PLANET' ) {
+        fudgeFactor = 10200;
+      }
+      return unitVector.multiplyScalar( magnitude * fudgeFactor );
     }
   }
 

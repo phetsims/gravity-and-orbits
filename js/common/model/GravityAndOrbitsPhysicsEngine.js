@@ -32,14 +32,21 @@ class GravityAndOrbitsPhysicsEngine {
   /**
    * @param {GravityAndOrbitsClock} clock
    * @param {Property.<boolean>} gravityEnabledProperty flag to indicate whether gravity is on or off.
+   * @param {boolean} adjustMoonOrbit - in the "Model" screen, there is an additional force from the Earth on the Moon to keep it in orbit
+   *                                  - This is necessary because the moon orbital radius is higher (so it is visible)
    */
-  constructor( clock, gravityEnabledProperty ) {
+  constructor( clock, gravityEnabledProperty, adjustMoonOrbit ) {
 
     // @private
     this.gravityEnabledProperty = gravityEnabledProperty;
 
+    // @private
+    this.adjustMoonOrbit = adjustMoonOrbit;
+
     this.clock = clock; // @public
-    this.bodies = []; // @public - contains the sun, moon, earth, satellite
+
+    // @public {Body[]} - contains the sun, moon, earth, satellite
+    this.bodies = [];
 
     // TODO: What is dt doing here?
     this.clock.addEventTimer( dt => {
@@ -103,7 +110,7 @@ class GravityAndOrbitsPhysicsEngine {
 
     // Compute the next state for each body based on the current state of all bodies in the system.
     const bodyStates = this.bodies.map( getBodyState );
-    const newState = new ModelState( bodyStates, this.clock ).getNextState( dt, this.gravityEnabledProperty );
+    const newState = new ModelState( bodyStates, this.clock, this.adjustMoonOrbit ).getNextState( dt, this.gravityEnabledProperty );
 
     // Set each body to its computed next state.
     // assumes that ModelState.getBodyState returns states in the same order as the container (ArrayList) used for
@@ -165,7 +172,7 @@ class GravityAndOrbitsPhysicsEngine {
   /**
    * Returns a defensive copy of the bodies.
    *
-   * @returns {Array<Body>}
+   * @returns {Body[]}
    * @public
    */
   getBodies() {

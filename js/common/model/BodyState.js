@@ -12,6 +12,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 class BodyState {
 
   /**
+   * @param {Body} body - the parent body from which this BodyState was created
    * @param {Vector2} position - in m
    * @param {Vector2} velocity - in m/s
    * @param {Vector2} acceleration - in m/s^2
@@ -20,7 +21,7 @@ class BodyState {
    * @param {number} rotation - in seconds // TODO this is wrong
    * @param {number} rotationPeriod - in seconds
    */
-  constructor( position, velocity, acceleration, mass, exploded, rotation, rotationPeriod ) {
+  constructor( body, position, velocity, acceleration, mass, exploded, rotation, rotationPeriod ) {
 
     // @public
     this.position = position;
@@ -30,6 +31,7 @@ class BodyState {
     this.exploded = exploded;
     this.rotation = rotation;
     this.rotationPeriod = rotationPeriod;
+    this.body = body;
   }
 
   /**

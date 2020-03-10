@@ -64,7 +64,7 @@ const MOON_X = EARTH_PERIHELION;
 const MOON_Y = MOON_PERIGEE;
 
 // see http://en.wikipedia.org/wiki/International_Space_Station
-const SPACE_STATION_RADIUS = 91/2;
+const SPACE_STATION_RADIUS = 91 / 2;
 const SPACE_STATION_MASS = GravityAndOrbitsConstants.SPACE_STATION_MASS;
 const SPACE_STATION_SPEED = 7706;
 const SPACE_STATION_PERIGEE = 347000;
@@ -96,7 +96,8 @@ class SceneFactory {
   constructor( model, planetStar, sunEarthMoon, earthMoon, earthSpaceStation, modelTandem, viewTandem, options ) {
 
     options = merge( {
-      adjustMoonPathLength: false // increase the moon path so that it matches other traces at default settings
+      adjustMoonPathLength: false, // increase the moon path so that it matches other traces at default settings
+      adjustMoonOrbit: false
     }, options );
 
     this.scenes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
@@ -117,11 +118,10 @@ class SceneFactory {
     } );
     const planet0 = new Planet( model, planetStar.earth, starPlanetSceneTandem.createTandem( 'planet' ) );
 
-    // TODO: Too many parameters, needs to be organized, pruned, and/or turned into config.
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       planetStar,
-      scaledDays( planetStar.timeScale ),
+      scaledDays(),
       this.createIconImage( true, true, false, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
@@ -129,10 +129,10 @@ class SceneFactory {
       starPlanetSceneTandem,
       viewTandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME ).createTandem( 'starPlanetSceneView' ),
       [ star0, planet0 ],
-      [ new Pair( star0, planet0, starPlanetSceneTandem.createTandem( 'starPlanetPair' ) ) ] ) );
+      [ new Pair( star0, planet0, starPlanetSceneTandem.createTandem( 'starPlanetPair' ) ) ] )
+    );
 
-    // increase moon path length so that it fades away with other bodies
-    // in model coordinates (at default orbit)
+    // increase moon path length so that it fades away with other bodies in model coordinates (at default orbit)
     const pathLengthBuffer = options.adjustMoonPathLength ? sunEarthMoon.moon.x / 2 : 0;
     const starPlanetMoonSceneTandem = modelTandem.createTandem( 'starPlanetMoonScene' );
     const star1 = new Star( model, sunEarthMoon.sun, starPlanetMoonSceneTandem.createTandem( 'star' ), {
@@ -150,7 +150,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       sunEarthMoon,
-      scaledDays( sunEarthMoon.timeScale ),
+      scaledDays(),
       this.createIconImage( true, true, true, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
@@ -161,7 +161,9 @@ class SceneFactory {
         new Pair( star1, planet1, starPlanetMoonSceneTandem.createTandem( 'starPlanetPair' ) ),
         new Pair( star1, moon1, starPlanetMoonSceneTandem.createTandem( 'starMoonPair' ) ),
         new Pair( planet1, moon1, starPlanetMoonSceneTandem.createTandem( 'planetMoonPair' ) )
-      ] ) );
+      ], {
+        adjustMoonOrbit: options.adjustMoonOrbit
+      } ) );
 
     const planetMoonSceneTandem = modelTandem.createTandem( 'planetMoonScene' );
     const planet2 = new Planet( model, earthMoon.earth, planetMoonSceneTandem.createTandem( 'planet' ), {
@@ -246,7 +248,6 @@ class SunEarthModeConfig extends ModeConfig {
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.earth = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.timeScale = 1;
     this.initialMeasuringTapeLocation = new Line(
       ( this.sun.x + this.earth.x ) / 3,
       -this.earth.x / 2,
@@ -272,7 +273,6 @@ class SunEarthMoonModeConfig extends ModeConfig {
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.moon = new BodyConfiguration(
       MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.timeScale = 1;
     this.initialMeasuringTapeLocation = new Line(
       ( this.sun.x + this.earth.x ) / 3,
       -this.earth.x / 2,
@@ -381,12 +381,11 @@ const getSwitchableRenderer = ( image1, image2, targetMass ) => {
 
 /**
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
- * @param scale
  * @returns {function}
  */
-const scaledDays = scale => {
+const scaledDays = () => {
   return time => {
-    const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY * scale );
+    const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
     const units = ( value === 1 ) ? earthDayString : earthDaysString;
     return StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( value, 0 ), units );
   };

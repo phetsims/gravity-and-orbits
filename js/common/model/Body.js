@@ -323,6 +323,7 @@ class Body {
    */
   toBodyState() {
     return new BodyState(
+      this,
       this.positionProperty.get().copy(),
       this.velocityProperty.get().copy(),
       this.accelerationProperty.get().copy(),
