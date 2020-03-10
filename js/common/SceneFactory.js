@@ -1,6 +1,5 @@
 // Copyright 2014-2020, University of Colorado Boulder
 
-// TODO: search // REVIEW comments
 /**
  * SceneFactory enumerates and declares the possible modes in the GravityAndOrbitsModel, such as 'Star + Planet' scene.
  * Models (and the bodies they contain) are created in SceneFactory.

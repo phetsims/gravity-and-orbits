@@ -492,19 +492,17 @@ class Body {
   }
 
   /**
-   * Create a derived property to see if position, velocity, mass, or collided properties have changed.
-   *
+   * Returns the Properties which, when changed, enable the rewind button.
+   * @returns {Property[]}
    * @public
-   * @returns {DerivedProperty}
    */
-  // REVIEW: what is this for, could it be optimized away?
-  anyPropertyDifferent() {
-    return DerivedProperty.or( [
-      this.positionProperty.differentProperty,
-      this.velocityProperty.differentProperty,
-      this.massProperty.differentProperty,
-      this.isCollidedProperty.differentProperty
-    ] );
+  getRewindableProperties() {
+    return [
+      this.positionProperty,
+      this.velocityProperty,
+      this.massProperty,
+      this.isCollidedProperty
+    ];
   }
 
   // @public

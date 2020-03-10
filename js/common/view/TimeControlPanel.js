@@ -42,13 +42,22 @@ class TimeControlPanel extends HBox {
     } );
 
     // Enable/disable the rewind button based on whether any Property in that scene has changed.
-    let dependencies = [ model.sceneProperty ];
+    const dependencies = [ model.sceneProperty ];
     model.getScenes().forEach( scene => {
-      dependencies = dependencies.concat( scene.getBodies().map( b => b.anyPropertyDifferent() ) );
+      scene.getBodies().forEach( body => {
+        body.getRewindableProperties().forEach( property => {
+          dependencies.push( property.differentProperty );
+        } );
+      } );
     } );
     const anyPropertyDifferentProperty = new DerivedProperty( dependencies, () => {
-      const changedArray = model.sceneProperty.value.getBodies().map( body => body.anyPropertyDifferent().value );
-      return _.some( changedArray );
+      let changed = false;
+      model.sceneProperty.value.getBodies().forEach( body => {
+        body.getRewindableProperties().forEach( property => {
+          changed = changed || property.differentProperty.value;
+        } );
+      } );
+      return changed;
     } );
     anyPropertyDifferentProperty.link( changed => rewindButton.setEnabled( changed ) );
 
