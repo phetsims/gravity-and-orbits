@@ -87,7 +87,7 @@ class BodyNode extends Node {
     } );
     this.addInputListener( dragHandler );
 
-    // REVIEW: What's all this commented code about?
+    // TODO: What's all this commented code about?
     // rotate the node with the rotation property
     // const rotationListener = function( rotation ) {
     //   if ( this.body.mass)

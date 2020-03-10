@@ -21,8 +21,6 @@ import Path from '../../../../scenery/js/nodes/Path.js';
 import sunImage from '../../../images/sun_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-// this needs to be called before the static classes are defined, otherwise the inheritance doesn't work right
-// REVIEW: is that comment still applicable?
 class BodyRenderer extends Node {
   // @abstract
   constructor( body ) {
@@ -82,8 +80,8 @@ class SwitchableBodyRenderer extends BodyRenderer {
   /**
    * Set the diameter for the renderer in view coordinates for both the current and default renderers.
    *
-   * @param  {number} viewDiameter
-   * REVIEW: public or private?
+   * @param {number} viewDiameter
+   * @public
    */
   setDiameter( viewDiameter ) {
     this.targetBodyRenderer.setDiameter( viewDiameter );

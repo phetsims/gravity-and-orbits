@@ -54,12 +54,12 @@ class ExplosionNode extends Node {
   }
 
   /**
-   * Get a graphic for the explosion, linking diameter to the time steps since a collision occured.
+   * Get a graphic for the explosion, linking diameter to the time steps since a collision occurred.
    *
-   * @param  {Body} body        description
-   * @param  {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
-   * @returns {type}             description
-   * REVIEW public/private
+   * @param {Body} body
+   * @param {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
+   * @returns {BodyRenderer}
+   * @private
    */
   getExplosionEdgeGraphic( body, getDiameter ) {
     const yellowAndWhite = {

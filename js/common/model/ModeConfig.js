@@ -26,7 +26,7 @@ class ModeConfig {
     this.dt = DEFAULT_DT; // @public
     this.zoom = zoom; // @public
 
-    // REVIEW: explain these better or delete them
+    // TODO: explain these better or delete them
     this.initialMeasuringTapeLocation = null; // @public
     this.forceScale = null; // @protected
   }

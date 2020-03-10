@@ -14,7 +14,7 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-// REVIEW: Is there common code for this, or should this be generalized?
+// TODO: Generalize, see https://github.com/phetsims/scenery-phet/issues/580
 class GridNode extends Node {
 
   /**

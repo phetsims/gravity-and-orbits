@@ -1,7 +1,7 @@
 // Copyright 2016-2020, University of Colorado Boulder
 
 /**
- * // REVIEW documentation
+ * Model for the "Model" screen.
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 
