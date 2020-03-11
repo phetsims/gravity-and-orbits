@@ -1,9 +1,7 @@
 // Copyright 2016-2020, University of Colorado Boulder
 
 /**
- * An enumerable that defines the various types of bodies that can exist in gravity-and-orbits.
- * In this simulation, bodies are referenced by name, so this keeps track of the different bodies
- * without using translatable names.
+ * Defines the various types of bodies that can exist in gravity-and-orbits.
  *
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
