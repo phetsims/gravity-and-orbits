@@ -32,7 +32,11 @@ class TimeControlPanel extends HBox {
     const timeControlNode = new TimeControlNode( model.isPlayingProperty, {
       playPauseStepXSpacing: 10 / 1.4,
       scale: 1.4,
-      tandem: options.tandem.createTandem( 'timeControlNode' )
+      tandem: options.tandem.createTandem( 'timeControlNode' ),
+      stepForwardOptions: {
+        isPlayingProperty: model.isPlayingProperty,
+        listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused()
+      }
     } );
 
     const rewindButton = new RewindButton( {
