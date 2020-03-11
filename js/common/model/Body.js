@@ -148,7 +148,7 @@ class Body {
                        this.type === GravityAndOrbitsBodies.STAR ? starString :
                        this.type === GravityAndOrbitsBodies.MOON ? moonString :
                        null;
-    assert && assert( this.labelString, 'no label found for body with identifier ' + this.type.name );
+    assert && assert( this.labelString, 'no label found for body with identifier ' + this.type.toString() );
 
     assert && assert( renderer !== null );
 
@@ -509,7 +509,7 @@ class Body {
    * @returns {string}
    */
   toString() {
-    return 'name = ' + this.type.name + ', mass = ' + this.massProperty.get();
+    return 'name = ' + this.type.toString() + ', mass = ' + this.massProperty.get();
   }
 }
 
