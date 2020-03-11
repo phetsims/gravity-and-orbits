@@ -33,26 +33,6 @@ class BodyState {
     this.rotationPeriod = rotationPeriod;
     this.body = body;
   }
-
-  /**
-   * Get the distance squared from the body position to another.
-   *
-   * @param  {Vector2} position
-   * @returns {number}
-   */
-  distanceSquared( position ) {
-    return this.position.minus( position ).magnitudeSquared;
-  }
-
-  /**
-   * Useful for debugging - provides a string of documented property values.
-   *
-   * @returns {string}
-   */
-  toString() {
-    return 'BodyState{' + 'position=' + this.position + ', velocity=' + this.velocity +
-           ', acceleration=' + this.acceleration + ', mass=' + this.mass + '}';
-  }
 }
 
 gravityAndOrbits.register( 'BodyState', BodyState );

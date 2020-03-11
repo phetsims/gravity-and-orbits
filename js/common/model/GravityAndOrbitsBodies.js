@@ -11,11 +11,8 @@
 import Enumeration from '../../../../phet-core/js/Enumeration.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-const GravityAndOrbitsBodies = Enumeration.byKeys( [ 'PLANET',
-  'SATELLITE',
-  'STAR',
-  'MOON'
-] );
+const GravityAndOrbitsBodies = Enumeration.byKeys( [ 'PLANET', 'SATELLITE', 'STAR', 'MOON' ] );
 
 gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
+
 export default GravityAndOrbitsBodies;
