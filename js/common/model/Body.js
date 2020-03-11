@@ -33,16 +33,6 @@ const planetString = gravityAndOrbitsStrings.planet;
 const satelliteString = gravityAndOrbitsStrings.satellite;
 const starString = gravityAndOrbitsStrings.star;
 
-// constants
-// map the body identifier to the translatable label for the body
-// must be one of GravityAndOrbitsBodies keys
-const LABEL_MAP = {
-  PLANET: planetString,
-  SATELLITE: satelliteString,
-  STAR: starString,
-  MOON: moonString
-};
-
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
 
@@ -153,7 +143,11 @@ class Body {
     this.rotationPeriod = options.rotationPeriod;
 
     // @public (read-only) - passed to visual labels, must be translatable
-    this.labelString = LABEL_MAP[ this.type.name ];
+    this.labelString = this.type === GravityAndOrbitsBodies.PLANET ? planetString :
+                       this.type === GravityAndOrbitsBodies.SATELLITE ? satelliteString :
+                       this.type === GravityAndOrbitsBodies.STAR ? starString :
+                       this.type === GravityAndOrbitsBodies.MOON ? moonString :
+                       null;
     assert && assert( this.labelString, 'no label found for body with identifier ' + this.type.name );
 
     assert && assert( renderer !== null );
