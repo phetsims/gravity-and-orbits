@@ -426,13 +426,7 @@ class Satellite extends Body {
       earthSpaceStation.satellite.mass,
       spaceStationString,
       model,
-      'satelliteMassControl',
       tandem,
-      'satelliteMassLabel',
-      'satelliteIcon',
-      'satelliteNode',
-      'satelliteGravityVectorNode',
-      'satelliteVelocityVectorNode',
       options
     );
   }
@@ -466,13 +460,7 @@ class Moon extends Body {
       bodyConfiguration.mass,
       ourMoonString,
       model,
-      'moonMassControl',
       tandem,
-      'moonMassLabel',
-      'moonIcon',
-      'moonNode',
-      'moonGravityVectorNode',
-      'moonVelocityVectorNode',
       options
     );
   }
@@ -497,13 +485,7 @@ class Planet extends Body {
       bodyConfiguration.mass,
       earthString,
       model,
-      'planetMassControl',
       tandem,
-      'planetMassLabel',
-      'planetIcon',
-      'planetNode',
-      'planetGravityVectorNode',
-      'planetVelocityVectorNode',
       options
     );
   }
@@ -528,13 +510,7 @@ class Star extends Body {
       bodyConfiguration.mass,
       ourSunString,
       model,
-      'starMassControl',
       tandem,
-      'starMassLabel',
-      'starIcon',
-      'starNode',
-      'starGravityVectorNode',
-      'starVelocityVectorNode',
       options
     );
     this.body = bodyConfiguration;

@@ -49,18 +49,11 @@ class Body {
    * @param {number} tickValue - default value for mass setting
    * @param {string} tickLabel - translatable label for the mass slider labeling the default value
    * @param {GravityAndOrbitsModel} model
-   * @param {string} bodyMassControlTandemName
    * @param {Tandem} tandem
-   * @param {string} labelTandemName
-   * @param {string} iconTandemName
-   * @param {string} bodyNodeTandemName
-   * @param {string} gravityVectorNodeTandemName
-   * @param {string} velocityVectorNodeTandemName
    * @param {Object} [options]
    */
   constructor( type, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
-               bodyMassControlTandemName, tandem, labelTandemName, iconTandemName, bodyNodeTandemName, gravityVectorNodeTandemName,
-               velocityVectorNodeTandemName, options ) {
+               tandem, options ) {
 
     options = merge( {
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -79,19 +72,19 @@ class Body {
     const diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
     // @public (read-only) {string}
-    this.gravityVectorNodeTandemName = gravityVectorNodeTandemName;
+    this.gravityVectorNodeTandemName = `${tandem.name}GravityVectorNode`;
 
     // @public (read-only) {string}
-    this.velocityVectorNodeTandemName = velocityVectorNodeTandemName;
+    this.velocityVectorNodeTandemName = `${tandem.name}VelocityVectorNode`;
 
     // @public (read-only) {string}
-    this.labelTandemName = labelTandemName;
+    this.labelTandemName = `${tandem.name}MassLabel`;
 
     // @public (read-only) {string}
-    this.iconTandemName = iconTandemName;
+    this.iconTandemName = `${tandem.name}Icon`;
 
     // @public (read-only) {string}
-    this.bodyNodeTandemName = bodyNodeTandemName;
+    this.bodyNodeTandemName = `${tandem.name}Node`;
 
     this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
     this.diameterProperty = new NumberProperty( diameter, {
@@ -103,7 +96,7 @@ class Body {
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
 
     // @public (read-only)
-    this.bodyMassControlTandemName = bodyMassControlTandemName;
+    this.bodyMassControlTandemName = `${tandem.name}MassControl`;
 
     options = merge( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
