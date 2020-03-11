@@ -413,7 +413,7 @@ class Satellite extends Body {
    */
   constructor( model, earthSpaceStation, tandem, options ) {
     options = merge( {
-      // diameterScale: 1000
+      // diameterScale: 1000 // TODO: See https://github.com/phetsims/gravity-and-orbits/issues/307
     }, options );
 
     super(
