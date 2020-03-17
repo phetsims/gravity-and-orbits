@@ -16,7 +16,7 @@ import VBox from '../../../../scenery/js/nodes/VBox.js';
 import Panel from '../../../../sun/js/Panel.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
-import GravityAndOrbitsControlPanel from './GravityAndOrbitsControlPanel.js';
+import GravityAndOrbitsControls from './GravityAndOrbitsControls.js';
 import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.js';
 import MassControlPanel from './MassControlPanel.js';
 
@@ -40,7 +40,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
     } );
 
     // Control panel in the upper right of the play area
-    const controlPanel = new GravityAndOrbitsControlPanel( model, {
+    const gravityAndOrbitsControls = new GravityAndOrbitsControls( model, {
       tandem: tandem.createTandem( 'controlPanel' )
     } );
 
@@ -78,7 +78,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
       right: this.layoutBounds.right - MARGIN,
       spacing: MARGIN,
       children: [
-        new Panel( alignGroup.createBox( controlPanel ), GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ),
+        new Panel( alignGroup.createBox( gravityAndOrbitsControls ), GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ),
         new Panel( alignGroup.createBox( massesControlPanel ), GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS )
       ]
     } ) );

@@ -2,7 +2,6 @@
 
 /**
  * Control panel containing the controls for orbital mode, gravity, and visibility of planetary path and vectors.
- * TODO: Indicate this is the contents, not the panel
  *
  * @author Aaron Davis (PhET Interactive Simulations)
  */
@@ -19,7 +18,7 @@ import SceneSelectionControls from './SceneSelectionControls.js';
 // constants
 const MENU_SECTION_OPTIONS = { x: 5 };
 
-class GravityAndOrbitsControlPanel extends VBox {
+class GravityAndOrbitsControls extends VBox {
 
   /**
    * @param {GravityAndOrbitsModel} model
@@ -63,5 +62,5 @@ class GravityAndOrbitsControlPanel extends VBox {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsControlPanel', GravityAndOrbitsControlPanel );
-export default GravityAndOrbitsControlPanel;
+gravityAndOrbits.register( 'GravityAndOrbitsControlPanel', GravityAndOrbitsControls );
+export default GravityAndOrbitsControls;
