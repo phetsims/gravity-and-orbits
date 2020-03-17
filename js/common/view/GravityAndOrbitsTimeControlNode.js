@@ -62,7 +62,6 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           touchAreaDilation: 5
         }
       },
-
       tandem: options.tandem
     } );
 
