@@ -11,7 +11,7 @@
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
-import RewindButton from '../../../../scenery-phet/js/buttons/RewindButton.js';
+import RestartButton from '../../../../scenery-phet/js/buttons/RestartButton.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
 import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
@@ -66,14 +66,14 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       tandem: options.tandem.createTandem( 'timeControlNode' )
     } );
 
-    const rewindButton = new RewindButton( {
+    const restartButton = new RestartButton( {
       enabled: false,
       radius: STEP_BUTTON_RADIUS,
       listener: () => model.sceneProperty.value.rewind(),
       center: this.getPlayPauseButtonCenter().minusXY( PLAY_PAUSE_BUTTON_RADIUS + STEP_BUTTON_RADIUS + PUSH_BUTTON_SPACING, 0 ),
-      tandem: options.tandem.createTandem( 'rewindButton' )
+      tandem: options.tandem.createTandem( 'restartButton' )
     } );
-    this.addChild( rewindButton );
+    this.addChild( restartButton );
 
     // Enable/disable the rewind button based on whether any Property in that scene has changed.
     const dependencies = [ model.sceneProperty ];
@@ -93,7 +93,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       } );
       return changed;
     } );
-    anyPropertyDifferentProperty.link( changed => rewindButton.setEnabled( changed ) );
+    anyPropertyDifferentProperty.link( changed => restartButton.setEnabled( changed ) );
   }
 }
 
