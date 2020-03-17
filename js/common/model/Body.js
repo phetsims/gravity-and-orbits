@@ -242,6 +242,7 @@ class Body {
     // @public (read-only)
     this.isMovableProperty = new BooleanProperty( bodyConfiguration.isMovable, {
       tandem: tandem.createTandem( 'isMovableProperty' ),
+      phetioReadOnly: true,
       phetioDocumentation: 'If true, the body can move during the physics update.'
     } );
 
