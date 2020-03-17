@@ -112,7 +112,7 @@ class EarthSpaceStationModeConfig extends SceneFactory.EarthSpaceStationModeConf
 
     // tuned by hand
     this.planet.radius *= 0.8;
-    this.satellite.radius *= 8;
+    this.satellite.radius *= 20000;
   }
 }
 
