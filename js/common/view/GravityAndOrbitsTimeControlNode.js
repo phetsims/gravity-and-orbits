@@ -58,10 +58,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           maxWidth: 200
         },
         radioButtonGroupOptions: {
-          touchAreaDilation: 5,
-          radioButtonOptions: {
-            radius: 9
-          }
+          touchAreaDilation: 5
         }
       },
       tandem: options.tandem
