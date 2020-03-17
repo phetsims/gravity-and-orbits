@@ -63,7 +63,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
         }
       },
 
-      tandem: options.tandem.createTandem( 'timeControlNode' )
+      tandem: options.tandem
     } );
 
     const restartButton = new RestartButton( {
