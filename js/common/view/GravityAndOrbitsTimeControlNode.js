@@ -6,6 +6,7 @@
  * @author Andrey Zelenkov (Mlearner)
  * @author Sam Reid (PhET Interactive Simulations)
  * @author Aaron Davis (PhET Interactive Simulations)
+ * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
@@ -17,6 +18,11 @@ import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
+
+// constants
+const PLAY_PAUSE_BUTTON_RADIUS = 34;
+const STEP_BUTTON_RADIUS = 23;
+const PUSH_BUTTON_SPACING = 8;
 
 class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
@@ -34,12 +40,12 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       timeControlSpeedProperty: model.timeControlSpeedProperty,
       timeControlSpeeds: [ TimeControlSpeed.FAST, TimeControlSpeed.NORMAL, TimeControlSpeed.SLOW ],
       playPauseStepButtonOptions: {
-        playPauseStepXSpacing: 10 / 1.4,
+        playPauseStepXSpacing: PUSH_BUTTON_SPACING,
         playPauseButtonOptions:  {
-          radius: 34
+          radius: PLAY_PAUSE_BUTTON_RADIUS
         },
         stepForwardButtonOptions: {
-          radius: 23,
+          radius: STEP_BUTTON_RADIUS,
           isPlayingProperty: model.isPlayingProperty,
           listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused()
         }
@@ -47,7 +53,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       speedRadioButtonGroupOnLeft: true,
       speedRadioButtonGroupOptions: {
         labelOptions: {
-          font: new PhetFont( 25 ),
+          font: new PhetFont( 20 ),
           fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
           maxWidth: 200
         },
@@ -62,11 +68,12 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
     const rewindButton = new RewindButton( {
       enabled: false,
+      radius: STEP_BUTTON_RADIUS,
       listener: () => model.sceneProperty.value.rewind(),
+      center: this.getPlayPauseButtonCenter().minusXY( PLAY_PAUSE_BUTTON_RADIUS + STEP_BUTTON_RADIUS + PUSH_BUTTON_SPACING, 0 ),
       tandem: options.tandem.createTandem( 'rewindButton' )
     } );
     this.addChild( rewindButton );
-
 
     // Enable/disable the rewind button based on whether any Property in that scene has changed.
     const dependencies = [ model.sceneProperty ];
