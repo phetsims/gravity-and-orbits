@@ -34,7 +34,7 @@ const LABEL_MAP = {
   MOON: moonMassString
 };
 
-class MassControlPanel extends VBox {
+class MassControls extends VBox {
 
   /**
    * @param massSettableBodies
@@ -96,5 +96,5 @@ class MassControlPanel extends VBox {
   }
 }
 
-gravityAndOrbits.register( 'MassControlPanel', MassControlPanel );
-export default MassControlPanel;
+gravityAndOrbits.register( 'MassControlPanel', MassControls );
+export default MassControls;
