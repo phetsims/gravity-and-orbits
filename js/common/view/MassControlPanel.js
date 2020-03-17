@@ -14,7 +14,6 @@ import HStrut from '../../../../scenery/js/nodes/HStrut.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
-import Panel from '../../../../sun/js/Panel.js';
 import gravityAndOrbitsStrings from '../../gravity-and-orbits-strings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
@@ -35,7 +34,7 @@ const LABEL_MAP = {
   MOON: moonMassString
 };
 
-class MassControlPanel extends Panel {
+class MassControlPanel extends VBox {
 
   /**
    * @param massSettableBodies
@@ -93,8 +92,7 @@ class MassControlPanel extends Panel {
       children.push( sliderNode );
     }
 
-    const vBox = new VBox( { children: children, spacing: 15, y: 5, align: 'left' } );
-    super( vBox, options );
+    super( { children: children, spacing: 15, y: 5, align: 'left' } );
   }
 }
 

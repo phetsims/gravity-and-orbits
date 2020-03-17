@@ -10,12 +10,15 @@
 import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
+import AlignGroup from '../../../../scenery/js/nodes/AlignGroup.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
+import VBox from '../../../../scenery/js/nodes/VBox.js';
+import Panel from '../../../../sun/js/Panel.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsControlPanel from './GravityAndOrbitsControlPanel.js';
-import MassControlPanel from './MassControlPanel.js';
 import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.js';
+import MassControlPanel from './MassControlPanel.js';
 
 // constants
 const MARGIN = 5;
@@ -32,10 +35,12 @@ class GravityAndOrbitsScreenView extends ScreenView {
 
     super();
 
+    const alignGroup = new AlignGroup( {
+      matchVertical: false
+    } );
+
     // Control panel in the upper right of the play area
     const controlPanel = new GravityAndOrbitsControlPanel( model, {
-      top: this.layoutBounds.top + MARGIN,
-      right: this.layoutBounds.right - MARGIN,
       tandem: tandem.createTandem( 'controlPanel' )
     } );
 
@@ -56,8 +61,6 @@ class GravityAndOrbitsScreenView extends ScreenView {
       const sceneView = scene.sceneView;
 
       const massControlPanel = new MassControlPanel( scene.getMassSettableBodies(), {
-        top: controlPanel.bottom + MARGIN,
-        right: this.layoutBounds.right - MARGIN,
 
         // Nest under massesControlPanel, see https://github.com/phetsims/gravity-and-orbits/issues/284#issuecomment-554106611
         tandem: massesControlPanelTandem.createTandem( scene.massControlPanelTandemName )
@@ -68,10 +71,17 @@ class GravityAndOrbitsScreenView extends ScreenView {
       massesControlPanel.addChild( massControlPanel );
     } );
     this.addChild( playAreaNode );
-    this.addChild( massesControlPanel );
 
     // add the control panel on top of the canvases
-    this.addChild( controlPanel );
+    this.addChild( new VBox( {
+      top: this.layoutBounds.top + MARGIN,
+      right: this.layoutBounds.right - MARGIN,
+      spacing: MARGIN,
+      children: [
+        new Panel( alignGroup.createBox( controlPanel ), GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ),
+        new Panel( alignGroup.createBox( massesControlPanel ), GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS )
+      ]
+    } ) );
 
     // Make sure only one scene is visible at a time
     model.sceneProperty.link( scene => {
