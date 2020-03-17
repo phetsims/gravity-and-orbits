@@ -106,7 +106,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.gridSpacing = gridSpacing; // @public - in meters
     this.gridCenter = gridCenter; // @public
     this.rewindingProperty = model.rewindingProperty; // save a reference to the rewinding property of p
-    this.speedTypeProperty = model.speedTypeProperty; // @public
+    this.timeControlSpeedProperty = model.timeControlSpeedProperty; // @public
     this.timeFormatter = timeFormatter; // @public
 
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
@@ -118,7 +118,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );
 
     // @private
-    const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.speedTypeProperty, tandem, tandem.createTandem( 'clock' ) );
+    const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.timeControlSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
     this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
 
     Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>

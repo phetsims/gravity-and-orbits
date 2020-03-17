@@ -11,12 +11,14 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import RewindButton from '../../../../scenery-phet/js/buttons/RewindButton.js';
+import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
-import HBox from '../../../../scenery/js/nodes/HBox.js';
+import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
-class TimeControlPanel extends HBox {
+class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
   /**
    * @param {GravityAndOrbitsModel} model
@@ -25,18 +27,37 @@ class TimeControlPanel extends HBox {
   constructor( model, options ) {
 
     options = merge( {
-      spacing: 10,
       tandem: Tandem.REQUIRED
     }, options );
 
-    const timeControlNode = new TimeControlNode( model.isPlayingProperty, {
-      playPauseStepXSpacing: 10 / 1.4,
-      scale: 1.4,
-      tandem: options.tandem.createTandem( 'timeControlNode' ),
-      stepForwardOptions: {
-        isPlayingProperty: model.isPlayingProperty,
-        listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused()
-      }
+    super( model.isPlayingProperty, {
+      timeControlSpeedProperty: model.timeControlSpeedProperty,
+      timeControlSpeeds: [ TimeControlSpeed.FAST, TimeControlSpeed.NORMAL, TimeControlSpeed.SLOW ],
+      playPauseStepButtonOptions: {
+        playPauseStepXSpacing: 10 / 1.4,
+        playPauseButtonOptions:  {
+          radius: 34
+        },
+        stepForwardButtonOptions: {
+          radius: 23,
+          isPlayingProperty: model.isPlayingProperty,
+          listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused()
+        }
+      },
+      speedRadioButtonGroupOnLeft: true,
+      speedRadioButtonGroupOptions: {
+        labelOptions: {
+          font: new PhetFont( 25 ),
+          fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
+          maxWidth: 200
+        },
+        radioButtonGroupOptions: {
+          spacing: 3,
+          touchAreaDilation: 5
+        }
+      },
+
+      tandem: options.tandem.createTandem( 'timeControlNode' )
     } );
 
     const rewindButton = new RewindButton( {
@@ -44,6 +65,8 @@ class TimeControlPanel extends HBox {
       listener: () => model.sceneProperty.value.rewind(),
       tandem: options.tandem.createTandem( 'rewindButton' )
     } );
+    this.addChild( rewindButton );
+
 
     // Enable/disable the rewind button based on whether any Property in that scene has changed.
     const dependencies = [ model.sceneProperty ];
@@ -64,12 +87,8 @@ class TimeControlPanel extends HBox {
       return changed;
     } );
     anyPropertyDifferentProperty.link( changed => rewindButton.setEnabled( changed ) );
-
-    super( merge( {
-      children: [ rewindButton, timeControlNode ]
-    }, options ) );
   }
 }
 
-gravityAndOrbits.register( 'TimeControlPanel', TimeControlPanel );
-export default TimeControlPanel;
+gravityAndOrbits.register( 'GravityAndOrbitsTimeControlNode', GravityAndOrbitsTimeControlNode );
+export default GravityAndOrbitsTimeControlNode;

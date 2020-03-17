@@ -9,9 +9,9 @@
  */
 
 import Emitter from '../../../../axon/js/Emitter.js';
+import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import ModelState from './ModelState.js';
-import SpeedType from './SpeedType.js';
 
 /**
  * Return the smaller of two Body instances, for determining which survives a collision.
@@ -79,9 +79,9 @@ class GravityAndOrbitsPhysicsEngine {
     const smallestTimeStep = this.clock.baseDTValue * 0.13125;
 
     // get the number of times we will need to step the model based on the dt passed in
-    const numberOfSteps = this.clock.speedTypeProperty.value === SpeedType.SLOW_MOTION ? 1 :
-                          this.clock.speedTypeProperty.value === SpeedType.NORMAL ? 4 :
-                          this.clock.speedTypeProperty.value === SpeedType.FAST_FORWARD ? 7 :
+    const numberOfSteps = this.clock.timeControlSpeedProperty.value === TimeControlSpeed.SLOW ? 1 :
+                          this.clock.timeControlSpeedProperty.value === TimeControlSpeed.NORMAL ? 4 :
+                          this.clock.timeControlSpeedProperty.value === TimeControlSpeed.FAST ? 7 :
                           null;
 
     // step the model by the smallest standard time step for the orbital mode

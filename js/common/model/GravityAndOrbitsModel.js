@@ -21,7 +21,7 @@ import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import SpeedType from './SpeedType.js';
+import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
 
 // constants
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
@@ -52,7 +52,11 @@ class GravityAndOrbitsModel {
       tandem: tandem.createTandem( 'isPlayingProperty' ),
       phetioDocumentation: `This value is true if '${screenTandem.phetioID}' is the active screen AND the play/pause button is in play mode.`
     } );
-    this.speedTypeProperty = new EnumerationProperty( SpeedType, SpeedType.NORMAL, { tandem: tandem.createTandem( 'speedTypeProperty' ) } );
+
+    // @public
+    this.timeControlSpeedProperty = new EnumerationProperty( TimeControlSpeed, TimeControlSpeed.NORMAL, {
+      tandem: tandem.createTandem( 'timeControlSpeedProperty' )
+    } );
 
     this.gravityEnabledProperty = new BooleanProperty( true, { tandem: tandem.createTandem( 'gravityEnabledProperty' ) } );
     this.steppingProperty = new BooleanProperty( false );
@@ -116,7 +120,7 @@ class GravityAndOrbitsModel {
     this.showVelocityProperty.reset();
     this.showMassProperty.reset();
     this.isPlayingProperty.reset();
-    this.speedTypeProperty.reset();
+    this.timeControlSpeedProperty.reset();
     this.showMeasuringTapeProperty.reset();
     this.gravityEnabledProperty.reset();
     this.steppingProperty.reset();

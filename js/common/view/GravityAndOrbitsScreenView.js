@@ -7,6 +7,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
@@ -14,8 +15,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsControlPanel from './GravityAndOrbitsControlPanel.js';
 import MassControlPanel from './MassControlPanel.js';
-import SpeedRadioButtons from './SpeedRadioButtons.js';
-import TimeControlPanel from './TimeControlPanel.js';
+import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.js';
 
 // constants
 const MARGIN = 5;
@@ -84,23 +84,16 @@ class GravityAndOrbitsScreenView extends ScreenView {
       model.updateActiveModule();
     } );
 
-    // Add the speed control slider.
-    this.addChild( new SpeedRadioButtons( model.speedTypeProperty, {
-        bottom: this.layoutBounds.bottom - MARGIN,
-        left: this.layoutBounds.left + MARGIN,
-        scale: 1.2,
-        tandem: tandem.createTandem( 'speedRadioButtonGroup' )
-      } )
-    );
-
     // Add play/pause, rewind, and step buttons
-    const timeControlPanel = new TimeControlPanel( model, {
-      bottom: this.layoutBounds.bottom - MARGIN,
-      centerX: this.layoutBounds.centerX - 117,
-      tandem: tandem.createTandem( 'timeControlPanel' ),
-      scale: 1.2
+    const timeControlNode = new GravityAndOrbitsTimeControlNode( model, {
+      tandem: tandem.createTandem( 'timeControlNode' )
     } );
-    this.addChild( timeControlPanel );
+    this.addChild( timeControlNode );
+    timeControlNode.setPlayPauseButtonCenter( new Vector2( this.layoutBounds.centerX - 117, this.layoutBounds.bottom - timeControlNode.height / 2 - MARGIN ) );
+
+    // spacing to put the SpeedRadioButtonGroup at the edge of the layout bounds - current spacing
+    // plus distance from the left of the TimeControlNode to left edge of layout bounds
+    timeControlNode.setButtonGroupXSpacing( timeControlNode.buttonGroupXSpacing + timeControlNode.left - this.layoutBounds.left - MARGIN );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {
