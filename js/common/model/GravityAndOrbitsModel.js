@@ -18,10 +18,10 @@ import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import PropertyIO from '../../../../axon/js/PropertyIO.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
+import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
 
 // constants
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;

@@ -41,7 +41,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       timeControlSpeeds: [ TimeControlSpeed.FAST, TimeControlSpeed.NORMAL, TimeControlSpeed.SLOW ],
       playPauseStepButtonOptions: {
         playPauseStepXSpacing: PUSH_BUTTON_SPACING,
-        playPauseButtonOptions:  {
+        playPauseButtonOptions: {
           radius: PLAY_PAUSE_BUTTON_RADIUS
         },
         stepForwardButtonOptions: {
