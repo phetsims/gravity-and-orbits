@@ -58,6 +58,9 @@ class TimeCounter extends Node {
     clock.timeProperty.link( this.timeListener );
 
     this.addChild( new VBox( {
+
+      // Prevent the "Clear" button from moving when the number text changes
+      resize: false,
       spacing: 4,
       children: [
         dayText,
