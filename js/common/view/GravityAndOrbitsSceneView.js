@@ -121,47 +121,53 @@ class GravityAndOrbitsSceneView extends Rectangle {
     } ) );
 
     // Add measuring tape
-    const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
-    const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
-      basePositionProperty: scene.measuringTapeStartPointProperty,
-      tipPositionProperty: scene.measuringTapeEndPointProperty,
-      textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
+    if ( model.showMeasuringTape ) {
 
-      // allows distances to be measured if the planets go outside of model bounds,
-      // see https://github.com/phetsims/gravity-and-orbits/issues/281
-      isTipDragBounded: false,
+      const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
+      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
+        basePositionProperty: scene.measuringTapeStartPointProperty,
+        tipPositionProperty: scene.measuringTapeEndPointProperty,
+        textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
 
-      // space station gets 1 sig fig, the other bodies have 0
-      significantFigures: ( bodies[ 1 ].type === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0,
+        // allows distances to be measured if the planets go outside of model bounds,
+        // see https://github.com/phetsims/gravity-and-orbits/issues/281
+        isTipDragBounded: false,
 
-      tandem: tandem.createTandem( 'measuringTapeNode' ),
-      phetioComponentOptions: {
-        visibleProperty: { phetioReadOnly: true } // controlled by a checkbox
-      }
-    } );
+        // space station gets 1 sig fig, the other bodies have 0
+        significantFigures: ( bodies[ 1 ].type === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0,
 
-    scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
+        tandem: tandem.createTandem( 'measuringTapeNode' ),
+        phetioComponentOptions: {
+          visibleProperty: { phetioReadOnly: true } // controlled by a checkbox
+        }
+      } );
+
+      scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
+      scene.modelBoundsProperty.link( bounds => {
+        const basePosition = measuringTapeNode.basePositionProperty.get();
+        measuringTapeNode.setDragBounds( bounds );
+
+        // if the position of the base has changed due to modifying the
+        // drag bounds, we want to subtract the difference from the position
+        // of the tip so that the measured value remains constant
+        if ( !measuringTapeNode.basePositionProperty.get().equals( basePosition ) ) {
+          const difference = basePosition.minus( measuringTapeNode.basePositionProperty.get() );
+          measuringTapeNode.tipPositionProperty.set( measuringTapeNode.tipPositionProperty.get().minus( difference ) );
+        }
+      } );
+
+      // measuring tape text should change with color Profile
+      GravityAndOrbitsColorProfile.measuringTapeTextProperty.linkAttribute( measuringTapeNode, 'textColor' );
+      this.addChild( measuringTapeNode );
+    }
+
     scene.modelBoundsProperty.link( bounds => {
-      const basePosition = measuringTapeNode.basePositionProperty.get();
-      measuringTapeNode.setDragBounds( bounds );
-
-      // if the position of the base has changed due to modifying the
-      // drag bounds, we want to subtract the difference from the position
-      // of the tip so that the measured value remains constant
-      if ( !measuringTapeNode.basePositionProperty.get().equals( basePosition ) ) {
-        const difference = basePosition.minus( measuringTapeNode.basePositionProperty.get() );
-        measuringTapeNode.tipPositionProperty.set( measuringTapeNode.tipPositionProperty.get().minus( difference ) );
-      }
 
       // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
       for ( let i = 0; i < bodies.length; i++ ) {
         bodies[ i ].boundsProperty.set( scene.transformProperty.get().viewToModelBounds( STAGE_SIZE ) );
       }
     } );
-
-    // measuring tape text should change with color Profile
-    GravityAndOrbitsColorProfile.measuringTapeTextProperty.linkAttribute( measuringTapeNode, 'textColor' );
-    this.addChild( measuringTapeNode );
 
     // If any body is out of bounds, show a "return object" button
     const anythingReturnable = DerivedProperty.or( isReturnableProperties );
