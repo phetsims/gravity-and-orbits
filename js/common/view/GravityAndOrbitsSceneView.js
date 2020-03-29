@@ -177,6 +177,12 @@ class GravityAndOrbitsSceneView extends Rectangle {
       textFill: 'black',
       x: 100,
       y: 100,
+      phetioComponentOptions: {
+        opacityProperty: { phetioReadOnly: true },
+        pickableProperty: { phetioReadOnly: true },
+        visibleProperty: { phetioReadOnly: true }
+      },
+      enabledPropertyOptions: { phetioReadOnly: true },
       listener: () => {
 
         // the return button should behave exactly like the rewind button
