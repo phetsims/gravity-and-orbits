@@ -2823,7 +2823,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.isPlayingProperty": {
-      "phetioDocumentation": "This value is true if 'gravityAndOrbits.modelScreen' is the active screen AND the play/pause button is in play mode.",
+      "phetioDocumentation": "This value is true if the play/pause button on this screen is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -16824,7 +16824,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.isPlayingProperty": {
-      "phetioDocumentation": "This value is true if 'gravityAndOrbits.toScaleScreen' is the active screen AND the play/pause button is in play mode.",
+      "phetioDocumentation": "This value is true if the play/pause button on this screen is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
