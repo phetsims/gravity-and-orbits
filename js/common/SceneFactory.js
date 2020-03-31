@@ -22,7 +22,7 @@ import moonImage from '../../images/moon_png.js';
 import genericPlanetImage from '../../images/planet_generic_png.js';
 import spaceStationImage from '../../images/space-station_png.js';
 import sunImage from '../../images/sun_png.js';
-import gravityAndOrbitsStrings from '../gravity-and-orbits-strings.js';
+import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import GravityAndOrbitsScene from './GravityAndOrbitsScene.js';

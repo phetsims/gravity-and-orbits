@@ -9,7 +9,7 @@
 
 import Utils from '../../../../dot/js/Utils.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
-import gravityAndOrbitsStrings from '../../gravity-and-orbits-strings.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import MassReadoutNode from './MassReadoutNode.js';

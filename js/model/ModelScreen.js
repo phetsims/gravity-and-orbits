@@ -11,7 +11,7 @@ import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import modelMipmap from '../../mipmaps/model_icon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
-import gravityAndOrbitsStrings from '../gravity-and-orbits-strings.js';
+import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import ModelModel from './ModelModel.js';
 

@@ -22,7 +22,7 @@ import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import merge from '../../../../phet-core/js/merge.js';
 import BooleanIO from '../../../../tandem/js/types/BooleanIO.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
-import gravityAndOrbitsStrings from '../../gravity-and-orbits-strings.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import BodyState from './BodyState.js';
 import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';

@@ -11,7 +11,7 @@ import SimLauncher from '../../joist/js/SimLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import GravityAndOrbitsColorProfile from './common/GravityAndOrbitsColorProfile.js';
 import GlobalOptionsNode from './common/view/GlobalOptionsNode.js';
-import gravityAndOrbitsStrings from './gravity-and-orbits-strings.js';
+import gravityAndOrbitsStrings from './gravityAndOrbitsStrings.js';
 import ModelScreen from './model/ModelScreen.js';
 import ToScaleScreen from './toScale/ToScaleScreen.js';
 

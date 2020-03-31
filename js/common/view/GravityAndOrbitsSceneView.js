@@ -18,7 +18,7 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
-import gravityAndOrbitsStrings from '../../gravity-and-orbits-strings.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 import GravityAndOrbitsBodies from '../model/GravityAndOrbitsBodies.js';

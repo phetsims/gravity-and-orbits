@@ -25,7 +25,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import iconMassImg from '../../../images/icon_mass_png.js';
 import pathIconImg from '../../../images/path_icon_png.js';
 import pathIconProjectorImg from '../../../images/path_icon_projector_png.js';
-import gravityAndOrbitsStrings from '../../gravity-and-orbits-strings.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 import GridNode from './GridNode.js';
