@@ -2862,7 +2862,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.planetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.planetMoonScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3187,7 +3187,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.planetSatelliteScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.planetSatelliteScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -3577,7 +3577,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.starPlanetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.starPlanetMoonScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -4058,7 +4058,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.starPlanetScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.modelScreen.model.starPlanetScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -16876,7 +16876,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.planetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.planetMoonScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -17201,7 +17201,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.planetSatelliteScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.planetSatelliteScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -17617,7 +17617,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -18098,7 +18098,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ReferenceIO"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.clock.isRunningProperty": {
-      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.starPlanetScene' is the active scene AND the sim is playing (isPlayingProperty is 'true').",
+      "phetioDocumentation": "This value is true when 'gravityAndOrbits.toScaleScreen.model.starPlanetScene' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with 'gravityAndOrbits.general.model.screenProperty'.)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
