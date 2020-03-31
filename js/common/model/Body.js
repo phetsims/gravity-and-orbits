@@ -219,7 +219,8 @@ class Body {
       tandem: tandem.createTandem( 'massProperty' ),
       phetioType: PropertyIO( NumberIO ),
       units: 'kg',
-      phetioDocumentation: 'The mass of the body'
+      phetioDocumentation: 'The mass of the body',
+      phetioStudioControl: false
     } );
 
     // @public
@@ -236,7 +237,8 @@ class Body {
       phetioType: PropertyIO( NumberIO ),
       units: 'radians',
       phetioHighFrequency: true,
-      phetioDocumentation: 'The rotation of the body about its own origin'
+      phetioDocumentation: 'The rotation of the body about its own origin',
+      phetioStudioControl: false
     } );
 
     // @public (read-only)

@@ -2962,7 +2962,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.positionProperty": {
@@ -2988,7 +2988,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.speedProperty": {
@@ -3092,7 +3092,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.positionProperty": {
@@ -3118,7 +3118,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.speedProperty": {
@@ -3287,7 +3287,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.positionProperty": {
@@ -3313,7 +3313,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.speedProperty": {
@@ -3430,7 +3430,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.positionProperty": {
@@ -3456,7 +3456,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.speedProperty": {
@@ -3677,7 +3677,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.positionProperty": {
@@ -3703,7 +3703,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.speedProperty": {
@@ -3807,7 +3807,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.positionProperty": {
@@ -3833,7 +3833,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.speedProperty": {
@@ -3950,7 +3950,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.positionProperty": {
@@ -3976,7 +3976,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.speedProperty": {
@@ -4158,7 +4158,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.positionProperty": {
@@ -4184,7 +4184,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.speedProperty": {
@@ -4288,7 +4288,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.positionProperty": {
@@ -4314,7 +4314,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.speedProperty": {
@@ -16976,7 +16976,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.positionProperty": {
@@ -17002,7 +17002,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.speedProperty": {
@@ -17106,7 +17106,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.positionProperty": {
@@ -17132,7 +17132,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.speedProperty": {
@@ -17301,7 +17301,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.positionProperty": {
@@ -17327,7 +17327,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.speedProperty": {
@@ -17444,7 +17444,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.positionProperty": {
@@ -17470,7 +17470,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.speedProperty": {
@@ -17717,7 +17717,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.positionProperty": {
@@ -17743,7 +17743,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.speedProperty": {
@@ -17847,7 +17847,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.positionProperty": {
@@ -17873,7 +17873,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.speedProperty": {
@@ -17990,7 +17990,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.positionProperty": {
@@ -18016,7 +18016,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.speedProperty": {
@@ -18198,7 +18198,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.positionProperty": {
@@ -18224,7 +18224,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.speedProperty": {
@@ -18328,7 +18328,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.positionProperty": {
@@ -18354,7 +18354,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": true,
-      "phetioStudioControl": true,
+      "phetioStudioControl": false,
       "phetioTypeName": "PropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.speedProperty": {
