@@ -40,12 +40,14 @@ class GravityAndOrbitsClock {
     // @public
     this.isRunningProperty = new BooleanProperty( false, {
       tandem: tandem.createTandem( 'isRunningProperty' ),
-      phetioDocumentation: `This value is true when '${sceneTandem.phetioID}' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with '${phet.joist.sim.screenProperty.tandem.phetioID}'.)`
+      phetioDocumentation: `This value is true when '${sceneTandem.phetioID}' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with '${phet.joist.sim.screenProperty.tandem.phetioID}'.)`,
+      phetioReadOnly: true
     } );
     this.timeProperty = new NumberProperty( 0, {
       tandem: tandem.createTandem( 'timeProperty' ),
       phetioHighFrequency: true,
-      units: 'seconds'
+      units: 'seconds',
+      phetioReadOnly: true
     } );
     this.dt = baseDTValue;
     this.steppingProperty = steppingProperty;

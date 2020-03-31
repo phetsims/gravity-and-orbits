@@ -90,7 +90,8 @@ class Body {
     this.diameterProperty = new NumberProperty( diameter, {
       tandem: tandem.createTandem( 'diameterProperty' ),
       units: 'm',
-      phetioDocumentation: 'The distance across the body'
+      phetioDocumentation: 'The distance across the body',
+      phetioReadOnly: true
     } );
     this.clockTicksSinceExplosionProperty = new Property( 0 );
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
@@ -202,7 +203,8 @@ class Body {
       phetioType: PropertyIO( Vector2IO ),
       tandem: tandem.createTandem( 'forceProperty' ),
       phetioHighFrequency: true,
-      units: 'N'
+      units: 'N',
+      phetioReadOnly: true
     } );
 
     // @private (only used for PhET-iO)
