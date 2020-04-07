@@ -151,6 +151,7 @@ class CheckboxPanel extends VBox {
     }
 
     super( merge( {
+      excludeInvisibleChildrenFromBounds: true,
       children: children,
       spacing: SPACING,
       align: 'left',
