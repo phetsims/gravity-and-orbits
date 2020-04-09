@@ -8,7 +8,6 @@
 
 import ColorProfile from '../../../scenery-phet/js/ColorProfile.js';
 import Color from '../../../scenery/js/util/Color.js';
-import Tandem from '../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 
 const GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' ], {
@@ -48,8 +47,6 @@ const GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' 
     default: 'black',
     projector: 'white'
   }
-}, {
-  tandem: Tandem.GLOBAL.createTandem( 'colorProfile' )
 } );
 
 gravityAndOrbits.register( 'GravityAndOrbitsColorProfile', GravityAndOrbitsColorProfile );
