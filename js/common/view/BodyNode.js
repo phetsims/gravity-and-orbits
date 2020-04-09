@@ -152,7 +152,7 @@ class BodyNode extends Node {
     } );
 
     // For PhET-iO, re-center the node after the text changes size
-    labelNode.on( 'bounds', () => {
+    labelNode.boundsProperty.lazyLink( () => {
       labelNode.centerX = tail.x;
     } );
     node.addChild( labelNode );

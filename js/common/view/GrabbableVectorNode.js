@@ -89,8 +89,7 @@ class GrabbableVectorNode extends VectorNode {
       grabArea.visible = this.pickable !== false;
       text.visible = this.pickable !== false;
     };
-    this.on( 'pickability', updateGrabAreaAndTextVisibility );
-    updateGrabAreaAndTextVisibility();
+    this.pickableProperty.link( updateGrabAreaAndTextVisibility );
   }
 }
 
