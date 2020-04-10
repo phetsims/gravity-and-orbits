@@ -61,7 +61,13 @@ class SceneSelectionControls extends Node {
     } );
 
     this.addChild( radioButtonGroup );
-    this.addChild( new VBox( { children: resetButtons, left: radioButtonGroup.right + 10, spacing: 5, y: 2 } ) );
+    this.addChild( new VBox( {
+      children: resetButtons,
+      left: radioButtonGroup.right + 10,
+      spacing: 5,
+      y: 2,
+      excludeInvisibleChildrenFromBounds: false
+    } ) );
     this.addChild( new HStrut( 219 ) );
   }
 }
