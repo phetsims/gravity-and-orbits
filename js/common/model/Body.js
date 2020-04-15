@@ -71,18 +71,6 @@ class Body {
 
     const diameter = ( bodyConfiguration.radius * 2 ) * options.diameterScale;
 
-    // @public (read-only) {string}
-    this.gravityVectorNodeTandemName = `${tandem.name}GravityVectorNode`;
-
-    // @public (read-only) {string}
-    this.velocityVectorNodeTandemName = `${tandem.name}VelocityVectorNode`;
-
-    // @public (read-only) {string}
-    // this.labelTandemName = `${tandem.name}MassLabel`;
-
-    // @public (read-only) {string}
-    // this.iconTandemName = `${tandem.name}Icon`;
-
     this.tandemName = tandem.name;
 
     // @public (read-only) {string}
@@ -97,9 +85,6 @@ class Body {
     } );
     this.clockTicksSinceExplosionProperty = new Property( 0 );
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
-
-    // @public (read-only)
-    // this.bodyMassControlTandemName = `${tandem.name}MassControl`;
 
     options = merge( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary

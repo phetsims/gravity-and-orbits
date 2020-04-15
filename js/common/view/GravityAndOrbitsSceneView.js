@@ -91,16 +91,19 @@ class GravityAndOrbitsSceneView extends Rectangle {
 
     // Add gravity force vector nodes
     for ( let i = 0; i < bodies.length; i++ ) {
+
+      const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
       this.addChild( new VectorNode( bodies[ i ], scene.transformProperty, model.showGravityForceProperty,
-        bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline, tandem.createTandem( bodies[ i ].gravityVectorNodeTandemName ) ) );
+        bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline, bodyNodeTandem.createTandem( 'gravityVectorNode' ) ) );
     }
 
     // Add velocity vector nodes
     for ( let i = 0; i < bodies.length; i++ ) {
       if ( bodies[ i ].isMovableProperty.value ) {
+        const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
         this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-          vString, tandem.createTandem( bodies[ i ].velocityVectorNodeTandemName ) ) );
+          vString, bodyNodeTandem.createTandem( 'velocityVectorNode' ) ) );
       }
     }
 
