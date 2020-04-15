@@ -78,10 +78,12 @@ class Body {
     this.velocityVectorNodeTandemName = `${tandem.name}VelocityVectorNode`;
 
     // @public (read-only) {string}
-    this.labelTandemName = `${tandem.name}MassLabel`;
+    // this.labelTandemName = `${tandem.name}MassLabel`;
 
     // @public (read-only) {string}
-    this.iconTandemName = `${tandem.name}Icon`;
+    // this.iconTandemName = `${tandem.name}Icon`;
+
+    this.tandemName = tandem.name;
 
     // @public (read-only) {string}
     this.bodyNodeTandemName = `${tandem.name}Node`;
@@ -97,7 +99,7 @@ class Body {
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
 
     // @public (read-only)
-    this.bodyMassControlTandemName = `${tandem.name}MassControl`;
+    // this.bodyMassControlTandemName = `${tandem.name}MassControl`;
 
     options = merge( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary

@@ -14,8 +14,8 @@ import HStrut from '../../../../scenery/js/nodes/HStrut.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
@@ -34,6 +34,7 @@ const LABEL_MAP = {
   MOON: moonMassString
 };
 
+// TODO: Rename MassControlPanel
 class MassControls extends VBox {
 
   /**
@@ -55,17 +56,18 @@ class MassControls extends VBox {
     for ( let i = 0; i < massSettableBodies.length; i++ ) {
       const sliderNode = new Node();
       const massSettableBody = massSettableBodies[ i ];
+      const massSettableBodyTandem = options.tandem.createTandem( massSettableBody.tandemName );
       const label = new Text( LABEL_MAP[ massSettableBody.type.name ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColorProfile.panelTextProperty,
         maxWidth: 175,
-        tandem: options.tandem.createTandem( massSettableBody.labelTandemName )
+        tandem: massSettableBodyTandem.createTandem( 'massLabel' )
       } );
 
       const icon = new Node( {
         children: [ massSettableBody.createRenderer( 14 ) ],
-        tandem: options.tandem.createTandem( massSettableBody.iconTandemName )
+        tandem: massSettableBodyTandem.createTandem( 'icon' )
       } );
 
       // Top component that shows the body's name and icon
@@ -83,7 +85,7 @@ class MassControls extends VBox {
             massSettableBody.massProperty.value * 2,
             massSettableBody.tickValue,
             massSettableBody.tickLabel,
-            options.tandem.createTandem( massSettableBody.bodyMassControlTandemName )
+            massSettableBodyTandem.createTandem('massControl')
           )
         ]
       } );
