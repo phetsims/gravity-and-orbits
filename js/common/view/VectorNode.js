@@ -27,9 +27,17 @@ class VectorNode extends Node {
    * @param {number} scale
    * @param {Color} fill
    * @param {Color} outline
+   * @param {Tandem} tandem
    */
   constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem ) {
-    super( { tandem: tandem } );
+    super( {
+      tandem: tandem,
+      phetioComponentOptions: {
+        opacityProperty: { phetioReadOnly: true },
+        visibleProperty: { phetioReadOnly: true },
+        pickableProperty: { phetioReadOnly: true }
+      }
+    } );
 
     this.body = body; // @private
     this.vectorProperty = vectorProperty; // @private
@@ -67,12 +75,18 @@ class VectorNode extends Node {
     this.addChild( arrowNode );
   }
 
-  // @private
+  /**
+   * @returns {Vector2}
+   * @private
+   */
   getTail() {
     return this.transformProperty.get().modelToViewPosition( this.body.positionProperty.get() );
   }
 
-  // @protected
+  /**
+   * @returns {Vector2}
+   * @protected
+   */
   getTip( tail ) {
     if ( typeof tail === 'undefined' ) {
       tail = this.getTail();
