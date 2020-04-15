@@ -12,8 +12,8 @@ import HBox from '../../../../scenery/js/nodes/HBox.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
 const gravityString = gravityAndOrbitsStrings.gravity;
@@ -39,6 +39,10 @@ class GravityControl extends Node {
     const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
     const onTextNode = new Text( onString, TEXT_OPTIONS );
     const offTextNode = new Text( offString, TEXT_OPTIONS );
+
+    this.addLinkedElement( gravityEnabledProperty, {
+      tandem: options.tandem.createTandem( 'gravityEnabledProperty' )
+    } );
 
     this.addChild( new HBox( {
       spacing: 10, bottom: 2, children: [

@@ -4824,6 +4824,19 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
+    "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityEnabledProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "LinkedElementIO"
+    },
     "gravityAndOrbits.modelScreen.view.controlPanel.gravityControl.gravityOffRadioButton": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -19045,6 +19058,19 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityEnabledProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "LinkedElementIO"
     },
     "gravityAndOrbits.toScaleScreen.view.controlPanel.gravityControl.gravityOffRadioButton": {
       "phetioDocumentation": "",
