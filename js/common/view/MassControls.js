@@ -85,7 +85,7 @@ class MassControls extends VBox {
             massSettableBody.massProperty.value * 2,
             massSettableBody.tickValue,
             massSettableBody.tickLabel,
-            massSettableBodyTandem.createTandem('massControl')
+            massSettableBodyTandem.createTandem( 'massControl' )
           )
         ]
       } );

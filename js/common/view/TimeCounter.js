@@ -14,8 +14,8 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
 const clearString = gravityAndOrbitsStrings.clear;

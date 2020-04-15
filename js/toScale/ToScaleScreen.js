@@ -11,8 +11,8 @@ import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import toScaleMipmap from '../../mipmaps/to_scale_icon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
-import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
+import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 
 const toScaleString = gravityAndOrbitsStrings.toScale;
