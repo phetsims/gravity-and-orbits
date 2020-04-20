@@ -14,7 +14,6 @@ import DerivedPropertyIO from '../../../../axon/js/DerivedPropertyIO.js';
 import Emitter from '../../../../axon/js/Emitter.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Property from '../../../../axon/js/Property.js';
-import PropertyIO from '../../../../axon/js/PropertyIO.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2IO from '../../../../dot/js/Vector2IO.js';
@@ -27,6 +26,7 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import BodyState from './BodyState.js';
 import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
 import RewindableProperty from './RewindableProperty.js';
+import RewindablePropertyIO from './RewindablePropertyIO.js';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -159,7 +159,7 @@ class Body {
 
     // @public
     this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
-      phetioType: PropertyIO( Vector2IO ),
+      phetioType: RewindablePropertyIO( Vector2IO ),
       tandem: tandem.createTandem( 'positionProperty' ),
       units: 'm',
       phetioHighFrequency: true,
@@ -168,7 +168,7 @@ class Body {
 
     // @public
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ), {
-      phetioType: PropertyIO( Vector2IO ),
+      phetioType: RewindablePropertyIO( Vector2IO ),
       tandem: tandem.createTandem( 'velocityProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
@@ -187,7 +187,7 @@ class Body {
     // @public
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
       phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
-      phetioType: PropertyIO( Vector2IO ),
+      phetioType: RewindablePropertyIO( Vector2IO ),
       tandem: tandem.createTandem( 'forceProperty' ),
       phetioHighFrequency: true,
       units: 'N',
@@ -206,7 +206,7 @@ class Body {
     // @public
     this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, {
       tandem: tandem.createTandem( 'massProperty' ),
-      phetioType: PropertyIO( NumberIO ),
+      phetioType: RewindablePropertyIO( NumberIO ),
       units: 'kg',
       phetioDocumentation: 'The mass of the body',
       phetioStudioControl: false
@@ -215,7 +215,7 @@ class Body {
     // @public
     this.isCollidedProperty = new RewindableProperty( changeRewindValueProperty, false, {
       tandem: tandem.createTandem( 'isCollidedProperty' ),
-      phetioType: PropertyIO( BooleanIO ),
+      phetioType: RewindablePropertyIO( BooleanIO ),
       phetioReadOnly: true,
       phetioDocumentation: 'True if the body has collided with another body'
     } );
@@ -223,7 +223,7 @@ class Body {
     // @public
     this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0, {
       tandem: tandem.createTandem( 'rotationProperty' ),
-      phetioType: PropertyIO( NumberIO ),
+      phetioType: RewindablePropertyIO( NumberIO ),
       units: 'radians',
       phetioHighFrequency: true,
       phetioDocumentation: 'The rotation of the body about its own origin',

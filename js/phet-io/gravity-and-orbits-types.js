@@ -1539,6 +1539,45 @@ window.phet.preloads.phetio.phetioTypes = assert &&
       "supertype": "ObjectIO",
       "typeName": "ReferenceIO<ObjectIO>"
     },
+    "RewindablePropertyIO<BooleanIO>": {
+      "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",
+      "events": [
+        "changed"
+      ],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "BooleanIO"
+      ],
+      "supertype": "PropertyIO<BooleanIO>",
+      "typeName": "RewindablePropertyIO<BooleanIO>"
+    },
+    "RewindablePropertyIO<NumberIO>": {
+      "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",
+      "events": [
+        "changed"
+      ],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "NumberIO"
+      ],
+      "supertype": "PropertyIO<NumberIO>",
+      "typeName": "RewindablePropertyIO<NumberIO>"
+    },
+    "RewindablePropertyIO<Vector2IO>": {
+      "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",
+      "events": [
+        "changed"
+      ],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "Vector2IO"
+      ],
+      "supertype": "PropertyIO<Vector2IO>",
+      "typeName": "RewindablePropertyIO<Vector2IO>"
+    },
     "RichTextIO": {
       "documentation": "The tandem IO type for the scenery RichText node",
       "events": [],

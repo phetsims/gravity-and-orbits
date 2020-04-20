@@ -2923,7 +2923,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -2936,7 +2936,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -2962,7 +2962,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -2975,7 +2975,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -2988,7 +2988,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.moon.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -3014,7 +3014,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -3053,7 +3053,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -3066,7 +3066,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -3092,7 +3092,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -3105,7 +3105,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -3118,7 +3118,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -3144,7 +3144,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetMoonScene.planetMoonPair.distanceProperty": {
       "phetioDocumentation": "",
@@ -3248,7 +3248,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -3261,7 +3261,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -3287,7 +3287,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -3300,7 +3300,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -3313,7 +3313,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -3339,7 +3339,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.planetSatellitePair.distanceProperty": {
       "phetioDocumentation": "",
@@ -3391,7 +3391,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -3404,7 +3404,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -3430,7 +3430,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -3443,7 +3443,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -3456,7 +3456,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.satellite.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -3482,7 +3482,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.planetSatelliteScene.zoomLevelProperty": {
       "phetioDocumentation": "",
@@ -3638,7 +3638,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -3651,7 +3651,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -3677,7 +3677,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -3690,7 +3690,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -3703,7 +3703,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.moon.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -3729,7 +3729,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -3768,7 +3768,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -3781,7 +3781,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -3807,7 +3807,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -3820,7 +3820,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -3833,7 +3833,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -3859,7 +3859,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.planetMoonPair.distanceProperty": {
       "phetioDocumentation": "",
@@ -3911,7 +3911,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -3924,7 +3924,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -3950,7 +3950,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -3963,7 +3963,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -3976,7 +3976,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.star.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -4002,7 +4002,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetMoonScene.starMoonPair.distanceProperty": {
       "phetioDocumentation": "",
@@ -4119,7 +4119,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -4132,7 +4132,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -4158,7 +4158,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -4171,7 +4171,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -4184,7 +4184,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -4210,7 +4210,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -4249,7 +4249,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -4262,7 +4262,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -4288,7 +4288,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -4301,7 +4301,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -4314,7 +4314,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.star.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -4340,7 +4340,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.modelScreen.model.starPlanetScene.starPlanetPair.distanceProperty": {
       "phetioDocumentation": "",
@@ -16930,7 +16930,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -16943,7 +16943,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -16969,7 +16969,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -16982,7 +16982,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -16995,7 +16995,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.moon.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -17021,7 +17021,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -17060,7 +17060,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -17073,7 +17073,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -17099,7 +17099,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -17112,7 +17112,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -17125,7 +17125,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -17151,7 +17151,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetMoonScene.planetMoonPair.distanceProperty": {
       "phetioDocumentation": "",
@@ -17255,7 +17255,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -17268,7 +17268,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -17294,7 +17294,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -17307,7 +17307,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -17320,7 +17320,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -17346,7 +17346,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.planetSatellitePair.distanceProperty": {
       "phetioDocumentation": "",
@@ -17398,7 +17398,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -17411,7 +17411,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -17437,7 +17437,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -17450,7 +17450,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -17463,7 +17463,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.satellite.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -17489,7 +17489,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.planetSatelliteScene.zoomLevelProperty": {
       "phetioDocumentation": "",
@@ -17671,7 +17671,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -17684,7 +17684,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -17710,7 +17710,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -17723,7 +17723,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -17736,7 +17736,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.moon.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -17762,7 +17762,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -17801,7 +17801,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -17814,7 +17814,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -17840,7 +17840,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -17853,7 +17853,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -17866,7 +17866,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -17892,7 +17892,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.planetMoonPair.distanceProperty": {
       "phetioDocumentation": "",
@@ -17944,7 +17944,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -17957,7 +17957,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -17983,7 +17983,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -17996,7 +17996,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -18009,7 +18009,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.star.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -18035,7 +18035,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetMoonScene.starMoonPair.distanceProperty": {
       "phetioDocumentation": "",
@@ -18152,7 +18152,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -18165,7 +18165,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -18191,7 +18191,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -18204,7 +18204,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -18217,7 +18217,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.planet.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -18243,7 +18243,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.diameterProperty": {
       "phetioDocumentation": "The distance across the body",
@@ -18282,7 +18282,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.isCollidedProperty": {
       "phetioDocumentation": "True if the body has collided with another body",
@@ -18295,7 +18295,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<BooleanIO>"
+      "phetioTypeName": "RewindablePropertyIO<BooleanIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.isMovableProperty": {
       "phetioDocumentation": "If true, the body can move during the physics update.",
@@ -18321,7 +18321,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.positionProperty": {
       "phetioDocumentation": "The position of the body",
@@ -18334,7 +18334,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.rotationProperty": {
       "phetioDocumentation": "The rotation of the body about its own origin",
@@ -18347,7 +18347,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": false,
-      "phetioTypeName": "PropertyIO<NumberIO>"
+      "phetioTypeName": "RewindablePropertyIO<NumberIO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.star.speedProperty": {
       "phetioDocumentation": "The speed of the body",
@@ -18373,7 +18373,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<Vector2IO>"
+      "phetioTypeName": "RewindablePropertyIO<Vector2IO>"
     },
     "gravityAndOrbits.toScaleScreen.model.starPlanetScene.starPlanetPair.distanceProperty": {
       "phetioDocumentation": "",
