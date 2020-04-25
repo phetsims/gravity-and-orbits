@@ -135,7 +135,11 @@ class BodyNode extends Node {
    * @private
    */
   createArrowIndicator( body, labelAngle, tandem ) {
-    const node = new Node();
+    const node = new Node( {
+      tandem: tandem,
+      phetioDocumentation: 'When the body is too small to see (depending on the zoom level), this shows a line that ' +
+                           'points to the body and indicates its name with a label.'
+    } );
     const viewCenter = new Vector2( 0, 0 );
     const northEastVector = Vector2.createPolar( 1, labelAngle );
     const tip = northEastVector.times( 10 ).plus( viewCenter );
