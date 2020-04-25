@@ -54,9 +54,11 @@ class MassControls extends VBox {
     const children = [];
 
     for ( let i = 0; i < massSettableBodies.length; i++ ) {
-      const sliderNode = new Node();
+
       const massSettableBody = massSettableBodies[ i ];
-      const massSettableBodyTandem = options.tandem.createTandem( massSettableBody.tandemName );
+      const massSettableBodyTandem = options.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
+      const sliderNode = new Node( { tandem: massSettableBodyTandem } );
+
       const label = new Text( LABEL_MAP[ massSettableBody.type.name ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',

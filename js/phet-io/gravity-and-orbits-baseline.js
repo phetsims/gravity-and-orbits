@@ -6065,7 +6065,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6078,7 +6078,20 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6091,7 +6104,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6104,7 +6117,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6117,7 +6130,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6130,7 +6143,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6143,7 +6156,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6156,7 +6169,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6169,7 +6182,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6182,7 +6195,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6195,7 +6208,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6208,7 +6221,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6221,7 +6234,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6234,7 +6247,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -6247,7 +6260,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6260,7 +6273,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6273,7 +6286,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6286,7 +6299,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6299,7 +6312,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -6312,7 +6325,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6325,7 +6338,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6338,7 +6351,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6351,7 +6364,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6364,7 +6377,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6376,7 +6389,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6389,7 +6402,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6402,7 +6415,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6415,7 +6428,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6428,7 +6441,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6441,7 +6454,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6454,20 +6467,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6480,7 +6480,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6493,7 +6493,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6506,7 +6506,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6519,7 +6584,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6532,7 +6597,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6545,7 +6610,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6558,7 +6623,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6571,7 +6636,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6584,7 +6649,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6597,7 +6662,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6610,7 +6675,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6623,7 +6688,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -6636,7 +6701,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6649,7 +6714,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6662,7 +6727,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6675,7 +6740,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6688,7 +6753,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -6701,7 +6766,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6714,7 +6779,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6727,7 +6792,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6740,7 +6805,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6753,7 +6818,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6765,7 +6830,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6778,7 +6843,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6791,7 +6856,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6804,7 +6869,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6817,7 +6882,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6830,7 +6895,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6843,20 +6908,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6869,7 +6921,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6882,7 +6934,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6895,7 +6947,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6908,7 +7025,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6921,7 +7038,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6934,7 +7051,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6947,7 +7064,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6960,7 +7077,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6973,7 +7090,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6986,7 +7103,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -6999,7 +7116,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7012,7 +7129,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -7025,7 +7142,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7038,7 +7155,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7051,7 +7168,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7064,7 +7181,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7077,7 +7194,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -7090,7 +7207,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7103,7 +7220,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7116,7 +7233,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7129,7 +7246,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7142,7 +7259,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7154,7 +7271,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7167,7 +7284,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7180,7 +7297,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7193,7 +7310,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7206,7 +7323,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7219,7 +7336,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7232,20 +7349,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7258,7 +7362,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7271,7 +7375,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7284,7 +7388,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7297,7 +7466,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7310,7 +7479,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7323,7 +7492,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7336,7 +7505,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7349,7 +7518,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7362,7 +7531,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7375,7 +7544,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7388,7 +7557,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7401,7 +7570,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -7414,7 +7583,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7427,7 +7596,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7440,7 +7609,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7453,7 +7622,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7466,7 +7635,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -7479,7 +7648,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7492,7 +7661,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7505,7 +7674,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7518,7 +7687,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7531,7 +7700,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7543,7 +7712,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7556,7 +7725,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7569,7 +7738,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7582,7 +7751,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7595,7 +7764,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7608,7 +7777,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7621,20 +7790,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7647,7 +7803,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7660,7 +7816,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7673,7 +7829,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7686,7 +7907,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7699,7 +7920,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7712,7 +7933,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7725,7 +7946,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7738,7 +7959,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7751,7 +7972,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7764,7 +7985,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7777,7 +7998,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7790,7 +8011,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -7803,7 +8024,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7816,7 +8037,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7829,7 +8050,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7842,7 +8063,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7855,7 +8076,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -7868,7 +8089,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7881,7 +8102,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7894,7 +8115,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7907,7 +8128,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7920,7 +8141,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7932,7 +8153,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7945,7 +8166,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7958,7 +8179,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7971,7 +8192,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7984,7 +8205,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -7997,7 +8218,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8010,20 +8231,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8036,7 +8244,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8049,7 +8257,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8062,7 +8270,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8075,7 +8348,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8088,7 +8361,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8101,7 +8374,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8114,7 +8387,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8127,7 +8400,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8140,7 +8413,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8153,7 +8426,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8166,7 +8439,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8179,7 +8452,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8192,7 +8465,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8205,7 +8478,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8218,7 +8491,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8231,7 +8504,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8244,7 +8517,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8257,7 +8530,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8270,7 +8543,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8283,7 +8556,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8296,7 +8569,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8309,7 +8582,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8321,7 +8594,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8334,7 +8607,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8347,7 +8620,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8360,7 +8633,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8373,7 +8646,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8386,7 +8659,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8399,20 +8672,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8425,7 +8685,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8438,7 +8698,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8451,7 +8711,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8464,7 +8789,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8477,7 +8802,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8490,7 +8815,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8503,7 +8828,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8516,7 +8841,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8529,7 +8854,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8542,7 +8867,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8555,7 +8880,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8568,7 +8893,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8581,7 +8906,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8594,7 +8919,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8607,7 +8932,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8620,7 +8945,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8633,7 +8958,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8646,7 +8971,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8659,7 +8984,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8672,7 +8997,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8685,7 +9010,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8698,7 +9023,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8710,7 +9035,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8723,7 +9048,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8736,7 +9061,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8749,7 +9074,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8762,7 +9087,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8775,7 +9100,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8788,20 +9113,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8814,7 +9126,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8827,7 +9139,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8840,7 +9152,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8853,7 +9230,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.enabledProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8866,7 +9243,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8879,7 +9256,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8892,7 +9269,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8905,7 +9282,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8918,7 +9295,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8931,7 +9308,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8944,7 +9321,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8957,7 +9334,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8970,7 +9347,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8983,7 +9360,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8996,7 +9373,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9009,7 +9386,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9022,7 +9399,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -9035,7 +9412,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9048,7 +9425,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9061,7 +9438,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9074,7 +9451,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9087,7 +9464,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.valueProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9099,7 +9476,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9112,7 +9489,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9125,7 +9502,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.opacityProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9138,7 +9515,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.pickableProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9151,7 +9528,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.textProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -9164,7 +9541,46 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.visibleProperty": {
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.modelScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20746,7 +21162,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20759,7 +21175,20 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20772,7 +21201,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20785,7 +21214,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.icon.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20798,7 +21227,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20811,7 +21240,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20824,7 +21253,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20837,7 +21266,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20850,7 +21279,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20863,7 +21292,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20876,7 +21305,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20889,7 +21318,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20902,7 +21331,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20915,7 +21344,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -20928,7 +21357,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20941,7 +21370,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20954,7 +21383,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20967,7 +21396,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -20980,7 +21409,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -20993,7 +21422,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21006,7 +21435,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21019,7 +21448,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21032,7 +21461,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21045,7 +21474,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21057,7 +21486,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21070,7 +21499,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21083,7 +21512,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21096,7 +21525,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21109,7 +21538,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21122,7 +21551,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moon.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21135,20 +21564,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21161,7 +21577,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21174,7 +21590,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.moonControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21187,7 +21603,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21200,7 +21681,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21213,7 +21694,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21226,7 +21707,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21239,7 +21720,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21252,7 +21733,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21265,7 +21746,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21278,7 +21759,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21291,7 +21772,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21304,7 +21785,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -21317,7 +21798,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21330,7 +21811,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21343,7 +21824,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21356,7 +21837,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21369,7 +21850,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -21382,7 +21863,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21395,7 +21876,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21408,7 +21889,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21421,7 +21902,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21434,7 +21915,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21446,7 +21927,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21459,7 +21940,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21472,7 +21953,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21485,7 +21966,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21498,7 +21979,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21511,7 +21992,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21524,20 +22005,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21550,7 +22018,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21563,7 +22031,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetMoonSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21576,7 +22044,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21589,7 +22122,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21602,7 +22135,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21615,7 +22148,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21628,7 +22161,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21641,7 +22174,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21654,7 +22187,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21667,7 +22200,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21680,7 +22213,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21693,7 +22226,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -21706,7 +22239,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21719,7 +22252,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21732,7 +22265,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21745,7 +22278,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21758,7 +22291,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -21771,7 +22304,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21784,7 +22317,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21797,7 +22330,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21810,7 +22343,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21823,7 +22356,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21835,7 +22368,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21848,7 +22381,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21861,7 +22394,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21874,7 +22407,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21887,7 +22420,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21900,7 +22433,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21913,20 +22446,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21939,7 +22459,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21952,7 +22472,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21965,7 +22485,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21978,7 +22563,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -21991,7 +22576,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22004,7 +22589,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22017,7 +22602,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22030,7 +22615,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22043,7 +22628,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22056,7 +22641,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22069,7 +22654,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22082,7 +22667,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -22095,7 +22680,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22108,7 +22693,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22121,7 +22706,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22134,7 +22719,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22147,7 +22732,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -22160,7 +22745,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22173,7 +22758,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22186,7 +22771,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22199,7 +22784,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22212,7 +22797,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22224,7 +22809,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22237,7 +22822,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22250,7 +22835,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22263,7 +22848,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22276,7 +22861,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22289,7 +22874,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satellite.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22302,20 +22887,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22328,7 +22900,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22341,7 +22913,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.planetSatelliteSceneMassesControlPanel.satelliteControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22354,7 +22926,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22367,7 +23004,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22380,7 +23017,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22393,7 +23030,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22406,7 +23043,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22419,7 +23056,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22432,7 +23069,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22445,7 +23082,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22458,7 +23095,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22471,7 +23108,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -22484,7 +23121,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22497,7 +23134,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22510,7 +23147,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22523,7 +23160,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22536,7 +23173,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -22549,7 +23186,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22562,7 +23199,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22575,7 +23212,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22588,7 +23225,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22601,7 +23238,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22613,7 +23250,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22626,7 +23263,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22639,7 +23276,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22652,7 +23289,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22665,7 +23302,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22678,7 +23315,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22691,20 +23328,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22717,7 +23341,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22730,7 +23354,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22743,7 +23367,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22756,7 +23445,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22769,7 +23458,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22782,7 +23471,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22795,7 +23484,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22808,7 +23497,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22821,7 +23510,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22834,7 +23523,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22847,7 +23536,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22860,7 +23549,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -22873,7 +23562,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22886,7 +23575,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22899,7 +23588,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22912,7 +23601,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22925,7 +23614,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -22938,7 +23627,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22951,7 +23640,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22964,7 +23653,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22977,7 +23666,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -22990,7 +23679,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23002,7 +23691,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23015,7 +23704,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23028,7 +23717,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23041,7 +23730,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23054,7 +23743,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23067,7 +23756,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.star.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23080,20 +23769,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23106,7 +23782,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23119,7 +23795,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetMoonSceneMassesControlPanel.starControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23132,7 +23808,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23145,7 +23886,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23158,7 +23899,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23171,7 +23912,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23184,7 +23925,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23197,7 +23938,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23210,7 +23951,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23223,7 +23964,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23236,7 +23977,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23249,7 +23990,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -23262,7 +24003,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23275,7 +24016,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23288,7 +24029,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23301,7 +24042,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23314,7 +24055,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -23327,7 +24068,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23340,7 +24081,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23353,7 +24094,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23366,7 +24107,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23379,7 +24120,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23391,7 +24132,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23404,7 +24145,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23417,7 +24158,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23430,7 +24171,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23443,7 +24184,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23456,7 +24197,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planet.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.massLabel.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23469,20 +24210,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon": {
-      "phetioDocumentation": "",
-      "phetioDynamicElement": false,
-      "phetioEventType": "MODEL",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioIsArchetype": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "NodeIO"
-    },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23495,7 +24223,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23508,7 +24236,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.icon.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.planetControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23521,7 +24249,72 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NodeIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.icon.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23534,7 +24327,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "SliderIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.enabledProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.enabledProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23547,7 +24340,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.enabledRangeProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.enabledRangeProperty": {
       "phetioDocumentation": "Sliders support two ranges: the outer range which specifies the min and max of the track and the enabledRangeProperty, which determines how low and high the thumb can be dragged within the track.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23560,7 +24353,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23573,7 +24366,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23586,7 +24379,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23599,7 +24392,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23612,7 +24405,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23625,7 +24418,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumb.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumb.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23638,7 +24431,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -23651,7 +24444,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23664,7 +24457,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23677,7 +24470,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23690,7 +24483,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.thumbInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.thumbInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23703,7 +24496,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -23716,7 +24509,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.dragAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23729,7 +24522,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.dragEndAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragEndAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23742,7 +24535,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.dragStartAction": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.dragStartAction": {
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO - the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23755,7 +24548,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.track.trackInputListener.isDraggingProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.track.trackInputListener.isDraggingProperty": {
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23768,7 +24561,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.valueProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.valueProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23780,7 +24573,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massControl.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massControl.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23793,7 +24586,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23806,7 +24599,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.opacityProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23819,7 +24612,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.pickableProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23832,7 +24625,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.textProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -23845,7 +24638,46 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<StringIO>"
     },
-    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.star.massLabel.visibleProperty": {
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.massLabel.visibleProperty": {
+      "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<BooleanIO>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.opacityProperty": {
+      "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "NumberPropertyIO"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.pickableProperty": {
+      "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
+    },
+    "gravityAndOrbits.toScaleScreen.view.massesControlPanel.starPlanetSceneMassesControlPanel.starControlNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
