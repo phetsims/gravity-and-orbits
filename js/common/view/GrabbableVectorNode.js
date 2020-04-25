@@ -35,7 +35,11 @@ class GrabbableVectorNode extends VectorNode {
   constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill,
                outline, labelText, tandem ) {
 
-    super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem );
+    super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, {
+      phetioComponentOptions: {
+        pickableProperty: { phetioReadOnly: false }
+      }
+    } );
 
     const tip = this.getTip();
 

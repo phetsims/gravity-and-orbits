@@ -10,6 +10,7 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
+import merge from '../../../../phet-core/js/merge.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -28,16 +29,18 @@ class VectorNode extends Node {
    * @param {Color} fill
    * @param {Color} outline
    * @param {Tandem} tandem
+   * @param {Object} [options]
    */
-  constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem ) {
-    super( {
+  constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options ) {
+    options = merge( {
       tandem: tandem,
       phetioComponentOptions: {
         opacityProperty: { phetioReadOnly: true },
         visibleProperty: { phetioReadOnly: true },
         pickableProperty: { phetioReadOnly: true }
       }
-    } );
+    }, options );
+    super( options );
 
     this.body = body; // @private
     this.vectorProperty = vectorProperty; // @private
@@ -100,7 +103,6 @@ class VectorNode extends Node {
     }
     return new Vector2( force.x + tail.x, force.y + tail.y );
   }
-
 }
 
 VectorNode.FORCE_SCALE = FORCE_SCALE;
