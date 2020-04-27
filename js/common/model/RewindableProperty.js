@@ -34,16 +34,6 @@ class RewindableProperty extends Property {
   }
 
   /**
-   * Take the rewind value as the initial value
-   * @param {*} value
-   * @override
-   */
-  setInitialValue( value ) {
-    super.setInitialValue( value );
-    this.rewindValue = value;
-  }
-
-  /**
    * Reset both the value and the rewind value.
    *
    * @public
