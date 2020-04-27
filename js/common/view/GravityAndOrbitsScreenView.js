@@ -9,6 +9,7 @@
 
 import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
+import merge from '../../../../phet-core/js/merge.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import AlignGroup from '../../../../scenery/js/nodes/AlignGroup.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
@@ -39,16 +40,15 @@ class GravityAndOrbitsScreenView extends ScreenView {
       matchVertical: false
     } );
 
-    // Control panel in the upper right of the play area
-    const gravityAndOrbitsControls = new GravityAndOrbitsControls( model, {
-      tandem: tandem.createTandem( 'controlPanel' )
+    // Control panel in the upper right of the play area.
+    const controlPanelTandem = tandem.createTandem( 'controlPanel' );
+    const controlPanel = new GravityAndOrbitsControls( model, {
+      tandem: controlPanelTandem // The outer Panel below is instrumented, this is just to pass the tandem to children
     } );
 
     // Container so all mass control panels (for each scene) can be hidden/shown at once
     const massesControlPanelTandem = tandem.createTandem( 'massesControlPanel' );
-    const massesControlPanel = new Node( {
-      tandem: massesControlPanelTandem
-    } );
+    const massesControlPanel = new Node();
 
     // Container so all play areas (for each scene) can be hidden/shown at once
     const playAreaNodeTandem = tandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME );
@@ -78,8 +78,12 @@ class GravityAndOrbitsScreenView extends ScreenView {
       right: this.layoutBounds.right - MARGIN,
       spacing: MARGIN,
       children: [
-        new Panel( alignGroup.createBox( gravityAndOrbitsControls ), GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS ),
-        new Panel( alignGroup.createBox( massesControlPanel ), GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS )
+        new Panel( alignGroup.createBox( controlPanel ), merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+          tandem: controlPanelTandem
+        } ) ),
+        new Panel( alignGroup.createBox( massesControlPanel ), merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+          tandem: massesControlPanelTandem
+        } ) )
       ]
     } ) );
 
