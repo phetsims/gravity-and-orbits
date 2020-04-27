@@ -113,15 +113,6 @@
   "toScale": {
     "value": "To Scale"
   },
-  "fastForward": {
-    "value": "Fast Forward"
-  },
-  "normal": {
-    "value": "Normal"
-  },
-  "slowMotion": {
-    "value": "Slow Motion"
-  },
   "v": {
     "value": "V"
   }
