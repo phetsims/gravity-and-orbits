@@ -7,7 +7,7 @@
  */
 
 import Sim from '../../joist/js/Sim.js';
-import SimLauncher from '../../joist/js/SimLauncher.js';
+import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import GravityAndOrbitsColorProfile from './common/GravityAndOrbitsColorProfile.js';
 import GlobalOptionsNode from './common/view/GlobalOptionsNode.js';
@@ -17,7 +17,7 @@ import ToScaleScreen from './toScale/ToScaleScreen.js';
 
 const gravityAndOrbitsTitleString = gravityAndOrbitsStrings[ 'gravity-and-orbits' ].title;
 
-SimLauncher.launch( () => {
+simLauncher.launch( () => {
 
   // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
   const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
