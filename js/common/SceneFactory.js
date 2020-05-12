@@ -248,7 +248,7 @@ class SunEarthModeConfig extends ModeConfig {
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.initialMeasuringTapeLocation = new Line(
+    this.initialMeasuringTapePosition = new Line(
       ( this.sun.x + this.planet.x ) / 3,
       -this.planet.x / 2,
       ( this.sun.x + this.planet.x ) / 3 + milesToMeters( 50000000 ),
@@ -273,7 +273,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.moon = new BodyConfiguration(
       MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.initialMeasuringTapeLocation = new Line(
+    this.initialMeasuringTapePosition = new Line(
       ( this.sun.x + this.planet.x ) / 3,
       -this.planet.x / 2,
       ( this.sun.x + this.planet.x ) / 3 + milesToMeters( 50000000 ),
@@ -306,7 +306,7 @@ class EarthMoonModeConfig extends ModeConfig {
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0, {
       rotationPeriod: options.moonRotationPeriod
     } );
-    this.initialMeasuringTapeLocation = new Line(
+    this.initialMeasuringTapePosition = new Line(
       this.planet.x + this.planet.radius * 2,
       -this.moon.y * 0.7,
       this.planet.x + this.planet.radius * 2 + milesToMeters( 100000 ),
@@ -343,7 +343,7 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 
     // @public
     // Sampled at runtime from MeasuringTape
-    this.initialMeasuringTapeLocation = new Line( 3162119, 7680496, 6439098, 7680496 );
+    this.initialMeasuringTapePosition = new Line( 3162119, 7680496, 6439098, 7680496 );
     this.forceScale = FORCE_SCALE * 3E13;
     this.dt = DEFAULT_DT * 9E-4;
   }

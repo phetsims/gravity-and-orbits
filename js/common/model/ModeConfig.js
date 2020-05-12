@@ -27,7 +27,7 @@ class ModeConfig {
     this.zoom = zoom; // @public
 
     // @public {Line} - Initial start and end point of the measuring tape
-    this.initialMeasuringTapeLocation = null;
+    this.initialMeasuringTapePosition = null;
 
     // @protected
     this.forceScale = null;

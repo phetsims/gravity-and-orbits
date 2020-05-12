@@ -25,7 +25,7 @@ class MassReadoutNode extends Node {
     } );
     this.addChild( readoutText );
 
-    const updateLocation = () => {
+    const updatePosition = () => {
       const bounds = bodyNode.bodyRenderer.getBounds();
 
       this.x = bounds.centerX - this.width / 2;
@@ -39,12 +39,12 @@ class MassReadoutNode extends Node {
 
     bodyNode.body.massProperty.link( () => {
       readoutText.setText( this.createText() );
-      updateLocation();
+      updatePosition();
     } );
 
     visibleProperty.link( visible => {
       this.visible = visible;
-      updateLocation();
+      updatePosition();
     } );
   }
 }

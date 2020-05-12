@@ -57,7 +57,7 @@ class GravityAndOrbitsScene extends PhetioObject {
                sceneViewTandem, bodies, pairs, options ) {
 
     const forceScale = modeConfig.forceScale;
-    const initialMeasuringTapeLocation = modeConfig.initialMeasuringTapeLocation;
+    const initialMeasuringTapePosition = modeConfig.initialMeasuringTapePosition;
     const defaultZoomScale = modeConfig.zoom;
     const tandemName = tandem.name;
     const radioButtonTandemName = `${tandemName}Button`;
@@ -83,8 +83,8 @@ class GravityAndOrbitsScene extends PhetioObject {
     const measuringTapePointOptions = {
       units: 'm'
     };
-    this.measuringTapeStartPointProperty = new Property( initialMeasuringTapeLocation.p1, measuringTapePointOptions );
-    this.measuringTapeEndPointProperty = new Property( initialMeasuringTapeLocation.p2, measuringTapePointOptions );
+    this.measuringTapeStartPointProperty = new Property( initialMeasuringTapePosition.p1, measuringTapePointOptions );
+    this.measuringTapeEndPointProperty = new Property( initialMeasuringTapePosition.p2, measuringTapePointOptions );
     this.zoomLevelProperty = new NumberProperty( 1, {
       tandem: tandem.createTandem( 'zoomLevelProperty' ),
       range: GravityAndOrbitsConstants.ZOOM_RANGE

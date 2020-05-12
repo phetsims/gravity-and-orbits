@@ -43,7 +43,7 @@ class ExplosionNode extends Node {
     // Add the graphic that shows the explosion, uses the twinkle graphics from the cartoon sun
     this.addChild( this.getExplosionEdgeGraphic( body, getDiameter ) );
 
-    // update the location of this node when the body changes, unless the body is collided
+    // update the position of this node when the body changes, unless the body is collided
     body.positionProperty.link( () => {
 
       // this if statement wasn't in the Java version, but it looks weird to have the explosion drag with the mouse
