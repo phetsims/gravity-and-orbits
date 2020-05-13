@@ -62,5 +62,5 @@ class GravityAndOrbitsControls extends VBox {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsControlPanel', GravityAndOrbitsControls );
+gravityAndOrbits.register( 'GravityAndOrbitsControls', GravityAndOrbitsControls );
 export default GravityAndOrbitsControls;

@@ -100,5 +100,5 @@ class MassControls extends VBox {
   }
 }
 
-gravityAndOrbits.register( 'MassControlPanel', MassControls );
+gravityAndOrbits.register( 'MassControls', MassControls );
 export default MassControls;
