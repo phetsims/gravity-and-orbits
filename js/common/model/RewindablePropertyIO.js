@@ -63,6 +63,8 @@ const create = parameterType => {
 
     /**
      * Encodes a Property phetioObject to a state.
+     * @public
+     *
      * @param {Object} property
      * @returns {Object} - a state object
      */
@@ -75,6 +77,8 @@ const create = parameterType => {
 
     /**
      * Decodes a state into a Property.
+     * @public
+     *
      * @param {Object} stateObject
      * @returns {Object}
      */

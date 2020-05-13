@@ -103,6 +103,7 @@ class GravityAndOrbitsPhysicsEngine {
    * Moves the model forward in time.  This function creates temporary state objects and calculates state values
    * based on the current state of the entire model. Afterwards, it applies the updated values to the body objects.
    * Finally, it checks for collisions between bodies.
+   * @public
    *
    * @param {number} dt
    */
@@ -189,6 +190,7 @@ class GravityAndOrbitsPhysicsEngine {
 
   /**
    * Get the body associated with the name.  The name must be one of GravityAndOrbitsBodies.
+   * @public
    *
    * @param {GravityAndOrbitsBodies} type
    * @returns {Body|null}

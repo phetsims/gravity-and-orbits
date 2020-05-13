@@ -61,6 +61,7 @@ class GravityAndOrbitsClock {
 
   /**
    * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
+   * @public
    *
    * @returns {number}
    */
@@ -77,6 +78,7 @@ class GravityAndOrbitsClock {
 
   /**
    * Set whether or not the model should be running.
+   * @public
    *
    * @param  {boolean} running
    */
@@ -86,6 +88,7 @@ class GravityAndOrbitsClock {
 
   /**
    * Set the clock time.
+   * @public
    *
    * @param  {number} time description
    */
@@ -105,6 +108,7 @@ class GravityAndOrbitsClock {
 
   /**
    * Add an event callback to the event timer, called every time the animation frame changes.
+   * @public
    *
    * @param  {number} stepFunction
    */
@@ -115,6 +119,7 @@ class GravityAndOrbitsClock {
 
   /**
    * Step the simulation by dt
+   * @public
    *
    * @param  {number} dt
    * @returns {type} description

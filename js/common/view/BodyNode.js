@@ -171,6 +171,7 @@ class BodyNode extends Node {
 
   /**
    * Get the position of this body node mased on a transform and the model element.
+   * @public
    *
    * @param  {Property.<ModelViewTransform2>} modelViewTransformProperty
    * @param  {Body} body
@@ -182,6 +183,7 @@ class BodyNode extends Node {
 
   /**
    * Get the diameter of the body in view coordinates.
+   * @public
    *
    * @returns {number}
    */

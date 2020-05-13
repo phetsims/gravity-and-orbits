@@ -316,6 +316,7 @@ class Body {
   /**
    * Save the current state of the body by storing the values of all rewindable properties.  This should only
    * be called when the clock is paused.
+   * @public
    */
   saveBodyState() {
     assert && assert( !this.isPlayingProperty.get(), 'saveBodyState should only be called when sim is paused' );
@@ -393,6 +394,7 @@ class Body {
 
   /**
    * Clear the whole path of points tracking the body's trajectory.
+   * @public
    */
   clearPath() {
     this.path = [];

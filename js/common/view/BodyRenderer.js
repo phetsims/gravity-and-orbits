@@ -112,6 +112,7 @@ class ImageRenderer extends BodyRenderer {
 
   /**
    * Set the diameter for the rednerer in view coordinates
+   * @public
    *
    * @param  {number} viewDiameter
    */
@@ -154,6 +155,7 @@ class SunRenderer extends ImageRenderer {
 
   /**
    * Set the diamater for the sun, based on view coordinates.
+   * @public
    *
    * @param  {number} viewDiameter
    */

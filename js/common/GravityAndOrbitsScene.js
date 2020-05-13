@@ -260,6 +260,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * Save the state of the orbital system, which includes all rewindable properties
    * of all bodies. This should only be called when the sim is paused.
+   * @public
    */
   saveState() {
     assert && assert( !this.isPlayingProperty.get(), 'saveState should only be called when sim paused' );
