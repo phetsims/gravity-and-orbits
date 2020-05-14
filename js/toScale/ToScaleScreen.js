@@ -7,6 +7,7 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
+import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import toScaleMipmap from '../../mipmaps/to_scale_icon_png.js';
@@ -22,7 +23,11 @@ class ToScaleScreen extends Screen {
   constructor( options ) {
     options = merge( {
       name: toScaleString,
-      homeScreenIcon: new Image( toScaleMipmap )
+      homeScreenIcon: new ScreenIcon( new Image( toScaleMipmap ), {
+        maxIconWidthProportion: 1,
+        maxIconHeightProportion: 1,
+        fill: 'black'
+      } )
     }, options );
 
     const viewTandem = options.tandem.createTandem( 'view' );
