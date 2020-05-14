@@ -18,7 +18,7 @@ import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import PropertyIO from '../../../../axon/js/PropertyIO.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
-import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
+import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import ObjectIO from '../../../../tandem/js/types/ObjectIO.js';
 import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
@@ -55,8 +55,8 @@ class GravityAndOrbitsModel {
     } );
 
     // @public
-    this.timeControlSpeedProperty = new EnumerationProperty( TimeControlSpeed, TimeControlSpeed.NORMAL, {
-      tandem: tandem.createTandem( 'timeControlSpeedProperty' )
+    this.timeSpeedProperty = new EnumerationProperty( TimeSpeed, TimeSpeed.NORMAL, {
+      tandem: tandem.createTandem( 'timeSpeedProperty' )
     } );
 
     this.gravityEnabledProperty = new BooleanProperty( true, { tandem: tandem.createTandem( 'gravityEnabledProperty' ) } );
@@ -121,7 +121,7 @@ class GravityAndOrbitsModel {
     this.showVelocityProperty.reset();
     this.showMassProperty.reset();
     this.isPlayingProperty.reset();
-    this.timeControlSpeedProperty.reset();
+    this.timeSpeedProperty.reset();
     this.showMeasuringTapeProperty.reset();
     this.gravityEnabledProperty.reset();
     this.steppingProperty.reset();

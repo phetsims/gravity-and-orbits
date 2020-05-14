@@ -14,7 +14,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import RestartButton from '../../../../scenery-phet/js/buttons/RestartButton.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
-import TimeControlSpeed from '../../../../scenery-phet/js/TimeControlSpeed.js';
+import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
@@ -37,8 +37,8 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     }, options );
 
     super( model.isPlayingProperty, {
-      timeControlSpeedProperty: model.timeControlSpeedProperty,
-      timeControlSpeeds: [ TimeControlSpeed.FAST, TimeControlSpeed.NORMAL, TimeControlSpeed.SLOW ],
+      timeSpeedProperty: model.timeSpeedProperty,
+      timeSpeeds: [ TimeSpeed.FAST, TimeSpeed.NORMAL, TimeSpeed.SLOW ],
       playPauseStepButtonOptions: {
         playPauseStepXSpacing: PUSH_BUTTON_SPACING,
         playPauseButtonOptions: {

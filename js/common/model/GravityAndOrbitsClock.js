@@ -28,11 +28,11 @@ class GravityAndOrbitsClock {
   /**
    * @param {number} baseDTValue (multiplied by scale to obtain true dt)
    * @param {Property.<boolean>} steppingProperty
-   * @param {EnumerationProperty.<TimeControlSpeed>} timeControlSpeedProperty
+   * @param {EnumerationProperty.<TimeSpeed>} timeSpeedProperty
    * @param {Tandem} sceneTandem
    * @param {Tandem} tandem
    */
-  constructor( baseDTValue, steppingProperty, timeControlSpeedProperty, sceneTandem, tandem ) {
+  constructor( baseDTValue, steppingProperty, timeSpeedProperty, sceneTandem, tandem ) {
 
     // @public (read-only)
     this.baseDTValue = baseDTValue;
@@ -53,7 +53,7 @@ class GravityAndOrbitsClock {
     this.steppingProperty = steppingProperty;
 
     // @public
-    this.timeControlSpeedProperty = timeControlSpeedProperty;
+    this.timeSpeedProperty = timeSpeedProperty;
 
     // Fraction between old state=0 and new state=1
     this.interpolationRatio = 1;
