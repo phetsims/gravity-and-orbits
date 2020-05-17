@@ -32,7 +32,6 @@ import VectorNode from './VectorNode.js';
 import ZoomControl from './ZoomControl.js';
 
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
-const thousandMilesString = gravityAndOrbitsStrings.thousandMiles;
 const vString = gravityAndOrbitsStrings.v;
 
 // constants
@@ -41,8 +40,6 @@ const WIDTH = 790 * ( 1 / SCALE );
 const HEIGHT = 618 * ( 1 / SCALE );
 const STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
 const buttonBackgroundColor = new Color( 255, 250, 125 );
-const METERS_PER_MILE = 0.000621371192;
-const THOUSAND_MILES_MULTIPLIER = METERS_PER_MILE / 1000;
 
 class GravityAndOrbitsSceneView extends Rectangle {
 
@@ -126,7 +123,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // Add measuring tape
     if ( model.showMeasuringTape ) {
 
-      const unitsProperty = new Property( { name: thousandMilesString, multiplier: THOUSAND_MILES_MULTIPLIER } );
+      const unitsProperty = new Property( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
       const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
         basePositionProperty: scene.measuringTapeStartPointProperty,
         tipPositionProperty: scene.measuringTapeEndPointProperty,

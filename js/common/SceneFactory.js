@@ -75,10 +75,6 @@ const SPACE_STATION_ORBITAL_PERIOD = 91.4 * 60;
 
 const SECONDS_PER_MINUTE = 60;
 const FORCE_SCALE = VectorNode.FORCE_SCALE;
-
-// not originally in this file
-const METERS_PER_MILE = 0.000621371192;
-
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
 class SceneFactory {
@@ -237,8 +233,6 @@ class SceneFactory {
   }
 }
 
-const milesToMeters = modelDistance => modelDistance / METERS_PER_MILE;
-
 class SunEarthModeConfig extends ModeConfig {
   constructor() {
 
@@ -251,7 +245,7 @@ class SunEarthModeConfig extends ModeConfig {
     this.initialMeasuringTapePosition = new Line(
       ( this.sun.x + this.planet.x ) / 3,
       -this.planet.x / 2,
-      ( this.sun.x + this.planet.x ) / 3 + milesToMeters( 50000000 ),
+      ( this.sun.x + this.planet.x ) / 3 + 80000000 * 1000,
       -this.planet.x / 2 );
     this.forceScale = FORCE_SCALE * 120;
   }
@@ -276,7 +270,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
     this.initialMeasuringTapePosition = new Line(
       ( this.sun.x + this.planet.x ) / 3,
       -this.planet.x / 2,
-      ( this.sun.x + this.planet.x ) / 3 + milesToMeters( 50000000 ),
+      ( this.sun.x + this.planet.x ) / 3 + 80000000 * 1000,
       -this.planet.x / 2 );
     this.forceScale = FORCE_SCALE * 120;
   }
@@ -309,7 +303,7 @@ class EarthMoonModeConfig extends ModeConfig {
     this.initialMeasuringTapePosition = new Line(
       this.planet.x + this.planet.radius * 2,
       -this.moon.y * 0.7,
-      this.planet.x + this.planet.radius * 2 + milesToMeters( 100000 ),
+      this.planet.x + this.planet.radius * 2 + 150000 * 1000,
       -this.moon.y * 0.7 );
     this.forceScale = FORCE_SCALE * 45;
     this.dt = DEFAULT_DT / 3;  // actual days
@@ -343,7 +337,8 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 
     // @public
     // Sampled at runtime from MeasuringTape
-    this.initialMeasuringTapePosition = new Line( 3162119, 7680496, 6439098, 7680496 );
+    const x0 = 3162119;
+    this.initialMeasuringTapePosition = new Line( x0, 7680496, x0 + 3000 * 1000, 7680496 );
     this.forceScale = FORCE_SCALE * 3E13;
     this.dt = DEFAULT_DT * 9E-4;
   }
