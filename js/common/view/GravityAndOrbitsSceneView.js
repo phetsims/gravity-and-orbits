@@ -21,7 +21,6 @@ import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
-import GravityAndOrbitsBodies from '../model/GravityAndOrbitsBodies.js';
 import BodyNode from './BodyNode.js';
 import ExplosionNode from './ExplosionNode.js';
 import GrabbableVectorNode from './GrabbableVectorNode.js';
@@ -133,8 +132,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         // see https://github.com/phetsims/gravity-and-orbits/issues/281
         isTipDragBounded: false,
 
-        // space station gets 1 sig fig, the other bodies have 0
-        significantFigures: ( bodies[ 1 ].type === GravityAndOrbitsBodies.SATELLITE ) ? 1 : 0,
+        significantFigures: 0,
 
         tandem: tandem.createTandem( 'measuringTapeNode' ),
         phetioComponentOptions: {
