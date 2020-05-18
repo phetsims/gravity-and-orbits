@@ -49,17 +49,17 @@ const spaceStationString = gravityAndOrbitsStrings.spaceStation;
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.
-const SUN_RADIUS = 6.955E8; // km
+const SUN_RADIUS = 6.957E8; // m
 const SUN_MASS = 1.989E30; // kg
 const EARTH_RADIUS = 6.371E6;
 const EARTH_MASS = GravityAndOrbitsConstants.EARTH_MASS;
-const EARTH_PERIHELION = 147098290E3; // km, distance from the sun at the closest point
+const EARTH_PERIHELION = 147098074E3; // m, distance from the sun at the closest point
 const EARTH_ORBITAL_SPEED_AT_PERIHELION = 30300; // m/s
-const MOON_MASS = 7.3477E22;
-const MOON_RADIUS = 1737.1E3;
+const MOON_MASS = 7.346E22;
+const MOON_RADIUS = 1727.4E3;
 const MOON_EARTH_SPEED = -1.01E3;
 const MOON_SPEED = MOON_EARTH_SPEED;
-const MOON_PERIGEE = 391370E3; // km, distance from earth at closet point
+const MOON_PERIGEE = 363300E3; // km, distance from earth at closet point
 const MOON_X = EARTH_PERIHELION;
 const MOON_Y = MOON_PERIGEE;
 
