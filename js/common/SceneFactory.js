@@ -57,8 +57,7 @@ const EARTH_PERIHELION = 147098074E3; // m, distance from the sun at the closest
 const EARTH_ORBITAL_SPEED_AT_PERIHELION = 30300; // m/s
 const MOON_MASS = 7.346E22;
 const MOON_RADIUS = 1727.4E3;
-const MOON_EARTH_SPEED = -1.01E3;
-const MOON_SPEED = MOON_EARTH_SPEED;
+const MOON_SPEED_AT_PERIGEE = -1082; // m/s
 const MOON_PERIGEE = 363300E3; // km, distance from earth at closet point
 const MOON_X = EARTH_PERIHELION;
 const MOON_Y = MOON_PERIGEE;
@@ -266,7 +265,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
     this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.moon = new BodyConfiguration(
-      MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, EARTH_ORBITAL_SPEED_AT_PERIHELION );
+      MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED_AT_PERIGEE, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.initialMeasuringTapePosition = new Line(
       ( this.sun.x + this.planet.x ) / 3,
       -this.planet.x / 2,
@@ -297,7 +296,7 @@ class EarthMoonModeConfig extends ModeConfig {
 
     // @public
     this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
-    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED, 0, {
+    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED_AT_PERIGEE, 0, {
       rotationPeriod: options.moonRotationPeriod
     } );
     this.initialMeasuringTapePosition = new Line(
