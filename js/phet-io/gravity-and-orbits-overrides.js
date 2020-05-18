@@ -253,7 +253,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
   "gravityAndOrbits.modelScreen.model.starPlanetScene.starPlanetPair.distanceProperty": {
     "phetioFeatured": true
   },
-  "gravityAndOrbits.modelScreen.model.timeControlSpeedProperty": {
+  "gravityAndOrbits.modelScreen.model.timeSpeedProperty": {
     "phetioFeatured": true
   },
   "gravityAndOrbits.modelScreen.view.controlPanel.checkboxPanel.visibleProperty": {
@@ -673,7 +673,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
   "gravityAndOrbits.toScaleScreen.model.starPlanetScene.starPlanetPair.distanceProperty": {
     "phetioFeatured": true
   },
-  "gravityAndOrbits.toScaleScreen.model.timeControlSpeedProperty": {
+  "gravityAndOrbits.toScaleScreen.model.timeSpeedProperty": {
     "phetioFeatured": true
   },
   "gravityAndOrbits.toScaleScreen.view.controlPanel.checkboxPanel.visibleProperty": {
