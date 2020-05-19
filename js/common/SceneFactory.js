@@ -280,10 +280,11 @@ class SunEarthMoonModeConfig extends ModeConfig {
   }
 }
 
+// TODO: Rename PlanetMoonModeConfig
 class EarthMoonModeConfig extends ModeConfig {
 
   /**
-   * Configuration for the Earh+Moon system.
+   * Configuration for the Earth+Moon system.
    * @param {Object} [options]
    */
   constructor( options ) {
@@ -295,7 +296,9 @@ class EarthMoonModeConfig extends ModeConfig {
     super( 400 );
 
     // @public
-    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, 0 );
+    const planetV = -MOON_SPEED_AT_PERIGEE * MOON_MASS / EARTH_MASS;
+
+    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, planetV, 0 );
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED_AT_PERIGEE, 0, {
       rotationPeriod: options.moonRotationPeriod
     } );
