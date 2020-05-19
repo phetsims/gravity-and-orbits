@@ -172,7 +172,7 @@ class Body {
       tandem: tandem.createTandem( 'velocityProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
-      phetioDocumentation: 'The speed and direction of motion of the body'
+      phetioDocumentation: 'The absolute speed and direction of motion of the body'
     } );
 
     // @public
@@ -181,7 +181,7 @@ class Body {
       tandem: tandem.createTandem( 'speedProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
-      phetioDocumentation: 'The speed of the body'
+      phetioDocumentation: 'The absolute speed of the body'
     } );
 
     // @public

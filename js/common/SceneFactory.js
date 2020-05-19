@@ -295,11 +295,14 @@ class EarthMoonModeConfig extends ModeConfig {
 
     super( 400 );
 
-    // @public
-    const planetV = -MOON_SPEED_AT_PERIGEE * MOON_MASS / EARTH_MASS;
+    // We want to center the overall motion of the system, but specify the relative speed of the moon to be
+    // equal to MOON_SPEED_AT_PERIGEE
+    const planetVelocityX = MOON_MASS * 1082 / ( EARTH_MASS + MOON_MASS );
+    const moonVelocityX = planetVelocityX - Math.abs( MOON_SPEED_AT_PERIGEE );
 
-    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, planetV, 0 );
-    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED_AT_PERIGEE, 0, {
+    // @public
+    this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, planetVelocityX, 0 );
+    this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, moonVelocityX, 0, {
       rotationPeriod: options.moonRotationPeriod
     } );
     this.initialMeasuringTapePosition = new Line(
