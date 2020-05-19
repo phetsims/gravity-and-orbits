@@ -151,8 +151,9 @@ class GravityAndOrbitsScene extends PhetioObject {
     const maxY = targetRectangle.y + targetRectangle.height;
     const modelBounds = new Bounds2( minX, minY, maxX, maxY );
     this.modelBoundsProperty.set( modelBounds );
+    const viewTranslation = 50;
     return ModelViewTransform2.createRectangleInvertedYMapping(
-      modelBounds, new Bounds2( 0, 0, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT ) );
+      modelBounds, new Bounds2( 0, -viewTranslation, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT - viewTranslation ) );
   }
 
   /**
