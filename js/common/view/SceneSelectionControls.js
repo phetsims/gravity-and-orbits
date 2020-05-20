@@ -33,9 +33,7 @@ class SceneSelectionControls extends Node {
     const resetButtons = modes.map( scene => {
       content.push( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 
-      // TODO(phet-io design): These should be nested in one node, so you can hide the whole thing.  But that will be complicated.  Worth it?
-      // CONSENSUS: We will feature the radio button groups, and leave the reset buttons as they are.
-      // CONSENSUS: put the reset buttons under the same group if not too complicated, but don't fracture the code
+      // For the PhET-iO design, we decided to feature the radio button group and leave the reset buttons separate.
       const resetButton = new PlanetModeResetButton( scene, {
         tandem: options.tandem.createTandem( scene.resetButtonTandemName )
       } );
