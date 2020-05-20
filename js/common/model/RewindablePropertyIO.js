@@ -71,7 +71,7 @@ const create = parameterType => {
     static toStateObject( property ) {
       validate( property, this.validator );
       const stateObject = PropertyIOImpl.toStateObject( property );
-      stateObject.rewindValue = parameterType.toStateObject( property.rewindValue ); // TODO: private access
+      stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
       return stateObject;
     }
 

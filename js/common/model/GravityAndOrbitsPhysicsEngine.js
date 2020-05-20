@@ -48,7 +48,6 @@ class GravityAndOrbitsPhysicsEngine {
     // @public {Body[]} - contains the sun, moon, earth, satellite
     this.bodies = [];
 
-    // TODO: What is dt doing here?
     this.clock.addEventTimer( dt => {
 
       // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253

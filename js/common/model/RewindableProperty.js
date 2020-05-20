@@ -23,7 +23,7 @@ class RewindableProperty extends Property {
   constructor( changeRewindValueProperty, value, options ) {
     super( value, options );
 
-    // @private - the "initial condition" the property can be rewound to, different than the overall "reset" value
+    // @public - the "initial condition" the property can be rewound to, different than the overall "reset" value
     this.rewindValue = value;
 
     // @private - see above
