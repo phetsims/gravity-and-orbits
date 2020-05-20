@@ -19,7 +19,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsControls from './GravityAndOrbitsControls.js';
 import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.js';
-import MassControls from './MassControls.js';
+import MassControlPanel from './MassControlPanel.js';
 
 // constants
 const MARGIN = 5;
@@ -60,7 +60,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
     model.getScenes().forEach( scene => {
       const sceneView = scene.sceneView;
 
-      const massControlPanel = new MassControls( scene.getMassSettableBodies(), {
+      const massControlPanel = new MassControlPanel( scene.getMassSettableBodies(), {
 
         // Nest under massesControlPanel, see https://github.com/phetsims/gravity-and-orbits/issues/284#issuecomment-554106611
         tandem: massesControlPanelTandem.createTandem( scene.massControlPanelTandemName )
