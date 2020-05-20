@@ -82,7 +82,7 @@ class SceneFactory {
    * @param {GravityAndOrbitsModel} model
    * @param {SunEarthModeConfig} planetStar
    * @param {SunEarthMoonModeConfig} sunEarthMoon
-   * @param {EarthMoonModeConfig} earthMoon
+   * @param {PlanetMoonModeConfig} earthMoon
    * @param {EarthSpaceStationModeConfig} earthSpaceStation
    * @param {Tandem} modelTandem
    * @param {Tandem} viewTandem
@@ -280,8 +280,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
   }
 }
 
-// TODO: Rename PlanetMoonModeConfig
-class EarthMoonModeConfig extends ModeConfig {
+class PlanetMoonModeConfig extends ModeConfig {
 
   /**
    * Configuration for the Earth+Moon system.
@@ -519,7 +518,7 @@ class Star extends Body {
 
 SceneFactory.SunEarthModeConfig = SunEarthModeConfig;
 SceneFactory.SunEarthMoonModeConfig = SunEarthMoonModeConfig;
-SceneFactory.EarthMoonModeConfig = EarthMoonModeConfig;
+SceneFactory.PlanetMoonModeConfig = PlanetMoonModeConfig;
 SceneFactory.EarthSpaceStationModeConfig = EarthSpaceStationModeConfig;
 
 gravityAndOrbits.register( 'SceneFactory', SceneFactory );

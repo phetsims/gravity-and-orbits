@@ -22,7 +22,7 @@ class ToScaleSceneFactory extends SceneFactory {
       model,
       new SceneFactory.SunEarthModeConfig(),
       new SceneFactory.SunEarthMoonModeConfig(),
-      new SceneFactory.EarthMoonModeConfig(),
+      new SceneFactory.PlanetMoonModeConfig(),
       new SceneFactory.EarthSpaceStationModeConfig(),
       modelTandem,
       viewTandem

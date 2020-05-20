@@ -37,7 +37,7 @@ class ModelSceneFactory extends SceneFactory {
       model,
       new SunEarthModeConfig(),
       new SunEarthMoonModeConfig(),
-      new EarthMoonModeConfig(),
+      new PlanetMoonModeConfig(),
       new EarthSpaceStationModeConfig(),
       modelTandem, viewTandem, {
         adjustMoonPathLength: true, // adjust the moon path length in model
@@ -87,7 +87,7 @@ class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
 
 gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
 
-class EarthMoonModeConfig extends SceneFactory.EarthMoonModeConfig {
+class PlanetMoonModeConfig extends SceneFactory.PlanetMoonModeConfig {
   constructor() {
 
     super( { moonRotationPeriod: daysToSeconds( 27.322 ) } );
@@ -101,7 +101,7 @@ class EarthMoonModeConfig extends SceneFactory.EarthMoonModeConfig {
   }
 }
 
-gravityAndOrbits.register( 'EarthMoonModeConfig', EarthMoonModeConfig );
+gravityAndOrbits.register( 'PlanetMoonModeConfig', PlanetMoonModeConfig );
 
 /**
  * Model configuration for a system with the earth and a space station.
