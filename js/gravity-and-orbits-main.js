@@ -19,9 +19,6 @@ const gravityAndOrbitsTitleString = gravityAndOrbitsStrings[ 'gravity-and-orbits
 
 simLauncher.launch( () => {
 
-  // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
-  const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
-
   const simOptions = {
     credits: {
       leadDesign: 'Emily B. Moore, Noah Podolefsky, Amy Rouinfar',
@@ -33,7 +30,7 @@ simLauncher.launch( () => {
     },
 
     // Creates content for the Options dialog
-    createOptionsDialogContent: () => globalOptionsNode
+    createOptionsDialogContent: tandem => new GlobalOptionsNode( tandem )
   };
 
   const modelScreen = new ModelScreen( {

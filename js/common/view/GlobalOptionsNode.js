@@ -27,6 +27,20 @@ class GlobalOptionsNode extends VBox {
       spacing: OptionsDialog.DEFAULT_SPACING,
       align: 'left'
     } );
+
+    // @private
+    this.disposeGlobalOptionsNode = () => {
+      projectorModeCheckbox.dispose();
+    };
+  }
+
+  /**
+   * @public
+   * @override
+   */
+  dispose() {
+    this.disposeGlobalOptionsNode();
+    super.dispose();
   }
 }
 
