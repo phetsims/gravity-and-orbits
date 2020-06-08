@@ -54,7 +54,7 @@ const SPACING = 10;
 
 const HBOX_OPTIONS = {
   maxWidth: 240,
-  SPACING: SPACING
+  spacing: SPACING
 };
 
 class CheckboxPanel extends VBox {
