@@ -23,6 +23,10 @@ const GravityAndOrbitsColorProfile = new ColorProfile( [ 'default', 'projector' 
     default: 'white',
     projector: 'black'
   },
+  measuringTapeTextBackground: {
+    default: 'rgba( 0, 0, 0, 0.65 )',
+    projector: 'rgba( 255, 255, 255, 0.65 )'
+  },
   bottomControlText: {
     default: 'white',
     projector: 'black'

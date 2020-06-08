@@ -126,7 +126,8 @@ class GravityAndOrbitsSceneView extends Rectangle {
       const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
         basePositionProperty: scene.measuringTapeStartPointProperty,
         tipPositionProperty: scene.measuringTapeEndPointProperty,
-        textBackgroundColor: 'rgba( 0, 0, 0, 0.65 )',
+        textBackgroundColor: GravityAndOrbitsColorProfile.measuringTapeTextBackgroundProperty,
+        textColor: GravityAndOrbitsColorProfile.measuringTapeTextProperty,
 
         // allows distances to be measured if the planets go outside of model bounds,
         // see https://github.com/phetsims/gravity-and-orbits/issues/281
@@ -154,8 +155,6 @@ class GravityAndOrbitsSceneView extends Rectangle {
         }
       } );
 
-      // measuring tape text should change with color Profile
-      GravityAndOrbitsColorProfile.measuringTapeTextProperty.linkAttribute( measuringTapeNode, 'textColor' );
       this.addChild( measuringTapeNode );
     }
 
