@@ -43,11 +43,19 @@ const ARROW_Y_COORDINATE = -10;
 const CHECKBOX_OPTIONS = {
   scale: 0.8,
   checkboxColor: GravityAndOrbitsColorProfile.panelTextProperty,
-  checkboxColorBackground: GravityAndOrbitsColorProfile.checkboxFillProperty,
-  maxWidth: 250
+  checkboxColorBackground: GravityAndOrbitsColorProfile.checkboxFillProperty
 };
-const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty };
+const TEXT_OPTIONS = {
+  font: FONT,
+  fill: GravityAndOrbitsColorProfile.panelTextProperty
+};
+
 const SPACING = 10;
+
+const HBOX_OPTIONS = {
+  maxWidth: 240,
+  SPACING: SPACING
+};
 
 class CheckboxPanel extends VBox {
 
@@ -69,34 +77,31 @@ class CheckboxPanel extends VBox {
     const optionsWithTandem = tandemName => merge( { tandem: options.tandem.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
 
     // gravity force checkbox
-    children.push( new Checkbox( new HBox( {
-        spacing: SPACING,
+    children.push( new Checkbox( new HBox( merge( {
         children: [
           gravityForceTextNode,
           new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
         ]
-      } ),
+      }, HBOX_OPTIONS ) ),
       model.showGravityForceProperty, optionsWithTandem( 'gravityForceCheckbox' ) ) );
 
     // velocity checkbox
-    children.push( new Checkbox( new HBox( {
-        spacing: SPACING,
+    children.push( new Checkbox( new HBox( merge( {
         children: [
           velocityTextNode,
           new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.RED_COLORBLIND } )
         ]
-      } ),
+      }, HBOX_OPTIONS ) ),
       model.showVelocityProperty, optionsWithTandem( 'velocityCheckbox' ) ) );
 
     // mass checkbox
     if ( model.showMassCheckbox ) {
-      children.push( new Checkbox( new HBox( {
-          spacing: SPACING,
+      children.push( new Checkbox( new HBox( merge( {
           children: [
             massTextNode,
             new Image( iconMassImg, { scale: 0.8 } )
           ]
-        } ),
+        }, HBOX_OPTIONS ) ),
         model.showMassProperty, optionsWithTandem( 'massCheckbox' ) ) );
     }
 
@@ -107,18 +112,16 @@ class CheckboxPanel extends VBox {
     } );
 
     // path checkbox
-    children.push( new Checkbox( new HBox( {
-        spacing: SPACING,
+    children.push( new Checkbox( new HBox( merge( {
         children: [
           pathTextNode,
           pathIconImageNode
         ]
-      } ),
+      }, HBOX_OPTIONS ) ),
       model.showPathProperty, optionsWithTandem( 'pathCheckbox' ) ) );
 
     // grid checkbox
-    children.push( new Checkbox( new HBox( {
-        spacing: SPACING,
+    children.push( new Checkbox( new HBox( merge( {
         children: [
           gridTextNode,
           new GridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
@@ -126,20 +129,19 @@ class CheckboxPanel extends VBox {
             lineWidth: 1.5
           } )
         ]
-      } ),
+      }, HBOX_OPTIONS ) ),
       model.showGridProperty, optionsWithTandem( 'gridCheckbox' ) ) );
 
     // measuring tape checkbox
     if ( model.showMeasuringTape ) {
       const measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
-      children.push( new Checkbox( new HBox( {
-        spacing: SPACING,
+      children.push( new Checkbox( new HBox( merge( {
         align: 'top',
         children: [
           measuringTapeTextNode,
           measuringTapeIcon
         ]
-      } ), model.showMeasuringTapeProperty, optionsWithTandem( 'measuringTapeCheckbox' ) ) );
+      }, HBOX_OPTIONS ) ), model.showMeasuringTapeProperty, optionsWithTandem( 'measuringTapeCheckbox' ) ) );
     }
 
     // increase the touch area of the checkboxes
