@@ -19,10 +19,13 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 import Vector2IO from '../../../../dot/js/Vector2IO.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import merge from '../../../../phet-core/js/merge.js';
+import PhetioObject from '../../../../tandem/js/PhetioObject.js';
+import ArrayIO from '../../../../tandem/js/types/ArrayIO.js';
 import BooleanIO from '../../../../tandem/js/types/BooleanIO.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import BodyIO from './BodyIO.js';
 import BodyState from './BodyState.js';
 import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
 import RewindableProperty from './RewindableProperty.js';
@@ -36,7 +39,7 @@ const starString = gravityAndOrbitsStrings.star;
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
 
-class Body {
+class Body extends PhetioObject {
 
   /**
    * @param {GravityAndOrbitsBodies} type - one of GravityAndOrbitsBodies, used for object identification
@@ -63,8 +66,12 @@ class Body {
       orbitalCenter: new Vector2( 0, 0 ), // orbital center for the body
       maxPathLength: 1400000000, // max path length for the body in km (should only be used if the body is too close to the center)
       pathLengthLimit: 6000, // limit on the number of points in the path
-      rotationPeriod: null // period of body rotation, in seconds - null rotation period will prevent rotation
+      rotationPeriod: null, // period of body rotation, in seconds - null rotation period will prevent rotation
+      phetioType: BodyIO,
+      tandem: tandem
     }, options );
+
+    super( options );
 
     // Keep track of the time at the beginning of a time step, for interpolation
     this.previousPosition = new Vector2( 0, 0 );
@@ -291,6 +298,29 @@ class Body {
    */
   getRadius() {
     return this.diameterProperty.get() / 2;
+  }
+
+  /**
+   * @public (phet-io)
+   */
+  toStateObject() {
+    return {
+      pathLength: this.pathLength,
+      modelPathLength: this.modelPathLength,
+      path: ArrayIO( Vector2IO ).toStateObject( this.path )
+    };
+  }
+
+  /**
+   * @param stateObject
+   * @public (phet-io)
+   */
+  setStateObject( stateObject ) {
+    this.pathLength = stateObject.pathLength;
+    this.modelPathLength = stateObject.modelPathLength;
+    this.path = ArrayIO( Vector2IO ).fromStateObject( stateObject.path );
+    this.clearedEmitter.emit( this.type );
+    this.path.forEach( pathPoint => this.pointAddedEmitter.emit( pathPoint, this.type ) );
   }
 
   /**
