@@ -119,12 +119,12 @@ class GravityAndOrbitsPhysicsEngine {
     for ( let i = 0; i < this.bodies.length; i++ ) {
       this.bodies[ i ].updateBodyStateFromModel( newState.getBodyState( i ) );
     }
-    // when two bodies collide, destroy the smaller
+    // when two uncollided bodies collide, destroy the smaller
     for ( let j = 0; j < this.bodies.length; j++ ) {
       const body = this.bodies[ j ];
       for ( let k = 0; k < this.bodies.length; k++ ) {
         const other = this.bodies[ k ];
-        if ( other !== body ) {
+        if ( other !== body && !other.isCollidedProperty.value && !body.isCollidedProperty.value ) {
           if ( other.collidesWidth( body ) ) {
             getSmaller( other, body ).isCollidedProperty.set( true );
           }
