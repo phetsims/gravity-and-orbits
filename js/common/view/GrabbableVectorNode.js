@@ -76,6 +76,7 @@ class GrabbableVectorNode extends VectorNode {
 
     // Add the drag handler
     grabArea.addInputListener( new SimpleDragHandler( {
+      allowTouchSnag: true,
       translate: event => {
         const modelDelta = transformProperty.get().viewToModelDelta( event.delta );
         body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
