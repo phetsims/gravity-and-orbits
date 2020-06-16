@@ -62,6 +62,7 @@ class BodyNode extends Node {
     const dragHandler = new MovableDragHandler( this.body.positionProperty, {
       dragBounds: modelBoundsProperty.value,
       modelViewTransform: this.modelViewTransformProperty.value,
+      attach: true,
       startDrag: () => {
         body.userControlled = true;
 
