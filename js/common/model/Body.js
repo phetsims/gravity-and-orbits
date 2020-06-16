@@ -90,7 +90,12 @@ class Body extends PhetioObject {
       phetioDocumentation: 'The distance across the body',
       phetioReadOnly: true
     } );
-    this.clockTicksSinceExplosionProperty = new Property( 0 );
+
+    this.clockTicksSinceExplosionProperty = new NumberProperty( 0, {
+      tandem: tandem.createTandem( 'clockTicksSinceExplosionProperty' ),
+      phetioDocumentation: 'For internal use only',
+      phetioReadOnly: true
+    } );
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
 
     options = merge( {
@@ -263,7 +268,7 @@ class Body extends PhetioObject {
     this.userModifiedVelocityEmitter = new Emitter();
 
     this.isCollidedProperty.link( collided => {
-      if ( collided ) {
+      if ( collided && !phet.joist.sim.isSettingPhetioStateProperty.value ) {
         this.clockTicksSinceExplosionProperty.set( 0 );
       }
     } );
