@@ -94,8 +94,8 @@ const create = parameterType => {
      * @param {Object} fromStateObject
      * @public
      */
-    static setValue( property, fromStateObject ) {
-      PropertyIOImpl.setValue( property, fromStateObject );
+    static applyState( property, fromStateObject ) {
+      PropertyIOImpl.applyState( property, fromStateObject );
       property.rewindValue = fromStateObject.rewindValue;
     }
   }

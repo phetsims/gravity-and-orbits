@@ -35,7 +35,7 @@ class BodyIO extends ObjectIO {
    * @param {Object} fromStateObject
    * @public
    */
-  static setValue( body, fromStateObject ) {
+  static applyState( body, fromStateObject ) {
     body.setStateObject( fromStateObject );
   }
 }
