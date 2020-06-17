@@ -54,8 +54,12 @@ class SceneSelectionControls extends Node {
       spacing: 0,
       deselectedOpacity: 1,
       cornerRadius: 5,
+
       touchAreaYDilation: 0, // reduce to 0 to prevent overlap between buttons
-      tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' )
+      tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' ),
+
+      // Keep aligned with reset buttons, see https://github.com/phetsims/gravity-and-orbits/issues/348
+      excludeInvisibleChildrenFromBounds: false
     } );
 
     this.addChild( radioButtonGroup );
@@ -64,6 +68,8 @@ class SceneSelectionControls extends Node {
       left: radioButtonGroup.right + 10,
       spacing: 5,
       y: 2,
+
+      // Keep aligned with scene radio buttons, see https://github.com/phetsims/gravity-and-orbits/issues/348
       excludeInvisibleChildrenFromBounds: false
     } ) );
     this.addChild( new HStrut( 219 ) );
