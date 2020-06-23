@@ -34,14 +34,14 @@ class SceneSelectionControls extends Node {
       content.push( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 
       // For the PhET-iO design, we decided to feature the radio button group and leave the reset buttons separate.
-      const resetButton = new PlanetModeResetButton( scene, {
+      const sceneResetButton = new SceneResetButton( scene, {
         tandem: options.tandem.createTandem( scene.resetButtonTandemName )
       } );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
-      sceneProperty.link( selectedScene => resetButton.setVisible( selectedScene === scene ) );
+      sceneProperty.link( selectedScene => sceneResetButton.setVisible( selectedScene === scene ) );
 
-      return resetButton;
+      return sceneResetButton;
     } );
     const radioButtonGroup = new RadioButtonGroup( sceneProperty, content, {
       alignVertically: true,
@@ -78,7 +78,7 @@ class SceneSelectionControls extends Node {
 
 gravityAndOrbits.register( 'SceneSelectionControls', SceneSelectionControls );
 
-class PlanetModeResetButton extends RectangularPushButton {
+class SceneResetButton extends RectangularPushButton {
 
   /**
    * @param {GravityAndOrbitsScene} scene
@@ -101,6 +101,6 @@ class PlanetModeResetButton extends RectangularPushButton {
   }
 }
 
-gravityAndOrbits.register( 'PlanetModeResetButton', PlanetModeResetButton );
+gravityAndOrbits.register( 'SceneResetButton', SceneResetButton );
 
 export default SceneSelectionControls;
