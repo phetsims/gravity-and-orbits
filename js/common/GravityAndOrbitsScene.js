@@ -79,7 +79,11 @@ class GravityAndOrbitsScene extends PhetioObject {
     } );
 
     this.activeProperty = new BooleanProperty( false );
-    this.deviatedFromDefaultsProperty = new BooleanProperty( false );
+
+    this.deviatedFromDefaultsProperty = new BooleanProperty( false, {
+      tandem: tandem.createTandem( 'deviatedFromDefaultsProperty' ),
+      phetioDocumentation: 'Internal use only'
+    } );
     const measuringTapePointOptions = {
       units: 'm'
     };
