@@ -181,9 +181,7 @@ class GravityAndOrbitsPhysicsEngine {
 
   // @public
   resetBodies() {
-    for ( let i = 0; i < this.bodies.length; i++ ) {
-      this.bodies[ i ].resetAll();
-    }
+    this.bodies.forEach( body => body.resetAll() );
     this.updateForceVectors(); // has to be done separately since physics is computed as a batch
   }
 
