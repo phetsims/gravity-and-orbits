@@ -252,9 +252,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.rewindingProperty.set( true );
     this.getClock().setSimulationTime( 0.0 );
     const bodies = this.physicsEngine.getBodies();
-    for ( let i = 0; i < bodies.length; i++ ) {
-      bodies[ i ].rewind();
-    }
+    bodies.forEach( body => body.rewind() );
 
     // update the force vectors accordingly
     this.physicsEngine.updateForceVectors();
