@@ -111,6 +111,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {
+      phetioRestoreScreenStateOnReset: false, // Handled in model reset functions
       listener: () => model.reset(),
       right: this.layoutBounds.right - MARGIN - 4,
       bottom: this.layoutBounds.bottom - MARGIN - 4, // slight difference centers below panels
