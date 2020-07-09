@@ -10,7 +10,6 @@
  */
 
 import Property from '../../../../axon/js/Property.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 class RewindableProperty extends Property {
@@ -96,8 +95,6 @@ class RewindableProperty extends Property {
    */
   rewind() {
     this.set( this.rewindValue );
-
-    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.restoreState( this );
   }
 }
 
