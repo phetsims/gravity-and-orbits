@@ -31,7 +31,7 @@ const GravityAndOrbitsConstants = {
     fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
   },
   PLAY_AREA_TANDEM_NAME: 'playAreaNode',
-  ZOOM_RANGE: new Range( 0.5, 1.5 )
+  ZOOM_RANGE: new Range( 0.5, 1.3 )
 };
 
 gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
