@@ -90,7 +90,7 @@ const create = parameterType => {
 
     /**
      * Used to set the value when loading a state
-     * @param {Property} property
+     * @param {RewindableProperty} property
      * @param {Object} fromStateObject
      * @public
      */

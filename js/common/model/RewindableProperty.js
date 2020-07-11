@@ -9,6 +9,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
@@ -30,7 +31,12 @@ class RewindableProperty extends Property {
     this.changeRewindValueProperty = changeRewindValueProperty;
 
     // @public (read-only) true when the rewind point value is different than the property's current value
-    this.differentProperty = new Property( !this.equalsRewindValue() );
+    this.differentProperty = new BooleanProperty( !this.equalsRewindValue(), {
+      tandem: options.tandem.createTandem( 'differentProperty' ),
+      phetioFeatured: false,
+      phetioReadOnly: true,
+      phetioDocumentation: 'for internal PhET use only'
+    } );
   }
 
   /**
