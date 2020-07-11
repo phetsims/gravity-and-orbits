@@ -24,6 +24,7 @@ import Vector2 from '../../../dot/js/Vector2.js';
 import merge from '../../../phet-core/js/merge.js';
 import ModelViewTransform2 from '../../../phetcommon/js/view/ModelViewTransform2.js';
 import PhetioObject from '../../../tandem/js/PhetioObject.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 import ObjectIO from '../../../tandem/js/types/ObjectIO.js';
 import ReferenceIO from '../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
@@ -241,6 +242,8 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.physicsEngine.resetBodies();
     this.deviatedFromDefaultsProperty.set( false );
     this.getClock().setSimulationTime( 0.0 );
+
+    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.restoreStateForPhetioObject( this );
   }
 
   /**
