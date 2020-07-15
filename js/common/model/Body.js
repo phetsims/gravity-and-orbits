@@ -354,8 +354,6 @@ class Body extends PhetioObject {
    * @public
    */
   saveBodyState() {
-    assert && assert( !this.isPlayingProperty.get(), 'saveBodyState should only be called when sim is paused' );
-
     this.positionProperty.storeRewindValueNoNotify();
     this.velocityProperty.storeRewindValueNoNotify();
     this.forceProperty.storeRewindValueNoNotify();

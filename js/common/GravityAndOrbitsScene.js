@@ -282,8 +282,6 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @public
    */
   saveState() {
-    assert && assert( !this.isPlayingProperty.get(), 'saveState should only be called when sim paused' );
-
     const bodies = this.physicsEngine.getBodies();
     for ( let i = 0; i < bodies.length; i++ ) {
       bodies[ i ].saveBodyState();
