@@ -139,15 +139,17 @@ class GravityAndOrbitsScene extends PhetioObject {
     // @private (phet-io only)
     this.pairs = pairs;
 
-    // When customizing a state in studio, we want it to overwrite the "initial conditions" for the reset all button.
-    // Acting on the hypothesis that the total stateSetEmitter fires first, we can use that as a hook for when to
-    // save the new initial conditions.  Note that we have to ignore subsequent stateSetEmitter calls because they
-    // may be triggered by the reset button or scene resets.
-    let okToOverwriteInitialConditions = true;
+    // Save the new PhET-iO state as an initial configuration for this scene, but only if the state being set applies
+    // to this scene.
+    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( state => {
 
-    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( () => {
-      okToOverwriteInitialConditions && this.saveState();
-      okToOverwriteInitialConditions = false;
+      const phetioIDsToSet = Object.keys( state );
+      for ( let i = 0; i < phetioIDsToSet.length; i++ ) {
+        if ( phetioIDsToSet[ i ].startsWith( this.tandem.phetioID ) ) {
+          this.saveState();
+          break;
+        }
+      }
     } );
   }
 
