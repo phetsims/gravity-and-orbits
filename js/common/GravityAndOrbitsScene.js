@@ -138,6 +138,17 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     // @private (phet-io only)
     this.pairs = pairs;
+
+    // When customizing a state in studio, we want it to overwrite the "initial conditions" for the reset all button.
+    // Acting on the hypothesis that the total stateSetEmitter fires first, we can use that as a hook for when to
+    // save the new initial conditions.  Note that we have to ignore subsequent stateSetEmitter calls because they
+    // may be triggered by the reset button or scene resets.
+    let okToOverwriteInitialConditions = true;
+
+    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( () => {
+      okToOverwriteInitialConditions && this.saveState();
+      okToOverwriteInitialConditions = false;
+    } );
   }
 
   /**
@@ -264,8 +275,8 @@ class GravityAndOrbitsScene extends PhetioObject {
   }
 
   /**
-   * Save the state of the orbital system, which includes all rewindable properties
-   * of all bodies. This should only be called when the sim is paused.
+   * Save the state of the orbital system, which includes all rewindable properties of all bodies. This should only be
+   * called when the sim is paused.
    * @public
    */
   saveState() {
