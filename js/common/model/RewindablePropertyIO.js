@@ -39,6 +39,7 @@ function RewindablePropertyIO( parameterType ) {
  * @returns {function(new:ObjectIO)}
  */
 const create = parameterType => {
+  assert && assert( parameterType.fromStateObject, 'only data type serialization supported for parameterType.' );
 
   const PropertyIOImpl = PropertyIO( parameterType );
 
@@ -76,27 +77,15 @@ const create = parameterType => {
     }
 
     /**
-     * Decodes a state into a Property.
-     * @public
-     *
-     * @param {Object} stateObject
-     * @returns {Object}
-     */
-    static fromStateObject( stateObject ) {
-      const fromStateObject = PropertyIOImpl.fromStateObject( stateObject );
-      fromStateObject.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
-      return fromStateObject;
-    }
-
-    /**
      * Used to set the value when loading a state
      * @param {RewindableProperty} property
-     * @param {Object} fromStateObject
+     * @param {Object} stateObject
      * @public
+     * @override
      */
-    static applyState( property, fromStateObject ) {
-      PropertyIOImpl.applyState( property, fromStateObject );
-      property.rewindValue = fromStateObject.rewindValue;
+    static applyState( property, stateObject ) {
+      PropertyIOImpl.applyState( property, stateObject );
+      property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
     }
   }
 

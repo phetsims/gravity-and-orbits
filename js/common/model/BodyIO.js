@@ -21,22 +21,13 @@ class BodyIO extends ObjectIO {
   }
 
   /**
-   * @param {Object} stateObject
-   * @returns {Object}
-   * @public
-   */
-  static fromStateObject( stateObject ) {
-    return stateObject;
-  }
-
-  /**
    * Used to set the value when loading a state
    * @param {Body} body
-   * @param {Object} fromStateObject
+   * @param {Object} stateObject
    * @public
    */
-  static applyState( body, fromStateObject ) {
-    body.setStateObject( fromStateObject );
+  static applyState( body, stateObject ) {
+    body.setStateObject( stateObject );
   }
 }
 
