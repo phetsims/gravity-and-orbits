@@ -1,11 +1,11 @@
 {
-  "comment": "# gravity-and-orbits 1.2.0-dev.11 Mon Jul 20 2020 11:23:33 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.2.0-dev.12 Tue Jul 21 2020 07:40:47 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1a41cef653bbed1025af5768bea958d7e3e0f8ae",
     "branch": "master"
   },
   "axon": {
-    "sha": "317cbae5a177329e53457af495bfc707e228b686",
+    "sha": "9a02dec232e5344824337be385c15a042e1b5022",
     "branch": "master"
   },
   "brand": {
@@ -21,11 +21,11 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "b187c03272147cee2a8cb837375f373212e41e33",
+    "sha": "13115d0067768bd37d4dec9dac631165e796dfa3",
     "branch": "master"
   },
   "joist": {
-    "sha": "a47d8e328dbe550277d86bb46a09b1c7a6af759a",
+    "sha": "3cd429cccc852148956a00b053a1ae790c9c4dba",
     "branch": "master"
   },
   "kite": {
@@ -41,7 +41,7 @@
     "branch": "master"
   },
   "phet-io-client-guides": {
-    "sha": "c68535c036def3455eb4a646dbc1e81ff62f0144",
+    "sha": "1a74dfd0695525d0cb95a1212b18d4cde73b1466",
     "branch": "master"
   },
   "phet-io-wrappers": {
@@ -49,7 +49,7 @@
     "branch": "master"
   },
   "phetcommon": {
-    "sha": "518e84dad19def715bde6b4dd0c82d0fa277443b",
+    "sha": "7efe73b2044421640a7a2c71a9a41d3e37ecd0bb",
     "branch": "master"
   },
   "phetmarks": {
