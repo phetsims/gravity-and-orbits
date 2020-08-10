@@ -24,7 +24,7 @@ import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 import BodyNode from './BodyNode.js';
 import ExplosionNode from './ExplosionNode.js';
 import GrabbableVectorNode from './GrabbableVectorNode.js';
-import GridNode from './GridNode.js';
+import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import PathsCanvasNode from './PathsCanvasNode.js';
 import TimeCounter from './TimeCounter.js';
 import VectorNode from './VectorNode.js';
@@ -109,7 +109,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     }
 
     // Add the node for the overlay grid, setting its visibility based on the model.showGridProperty
-    const gridNode = new GridNode( scene.transformProperty, scene.gridSpacing, scene.gridCenter, 28 );
+    const gridNode = new GravityAndOrbitsGridNode( scene.transformProperty, scene.gridSpacing, scene.gridCenter, 28 );
     model.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 

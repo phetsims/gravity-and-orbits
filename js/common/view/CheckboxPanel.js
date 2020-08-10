@@ -28,7 +28,7 @@ import pathIconProjectorImg from '../../../images/path_icon_projector_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
-import GridNode from './GridNode.js';
+import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
 const gridString = gravityAndOrbitsStrings.grid;
@@ -124,9 +124,11 @@ class CheckboxPanel extends VBox {
     children.push( new Checkbox( new HBox( merge( {
         children: [
           gridTextNode,
-          new GridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
-            stroke: GravityAndOrbitsColorProfile.gridIconProperty,
-            lineWidth: 1.5
+          new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 2, {
+            majorLineOptions: {
+              stroke: GravityAndOrbitsColorProfile.gridIconProperty,
+              lineWidth: 1.5
+            }
           } )
         ]
       }, HBOX_OPTIONS ) ),
