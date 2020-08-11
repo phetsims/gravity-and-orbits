@@ -385,7 +385,7 @@ class Body extends PhetioObject {
    *
    * @public
    */
-  allBodiesUpdated() {
+  modelStepped() {
 
     // Only add to the path if the user isn't dragging it and if the body is not exploded and the body is movable
     if ( !this.userControlled && !this.isCollidedProperty.get() && this.isMovableProperty.value ) {
@@ -397,7 +397,7 @@ class Body extends PhetioObject {
    * Add a point to the collection of points that follow the trajectory of a moving body.
    * This also removes points when the path gets too long.
    *
-   * @public
+   * @private
    */
   addPathPoint() {
     const pathPoint = this.positionProperty.get();
