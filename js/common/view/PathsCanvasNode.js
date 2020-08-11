@@ -176,7 +176,13 @@ class PathsCanvasNode extends CanvasNode {
       context.stroke();
 
       // Draw the faded out part
-      context.lineCap = 'butt';
+
+      // Using "butt" is too "feathered" and makes the stroke look less bold than it should be
+      context.lineCap = 'square';
+
+      // Using "square" makes the stroke too wide, so we must trim it down accordingly.
+      context.lineWidth = STROKE_WIDTH * 0.6;
+
       const faded = body.color;
 
       while ( body.pathLength < maxPathLength && j > 0 ) {
