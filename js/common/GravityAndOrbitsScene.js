@@ -61,7 +61,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     const initialMeasuringTapePosition = modeConfig.initialMeasuringTapePosition;
     const defaultZoomScale = modeConfig.zoom;
     const tandemName = tandem.name;
-    const radioButtonTandemName = `${tandemName}Button`;
+    const radioButtonTandemName = `${tandemName}RadioButton`;
     const resetButtonTandemName = `${tandemName}ResetButton`;
     const massControlPanelTandemName = `${tandemName}MassesControlPanel`;
 
