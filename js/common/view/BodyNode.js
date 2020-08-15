@@ -8,10 +8,11 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
-import MovableDragHandler from '../../../../scenery-phet/js/input/MovableDragHandler.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
@@ -59,34 +60,33 @@ class BodyNode extends Node {
     };
     body.rotationProperty.link( rotationListener );
 
-    const dragHandler = new MovableDragHandler( this.body.positionProperty, {
-      dragBounds: modelBoundsProperty.value,
-      modelViewTransform: this.modelViewTransformProperty.value,
-      attach: true,
-      startDrag: () => {
+    const dragListener = new DragListener( {
+      positionProperty: body.positionProperty,
+      transform: this.modelViewTransformProperty.value,
+      dragBoundsProperty: new DerivedProperty( [ modelBoundsProperty, body.diameterProperty ], ( modelBounds, diameter ) => modelBounds.erode( diameter / 2 ) ),
+      start: () => {
         body.userControlled = true;
 
-        // when the dragging starts, we want to clear the path
+        // Clear the path when dragging starts.
         body.clearPath();
       },
-      onDrag: () => {
-        body.userModifiedPositionEmitter.emit();
-      },
-      endDrag: () => {
+      drag: event => body.userModifiedPositionEmitter.emit(),
+      end: () => {
         body.userControlled = false;
 
         // reset the simulation time when the planet is released
         if ( isPlayingProperty.value !== true ) {
           clock.setSimulationTime( 0.0 );
 
-          // if paused, on release, the state of the orbital system should be saved
-          // so that rewind will revert to the last placement of bodies
+          // if paused, on release, the state of the orbital system should be saved so that rewind will revert to the
+          // last placement of bodies
           scene.saveState();
         }
       },
       tandem: tandem.createTandem( 'dragHandler' )
     } );
-    this.addInputListener( dragHandler );
+
+    this.addInputListener( dragListener );
 
     // create position and diameter listeners so that they can be unlinked for garbage collection and so that anonymous
     // closures are not necessary through multilink
@@ -104,7 +104,7 @@ class BodyNode extends Node {
     };
     Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
-    this.modelViewTransformListener = modelViewTransform => dragHandler.setModelViewTransform( modelViewTransform );
+    this.modelViewTransformListener = modelViewTransform => dragListener.setTransform( modelViewTransform );
     this.modelViewTransformProperty.link( this.modelViewTransformListener );
 
     this.modelBoundsListener = dragBounds => {
@@ -113,9 +113,7 @@ class BodyNode extends Node {
       // of the planets.  We store the position, and restore once drag bounds have been set
       // these changes should never set rewindable values of the body Properties
       this.body.freezeRewindChangeProperty.set( true );
-      const oldPosition = this.body.positionProperty.value;
-      dragHandler.setDragBounds( dragBounds );
-      this.body.positionProperty.set( oldPosition );
+      this.body.positionProperty.set( this.body.positionProperty.value );
 
       // now unfreeze the Property rewindValues
       this.body.freezeRewindChangeProperty.set( false );
