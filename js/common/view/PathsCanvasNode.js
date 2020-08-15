@@ -20,9 +20,10 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 const STROKE_WIDTH = 3;
 
 class PathsCanvasNode extends CanvasNode {
+
   /**
    *
-   * @param {Body} bodies
+   * @param {Body[]} bodies
    * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {Property.<boolean>} visibleProperty
    * @param {Bounds2} canvasBounds
