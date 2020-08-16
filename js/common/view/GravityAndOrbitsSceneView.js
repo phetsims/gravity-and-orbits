@@ -158,6 +158,15 @@ class GravityAndOrbitsSceneView extends Rectangle {
       this.addChild( measuringTapeNode );
     }
 
+    if ( phet.chipper.queryParameters.dev ) {
+      const draggableAreaNode = new Rectangle( 0, 0, 0, 0, { stroke: 'blue', lineWidth: 4 } );
+      this.addChild( draggableAreaNode );
+
+      scene.modelBoundsProperty.link( bounds => {
+        draggableAreaNode.setRectBounds( scene.transformProperty.get().modelToViewBounds( bounds ) );
+      } );
+    }
+
     scene.modelBoundsProperty.link( bounds => {
 
       // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
