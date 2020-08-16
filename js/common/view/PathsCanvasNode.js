@@ -182,7 +182,7 @@ class PathsCanvasNode extends CanvasNode {
       context.lineCap = 'square';
 
       // Using "square" makes the stroke too wide, so we must trim it down accordingly.
-      context.lineWidth = STROKE_WIDTH * 0.6;
+      context.lineWidth = STROKE_WIDTH * 0.7;
 
       const faded = body.color;
 
