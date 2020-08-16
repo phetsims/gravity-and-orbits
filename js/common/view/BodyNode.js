@@ -36,7 +36,6 @@ class BodyNode extends Node {
   constructor( body, labelAngle, isPlayingProperty, scene, tandem ) {
     super( { pickable: true, cursor: 'pointer', tandem: tandem } );
 
-    const modelBoundsProperty = scene.modelBoundsProperty;
     const clock = scene.getClock();
 
     this.modelViewTransformProperty = scene.transformProperty; // @private
@@ -60,10 +59,13 @@ class BodyNode extends Node {
     };
     body.rotationProperty.link( rotationListener );
 
+    const dragBoundsProperty = new DerivedProperty( [ scene.modelBoundsProperty, body.diameterProperty ], ( modelBounds, diameter ) => {
+      return modelBounds.eroded( diameter / 2 );
+    } );
     const dragListener = new DragListener( {
       positionProperty: body.positionProperty,
       transform: this.modelViewTransformProperty.value,
-      dragBoundsProperty: new DerivedProperty( [ modelBoundsProperty, body.diameterProperty ], ( modelBounds, diameter ) => modelBounds.erode( diameter / 2 ) ),
+      dragBoundsProperty: dragBoundsProperty,
       start: () => {
         body.userControlled = true;
 
@@ -117,9 +119,8 @@ class BodyNode extends Node {
 
       // now unfreeze the Property rewindValues
       this.body.freezeRewindChangeProperty.set( false );
-
     };
-    modelBoundsProperty.link( this.modelBoundsListener );
+    scene.modelBoundsProperty.link( this.modelBoundsListener );
 
     // Points to the sphere with a text indicator and line when it is too small to see (in modes with realistic units)
     this.addChild( this.createArrowIndicator( this.body, labelAngle, tandem.createTandem( 'indicatorNode' ) ) );

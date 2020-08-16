@@ -18,7 +18,6 @@
 import BooleanProperty from '../../../axon/js/BooleanProperty.js';
 import NumberProperty from '../../../axon/js/NumberProperty.js';
 import Property from '../../../axon/js/Property.js';
-import Bounds2 from '../../../dot/js/Bounds2.js';
 import Rectangle from '../../../dot/js/Rectangle.js';
 import Vector2 from '../../../dot/js/Vector2.js';
 import merge from '../../../phet-core/js/merge.js';
@@ -162,15 +161,15 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @private
    */
   createTransform( defaultZoomScale, gridCenter ) {
-    const targetRectangle = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
-    const minX = targetRectangle.x;
-    const minY = targetRectangle.y;
-    const maxX = targetRectangle.x + targetRectangle.width;
-    const maxY = targetRectangle.y + targetRectangle.height;
-    const modelBounds = new Bounds2( minX, minY, maxX, maxY );
+    const modelBounds = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
     this.modelBoundsProperty.set( modelBounds );
-    const viewTranslation = 50;
-    const viewBounds = new Bounds2( 0, -viewTranslation, PLAY_AREA_WIDTH, PLAY_AREA_HEIGHT - viewTranslation );
+    const playAreaHeight = PLAY_AREA_HEIGHT - 50;
+    const scale = playAreaHeight / PLAY_AREA_HEIGHT;
+    const viewBounds = new Rectangle( 30, 0, PLAY_AREA_WIDTH * scale, PLAY_AREA_HEIGHT * scale );
+
+    // Ensure the transform is square (not stretched or squashed), so that circles transform into circles and not ellipses
+    assert && assert( Math.abs( modelBounds.width / modelBounds.height - viewBounds.width / viewBounds.height ) <= 1E-12 );
+
     return ModelViewTransform2.createRectangleInvertedYMapping( modelBounds, viewBounds );
   }
 
