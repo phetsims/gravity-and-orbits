@@ -10,7 +10,7 @@
 import Property from '../../../../axon/js/Property.js';
 import Shape from '../../../../kite/js/Shape.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import SimpleDragHandler from '../../../../scenery/js/input/SimpleDragHandler.js';
+import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Color from '../../../../scenery/js/util/Color.js';
@@ -74,16 +74,29 @@ class GrabbableVectorNode extends VectorNode {
     };
     Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );
 
+    // The velocity vector is rooted on the object, so we manage all of its drags by deltas.
+    let previousPoint = null;
+
     // Add the drag handler
-    grabArea.addInputListener( new SimpleDragHandler( {
-      allowTouchSnag: true,
-      translate: event => {
-        const modelDelta = transformProperty.get().viewToModelDelta( event.delta );
-        body.velocityProperty.set( body.velocityProperty.get().plusXY( modelDelta.x / scale, modelDelta.y / scale ) );
-        body.userModifiedVelocityEmitter.emit();
+    const dragListener = new DragListener( {
+      start: event => {
+        previousPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
       },
+      drag: event => {
+
+        const currentPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
+        if ( previousPoint ) {
+          const delta = currentPoint.minus( previousPoint );
+          body.velocityProperty.set( body.velocityProperty.get().plus( delta ) );
+          body.userModifiedVelocityEmitter.emit();
+        }
+
+        previousPoint = currentPoint;
+      },
+      end: event => {},
       tandem: tandem.createTandem( 'dragHandler' )
-    } ) );
+    } );
+    grabArea.addInputListener( dragListener );
 
     // move behind the geometry created by the superclass
     grabArea.moveToBack();
