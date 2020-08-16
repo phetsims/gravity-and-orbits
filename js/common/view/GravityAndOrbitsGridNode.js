@@ -30,10 +30,13 @@ class GravityAndOrbitsGridNode extends GridNode {
       majorLineOptions: {
         stroke: 'gray',
         lineWidth: 1
-      },
-      center: center
+      }
     }, options );
     super( gridDimension, gridDimension, options );
+
+    transformProperty.link( transform => {
+      this.translation = transform.modelToViewPosition( center );
+    } );
   }
 }
 
