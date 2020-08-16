@@ -17,10 +17,10 @@ import Color from '../../../../scenery/js/util/Color.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import VectorNode from './VectorNode.js';
 
-class GrabbableVectorNode extends VectorNode {
+class DraggableVectorNode extends VectorNode {
 
   /**
-   * Constructor for GrabbableVectorNode
+   * Constructor for DraggableVectorNode
    * @param {Body} body
    * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {Property.<boolean>} visibleProperty
@@ -111,5 +111,5 @@ class GrabbableVectorNode extends VectorNode {
   }
 }
 
-gravityAndOrbits.register( 'GrabbableVectorNode', GrabbableVectorNode );
-export default GrabbableVectorNode;
+gravityAndOrbits.register( 'DraggableVectorNode', DraggableVectorNode );
+export default DraggableVectorNode;

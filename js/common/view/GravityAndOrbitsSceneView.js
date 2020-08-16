@@ -23,7 +23,7 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 import BodyNode from './BodyNode.js';
 import ExplosionNode from './ExplosionNode.js';
-import GrabbableVectorNode from './GrabbableVectorNode.js';
+import DraggableVectorNode from './DraggableVectorNode.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import PathsCanvasNode from './PathsCanvasNode.js';
 import TimeCounter from './TimeCounter.js';
@@ -97,7 +97,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     for ( let i = 0; i < bodies.length; i++ ) {
       if ( bodies[ i ].isMovableProperty.value ) {
         const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
-        this.addChild( new GrabbableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
+        this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
           vString, bodyNodeTandem.createTandem( 'velocityVectorNode' ) ) );
       }
