@@ -17,10 +17,9 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 class GravityAndOrbitsGridNode extends Node {
 
   /**
-   * Constructor for GridNode
    * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {number} spacing - spacing between grid lines
-   * @param {Vector2} center - center of the grid
+   * @param {Vector2} center - center of the grid in model coordinates
    * @param {number} numGridLines - number grid lines on each side of the center
    * @param {Object} [options]
    */
@@ -31,27 +30,22 @@ class GravityAndOrbitsGridNode extends Node {
       stroke: 'gray'
     }, options );
 
-    super();
     const path = new Path( null, options );
-    this.addChild( path );
+    super( { children: [ path ] } );
 
     transformProperty.link( () => {
       const shape = new Shape();
 
-      // horizontal lines
-      for ( let i = -numGridLines; i <= numGridLines; i++ ) {
-        const y = i * spacing + center.y;
-        const x1 = numGridLines * spacing + center.x;
-        const x2 = -numGridLines * spacing + center.x;
-        shape.moveTo( x1, y ).lineTo( x2, y );
-      }
+      const x1 = -numGridLines * spacing + center.x;
+      const x2 = numGridLines * spacing + center.x;
+      const y1 = -numGridLines * spacing + center.y;
+      const y2 = numGridLines * spacing + center.y;
 
-      // vertical lines
       for ( let i = -numGridLines; i <= numGridLines; i++ ) {
         const x = i * spacing + center.x;
-        const y1 = numGridLines * spacing + center.y;
-        const y2 = -numGridLines * spacing + center.y;
-        shape.moveTo( x, y1 ).lineTo( x, y2 );
+        const y = i * spacing + center.y;
+        shape.moveTo( x1, y ).lineTo( x2, y ); // horizontal lines
+        shape.moveTo( x, y1 ).lineTo( x, y2 ); // vertical lines
       }
 
       path.shape = transformProperty.get().modelToViewShape( shape );
