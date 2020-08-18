@@ -8,7 +8,9 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import merge from '../../../../phet-core/js/merge.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GridNode from '../../../../griddle/js/GridNode.js';
 
@@ -23,20 +25,28 @@ class GravityAndOrbitsGridNode extends GridNode {
    */
   constructor( transformProperty, spacing, center, numGridLines, options ) {
     const gridDimension = numGridLines * transformProperty.value.modelToViewDeltaX( spacing );
+
+    // Adapter Property to position the grid on the given model center
+    const gridTransformProperty = new Property();
+
+    transformProperty.link( transform => {
+      gridTransformProperty.set( ModelViewTransform2.createSinglePointScaleMapping(
+        center, // model center
+        transformProperty.get().modelToViewPosition( center ), // view center
+        transform.modelToViewDeltaX( 1 )
+      ) );
+    } );
+
     options = merge( {
       majorHorizontalLineSpacing: spacing,
       majorVerticalLineSpacing: spacing,
-      modelViewTransformProperty: transformProperty,
+      modelViewTransformProperty: gridTransformProperty,
       majorLineOptions: {
         stroke: 'gray',
         lineWidth: 1
       }
     }, options );
     super( gridDimension, gridDimension, options );
-
-    transformProperty.link( transform => {
-      this.translation = transform.modelToViewPosition( center );
-    } );
   }
 }
 
