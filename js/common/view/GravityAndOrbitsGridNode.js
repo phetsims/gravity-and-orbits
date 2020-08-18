@@ -8,45 +8,54 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-import Property from '../../../../axon/js/Property.js';
+import Shape from '../../../../kite/js/Shape.js';
 import merge from '../../../../phet-core/js/merge.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
+import Path from '../../../../scenery/js/nodes/Path.js';
+import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GridNode from '../../../../griddle/js/GridNode.js';
 
-class GravityAndOrbitsGridNode extends GridNode {
+class GravityAndOrbitsGridNode extends Node {
 
   /**
+   * Constructor for GridNode
    * @param {Property.<ModelViewTransform2>} transformProperty
-   * @param {number} spacing - spacing between grid lines in model coordinates
-   * @param {Vector2} center - center of the grid in model coordinates
+   * @param {number} spacing - spacing between grid lines
+   * @param {Vector2} center - center of the grid
    * @param {number} numGridLines - number grid lines on each side of the center
    * @param {Object} [options]
    */
   constructor( transformProperty, spacing, center, numGridLines, options ) {
-    const gridDimension = numGridLines * transformProperty.value.modelToViewDeltaX( spacing );
-
-    // Adapter Property to position the grid on the given model center
-    const gridTransformProperty = new Property();
-
-    transformProperty.link( transform => {
-      gridTransformProperty.set( ModelViewTransform2.createSinglePointScaleMapping(
-        center, // model center
-        transformProperty.get().modelToViewPosition( center ), // view center
-        transform.modelToViewDeltaX( 1 )
-      ) );
-    } );
 
     options = merge( {
-      majorHorizontalLineSpacing: spacing,
-      majorVerticalLineSpacing: spacing,
-      modelViewTransformProperty: gridTransformProperty,
-      majorLineOptions: {
-        stroke: 'gray',
-        lineWidth: 1
-      }
+      lineWidth: 1,
+      stroke: 'gray'
     }, options );
-    super( gridDimension, gridDimension, options );
+
+    super();
+    const path = new Path( null, options );
+    this.addChild( path );
+
+    transformProperty.link( () => {
+      const shape = new Shape();
+
+      // horizontal lines
+      for ( let i = -numGridLines; i <= numGridLines; i++ ) {
+        const y = i * spacing + center.y;
+        const x1 = numGridLines * spacing + center.x;
+        const x2 = -numGridLines * spacing + center.x;
+        shape.moveTo( x1, y ).lineTo( x2, y );
+      }
+
+      // vertical lines
+      for ( let i = -numGridLines; i <= numGridLines; i++ ) {
+        const x = i * spacing + center.x;
+        const y1 = numGridLines * spacing + center.y;
+        const y2 = -numGridLines * spacing + center.y;
+        shape.moveTo( x, y1 ).lineTo( x, y2 );
+      }
+
+      path.shape = transformProperty.get().modelToViewShape( shape );
+    } );
   }
 }
 
