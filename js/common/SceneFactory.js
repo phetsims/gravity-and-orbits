@@ -189,7 +189,8 @@ class SceneFactory {
     const spaceStationMassReadoutFactory = ( bodyNode, visibleProperty ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
     const planetSatelliteSceneTandem = modelTandem.createTandem( 'planetSatelliteScene' );
     const planet3 = new Planet( model, earthSpaceStation.planet, planetSatelliteSceneTandem.createTandem( 'planet' ), {
-      maxPathLength: 35879455 // in km
+      maxPathLength: 35879455, // in km
+      touchDilation: 0
     } );
     const satellite3 = new Satellite( model, earthSpaceStation, planetSatelliteSceneTandem.createTandem( 'satellite' ), {
       rotationPeriod: earthSpaceStation.satellite.rotationPeriod
