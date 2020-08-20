@@ -68,10 +68,14 @@ class Body extends PhetioObject {
       pathLengthLimit: 6000, // limit on the number of points in the path
       rotationPeriod: null, // period of body rotation, in seconds - null rotation period will prevent rotation
       phetioType: BodyIO,
+      touchDilation: 15,
       tandem: tandem
     }, options );
 
     super( options );
+
+    // @public (read-only) - indicates how much the touch radius should be expanded in any views
+    this.touchDilation = options.touchDilation;
 
     // Keep track of the time at the beginning of a time step, for interpolation
     this.previousPosition = new Vector2( 0, 0 );

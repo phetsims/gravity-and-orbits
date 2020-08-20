@@ -133,13 +133,16 @@ class SceneFactory {
     const star1 = new Star( model, sunEarthMoon.sun, starPlanetMoonSceneTandem.createTandem( 'star' ), {
       maxPathLength: 345608942000 // in km
     } );
-    const planet1 = new Planet( model, sunEarthMoon.planet, starPlanetMoonSceneTandem.createTandem( 'planet' ) );
+    const planet1 = new Planet( model, sunEarthMoon.planet, starPlanetMoonSceneTandem.createTandem( 'planet' ), {
+      touchDilation: 2
+    } );
     const moon1 = new Moon( model,
       false, // no room for the slider
       false, // so it doesn't intersect with earth mass readout
       sunEarthMoon.moon,
       starPlanetMoonSceneTandem.createTandem( 'moon' ), {
-        pathLengthBuffer: pathLengthBuffer
+        pathLengthBuffer: pathLengthBuffer,
+        touchDilation: 5
       }
     );
     this.scenes.push( new GravityAndOrbitsScene(

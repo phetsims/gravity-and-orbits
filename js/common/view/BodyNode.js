@@ -20,9 +20,6 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
-// constants
-const TOUCH_DILATION = 15; // dilation factor, produces touch bounds which are easy to drag
-
 class BodyNode extends Node {
 
   /**
@@ -98,13 +95,13 @@ class BodyNode extends Node {
     };
     Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
-    this.diameterListener = ( position, modelViewTransform ) => {
+    this.diameterListener = () => {
       const viewDiameter = this.getViewDiameter();
       this.bodyRenderer.setDiameter( viewDiameter );
       const viewCenter = this.bodyRenderer.bounds.center;
 
       // touch areas need to change with diameter
-      const circle = Shape.circle( viewCenter.x, viewCenter.y, viewDiameter / 2 + TOUCH_DILATION );
+      const circle = Shape.circle( viewCenter.x, viewCenter.y, viewDiameter / 2 + body.touchDilation );
       this.touchArea = circle;
       this.mouseArea = circle;
     };
