@@ -85,7 +85,7 @@ class BodyNode extends Node {
           scene.saveState();
         }
       },
-      tandem: tandem.createTandem( 'dragHandler' )
+      tandem: tandem.createTandem( 'dragListener' )
     } );
 
     this.addInputListener( dragListener );

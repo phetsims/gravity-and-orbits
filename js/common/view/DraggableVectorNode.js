@@ -94,7 +94,7 @@ class DraggableVectorNode extends VectorNode {
         previousPoint = currentPoint;
       },
       end: event => {},
-      tandem: tandem.createTandem( 'dragHandler' )
+      tandem: tandem.createTandem( 'dragListener' )
     } );
     grabArea.addInputListener( dragListener );
 
