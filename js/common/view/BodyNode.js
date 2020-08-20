@@ -11,6 +11,7 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
+import Shape from '../../../../kite/js/Shape.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
@@ -98,11 +99,14 @@ class BodyNode extends Node {
     Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
     this.diameterListener = ( position, modelViewTransform ) => {
-      this.bodyRenderer.setDiameter( this.getViewDiameter() );
+      const viewDiameter = this.getViewDiameter();
+      this.bodyRenderer.setDiameter( viewDiameter );
+      const viewCenter = this.bodyRenderer.bounds.center;
 
       // touch areas need to change with diameter
-      this.touchArea = this.bodyRenderer.bounds.dilated( TOUCH_DILATION );
-      this.mouseArea = this.bodyRenderer.bounds.dilated( TOUCH_DILATION );
+      const circle = Shape.circle( viewCenter.x, viewCenter.y, viewDiameter / 2 + TOUCH_DILATION );
+      this.touchArea = circle;
+      this.mouseArea = circle;
     };
     Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
