@@ -7,7 +7,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import RewindableProperty from './RewindableProperty.js';
 
 /**
- * IO type for RewindableProperty
+ * IO Type for RewindableProperty
  *
  * @author Sam Reid (PhET Interactive Simulations)
  */
@@ -17,7 +17,7 @@ const cache = new Map();
 
 /**
  * An observable Property that triggers notifications when the value changes.
- * This caching implementation should be kept in sync with the other parametric IO type caching implementations.
+ * This caching implementation should be kept in sync with the other parametric IO Type caching implementations.
  * @param {function(new:ObjectIO)} parameterType
  * @returns {function(new:ObjectIO)}
  */

@@ -5,7 +5,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from './Body.js';
 
 /**
- * IO type for Body
+ * IO Type for Body
  *
  * @author Sam Reid (PhET Interactive Simulations)
  */
