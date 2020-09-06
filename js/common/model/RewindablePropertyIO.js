@@ -95,7 +95,7 @@ const create = parameterType => {
   RewindablePropertyIOImpl.validator = { valueType: RewindableProperty };
   RewindablePropertyIOImpl.typeName = `RewindablePropertyIO<${parameterType.typeName}>`;
   RewindablePropertyIOImpl.parameterTypes = [ parameterType ];
-  ObjectIO.validateSubtype( RewindablePropertyIOImpl );
+  ObjectIO.validateIOType( RewindablePropertyIOImpl );
 
   return RewindablePropertyIOImpl;
 };

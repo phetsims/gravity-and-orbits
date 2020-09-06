@@ -34,7 +34,7 @@ class BodyIO extends ObjectIO {
 BodyIO.documentation = 'Represents a physical body in the simulation';
 BodyIO.validator = { isValidValue: b => b instanceof Body };
 BodyIO.typeName = 'BodyIO';
-ObjectIO.validateSubtype( BodyIO );
+ObjectIO.validateIOType( BodyIO );
 
 gravityAndOrbits.register( 'BodyIO', BodyIO );
 export default BodyIO;
