@@ -97,7 +97,7 @@ class Body extends PhetioObject {
 
     this.clockTicksSinceExplosionProperty = new NumberProperty( 0, {
       tandem: tandem.createTandem( 'clockTicksSinceExplosionProperty' ),
-      phetioDocumentation: 'For internal use only',
+      phetioDocumentation: 'for internal PhET use only',
       phetioReadOnly: true
     } );
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
