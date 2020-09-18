@@ -24,7 +24,7 @@ import merge from '../../../phet-core/js/merge.js';
 import ModelViewTransform2 from '../../../phetcommon/js/view/ModelViewTransform2.js';
 import PhetioObject from '../../../tandem/js/PhetioObject.js';
 import Tandem from '../../../tandem/js/Tandem.js';
-import ObjectIO from '../../../tandem/js/types/ObjectIO.js';
+import IOType from '../../../tandem/js/types/IOType.js';
 import ReferenceIO from '../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
@@ -74,7 +74,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     super( {
       phetioDocumentation: 'A group of orbital masses which can be selected',
-      phetioType: ReferenceIO( ObjectIO ),
+      phetioType: ReferenceIO( IOType.ObjectIO ),
       tandem: tandem
     } );
 

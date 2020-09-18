@@ -1,8 +1,7 @@
 // Copyright 2020, University of Colorado Boulder
 
 import PropertyIO from '../../../../axon/js/PropertyIO.js';
-import validate from '../../../../axon/js/validate.js';
-import ObjectIO from '../../../../tandem/js/types/ObjectIO.js';
+import IOType from '../../../../tandem/js/types/IOType.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import RewindableProperty from './RewindableProperty.js';
 
@@ -27,78 +26,46 @@ function RewindablePropertyIO( parameterType ) {
   const cacheKey = parameterType;
 
   if ( !cache.has( cacheKey ) ) {
-    cache.set( cacheKey, create( parameterType ) );
+
+    const PropertyIOImpl = PropertyIO( parameterType );
+    cache.set( cacheKey, new IOType( `RewindablePropertyIO<${parameterType.typeName}>`, {
+        valueType: RewindableProperty,
+        parameterTypes: [ parameterType ],
+        documentation: 'Observable values that send out notifications when the value changes. This differs from the ' +
+                       'traditional listener pattern in that added listeners also receive a callback with the current value ' +
+                       'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
+        supertype: PropertyIOImpl,
+
+        /**
+         * Encodes a Property phetioObject to a state.
+         * @public
+         *
+         * @param {Object} property
+         * @returns {Object} - a state object
+         */
+        toStateObject( property ) {
+          const stateObject = PropertyIOImpl.toStateObject( property );
+          stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
+          return stateObject;
+        },
+
+        /**
+         * Used to set the value when loading a state
+         * @param {RewindableProperty} property
+         * @param {Object} stateObject
+         * @public
+         * @override
+         */
+        applyState( property, stateObject ) {
+          PropertyIOImpl.applyState( property, stateObject );
+          property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
+        }
+      } )
+    );
   }
 
   return cache.get( cacheKey );
 }
-
-/**
- * Creates a RewindablePropertyIOImpl
- * @param {function(new:ObjectIO)} parameterType
- * @returns {function(new:ObjectIO)}
- */
-const create = parameterType => {
-  assert && assert( parameterType.fromStateObject, 'only data type serialization supported for parameterType.' );
-
-  const PropertyIOImpl = PropertyIO( parameterType );
-
-  /**
-   * @param {Property} property
-   * @param {string} phetioID
-   * @constructor
-   */
-  class RewindablePropertyIOImpl extends PropertyIOImpl {
-
-    /**
-     * @param {Property} property
-     * @param {string} phetioID
-     */
-    constructor( property, phetioID ) {
-      assert && assert( !!parameterType, 'RewindablePropertyIO needs parameterType' );
-      assert && assert( property, 'Property should exist' );
-      assert && assert( _.endsWith( phetioID, 'Property' ), 'RewindablePropertyIO instances should end with the "Property" suffix, for ' + phetioID );
-
-      super( property, phetioID );
-    }
-
-    /**
-     * Encodes a Property phetioObject to a state.
-     * @public
-     *
-     * @param {Object} property
-     * @returns {Object} - a state object
-     */
-    static toStateObject( property ) {
-      validate( property, this.validator );
-      const stateObject = PropertyIOImpl.toStateObject( property );
-      stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
-      return stateObject;
-    }
-
-    /**
-     * Used to set the value when loading a state
-     * @param {RewindableProperty} property
-     * @param {Object} stateObject
-     * @public
-     * @override
-     */
-    static applyState( property, stateObject ) {
-      PropertyIOImpl.applyState( property, stateObject );
-      property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
-    }
-  }
-
-  RewindablePropertyIOImpl.documentation = 'Observable values that send out notifications when the value changes. This differs from the ' +
-                                           'traditional listener pattern in that added listeners also receive a callback with the current value ' +
-                                           'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.';
-  RewindablePropertyIOImpl.validator = { valueType: RewindableProperty };
-  RewindablePropertyIOImpl.typeName = `RewindablePropertyIO<${parameterType.typeName}>`;
-  RewindablePropertyIOImpl.parameterTypes = [ parameterType ];
-  ObjectIO.validateIOType( RewindablePropertyIOImpl );
-
-  return RewindablePropertyIOImpl;
-};
 
 gravityAndOrbits.register( 'RewindablePropertyIO', RewindablePropertyIO );
 export default RewindablePropertyIO;
