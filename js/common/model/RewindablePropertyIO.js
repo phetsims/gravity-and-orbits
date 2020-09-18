@@ -35,28 +35,12 @@ function RewindablePropertyIO( parameterType ) {
                        'traditional listener pattern in that added listeners also receive a callback with the current value ' +
                        'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
         supertype: PropertyIOImpl,
-
-        /**
-         * Encodes a Property phetioObject to a state.
-         * @public
-         *
-         * @param {Object} property
-         * @returns {Object} - a state object
-         */
-        toStateObject( property ) {
+        toStateObject: property => {
           const stateObject = PropertyIOImpl.toStateObject( property );
           stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
           return stateObject;
         },
-
-        /**
-         * Used to set the value when loading a state
-         * @param {RewindableProperty} property
-         * @param {Object} stateObject
-         * @public
-         * @override
-         */
-        applyState( property, stateObject ) {
+        applyState: ( property, stateObject ) => {
           PropertyIOImpl.applyState( property, stateObject );
           property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
         }
