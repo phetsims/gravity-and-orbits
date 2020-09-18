@@ -10,7 +10,6 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import DerivedPropertyIO from '../../../../axon/js/DerivedPropertyIO.js';
 import Emitter from '../../../../axon/js/Emitter.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Property from '../../../../axon/js/Property.js';
@@ -193,7 +192,7 @@ class Body extends PhetioObject {
 
     // @public
     this.speedProperty = new DerivedProperty( [ this.velocityProperty ], velocity => velocity.magnitude, {
-      phetioType: DerivedPropertyIO( NumberIO ),
+      phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'speedProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
@@ -213,7 +212,7 @@ class Body extends PhetioObject {
     // @private (only used for PhET-iO)
     this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], force => force.magnitude, {
       phetioDocumentation: 'The magnitude of the net force on this body by other bodies',
-      phetioType: DerivedPropertyIO( NumberIO ),
+      phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'forceMagnitudeProperty' ),
       phetioHighFrequency: true,
       units: 'N'

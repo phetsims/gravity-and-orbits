@@ -7,7 +7,6 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import DerivedPropertyIO from '../../../../axon/js/DerivedPropertyIO.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
@@ -30,7 +29,7 @@ class Pair {
       this.body2.positionProperty
     ], ( body1Position, body2Position ) => body2Position.distance( body1Position ), {
       tandem: tandem.createTandem( 'distanceProperty' ),
-      phetioType: DerivedPropertyIO( NumberIO ),
+      phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       phetioHighFrequency: true,
       units: 'm'
     } );
