@@ -10,6 +10,7 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import StopwatchNode from '../../../../scenery-phet/js/StopwatchNode.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
@@ -21,7 +22,7 @@ import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 const clearString = gravityAndOrbitsStrings.clear;
 
 // constants
-const FONT = new PhetFont( 22 );
+const FONT_SIZE = 22;
 
 class TimeCounter extends Node {
 
@@ -36,13 +37,16 @@ class TimeCounter extends Node {
 
     // day text counter
     const dayText = new Text( '', {
-      font: FONT,
+      font: new PhetFont( {
+        family: StopwatchNode.NUMBER_FONT_FAMILY,
+        size: FONT_SIZE
+      } ),
       fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
       maxWidth: 200
     } );
 
     const clearButton = new TextPushButton( clearString, {
-      font: FONT,
+      font: new PhetFont( FONT_SIZE ),
       listener: () => clock.setSimulationTime( 0 ),
       maxWidth: 200,
       tandem: tandem.createTandem( 'clearButton' )
@@ -52,12 +56,13 @@ class TimeCounter extends Node {
     this.timeListener = time => {
       assert && assert( !isNaN( time ), 'time should be a number' );
       dayText.setText( timeFormatter( time ) );
-      dayText.centerX = clearButton.centerX;
+      dayText.right = clearButton.right;
       clearButton.enabled = ( time !== 0 );
     };
     clock.timeProperty.link( this.timeListener );
 
     this.addChild( new VBox( {
+      align: 'right',
 
       // Prevent the "Clear" button from moving when the number text changes
       resize: false,
