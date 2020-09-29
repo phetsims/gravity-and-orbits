@@ -11,7 +11,7 @@ import RewindableProperty from './RewindableProperty.js';
  * @author Sam Reid (PhET Interactive Simulations)
  */
 
-// {Map.<cacheKey:function(new:ObjectIO), function(new:ObjectIO)>} - Cache each parameterized RewindablePropertyIO so that it is only created once
+// {Map.<IOType, IOType>} - Cache each parameterized RewindablePropertyIO so that it is only created once
 const cache = new Map();
 
 /**
