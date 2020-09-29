@@ -16,6 +16,7 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
+import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
@@ -149,18 +150,20 @@ class BodyNode extends Node {
     node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: GravityAndOrbitsColorProfile.arrowIndicatorProperty } ) );
     const labelNode = new Text( body.labelString, {
       font: new PhetFont( 18 ),
-      centerX: tail.x,
-      y: tail.y - this.height - 10,
       fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty,
       maxWidth: 65,
       tandem: tandem.createTandem( 'labelNode' )
     } );
 
-    // For PhET-iO, re-center the node after the text changes size
-    labelNode.boundsProperty.lazyLink( () => {
-      labelNode.centerX = tail.x;
+    // Eliminate artifacts seen on Windows chrome by adding an invisible rectangle underlay, see
+    // https://github.com/phetsims/QA/issues/519
+    const antiArtifactRectangle = new Rectangle( labelNode.bounds.dilated( 1 ), { fill: 'blue' } );
+    const labelWithAntiArtifactRectangle = new Node( {
+      children: [ antiArtifactRectangle, labelNode ],
+      centerX: tail.x,
+      y: tail.y - this.height - 10
     } );
-    node.addChild( labelNode );
+    node.addChild( labelWithAntiArtifactRectangle );
 
     // when transform or mass changes diameter, check for visibility change of label
     const labelVisibilityListener = () => node.setVisible( this.getViewDiameter() <= 10 );
