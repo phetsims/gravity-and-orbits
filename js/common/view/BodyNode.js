@@ -152,7 +152,7 @@ class BodyNode extends Node {
       centerX: tail.x,
       y: tail.y - this.height - 10,
       fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty,
-      maxWidth: 75,
+      maxWidth: 65,
       tandem: tandem.createTandem( 'labelNode' )
     } );
 
