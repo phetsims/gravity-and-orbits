@@ -16,7 +16,6 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import Property from '../../../../axon/js/Property.js';
-import PropertyIO from '../../../../axon/js/PropertyIO.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
@@ -74,7 +73,7 @@ class GravityAndOrbitsModel {
     this.sceneProperty = new Property( this.sceneList.scenes[ 0 ], {
       tandem: tandem.createTandem( 'sceneProperty' ),
       validValues: this.sceneList.scenes,
-      phetioType: PropertyIO( ReferenceIO( IOType.ObjectIO ) )
+      phetioType: Property.PropertyIO( ReferenceIO( IOType.ObjectIO ) )
     } );
   }
 

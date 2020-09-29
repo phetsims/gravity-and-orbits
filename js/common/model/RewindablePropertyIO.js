@@ -1,6 +1,6 @@
 // Copyright 2020, University of Colorado Boulder
 
-import PropertyIO from '../../../../axon/js/PropertyIO.js';
+import Property from '../../../../axon/js/Property.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import RewindableProperty from './RewindableProperty.js';
@@ -27,7 +27,7 @@ function RewindablePropertyIO( parameterType ) {
 
   if ( !cache.has( cacheKey ) ) {
 
-    const PropertyIOImpl = PropertyIO( parameterType );
+    const PropertyIOImpl = Property.PropertyIO( parameterType );
     cache.set( cacheKey, new IOType( `RewindablePropertyIO<${parameterType.typeName}>`, {
         valueType: RewindableProperty,
         parameterTypes: [ parameterType ],
