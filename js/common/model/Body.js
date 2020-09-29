@@ -15,7 +15,6 @@ import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
-import Vector2IO from '../../../../dot/js/Vector2IO.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetioObject from '../../../../tandem/js/PhetioObject.js';
@@ -174,7 +173,7 @@ class Body extends PhetioObject {
 
     // @public
     this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
-      phetioType: RewindablePropertyIO( Vector2IO ),
+      phetioType: RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'positionProperty' ),
       units: 'm',
       phetioHighFrequency: true,
@@ -183,7 +182,7 @@ class Body extends PhetioObject {
 
     // @public
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ), {
-      phetioType: RewindablePropertyIO( Vector2IO ),
+      phetioType: RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'velocityProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
@@ -202,7 +201,7 @@ class Body extends PhetioObject {
     // @public
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
       phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
-      phetioType: RewindablePropertyIO( Vector2IO ),
+      phetioType: RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'forceProperty' ),
       phetioHighFrequency: true,
       units: 'N',
@@ -315,7 +314,7 @@ class Body extends PhetioObject {
     return {
       pathLength: this.pathLength,
       modelPathLength: this.modelPathLength,
-      path: ArrayIO( Vector2IO ).toStateObject( this.path )
+      path: ArrayIO( Vector2.Vector2IO ).toStateObject( this.path )
     };
   }
 
@@ -326,7 +325,7 @@ class Body extends PhetioObject {
   setStateObject( stateObject ) {
     this.pathLength = stateObject.pathLength;
     this.modelPathLength = stateObject.modelPathLength;
-    this.path = ArrayIO( Vector2IO ).fromStateObject( stateObject.path );
+    this.path = ArrayIO( Vector2.Vector2IO ).fromStateObject( stateObject.path );
     this.clearedEmitter.emit( this.type );
     this.path.forEach( pathPoint => this.pointAddedEmitter.emit( pathPoint, this.type ) );
   }
