@@ -20,10 +20,10 @@ import merge from '../../../../phet-core/js/merge.js';
 import PhetioObject from '../../../../tandem/js/PhetioObject.js';
 import ArrayIO from '../../../../tandem/js/types/ArrayIO.js';
 import BooleanIO from '../../../../tandem/js/types/BooleanIO.js';
+import IOType from '../../../../tandem/js/types/IOType.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import BodyIO from './BodyIO.js';
 import BodyState from './BodyState.js';
 import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
 import RewindableProperty from './RewindableProperty.js';
@@ -65,7 +65,7 @@ class Body extends PhetioObject {
       maxPathLength: 1400000000, // max path length for the body in km (should only be used if the body is too close to the center)
       pathLengthLimit: 6000, // limit on the number of points in the path
       rotationPeriod: null, // period of body rotation, in seconds - null rotation period will prevent rotation
-      phetioType: BodyIO,
+      phetioType: Body.BodyIO,
       touchDilation: 15,
       tandem: tandem
     }, options );
@@ -534,6 +534,13 @@ class Body extends PhetioObject {
     return 'name = ' + this.type.toString() + ', mass = ' + this.massProperty.get();
   }
 }
+
+Body.BodyIO = new IOType( 'BodyIO', {
+  valueType: Body,
+  documentation: 'Represents a physical body in the simulation',
+  toStateObject: body => body.toStateObject(),
+  applyState: ( body, stateObject ) => body.setStateObject( stateObject )
+} );
 
 gravityAndOrbits.register( 'Body', Body );
 export default Body;
