@@ -89,7 +89,7 @@ class CheckboxPanel extends VBox {
     children.push( new Checkbox( new HBox( merge( {
         children: [
           velocityTextNode,
-          new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.RED_COLORBLIND } )
+          new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.VELOCITY } )
         ]
       }, HBOX_OPTIONS ) ),
       model.showVelocityProperty, optionsWithTandem( 'velocityCheckbox' ) ) );

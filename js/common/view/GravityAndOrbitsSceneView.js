@@ -64,7 +64,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
 
     const forceVectorColorFill = new Color( 50, 130, 215 );
     const forceVectorColorOutline = new Color( 64, 64, 64 );
-    const velocityVectorColorFill = PhetColorScheme.RED_COLORBLIND;
+    const velocityVectorColorFill = PhetColorScheme.VELOCITY;
     const velocityVectorColorOutline = new Color( 64, 64, 64 );
 
     // Use canvas coordinates to determine whether something has left the visible area
