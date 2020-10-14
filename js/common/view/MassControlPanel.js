@@ -43,11 +43,9 @@ class MassControlPanel extends VBox {
   constructor( massSettableBodies, options ) {
 
     options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
-      phetioComponentOptions: {
 
-        // Managed by the simulation, can be buggy if independently controlled by studio
-        visibleProperty: { phetioReadOnly: true }
-      }
+      // Managed by the simulation, can be buggy if independently controlled by studio
+      visiblePropertyOptions: { phetioReadOnly: true }
     }, options );
 
     const children = [];

@@ -34,9 +34,9 @@ class VectorNode extends Node {
   constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options ) {
     options = merge( {
       tandem: tandem,
+      visiblePropertyOptions: { phetioReadOnly: true },
       phetioComponentOptions: {
         opacityProperty: { phetioReadOnly: true },
-        visibleProperty: { phetioReadOnly: true },
         pickableProperty: { phetioReadOnly: true }
       }
     }, options );

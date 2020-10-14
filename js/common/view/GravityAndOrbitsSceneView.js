@@ -22,8 +22,8 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 import BodyNode from './BodyNode.js';
-import ExplosionNode from './ExplosionNode.js';
 import DraggableVectorNode from './DraggableVectorNode.js';
+import ExplosionNode from './ExplosionNode.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import PathsCanvasNode from './PathsCanvasNode.js';
 import TimeCounter from './TimeCounter.js';
@@ -136,9 +136,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         significantFigures: 0,
 
         tandem: tandem.createTandem( 'measuringTapeNode' ),
-        phetioComponentOptions: {
-          visibleProperty: { phetioReadOnly: true } // controlled by a checkbox
-        }
+        visiblePropertyOptions: { phetioReadOnly: true } // controlled by a checkbox
       } );
 
       scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
@@ -185,9 +183,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
       y: 100,
       phetioComponentOptions: {
         opacityProperty: { phetioReadOnly: true },
-        pickableProperty: { phetioReadOnly: true },
-        visibleProperty: { phetioReadOnly: true }
+        pickableProperty: { phetioReadOnly: true }
       },
+      visiblePropertyOptions: { phetioReadOnly: true },
       enabledPropertyOptions: { phetioReadOnly: true },
       listener: () => {
 
