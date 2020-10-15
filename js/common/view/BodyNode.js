@@ -33,7 +33,12 @@ class BodyNode extends Node {
    * @param {Tandem} tandem
    */
   constructor( body, labelAngle, isPlayingProperty, scene, tandem ) {
-    super( { pickable: true, cursor: 'pointer', tandem: tandem } );
+    super( {
+      cursor: 'pointer',
+      tandem: tandem,
+      pickable: true,
+      pickablePropertyInstrumented: true
+    } );
 
     const clock = scene.getClock();
 

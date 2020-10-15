@@ -182,8 +182,13 @@ class GravityAndOrbitsSceneView extends Rectangle {
       x: 100,
       y: 100,
       phetioComponentOptions: {
-        opacityProperty: { phetioReadOnly: true },
-        pickableProperty: { phetioReadOnly: true }
+        opacityProperty: { phetioReadOnly: true }
+      },
+
+      // TODO: we likely don't need this, can we remove the pickableProperty? see https://github.com/phetsims/scenery/issues/1092
+      pickablePropertyInstrumented: true,
+      pickablePropertyOptions: {
+        phetioReadOnly: true
       },
       visiblePropertyOptions: { phetioReadOnly: true },
       enabledPropertyOptions: { phetioReadOnly: true },

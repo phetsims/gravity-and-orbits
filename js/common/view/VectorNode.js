@@ -35,9 +35,10 @@ class VectorNode extends Node {
     options = merge( {
       tandem: tandem,
       visiblePropertyOptions: { phetioReadOnly: true },
+      pickablePropertyOptions: { phetioReadOnly: true },
+      pickablePropertyInstrumented: true,
       phetioComponentOptions: {
-        opacityProperty: { phetioReadOnly: true },
-        pickableProperty: { phetioReadOnly: true }
+        opacityProperty: { phetioReadOnly: true }
       }
     }, options );
     super( options );
