@@ -36,10 +36,7 @@ class VectorNode extends Node {
       tandem: tandem,
       visiblePropertyOptions: { phetioReadOnly: true },
       pickablePropertyOptions: { phetioReadOnly: true },
-      pickablePropertyInstrumented: true,
-      phetioComponentOptions: {
-        opacityProperty: { phetioReadOnly: true }
-      }
+      pickablePropertyInstrumented: true
     }, options );
     super( options );
 
