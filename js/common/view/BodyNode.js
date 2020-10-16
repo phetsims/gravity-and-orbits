@@ -150,7 +150,7 @@ class BodyNode extends Node {
     const viewCenter = new Vector2( 0, 0 );
     const northEastVector = Vector2.createPolar( 1, labelAngle );
     const tip = northEastVector.times( 10 ).plus( viewCenter );
-    const tail = northEastVector.times( 60 ).plus( viewCenter );
+    const tail = northEastVector.times( 70 ).plus( viewCenter );
 
     node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: GravityAndOrbitsColorProfile.arrowIndicatorProperty } ) );
     const labelNode = new Text( body.labelString, {
