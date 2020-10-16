@@ -35,9 +35,7 @@ class DraggableVectorNode extends VectorNode {
   constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill,
                outline, labelText, tandem ) {
 
-    super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, {
-      pickablePropertyOptions: { phetioReadOnly: false }
-    } );
+    super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem );
 
     const tip = this.getTip();
 
