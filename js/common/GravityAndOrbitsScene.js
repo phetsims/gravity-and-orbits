@@ -20,6 +20,7 @@ import NumberProperty from '../../../axon/js/NumberProperty.js';
 import Property from '../../../axon/js/Property.js';
 import Rectangle from '../../../dot/js/Rectangle.js';
 import Vector2 from '../../../dot/js/Vector2.js';
+import Vector2Property from '../../../dot/js/Vector2Property.js';
 import merge from '../../../phet-core/js/merge.js';
 import ModelViewTransform2 from '../../../phetcommon/js/view/ModelViewTransform2.js';
 import PhetioObject from '../../../tandem/js/PhetioObject.js';
@@ -87,8 +88,12 @@ class GravityAndOrbitsScene extends PhetioObject {
     const measuringTapePointOptions = {
       units: 'm'
     };
-    this.measuringTapeStartPointProperty = new Property( initialMeasuringTapePosition.p1, measuringTapePointOptions );
-    this.measuringTapeEndPointProperty = new Property( initialMeasuringTapePosition.p2, measuringTapePointOptions );
+    this.measuringTapeStartPointProperty = new Vector2Property( initialMeasuringTapePosition.p1, merge( {
+      tandem: tandem.createTandem( 'measuringTapeStartPointProperty' )
+    }, measuringTapePointOptions ) );
+    this.measuringTapeEndPointProperty = new Vector2Property( initialMeasuringTapePosition.p2, merge( {
+      tandem: tandem.createTandem( 'measuringTapeEndPointProperty' )
+    }, measuringTapePointOptions ) );
     this.zoomLevelProperty = new NumberProperty( 1, {
       tandem: tandem.createTandem( 'zoomLevelProperty' ),
       range: GravityAndOrbitsConstants.ZOOM_RANGE
