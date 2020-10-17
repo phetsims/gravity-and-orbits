@@ -319,18 +319,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.modelScreen.view.massesControlPanel.visibleProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.moonNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.moonNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.planetNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.returnObjectsButton.enabledProperty": {
       "phetioFeatured": false
     },
@@ -343,23 +331,11 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetMoonSceneView.zoomControl.visibleProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.planetNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.returnObjectsButton.enabledProperty": {
       "phetioFeatured": false
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.returnObjectsButton.visibleProperty": {
       "phetioFeatured": false
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.planetSatelliteSceneView.timeCounter.visibleProperty": {
       "phetioFeatured": true
@@ -370,19 +346,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.moonNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode.velocityVectorNode.pickableProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.returnObjectsButton.enabledProperty": {
@@ -390,9 +354,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.returnObjectsButton.visibleProperty": {
       "phetioFeatured": false
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.starNode.pickableProperty": {
-      "phetioFeatured": true
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetMoonSceneView.timeCounter.visibleProperty": {
       "phetioFeatured": true
@@ -403,20 +364,11 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.planetNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.returnObjectsButton.enabledProperty": {
       "phetioFeatured": false
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.returnObjectsButton.visibleProperty": {
       "phetioFeatured": false
-    },
-    "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.starNode.pickableProperty": {
-      "phetioFeatured": true
     },
     "gravityAndOrbits.modelScreen.view.playAreaNode.starPlanetSceneView.timeCounter.visibleProperty": {
       "phetioFeatured": true
@@ -757,19 +709,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.moonNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.planetNode.velocityVectorNode.pickableProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.returnObjectsButton.enabledProperty": {
@@ -790,12 +730,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.readoutTextProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.planetNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.returnObjectsButton.enabledProperty": {
       "phetioFeatured": false
     },
@@ -803,12 +737,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
       "phetioFeatured": false
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.indicatorNode.labelNode.textProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.satelliteNode.velocityVectorNode.pickableProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.timeCounter.visibleProperty": {
@@ -826,19 +754,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonNode.indicatorNode.labelNode.textProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.moonNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode.indicatorNode.labelNode.textProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.planetNode.velocityVectorNode.pickableProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.returnObjectsButton.enabledProperty": {
@@ -848,12 +764,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
       "phetioFeatured": false
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starNode.indicatorNode.labelNode.textProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.starNode.velocityVectorNode.pickableProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.timeCounter.visibleProperty": {
@@ -871,12 +781,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetNode.indicatorNode.labelNode.textProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.planetNode.velocityVectorNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.returnObjectsButton.enabledProperty": {
       "phetioFeatured": false
     },
@@ -884,12 +788,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
       "phetioFeatured": false
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starNode.indicatorNode.labelNode.textProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starNode.pickableProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.starNode.velocityVectorNode.pickableProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.timeCounter.visibleProperty": {
