@@ -62,7 +62,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
 
     this.addChild( new PathsCanvasNode( bodies, scene.transformProperty, model.showPathProperty, STAGE_SIZE ) );
 
-    const forceVectorColorFill = new Color( 50, 130, 215 );
+    const forceVectorColorFill = PhetColorScheme.GRAVITATIONAL_FORCE;
     const forceVectorColorOutline = new Color( 64, 64, 64 );
     const velocityVectorColorFill = PhetColorScheme.VELOCITY;
     const velocityVectorColorOutline = new Color( 64, 64, 64 );
