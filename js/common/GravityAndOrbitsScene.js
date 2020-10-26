@@ -88,11 +88,13 @@ class GravityAndOrbitsScene extends PhetioObject {
     const measuringTapePointOptions = {
       units: 'm'
     };
+
+    const measuringTapeTandem = tandem.createTandem( 'measuringTape' );
     this.measuringTapeStartPointProperty = new Vector2Property( initialMeasuringTapePosition.p1, merge( {
-      tandem: tandem.createTandem( 'measuringTapeStartPointProperty' )
+      tandem: measuringTapeTandem.createTandem( 'startPointProperty' )
     }, measuringTapePointOptions ) );
     this.measuringTapeEndPointProperty = new Vector2Property( initialMeasuringTapePosition.p2, merge( {
-      tandem: tandem.createTandem( 'measuringTapeEndPointProperty' )
+      tandem: measuringTapeTandem.createTandem( 'endPointProperty' )
     }, measuringTapePointOptions ) );
     this.zoomLevelProperty = new NumberProperty( 1, {
       tandem: tandem.createTandem( 'zoomLevelProperty' ),
