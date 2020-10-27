@@ -37,7 +37,7 @@ class BodyNode extends Node {
       cursor: 'pointer',
       tandem: tandem,
       pickable: true,
-      pickablePropertyInstrumented: true
+      pickablePropertyPhetioInstrumented: true
     } );
 
     const clock = scene.getClock();
