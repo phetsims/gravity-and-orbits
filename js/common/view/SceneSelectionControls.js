@@ -13,7 +13,7 @@ import Image from '../../../../scenery/js/nodes/Image.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import Color from '../../../../scenery/js/util/Color.js';
-import RadioButtonGroup from '../../../../sun/js/buttons/RadioButtonGroup.js';
+import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import resetArrowImg from '../../../images/reset_arrow_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -43,7 +43,7 @@ class SceneSelectionControls extends Node {
 
       return sceneResetButton;
     } );
-    const radioButtonGroup = new RadioButtonGroup( sceneProperty, content, {
+    const radioButtonGroup = new RectangularRadioButtonGroup( sceneProperty, content, {
       alignVertically: true,
       selectedStroke: GravityAndOrbitsColorProfile.panelTextProperty,
       selectedLineWidth: 2,
