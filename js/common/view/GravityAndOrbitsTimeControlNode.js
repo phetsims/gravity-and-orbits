@@ -67,6 +67,8 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     const restartButton = new RestartButton( {
       enabled: false,
       radius: STEP_BUTTON_RADIUS,
+      xMargin: 9.5,
+      yMargin: 9.5,
       listener: () => model.sceneProperty.value.rewind(),
       center: this.getPlayPauseButtonCenter().minusXY( PLAY_PAUSE_BUTTON_RADIUS + STEP_BUTTON_RADIUS + PUSH_BUTTON_SPACING, 0 ),
       tandem: options.tandem.createTandem( 'restartButton' )
