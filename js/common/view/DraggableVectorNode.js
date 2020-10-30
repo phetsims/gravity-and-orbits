@@ -30,12 +30,13 @@ class DraggableVectorNode extends VectorNode {
    * @param {Color} outline
    * @param {string} labelText
    * @param {Tandem} tandem
+   * @param {Object} [options]
    * @constructor
    */
   constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill,
-               outline, labelText, tandem ) {
+               outline, labelText, tandem, options ) {
 
-    super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem );
+    super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options );
 
     const tip = this.getTip();
 

@@ -89,8 +89,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
     for ( let i = 0; i < bodies.length; i++ ) {
 
       const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
-      this.addChild( new VectorNode( bodies[ i ], scene.transformProperty, model.showGravityForceProperty,
-        bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline, bodyNodeTandem.createTandem( 'gravityVectorNode' ) ) );
+      const gravityForceVectorNode = new VectorNode( bodies[ i ], scene.transformProperty, model.showGravityForceProperty,
+        bodies[ i ].forceProperty, forceScale, forceVectorColorFill, forceVectorColorOutline, bodyNodeTandem.createTandem( 'gravityVectorNode' ) );
+      this.addChild( gravityForceVectorNode );
     }
 
     // Add velocity vector nodes
@@ -99,7 +100,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
         const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
         this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-          vString, bodyNodeTandem.createTandem( 'velocityVectorNode' ) ) );
+          vString, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
+            pickablePropertyPhetioInstrumented: true
+          } ) );
       }
     }
 
