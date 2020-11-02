@@ -1,11 +1,11 @@
 {
-  "comment": "# gravity-and-orbits 1.2.0-dev.17 Fri Oct 30 2020 09:45:54 GMT-0800 (Alaska Daylight Time)",
+  "comment": "# gravity-and-orbits 1.2.0-rc.0 Mon Nov 02 2020 16:12:02 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "49aa67d01046326d85dcd8f265db91e8753038a1",
     "branch": "master"
   },
   "axon": {
-    "sha": "30930d71c6d45a613c637dd402b7eaa00d41d881",
+    "sha": "ed9f64f3d4fd4502fb489f4603d8eea54590d3d5",
     "branch": "master"
   },
   "brand": {
@@ -13,16 +13,16 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "98561b490c5014a07e7ea504857b0ff4e4da2456",
+    "sha": "2b2190d9ce7c78d49ab1438272ce5978e9f79d9d",
     "branch": "master"
   },
   "dot": {
-    "sha": "1b7cb5c074b22a25911e5d8f450c0525d76303d1",
+    "sha": "556d5b90d598f6c11d20eef7c39b692533e6f21d",
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "ac4cb7e93bd4fe43519a73fa7bad2b15b4b39b6b",
-    "branch": "master"
+    "sha": "95e7f6bd58c37abfc536fa18e9aaf190be204102",
+    "branch": "1.2"
   },
   "joist": {
     "sha": "39712126e23f03fa6500ee3b85525f71026b4cec",
@@ -61,11 +61,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "776431455af73f7f639e5399add2bc65a166307e",
+    "sha": "7c7082dbc89e1cb300982b2d19a8acad33783cdc",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "d552c063555d8f8dc5c0a500a02201781d381b92",
+    "sha": "0b6b199d3f618467633b788db04c8fcf20aa4170",
     "branch": "master"
   },
   "sherpa": {
@@ -77,11 +77,11 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "c2f6d3a26e1c0974ed178b2cf58e35b42b409a87",
+    "sha": "fd21f44c14001012d252bb234378ee6dd88f952d",
     "branch": "master"
   },
   "tambo": {
-    "sha": "4f70d3abb6e3c17119b0961e64e43beba0e9d5cd",
+    "sha": "21ccfaf503af6fc0f67cc7dc79200fbb4b508607",
     "branch": "master"
   },
   "tandem": {
@@ -93,7 +93,7 @@
     "branch": "master"
   },
   "utterance-queue": {
-    "sha": "56e4ff865350140acd25d2e2efecb4ddff37f83c",
+    "sha": "e592fd177070bd8e31fbcf339a9d1da4d1f8786a",
     "branch": "master"
   }
 }
