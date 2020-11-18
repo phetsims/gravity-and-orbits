@@ -74,9 +74,11 @@ class PathsCanvasNode extends CanvasNode {
 
     visibleProperty.link( isVisible => {
       this.visible = isVisible;
-      for ( let i = 0; i < bodies.length; i++ ) {
-        this.namedPoints[ bodies[ i ].type.name ].points = [];
-        this.bodies[ i ].clearPath();
+      if ( !isVisible ) {
+        for ( let i = 0; i < bodies.length; i++ ) {
+          this.namedPoints[ bodies[ i ].type.name ].points = [];
+          this.bodies[ i ].clearPath();
+        }
       }
       this.invalidatePaint();
     } );
