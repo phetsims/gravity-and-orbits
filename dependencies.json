@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.4.0-dev.1 Tue Nov 17 2020 16:09:41 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.4.0-dev.2 Wed Nov 18 2020 09:11:15 GMT-0900 (Alaska Standard Time)",
   "assert": {
     "sha": "49aa67d01046326d85dcd8f265db91e8753038a1",
     "branch": "master"
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "b67110ffc5c5a4f3b697eb85fa657b41e39e1644",
+    "sha": "cdf2fc56876111d4863cce4aa5835ab352d3b7cb",
     "branch": "master"
   },
   "joist": {
@@ -45,7 +45,7 @@
     "branch": "master"
   },
   "phet-io-wrappers": {
-    "sha": "d42fa504569272f51ceccf5557d819bc3b650946",
+    "sha": "2fe32560327cf2c426b6a4c9cd179252d992dc96",
     "branch": "master"
   },
   "phetcommon": {
@@ -61,11 +61,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "7794ca08ebeda1d1037b05f44df3815e989b9693",
+    "sha": "ef5691dc05b54eaaa55ba7a22da200d710c64bbb",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "38cbba9ec54fb0ddf0a848db855fe65f7d4a2c95",
+    "sha": "db7e13199c3c7205c6b34719fd74a02b35c8c88d",
     "branch": "master"
   },
   "sherpa": {
@@ -77,11 +77,11 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "278bd57e33ca0bf57ed770e8eafb4b5e6a678ee2",
+    "sha": "fffaee5599291a7a206271f592c536c11d0f0b19",
     "branch": "master"
   },
   "tambo": {
-    "sha": "21ccfaf503af6fc0f67cc7dc79200fbb4b508607",
+    "sha": "b5b4c12823d96f2426630ff9f2fc768499b64d31",
     "branch": "master"
   },
   "tandem": {
