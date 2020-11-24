@@ -12,7 +12,6 @@
  */
 
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
 import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
@@ -27,13 +26,8 @@ class PathsCanvasNode extends CanvasNode {
    * @param {Property.<ModelViewTransform2>} transformProperty
    * @param {Property.<boolean>} visibleProperty
    * @param {Bounds2} canvasBounds
-   * @param {Object} [options]
    */
-  constructor( bodies, transformProperty, visibleProperty, canvasBounds, options ) {
-
-    options = merge( {
-      maxPathLength: 1150 // max path length for the trace that follows the planets
-    }, options );
+  constructor( bodies, transformProperty, visibleProperty, canvasBounds ) {
 
     assert && assert( canvasBounds, 'Paths canvas must define bounds' );
     super( {
@@ -52,7 +46,7 @@ class PathsCanvasNode extends CanvasNode {
 
     // transform all body points and re paint the canvas
     // disposal unnecessary, the canvas node exists for life of sim
-    transformProperty.link( transform => {
+    const updateNamedPoints = () => {
       for ( let i = 0; i < bodies.length; i++ ) {
         const body = bodies[ i ];
 
@@ -68,19 +62,21 @@ class PathsCanvasNode extends CanvasNode {
       }
 
       this.invalidatePaint();
-    } );
+    };
+    transformProperty.link( updateNamedPoints );
 
     this.bodies = bodies; // @private
 
     visibleProperty.link( isVisible => {
       this.visible = isVisible;
-      if ( !isVisible ) {
+
+      // Paths should restart from the body position when "Path" checkbox is checked
+      if ( !phet.joist.sim.isSettingPhetioStateProperty.value ) {
         for ( let i = 0; i < bodies.length; i++ ) {
-          this.namedPoints[ bodies[ i ].type.name ].points = [];
           this.bodies[ i ].clearPath();
         }
       }
-      this.invalidatePaint();
+      updateNamedPoints();
     } );
 
     // @private - listener for when a point is added, bound by thisNode
