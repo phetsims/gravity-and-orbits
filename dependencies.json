@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.3.0-rc.2 Fri Dec 04 2020 12:48:53 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.3.0-rc.3 Fri Dec 04 2020 13:02:31 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "49aa67d01046326d85dcd8f265db91e8753038a1",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "d4d2151bfc9792c3d1c43c897e3df2ef25f3f2dd",
+    "sha": "23042c9cf935dea87dd9b95f9e255a7d2edbf859",
     "branch": "1.3"
   },
   "joist": {
@@ -42,7 +42,7 @@
   },
   "phet-io-client-guides": {
     "sha": "13fe54a69c4f1caf1c4cc9ccd05eb2ce34d69325",
-    "branch": "gravity-and-orbits-1.3"
+    "branch": "HEAD"
   },
   "phet-io-wrappers": {
     "sha": "74889d51f3a4f657ec524af8dc19c1de8cc6ba66",
