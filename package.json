@@ -18,7 +18,8 @@
       "phet",
       "phet-io"
     ],
-    "simulation": true
+    "simulation": true,
+    "supportsPanAndZoom": false
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_es6_eslintrc.js"
