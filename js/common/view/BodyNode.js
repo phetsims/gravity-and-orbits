@@ -163,7 +163,12 @@ class BodyNode extends Node {
     // Eliminate artifacts seen on Windows chrome by adding an invisible rectangle underlay, see
     // https://github.com/phetsims/QA/issues/519
     // 1px is too small for ?stringTest=long because the underlay rectangle is reduced in size as well
-    const antiArtifactRectangle = new Rectangle( labelNode.bounds.dilated( 10 ) );
+    const antiArtifactRectangle = new Rectangle( labelNode.bounds.dilated( 10 ), {
+
+      // A rectangle with no fill doesn't paint, so we paint with low or no opacity to make sure that region is painted
+      fill: 'blue',
+      opacity: 0
+    } );
     const labelWithAntiArtifactRectangle = new Node( {
       children: [ antiArtifactRectangle, labelNode ],
       centerX: tail.x,
