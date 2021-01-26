@@ -17,9 +17,14 @@ const gridString = gravityAndOrbitsStrings.grid;
 // For instance, we could have these checks here in the screen view, or we could put it in GravityAndOrbitsControlPanel
 // or GravityAndOrbitsCheckboxPanel
 class GravityAndOrbitsScreenViewSpecification extends NodeSpecification {
-  constructor( gravityAndOrbitsScreenView ) {
-    super( gravityAndOrbitsScreenView );
 
+  constructor() {
+    super();
+  }
+
+  // @public
+  test( gravityAndOrbitsScreenView ) {
+    super.test( gravityAndOrbitsScreenView );
     const resetAllButtons = gravityAndOrbitsScreenView.getLeafTrails( node => node instanceof ResetAllButton );
     assert && assert( resetAllButtons.length === 1, 'should have exactly 1 reset all button' );
 
@@ -27,13 +32,15 @@ class GravityAndOrbitsScreenViewSpecification extends NodeSpecification {
     assert && assert( gridCheckboxes.length === 1, 'should have a checkbox labeled "grid"' );
 
     const gridCheckbox = gridCheckboxes[ 0 ].lastNode();
-    assert && assert( new CheckboxSpecification( gridCheckbox, {
+    const checkboxSpecification = new CheckboxSpecification( {
       // TODO: For testing https://github.com/phetsims/phet-io/issues/1657, pretend the spec calls for MODEL events to test failure
       // phetioEventType: EventType.MODEL,
 
       // This is a shortcut for "don't care"--could be used if this test isn't supposed to require a specific subtandem
+      // But how could this be done during specification construction? See  https://github.com/phetsims/phet-io/issues/1657,
       tandem: gridCheckbox.tandem
-    } ) );
+    } );
+    checkboxSpecification.test( gridCheckbox );
   }
 }
 

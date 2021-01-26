@@ -35,7 +35,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
    * @param {Tandem} tandem
    */
   constructor( model, tandem ) {
-    assert && onInstance( () => new GravityAndOrbitsScreenViewSpecification( this ) );
+    assert && onInstance( () => new GravityAndOrbitsScreenViewSpecification().test( this ) );
 
     super();
 
