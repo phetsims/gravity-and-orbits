@@ -15,11 +15,9 @@ import AlignGroup from '../../../../scenery/js/nodes/AlignGroup.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import Panel from '../../../../sun/js/Panel.js';
-import onInstance from '../../../../tandem/js/onInstance.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsControls from './GravityAndOrbitsControls.js';
-import GravityAndOrbitsScreenViewSpecification from './GravityAndOrbitsScreenViewSpecification.js';
 import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.js';
 import MassControlPanel from './MassControlPanel.js';
 
@@ -35,7 +33,6 @@ class GravityAndOrbitsScreenView extends ScreenView {
    * @param {Tandem} tandem
    */
   constructor( model, tandem ) {
-    assert && onInstance( () => new GravityAndOrbitsScreenViewSpecification().test( this ) );
 
     super();
 
