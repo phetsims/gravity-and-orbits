@@ -44,7 +44,7 @@ class Body extends PhetioObject {
    * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
    * @param {Color} color
    * @param {Color} highlight
-   * @param {function.<Body, number, BodyRenderer>} renderer - way to associate the graphical representation directly
+   * @param {function(Body, number):BodyRenderer} renderer - way to associate the graphical representation directly
    *                                                          instead of later with conditional logic or map
    * @param {number} labelAngle
    * @param {number} tickValue - default value for mass setting

@@ -30,7 +30,7 @@ class GravityAndOrbitsModel {
 
   /**
    * @param {boolean} showMeasuringTape
-   * @param {function.<ModeListParameterList, Array.<GravityAndOrbitsScene>>} createModes
+   * @param {function(ModeListParameterList):Array.<GravityAndOrbitsScene>} createModes
    * @param {number} initialSceneIndex
    * @param {boolean} showMassCheckbox
    * @param {Tandem} tandem
@@ -67,7 +67,7 @@ class GravityAndOrbitsModel {
     this.showMassCheckbox = showMassCheckbox; // @public
     this.showMeasuringTape = showMeasuringTape; // @public
 
-    // @private {SceneFactory}
+    // @private {SceneFactory} // TODO: update this doc or the return type for createModes, https://github.com/phetsims/chipper/issues/1005
     this.sceneList = createModes( this );
 
     this.sceneProperty = new Property( this.sceneList.scenes[ 0 ], {
