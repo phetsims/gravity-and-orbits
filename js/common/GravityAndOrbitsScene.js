@@ -40,7 +40,6 @@ const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
 class GravityAndOrbitsScene extends PhetioObject {
 
   /**
-   * Create a new GravityAndOrbitsScene that shares ModeListParameterList values with other modes
    * @param {GravityAndOrbitsModel} model
    * @param {ModeConfig} modeConfig
    * @param {function(number):string} timeFormatter
