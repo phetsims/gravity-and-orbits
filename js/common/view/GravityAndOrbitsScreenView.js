@@ -34,7 +34,9 @@ class GravityAndOrbitsScreenView extends ScreenView {
    */
   constructor( model, tandem ) {
 
-    super();
+    super( {
+      tandem: tandem
+    } );
 
     const alignGroup = new AlignGroup( {
       matchVertical: false
