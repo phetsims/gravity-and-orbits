@@ -166,8 +166,7 @@ class BodyNode extends Node {
     const antiArtifactRectangle = new Rectangle( labelNode.bounds.dilated( 10 ), {
 
       // A rectangle with no fill doesn't paint, so we paint with low or no opacity to make sure that region is painted
-      fill: 'blue',
-      opacity: 0
+      fill: 'transparent'
     } );
     const labelWithAntiArtifactRectangle = new Node( {
       children: [ antiArtifactRectangle, labelNode ],
