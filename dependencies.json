@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.5.0-dev.1 Tue Mar 16 2021 12:25:46 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.5.0-dev.2 Tue Mar 16 2021 22:46:20 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "423d662a3672e3de42852ee6d6fdec705ac98dd5",
     "branch": "master"
@@ -13,7 +13,7 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "77ba0d6b5866d38e762eb92e442ef5e64802991d",
+    "sha": "cfff1de702d667388188a2142af2101b5bbce13a",
     "branch": "master"
   },
   "dot": {
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "108697487bb589b084fb3f569c9e5fe74f4bc06e",
+    "sha": "bed6692c10e52b0f15160e50f8c7f957ac0673d7",
     "branch": "master"
   },
   "joist": {
@@ -37,7 +37,7 @@
     "branch": "master"
   },
   "phet-io": {
-    "sha": "0a4b15c884432278f2d83d2757ba1a160f9ad023",
+    "sha": "57545a0e01bb4d54977266ab68a5b8ece5bb5f5d",
     "branch": "master"
   },
   "phet-io-client-guides": {
@@ -53,7 +53,7 @@
     "branch": "master"
   },
   "phetmarks": {
-    "sha": "740f11d0a5943c703e52c42e31b8e14eb50f4cad",
+    "sha": "37e6c1a5b6965dbe21e2ea2e4d508907c4c7b390",
     "branch": "master"
   },
   "query-string-machine": {
@@ -65,7 +65,7 @@
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "e10e699e11aa064ff2108a35dfe5b1d818bd583f",
+    "sha": "58b7b5b97e61fa9993feb2ac1e55f460b83734cc",
     "branch": "master"
   },
   "sherpa": {
@@ -73,7 +73,7 @@
     "branch": "master"
   },
   "studio": {
-    "sha": "0c675eb47ef96c242182b5e5c5ab26bbe602a10a",
+    "sha": "edf65a6ba1cbf401490984d38a14820c9779f391",
     "branch": "master"
   },
   "sun": {
