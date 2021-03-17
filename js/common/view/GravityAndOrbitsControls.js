@@ -7,8 +7,8 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
+import HSeparator from '../../../../sun/js/HSeparator.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import CheckboxPanel from './CheckboxPanel.js';
@@ -17,6 +17,7 @@ import SceneSelectionControls from './SceneSelectionControls.js';
 
 // constants
 const MENU_SECTION_OPTIONS = { x: 5 };
+const SEPARATOR_OPTIONS = { lineWidth: 2, stroke: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE };
 
 class GravityAndOrbitsControls extends VBox {
 
@@ -29,19 +30,15 @@ class GravityAndOrbitsControls extends VBox {
     options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options );
 
     // top separator rectangle for the gravity control section
-    const makeTopSeparatorRectangle = () => new Rectangle( 0, 0, 0, 3, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
-
-    // make bottom separator rectangle for the gravity control
-    // slightly taller - the vertical draw of the 'y' in gravity creates the illusion that
-    // the top has more space
-    const makeBottomSeparatorRectangle = () => new Rectangle( 0, 0, 0, 4, { fill: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE } );
+    const topSeparator = new HSeparator( 0, merge( { tandem: options.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );
+    const bottomSeparator = new HSeparator( 0, merge( { tandem: options.tandem.createTandem( 'separator2' ) }, SEPARATOR_OPTIONS ) );
 
     // menu sections and separators
     const sections = [
       new SceneSelectionControls( model.sceneProperty, model.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
-      makeTopSeparatorRectangle(),
+      topSeparator,
       new GravityControl( model.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
-      makeBottomSeparatorRectangle(),
+      bottomSeparator,
       new CheckboxPanel( model, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
     ];
 
@@ -56,9 +53,8 @@ class GravityAndOrbitsControls extends VBox {
 
     // resize the separators to allow them to go inside the panel margins
     const separatorWidth = this.width + 2 * GravityAndOrbitsConstants.PANEL_X_MARGIN;
-    for ( let i = 0; i < Math.floor( sections.length / 2 ); i++ ) {
-      sections[ i * 2 + 1 ].setRect( -GravityAndOrbitsConstants.PANEL_X_MARGIN, 0, separatorWidth, 2 );
-    }
+    topSeparator.setLine( 0, 0, separatorWidth, 0 );
+    bottomSeparator.setLine( 0, 0, separatorWidth, 0 );
   }
 }
 
