@@ -38,7 +38,12 @@ class TimeCounter extends Node {
     // day text counter
     const dayText = new Text( '', {
       font: new PhetFont( {
-        family: StopwatchNode.NUMBER_FONT_FAMILY,
+
+        // In the Android app on the Galaxy Tab A SM-T580 (but not the Samsung A51, Android 10), StopwatchNode.NUMBER_FONT_FAMILY
+        // fails the sim from starting up. That problem will be investigated in https://github.com/phetsims/scenery-phet/issues/674
+        // But to unblock Gravity and Orbits, we use a fallback font family that has been tested on the device to work ok.
+        // Once we have progress in https://github.com/phetsims/scenery-phet/issues/674, this should be revisited.
+        family: phet.chipper.queryParameters[ 'phet-android-app' ] ? 'monospace' : StopwatchNode.NUMBER_FONT_FAMILY,
         size: FONT_SIZE
       } ),
       fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
