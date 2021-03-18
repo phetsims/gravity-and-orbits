@@ -383,41 +383,47 @@ class Body extends PhetioObject {
 
   /**
    * This method is called after all bodies have been updated by the physics engine (must be done as a batch),
-   * so that the path can be updated.
+   * so that the path can be updated
    *
    * @public
    */
   modelStepped() {
 
     // Only add to the path if the user isn't dragging it and if the body is not exploded and the body is movable
-    if ( !this.userControlled && this.isMovableProperty.value ) {
-      const isCollided = this.isCollidedProperty.value;
-      const pathPoint = this.positionProperty.get();
+    if ( !this.userControlled && !this.isCollidedProperty.get() && this.isMovableProperty.value ) {
+      this.addPathPoint();
+    }
+  }
 
-      if ( !isCollided ) {
-        this.path.push( pathPoint );
-        this.pointAddedEmitter.emit( pathPoint, this.type );
-      }
+  /**
+   * Add a point to the collection of points that follow the trajectory of a moving body.
+   * This also removes points when the path gets too long.
+   *
+   * @private
+   */
+  addPathPoint() {
+    const pathPoint = this.positionProperty.get();
+    this.path.push( pathPoint );
+    this.pointAddedEmitter.emit( pathPoint, this.type );
 
-      // add the length to the tracked path length
-      if ( this.path.length > 2 ) {
-        const difference = this.path[ this.path.length - 1 ].minus( this.path[ this.path.length - 2 ] );
-        const addedMagnitude = difference.magnitude;
+    // add the length to the tracked path length
+    if ( this.path.length > 2 ) {
+      const difference = this.path[ this.path.length - 1 ].minus( this.path[ this.path.length - 2 ] );
+      const addedMagnitude = difference.magnitude;
 
-        this.modelPathLength += addedMagnitude;
-      }
+      this.modelPathLength += addedMagnitude;
+    }
 
-      // remove points from the path as the path gets too long
-      // if the path grows more than ~6000 points, start removing points
-      while ( this.modelPathLength > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
-        const loss = this.path[ 1 ].minus( this.path[ 0 ] );
-        const lossMagnitude = loss.magnitude;
+    // remove points from the path as the path gets too long
+    // if the path grows more than ~6000 points, start removing points
+    while ( this.modelPathLength > this.maxPathLength || this.path.length > this.pathLengthLimit ) {
+      const loss = this.path[ 1 ].minus( this.path[ 0 ] );
+      const lossMagnitude = loss.magnitude;
 
-        this.path.shift();
-        this.pointRemovedEmitter.emit( this.type );
+      this.path.shift();
+      this.pointRemovedEmitter.emit( this.type );
 
-        this.modelPathLength -= lossMagnitude;
-      }
+      this.modelPathLength -= lossMagnitude;
     }
   }
 
