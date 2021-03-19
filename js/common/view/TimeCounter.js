@@ -43,7 +43,7 @@ class TimeCounter extends Node {
         // fails the sim from starting up. That problem will be investigated in https://github.com/phetsims/scenery-phet/issues/674
         // But to unblock Gravity and Orbits, we use a fallback font family that has been tested on the device to work ok.
         // Once we have progress in https://github.com/phetsims/scenery-phet/issues/674, this should be revisited.
-        family: StopwatchNode.NUMBER_FONT_FAMILY,
+        family: phet.chipper.queryParameters[ 'phet-android-app' ] ? 'monospace' : StopwatchNode.NUMBER_FONT_FAMILY,
         size: FONT_SIZE
       } ),
       fill: GravityAndOrbitsColorProfile.bottomControlTextProperty,
