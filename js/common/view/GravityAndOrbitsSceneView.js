@@ -101,7 +101,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
           vString, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
-            inputEnabledPropertyPhetioInstrumented: true
+            phetioInputEnabledPropertyInstrumented: true
           } ) );
       }
     }
