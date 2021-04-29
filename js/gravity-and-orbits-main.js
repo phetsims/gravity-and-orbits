@@ -35,11 +35,13 @@ simLauncher.launch( () => {
 
   const modelScreen = new ModelScreen( {
     backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
-    tandem: Tandem.ROOT.createTandem( 'modelScreen' )
+    tandem: Tandem.ROOT.createTandem( 'modelScreen' ),
+    phetioDesigned: true
   } );
   const toScaleScreen = new ToScaleScreen( {
     backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
-    tandem: Tandem.ROOT.createTandem( 'toScaleScreen' )
+    tandem: Tandem.ROOT.createTandem( 'toScaleScreen' ),
+    phetioDesigned: true
   } );
   new Sim( gravityAndOrbitsTitleString, [ modelScreen, toScaleScreen ], simOptions ).start();
 } );
