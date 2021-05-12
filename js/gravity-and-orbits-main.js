@@ -30,18 +30,19 @@ simLauncher.launch( () => {
     },
 
     // Creates content for the Options dialog
-    createOptionsDialogContent: tandem => new GlobalOptionsNode( tandem )
+    createOptionsDialogContent: tandem => new GlobalOptionsNode( tandem ),
+
+    // phet-io
+    phetioDesigned: true
   };
 
   const modelScreen = new ModelScreen( {
     backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
-    tandem: Tandem.ROOT.createTandem( 'modelScreen' ),
-    phetioDesigned: true
+    tandem: Tandem.ROOT.createTandem( 'modelScreen' )
   } );
   const toScaleScreen = new ToScaleScreen( {
     backgroundColorProperty: GravityAndOrbitsColorProfile.backgroundProperty,
-    tandem: Tandem.ROOT.createTandem( 'toScaleScreen' ),
-    phetioDesigned: true
+    tandem: Tandem.ROOT.createTandem( 'toScaleScreen' )
   } );
   new Sim( gravityAndOrbitsTitleString, [ modelScreen, toScaleScreen ], simOptions ).start();
 } );
