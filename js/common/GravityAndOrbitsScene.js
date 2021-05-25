@@ -75,6 +75,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     super( {
       phetioDocumentation: 'A group of orbital masses which can be selected',
       phetioType: ReferenceIO( IOType.ObjectIO ),
+      phetioState: false,
       tandem: tandem
     } );
 
