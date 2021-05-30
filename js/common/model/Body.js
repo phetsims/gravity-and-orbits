@@ -539,7 +539,12 @@ Body.BodyIO = new IOType( 'BodyIO', {
   valueType: Body,
   documentation: 'Represents a physical body in the simulation',
   toStateObject: body => body.toStateObject(),
-  applyState: ( body, stateObject ) => body.setStateObject( stateObject )
+  applyState: ( body, stateObject ) => body.setStateObject( stateObject ),
+  stateSchema: {
+    pathLength: NumberIO,
+    modelPathLength: NumberIO,
+    path: ArrayIO( Vector2.Vector2IO )
+  }
 } );
 
 gravityAndOrbits.register( 'Body', Body );

@@ -43,6 +43,9 @@ function RewindablePropertyIO( parameterType ) {
         applyState: ( property, stateObject ) => {
           PropertyIOImpl.applyState( property, stateObject );
           property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
+        },
+        stateSchema: {
+          rewindValue: parameterType
         }
       } )
     );
