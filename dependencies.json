@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.5.0-dev.5 Thu Jun 03 2021 09:45:54 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.5.0-dev.6 Fri Jun 04 2021 07:59:34 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "b163b8aefd34c93062c94974f1e6ec4a1e3286e8",
     "branch": "master"
@@ -13,7 +13,7 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "cb0d287b7dec072d5014a82a886b24b9a8369310",
+    "sha": "36af2fce595680494cb9668d06dfd8baa2651731",
     "branch": "master"
   },
   "dot": {
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "a7c94ab0c7ef1d4ba32d3d5d676e1aeb501c0333",
+    "sha": "d9c5cb7e0c43c6751e855a596ff73810a21d42c7",
     "branch": "master"
   },
   "joist": {
@@ -61,7 +61,7 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "4598ab142f856119a855d323a061553e10a0022c",
+    "sha": "5c27babc407c4bd8c5d9d05d0a5539c077012e3e",
     "branch": "master"
   },
   "scenery-phet": {
@@ -77,7 +77,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "2d5657c67e7aa34155f75314486b16087ecc7fad",
+    "sha": "489c014eea98bb450d6b2c7a7626e3b1d8cbcc11",
     "branch": "master"
   },
   "tambo": {
