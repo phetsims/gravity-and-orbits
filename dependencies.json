@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.5.0-dev.7 Thu Jun 17 2021 11:57:45 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.5.0-dev.8 Thu Jun 17 2021 13:41:36 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1971d73693abe3396a5056c4962feead10507e41",
     "branch": "master"
@@ -21,11 +21,11 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "8aef88d54e942f1e7fc2086011e3a8e90a36f6c0",
+    "sha": "0e01cee82c313f7d976d4917e58179779ac68cb3",
     "branch": "master"
   },
   "joist": {
-    "sha": "a581d3a19821bca0ac180506b355a5cfcce1f637",
+    "sha": "17645a7ad98b2177524b9cc9e61b5d0a9660a82c",
     "branch": "master"
   },
   "kite": {
@@ -73,7 +73,7 @@
     "branch": "master"
   },
   "studio": {
-    "sha": "72f950670163a2e2321f9b494ec87d31564e7f2a",
+    "sha": "21bb6fc2a8296932a0ff14dfc87b77cd0573c16d",
     "branch": "master"
   },
   "sun": {
