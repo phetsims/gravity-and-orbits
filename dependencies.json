@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.5.0-dev.8 Thu Jun 17 2021 13:41:36 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.5.0-rc.0 Mon Jun 21 2021 11:49:54 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1971d73693abe3396a5056c4962feead10507e41",
     "branch": "master"
@@ -21,11 +21,11 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "0e01cee82c313f7d976d4917e58179779ac68cb3",
-    "branch": "master"
+    "sha": "a73efac84ede99aece1abfcbfd34190e958678b0",
+    "branch": "1.5"
   },
   "joist": {
-    "sha": "17645a7ad98b2177524b9cc9e61b5d0a9660a82c",
+    "sha": "d95fa578c2341f20325fc5c69bd88cadfb93c558",
     "branch": "master"
   },
   "kite": {
@@ -33,11 +33,11 @@
     "branch": "master"
   },
   "phet-core": {
-    "sha": "fd11f3d3ea4ceb813c42176d8ea724c800770c81",
+    "sha": "e5408a37539b6ceef9d753b974816903b7a6fbf5",
     "branch": "master"
   },
   "phet-io": {
-    "sha": "66f60f496ac14533de9b6ff82e6f224a8fb05686",
+    "sha": "2f43f4ea50309bf4d250975f1e984a3e7997d99e",
     "branch": "master"
   },
   "phet-io-client-guides": {
@@ -61,7 +61,7 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "a17411efee653bfb9464d8b5b439e0f43b2d698f",
+    "sha": "af7d3939183738ce039899f1982cbf21f254a46b",
     "branch": "master"
   },
   "scenery-phet": {
@@ -69,15 +69,15 @@
     "branch": "master"
   },
   "sherpa": {
-    "sha": "8dd150bbf1566f800f327d4f1ec24c47a7710cec",
+    "sha": "a4252286a39366b770cb1382db921bf019cfd3a7",
     "branch": "master"
   },
   "studio": {
-    "sha": "21bb6fc2a8296932a0ff14dfc87b77cd0573c16d",
+    "sha": "e69b752fbd790ffb3335042d7bd7de5f1f786fca",
     "branch": "master"
   },
   "sun": {
-    "sha": "925ba0b85e603a6bd120c1af073630610241cbea",
+    "sha": "3a4784bcd983e0e5bbb6bfb4fc1c132d29e17d17",
     "branch": "master"
   },
   "tambo": {
