@@ -92,12 +92,7 @@ class VectorNode extends Node {
       tail = this.getTail();
     }
 
-    const minArrowLength = 10;
-    let force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
-
-    if ( force.magnitude < minArrowLength && force.magnitude > 1E-12 ) {
-      force = force.times( minArrowLength / force.magnitude );
-    }
+    const force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
     return new Vector2( force.x + tail.x, force.y + tail.y );
   }
 }

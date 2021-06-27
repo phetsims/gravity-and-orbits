@@ -73,22 +73,28 @@ class DraggableVectorNode extends VectorNode {
 
     // The velocity vector is rooted on the object, so we manage all of its drags by deltas.
     let previousPoint = null;
+    let previousValue = null;
 
     // Add the drag handler
     const dragListener = new DragListener( {
       start: event => {
         previousPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
+        previousValue = body.velocityProperty.get();
       },
       drag: event => {
 
         const currentPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
         if ( previousPoint ) {
           const delta = currentPoint.minus( previousPoint );
-          body.velocityProperty.set( body.velocityProperty.get().plus( delta ) );
+
+          const proposedVelocity = previousValue.plus( delta );
+          const viewVector = this.transformProperty.get().modelToViewDelta( proposedVelocity.times( this.scale ) );
+          if ( viewVector.magnitude < 10 ) {
+            proposedVelocity.setXY( 0, 0 );
+          }
+          body.velocityProperty.set( proposedVelocity );
           body.userModifiedVelocityEmitter.emit();
         }
-
-        previousPoint = currentPoint;
       },
       end: event => {},
       tandem: tandem.createTandem( 'dragListener' )
