@@ -176,7 +176,7 @@ class BodyNode extends Node {
     node.addChild( labelWithAntiArtifactRectangle );
 
     // when transform or mass changes diameter, check for visibility change of label
-    const labelVisibilityListener = () => node.setVisible( this.getViewDiameter() <= 10 );
+    const labelVisibilityListener = () => node.setVisible( this.getViewDiameter() <= 12 );
     this.body.diameterProperty.link( labelVisibilityListener );
     this.modelViewTransformProperty.link( labelVisibilityListener );
 
