@@ -105,12 +105,11 @@ class DraggableVectorNode extends VectorNode {
     grabArea.moveToBack();
     text.moveToBack();
 
-    // For PhET-iO, when the node is made unpickable, don't show the drag circle
-    const updateGrabAreaAndTextVisibility = () => {
-      grabArea.visible = this.pickable !== false;
-      text.visible = this.pickable !== false;
-    };
-    this.pickableProperty.link( updateGrabAreaAndTextVisibility );
+    // For PhET-iO, when the node does not support input, don't show the drag circle
+    this.inputEnabledProperty.link( inputEnabled => {
+      grabArea.visible = inputEnabled;
+      text.visible = inputEnabled;
+    } );
   }
 }
 
