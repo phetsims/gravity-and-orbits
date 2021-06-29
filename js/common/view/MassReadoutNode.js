@@ -21,6 +21,7 @@ class MassReadoutNode extends Node {
     const readoutText = new Text( this.createText(), {
       pickable: false,
       font: new PhetFont( 18 ),
+      maxWidth: 240,
       fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
     } );
     this.addChild( readoutText );
