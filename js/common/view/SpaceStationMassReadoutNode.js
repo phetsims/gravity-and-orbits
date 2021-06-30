@@ -12,6 +12,7 @@ import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import GravityAndOrbitsBodies from '../model/GravityAndOrbitsBodies.js';
 import MassReadoutNode from './MassReadoutNode.js';
 
 const billionBillionSpaceStationMassesString = gravityAndOrbitsStrings.billionBillionSpaceStationMasses;
@@ -19,6 +20,16 @@ const pattern0Value1UnitsString = gravityAndOrbitsStrings.pattern[ '0value' ][ '
 const spaceStationMassString = gravityAndOrbitsStrings.spaceStationMass;
 
 class SpaceStationMassReadoutNode extends MassReadoutNode {
+
+  /**
+   * @param {BodyNode} bodyNode
+   * @param {Property.<boolean>} visibleProperty
+   */
+  constructor( bodyNode, visibleProperty ) {
+    super( bodyNode, visibleProperty, bodyNode.body.type === GravityAndOrbitsBodies.PLANET ? {
+      textMaxWidth: 400
+    } : {} );
+  }
 
   /**
    * Create a text label for the space station, modified so that it will be quantitative

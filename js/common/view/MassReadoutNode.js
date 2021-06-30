@@ -7,6 +7,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
@@ -14,14 +15,17 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
 class MassReadoutNode extends Node {
-  constructor( bodyNode, visibleProperty ) {
+  constructor( bodyNode, visibleProperty, options ) {
     super();
+    options = merge( {
+      textMaxWidth: 240
+    }, options );
     this.bodyNode = bodyNode; // @protected
 
     const readoutText = new Text( this.createText(), {
       pickable: false,
       font: new PhetFont( 18 ),
-      maxWidth: 240,
+      maxWidth: options.textMaxWidth,
       fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
     } );
     this.addChild( readoutText );
