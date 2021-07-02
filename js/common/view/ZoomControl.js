@@ -13,6 +13,7 @@ import Shape from '../../../../kite/js/Shape.js';
 import merge from '../../../../phet-core/js/merge.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
+import SceneryConstants from '../../../../scenery/js/SceneryConstants.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import VSlider from '../../../../sun/js/VSlider.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -35,7 +36,9 @@ class ZoomControl extends Node {
 
     options = merge( {
       scale: 0.8,
-      tandem: tandem
+      tandem: tandem,
+      phetioEnabledPropertyInstrumented: true,
+      disabledOpacity: SceneryConstants.DISABLED_OPACITY
     }, options );
 
     super();
@@ -47,7 +50,9 @@ class ZoomControl extends Node {
       // custom thumb colors
       thumbFill: '#98BECF',
       thumbFillHighlighted: '#B3D3E2',
-      tandem: tandem.createTandem( 'slider' )
+      tandem: tandem.createTandem( 'slider' ),
+
+      phetioReadOnly: true
     } );
 
     slider.translate( -TRACK_SIZE.height - THUMB_SIZE.height - 17, -TRACK_SIZE.width / 2 );
@@ -104,6 +109,7 @@ class SliderButton extends RectangularPushButton {
       content: sample,
       xMargin: 0,
       yMargin: 0,
+      phetioReadOnly: true,
       listener: () => {
         scaleProperty.value = Math.max(
           Math.min( scaleProperty.value + ( isIncrease ? step : -step ), range.max ),
