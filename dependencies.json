@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.5.0-rc.1 Mon Jul 05 2021 15:06:54 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.5.0-rc.1 Mon Jul 05 2021 15:20:45 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1971d73693abe3396a5056c4962feead10507e41",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "b94d536608156635e03454697f52d0a2cae70636",
+    "sha": "c611ef839ca010777fdca4f94e4dd37a95e59b3e",
     "branch": "1.5"
   },
   "joist": {
@@ -37,12 +37,12 @@
     "branch": "HEAD"
   },
   "phet-io": {
-    "sha": "164f376ad1ecdb7392d8c784dcab3c6c9156de9b",
+    "sha": "37104fd41a4f4190fad6f3110ccdeb7472ccf474",
     "branch": "gravity-and-orbits-1.5"
   },
   "phet-io-client-guides": {
-    "sha": "4996d70bb084ea3319be9b40ffd27f9a2e421ba4",
-    "branch": "HEAD"
+    "sha": "f7d065f94affa5cad58915710ed5eb9fb1c60ac5",
+    "branch": "gravity-and-orbits-1.5"
   },
   "phet-io-wrappers": {
     "sha": "30e06914ef0577c7e0f793d48a54ee7b3a24827c",
@@ -61,8 +61,8 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "af7d3939183738ce039899f1982cbf21f254a46b",
-    "branch": "HEAD"
+    "sha": "4c9d8af7be29f2257b0f2a94208e7f08bc749dd6",
+    "branch": "gravity-and-orbits-1.5"
   },
   "scenery-phet": {
     "sha": "5235b663ef3bf4247e85adb2c15101f1b2e1e298",
