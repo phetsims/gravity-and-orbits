@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.5.0-rc.1 Mon Jun 21 2021 11:54:16 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.5.0-rc.1 Mon Jul 05 2021 15:06:54 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1971d73693abe3396a5056c4962feead10507e41",
     "branch": "HEAD"
@@ -13,15 +13,15 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "914b2256798973baf5f1b2d4f6f6ee0a697e2a49",
-    "branch": "HEAD"
+    "sha": "60a1ce1af0740d0f7bb2995b03bd9ccac096a025",
+    "branch": "gravity-and-orbits-1.5"
   },
   "dot": {
     "sha": "7f9c76f731915e1c77c647665b247b117d386424",
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "1d230192cb721bbc343502830c5e237af4556eab",
+    "sha": "b94d536608156635e03454697f52d0a2cae70636",
     "branch": "1.5"
   },
   "joist": {
@@ -37,8 +37,8 @@
     "branch": "HEAD"
   },
   "phet-io": {
-    "sha": "2f43f4ea50309bf4d250975f1e984a3e7997d99e",
-    "branch": "HEAD"
+    "sha": "164f376ad1ecdb7392d8c784dcab3c6c9156de9b",
+    "branch": "gravity-and-orbits-1.5"
   },
   "phet-io-client-guides": {
     "sha": "4996d70bb084ea3319be9b40ffd27f9a2e421ba4",
