@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.5.0-rc.1 Mon Jul 05 2021 15:40:52 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.5.0-rc.1 Tue Jul 06 2021 12:57:55 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1971d73693abe3396a5056c4962feead10507e41",
     "branch": "HEAD"
@@ -14,14 +14,14 @@
   },
   "chipper": {
     "sha": "183ec2295e1fddb0819269b568d586e567941b4f",
-    "branch": "gravity-and-orbits-1.5"
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "7f9c76f731915e1c77c647665b247b117d386424",
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "2d59233b8679c175aa0498434b141af4192a52f9",
+    "sha": "70fc0dcf325adc7d3a2850e0d81c7a048e55ec28",
     "branch": "1.5"
   },
   "joist": {
@@ -38,15 +38,15 @@
   },
   "phet-io": {
     "sha": "37104fd41a4f4190fad6f3110ccdeb7472ccf474",
-    "branch": "gravity-and-orbits-1.5"
+    "branch": "HEAD"
   },
   "phet-io-client-guides": {
     "sha": "f7d065f94affa5cad58915710ed5eb9fb1c60ac5",
-    "branch": "gravity-and-orbits-1.5"
+    "branch": "HEAD"
   },
   "phet-io-wrappers": {
     "sha": "9ea9df4901e84ee3ed2b89ad0554c52530cf81c4",
-    "branch": "gravity-and-orbits-1.5"
+    "branch": "HEAD"
   },
   "phetcommon": {
     "sha": "6a50b84b7fb7084546f2e7023ce59715789fbeb6",
@@ -62,7 +62,7 @@
   },
   "scenery": {
     "sha": "4c9d8af7be29f2257b0f2a94208e7f08bc749dd6",
-    "branch": "gravity-and-orbits-1.5"
+    "branch": "HEAD"
   },
   "scenery-phet": {
     "sha": "5235b663ef3bf4247e85adb2c15101f1b2e1e298",
@@ -70,10 +70,10 @@
   },
   "sherpa": {
     "sha": "e2d109f45766c8a0461ef8efc5cace8c0486ccf5",
-    "branch": "gravity-and-orbits-1.5"
+    "branch": "HEAD"
   },
   "studio": {
-    "sha": "3aa57c688e7102ea0386794a6bc626558a32e88f",
+    "sha": "3566adec1f0378ffea02ea418a72d0d1768e0e5e",
     "branch": "gravity-and-orbits-1.5"
   },
   "sun": {
