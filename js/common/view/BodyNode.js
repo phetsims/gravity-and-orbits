@@ -19,7 +19,7 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 
 class BodyNode extends Node {
 
@@ -152,12 +152,15 @@ class BodyNode extends Node {
     const tip = northEastVector.times( 10 ).plus( viewCenter );
     const tail = northEastVector.times( 70 ).plus( viewCenter );
 
-    node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, { stroke: GravityAndOrbitsColorProfile.arrowIndicatorProperty } ) );
+    const labelNodeTandem = tandem.createTandem( 'labelNode' );
+    node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, {
+      stroke: GravityAndOrbitsConstants.BODY_LABEL_COLOR_PROPERTY
+    } ) );
     const labelNode = new Text( body.labelString, {
       font: new PhetFont( 18 ),
-      fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty,
+      fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
       maxWidth: 65,
-      tandem: tandem.createTandem( 'labelNode' )
+      tandem: labelNodeTandem
     } );
 
     // Eliminate artifacts seen on Windows chrome by adding an invisible rectangle underlay, see

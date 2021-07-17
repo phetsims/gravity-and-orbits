@@ -16,6 +16,8 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import colorProfileNameProperty from '../../../../scenery/js/util/colorProfileNameProperty.js';
+import ColorProfileProperty from '../../../../scenery/js/util/ColorProfileProperty.js';
 import HBox from '../../../../scenery/js/nodes/HBox.js';
 import Image from '../../../../scenery/js/nodes/Image.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
@@ -27,7 +29,7 @@ import pathIconImg from '../../../images/path_icon_png.js';
 import pathIconProjectorImg from '../../../images/path_icon_projector_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
@@ -42,12 +44,12 @@ const FONT = new PhetFont( 18 );
 const ARROW_Y_COORDINATE = -10;
 const CHECKBOX_OPTIONS = {
   scale: 0.8,
-  checkboxColor: GravityAndOrbitsColorProfile.panelTextProperty,
-  checkboxColorBackground: GravityAndOrbitsColorProfile.checkboxFillProperty
+  checkboxColor: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
+  checkboxColorBackground: GravityAndOrbitsConstants.BACKGROUND_COLOR_PROPERTY
 };
 const TEXT_OPTIONS = {
   font: FONT,
-  fill: GravityAndOrbitsColorProfile.panelTextProperty
+  fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY
 };
 
 const SPACING = 10;
@@ -106,7 +108,7 @@ class CheckboxPanel extends VBox {
     }
 
     const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
-    GravityAndOrbitsColorProfile.profileNameProperty.lazyLink( profileName => {
+    colorProfileNameProperty.lazyLink( profileName => {
       assert && assert( profileName === 'default' || profileName === 'projector' );
       pathIconImageNode.setImage( profileName === 'projector' ? pathIconProjectorImg : pathIconImg );
     } );
@@ -126,7 +128,9 @@ class CheckboxPanel extends VBox {
           gridTextNode,
           new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
             majorLineOptions: {
-              stroke: GravityAndOrbitsColorProfile.gridIconProperty,
+              stroke: new ColorProfileProperty( { default: 'gray', projector: 'black' }, {
+                tandem: options.tandem.createTandem( 'gridCheckbox' ).createTandem( 'strokeProperty' )
+              } ),
               lineWidth: 1.5
             }
           } )

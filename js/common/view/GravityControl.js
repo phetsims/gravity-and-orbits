@@ -14,7 +14,7 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 
 const gravityString = gravityAndOrbitsStrings.gravity;
 
@@ -24,7 +24,7 @@ const onString = gravityAndOrbitsStrings.on;
 
 // constants
 const FONT = new PhetFont( 14 );
-const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColorProfile.panelTextProperty, maxWidth: 50 };
+const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY, maxWidth: 50 };
 const RADIO_OPTIONS = { radius: 7 };
 
 class GravityControl extends Node {

@@ -11,13 +11,12 @@ import OptionsDialog from '../../../../joist/js/OptionsDialog.js';
 import ProjectorModeCheckbox from '../../../../joist/js/ProjectorModeCheckbox.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
 
 class GlobalOptionsNode extends VBox {
   constructor( tandem ) {
 
     // add support for setting projector mode
-    const projectorModeCheckbox = new ProjectorModeCheckbox( GravityAndOrbitsColorProfile, {
+    const projectorModeCheckbox = new ProjectorModeCheckbox( null, {
       tandem: tandem.createTandem( 'projectorModeCheckbox' )
     } );
 

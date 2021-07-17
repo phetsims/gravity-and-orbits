@@ -12,7 +12,7 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 
 class MassReadoutNode extends Node {
   constructor( bodyNode, visibleProperty, options ) {
@@ -26,7 +26,7 @@ class MassReadoutNode extends Node {
       pickable: false,
       font: new PhetFont( 18 ),
       maxWidth: options.textMaxWidth,
-      fill: GravityAndOrbitsColorProfile.bodyNodeTextProperty
+      fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY
     } );
     this.addChild( readoutText );
 

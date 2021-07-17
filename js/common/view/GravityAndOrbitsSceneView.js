@@ -15,12 +15,13 @@ import platform from '../../../../phet-core/js/platform.js';
 import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import ColorProfileProperty from '../../../../scenery/js/util/ColorProfileProperty.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import GravityAndOrbitsColorProfile from '../GravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyNode from './BodyNode.js';
 import DraggableVectorNode from './DraggableVectorNode.js';
 import ExplosionNode from './ExplosionNode.js';
@@ -126,11 +127,21 @@ class GravityAndOrbitsSceneView extends Rectangle {
     if ( model.showMeasuringTape ) {
 
       const unitsProperty = new Property( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
+      const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
+      const measuringTapeTextColorProperty = GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY;
+      const measuringTapeTextBackgroundColorProperty = new ColorProfileProperty( {
+        default: 'rgba( 0, 0, 0, 0.65 )',
+        projector: 'rgba( 255, 255, 255, 0.65 )'
+      }, {
+        tandem: measuringTapeTandem.createTandem( 'backgroundColorProperty' ),
+        name: 'measuring tape text background'
+      } );
+
       const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
         basePositionProperty: scene.measuringTapeStartPointProperty,
         tipPositionProperty: scene.measuringTapeEndPointProperty,
-        textBackgroundColor: GravityAndOrbitsColorProfile.measuringTapeTextBackgroundProperty,
-        textColor: GravityAndOrbitsColorProfile.measuringTapeTextProperty,
+        textBackgroundColor: measuringTapeTextBackgroundColorProperty,
+        textColor: measuringTapeTextColorProperty,
 
         // allows distances to be measured if the planets go outside of model bounds,
         // see https://github.com/phetsims/gravity-and-orbits/issues/281
@@ -138,7 +149,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
 
         significantFigures: 0,
 
-        tandem: tandem.createTandem( 'measuringTapeNode' ),
+        tandem: measuringTapeTandem,
         visiblePropertyOptions: { phetioReadOnly: true } // controlled by a checkbox
       } );
 

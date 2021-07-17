@@ -7,8 +7,10 @@
  */
 
 import Range from '../../../dot/js/Range.js';
+import ColorProfileProperty from '../../../scenery/js/util/ColorProfileProperty.js';
+import Color from '../../../scenery/js/util/Color.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
-import GravityAndOrbitsColorProfile from './GravityAndOrbitsColorProfile.js';
 
 // constants
 const CONTROL_PANEL_STROKE = '#8E9097';
@@ -28,10 +30,31 @@ const GravityAndOrbitsConstants = {
     cornerRadius: 5,
     xMargin: PANEL_X_MARGIN,
     scale: 1.05,
-    fill: GravityAndOrbitsColorProfile.panelBackgroundProperty
+    fill: new ColorProfileProperty( {
+      default: 'black',
+      projector: new Color( 222, 234, 255 )
+    }, {
+      name: 'control panel fill'
+    } )
   },
   PLAY_AREA_TANDEM_NAME: 'playAreaNode',
-  ZOOM_RANGE: new Range( 0.5, 1.3 )
+  ZOOM_RANGE: new Range( 0.5, 1.3 ),
+
+  // Color mainly used for foreground things like text
+  FOREGROUND_COLOR_PROPERTY: new ColorProfileProperty( { default: 'white', projector: 'black' }, {
+    tandem: Tandem.GENERAL_VIEW.createTandem( 'foregroundColorProperty' )
+  } ),
+
+  // Color mainly used for background things like panels or text backgrounds
+  BACKGROUND_COLOR_PROPERTY: new ColorProfileProperty( {
+    default: 'black',
+    projector: 'white'
+  }, {
+    tandem: Tandem.GENERAL_VIEW.createTandem( 'backgroundColorProperty' )
+  } ),
+  BODY_LABEL_COLOR_PROPERTY: new ColorProfileProperty( { default: new Color( 255, 255, 0 ), projector: 'black' }, {
+    tandem: Tandem.GENERAL_VIEW.createTandem( 'labelColorProperty' )
+  } )
 };
 
 gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
