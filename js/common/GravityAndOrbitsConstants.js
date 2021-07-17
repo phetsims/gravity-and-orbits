@@ -30,29 +30,27 @@ const GravityAndOrbitsConstants = {
     cornerRadius: 5,
     xMargin: PANEL_X_MARGIN,
     scale: 1.05,
-    fill: new ColorProfileProperty( {
+    fill: new ColorProfileProperty( 'control panel fill', {
       default: 'black',
       projector: new Color( 222, 234, 255 )
-    }, {
-      name: 'control panel fill'
     } )
   },
   PLAY_AREA_TANDEM_NAME: 'playAreaNode',
   ZOOM_RANGE: new Range( 0.5, 1.3 ),
 
   // Color mainly used for foreground things like text
-  FOREGROUND_COLOR_PROPERTY: new ColorProfileProperty( { default: 'white', projector: 'black' }, {
+  FOREGROUND_COLOR_PROPERTY: new ColorProfileProperty( 'foreground', { default: 'white', projector: 'black' }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'foregroundColorProperty' )
   } ),
 
   // Color mainly used for background things like panels or text backgrounds
-  BACKGROUND_COLOR_PROPERTY: new ColorProfileProperty( {
+  BACKGROUND_COLOR_PROPERTY: new ColorProfileProperty( 'background', {
     default: 'black',
     projector: 'white'
   }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'backgroundColorProperty' )
   } ),
-  BODY_LABEL_COLOR_PROPERTY: new ColorProfileProperty( { default: new Color( 255, 255, 0 ), projector: 'black' }, {
+  BODY_LABEL_COLOR_PROPERTY: new ColorProfileProperty( 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'labelColorProperty' )
   } )
 };

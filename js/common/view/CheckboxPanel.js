@@ -128,7 +128,7 @@ class CheckboxPanel extends VBox {
           gridTextNode,
           new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
             majorLineOptions: {
-              stroke: new ColorProfileProperty( { default: 'gray', projector: 'black' }, {
+              stroke: new ColorProfileProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
                 tandem: options.tandem.createTandem( 'gridCheckbox' ).createTandem( 'strokeProperty' )
               } ),
               lineWidth: 1.5

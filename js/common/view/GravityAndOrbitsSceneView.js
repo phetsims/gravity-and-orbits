@@ -129,7 +129,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
       const unitsProperty = new Property( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
       const measuringTapeTextColorProperty = GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY;
-      const measuringTapeTextBackgroundColorProperty = new ColorProfileProperty( {
+      const measuringTapeTextBackgroundColorProperty = new ColorProfileProperty( 'measuring tape text background', {
         default: 'rgba( 0, 0, 0, 0.65 )',
         projector: 'rgba( 255, 255, 255, 0.65 )'
       }, {
