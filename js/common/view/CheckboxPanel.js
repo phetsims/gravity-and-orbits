@@ -17,7 +17,6 @@ import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js'
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import colorProfileNameProperty from '../../../../scenery/js/util/colorProfileNameProperty.js';
-import ColorProfileProperty from '../../../../scenery/js/util/ColorProfileProperty.js';
 import HBox from '../../../../scenery/js/nodes/HBox.js';
 import Image from '../../../../scenery/js/nodes/Image.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
@@ -127,12 +126,8 @@ class CheckboxPanel extends VBox {
         children: [
           gridTextNode,
           new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
-            majorLineOptions: {
-              stroke: new ColorProfileProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
-                tandem: options.tandem.createTandem( 'gridCheckbox' ).createTandem( 'strokeProperty' )
-              } ),
-              lineWidth: 1.5
-            }
+            stroke: GravityAndOrbitsConstants.GRID_ICON_STROKE_PROPERTY,
+            lineWidth: 1.5
           } )
         ]
       }, HBOX_OPTIONS ) ),

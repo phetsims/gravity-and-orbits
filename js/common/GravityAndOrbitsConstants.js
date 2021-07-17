@@ -52,6 +52,17 @@ const GravityAndOrbitsConstants = {
   } ),
   BODY_LABEL_COLOR_PROPERTY: new ColorProfileProperty( 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'labelColorProperty' )
+  } ),
+
+  measuringTapeTextBackgroundColorProperty: new ColorProfileProperty( 'measuring tape text background', {
+    default: 'rgba( 0, 0, 0, 0.65 )',
+    projector: 'rgba( 255, 255, 255, 0.65 )'
+  }, {
+    tandem: Tandem.GENERAL_VIEW.createTandem( 'measuringTapeTextBackgroundColorProperty' )
+  } ),
+
+  GRID_ICON_STROKE_PROPERTY: new ColorProfileProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
+    tandem: Tandem.GENERAL_VIEW.createTandem( 'gridCheckboxStrokeProperty' )
   } )
 };
 
