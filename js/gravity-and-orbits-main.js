@@ -9,7 +9,7 @@
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import GravityAndOrbitsConstants from './common/GravityAndOrbitsConstants.js';
+import gravityAndOrbitsColorProfile from './common/gravityAndOrbitsColorProfile.js';
 import GlobalOptionsNode from './common/view/GlobalOptionsNode.js';
 import gravityAndOrbitsStrings from './gravityAndOrbitsStrings.js';
 import ModelScreen from './model/ModelScreen.js';
@@ -36,7 +36,7 @@ simLauncher.launch( () => {
     phetioDesigned: true
   };
 
-  const backgroundColorProperty = GravityAndOrbitsConstants.BACKGROUND_COLOR_PROPERTY;
+  const backgroundColorProperty = gravityAndOrbitsColorProfile.backgroundProperty;
 
   const modelScreen = new ModelScreen( {
     backgroundColorProperty: backgroundColorProperty,

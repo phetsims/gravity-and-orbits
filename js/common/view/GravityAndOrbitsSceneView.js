@@ -20,7 +20,7 @@ import Color from '../../../../scenery/js/util/Color.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
 import BodyNode from './BodyNode.js';
 import DraggableVectorNode from './DraggableVectorNode.js';
 import ExplosionNode from './ExplosionNode.js';
@@ -127,13 +127,13 @@ class GravityAndOrbitsSceneView extends Rectangle {
 
       const unitsProperty = new Property( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
-      const measuringTapeTextColorProperty = GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY;
+      const measuringTapeTextColorProperty = gravityAndOrbitsColorProfile.foregroundProperty;
 
 
       const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
         basePositionProperty: scene.measuringTapeStartPointProperty,
         tipPositionProperty: scene.measuringTapeEndPointProperty,
-        textBackgroundColor: GravityAndOrbitsConstants.measuringTapeTextBackgroundColorProperty,
+        textBackgroundColor: gravityAndOrbitsColorProfile.measuringTapeTextBackgroundColorProperty,
         textColor: measuringTapeTextColorProperty,
 
         // allows distances to be measured if the planets go outside of model bounds,

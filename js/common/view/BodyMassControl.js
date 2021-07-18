@@ -13,7 +13,7 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import HSlider from '../../../../sun/js/HSlider.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
 
 // constants
 const SNAP_TOLERANCE = 0.03;
@@ -39,12 +39,12 @@ class BodyMassControl extends HSlider {
       thumbSize: THUMB_SIZE,
       thumbTouchAreaXDilation: THUMB_SIZE.width,
       thumbTouchAreaYDilation: THUMB_SIZE.height,
-      trackStroke: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
+      trackStroke: gravityAndOrbitsColorProfile.foregroundProperty,
 
       // ticks
       tickLabelSpacing: 3,
       majorTickLength: 13,
-      majorTickStroke: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
+      majorTickStroke: gravityAndOrbitsColorProfile.foregroundProperty,
 
       // custom thumb
       thumbFill: '#98BECF',
@@ -60,7 +60,7 @@ class BodyMassControl extends HSlider {
       top: 10,
       centerX: SPACING,
       font: new PhetFont( 13 ),
-      fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
+      fill: gravityAndOrbitsColorProfile.foregroundProperty,
       maxWidth: 80
     } );
 
@@ -68,7 +68,7 @@ class BodyMassControl extends HSlider {
     // @param {string} - string for the label text
     const createNumberLabel = value => new Text( value, {
       font: new PhetFont( 13 ),
-      fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
+      fill: gravityAndOrbitsColorProfile.foregroundProperty,
       maxWidth: 110
     } );
 

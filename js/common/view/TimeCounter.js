@@ -17,7 +17,7 @@ import VBox from '../../../../scenery/js/nodes/VBox.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
 
 const clearString = gravityAndOrbitsStrings.clear;
 
@@ -41,7 +41,7 @@ class TimeCounter extends Node {
         family: StopwatchNode.NUMBER_FONT_FAMILY,
         size: FONT_SIZE
       } ),
-      fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
+      fill: gravityAndOrbitsColorProfile.foregroundProperty,
       maxWidth: 200
     } );
 

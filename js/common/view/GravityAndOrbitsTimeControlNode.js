@@ -17,7 +17,7 @@ import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
@@ -54,7 +54,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       speedRadioButtonGroupOptions: {
         labelOptions: {
           font: new PhetFont( 20 ),
-          fill: GravityAndOrbitsConstants.FOREGROUND_COLOR_PROPERTY,
+          fill: gravityAndOrbitsColorProfile.foregroundProperty,
           maxWidth: 200
         },
         radioButtonGroupOptions: {

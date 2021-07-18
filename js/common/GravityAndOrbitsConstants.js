@@ -7,10 +7,8 @@
  */
 
 import Range from '../../../dot/js/Range.js';
-import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
-import Color from '../../../scenery/js/util/Color.js';
-import Tandem from '../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
+import gravityAndOrbitsColorProfile from './gravityAndOrbitsColorProfile.js';
 
 // constants
 const CONTROL_PANEL_STROKE = '#8E9097';
@@ -30,40 +28,10 @@ const GravityAndOrbitsConstants = {
     cornerRadius: 5,
     xMargin: PANEL_X_MARGIN,
     scale: 1.05,
-    fill: new ProfileColorProperty( 'control panel fill', {
-      default: 'black',
-      projector: new Color( 222, 234, 255 )
-    } )
+    fill: gravityAndOrbitsColorProfile.controlPanelFillProperty
   },
   PLAY_AREA_TANDEM_NAME: 'playAreaNode',
-  ZOOM_RANGE: new Range( 0.5, 1.3 ),
-
-  // Color mainly used for foreground things like text
-  FOREGROUND_COLOR_PROPERTY: new ProfileColorProperty( 'foreground', { default: 'white', projector: 'black' }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'foregroundColorProperty' )
-  } ),
-
-  // Color mainly used for background things like panels or text backgrounds
-  BACKGROUND_COLOR_PROPERTY: new ProfileColorProperty( 'background', {
-    default: 'black',
-    projector: 'white'
-  }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'backgroundColorProperty' )
-  } ),
-  BODY_LABEL_COLOR_PROPERTY: new ProfileColorProperty( 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'labelColorProperty' )
-  } ),
-
-  measuringTapeTextBackgroundColorProperty: new ProfileColorProperty( 'measuring tape text background', {
-    default: 'rgba( 0, 0, 0, 0.65 )',
-    projector: 'rgba( 255, 255, 255, 0.65 )'
-  }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'measuringTapeTextBackgroundColorProperty' )
-  } ),
-
-  GRID_ICON_STROKE_PROPERTY: new ProfileColorProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'gridCheckboxStrokeProperty' )
-  } )
+  ZOOM_RANGE: new Range( 0.5, 1.3 )
 };
 
 gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
