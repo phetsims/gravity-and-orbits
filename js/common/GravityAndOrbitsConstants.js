@@ -7,7 +7,7 @@
  */
 
 import Range from '../../../dot/js/Range.js';
-import ColorProfileProperty from '../../../scenery/js/util/ColorProfileProperty.js';
+import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
 import Color from '../../../scenery/js/util/Color.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
@@ -30,7 +30,7 @@ const GravityAndOrbitsConstants = {
     cornerRadius: 5,
     xMargin: PANEL_X_MARGIN,
     scale: 1.05,
-    fill: new ColorProfileProperty( 'control panel fill', {
+    fill: new ProfileColorProperty( 'control panel fill', {
       default: 'black',
       projector: new Color( 222, 234, 255 )
     } )
@@ -39,29 +39,29 @@ const GravityAndOrbitsConstants = {
   ZOOM_RANGE: new Range( 0.5, 1.3 ),
 
   // Color mainly used for foreground things like text
-  FOREGROUND_COLOR_PROPERTY: new ColorProfileProperty( 'foreground', { default: 'white', projector: 'black' }, {
+  FOREGROUND_COLOR_PROPERTY: new ProfileColorProperty( 'foreground', { default: 'white', projector: 'black' }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'foregroundColorProperty' )
   } ),
 
   // Color mainly used for background things like panels or text backgrounds
-  BACKGROUND_COLOR_PROPERTY: new ColorProfileProperty( 'background', {
+  BACKGROUND_COLOR_PROPERTY: new ProfileColorProperty( 'background', {
     default: 'black',
     projector: 'white'
   }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'backgroundColorProperty' )
   } ),
-  BODY_LABEL_COLOR_PROPERTY: new ColorProfileProperty( 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
+  BODY_LABEL_COLOR_PROPERTY: new ProfileColorProperty( 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'labelColorProperty' )
   } ),
 
-  measuringTapeTextBackgroundColorProperty: new ColorProfileProperty( 'measuring tape text background', {
+  measuringTapeTextBackgroundColorProperty: new ProfileColorProperty( 'measuring tape text background', {
     default: 'rgba( 0, 0, 0, 0.65 )',
     projector: 'rgba( 255, 255, 255, 0.65 )'
   }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'measuringTapeTextBackgroundColorProperty' )
   } ),
 
-  GRID_ICON_STROKE_PROPERTY: new ColorProfileProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
+  GRID_ICON_STROKE_PROPERTY: new ProfileColorProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'gridCheckboxStrokeProperty' )
   } )
 };
