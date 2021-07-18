@@ -1,4 +1,4 @@
-// Copyright 2015-2020, University of Colorado Boulder
+// Copyright 2015-2021, University of Colorado Boulder
 
 /**
  * Control panel used to change the mass of the various bodies. This is the panel in the lower right section of the screen that holds sliders
