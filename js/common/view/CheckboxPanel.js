@@ -16,6 +16,7 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import SceneryConstants from '../../../../scenery/js/SceneryConstants.js';
 import colorProfileProperty from '../../../../scenery/js/util/colorProfileProperty.js';
 import HBox from '../../../../scenery/js/nodes/HBox.js';
 import Image from '../../../../scenery/js/nodes/Image.js';
@@ -108,8 +109,8 @@ class CheckboxPanel extends VBox {
 
     const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
     colorProfileProperty.lazyLink( profileName => {
-      assert && assert( profileName === 'default' || profileName === 'projector' );
-      pathIconImageNode.setImage( profileName === 'projector' ? pathIconProjectorImg : pathIconImg );
+      assert && assert( profileName === SceneryConstants.DEFAULT_COLOR_PROFILE || profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE_NAME );
+      pathIconImageNode.setImage( profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE_NAME ? pathIconProjectorImg : pathIconImg );
     } );
 
     // path checkbox
