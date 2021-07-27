@@ -109,8 +109,8 @@ class CheckboxPanel extends VBox {
 
     const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
     colorProfileProperty.lazyLink( profileName => {
-      assert && assert( profileName === SceneryConstants.DEFAULT_COLOR_PROFILE || profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE_NAME );
-      pathIconImageNode.setImage( profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE_NAME ? pathIconProjectorImg : pathIconImg );
+      assert && assert( profileName === SceneryConstants.DEFAULT_COLOR_PROFILE || profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE );
+      pathIconImageNode.setImage( profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE ? pathIconProjectorImg : pathIconImg );
     } );
 
     // path checkbox
