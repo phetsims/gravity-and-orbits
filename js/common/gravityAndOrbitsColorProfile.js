@@ -29,8 +29,8 @@ const gravityAndOrbitsColorProfile = {
     tandem: Tandem.GENERAL_VIEW.createTandem( 'measuringTapeTextBackgroundColorProperty' )
   } ),
 
-  gridIconStrokeProperty: new ProfileColorProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'gridCheckboxStrokeProperty' )
+  gridIconStrokeColorProperty: new ProfileColorProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
+    tandem: Tandem.GENERAL_VIEW.createTandem( 'gridIconStrokeColorProperty' )
   } ),
 
   controlPanelFillProperty: new ProfileColorProperty( 'control panel fill', {

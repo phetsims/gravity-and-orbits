@@ -127,7 +127,7 @@ class CheckboxPanel extends VBox {
         children: [
           gridTextNode,
           new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
-            stroke: gravityAndOrbitsColorProfile.gridIconStrokeProperty,
+            stroke: gravityAndOrbitsColorProfile.gridIconStrokeColorProperty,
             lineWidth: 1.5
           } )
         ]
