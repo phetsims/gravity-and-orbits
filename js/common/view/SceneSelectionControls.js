@@ -17,7 +17,7 @@ import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularR
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import resetArrowImg from '../../../images/reset_arrow_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 
 class SceneSelectionControls extends Node {
 
@@ -45,7 +45,7 @@ class SceneSelectionControls extends Node {
     } );
     const radioButtonGroup = new RectangularRadioButtonGroup( sceneProperty, content, {
       alignVertically: true,
-      selectedStroke: gravityAndOrbitsColorProfile.foregroundProperty,
+      selectedStroke: GravityAndOrbitsColors.foregroundProperty,
       selectedLineWidth: 2,
       baseColor: 'rgba(0,0,0,0)',
       deselectedLineWidth: 0,

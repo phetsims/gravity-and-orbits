@@ -16,7 +16,7 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 
@@ -59,7 +59,7 @@ class MassControlPanel extends VBox {
       const label = new Text( LABEL_MAP[ massSettableBody.type.name ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
-        fill: gravityAndOrbitsColorProfile.foregroundProperty,
+        fill: GravityAndOrbitsColors.foregroundProperty,
         maxWidth: 175,
         tandem: massSettableBodyTandem.createTandem( 'massLabel' )
       } );

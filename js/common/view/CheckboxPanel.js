@@ -29,7 +29,7 @@ import pathIconImg from '../../../images/path_icon_png.js';
 import pathIconProjectorImg from '../../../images/path_icon_projector_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
@@ -44,12 +44,12 @@ const FONT = new PhetFont( 18 );
 const ARROW_Y_COORDINATE = -10;
 const CHECKBOX_OPTIONS = {
   scale: 0.8,
-  checkboxColor: gravityAndOrbitsColorProfile.foregroundProperty,
-  checkboxColorBackground: gravityAndOrbitsColorProfile.backgroundProperty
+  checkboxColor: GravityAndOrbitsColors.foregroundProperty,
+  checkboxColorBackground: GravityAndOrbitsColors.backgroundProperty
 };
 const TEXT_OPTIONS = {
   font: FONT,
-  fill: gravityAndOrbitsColorProfile.foregroundProperty
+  fill: GravityAndOrbitsColors.foregroundProperty
 };
 
 const SPACING = 10;
@@ -127,7 +127,7 @@ class CheckboxPanel extends VBox {
         children: [
           gridTextNode,
           new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
-            stroke: gravityAndOrbitsColorProfile.gridIconStrokeColorProperty,
+            stroke: GravityAndOrbitsColors.gridIconStrokeColorProperty,
             lineWidth: 1.5
           } )
         ]

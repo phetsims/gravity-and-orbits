@@ -19,7 +19,7 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsColorProfile from '../gravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 
 class BodyNode extends Node {
 
@@ -154,11 +154,11 @@ class BodyNode extends Node {
 
     const labelNodeTandem = tandem.createTandem( 'labelNode' );
     node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, {
-      stroke: gravityAndOrbitsColorProfile.bodyLabelIndicatorProperty
+      stroke: GravityAndOrbitsColors.bodyLabelIndicatorProperty
     } ) );
     const labelNode = new Text( body.labelString, {
       font: new PhetFont( 18 ),
-      fill: gravityAndOrbitsColorProfile.foregroundProperty,
+      fill: GravityAndOrbitsColors.foregroundProperty,
       maxWidth: 65,
       tandem: labelNodeTandem
     } );

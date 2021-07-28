@@ -8,7 +8,7 @@
 
 import Range from '../../../dot/js/Range.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
-import gravityAndOrbitsColorProfile from './gravityAndOrbitsColorProfile.js';
+import GravityAndOrbitsColors from './GravityAndOrbitsColors.js';
 
 // constants
 const CONTROL_PANEL_STROKE = '#8E9097';
@@ -28,7 +28,7 @@ const GravityAndOrbitsConstants = {
     cornerRadius: 5,
     xMargin: PANEL_X_MARGIN,
     scale: 1.05,
-    fill: gravityAndOrbitsColorProfile.controlPanelFillProperty
+    fill: GravityAndOrbitsColors.controlPanelFillProperty
   },
   PLAY_AREA_TANDEM_NAME: 'playAreaNode',
   ZOOM_RANGE: new Range( 0.5, 1.3 )

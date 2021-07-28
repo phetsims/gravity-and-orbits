@@ -4,7 +4,7 @@ import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.
 import Tandem from '../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 
-const gravityAndOrbitsColorProfile = {
+const GravityAndOrbitsColors = {
 
   // Color mainly used for foreground things like text
   foregroundProperty: new ProfileColorProperty( 'foreground', { default: 'white', projector: 'black' }, {
@@ -39,6 +39,6 @@ const gravityAndOrbitsColorProfile = {
   } )
 };
 
-gravityAndOrbits.register( 'gravityAndOrbitsColorProfile', gravityAndOrbitsColorProfile );
+gravityAndOrbits.register( 'GravityAndOrbitsColors', GravityAndOrbitsColors );
 
-export default gravityAndOrbitsColorProfile;
+export default GravityAndOrbitsColors;
