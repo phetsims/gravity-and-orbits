@@ -8,7 +8,7 @@ const GravityAndOrbitsColors = {
 
   // Color mainly used for foreground things like text
   foregroundProperty: new ProfileColorProperty( 'foreground', { default: 'white', projector: 'black' }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'foregroundColorProperty' )
+    tandem: Tandem.COLORS.createTandem( 'foregroundColorProperty' )
   } ),
 
   // Color mainly used for background things like panels or text backgrounds
@@ -16,21 +16,21 @@ const GravityAndOrbitsColors = {
     default: 'black',
     projector: 'white'
   }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'backgroundColorProperty' )
+    tandem: Tandem.COLORS.createTandem( 'backgroundColorProperty' )
   } ),
   bodyLabelIndicatorProperty: new ProfileColorProperty( 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'labelColorProperty' )
+    tandem: Tandem.COLORS.createTandem( 'labelColorProperty' )
   } ),
 
   measuringTapeTextBackgroundColorProperty: new ProfileColorProperty( 'measuring tape text background', {
     default: 'rgba( 0, 0, 0, 0.65 )',
     projector: 'rgba( 255, 255, 255, 0.65 )'
   }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'measuringTapeTextBackgroundColorProperty' )
+    tandem: Tandem.COLORS.createTandem( 'measuringTapeTextBackgroundColorProperty' )
   } ),
 
   gridIconStrokeColorProperty: new ProfileColorProperty( 'grid icon stroke', { default: 'gray', projector: 'black' }, {
-    tandem: Tandem.GENERAL_VIEW.createTandem( 'gridIconStrokeColorProperty' )
+    tandem: Tandem.COLORS.createTandem( 'gridIconStrokeColorProperty' )
   } ),
 
   controlPanelFillProperty: new ProfileColorProperty( 'control panel fill', {
