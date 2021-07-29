@@ -1,6 +1,6 @@
-// Copyright 2002-2015, University of Colorado Boulder
+// Copyright 2021, University of Colorado Boulder
 
 /* eslint-env node */
 
 // use chipper's gruntfile
-module.exports = require( '../chipper/js/grunt/Gruntfile.js' );
+module.exports = require( '../chipper/dist/chipper/js/grunt/Gruntfile.js' );
