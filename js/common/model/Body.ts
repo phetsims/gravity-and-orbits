@@ -1,5 +1,4 @@
 // Copyright 2014-2021, University of Colorado Boulder
-
 /**
  * Body is a single point mass in the Gravity and Orbits simulation, such as the Earth, Sun, Moon or Space Station.
  * This class also keeps track of body-related data such as the path.
@@ -28,6 +27,11 @@ import BodyState from './BodyState.js';
 import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
 import RewindableProperty from './RewindableProperty.js';
 import RewindablePropertyIO from './RewindablePropertyIO.js';
+import BodyConfiguration from './BodyConfiguration';
+import Color from '../../../../scenery/js/util/Color';
+import BodyRenderer from '../view/BodyRenderer';
+import GravityAndOrbitsModel from './GravityAndOrbitsModel';
+import Tandem from '../../../../tandem/js/Tandem';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -38,6 +42,50 @@ const starString = gravityAndOrbitsStrings.star;
 const tempVector = new Vector2( 0, 0 );
 
 class Body extends PhetioObject {
+  public readonly touchDilation: number;
+  public readonly previousPosition: Vector2;
+  private readonly tandemName: string;
+  private bodyNodeTandemName: string;
+  private accelerationProperty: Vector2Property;
+  private diameterProperty: NumberProperty;
+  private clockTicksSinceExplosionProperty: NumberProperty;
+  private boundsProperty: Property;
+  private massSettable: boolean;
+  private readonly maxPathLength: number;
+  private readonly pathLengthBuffer: any;
+  public pathLength: number;
+  private readonly pathLengthLimit: number;
+  private modelPathLength: number;
+  private massReadoutBelow: any;
+  private tickValue: number;
+  private tickLabel: string;
+  private color: Color;
+  private highlight: Color;
+  private readonly type: 'planet' | 'star' | 'moon' | 'satellite';
+  private rotationPeriod: number;
+  private labelString: string;
+  private renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
+  private freezeRewindChangeProperty: Property;
+  private labelAngle: number;
+  private speedProperty: DerivedProperty;
+  private userControlled: boolean;
+  private isPlayingProperty: BooleanProperty;
+  private positionProperty: RewindableProperty;
+  private velocityProperty: RewindableProperty;
+  private forceProperty: RewindableProperty;
+  private forceMagnitudeProperty: DerivedProperty;
+  private massProperty: RewindableProperty;
+  private isCollidedProperty: RewindableProperty;
+  private rotationProperty: RewindableProperty;
+  private isMovableProperty: BooleanProperty;
+  private density: number;
+  private path: any[];
+  private pointAddedEmitter: Emitter;
+  private pointRemovedEmitter: Emitter;
+  private clearedEmitter: Emitter;
+  private userModifiedPositionEmitter: Emitter;
+  private userModifiedVelocityEmitter: Emitter;
+  static BodyIO: IOType;
 
   /**
    * @param {GravityAndOrbitsBodies} type - one of GravityAndOrbitsBodies, used for object identification
@@ -53,8 +101,8 @@ class Body extends PhetioObject {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( type, bodyConfiguration, color, highlight, renderer, labelAngle, tickValue, tickLabel, model,
-               tandem, options ) {
+  constructor( type: 'planet' | 'star' | 'moon' | 'satellite', bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
+               tandem: Tandem, options: any ) {
 
     options = merge( {
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
@@ -72,7 +120,7 @@ class Body extends PhetioObject {
 
     super( options );
 
-    // @public (read-only) - indicates how much the touch radius should be expanded in any views
+    // indicates how much the touch radius should be expanded in any views
     this.touchDilation = options.touchDilation;
 
     // Keep track of the time at the beginning of a time step, for interpolation
@@ -129,7 +177,6 @@ class Body extends PhetioObject {
     // name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
     this.tickLabel = tickLabel; // @public (read-only)
 
-    // true if the object doesn't move when the physics engine runs, (though still can be moved by the user's mouse)
     this.color = color; // @public (read-only)
     this.highlight = highlight; // @public (read-only)
     this.type = type; // @public (read-only)
@@ -138,10 +185,10 @@ class Body extends PhetioObject {
     this.rotationPeriod = options.rotationPeriod;
 
     // @public (read-only) - passed to visual labels, must be translatable
-    this.labelString = this.type === GravityAndOrbitsBodies.PLANET ? planetString :
-                       this.type === GravityAndOrbitsBodies.SATELLITE ? satelliteString :
-                       this.type === GravityAndOrbitsBodies.STAR ? starString :
-                       this.type === GravityAndOrbitsBodies.MOON ? moonString :
+    this.labelString = this.type === 'planet' ? planetString :
+                       this.type === 'satellite' ? satelliteString :
+                       this.type === 'star' ? starString :
+                       this.type === 'moon' ? moonString :
                        null;
     assert && assert( this.labelString, `no label found for body with identifier ${this.type.toString()}` );
 
@@ -166,7 +213,7 @@ class Body extends PhetioObject {
         rewindingProperty,
         this.freezeRewindChangeProperty
       ], ( playButtonPressed, stepping, rewinding, freezeRewind ) =>
-      !playButtonPressed && !stepping && !rewinding && !freezeRewind
+        !playButtonPressed && !stepping && !rewinding && !freezeRewind
     );
 
     // rewindable properties - body states can be rewound, and these properties can have saved states to support this
@@ -535,7 +582,7 @@ class Body extends PhetioObject {
   }
 }
 
-Body.BodyIO = new IOType( 'BodyIO', {
+const BodyIO = new IOType( 'BodyIO', {
   valueType: Body,
   documentation: 'Represents a physical body in the simulation',
   toStateObject: body => body.toStateObject(),
@@ -546,6 +593,8 @@ Body.BodyIO = new IOType( 'BodyIO', {
     path: ArrayIO( Vector2.Vector2IO )
   }
 } );
+
+Body.BodyIO = BodyIO;
 
 gravityAndOrbits.register( 'Body', Body );
 export default Body;

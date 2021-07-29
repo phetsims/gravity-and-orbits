@@ -8,8 +8,19 @@
  */
 
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import Vector2 from '../../../../dot/js/Vector2';
+import Body from './Body.js';
 
 class BodyState {
+
+  public readonly body: Body;
+  public readonly position: Vector2;
+  public readonly velocity: Vector2;
+  public readonly acceleration: Vector2;
+  public readonly mass: number;
+  public readonly exploded: boolean;
+  public readonly rotation: number;
+  public readonly rotationPeriod: number;
 
   /**
    * @param {Body} body - the parent body from which this BodyState was created
@@ -21,7 +32,7 @@ class BodyState {
    * @param {number} rotation - The rotation of the body about its own origin in radians
    * @param {number} rotationPeriod - in seconds
    */
-  constructor( body, position, velocity, acceleration, mass, exploded, rotation, rotationPeriod ) {
+  constructor( body: Body, position: Vector2, velocity: Vector2, acceleration: Vector2, mass: number, exploded: boolean, rotation: number, rotationPeriod: number ) {
 
     // @public
     this.position = position;
