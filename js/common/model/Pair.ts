@@ -9,22 +9,27 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import Tandem from '../../../../tandem/js/Tandem';
+import Body from './Body.js';
 
 class Pair {
+  private body1: Body;
+  private body2: Body;
+  private distanceProperty: DerivedProperty;
 
   /**
    * @param {Body} body1
    * @param {Body} body2
    * @param {Tandem} tandem
    */
-  constructor( body1, body2, tandem ) {
+  constructor( body1: Body, body2: Body, tandem: Tandem ) {
     assert && assert( body1.massProperty.value > body2.massProperty.value, 'Should be ordered big to small' );
 
     this.body1 = body1;
     this.body2 = body2;
 
     // @private (for phet-io only)
-    this.distancePropery = new DerivedProperty( [
+    this.distanceProperty = new DerivedProperty( [
       this.body1.positionProperty,
       this.body2.positionProperty
     ], ( body1Position, body2Position ) => body2Position.distance( body1Position ), {

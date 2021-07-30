@@ -1,4 +1,5 @@
 // Copyright 2014-2020, University of Colorado Boulder
+// @ts-nocheck
 
 /**
  * SceneFactory enumerates and declares the possible modes in the GravityAndOrbitsModel, such as 'Star + Planet' scene.
@@ -36,6 +37,8 @@ import BodyRenderer from './view/BodyRenderer.js';
 import EarthMassReadoutNode from './view/EarthMassReadoutNode.js';
 import SpaceStationMassReadoutNode from './view/SpaceStationMassReadoutNode.js';
 import VectorNode from './view/VectorNode.js';
+import GravityAndOrbitsModel from './model/GravityAndOrbitsModel';
+import Tandem from '../../../tandem/js/Tandem';
 
 const earthDaysString = gravityAndOrbitsStrings.earthDays;
 const earthDayString = gravityAndOrbitsStrings.earthDay;
@@ -77,6 +80,11 @@ const FORCE_SCALE = VectorNode.FORCE_SCALE;
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
 class SceneFactory {
+  private scenes: any[];
+  static SunEarthModeConfig: any;
+  static SunEarthMoonModeConfig: any;
+  static PlanetMoonModeConfig: any;
+  static EarthSpaceStationModeConfig: any;
 
   /**
    * @param {GravityAndOrbitsModel} model
@@ -174,7 +182,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       earthMoon,
-      scaledDays( 1.0 ),
+      scaledDays(),
       this.createIconImage( false, true, true, false ),
       SUN_MODES_VELOCITY_SCALE * 0.06,
       readoutInEarthMasses,
@@ -237,6 +245,8 @@ class SceneFactory {
 }
 
 class SunEarthModeConfig extends ModeConfig {
+  private sun: BodyConfiguration;
+  private planet: BodyConfiguration;
   constructor() {
 
     super( 1.25 );
@@ -261,6 +271,9 @@ class SunEarthModeConfig extends ModeConfig {
 
 // static class: SunEarthMoonModeConfig
 class SunEarthMoonModeConfig extends ModeConfig {
+  private sun: BodyConfiguration;
+  private planet: BodyConfiguration;
+  private moon: BodyConfiguration;
   constructor() {
 
     super( 1.25 );
@@ -268,7 +281,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this.moon = new BodyConfiguration(
+    this[ 'moon' ] = new BodyConfiguration(
       MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED_AT_PERIGEE, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.initialMeasuringTapePosition = new Line(
       ( this.sun.x + this.planet.x ) / 3,
@@ -285,6 +298,8 @@ class SunEarthMoonModeConfig extends ModeConfig {
 }
 
 class PlanetMoonModeConfig extends ModeConfig {
+  private planet: BodyConfiguration;
+  private moon: BodyConfiguration;
 
   /**
    * Configuration for the Earth+Moon system.
@@ -324,6 +339,8 @@ class PlanetMoonModeConfig extends ModeConfig {
 }
 
 class EarthSpaceStationModeConfig extends ModeConfig {
+  private planet: BodyConfiguration;
+  private satellite: BodyConfiguration;
   /**
    * Static class.
    * @param {Object} [options]
@@ -416,7 +433,7 @@ class Satellite extends Body {
    */
   constructor( model, earthSpaceStation, tandem, options ) {
     super(
-      GravityAndOrbitsBodies.SATELLITE,
+      'satellite',
       earthSpaceStation.satellite,
       Color.gray,
       Color.white,
@@ -450,7 +467,7 @@ class Moon extends Body {
     }, options );
 
     super(
-      GravityAndOrbitsBodies.MOON,
+      'moon',
       bodyConfiguration,
       Color.magenta,
       Color.white,
@@ -473,9 +490,9 @@ class Planet extends Body {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( model, bodyConfiguration, tandem, options ) {
+  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: any ) {
     super(
-      GravityAndOrbitsBodies.PLANET,
+      'planet',
       bodyConfiguration,
       Color.gray,
       Color.lightGray,
@@ -500,7 +517,7 @@ class Star extends Body {
    */
   constructor( model, bodyConfiguration, tandem, options ) {
     super(
-      GravityAndOrbitsBodies.STAR,
+      'star',
       bodyConfiguration,
       Color.yellow,
       Color.white,
@@ -512,7 +529,7 @@ class Star extends Body {
       tandem,
       options
     );
-    this.body = bodyConfiguration;
+    // this.body = bodyConfiguration; // TODO ???
   }
 }
 

@@ -12,7 +12,21 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 import merge from '../../../../phet-core/js/merge.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
+declare interface BodyConfigurationOptions {
+  rotationPeriod?: null | number
+}
+
 class BodyConfiguration {
+
+  public readonly mass: number;
+  public readonly radius: number;
+  public readonly x: number;
+  public readonly y: number;
+  public readonly vx: number;
+  public readonly vy: number;
+  public readonly options: object;
+  public readonly isMovable: boolean;
+  public readonly rotationPeriod: null | number;
 
   /**
    * @param {number} mass
@@ -23,7 +37,7 @@ class BodyConfiguration {
    * @param {number} vy
    * @param {Object} [options]
    */
-  constructor( mass, radius, x, y, vx, vy, options ) {
+  constructor( mass: number, radius: number, x: number, y: number, vx: number, vy: number, options?: BodyConfigurationOptions ) {
 
     options = merge( {
       rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation

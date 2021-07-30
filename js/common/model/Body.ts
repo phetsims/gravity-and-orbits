@@ -70,11 +70,11 @@ class Body extends PhetioObject {
   private speedProperty: DerivedProperty;
   private userControlled: boolean;
   private isPlayingProperty: BooleanProperty;
-  private positionProperty: RewindableProperty;
+  positionProperty: RewindableProperty;
   private velocityProperty: RewindableProperty;
   private forceProperty: RewindableProperty;
   private forceMagnitudeProperty: DerivedProperty;
-  private massProperty: RewindableProperty;
+  public readonly massProperty: RewindableProperty;
   private isCollidedProperty: RewindableProperty;
   private rotationProperty: RewindableProperty;
   private isMovableProperty: BooleanProperty;
