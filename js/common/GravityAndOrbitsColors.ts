@@ -18,7 +18,10 @@ const GravityAndOrbitsColors = {
   }, {
     tandem: Tandem.COLORS.createTandem( 'backgroundColorProperty' )
   } ),
-  bodyLabelIndicatorProperty: new ProfileColorProperty( 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
+  bodyLabelIndicatorProperty: new ProfileColorProperty( 'body label indicator', {
+    default: new Color( 255, 255, 0 ),
+    projector: 'black'
+  }, {
     tandem: Tandem.COLORS.createTandem( 'labelColorProperty' )
   } ),
 

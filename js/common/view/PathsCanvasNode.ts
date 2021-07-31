@@ -237,7 +237,7 @@ class NamedPoints {
    *
    * @param {GravityAndOrbitsBodies} type
    */
-  constructor( type:BodyType ) {
+  constructor( type: BodyType ) {
     this.type = type;
     this.points = [];
   }

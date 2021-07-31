@@ -163,7 +163,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
-    this.modelBoundsProperty = new Property(null); // @public - needed for movableDragHandler bounds
+    this.modelBoundsProperty = new Property( null ); // @public - needed for movableDragHandler bounds
     this.transformProperty = new Property( this.createTransform( defaultZoomScale, gridCenter ) ); // @public
 
     this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );

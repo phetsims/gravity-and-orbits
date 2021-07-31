@@ -17,6 +17,7 @@ import BodyNode from './BodyNode.js';
 
 abstract class MassReadoutNode extends Node {
   protected bodyNode: BodyNode;
+
   constructor( bodyNode, visibleProperty, options ) {
     super();
     options = merge( {

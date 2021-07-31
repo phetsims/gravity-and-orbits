@@ -42,8 +42,8 @@ const starString = gravityAndOrbitsStrings.star;
 const tempVector = new Vector2( 0, 0 );
 
 class Body extends PhetioObject {
- readonly touchDilation: number;
- readonly previousPosition: Vector2;
+  readonly touchDilation: number;
+  readonly previousPosition: Vector2;
   private readonly tandemName: string;
   private bodyNodeTandemName: string;
   private accelerationProperty: Vector2Property;
@@ -53,7 +53,7 @@ class Body extends PhetioObject {
   private massSettable: boolean;
   private readonly maxPathLength: number;
   private readonly pathLengthBuffer: any;
- pathLength: number;
+  pathLength: number;
   private readonly pathLengthLimit: number;
   private modelPathLength: number;
   private massReadoutBelow: any;
@@ -74,7 +74,7 @@ class Body extends PhetioObject {
   private readonly velocityProperty: RewindableProperty;
   private readonly forceProperty: RewindableProperty;
   private forceMagnitudeProperty: DerivedProperty;
- readonly massProperty: RewindableProperty;
+  readonly massProperty: RewindableProperty;
   isCollidedProperty: RewindableProperty;
   rotationProperty: RewindableProperty;
   private isMovableProperty: BooleanProperty;

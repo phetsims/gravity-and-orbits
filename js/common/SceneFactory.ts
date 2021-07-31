@@ -246,6 +246,7 @@ class SceneFactory {
 class SunEarthModeConfig extends ModeConfig {
   private sun: BodyConfiguration;
   private planet: BodyConfiguration;
+
   constructor() {
 
     super( 1.25 );
@@ -273,6 +274,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
   private sun: BodyConfiguration;
   private planet: BodyConfiguration;
   private moon: BodyConfiguration;
+
   constructor() {
 
     super( 1.25 );
@@ -340,6 +342,7 @@ class PlanetMoonModeConfig extends ModeConfig {
 class EarthSpaceStationModeConfig extends ModeConfig {
   private planet: BodyConfiguration;
   private satellite: BodyConfiguration;
+
   /**
    * Static class.
    * @param {Object} [options]
