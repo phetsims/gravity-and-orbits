@@ -1,5 +1,5 @@
 // Copyright 2014-2020, University of Colorado Boulder
-
+// @ts-nocheck
 /**
  * This is the Node that renders the content of a physical body, such as a planet or space station.  This component
  * is separate from BodyNode since it is used to create icons.  It is also used to be able to switch between rendering
@@ -13,6 +13,7 @@
  */
 
 import Matrix3 from '../../../../dot/js/Matrix3.js';
+import Body from '../model/Body.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Shape from '../../../../kite/js/Shape.js';
 import Image from '../../../../scenery/js/nodes/Image.js';
@@ -23,6 +24,9 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 class BodyRenderer extends Node {
   // @abstract
+  private body: Body;
+  targetBodyRenderer: any;
+  static SwitchableBodyRenderer: SwitchableBodyRenderer;
   constructor( body ) {
 
     super();
@@ -48,6 +52,9 @@ class BodyRenderer extends Node {
 gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
 class SwitchableBodyRenderer extends BodyRenderer {
+  targetBodyRenderer: any;
+  private defaultBodyRenderer: any;
+  private massListener: () => void;
   /**
    * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different
    * renderer otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to
@@ -92,6 +99,8 @@ class SwitchableBodyRenderer extends BodyRenderer {
 gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
 
 class ImageRenderer extends BodyRenderer {
+  private readonly imageNode: Image;
+  private viewDiameter: any;
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
    *
@@ -135,6 +144,9 @@ class ImageRenderer extends BodyRenderer {
 gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
 
 class SunRenderer extends ImageRenderer {
+  private twinkles: Path;
+  private numSegments: number;
+  private twinkleRadius: number;
   /**
    * Adds triangle edges to the sun to make it look more recognizable
    *

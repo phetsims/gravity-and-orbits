@@ -9,6 +9,7 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import Body from '../model/Body.js';
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Shape from '../../../../kite/js/Shape.js';
@@ -20,8 +21,18 @@ import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import BodyRenderer from './BodyRenderer.js';
 
 class BodyNode extends Node {
+  private modelViewTransformProperty: any;
+  private body: Body;
+  private bodyRenderer: BodyRenderer;
+  private positionListener: ( position, modelViewTransform ) => void;
+  private diameterListener: () => void;
+  private modelViewTransformListener: ( modelViewTransform ) => void;
+  private modelBoundsListener: ( dragBounds ) => void;
 
   /**
    * Constructor for BodyNode
@@ -32,7 +43,7 @@ class BodyNode extends Node {
    * @param {GravityAndOrbitsScene} scene
    * @param {Tandem} tandem
    */
-  constructor( body, labelAngle, isPlayingProperty, scene, tandem ) {
+  constructor( body: Body, labelAngle: number, isPlayingProperty: Property, scene: GravityAndOrbitsScene, tandem: Tandem ) {
     super( {
       cursor: 'pointer',
       tandem: tandem,
@@ -97,6 +108,7 @@ class BodyNode extends Node {
     // create position and diameter listeners so that they can be unlinked for garbage collection and so that anonymous
     // closures are not necessary through multilink
     this.positionListener = ( position, modelViewTransform ) => {
+      // @ts-ignore
       this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
     };
     Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );

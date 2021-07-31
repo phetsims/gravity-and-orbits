@@ -12,8 +12,8 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import Tandem from '../../../../tandem/js/Tandem';
-import IOType from '../../../../tandem/js/types/IOType';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import IOType from '../../../../tandem/js/types/IOType.js';
 
 type RewindablePropertyOptions = {
 
