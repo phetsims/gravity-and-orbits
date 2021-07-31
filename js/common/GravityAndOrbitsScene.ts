@@ -49,7 +49,7 @@ type GravityAndOrbitsSceneOptions = {
 };
 
 class GravityAndOrbitsScene extends PhetioObject {
-  private activeProperty: BooleanProperty;
+  activeProperty: BooleanProperty;
   private deviatedFromDefaultsProperty: BooleanProperty;
   private measuringTapeStartPointProperty: Vector2Property;
   private measuringTapeEndPointProperty: Vector2Property;

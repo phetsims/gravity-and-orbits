@@ -52,11 +52,11 @@ class Body extends PhetioObject {
   private boundsProperty: Property;
   private massSettable: boolean;
   private readonly maxPathLength: number;
-  private readonly pathLengthBuffer: any;
+  private readonly pathLengthBuffer: number;
   pathLength: number;
   private readonly pathLengthLimit: number;
   private modelPathLength: number;
-  private massReadoutBelow: any;
+  private massReadoutBelow: boolean;
   private tickValue: number;
   private tickLabel: string;
   private color: Color;

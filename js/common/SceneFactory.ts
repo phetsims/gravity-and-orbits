@@ -79,11 +79,11 @@ const FORCE_SCALE = VectorNode.FORCE_SCALE;
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
 class SceneFactory {
-  scenes: any[];
   static SunEarthModeConfig: any;
   static SunEarthMoonModeConfig: any;
   static PlanetMoonModeConfig: any;
   static EarthSpaceStationModeConfig: any;
+  scenes: GravityAndOrbitsScene[];
 
   /**
    * @param {GravityAndOrbitsModel} model
@@ -244,8 +244,8 @@ class SceneFactory {
 }
 
 class SunEarthModeConfig extends ModeConfig {
-  private sun: BodyConfiguration;
-  private planet: BodyConfiguration;
+  private readonly sun: BodyConfiguration;
+  private readonly planet: BodyConfiguration;
 
   constructor() {
 
@@ -484,6 +484,8 @@ class Moon extends Body {
   }
 }
 
+type PlanetOptions = {};
+
 class Planet extends Body {
 
   /**
@@ -492,7 +494,7 @@ class Planet extends Body {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: any ) {
+  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: PlanetOptions ) {
     super(
       'planet',
       bodyConfiguration,
