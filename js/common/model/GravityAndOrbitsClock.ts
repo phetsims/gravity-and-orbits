@@ -13,6 +13,9 @@ import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import EventTimer from '../../../../phet-core/js/EventTimer.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import Tandem from '../../../../tandem/js/Tandem';
+import Property from '../../../../axon/js/Property';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty';
 
 // constants
 // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
@@ -24,6 +27,14 @@ const SECONDS_PER_DAY = 86400;
 const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
 class GravityAndOrbitsClock {
+  private baseDTValue: number;
+  private isRunningProperty: BooleanProperty;
+  private timeProperty: NumberProperty;
+  private dt: number;
+  private steppingProperty: Property;
+  private timeSpeedProperty: EnumerationProperty;
+  private interpolationRatio: number;
+  private eventTimer: EventTimer;
 
   /**
    * @param {number} baseDTValue (multiplied by scale to obtain true dt)
@@ -32,7 +43,7 @@ class GravityAndOrbitsClock {
    * @param {Tandem} sceneTandem
    * @param {Tandem} tandem
    */
-  constructor( baseDTValue, steppingProperty, timeSpeedProperty, sceneTandem, tandem ) {
+  constructor( baseDTValue: number, steppingProperty: Property, timeSpeedProperty: EnumerationProperty, sceneTandem: Tandem, tandem: Tandem ) {
 
     // @public (read-only)
     this.baseDTValue = baseDTValue;
@@ -128,13 +139,11 @@ class GravityAndOrbitsClock {
     this.eventTimer.step( dt );
     this.interpolationRatio = this.eventTimer.getRatio();
   }
-}
 
-// statics
-GravityAndOrbitsClock.CLOCK_FRAME_RATE = CLOCK_FRAME_RATE;
-GravityAndOrbitsClock.DAYS_PER_TICK = DAYS_PER_TICK;
-GravityAndOrbitsClock.SECONDS_PER_DAY = SECONDS_PER_DAY;
-GravityAndOrbitsClock.DEFAULT_DT = DEFAULT_DT;
+  // statics
+  static SECONDS_PER_DAY = SECONDS_PER_DAY;
+  static DEFAULT_DT = DEFAULT_DT;
+}
 
 gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
 export default GravityAndOrbitsClock;
