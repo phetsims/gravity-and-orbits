@@ -32,6 +32,7 @@ import Color from '../../../../scenery/js/util/Color';
 import BodyRenderer from '../view/BodyRenderer';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel';
 import Tandem from '../../../../tandem/js/Tandem';
+import type {BodyType} from './GravityAndOrbitsBodies';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -61,7 +62,7 @@ class Body extends PhetioObject {
   private tickLabel: string;
   private color: Color;
   private highlight: Color;
-  private readonly type: 'planet' | 'star' | 'moon' | 'satellite';
+  private readonly type: BodyType;
   private rotationPeriod: number;
   private labelString: string;
   private renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
@@ -101,7 +102,7 @@ class Body extends PhetioObject {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( type: 'planet' | 'star' | 'moon' | 'satellite', bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
+  constructor( type: BodyType, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
                tandem: Tandem, options: any ) {
 
     options = merge( {
