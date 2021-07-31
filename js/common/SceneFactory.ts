@@ -533,7 +533,6 @@ class Star extends Body {
       tandem,
       options
     );
-    // this.body = bodyConfiguration; // TODO ???
   }
 }
 

@@ -14,7 +14,7 @@
 import Utils from '../../../../dot/js/Utils.js';
 import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import {BodyType} from '../model/GravityAndOrbitsBodies.js';
+import {GravityAndOrbitsBodiesType} from '../model/GravityAndOrbitsBodies.js';
 
 // constants
 const STROKE_WIDTH = 3;
@@ -237,7 +237,7 @@ class NamedPoints {
    *
    * @param {GravityAndOrbitsBodies} type
    */
-  constructor( type: BodyType ) {
+  constructor( type: GravityAndOrbitsBodiesType ) {
     this.type = type;
     this.points = [];
   }

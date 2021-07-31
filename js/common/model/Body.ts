@@ -31,7 +31,7 @@ import Color from '../../../../scenery/js/util/Color';
 import BodyRenderer from '../view/BodyRenderer';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel';
 import Tandem from '../../../../tandem/js/Tandem';
-import type {BodyType} from './GravityAndOrbitsBodies';
+import type {GravityAndOrbitsBodiesType} from './GravityAndOrbitsBodies';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -61,7 +61,7 @@ class Body extends PhetioObject {
   private tickLabel: string;
   private color: Color;
   private highlight: Color;
-  private readonly type: BodyType;
+  private readonly type: GravityAndOrbitsBodiesType;
   private readonly rotationPeriod: number;
   private readonly labelString: string;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
@@ -101,7 +101,7 @@ class Body extends PhetioObject {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( type: BodyType, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
+  constructor( type: GravityAndOrbitsBodiesType, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
                tandem: Tandem, options: any ) {
 
     options = merge( {
@@ -308,11 +308,11 @@ class Body extends PhetioObject {
     this.pointAddedEmitter = new Emitter( {
       parameters: [
         { valueType: Vector2 },
-        { validValues: GravityAndOrbitsBodies.VALUES }
+        { validValues: GravityAndOrbitsBodies }
       ]
     } );
-    this.pointRemovedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
-    this.clearedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies.VALUES } ] } );
+    this.pointRemovedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies } ] } );
+    this.clearedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies } ] } );
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
