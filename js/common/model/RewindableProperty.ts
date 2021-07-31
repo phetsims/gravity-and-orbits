@@ -12,16 +12,33 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import Tandem from '../../../../tandem/js/Tandem';
+import IOType from '../../../../tandem/js/types/IOType';
+
+type RewindablePropertyOptions = {
+
+  // TODO: Move these to PhetioObjectOptions, see https://github.com/phetsims/gravity-and-orbits/issues/405
+  tandem?: Tandem,
+  phetioType?: IOType;
+  units?: string;
+  phetioHighFrequency?: boolean;
+  phetioDocumentation?: string;
+  phetioStudioControl?: boolean;
+  phetioReadOnly?: boolean;
+};
 
 class RewindableProperty extends Property {
+  private rewindValue: any;
+  private changeRewindValueProperty: Property;
+  private differentProperty: BooleanProperty;
 
   /**
-   * @param {Property.<boolean>} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
+   * @param {Property} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
    * @param {*} value
    * @param {Object} [options]
    * @constructor
    */
-  constructor( changeRewindValueProperty, value, options ) {
+  constructor( changeRewindValueProperty: Property, value: any, options?: RewindablePropertyOptions ) {
     super( value, options );
 
     // @public - the "initial condition" the property can be rewound to, different than the overall "reset" value
@@ -65,6 +82,8 @@ class RewindableProperty extends Property {
       this.storeRewindValueNoNotify();
     }
     this.differentProperty.set( !this.equalsRewindValue() );
+
+    return this;
   }
 
   /**
