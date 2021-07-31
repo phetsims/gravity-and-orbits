@@ -29,6 +29,7 @@ import PathsCanvasNode from './PathsCanvasNode.js';
 import TimeCounter from './TimeCounter.js';
 import VectorNode from './VectorNode.js';
 import ZoomControl from './ZoomControl.js';
+import Dimension2 from '../../../../dot/js/Dimension2';
 
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
 const vString = gravityAndOrbitsStrings.v;
@@ -41,6 +42,8 @@ const STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
 const buttonBackgroundColor = new Color( 255, 250, 125 );
 
 class GravityAndOrbitsSceneView extends Rectangle {
+  static STAGE_SIZE: Bounds2;
+  static buttonBackgroundColor: Color;
 
   /**
    * Constructor for GravityAndOrbitsSceneView

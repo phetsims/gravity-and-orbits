@@ -15,6 +15,8 @@ import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import Property from '../../../../axon/js/Property';
+import Tandem from '../../../../tandem/js/Tandem';
 
 const gravityString = gravityAndOrbitsStrings.gravity;
 
@@ -27,13 +29,17 @@ const FONT = new PhetFont( 14 );
 const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColors.foregroundProperty, maxWidth: 50 };
 const RADIO_OPTIONS = { radius: 7 };
 
+type GravityControlOptions = {
+  tandem?: Tandem
+}
+
 class GravityControl extends Node {
 
   /**
    * @param {Property.<boolean>} gravityEnabledProperty
    * @param {Object} [options] - This object contains options for main node of gravity menu.
    */
-  constructor( gravityEnabledProperty, options ) {
+  constructor( gravityEnabledProperty: Property, options?: GravityControlOptions ) {
     super( options );
 
     const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );

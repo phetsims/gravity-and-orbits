@@ -32,7 +32,7 @@ const getBodyState = body => body.toBodyState();
 class GravityAndOrbitsPhysicsEngine {
   private gravityEnabledProperty: Property;
   private adjustMoonOrbit: boolean;
-  private clock: GravityAndOrbitsClock;
+  clock: GravityAndOrbitsClock;
   private bodies: any[];
   private stepCompleteEmitter: Emitter;
 

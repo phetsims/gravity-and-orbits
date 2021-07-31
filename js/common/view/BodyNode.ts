@@ -26,13 +26,13 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import BodyRenderer from './BodyRenderer.js';
 
 class BodyNode extends Node {
-  private modelViewTransformProperty: any;
-  private body: Body;
-  private bodyRenderer: BodyRenderer;
-  private positionListener: ( position, modelViewTransform ) => void;
-  private diameterListener: () => void;
-  private modelViewTransformListener: ( modelViewTransform ) => void;
-  private modelBoundsListener: ( dragBounds ) => void;
+  private readonly modelViewTransformProperty: any;
+  readonly body: Body;
+  private readonly bodyRenderer: BodyRenderer;
+  private readonly positionListener: ( position, modelViewTransform ) => void;
+  private readonly diameterListener: () => void;
+  private readonly modelViewTransformListener: ( modelViewTransform ) => void;
+  private readonly modelBoundsListener: ( dragBounds ) => void;
 
   /**
    * Constructor for BodyNode

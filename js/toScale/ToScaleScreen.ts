@@ -23,6 +23,8 @@ class ToScaleScreen extends Screen {
   constructor( options ) {
     options = merge( {
       name: toScaleString,
+
+      // @ts-ignore
       homeScreenIcon: new ScreenIcon( new Image( toScaleMipmap ), {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1,

@@ -35,8 +35,8 @@ class GravityAndOrbitsModel {
   private showMassProperty: BooleanProperty;
   private showMeasuringTapeProperty: BooleanProperty;
   public isPlayingProperty: BooleanProperty;
-  private timeSpeedProperty: EnumerationProperty;
-  private gravityEnabledProperty: BooleanProperty;
+  timeSpeedProperty: EnumerationProperty;
+  gravityEnabledProperty: BooleanProperty;
   steppingProperty: BooleanProperty;
   rewindingProperty: BooleanProperty;
   private showMassCheckbox: boolean;

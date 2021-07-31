@@ -23,7 +23,7 @@ class GravityAndOrbitsGridNode extends Node {
    * @param {number} numGridLines - number grid lines on each side of the center
    * @param {Object} [options]
    */
-  constructor( transformProperty, spacing, center, numGridLines, options ) {
+  constructor( transformProperty, spacing, center, numGridLines, options? ) {
 
     options = merge( {
       lineWidth: 1,

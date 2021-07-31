@@ -25,6 +25,7 @@ const clearString = gravityAndOrbitsStrings.clear;
 const FONT_SIZE = 22;
 
 class TimeCounter extends Node {
+  private timeListener: ( time ) => void;
 
   /**
    * @param {function} timeFormatter

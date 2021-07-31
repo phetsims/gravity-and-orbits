@@ -36,8 +36,11 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       tandem: Tandem.REQUIRED
     }, options );
 
+
     super( model.isPlayingProperty, {
       timeSpeedProperty: model.timeSpeedProperty,
+
+      // @ts-ignore
       timeSpeeds: [ TimeSpeed.FAST, TimeSpeed.NORMAL, TimeSpeed.SLOW ],
       playPauseStepButtonOptions: {
         playPauseStepXSpacing: PUSH_BUTTON_SPACING,

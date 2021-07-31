@@ -14,11 +14,17 @@ import merge from '../../../../phet-core/js/merge.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import Body from '../model/Body.js';
 
 // constants
 const FORCE_SCALE = 76.0 / 5.179E15;
 
 class VectorNode extends Node {
+  private body: Body;
+  private vectorProperty: Property;
+  protected transformProperty: Property;
+  private readonly propertyListener: ( visible ) => void;
+  static FORCE_SCALE: number;
 
   /**
    * @param {Body} body
@@ -31,7 +37,7 @@ class VectorNode extends Node {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options ) {
+  constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options? ) {
     options = merge( {
       tandem: tandem,
       visiblePropertyOptions: { phetioReadOnly: true }
@@ -86,7 +92,7 @@ class VectorNode extends Node {
    * @returns {Vector2}
    * @protected
    */
-  getTip( tail ) {
+  getTip( tail? ) {
     if ( typeof tail === 'undefined' ) {
       tail = this.getTail();
     }

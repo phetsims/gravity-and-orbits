@@ -32,12 +32,48 @@ import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
 import GravityAndOrbitsPhysicsEngine from './model/GravityAndOrbitsPhysicsEngine.js';
 import GravityAndOrbitsSceneView from './view/GravityAndOrbitsSceneView.js';
+import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
+import ModeConfig from './model/ModeConfig.js';
+import BodyNode from './view/BodyNode.js';
+import Pair from './model/Pair.js';
+import EnumerationProperty from '../../../axon/js/EnumerationProperty';
 
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
 const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
 
+type GravityAndOrbitsSceneOptions = {
+  adjustMoonOrbit: boolean;
+  dt: number;
+  gridCenter: Vector2;
+};
+
 class GravityAndOrbitsScene extends PhetioObject {
+  private activeProperty: BooleanProperty;
+  private deviatedFromDefaultsProperty: BooleanProperty;
+  private measuringTapeStartPointProperty: Vector2Property;
+  private measuringTapeEndPointProperty: Vector2Property;
+  private zoomLevelProperty: NumberProperty;
+  private radioButtonTandemName: string;
+  private resetButtonTandemName: string;
+  private tandemName: string;
+  private massControlPanelTandemName: string;
+  private dt: number;
+  private forceScale: number;
+  private iconImage: Node;
+  private velocityVectorScale: number;
+  private isPlayingProperty: BooleanProperty;
+  private physicsEngine: GravityAndOrbitsPhysicsEngine;
+  private gridSpacing: number;
+  private gridCenter: Vector2;
+  private rewindingProperty: BooleanProperty;
+  private timeSpeedProperty: EnumerationProperty;
+  private timeFormatter: ( arg0: number ) => string;
+  private massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node;
+  modelBoundsProperty: Property;
+  transformProperty: Property;
+  private sceneView: GravityAndOrbitsSceneView;
+  private pairs: Pair[];
 
   /**
    * @param {GravityAndOrbitsModel} model
@@ -53,8 +89,8 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Pair[]} pairs
    * @param {Object} [options]
    */
-  constructor( model, modeConfig, timeFormatter, iconImage, velocityVectorScale, massReadoutFactory, gridSpacing, tandem,
-               sceneViewTandem, bodies, pairs, options ) {
+  constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node, gridSpacing: number, tandem: Tandem,
+               sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], options?: GravityAndOrbitsSceneOptions ) {
 
     const forceScale = modeConfig.forceScale;
     const initialMeasuringTapePosition = modeConfig.initialMeasuringTapePosition;
@@ -90,9 +126,12 @@ class GravityAndOrbitsScene extends PhetioObject {
     };
 
     const measuringTapeTandem = tandem.createTandem( 'measuringTape' );
+
+    // @ts-ignore
     this.measuringTapeStartPointProperty = new Vector2Property( initialMeasuringTapePosition.p1, merge( {
       tandem: measuringTapeTandem.createTandem( 'startPointProperty' )
     }, measuringTapePointOptions ) );
+    // @ts-ignore
     this.measuringTapeEndPointProperty = new Vector2Property( initialMeasuringTapePosition.p2, merge( {
       tandem: measuringTapeTandem.createTandem( 'endPointProperty' )
     }, measuringTapePointOptions ) );
@@ -124,7 +163,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
-    this.modelBoundsProperty = new Property(); // @public - needed for movableDragHandler bounds
+    this.modelBoundsProperty = new Property(null); // @public - needed for movableDragHandler bounds
     this.transformProperty = new Property( this.createTransform( defaultZoomScale, gridCenter ) ); // @public
 
     this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );

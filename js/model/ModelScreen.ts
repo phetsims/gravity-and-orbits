@@ -24,6 +24,8 @@ class ModelScreen extends Screen {
 
     options = merge( {
       name: modelString,
+
+      // @ts-ignore
       homeScreenIcon: new ScreenIcon( new Image( modelMipmap ), {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1,

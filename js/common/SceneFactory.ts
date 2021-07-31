@@ -29,7 +29,6 @@ import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import GravityAndOrbitsScene from './GravityAndOrbitsScene.js';
 import Body from './model/Body.js';
 import BodyConfiguration from './model/BodyConfiguration.js';
-import GravityAndOrbitsBodies from './model/GravityAndOrbitsBodies.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
 import ModeConfig from './model/ModeConfig.js';
 import Pair from './model/Pair.js';
@@ -96,7 +95,7 @@ class SceneFactory {
    * @param {Tandem} viewTandem
    * @param {Object} [options]
    */
-  constructor( model, planetStar, sunEarthMoon, earthMoon, earthSpaceStation, modelTandem, viewTandem, options ) {
+  constructor( model, planetStar, sunEarthMoon, earthMoon, earthSpaceStation, modelTandem, viewTandem, options? ) {
 
     options = merge( {
       adjustMoonPathLength: false, // increase the moon path so that it matches other traces at default settings

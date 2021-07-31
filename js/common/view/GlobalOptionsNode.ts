@@ -13,6 +13,7 @@ import VBox from '../../../../scenery/js/nodes/VBox.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 class GlobalOptionsNode extends VBox {
+  private disposeGlobalOptionsNode: () => void;
   constructor( tandem ) {
 
     // add support for setting projector mode

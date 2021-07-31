@@ -13,8 +13,10 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import BodyNode from './BodyNode.js';
 
-class MassReadoutNode extends Node {
+abstract class MassReadoutNode extends Node {
+  protected bodyNode: BodyNode;
   constructor( bodyNode, visibleProperty, options ) {
     super();
     options = merge( {
@@ -52,6 +54,8 @@ class MassReadoutNode extends Node {
       updatePosition();
     } );
   }
+
+  protected abstract createText()
 }
 
 gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );

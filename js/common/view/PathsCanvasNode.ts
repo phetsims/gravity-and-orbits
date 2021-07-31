@@ -14,11 +14,18 @@
 import Utils from '../../../../dot/js/Utils.js';
 import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import {BodyType} from '../model/GravityAndOrbitsBodies.js';
 
 // constants
 const STROKE_WIDTH = 3;
 
 class PathsCanvasNode extends CanvasNode {
+  private namedPoints: {};
+  private transformProperty: any;
+  private bodies: any;
+  private pointAddedListener: ( point, bodyName ) => void;
+  private pointRemovedListener: ( bodyName ) => void;
+  private clearedListener: ( bodyName ) => void;
 
   /**
    *
@@ -222,13 +229,15 @@ class PathsCanvasNode extends CanvasNode {
 gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
 class NamedPoints {
+  private type: any;
+  private points: any[];
 
   /**
    * Named points assigns an array of points a name so that it can be looked up outside of a closure.
    *
    * @param {GravityAndOrbitsBodies} type
    */
-  constructor( type ) {
+  constructor( type:BodyType ) {
     this.type = type;
     this.points = [];
   }
