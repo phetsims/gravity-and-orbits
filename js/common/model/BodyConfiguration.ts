@@ -18,15 +18,15 @@ declare interface BodyConfigurationOptions {
 
 class BodyConfiguration {
 
-  public readonly mass: number;
-  public readonly radius: number;
-  public readonly x: number;
-  public readonly y: number;
-  public vx: number;
-  public vy: number;
-  public readonly options: object;
-  public readonly isMovable: boolean;
-  public readonly rotationPeriod: null | number;
+  readonly mass: number;
+  readonly radius: number;
+  readonly x: number;
+  readonly y: number;
+  vx: number;
+  vy: number;
+  readonly options: object;
+  readonly isMovable: boolean;
+  readonly rotationPeriod: null | number;
 
   /**
    * @param {number} mass

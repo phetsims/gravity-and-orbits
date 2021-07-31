@@ -13,14 +13,14 @@ import Body from './Body.js';
 
 class BodyState {
 
-  public readonly body: Body;
-  public readonly position: Vector2;
-  public readonly velocity: Vector2;
-  public acceleration: Vector2;
-  public readonly mass: number;
-  public readonly exploded: boolean;
-  public rotation: number;
-  public readonly rotationPeriod: number;
+  readonly body: Body;
+  readonly position: Vector2;
+  readonly velocity: Vector2;
+  acceleration: Vector2;
+  readonly mass: number;
+  readonly exploded: boolean;
+  rotation: number;
+  readonly rotationPeriod: number;
 
   /**
    * @param {Body} body - the parent body from which this BodyState was created

@@ -42,8 +42,8 @@ const starString = gravityAndOrbitsStrings.star;
 const tempVector = new Vector2( 0, 0 );
 
 class Body extends PhetioObject {
-  public readonly touchDilation: number;
-  public readonly previousPosition: Vector2;
+ readonly touchDilation: number;
+ readonly previousPosition: Vector2;
   private readonly tandemName: string;
   private bodyNodeTandemName: string;
   private accelerationProperty: Vector2Property;
@@ -53,7 +53,7 @@ class Body extends PhetioObject {
   private massSettable: boolean;
   private readonly maxPathLength: number;
   private readonly pathLengthBuffer: any;
-  public pathLength: number;
+ pathLength: number;
   private readonly pathLengthLimit: number;
   private modelPathLength: number;
   private massReadoutBelow: any;
@@ -62,19 +62,19 @@ class Body extends PhetioObject {
   private color: Color;
   private highlight: Color;
   private readonly type: BodyType;
-  private rotationPeriod: number;
-  private labelString: string;
-  private renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
+  private readonly rotationPeriod: number;
+  private readonly labelString: string;
+  private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   freezeRewindChangeProperty: Property;
   private labelAngle: number;
   private speedProperty: DerivedProperty;
   userControlled: boolean;
-  private isPlayingProperty: BooleanProperty;
+  private readonly isPlayingProperty: BooleanProperty;
   positionProperty: RewindableProperty;
-  private velocityProperty: RewindableProperty;
-  private forceProperty: RewindableProperty;
+  private readonly velocityProperty: RewindableProperty;
+  private readonly forceProperty: RewindableProperty;
   private forceMagnitudeProperty: DerivedProperty;
-  public readonly massProperty: RewindableProperty;
+ readonly massProperty: RewindableProperty;
   isCollidedProperty: RewindableProperty;
   rotationProperty: RewindableProperty;
   private isMovableProperty: BooleanProperty;
