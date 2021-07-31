@@ -22,8 +22,8 @@ class BodyConfiguration {
   public readonly radius: number;
   public readonly x: number;
   public readonly y: number;
-  public readonly vx: number;
-  public readonly vy: number;
+  public vx: number;
+  public vy: number;
   public readonly options: object;
   public readonly isMovable: boolean;
   public readonly rotationPeriod: null | number;

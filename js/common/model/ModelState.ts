@@ -13,6 +13,8 @@
 import Vector2 from '../../../../dot/js/Vector2.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import BodyState from './BodyState.js';
+import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 
 // constants
 const XI = 0.1786178958448091;
@@ -24,16 +26,19 @@ const velocity = new Vector2( 0, 0 ); // used in updatePositions()
 const netForce = new Vector2( 0, 0 ); // used in getNetForce()
 
 class ModelState {
+  private readonly bodyStates: Array<BodyState>;
+  private clock: GravityAndOrbitsClock;
+  private readonly adjustMoonOrbit: boolean;
 
   /**
    * @param {Array.<BodyState>} bodyStates
    * @param {GravityAndOrbitsClock} clock
    * @param {boolean} adjustMoonOrbit
    */
-  constructor( bodyStates, clock, adjustMoonOrbit ) {
-    this.bodyStates = bodyStates; // @private
-    this.clock = clock; // @private
-    this.adjustMoonOrbit = adjustMoonOrbit; // @private
+  constructor( bodyStates: Array<BodyState>, clock: GravityAndOrbitsClock, adjustMoonOrbit: boolean ) {
+    this.bodyStates = bodyStates;
+    this.clock = clock;
+    this.adjustMoonOrbit = adjustMoonOrbit;
   }
 
   /**

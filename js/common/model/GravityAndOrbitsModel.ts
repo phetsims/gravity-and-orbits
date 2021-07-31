@@ -22,11 +22,28 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import SceneFactory from '../SceneFactory.js';
 
 // constants
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
 class GravityAndOrbitsModel {
+  private showGravityForceProperty: BooleanProperty;
+  private showVelocityProperty: BooleanProperty;
+  private showPathProperty: BooleanProperty;
+  private showGridProperty: BooleanProperty;
+  private showMassProperty: BooleanProperty;
+  private showMeasuringTapeProperty: BooleanProperty;
+  public isPlayingProperty: BooleanProperty;
+  private timeSpeedProperty: EnumerationProperty;
+  private gravityEnabledProperty: BooleanProperty;
+  steppingProperty: BooleanProperty;
+  rewindingProperty: BooleanProperty;
+  private showMassCheckbox: boolean;
+  private showMeasuringTape: boolean;
+  private sceneList: SceneFactory;
+  private sceneProperty: Property;
+  static G: number;
 
   /**
    * @param {boolean} showMeasuringTape
@@ -35,7 +52,7 @@ class GravityAndOrbitsModel {
    * @param {boolean} showMassCheckbox
    * @param {Tandem} tandem
    */
-  constructor( showMeasuringTape, createModes, initialSceneIndex, showMassCheckbox, tandem ) {
+  constructor( showMeasuringTape: boolean, createModes: ( arg0: GravityAndOrbitsModel ) => SceneFactory, initialSceneIndex: number, showMassCheckbox: boolean, tandem: Tandem ) {
 
     // Properties that are common to all "modes" should live here.
     this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );
@@ -54,6 +71,7 @@ class GravityAndOrbitsModel {
     } );
 
     // @public
+    // @ts-ignore
     this.timeSpeedProperty = new EnumerationProperty( TimeSpeed, TimeSpeed.NORMAL, {
       tandem: tandem.createTandem( 'timeSpeedProperty' )
     } );

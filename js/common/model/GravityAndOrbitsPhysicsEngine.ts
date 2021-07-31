@@ -12,6 +12,8 @@ import Emitter from '../../../../axon/js/Emitter.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import ModelState from './ModelState.js';
+import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
+import Property from '../../../../axon/js/Property';
 
 /**
  * Return the smaller of two Body instances, for determining which survives a collision.
@@ -28,6 +30,11 @@ const getSmaller = ( other, body ) => other.massProperty.get() < body.massProper
 const getBodyState = body => body.toBodyState();
 
 class GravityAndOrbitsPhysicsEngine {
+  private gravityEnabledProperty: Property;
+  private adjustMoonOrbit: boolean;
+  private clock: GravityAndOrbitsClock;
+  private bodies: any[];
+  private stepCompleteEmitter: Emitter;
 
   /**
    * @param {GravityAndOrbitsClock} clock
@@ -35,7 +42,7 @@ class GravityAndOrbitsPhysicsEngine {
    * @param {boolean} adjustMoonOrbit - in the "Model" screen, there is an additional force from the Earth on the Moon to keep it in orbit
    *                                  - This is necessary because the moon orbital radius is higher (so it is visible)
    */
-  constructor( clock, gravityEnabledProperty, adjustMoonOrbit ) {
+  constructor( clock: GravityAndOrbitsClock, gravityEnabledProperty: Property, adjustMoonOrbit: boolean ) {
 
     // @private
     this.gravityEnabledProperty = gravityEnabledProperty;
@@ -78,11 +85,15 @@ class GravityAndOrbitsPhysicsEngine {
     const smallestTimeStep = this.clock.baseDTValue * 0.13125;
 
     // get the number of times we will need to step the model based on the dt passed in
+    // @ts-ignore
     const numberOfSteps = this.clock.timeSpeedProperty.value === TimeSpeed.SLOW ? 1 :
+
+      // @ts-ignore
                           this.clock.timeSpeedProperty.value === TimeSpeed.NORMAL ? 4 :
+
+                            // @ts-ignore
                           this.clock.timeSpeedProperty.value === TimeSpeed.FAST ? 7 :
                           null;
-
     // step the model by the smallest standard time step for the orbital mode
     for ( let i = 0; i < numberOfSteps; i++ ) {
       this.step( smallestTimeStep );

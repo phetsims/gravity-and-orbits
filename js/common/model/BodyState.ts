@@ -16,10 +16,10 @@ class BodyState {
   public readonly body: Body;
   public readonly position: Vector2;
   public readonly velocity: Vector2;
-  public readonly acceleration: Vector2;
+  public acceleration: Vector2;
   public readonly mass: number;
   public readonly exploded: boolean;
-  public readonly rotation: number;
+  public rotation: number;
   public readonly rotationPeriod: number;
 
   /**

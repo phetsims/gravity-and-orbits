@@ -12,11 +12,16 @@
 import Vector2 from '../../../../dot/js/Vector2.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
+import BodyConfiguration from './BodyConfiguration.js';
 
 // constants
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
-class ModeConfig {
+abstract class ModeConfig {
+  private dt: number;
+  private zoom: number;
+  private initialMeasuringTapePosition: Vector2;
+  private forceScale: number;
 
   /**
    * @param {number} zoom
@@ -26,7 +31,7 @@ class ModeConfig {
     this.dt = DEFAULT_DT; // @public
     this.zoom = zoom; // @public
 
-    // @public {Line} - Initial start and end point of the measuring tape
+    // @public - Initial start and end point of the measuring tape
     this.initialMeasuringTapePosition = null;
 
     // @protected
@@ -75,9 +80,7 @@ class ModeConfig {
    * @public
    * @abstract
    */
-  getBodies() {
-    throw new Error( 'must be implemented by subtype' );
-  }
+  abstract getBodies(): BodyConfiguration[]
 }
 
 gravityAndOrbits.register( 'ModeConfig', ModeConfig );

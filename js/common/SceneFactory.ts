@@ -80,7 +80,7 @@ const FORCE_SCALE = VectorNode.FORCE_SCALE;
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
 class SceneFactory {
-  private scenes: any[];
+  scenes: any[];
   static SunEarthModeConfig: any;
   static SunEarthMoonModeConfig: any;
   static PlanetMoonModeConfig: any;
