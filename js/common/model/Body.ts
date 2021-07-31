@@ -26,7 +26,6 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import BodyState from './BodyState.js';
 import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
 import RewindableProperty from './RewindableProperty.js';
-import RewindablePropertyIO from './RewindablePropertyIO.js';
 import BodyConfiguration from './BodyConfiguration';
 import Color from '../../../../scenery/js/util/Color';
 import BodyRenderer from '../view/BodyRenderer';
@@ -221,7 +220,7 @@ class Body extends PhetioObject {
 
     // @public
     this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
-      phetioType: RewindablePropertyIO( Vector2.Vector2IO ),
+      phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'positionProperty' ),
       units: 'm',
       phetioHighFrequency: true,
@@ -230,7 +229,7 @@ class Body extends PhetioObject {
 
     // @public
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ), {
-      phetioType: RewindablePropertyIO( Vector2.Vector2IO ),
+      phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'velocityProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
@@ -249,7 +248,7 @@ class Body extends PhetioObject {
     // @public
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
       phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
-      phetioType: RewindablePropertyIO( Vector2.Vector2IO ),
+      phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'forceProperty' ),
       phetioHighFrequency: true,
       units: 'N',
@@ -268,7 +267,7 @@ class Body extends PhetioObject {
     // @public
     this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, {
       tandem: tandem.createTandem( 'massProperty' ),
-      phetioType: RewindablePropertyIO( NumberIO ),
+      phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
       units: 'kg',
       phetioDocumentation: 'The mass of the body',
       phetioStudioControl: false
@@ -277,7 +276,7 @@ class Body extends PhetioObject {
     // @public
     this.isCollidedProperty = new RewindableProperty( changeRewindValueProperty, false, {
       tandem: tandem.createTandem( 'isCollidedProperty' ),
-      phetioType: RewindablePropertyIO( BooleanIO ),
+      phetioType: RewindableProperty.RewindablePropertyIO( BooleanIO ),
       phetioReadOnly: true,
       phetioDocumentation: 'True if the body has collided with another body'
     } );
@@ -285,7 +284,7 @@ class Body extends PhetioObject {
     // @public
     this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0, {
       tandem: tandem.createTandem( 'rotationProperty' ),
-      phetioType: RewindablePropertyIO( NumberIO ),
+      phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
       units: 'radians',
       phetioHighFrequency: true,
       phetioDocumentation: 'The rotation of the body about its own origin',
