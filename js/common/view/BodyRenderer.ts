@@ -24,9 +24,11 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 class BodyRenderer extends Node {
   // @abstract
-  private body: Body;
+  private readonly body: Body;
   targetBodyRenderer: any;
   static SwitchableBodyRenderer: SwitchableBodyRenderer;
+  static SunRenderer: any;
+
   constructor( body ) {
 
     super();
@@ -55,6 +57,7 @@ class SwitchableBodyRenderer extends BodyRenderer {
   targetBodyRenderer: any;
   private defaultBodyRenderer: any;
   private massListener: () => void;
+
   /**
    * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different
    * renderer otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to
@@ -101,6 +104,7 @@ gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
 class ImageRenderer extends BodyRenderer {
   private readonly imageNode: Image;
   private viewDiameter: any;
+
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
    *
@@ -144,9 +148,10 @@ class ImageRenderer extends BodyRenderer {
 gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
 
 class SunRenderer extends ImageRenderer {
-  private twinkles: Path;
-  private numSegments: number;
-  private twinkleRadius: number;
+  private readonly twinkles: Path;
+  private readonly numSegments: number;
+  private readonly twinkleRadius: number;
+
   /**
    * Adds triangle edges to the sun to make it look more recognizable
    *
@@ -193,5 +198,7 @@ gravityAndOrbits.register( 'SunRenderer', SunRenderer );
 BodyRenderer.SwitchableBodyRenderer = SwitchableBodyRenderer;
 BodyRenderer.ImageRenderer = ImageRenderer;
 BodyRenderer.SunRenderer = SunRenderer;
+
+export {SunRenderer};
 
 export default BodyRenderer;
