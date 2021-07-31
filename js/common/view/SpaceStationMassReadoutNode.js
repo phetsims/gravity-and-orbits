@@ -12,7 +12,6 @@ import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
-import GravityAndOrbitsBodies from '../model/GravityAndOrbitsBodies.js';
 import MassReadoutNode from './MassReadoutNode.js';
 
 const billionBillionSpaceStationMassesString = gravityAndOrbitsStrings.billionBillionSpaceStationMasses;
@@ -26,7 +25,7 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
    * @param {Property.<boolean>} visibleProperty
    */
   constructor( bodyNode, visibleProperty ) {
-    super( bodyNode, visibleProperty, bodyNode.body.type === GravityAndOrbitsBodies.PLANET ? {
+    super( bodyNode, visibleProperty, bodyNode.body.type === 'planet' ? {
       textMaxWidth: 400
     } : {} );
   }

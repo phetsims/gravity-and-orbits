@@ -38,7 +38,7 @@ class PathsCanvasNode extends CanvasNode {
     // @private - a map tracking each body and its associated points
     this.namedPoints = {}; // @private
     for ( let i = 0; i < bodies.length; i++ ) {
-      this.namedPoints[ bodies[ i ].type.name ] = new NamedPoints( bodies[ i ].type );
+      this.namedPoints[ bodies[ i ].type ] = new NamedPoints( bodies[ i ].type );
     }
 
     // @private
@@ -52,12 +52,12 @@ class PathsCanvasNode extends CanvasNode {
 
         // when the transform changes, we want to re-transform all points in a body
         // path and then re paint the canvas
-        this.namedPoints[ body.type.name ].points = [];
+        this.namedPoints[ body.type ].points = [];
 
         for ( let j = 0; j < body.path.length; j++ ) {
           const point = body.path[ j ];
           const pt = transformProperty.get().modelToViewPosition( point );
-          this.namedPoints[ body.type.name ].points.push( pt );
+          this.namedPoints[ body.type ].points.push( pt );
         }
       }
 
@@ -139,7 +139,7 @@ class PathsCanvasNode extends CanvasNode {
     // draw the path for each body one by one
     for ( let i = 0; i < this.bodies.length; i++ ) {
       const body = this.bodies[ i ];
-      const points = this.namedPoints[ body.type.name ].points;
+      const points = this.namedPoints[ body.type ].points;
 
       // max path length in view coordinates
       const maxPathLength = this.transformProperty.get().modelToViewDeltaX( body.maxPathLength );

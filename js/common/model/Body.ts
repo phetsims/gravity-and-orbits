@@ -190,7 +190,7 @@ class Body extends PhetioObject {
                        this.type === 'star' ? starString :
                        this.type === 'moon' ? moonString :
                        null;
-    assert && assert( this.labelString, `no label found for body with identifier ${this.type.toString()}` );
+    assert && assert( this.labelString, `no label found for body with identifier ${this.type}` );
 
     assert && assert( renderer !== null );
 
@@ -578,7 +578,7 @@ class Body extends PhetioObject {
    * @returns {string}
    */
   toString() {
-    return `name = ${this.type.toString()}, mass = ${this.massProperty.get()}`;
+    return `name = ${this.type}, mass = ${this.massProperty.get()}`;
   }
 }
 

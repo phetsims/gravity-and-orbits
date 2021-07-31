@@ -13,7 +13,6 @@
 import Vector2 from '../../../../dot/js/Vector2.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
 
 // constants
 const XI = 0.1786178958448091;
@@ -194,7 +193,7 @@ class ModelState {
       const magnitude = PhysicalConstants.GRAVITATIONAL_CONSTANT * source.mass * target.mass / r / r;
       let fudgeFactor = 1;
 
-      if ( this.adjustMoonOrbit && source.body.type === GravityAndOrbitsBodies.MOON && target.body.type === GravityAndOrbitsBodies.PLANET ) {
+      if ( this.adjustMoonOrbit && source.body.type === 'moon' && target.body.type === 'planet' ) {
         fudgeFactor = 10200;
       }
       return unitVector.multiplyScalar( magnitude * fudgeFactor );

@@ -6,11 +6,10 @@
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 
-import Enumeration from '../../../../phet-core/js/Enumeration.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-const GravityAndOrbitsBodies = Enumeration.byKeys( [ 'PLANET', 'SATELLITE', 'STAR', 'MOON' ] );
-
+const GravityAndOrbitsBodies = {
+  VALUES: [ 'planet', 'satellite', 'star', 'moon' ]
+}
 gravityAndOrbits.register( 'GravityAndOrbitsBodies', GravityAndOrbitsBodies );
-
 export default GravityAndOrbitsBodies;

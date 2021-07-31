@@ -28,10 +28,10 @@ const starMassString = gravityAndOrbitsStrings.starMass;
 // constants
 const CONTROL_FONT = new PhetFont( 14 );
 const LABEL_MAP = {
-  PLANET: planetMassString,
-  SATELLITE: satelliteMassString,
-  STAR: starMassString,
-  MOON: moonMassString
+  planet: planetMassString,
+  satellite: satelliteMassString,
+  star: starMassString,
+  moon: moonMassString
 };
 
 class MassControlPanel extends VBox {
@@ -56,7 +56,7 @@ class MassControlPanel extends VBox {
       const massSettableBodyTandem = options.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
       const sliderNode = new Node( { tandem: massSettableBodyTandem } );
 
-      const label = new Text( LABEL_MAP[ massSettableBody.type.name ], {
+      const label = new Text( LABEL_MAP[ massSettableBody.type ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColors.foregroundProperty,
