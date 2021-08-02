@@ -16,6 +16,10 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import VectorNode from './VectorNode.js';
+import Body from '../model/Body.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import Vector2 from '../../../../dot/js/Vector2';
+import Tandem from '../../../../tandem/js/Tandem';
 
 class DraggableVectorNode extends VectorNode {
 
@@ -33,8 +37,8 @@ class DraggableVectorNode extends VectorNode {
    * @param {Object} [options]
    * @constructor
    */
-  constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill,
-               outline, labelText, tandem, options ) {
+  constructor( body: Body, transformProperty: Property, visibleProperty: Property, vectorProperty: Property, scale: number, fill: Color,
+               outline: Color, labelText: string, tandem: Tandem, options?: object ) {
 
     super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options );
 
@@ -72,8 +76,8 @@ class DraggableVectorNode extends VectorNode {
     Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );
 
     // The velocity vector is rooted on the object, so we manage all of its drags by deltas.
-    let previousPoint = null;
-    let previousValue = null;
+    let previousPoint: Vector2 | null = null;
+    let previousValue: Vector2 | null = null;
 
     // Add the drag handler
     const dragListener = new DragListener( {
@@ -87,8 +91,8 @@ class DraggableVectorNode extends VectorNode {
         if ( previousPoint ) {
           const delta = currentPoint.minus( previousPoint );
 
-          const proposedVelocity = previousValue.plus( delta );
-          const viewVector = this.transformProperty.get().modelToViewDelta( proposedVelocity.times( this.scale ) );
+          const proposedVelocity = previousValue!.plus( delta );
+          const viewVector = this.transformProperty.get().modelToViewDelta( proposedVelocity.times( this.vectorNodeScale ) );
           if ( viewVector.magnitude < 10 ) {
             proposedVelocity.setXY( 0, 0 );
           }

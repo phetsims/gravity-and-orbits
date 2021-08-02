@@ -28,10 +28,10 @@ type RewindablePropertyOptions = {
 };
 
 class RewindableProperty extends Property {
-  private rewindValue: any;
+  rewindValue: any;
   private changeRewindValueProperty: Property;
   private differentProperty: BooleanProperty;
-  static RewindablePropertyIO: ( parameterType ) => any;
+  static RewindablePropertyIO: ( parameterType: any ) => any;
 
   /**
    * @param {Property} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
@@ -74,7 +74,7 @@ class RewindableProperty extends Property {
    * @public
    * @override
    */
-  set( value ) {
+  set( value: any ) {
     super.set( value );
 
     // If the user changed the initial conditions (as opposed to the state changing through model stepping),
@@ -149,7 +149,7 @@ RewindableProperty.RewindablePropertyIO = ( parameterType ) => {
                        'traditional listener pattern in that added listeners also receive a callback with the current value ' +
                        'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
         supertype: PropertyIOImpl,
-        toStateObject: property => {
+        toStateObject: ( property: RewindableProperty ) => {
           const stateObject = PropertyIOImpl.toStateObject( property );
           stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
           return stateObject;

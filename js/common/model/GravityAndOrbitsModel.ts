@@ -28,19 +28,19 @@ import SceneFactory from '../SceneFactory.js';
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
 class GravityAndOrbitsModel {
-  private showGravityForceProperty: BooleanProperty;
-  private showVelocityProperty: BooleanProperty;
-  private showPathProperty: BooleanProperty;
-  private showGridProperty: BooleanProperty;
-  private showMassProperty: BooleanProperty;
-  private showMeasuringTapeProperty: BooleanProperty;
+  showGravityForceProperty: BooleanProperty;
+  showVelocityProperty: BooleanProperty;
+  showPathProperty: BooleanProperty;
+  showGridProperty: BooleanProperty;
+  showMassProperty: BooleanProperty;
+  showMeasuringTapeProperty: BooleanProperty;
   public isPlayingProperty: BooleanProperty;
   public timeSpeedProperty: EnumerationProperty;
   public gravityEnabledProperty: BooleanProperty;
   public steppingProperty: BooleanProperty;
   public rewindingProperty: BooleanProperty;
-  private showMassCheckbox: boolean;
-  private showMeasuringTape: boolean;
+  showMassCheckbox: boolean;
+  showMeasuringTape: boolean;
   private sceneList: SceneFactory;
   private sceneProperty: Property;
   static G: number;

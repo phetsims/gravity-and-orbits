@@ -12,6 +12,8 @@ import LinearFunction from '../../../../dot/js/LinearFunction.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import BodyRenderer from './BodyRenderer.js';
+import Body from '../model/Body.js';
+import Property from '../../../../axon/js/Property';
 
 // constants
 const NUM_STEPS_FOR_ANIMATION = 10;
@@ -22,7 +24,7 @@ class ExplosionNode extends Node {
    * @param {Body} body
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    */
-  constructor( body, modelViewTransformProperty ) {
+  constructor( body: Body, modelViewTransformProperty: Property ) {
     super();
 
     // Function that computes the diameter as a function of the animation step
@@ -74,17 +76,17 @@ class ExplosionNode extends Node {
     const explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
     const explodedProperty = new DerivedProperty( [ body.isCollidedProperty, body.clockTicksSinceExplosionProperty ],
-      ( collided, clockTicks ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
+      ( collided, clockTicks: number ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
 
     explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
 
-    body.clockTicksSinceExplosionProperty.lazyLink( clockTicks => explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) ) );
+    body.clockTicksSinceExplosionProperty.lazyLink( ( clockTicks: number ) => explosionEdgeGraphic.setDiameter( getDiameter( clockTicks ) ) );
 
     return explosionEdgeGraphic;
   }
 
   // @private
-  getMaxViewDiameter( body, modelViewTransformProperty ) {
+  getMaxViewDiameter( body: Body, modelViewTransformProperty ) {
     return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
   }
 }

@@ -67,7 +67,7 @@ class ModelState {
    * @private
    * @param {number} dt
    */
-  updatePositions( dt ) {
+  updatePositions( dt: number ) {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
       velocity.setXY( bodyState.velocity.x * dt, bodyState.velocity.y * dt );
@@ -81,7 +81,7 @@ class ModelState {
    * @private
    * @param {number} dt
    */
-  updateVelocities( dt ) {
+  updateVelocities( dt: number ) {
     this.updateAccelerations();
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
@@ -109,7 +109,7 @@ class ModelState {
    *
    * @param {number} dt (seconds)
    */
-  updateRotations( dt ) {
+  updateRotations( dt: number ) {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
 
@@ -127,7 +127,7 @@ class ModelState {
    * @param {number} dt - delta time (seconds)
    * @private
    */
-  getDeltaRotation( rotationPeriod, dt ) {
+  getDeltaRotation( rotationPeriod: number, dt: number ) {
 
     // convert delta time to rotation in orbit
     // negative one so that rotation is counter clockwise (with orbital motion)
@@ -211,7 +211,7 @@ class ModelState {
    * @param {number} dt
    * @returns {ModelState}
    */
-  getNextCoastingState( dt ) {
+  getNextCoastingState( dt: number ) {
 
     // update Positions
     this.updatePositions( dt );
@@ -234,7 +234,7 @@ class ModelState {
    * @param {number} dt
    * @returns {ModelState}
    */
-  getNextInteractingState( dt ) {
+  getNextInteractingState( dt: number ) {
 
     //-------------
     // Step One
@@ -308,7 +308,7 @@ class ModelState {
    * @param {number} index
    * @returns {Array.<BodyState>}
    */
-  getBodyState( index ) {
+  getBodyState( index: number ) {
     return this.bodyStates[ index ];
   }
 }

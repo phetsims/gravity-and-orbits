@@ -15,6 +15,8 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
+import Color from '../../../../scenery/js/util/Color';
+import Tandem from '../../../../tandem/js/Tandem';
 
 // constants
 const FORCE_SCALE = 76.0 / 5.179E15;
@@ -23,8 +25,9 @@ class VectorNode extends Node {
   private body: Body;
   private vectorProperty: Property;
   protected transformProperty: Property;
-  private readonly propertyListener: ( visible ) => void;
+  private readonly propertyListener: ( visible:boolean ) => void;
   static FORCE_SCALE: number;
+  protected readonly vectorNodeScale: number;
 
   /**
    * @param {Body} body
@@ -37,7 +40,7 @@ class VectorNode extends Node {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options? ) {
+  constructor( body: Body, transformProperty: Property, visibleProperty: Property, vectorProperty: Property, scale: number, fill: Color, outline: Color, tandem: Tandem, options?: object ) {
     options = merge( {
       tandem: tandem,
       visiblePropertyOptions: { phetioReadOnly: true }
@@ -48,7 +51,7 @@ class VectorNode extends Node {
     this.vectorProperty = vectorProperty; // @private
     this.body = body; // @private
     this.transformProperty = transformProperty; // @private
-    this.scale = scale; // @private
+    this.vectorNodeScale = scale; // @private
 
     // Only show if the body hasn't collided
     const shouldBeShownProperty = new DerivedProperty(
@@ -97,7 +100,7 @@ class VectorNode extends Node {
       tail = this.getTail();
     }
 
-    const force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.scale ) );
+    const force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.vectorNodeScale ) );
     return new Vector2( force.x + tail.x, force.y + tail.y );
   }
 }

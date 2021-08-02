@@ -153,7 +153,7 @@ class BodyNode extends Node {
    * @param {Tandem} tandem
    * @private
    */
-  createArrowIndicator( body, labelAngle, tandem ) {
+  createArrowIndicator( body: Body, labelAngle: number, tandem: Tandem ) {
     const node = new Node( {
       tandem: tandem,
       phetioDocumentation: 'When the body is too small to see (depending on the zoom level), this shows a line that ' +

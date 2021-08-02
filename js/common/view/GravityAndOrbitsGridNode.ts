@@ -13,6 +13,9 @@ import merge from '../../../../phet-core/js/merge.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import Property from '../../../../axon/js/Property';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import Vector2 from '../../../../dot/js/Vector2';
 
 class GravityAndOrbitsGridNode extends Node {
 
@@ -23,7 +26,7 @@ class GravityAndOrbitsGridNode extends Node {
    * @param {number} numGridLines - number grid lines on each side of the center
    * @param {Object} [options]
    */
-  constructor( transformProperty, spacing, center, numGridLines, options? ) {
+  constructor( transformProperty: Property, spacing: number, center: Vector2, numGridLines: number, options?: object ) {
 
     options = merge( {
       lineWidth: 1,

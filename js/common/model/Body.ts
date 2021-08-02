@@ -61,9 +61,9 @@ class Body extends PhetioObject {
   private tickLabel: string;
   private color: Color;
   private highlight: Color;
-  private readonly type: GravityAndOrbitsBodiesType;
+  readonly type: GravityAndOrbitsBodiesType;
   private readonly rotationPeriod: number;
-  private readonly labelString: string;
+  readonly labelString: string;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   freezeRewindChangeProperty: Property;
   private labelAngle: number;
@@ -71,7 +71,7 @@ class Body extends PhetioObject {
   userControlled: boolean;
   private readonly isPlayingProperty: BooleanProperty;
   positionProperty: RewindableProperty;
-  private readonly velocityProperty: RewindableProperty;
+  readonly velocityProperty: RewindableProperty;
   private readonly forceProperty: RewindableProperty;
   private forceMagnitudeProperty: DerivedProperty;
   readonly massProperty: RewindableProperty;
@@ -79,12 +79,12 @@ class Body extends PhetioObject {
   rotationProperty: RewindableProperty;
   private isMovableProperty: BooleanProperty;
   private density: number;
-  private path: any[];
-  private pointAddedEmitter: Emitter;
-  private pointRemovedEmitter: Emitter;
-  private clearedEmitter: Emitter;
+  path: any[];
+  pointAddedEmitter: Emitter;
+  pointRemovedEmitter: Emitter;
+  clearedEmitter: Emitter;
   userModifiedPositionEmitter: Emitter;
-  private userModifiedVelocityEmitter: Emitter;
+  userModifiedVelocityEmitter: Emitter;
   static BodyIO: IOType;
 
   /**

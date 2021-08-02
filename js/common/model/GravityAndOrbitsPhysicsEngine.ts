@@ -12,6 +12,7 @@ import Emitter from '../../../../axon/js/Emitter.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import ModelState from './ModelState.js';
+import Body from './Body.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 import Property from '../../../../axon/js/Property';
 
@@ -21,13 +22,13 @@ import Property from '../../../../axon/js/Property';
  * @param {Body} body
  * @returns {Body} the smaller body
  */
-const getSmaller = ( other, body ) => other.massProperty.get() < body.massProperty.get() ? other : body;
+const getSmaller = ( other: Body, body: Body ):Body => other.massProperty.get() < body.massProperty.get() ? other : body;
 /**
  * For use inside a map call, factored out here for performance
  * @param body
  * @returns {BodyState}
  */
-const getBodyState = body => body.toBodyState();
+const getBodyState = ( body: Body ) => body.toBodyState();
 
 class GravityAndOrbitsPhysicsEngine {
   private gravityEnabledProperty: Property;
@@ -55,7 +56,7 @@ class GravityAndOrbitsPhysicsEngine {
     // @public {Body[]} - contains the sun, moon, earth, satellite
     this.bodies = [];
 
-    this.clock.addEventTimer( dt => {
+    this.clock.addEventTimer( ( dt: number ) => {
 
       // NOTE: replacing step with stepModel fixes https://github.com/phetsims/gravity-and-orbits/issues/253
       // but introduces performance issues

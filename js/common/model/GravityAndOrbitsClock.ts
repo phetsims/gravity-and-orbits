@@ -93,7 +93,7 @@ class GravityAndOrbitsClock {
    *
    * @param  {boolean} running
    */
-  setRunning( running ) {
+  setRunning( running: boolean ) {
     this.isRunningProperty.set( running );
   }
 
@@ -103,7 +103,7 @@ class GravityAndOrbitsClock {
    *
    * @param  {number} time description
    */
-  setSimulationTime( time ) {
+  setSimulationTime( time: number ) {
     this.timeProperty.set( time );
   }
 
@@ -121,9 +121,9 @@ class GravityAndOrbitsClock {
    * Add an event callback to the event timer, called every time the animation frame changes.
    * @public
    *
-   * @param  {number} stepFunction
+   * @param  {function} stepFunction
    */
-  addEventTimer( stepFunction ) {
+  addEventTimer( stepFunction: ( dt: number ) => void ) {
     assert && assert( !this.eventTimer, 'there can be only one event timer' );
     this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
   }
@@ -135,7 +135,7 @@ class GravityAndOrbitsClock {
    * @param  {number} dt
    * @returns {type} description
    */
-  step( dt ) {
+  step( dt: number ) {
     this.eventTimer.step( dt );
     this.interpolationRatio = this.eventTimer.getRatio();
   }

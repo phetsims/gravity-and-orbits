@@ -14,15 +14,19 @@
 import Utils from '../../../../dot/js/Utils.js';
 import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
+import Body from '../model/Body.js';
 import {GravityAndOrbitsBodiesType} from '../model/GravityAndOrbitsBodies.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import Property from '../../../../axon/js/Property';
+import Bounds2 from '../../../../dot/js/Bounds2';
 
 // constants
 const STROKE_WIDTH = 3;
 
 class PathsCanvasNode extends CanvasNode {
-  private namedPoints: {};
+  private readonly namedPoints: {};
   private transformProperty: any;
-  private bodies: any;
+  private readonly bodies: any;
   private pointAddedListener: ( point, bodyName ) => void;
   private pointRemovedListener: ( bodyName ) => void;
   private clearedListener: ( bodyName ) => void;
@@ -34,7 +38,7 @@ class PathsCanvasNode extends CanvasNode {
    * @param {Property.<boolean>} visibleProperty
    * @param {Bounds2} canvasBounds
    */
-  constructor( bodies, transformProperty, visibleProperty, canvasBounds ) {
+  constructor( bodies: Body[], transformProperty: Property, visibleProperty: Property, canvasBounds: Bounds2 ) {
 
     assert && assert( canvasBounds, 'Paths canvas must define bounds' );
     super( {

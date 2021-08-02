@@ -31,6 +31,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
 const gridString = gravityAndOrbitsStrings.grid;
@@ -59,13 +60,17 @@ const HBOX_OPTIONS = {
   spacing: SPACING
 };
 
+type CheckboxPanelOptions = {
+  tandem?: Tandem
+};
+
 class CheckboxPanel extends VBox {
 
   /**
    * @param {GravityAndOrbitsModel} model
    * @param {Object} [options]
    */
-  constructor( model, options ) {
+  constructor( model: GravityAndOrbitsModel, options?: CheckboxPanelOptions ) {
 
     const children = [];
 
@@ -76,7 +81,7 @@ class CheckboxPanel extends VBox {
     const gridTextNode = new Text( gridString, TEXT_OPTIONS );
     const measuringTapeTextNode = new Text( measuringTapeString, TEXT_OPTIONS );
 
-    const optionsWithTandem = tandemName => merge( { tandem: options.tandem.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
+    const optionsWithTandem = ( tandemName: string ) => merge( { tandem: options.tandem.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
 
     // gravity force checkbox
     children.push( new Checkbox( new HBox( merge( {
