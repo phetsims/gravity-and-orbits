@@ -7,9 +7,13 @@
   ],
   "include": [
     "js/**/*",
+    "images/**/*",
     "sounds/**/*",
     "mipmaps/**/*",
-    "images/**/*",
     "../chipper/phet-types.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
   ]
 }
