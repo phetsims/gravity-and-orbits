@@ -42,18 +42,36 @@ const starString = gravityAndOrbitsStrings.star;
 const tempVector = new Vector2( 0, 0 );
 
 class Body extends PhetioObject {
+
+  pathLength: number;
+  path: any[];
+  userControlled: boolean;
+
   readonly touchDilation: number;
   readonly previousPosition: Vector2;
+  readonly type: GravityAndOrbitsBodiesType;
+  readonly labelString: string;
+  readonly massProperty: RewindableProperty;
+  readonly velocityProperty: RewindableProperty;
+  readonly diameterProperty: NumberProperty;
+  readonly freezeRewindChangeProperty: Property;
+  readonly positionProperty: RewindableProperty;
+  readonly isCollidedProperty: RewindableProperty;
+  readonly rotationProperty: RewindableProperty;
+  readonly pointAddedEmitter: Emitter;
+  readonly pointRemovedEmitter: Emitter;
+  readonly clearedEmitter: Emitter;
+  readonly userModifiedPositionEmitter: Emitter;
+  readonly userModifiedVelocityEmitter: Emitter;
+
   private readonly tandemName: string;
   private bodyNodeTandemName: string;
   private accelerationProperty: Vector2Property;
-  diameterProperty: NumberProperty;
   private clockTicksSinceExplosionProperty: NumberProperty;
   private boundsProperty: Property;
   private massSettable: boolean;
   private readonly maxPathLength: number;
   private readonly pathLengthBuffer: number;
-  pathLength: number;
   private readonly pathLengthLimit: number;
   private modelPathLength: number;
   private massReadoutBelow: boolean;
@@ -61,30 +79,16 @@ class Body extends PhetioObject {
   private tickLabel: string;
   private color: Color;
   private highlight: Color;
-  readonly type: GravityAndOrbitsBodiesType;
   private readonly rotationPeriod: number;
-  readonly labelString: string;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
-  freezeRewindChangeProperty: Property;
   private labelAngle: number;
   private speedProperty: DerivedProperty;
-  userControlled: boolean;
   private readonly isPlayingProperty: BooleanProperty;
-  positionProperty: RewindableProperty;
-  readonly velocityProperty: RewindableProperty;
   private readonly forceProperty: RewindableProperty;
   private forceMagnitudeProperty: DerivedProperty;
-  readonly massProperty: RewindableProperty;
-  isCollidedProperty: RewindableProperty;
-  rotationProperty: RewindableProperty;
   private isMovableProperty: BooleanProperty;
   private density: number;
-  path: any[];
-  pointAddedEmitter: Emitter;
-  pointRemovedEmitter: Emitter;
-  clearedEmitter: Emitter;
-  userModifiedPositionEmitter: Emitter;
-  userModifiedVelocityEmitter: Emitter;
+
   static BodyIO: IOType;
 
   /**
