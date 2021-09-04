@@ -1,0 +1,19 @@
+{
+  "extends": "../chipper/tsconfig-core.json",
+  "references": [
+    {
+      "path": "../joist"
+    }
+  ],
+  "include": [
+    "js/**/*",
+    "images/**/*",
+    "sounds/**/*",
+    "mipmaps/**/*",
+    "../chipper/phet-types.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
