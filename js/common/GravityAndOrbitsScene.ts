@@ -50,17 +50,20 @@ type GravityAndOrbitsSceneOptions = {
 
 class GravityAndOrbitsScene extends PhetioObject {
   activeProperty: BooleanProperty;
+  iconImage: Node;
+  modelBoundsProperty: Property;
+  transformProperty: Property;
+  radioButtonTandemName: string;
+  resetButtonTandemName: string;
+
   private deviatedFromDefaultsProperty: BooleanProperty;
   private measuringTapeStartPointProperty: Vector2Property;
   private measuringTapeEndPointProperty: Vector2Property;
   private zoomLevelProperty: NumberProperty;
-  private radioButtonTandemName: string;
-  private resetButtonTandemName: string;
   private tandemName: string;
   private massControlPanelTandemName: string;
   private dt: number;
   private forceScale: number;
-  private iconImage: Node;
   private velocityVectorScale: number;
   private isPlayingProperty: BooleanProperty;
   private physicsEngine: GravityAndOrbitsPhysicsEngine;
@@ -70,8 +73,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   private timeSpeedProperty: EnumerationProperty;
   private timeFormatter: ( arg0: number ) => string;
   private massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node;
-  modelBoundsProperty: Property;
-  transformProperty: Property;
   private sceneView: GravityAndOrbitsSceneView;
   private pairs: Pair[];
 

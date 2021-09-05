@@ -24,15 +24,18 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import BodyRenderer from './BodyRenderer.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import Bounds2 from '../../../../dot/js/Bounds2.js';
+import Transform3 from '../../../../dot/js/Transform3.js';
 
 class BodyNode extends Node {
   private readonly modelViewTransformProperty: any;
   readonly body: Body;
   private readonly bodyRenderer: BodyRenderer;
-  private readonly positionListener: ( position, modelViewTransform ) => void;
+  private readonly positionListener: ( position: Vector2, modelViewTransform: ModelViewTransform2 ) => void;
   private readonly diameterListener: () => void;
-  private readonly modelViewTransformListener: ( modelViewTransform ) => void;
-  private readonly modelBoundsListener: ( dragBounds ) => void;
+  private readonly modelViewTransformListener: ( modelViewTransform: ModelViewTransform2 ) => void;
+  private readonly modelBoundsListener: ( dragBounds: Bounds2 ) => void;
 
   /**
    * Constructor for BodyNode
@@ -62,7 +65,7 @@ class BodyNode extends Node {
     this.addChild( this.bodyRenderer );
 
     // images rotate the target body with the rotation property
-    const rotationListener = rotation => {
+    const rotationListener = ( rotation: number ) => {
 
       // if the body has a 'target mass' representation, only rotate that one
       if ( this.bodyRenderer.targetBodyRenderer ) {
@@ -74,7 +77,7 @@ class BodyNode extends Node {
     };
     body.rotationProperty.link( rotationListener );
 
-    const dragBoundsProperty = new DerivedProperty( [ scene.modelBoundsProperty, body.diameterProperty ], ( modelBounds, diameter ) => {
+    const dragBoundsProperty = new DerivedProperty( [ scene.modelBoundsProperty, body.diameterProperty ], ( modelBounds: Bounds2, diameter: number ) => {
       return modelBounds.eroded( diameter / 2 );
     } );
     const dragListener = new DragListener( {
@@ -87,7 +90,7 @@ class BodyNode extends Node {
         // Clear the path when dragging starts.
         body.clearPath();
       },
-      drag: event => body.userModifiedPositionEmitter.emit(),
+      drag: () => body.userModifiedPositionEmitter.emit(),
       end: () => {
         body.userControlled = false;
 
@@ -125,7 +128,7 @@ class BodyNode extends Node {
     };
     Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
-    this.modelViewTransformListener = modelViewTransform => dragListener.setTransform( modelViewTransform );
+    this.modelViewTransformListener = ( modelViewTransform: Transform3 ) => dragListener.setTransform( modelViewTransform );
     this.modelViewTransformProperty.link( this.modelViewTransformListener );
 
     this.modelBoundsListener = dragBounds => {
@@ -206,7 +209,7 @@ class BodyNode extends Node {
    * @param  {Body} body
    * @returns {Vector2}
    */
-  getPosition( modelViewTransformProperty, body ) {
+  getPosition( modelViewTransformProperty: Property, body: Body ) {
     return modelViewTransformProperty.get().modelToView( body.positionProperty.get() );
   }
 

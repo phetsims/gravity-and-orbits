@@ -19,17 +19,18 @@ import {GravityAndOrbitsBodiesType} from '../model/GravityAndOrbitsBodies.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 import Property from '../../../../axon/js/Property';
 import Bounds2 from '../../../../dot/js/Bounds2';
+import Vector2 from '../../../../dot/js/Vector2.js';
 
 // constants
 const STROKE_WIDTH = 3;
 
 class PathsCanvasNode extends CanvasNode {
-  private readonly namedPoints: {};
+  private readonly namedPoints: { [ key: string ]: NamedPoints };
   private transformProperty: any;
   private readonly bodies: any;
-  private pointAddedListener: ( point, bodyName ) => void;
-  private pointRemovedListener: ( bodyName ) => void;
-  private clearedListener: ( bodyName ) => void;
+  private pointAddedListener: ( point: Vector2, bodyName: string ) => void;
+  private pointRemovedListener: ( bodyName: string ) => void;
+  private clearedListener: ( bodyName: string ) => void;
 
   /**
    *
@@ -144,7 +145,7 @@ class PathsCanvasNode extends CanvasNode {
    * @private
    * @param {CanvasRenderingContext2D} context
    */
-  paintCanvas( context ) {
+  paintCanvas( context: CanvasRenderingContext2D ) {
     let j;
 
     // draw the path for each body one by one
@@ -234,7 +235,7 @@ gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
 class NamedPoints {
   private type: any;
-  private points: any[];
+  points: any[];
 
   /**
    * Named points assigns an array of points a name so that it can be looked up outside of a closure.

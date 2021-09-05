@@ -28,11 +28,12 @@ const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
 class GravityAndOrbitsClock {
   baseDTValue: number;
+  timeSpeedProperty: EnumerationProperty;
+  timeProperty: NumberProperty;
+
   private isRunningProperty: BooleanProperty;
-  private timeProperty: NumberProperty;
   private dt: number;
   private steppingProperty: Property;
-  timeSpeedProperty: EnumerationProperty;
   private interpolationRatio: number;
   private eventTimer: EventTimer | null;
 

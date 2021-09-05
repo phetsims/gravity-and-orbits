@@ -7,11 +7,13 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import Utils from '../../../../dot/js/Utils.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import BodyNode from './BodyNode.js';
 import MassReadoutNode from './MassReadoutNode.js';
 
 const billionBillionSpaceStationMassesString = gravityAndOrbitsStrings.billionBillionSpaceStationMasses;
@@ -24,7 +26,7 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
    * @param {BodyNode} bodyNode
    * @param {Property.<boolean>} visibleProperty
    */
-  constructor( bodyNode, visibleProperty ) {
+  constructor( bodyNode: BodyNode, visibleProperty: Property ) {
     super( bodyNode, visibleProperty, bodyNode.body.type === 'planet' ? {
       textMaxWidth: 400
     } : {} );

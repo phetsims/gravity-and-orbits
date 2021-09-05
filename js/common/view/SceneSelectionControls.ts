@@ -18,6 +18,8 @@ import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushBut
 import resetArrowImg from '../../../images/reset_arrow_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import Property from '../../../../axon/js/Property.js';
+import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 
 class SceneSelectionControls extends Node {
 
@@ -26,10 +28,10 @@ class SceneSelectionControls extends Node {
    * @param {Array.<GravityAndOrbitsScene>} modes
    * @param {Object} [options] - This object contains options for main node of planet menu.
    */
-  constructor( sceneProperty, modes, options ) {
+  constructor( sceneProperty: Property, modes: GravityAndOrbitsScene[], options? ) {
     super( options );
 
-    const content = []; // for radio buttons
+    const content: Object[] = []; // for radio buttons
     const resetButtons = modes.map( scene => {
       content.push( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 

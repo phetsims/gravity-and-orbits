@@ -15,9 +15,11 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
 
 const clearString = gravityAndOrbitsStrings.clear;
 
@@ -25,7 +27,7 @@ const clearString = gravityAndOrbitsStrings.clear;
 const FONT_SIZE = 22;
 
 class TimeCounter extends Node {
-  private timeListener: ( time ) => void;
+  private timeListener: ( time: number ) => void;
 
   /**
    * @param {function} timeFormatter
@@ -33,7 +35,7 @@ class TimeCounter extends Node {
    * @param {Tandem} tandem
    * @param [options]
    */
-  constructor( timeFormatter, clock, tandem, options ) {
+  constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, options?: { bottom: number; right: number; scale: number; } ) {
     super();
 
     // day text counter

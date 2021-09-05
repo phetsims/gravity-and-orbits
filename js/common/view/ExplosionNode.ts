@@ -28,7 +28,7 @@ class ExplosionNode extends Node {
     super();
 
     // Function that computes the diameter as a function of the animation step
-    const getDiameter = numClockTicksSinceExplosion => {
+    const getDiameter = ( numClockTicksSinceExplosion: number ) => {
       if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
         const myFunction = new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2,
           1, this.getMaxViewDiameter( body, modelViewTransformProperty ) );
@@ -67,16 +67,16 @@ class ExplosionNode extends Node {
    * @returns {BodyRenderer}
    * @private
    */
-  getExplosionEdgeGraphic( body, getDiameter ) {
+  getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any; } ) {
     const yellowAndWhite = {
       highlight: 'white',
       color: 'yellow'
     };
-    const getDoubleRadius = radius => radius * 2;
+    const getDoubleRadius = ( radius: number ) => radius * 2;
     const explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
     const explodedProperty = new DerivedProperty( [ body.isCollidedProperty, body.clockTicksSinceExplosionProperty ],
-      ( collided, clockTicks: number ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
+      ( collided: boolean, clockTicks: number ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
 
     explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
 
@@ -86,7 +86,7 @@ class ExplosionNode extends Node {
   }
 
   // @private
-  getMaxViewDiameter( body: Body, modelViewTransformProperty ) {
+  getMaxViewDiameter( body: Body, modelViewTransformProperty: Property ) {
     return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
   }
 }

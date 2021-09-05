@@ -153,7 +153,7 @@ class ModelState {
    * @param {BodyState} bodyState
    * @returns {Vector2}
    */
-  getNetForce( bodyState ) {
+  getNetForce( bodyState: BodyState ) {
 
     // use netForce to keep track of the net force, initialize to zero.
     netForce.setXY( 0, 0 );
@@ -177,7 +177,7 @@ class ModelState {
    * @param {BodyState} target
    * @returns {Vector2}
    */
-  getTwoBodyForce( source, target ) {
+  getTwoBodyForce( source: BodyState, target: BodyState ) {
     if ( source.position.equals( target.position ) ) {
 
       // Two bodies at exactly the same position would feel an infinite force.  In the physics computation, this would

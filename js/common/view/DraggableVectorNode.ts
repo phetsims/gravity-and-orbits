@@ -66,7 +66,7 @@ class DraggableVectorNode extends VectorNode {
     this.addChild( text );
 
     // Center the grab area on the tip (see getTip()) when any of its dependencies change
-    const propertyListener = visible => {
+    const propertyListener = ( visible: boolean ) => {
       if ( visible ) {
         const tip = this.getTip();
         grabArea.center = tip;
@@ -110,7 +110,7 @@ class DraggableVectorNode extends VectorNode {
     text.moveToBack();
 
     // For PhET-iO, when the node does not support input, don't show the drag circle
-    this.inputEnabledProperty.link( inputEnabled => {
+    this.inputEnabledProperty.link( ( inputEnabled: boolean ) => {
       grabArea.visible = inputEnabled;
       text.visible = inputEnabled;
     } );

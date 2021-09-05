@@ -7,7 +7,9 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
+import Range from '../../../../dot/js/Range.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Shape from '../../../../kite/js/Shape.js';
 import merge from '../../../../phet-core/js/merge.js';
@@ -16,6 +18,7 @@ import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import SceneryConstants from '../../../../scenery/js/SceneryConstants.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
 import VSlider from '../../../../sun/js/VSlider.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 
@@ -32,7 +35,7 @@ class ZoomControl extends Node {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( scaleProperty, tandem, options ) {
+  constructor( scaleProperty: Property, tandem: Tandem, options?: Object ) {
 
     options = merge( {
       scale: 0.8,
@@ -91,7 +94,7 @@ class SliderButton extends RectangularPushButton {
    * @param {boolean} isIncrease flag for defining type of button
    * @param {Object} [options]
    */
-  constructor( scaleProperty, range, step, isIncrease, options ) {
+  constructor( scaleProperty: Property, range: Range, step: number, isIncrease: boolean, options? ) {
 
     // create default view
     const sample = new Node( {

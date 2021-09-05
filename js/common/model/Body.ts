@@ -46,6 +46,7 @@ class Body extends PhetioObject {
   pathLength: number;
   path: any[];
   userControlled: boolean;
+  clockTicksSinceExplosionProperty: NumberProperty;
 
   readonly touchDilation: number;
   readonly previousPosition: Vector2;
@@ -67,7 +68,7 @@ class Body extends PhetioObject {
   private readonly tandemName: string;
   private bodyNodeTandemName: string;
   private accelerationProperty: Vector2Property;
-  private clockTicksSinceExplosionProperty: NumberProperty;
+
   private boundsProperty: Property;
   private massSettable: boolean;
   private readonly maxPathLength: number;

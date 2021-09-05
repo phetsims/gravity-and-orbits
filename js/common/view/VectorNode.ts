@@ -25,7 +25,7 @@ class VectorNode extends Node {
   private body: Body;
   private vectorProperty: Property;
   protected transformProperty: Property;
-  private readonly propertyListener: ( visible:boolean ) => void;
+  private readonly propertyListener: ( visible: boolean ) => void;
   static FORCE_SCALE: number;
   protected readonly vectorNodeScale: number;
 
@@ -55,7 +55,7 @@ class VectorNode extends Node {
 
     // Only show if the body hasn't collided
     const shouldBeShownProperty = new DerivedProperty(
-      [ visibleProperty, body.isCollidedProperty ], ( visible, collided ) => visible && !collided
+      [ visibleProperty, body.isCollidedProperty ], ( visible: boolean, collided: boolean ) => visible && !collided
     );
     shouldBeShownProperty.linkAttribute( this, 'visible' );
 
@@ -95,11 +95,7 @@ class VectorNode extends Node {
    * @returns {Vector2}
    * @protected
    */
-  getTip( tail? ) {
-    if ( typeof tail === 'undefined' ) {
-      tail = this.getTail();
-    }
-
+  getTip( tail: Vector2 = this.getTail() ) {
     const force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.vectorNodeScale ) );
     return new Vector2( force.x + tail.x, force.y + tail.y );
   }
