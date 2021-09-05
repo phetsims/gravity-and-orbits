@@ -216,7 +216,7 @@ class Body extends PhetioObject {
         steppingProperty,
         rewindingProperty,
         this.freezeRewindChangeProperty
-      ], ( playButtonPressed, stepping, rewinding, freezeRewind ) =>
+      ], ( playButtonPressed: boolean, stepping: boolean, rewinding: boolean, freezeRewind: boolean ) =>
         !playButtonPressed && !stepping && !rewinding && !freezeRewind
     );
 
@@ -241,7 +241,7 @@ class Body extends PhetioObject {
     } );
 
     // @public
-    this.speedProperty = new DerivedProperty( [ this.velocityProperty ], velocity => velocity.magnitude, {
+    this.speedProperty = new DerivedProperty( [ this.velocityProperty ], ( velocity: Vector2 ) => velocity.magnitude, {
       phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'speedProperty' ),
       units: 'm/s',
@@ -260,7 +260,7 @@ class Body extends PhetioObject {
     } );
 
     // @private (only used for PhET-iO)
-    this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], force => force.magnitude, {
+    this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], ( force: Vector2 ) => force.magnitude, {
       phetioDocumentation: 'The magnitude of the net force on this body by other bodies',
       phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'forceMagnitudeProperty' ),
@@ -373,7 +373,7 @@ class Body extends PhetioObject {
    * @param stateObject
    * @public (phet-io)
    */
-  setStateObject( stateObject ) {
+  setStateObject( stateObject: { pathLength: number; modelPathLength: number; path: any; } ) {
     this.pathLength = stateObject.pathLength;
     this.modelPathLength = stateObject.modelPathLength;
     this.path = ArrayIO( Vector2.Vector2IO ).fromStateObject( stateObject.path );
@@ -420,7 +420,7 @@ class Body extends PhetioObject {
    * @public
    * @param {BodyState} bodyState
    */
-  updateBodyStateFromModel( bodyState ) {
+  updateBodyStateFromModel( bodyState: { position: any; velocity: any; acceleration: { multiplyScalar: ( arg0: any ) => any; }; mass: any; rotation: any; } ) {
     if ( !this.isCollidedProperty.value ) {
       if ( this.isMovableProperty.value && !this.userControlled ) {
         this.positionProperty.set( bodyState.position );
@@ -509,7 +509,7 @@ class Body extends PhetioObject {
    * @public
    * @returns {BodyRenderer}
    */
-  createRenderer( viewDiameter ) {
+  createRenderer( viewDiameter: number ) {
     return this.renderer( this, viewDiameter );
   }
 
@@ -529,7 +529,7 @@ class Body extends PhetioObject {
    * @param {Body} body
    * @returns {boolean}
    */
-  collidesWidth( body ) {
+  collidesWidth( body: Body ) {
     const position1 = this.positionProperty.get();
     const position2 = body.positionProperty.get();
 
@@ -589,8 +589,8 @@ class Body extends PhetioObject {
 const BodyIO = new IOType( 'BodyIO', {
   valueType: Body,
   documentation: 'Represents a physical body in the simulation',
-  toStateObject: body => body.toStateObject(),
-  applyState: ( body, stateObject ) => body.setStateObject( stateObject ),
+  toStateObject: ( body: Body ) => body.toStateObject(),
+  applyState: ( body: Body, stateObject: { pathLength: number; modelPathLength: number; path: any; } ) => body.setStateObject( stateObject ),
   stateSchema: {
     pathLength: NumberIO,
     modelPathLength: NumberIO,

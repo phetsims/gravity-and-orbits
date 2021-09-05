@@ -10,6 +10,7 @@
  * @author Martin Veillette (Berea College)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -49,7 +50,7 @@ class ModelState {
    * @param {Property.<boolean>} gravityEnabledProperty
    * @returns {ModelState}
    */
-  getNextState( dt, gravityEnabledProperty ) {
+  getNextState( dt: number, gravityEnabledProperty: Property ) {
 
     if ( gravityEnabledProperty.get() ) {
       return this.getNextInteractingState( dt );

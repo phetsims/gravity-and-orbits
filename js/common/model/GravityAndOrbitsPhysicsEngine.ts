@@ -22,7 +22,7 @@ import Property from '../../../../axon/js/Property';
  * @param {Body} body
  * @returns {Body} the smaller body
  */
-const getSmaller = ( other: Body, body: Body ):Body => other.massProperty.get() < body.massProperty.get() ? other : body;
+const getSmaller = ( other: Body, body: Body ): Body => other.massProperty.get() < body.massProperty.get() ? other : body;
 /**
  * For use inside a map call, factored out here for performance
  * @param body
@@ -92,9 +92,8 @@ class GravityAndOrbitsPhysicsEngine {
       // @ts-ignore
                           this.clock.timeSpeedProperty.value === TimeSpeed.NORMAL ? 4 :
 
-                            // @ts-ignore
-                          this.clock.timeSpeedProperty.value === TimeSpeed.FAST ? 7 :
-                          null;
+                          // TimeSpeed.FAST
+                          7;
     // step the model by the smallest standard time step for the orbital mode
     for ( let i = 0; i < numberOfSteps; i++ ) {
       this.step( smallestTimeStep );
@@ -118,7 +117,7 @@ class GravityAndOrbitsPhysicsEngine {
    *
    * @param {number} dt
    */
-  step( dt ) {
+  step( dt:number ) {
 
     // Compute the next state for each body based on the current state of all bodies in the system.
     const bodyStates = this.bodies.map( getBodyState );
@@ -158,7 +157,7 @@ class GravityAndOrbitsPhysicsEngine {
    * @public
    * @param body
    */
-  addBody( body ) {
+  addBody( body:Body ) {
     this.bodies.push( body );
 
     // update the force vectors when the position or mass changes

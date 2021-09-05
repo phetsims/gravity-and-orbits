@@ -34,7 +34,7 @@ class GravityAndOrbitsClock {
   private steppingProperty: Property;
   timeSpeedProperty: EnumerationProperty;
   private interpolationRatio: number;
-  private eventTimer: EventTimer;
+  private eventTimer: EventTimer | null;
 
   /**
    * @param {number} baseDTValue (multiplied by scale to obtain true dt)
@@ -68,6 +68,8 @@ class GravityAndOrbitsClock {
 
     // Fraction between old state=0 and new state=1
     this.interpolationRatio = 1;
+
+    this.eventTimer = null;
   }
 
   /**
@@ -136,8 +138,10 @@ class GravityAndOrbitsClock {
    * @returns {type} description
    */
   step( dt: number ) {
-    this.eventTimer.step( dt );
-    this.interpolationRatio = this.eventTimer.getRatio();
+    if ( this.eventTimer ) {
+      this.eventTimer.step( dt );
+      this.interpolationRatio = this.eventTimer.getRatio();
+    }
   }
 
   // statics

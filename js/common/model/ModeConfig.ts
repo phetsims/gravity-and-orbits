@@ -21,14 +21,14 @@ const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 abstract class ModeConfig {
   readonly dt: number;
   readonly zoom: number;
-  readonly initialMeasuringTapePosition: Line;
-  readonly forceScale: number;
+  readonly initialMeasuringTapePosition: Line | null;
+  readonly forceScale: number | null;
 
   /**
    * @param {number} zoom
    * @constructor
    */
-  protected constructor( zoom ) {
+  protected constructor( zoom: number ) {
     this.dt = DEFAULT_DT; // @public
     this.zoom = zoom; // @public
 

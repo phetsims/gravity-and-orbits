@@ -96,7 +96,7 @@ class GravityAndOrbitsModel {
   }
 
   // @public
-  step( dt ) {
+  step( dt: number ) {
 
     // limit dt to 1 so there are no large jumps
     dt = Math.min( 1, dt );
