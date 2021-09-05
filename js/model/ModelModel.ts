@@ -9,6 +9,9 @@ import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import ModelSceneFactory from './ModelSceneFactory.js';
 
+const x: number = 'hello';
+console.log( x );
+
 class ModelModel extends GravityAndOrbitsModel {
 
   /**
