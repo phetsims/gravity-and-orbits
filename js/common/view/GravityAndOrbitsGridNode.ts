@@ -1,4 +1,4 @@
-// Copyright 2020, University of Colorado Boulder
+// Copyright 2020-2021, University of Colorado Boulder
 
 /**
  * When enabled, shows a grid across the play area that helps the user to make quantitative comparisons
