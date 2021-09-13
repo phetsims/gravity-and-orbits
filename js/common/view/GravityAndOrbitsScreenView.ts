@@ -20,6 +20,8 @@ import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsControls from './GravityAndOrbitsControls.js';
 import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.js';
 import MassControlPanel from './MassControlPanel.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 // constants
 const MARGIN = 5;
@@ -32,7 +34,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
    * @param {GravityAndOrbitsModel} model
    * @param {Tandem} tandem
    */
-  constructor( model, tandem ) {
+  constructor( model: GravityAndOrbitsModel, tandem: Tandem ) {
 
     super( {
       tandem: tandem

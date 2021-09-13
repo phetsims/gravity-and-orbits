@@ -30,6 +30,9 @@ import TimeCounter from './TimeCounter.js';
 import VectorNode from './VectorNode.js';
 import ZoomControl from './ZoomControl.js';
 import Dimension2 from '../../../../dot/js/Dimension2';
+import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
 const vString = gravityAndOrbitsStrings.v;
@@ -51,7 +54,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
    * @param {GravityAndOrbitsModel} model
    * @param {Tandem} tandem
    */
-  constructor( scene, model, tandem ) {
+  constructor( scene: GravityAndOrbitsScene, model: GravityAndOrbitsModel, tandem: Tandem ) {
     const forceScale = scene.forceScale;
 
     // each orbit mode has its own play area with a CanvasNode for rendering paths
@@ -71,7 +74,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     const velocityVectorColorOutline = new Color( 64, 64, 64 );
 
     // Use canvas coordinates to determine whether something has left the visible area
-    const isReturnableProperties = [];
+    const isReturnableProperties: DerivedProperty[] = [];
     bodies.forEach( body => {
       const bodyNode = new BodyNode( body, body.labelAngle, model.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
       const massReadoutNode = scene.massReadoutFactory( bodyNode, model.showMassProperty );

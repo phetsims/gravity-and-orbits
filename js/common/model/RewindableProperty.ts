@@ -18,7 +18,7 @@ import IOType from '../../../../tandem/js/types/IOType.js';
 type RewindablePropertyOptions = {
 
   // TODO: Move these to PhetioObjectOptions, see https://github.com/phetsims/gravity-and-orbits/issues/405
-  tandem?: Tandem,
+  tandem: Tandem,
   phetioType?: IOType;
   units?: string;
   phetioHighFrequency?: boolean;

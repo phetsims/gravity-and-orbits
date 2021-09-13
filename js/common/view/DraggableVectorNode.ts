@@ -81,11 +81,11 @@ class DraggableVectorNode extends VectorNode {
 
     // Add the drag handler
     const dragListener = new DragListener( {
-      start: event => {
+      start: ( event: { pointer: { point: Vector2; }; } ) => {
         previousPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
         previousValue = body.velocityProperty.get();
       },
-      drag: event => {
+      drag: ( event: { pointer: { point: Vector2; }; } ) => {
 
         const currentPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
         if ( previousPoint ) {
@@ -100,7 +100,7 @@ class DraggableVectorNode extends VectorNode {
           body.userModifiedVelocityEmitter.emit();
         }
       },
-      end: event => {},
+      end: () => {},
       tandem: tandem.createTandem( 'dragListener' )
     } );
     grabArea.addInputListener( dragListener );

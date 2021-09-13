@@ -9,6 +9,8 @@
 
 import SceneFactory from '../common/SceneFactory.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
+import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
 class ToScaleSceneFactory extends SceneFactory {
 
@@ -17,7 +19,7 @@ class ToScaleSceneFactory extends SceneFactory {
    * @param {Tandem} modelTandem
    * @param {Tandem} viewTandem
    */
-  constructor( model, modelTandem, viewTandem ) {
+  constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       model,
       new SceneFactory.SunEarthModeConfig(),

@@ -10,6 +10,8 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Tandem from '../../../tandem/js/Tandem.js';
+import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import SceneFactory from '../common/SceneFactory.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 
@@ -23,7 +25,7 @@ const EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier fo
  * @param {number} days
  * @returns {number}
  */
-const daysToSeconds = days => days * 24 * 60 * 60;
+const daysToSeconds = ( days: number ) => days * 24 * 60 * 60;
 
 class ModelSceneFactory extends SceneFactory {
 
@@ -32,7 +34,7 @@ class ModelSceneFactory extends SceneFactory {
    * @param {Tandem} modelTandem
    * @param {Tandem} viewTandem
    */
-  constructor( model, modelTandem, viewTandem ) {
+  constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       model,
       new SunEarthModeConfig(),

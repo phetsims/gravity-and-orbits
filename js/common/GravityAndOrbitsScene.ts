@@ -32,6 +32,7 @@ import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
 import GravityAndOrbitsPhysicsEngine from './model/GravityAndOrbitsPhysicsEngine.js';
 import GravityAndOrbitsSceneView from './view/GravityAndOrbitsSceneView.js';
+import Node from '../../../scenery/js/nodes/Node.js';
 import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
 import ModeConfig from './model/ModeConfig.js';
 import BodyNode from './view/BodyNode.js';
@@ -43,9 +44,9 @@ const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
 const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
 
 type GravityAndOrbitsSceneOptions = {
-  adjustMoonOrbit?: boolean;
-  dt?: number;
-  gridCenter?: Vector2;
+  adjustMoonOrbit: boolean;
+  dt: number;
+  gridCenter: Vector2;
 };
 
 type MeasuringTapeOptions = {
@@ -60,25 +61,26 @@ class GravityAndOrbitsScene extends PhetioObject {
   transformProperty: Property;
   radioButtonTandemName: string;
   resetButtonTandemName: string;
+  sceneView: GravityAndOrbitsSceneView;
+  massControlPanelTandemName: string;
+  forceScale: number;
+  physicsEngine: GravityAndOrbitsPhysicsEngine;
+  massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node;
+  zoomLevelProperty: NumberProperty;
+  velocityVectorScale: number;
+  gridSpacing: number;
+  gridCenter: Vector2;
+  timeFormatter: ( arg0: number ) => string;
+  measuringTapeStartPointProperty: Vector2Property;
+  measuringTapeEndPointProperty: Vector2Property;
+  isPlayingProperty: BooleanProperty;
+  massControlPanel: Node;
 
   private deviatedFromDefaultsProperty: BooleanProperty;
-  private measuringTapeStartPointProperty: Vector2Property;
-  private measuringTapeEndPointProperty: Vector2Property;
-  private zoomLevelProperty: NumberProperty;
   private tandemName: string;
-  private massControlPanelTandemName: string;
   private dt: number;
-  private forceScale: number;
-  private velocityVectorScale: number;
-  private isPlayingProperty: BooleanProperty;
-  private physicsEngine: GravityAndOrbitsPhysicsEngine;
-  private gridSpacing: number;
-  private gridCenter: Vector2;
   private rewindingProperty: BooleanProperty;
   private timeSpeedProperty: EnumerationProperty;
-  private timeFormatter: ( arg0: number ) => string;
-  private massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node;
-  private sceneView: GravityAndOrbitsSceneView;
   private pairs: Pair[];
 
   /**
@@ -96,7 +98,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Object} [options]
    */
   constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node, gridSpacing: number, tandem: Tandem,
-               sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], options?: GravityAndOrbitsSceneOptions ) {
+               sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], options?: Partial<GravityAndOrbitsSceneOptions> ) {
 
     const forceScale = modeConfig.forceScale;
     const initialMeasuringTapePosition = modeConfig.initialMeasuringTapePosition;
@@ -110,7 +112,7 @@ class GravityAndOrbitsScene extends PhetioObject {
       gridCenter: new Vector2( 0, 0 ),
       dt: modeConfig.dt,
       adjustMoonOrbit: false
-    }, options );
+    }, options ) as GravityAndOrbitsSceneOptions;
     const gridCenter = options.gridCenter;
     const dt = options.dt;
 

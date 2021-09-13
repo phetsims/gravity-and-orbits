@@ -24,7 +24,6 @@ class BodyConfiguration {
   readonly y: number;
   vx: number;
   vy: number;
-  readonly options: object;
   readonly isMovable: boolean;
   readonly rotationPeriod: null | number;
 

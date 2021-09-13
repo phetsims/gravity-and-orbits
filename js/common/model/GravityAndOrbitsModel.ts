@@ -34,15 +34,16 @@ class GravityAndOrbitsModel {
   showGridProperty: BooleanProperty;
   showMassProperty: BooleanProperty;
   showMeasuringTapeProperty: BooleanProperty;
-  public isPlayingProperty: BooleanProperty;
-  public timeSpeedProperty: EnumerationProperty;
-  public gravityEnabledProperty: BooleanProperty;
-  public steppingProperty: BooleanProperty;
-  public rewindingProperty: BooleanProperty;
+  sceneProperty: Property;
+  isPlayingProperty: BooleanProperty;
+  timeSpeedProperty: EnumerationProperty;
+  gravityEnabledProperty: BooleanProperty;
+  steppingProperty: BooleanProperty;
+  rewindingProperty: BooleanProperty;
   showMassCheckbox: boolean;
   showMeasuringTape: boolean;
-  private sceneList: SceneFactory;
-  private sceneProperty: Property;
+  sceneList: SceneFactory;
+
   static G: number;
 
   /**
