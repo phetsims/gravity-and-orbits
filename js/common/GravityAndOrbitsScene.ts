@@ -43,9 +43,14 @@ const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
 const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
 
 type GravityAndOrbitsSceneOptions = {
-  adjustMoonOrbit: boolean;
-  dt: number;
-  gridCenter: Vector2;
+  adjustMoonOrbit?: boolean;
+  dt?: number;
+  gridCenter?: Vector2;
+};
+
+type MeasuringTapeOptions = {
+  tandem?: Tandem,
+  units?: string
 };
 
 class GravityAndOrbitsScene extends PhetioObject {
@@ -122,7 +127,7 @@ class GravityAndOrbitsScene extends PhetioObject {
       tandem: tandem.createTandem( 'deviatedFromDefaultsProperty' ),
       phetioDocumentation: 'for internal PhET use only'
     } );
-    const measuringTapePointOptions = {
+    const measuringTapePointOptions: MeasuringTapeOptions = {
       units: 'm'
     };
 
