@@ -38,9 +38,6 @@ import BodyNode from './view/BodyNode.js';
 import Pair from './model/Pair.js';
 import EnumerationProperty from '../../../axon/js/EnumerationProperty';
 
-const x: string = 'hello';
-console.log( x );
-
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
 const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
