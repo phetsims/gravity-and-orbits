@@ -109,6 +109,8 @@ class Body extends PhetioObject {
   constructor( type: GravityAndOrbitsBodiesType, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
                tandem: Tandem, options: any ) {
 
+    const x: string = 'Body constructor';
+    console.log( x );
     options = merge( {
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
       diameterScale: 1, // scale factor applied to the diameter
