@@ -15,15 +15,17 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
+import Body from '../model/Body.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
-const moonMassString = gravityAndOrbitsStrings.moonMass;
-const planetMassString = gravityAndOrbitsStrings.planetMass;
-const satelliteMassString = gravityAndOrbitsStrings.satelliteMass;
-const starMassString = gravityAndOrbitsStrings.starMass;
+const moonMassString = gravityAndOrbitsStringsTS.moonMass;
+const planetMassString = gravityAndOrbitsStringsTS.planetMass;
+const satelliteMassString = gravityAndOrbitsStringsTS.satelliteMass;
+const starMassString = gravityAndOrbitsStringsTS.starMass;
 
 // constants
 const CONTROL_FONT = new PhetFont( 14 );
@@ -34,26 +36,30 @@ const LABEL_MAP = {
   moon: moonMassString
 };
 
+type MassControlPanelOptions = {
+  tandem: Tandem
+};
+
 class MassControlPanel extends VBox {
 
   /**
    * @param massSettableBodies
    * @param options
    */
-  constructor( massSettableBodies, options ) {
+  constructor( massSettableBodies: Body[], options?: Partial<MassControlPanelOptions> ) {
 
-    options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+    const filledOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
 
       // Managed by the simulation, can be buggy if independently controlled by studio
       visiblePropertyOptions: { phetioReadOnly: true }
-    }, options );
+    }, options ) as MassControlPanelOptions;
 
     const children = [];
 
     for ( let i = 0; i < massSettableBodies.length; i++ ) {
 
       const massSettableBody = massSettableBodies[ i ];
-      const massSettableBodyTandem = options.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
+      const massSettableBodyTandem = filledOptions.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
       const sliderNode = new Node( { tandem: massSettableBodyTandem } );
 
       const label = new Text( LABEL_MAP[ massSettableBody.type ], {

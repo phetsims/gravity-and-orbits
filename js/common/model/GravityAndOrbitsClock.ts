@@ -13,8 +13,8 @@ import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import EventTimer from '../../../../phet-core/js/EventTimer.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import Tandem from '../../../../tandem/js/Tandem';
-import Property from '../../../../axon/js/Property';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import Property from '../../../../axon/js/Property.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty';
 
 // constants

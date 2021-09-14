@@ -5,6 +5,7 @@
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 
+import Tandem from '../../../tandem/js/Tandem.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import ModelSceneFactory from './ModelSceneFactory.js';
@@ -15,7 +16,7 @@ class ModelModel extends GravityAndOrbitsModel {
    * @param {Tandem} modelTandem
    * @param {Tandem} viewTandem - needed to create the scene views
    */
-  constructor( modelTandem, viewTandem ) {
+  constructor( modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       false,
       model => new ModelSceneFactory( model, modelTandem, viewTandem ),

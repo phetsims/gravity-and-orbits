@@ -16,13 +16,14 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property';
-import Tandem from '../../../../tandem/js/Tandem';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 
-const gravityString = gravityAndOrbitsStrings.gravity;
+const gravityString = gravityAndOrbitsStringsTS.gravity;
 
 // strings
-const offString = gravityAndOrbitsStrings.off;
-const onString = gravityAndOrbitsStrings.on;
+const offString = gravityAndOrbitsStringsTS.off;
+const onString = gravityAndOrbitsStringsTS.on;
 
 // constants
 const FONT = new PhetFont( 14 );
@@ -30,7 +31,7 @@ const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColors.foregroundProper
 const RADIO_OPTIONS = { radius: 7 };
 
 type GravityControlOptions = {
-  tandem?: Tandem
+  tandem: Tandem
 }
 
 class GravityControl extends Node {
@@ -39,22 +40,24 @@ class GravityControl extends Node {
    * @param {Property.<boolean>} gravityEnabledProperty
    * @param {Object} [options] - This object contains options for main node of gravity menu.
    */
-  constructor( gravityEnabledProperty: Property, options?: GravityControlOptions ) {
+  constructor( gravityEnabledProperty: Property, options?: Partial<GravityControlOptions> ) {
     super( options );
+
+    const filledOptions: GravityControlOptions = merge( { tandem: Tandem.OPTIONAL }, options ) as GravityControlOptions;
 
     const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
     const onTextNode = new Text( onString, TEXT_OPTIONS );
     const offTextNode = new Text( offString, TEXT_OPTIONS );
 
     this.addLinkedElement( gravityEnabledProperty, {
-      tandem: options.tandem.createTandem( 'gravityEnabledProperty' )
+      tandem: filledOptions.tandem.createTandem( 'gravityEnabledProperty' )
     } );
 
     this.addChild( new HBox( {
       spacing: 10, bottom: 2, children: [
         gravityTextNode,
-        new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOnRadioButton' ) }, RADIO_OPTIONS ) ),
-        new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOffRadioButton' ) }, RADIO_OPTIONS ) )
+        new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: filledOptions.tandem.createTandem( 'gravityOnRadioButton' ) }, RADIO_OPTIONS ) ),
+        new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: filledOptions.tandem.createTandem( 'gravityOffRadioButton' ) }, RADIO_OPTIONS ) )
       ]
     } ) );
   }

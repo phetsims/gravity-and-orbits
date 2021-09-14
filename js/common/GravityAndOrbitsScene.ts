@@ -36,6 +36,7 @@ import Node from '../../../scenery/js/nodes/Node.js';
 import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
 import ModeConfig from './model/ModeConfig.js';
 import BodyNode from './view/BodyNode.js';
+import Body from './model/Body.js';
 import Pair from './model/Pair.js';
 import EnumerationProperty from '../../../axon/js/EnumerationProperty';
 
@@ -74,7 +75,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   measuringTapeStartPointProperty: Vector2Property;
   measuringTapeEndPointProperty: Vector2Property;
   isPlayingProperty: BooleanProperty;
-  massControlPanel: Node;
+  massControlPanel: Node | null;
 
   private deviatedFromDefaultsProperty: BooleanProperty;
   private tandemName: string;
@@ -108,13 +109,13 @@ class GravityAndOrbitsScene extends PhetioObject {
     const resetButtonTandemName = `${tandemName}ResetButton`;
     const massControlPanelTandemName = `${tandemName}MassesControlPanel`;
 
-    options = merge( {
+    const filledOptions: GravityAndOrbitsSceneOptions = merge( {
       gridCenter: new Vector2( 0, 0 ),
       dt: modeConfig.dt,
       adjustMoonOrbit: false
     }, options ) as GravityAndOrbitsSceneOptions;
-    const gridCenter = options.gridCenter;
-    const dt = options.dt;
+    const gridCenter = filledOptions.gridCenter as Vector2;
+    const dt = filledOptions.dt;
 
     super( {
       phetioDocumentation: 'A group of orbital masses which can be selected',
@@ -122,6 +123,8 @@ class GravityAndOrbitsScene extends PhetioObject {
       phetioState: false,
       tandem: tandem
     } );
+
+    this.massControlPanel = null;
 
     this.activeProperty = new BooleanProperty( false );
 
@@ -154,7 +157,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.massControlPanelTandemName = massControlPanelTandemName; // @public (read-only)
 
     this.dt = dt; // @private
-    this.forceScale = forceScale; // @private
+    this.forceScale = forceScale as number; // @private
     this.iconImage = iconImage; // @private
 
     // @private
@@ -178,9 +181,9 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     // @private
     const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.timeSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
-    this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
+    this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, filledOptions.adjustMoonOrbit );
 
-    Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
+    Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed: boolean, active: boolean ) =>
       this.physicsEngine.clock.setRunning( playButtonPressed && active )
     );
 
@@ -194,7 +197,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     // Save the new PhET-iO state as an initial configuration for this scene, but only if the state being set applies
     // to this scene.
-    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( state => {
+    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( ( state: Object ) => {
 
       const phetioIDsToSet = Object.keys( state );
       for ( let i = 0; i < phetioIDsToSet.length; i++ ) {
@@ -214,7 +217,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @returns {ModelViewTransform2}
    * @private
    */
-  createTransform( defaultZoomScale, gridCenter ) {
+  createTransform( defaultZoomScale: number, gridCenter: Vector2 ) {
     const modelBounds = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
     this.modelBoundsProperty.set( modelBounds );
     const playAreaHeight = PLAY_AREA_HEIGHT - 50;
@@ -234,7 +237,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @returns {Rectangle}
    * @private
    */
-  getTargetRectangle( targetScale, targetCenterModelPoint ) {
+  getTargetRectangle( targetScale: number, targetCenterModelPoint: Vector2 ) {
     const z = targetScale * 1.5E-9;
     const modelWidth = PLAY_AREA_WIDTH / z;
     const modelHeight = PLAY_AREA_HEIGHT / z;
@@ -268,7 +271,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @public
    * @param body
    */
-  addBody( body ) {
+  addBody( body: Body ) {
     this.physicsEngine.addBody( body );
 
     body.massProperty.link( this.setDeviatedFromDefaults.bind( this ) );

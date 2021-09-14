@@ -18,11 +18,18 @@ import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import Body from '../model/Body.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
+import RewindableProperty from '../model/RewindableProperty.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
 const STEP_BUTTON_RADIUS = 23;
 const PUSH_BUTTON_SPACING = 8;
+
+type GravityAndOrbitsTimeControlNodeOptions = {
+  tandem: Tandem
+};
 
 class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
@@ -30,11 +37,11 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
    * @param {GravityAndOrbitsModel} model
    * @param {Object} [options]
    */
-  constructor( model, options ) {
+  constructor( model: GravityAndOrbitsModel, options?: Partial<GravityAndOrbitsTimeControlNodeOptions> ) {
 
-    options = merge( {
+    const filledOptions: GravityAndOrbitsTimeControlNodeOptions = merge( {
       tandem: Tandem.REQUIRED
-    }, options );
+    }, options ) as GravityAndOrbitsTimeControlNodeOptions;
 
 
     super( model.isPlayingProperty, {
@@ -64,7 +71,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           touchAreaDilation: 5
         }
       },
-      tandem: options.tandem
+      tandem: filledOptions.tandem
     } );
 
     const restartButton = new RestartButton( {
@@ -74,7 +81,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       yMargin: 9.5,
       listener: () => model.sceneProperty.value.rewind(),
       center: this.getPlayPauseButtonCenter().minusXY( PLAY_PAUSE_BUTTON_RADIUS + STEP_BUTTON_RADIUS + PUSH_BUTTON_SPACING, 0 ),
-      tandem: options.tandem.createTandem( 'restartButton' )
+      tandem: filledOptions.tandem.createTandem( 'restartButton' )
     } );
     this.addChild( restartButton );
 
@@ -82,15 +89,15 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     const dependencies = [ model.sceneProperty ];
     model.getScenes().forEach( scene => {
       scene.getBodies().forEach( body => {
-        body.getRewindableProperties().forEach( property => {
+        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
           dependencies.push( property.differentProperty );
         } );
       } );
     } );
     const anyPropertyDifferentProperty = new DerivedProperty( dependencies, () => {
       let changed = false;
-      model.sceneProperty.value.getBodies().forEach( body => {
-        body.getRewindableProperties().forEach( property => {
+      model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
+        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
           changed = changed || property.differentProperty.value;
         } );
       } );

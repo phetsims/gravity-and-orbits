@@ -30,13 +30,14 @@ import BodyConfiguration from './BodyConfiguration';
 import Color from '../../../../scenery/js/util/Color';
 import BodyRenderer from '../view/BodyRenderer';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel';
-import Tandem from '../../../../tandem/js/Tandem';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import type {GravityAndOrbitsBodiesType} from './GravityAndOrbitsBodies';
+import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 
-const moonString = gravityAndOrbitsStrings.moon;
-const planetString = gravityAndOrbitsStrings.planet;
-const satelliteString = gravityAndOrbitsStrings.satellite;
-const starString = gravityAndOrbitsStrings.star;
+const moonString = gravityAndOrbitsStringsTS.moon;
+const planetString = gravityAndOrbitsStringsTS.planet;
+const satelliteString = gravityAndOrbitsStringsTS.satellite;
+const starString = gravityAndOrbitsStringsTS.star;
 
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
@@ -48,10 +49,11 @@ class Body extends PhetioObject {
   userControlled: boolean;
   clockTicksSinceExplosionProperty: NumberProperty;
 
+  readonly density: number;
   readonly touchDilation: number;
   readonly previousPosition: Vector2;
   readonly type: GravityAndOrbitsBodiesType;
-  readonly labelString: string;
+  readonly labelString: string|null;
   readonly massProperty: RewindableProperty;
   readonly velocityProperty: RewindableProperty;
   readonly diameterProperty: NumberProperty;
@@ -64,8 +66,11 @@ class Body extends PhetioObject {
   readonly clearedEmitter: Emitter;
   readonly userModifiedPositionEmitter: Emitter;
   readonly userModifiedVelocityEmitter: Emitter;
+  readonly tandemName: string;
+  readonly tickValue: number;
+  readonly tickLabel: string;
+  readonly massReadoutBelow: boolean;
 
-  private readonly tandemName: string;
   private bodyNodeTandemName: string;
   private accelerationProperty: Vector2Property;
 
@@ -75,9 +80,6 @@ class Body extends PhetioObject {
   private readonly pathLengthBuffer: number;
   private readonly pathLengthLimit: number;
   private modelPathLength: number;
-  private massReadoutBelow: boolean;
-  private tickValue: number;
-  private tickLabel: string;
   private color: Color;
   private highlight: Color;
   private readonly rotationPeriod: number;
@@ -88,7 +90,6 @@ class Body extends PhetioObject {
   private readonly forceProperty: RewindableProperty;
   private forceMagnitudeProperty: DerivedProperty;
   private isMovableProperty: BooleanProperty;
-  private density: number;
 
   static BodyIO: IOType;
 

@@ -30,7 +30,7 @@ type RewindablePropertyOptions = {
 class RewindableProperty extends Property {
   rewindValue: any;
   private changeRewindValueProperty: Property;
-  private differentProperty: BooleanProperty;
+  readonly differentProperty: BooleanProperty;
   static RewindablePropertyIO: ( parameterType: any ) => any;
 
   /**
@@ -39,7 +39,9 @@ class RewindableProperty extends Property {
    * @param {Object} [options]
    * @constructor
    */
-  constructor( changeRewindValueProperty: Property, value: any, options?: RewindablePropertyOptions ) {
+  constructor( changeRewindValueProperty: Property, value: any, options: RewindablePropertyOptions = {
+    tandem: Tandem.OPTIONAL
+  } ) {
     super( value, options );
 
     // @public - the "initial condition" the property can be rewound to, different than the overall "reset" value
@@ -154,7 +156,7 @@ RewindableProperty.RewindablePropertyIO = ( parameterType ) => {
           stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
           return stateObject;
         },
-        applyState: ( property: RewindableProperty, stateObject ) => {
+        applyState: ( property: RewindableProperty, stateObject: { rewindValue: any; } ) => {
           PropertyIOImpl.applyState( property, stateObject );
           property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
         },

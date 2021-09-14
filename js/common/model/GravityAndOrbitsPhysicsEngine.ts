@@ -15,6 +15,7 @@ import ModelState from './ModelState.js';
 import Body from './Body.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 import Property from '../../../../axon/js/Property';
+import {GravityAndOrbitsBodiesType} from './GravityAndOrbitsBodies.js';
 
 /**
  * Return the smaller of two Body instances, for determining which survives a collision.
@@ -92,7 +93,7 @@ class GravityAndOrbitsPhysicsEngine {
       // @ts-ignore
                           this.clock.timeSpeedProperty.value === TimeSpeed.NORMAL ? 4 :
 
-                          // TimeSpeed.FAST
+                            // TimeSpeed.FAST
                           7;
     // step the model by the smallest standard time step for the orbital mode
     for ( let i = 0; i < numberOfSteps; i++ ) {
@@ -117,7 +118,7 @@ class GravityAndOrbitsPhysicsEngine {
    *
    * @param {number} dt
    */
-  step( dt:number ) {
+  step( dt: number ) {
 
     // Compute the next state for each body based on the current state of all bodies in the system.
     const bodyStates = this.bodies.map( getBodyState );
@@ -157,7 +158,7 @@ class GravityAndOrbitsPhysicsEngine {
    * @public
    * @param body
    */
-  addBody( body:Body ) {
+  addBody( body: Body ) {
     this.bodies.push( body );
 
     // update the force vectors when the position or mass changes
@@ -200,10 +201,10 @@ class GravityAndOrbitsPhysicsEngine {
    * Get the body associated with the name.  The name must be one of GravityAndOrbitsBodies.
    * @public
    *
-   * @param {GravityAndOrbitsBodies} type
+   * @param {GravityAndOrbitsBodiesType} type
    * @returns {Body|null}
    */
-  getBody( type ) {
+  getBody( type: GravityAndOrbitsBodiesType ) {
     for ( let i = 0; i < this.bodies.length; i++ ) {
       const body = this.bodies[ i ];
 

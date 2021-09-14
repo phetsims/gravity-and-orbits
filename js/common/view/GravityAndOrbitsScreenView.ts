@@ -95,6 +95,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
     model.sceneProperty.link( scene => {
       for ( let i = 0; i < model.sceneList.scenes.length; i++ ) {
         model.sceneList.scenes[ i ].sceneView.visible = false;
+        // @ts-ignore
         model.sceneList.scenes[ i ].massControlPanel.visible = false;
       }
       scene.sceneView.visible = true;

@@ -15,13 +15,21 @@ import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenVie
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
+import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
+import Tandem from '../../../tandem/js/Tandem.js';
+import gravityAndOrbitsStringsTS from '../gravityAndOrbitsStringsTS.js';
+import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
 
-const toScaleString = gravityAndOrbitsStrings.toScale;
+const toScaleString = gravityAndOrbitsStringsTS.toScale;
 
+type ScreenOptions = {
+  tandem: Tandem,
+  backgroundColorProperty: ProfileColorProperty
+};
 
 class ToScaleScreen extends Screen {
-  constructor( options ) {
-    options = merge( {
+  constructor( options?: Partial<ScreenOptions> ) {
+    const filledOptions = merge( {
       name: toScaleString,
 
       // @ts-ignore
@@ -30,13 +38,13 @@ class ToScaleScreen extends Screen {
         maxIconHeightProportion: 1,
         fill: 'black'
       } )
-    }, options );
+    }, options ) as ScreenOptions;
 
-    const viewTandem = options.tandem.createTandem( 'view' );
+    const viewTandem = filledOptions.tandem.createTandem( 'view' );
     super(
-      () => new ToScaleModel( options.tandem.createTandem( 'model' ), viewTandem ),
-      model => new GravityAndOrbitsScreenView( model, viewTandem ),
-      options
+      () => new ToScaleModel( filledOptions.tandem.createTandem( 'model' ), viewTandem ),
+      ( model: GravityAndOrbitsModel ) => new GravityAndOrbitsScreenView( model, viewTandem ),
+      filledOptions
     );
   }
 }

@@ -14,10 +14,16 @@ import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import CheckboxPanel from './CheckboxPanel.js';
 import GravityControl from './GravityControl.js';
 import SceneSelectionControls from './SceneSelectionControls.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 // constants
 const MENU_SECTION_OPTIONS = { x: 5 };
 const SEPARATOR_OPTIONS = { lineWidth: 2, stroke: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE };
+
+type GravityAndOrbitsControlsOptions = {
+  tandem: Tandem
+};
 
 class GravityAndOrbitsControls extends VBox {
 
@@ -25,21 +31,22 @@ class GravityAndOrbitsControls extends VBox {
    * @param {GravityAndOrbitsModel} model
    * @param {Object} [options]
    */
-  constructor( model, options ) {
+  constructor( model: GravityAndOrbitsModel, options?: Partial<GravityAndOrbitsControlsOptions> ) {
 
-    options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options );
+    // @ts-ignore
+    const filledOptions: GravityAndOrbitsControlsOptions = merge( {} , GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options ) as GravityAndOrbitsControls;
 
     // top separator rectangle for the gravity control section
-    const topSeparator = new HSeparator( 0, merge( { tandem: options.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );
-    const bottomSeparator = new HSeparator( 0, merge( { tandem: options.tandem.createTandem( 'separator2' ) }, SEPARATOR_OPTIONS ) );
+    const topSeparator = new HSeparator( 0, merge( { tandem: filledOptions.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );
+    const bottomSeparator = new HSeparator( 0, merge( { tandem: filledOptions.tandem.createTandem( 'separator2' ) }, SEPARATOR_OPTIONS ) );
 
     // menu sections and separators
     const sections = [
-      new SceneSelectionControls( model.sceneProperty, model.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
+      new SceneSelectionControls( model.sceneProperty, model.getScenes(), merge( { tandem: filledOptions.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
       topSeparator,
-      new GravityControl( model.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
+      new GravityControl( model.gravityEnabledProperty, merge( { tandem: filledOptions.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
       bottomSeparator,
-      new CheckboxPanel( model, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
+      new CheckboxPanel( model, merge( { tandem: filledOptions.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
     ];
 
     assert && assert( sections.length === 5, 'There should be 5 sections in the GravityAndOrbitsControlPanel' );

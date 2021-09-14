@@ -31,7 +31,7 @@ import Transform3 from '../../../../dot/js/Transform3.js';
 class BodyNode extends Node {
   private readonly modelViewTransformProperty: any;
   readonly body: Body;
-  private readonly bodyRenderer: BodyRenderer;
+  readonly bodyRenderer: BodyRenderer;
   private readonly positionListener: ( position: Vector2, modelViewTransform: ModelViewTransform2 ) => void;
   private readonly diameterListener: () => void;
   private readonly modelViewTransformListener: ( modelViewTransform: Transform3 ) => void;
@@ -171,7 +171,7 @@ class BodyNode extends Node {
     node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, {
       stroke: GravityAndOrbitsColors.bodyLabelIndicatorProperty
     } ) );
-    const labelNode = new Text( body.labelString, {
+    const labelNode = new Text( body.labelString as string, {
       font: new PhetFont( 18 ),
       fill: GravityAndOrbitsColors.foregroundProperty,
       maxWidth: 65,

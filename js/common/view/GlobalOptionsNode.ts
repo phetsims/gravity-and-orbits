@@ -11,7 +11,7 @@ import OptionsDialog from '../../../../joist/js/OptionsDialog.js';
 import ProjectorModeCheckbox from '../../../../joist/js/ProjectorModeCheckbox.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import Tandem from '../../../../tandem/js/Tandem';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 class GlobalOptionsNode extends VBox {
   private disposeGlobalOptionsNode: () => void;

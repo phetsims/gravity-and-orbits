@@ -12,8 +12,10 @@ import Range from '../../../../dot/js/Range.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import HSlider from '../../../../sun/js/HSlider.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import Body from '../model/Body.js';
 
 // constants
 const SNAP_TOLERANCE = 0.03;
@@ -32,7 +34,7 @@ class BodyMassControl extends HSlider {
    * @param {string} valueLabel
    * @param {Tandem} tandem
    */
-  constructor( body, min, max, defaultLabelValue, valueLabel, tandem ) {
+  constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: string, tandem: Tandem ) {
 
     // @ts-ignore
     super( body.massProperty, new Range( min, max ), {
@@ -52,7 +54,7 @@ class BodyMassControl extends HSlider {
       thumbFillHighlighted: '#B3D3E2',
 
       // snap to default value if close
-      constrainValue: mass => Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ? defaultLabelValue : mass,
+      constrainValue: ( mass: number ) => Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ? defaultLabelValue : mass,
       tandem: tandem
     } );
 
@@ -67,7 +69,7 @@ class BodyMassControl extends HSlider {
 
     // create a label for the default value
     // @param {string} - string for the label text
-    const createNumberLabel = value => new Text( value, {
+    const createNumberLabel = ( value: string ) => new Text( value, {
       font: new PhetFont( 13 ),
       fill: GravityAndOrbitsColors.foregroundProperty,
       maxWidth: 110
@@ -82,7 +84,7 @@ class BodyMassControl extends HSlider {
     // setting the diameter property took place in Body.setMass() in the Java version, but doesn't work here since
     // the mass itself is set by the slider in this case.
     // derived from: density = mass/volume, and volume = 4/3 pi r r r
-    const massListener = mass => {
+    const massListener = ( mass: number ) => {
       const radius = Math.pow( 3 * mass / 4 / Math.PI / body.density, 1 / 3 );
       body.diameterProperty.set( 2 * radius );
     };

@@ -7,6 +7,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
@@ -15,20 +16,24 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
 
+type MassReadoutNodeOptions = {
+  textMaxWidth: number
+};
+
 abstract class MassReadoutNode extends Node {
   protected bodyNode: BodyNode;
 
-  constructor( bodyNode, visibleProperty, options ) {
+  constructor( bodyNode: BodyNode, visibleProperty: Property, options?: Partial<MassReadoutNodeOptions> ) {
     super();
-    options = merge( {
+    const filledOptions :MassReadoutNodeOptions = merge( {
       textMaxWidth: 240
-    }, options );
+    }, options ) as MassReadoutNodeOptions;
     this.bodyNode = bodyNode; // @protected
 
     const readoutText = new Text( this.createText(), {
       pickable: false,
       font: new PhetFont( 18 ),
-      maxWidth: options.textMaxWidth,
+      maxWidth: filledOptions.textMaxWidth,
       fill: GravityAndOrbitsColors.foregroundProperty
     } );
     this.addChild( readoutText );
@@ -56,7 +61,7 @@ abstract class MassReadoutNode extends Node {
     } );
   }
 
-  protected abstract createText()
+  protected abstract createText(): string
 }
 
 gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );

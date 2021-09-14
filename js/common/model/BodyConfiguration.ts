@@ -13,7 +13,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 declare interface BodyConfigurationOptions {
-  rotationPeriod?: null | number
+  rotationPeriod: null | number
 }
 
 class BodyConfiguration {
@@ -38,9 +38,9 @@ class BodyConfiguration {
    */
   constructor( mass: number, radius: number, x: number, y: number, vx: number, vy: number, options?: BodyConfigurationOptions ) {
 
-    options = merge( {
+    const filledOptions = merge( {
       rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
-    }, options );
+    }, options ) as BodyConfigurationOptions;
 
     // @public
     this.isMovable = true; // True if the object moves based on physics (even non-isMovable things can be dragged though)
@@ -50,7 +50,7 @@ class BodyConfiguration {
     this.y = y;
     this.vx = vx;
     this.vy = vy;
-    this.rotationPeriod = options.rotationPeriod;
+    this.rotationPeriod = filledOptions.rotationPeriod;
   }
 
   // @public

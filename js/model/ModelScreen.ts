@@ -10,19 +10,27 @@ import Screen from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 import modelMipmap from '../../mipmaps/model_icon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
+import gravityAndOrbitsStringsTS from '../gravityAndOrbitsStringsTS.js';
 import ModelModel from './ModelModel.js';
+import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
+import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
 
-const modelString = gravityAndOrbitsStrings.model;
+const modelString = gravityAndOrbitsStringsTS.model;
 
+type ModelScreenOptions = {
+  tandem: Tandem,
+  backgroundColorProperty: ProfileColorProperty
+};
 
 class ModelScreen extends Screen {
-  constructor( options ) {
+  constructor( options?: Partial<ModelScreenOptions> ) {
 
-    options = merge( {
+    const filledOptions = merge( {
       name: modelString,
 
       // @ts-ignore
@@ -31,13 +39,13 @@ class ModelScreen extends Screen {
         maxIconHeightProportion: 1,
         fill: 'black'
       } )
-    }, options );
+    }, options ) as ModelScreenOptions;
 
-    const viewTandem = options.tandem.createTandem( 'view' );
+    const viewTandem = filledOptions.tandem.createTandem( 'view' );
     super(
-      () => new ModelModel( options.tandem.createTandem( 'model' ), viewTandem ),
-      model => new GravityAndOrbitsScreenView( model, viewTandem ),
-      options
+      () => new ModelModel( filledOptions.tandem.createTandem( 'model' ), viewTandem ),
+      ( model: GravityAndOrbitsModel ) => new GravityAndOrbitsScreenView( model, viewTandem ),
+      filledOptions
     );
   }
 }

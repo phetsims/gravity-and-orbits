@@ -86,6 +86,8 @@ class ZoomControl extends Node {
 
 gravityAndOrbits.register( 'ZoomControl', ZoomControl );
 
+type ZoomControlOptions = {};
+
 class SliderButton extends RectangularPushButton {
   /**
    * @param {Property.<number>} scaleProperty - Scale property for updating.
@@ -94,7 +96,7 @@ class SliderButton extends RectangularPushButton {
    * @param {boolean} isIncrease flag for defining type of button
    * @param {Object} [options]
    */
-  constructor( scaleProperty: Property, range: Range, step: number, isIncrease: boolean, options? ) {
+  constructor( scaleProperty: Property, range: Range, step: number, isIncrease: boolean, options?: Partial<ZoomControlOptions> ) {
 
     // create default view
     const sample = new Node( {

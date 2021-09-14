@@ -12,10 +12,11 @@ import Tandem from '../../tandem/js/Tandem.js';
 import GravityAndOrbitsColors from './common/GravityAndOrbitsColors.js';
 import GlobalOptionsNode from './common/view/GlobalOptionsNode.js';
 import gravityAndOrbitsStrings from './gravityAndOrbitsStrings.js';
+import gravityAndOrbitsStringsTS from './gravityAndOrbitsStringsTS.js';
 import ModelScreen from './model/ModelScreen.js';
 import ToScaleScreen from './toScale/ToScaleScreen.js';
 
-const gravityAndOrbitsTitleString = gravityAndOrbitsStrings[ 'gravity-and-orbits' ].title;
+const gravityAndOrbitsTitleString = gravityAndOrbitsStringsTS[ 'gravity-and-orbits' ].title;
 
 simLauncher.launch( () => {
 
@@ -30,7 +31,7 @@ simLauncher.launch( () => {
     },
 
     // Creates content for the Options dialog
-    createOptionsDialogContent: tandem => new GlobalOptionsNode( tandem ),
+    createOptionsDialogContent: ( tandem: Tandem ) => new GlobalOptionsNode( tandem ),
 
     // phet-io
     phetioDesigned: true

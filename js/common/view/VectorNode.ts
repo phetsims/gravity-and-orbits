@@ -16,7 +16,7 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import Color from '../../../../scenery/js/util/Color';
-import Tandem from '../../../../tandem/js/Tandem';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 // constants
 const FORCE_SCALE = 76.0 / 5.179E15;

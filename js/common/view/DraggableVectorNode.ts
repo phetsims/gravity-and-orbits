@@ -19,7 +19,7 @@ import VectorNode from './VectorNode.js';
 import Body from '../model/Body.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 import Vector2 from '../../../../dot/js/Vector2';
-import Tandem from '../../../../tandem/js/Tandem';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 class DraggableVectorNode extends VectorNode {
 
