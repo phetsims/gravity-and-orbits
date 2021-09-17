@@ -32,12 +32,15 @@ import BodyRenderer from '../view/BodyRenderer';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import type {GravityAndOrbitsBodiesType} from './GravityAndOrbitsBodies';
-import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 
-const moonString = gravityAndOrbitsStringsTS.moon;
-const planetString = gravityAndOrbitsStringsTS.planet;
-const satelliteString = gravityAndOrbitsStringsTS.satellite;
-const starString = gravityAndOrbitsStringsTS.star;
+// @ts-ignore
+const moonString = gravityAndOrbitsStrings.moon;
+// @ts-ignore
+const planetString = gravityAndOrbitsStrings.planet;
+// @ts-ignore
+const satelliteString = gravityAndOrbitsStrings.satellite;
+// @ts-ignore
+const starString = gravityAndOrbitsStrings.star;
 
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );

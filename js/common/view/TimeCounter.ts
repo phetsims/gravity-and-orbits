@@ -17,11 +17,12 @@ import VBox from '../../../../scenery/js/nodes/VBox.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
 
-const clearString = gravityAndOrbitsStringsTS.clear;
+// @ts-ignore
+const clearString = gravityAndOrbitsStrings.clear;
 
 // constants
 const FONT_SIZE = 22;

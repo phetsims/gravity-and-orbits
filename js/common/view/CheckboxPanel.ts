@@ -32,14 +32,19 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 
-const gravityForceString = gravityAndOrbitsStringsTS.gravityForce;
-const gridString = gravityAndOrbitsStringsTS.grid;
-const massString = gravityAndOrbitsStringsTS.mass;
-const measuringTapeString = gravityAndOrbitsStringsTS.measuringTape;
-const pathString = gravityAndOrbitsStringsTS.path;
-const velocityString = gravityAndOrbitsStringsTS.velocity;
+// @ts-ignore
+const gravityForceString = gravityAndOrbitsStrings.gravityForce;
+// @ts-ignore
+const gridString = gravityAndOrbitsStrings.grid;
+// @ts-ignore
+const massString = gravityAndOrbitsStrings.mass;
+// @ts-ignore
+const measuringTapeString = gravityAndOrbitsStrings.measuringTape;
+// @ts-ignore
+const pathString = gravityAndOrbitsStrings.path;
+// @ts-ignore
+const velocityString = gravityAndOrbitsStrings.velocity;
 
 // constants
 const FONT = new PhetFont( 18 );

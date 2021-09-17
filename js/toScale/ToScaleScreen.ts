@@ -17,10 +17,10 @@ import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import Tandem from '../../../tandem/js/Tandem.js';
-import gravityAndOrbitsStringsTS from '../gravityAndOrbitsStringsTS.js';
 import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
 
-const toScaleString = gravityAndOrbitsStringsTS.toScale;
+// @ts-ignore
+const toScaleString = gravityAndOrbitsStrings.toScale;
 
 type ScreenOptions = {
   tandem: Tandem,

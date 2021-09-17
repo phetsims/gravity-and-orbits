@@ -15,17 +15,21 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
+import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
-const moonMassString = gravityAndOrbitsStringsTS.moonMass;
-const planetMassString = gravityAndOrbitsStringsTS.planetMass;
-const satelliteMassString = gravityAndOrbitsStringsTS.satelliteMass;
-const starMassString = gravityAndOrbitsStringsTS.starMass;
+// @ts-ignore
+const moonMassString = gravityAndOrbitsStrings.moonMass;
+// @ts-ignore
+const planetMassString = gravityAndOrbitsStrings.planetMass;
+// @ts-ignore
+const satelliteMassString = gravityAndOrbitsStrings.satelliteMass;
+// @ts-ignore
+const starMassString = gravityAndOrbitsStrings.starMass;
 
 // constants
 const CONTROL_FONT = new PhetFont( 14 );

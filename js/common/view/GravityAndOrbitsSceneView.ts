@@ -33,10 +33,11 @@ import Dimension2 from '../../../../dot/js/Dimension2';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 
-const returnObjectsString = gravityAndOrbitsStringsTS.returnObjects;
-const vString = gravityAndOrbitsStringsTS.v;
+// @ts-ignore
+const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
+// @ts-ignore
+const vString = gravityAndOrbitsStrings.v;
 
 // constants
 const SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
@@ -132,7 +133,8 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // Add measuring tape
     if ( model.showMeasuringTape ) {
 
-      const unitsProperty = new Property( { name: gravityAndOrbitsStringsTS.kilometers, multiplier: 1 / 1000 } );
+      // @ts-ignore
+      const unitsProperty = new Property( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
       const measuringTapeTextColorProperty = GravityAndOrbitsColors.foregroundProperty;
 

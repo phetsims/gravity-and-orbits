@@ -12,11 +12,11 @@ import Tandem from '../../tandem/js/Tandem.js';
 import GravityAndOrbitsColors from './common/GravityAndOrbitsColors.js';
 import GlobalOptionsNode from './common/view/GlobalOptionsNode.js';
 import gravityAndOrbitsStrings from './gravityAndOrbitsStrings.js';
-import gravityAndOrbitsStringsTS from './gravityAndOrbitsStringsTS.js';
 import ModelScreen from './model/ModelScreen.js';
 import ToScaleScreen from './toScale/ToScaleScreen.js';
 
-const gravityAndOrbitsTitleString = gravityAndOrbitsStringsTS[ 'gravity-and-orbits' ].title;
+// @ts-ignore
+const gravityAndOrbitsTitleString = gravityAndOrbitsStrings[ 'gravity-and-orbits' ].title;
 
 simLauncher.launch( () => {
 

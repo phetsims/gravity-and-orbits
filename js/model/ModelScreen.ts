@@ -15,12 +15,12 @@ import modelMipmap from '../../mipmaps/model_icon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
-import gravityAndOrbitsStringsTS from '../gravityAndOrbitsStringsTS.js';
 import ModelModel from './ModelModel.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
 
-const modelString = gravityAndOrbitsStringsTS.model;
+// @ts-ignore
+const modelString = gravityAndOrbitsStrings.model;
 
 type ModelScreenOptions = {
   tandem: Tandem,

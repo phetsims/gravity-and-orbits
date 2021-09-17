@@ -17,13 +17,14 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 
-const gravityString = gravityAndOrbitsStringsTS.gravity;
+// @ts-ignore
+const gravityString = gravityAndOrbitsStrings.gravity;
 
-// strings
-const offString = gravityAndOrbitsStringsTS.off;
-const onString = gravityAndOrbitsStringsTS.on;
+// @ts-ignore
+const offString = gravityAndOrbitsStrings.off;
+// @ts-ignore
+const onString = gravityAndOrbitsStrings.on;
 
 // constants
 const FONT = new PhetFont( 14 );

@@ -12,14 +12,16 @@ import Utils from '../../../../dot/js/Utils.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
-import gravityAndOrbitsStringsTS from '../../gravityAndOrbitsStringsTS.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyNode from './BodyNode.js';
 import MassReadoutNode from './MassReadoutNode.js';
 
-const billionBillionSpaceStationMassesString = gravityAndOrbitsStringsTS.billionBillionSpaceStationMasses;
-const pattern0Value1UnitsString = gravityAndOrbitsStringsTS.pattern[ '0value' ][ '1units' ];
-const spaceStationMassString = gravityAndOrbitsStringsTS.spaceStationMass;
+// @ts-ignore
+const billionBillionSpaceStationMassesString = gravityAndOrbitsStrings.billionBillionSpaceStationMasses;
+// @ts-ignore
+const pattern0Value1UnitsString = gravityAndOrbitsStrings.pattern[ '0value' ][ '1units' ];
+// @ts-ignore
+const spaceStationMassString = gravityAndOrbitsStrings.spaceStationMass;
 
 class SpaceStationMassReadoutNode extends MassReadoutNode {
 
