@@ -56,7 +56,6 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
         },
         stepForwardButtonOptions: {
           radius: STEP_BUTTON_RADIUS,
-          isPlayingProperty: model.isPlayingProperty,
           listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused()
         }
       },
