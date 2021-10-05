@@ -10,7 +10,9 @@
     "images/**/*",
     "sounds/**/*",
     "mipmaps/**/*",
-    "../chipper/phet-types.d.ts"
+    "../chipper/phet-types.d.ts",
+    "../chipper/node_modules/@types/lodash/index.d.ts",
+    "../chipper/node_modules/@types/qunit/index.d.ts",
   ],
   "exclude": [
     "node_modules",

@@ -26,7 +26,8 @@
       "compareDesignedAPIChanges": true
     },
     "typescript": true,
-    "supportsOutputJS": true
+    "supportsOutputJS": true,
+    "generatedUnitTests": true
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js"
