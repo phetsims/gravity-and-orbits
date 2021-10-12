@@ -31,7 +31,6 @@ import Color from '../../../../scenery/js/util/Color';
 import BodyRenderer from '../view/BodyRenderer';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import type {GravityAndOrbitsBodiesType} from './GravityAndOrbitsBodies';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -51,7 +50,7 @@ class Body extends PhetioObject {
   readonly density: number;
   readonly touchDilation: number;
   readonly previousPosition: Vector2;
-  readonly type: GravityAndOrbitsBodiesType;
+  readonly type: GravityAndOrbitsBodies;
   readonly labelString: string | null;
   readonly massProperty: RewindableProperty<number>;
   readonly velocityProperty: RewindableProperty<Vector2>;
@@ -60,9 +59,9 @@ class Body extends PhetioObject {
   readonly positionProperty: RewindableProperty<Vector2>;
   readonly isCollidedProperty: RewindableProperty<boolean>;
   readonly rotationProperty: RewindableProperty<number>;
-  readonly pointAddedEmitter: Emitter<[ Vector2, GravityAndOrbitsBodiesType ]>;
-  readonly pointRemovedEmitter: Emitter<[ GravityAndOrbitsBodiesType ]>;
-  readonly clearedEmitter: Emitter<[ GravityAndOrbitsBodiesType ]>;
+  readonly pointAddedEmitter: Emitter<[ Vector2, GravityAndOrbitsBodies ]>;
+  readonly pointRemovedEmitter: Emitter<[ GravityAndOrbitsBodies ]>;
+  readonly clearedEmitter: Emitter<[ GravityAndOrbitsBodies ]>;
   readonly userModifiedPositionEmitter: Emitter<[]>;
   readonly userModifiedVelocityEmitter: Emitter<[]>;
   readonly tandemName: string;
@@ -106,7 +105,7 @@ class Body extends PhetioObject {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( type: GravityAndOrbitsBodiesType, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
+  constructor( type: GravityAndOrbitsBodies, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
                tandem: Tandem, options: any ) {
 
     options = merge( {
@@ -310,14 +309,14 @@ class Body extends PhetioObject {
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // @public - emitters for various events
-    this.pointAddedEmitter = new Emitter<[ Vector2, GravityAndOrbitsBodiesType ]>( {
+    this.pointAddedEmitter = new Emitter<[ Vector2, GravityAndOrbitsBodies ]>( {
       parameters: [
         { valueType: Vector2 },
-        { validValues: GravityAndOrbitsBodies }
+        { validValues: [ 'planet', 'satellite', 'star', 'moon' ] }
       ]
     } );
-    this.pointRemovedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies } ] } );
-    this.clearedEmitter = new Emitter( { parameters: [ { validValues: GravityAndOrbitsBodies } ] } );
+    this.pointRemovedEmitter = new Emitter( { parameters: [ { validValues: [ 'planet', 'satellite', 'star', 'moon' ] } ] } );
+    this.clearedEmitter = new Emitter( { parameters: [ { validValues: [ 'planet', 'satellite', 'star', 'moon' ] } ] } );
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 

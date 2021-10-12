@@ -15,7 +15,7 @@ import ModelState from './ModelState.js';
 import Body from './Body.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 import Property from '../../../../axon/js/Property';
-import {GravityAndOrbitsBodiesType} from './GravityAndOrbitsBodies.js';
+import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
 
 /**
  * Return the smaller of two Body instances, for determining which survives a collision.
@@ -201,10 +201,10 @@ class GravityAndOrbitsPhysicsEngine {
    * Get the body associated with the name.  The name must be one of GravityAndOrbitsBodies.
    * @public
    *
-   * @param {GravityAndOrbitsBodiesType} type
+   * @param {GravityAndOrbitsBodies} type
    * @returns {Body|null}
    */
-  getBody( type: GravityAndOrbitsBodiesType ) {
+  getBody( type: GravityAndOrbitsBodies ) {
     for ( let i = 0; i < this.bodies.length; i++ ) {
       const body = this.bodies[ i ];
 

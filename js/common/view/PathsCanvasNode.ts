@@ -15,7 +15,7 @@ import Utils from '../../../../dot/js/Utils.js';
 import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
-import {GravityAndOrbitsBodiesType} from '../model/GravityAndOrbitsBodies.js';
+import GravityAndOrbitsBodies from '../model/GravityAndOrbitsBodies.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 import Property from '../../../../axon/js/Property';
 import Bounds2 from '../../../../dot/js/Bounds2';
@@ -28,9 +28,9 @@ class PathsCanvasNode extends CanvasNode {
   private readonly namedPoints: { [ key: string ]: NamedPoints };
   private transformProperty: Property<ModelViewTransform2>;
   private readonly bodies: Body[];
-  private pointAddedListener: ( point: Vector2, bodyName: GravityAndOrbitsBodiesType ) => void;
-  private pointRemovedListener: ( bodyName: GravityAndOrbitsBodiesType ) => void;
-  private clearedListener: ( bodyName: GravityAndOrbitsBodiesType ) => void;
+  private pointAddedListener: ( point: Vector2, bodyName: GravityAndOrbitsBodies ) => void;
+  private pointRemovedListener: ( bodyName: GravityAndOrbitsBodies ) => void;
+  private clearedListener: ( bodyName: GravityAndOrbitsBodies ) => void;
 
   /**
    *
@@ -234,7 +234,7 @@ class PathsCanvasNode extends CanvasNode {
 gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
 class NamedPoints {
-  private type: GravityAndOrbitsBodiesType;
+  private type: GravityAndOrbitsBodies;
   points: Vector2[];
 
   /**
@@ -242,7 +242,7 @@ class NamedPoints {
    *
    * @param {GravityAndOrbitsBodies} type
    */
-  constructor( type: GravityAndOrbitsBodiesType ) {
+  constructor( type: GravityAndOrbitsBodies ) {
     this.type = type;
     this.points = [];
   }
