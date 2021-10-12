@@ -8,6 +8,6 @@
 
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-type GravityAndOrbitsBodies = 'planet' | 'satellite' | 'star' | 'moon';
+type BodyTypeEnum = 'planet' | 'satellite' | 'star' | 'moon';
 
-export default GravityAndOrbitsBodies;
+export default BodyTypeEnum;

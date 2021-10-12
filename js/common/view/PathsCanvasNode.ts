@@ -15,7 +15,7 @@ import Utils from '../../../../dot/js/Utils.js';
 import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
-import GravityAndOrbitsBodies from '../model/GravityAndOrbitsBodies.js';
+import BodyTypeEnum from '../model/BodyTypeEnum.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 import Property from '../../../../axon/js/Property';
 import Bounds2 from '../../../../dot/js/Bounds2';
@@ -28,9 +28,9 @@ class PathsCanvasNode extends CanvasNode {
   private readonly namedPoints: { [ key: string ]: NamedPoints };
   private transformProperty: Property<ModelViewTransform2>;
   private readonly bodies: Body[];
-  private pointAddedListener: ( point: Vector2, bodyName: GravityAndOrbitsBodies ) => void;
-  private pointRemovedListener: ( bodyName: GravityAndOrbitsBodies ) => void;
-  private clearedListener: ( bodyName: GravityAndOrbitsBodies ) => void;
+  private pointAddedListener: ( point: Vector2, bodyName: BodyTypeEnum ) => void;
+  private pointRemovedListener: ( bodyName: BodyTypeEnum ) => void;
+  private clearedListener: ( bodyName: BodyTypeEnum ) => void;
 
   /**
    *
@@ -234,15 +234,15 @@ class PathsCanvasNode extends CanvasNode {
 gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
 class NamedPoints {
-  private type: GravityAndOrbitsBodies;
+  private type: BodyTypeEnum;
   points: Vector2[];
 
   /**
    * Named points assigns an array of points a name so that it can be looked up outside of a closure.
    *
-   * @param {GravityAndOrbitsBodies} type
+   * @param {BodyTypeEnum} type
    */
-  constructor( type: GravityAndOrbitsBodies ) {
+  constructor( type: BodyTypeEnum ) {
     this.type = type;
     this.points = [];
   }

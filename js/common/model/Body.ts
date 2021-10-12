@@ -24,7 +24,7 @@ import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import BodyState from './BodyState.js';
-import GravityAndOrbitsBodies from './GravityAndOrbitsBodies.js';
+import BodyTypeEnum from './BodyTypeEnum.js';
 import RewindableProperty from './RewindableProperty.js';
 import BodyConfiguration from './BodyConfiguration';
 import Color from '../../../../scenery/js/util/Color';
@@ -50,7 +50,7 @@ class Body extends PhetioObject {
   readonly density: number;
   readonly touchDilation: number;
   readonly previousPosition: Vector2;
-  readonly type: GravityAndOrbitsBodies;
+  readonly type: BodyTypeEnum;
   readonly labelString: string | null;
   readonly massProperty: RewindableProperty<number>;
   readonly velocityProperty: RewindableProperty<Vector2>;
@@ -59,9 +59,9 @@ class Body extends PhetioObject {
   readonly positionProperty: RewindableProperty<Vector2>;
   readonly isCollidedProperty: RewindableProperty<boolean>;
   readonly rotationProperty: RewindableProperty<number>;
-  readonly pointAddedEmitter: Emitter<[ Vector2, GravityAndOrbitsBodies ]>;
-  readonly pointRemovedEmitter: Emitter<[ GravityAndOrbitsBodies ]>;
-  readonly clearedEmitter: Emitter<[ GravityAndOrbitsBodies ]>;
+  readonly pointAddedEmitter: Emitter<[ Vector2, BodyTypeEnum ]>;
+  readonly pointRemovedEmitter: Emitter<[ BodyTypeEnum ]>;
+  readonly clearedEmitter: Emitter<[ BodyTypeEnum ]>;
   readonly userModifiedPositionEmitter: Emitter<[]>;
   readonly userModifiedVelocityEmitter: Emitter<[]>;
   readonly tandemName: string;
@@ -92,7 +92,7 @@ class Body extends PhetioObject {
   static BodyIO: IOType;
 
   /**
-   * @param {GravityAndOrbitsBodies} type - one of GravityAndOrbitsBodies, used for object identification
+   * @param {BodyTypeEnum} type - used for object identification
    * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
    * @param {Color} color
    * @param {Color} highlight
@@ -105,7 +105,7 @@ class Body extends PhetioObject {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( type: GravityAndOrbitsBodies, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
+  constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
                tandem: Tandem, options: any ) {
 
     options = merge( {
@@ -309,7 +309,7 @@ class Body extends PhetioObject {
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // @public - emitters for various events
-    this.pointAddedEmitter = new Emitter<[ Vector2, GravityAndOrbitsBodies ]>( {
+    this.pointAddedEmitter = new Emitter<[ Vector2, BodyTypeEnum ]>( {
       parameters: [
         { valueType: Vector2 },
         { validValues: [ 'planet', 'satellite', 'star', 'moon' ] }
