@@ -36,7 +36,6 @@ class BodyMassControl extends HSlider {
    */
   constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: string, tandem: Tandem ) {
 
-    // @ts-ignore
     super( body.massProperty, new Range( min, max ), {
       trackSize: new Dimension2( WIDTH, 1 ),
       thumbSize: THUMB_SIZE,

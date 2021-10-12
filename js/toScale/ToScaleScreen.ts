@@ -10,6 +10,7 @@ import Screen from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
+import Node from '../../../scenery/js/nodes/Node.js';
 import toScaleMipmap from '../../mipmaps/to_scale_icon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
@@ -31,8 +32,7 @@ class ToScaleScreen extends Screen {
     const filledOptions = merge( {
       name: toScaleString,
 
-      // @ts-ignore
-      homeScreenIcon: new ScreenIcon( new Image( toScaleMipmap ), {
+      homeScreenIcon: new ScreenIcon( new Image( toScaleMipmap ) as unknown as Node, {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1,
         fill: 'black'

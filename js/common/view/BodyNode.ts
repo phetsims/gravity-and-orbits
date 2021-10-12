@@ -111,7 +111,6 @@ class BodyNode extends Node {
     // create position and diameter listeners so that they can be unlinked for garbage collection and so that anonymous
     // closures are not necessary through multilink
     this.positionListener = ( position, modelViewTransform ) => {
-      // @ts-ignore
       this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
     };
     Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );

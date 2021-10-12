@@ -95,9 +95,11 @@ class GravityAndOrbitsScreenView extends ScreenView {
     // Make sure only one scene is visible at a time
     model.sceneProperty.link( ( scene: GravityAndOrbitsScene ) => {
       for ( let i = 0; i < model.sceneList.scenes.length; i++ ) {
-        model.sceneList.scenes[ i ].sceneView.visible = false;
-        // @ts-ignore
-        model.sceneList.scenes[ i ].massControlPanel.visible = false;
+        const gravityAndOrbitsScene = model.sceneList.scenes[ i ];
+        gravityAndOrbitsScene.sceneView.visible = false;
+        if ( gravityAndOrbitsScene.massControlPanel ) {
+          gravityAndOrbitsScene.massControlPanel.visible = false;
+        }
       }
       scene.sceneView.visible = true;
       if ( scene.massControlPanel ) {
