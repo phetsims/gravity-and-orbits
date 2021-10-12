@@ -28,9 +28,9 @@ class PathsCanvasNode extends CanvasNode {
   private readonly namedPoints: { [ key: string ]: NamedPoints };
   private transformProperty: Property<ModelViewTransform2>;
   private readonly bodies: Body[];
-  private pointAddedListener: ( point: Vector2, bodyName: string ) => void;
-  private pointRemovedListener: ( bodyName: string ) => void;
-  private clearedListener: ( bodyName: string ) => void;
+  private pointAddedListener: ( point: Vector2, bodyName: GravityAndOrbitsBodiesType ) => void;
+  private pointRemovedListener: ( bodyName: GravityAndOrbitsBodiesType ) => void;
+  private clearedListener: ( bodyName: GravityAndOrbitsBodiesType ) => void;
 
   /**
    *

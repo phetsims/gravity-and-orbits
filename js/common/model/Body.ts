@@ -60,11 +60,11 @@ class Body extends PhetioObject {
   readonly positionProperty: RewindableProperty<Vector2>;
   readonly isCollidedProperty: RewindableProperty<boolean>;
   readonly rotationProperty: RewindableProperty<number>;
-  readonly pointAddedEmitter: Emitter;
-  readonly pointRemovedEmitter: Emitter;
-  readonly clearedEmitter: Emitter;
-  readonly userModifiedPositionEmitter: Emitter;
-  readonly userModifiedVelocityEmitter: Emitter;
+  readonly pointAddedEmitter: Emitter<[ Vector2, GravityAndOrbitsBodiesType ]>;
+  readonly pointRemovedEmitter: Emitter<[ GravityAndOrbitsBodiesType ]>;
+  readonly clearedEmitter: Emitter<[ GravityAndOrbitsBodiesType ]>;
+  readonly userModifiedPositionEmitter: Emitter<[]>;
+  readonly userModifiedVelocityEmitter: Emitter<[]>;
   readonly tandemName: string;
   readonly tickValue: number;
   readonly tickLabel: string;
@@ -310,7 +310,7 @@ class Body extends PhetioObject {
     this.path = []; // @public - {Vector2[]} array of the points in the body's trail
 
     // @public - emitters for various events
-    this.pointAddedEmitter = new Emitter( {
+    this.pointAddedEmitter = new Emitter<[ Vector2, GravityAndOrbitsBodiesType ]>( {
       parameters: [
         { valueType: Vector2 },
         { validValues: GravityAndOrbitsBodies }

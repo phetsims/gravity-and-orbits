@@ -36,7 +36,7 @@ class GravityAndOrbitsPhysicsEngine {
   private adjustMoonOrbit: boolean;
   clock: GravityAndOrbitsClock;
   bodies: Body[];
-  private stepCompleteEmitter: Emitter;
+  private stepCompleteEmitter: Emitter<[]>;
 
   /**
    * @param {GravityAndOrbitsClock} clock
