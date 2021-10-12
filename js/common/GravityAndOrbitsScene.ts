@@ -39,6 +39,7 @@ import BodyNode from './view/BodyNode.js';
 import Body from './model/Body.js';
 import Pair from './model/Pair.js';
 import EnumerationProperty from '../../../axon/js/EnumerationProperty';
+import Bounds2 from '../../../dot/js/Bounds2.js';
 
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
@@ -58,15 +59,15 @@ type MeasuringTapeOptions = {
 class GravityAndOrbitsScene extends PhetioObject {
   activeProperty: BooleanProperty;
   iconImage: Node;
-  modelBoundsProperty: Property;
-  transformProperty: Property;
+  modelBoundsProperty: Property<Bounds2|null>;
+  transformProperty: Property<ModelViewTransform2>;
   radioButtonTandemName: string;
   resetButtonTandemName: string;
   sceneView: GravityAndOrbitsSceneView;
   massControlPanelTandemName: string;
   forceScale: number;
   physicsEngine: GravityAndOrbitsPhysicsEngine;
-  massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node;
+  massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node;
   zoomLevelProperty: NumberProperty;
   velocityVectorScale: number;
   gridSpacing: number;
@@ -98,7 +99,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Pair[]} pairs
    * @param {Object} [options]
    */
-  constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property ) => Node, gridSpacing: number, tandem: Tandem,
+  constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node, gridSpacing: number, tandem: Tandem,
                sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], options?: Partial<GravityAndOrbitsSceneOptions> ) {
 
     const forceScale = modeConfig.forceScale;
@@ -174,7 +175,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
-    this.modelBoundsProperty = new Property( null ); // @public - needed for movableDragHandler bounds
+    this.modelBoundsProperty = new Property<Bounds2|null>( null ); // @public - needed for movableDragHandler bounds
     this.transformProperty = new Property( this.createTransform( defaultZoomScale, gridCenter ) ); // @public
 
     this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );

@@ -17,14 +17,15 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import Color from '../../../../scenery/js/util/Color';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 
 // constants
 const FORCE_SCALE = 76.0 / 5.179E15;
 
 class VectorNode extends Node {
   private body: Body;
-  private vectorProperty: Property;
-  protected transformProperty: Property;
+  private vectorProperty: Property<Vector2>;
+  protected transformProperty: Property<ModelViewTransform2>;
   private readonly propertyListener: ( visible: boolean ) => void;
   static FORCE_SCALE: number;
   protected readonly vectorNodeScale: number;
@@ -40,7 +41,7 @@ class VectorNode extends Node {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( body: Body, transformProperty: Property, visibleProperty: Property, vectorProperty: Property, scale: number, fill: Color, outline: Color, tandem: Tandem, options?: object ) {
+  constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color, outline: Color, tandem: Tandem, options?: object ) {
     options = merge( {
       tandem: tandem,
       visiblePropertyOptions: { phetioReadOnly: true }

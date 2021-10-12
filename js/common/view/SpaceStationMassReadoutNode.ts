@@ -29,7 +29,7 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
    * @param {BodyNode} bodyNode
    * @param {Property.<boolean>} visibleProperty
    */
-  constructor( bodyNode: BodyNode, visibleProperty: Property ) {
+  constructor( bodyNode: BodyNode, visibleProperty: Property<boolean> ) {
     super( bodyNode, visibleProperty, bodyNode.body.type === 'planet' ? {
       textMaxWidth: 400
     } : {} );

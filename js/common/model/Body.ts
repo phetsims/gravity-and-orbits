@@ -56,14 +56,14 @@ class Body extends PhetioObject {
   readonly touchDilation: number;
   readonly previousPosition: Vector2;
   readonly type: GravityAndOrbitsBodiesType;
-  readonly labelString: string|null;
-  readonly massProperty: RewindableProperty;
-  readonly velocityProperty: RewindableProperty;
+  readonly labelString: string | null;
+  readonly massProperty: RewindableProperty<number>;
+  readonly velocityProperty: RewindableProperty<Vector2>;
   readonly diameterProperty: NumberProperty;
-  readonly freezeRewindChangeProperty: Property;
-  readonly positionProperty: RewindableProperty;
-  readonly isCollidedProperty: RewindableProperty;
-  readonly rotationProperty: RewindableProperty;
+  readonly freezeRewindChangeProperty: Property<boolean>;
+  readonly positionProperty: RewindableProperty<Vector2>;
+  readonly isCollidedProperty: RewindableProperty<boolean>;
+  readonly rotationProperty: RewindableProperty<number>;
   readonly pointAddedEmitter: Emitter;
   readonly pointRemovedEmitter: Emitter;
   readonly clearedEmitter: Emitter;
@@ -77,7 +77,7 @@ class Body extends PhetioObject {
   private bodyNodeTandemName: string;
   private accelerationProperty: Vector2Property;
 
-  private boundsProperty: Property;
+  private boundsProperty: Property<Bounds2>;
   private massSettable: boolean;
   private readonly maxPathLength: number;
   private readonly pathLengthBuffer: number;
@@ -90,7 +90,7 @@ class Body extends PhetioObject {
   private labelAngle: number;
   private speedProperty: DerivedProperty;
   private readonly isPlayingProperty: BooleanProperty;
-  private readonly forceProperty: RewindableProperty;
+  private readonly forceProperty: RewindableProperty<Vector2>;
   private forceMagnitudeProperty: DerivedProperty;
   private isMovableProperty: BooleanProperty;
 
@@ -325,7 +325,7 @@ class Body extends PhetioObject {
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
-    this.isCollidedProperty.link( collided => {
+    this.isCollidedProperty.link( ( collided: boolean ) => {
       if ( collided && !phet.joist.sim.isSettingPhetioStateProperty.value ) {
         this.clockTicksSinceExplosionProperty.set( 0 );
       }

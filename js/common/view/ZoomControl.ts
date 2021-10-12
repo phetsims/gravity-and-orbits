@@ -35,7 +35,7 @@ class ZoomControl extends Node {
    * @param {Tandem} tandem
    * @param {Object} [options]
    */
-  constructor( scaleProperty: Property, tandem: Tandem, options?: Object ) {
+  constructor( scaleProperty: Property<number>, tandem: Tandem, options?: Object ) {
 
     options = merge( {
       scale: 0.8,
@@ -96,7 +96,7 @@ class SliderButton extends RectangularPushButton {
    * @param {boolean} isIncrease flag for defining type of button
    * @param {Object} [options]
    */
-  constructor( scaleProperty: Property, range: Range, step: number, isIncrease: boolean, options?: Partial<ZoomControlOptions> ) {
+  constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, options?: Partial<ZoomControlOptions> ) {
 
     // create default view
     const sample = new Node( {
@@ -127,12 +127,12 @@ class SliderButton extends RectangularPushButton {
     if ( isIncrease ) {
 
       // plus button
-      scaleProperty.link( scaleValue => this.setEnabled( scaleValue !== range.max ) );
+      scaleProperty.link( (scaleValue:number) => this.setEnabled( scaleValue !== range.max ) );
     }
     else {
 
       // minus button
-      scaleProperty.link( scaleValue => this.setEnabled( scaleValue !== range.min ) );
+      scaleProperty.link( (scaleValue:number) => this.setEnabled( scaleValue !== range.min ) );
     }
 
     // Increase the touch area in all directions except toward the slider knob,

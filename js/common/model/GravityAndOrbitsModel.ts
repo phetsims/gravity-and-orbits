@@ -23,6 +23,7 @@ import IOType from '../../../../tandem/js/types/IOType.js';
 import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import SceneFactory from '../SceneFactory.js';
+import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 
 // constants
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
@@ -34,7 +35,7 @@ class GravityAndOrbitsModel {
   showGridProperty: BooleanProperty;
   showMassProperty: BooleanProperty;
   showMeasuringTapeProperty: BooleanProperty;
-  sceneProperty: Property;
+  sceneProperty: Property<GravityAndOrbitsScene>;
   isPlayingProperty: BooleanProperty;
   timeSpeedProperty: EnumerationProperty;
   gravityEnabledProperty: BooleanProperty;

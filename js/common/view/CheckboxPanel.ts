@@ -119,7 +119,7 @@ class CheckboxPanel extends VBox {
     }
 
     const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
-    colorProfileProperty.lazyLink( profileName => {
+    colorProfileProperty.lazyLink( ( profileName: any ) => {
       assert && assert( profileName === SceneryConstants.DEFAULT_COLOR_PROFILE || profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE );
       pathIconImageNode.setImage( profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE ? pathIconProjectorImg : pathIconImg );
     } );
@@ -162,6 +162,7 @@ class CheckboxPanel extends VBox {
     for ( let i = 0; i < children.length; i++ ) {
       const checkboxNode = children[ i ];
       const bounds = checkboxNode.parentToLocalBounds( checkboxNode.bounds );
+      // @ts-ignore
       checkboxNode.touchArea = Shape.rectangle( -5, bounds.centerY - touchAreaHeight / 2, bounds.width + 10, touchAreaHeight );
     }
 

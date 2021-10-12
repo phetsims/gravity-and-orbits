@@ -46,7 +46,7 @@ class BodyNode extends Node {
    * @param {GravityAndOrbitsScene} scene
    * @param {Tandem} tandem
    */
-  constructor( body: Body, labelAngle: number, isPlayingProperty: Property, scene: GravityAndOrbitsScene, tandem: Tandem ) {
+  constructor( body: Body, labelAngle: number, isPlayingProperty: Property<boolean>, scene: GravityAndOrbitsScene, tandem: Tandem ) {
     super( {
       cursor: 'pointer',
       tandem: tandem,
@@ -59,7 +59,7 @@ class BodyNode extends Node {
     this.modelViewTransformProperty = scene.transformProperty; // @private
     this.body = body; // @public
 
-    this.body.isCollidedProperty.link( isCollided => this.setVisible( !isCollided ) );
+    this.body.isCollidedProperty.link( ( isCollided: boolean ) => this.setVisible( !isCollided ) );
 
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
     this.addChild( this.bodyRenderer );
@@ -199,18 +199,6 @@ class BodyNode extends Node {
     this.modelViewTransformProperty.link( labelVisibilityListener );
 
     return node;
-  }
-
-  /**
-   * Get the position of this body node mased on a transform and the model element.
-   * @public
-   *
-   * @param  {Property.<ModelViewTransform2>} modelViewTransformProperty
-   * @param  {Body} body
-   * @returns {Vector2}
-   */
-  getPosition( modelViewTransformProperty: Property, body: Body ) {
-    return modelViewTransformProperty.get().modelToView( body.positionProperty.get() );
   }
 
   /**

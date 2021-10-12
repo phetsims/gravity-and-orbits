@@ -41,7 +41,7 @@ class GravityControl extends Node {
    * @param {Property.<boolean>} gravityEnabledProperty
    * @param {Object} [options] - This object contains options for main node of gravity menu.
    */
-  constructor( gravityEnabledProperty: Property, options?: Partial<GravityControlOptions> ) {
+  constructor( gravityEnabledProperty: Property<boolean>, options?: Partial<GravityControlOptions> ) {
     super( options );
 
     const filledOptions: GravityControlOptions = merge( { tandem: Tandem.OPTIONAL }, options ) as GravityControlOptions;

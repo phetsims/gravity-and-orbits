@@ -32,10 +32,10 @@ const getSmaller = ( other: Body, body: Body ): Body => other.massProperty.get()
 const getBodyState = ( body: Body ) => body.toBodyState();
 
 class GravityAndOrbitsPhysicsEngine {
-  private gravityEnabledProperty: Property;
+  private gravityEnabledProperty: Property<boolean>;
   private adjustMoonOrbit: boolean;
   clock: GravityAndOrbitsClock;
-  private bodies: any[];
+  bodies: any[];
   private stepCompleteEmitter: Emitter;
 
   /**
@@ -44,7 +44,7 @@ class GravityAndOrbitsPhysicsEngine {
    * @param {boolean} adjustMoonOrbit - in the "Model" screen, there is an additional force from the Earth on the Moon to keep it in orbit
    *                                  - This is necessary because the moon orbital radius is higher (so it is visible)
    */
-  constructor( clock: GravityAndOrbitsClock, gravityEnabledProperty: Property, adjustMoonOrbit: boolean ) {
+  constructor( clock: GravityAndOrbitsClock, gravityEnabledProperty: Property<boolean>, adjustMoonOrbit: boolean ) {
 
     // @private
     this.gravityEnabledProperty = gravityEnabledProperty;

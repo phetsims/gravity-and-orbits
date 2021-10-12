@@ -33,6 +33,7 @@ import Dimension2 from '../../../../dot/js/Dimension2';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 
 // @ts-ignore
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
@@ -134,7 +135,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     if ( model.showMeasuringTape ) {
 
       // @ts-ignore
-      const unitsProperty = new Property( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
+      const unitsProperty = new Property<object>( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
       const measuringTapeTextColorProperty = GravityAndOrbitsColors.foregroundProperty;
 
@@ -155,8 +156,8 @@ class GravityAndOrbitsSceneView extends Rectangle {
         visiblePropertyOptions: { phetioReadOnly: true } // controlled by a checkbox
       } );
 
-      scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
-      scene.modelBoundsProperty.link( bounds => {
+      scene.transformProperty.link( ( transform: ModelViewTransform2 ) => measuringTapeNode.setModelViewTransform( transform ) );
+      scene.modelBoundsProperty.link( ( bounds: Bounds2 ) => {
         const basePosition = measuringTapeNode.basePositionProperty.get();
         measuringTapeNode.setDragBounds( bounds );
 
@@ -176,12 +177,12 @@ class GravityAndOrbitsSceneView extends Rectangle {
       const draggableAreaNode = new Rectangle( 0, 0, 0, 0, { stroke: 'blue', lineWidth: 4 } );
       this.addChild( draggableAreaNode );
 
-      scene.modelBoundsProperty.link( bounds => {
+      scene.modelBoundsProperty.link( ( bounds: Bounds2 ) => {
         draggableAreaNode.setRectBounds( scene.transformProperty.get().modelToViewBounds( bounds ) );
       } );
     }
 
-    scene.modelBoundsProperty.link( bounds => {
+    scene.modelBoundsProperty.link( ( bounds: Bounds2 ) => {
 
       // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
       for ( let i = 0; i < bodies.length; i++ ) {

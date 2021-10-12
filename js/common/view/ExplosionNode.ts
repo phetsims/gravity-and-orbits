@@ -14,6 +14,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import BodyRenderer from './BodyRenderer.js';
 import Body from '../model/Body.js';
 import Property from '../../../../axon/js/Property';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 
 // constants
 const NUM_STEPS_FOR_ANIMATION = 10;
@@ -24,7 +25,7 @@ class ExplosionNode extends Node {
    * @param {Body} body
    * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
    */
-  constructor( body: Body, modelViewTransformProperty: Property ) {
+  constructor( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ) {
     super();
 
     // Function that computes the diameter as a function of the animation step
@@ -86,7 +87,7 @@ class ExplosionNode extends Node {
   }
 
   // @private
-  getMaxViewDiameter( body: Body, modelViewTransformProperty: Property ) {
+  getMaxViewDiameter( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ) {
     return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
   }
 }

@@ -88,6 +88,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     const dependencies = [ model.sceneProperty ];
     model.getScenes().forEach( scene => {
       scene.getBodies().forEach( body => {
+        // @ts-ignore
         body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
           dependencies.push( property.differentProperty );
         } );
@@ -96,13 +97,14 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     const anyPropertyDifferentProperty = new DerivedProperty( dependencies, () => {
       let changed = false;
       model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
+        // @ts-ignore
         body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
           changed = changed || property.differentProperty.value;
         } );
       } );
       return changed;
     } );
-    anyPropertyDifferentProperty.link( changed => restartButton.setEnabled( changed ) );
+    anyPropertyDifferentProperty.link( ( changed: boolean ) => restartButton.setEnabled( changed ) );
   }
 }
 

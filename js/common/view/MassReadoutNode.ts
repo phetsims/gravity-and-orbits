@@ -23,9 +23,9 @@ type MassReadoutNodeOptions = {
 abstract class MassReadoutNode extends Node {
   protected bodyNode: BodyNode;
 
-  constructor( bodyNode: BodyNode, visibleProperty: Property, options?: Partial<MassReadoutNodeOptions> ) {
+  constructor( bodyNode: BodyNode, visibleProperty: Property<boolean>, options?: Partial<MassReadoutNodeOptions> ) {
     super();
-    const filledOptions :MassReadoutNodeOptions = merge( {
+    const filledOptions: MassReadoutNodeOptions = merge( {
       textMaxWidth: 240
     }, options ) as MassReadoutNodeOptions;
     this.bodyNode = bodyNode; // @protected
@@ -55,7 +55,7 @@ abstract class MassReadoutNode extends Node {
       updatePosition();
     } );
 
-    visibleProperty.link( visible => {
+    visibleProperty.link( ( visible: boolean ) => {
       this.visible = visible;
       updatePosition();
     } );

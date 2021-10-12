@@ -39,7 +39,7 @@ class PathsCanvasNode extends CanvasNode {
    * @param {Property.<boolean>} visibleProperty
    * @param {Bounds2} canvasBounds
    */
-  constructor( bodies: Body[], transformProperty: Property, visibleProperty: Property, canvasBounds: Bounds2 ) {
+  constructor( bodies: Body[], transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, canvasBounds: Bounds2 ) {
 
     assert && assert( canvasBounds, 'Paths canvas must define bounds' );
     super( {
@@ -79,7 +79,7 @@ class PathsCanvasNode extends CanvasNode {
 
     this.bodies = bodies; // @private
 
-    visibleProperty.link( isVisible => {
+    visibleProperty.link( (isVisible:boolean) => {
       this.visible = isVisible;
 
       // Paths should restart from the body position when "Path" checkbox is checked

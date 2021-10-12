@@ -50,7 +50,7 @@ class ModelState {
    * @param {Property.<boolean>} gravityEnabledProperty
    * @returns {ModelState}
    */
-  getNextState( dt: number, gravityEnabledProperty: Property ) {
+  getNextState( dt: number, gravityEnabledProperty: Property<boolean> ) {
 
     if ( gravityEnabledProperty.get() ) {
       return this.getNextInteractingState( dt );

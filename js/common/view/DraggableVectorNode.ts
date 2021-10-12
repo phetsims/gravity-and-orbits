@@ -37,7 +37,7 @@ class DraggableVectorNode extends VectorNode {
    * @param {Object} [options]
    * @constructor
    */
-  constructor( body: Body, transformProperty: Property, visibleProperty: Property, vectorProperty: Property, scale: number, fill: Color,
+  constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color,
                outline: Color, labelText: string, tandem: Tandem, options?: object ) {
 
     super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, options );

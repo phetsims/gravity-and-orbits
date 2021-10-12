@@ -26,7 +26,7 @@ class GravityAndOrbitsGridNode extends Node {
    * @param {number} numGridLines - number grid lines on each side of the center
    * @param {Object} [options]
    */
-  constructor( transformProperty: Property, spacing: number, center: Vector2, numGridLines: number, options?: object ) {
+  constructor( transformProperty: Property<ModelViewTransform2>, spacing: number, center: Vector2, numGridLines: number, options?: object ) {
 
     options = merge( {
       lineWidth: 1,

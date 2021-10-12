@@ -33,7 +33,7 @@ class SceneSelectionControls extends Node {
    * @param {Array.<GravityAndOrbitsScene>} modes
    * @param {Object} [options] - This object contains options for main node of planet menu.
    */
-  constructor( sceneProperty: Property, modes: GravityAndOrbitsScene[], options?: Partial<SceneSelectionControlsOptions> ) {
+  constructor( sceneProperty: Property<GravityAndOrbitsScene>, modes: GravityAndOrbitsScene[], options?: Partial<SceneSelectionControlsOptions> ) {
     super( options );
     const filledOptions: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, options ) as SceneSelectionControlsOptions;
 
@@ -47,7 +47,7 @@ class SceneSelectionControls extends Node {
       } );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
-      sceneProperty.link( selectedScene => sceneResetButton.setVisible( selectedScene === scene ) );
+      sceneProperty.link( (selectedScene:GravityAndOrbitsScene) => sceneResetButton.setVisible( selectedScene === scene ) );
 
       return sceneResetButton;
     } );

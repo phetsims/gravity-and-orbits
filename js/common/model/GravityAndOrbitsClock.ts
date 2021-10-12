@@ -33,7 +33,7 @@ class GravityAndOrbitsClock {
 
   private isRunningProperty: BooleanProperty;
   private dt: number;
-  private steppingProperty: Property;
+  private steppingProperty: BooleanProperty;
   private interpolationRatio: number;
   private eventTimer: EventTimer | null;
 
@@ -44,7 +44,7 @@ class GravityAndOrbitsClock {
    * @param {Tandem} sceneTandem
    * @param {Tandem} tandem
    */
-  constructor( baseDTValue: number, steppingProperty: Property, timeSpeedProperty: EnumerationProperty, sceneTandem: Tandem, tandem: Tandem ) {
+  constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty, sceneTandem: Tandem, tandem: Tandem ) {
 
     // @public (read-only)
     this.baseDTValue = baseDTValue;
