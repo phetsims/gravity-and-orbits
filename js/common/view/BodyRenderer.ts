@@ -25,7 +25,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 class BodyRenderer extends Node {
   // @abstract
   private readonly body: Body;
-  targetBodyRenderer: any;
+  targetBodyRenderer: BodyRenderer;
   static SwitchableBodyRenderer: SwitchableBodyRenderer;
   static SunRenderer: any;
 
@@ -54,8 +54,8 @@ class BodyRenderer extends Node {
 gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
 class SwitchableBodyRenderer extends BodyRenderer {
-  targetBodyRenderer: any;
-  private defaultBodyRenderer: any;
+  targetBodyRenderer: BodyRenderer;
+  private defaultBodyRenderer: BodyRenderer;
   private massListener: () => void;
 
   /**
@@ -103,7 +103,7 @@ gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
 
 class ImageRenderer extends BodyRenderer {
   private readonly imageNode: Image;
-  private viewDiameter: any;
+  private viewDiameter: number;
 
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.

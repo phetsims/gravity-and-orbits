@@ -26,8 +26,8 @@ const STROKE_WIDTH = 3;
 
 class PathsCanvasNode extends CanvasNode {
   private readonly namedPoints: { [ key: string ]: NamedPoints };
-  private transformProperty: any;
-  private readonly bodies: any;
+  private transformProperty: Property<ModelViewTransform2>;
+  private readonly bodies: Body[];
   private pointAddedListener: ( point: Vector2, bodyName: string ) => void;
   private pointRemovedListener: ( bodyName: string ) => void;
   private clearedListener: ( bodyName: string ) => void;
@@ -234,8 +234,8 @@ class PathsCanvasNode extends CanvasNode {
 gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
 class NamedPoints {
-  private type: any;
-  points: any[];
+  private type: GravityAndOrbitsBodiesType;
+  points: Vector2[];
 
   /**
    * Named points assigns an array of points a name so that it can be looked up outside of a closure.

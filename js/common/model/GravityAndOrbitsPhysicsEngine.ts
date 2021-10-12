@@ -35,7 +35,7 @@ class GravityAndOrbitsPhysicsEngine {
   private gravityEnabledProperty: Property<boolean>;
   private adjustMoonOrbit: boolean;
   clock: GravityAndOrbitsClock;
-  bodies: any[];
+  bodies: Body[];
   private stepCompleteEmitter: Emitter;
 
   /**

@@ -29,7 +29,7 @@ import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Transform3 from '../../../../dot/js/Transform3.js';
 
 class BodyNode extends Node {
-  private readonly modelViewTransformProperty: any;
+  private readonly modelViewTransformProperty: Property<ModelViewTransform2>;
   readonly body: Body;
   readonly bodyRenderer: BodyRenderer;
   private readonly positionListener: ( position: Vector2, modelViewTransform: ModelViewTransform2 ) => void;

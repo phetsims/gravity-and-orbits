@@ -44,7 +44,7 @@ const tempVector = new Vector2( 0, 0 );
 class Body extends PhetioObject {
 
   pathLength: number;
-  path: any[];
+  path: Vector2[];
   userControlled: boolean;
   clockTicksSinceExplosionProperty: NumberProperty;
 
@@ -70,25 +70,25 @@ class Body extends PhetioObject {
   readonly tickLabel: string;
   readonly massReadoutBelow: boolean;
 
-  private bodyNodeTandemName: string;
-  private accelerationProperty: Vector2Property;
+  readonly bodyNodeTandemName: string;
+  private readonly accelerationProperty: Vector2Property;
 
-  private boundsProperty: Property<Bounds2>;
-  private massSettable: boolean;
-  private readonly maxPathLength: number;
+  readonly boundsProperty: Property<Bounds2>;
+  readonly massSettable: boolean;
+  readonly maxPathLength: number;
   private readonly pathLengthBuffer: number;
   private readonly pathLengthLimit: number;
   private modelPathLength: number;
-  private color: Color;
+  readonly color: Color;
   private highlight: Color;
   private readonly rotationPeriod: number;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
-  private labelAngle: number;
+  labelAngle: number;
   private speedProperty: DerivedProperty;
   private readonly isPlayingProperty: BooleanProperty;
-  private readonly forceProperty: RewindableProperty<Vector2>;
+  readonly forceProperty: RewindableProperty<Vector2>;
   private forceMagnitudeProperty: DerivedProperty;
-  private isMovableProperty: BooleanProperty;
+  readonly isMovableProperty: BooleanProperty;
 
   static BodyIO: IOType;
 

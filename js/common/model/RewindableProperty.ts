@@ -31,15 +31,15 @@ class RewindableProperty<T> extends Property<T> {
   rewindValue: T;
   private changeRewindValueProperty: Property<T>;
   readonly differentProperty: BooleanProperty;
-  static RewindablePropertyIO: ( parameterType: any ) => any;
+  static RewindablePropertyIO: ( parameterType: any ) => IOType;
 
   /**
    * @param {Property} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
-   * @param {*} value
+   * @param {T} value
    * @param {Object} [options]
    * @constructor
    */
-  constructor( changeRewindValueProperty: Property<T>, value: any, options: RewindablePropertyOptions = {
+  constructor( changeRewindValueProperty: Property<T>, value: T, options: RewindablePropertyOptions = {
     tandem: Tandem.OPTIONAL
   } ) {
     super( value, options );
@@ -76,7 +76,7 @@ class RewindableProperty<T> extends Property<T> {
    * @public
    * @override
    */
-  set( value: any ) {
+  set( value: T ) {
     super.set( value );
 
     // If the user changed the initial conditions (as opposed to the state changing through model stepping),
