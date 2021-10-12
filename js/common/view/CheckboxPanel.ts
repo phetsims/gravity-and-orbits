@@ -33,17 +33,11 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 
-// @ts-ignore
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
-// @ts-ignore
 const gridString = gravityAndOrbitsStrings.grid;
-// @ts-ignore
 const massString = gravityAndOrbitsStrings.mass;
-// @ts-ignore
 const measuringTapeString = gravityAndOrbitsStrings.measuringTape;
-// @ts-ignore
 const pathString = gravityAndOrbitsStrings.path;
-// @ts-ignore
 const velocityString = gravityAndOrbitsStrings.velocity;
 
 // constants

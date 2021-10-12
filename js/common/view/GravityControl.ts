@@ -18,12 +18,8 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
-// @ts-ignore
 const gravityString = gravityAndOrbitsStrings.gravity;
-
-// @ts-ignore
 const offString = gravityAndOrbitsStrings.off;
-// @ts-ignore
 const onString = gravityAndOrbitsStrings.on;
 
 // constants

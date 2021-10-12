@@ -19,7 +19,6 @@ import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
 
-// @ts-ignore
 const toScaleString = gravityAndOrbitsStrings.toScale;
 
 type ScreenOptions = {

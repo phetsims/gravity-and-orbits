@@ -21,7 +21,6 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
 
-// @ts-ignore
 const clearString = gravityAndOrbitsStrings.clear;
 
 // constants

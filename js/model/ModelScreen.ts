@@ -19,7 +19,6 @@ import ModelModel from './ModelModel.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
 
-// @ts-ignore
 const modelString = gravityAndOrbitsStrings.model;
 
 type ModelScreenOptions = {

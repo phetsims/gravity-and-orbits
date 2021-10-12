@@ -22,13 +22,9 @@ import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
-// @ts-ignore
 const moonMassString = gravityAndOrbitsStrings.moonMass;
-// @ts-ignore
 const planetMassString = gravityAndOrbitsStrings.planetMass;
-// @ts-ignore
 const satelliteMassString = gravityAndOrbitsStrings.satelliteMass;
-// @ts-ignore
 const starMassString = gravityAndOrbitsStrings.starMass;
 
 // constants

@@ -33,13 +33,9 @@ import GravityAndOrbitsModel from './GravityAndOrbitsModel';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import type {GravityAndOrbitsBodiesType} from './GravityAndOrbitsBodies';
 
-// @ts-ignore
 const moonString = gravityAndOrbitsStrings.moon;
-// @ts-ignore
 const planetString = gravityAndOrbitsStrings.planet;
-// @ts-ignore
 const satelliteString = gravityAndOrbitsStrings.satellite;
-// @ts-ignore
 const starString = gravityAndOrbitsStrings.star;
 
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation

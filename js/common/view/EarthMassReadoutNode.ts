@@ -14,13 +14,10 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import MassReadoutNode from './MassReadoutNode.js';
 
-// @ts-ignore
 const earthMassesString = gravityAndOrbitsStrings.earthMasses;
-// @ts-ignore
 const earthMassString = gravityAndOrbitsStrings.earthMass;
 // @ts-ignore
 const pattern0Value1UnitsString = gravityAndOrbitsStrings.pattern[ '0value' ][ '1units' ];
-// @ts-ignore
 const thousandEarthMassesString = gravityAndOrbitsStrings.thousandEarthMasses;
 
 class EarthMassReadoutNode extends MassReadoutNode {

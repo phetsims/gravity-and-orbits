@@ -35,9 +35,7 @@ import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
 
-// @ts-ignore
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
-// @ts-ignore
 const vString = gravityAndOrbitsStrings.v;
 
 // constants
