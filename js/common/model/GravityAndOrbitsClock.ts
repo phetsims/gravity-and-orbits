@@ -14,8 +14,7 @@ import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import EventTimer from '../../../../phet-core/js/EventTimer.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import Property from '../../../../axon/js/Property.js';
-import EnumerationProperty from '../../../../axon/js/EnumerationProperty';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 
 // constants
 // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness

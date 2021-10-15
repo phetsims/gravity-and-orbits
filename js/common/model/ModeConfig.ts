@@ -13,7 +13,7 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 import BodyConfiguration from './BodyConfiguration.js';
-import Line from '../../../../kite/js/segments/Line';
+import Line from '../../../../kite/js/segments/Line.js';
 
 // constants
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;

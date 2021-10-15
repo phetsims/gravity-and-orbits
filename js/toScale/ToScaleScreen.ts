@@ -18,7 +18,7 @@ import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import Tandem from '../../../tandem/js/Tandem.js';
-import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
+import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
 
 const toScaleString = gravityAndOrbitsStrings.toScale;
 

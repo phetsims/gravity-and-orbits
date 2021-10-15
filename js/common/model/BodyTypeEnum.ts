@@ -6,8 +6,5 @@
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 
-import gravityAndOrbits from '../../gravityAndOrbits.js';
-
 type BodyTypeEnum = 'planet' | 'satellite' | 'star' | 'moon';
-
 export default BodyTypeEnum;

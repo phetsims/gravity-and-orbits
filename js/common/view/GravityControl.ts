@@ -15,7 +15,7 @@ import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
-import Property from '../../../../axon/js/Property';
+import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
 const gravityString = gravityAndOrbitsStrings.gravity;

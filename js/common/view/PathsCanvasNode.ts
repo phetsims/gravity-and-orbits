@@ -16,9 +16,9 @@ import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import BodyTypeEnum from '../model/BodyTypeEnum.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
-import Property from '../../../../axon/js/Property';
-import Bounds2 from '../../../../dot/js/Bounds2';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
+import Property from '../../../../axon/js/Property.js';
+import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 
 // constants
@@ -79,7 +79,7 @@ class PathsCanvasNode extends CanvasNode {
 
     this.bodies = bodies; // @private
 
-    visibleProperty.link( (isVisible:boolean) => {
+    visibleProperty.link( ( isVisible: boolean ) => {
       this.visible = isVisible;
 
       // Paths should restart from the body position when "Path" checkbox is checked

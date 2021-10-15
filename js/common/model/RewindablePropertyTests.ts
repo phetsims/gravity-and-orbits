@@ -2,7 +2,6 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import RewindableProperty from './RewindableProperty.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 QUnit.module( 'RewindablePropertyTests' );
 

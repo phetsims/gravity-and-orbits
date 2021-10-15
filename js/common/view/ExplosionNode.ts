@@ -13,8 +13,8 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import BodyRenderer from './BodyRenderer.js';
 import Body from '../model/Body.js';
-import Property from '../../../../axon/js/Property';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import Property from '../../../../axon/js/Property.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 
 // constants
 const NUM_STEPS_FOR_ANIMATION = 10;

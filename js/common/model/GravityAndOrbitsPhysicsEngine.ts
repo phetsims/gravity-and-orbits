@@ -14,7 +14,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import ModelState from './ModelState.js';
 import Body from './Body.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
-import Property from '../../../../axon/js/Property';
+import Property from '../../../../axon/js/Property.js';
 import BodyTypeEnum from './BodyTypeEnum.js';
 
 /**

@@ -138,7 +138,7 @@ const cache = new Map();
  * @param {IOType} parameterType
  * @returns {IOType}
  */
-RewindableProperty.RewindablePropertyIO = ( parameterType ) => {
+RewindableProperty.RewindablePropertyIO = parameterType => {
   assert && assert( parameterType, 'RewindablePropertyIO needs parameterType' );
 
   const cacheKey = parameterType;
@@ -153,13 +153,13 @@ RewindableProperty.RewindablePropertyIO = ( parameterType ) => {
                        'traditional listener pattern in that added listeners also receive a callback with the current value ' +
                        'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
         supertype: PropertyIOImpl,
-      // @ts-ignore
+        // @ts-ignore
         toStateObject: ( property: RewindableProperty ) => {
           const stateObject = PropertyIOImpl.toStateObject( property );
           stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
           return stateObject;
         },
-      // @ts-ignore
+        // @ts-ignore
         applyState: ( property: RewindableProperty, stateObject: { rewindValue: any; } ) => {
           PropertyIOImpl.applyState( property, stateObject );
           property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
@@ -172,7 +172,7 @@ RewindableProperty.RewindablePropertyIO = ( parameterType ) => {
   }
 
   return cache.get( cacheKey );
-}
+};
 
 gravityAndOrbits.register( 'RewindableProperty', RewindableProperty );
 export default RewindableProperty;

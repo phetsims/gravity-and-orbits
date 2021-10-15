@@ -18,7 +18,7 @@ import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
-import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty';
+import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
 
 const modelString = gravityAndOrbitsStrings.model;
 

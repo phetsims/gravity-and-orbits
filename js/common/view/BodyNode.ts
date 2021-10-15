@@ -24,7 +24,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import BodyRenderer from './BodyRenderer.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Transform3 from '../../../../dot/js/Transform3.js';
 

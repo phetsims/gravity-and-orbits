@@ -8,7 +8,7 @@
  */
 
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import Vector2 from '../../../../dot/js/Vector2';
+import Vector2 from '../../../../dot/js/Vector2.js';
 import Body from './Body.js';
 
 class BodyState {

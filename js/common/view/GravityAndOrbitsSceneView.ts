@@ -29,11 +29,10 @@ import PathsCanvasNode from './PathsCanvasNode.js';
 import TimeCounter from './TimeCounter.js';
 import VectorNode from './VectorNode.js';
 import ZoomControl from './ZoomControl.js';
-import Dimension2 from '../../../../dot/js/Dimension2';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
 const vString = gravityAndOrbitsStrings.v;

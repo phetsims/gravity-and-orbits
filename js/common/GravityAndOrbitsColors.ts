@@ -7,7 +7,10 @@ import gravityAndOrbits from '../gravityAndOrbits.js';
 const GravityAndOrbitsColors = {
 
   // Color mainly used for foreground things like text
-  foregroundProperty: new ProfileColorProperty( gravityAndOrbits, 'foreground', { default: 'white', projector: 'black' }, {
+  foregroundProperty: new ProfileColorProperty( gravityAndOrbits, 'foreground', {
+    default: 'white',
+    projector: 'black'
+  }, {
     tandem: Tandem.COLORS.createTandem( 'foregroundColorProperty' )
   } ),
 
@@ -18,7 +21,10 @@ const GravityAndOrbitsColors = {
   }, {
     tandem: Tandem.COLORS.createTandem( 'backgroundColorProperty' )
   } ),
-  bodyLabelIndicatorProperty: new ProfileColorProperty( gravityAndOrbits, 'body label indicator', { default: new Color( 255, 255, 0 ), projector: 'black' }, {
+  bodyLabelIndicatorProperty: new ProfileColorProperty( gravityAndOrbits, 'body label indicator', {
+    default: new Color( 255, 255, 0 ),
+    projector: 'black'
+  }, {
     tandem: Tandem.COLORS.createTandem( 'labelColorProperty' )
   } ),
 
@@ -29,7 +35,10 @@ const GravityAndOrbitsColors = {
     tandem: Tandem.COLORS.createTandem( 'measuringTapeTextBackgroundColorProperty' )
   } ),
 
-  gridIconStrokeColorProperty: new ProfileColorProperty( gravityAndOrbits, 'grid icon stroke', { default: 'gray', projector: 'black' }, {
+  gridIconStrokeColorProperty: new ProfileColorProperty( gravityAndOrbits, 'grid icon stroke', {
+    default: 'gray',
+    projector: 'black'
+  }, {
     tandem: Tandem.COLORS.createTandem( 'gridIconStrokeColorProperty' )
   } ),
 

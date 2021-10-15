@@ -38,7 +38,7 @@ import ModeConfig from './model/ModeConfig.js';
 import BodyNode from './view/BodyNode.js';
 import Body from './model/Body.js';
 import Pair from './model/Pair.js';
-import EnumerationProperty from '../../../axon/js/EnumerationProperty';
+import EnumerationProperty from '../../../axon/js/EnumerationProperty.js';
 import Bounds2 from '../../../dot/js/Bounds2.js';
 
 // constants
@@ -59,7 +59,7 @@ type MeasuringTapeOptions = {
 class GravityAndOrbitsScene extends PhetioObject {
   activeProperty: BooleanProperty;
   iconImage: Node;
-  modelBoundsProperty: Property<Bounds2|null>;
+  modelBoundsProperty: Property<Bounds2 | null>;
   transformProperty: Property<ModelViewTransform2>;
   radioButtonTandemName: string;
   resetButtonTandemName: string;

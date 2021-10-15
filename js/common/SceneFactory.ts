@@ -36,8 +36,8 @@ import BodyRenderer from './view/BodyRenderer.js';
 import EarthMassReadoutNode from './view/EarthMassReadoutNode.js';
 import SpaceStationMassReadoutNode from './view/SpaceStationMassReadoutNode.js';
 import VectorNode from './view/VectorNode.js';
-import GravityAndOrbitsModel from './model/GravityAndOrbitsModel';
-import Tandem from '../../../tandem/js/Tandem';
+import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
 const earthDaysString = gravityAndOrbitsStrings.earthDays;
 const earthDayString = gravityAndOrbitsStrings.earthDay;
@@ -282,7 +282,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
-    this[ 'moon' ] = new BodyConfiguration(
+    this.moon = new BodyConfiguration(
       MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, MOON_SPEED_AT_PERIGEE, EARTH_ORBITAL_SPEED_AT_PERIHELION );
     this.initialMeasuringTapePosition = new Line(
       ( this.sun.x + this.planet.x ) / 3,

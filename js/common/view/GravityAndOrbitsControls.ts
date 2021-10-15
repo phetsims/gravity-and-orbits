@@ -33,7 +33,7 @@ class GravityAndOrbitsControls extends VBox {
    */
   constructor( model: GravityAndOrbitsModel, options?: Partial<GravityAndOrbitsControlsOptions> ) {
 
-    const filledOptions: GravityAndOrbitsControlsOptions = merge( {} , GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options ) as unknown as GravityAndOrbitsControls;
+    const filledOptions: GravityAndOrbitsControlsOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, options ) as unknown as GravityAndOrbitsControls;
 
     // top separator rectangle for the gravity control section
     const topSeparator = new HSeparator( 0, merge( { tandem: filledOptions.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );

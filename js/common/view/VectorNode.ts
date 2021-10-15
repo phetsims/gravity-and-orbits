@@ -15,9 +15,9 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
-import Color from '../../../../scenery/js/util/Color';
+import Color from '../../../../scenery/js/util/Color.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 
 // constants
 const FORCE_SCALE = 76.0 / 5.179E15;

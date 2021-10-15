@@ -13,9 +13,9 @@ import merge from '../../../../phet-core/js/merge.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import Property from '../../../../axon/js/Property';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2';
-import Vector2 from '../../../../dot/js/Vector2';
+import Property from '../../../../axon/js/Property.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
+import Vector2 from '../../../../dot/js/Vector2.js';
 
 class GravityAndOrbitsGridNode extends Node {
 

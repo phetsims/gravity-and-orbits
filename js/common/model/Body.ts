@@ -26,10 +26,10 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import BodyState from './BodyState.js';
 import BodyTypeEnum from './BodyTypeEnum.js';
 import RewindableProperty from './RewindableProperty.js';
-import BodyConfiguration from './BodyConfiguration';
-import Color from '../../../../scenery/js/util/Color';
-import BodyRenderer from '../view/BodyRenderer';
-import GravityAndOrbitsModel from './GravityAndOrbitsModel';
+import BodyConfiguration from './BodyConfiguration.js';
+import Color from '../../../../scenery/js/util/Color.js';
+import BodyRenderer from '../view/BodyRenderer.js';
+import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
 const moonString = gravityAndOrbitsStrings.moon;
