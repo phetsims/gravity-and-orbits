@@ -16,7 +16,7 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 class Pair {
   private body1: Body;
   private body2: Body;
-  private distanceProperty: DerivedProperty;
+  private distanceProperty: DerivedProperty<number>;
 
   /**
    * @param {Body} body1

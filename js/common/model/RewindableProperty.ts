@@ -29,7 +29,7 @@ type RewindablePropertyOptions = {
 
 class RewindableProperty<T> extends Property<T> {
   rewindValue: T;
-  private changeRewindValueProperty: Property<T>;
+  private changeRewindValueProperty: Property<boolean>;
   readonly differentProperty: BooleanProperty;
   static RewindablePropertyIO: ( parameterType: any ) => IOType;
 
@@ -39,7 +39,7 @@ class RewindableProperty<T> extends Property<T> {
    * @param {Object} [options]
    * @constructor
    */
-  constructor( changeRewindValueProperty: Property<T>, value: T, options: RewindablePropertyOptions = {
+  constructor( changeRewindValueProperty: Property<boolean>, value: T, options: RewindablePropertyOptions = {
     tandem: Tandem.OPTIONAL
   } ) {
     super( value, options );

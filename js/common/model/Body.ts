@@ -83,10 +83,10 @@ class Body extends PhetioObject {
   private readonly rotationPeriod: number;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   labelAngle: number;
-  private speedProperty: DerivedProperty;
+  private speedProperty: DerivedProperty<number>;
   private readonly isPlayingProperty: BooleanProperty;
   readonly forceProperty: RewindableProperty<Vector2>;
-  private forceMagnitudeProperty: DerivedProperty;
+  private forceMagnitudeProperty: DerivedProperty<number>;
   readonly isMovableProperty: BooleanProperty;
 
   static BodyIO: IOType;
@@ -211,7 +211,7 @@ class Body extends PhetioObject {
     this.freezeRewindChangeProperty = new Property( false );
 
     this.labelAngle = labelAngle; // @public
-    const changeRewindValueProperty = new DerivedProperty( [
+    const changeRewindValueProperty = new DerivedProperty<boolean>( [
         this.isPlayingProperty,
         steppingProperty,
         rewindingProperty,
@@ -223,7 +223,7 @@ class Body extends PhetioObject {
     // rewindable properties - body states can be rewound, and these properties can have saved states to support this
 
     // @public
-    this.positionProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
+    this.positionProperty = new RewindableProperty<Vector2>( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
       phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'positionProperty' ),
       units: 'm',
