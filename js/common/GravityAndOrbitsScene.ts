@@ -40,7 +40,6 @@ import Body from './model/Body.js';
 import Pair from './model/Pair.js';
 import EnumerationProperty from '../../../axon/js/EnumerationProperty.js';
 import Bounds2 from '../../../dot/js/Bounds2.js';
-import TimeSpeed from '../../../scenery-phet/js/TimeSpeed.js';
 
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
@@ -83,7 +82,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   private tandemName: string;
   private dt: number;
   private rewindingProperty: BooleanProperty;
-  private timeSpeedProperty: EnumerationProperty<typeof TimeSpeed>;
+  private timeSpeedProperty: EnumerationProperty;
   private pairs: Pair[];
 
   /**

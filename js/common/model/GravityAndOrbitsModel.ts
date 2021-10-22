@@ -37,7 +37,7 @@ class GravityAndOrbitsModel {
   showMeasuringTapeProperty: BooleanProperty;
   sceneProperty: Property<GravityAndOrbitsScene>;
   isPlayingProperty: BooleanProperty;
-  timeSpeedProperty: EnumerationProperty<typeof TimeSpeed>;
+  timeSpeedProperty: EnumerationProperty;
   gravityEnabledProperty: BooleanProperty;
   steppingProperty: BooleanProperty;
   rewindingProperty: BooleanProperty;
