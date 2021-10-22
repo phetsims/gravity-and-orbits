@@ -15,6 +15,7 @@ import EventTimer from '../../../../phet-core/js/EventTimer.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
+import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 
 // constants
 // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
@@ -27,7 +28,7 @@ const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
 class GravityAndOrbitsClock {
   baseDTValue: number;
-  timeSpeedProperty: EnumerationProperty;
+  timeSpeedProperty: EnumerationProperty<typeof TimeSpeed>;
   timeProperty: NumberProperty;
 
   private isRunningProperty: BooleanProperty;
@@ -43,7 +44,7 @@ class GravityAndOrbitsClock {
    * @param {Tandem} sceneTandem
    * @param {Tandem} tandem
    */
-  constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty, sceneTandem: Tandem, tandem: Tandem ) {
+  constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<typeof TimeSpeed>, sceneTandem: Tandem, tandem: Tandem ) {
 
     // @public (read-only)
     this.baseDTValue = baseDTValue;
