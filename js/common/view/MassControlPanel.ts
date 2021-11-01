@@ -20,7 +20,6 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 
 const moonMassString = gravityAndOrbitsStrings.moonMass;
 const planetMassString = gravityAndOrbitsStrings.planetMass;
@@ -36,19 +35,18 @@ const LABEL_MAP = {
   moon: moonMassString
 };
 
-type MassControlPanelOptions = {
-  tandem: Tandem
-};
+type MassControlPanelOptions = {} & PhetioObjectOptions;
+type MassControlPanelImplementationOptions = Pick<MassControlPanelOptions, 'tandem'>;
 
 class MassControlPanel extends VBox {
 
-  constructor( massSettableBodies: Body[], providedOptions?: Partial<MassControlPanelOptions> ) {
+  constructor( massSettableBodies: Body[], providedOptions?: MassControlPanelOptions ) {
 
     const options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
 
       // Managed by the simulation, can be buggy if independently controlled by studio
       visiblePropertyOptions: { phetioReadOnly: true }
-    }, providedOptions ) as MassControlPanelOptions;
+    }, providedOptions ) as MassControlPanelImplementationOptions;
 
     const children = [];
 
