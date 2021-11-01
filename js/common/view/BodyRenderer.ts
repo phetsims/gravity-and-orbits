@@ -199,6 +199,4 @@ BodyRenderer.SwitchableBodyRenderer = SwitchableBodyRenderer;
 BodyRenderer.ImageRenderer = ImageRenderer;
 BodyRenderer.SunRenderer = SunRenderer;
 
-export { SunRenderer };
-
 export default BodyRenderer;
