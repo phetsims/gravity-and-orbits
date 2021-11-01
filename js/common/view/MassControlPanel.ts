@@ -36,7 +36,7 @@ const LABEL_MAP = {
 };
 
 type MassControlPanelOptions = {} & PhetioObjectOptions;
-type MassControlPanelImplementationOptions = Pick<MassControlPanelOptions, 'tandem'>;
+type MassControlPanelImplementationOptions = Required<Pick<MassControlPanelOptions, 'tandem'>>;
 
 class MassControlPanel extends VBox {
 

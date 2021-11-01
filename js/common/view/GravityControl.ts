@@ -39,7 +39,7 @@ class GravityControl extends Node {
   constructor( gravityEnabledProperty: Property<boolean>, providedOptions?: Partial<GravityControlOptions> ) {
     super( providedOptions );
 
-    const options = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as GravityControlImplementationOptions;
+    const options = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as Required<GravityControlImplementationOptions>;
 
     const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
     const onTextNode = new Text( onString, TEXT_OPTIONS );

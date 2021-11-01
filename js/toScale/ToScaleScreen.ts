@@ -22,7 +22,7 @@ import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.
 const toScaleString = gravityAndOrbitsStrings.toScale;
 
 type ScreenOptions = {
-  backgroundColorProperty: ProfileColorProperty
+  backgroundColorProperty?: ProfileColorProperty
 } & PhetioObjectOptions;
 
 class ToScaleScreen extends Screen {

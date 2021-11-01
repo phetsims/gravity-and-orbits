@@ -40,7 +40,7 @@ const starString = gravityAndOrbitsStrings.star;
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
 
-type BodyImplementationOptions = {
+type BodyOptions = {
   pathLengthBuffer?: number,
   diameterScale?: number,
   massSettable?: boolean,
@@ -49,11 +49,10 @@ type BodyImplementationOptions = {
   maxPathLength?: number,
   pathLengthLimit?: number,
   rotationPeriod?: null | number
-  phetioType?: IOType,
   touchDilation?: number,
-  tandem?: Tandem
-};
-type BodyOptions = BodyImplementationOptions & PhetioObjectOptions;
+} & PhetioObjectOptions;
+type BodyImplementationOptions = Pick<BodyOptions, 'tandem' | 'touchDilation' | 'diameterScale' | 'pathLengthBuffer' | 'massSettable' |
+  'pathLengthLimit' | 'massReadoutBelow' | 'rotationPeriod' | 'orbitalCenter' | 'maxPathLength'>;
 
 class Body extends PhetioObject {
 
@@ -83,10 +82,8 @@ class Body extends PhetioObject {
   readonly tickValue: number;
   readonly tickLabel: string;
   readonly massReadoutBelow: boolean;
-
   readonly bodyNodeTandemName: string;
   private readonly accelerationProperty: Vector2Property;
-
   readonly boundsProperty: Property<Bounds2>;
   readonly massSettable: boolean;
   readonly maxPathLength: number;
