@@ -40,6 +40,20 @@ const starString = gravityAndOrbitsStrings.star;
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
 
+type BodyOptions = {
+  pathLengthBuffer?: number,
+  diameterScale?: number,
+  massSettable?: boolean,
+  massReadoutBelow?: boolean,
+  orbitalCenter?: Vector2,
+  maxPathLength?: number,
+  pathLengthLimit?: number,
+  rotationPeriod?: null | number
+  phetioType?: IOType,
+  touchDilation?: number,
+  tandem?: Tandem
+} & PhetioObjectOptions;
+
 class Body extends PhetioObject {
 
   pathLength: number;
@@ -80,7 +94,7 @@ class Body extends PhetioObject {
   private modelPathLength: number;
   readonly color: Color;
   private highlight: Color;
-  private readonly rotationPeriod: number;
+  private readonly rotationPeriod: number | null;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   labelAngle: number;
   private speedProperty: DerivedProperty<number>;
@@ -103,12 +117,12 @@ class Body extends PhetioObject {
    * @param {string} tickLabel - translatable label for the mass slider labeling the default value
    * @param {GravityAndOrbitsModel} model
    * @param {Tandem} tandem
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
   constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
-               tandem: Tandem, options: any ) {
+               tandem: Tandem, providedOptions?: BodyOptions ) {
 
-    options = merge( {
+    let options = merge( {
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
       diameterScale: 1, // scale factor applied to the diameter
       massSettable: true, // can the mass of this body be set by the control panel?
@@ -120,7 +134,7 @@ class Body extends PhetioObject {
       phetioType: Body.BodyIO,
       touchDilation: 15,
       tandem: tandem
-    }, options );
+    }, providedOptions ) as unknown as Required<BodyOptions>;
 
     super( options );
 
@@ -154,7 +168,7 @@ class Body extends PhetioObject {
 
     options = merge( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
-    }, options );
+    }, options ) as unknown as Required<BodyOptions>;
     this.pathLengthBuffer = options.pathLengthBuffer; // @public (read-only)
 
     this.massSettable = options.massSettable; // @public (read-only)

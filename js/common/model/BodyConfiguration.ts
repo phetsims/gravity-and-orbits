@@ -27,15 +27,6 @@ class BodyConfiguration {
   readonly isMovable: boolean;
   readonly rotationPeriod: null | number;
 
-  /**
-   * @param {number} mass
-   * @param {number} radius
-   * @param {number} x
-   * @param {number} y
-   * @param {number} vx
-   * @param {number} vy
-   * @param {Object} [options]
-   */
   constructor( mass: number, radius: number, x: number, y: number, vx: number, vy: number, options?: BodyConfigurationOptions ) {
 
     const filledOptions = merge( {
