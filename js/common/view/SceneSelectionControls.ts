@@ -31,11 +31,11 @@ class SceneSelectionControls extends Node {
   /**
    * @param {Property.<GravityAndOrbitsScene>} sceneProperty
    * @param {Array.<GravityAndOrbitsScene>} modes
-   * @param {Object} [options] - This object contains options for main node of planet menu.
+   * @param {Object} [providedOptions] - This object contains options for main node of planet menu.
    */
-  constructor( sceneProperty: Property<GravityAndOrbitsScene>, modes: GravityAndOrbitsScene[], options?: Partial<SceneSelectionControlsOptions> ) {
-    super( options );
-    const filledOptions: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, options ) as SceneSelectionControlsOptions;
+  constructor( sceneProperty: Property<GravityAndOrbitsScene>, modes: GravityAndOrbitsScene[], providedOptions?: Partial<SceneSelectionControlsOptions> ) {
+    super( providedOptions );
+    const options: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as SceneSelectionControlsOptions;
 
     const content: Object[] = []; // for radio buttons
     const resetButtons = modes.map( scene => {
@@ -43,7 +43,7 @@ class SceneSelectionControls extends Node {
 
       // For the PhET-iO design, we decided to feature the radio button group and leave the reset buttons separate.
       const sceneResetButton = new SceneResetButton( scene, {
-        tandem: filledOptions.tandem.createTandem( scene.resetButtonTandemName )
+        tandem: options.tandem.createTandem( scene.resetButtonTandemName )
       } );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
@@ -64,7 +64,7 @@ class SceneSelectionControls extends Node {
       cornerRadius: 5,
 
       touchAreaYDilation: 0, // reduce to 0 to prevent overlap between buttons
-      tandem: filledOptions.tandem.createTandem( 'sceneSelectionRadioButtonGroup' ),
+      tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' ),
 
       // Keep aligned with reset buttons, see https://github.com/phetsims/gravity-and-orbits/issues/348
       excludeInvisibleChildrenFromBounds: false
@@ -90,10 +90,10 @@ class SceneResetButton extends RectangularPushButton {
 
   /**
    * @param {GravityAndOrbitsScene} scene
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( scene: GravityAndOrbitsScene, options?: Object ) {
-    options = merge( {
+  constructor( scene: GravityAndOrbitsScene, providedOptions?: Object ) {
+    const options = merge( {
       content: new Node( {
         children: [
           new Image( resetArrowImg, { scale: 0.3 } )
@@ -103,7 +103,7 @@ class SceneResetButton extends RectangularPushButton {
       yMargin: 3,
       baseColor: new Color( 220, 220, 220 ),
       listener: () => scene.resetScene()
-    }, options );
+    }, providedOptions );
 
     super( options );
   }

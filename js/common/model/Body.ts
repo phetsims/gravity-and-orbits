@@ -134,7 +134,7 @@ class Body extends PhetioObject {
       phetioType: Body.BodyIO,
       touchDilation: 15,
       tandem: tandem
-    }, providedOptions ) as unknown as Required<BodyOptions>;
+    }, providedOptions ) as Required<BodyOptions>;
 
     super( options );
 
@@ -168,7 +168,7 @@ class Body extends PhetioObject {
 
     options = merge( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
-    }, options ) as unknown as Required<BodyOptions>;
+    }, options ) as Required<BodyOptions>;
     this.pathLengthBuffer = options.pathLengthBuffer; // @public (read-only)
 
     this.massSettable = options.massSettable; // @public (read-only)

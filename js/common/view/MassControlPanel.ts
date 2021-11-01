@@ -42,24 +42,20 @@ type MassControlPanelOptions = {
 
 class MassControlPanel extends VBox {
 
-  /**
-   * @param massSettableBodies
-   * @param options
-   */
-  constructor( massSettableBodies: Body[], options?: Partial<MassControlPanelOptions> ) {
+  constructor( massSettableBodies: Body[], providedOptions?: Partial<MassControlPanelOptions> ) {
 
-    const filledOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+    const options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
 
       // Managed by the simulation, can be buggy if independently controlled by studio
       visiblePropertyOptions: { phetioReadOnly: true }
-    }, options ) as MassControlPanelOptions;
+    }, providedOptions ) as MassControlPanelOptions;
 
     const children = [];
 
     for ( let i = 0; i < massSettableBodies.length; i++ ) {
 
       const massSettableBody = massSettableBodies[ i ];
-      const massSettableBodyTandem = filledOptions.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
+      const massSettableBodyTandem = options.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
       const sliderNode = new Node( { tandem: massSettableBodyTandem } );
 
       const label = new Text( LABEL_MAP[ massSettableBody.type ], {

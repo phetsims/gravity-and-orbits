@@ -33,16 +33,16 @@ class ZoomControl extends Node {
   /**
    * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
    * @param {Tandem} tandem
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( scaleProperty: Property<number>, tandem: Tandem, options?: Object ) {
+  constructor( scaleProperty: Property<number>, tandem: Tandem, providedOptions?: Object ) {
 
-    options = merge( {
+    const options = merge( {
       scale: 0.8,
       tandem: tandem,
       phetioEnabledPropertyInstrumented: true,
       disabledOpacity: SceneryConstants.DISABLED_OPACITY
-    }, options );
+    }, providedOptions );
 
     super();
 
@@ -94,9 +94,9 @@ class SliderButton extends RectangularPushButton {
    * @param {Range} range - Working range of slider.
    * @param {number} step step of scale changes
    * @param {boolean} isIncrease flag for defining type of button
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, options?: Partial<ZoomControlOptions> ) {
+  constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, providedOptions?: Partial<ZoomControlOptions> ) {
 
     // create default view
     const sample = new Node( {
@@ -121,7 +121,7 @@ class SliderButton extends RectangularPushButton {
           Math.min( scaleProperty.value + ( isIncrease ? step : -step ), range.max ),
           range.min );
       }
-    }, options ) );
+    }, providedOptions ) );
 
     // add disabling effect for buttons
     if ( isIncrease ) {

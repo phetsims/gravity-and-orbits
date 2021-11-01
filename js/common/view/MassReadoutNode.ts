@@ -23,17 +23,17 @@ type MassReadoutNodeOptions = {
 abstract class MassReadoutNode extends Node {
   protected bodyNode: BodyNode;
 
-  constructor( bodyNode: BodyNode, visibleProperty: Property<boolean>, options?: Partial<MassReadoutNodeOptions> ) {
+  constructor( bodyNode: BodyNode, visibleProperty: Property<boolean>, providedOptions?: Partial<MassReadoutNodeOptions> ) {
     super();
-    const filledOptions: MassReadoutNodeOptions = merge( {
+    const options: MassReadoutNodeOptions = merge( {
       textMaxWidth: 240
-    }, options ) as MassReadoutNodeOptions;
+    }, providedOptions ) as MassReadoutNodeOptions;
     this.bodyNode = bodyNode; // @protected
 
     const readoutText = new Text( this.createText(), {
       pickable: false,
       font: new PhetFont( 18 ),
-      maxWidth: filledOptions.textMaxWidth,
+      maxWidth: options.textMaxWidth,
       fill: GravityAndOrbitsColors.foregroundProperty
     } );
     this.addChild( readoutText );

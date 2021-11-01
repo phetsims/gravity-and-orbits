@@ -39,13 +39,13 @@ class VectorNode extends Node {
    * @param {Color} fill
    * @param {Color} outline
    * @param {Tandem} tandem
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color, outline: Color, tandem: Tandem, options?: object ) {
-    options = merge( {
+  constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color, outline: Color, tandem: Tandem, providedOptions?: object ) {
+    const options = merge( {
       tandem: tandem,
       visiblePropertyOptions: { phetioReadOnly: true }
-    }, options );
+    }, providedOptions );
     super( options );
 
     this.body = body; // @private

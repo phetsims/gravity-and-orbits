@@ -17,19 +17,17 @@ import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
-import Tandem from '../../../tandem/js/Tandem.js';
 import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
 
 const toScaleString = gravityAndOrbitsStrings.toScale;
 
 type ScreenOptions = {
-  tandem: Tandem,
   backgroundColorProperty: ProfileColorProperty
-};
+} & PhetioObjectOptions;
 
 class ToScaleScreen extends Screen {
-  constructor( options?: Partial<ScreenOptions> ) {
-    const filledOptions = merge( {
+  constructor( providedOptions?: ScreenOptions ) {
+    const options = merge( {
       name: toScaleString,
 
       homeScreenIcon: new ScreenIcon( new Image( toScaleMipmap ) as unknown as Node, {
@@ -37,13 +35,13 @@ class ToScaleScreen extends Screen {
         maxIconHeightProportion: 1,
         fill: 'black'
       } )
-    }, options ) as ScreenOptions;
+    }, providedOptions ) as ScreenOptions;
 
-    const viewTandem = filledOptions.tandem.createTandem( 'view' );
+    const viewTandem = options.tandem.createTandem( 'view' );
     super(
-      () => new ToScaleModel( filledOptions.tandem.createTandem( 'model' ), viewTandem ),
+      () => new ToScaleModel( options.tandem.createTandem( 'model' ), viewTandem ),
       ( model: GravityAndOrbitsModel ) => new GravityAndOrbitsScreenView( model, viewTandem ),
-      filledOptions
+      options
     );
   }
 }

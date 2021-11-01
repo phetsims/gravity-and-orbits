@@ -35,26 +35,26 @@ class GravityControl extends Node {
 
   /**
    * @param {Property.<boolean>} gravityEnabledProperty
-   * @param {Object} [options] - This object contains options for main node of gravity menu.
+   * @param {Object} [providedOptions] - This object contains options for main node of gravity menu.
    */
-  constructor( gravityEnabledProperty: Property<boolean>, options?: Partial<GravityControlOptions> ) {
-    super( options );
+  constructor( gravityEnabledProperty: Property<boolean>, providedOptions?: Partial<GravityControlOptions> ) {
+    super( providedOptions );
 
-    const filledOptions: GravityControlOptions = merge( { tandem: Tandem.OPTIONAL }, options ) as GravityControlOptions;
+    const options: GravityControlOptions = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as GravityControlOptions;
 
     const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
     const onTextNode = new Text( onString, TEXT_OPTIONS );
     const offTextNode = new Text( offString, TEXT_OPTIONS );
 
     this.addLinkedElement( gravityEnabledProperty, {
-      tandem: filledOptions.tandem.createTandem( 'gravityEnabledProperty' )
+      tandem: options.tandem.createTandem( 'gravityEnabledProperty' )
     } );
 
     this.addChild( new HBox( {
       spacing: 10, bottom: 2, children: [
         gravityTextNode,
-        new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: filledOptions.tandem.createTandem( 'gravityOnRadioButton' ) }, RADIO_OPTIONS ) ),
-        new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: filledOptions.tandem.createTandem( 'gravityOffRadioButton' ) }, RADIO_OPTIONS ) )
+        new AquaRadioButton( gravityEnabledProperty, true, onTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOnRadioButton' ) }, RADIO_OPTIONS ) ),
+        new AquaRadioButton( gravityEnabledProperty, false, offTextNode, merge( { tandem: options.tandem.createTandem( 'gravityOffRadioButton' ) }, RADIO_OPTIONS ) )
       ]
     } ) );
   }

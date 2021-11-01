@@ -24,16 +24,16 @@ class GravityAndOrbitsGridNode extends Node {
    * @param {number} spacing - spacing between grid lines
    * @param {Vector2} center - center of the grid in model coordinates
    * @param {number} numGridLines - number grid lines on each side of the center
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( transformProperty: Property<ModelViewTransform2>, spacing: number, center: Vector2, numGridLines: number, options?: object ) {
+  constructor( transformProperty: Property<ModelViewTransform2>, spacing: number, center: Vector2, numGridLines: number, providedOptions?: object ) {
 
-    options = merge( {
+    providedOptions = merge( {
       lineWidth: 1,
       stroke: 'gray'
-    }, options );
+    }, providedOptions );
 
-    const path = new Path( null, options );
+    const path = new Path( null, providedOptions );
     super( { children: [ path ] } );
 
     transformProperty.link( () => {

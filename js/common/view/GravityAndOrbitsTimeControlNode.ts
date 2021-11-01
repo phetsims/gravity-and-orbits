@@ -35,13 +35,13 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
   /**
    * @param {GravityAndOrbitsModel} model
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( model: GravityAndOrbitsModel, options?: Partial<GravityAndOrbitsTimeControlNodeOptions> ) {
+  constructor( model: GravityAndOrbitsModel, providedOptions?: Partial<GravityAndOrbitsTimeControlNodeOptions> ) {
 
-    const filledOptions: GravityAndOrbitsTimeControlNodeOptions = merge( {
+    const options: GravityAndOrbitsTimeControlNodeOptions = merge( {
       tandem: Tandem.REQUIRED
-    }, options ) as GravityAndOrbitsTimeControlNodeOptions;
+    }, providedOptions ) as GravityAndOrbitsTimeControlNodeOptions;
 
 
     super( model.isPlayingProperty, {
@@ -70,7 +70,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           touchAreaDilation: 5
         }
       },
-      tandem: filledOptions.tandem
+      tandem: options.tandem
     } );
 
     const restartButton = new RestartButton( {
@@ -80,7 +80,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       yMargin: 9.5,
       listener: () => model.sceneProperty.value.rewind(),
       center: this.getPlayPauseButtonCenter().minusXY( PLAY_PAUSE_BUTTON_RADIUS + STEP_BUTTON_RADIUS + PUSH_BUTTON_SPACING, 0 ),
-      tandem: filledOptions.tandem.createTandem( 'restartButton' )
+      tandem: options.tandem.createTandem( 'restartButton' )
     } );
     this.addChild( restartButton );
 

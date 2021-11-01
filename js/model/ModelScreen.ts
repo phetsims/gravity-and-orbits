@@ -28,9 +28,9 @@ type ModelScreenOptions = {
 };
 
 class ModelScreen extends Screen {
-  constructor( options?: Partial<ModelScreenOptions> ) {
+  constructor( providedOptions?: Partial<ModelScreenOptions> ) {
 
-    const filledOptions = merge( {
+    const options = merge( {
       name: modelString,
 
       homeScreenIcon: new ScreenIcon( new Image( modelMipmap ) as unknown as Node, {
@@ -38,13 +38,13 @@ class ModelScreen extends Screen {
         maxIconHeightProportion: 1,
         fill: 'black'
       } )
-    }, options ) as ModelScreenOptions;
+    }, providedOptions ) as ModelScreenOptions;
 
-    const viewTandem = filledOptions.tandem.createTandem( 'view' );
+    const viewTandem = options.tandem.createTandem( 'view' );
     super(
-      () => new ModelModel( filledOptions.tandem.createTandem( 'model' ), viewTandem ),
+      () => new ModelModel( options.tandem.createTandem( 'model' ), viewTandem ),
       ( model: GravityAndOrbitsModel ) => new GravityAndOrbitsScreenView( model, viewTandem ),
-      filledOptions
+      options
     );
   }
 }

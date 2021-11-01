@@ -33,9 +33,9 @@ class TimeCounter extends Node {
    * @param {function} timeFormatter
    * @param {GravityAndOrbitsClock} clock
    * @param {Tandem} tandem
-   * @param [options]
+   * @param [providedOptions]
    */
-  constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, options?: { bottom: number; right: number; scale: number; } ) {
+  constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: { bottom: number; right: number; scale: number; } ) {
     super();
 
     // day text counter
@@ -76,7 +76,7 @@ class TimeCounter extends Node {
       ]
     } ) );
 
-    this.mutate( merge( { tandem: tandem }, options ) );
+    this.mutate( merge( { tandem: tandem }, providedOptions ) );
   }
 }
 
