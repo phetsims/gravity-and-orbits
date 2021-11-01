@@ -14,18 +14,11 @@ import Property from '../../../../axon/js/Property.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
+import merge from '../../../../phet-core/js/merge.js';
 
 type RewindablePropertyOptions = {
-
-  // TODO: Move these to PhetioObjectOptions, see https://github.com/phetsims/gravity-and-orbits/issues/405
-  tandem: Tandem,
-  phetioType?: IOType;
-  units?: string;
-  phetioHighFrequency?: boolean;
-  phetioDocumentation?: string;
-  phetioStudioControl?: boolean;
-  phetioReadOnly?: boolean;
-};
+  units?: string
+} & PhetioObjectOptions;
 
 class RewindableProperty<T> extends Property<T> {
   rewindValue: T;
@@ -36,12 +29,15 @@ class RewindableProperty<T> extends Property<T> {
   /**
    * @param {Property} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
    * @param {T} value
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    * @constructor
    */
-  constructor( changeRewindValueProperty: Property<boolean>, value: T, options: RewindablePropertyOptions = {
-    tandem: Tandem.OPTIONAL
-  } ) {
+  constructor( changeRewindValueProperty: Property<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {
+
+    const options = merge( {
+      tandem: Tandem.OPTIONAL
+    }, providedOptions ) as unknown as RewindablePropertyOptions;
+
     super( value, options );
 
     // @public - the "initial condition" the property can be rewound to, different than the overall "reset" value
