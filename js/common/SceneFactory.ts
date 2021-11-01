@@ -492,9 +492,9 @@ class Planet extends Body {
    * @param {GravityAndOrbitsModel} model
    * @param {BodyConfiguration} bodyConfiguration
    * @param {Tandem} tandem
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: PlanetOptions ) {
+  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, providedOptions?: PlanetOptions ) {
     super(
       'planet',
       bodyConfiguration,
@@ -506,7 +506,7 @@ class Planet extends Body {
       earthString,
       model,
       tandem,
-      options
+      providedOptions
     );
   }
 }

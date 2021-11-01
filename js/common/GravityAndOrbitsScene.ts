@@ -46,9 +46,9 @@ const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
 const PLAY_AREA_HEIGHT = GravityAndOrbitsSceneView.STAGE_SIZE.height;
 
 type GravityAndOrbitsSceneOptions = {
-  adjustMoonOrbit: boolean;
-  dt: number;
-  gridCenter: Vector2;
+  adjustMoonOrbit?: boolean;
+  dt?: number;
+  gridCenter?: Vector2;
 };
 
 type MeasuringTapeOptions = {
@@ -97,10 +97,10 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {Tandem} sceneViewTandem
    * @param {Body[]} bodies
    * @param {Pair[]} pairs
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
   constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node, gridSpacing: number, tandem: Tandem,
-               sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], options?: Partial<GravityAndOrbitsSceneOptions> ) {
+               sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], providedOptions?: GravityAndOrbitsSceneOptions ) {
 
     const forceScale = modeConfig.forceScale;
     const initialMeasuringTapePosition = modeConfig.initialMeasuringTapePosition;
@@ -110,13 +110,13 @@ class GravityAndOrbitsScene extends PhetioObject {
     const resetButtonTandemName = `${tandemName}ResetButton`;
     const massControlPanelTandemName = `${tandemName}MassesControlPanel`;
 
-    const filledOptions: GravityAndOrbitsSceneOptions = merge( {
+    const options = merge( {
       gridCenter: new Vector2( 0, 0 ),
       dt: modeConfig.dt,
       adjustMoonOrbit: false
-    }, options ) as GravityAndOrbitsSceneOptions;
-    const gridCenter = filledOptions.gridCenter as Vector2;
-    const dt = filledOptions.dt;
+    }, providedOptions ) as Required<GravityAndOrbitsSceneOptions>;
+    const gridCenter = options.gridCenter as Vector2;
+    const dt = options.dt;
 
     super( {
       phetioDocumentation: 'A group of orbital masses which can be selected',
@@ -182,7 +182,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     // @private
     const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.timeSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
-    this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, filledOptions.adjustMoonOrbit );
+    this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
 
     Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed: boolean, active: boolean ) =>
       this.physicsEngine.clock.setRunning( playButtonPressed && active )

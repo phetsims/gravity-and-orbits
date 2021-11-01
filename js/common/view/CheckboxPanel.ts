@@ -68,12 +68,12 @@ class CheckboxPanel extends VBox {
 
   /**
    * @param {GravityAndOrbitsModel} model
-   * @param {Object} [options]
+   * @param {Object} [providedOptions]
    */
-  constructor( model: GravityAndOrbitsModel, options?: Partial<CheckboxPanelOptions> ) {
+  constructor( model: GravityAndOrbitsModel, providedOptions?: Partial<CheckboxPanelOptions> ) {
 
     const children = [];
-    const filledOptions = merge( { tandem: Tandem.OPTIONAL }, options ) as CheckboxPanelOptions;
+    const options = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as CheckboxPanelOptions;
 
     const gravityForceTextNode = new Text( gravityForceString, TEXT_OPTIONS );
     const velocityTextNode = new Text( velocityString, TEXT_OPTIONS );
@@ -81,7 +81,7 @@ class CheckboxPanel extends VBox {
     const pathTextNode = new Text( pathString, TEXT_OPTIONS );
     const gridTextNode = new Text( gridString, TEXT_OPTIONS );
     const measuringTapeTextNode = new Text( measuringTapeString, TEXT_OPTIONS );
-    const optionsWithTandem = ( tandemName: string ) => merge( { tandem: filledOptions.tandem.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
+    const optionsWithTandem = ( tandemName: string ) => merge( { tandem: options.tandem.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
 
     // gravity force checkbox
     children.push( new Checkbox( new HBox( merge( {
@@ -167,7 +167,7 @@ class CheckboxPanel extends VBox {
       align: 'left',
       bottom: -12,
       tandem: Tandem.REQUIRED
-    }, options ) );
+    }, providedOptions ) );
   }
 }
 
