@@ -27,7 +27,7 @@ import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import GravityAndOrbitsScene from './GravityAndOrbitsScene.js';
-import Body from './model/Body.js';
+import Body, { BodyOptions } from './model/Body.js';
 import BodyConfiguration from './model/BodyConfiguration.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
 import ModeConfig from './model/ModeConfig.js';
@@ -484,7 +484,7 @@ class Moon extends Body {
   }
 }
 
-type PlanetOptions = {};
+type PlanetOptions = {} & BodyOptions;
 
 class Planet extends Body {
 

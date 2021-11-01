@@ -61,8 +61,7 @@ const HBOX_OPTIONS = {
 };
 
 type CheckboxPanelOptions = {
-  tandem: Tandem
-};
+} & PhetioObjectOptions;
 
 class CheckboxPanel extends VBox {
 
@@ -70,10 +69,10 @@ class CheckboxPanel extends VBox {
    * @param {GravityAndOrbitsModel} model
    * @param {Object} [providedOptions]
    */
-  constructor( model: GravityAndOrbitsModel, providedOptions?: Partial<CheckboxPanelOptions> ) {
+  constructor( model: GravityAndOrbitsModel, providedOptions?: CheckboxPanelOptions ) {
 
     const children = [];
-    const options = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as CheckboxPanelOptions;
+    const options = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as Required<CheckboxPanelOptions>;
 
     const gravityForceTextNode = new Text( gravityForceString, TEXT_OPTIONS );
     const velocityTextNode = new Text( velocityString, TEXT_OPTIONS );

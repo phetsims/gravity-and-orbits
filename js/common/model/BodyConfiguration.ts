@@ -12,7 +12,7 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 import merge from '../../../../phet-core/js/merge.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-declare interface BodyConfigurationOptions {
+type BodyConfigurationOptions = {
   rotationPeriod: null | number
 }
 
@@ -31,7 +31,7 @@ class BodyConfiguration {
 
     const options = merge( {
       rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
-    }, providedOptions ) as BodyConfigurationOptions;
+    }, providedOptions ) as Required<BodyConfigurationOptions>;
 
     // @public
     this.isMovable = true; // True if the object moves based on physics (even non-isMovable things can be dragged though)

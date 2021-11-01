@@ -49,7 +49,7 @@ type GravityAndOrbitsSceneOptions = {
   adjustMoonOrbit?: boolean;
   dt?: number;
   gridCenter?: Vector2;
-};
+} & PhetioObjectOptions;
 
 type MeasuringTapeOptions = {
   tandem?: Tandem,
