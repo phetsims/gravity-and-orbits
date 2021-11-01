@@ -36,7 +36,7 @@ class RewindableProperty<T> extends Property<T> {
 
     const options = merge( {
       tandem: Tandem.OPTIONAL
-    }, providedOptions ) as RewindablePropertyOptions;
+    }, providedOptions ) as Pick<RewindablePropertyOptions, 'tandem'>;
 
     super( value, options );
 
