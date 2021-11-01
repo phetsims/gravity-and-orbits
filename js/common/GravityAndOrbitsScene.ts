@@ -56,6 +56,8 @@ type MeasuringTapeOptions = {
   units?: string
 };
 
+type GravityAndOrbitsSceneImplementationOptions = Pick<GravityAndOrbitsSceneOptions, 'adjustMoonOrbit' | 'dt' | 'gridCenter'>;
+
 class GravityAndOrbitsScene extends PhetioObject {
   activeProperty: BooleanProperty;
   iconImage: Node;
@@ -114,7 +116,7 @@ class GravityAndOrbitsScene extends PhetioObject {
       gridCenter: new Vector2( 0, 0 ),
       dt: modeConfig.dt,
       adjustMoonOrbit: false
-    }, providedOptions ) as Required<GravityAndOrbitsSceneOptions>;
+    }, providedOptions ) as Required<GravityAndOrbitsSceneImplementationOptions>;
     const gridCenter = options.gridCenter as Vector2;
     const dt = options.dt;
 

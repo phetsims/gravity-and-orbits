@@ -40,7 +40,7 @@ const starString = gravityAndOrbitsStrings.star;
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
 
-type BodyOptions = {
+type BodyImplementationOptions = {
   pathLengthBuffer?: number,
   diameterScale?: number,
   massSettable?: boolean,
@@ -52,7 +52,8 @@ type BodyOptions = {
   phetioType?: IOType,
   touchDilation?: number,
   tandem?: Tandem
-} & PhetioObjectOptions;
+};
+type BodyOptions = BodyImplementationOptions & PhetioObjectOptions;
 
 class Body extends PhetioObject {
 
@@ -134,7 +135,7 @@ class Body extends PhetioObject {
       phetioType: Body.BodyIO,
       touchDilation: 15,
       tandem: tandem
-    }, providedOptions ) as Required<BodyOptions>;
+    }, providedOptions ) as Required<BodyImplementationOptions>;
 
     super( options );
 
