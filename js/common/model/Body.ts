@@ -385,7 +385,7 @@ class Body extends PhetioObject {
    * @param stateObject
    * @public (phet-io)
    */
-  setStateObject( stateObject: { pathLength: number; modelPathLength: number; path: any; } ) {
+  setStateObject( stateObject: any ) {
     this.pathLength = stateObject.pathLength;
     this.modelPathLength = stateObject.modelPathLength;
     this.path = ArrayIO( Vector2.Vector2IO ).fromStateObject( stateObject.path );
@@ -602,7 +602,7 @@ const BodyIO = new IOType( 'BodyIO', {
   valueType: Body,
   documentation: 'Represents a physical body in the simulation',
   toStateObject: ( body: Body ) => body.toStateObject(),
-  applyState: ( body: Body, stateObject: { pathLength: number; modelPathLength: number; path: any; } ) => body.setStateObject( stateObject ),
+  applyState: ( body: Body, stateObject: any ) => body.setStateObject( stateObject ),
   stateSchema: {
     pathLength: NumberIO,
     modelPathLength: NumberIO,
