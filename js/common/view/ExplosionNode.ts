@@ -33,13 +33,11 @@ class ExplosionNode extends Node {
       if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION / 2 ) {
         const myFunction = new LinearFunction( 0, NUM_STEPS_FOR_ANIMATION / 2,
           1, this.getMaxViewDiameter( body, modelViewTransformProperty ) );
-        // @ts-ignore
         return myFunction.evaluate( numClockTicksSinceExplosion );
       }
       else if ( numClockTicksSinceExplosion < NUM_STEPS_FOR_ANIMATION ) {
         const myFunction2 = new LinearFunction( NUM_STEPS_FOR_ANIMATION / 2, NUM_STEPS_FOR_ANIMATION,
           this.getMaxViewDiameter( body, modelViewTransformProperty ), 1 );
-        // @ts-ignore
         return myFunction2.evaluate( numClockTicksSinceExplosion );
       }
       else {
