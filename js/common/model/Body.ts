@@ -220,7 +220,7 @@ class Body extends PhetioObject {
     const rewindingProperty = model.rewindingProperty;
 
     // @public - force freeze all changes to the rewind values for rewindable Property
-    this.freezeRewindChangeProperty = new Property( false );
+    this.freezeRewindChangeProperty = new Property<boolean>( false );
 
     this.labelAngle = labelAngle; // @public
     const changeRewindValueProperty = new DerivedProperty<boolean>( [
@@ -290,7 +290,7 @@ class Body extends PhetioObject {
     } );
 
     // @public
-    this.isCollidedProperty = new RewindableProperty( changeRewindValueProperty, false, {
+    this.isCollidedProperty = new RewindableProperty<boolean>( changeRewindValueProperty, false, {
       tandem: tandem.createTandem( 'isCollidedProperty' ),
       phetioType: RewindableProperty.RewindablePropertyIO( BooleanIO ),
       phetioReadOnly: true,

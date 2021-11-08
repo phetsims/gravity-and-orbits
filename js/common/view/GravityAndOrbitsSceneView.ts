@@ -152,9 +152,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
       } );
 
       scene.transformProperty.link( ( transform: ModelViewTransform2 ) => measuringTapeNode.setModelViewTransform( transform ) );
-      scene.modelBoundsProperty.link( ( bounds: Bounds2 ) => {
+      scene.modelBoundsProperty.link( bounds => {
         const basePosition = measuringTapeNode.basePositionProperty.get();
-        measuringTapeNode.setDragBounds( bounds );
+        measuringTapeNode.setDragBounds( bounds! );
 
         // if the position of the base has changed due to modifying the
         // drag bounds, we want to subtract the difference from the position
@@ -172,12 +172,12 @@ class GravityAndOrbitsSceneView extends Rectangle {
       const draggableAreaNode = new Rectangle( 0, 0, 0, 0, { stroke: 'blue', lineWidth: 4 } );
       this.addChild( draggableAreaNode );
 
-      scene.modelBoundsProperty.link( ( bounds: Bounds2 ) => {
+      scene.modelBoundsProperty.link( bounds => {
         draggableAreaNode.setRectBounds( scene.transformProperty.get().modelToViewBounds( bounds ) );
       } );
     }
 
-    scene.modelBoundsProperty.link( ( bounds: Bounds2 ) => {
+    scene.modelBoundsProperty.link( bounds => {
 
       // Tell each of the bodies about the stage size (in model coordinates) so they know if they are out of bounds
       for ( let i = 0; i < bodies.length; i++ ) {

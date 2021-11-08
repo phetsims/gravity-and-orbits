@@ -35,7 +35,7 @@ class BodyNode extends Node {
   private readonly positionListener: ( position: Vector2, modelViewTransform: ModelViewTransform2 ) => void;
   private readonly diameterListener: () => void;
   private readonly modelViewTransformListener: ( modelViewTransform: Transform3 ) => void;
-  private readonly modelBoundsListener: ( dragBounds: Bounds2 ) => void;
+  private readonly modelBoundsListener: ( dragBounds: Bounds2 | null ) => void;
 
   /**
    * Constructor for BodyNode
