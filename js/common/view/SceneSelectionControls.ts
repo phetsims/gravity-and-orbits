@@ -47,7 +47,7 @@ class SceneSelectionControls extends Node {
       } );
 
       // link reset buttons so that only the reset button next to the selected radio button is visible
-      sceneProperty.link( ( selectedScene: GravityAndOrbitsScene ) => sceneResetButton.setVisible( selectedScene === scene ) );
+      sceneProperty.link( selectedScene => sceneResetButton.setVisible( selectedScene === scene ) );
 
       return sceneResetButton;
     } );

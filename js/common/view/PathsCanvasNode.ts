@@ -79,7 +79,7 @@ class PathsCanvasNode extends CanvasNode {
 
     this.bodies = bodies; // @private
 
-    visibleProperty.link( ( isVisible: boolean ) => {
+    visibleProperty.link( isVisible => {
       this.visible = isVisible;
 
       // Paths should restart from the body position when "Path" checkbox is checked

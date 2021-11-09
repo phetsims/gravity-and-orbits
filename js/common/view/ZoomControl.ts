@@ -127,12 +127,12 @@ class SliderButton extends RectangularPushButton {
     if ( isIncrease ) {
 
       // plus button
-      scaleProperty.link( ( scaleValue: number ) => this.setEnabled( scaleValue !== range.max ) );
+      scaleProperty.link( scaleValue => this.setEnabled( scaleValue !== range.max ) );
     }
     else {
 
       // minus button
-      scaleProperty.link( ( scaleValue: number ) => this.setEnabled( scaleValue !== range.min ) );
+      scaleProperty.link( scaleValue => this.setEnabled( scaleValue !== range.min ) );
     }
 
     // Increase the touch area in all directions except toward the slider knob,

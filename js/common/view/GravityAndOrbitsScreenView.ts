@@ -22,7 +22,6 @@ import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.j
 import MassControlPanel from './MassControlPanel.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 
 // constants
 const MARGIN = 5;
@@ -93,7 +92,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
     } ) );
 
     // Make sure only one scene is visible at a time
-    model.sceneProperty.link( ( scene: GravityAndOrbitsScene ) => {
+    model.sceneProperty.link( scene => {
       for ( let i = 0; i < model.sceneList.scenes.length; i++ ) {
         const gravityAndOrbitsScene = model.sceneList.scenes[ i ];
         gravityAndOrbitsScene.sceneView.visible = false;

@@ -55,7 +55,7 @@ abstract class MassReadoutNode extends Node {
       updatePosition();
     } );
 
-    visibleProperty.link( ( visible: boolean ) => {
+    visibleProperty.link( visible => {
       this.visible = visible;
       updatePosition();
     } );

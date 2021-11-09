@@ -173,7 +173,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
       this.addChild( draggableAreaNode );
 
       scene.modelBoundsProperty.link( bounds => {
-        draggableAreaNode.setRectBounds( scene.transformProperty.get().modelToViewBounds( bounds ) );
+        if ( bounds ) {
+          draggableAreaNode.setRectBounds( scene.transformProperty.get().modelToViewBounds( bounds ) );
+        }
       } );
     }
 
