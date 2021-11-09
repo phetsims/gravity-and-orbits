@@ -32,7 +32,6 @@ import ZoomControl from './ZoomControl.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
 const vString = gravityAndOrbitsStrings.v;
@@ -151,7 +150,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         visiblePropertyOptions: { phetioReadOnly: true } // controlled by a checkbox
       } );
 
-      scene.transformProperty.link( ( transform: ModelViewTransform2 ) => measuringTapeNode.setModelViewTransform( transform ) );
+      scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
       scene.modelBoundsProperty.link( bounds => {
         const basePosition = measuringTapeNode.basePositionProperty.get();
         measuringTapeNode.setDragBounds( bounds! );

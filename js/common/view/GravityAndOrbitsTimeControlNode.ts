@@ -94,7 +94,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
         } );
       } );
     } );
-    const anyPropertyDifferentProperty = new DerivedProperty( dependencies, () => {
+    const anyPropertyDifferentProperty = new DerivedProperty<boolean>( dependencies, () => {
       let changed = false;
       model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
         // @ts-ignore
@@ -104,7 +104,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       } );
       return changed;
     } );
-    anyPropertyDifferentProperty.link( ( changed: boolean ) => restartButton.setEnabled( changed ) );
+    anyPropertyDifferentProperty.link( changed => restartButton.setEnabled( changed ) );
   }
 }
 

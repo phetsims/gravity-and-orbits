@@ -59,7 +59,7 @@ class BodyNode extends Node {
     this.modelViewTransformProperty = scene.transformProperty; // @private
     this.body = body; // @public
 
-    this.body.isCollidedProperty.link( ( isCollided: boolean ) => this.setVisible( !isCollided ) );
+    this.body.isCollidedProperty.link( isCollided => this.setVisible( !isCollided ) );
 
     this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
     this.addChild( this.bodyRenderer );

@@ -332,7 +332,7 @@ class Body extends PhetioObject {
     this.userModifiedPositionEmitter = new Emitter();
     this.userModifiedVelocityEmitter = new Emitter();
 
-    this.isCollidedProperty.link( ( collided: boolean ) => {
+    this.isCollidedProperty.link( collided => {
       if ( collided && !phet.joist.sim.isSettingPhetioStateProperty.value ) {
         this.clockTicksSinceExplosionProperty.set( 0 );
       }
@@ -431,7 +431,7 @@ class Body extends PhetioObject {
    * @public
    * @param {BodyState} bodyState
    */
-  updateBodyStateFromModel( bodyState: { position: any; velocity: any; acceleration: { multiplyScalar: ( arg0: any ) => any; }; mass: any; rotation: any; } ) {
+  updateBodyStateFromModel( bodyState: { position: Vector2; velocity: Vector2; acceleration: Vector2; mass: number; rotation: number; } ) {
     if ( !this.isCollidedProperty.value ) {
       if ( this.isMovableProperty.value && !this.userControlled ) {
         this.positionProperty.set( bodyState.position );
