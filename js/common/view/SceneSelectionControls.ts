@@ -37,9 +37,7 @@ class SceneSelectionControls extends Node {
     super( providedOptions );
     const options: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as SceneSelectionControlsOptions;
 
-    const content: Object[] = []; // for radio buttons
     const resetButtons = modes.map( scene => {
-      content.push( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
 
       // For the PhET-iO design, we decided to feature the radio button group and leave the reset buttons separate.
       const sceneResetButton = new SceneResetButton( scene, {
@@ -51,6 +49,11 @@ class SceneSelectionControls extends Node {
 
       return sceneResetButton;
     } );
+
+    const content = modes.map( scene => {
+      return ( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
+    } );
+
     const radioButtonGroup = new RectangularRadioButtonGroup( sceneProperty, content, {
       alignVertically: true,
       selectedStroke: GravityAndOrbitsColors.foregroundProperty,
