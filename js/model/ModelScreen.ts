@@ -10,7 +10,6 @@ import Screen from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
-import Node from '../../../scenery/js/nodes/Node.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import modelMipmap from '../../mipmaps/model_icon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
@@ -33,7 +32,7 @@ class ModelScreen extends Screen {
     const options = merge( {
       name: modelString,
 
-      homeScreenIcon: new ScreenIcon( new Image( modelMipmap ) as unknown as Node, {
+      homeScreenIcon: new ScreenIcon( new Image( modelMipmap ), {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1,
         fill: 'black'
