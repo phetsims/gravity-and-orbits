@@ -80,7 +80,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
       this.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
 
-      const isReturnableProperty = new DerivedProperty<boolean>( [ body.positionProperty, scene.zoomLevelProperty ], () => {
+      const isReturnableProperty = new DerivedProperty( [ body.positionProperty, scene.zoomLevelProperty ], () => {
 
         // the return objects button should be visible when a body is out of bounds
         // and not at the rewind position

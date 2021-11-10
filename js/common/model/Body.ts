@@ -223,7 +223,7 @@ class Body extends PhetioObject {
     this.freezeRewindChangeProperty = new Property<boolean>( false );
 
     this.labelAngle = labelAngle; // @public
-    const changeRewindValueProperty = new DerivedProperty<boolean>( [
+    const changeRewindValueProperty = new DerivedProperty( [
         this.isPlayingProperty,
         steppingProperty,
         rewindingProperty,
