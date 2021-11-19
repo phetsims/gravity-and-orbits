@@ -25,7 +25,6 @@
     "phet-io": {
       "compareDesignedAPIChanges": true
     },
-    "typescript": true,
     "supportsOutputJS": true,
     "generatedUnitTests": true
   },
