@@ -338,7 +338,8 @@ class Body extends PhetioObject {
       }
     } );
 
-    const initialPosition = this.positionProperty.initialValue.minus( options.orbitalCenter );
+    assert && assert( this.positionProperty.initialValue, 'initial value should be truthy' );
+    const initialPosition = this.positionProperty.initialValue!.minus( options.orbitalCenter );
     const distToCenter = initialPosition.magnitude;
 
     // determine the max path length for the body in model coordinates
