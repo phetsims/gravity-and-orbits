@@ -17,11 +17,14 @@ import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import ProfileColorProperty from '../../../scenery/js/util/ProfileColorProperty.js';
+import { PhetioObjectOptions } from '../../../tandem/js/PhetioObject.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
 const toScaleString = gravityAndOrbitsStrings.toScale;
 
 type ScreenOptions = {
-  backgroundColorProperty?: ProfileColorProperty
+  backgroundColorProperty?: ProfileColorProperty;
+  tandem: Tandem;
 } & PhetioObjectOptions;
 
 class ToScaleScreen extends Screen {

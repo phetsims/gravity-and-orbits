@@ -15,9 +15,11 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import merge from '../../../../phet-core/js/merge.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 
 type RewindablePropertyOptions = {
-  units?: string
+  units?: string;
+  tandem: Tandem;
 } & PhetioObjectOptions;
 
 class RewindableProperty<T> extends Property<T> {

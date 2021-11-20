@@ -20,6 +20,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 
 const moonMassString = gravityAndOrbitsStrings.moonMass;
 const planetMassString = gravityAndOrbitsStrings.planetMass;
