@@ -12,7 +12,7 @@
  */
 
 import Utils from '../../../../dot/js/Utils.js';
-import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
+import { CanvasNode } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import BodyTypeEnum from '../model/BodyTypeEnum.js';

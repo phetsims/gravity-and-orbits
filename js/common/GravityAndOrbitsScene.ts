@@ -32,7 +32,7 @@ import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
 import GravityAndOrbitsPhysicsEngine from './model/GravityAndOrbitsPhysicsEngine.js';
 import GravityAndOrbitsSceneView from './view/GravityAndOrbitsSceneView.js';
-import Node from '../../../scenery/js/nodes/Node.js';
+import { Node } from '../../../scenery/js/imports.js';
 import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
 import ModeConfig from './model/ModeConfig.js';
 import BodyNode from './view/BodyNode.js';

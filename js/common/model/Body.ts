@@ -27,7 +27,7 @@ import BodyState from './BodyState.js';
 import BodyTypeEnum from './BodyTypeEnum.js';
 import RewindableProperty from './RewindableProperty.js';
 import BodyConfiguration from './BodyConfiguration.js';
-import Color from '../../../../scenery/js/util/Color.js';
+import { Color } from '../../../../scenery/js/imports.js';
 import BodyRenderer from '../view/BodyRenderer.js';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
