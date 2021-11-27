@@ -613,5 +613,5 @@ const BodyIO = new IOType( 'BodyIO', {
 Body.BodyIO = BodyIO;
 
 gravityAndOrbits.register( 'Body', Body );
-export { BodyOptions };
+export type { BodyOptions };
 export default Body;
