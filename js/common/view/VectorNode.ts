@@ -79,7 +79,7 @@ class VectorNode extends Node {
         arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
       }
     };
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], this.propertyListener );
+    Property.multilink<any[]>( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], this.propertyListener );
 
     this.addChild( arrowNode );
   }

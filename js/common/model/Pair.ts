@@ -12,11 +12,12 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import Body from './Body.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
+import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 
 class Pair {
   private body1: Body;
   private body2: Body;
-  private distanceProperty: DerivedProperty<number>;
+  private distanceProperty: IReadOnlyProperty<number>;
 
   /**
    * @param {Body} body1

@@ -31,6 +31,7 @@ import { Color } from '../../../../scenery/js/imports.js';
 import BodyRenderer from '../view/BodyRenderer.js';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -95,10 +96,10 @@ class Body extends PhetioObject {
   private readonly rotationPeriod: number | null;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   labelAngle: number;
-  private speedProperty: DerivedProperty<number>;
+  private speedProperty: IReadOnlyProperty<number>;
   private readonly isPlayingProperty: BooleanProperty;
   readonly forceProperty: RewindableProperty<Vector2>;
-  private forceMagnitudeProperty: DerivedProperty<number>;
+  private forceMagnitudeProperty: IReadOnlyProperty<number>;
   readonly isMovableProperty: BooleanProperty;
 
   static BodyIO: IOType;

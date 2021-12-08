@@ -73,7 +73,7 @@ class DraggableVectorNode extends VectorNode {
         text.center = tip;
       }
     };
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );
+    Property.multilink<any[]>( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );
 
     // The velocity vector is rooted on the object, so we manage all of its drags by deltas.
     let previousPoint: Vector2 | null = null;

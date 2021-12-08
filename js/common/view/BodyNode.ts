@@ -77,8 +77,10 @@ class BodyNode extends Node {
     };
     body.rotationProperty.link( rotationListener );
 
-    const dragBoundsProperty = new DerivedProperty( [ scene.modelBoundsProperty, body.diameterProperty ], ( modelBounds: Bounds2, diameter: number ) => {
-      return modelBounds.eroded( diameter / 2 );
+    const dragBoundsProperty = new DerivedProperty( [ scene.modelBoundsProperty, body.diameterProperty ], ( modelBounds: Bounds2 | null, diameter: number ) => {
+      assert && assert( modelBounds !== null );
+
+      return modelBounds!.eroded( diameter / 2 );
     } );
     const dragListener = new DragListener( {
       positionProperty: body.positionProperty,
@@ -125,7 +127,7 @@ class BodyNode extends Node {
       this.touchArea = circle;
       this.mouseArea = circle;
     };
-    Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
+    Property.multilink<any[]>( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
     this.modelViewTransformListener = ( modelViewTransform: Transform3 ) => dragListener.setTransform( modelViewTransform );
     this.modelViewTransformProperty.link( this.modelViewTransformListener );

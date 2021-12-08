@@ -32,6 +32,7 @@ import ZoomControl from './ZoomControl.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
 const vString = gravityAndOrbitsStrings.v;
@@ -73,14 +74,14 @@ class GravityAndOrbitsSceneView extends Rectangle {
     const velocityVectorColorOutline = new Color( 64, 64, 64 );
 
     // Use canvas coordinates to determine whether something has left the visible area
-    const isReturnableProperties: DerivedProperty<boolean>[] = [];
+    const isReturnableProperties: IReadOnlyProperty<boolean>[] = [];
     bodies.forEach( body => {
       const bodyNode = new BodyNode( body, body.labelAngle, model.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
       const massReadoutNode = scene.massReadoutFactory( bodyNode, model.showMassProperty );
       this.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
 
-      const isReturnableProperty = new DerivedProperty( [ body.positionProperty, scene.zoomLevelProperty ], () => {
+      const isReturnableProperty = new DerivedProperty( [ body.positionProperty, scene.zoomLevelProperty ], ( ...args: any[] ) => {
 
         // the return objects button should be visible when a body is out of bounds
         // and not at the rewind position

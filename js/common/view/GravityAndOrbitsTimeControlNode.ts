@@ -21,6 +21,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Body from '../model/Body.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import RewindableProperty from '../model/RewindableProperty.js';
+import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
@@ -94,7 +95,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
         } );
       } );
     } );
-    const anyPropertyDifferentProperty = new DerivedProperty( dependencies, () => {
+    const anyPropertyDifferentProperty = new DerivedProperty( dependencies, ( ...args: GravityAndOrbitsScene[] ) => {
       let changed = false;
       model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
         // @ts-ignore
