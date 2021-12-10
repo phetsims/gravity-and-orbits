@@ -84,7 +84,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   private tandemName: string;
   private dt: number;
   private rewindingProperty: BooleanProperty;
-  private timeSpeedProperty: EnumerationProperty;
+  private timeSpeedProperty: EnumerationProperty<any>;
   private pairs: Pair[];
 
   /**
