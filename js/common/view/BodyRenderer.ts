@@ -19,7 +19,7 @@ import Shape from '../../../../kite/js/Shape.js';
 import { Image } from '../../../../scenery/js/imports.js';
 import { Node } from '../../../../scenery/js/imports.js';
 import { Path } from '../../../../scenery/js/imports.js';
-import sunImage from '../../../images/sun_png.js';
+import sun_png from '../../../images/sun_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 class BodyRenderer extends Node {
@@ -161,7 +161,7 @@ class SunRenderer extends ImageRenderer {
    * @param {function} twinkleRadius
    */
   constructor( body, viewDiameter, numSegments, twinkleRadius ) {
-    super( body, viewDiameter, sunImage );
+    super( body, viewDiameter, sun_png );
     this.twinkles = new Path( null, { fill: 'yellow' } ); // @private
     this.numSegments = numSegments; // @private
     this.twinkleRadius = twinkleRadius; // @private

@@ -24,9 +24,9 @@ import { Text } from '../../../../scenery/js/imports.js';
 import { VBox } from '../../../../scenery/js/imports.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import iconMassImg from '../../../images/icon_mass_png.js';
-import pathIconImg from '../../../images/path_icon_png.js';
-import pathIconProjectorImg from '../../../images/path_icon_projector_png.js';
+import iconMass_png from '../../../images/iconMass_png.js';
+import pathIcon_png from '../../../images/pathIcon_png.js';
+import pathIconProjector_png from '../../../images/pathIconProjector_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
@@ -106,16 +106,16 @@ class CheckboxPanel extends VBox {
       children.push( new Checkbox( new HBox( merge( {
           children: [
             massTextNode,
-            new Image( iconMassImg, { scale: 0.8 } )
+            new Image( iconMass_png, { scale: 0.8 } )
           ]
         }, HBOX_OPTIONS ) ),
         model.showMassProperty, optionsWithTandem( 'massCheckbox' ) ) );
     }
 
-    const pathIconImageNode = new Image( pathIconImg, { scale: 0.25 } );
+    const pathIconImageNode = new Image( pathIcon_png, { scale: 0.25 } );
     colorProfileProperty.lazyLink( ( profileName: any ) => {
       assert && assert( profileName === SceneryConstants.DEFAULT_COLOR_PROFILE || profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE );
-      pathIconImageNode.setImage( profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE ? pathIconProjectorImg : pathIconImg );
+      pathIconImageNode.setImage( profileName === SceneryConstants.PROJECTOR_COLOR_PROFILE ? pathIconProjector_png : pathIcon_png );
     } );
 
     // path checkbox

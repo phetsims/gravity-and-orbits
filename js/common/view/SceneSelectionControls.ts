@@ -15,7 +15,7 @@ import { VBox } from '../../../../scenery/js/imports.js';
 import { Color } from '../../../../scenery/js/imports.js';
 import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
-import resetArrowImg from '../../../images/reset_arrow_png.js';
+import resetArrow_png from '../../../images/resetArrow_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property.js';
@@ -99,7 +99,7 @@ class SceneResetButton extends RectangularPushButton {
     const options = merge( {
       content: new Node( {
         children: [
-          new Image( resetArrowImg, { scale: 0.3 } )
+          new Image( resetArrow_png, { scale: 0.3 } )
         ]
       } ),
       xMargin: 5,

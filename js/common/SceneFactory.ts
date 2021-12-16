@@ -17,12 +17,12 @@ import { HBox } from '../../../scenery/js/imports.js';
 import { Image } from '../../../scenery/js/imports.js';
 import { Line } from '../../../scenery/js/imports.js';
 import { Color } from '../../../scenery/js/imports.js';
-import earthImage from '../../images/earth_png.js';
-import genericMoonImage from '../../images/moon_generic_png.js';
-import moonImage from '../../images/moon_png.js';
-import genericPlanetImage from '../../images/planet_generic_png.js';
-import spaceStationImage from '../../images/space-station_png.js';
-import sunImage from '../../images/sun_png.js';
+import earth_png from '../../images/earth_png.js';
+import moonGeneric_png from '../../images/moonGeneric_png.js';
+import moon_png from '../../images/moon_png.js';
+import planetGeneric_png from '../../images/planetGeneric_png.js';
+import spaceStation_png from '../../images/spaceStation_png.js';
+import sun_png from '../../images/sun_png.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
@@ -229,10 +229,10 @@ class SceneFactory {
    */
   createIconImage( sun, earth, moon, spaceStation ) {
     const children = [
-      new Image( sunImage, { visible: sun } ),
-      new Image( earthImage, { visible: earth } ),
-      new Image( moonImage, { visible: moon } ),
-      new Image( spaceStationImage, { visible: spaceStation } )
+      new Image( sun_png, { visible: sun } ),
+      new Image( earth_png, { visible: earth } ),
+      new Image( moon_png, { visible: moon } ),
+      new Image( spaceStation_png, { visible: spaceStation } )
     ];
 
     for ( let i = 0; i < children.length; i++ ) {
@@ -439,7 +439,7 @@ class Satellite extends Body {
       earthSpaceStation.satellite,
       Color.gray,
       Color.white,
-      getImageRenderer( spaceStationImage ),
+      getImageRenderer( spaceStation_png ),
       -Math.PI / 4,
       earthSpaceStation.satellite.mass,
       spaceStationString,
@@ -473,7 +473,7 @@ class Moon extends Body {
       bodyConfiguration,
       Color.magenta,
       Color.white,
-      getSwitchableRenderer( moonImage, genericMoonImage, bodyConfiguration.mass ),
+      getSwitchableRenderer( moon_png, moonGeneric_png, bodyConfiguration.mass ),
       -3 * Math.PI / 4,
       bodyConfiguration.mass,
       ourMoonString,
@@ -500,7 +500,7 @@ class Planet extends Body {
       bodyConfiguration,
       Color.gray,
       Color.lightGray,
-      getSwitchableRenderer( earthImage, genericPlanetImage, bodyConfiguration.mass ),
+      getSwitchableRenderer( earth_png, planetGeneric_png, bodyConfiguration.mass ),
       -Math.PI / 4,
       bodyConfiguration.mass,
       earthString,
@@ -525,7 +525,7 @@ class Star extends Body {
       bodyConfiguration,
       Color.yellow,
       Color.white,
-      getImageRenderer( sunImage ),
+      getImageRenderer( sun_png ),
       -Math.PI / 4,
       bodyConfiguration.mass,
       ourSunString,
