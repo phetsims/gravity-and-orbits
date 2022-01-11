@@ -38,7 +38,7 @@ import ModeConfig from './model/ModeConfig.js';
 import BodyNode from './view/BodyNode.js';
 import Body from './model/Body.js';
 import Pair from './model/Pair.js';
-import EnumerationProperty from '../../../axon/js/EnumerationProperty.js';
+import EnumerationDeprecatedProperty from '../../../axon/js/EnumerationDeprecatedProperty.js';
 import Bounds2 from '../../../dot/js/Bounds2.js';
 
 // constants
@@ -84,7 +84,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   private tandemName: string;
   private dt: number;
   private rewindingProperty: BooleanProperty;
-  private timeSpeedProperty: EnumerationProperty;
+  private timeSpeedProperty: EnumerationDeprecatedProperty;
   private pairs: Pair[];
 
   /**

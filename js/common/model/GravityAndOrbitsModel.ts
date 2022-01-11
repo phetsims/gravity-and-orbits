@@ -14,7 +14,7 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
+import EnumerationDeprecatedProperty from '../../../../axon/js/EnumerationDeprecatedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
@@ -37,7 +37,7 @@ class GravityAndOrbitsModel {
   showMeasuringTapeProperty: BooleanProperty;
   sceneProperty: Property<GravityAndOrbitsScene>;
   isPlayingProperty: BooleanProperty;
-  timeSpeedProperty: EnumerationProperty;
+  timeSpeedProperty: EnumerationDeprecatedProperty;
   gravityEnabledProperty: BooleanProperty;
   steppingProperty: BooleanProperty;
   rewindingProperty: BooleanProperty;
@@ -74,7 +74,7 @@ class GravityAndOrbitsModel {
 
     // @public
     // @ts-ignore
-    this.timeSpeedProperty = new EnumerationProperty( TimeSpeed, TimeSpeed.NORMAL, {
+    this.timeSpeedProperty = new EnumerationDeprecatedProperty( TimeSpeed, TimeSpeed.NORMAL, {
       tandem: tandem.createTandem( 'timeSpeedProperty' )
     } );
 
