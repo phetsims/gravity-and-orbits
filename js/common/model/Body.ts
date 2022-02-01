@@ -286,8 +286,7 @@ class Body extends PhetioObject {
       tandem: tandem.createTandem( 'massProperty' ),
       phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
       units: 'kg',
-      phetioDocumentation: 'The mass of the body',
-      phetioStudioControl: false
+      phetioDocumentation: 'The mass of the body'
     } );
 
     // @public
@@ -304,8 +303,7 @@ class Body extends PhetioObject {
       phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
       units: 'radians',
       phetioHighFrequency: true,
-      phetioDocumentation: 'The rotation of the body about its own origin',
-      phetioStudioControl: false
+      phetioDocumentation: 'The rotation of the body about its own origin'
     } );
 
     // @public (read-only)
