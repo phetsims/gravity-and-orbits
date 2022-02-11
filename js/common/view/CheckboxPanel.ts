@@ -16,12 +16,7 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { SceneryConstants } from '../../../../scenery/js/imports.js';
-import { colorProfileProperty } from '../../../../scenery/js/imports.js';
-import { HBox } from '../../../../scenery/js/imports.js';
-import { Image } from '../../../../scenery/js/imports.js';
-import { Text } from '../../../../scenery/js/imports.js';
-import { VBox } from '../../../../scenery/js/imports.js';
+import { colorProfileProperty, HBox, HBoxOptions, Image, SceneryConstants, Text, VBox, VBoxOptions } from '../../../../scenery/js/imports.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import iconMass_png from '../../../images/iconMass_png.js';
@@ -32,7 +27,7 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
 const gridString = gravityAndOrbitsStrings.grid;
@@ -61,8 +56,9 @@ const HBOX_OPTIONS = {
   spacing: SPACING
 };
 
-type CheckboxPanelOptions = {
-} & PhetioObjectOptions;
+type CheckboxPanelSelfOptions = {};
+
+type CheckboxPanelOptions = CheckboxPanelSelfOptions & VBoxOptions;
 
 class CheckboxPanel extends VBox {
 
@@ -142,7 +138,7 @@ class CheckboxPanel extends VBox {
     // measuring tape checkbox
     if ( model.showMeasuringTape ) {
       const measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
-      children.push( new Checkbox( new HBox( merge( {
+      children.push( new Checkbox( new HBox( optionize<HBoxOptions, {}, HBoxOptions>( {
         align: 'top',
         children: [
           measuringTapeTextNode,
@@ -160,7 +156,7 @@ class CheckboxPanel extends VBox {
       checkboxNode.touchArea = Shape.rectangle( -5, bounds.centerY - touchAreaHeight / 2, bounds.width + 10, touchAreaHeight );
     }
 
-    super( merge( {
+    super( optionize<CheckboxPanelOptions, CheckboxPanelSelfOptions, VBoxOptions>( {
       excludeInvisibleChildrenFromBounds: true,
       children: children,
       spacing: SPACING,
