@@ -16,7 +16,6 @@ import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenVie
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
-import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import { ProfileColorProperty } from '../../../scenery/js/imports.js';
 
 const modelString = gravityAndOrbitsStrings.model;
@@ -26,7 +25,7 @@ type ModelScreenOptions = {
   backgroundColorProperty: ProfileColorProperty
 };
 
-class ModelScreen extends Screen {
+class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
   constructor( providedOptions?: Partial<ModelScreenOptions> ) {
 
     const options = merge( {
@@ -42,7 +41,7 @@ class ModelScreen extends Screen {
     const viewTandem = options.tandem.createTandem( 'view' );
     super(
       () => new ModelModel( options.tandem.createTandem( 'model' ), viewTandem ),
-      ( model: GravityAndOrbitsModel ) => new GravityAndOrbitsScreenView( model, viewTandem ),
+      model => new GravityAndOrbitsScreenView( model, viewTandem ),
       options
     );
   }

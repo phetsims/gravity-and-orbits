@@ -15,7 +15,6 @@ import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenVie
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
-import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import { ProfileColorProperty } from '../../../scenery/js/imports.js';
 import { PhetioObjectOptions } from '../../../tandem/js/PhetioObject.js';
 import Tandem from '../../../tandem/js/Tandem.js';
@@ -27,7 +26,7 @@ type ScreenOptions = {
   tandem: Tandem;
 } & PhetioObjectOptions;
 
-class ToScaleScreen extends Screen {
+class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
   constructor( providedOptions?: ScreenOptions ) {
     const options = merge( {
       name: toScaleString,
@@ -42,7 +41,7 @@ class ToScaleScreen extends Screen {
     const viewTandem = options.tandem.createTandem( 'view' );
     super(
       () => new ToScaleModel( options.tandem.createTandem( 'model' ), viewTandem ),
-      ( model: GravityAndOrbitsModel ) => new GravityAndOrbitsScreenView( model, viewTandem ),
+      model => new GravityAndOrbitsScreenView( model, viewTandem ),
       options
     );
   }
