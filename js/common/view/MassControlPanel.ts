@@ -20,7 +20,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
-import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
+import { PhetioObjectOptions, RequiredTandem } from '../../../../tandem/js/PhetioObject.js';
 
 const moonMassString = gravityAndOrbitsStrings.moonMass;
 const planetMassString = gravityAndOrbitsStrings.planetMass;
@@ -37,7 +37,7 @@ const LABEL_MAP = {
 };
 
 type MassControlPanelOptions = {} & PhetioObjectOptions;
-type MassControlPanelImplementationOptions = Required<Pick<MassControlPanelOptions, 'tandem'>>;
+type MassControlPanelImplementationOptions = RequiredTandem<MassControlPanelOptions>;
 
 class MassControlPanel extends VBox {
 
