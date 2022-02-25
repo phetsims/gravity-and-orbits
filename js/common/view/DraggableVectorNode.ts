@@ -10,7 +10,7 @@
 import Property from '../../../../axon/js/Property.js';
 import Shape from '../../../../kite/js/Shape.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { DragListener } from '../../../../scenery/js/imports.js';
+import { DragListener, PressListenerEvent } from '../../../../scenery/js/imports.js';
 import { Path } from '../../../../scenery/js/imports.js';
 import { Text } from '../../../../scenery/js/imports.js';
 import { Color } from '../../../../scenery/js/imports.js';
@@ -81,13 +81,13 @@ class DraggableVectorNode extends VectorNode {
 
     // Add the drag handler
     const dragListener = new DragListener( {
-      start: ( event: { pointer: { point: Vector2; }; } ) => {
-        previousPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
+      start: ( event: PressListenerEvent ) => {
+        previousPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer!.point! ) ).timesScalar( 1 / scale );
         previousValue = body.velocityProperty.get();
       },
-      drag: ( event: { pointer: { point: Vector2; }; } ) => {
+      drag: ( event: PressListenerEvent ) => {
 
-        const currentPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer.point ) ).timesScalar( 1 / scale );
+        const currentPoint = transformProperty.value.viewToModelPosition( this.globalToParentPoint( event.pointer!.point! ) ).timesScalar( 1 / scale );
         if ( previousPoint ) {
           const delta = currentPoint.minus( previousPoint );
 
