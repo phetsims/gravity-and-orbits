@@ -9,11 +9,7 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { HBox } from '../../../../scenery/js/imports.js';
-import { HStrut } from '../../../../scenery/js/imports.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import { Text } from '../../../../scenery/js/imports.js';
-import { VBox } from '../../../../scenery/js/imports.js';
+import { HBox, HStrut, Node, Text, VBox } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
@@ -37,7 +33,7 @@ const LABEL_MAP = {
 };
 
 type MassControlPanelOptions = {} & PhetioObjectOptions;
-type MassControlPanelImplementationOptions = RequiredTandem<MassControlPanelOptions>;
+type MassControlPanelImplementationOptions = RequiredTandem;
 
 class MassControlPanel extends VBox {
 
