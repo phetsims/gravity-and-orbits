@@ -8,7 +8,7 @@
  */
 
 import Property from '../../../../axon/js/Property.js';
-import Shape from '../../../../kite/js/Shape.js';
+import { Shape } from '../../../../kite/js/imports.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { DragListener, PressListenerEvent } from '../../../../scenery/js/imports.js';
 import { Path } from '../../../../scenery/js/imports.js';

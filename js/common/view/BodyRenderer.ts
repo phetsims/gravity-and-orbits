@@ -15,7 +15,7 @@
 import Matrix3 from '../../../../dot/js/Matrix3.js';
 import Body from '../model/Body.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
-import Shape from '../../../../kite/js/Shape.js';
+import { Shape } from '../../../../kite/js/imports.js';
 import { Image } from '../../../../scenery/js/imports.js';
 import { Node } from '../../../../scenery/js/imports.js';
 import { Path } from '../../../../scenery/js/imports.js';

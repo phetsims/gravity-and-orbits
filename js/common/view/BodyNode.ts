@@ -12,7 +12,7 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Body from '../model/Body.js';
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
-import Shape from '../../../../kite/js/Shape.js';
+import { Shape } from '../../../../kite/js/imports.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { DragListener } from '../../../../scenery/js/imports.js';
 import { Line } from '../../../../scenery/js/imports.js';
