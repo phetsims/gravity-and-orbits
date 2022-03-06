@@ -55,6 +55,7 @@ class SceneSelectionControls extends Node {
     } );
 
     const radioButtonGroup = new RectangularRadioButtonGroup( sceneProperty, content, {
+      // @ts-ignore TODO: unknown option?
       alignVertically: true,
       selectedStroke: GravityAndOrbitsColors.foregroundProperty,
       selectedLineWidth: 2,
@@ -63,6 +64,7 @@ class SceneSelectionControls extends Node {
       buttonContentXMargin: 5,
       buttonContentYMargin: 5,
       spacing: 0,
+      // @ts-ignore TODO: unknown option?
       deselectedOpacity: 1,
       cornerRadius: 5,
 
