@@ -7,16 +7,17 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { HBox, HStrut, Node, Text, VBox } from '../../../../scenery/js/imports.js';
+import { HBox, HStrut, Node, Text, VBox, VBoxOptions } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
-import { PhetioObjectOptions, RequiredTandem } from '../../../../tandem/js/PhetioObject.js';
+import { PickRequired } from '../../../../phet-core/js/types/PickRequired.js';
+import optionize, { OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
+import merge from '../../../../phet-core/js/merge.js';
 
 const moonMassString = gravityAndOrbitsStrings.moonMass;
 const planetMassString = gravityAndOrbitsStrings.planetMass;
@@ -32,18 +33,19 @@ const LABEL_MAP = {
   moon: moonMassString
 };
 
-type MassControlPanelOptions = {} & PhetioObjectOptions;
-type MassControlPanelImplementationOptions = RequiredTandem;
+type MassControlPanelOptions = VBoxOptions & PickRequired<VBoxOptions, 'tandem'>;
 
 class MassControlPanel extends VBox {
 
   constructor( massSettableBodies: Body[], providedOptions?: MassControlPanelOptions ) {
 
-    const options = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+    const defaults: OptionizeDefaults<{}, VBoxOptions> = merge( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
 
       // Managed by the simulation, can be buggy if independently controlled by studio
       visiblePropertyOptions: { phetioReadOnly: true }
-    }, providedOptions ) as MassControlPanelImplementationOptions;
+    } );
+
+    const options = optionize<MassControlPanelOptions, {}, VBoxOptions>( {}, defaults, providedOptions );
 
     const children = [];
 
