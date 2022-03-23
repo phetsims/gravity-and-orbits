@@ -21,8 +21,8 @@ import { ProfileColorProperty } from '../../../scenery/js/imports.js';
 const modelString = gravityAndOrbitsStrings.model;
 
 type ModelScreenOptions = {
-  tandem: Tandem,
-  backgroundColorProperty: ProfileColorProperty
+  tandem: Tandem;
+  backgroundColorProperty: ProfileColorProperty;
 };
 
 class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {

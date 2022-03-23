@@ -158,7 +158,7 @@ RewindableProperty.RewindablePropertyIO = parameterType => {
           return stateObject;
         },
         // @ts-ignore
-        applyState: ( property: RewindableProperty, stateObject: { rewindValue: any; } ) => {
+        applyState: ( property: RewindableProperty, stateObject: { rewindValue: any } ) => {
           PropertyIOImpl.applyState( property, stateObject );
           property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
         },

@@ -66,7 +66,7 @@ class ExplosionNode extends Node {
    * @returns {BodyRenderer}
    * @private
    */
-  getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any; } ) {
+  getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ) {
     const yellowAndWhite = {
       highlight: 'white',
       color: 'yellow'

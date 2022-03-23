@@ -52,8 +52,8 @@ type GravityAndOrbitsSceneOptions = {
 } & PhetioObjectOptions;
 
 type MeasuringTapeOptions = {
-  tandem?: Tandem,
-  units?: string
+  tandem?: Tandem;
+  units?: string;
 };
 
 type GravityAndOrbitsSceneImplementationOptions = Pick<GravityAndOrbitsSceneOptions, 'adjustMoonOrbit' | 'dt' | 'gridCenter'>;

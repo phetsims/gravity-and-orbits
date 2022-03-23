@@ -22,7 +22,7 @@ const MENU_SECTION_OPTIONS = { x: 5 };
 const SEPARATOR_OPTIONS = { lineWidth: 2, stroke: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE };
 
 type GravityAndOrbitsControlsOptions = {
-  tandem: Tandem
+  tandem: Tandem;
 };
 
 class GravityAndOrbitsControls extends VBox {

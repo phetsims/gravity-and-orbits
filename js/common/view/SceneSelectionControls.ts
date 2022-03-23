@@ -23,7 +23,7 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
 type SceneSelectionControlsOptions = {
-  tandem: Tandem
+  tandem: Tandem;
 };
 
 class SceneSelectionControls extends Node {

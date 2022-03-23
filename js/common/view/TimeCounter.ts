@@ -35,7 +35,7 @@ class TimeCounter extends Node {
    * @param {Tandem} tandem
    * @param [providedOptions]
    */
-  constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: { bottom: number; right: number; scale: number; } ) {
+  constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: { bottom: number; right: number; scale: number } ) {
     super();
 
     // day text counter

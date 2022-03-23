@@ -42,15 +42,15 @@ const starString = gravityAndOrbitsStrings.star;
 const tempVector = new Vector2( 0, 0 );
 
 type BodyOptions = {
-  pathLengthBuffer?: number,
-  diameterScale?: number,
-  massSettable?: boolean,
-  massReadoutBelow?: boolean,
-  orbitalCenter?: Vector2,
-  maxPathLength?: number,
-  pathLengthLimit?: number,
-  rotationPeriod?: null | number
-  touchDilation?: number,
+  pathLengthBuffer?: number;
+  diameterScale?: number;
+  massSettable?: boolean;
+  massReadoutBelow?: boolean;
+  orbitalCenter?: Vector2;
+  maxPathLength?: number;
+  pathLengthLimit?: number;
+  rotationPeriod?: null | number;
+  touchDilation?: number;
 } & PhetioObjectOptions;
 type BodyImplementationOptions = Pick<BodyOptions, 'tandem' | 'touchDilation' | 'diameterScale' | 'pathLengthBuffer' | 'massSettable' |
   'pathLengthLimit' | 'massReadoutBelow' | 'rotationPeriod' | 'orbitalCenter' | 'maxPathLength'>;
@@ -431,7 +431,7 @@ class Body extends PhetioObject {
    * @public
    * @param {BodyState} bodyState
    */
-  updateBodyStateFromModel( bodyState: { position: Vector2; velocity: Vector2; acceleration: Vector2; mass: number; rotation: number; } ) {
+  updateBodyStateFromModel( bodyState: { position: Vector2; velocity: Vector2; acceleration: Vector2; mass: number; rotation: number } ) {
     if ( !this.isCollidedProperty.value ) {
       if ( this.isMovableProperty.value && !this.userControlled ) {
         this.positionProperty.set( bodyState.position );

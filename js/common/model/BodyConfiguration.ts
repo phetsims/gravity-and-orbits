@@ -13,7 +13,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 type BodyConfigurationOptions = {
-  rotationPeriod: null | number
+  rotationPeriod: null | number;
 }
 
 class BodyConfiguration {

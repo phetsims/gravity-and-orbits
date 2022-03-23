@@ -29,7 +29,7 @@ const STEP_BUTTON_RADIUS = 23;
 const PUSH_BUTTON_SPACING = 8;
 
 type GravityAndOrbitsTimeControlNodeOptions = {
-  tandem: Tandem
+  tandem: Tandem;
 };
 
 class GravityAndOrbitsTimeControlNode extends TimeControlNode {

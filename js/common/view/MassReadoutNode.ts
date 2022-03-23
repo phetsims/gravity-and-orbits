@@ -17,7 +17,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
 
 type MassReadoutNodeOptions = {
-  textMaxWidth: number
+  textMaxWidth: number;
 };
 
 abstract class MassReadoutNode extends Node {
