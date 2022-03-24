@@ -1,4 +1,4 @@
-// Copyright 2014-2021, University of Colorado Boulder
+// Copyright 2014-2022, University of Colorado Boulder
 
 /**
  * Class that facilitates configuration of body instances for a GravityAndOrbitsScene; a data structure that describes
