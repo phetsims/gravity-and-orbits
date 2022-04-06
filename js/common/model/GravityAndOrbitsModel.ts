@@ -131,7 +131,6 @@ class GravityAndOrbitsModel {
 
   /**
    * @public
-   * @override
    */
   reset() {
     this.showGravityForceProperty.reset();

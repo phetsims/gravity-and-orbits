@@ -292,7 +292,6 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    * @public
-   * @override
    */
   reset() {
     this.activeProperty.reset();

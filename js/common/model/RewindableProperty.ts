@@ -61,9 +61,8 @@ class RewindableProperty<T> extends Property<T> {
    * Reset both the value and the rewind value.
    *
    * @public
-   * @override
    */
-  reset() {
+  override reset() {
     super.reset();
 
     // reset the rewind value as well
@@ -72,9 +71,8 @@ class RewindableProperty<T> extends Property<T> {
 
   /**
    * @public
-   * @override
    */
-  set( value: T ) {
+  override set( value: T ) {
     super.set( value );
 
     // If the user changed the initial conditions (as opposed to the state changing through model stepping),

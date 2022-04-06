@@ -592,7 +592,7 @@ class Body extends PhetioObject {
    * @public
    * @returns {string}
    */
-  toString() {
+  override toString() {
     return `name = ${this.type}, mass = ${this.massProperty.get()}`;
   }
 }
