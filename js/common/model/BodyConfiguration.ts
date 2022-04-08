@@ -18,13 +18,13 @@ type BodyConfigurationOptions = {
 
 class BodyConfiguration {
 
-  readonly mass: number;
-  readonly radius: number;
-  readonly x: number;
-  readonly y: number;
+  mass: number;
+  radius: number;
+  x: number;
+  y: number;
   vx: number;
   vy: number;
-  readonly isMovable: boolean;
+  isMovable: boolean;
   readonly rotationPeriod: null | number;
 
   constructor( mass: number, radius: number, x: number, y: number, vx: number, vy: number, providedOptions?: BodyConfigurationOptions ) {

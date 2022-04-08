@@ -7,7 +7,6 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-import Property from '../../../../axon/js/Property.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Node } from '../../../../scenery/js/imports.js';
@@ -15,6 +14,7 @@ import { Text } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
+import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 
 type MassReadoutNodeOptions = {
   textMaxWidth: number;
@@ -23,7 +23,7 @@ type MassReadoutNodeOptions = {
 abstract class MassReadoutNode extends Node {
   protected bodyNode: BodyNode;
 
-  constructor( bodyNode: BodyNode, visibleProperty: Property<boolean>, providedOptions?: Partial<MassReadoutNodeOptions> ) {
+  constructor( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean>, providedOptions?: Partial<MassReadoutNodeOptions> ) {
     super();
     const options: MassReadoutNodeOptions = merge( {
       textMaxWidth: 240

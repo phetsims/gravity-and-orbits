@@ -21,19 +21,11 @@ const EARTH_MOON_RADIUS_MULTIPLIER = 800; // earth and moon radius multiplier fo
 
 /**
  * Convenience function that converts days to seconds, using days * hoursPerDay * minutesPerHour * secondsPerMinute
- *
- * @param {number} days
- * @returns {number}
  */
 const daysToSeconds = ( days: number ) => days * 24 * 60 * 60;
 
 class ModelSceneFactory extends SceneFactory {
 
-  /**
-   * @param {GravityAndOrbitsModel} model
-   * @param {Tandem} modelTandem
-   * @param {Tandem} viewTandem
-   */
   constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       model,
@@ -61,7 +53,7 @@ class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
 
     // Sun shouldn't move in model modes
     this.sun.isMovable = false;
-    this.forceScale *= 0.58; // Tuned so the default force arrow takes 1/2 grid cell
+    this.forceScale! *= 0.58; // Tuned so the default force arrow takes 1/2 grid cell
   }
 }
 
@@ -83,7 +75,7 @@ class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
     // Sun shouldn't move in model modes
     this.sun.isMovable = false;
 
-    this.forceScale *= 0.58; // Tuned so the default force arrow takes 1/2 grid cell
+    this.forceScale! *= 0.58; // Tuned so the default force arrow takes 1/2 grid cell
   }
 }
 
@@ -99,7 +91,7 @@ class PlanetMoonModeConfig extends SceneFactory.PlanetMoonModeConfig {
     this.moon.radius *= radiusMultiplier;
 
     // so that default gravity force takes up 1/2 cell in grid
-    this.forceScale *= 0.79;
+    this.forceScale! *= 0.79;
   }
 }
 

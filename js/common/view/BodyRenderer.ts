@@ -1,5 +1,5 @@
 // Copyright 2014-2022, University of Colorado Boulder
-// @ts-nocheck
+
 /**
  * This is the Node that renders the content of a physical body, such as a planet or space station.  This component
  * is separate from BodyNode since it is used to create icons.  It is also used to be able to switch between rendering
@@ -22,14 +22,14 @@ import { Path } from '../../../../scenery/js/imports.js';
 import sun_png from '../../../images/sun_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-class BodyRenderer extends Node {
-  // @abstract
+abstract class BodyRenderer extends Node {
   private readonly body: Body;
-  targetBodyRenderer: BodyRenderer;
-  static SwitchableBodyRenderer: SwitchableBodyRenderer;
+  targetBodyRenderer?: BodyRenderer;
   static SunRenderer: any;
+  static ImageRenderer: typeof ImageRenderer;
+  static SwitchableBodyRenderer: typeof SwitchableBodyRenderer;
 
-  constructor( body ) {
+  constructor( body: Body ) {
 
     super();
 
@@ -42,19 +42,13 @@ class BodyRenderer extends Node {
     return this.body;
   }
 
-  /**
-   * @public
-   * @abstract
-   */
-  setDiameter( viewDiameter ) {
-    throw new Error( 'must be implemented by subtype' );
-  }
+  abstract setDiameter( viewDiameter: number ): void;
 }
 
 gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
 class SwitchableBodyRenderer extends BodyRenderer {
-  targetBodyRenderer: BodyRenderer;
+  override targetBodyRenderer: BodyRenderer;
   private defaultBodyRenderer: BodyRenderer;
   private massListener: () => void;
 
@@ -62,13 +56,8 @@ class SwitchableBodyRenderer extends BodyRenderer {
    * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different
    * renderer otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to
    * earth mass or otherwise drawn as a sphere with a gradient paint.
-   *
-   * @param body
-   * @param targetMass
-   * @param targetBodyRenderer
-   * @param defaultBodyRenderer
    */
-  constructor( body, targetMass, targetBodyRenderer, defaultBodyRenderer ) {
+  constructor( body: Body, targetMass: number, targetBodyRenderer: BodyRenderer, defaultBodyRenderer: BodyRenderer ) {
 
     super( body );
 
@@ -89,11 +78,8 @@ class SwitchableBodyRenderer extends BodyRenderer {
 
   /**
    * Set the diameter for the renderer in view coordinates for both the current and default renderers.
-   *
-   * @param {number} viewDiameter
-   * @public
    */
-  setDiameter( viewDiameter ) {
+  setDiameter( viewDiameter: number ) {
     this.targetBodyRenderer.setDiameter( viewDiameter );
     this.defaultBodyRenderer.setDiameter( viewDiameter );
   }
@@ -107,12 +93,8 @@ class ImageRenderer extends BodyRenderer {
 
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
-   *
-   * @param {Body} body
-   * @param {number} viewDiameter
-   * @param {string} imageName - image from the plugin
    */
-  constructor( body, viewDiameter, imageName ) {
+  constructor( body: Body, viewDiameter: number, imageName: string | HTMLImageElement ) {
 
     super( body );
 
@@ -125,11 +107,8 @@ class ImageRenderer extends BodyRenderer {
 
   /**
    * Set the diameter for the rednerer in view coordinates
-   * @public
-   *
-   * @param  {number} viewDiameter
    */
-  setDiameter( viewDiameter ) {
+  setDiameter( viewDiameter: number ) {
     this.viewDiameter = viewDiameter;
     this.updateViewDiameter();
   }
@@ -150,17 +129,12 @@ gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
 class SunRenderer extends ImageRenderer {
   private readonly twinkles: Path;
   private readonly numSegments: number;
-  private readonly twinkleRadius: number;
+  private readonly twinkleRadius: ( n: number ) => number;
 
   /**
    * Adds triangle edges to the sun to make it look more recognizable
-   *
-   * @param {Body} body
-   * @param {number} viewDiameter
-   * @param {number} numSegments
-   * @param {function} twinkleRadius
    */
-  constructor( body, viewDiameter, numSegments, twinkleRadius ) {
+  constructor( body: Body, viewDiameter: number, numSegments: number, twinkleRadius: ( n: number ) => number ) {
     super( body, viewDiameter, sun_png );
     this.twinkles = new Path( null, { fill: 'yellow' } ); // @private
     this.numSegments = numSegments; // @private
@@ -176,7 +150,7 @@ class SunRenderer extends ImageRenderer {
    *
    * @param  {number} viewDiameter
    */
-  setDiameter( viewDiameter ) {
+  override setDiameter( viewDiameter: number ): void {
     super.setDiameter( viewDiameter );
     let angle = 0;
     const deltaAngle = Math.PI * 2 / this.numSegments;

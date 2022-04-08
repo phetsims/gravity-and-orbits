@@ -13,16 +13,18 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 import BodyConfiguration from './BodyConfiguration.js';
-import { Line } from '../../../../kite/js/imports.js';
+import { Line } from '../../../../scenery/js/imports.js';
 
 // constants
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
 abstract class ModeConfig {
-  readonly dt: number;
+  dt: number;
   readonly zoom: number;
-  readonly initialMeasuringTapePosition: Line | null;
-  readonly forceScale: number | null;
+
+  // Initial start and end point of the measuring tape
+  initialMeasuringTapePosition?: Line;
+  forceScale?: number;
 
   /**
    * @param {number} zoom
@@ -31,12 +33,6 @@ abstract class ModeConfig {
   protected constructor( zoom: number ) {
     this.dt = DEFAULT_DT; // @public
     this.zoom = zoom; // @public
-
-    // @public - Initial start and end point of the measuring tape
-    this.initialMeasuringTapePosition = null;
-
-    // @protected
-    this.forceScale = null;
   }
 
   // @public
