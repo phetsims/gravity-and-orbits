@@ -6,6 +6,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import { CreditsData } from '../../joist/js/CreditsNode.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
@@ -20,15 +21,16 @@ const gravityAndOrbitsTitleString = gravityAndOrbitsStrings[ 'gravity-and-orbits
 
 simLauncher.launch( () => {
 
+  const credits: CreditsData = {
+    leadDesign: 'Emily B. Moore, Noah Podolefsky, Amy Rouinfar',
+    softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Jon Olson, Sam Reid',
+    team: 'Trish Loeblein, Ariel Paul, Kathy Perkins',
+    qualityAssurance: 'Logan Bray, Steele Dalton, Ethan Johnson, Brooklyn Lash, Emily Miller, Elise Morgan, Liam Mulhall, Oliver Orejola, Devon Quispe, Ben Roberts, Kathryn Woessner, Bryan Yoelin',
+    thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
+            'HTML5.'
+  };
   const simOptions = {
-    credits: {
-      leadDesign: 'Emily B. Moore, Noah Podolefsky, Amy Rouinfar',
-      softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Jon Olson, Sam Reid',
-      team: 'Trish Loeblein, Ariel Paul, Kathy Perkins',
-      qualityAssurance: 'Logan Bray, Steele Dalton, Ethan Johnson, Brooklyn Lash, Emily Miller, Elise Morgan, Liam Mulhall, Oliver Orejola, Devon Quispe, Ben Roberts, Kathryn Woessner, Bryan Yoelin',
-      thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
-              'HTML5.'
-    },
+    credits: credits,
 
     // Creates content for the Options dialog
     createOptionsDialogContent: ( tandem: Tandem ) => new GlobalOptionsNode( tandem ),
