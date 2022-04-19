@@ -16,7 +16,7 @@ import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import optionize, { OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
+import { optionize3, OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
 import merge from '../../../../phet-core/js/merge.js';
 
 const moonMassString = gravityAndOrbitsStrings.moonMass;
@@ -45,7 +45,7 @@ class MassControlPanel extends VBox {
       visiblePropertyOptions: { phetioReadOnly: true }
     } );
 
-    const options = optionize<MassControlPanelOptions, {}, VBoxOptions>( {}, defaults, providedOptions );
+    const options = optionize3<MassControlPanelOptions, {}, VBoxOptions>()( {}, defaults, providedOptions );
 
     const children = [];
 

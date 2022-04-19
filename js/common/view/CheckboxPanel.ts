@@ -138,7 +138,7 @@ class CheckboxPanel extends VBox {
     // measuring tape checkbox
     if ( model.showMeasuringTape ) {
       const measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
-      children.push( new Checkbox( new HBox( optionize<HBoxOptions, {}, HBoxOptions>( {
+      children.push( new Checkbox( new HBox( optionize<HBoxOptions, {}, HBoxOptions>()( {
         align: 'top',
         children: [
           measuringTapeTextNode,
@@ -156,7 +156,7 @@ class CheckboxPanel extends VBox {
       checkboxNode.touchArea = Shape.rectangle( -5, bounds.centerY - touchAreaHeight / 2, bounds.width + 10, touchAreaHeight );
     }
 
-    super( optionize<CheckboxPanelOptions, CheckboxPanelSelfOptions, VBoxOptions>( {
+    super( optionize<CheckboxPanelOptions, CheckboxPanelSelfOptions, VBoxOptions>()( {
       excludeInvisibleChildrenFromBounds: true,
       children: children,
       spacing: SPACING,
