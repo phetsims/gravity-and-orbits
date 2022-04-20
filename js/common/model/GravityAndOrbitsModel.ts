@@ -14,7 +14,7 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import EnumerationDeprecatedProperty from '../../../../axon/js/EnumerationDeprecatedProperty.js';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
@@ -37,7 +37,7 @@ class GravityAndOrbitsModel {
   showMeasuringTapeProperty: BooleanProperty;
   sceneProperty: Property<GravityAndOrbitsScene>;
   isPlayingProperty: BooleanProperty;
-  timeSpeedProperty: EnumerationDeprecatedProperty;
+  timeSpeedProperty: EnumerationProperty<TimeSpeed>;
   gravityEnabledProperty: BooleanProperty;
   steppingProperty: BooleanProperty;
   rewindingProperty: BooleanProperty;
@@ -72,9 +72,7 @@ class GravityAndOrbitsModel {
       phetioDocumentation: `This value is true if the play/pause button on this screen is in play mode. (It remains true even if the user switches screens. Use in combination with '${phet.joist.sim.screenProperty.tandem.phetioID}'.)`
     } );
 
-    // @public
-    // @ts-ignore
-    this.timeSpeedProperty = new EnumerationDeprecatedProperty( TimeSpeed, TimeSpeed.NORMAL, {
+    this.timeSpeedProperty = new EnumerationProperty( TimeSpeed.NORMAL, {
       tandem: tandem.createTandem( 'timeSpeedProperty' )
     } );
 

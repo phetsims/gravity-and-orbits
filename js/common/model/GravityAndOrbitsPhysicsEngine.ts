@@ -89,12 +89,8 @@ class GravityAndOrbitsPhysicsEngine {
     // get the number of times we will need to step the model based on the dt passed in
     // @ts-ignore
     const numberOfSteps = this.clock.timeSpeedProperty.value === TimeSpeed.SLOW ? 1 :
-
-      // @ts-ignore
                           this.clock.timeSpeedProperty.value === TimeSpeed.NORMAL ? 4 :
-
-                            // TimeSpeed.FAST
-                          7;
+                          7; // TimeSpeed.FAST
     // step the model by the smallest standard time step for the orbital mode
     for ( let i = 0; i < numberOfSteps; i++ ) {
       this.step( smallestTimeStep );

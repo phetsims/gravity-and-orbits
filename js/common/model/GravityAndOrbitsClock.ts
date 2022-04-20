@@ -14,7 +14,8 @@ import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import EventTimer from '../../../../phet-core/js/EventTimer.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import EnumerationDeprecatedProperty from '../../../../axon/js/EnumerationDeprecatedProperty.js';
+import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 
 // constants
 // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
@@ -27,7 +28,7 @@ const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
 class GravityAndOrbitsClock {
   baseDTValue: number;
-  timeSpeedProperty: EnumerationDeprecatedProperty;
+  timeSpeedProperty: EnumerationProperty<TimeSpeed>;
   timeProperty: NumberProperty;
 
   private isRunningProperty: BooleanProperty;
@@ -39,11 +40,12 @@ class GravityAndOrbitsClock {
   /**
    * @param {number} baseDTValue (multiplied by scale to obtain true dt)
    * @param {Property.<boolean>} steppingProperty
-   * @param {EnumerationDeprecatedProperty.<TimeSpeed>} timeSpeedProperty
+   * @param {EnumerationProperty.<TimeSpeed>} timeSpeedProperty
    * @param {Tandem} sceneTandem
    * @param {Tandem} tandem
    */
-  constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationDeprecatedProperty, sceneTandem: Tandem, tandem: Tandem ) {
+  constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
+               sceneTandem: Tandem, tandem: Tandem ) {
 
     // @public (read-only)
     this.baseDTValue = baseDTValue;
