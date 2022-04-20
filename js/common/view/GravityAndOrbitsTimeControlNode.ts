@@ -67,9 +67,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           fill: GravityAndOrbitsColors.foregroundProperty,
           maxWidth: 200
         },
-        radioButtonGroupOptions: {
-          touchAreaDilation: 5
-        }
+        touchAreaDilation: 5
       },
       tandem: options.tandem
     } );
