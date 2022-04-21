@@ -155,10 +155,10 @@ class GravityAndOrbitsScene extends PhetioObject {
       range: GravityAndOrbitsConstants.ZOOM_RANGE
     } );
 
-    this.radioButtonTandemName = radioButtonTandemName; // @public (read-only)
-    this.resetButtonTandemName = resetButtonTandemName; // @public (read-only)
-    this.tandemName = tandemName; // @public (read-only)
-    this.massControlPanelTandemName = massControlPanelTandemName; // @public (read-only)
+    this.radioButtonTandemName = radioButtonTandemName; // (read-only)
+    this.resetButtonTandemName = resetButtonTandemName; // (read-only)
+    this.tandemName = tandemName; // (read-only)
+    this.massControlPanelTandemName = massControlPanelTandemName; // (read-only)
 
     this.dt = dt; // @private
     this.forceScale = forceScale as number; // @private
@@ -168,18 +168,18 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.isPlayingProperty = model.isPlayingProperty;
 
     // How much to scale (shrink or grow) the velocity vectors; a mapping from meters/second to stage coordinates
-    this.velocityVectorScale = velocityVectorScale; // @public
-    this.gridSpacing = gridSpacing; // @public - in meters
-    this.gridCenter = gridCenter; // @public
+    this.velocityVectorScale = velocityVectorScale;
+    this.gridSpacing = gridSpacing; // in meters
+    this.gridCenter = gridCenter;
     this.rewindingProperty = model.rewindingProperty; // save a reference to the rewinding property of p
-    this.timeSpeedProperty = model.timeSpeedProperty; // @public
-    this.timeFormatter = timeFormatter; // @public
+    this.timeSpeedProperty = model.timeSpeedProperty;
+    this.timeFormatter = timeFormatter;
 
     // Function that creates a Node to readout the mass for the specified body node (with the specified visibility flag)
     this.massReadoutFactory = massReadoutFactory;
 
-    this.modelBoundsProperty = new Property<Bounds2 | null>( null ); // @public - needed for movableDragHandler bounds
-    this.transformProperty = new Property( this.createTransform( defaultZoomScale, gridCenter ) ); // @public
+    this.modelBoundsProperty = new Property<Bounds2 | null>( null ); // needed for movableDragHandler bounds
+    this.transformProperty = new Property( this.createTransform( defaultZoomScale, gridCenter ) );
 
     this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );
 
@@ -193,7 +193,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     bodies.forEach( body => this.addBody( body ) );
 
-    // @public {Node} - scenery node that depicts the play area for this scene
+    // {Node} - scenery node that depicts the play area for this scene
     this.sceneView = new GravityAndOrbitsSceneView( this, model, sceneViewTandem );
 
     // @private (phet-io only)
@@ -252,12 +252,10 @@ class GravityAndOrbitsScene extends PhetioObject {
       modelHeight );
   }
 
-  // @public
   getClock() {
     return this.physicsEngine.clock;
   }
 
-  // @public
   getBodies() {
     return this.physicsEngine.getBodies();
   }
@@ -272,7 +270,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   }
 
   /**
-   * @public
    * @param body
    */
   addBody( body: Body ) {
@@ -292,7 +289,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   }
 
   /**
-   * @public
    */
   reset() {
     this.activeProperty.reset();
@@ -308,7 +304,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * Return the bodies to their original states when the user presses "reset" (not "reset all")
    *
-   * @public
    */
   resetScene() {
     this.physicsEngine.resetBodies();
@@ -321,7 +316,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * Restore the last set of initial conditions that were set while the sim was paused.
    *
-   * @public
    */
   rewind() {
     this.rewindingProperty.set( true );
@@ -338,7 +332,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * Save the state of the orbital system, which includes all rewindable properties of all bodies. This should only be
    * called when the sim is paused.
-   * @public
    */
   saveState() {
     const bodies = this.physicsEngine.getBodies();
@@ -348,7 +341,6 @@ class GravityAndOrbitsScene extends PhetioObject {
   }
 
   /**
-   * @public
    * @returns {Array.<Body>} - All bodies in the scene for which the mass can be changed
    */
   getMassSettableBodies() {

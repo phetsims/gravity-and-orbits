@@ -47,10 +47,9 @@ class GravityAndOrbitsClock {
   constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
                sceneTandem: Tandem, tandem: Tandem ) {
 
-    // @public (read-only)
+    // (read-only)
     this.baseDTValue = baseDTValue;
 
-    // @public
     this.isRunningProperty = new BooleanProperty( false, {
       tandem: tandem.createTandem( 'isRunningProperty' ),
       phetioDocumentation: `This value is true when '${sceneTandem.phetioID}' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with '${phet.joist.sim.screenProperty.tandem.phetioID}'.)`,
@@ -65,7 +64,6 @@ class GravityAndOrbitsClock {
     this.dt = baseDTValue;
     this.steppingProperty = steppingProperty;
 
-    // @public
     this.timeSpeedProperty = timeSpeedProperty;
 
     // Fraction between old state=0 and new state=1
@@ -76,7 +74,6 @@ class GravityAndOrbitsClock {
 
   /**
    * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
-   * @public
    *
    * @returns {number}
    */
@@ -93,7 +90,6 @@ class GravityAndOrbitsClock {
 
   /**
    * Set whether or not the model should be running.
-   * @public
    *
    * @param  {boolean} running
    */
@@ -103,7 +99,6 @@ class GravityAndOrbitsClock {
 
   /**
    * Set the clock time.
-   * @public
    *
    * @param  {number} time description
    */
@@ -111,19 +106,16 @@ class GravityAndOrbitsClock {
     this.timeProperty.set( time );
   }
 
-  // @public
   getSimulationTime() {
     return this.timeProperty.get();
   }
 
-  // @public
   resetSimulationTime() {
     this.timeProperty.reset();
   }
 
   /**
    * Add an event callback to the event timer, called every time the animation frame changes.
-   * @public
    *
    * @param  {function} stepFunction
    */
@@ -134,7 +126,6 @@ class GravityAndOrbitsClock {
 
   /**
    * Step the simulation by dt
-   * @public
    *
    * @param  {number} dt
    * @returns {type} description

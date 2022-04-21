@@ -16,9 +16,7 @@ import Matrix3 from '../../../../dot/js/Matrix3.js';
 import Body from '../model/Body.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import { Shape } from '../../../../kite/js/imports.js';
-import { Image } from '../../../../scenery/js/imports.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import { Path } from '../../../../scenery/js/imports.js';
+import { Image, Node, Path } from '../../../../scenery/js/imports.js';
 import sun_png from '../../../images/sun_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
@@ -37,7 +35,6 @@ abstract class BodyRenderer extends Node {
     this.body = body;
   }
 
-  // @public
   getBody() {
     return this.body;
   }
@@ -61,7 +58,7 @@ class SwitchableBodyRenderer extends BodyRenderer {
 
     super( body );
 
-    // @public (read-only)
+    // (read-only)
     this.targetBodyRenderer = targetBodyRenderer;
     this.defaultBodyRenderer = defaultBodyRenderer;
 
@@ -146,7 +143,6 @@ class SunRenderer extends ImageRenderer {
 
   /**
    * Set the diamater for the sun, based on view coordinates.
-   * @public
    *
    * @param  {number} viewDiameter
    */

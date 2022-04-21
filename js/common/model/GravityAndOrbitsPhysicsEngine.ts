@@ -52,9 +52,9 @@ class GravityAndOrbitsPhysicsEngine {
     // @private
     this.adjustMoonOrbit = adjustMoonOrbit;
 
-    this.clock = clock; // @public
+    this.clock = clock;
 
-    // @public {Body[]} - contains the sun, moon, earth, satellite
+    // {Body[]} - contains the sun, moon, earth, satellite
     this.bodies = [];
 
     this.clock.addEventTimer( ( dt: number ) => {
@@ -110,7 +110,6 @@ class GravityAndOrbitsPhysicsEngine {
    * Moves the model forward in time.  This function creates temporary state objects and calculates state values
    * based on the current state of the entire model. Afterwards, it applies the updated values to the body objects.
    * Finally, it checks for collisions between bodies.
-   * @public
    *
    * @param {number} dt
    */
@@ -141,7 +140,6 @@ class GravityAndOrbitsPhysicsEngine {
     }
   }
 
-  // @public
   resetAll() {
     this.resetBodies();
     this.clock.resetSimulationTime();
@@ -151,7 +149,6 @@ class GravityAndOrbitsPhysicsEngine {
   /**
    * Adds a body and updates the body's force vectors
    *
-   * @public
    * @param body
    */
   addBody( body: Body ) {
@@ -181,13 +178,11 @@ class GravityAndOrbitsPhysicsEngine {
    * Returns a defensive copy of the bodies.
    *
    * @returns {Body[]}
-   * @public
    */
   getBodies() {
     return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
   }
 
-  // @public
   resetBodies() {
     this.bodies.forEach( body => body.resetAll() );
     this.updateForceVectors(); // has to be done separately since physics is computed as a batch
@@ -195,7 +190,6 @@ class GravityAndOrbitsPhysicsEngine {
 
   /**
    * Get the body associated with the name.
-   * @public
    *
    * @param {BodyTypeEnum} type
    * @returns {Body|null}

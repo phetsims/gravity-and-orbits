@@ -82,8 +82,8 @@ class GravityAndOrbitsModel {
 
     // these two booleans indicate whether or not to show the checkbox for measuring tape and mass.
     // they are false for the model screen and true for the toScale screen
-    this.showMassCheckbox = showMassCheckbox; // @public
-    this.showMeasuringTape = showMeasuringTape; // @public
+    this.showMassCheckbox = showMassCheckbox;
+    this.showMeasuringTape = showMeasuringTape;
 
     // @private {SceneFactory}
     this.sceneList = createModes( this );
@@ -95,7 +95,6 @@ class GravityAndOrbitsModel {
     } );
   }
 
-  // @public
   step( dt: number ) {
 
     // limit dt to 1 so there are no large jumps
@@ -115,7 +114,6 @@ class GravityAndOrbitsModel {
     }
   }
 
-  // @public
   getScenes() {
     return this.sceneList.scenes;
   }
@@ -128,7 +126,6 @@ class GravityAndOrbitsModel {
   }
 
   /**
-   * @public
    */
   reset() {
     this.showGravityForceProperty.reset();

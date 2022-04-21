@@ -31,11 +31,10 @@ abstract class ModeConfig {
    * @constructor
    */
   protected constructor( zoom: number ) {
-    this.dt = DEFAULT_DT; // @public
-    this.zoom = zoom; // @public
+    this.dt = DEFAULT_DT;
+    this.zoom = zoom;
   }
 
-  // @public
   center() {
     const deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
     const bodies = this.getBodies();
@@ -74,7 +73,6 @@ abstract class ModeConfig {
 
   /**
    * @returns {BodyConfiguration[]}
-   * @public
    * @abstract
    */
   abstract getBodies(): BodyConfiguration[]

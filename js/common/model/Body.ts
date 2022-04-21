@@ -147,7 +147,7 @@ class Body extends PhetioObject {
 
     this.tandemName = tandem.name;
 
-    // @public (read-only) {string}
+    // (read-only) {string}
     this.bodyNodeTandemName = `${tandem.name}Node`;
 
     this.accelerationProperty = new Vector2Property( new Vector2( 0, 0 ) );
@@ -168,40 +168,40 @@ class Body extends PhetioObject {
     options = merge( {
       pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
     }, options ) as Required<BodyOptions>;
-    this.pathLengthBuffer = options.pathLengthBuffer; // @public (read-only)
+    this.pathLengthBuffer = options.pathLengthBuffer; // (read-only)
 
-    this.massSettable = options.massSettable; // @public (read-only)
+    this.massSettable = options.massSettable; // (read-only)
 
-    // @public number of samples in the path before it starts erasing (fading out from the back)
+    // number of samples in the path before it starts erasing (fading out from the back)
     this.maxPathLength = 0;
 
-    // @public - total length of the current path
+    // total length of the current path
     this.pathLength = 0;
 
     // @private - limit on the number of segments in the path
     this.pathLengthLimit = options.pathLengthLimit;
 
-    // @public - total length of the current path in model coordinates
+    // total length of the current path in model coordinates
     this.modelPathLength = 0;
 
     // True if the mass readout should appear below the body (so that readouts don't overlap too much),
     // in the model for convenience since the body type determines where the mass readout should appear
-    this.massReadoutBelow = options.massReadoutBelow; // @public (read-only)
+    this.massReadoutBelow = options.massReadoutBelow; // (read-only)
 
     // value that this body's mass should be identified with, for 'planet' this will be the earth's mass
-    this.tickValue = tickValue; // @public (read-only)
+    this.tickValue = tickValue; // (read-only)
 
     // name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
-    this.tickLabel = tickLabel; // @public (read-only)
+    this.tickLabel = tickLabel; // (read-only)
 
-    this.color = color; // @public (read-only)
-    this.highlight = highlight; // @public (read-only)
-    this.type = type; // @public (read-only)
+    this.color = color; // (read-only)
+    this.highlight = highlight; // (read-only)
+    this.type = type; // (read-only)
 
-    // @public (read-only) - period of rotation for the body in seconds
+    // (read-only) - period of rotation for the body in seconds
     this.rotationPeriod = options.rotationPeriod;
 
-    // @public (read-only) - passed to visual labels, must be translatable
+    // (read-only) - passed to visual labels, must be translatable
     this.labelString = this.type === 'planet' ? planetString :
                        this.type === 'satellite' ? satelliteString :
                        this.type === 'star' ? starString :
@@ -220,10 +220,10 @@ class Body extends PhetioObject {
     const steppingProperty = model.steppingProperty;
     const rewindingProperty = model.rewindingProperty;
 
-    // @public - force freeze all changes to the rewind values for rewindable Property
+    // force freeze all changes to the rewind values for rewindable Property
     this.freezeRewindChangeProperty = new Property<boolean>( false );
 
-    this.labelAngle = labelAngle; // @public
+    this.labelAngle = labelAngle;
     const changeRewindValueProperty = new DerivedProperty( [
         this.isPlayingProperty,
         steppingProperty,
@@ -235,7 +235,6 @@ class Body extends PhetioObject {
 
     // rewindable properties - body states can be rewound, and these properties can have saved states to support this
 
-    // @public
     this.positionProperty = new RewindableProperty<Vector2>( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
       phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'positionProperty' ),
@@ -244,7 +243,6 @@ class Body extends PhetioObject {
       phetioDocumentation: 'The position of the body'
     } );
 
-    // @public
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ), {
       phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
       tandem: tandem.createTandem( 'velocityProperty' ),
@@ -253,7 +251,6 @@ class Body extends PhetioObject {
       phetioDocumentation: 'The absolute speed and direction of motion of the body'
     } );
 
-    // @public
     this.speedProperty = new DerivedProperty( [ this.velocityProperty ], ( velocity: Vector2 ) => velocity.magnitude, {
       phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'speedProperty' ),
@@ -262,7 +259,6 @@ class Body extends PhetioObject {
       phetioDocumentation: 'The absolute speed of the body'
     } );
 
-    // @public
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
       phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
       phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
@@ -281,7 +277,6 @@ class Body extends PhetioObject {
       units: 'N'
     } );
 
-    // @public
     this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, {
       tandem: tandem.createTandem( 'massProperty' ),
       phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
@@ -289,7 +284,6 @@ class Body extends PhetioObject {
       phetioDocumentation: 'The mass of the body'
     } );
 
-    // @public
     this.isCollidedProperty = new RewindableProperty<boolean>( changeRewindValueProperty, false, {
       tandem: tandem.createTandem( 'isCollidedProperty' ),
       phetioType: RewindableProperty.RewindablePropertyIO( BooleanIO ),
@@ -297,7 +291,6 @@ class Body extends PhetioObject {
       phetioDocumentation: 'True if the body has collided with another body'
     } );
 
-    // @public
     this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0, {
       tandem: tandem.createTandem( 'rotationProperty' ),
       phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
@@ -306,20 +299,20 @@ class Body extends PhetioObject {
       phetioDocumentation: 'The rotation of the body about its own origin'
     } );
 
-    // @public (read-only)
+    // (read-only)
     this.isMovableProperty = new BooleanProperty( bodyConfiguration.isMovable, {
       tandem: tandem.createTandem( 'isMovableProperty' ),
       phetioReadOnly: true,
       phetioDocumentation: 'If true, the body can move during the physics update.'
     } );
 
-    this.density = bodyConfiguration.mass / this.getVolume(); // @public
+    this.density = bodyConfiguration.mass / this.getVolume();
 
     // true if the user is currently controlling the position of the body with the mouse
-    this.userControlled = false; // @public
-    this.path = []; // @public - {Vector2[]} array of the points in the body's trail
+    this.userControlled = false;
+    this.path = []; // {Vector2[]} array of the points in the body's trail
 
-    // @public - emitters for various events
+    // emitters for various events
     this.pointAddedEmitter = new Emitter<[ Vector2, BodyTypeEnum ]>( {
       parameters: [
         { valueType: Vector2 },
@@ -355,7 +348,6 @@ class Body extends PhetioObject {
   }
 
   /**
-   * @public
    * @returns {number}
    */
   getVolume() {
@@ -363,7 +355,6 @@ class Body extends PhetioObject {
   }
 
   /**
-   * @public
    * @returns {number}
    */
   getRadius() {
@@ -371,7 +362,7 @@ class Body extends PhetioObject {
   }
 
   /**
-   * @public (phet-io)
+   * (phet-io)
    */
   toStateObject() {
     return {
@@ -382,7 +373,7 @@ class Body extends PhetioObject {
   }
 
   /**
-   * @public (phet-io)
+   * (phet-io)
    */
   setStateObject( stateObject: ReturnType<typeof Body.prototype.toStateObject> ) {
     this.pathLength = stateObject.pathLength;
@@ -396,7 +387,6 @@ class Body extends PhetioObject {
    * Create an immutable representation of this body for use in the physics engine
    * use copy() for Vector2 so that the properties don't get mutated
    *
-   * @public
    * @returns {BodyState}
    */
   toBodyState() {
@@ -415,7 +405,6 @@ class Body extends PhetioObject {
   /**
    * Save the current state of the body by storing the values of all rewindable properties.  This should only
    * be called when the clock is paused.
-   * @public
    */
   saveBodyState() {
     this.positionProperty.storeRewindValueNoNotify();
@@ -428,7 +417,6 @@ class Body extends PhetioObject {
   /**
    * Take the updated BodyState from the physics engine and update the state of this body based on it.
    *
-   * @public
    * @param {BodyState} bodyState
    */
   updateBodyStateFromModel( bodyState: { position: Vector2; velocity: Vector2; acceleration: Vector2; mass: number; rotation: number } ) {
@@ -447,7 +435,6 @@ class Body extends PhetioObject {
    * This method is called after all bodies have been updated by the physics engine (must be done as a batch),
    * so that the path can be updated
    *
-   * @public
    */
   modelStepped() {
 
@@ -491,7 +478,6 @@ class Body extends PhetioObject {
 
   /**
    * Clear the whole path of points tracking the body's trajectory.
-   * @public
    */
   clearPath() {
     this.path = [];
@@ -500,7 +486,6 @@ class Body extends PhetioObject {
     this.clearedEmitter.emit( this.type );
   }
 
-  // @public
   resetAll() {
     this.positionProperty.reset();
     this.velocityProperty.reset();
@@ -517,7 +502,6 @@ class Body extends PhetioObject {
   /**
    * Create an image renderer for this body.
    *
-   * @public
    * @returns {BodyRenderer}
    */
   createRenderer( viewDiameter: number ) {
@@ -526,7 +510,6 @@ class Body extends PhetioObject {
 
   /**
    * Keep track of the time at the beginning of a time step, for interpolation
-   * @public
    */
   storePreviousPosition() {
     this.previousPosition.x = this.positionProperty.value.x;
@@ -536,7 +519,6 @@ class Body extends PhetioObject {
   /**
    * Check to see if this body collides with another.
    *
-   * @public
    * @param {Body} body
    * @returns {boolean}
    */
@@ -556,7 +538,6 @@ class Body extends PhetioObject {
   /**
    * Rewind all rewindable properties to their values in the last time step.
    *
-   * @public
    */
   rewind() {
     this.positionProperty.rewind();
@@ -571,7 +552,6 @@ class Body extends PhetioObject {
   /**
    * Returns the Properties which, when changed, enable the rewind button.
    * @returns {Property[]}
-   * @public
    */
   getRewindableProperties() {
     return [
@@ -582,14 +562,12 @@ class Body extends PhetioObject {
     ];
   }
 
-  // @public
   resetPositionAndVelocity() {
     this.positionProperty.reset();
     this.velocityProperty.reset();
   }
 
   /**
-   * @public
    * @returns {string}
    */
   override toString() {

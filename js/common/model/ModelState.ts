@@ -45,7 +45,6 @@ class ModelState {
   /**
    * Updates the model, producing the next ModelState
    *
-   * @public
    * @param {number} dt
    * @param {Property.<boolean>} gravityEnabledProperty
    * @returns {ModelState}
@@ -305,7 +304,6 @@ class ModelState {
    * Get the BodyState for the specified index--future work could
    * change this signature to getState(Body body) since it would be safer.
    * See usage in GravityAndOrbitsPhysicsEngine constructor.
-   * @public
    * @param {number} index
    * @returns {Array.<BodyState>}
    */

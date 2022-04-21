@@ -34,7 +34,6 @@ class BodyState {
    */
   constructor( body: Body, position: Vector2, velocity: Vector2, acceleration: Vector2, mass: number, exploded: boolean, rotation: number, rotationPeriod: number|null ) {
 
-    // @public
     this.position = position;
     this.velocity = velocity;
     this.acceleration = acceleration;

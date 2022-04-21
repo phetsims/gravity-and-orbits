@@ -57,11 +57,11 @@ class BodyNode extends Node {
     const clock = scene.getClock();
 
     this.modelViewTransformProperty = scene.transformProperty; // @private
-    this.body = body; // @public
+    this.body = body;
 
     this.body.isCollidedProperty.link( isCollided => this.setVisible( !isCollided ) );
 
-    this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() ); // @public
+    this.bodyRenderer = this.body.createRenderer( this.getViewDiameter() );
     this.addChild( this.bodyRenderer );
 
     // images rotate the target body with the rotation property
@@ -204,7 +204,6 @@ class BodyNode extends Node {
 
   /**
    * Get the diameter of the body in view coordinates.
-   * @public
    *
    * @returns {number}
    */

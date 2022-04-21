@@ -42,13 +42,13 @@ class RewindableProperty<T> extends Property<T> {
 
     super( value, options );
 
-    // @public - the "initial condition" the property can be rewound to, different than the overall "reset" value
+    // the "initial condition" the property can be rewound to, different than the overall "reset" value
     this.rewindValue = value;
 
     // @private - see above
     this.changeRewindValueProperty = changeRewindValueProperty;
 
-    // @public (read-only) true when the rewind point value is different than the property's current value
+    // (read-only) true when the rewind point value is different than the property's current value
     this.differentProperty = new BooleanProperty( !this.equalsRewindValue(), {
       tandem: options.tandem.createTandem( 'differentProperty' ),
       phetioFeatured: false,
@@ -60,7 +60,6 @@ class RewindableProperty<T> extends Property<T> {
   /**
    * Reset both the value and the rewind value.
    *
-   * @public
    */
   override reset() {
     super.reset();
@@ -70,7 +69,6 @@ class RewindableProperty<T> extends Property<T> {
   }
 
   /**
-   * @public
    */
   override set( value: T ) {
     super.set( value );
@@ -88,7 +86,6 @@ class RewindableProperty<T> extends Property<T> {
   /**
    * Store the new value as the initial condition which can be rewound to. We have to skip notifications sometimes
    * or the wrong initial conditions get stored.
-   * @public
    */
   storeRewindValueNoNotify() {
     this.rewindValue = this.get();
@@ -99,7 +96,6 @@ class RewindableProperty<T> extends Property<T> {
    * Check for equality between current and rewind values.  Supported types are number, boolean
    * and Vector2.
    *
-   * @public
    * @returns {boolean}
    */
   equalsRewindValue() {
@@ -117,7 +113,6 @@ class RewindableProperty<T> extends Property<T> {
 
   /**
    * Set the value to match the last recorded rewindValue
-   * @public
    */
   rewind() {
     this.set( this.rewindValue );

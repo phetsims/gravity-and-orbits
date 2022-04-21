@@ -93,7 +93,7 @@ class SceneFactory {
       adjustMoonOrbit: false
     }, options );
 
-    this.scenes = []; // @public - in the java version this class extended ArrayList, but here we have an array field
+    this.scenes = []; // in the java version this class extended ArrayList, but here we have an array field
 
     planetStar.center();
     sunEarthMoon.center();
@@ -236,7 +236,6 @@ class SunEarthModeConfig extends ModeConfig {
 
     super( 1.25 );
 
-    // @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
@@ -263,7 +262,6 @@ class SunEarthMoonModeConfig extends ModeConfig {
   constructor() {
 
     super( 1.25 );
-    // @public
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
     this.planet = new BodyConfiguration(
       EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, 0, EARTH_ORBITAL_SPEED_AT_PERIHELION );
@@ -304,7 +302,6 @@ class PlanetMoonModeConfig extends ModeConfig {
     const planetVelocityX = MOON_MASS * 1082 / ( EARTH_MASS + MOON_MASS );
     const moonVelocityX = planetVelocityX - Math.abs( MOON_SPEED_AT_PERIGEE );
 
-    // @public
     this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, planetVelocityX, 0 );
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, moonVelocityX, 0, {
       rotationPeriod: options.moonRotationPeriod
@@ -340,14 +337,12 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 
     super( 21600 );
 
-    // @public
     this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
     this.satellite = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
       SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
         rotationPeriod: options.spaceStationRotationPeriod
       } );
 
-    // @public
     // Sampled at runtime from MeasuringTape
     const x0 = 3162119;
     this.initialMeasuringTapePosition = new Line( x0, 7680496, x0 + 3000 * 1000, 7680496 );
