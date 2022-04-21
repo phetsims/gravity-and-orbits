@@ -10,40 +10,30 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import merge from '../../../../phet-core/js/merge.js';
 import RestartButton from '../../../../scenery-phet/js/buttons/RestartButton.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import TimeControlNode from '../../../../scenery-phet/js/TimeControlNode.js';
+import TimeControlNode, { TimeControlNodeOptions } from '../../../../scenery-phet/js/TimeControlNode.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Body from '../model/Body.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import RewindableProperty from '../model/RewindableProperty.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
 const STEP_BUTTON_RADIUS = 23;
 const PUSH_BUTTON_SPACING = 8;
 
-type GravityAndOrbitsTimeControlNodeOptions = {
-  tandem: Tandem;
-};
+type SelfOptions = {};
+
+type GravityAndOrbitsTimeControlNodeOptions = SelfOptions & PickRequired<TimeControlNodeOptions, 'tandem'>;
 
 class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
-  /**
-   * @param {GravityAndOrbitsModel} model
-   * @param {Object} [providedOptions]
-   */
-  constructor( model: GravityAndOrbitsModel, providedOptions?: Partial<GravityAndOrbitsTimeControlNodeOptions> ) {
-
-    const options: GravityAndOrbitsTimeControlNodeOptions = merge( {
-      tandem: Tandem.REQUIRED
-    }, providedOptions ) as GravityAndOrbitsTimeControlNodeOptions;
-
+  constructor( model: GravityAndOrbitsModel, providedOptions: GravityAndOrbitsTimeControlNodeOptions ) {
 
     super( model.isPlayingProperty, {
       timeSpeedProperty: model.timeSpeedProperty,
@@ -64,10 +54,8 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           font: new PhetFont( 20 ),
           fill: GravityAndOrbitsColors.foregroundProperty,
           maxWidth: 200
-        },
-        touchAreaDilation: 5
-      },
-      tandem: options.tandem
+        }
+      }
     } );
 
     const restartButton = new RestartButton( {
@@ -77,7 +65,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       yMargin: 9.5,
       listener: () => model.sceneProperty.value.rewind(),
       center: this.getPlayPauseButtonCenter().minusXY( PLAY_PAUSE_BUTTON_RADIUS + STEP_BUTTON_RADIUS + PUSH_BUTTON_SPACING, 0 ),
-      tandem: options.tandem.createTandem( 'restartButton' )
+      tandem: providedOptions.tandem.createTandem( 'restartButton' )
     } );
     this.addChild( restartButton );
 

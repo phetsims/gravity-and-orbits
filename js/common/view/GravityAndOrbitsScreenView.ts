@@ -116,7 +116,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
 
     // spacing to put the SpeedRadioButtonGroup at the edge of the layout bounds - current spacing
     // plus distance from the left of the TimeControlNode to left edge of layout bounds
-    timeControlNode.setButtonGroupXSpacing( timeControlNode.buttonGroupXSpacing + timeControlNode.left - this.layoutBounds.left - MARGIN );
+    timeControlNode.setButtonGroupXSpacing( timeControlNode.getButtonGroupXSpacing() + timeControlNode.left - this.layoutBounds.left - MARGIN );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {
