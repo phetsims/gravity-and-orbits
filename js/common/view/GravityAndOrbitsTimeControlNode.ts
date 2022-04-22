@@ -55,7 +55,8 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           fill: GravityAndOrbitsColors.foregroundProperty,
           maxWidth: 200
         }
-      }
+      },
+      tandem: providedOptions.tandem
     } );
 
     const restartButton = new RestartButton( {
