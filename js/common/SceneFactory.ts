@@ -8,10 +8,6 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-
-// Disable for the whole file https://github.com/phetsims/chipper/issues/1237
-/* eslint-disable no-protected-jsdoc */
-
 import Utils from '../../../dot/js/Utils.js';
 import Vector2 from '../../../dot/js/Vector2.js';
 import merge from '../../../phet-core/js/merge.js';
@@ -248,8 +244,7 @@ class SunEarthModeConfig extends ModeConfig {
     this.forceScale = FORCE_SCALE * 120;
   }
 
-  // @protected
-  getBodies() {
+  protected getBodies() {
     return [ this.sun, this.planet ];
   }
 }
