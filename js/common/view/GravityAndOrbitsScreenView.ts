@@ -1,4 +1,4 @@
-// Copyright 2014-2021, University of Colorado Boulder
+// Copyright 2014-2022, University of Colorado Boulder
 
 /**
  * GravityAndOrbitsScreenView. This file was not in the original Java code, but was created to have the sim follow the
