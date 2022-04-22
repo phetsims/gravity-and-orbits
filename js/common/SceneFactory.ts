@@ -8,14 +8,15 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+
+// Disable for the whole file https://github.com/phetsims/chipper/issues/1237
+/* eslint-disable no-protected-jsdoc */
+
 import Utils from '../../../dot/js/Utils.js';
 import Vector2 from '../../../dot/js/Vector2.js';
 import merge from '../../../phet-core/js/merge.js';
 import StringUtils from '../../../phetcommon/js/util/StringUtils.js';
-import { HBox, Node } from '../../../scenery/js/imports.js';
-import { Image } from '../../../scenery/js/imports.js';
-import { Line } from '../../../scenery/js/imports.js';
-import { Color } from '../../../scenery/js/imports.js';
+import { Color, HBox, Image, Line, Node } from '../../../scenery/js/imports.js';
 import earth_png from '../../images/earth_png.js';
 import moonGeneric_png from '../../images/moonGeneric_png.js';
 import moon_png from '../../images/moon_png.js';
@@ -275,8 +276,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
     this.forceScale = FORCE_SCALE * 120;
   }
 
-  // @protected
-  getBodies() {
+  protected getBodies() {
     return [ this.sun, this.planet, this.moon ];
   }
 }
@@ -315,8 +315,7 @@ class PlanetMoonModeConfig extends ModeConfig {
     this.dt = DEFAULT_DT / 3;  // actual days
   }
 
-  // @protected
-  getBodies() {
+  protected getBodies() {
     return [ this.planet, this.moon ];
   }
 }
@@ -350,8 +349,7 @@ class EarthSpaceStationModeConfig extends ModeConfig {
     this.dt = DEFAULT_DT * 9E-4;
   }
 
-  // @protected
-  getBodies() {
+  protected getBodies() {
     return [ this.planet, this.satellite ];
   }
 }

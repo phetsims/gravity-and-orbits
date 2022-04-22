@@ -12,10 +12,9 @@ import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import merge from '../../../../phet-core/js/merge.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
-import { Node } from '../../../../scenery/js/imports.js';
+import { Color, Node } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
-import { Color } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 
@@ -84,19 +83,11 @@ class VectorNode extends Node {
     this.addChild( arrowNode );
   }
 
-  /**
-   * @returns {Vector2}
-   * @private
-   */
-  getTail() {
+  private getTail(): Vector2 {
     return this.transformProperty.get().modelToViewPosition( this.body.positionProperty.get() );
   }
 
-  /**
-   * @returns {Vector2}
-   * @protected
-   */
-  getTip( tail: Vector2 = this.getTail() ) {
+  protected getTip( tail: Vector2 = this.getTail() ): Vector2 {
     const force = this.transformProperty.get().modelToViewDelta( this.vectorProperty.get().times( this.vectorNodeScale ) );
     return new Vector2( force.x + tail.x, force.y + tail.y );
   }

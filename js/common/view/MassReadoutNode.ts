@@ -28,7 +28,7 @@ abstract class MassReadoutNode extends Node {
     const options: MassReadoutNodeOptions = merge( {
       textMaxWidth: 240
     }, providedOptions ) as MassReadoutNodeOptions;
-    this.bodyNode = bodyNode; // @protected
+    this.bodyNode = bodyNode;
 
     const readoutText = new Text( this.createText(), {
       pickable: false,

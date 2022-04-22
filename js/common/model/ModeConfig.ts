@@ -35,7 +35,7 @@ abstract class ModeConfig {
     this.zoom = zoom;
   }
 
-  center() {
+  center(): void {
     const deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
     const bodies = this.getBodies();
     for ( let i = 0; i < bodies.length; i++ ) {
@@ -45,11 +45,9 @@ abstract class ModeConfig {
   }
 
   /**
-   * @private
    * Compute the total momentum for purposes of centering the camera on the center of momentum frame
-   * @returns {Vector2}
    */
-  getTotalMomentum() {
+  private getTotalMomentum(): Vector2 {
     let totalMomentum = new Vector2( 0, 0 );
     const bodies = this.getBodies();
     for ( let i = 0; i < bodies.length; i++ ) {
@@ -58,11 +56,7 @@ abstract class ModeConfig {
     return totalMomentum;
   }
 
-  /**
-   * @private
-   * @returns {number}
-   */
-  getTotalMass() {
+  private getTotalMass(): number {
     let totalMass = 0.0;
     const bodies = this.getBodies();
     for ( let i = 0; i < bodies.length; i++ ) {
@@ -71,11 +65,7 @@ abstract class ModeConfig {
     return totalMass;
   }
 
-  /**
-   * @returns {BodyConfiguration[]}
-   * @abstract
-   */
-  abstract getBodies(): BodyConfiguration[]
+  protected abstract getBodies(): BodyConfiguration[]
 }
 
 gravityAndOrbits.register( 'ModeConfig', ModeConfig );
