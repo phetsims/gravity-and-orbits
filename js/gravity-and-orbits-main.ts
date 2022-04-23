@@ -7,7 +7,7 @@
  */
 
 import { CreditsData } from '../../joist/js/CreditsNode.js';
-import Sim from '../../joist/js/Sim.js';
+import Sim, { SimOptions } from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import GravityAndOrbitsColors from './common/GravityAndOrbitsColors.js';
@@ -29,7 +29,7 @@ simLauncher.launch( () => {
     thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
             'HTML5.'
   };
-  const simOptions = {
+  const simOptions: SimOptions = {
     credits: credits,
 
     // Creates content for the Options dialog
