@@ -141,10 +141,6 @@ class PathsCanvasNode extends CanvasNode {
     }
   }
 
-  /**
-   * @private
-   * @param {CanvasRenderingContext2D} context
-   */
   paintCanvas( context: CanvasRenderingContext2D ) {
     let j;
 
