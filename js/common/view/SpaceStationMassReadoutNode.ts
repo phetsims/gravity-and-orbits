@@ -41,7 +41,7 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
    *
    * @returns {string} - formatted string
    */
-  createText() {
+  createText(): string {
     const massKG = this.bodyNode.body.massProperty.get();
     const spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;
 

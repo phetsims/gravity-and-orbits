@@ -35,7 +35,7 @@ abstract class BodyRenderer extends Node {
     this.body = body;
   }
 
-  getBody() {
+  getBody(): Body {
     return this.body;
   }
 
@@ -76,7 +76,7 @@ class SwitchableBodyRenderer extends BodyRenderer {
   /**
    * Set the diameter for the renderer in view coordinates for both the current and default renderers.
    */
-  setDiameter( viewDiameter: number ) {
+  setDiameter( viewDiameter: number ): void {
     this.targetBodyRenderer.setDiameter( viewDiameter );
     this.defaultBodyRenderer.setDiameter( viewDiameter );
   }
@@ -105,13 +105,13 @@ class ImageRenderer extends BodyRenderer {
   /**
    * Set the diameter for the rednerer in view coordinates
    */
-  setDiameter( viewDiameter: number ) {
+  setDiameter( viewDiameter: number ): void {
     this.viewDiameter = viewDiameter;
     this.updateViewDiameter();
   }
 
   // @private
-  updateViewDiameter() {
+  updateViewDiameter(): void {
     this.imageNode.matrix = new Matrix3();
     const scale = this.viewDiameter / this.imageNode.width;
     this.imageNode.setScaleMagnitude( scale );

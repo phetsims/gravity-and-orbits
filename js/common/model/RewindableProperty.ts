@@ -59,18 +59,15 @@ class RewindableProperty<T> extends Property<T> {
 
   /**
    * Reset both the value and the rewind value.
-   *
    */
-  override reset() {
+  override reset(): void {
     super.reset();
 
     // reset the rewind value as well
     this.rewindValue = this.value;
   }
 
-  /**
-   */
-  override set( value: T ) {
+  override set( value: T ): this {
     super.set( value );
 
     // If the user changed the initial conditions (as opposed to the state changing through model stepping),
@@ -87,7 +84,7 @@ class RewindableProperty<T> extends Property<T> {
    * Store the new value as the initial condition which can be rewound to. We have to skip notifications sometimes
    * or the wrong initial conditions get stored.
    */
-  storeRewindValueNoNotify() {
+  storeRewindValueNoNotify(): void {
     this.rewindValue = this.get();
     this.differentProperty.set( !this.equalsRewindValue() );
   }
@@ -95,10 +92,8 @@ class RewindableProperty<T> extends Property<T> {
   /**
    * Check for equality between current and rewind values.  Supported types are number, boolean
    * and Vector2.
-   *
-   * @returns {boolean}
    */
-  equalsRewindValue() {
+  equalsRewindValue(): boolean {
 
     // if an object, must call unique function to check for equality
     // @ts-ignore
@@ -114,7 +109,7 @@ class RewindableProperty<T> extends Property<T> {
   /**
    * Set the value to match the last recorded rewindValue
    */
-  rewind() {
+  rewind(): void {
     this.set( this.rewindValue );
   }
 }

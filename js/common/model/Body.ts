@@ -32,6 +32,7 @@ import BodyRenderer from '../view/BodyRenderer.js';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
+import IProperty from '../../../../axon/js/IProperty.js';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -350,21 +351,21 @@ class Body extends PhetioObject {
   /**
    * @returns {number}
    */
-  getVolume() {
+  getVolume(): number {
     return 4.0 / 3.0 * Math.PI * Math.pow( this.getRadius(), 3 );
   }
 
   /**
    * @returns {number}
    */
-  getRadius() {
+  getRadius(): number {
     return this.diameterProperty.get() / 2;
   }
 
   /**
    * (phet-io)
    */
-  toStateObject() {
+  toStateObject(): { pathLength: number; modelPathLength: number; path: any } {
     return {
       pathLength: this.pathLength,
       modelPathLength: this.modelPathLength,
@@ -375,7 +376,7 @@ class Body extends PhetioObject {
   /**
    * (phet-io)
    */
-  setStateObject( stateObject: ReturnType<typeof Body.prototype.toStateObject> ) {
+  setStateObject( stateObject: ReturnType<typeof Body.prototype.toStateObject> ): void {
     this.pathLength = stateObject.pathLength;
     this.modelPathLength = stateObject.modelPathLength;
     this.path = ArrayIO( Vector2.Vector2IO ).fromStateObject( stateObject.path );
@@ -389,7 +390,7 @@ class Body extends PhetioObject {
    *
    * @returns {BodyState}
    */
-  toBodyState() {
+  toBodyState(): BodyState {
     return new BodyState(
       this,
       this.positionProperty.get().copy(),
@@ -406,7 +407,7 @@ class Body extends PhetioObject {
    * Save the current state of the body by storing the values of all rewindable properties.  This should only
    * be called when the clock is paused.
    */
-  saveBodyState() {
+  saveBodyState(): void {
     this.positionProperty.storeRewindValueNoNotify();
     this.velocityProperty.storeRewindValueNoNotify();
     this.forceProperty.storeRewindValueNoNotify();
@@ -419,7 +420,7 @@ class Body extends PhetioObject {
    *
    * @param {BodyState} bodyState
    */
-  updateBodyStateFromModel( bodyState: { position: Vector2; velocity: Vector2; acceleration: Vector2; mass: number; rotation: number } ) {
+  updateBodyStateFromModel( bodyState: { position: Vector2; velocity: Vector2; acceleration: Vector2; mass: number; rotation: number } ): void {
     if ( !this.isCollidedProperty.value ) {
       if ( this.isMovableProperty.value && !this.userControlled ) {
         this.positionProperty.set( bodyState.position );
@@ -436,7 +437,7 @@ class Body extends PhetioObject {
    * so that the path can be updated
    *
    */
-  modelStepped() {
+  modelStepped(): void {
 
     // Only add to the path if the user isn't dragging it and if the body is not exploded and the body is movable
     if ( !this.userControlled && !this.isCollidedProperty.get() && this.isMovableProperty.value ) {
@@ -450,7 +451,7 @@ class Body extends PhetioObject {
    *
    * @private
    */
-  addPathPoint() {
+  addPathPoint(): void {
     const pathPoint = this.positionProperty.get();
     this.path.push( pathPoint );
     this.pointAddedEmitter.emit( pathPoint, this.type );
@@ -479,14 +480,14 @@ class Body extends PhetioObject {
   /**
    * Clear the whole path of points tracking the body's trajectory.
    */
-  clearPath() {
+  clearPath(): void {
     this.path = [];
     this.pathLength = 0;
     this.modelPathLength = 0;
     this.clearedEmitter.emit( this.type );
   }
 
-  resetAll() {
+  resetAll(): void {
     this.positionProperty.reset();
     this.velocityProperty.reset();
     this.accelerationProperty.reset();
@@ -504,14 +505,14 @@ class Body extends PhetioObject {
    *
    * @returns {BodyRenderer}
    */
-  createRenderer( viewDiameter: number ) {
+  createRenderer( viewDiameter: number ): BodyRenderer {
     return this.renderer( this, viewDiameter );
   }
 
   /**
    * Keep track of the time at the beginning of a time step, for interpolation
    */
-  storePreviousPosition() {
+  storePreviousPosition(): void {
     this.previousPosition.x = this.positionProperty.value.x;
     this.previousPosition.y = this.positionProperty.value.y;
   }
@@ -522,7 +523,7 @@ class Body extends PhetioObject {
    * @param {Body} body
    * @returns {boolean}
    */
-  collidesWidth( body: Body ) {
+  collidesWidth( body: Body ): boolean {
     const position1 = this.positionProperty.get();
     const position2 = body.positionProperty.get();
 
@@ -539,7 +540,7 @@ class Body extends PhetioObject {
    * Rewind all rewindable properties to their values in the last time step.
    *
    */
-  rewind() {
+  rewind(): void {
     this.positionProperty.rewind();
     this.velocityProperty.rewind();
     this.forceProperty.rewind();
@@ -553,7 +554,7 @@ class Body extends PhetioObject {
    * Returns the Properties which, when changed, enable the rewind button.
    * @returns {Property[]}
    */
-  getRewindableProperties() {
+  getRewindableProperties(): IProperty<any>[] {
     return [
       this.positionProperty,
       this.velocityProperty,
@@ -562,7 +563,7 @@ class Body extends PhetioObject {
     ];
   }
 
-  resetPositionAndVelocity() {
+  resetPositionAndVelocity(): void {
     this.positionProperty.reset();
     this.velocityProperty.reset();
   }
@@ -570,7 +571,7 @@ class Body extends PhetioObject {
   /**
    * @returns {string}
    */
-  override toString() {
+  override toString(): string {
     return `name = ${this.type}, mass = ${this.massProperty.get()}`;
   }
 }

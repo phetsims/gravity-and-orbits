@@ -66,7 +66,7 @@ class ExplosionNode extends Node {
    * @returns {BodyRenderer}
    * @private
    */
-  getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ) {
+  getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ): any {
     const yellowAndWhite = {
       highlight: 'white',
       color: 'yellow'
@@ -85,7 +85,7 @@ class ExplosionNode extends Node {
   }
 
   // @private
-  getMaxViewDiameter( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ) {
+  getMaxViewDiameter( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ): number {
     return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
   }
 }

@@ -244,7 +244,7 @@ class SunEarthModeConfig extends ModeConfig {
     this.forceScale = FORCE_SCALE * 120;
   }
 
-  protected getBodies() {
+  protected getBodies(): BodyConfiguration[] {
     return [ this.sun, this.planet ];
   }
 }
@@ -271,7 +271,7 @@ class SunEarthMoonModeConfig extends ModeConfig {
     this.forceScale = FORCE_SCALE * 120;
   }
 
-  protected getBodies() {
+  protected getBodies(): BodyConfiguration[] {
     return [ this.sun, this.planet, this.moon ];
   }
 }
@@ -310,7 +310,7 @@ class PlanetMoonModeConfig extends ModeConfig {
     this.dt = DEFAULT_DT / 3;  // actual days
   }
 
-  protected getBodies() {
+  protected getBodies(): BodyConfiguration[] {
     return [ this.planet, this.moon ];
   }
 }
@@ -344,7 +344,7 @@ class EarthSpaceStationModeConfig extends ModeConfig {
     this.dt = DEFAULT_DT * 9E-4;
   }
 
-  protected getBodies() {
+  protected getBodies(): BodyConfiguration[] {
     return [ this.planet, this.satellite ];
   }
 }

@@ -221,7 +221,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @returns {ModelViewTransform2}
    * @private
    */
-  createTransform( defaultZoomScale: number, gridCenter: Vector2 ) {
+  createTransform( defaultZoomScale: number, gridCenter: Vector2 ): ModelViewTransform2 {
     const modelBounds = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
     this.modelBoundsProperty.set( modelBounds );
     const playAreaHeight = PLAY_AREA_HEIGHT - 50;
@@ -241,7 +241,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @returns {Rectangle}
    * @private
    */
-  getTargetRectangle( targetScale: number, targetCenterModelPoint: Vector2 ) {
+  getTargetRectangle( targetScale: number, targetCenterModelPoint: Vector2 ): Rectangle {
     const z = targetScale * 1.5E-9;
     const modelWidth = PLAY_AREA_WIDTH / z;
     const modelHeight = PLAY_AREA_HEIGHT / z;
@@ -252,11 +252,11 @@ class GravityAndOrbitsScene extends PhetioObject {
       modelHeight );
   }
 
-  getClock() {
+  getClock(): GravityAndOrbitsClock {
     return this.physicsEngine.clock;
   }
 
-  getBodies() {
+  getBodies(): Body[] {
     return this.physicsEngine.getBodies();
   }
 
@@ -265,14 +265,14 @@ class GravityAndOrbitsScene extends PhetioObject {
    *
    * @private
    */
-  setDeviatedFromDefaults() {
+  setDeviatedFromDefaults(): void {
     this.deviatedFromDefaultsProperty.set( true );
   }
 
   /**
    * @param body
    */
-  addBody( body: Body ) {
+  addBody( body: Body ): void {
     this.physicsEngine.addBody( body );
 
     body.massProperty.link( this.setDeviatedFromDefaults.bind( this ) );
@@ -290,7 +290,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    */
-  reset() {
+  reset(): void {
     this.activeProperty.reset();
     this.deviatedFromDefaultsProperty.reset();
     this.measuringTapeStartPointProperty.reset();
@@ -305,7 +305,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * Return the bodies to their original states when the user presses "reset" (not "reset all")
    *
    */
-  resetScene() {
+  resetScene(): void {
     this.physicsEngine.resetBodies();
     this.deviatedFromDefaultsProperty.set( false );
     this.getClock().setSimulationTime( 0.0 );
@@ -317,7 +317,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * Restore the last set of initial conditions that were set while the sim was paused.
    *
    */
-  rewind() {
+  rewind(): void {
     this.rewindingProperty.set( true );
     this.getClock().setSimulationTime( 0.0 );
     const bodies = this.physicsEngine.getBodies();
@@ -333,7 +333,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * Save the state of the orbital system, which includes all rewindable properties of all bodies. This should only be
    * called when the sim is paused.
    */
-  saveState() {
+  saveState(): void {
     const bodies = this.physicsEngine.getBodies();
     for ( let i = 0; i < bodies.length; i++ ) {
       bodies[ i ].saveBodyState();
@@ -343,7 +343,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * @returns {Array.<Body>} - All bodies in the scene for which the mass can be changed
    */
-  getMassSettableBodies() {
+  getMassSettableBodies(): Body[] {
     const bodies = this.getBodies();
     const massSettableBodies = [];
     for ( let i = 0; i < bodies.length; i++ ) {

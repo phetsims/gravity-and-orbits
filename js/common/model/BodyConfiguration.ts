@@ -43,7 +43,7 @@ class BodyConfiguration {
     this.rotationPeriod = options.rotationPeriod;
   }
 
-  getMomentum() {
+  getMomentum(): Vector2 {
     return new Vector2( this.vx * this.mass, this.vy * this.mass );
   }
 }

@@ -14,11 +14,7 @@ import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import { Shape } from '../../../../kite/js/imports.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { DragListener } from '../../../../scenery/js/imports.js';
-import { Line } from '../../../../scenery/js/imports.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import { Rectangle } from '../../../../scenery/js/imports.js';
-import { Text } from '../../../../scenery/js/imports.js';
+import { DragListener, Line, Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
@@ -157,7 +153,7 @@ class BodyNode extends Node {
    * @param {Tandem} tandem
    * @private
    */
-  createArrowIndicator( body: Body, labelAngle: number, tandem: Tandem ) {
+  createArrowIndicator( body: Body, labelAngle: number, tandem: Tandem ): Node {
     const node = new Node( {
       tandem: tandem,
       phetioDocumentation: 'When the body is too small to see (depending on the zoom level), this shows a line that ' +
@@ -207,7 +203,7 @@ class BodyNode extends Node {
    *
    * @returns {number}
    */
-  getViewDiameter() {
+  getViewDiameter(): number {
     const viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
     return Math.max( viewDiameter, 2 );
   }

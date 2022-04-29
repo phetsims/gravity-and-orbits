@@ -141,7 +141,7 @@ class PathsCanvasNode extends CanvasNode {
     }
   }
 
-  paintCanvas( context: CanvasRenderingContext2D ) {
+  paintCanvas( context: CanvasRenderingContext2D ): void {
     let j;
 
     // draw the path for each body one by one

@@ -95,7 +95,7 @@ class GravityAndOrbitsModel {
     } );
   }
 
-  step( dt: number ) {
+  step( dt: number ): void {
 
     // limit dt to 1 so there are no large jumps
     dt = Math.min( 1, dt );
@@ -114,12 +114,12 @@ class GravityAndOrbitsModel {
     }
   }
 
-  getScenes() {
+  getScenes(): GravityAndOrbitsScene[] {
     return this.sceneList.scenes;
   }
 
   // @private
-  updateActiveModule() {
+  updateActiveModule(): void {
     for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
       this.sceneList.scenes[ i ].activeProperty.set( this.sceneList.scenes[ i ] === this.sceneProperty.value );
     }
@@ -127,7 +127,7 @@ class GravityAndOrbitsModel {
 
   /**
    */
-  reset() {
+  reset(): void {
     this.showGravityForceProperty.reset();
     this.showPathProperty.reset();
     this.showGridProperty.reset();

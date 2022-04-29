@@ -29,7 +29,7 @@ class EarthMassReadoutNode extends MassReadoutNode {
    * @returns {string}
    * @private
    */
-  createText() {
+  createText(): string {
     const massKG = this.bodyNode.body.massProperty.get();
     const earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
 

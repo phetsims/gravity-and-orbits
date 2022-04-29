@@ -79,7 +79,7 @@ class GravityAndOrbitsPhysicsEngine {
    * @returns {number} elapsed time
    * @private
    */
-  stepModel() {
+  stepModel(): number {
 
     this.bodies.forEach( body => body.storePreviousPosition() );
 
@@ -113,7 +113,7 @@ class GravityAndOrbitsPhysicsEngine {
    *
    * @param {number} dt
    */
-  step( dt: number ) {
+  step( dt: number ): void {
 
     // Compute the next state for each body based on the current state of all bodies in the system.
     const bodyStates = this.bodies.map( getBodyState );
@@ -140,7 +140,7 @@ class GravityAndOrbitsPhysicsEngine {
     }
   }
 
-  resetAll() {
+  resetAll(): void {
     this.resetBodies();
     this.clock.resetSimulationTime();
     this.updateForceVectors();
@@ -151,7 +151,7 @@ class GravityAndOrbitsPhysicsEngine {
    *
    * @param body
    */
-  addBody( body: Body ) {
+  addBody( body: Body ): void {
     this.bodies.push( body );
 
     // update the force vectors when the position or mass changes
@@ -170,7 +170,7 @@ class GravityAndOrbitsPhysicsEngine {
    *
    * @private
    */
-  updateForceVectors() {
+  updateForceVectors(): void {
     this.step( 0 );
   }
 
@@ -179,11 +179,11 @@ class GravityAndOrbitsPhysicsEngine {
    *
    * @returns {Body[]}
    */
-  getBodies() {
+  getBodies(): Body[] {
     return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
   }
 
-  resetBodies() {
+  resetBodies(): void {
     this.bodies.forEach( body => body.resetAll() );
     this.updateForceVectors(); // has to be done separately since physics is computed as a batch
   }
@@ -194,7 +194,7 @@ class GravityAndOrbitsPhysicsEngine {
    * @param {BodyTypeEnum} type
    * @returns {Body|null}
    */
-  getBody( type: BodyTypeEnum ) {
+  getBody( type: BodyTypeEnum ): Body | null {
     for ( let i = 0; i < this.bodies.length; i++ ) {
       const body = this.bodies[ i ];
 

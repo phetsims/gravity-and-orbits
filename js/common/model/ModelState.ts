@@ -49,7 +49,7 @@ class ModelState {
    * @param {Property.<boolean>} gravityEnabledProperty
    * @returns {ModelState}
    */
-  getNextState( dt: number, gravityEnabledProperty: Property<boolean> ) {
+  getNextState( dt: number, gravityEnabledProperty: Property<boolean> ): this {
 
     if ( gravityEnabledProperty.get() ) {
       return this.getNextInteractingState( dt );
@@ -67,7 +67,7 @@ class ModelState {
    * @private
    * @param {number} dt
    */
-  updatePositions( dt: number ) {
+  updatePositions( dt: number ): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
       velocity.setXY( bodyState.velocity.x * dt, bodyState.velocity.y * dt );
@@ -81,7 +81,7 @@ class ModelState {
    * @private
    * @param {number} dt
    */
-  updateVelocities( dt: number ) {
+  updateVelocities( dt: number ): void {
     this.updateAccelerations();
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
@@ -94,7 +94,7 @@ class ModelState {
    *
    * @private
    */
-  updateAccelerations() {
+  updateAccelerations(): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
       const acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
@@ -109,7 +109,7 @@ class ModelState {
    *
    * @param {number} dt (seconds)
    */
-  updateRotations( dt: number ) {
+  updateRotations( dt: number ): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
 
@@ -127,7 +127,7 @@ class ModelState {
    * @param {number} dt - delta time (seconds)
    * @private
    */
-  getDeltaRotation( rotationPeriod: number, dt: number ) {
+  getDeltaRotation( rotationPeriod: number, dt: number ): number {
 
     // convert delta time to rotation in orbit
     // negative one so that rotation is counter clockwise (with orbital motion)
@@ -139,7 +139,7 @@ class ModelState {
    *
    * @private
    */
-  setAccelerationToZero() {
+  setAccelerationToZero(): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       this.bodyStates[ i ].acceleration = new Vector2( 0, 0 );
     }
@@ -152,7 +152,7 @@ class ModelState {
    * @param {BodyState} bodyState
    * @returns {Vector2}
    */
-  getNetForce( bodyState: BodyState ) {
+  getNetForce( bodyState: BodyState ): Vector2 {
 
     // use netForce to keep track of the net force, initialize to zero.
     netForce.setXY( 0, 0 );
@@ -176,7 +176,7 @@ class ModelState {
    * @param {BodyState} target
    * @returns {Vector2}
    */
-  getTwoBodyForce( source: BodyState, target: BodyState ) {
+  getTwoBodyForce( source: BodyState, target: BodyState ): Vector2 {
     if ( source.position.equals( target.position ) ) {
 
       // Two bodies at exactly the same position would feel an infinite force.  In the physics computation, this would
@@ -211,7 +211,7 @@ class ModelState {
    * @param {number} dt
    * @returns {ModelState}
    */
-  getNextCoastingState( dt: number ) {
+  getNextCoastingState( dt: number ): this {
 
     // update Positions
     this.updatePositions( dt );
@@ -234,7 +234,7 @@ class ModelState {
    * @param {number} dt
    * @returns {ModelState}
    */
-  getNextInteractingState( dt: number ) {
+  getNextInteractingState( dt: number ): this {
 
     //-------------
     // Step One
@@ -307,7 +307,7 @@ class ModelState {
    * @param {number} index
    * @returns {Array.<BodyState>}
    */
-  getBodyState( index: number ) {
+  getBodyState( index: number ): BodyState {
     return this.bodyStates[ index ];
   }
 }

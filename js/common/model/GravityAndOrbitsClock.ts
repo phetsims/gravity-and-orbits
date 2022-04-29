@@ -77,7 +77,7 @@ class GravityAndOrbitsClock {
    *
    * @returns {number}
    */
-  stepClockWhilePaused() {
+  stepClockWhilePaused(): void {
 
     // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
     // application specific logic
@@ -93,7 +93,7 @@ class GravityAndOrbitsClock {
    *
    * @param  {boolean} running
    */
-  setRunning( running: boolean ) {
+  setRunning( running: boolean ): void {
     this.isRunningProperty.set( running );
   }
 
@@ -102,15 +102,15 @@ class GravityAndOrbitsClock {
    *
    * @param  {number} time description
    */
-  setSimulationTime( time: number ) {
+  setSimulationTime( time: number ): void {
     this.timeProperty.set( time );
   }
 
-  getSimulationTime() {
+  getSimulationTime(): number {
     return this.timeProperty.get();
   }
 
-  resetSimulationTime() {
+  resetSimulationTime(): void {
     this.timeProperty.reset();
   }
 
@@ -119,7 +119,7 @@ class GravityAndOrbitsClock {
    *
    * @param  {function} stepFunction
    */
-  addEventTimer( stepFunction: ( dt: number ) => void ) {
+  addEventTimer( stepFunction: ( dt: number ) => void ): void {
     assert && assert( !this.eventTimer, 'there can be only one event timer' );
     this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
   }
@@ -130,7 +130,7 @@ class GravityAndOrbitsClock {
    * @param  {number} dt
    * @returns {type} description
    */
-  step( dt: number ) {
+  step( dt: number ): void {
     if ( this.eventTimer ) {
       this.eventTimer.step( dt );
       this.interpolationRatio = this.eventTimer.getRatio();

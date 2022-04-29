@@ -38,7 +38,7 @@ class GlobalOptionsNode extends VBox {
 
   /**
    */
-  override dispose() {
+  override dispose(): void {
     this.disposeGlobalOptionsNode();
     super.dispose();
   }
