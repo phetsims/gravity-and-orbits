@@ -9,49 +9,49 @@ import gravityAndOrbits from './gravityAndOrbits.js';
 
 type StringsType = {
   'gravity-and-orbits': {
-    'title': string
-  },
-  'earth': string,
-  'earthMasses': string,
-  'ourSun': string,
-  'earthDay': string,
-  'planet': string,
-  'planetMass': string,
-  'velocity': string,
-  'earthDays': string,
-  'measuringTape': string,
-  'billionBillionSpaceStationMasses': string,
-  'spaceStationMass': string,
-  'gravityForce': string,
-  'model': string,
-  'moon': string,
-  'moonMass': string,
-  'thousandEarthMasses': string,
-  'on': string,
-  'kilometers': string,
+    'title': string;
+  };
+  'earth': string;
+  'earthMasses': string;
+  'ourSun': string;
+  'earthDay': string;
+  'planet': string;
+  'planetMass': string;
+  'velocity': string;
+  'earthDays': string;
+  'measuringTape': string;
+  'billionBillionSpaceStationMasses': string;
+  'spaceStationMass': string;
+  'gravityForce': string;
+  'model': string;
+  'moon': string;
+  'moonMass': string;
+  'thousandEarthMasses': string;
+  'on': string;
+  'kilometers': string;
   'pattern': {
     '0value': {
-      '1units': string
+      '1units': string;
     }
-  },
-  'clear': string,
-  'spaceStation': string,
-  'satellite': string,
-  'satelliteMass': string,
-  'earthMinutes': string,
-  'gravity': string,
-  'grid': string,
-  'mass': string,
-  'off': string,
-  'path': string,
-  'ourMoon': string,
-  'earthMinute': string,
-  'returnObjects': string,
-  'star': string,
-  'starMass': string,
-  'earthMass': string,
-  'toScale': string,
-  'v': string
+  };
+  'clear': string;
+  'spaceStation': string;
+  'satellite': string;
+  'satelliteMass': string;
+  'earthMinutes': string;
+  'gravity': string;
+  'grid': string;
+  'mass': string;
+  'off': string;
+  'path': string;
+  'ourMoon': string;
+  'earthMinute': string;
+  'returnObjects': string;
+  'star': string;
+  'starMass': string;
+  'earthMass': string;
+  'toScale': string;
+  'v': string;
 };
 
 const gravityAndOrbitsStrings = getStringModule( 'GRAVITY_AND_ORBITS' ) as StringsType;
