@@ -27,7 +27,7 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import optionize, { assignOptions } from '../../../../phet-core/js/optionize.js';
 
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
 const gridString = gravityAndOrbitsStrings.grid;
@@ -138,7 +138,7 @@ class CheckboxPanel extends VBox {
     // measuring tape checkbox
     if ( model.showMeasuringTape ) {
       const measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
-      children.push( new Checkbox( new HBox( optionize<HBoxOptions, {}, HBoxOptions>()( {
+      children.push( new Checkbox( new HBox( assignOptions<HBoxOptions>( {
         align: 'top',
         children: [
           measuringTapeTextNode,
