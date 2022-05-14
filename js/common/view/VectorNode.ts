@@ -55,7 +55,7 @@ class VectorNode extends Node {
 
     // Only show if the body hasn't collided
     const shouldBeShownProperty = new DerivedProperty(
-      [ visibleProperty, body.isCollidedProperty ], ( visible: boolean, collided: boolean ) => visible && !collided
+      [ visibleProperty, body.isCollidedProperty ], ( visible, collided ) => visible && !collided
     );
     shouldBeShownProperty.linkAttribute( this, 'visible' );
 

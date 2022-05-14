@@ -75,7 +75,7 @@ class ExplosionNode extends Node {
     const explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
     const explodedProperty = new DerivedProperty( [ body.isCollidedProperty, body.clockTicksSinceExplosionProperty ],
-      ( collided: boolean, clockTicks: number ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
+      ( collided, clockTicks ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
 
     explodedProperty.linkAttribute( explosionEdgeGraphic, 'visible' );
 

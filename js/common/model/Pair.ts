@@ -34,7 +34,7 @@ class Pair {
     this.distanceProperty = new DerivedProperty( [
       this.body1.positionProperty,
       this.body2.positionProperty
-    ], ( body1Position: Vector2, body2Position: Vector2 ) => body2Position.distance( body1Position ), {
+    ], ( body1Position, body2Position ) => body2Position.distance( body1Position ), {
       tandem: tandem.createTandem( 'distanceProperty' ),
       phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       phetioHighFrequency: true,

@@ -80,6 +80,8 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
         } );
       } );
     } );
+
+    // @ts-ignore
     const anyPropertyDifferentProperty = new DerivedProperty( dependencies, ( ...args: GravityAndOrbitsScene[] ) => {
       let changed = false;
       model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {

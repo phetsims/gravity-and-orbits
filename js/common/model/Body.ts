@@ -230,7 +230,7 @@ class Body extends PhetioObject {
         steppingProperty,
         rewindingProperty,
         this.freezeRewindChangeProperty
-      ], ( playButtonPressed: boolean, stepping: boolean, rewinding: boolean, freezeRewind: boolean ) =>
+      ], ( playButtonPressed, stepping, rewinding, freezeRewind ) =>
         !playButtonPressed && !stepping && !rewinding && !freezeRewind
     );
 
@@ -252,7 +252,7 @@ class Body extends PhetioObject {
       phetioDocumentation: 'The absolute speed and direction of motion of the body'
     } );
 
-    this.speedProperty = new DerivedProperty( [ this.velocityProperty ], ( velocity: Vector2 ) => velocity.magnitude, {
+    this.speedProperty = new DerivedProperty( [ this.velocityProperty ], velocity => velocity.magnitude, {
       phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'speedProperty' ),
       units: 'm/s',
@@ -270,7 +270,7 @@ class Body extends PhetioObject {
     } );
 
     // @private (only used for PhET-iO)
-    this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], ( force: Vector2 ) => force.magnitude, {
+    this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], force => force.magnitude, {
       phetioDocumentation: 'The magnitude of the net force on this body by other bodies',
       phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
       tandem: tandem.createTandem( 'forceMagnitudeProperty' ),

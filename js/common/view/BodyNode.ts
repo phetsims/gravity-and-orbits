@@ -73,7 +73,7 @@ class BodyNode extends Node {
     };
     body.rotationProperty.link( rotationListener );
 
-    const dragBoundsProperty = new DerivedProperty( [ scene.modelBoundsProperty, body.diameterProperty ], ( modelBounds: Bounds2 | null, diameter: number ) => {
+    const dragBoundsProperty = new DerivedProperty( [ scene.modelBoundsProperty, body.diameterProperty ], ( modelBounds, diameter ) => {
       assert && assert( modelBounds !== null );
 
       return modelBounds!.eroded( diameter / 2 );
