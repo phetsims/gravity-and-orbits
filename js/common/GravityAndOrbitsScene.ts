@@ -187,7 +187,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.timeSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
     this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
 
-    Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed: boolean, active: boolean ) =>
+    Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
       this.physicsEngine.clock.setRunning( playButtonPressed && active )
     );
 

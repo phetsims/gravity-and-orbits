@@ -123,7 +123,7 @@ class BodyNode extends Node {
       this.touchArea = circle;
       this.mouseArea = circle;
     };
-    Property.multilink<any[]>( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
+    Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
     this.modelViewTransformListener = ( modelViewTransform: Transform3 ) => dragListener.setTransform( modelViewTransform );
     this.modelViewTransformProperty.link( this.modelViewTransformListener );
