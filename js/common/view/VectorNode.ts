@@ -17,6 +17,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 
 // constants
 const FORCE_SCALE = 76.0 / 5.179E15;
@@ -78,7 +79,7 @@ class VectorNode extends Node {
         arrowNode.setTailAndTip( tail.x, tail.y, tip.x, tip.y );
       }
     };
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], this.propertyListener );
+    Multilink.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], this.propertyListener );
 
     this.addChild( arrowNode );
   }

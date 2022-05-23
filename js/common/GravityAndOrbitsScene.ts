@@ -41,6 +41,7 @@ import Pair from './model/Pair.js';
 import Bounds2 from '../../../dot/js/Bounds2.js';
 import EnumerationProperty from '../../../axon/js/EnumerationProperty.js';
 import TimeSpeed from '../../../scenery-phet/js/TimeSpeed.js';
+import Multilink from '../../../axon/js/Multilink.js';
 
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
@@ -187,7 +188,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.timeSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
     this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
 
-    Property.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
+    Multilink.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
       this.physicsEngine.clock.setRunning( playButtonPressed && active )
     );
 

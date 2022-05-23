@@ -20,6 +20,7 @@ import Body from '../model/Body.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 
 class DraggableVectorNode extends VectorNode {
 
@@ -73,7 +74,7 @@ class DraggableVectorNode extends VectorNode {
         text.center = tip;
       }
     };
-    Property.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );
+    Multilink.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );
 
     // The velocity vector is rooted on the object, so we manage all of its drags by deltas.
     let previousPoint: Vector2 | null = null;

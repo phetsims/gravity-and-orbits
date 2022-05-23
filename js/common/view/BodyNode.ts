@@ -23,6 +23,7 @@ import BodyRenderer from './BodyRenderer.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Transform3 from '../../../../dot/js/Transform3.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 
 class BodyNode extends Node {
   private readonly modelViewTransformProperty: Property<ModelViewTransform2>;
@@ -111,7 +112,7 @@ class BodyNode extends Node {
     this.positionListener = ( position, modelViewTransform ) => {
       this.setTranslation( modelViewTransform.modelToViewPosition( position ) );
     };
-    Property.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
+    Multilink.multilink( [ this.body.positionProperty, this.modelViewTransformProperty ], this.positionListener );
 
     this.diameterListener = () => {
       const viewDiameter = this.getViewDiameter();
@@ -123,7 +124,7 @@ class BodyNode extends Node {
       this.touchArea = circle;
       this.mouseArea = circle;
     };
-    Property.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
+    Multilink.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
     this.modelViewTransformListener = ( modelViewTransform: Transform3 ) => dragListener.setTransform( modelViewTransform );
     this.modelViewTransformProperty.link( this.modelViewTransformListener );
