@@ -202,7 +202,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     // Save the new PhET-iO state as an initial configuration for this scene, but only if the state being set applies
     // to this scene.
-    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( ( state: Object ) => {
+    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( ( state: Record<string, unknown> ) => {
 
       const phetioIDsToSet = Object.keys( state );
       for ( let i = 0; i < phetioIDsToSet.length; i++ ) {

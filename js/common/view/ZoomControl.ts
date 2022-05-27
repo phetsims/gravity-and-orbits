@@ -12,21 +12,23 @@ import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Range from '../../../../dot/js/Range.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import { Shape } from '../../../../kite/js/imports.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { Node } from '../../../../scenery/js/imports.js';
+import { Node, NodeOptions } from '../../../../scenery/js/imports.js';
 import { Rectangle } from '../../../../scenery/js/imports.js';
 import { SceneryConstants } from '../../../../scenery/js/imports.js';
-import RectangularPushButton from '../../../../sun/js/buttons/RectangularPushButton.js';
+import RectangularPushButton, { RectangularPushButtonOptions } from '../../../../sun/js/buttons/RectangularPushButton.js';
 import VSlider from '../../../../sun/js/VSlider.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 // constants
 const TRACK_SIZE = new Dimension2( 3, 140 );
 const THUMB_SIZE = new Dimension2( 28, 20 );
 const STEP = 0.1;
 const BUTTON_SIZE = 25;
+
+type ZoomControlOptions = NodeOptions;
 
 class ZoomControl extends Node {
 
@@ -35,9 +37,9 @@ class ZoomControl extends Node {
    * @param {Tandem} tandem
    * @param {Object} [providedOptions]
    */
-  constructor( scaleProperty: Property<number>, tandem: Tandem, providedOptions?: Object ) {
+  constructor( scaleProperty: Property<number>, tandem: Tandem, providedOptions?: ZoomControlOptions ) {
 
-    const options = merge( {
+    const options = optionize<ZoomControlOptions, {}, NodeOptions>()( {
       scale: 0.8,
       tandem: tandem,
       phetioEnabledPropertyInstrumented: true,
@@ -86,8 +88,6 @@ class ZoomControl extends Node {
 
 gravityAndOrbits.register( 'ZoomControl', ZoomControl );
 
-type ZoomControlOptions = {};
-
 class SliderButton extends RectangularPushButton {
   /**
    * @param {Property.<number>} scaleProperty - Scale property for updating.
@@ -96,7 +96,7 @@ class SliderButton extends RectangularPushButton {
    * @param {boolean} isIncrease flag for defining type of button
    * @param {Object} [providedOptions]
    */
-  constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, providedOptions?: Partial<ZoomControlOptions> ) {
+  constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, providedOptions?: RectangularPushButtonOptions ) {
 
     // create default view
     const sample = new Node( {
@@ -105,13 +105,13 @@ class SliderButton extends RectangularPushButton {
         new Rectangle( 4, BUTTON_SIZE / 2 - 1, BUTTON_SIZE - 8, 2, { fill: 'black' } )
       ]
     } );
-
+    
     // increase or decrease view
     if ( isIncrease ) {
       sample.addChild( new Rectangle( BUTTON_SIZE / 2 - 1, 4, 2, BUTTON_SIZE - 8, { fill: 'black' } ) );
     }
 
-    super( merge( {
+    const options = optionize<RectangularPushButtonOptions, {}, RectangularPushButtonOptions>()( {
       content: sample,
       xMargin: 0,
       yMargin: 0,
@@ -121,7 +121,9 @@ class SliderButton extends RectangularPushButton {
           Math.min( scaleProperty.value + ( isIncrease ? step : -step ), range.max ),
           range.min );
       }
-    }, providedOptions ) );
+    }, providedOptions );
+
+    super( options );
 
     // add disabling effect for buttons
     if ( isIncrease ) {
