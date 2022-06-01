@@ -47,13 +47,12 @@ class PathsCanvasNode extends CanvasNode {
       preventFit: true
     } );
 
-    // @private - a map tracking each body and its associated points
-    this.namedPoints = {}; // @private
+    // a map tracking each body and its associated points
+    this.namedPoints = {};
     for ( let i = 0; i < bodies.length; i++ ) {
       this.namedPoints[ bodies[ i ].type ] = new NamedPoints( bodies[ i ].type );
     }
 
-    // @private
     this.transformProperty = transformProperty;
 
     // transform all body points and re paint the canvas
@@ -77,7 +76,7 @@ class PathsCanvasNode extends CanvasNode {
     };
     transformProperty.link( updateNamedPoints );
 
-    this.bodies = bodies; // @private
+    this.bodies = bodies;
 
     visibleProperty.link( isVisible => {
       this.visible = isVisible;
@@ -91,7 +90,7 @@ class PathsCanvasNode extends CanvasNode {
       updateNamedPoints();
     } );
 
-    // @private - listener for when a point is added, bound by thisNode
+    // listener for when a point is added, bound by thisNode
     // created to avoid excess closures every time a point is removed
     // @param {string} bodyName - used to look up points associated with the desired body's trail
     this.pointAddedListener = ( point, bodyName ) => {
@@ -105,9 +104,9 @@ class PathsCanvasNode extends CanvasNode {
       }
     };
 
-    // @private - listener for when a point is removed, bound by thisNode
+    // listener for when a point is removed, bound by thisNode
     // created to avoid excess closures every time a point is removed
-    // @param {string} bodyName - used to look up points associated with the desired body's trail
+    // @param {BodyTypeEnum} bodyName - used to look up points associated with the desired body's trail
     this.pointRemovedListener = bodyName => {
 
       // 'this' defined by bind in addListener
@@ -120,9 +119,9 @@ class PathsCanvasNode extends CanvasNode {
       }
     };
 
-    // @private - listener for when date is cleared, bound by thisNode
+    // listener for when date is cleared, bound by thisNode
     // created to avoid excess closures every time date is cleared
-    // @param {string} bodyName - used to look up points associated with the desired body's trail
+    // @param {BodyTypeEnum} bodyName - used to look up points associated with the desired body's trail
     this.clearedListener = bodyName => {
 
       // 'this' is defined by bind

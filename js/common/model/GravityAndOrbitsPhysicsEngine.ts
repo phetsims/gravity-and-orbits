@@ -46,10 +46,7 @@ class GravityAndOrbitsPhysicsEngine {
    */
   constructor( clock: GravityAndOrbitsClock, gravityEnabledProperty: Property<boolean>, adjustMoonOrbit: boolean ) {
 
-    // @private
     this.gravityEnabledProperty = gravityEnabledProperty;
-
-    // @private
     this.adjustMoonOrbit = adjustMoonOrbit;
 
     this.clock = clock;
@@ -77,9 +74,8 @@ class GravityAndOrbitsPhysicsEngine {
    * calculated with consistent changes in time.
    *
    * @returns {number} elapsed time
-   * @private
    */
-  stepModel(): number {
+  private stepModel(): number {
 
     this.bodies.forEach( body => body.storePreviousPosition() );
 
@@ -167,10 +163,8 @@ class GravityAndOrbitsPhysicsEngine {
    * (2) when reset is pressed
    * This update is done by running the physics engine for dt=0.0 then applying the computed forces to the bodies.
    * Without this block of code, the force vectors would be zero on sim startup until the clock is started.
-   *
-   * @private
    */
-  updateForceVectors(): void {
+  public updateForceVectors(): void {
     this.step( 0 );
   }
 

@@ -161,11 +161,10 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.tandemName = tandemName; // (read-only)
     this.massControlPanelTandemName = massControlPanelTandemName; // (read-only)
 
-    this.dt = dt; // @private
-    this.forceScale = forceScale as number; // @private
-    this.iconImage = iconImage; // @private
+    this.dt = dt;
+    this.forceScale = forceScale as number;
+    this.iconImage = iconImage;
 
-    // @private
     this.isPlayingProperty = model.isPlayingProperty;
 
     // How much to scale (shrink or grow) the velocity vectors; a mapping from meters/second to stage coordinates
@@ -184,7 +183,6 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );
 
-    // @private
     const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.timeSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
     this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
 
@@ -197,7 +195,6 @@ class GravityAndOrbitsScene extends PhetioObject {
     // {Node} - scenery node that depicts the play area for this scene
     this.sceneView = new GravityAndOrbitsSceneView( this, model, sceneViewTandem );
 
-    // @private (phet-io only)
     this.pairs = pairs;
 
     // Save the new PhET-iO state as an initial configuration for this scene, but only if the state being set applies
@@ -220,9 +217,8 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param {number} defaultZoomScale
    * @param {Vector2} gridCenter
    * @returns {ModelViewTransform2}
-   * @private
    */
-  createTransform( defaultZoomScale: number, gridCenter: Vector2 ): ModelViewTransform2 {
+  private createTransform( defaultZoomScale: number, gridCenter: Vector2 ): ModelViewTransform2 {
     const modelBounds = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
     this.modelBoundsProperty.set( modelBounds );
     const playAreaHeight = PLAY_AREA_HEIGHT - 50;
@@ -240,9 +236,8 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param targetScale
    * @param targetCenterModelPoint
    * @returns {Rectangle}
-   * @private
    */
-  getTargetRectangle( targetScale: number, targetCenterModelPoint: Vector2 ): Rectangle {
+  private getTargetRectangle( targetScale: number, targetCenterModelPoint: Vector2 ): Rectangle {
     const z = targetScale * 1.5E-9;
     const modelWidth = PLAY_AREA_WIDTH / z;
     const modelHeight = PLAY_AREA_HEIGHT / z;
@@ -263,10 +258,8 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    * Set the deviated from defaults property - stored on the scene so that we don't have to use a closure for performance.
-   *
-   * @private
    */
-  setDeviatedFromDefaults(): void {
+  private setDeviatedFromDefaults(): void {
     this.deviatedFromDefaultsProperty.set( true );
   }
 

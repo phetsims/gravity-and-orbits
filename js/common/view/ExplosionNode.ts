@@ -64,9 +64,8 @@ class ExplosionNode extends Node {
    * @param {Body} body
    * @param {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
    * @returns {BodyRenderer}
-   * @private
    */
-  getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ): any {
+  private getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ): any {
     const yellowAndWhite = {
       highlight: 'white',
       color: 'yellow'
@@ -84,8 +83,7 @@ class ExplosionNode extends Node {
     return explosionEdgeGraphic;
   }
 
-  // @private
-  getMaxViewDiameter( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ): number {
+  private getMaxViewDiameter( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ): number {
     return modelViewTransformProperty.get().modelToViewDeltaX( body.diameterProperty.get() ) * 2;
   }
 }

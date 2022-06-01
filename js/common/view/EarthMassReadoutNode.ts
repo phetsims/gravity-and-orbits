@@ -25,11 +25,8 @@ class EarthMassReadoutNode extends MassReadoutNode {
   /**
    * Create a label for the earth, but with rules to provide either exact or qualitative representations,
    * and limitations so that the label looks good in the view.
-   *
-   * @returns {string}
-   * @private
    */
-  createText(): string {
+  public createText(): string {
     const massKG = this.bodyNode.body.massProperty.get();
     const earthMasses = massKG / GravityAndOrbitsConstants.EARTH_MASS;
 

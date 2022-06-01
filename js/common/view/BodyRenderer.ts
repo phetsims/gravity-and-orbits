@@ -31,7 +31,6 @@ abstract class BodyRenderer extends Node {
 
     super();
 
-    // @private
     this.body = body;
   }
 
@@ -62,7 +61,6 @@ class SwitchableBodyRenderer extends BodyRenderer {
     this.targetBodyRenderer = targetBodyRenderer;
     this.defaultBodyRenderer = defaultBodyRenderer;
 
-    // @private - so new closure need not be defined
     this.massListener = () => {
 
       // this defined by bound
@@ -95,8 +93,8 @@ class ImageRenderer extends BodyRenderer {
 
     super( body );
 
-    this.imageNode = new Image( imageName ); // @private
-    this.viewDiameter = viewDiameter; // @private
+    this.imageNode = new Image( imageName );
+    this.viewDiameter = viewDiameter;
     this.addChild( this.imageNode );
 
     this.updateViewDiameter();
@@ -110,8 +108,7 @@ class ImageRenderer extends BodyRenderer {
     this.updateViewDiameter();
   }
 
-  // @private
-  updateViewDiameter(): void {
+  private updateViewDiameter(): void {
     this.imageNode.matrix = new Matrix3();
     const scale = this.viewDiameter / this.imageNode.width;
     this.imageNode.setScaleMagnitude( scale );
@@ -133,9 +130,9 @@ class SunRenderer extends ImageRenderer {
    */
   constructor( body: Body, viewDiameter: number, numSegments: number, twinkleRadius: ( n: number ) => number ) {
     super( body, viewDiameter, sun_png );
-    this.twinkles = new Path( null, { fill: 'yellow' } ); // @private
-    this.numSegments = numSegments; // @private
-    this.twinkleRadius = twinkleRadius; // @private
+    this.twinkles = new Path( null, { fill: 'yellow' } );
+    this.numSegments = numSegments;
+    this.twinkleRadius = twinkleRadius;
     this.addChild( this.twinkles );
     this.twinkles.moveToBack();
     this.setDiameter( viewDiameter );

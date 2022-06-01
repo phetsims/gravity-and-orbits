@@ -14,7 +14,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
 class GlobalOptionsNode extends VBox {
-  private disposeGlobalOptionsNode: () => void;
+  private readonly disposeGlobalOptionsNode: () => void;
 
   constructor( tandem: Tandem ) {
 
@@ -30,7 +30,6 @@ class GlobalOptionsNode extends VBox {
       align: 'left'
     } );
 
-    // @private
     this.disposeGlobalOptionsNode = () => {
       projectorModeCheckbox.dispose();
     };

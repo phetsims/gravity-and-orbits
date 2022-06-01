@@ -29,7 +29,6 @@ class Pair {
     this.body1 = body1;
     this.body2 = body2;
 
-    // @private (for phet-io only)
     this.distanceProperty = new DerivedProperty( [
       this.body1.positionProperty,
       this.body2.positionProperty

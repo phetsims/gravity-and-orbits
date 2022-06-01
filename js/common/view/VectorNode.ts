@@ -48,11 +48,11 @@ class VectorNode extends Node {
     }, providedOptions );
     super( options );
 
-    this.body = body; // @private
-    this.vectorProperty = vectorProperty; // @private
-    this.body = body; // @private
-    this.transformProperty = transformProperty; // @private
-    this.vectorNodeScale = scale; // @private
+    this.body = body;
+    this.vectorProperty = vectorProperty;
+    this.body = body;
+    this.transformProperty = transformProperty;
+    this.vectorNodeScale = scale;
 
     // Only show if the body hasn't collided
     const shouldBeShownProperty = new DerivedProperty(

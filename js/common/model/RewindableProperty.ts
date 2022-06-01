@@ -45,7 +45,6 @@ class RewindableProperty<T> extends Property<T> {
     // the "initial condition" the property can be rewound to, different than the overall "reset" value
     this.rewindValue = value;
 
-    // @private - see above
     this.changeRewindValueProperty = changeRewindValueProperty;
 
     // (read-only) true when the rewind point value is different than the property's current value

@@ -64,10 +64,9 @@ class ModelState {
   /**
    * Finds the positions of the bodies after a time dt
    *
-   * @private
    * @param {number} dt
    */
-  updatePositions( dt: number ): void {
+  private updatePositions( dt: number ): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
       velocity.setXY( bodyState.velocity.x * dt, bodyState.velocity.y * dt );
@@ -78,10 +77,9 @@ class ModelState {
   /**
    * Finds the velocities of the bodies after a time dt
    *
-   * @private
    * @param {number} dt
    */
-  updateVelocities( dt: number ): void {
+  private updateVelocities( dt: number ): void {
     this.updateAccelerations();
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
@@ -91,10 +89,8 @@ class ModelState {
 
   /**
    * Finds the current values of the accelerations
-   *
-   * @private
    */
-  updateAccelerations(): void {
+  private updateAccelerations(): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
       const acceleration = this.getNetForce( bodyState ).divideScalar( bodyState.mass );
@@ -105,11 +101,10 @@ class ModelState {
   /**
    * Update rotations of all bodies in the sim. Some bodies need to rotate so that during orbital motion they
    * always point toward the earth. Only some bodies require rotation.
-   * @private
    *
    * @param {number} dt (seconds)
    */
-  updateRotations( dt: number ): void {
+  private updateRotations( dt: number ): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       const bodyState = this.bodyStates[ i ];
 
@@ -125,9 +120,8 @@ class ModelState {
    * Get rotation of the body, based on the body's rotation period and the elapsed sim time.
    * @param {number} rotationPeriod
    * @param {number} dt - delta time (seconds)
-   * @private
    */
-  getDeltaRotation( rotationPeriod: number, dt: number ): number {
+  private getDeltaRotation( rotationPeriod: number, dt: number ): number {
 
     // convert delta time to rotation in orbit
     // negative one so that rotation is counter clockwise (with orbital motion)
@@ -136,10 +130,8 @@ class ModelState {
 
   /**
    * Sets all the accelerations to zero, useful when gravity is turned off
-   *
-   * @private
    */
-  setAccelerationToZero(): void {
+  private setAccelerationToZero(): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
       this.bodyStates[ i ].acceleration = new Vector2( 0, 0 );
     }
@@ -148,11 +140,10 @@ class ModelState {
   /**
    * Gets the net force on the bodyState due to the other bodies
    *
-   * @private
    * @param {BodyState} bodyState
    * @returns {Vector2}
    */
-  getNetForce( bodyState: BodyState ): Vector2 {
+  private getNetForce( bodyState: BodyState ): Vector2 {
 
     // use netForce to keep track of the net force, initialize to zero.
     netForce.setXY( 0, 0 );
@@ -171,12 +162,11 @@ class ModelState {
 
   /**
    * Returns the force on the body source due to the body target
-   * @private
    * @param {BodyState} source
    * @param {BodyState} target
    * @returns {Vector2}
    */
-  getTwoBodyForce( source: BodyState, target: BodyState ): Vector2 {
+  private getTwoBodyForce( source: BodyState, target: BodyState ): Vector2 {
     if ( source.position.equals( target.position ) ) {
 
       // Two bodies at exactly the same position would feel an infinite force.  In the physics computation, this would
@@ -207,11 +197,8 @@ class ModelState {
 
   /**
    * Updates the model, producing the next ModelState when gravity is present
-   * @private
-   * @param {number} dt
-   * @returns {ModelState}
    */
-  getNextCoastingState( dt: number ): this {
+  private getNextCoastingState( dt: number ): this {
 
     // update Positions
     this.updatePositions( dt );
@@ -230,11 +217,10 @@ class ModelState {
 
   /**
    * Updates the model, producing the next ModelState when gravity is present
-   * @private
    * @param {number} dt
    * @returns {ModelState}
    */
-  getNextInteractingState( dt: number ): this {
+  private getNextInteractingState( dt: number ): this {
 
     //-------------
     // Step One

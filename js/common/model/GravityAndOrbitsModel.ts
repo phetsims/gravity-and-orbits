@@ -85,7 +85,6 @@ class GravityAndOrbitsModel {
     this.showMassCheckbox = showMassCheckbox;
     this.showMeasuringTape = showMeasuringTape;
 
-    // @private {SceneFactory}
     this.sceneList = createModes( this );
 
     this.sceneProperty = new Property( this.sceneList.scenes[ 0 ], {
@@ -118,8 +117,7 @@ class GravityAndOrbitsModel {
     return this.sceneList.scenes;
   }
 
-  // @private
-  updateActiveModule(): void {
+  public updateActiveModule(): void {
     for ( let i = 0; i < this.sceneList.scenes.length; i++ ) {
       this.sceneList.scenes[ i ].activeProperty.set( this.sceneList.scenes[ i ] === this.sceneProperty.value );
     }

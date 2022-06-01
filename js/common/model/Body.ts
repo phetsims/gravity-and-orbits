@@ -179,7 +179,7 @@ class Body extends PhetioObject {
     // total length of the current path
     this.pathLength = 0;
 
-    // @private - limit on the number of segments in the path
+    // limit on the number of segments in the path
     this.pathLengthLimit = options.pathLengthLimit;
 
     // total length of the current path in model coordinates
@@ -214,9 +214,8 @@ class Body extends PhetioObject {
 
     // Function that creates a Node for this Body. This is in the model so we can associate the graphical
     // representation directly instead of later with conditional logic or map
-    this.renderer = renderer; // @private
+    this.renderer = renderer;
 
-    // @private
     this.isPlayingProperty = model.isPlayingProperty;
     const steppingProperty = model.steppingProperty;
     const rewindingProperty = model.rewindingProperty;
@@ -269,7 +268,6 @@ class Body extends PhetioObject {
       phetioReadOnly: true
     } );
 
-    // @private (only used for PhET-iO)
     this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], force => force.magnitude, {
       phetioDocumentation: 'The magnitude of the net force on this body by other bodies',
       phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
@@ -448,10 +446,8 @@ class Body extends PhetioObject {
   /**
    * Add a point to the collection of points that follow the trajectory of a moving body.
    * This also removes points when the path gets too long.
-   *
-   * @private
    */
-  addPathPoint(): void {
+  private addPathPoint(): void {
     const pathPoint = this.positionProperty.get();
     this.path.push( pathPoint );
     this.pointAddedEmitter.emit( pathPoint, this.type );

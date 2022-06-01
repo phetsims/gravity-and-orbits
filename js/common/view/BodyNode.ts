@@ -53,7 +53,7 @@ class BodyNode extends Node {
 
     const clock = scene.getClock();
 
-    this.modelViewTransformProperty = scene.transformProperty; // @private
+    this.modelViewTransformProperty = scene.transformProperty;
     this.body = body;
 
     this.body.isCollidedProperty.link( isCollided => this.setVisible( !isCollided ) );
@@ -152,9 +152,8 @@ class BodyNode extends Node {
    * @param {Body} body
    * @param {number} labelAngle
    * @param {Tandem} tandem
-   * @private
    */
-  createArrowIndicator( body: Body, labelAngle: number, tandem: Tandem ): Node {
+  private createArrowIndicator( body: Body, labelAngle: number, tandem: Tandem ): Node {
     const node = new Node( {
       tandem: tandem,
       phetioDocumentation: 'When the body is too small to see (depending on the zoom level), this shows a line that ' +
