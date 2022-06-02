@@ -352,7 +352,6 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 /**
  * Creates a BodyRenderer that just shows the specified image
  * @param {string} image
- * @returns {function}
  */
 const getImageRenderer = ( image: string | HTMLImageElement ) => {
   return ( body: Body, viewDiameter: number ) => new BodyRenderer.ImageRenderer( body, viewDiameter, image );
@@ -372,7 +371,6 @@ const getSwitchableRenderer = ( image1: any, image2: any, targetMass: number ) =
 
 /**
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
- * @returns {function}
  */
 const scaledDays = () => {
   return ( time: number ) => {
@@ -386,7 +384,6 @@ const scaledDays = () => {
  * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
  * elapsed clock readout
  * @param time
- * @returns {string}
  */
 const formatMinutes = ( time: number ) => {
   const value = ( time / SECONDS_PER_MINUTE );

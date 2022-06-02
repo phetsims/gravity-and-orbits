@@ -74,8 +74,6 @@ class GravityAndOrbitsClock {
 
   /**
    * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
-   *
-   * @returns {number}
    */
   stepClockWhilePaused(): void {
 
@@ -128,7 +126,6 @@ class GravityAndOrbitsClock {
    * Step the simulation by dt
    *
    * @param  {number} dt
-   * @returns {type} description
    */
   step( dt: number ): void {
     if ( this.eventTimer ) {

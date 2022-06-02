@@ -346,16 +346,10 @@ class Body extends PhetioObject {
     }
   }
 
-  /**
-   * @returns {number}
-   */
   getVolume(): number {
     return 4.0 / 3.0 * Math.PI * Math.pow( this.getRadius(), 3 );
   }
 
-  /**
-   * @returns {number}
-   */
   getRadius(): number {
     return this.diameterProperty.get() / 2;
   }
@@ -385,8 +379,6 @@ class Body extends PhetioObject {
   /**
    * Create an immutable representation of this body for use in the physics engine
    * use copy() for Vector2 so that the properties don't get mutated
-   *
-   * @returns {BodyState}
    */
   toBodyState(): BodyState {
     return new BodyState(
@@ -498,8 +490,6 @@ class Body extends PhetioObject {
 
   /**
    * Create an image renderer for this body.
-   *
-   * @returns {BodyRenderer}
    */
   createRenderer( viewDiameter: number ): BodyRenderer {
     return this.renderer( this, viewDiameter );
@@ -517,7 +507,6 @@ class Body extends PhetioObject {
    * Check to see if this body collides with another.
    *
    * @param {Body} body
-   * @returns {boolean}
    */
   collidesWidth( body: Body ): boolean {
     const position1 = this.positionProperty.get();
@@ -548,7 +537,6 @@ class Body extends PhetioObject {
 
   /**
    * Returns the Properties which, when changed, enable the rewind button.
-   * @returns {Property[]}
    */
   getRewindableProperties(): IProperty<any>[] {
     return [
@@ -564,9 +552,6 @@ class Body extends PhetioObject {
     this.velocityProperty.reset();
   }
 
-  /**
-   * @returns {string}
-   */
   override toString(): string {
     return `name = ${this.type}, mass = ${this.massProperty.get()}`;
   }

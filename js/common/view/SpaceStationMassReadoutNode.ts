@@ -39,7 +39,7 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
    * or qualitative depending on the mass of the station.  For instance, if larger than
    * a specific mass, the label will be in something like 'billions of station masses'.
    *
-   * @returns {string} - formatted string
+   * @returns formatted string
    */
   createText(): string {
     const massKG = this.bodyNode.body.massProperty.get();

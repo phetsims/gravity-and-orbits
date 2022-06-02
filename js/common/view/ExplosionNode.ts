@@ -63,9 +63,8 @@ class ExplosionNode extends Node {
    *
    * @param {Body} body
    * @param {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
-   * @returns {BodyRenderer}
    */
-  private getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ): any {
+  private getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ): BodyRenderer {
     const yellowAndWhite = {
       highlight: 'white',
       color: 'yellow'

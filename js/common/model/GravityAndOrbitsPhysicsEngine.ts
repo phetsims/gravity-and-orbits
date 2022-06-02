@@ -21,13 +21,12 @@ import BodyTypeEnum from './BodyTypeEnum.js';
  * Return the smaller of two Body instances, for determining which survives a collision.
  * @param {Body} other
  * @param {Body} body
- * @returns {Body} the smaller body
+ * @returns the smaller body
  */
 const getSmaller = ( other: Body, body: Body ): Body => other.massProperty.get() < body.massProperty.get() ? other : body;
+
 /**
  * For use inside a map call, factored out here for performance
- * @param body
- * @returns {BodyState}
  */
 const getBodyState = ( body: Body ) => body.toBodyState();
 
@@ -73,7 +72,7 @@ class GravityAndOrbitsPhysicsEngine {
    * apart the change in time into a series of time steps.  This ensures that this.step and the next model state is
    * calculated with consistent changes in time.
    *
-   * @returns {number} elapsed time
+   * @returns elapsed time
    */
   private stepModel(): number {
 
@@ -170,8 +169,6 @@ class GravityAndOrbitsPhysicsEngine {
 
   /**
    * Returns a defensive copy of the bodies.
-   *
-   * @returns {Body[]}
    */
   getBodies(): Body[] {
     return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
@@ -186,7 +183,6 @@ class GravityAndOrbitsPhysicsEngine {
    * Get the body associated with the name.
    *
    * @param {BodyTypeEnum} type
-   * @returns {Body|null}
    */
   getBody( type: BodyTypeEnum ): Body | null {
     for ( let i = 0; i < this.bodies.length; i++ ) {

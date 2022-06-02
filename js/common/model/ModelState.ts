@@ -47,7 +47,6 @@ class ModelState {
    *
    * @param {number} dt
    * @param {Property.<boolean>} gravityEnabledProperty
-   * @returns {ModelState}
    */
   getNextState( dt: number, gravityEnabledProperty: Property<boolean> ): this {
 
@@ -141,7 +140,6 @@ class ModelState {
    * Gets the net force on the bodyState due to the other bodies
    *
    * @param {BodyState} bodyState
-   * @returns {Vector2}
    */
   private getNetForce( bodyState: BodyState ): Vector2 {
 
@@ -164,7 +162,6 @@ class ModelState {
    * Returns the force on the body source due to the body target
    * @param {BodyState} source
    * @param {BodyState} target
-   * @returns {Vector2}
    */
   private getTwoBodyForce( source: BodyState, target: BodyState ): Vector2 {
     if ( source.position.equals( target.position ) ) {
@@ -218,7 +215,6 @@ class ModelState {
   /**
    * Updates the model, producing the next ModelState when gravity is present
    * @param {number} dt
-   * @returns {ModelState}
    */
   private getNextInteractingState( dt: number ): this {
 
@@ -290,8 +286,6 @@ class ModelState {
    * Get the BodyState for the specified index--future work could
    * change this signature to getState(Body body) since it would be safer.
    * See usage in GravityAndOrbitsPhysicsEngine constructor.
-   * @param {number} index
-   * @returns {Array.<BodyState>}
    */
   getBodyState( index: number ): BodyState {
     return this.bodyStates[ index ];

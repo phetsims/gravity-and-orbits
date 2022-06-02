@@ -216,7 +216,6 @@ class GravityAndOrbitsScene extends PhetioObject {
    *
    * @param {number} defaultZoomScale
    * @param {Vector2} gridCenter
-   * @returns {ModelViewTransform2}
    */
   private createTransform( defaultZoomScale: number, gridCenter: Vector2 ): ModelViewTransform2 {
     const modelBounds = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
@@ -235,7 +234,6 @@ class GravityAndOrbitsScene extends PhetioObject {
    * Find the rectangle that should be viewed in the model
    * @param targetScale
    * @param targetCenterModelPoint
-   * @returns {Rectangle}
    */
   private getTargetRectangle( targetScale: number, targetCenterModelPoint: Vector2 ): Rectangle {
     const z = targetScale * 1.5E-9;
@@ -335,7 +333,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   }
 
   /**
-   * @returns {Array.<Body>} - All bodies in the scene for which the mass can be changed
+   * @returns All bodies in the scene for which the mass can be changed
    */
   getMassSettableBodies(): Body[] {
     const bodies = this.getBodies();

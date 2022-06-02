@@ -121,10 +121,8 @@ const cache = new Map();
 /**
  * An observable Property that triggers notifications when the value changes.
  * This caching implementation should be kept in sync with the other parametric IO Type caching implementations.
- * @param {IOType} parameterType
- * @returns {IOType}
  */
-RewindableProperty.RewindablePropertyIO = parameterType => {
+RewindableProperty.RewindablePropertyIO = ( parameterType: IOType ) => {
   assert && assert( parameterType, 'RewindablePropertyIO needs parameterType' );
 
   const cacheKey = parameterType;

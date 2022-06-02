@@ -200,8 +200,6 @@ class BodyNode extends Node {
 
   /**
    * Get the diameter of the body in view coordinates.
-   *
-   * @returns {number}
    */
   getViewDiameter(): number {
     const viewDiameter = this.modelViewTransformProperty.get().modelToViewDeltaX( this.body.diameterProperty.get() );
