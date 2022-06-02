@@ -16,6 +16,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import merge from '../../../../phet-core/js/merge.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
+import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 
 type RewindablePropertyOptions = {
   units?: string;
@@ -24,7 +25,7 @@ type RewindablePropertyOptions = {
 
 class RewindableProperty<T> extends Property<T> {
   rewindValue: T;
-  private changeRewindValueProperty: Property<boolean>;
+  private changeRewindValueProperty: IReadOnlyProperty<boolean>;
   readonly differentProperty: BooleanProperty;
   static RewindablePropertyIO: ( parameterType: any ) => IOType;
 
@@ -34,7 +35,7 @@ class RewindableProperty<T> extends Property<T> {
    * @param {Object} [providedOptions]
    * @constructor
    */
-  constructor( changeRewindValueProperty: Property<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {
+  constructor( changeRewindValueProperty: IReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {
 
     const options = merge( {
       tandem: Tandem.OPTIONAL
