@@ -21,10 +21,6 @@ const NUM_STEPS_FOR_ANIMATION = 10;
 
 class ExplosionNode extends Node {
 
-  /**
-   * @param {Body} body
-   * @param {Property.<ModelViewTransform2>} modelViewTransformProperty
-   */
   constructor( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ) {
     super();
 
@@ -61,8 +57,8 @@ class ExplosionNode extends Node {
   /**
    * Get a graphic for the explosion, linking diameter to the time steps since a collision occurred.
    *
-   * @param {Body} body
-   * @param {function} getDiameter - diameter of graphic in view coordinates as function of time since collision
+   * @param body
+   * @param getDiameter - diameter of graphic in view coordinates as function of time since collision
    */
   private getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ): BodyRenderer {
     const yellowAndWhite = {

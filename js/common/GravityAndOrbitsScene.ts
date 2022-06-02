@@ -90,18 +90,18 @@ class GravityAndOrbitsScene extends PhetioObject {
   private pairs: Pair[];
 
   /**
-   * @param {GravityAndOrbitsModel} model
-   * @param {ModeConfig} modeConfig
-   * @param {function(number):string} timeFormatter
-   * @param {Node} iconImage
-   * @param {number} velocityVectorScale
-   * @param {function(BodyNode, Property.<boolean>):Node} massReadoutFactory - returns a node for the representation
-   * @param {number} gridSpacing
-   * @param {Tandem} tandem
-   * @param {Tandem} sceneViewTandem
-   * @param {Body[]} bodies
-   * @param {Pair[]} pairs
-   * @param {Object} [providedOptions]
+   * @param model
+   * @param modeConfig
+   * @param timeFormatter
+   * @param iconImage
+   * @param velocityVectorScale
+   * @param massReadoutFactory - returns a node for the representation
+   * @param gridSpacing
+   * @param tandem
+   * @param sceneViewTandem
+   * @param bodies
+   * @param pairs
+   * @param [providedOptions]
    */
   constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node, gridSpacing: number, tandem: Tandem,
                sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], providedOptions?: GravityAndOrbitsSceneOptions ) {
@@ -213,9 +213,6 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    * Create the transform from model coordinates to stage coordinates
-   *
-   * @param {number} defaultZoomScale
-   * @param {Vector2} gridCenter
    */
   private createTransform( defaultZoomScale: number, gridCenter: Vector2 ): ModelViewTransform2 {
     const modelBounds = this.getTargetRectangle( defaultZoomScale * this.zoomLevelProperty.get(), gridCenter );
@@ -232,8 +229,6 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    * Find the rectangle that should be viewed in the model
-   * @param targetScale
-   * @param targetCenterModelPoint
    */
   private getTargetRectangle( targetScale: number, targetCenterModelPoint: Vector2 ): Rectangle {
     const z = targetScale * 1.5E-9;
@@ -261,9 +256,6 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.deviatedFromDefaultsProperty.set( true );
   }
 
-  /**
-   * @param body
-   */
   addBody( body: Body ): void {
     this.physicsEngine.addBody( body );
 

@@ -47,13 +47,6 @@ class GravityAndOrbitsModel {
 
   static G: number;
 
-  /**
-   * @param {boolean} showMeasuringTape
-   * @param {function(GravityAndOrbitsModel):SceneFactory} createModes
-   * @param {number} initialSceneIndex
-   * @param {boolean} showMassCheckbox
-   * @param {Tandem} tandem
-   */
   constructor( showMeasuringTape: boolean, createModes: ( arg0: GravityAndOrbitsModel ) => SceneFactory, initialSceneIndex: number, showMassCheckbox: boolean, tandem: Tandem ) {
 
     // Properties that are common to all "modes" should live here.

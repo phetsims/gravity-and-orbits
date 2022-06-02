@@ -38,11 +38,11 @@ class GravityAndOrbitsClock {
   private eventTimer: EventTimer | null;
 
   /**
-   * @param {number} baseDTValue (multiplied by scale to obtain true dt)
-   * @param {Property.<boolean>} steppingProperty
-   * @param {EnumerationProperty.<TimeSpeed>} timeSpeedProperty
-   * @param {Tandem} sceneTandem
-   * @param {Tandem} tandem
+   * @param baseDTValue (multiplied by scale to obtain true dt)
+   * @param steppingProperty
+   * @param timeSpeedProperty
+   * @param sceneTandem
+   * @param tandem
    */
   constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
                sceneTandem: Tandem, tandem: Tandem ) {

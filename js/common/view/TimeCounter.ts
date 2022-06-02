@@ -30,9 +30,9 @@ class TimeCounter extends Node {
   private timeListener: ( time: number ) => void;
 
   /**
-   * @param {function} timeFormatter
-   * @param {GravityAndOrbitsClock} clock
-   * @param {Tandem} tandem
+   * @param timeFormatter
+   * @param clock
+   * @param tandem
    * @param [providedOptions]
    */
   constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: { bottom: number; right: number; scale: number } ) {

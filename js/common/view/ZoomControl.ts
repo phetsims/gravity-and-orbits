@@ -33,9 +33,9 @@ type ZoomControlOptions = NodeOptions;
 class ZoomControl extends Node {
 
   /**
-   * @param {Property.<number>} scaleProperty - Scale property for observing and updating.
-   * @param {Tandem} tandem
-   * @param {Object} [providedOptions]
+   * @param scaleProperty - Scale property for observing and updating.
+   * @param tandem
+   * @param [providedOptions]
    */
   constructor( scaleProperty: Property<number>, tandem: Tandem, providedOptions?: ZoomControlOptions ) {
 
@@ -90,11 +90,11 @@ gravityAndOrbits.register( 'ZoomControl', ZoomControl );
 
 class SliderButton extends RectangularPushButton {
   /**
-   * @param {Property.<number>} scaleProperty - Scale property for updating.
-   * @param {Range} range - Working range of slider.
-   * @param {number} step step of scale changes
-   * @param {boolean} isIncrease flag for defining type of button
-   * @param {Object} [providedOptions]
+   * @param scaleProperty - Scale property for updating.
+   * @param range - Working range of slider.
+   * @param step step of scale changes
+   * @param isIncrease flag for defining type of button
+   * @param [providedOptions]
    */
   constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, providedOptions?: RectangularPushButtonOptions ) {
 

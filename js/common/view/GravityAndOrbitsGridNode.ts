@@ -20,11 +20,11 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 class GravityAndOrbitsGridNode extends Node {
 
   /**
-   * @param {Property.<ModelViewTransform2>} transformProperty
-   * @param {number} spacing - spacing between grid lines
-   * @param {Vector2} center - center of the grid in model coordinates
-   * @param {number} numGridLines - number grid lines on each side of the center
-   * @param {Object} [providedOptions]
+   * @param transformProperty
+   * @param spacing - spacing between grid lines
+   * @param center - center of the grid in model coordinates
+   * @param numGridLines - number grid lines on each side of the center
+   * @param [providedOptions]
    */
   constructor( transformProperty: Property<ModelViewTransform2>, spacing: number, center: Vector2, numGridLines: number, providedOptions?: object ) {
 

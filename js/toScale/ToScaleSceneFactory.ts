@@ -14,11 +14,6 @@ import Tandem from '../../../tandem/js/Tandem.js';
 
 class ToScaleSceneFactory extends SceneFactory {
 
-  /**
-   * @param {GravityAndOrbitsModel} model
-   * @param {Tandem} modelTandem
-   * @param {Tandem} viewTandem
-   */
   constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       model,

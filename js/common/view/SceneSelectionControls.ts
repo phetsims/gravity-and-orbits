@@ -30,9 +30,9 @@ type SceneSelectionControlsOptions = {
 class SceneSelectionControls extends Node {
 
   /**
-   * @param {Property.<GravityAndOrbitsScene>} sceneProperty
-   * @param {Array.<GravityAndOrbitsScene>} modes
-   * @param {Object} [providedOptions] - This object contains options for main node of planet menu.
+   * @param sceneProperty
+   * @param modes
+   * @param [providedOptions] - This object contains options for main node of planet menu.
    */
   constructor( sceneProperty: Property<GravityAndOrbitsScene>, modes: GravityAndOrbitsScene[], providedOptions?: Partial<SceneSelectionControlsOptions> ) {
     super( providedOptions );
@@ -95,8 +95,8 @@ gravityAndOrbits.register( 'SceneSelectionControls', SceneSelectionControls );
 class SceneResetButton extends RectangularPushButton {
 
   /**
-   * @param {GravityAndOrbitsScene} scene
-   * @param {Object} [providedOptions]
+   * @param scene
+   * @param [providedOptions]
    */
   constructor( scene: GravityAndOrbitsScene, providedOptions?: RectangularPushButtonOptions ) {
     const options = optionize<RectangularPushButtonOptions, {}, RectangularPushButtonOptions>()( {

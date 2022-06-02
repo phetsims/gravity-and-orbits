@@ -25,15 +25,6 @@ const WIDTH = 180;
 const SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
 
 class BodyMassControl extends HSlider {
-  /**
-   *
-   * @param {Body} body
-   * @param {number} min
-   * @param {number} max
-   * @param {number} defaultLabelValue
-   * @param {string} valueLabel
-   * @param {Tandem} tandem
-   */
   constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: string, tandem: Tandem ) {
 
     super( body.massProperty, new Range( min, max ), {
@@ -67,7 +58,7 @@ class BodyMassControl extends HSlider {
     } );
 
     // create a label for the default value
-    // @param {string} - string for the label text
+    // @param - string for the label text
     const createNumberLabel = ( value: string ) => new Text( value, {
       font: new PhetFont( 13 ),
       fill: GravityAndOrbitsColors.foregroundProperty,

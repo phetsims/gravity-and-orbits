@@ -19,8 +19,8 @@ import BodyTypeEnum from './BodyTypeEnum.js';
 
 /**
  * Return the smaller of two Body instances, for determining which survives a collision.
- * @param {Body} other
- * @param {Body} body
+ * @param other
+ * @param body
  * @returns the smaller body
  */
 const getSmaller = ( other: Body, body: Body ): Body => other.massProperty.get() < body.massProperty.get() ? other : body;
@@ -38,9 +38,9 @@ class GravityAndOrbitsPhysicsEngine {
   private stepCompleteEmitter: Emitter<[]>;
 
   /**
-   * @param {GravityAndOrbitsClock} clock
-   * @param {Property.<boolean>} gravityEnabledProperty flag to indicate whether gravity is on or off.
-   * @param {boolean} adjustMoonOrbit - in the "Model" screen, there is an additional force from the Earth on the Moon to keep it in orbit
+   * @param clock
+   * @param gravityEnabledProperty flag to indicate whether gravity is on or off.
+   * @param adjustMoonOrbit - in the "Model" screen, there is an additional force from the Earth on the Moon to keep it in orbit
    *                                  - This is necessary because the moon orbital radius is higher (so it is visible)
    */
   constructor( clock: GravityAndOrbitsClock, gravityEnabledProperty: Property<boolean>, adjustMoonOrbit: boolean ) {
@@ -105,8 +105,6 @@ class GravityAndOrbitsPhysicsEngine {
    * Moves the model forward in time.  This function creates temporary state objects and calculates state values
    * based on the current state of the entire model. Afterwards, it applies the updated values to the body objects.
    * Finally, it checks for collisions between bodies.
-   *
-   * @param {number} dt
    */
   step( dt: number ): void {
 
@@ -143,8 +141,6 @@ class GravityAndOrbitsPhysicsEngine {
 
   /**
    * Adds a body and updates the body's force vectors
-   *
-   * @param body
    */
   addBody( body: Body ): void {
     this.bodies.push( body );
@@ -181,8 +177,6 @@ class GravityAndOrbitsPhysicsEngine {
 
   /**
    * Get the body associated with the name.
-   *
-   * @param {BodyTypeEnum} type
    */
   getBody( type: BodyTypeEnum ): Body | null {
     for ( let i = 0; i < this.bodies.length; i++ ) {

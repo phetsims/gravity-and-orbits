@@ -106,18 +106,18 @@ class Body extends PhetioObject {
   static BodyIO: IOType;
 
   /**
-   * @param {BodyTypeEnum} type - used for object identification
-   * @param {BodyConfiguration} bodyConfiguration - collection of properties that define the body state
-   * @param {Color} color
-   * @param {Color} highlight
-   * @param {function(Body, number):BodyRenderer} renderer - way to associate the graphical representation directly
+   * @param type - used for object identification
+   * @param bodyConfiguration - collection of properties that define the body state
+   * @param color
+   * @param highlight
+   * @param renderer - way to associate the graphical representation directly
    *                                                          instead of later with conditional logic or map
-   * @param {number} labelAngle
-   * @param {number} tickValue - default value for mass setting
-   * @param {string} tickLabel - translatable label for the mass slider labeling the default value
-   * @param {GravityAndOrbitsModel} model
-   * @param {Tandem} tandem
-   * @param {Object} [providedOptions]
+   * @param labelAngle
+   * @param tickValue - default value for mass setting
+   * @param tickLabel - translatable label for the mass slider labeling the default value
+   * @param model
+   * @param tandem
+   * @param [providedOptions]
    */
   constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
                tandem: Tandem, providedOptions?: BodyOptions ) {
@@ -407,8 +407,6 @@ class Body extends PhetioObject {
 
   /**
    * Take the updated BodyState from the physics engine and update the state of this body based on it.
-   *
-   * @param {BodyState} bodyState
    */
   updateBodyStateFromModel( bodyState: { position: Vector2; velocity: Vector2; acceleration: Vector2; mass: number; rotation: number } ): void {
     if ( !this.isCollidedProperty.value ) {
@@ -505,8 +503,6 @@ class Body extends PhetioObject {
 
   /**
    * Check to see if this body collides with another.
-   *
-   * @param {Body} body
    */
   collidesWidth( body: Body ): boolean {
     const position1 = this.positionProperty.get();

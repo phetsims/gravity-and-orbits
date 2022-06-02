@@ -31,15 +31,15 @@ class VectorNode extends Node {
   protected readonly vectorNodeScale: number;
 
   /**
-   * @param {Body} body
-   * @param {Property.<ModelViewTransform2>} transformProperty
-   * @param {Property.<boolean>} visibleProperty
-   * @param {Property.<Vector2>} vectorProperty
-   * @param {number} scale
-   * @param {Color} fill
-   * @param {Color} outline
-   * @param {Tandem} tandem
-   * @param {Object} [providedOptions]
+   * @param body
+   * @param transformProperty
+   * @param visibleProperty
+   * @param vectorProperty
+   * @param scale
+   * @param fill
+   * @param outline
+   * @param tandem
+   * @param [providedOptions]
    */
   constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color, outline: Color, tandem: Tandem, providedOptions?: object ) {
     const options = merge( {

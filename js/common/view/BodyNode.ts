@@ -36,12 +36,12 @@ class BodyNode extends Node {
 
   /**
    * Constructor for BodyNode
-   * @param {Body} body
-   * @param {number} labelAngle - Angle at which to show the name label, different for different BodyNodes so they
+   * @param body
+   * @param labelAngle - Angle at which to show the name label, different for different BodyNodes so they
    *                              don't overlap too much
-   * @param {Property.<boolean>} isPlayingProperty is the simulation playing?
-   * @param {GravityAndOrbitsScene} scene
-   * @param {Tandem} tandem
+   * @param isPlayingProperty is the simulation playing?
+   * @param scene
+   * @param tandem
    */
   constructor( body: Body, labelAngle: number, isPlayingProperty: Property<boolean>, scene: GravityAndOrbitsScene, tandem: Tandem ) {
     super( {
@@ -149,9 +149,6 @@ class BodyNode extends Node {
   /**
    * Return a Node that points to the sphere with a text indicator and line when it is too small to see (in modes
    * with realistic units)
-   * @param {Body} body
-   * @param {number} labelAngle
-   * @param {Tandem} tandem
    */
   private createArrowIndicator( body: Body, labelAngle: number, tandem: Tandem ): Node {
     const node = new Node( {

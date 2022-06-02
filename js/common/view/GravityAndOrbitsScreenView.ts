@@ -30,9 +30,6 @@ class GravityAndOrbitsScreenView extends ScreenView {
 
   /**
    * Constructor for GravityAndOrbitsScreenView. This is the ScreenView for both screens in this sim.
-   *
-   * @param {GravityAndOrbitsModel} model
-   * @param {Tandem} tandem
    */
   constructor( model: GravityAndOrbitsModel, tandem: Tandem ) {
 

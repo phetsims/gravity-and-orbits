@@ -33,11 +33,6 @@ class PathsCanvasNode extends CanvasNode {
   private clearedListener: ( bodyName: BodyTypeEnum ) => void;
 
   /**
-   *
-   * @param {Body[]} bodies
-   * @param {Property.<ModelViewTransform2>} transformProperty
-   * @param {Property.<boolean>} visibleProperty
-   * @param {Bounds2} canvasBounds
    */
   constructor( bodies: Body[], transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, canvasBounds: Bounds2 ) {
 
@@ -92,7 +87,7 @@ class PathsCanvasNode extends CanvasNode {
 
     // listener for when a point is added, bound by thisNode
     // created to avoid excess closures every time a point is removed
-    // @param {string} bodyName - used to look up points associated with the desired body's trail
+    // @param bodyName - used to look up points associated with the desired body's trail
     this.pointAddedListener = ( point, bodyName ) => {
       const pt = transformProperty.get().modelToViewPosition( point );
 
@@ -106,7 +101,7 @@ class PathsCanvasNode extends CanvasNode {
 
     // listener for when a point is removed, bound by thisNode
     // created to avoid excess closures every time a point is removed
-    // @param {BodyTypeEnum} bodyName - used to look up points associated with the desired body's trail
+    // @param bodyName - used to look up points associated with the desired body's trail
     this.pointRemovedListener = bodyName => {
 
       // 'this' defined by bind in addListener
@@ -121,7 +116,7 @@ class PathsCanvasNode extends CanvasNode {
 
     // listener for when date is cleared, bound by thisNode
     // created to avoid excess closures every time date is cleared
-    // @param {BodyTypeEnum} bodyName - used to look up points associated with the desired body's trail
+    // @param bodyName - used to look up points associated with the desired body's trail
     this.clearedListener = bodyName => {
 
       // 'this' is defined by bind
@@ -234,8 +229,6 @@ class NamedPoints {
 
   /**
    * Named points assigns an array of points a name so that it can be looked up outside of a closure.
-   *
-   * @param {BodyTypeEnum} type
    */
   constructor( type: BodyTypeEnum ) {
     this.type = type;

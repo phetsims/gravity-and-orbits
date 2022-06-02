@@ -23,14 +23,14 @@ class BodyState {
   readonly rotationPeriod: number|null;
 
   /**
-   * @param {Body} body - the parent body from which this BodyState was created
-   * @param {Vector2} position - in m
-   * @param {Vector2} velocity - in m/s
-   * @param {Vector2} acceleration - in m/s^2
-   * @param {number} mass - in kg
-   * @param {boolean} exploded
-   * @param {number} rotation - The rotation of the body about its own origin in radians
-   * @param {number} rotationPeriod - in seconds
+   * @param body - the parent body from which this BodyState was created
+   * @param position - in m
+   * @param velocity - in m/s
+   * @param acceleration - in m/s^2
+   * @param mass - in kg
+   * @param exploded
+   * @param rotation - The rotation of the body about its own origin in radians
+   * @param rotationPeriod - in seconds
    */
   constructor( body: Body, position: Vector2, velocity: Vector2, acceleration: Vector2, mass: number, exploded: boolean, rotation: number, rotationPeriod: number|null ) {
 

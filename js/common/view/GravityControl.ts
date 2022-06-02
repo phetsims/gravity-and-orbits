@@ -34,8 +34,8 @@ type GravityControlImplementationOptions = Pick<GravityControlOptions, 'tandem'>
 class GravityControl extends Node {
 
   /**
-   * @param {Property.<boolean>} gravityEnabledProperty
-   * @param {Object} [providedOptions] - This object contains options for main node of gravity menu.
+   * @param gravityEnabledProperty
+   * @param [providedOptions] - This object contains options for main node of gravity menu.
    */
   constructor( gravityEnabledProperty: Property<boolean>, providedOptions?: Partial<GravityControlOptions> ) {
     super( providedOptions );

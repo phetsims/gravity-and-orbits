@@ -50,9 +50,6 @@ class GravityAndOrbitsSceneView extends Rectangle {
 
   /**
    * Constructor for GravityAndOrbitsSceneView
-   * @param {GravityAndOrbitsScene} scene
-   * @param {GravityAndOrbitsModel} model
-   * @param {Tandem} tandem
    */
   constructor( scene: GravityAndOrbitsScene, model: GravityAndOrbitsModel, tandem: Tandem ) {
     const forceScale = scene.forceScale;

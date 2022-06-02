@@ -27,7 +27,7 @@ abstract class ModeConfig {
   forceScale?: number;
 
   /**
-   * @param {number} zoom
+   * @param zoom
    * @constructor
    */
   protected constructor( zoom: number ) {

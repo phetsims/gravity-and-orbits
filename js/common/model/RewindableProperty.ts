@@ -30,9 +30,9 @@ class RewindableProperty<T> extends Property<T> {
   static RewindablePropertyIO: ( parameterType: any ) => IOType;
 
   /**
-   * @param {Property} changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
-   * @param {T} value
-   * @param {Object} [providedOptions]
+   * @param changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
+   * @param value
+   * @param [providedOptions]
    * @constructor
    */
   constructor( changeRewindValueProperty: IReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {

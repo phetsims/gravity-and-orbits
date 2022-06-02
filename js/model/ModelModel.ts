@@ -13,8 +13,8 @@ import ModelSceneFactory from './ModelSceneFactory.js';
 class ModelModel extends GravityAndOrbitsModel {
 
   /**
-   * @param {Tandem} modelTandem
-   * @param {Tandem} viewTandem - needed to create the scene views
+   * @param modelTandem
+   * @param viewTandem - needed to create the scene views
    */
   constructor( modelTandem: Tandem, viewTandem: Tandem ) {
     super(

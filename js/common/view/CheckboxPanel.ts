@@ -63,8 +63,8 @@ type CheckboxPanelOptions = CheckboxPanelSelfOptions & VBoxOptions;
 class CheckboxPanel extends VBox {
 
   /**
-   * @param {GravityAndOrbitsModel} model
-   * @param {Object} [providedOptions]
+   * @param model
+   * @param [providedOptions]
    */
   constructor( model: GravityAndOrbitsModel, providedOptions?: CheckboxPanelOptions ) {
 

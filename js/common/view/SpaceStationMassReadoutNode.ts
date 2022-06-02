@@ -24,10 +24,6 @@ const spaceStationMassString = gravityAndOrbitsStrings.spaceStationMass;
 
 class SpaceStationMassReadoutNode extends MassReadoutNode {
 
-  /**
-   * @param {BodyNode} bodyNode
-   * @param {Property.<boolean>} visibleProperty
-   */
   constructor( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean> ) {
     super( bodyNode, visibleProperty, bodyNode.body.type === 'planet' ? {
       textMaxWidth: 400

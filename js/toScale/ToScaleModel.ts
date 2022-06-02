@@ -13,8 +13,8 @@ import ToScaleSceneFactory from './ToScaleSceneFactory.js';
 class ToScaleModel extends GravityAndOrbitsModel {
 
   /**
-   * @param {Tandem} modelTandem
-   * @param {Tandem} viewTandem - needed so we can create the scenes and corresponding views
+   * @param modelTandem
+   * @param viewTandem - needed so we can create the scenes and corresponding views
    */
   constructor( modelTandem: Tandem, viewTandem: Tandem ) {
     super(

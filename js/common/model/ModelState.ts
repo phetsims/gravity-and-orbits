@@ -31,11 +31,6 @@ class ModelState {
   private clock: GravityAndOrbitsClock;
   private readonly adjustMoonOrbit: boolean;
 
-  /**
-   * @param {Array.<BodyState>} bodyStates
-   * @param {GravityAndOrbitsClock} clock
-   * @param {boolean} adjustMoonOrbit
-   */
   constructor( bodyStates: Array<BodyState>, clock: GravityAndOrbitsClock, adjustMoonOrbit: boolean ) {
     this.bodyStates = bodyStates;
     this.clock = clock;
@@ -44,9 +39,6 @@ class ModelState {
 
   /**
    * Updates the model, producing the next ModelState
-   *
-   * @param {number} dt
-   * @param {Property.<boolean>} gravityEnabledProperty
    */
   getNextState( dt: number, gravityEnabledProperty: Property<boolean> ): this {
 
@@ -62,8 +54,6 @@ class ModelState {
 
   /**
    * Finds the positions of the bodies after a time dt
-   *
-   * @param {number} dt
    */
   private updatePositions( dt: number ): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
@@ -75,8 +65,6 @@ class ModelState {
 
   /**
    * Finds the velocities of the bodies after a time dt
-   *
-   * @param {number} dt
    */
   private updateVelocities( dt: number ): void {
     this.updateAccelerations();
@@ -101,7 +89,7 @@ class ModelState {
    * Update rotations of all bodies in the sim. Some bodies need to rotate so that during orbital motion they
    * always point toward the earth. Only some bodies require rotation.
    *
-   * @param {number} dt (seconds)
+   * @param dt (seconds)
    */
   private updateRotations( dt: number ): void {
     for ( let i = 0; i < this.bodyStates.length; i++ ) {
@@ -117,8 +105,8 @@ class ModelState {
 
   /**
    * Get rotation of the body, based on the body's rotation period and the elapsed sim time.
-   * @param {number} rotationPeriod
-   * @param {number} dt - delta time (seconds)
+   * @param rotationPeriod
+   * @param dt - delta time (seconds)
    */
   private getDeltaRotation( rotationPeriod: number, dt: number ): number {
 
@@ -138,8 +126,6 @@ class ModelState {
 
   /**
    * Gets the net force on the bodyState due to the other bodies
-   *
-   * @param {BodyState} bodyState
    */
   private getNetForce( bodyState: BodyState ): Vector2 {
 
@@ -160,8 +146,6 @@ class ModelState {
 
   /**
    * Returns the force on the body source due to the body target
-   * @param {BodyState} source
-   * @param {BodyState} target
    */
   private getTwoBodyForce( source: BodyState, target: BodyState ): Vector2 {
     if ( source.position.equals( target.position ) ) {
@@ -214,7 +198,6 @@ class ModelState {
 
   /**
    * Updates the model, producing the next ModelState when gravity is present
-   * @param {number} dt
    */
   private getNextInteractingState( dt: number ): this {
 

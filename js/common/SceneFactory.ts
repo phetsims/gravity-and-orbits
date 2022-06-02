@@ -282,7 +282,7 @@ class PlanetMoonModeConfig extends ModeConfig {
 
   /**
    * Configuration for the Earth+Moon system.
-   * @param {Object} [options]
+   * @param [options]
    */
   constructor( options?: any ) {
 
@@ -321,7 +321,7 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 
   /**
    * Static class.
-   * @param {Object} [options]
+   * @param [options]
    */
   constructor( options?: any ) {
 
@@ -351,7 +351,6 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 
 /**
  * Creates a BodyRenderer that just shows the specified image
- * @param {string} image
  */
 const getImageRenderer = ( image: string | HTMLImageElement ) => {
   return ( body: Body, viewDiameter: number ) => new BodyRenderer.ImageRenderer( body, viewDiameter, image );
@@ -383,7 +382,6 @@ const scaledDays = () => {
 /**
  * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
  * elapsed clock readout
- * @param time
  */
 const formatMinutes = ( time: number ) => {
   const value = ( time / SECONDS_PER_MINUTE );
@@ -441,10 +439,10 @@ type PlanetOptions = {} & BodyOptions;
 class Planet extends Body {
 
   /**
-   * @param {GravityAndOrbitsModel} model
-   * @param {BodyConfiguration} bodyConfiguration
-   * @param {Tandem} tandem
-   * @param {Object} [providedOptions]
+   * @param model
+   * @param bodyConfiguration
+   * @param tandem
+   * @param [providedOptions]
    */
   constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, providedOptions?: PlanetOptions ) {
     super(
