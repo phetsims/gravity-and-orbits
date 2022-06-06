@@ -56,9 +56,9 @@ const HBOX_OPTIONS = {
   spacing: SPACING
 };
 
-type CheckboxPanelSelfOptions = {};
+type SelfOptions = {};
 
-type CheckboxPanelOptions = CheckboxPanelSelfOptions & VBoxOptions;
+type CheckboxPanelOptions = SelfOptions & VBoxOptions;
 
 class CheckboxPanel extends VBox {
 
@@ -156,7 +156,7 @@ class CheckboxPanel extends VBox {
       checkboxNode.touchArea = Shape.rectangle( -5, bounds.centerY - touchAreaHeight / 2, bounds.width + 10, touchAreaHeight );
     }
 
-    super( optionize<CheckboxPanelOptions, CheckboxPanelSelfOptions, VBoxOptions>()( {
+    super( optionize<CheckboxPanelOptions, SelfOptions, VBoxOptions>()( {
       excludeInvisibleChildrenFromBounds: true,
       children: children,
       spacing: SPACING,
