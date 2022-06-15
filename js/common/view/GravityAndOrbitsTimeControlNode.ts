@@ -21,13 +21,14 @@ import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import RewindableProperty from '../model/RewindableProperty.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import EmptyObjectType from '../../../../phet-core/js/types/EmptyObjectType.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
 const STEP_BUTTON_RADIUS = 23;
 const PUSH_BUTTON_SPACING = 8;
 
-type SelfOptions = {};
+type SelfOptions = EmptyObjectType;
 
 type GravityAndOrbitsTimeControlNodeOptions = SelfOptions & PickRequired<TimeControlNodeOptions, 'tandem'>;
 

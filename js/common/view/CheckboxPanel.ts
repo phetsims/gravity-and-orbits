@@ -28,6 +28,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
+import EmptyObjectType from '../../../../phet-core/js/types/EmptyObjectType.js';
 
 const gravityForceString = gravityAndOrbitsStrings.gravityForce;
 const gridString = gravityAndOrbitsStrings.grid;
@@ -56,7 +57,7 @@ const HBOX_OPTIONS = {
   spacing: SPACING
 };
 
-type SelfOptions = {};
+type SelfOptions = EmptyObjectType;
 
 type CheckboxPanelOptions = SelfOptions & VBoxOptions;
 
