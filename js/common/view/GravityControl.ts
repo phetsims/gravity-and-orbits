@@ -28,7 +28,7 @@ const FONT = new PhetFont( 14 );
 const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColors.foregroundProperty, maxWidth: 50 };
 const RADIO_OPTIONS = { radius: 7 };
 
-type GravityControlOptions = {} & PhetioObjectOptions;
+type GravityControlOptions = PhetioObjectOptions;
 type GravityControlImplementationOptions = Pick<GravityControlOptions, 'tandem'>;
 
 class GravityControl extends Node {

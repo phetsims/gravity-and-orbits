@@ -40,7 +40,7 @@ class MassControlPanel extends VBox {
 
   constructor( massSettableBodies: Body[], providedOptions?: MassControlPanelOptions ) {
 
-    const defaults: OptionizeDefaults<{}, VBoxOptions> = merge( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+    const defaults: OptionizeDefaults<EmptyObjectType, VBoxOptions> = merge( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
 
       // Managed by the simulation, can be buggy if independently controlled by studio
       visiblePropertyOptions: { phetioReadOnly: true }

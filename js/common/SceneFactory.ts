@@ -434,7 +434,7 @@ class Moon extends Body {
   }
 }
 
-type PlanetOptions = {} & BodyOptions;
+type PlanetOptions = BodyOptions;
 
 class Planet extends Body {
 
