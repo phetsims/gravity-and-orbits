@@ -101,7 +101,7 @@ class DraggableVectorNode extends VectorNode {
           body.userModifiedVelocityEmitter.emit();
         }
       },
-      end: () => {},
+      end: _.noop,
       tandem: tandem.createTandem( 'dragListener' )
     } );
     grabArea.addInputListener( dragListener );
