@@ -20,10 +20,9 @@ import { Image, Node, Path } from '../../../../scenery/js/imports.js';
 import sun_png from '../../../images/sun_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
-abstract class BodyRenderer extends Node {
+export default abstract class BodyRenderer extends Node {
   private readonly body: Body;
   targetBodyRenderer?: BodyRenderer;
-  static SunRenderer: any;
   static ImageRenderer: typeof ImageRenderer;
   static SwitchableBodyRenderer: typeof SwitchableBodyRenderer;
 
@@ -43,7 +42,7 @@ abstract class BodyRenderer extends Node {
 
 gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
-class SwitchableBodyRenderer extends BodyRenderer {
+export class SwitchableBodyRenderer extends BodyRenderer {
   override targetBodyRenderer: BodyRenderer;
   private defaultBodyRenderer: BodyRenderer;
   private massListener: () => void;
@@ -82,7 +81,7 @@ class SwitchableBodyRenderer extends BodyRenderer {
 
 gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
 
-class ImageRenderer extends BodyRenderer {
+export class ImageRenderer extends BodyRenderer {
   private readonly imageNode: Image;
   private viewDiameter: number;
 
@@ -120,7 +119,7 @@ class ImageRenderer extends BodyRenderer {
 
 gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
 
-class SunRenderer extends ImageRenderer {
+export class SunRenderer extends ImageRenderer {
   private readonly twinkles: Path;
   private readonly numSegments: number;
   private readonly twinkleRadius: ( n: number ) => number;
@@ -161,9 +160,3 @@ class SunRenderer extends ImageRenderer {
 }
 
 gravityAndOrbits.register( 'SunRenderer', SunRenderer );
-
-BodyRenderer.SwitchableBodyRenderer = SwitchableBodyRenderer;
-BodyRenderer.ImageRenderer = ImageRenderer;
-BodyRenderer.SunRenderer = SunRenderer;
-
-export default BodyRenderer;

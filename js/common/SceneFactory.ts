@@ -28,7 +28,7 @@ import BodyConfiguration from './model/BodyConfiguration.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
 import ModeConfig from './model/ModeConfig.js';
 import Pair from './model/Pair.js';
-import BodyRenderer from './view/BodyRenderer.js';
+import { ImageRenderer, SwitchableBodyRenderer } from './view/BodyRenderer.js';
 import EarthMassReadoutNode from './view/EarthMassReadoutNode.js';
 import SpaceStationMassReadoutNode from './view/SpaceStationMassReadoutNode.js';
 import VectorNode from './view/VectorNode.js';
@@ -36,6 +36,7 @@ import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import BodyNode from './view/BodyNode.js';
 import IReadOnlyProperty from '../../../axon/js/IReadOnlyProperty.js';
+import optionize from '../../../phet-core/js/optionize.js';
 
 const earthDaysString = gravityAndOrbitsStrings.earthDays;
 const earthDayString = gravityAndOrbitsStrings.earthDay;
@@ -76,6 +77,13 @@ const SECONDS_PER_MINUTE = 60;
 const FORCE_SCALE = VectorNode.FORCE_SCALE;
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
+type SelfOptions = {
+  adjustMoonPathLength?: boolean;
+  adjustMoonOrbit?: boolean;
+};
+
+type SceneFactoryOptions = SelfOptions;
+
 class SceneFactory {
   scenes: GravityAndOrbitsScene[];
   static SunEarthModeConfig: typeof SunEarthModeConfig;
@@ -83,12 +91,12 @@ class SceneFactory {
   static PlanetMoonModeConfig: typeof PlanetMoonModeConfig;
   static EarthSpaceStationModeConfig: typeof EarthSpaceStationModeConfig;
 
-  constructor( model: GravityAndOrbitsModel, planetStar: SunEarthModeConfig, sunEarthMoon: SunEarthMoonModeConfig, earthMoon: PlanetMoonModeConfig, earthSpaceStation: EarthSpaceStationModeConfig, modelTandem: Tandem, viewTandem: Tandem, options?: any ) {
+  constructor( model: GravityAndOrbitsModel, planetStar: SunEarthModeConfig, sunEarthMoon: SunEarthMoonModeConfig, earthMoon: PlanetMoonModeConfig, earthSpaceStation: EarthSpaceStationModeConfig, modelTandem: Tandem, viewTandem: Tandem, providedOptions?: SceneFactoryOptions ) {
 
-    options = merge( {
+    const options = optionize<SceneFactoryOptions, SelfOptions>()( {
       adjustMoonPathLength: false, // increase the moon path so that it matches other traces at default settings
       adjustMoonOrbit: false
-    }, options );
+    }, providedOptions );
 
     this.scenes = []; // in the java version this class extended ArrayList, but here we have an array field
 
@@ -276,19 +284,24 @@ class SunEarthMoonModeConfig extends ModeConfig {
   }
 }
 
+type PlanetMoonModeConfigSelfOptions = {
+  moonRotationPeriod?: number | null;
+};
+
+type PlanetMoonModeConfigOptions = PlanetMoonModeConfigSelfOptions;
+
 class PlanetMoonModeConfig extends ModeConfig {
   readonly planet: BodyConfiguration;
   readonly moon: BodyConfiguration;
 
   /**
    * Configuration for the Earth+Moon system.
-   * @param [options]
    */
-  constructor( options?: any ) {
+  constructor( providedOptions?: PlanetMoonModeConfigOptions ) {
 
-    options = merge( {
+    const options = optionize<PlanetMoonModeConfigOptions, PlanetMoonModeConfigSelfOptions>()( {
       moonRotationPeriod: null // rotation period for the moon in seconds, null means no rotation
-    }, options );
+    }, providedOptions );
 
     super( 400 );
 
@@ -299,7 +312,7 @@ class PlanetMoonModeConfig extends ModeConfig {
 
     this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, EARTH_PERIHELION, 0, planetVelocityX, 0 );
     this.moon = new BodyConfiguration( MOON_MASS, MOON_RADIUS, MOON_X, MOON_Y, moonVelocityX, 0, {
-      rotationPeriod: options.moonRotationPeriod
+      rotationPeriod: options.moonRotationPeriod || null
     } );
     this.initialMeasuringTapePosition = new Line(
       this.planet.x + this.planet.radius * 2,
@@ -320,21 +333,16 @@ class EarthSpaceStationModeConfig extends ModeConfig {
   readonly satellite: BodyConfiguration;
 
   /**
-   * Static class.
-   * @param [options]
+   * @param [spaceStationRotationPeriod] - in seconds
    */
-  constructor( options?: any ) {
-
-    options = merge( {
-      spaceStationRotationPeriod: SPACE_STATION_ORBITAL_PERIOD // rotation period in seconds
-    }, options );
+  constructor( spaceStationRotationPeriod = SPACE_STATION_ORBITAL_PERIOD ) {
 
     super( 21600 );
 
     this.planet = new BodyConfiguration( EARTH_MASS, EARTH_RADIUS, 0, 0, 0, 0 );
     this.satellite = new BodyConfiguration( SPACE_STATION_MASS, SPACE_STATION_RADIUS,
       SPACE_STATION_PERIGEE + EARTH_RADIUS + SPACE_STATION_RADIUS, 0, 0, SPACE_STATION_SPEED, {
-        rotationPeriod: options.spaceStationRotationPeriod
+        rotationPeriod: spaceStationRotationPeriod
       } );
 
     // Sampled at runtime from MeasuringTape
@@ -353,19 +361,19 @@ class EarthSpaceStationModeConfig extends ModeConfig {
  * Creates a BodyRenderer that just shows the specified image
  */
 const getImageRenderer = ( image: string | HTMLImageElement ) => {
-  return ( body: Body, viewDiameter: number ) => new BodyRenderer.ImageRenderer( body, viewDiameter, image );
+  return ( body: Body, viewDiameter: number ) => new ImageRenderer( body, viewDiameter, image );
 };
 
 /**
  * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
  */
-const getSwitchableRenderer = ( image1: any, image2: any, targetMass: number ) => {
+const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: string | HTMLImageElement, targetMass: number ) => {
 
   // the mass for which to use the image
-  return ( body: Body, viewDiameter: number ) => new BodyRenderer.SwitchableBodyRenderer(
+  return ( body: Body, viewDiameter: number ) => new SwitchableBodyRenderer(
     body,
     targetMass,
-    new BodyRenderer.ImageRenderer( body, viewDiameter, image1 ), new BodyRenderer.ImageRenderer( body, viewDiameter, image2 ) );
+    new ImageRenderer( body, viewDiameter, image1 ), new ImageRenderer( body, viewDiameter, image2 ) );
 };
 
 /**
@@ -391,7 +399,7 @@ const formatMinutes = ( time: number ) => {
 
 class Satellite extends Body {
 
-  constructor( model: GravityAndOrbitsModel, earthSpaceStation: EarthSpaceStationModeConfig, tandem: Tandem, options?: any ) {
+  constructor( model: GravityAndOrbitsModel, earthSpaceStation: EarthSpaceStationModeConfig, tandem: Tandem, options?: BodyOptions ) {
     super(
       'satellite',
       earthSpaceStation.satellite,
@@ -410,7 +418,7 @@ class Satellite extends Body {
 
 class Moon extends Body {
 
-  constructor( model: GravityAndOrbitsModel, massSettable: boolean, massReadoutBelow: boolean, bodyConfiguration: BodyConfiguration, tandem: Tandem, options: any ) {
+  constructor( model: GravityAndOrbitsModel, massSettable: boolean, massReadoutBelow: boolean, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: BodyOptions ) {
     options = merge( {
       pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
       massSettable: massSettable,
@@ -463,7 +471,7 @@ class Planet extends Body {
 
 class Star extends Body {
 
-  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options: any ) {
+  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: BodyOptions ) {
     super(
       'star',
       bodyConfiguration,

@@ -78,10 +78,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
       this.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
 
-      const isReturnableProperty = new DerivedProperty( [ body.positionProperty, scene.zoomLevelProperty ], ( ...args: any[] ) => {
+      const isReturnableProperty = new DerivedProperty( [ body.positionProperty, scene.zoomLevelProperty ], position => {
 
-        // the return objects button should be visible when a body is out of bounds
-        // and not at the rewind position
+        // the return objects button should be visible when a body is out of bounds and not at the rewind position
         const atRewindPosition = bodyNode.body.positionProperty.equalsRewindValue();
         return !STAGE_SIZE.intersectsBounds( bodyNode.bounds ) && !atRewindPosition;
       } );

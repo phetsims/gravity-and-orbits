@@ -13,7 +13,7 @@ import Emitter from '../../../../axon/js/Emitter.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
-import Vector2 from '../../../../dot/js/Vector2.js';
+import Vector2, { Vector2State } from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetioObject, { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
@@ -56,7 +56,7 @@ type BodyOptions = {
 type BodyImplementationOptions = Pick<BodyOptions, 'tandem' | 'touchDilation' | 'diameterScale' | 'pathLengthBuffer' | 'massSettable' |
   'pathLengthLimit' | 'massReadoutBelow' | 'rotationPeriod' | 'orbitalCenter' | 'maxPathLength'>;
 
-class Body extends PhetioObject {
+export default class Body extends PhetioObject {
 
   pathLength: number;
   path: Vector2[];
@@ -357,7 +357,7 @@ class Body extends PhetioObject {
   /**
    * (phet-io)
    */
-  toStateObject(): { pathLength: number; modelPathLength: number; path: any } {
+  toStateObject(): BodyStateType {
     return {
       pathLength: this.pathLength,
       modelPathLength: this.modelPathLength,
@@ -534,7 +534,7 @@ class Body extends PhetioObject {
   /**
    * Returns the Properties which, when changed, enable the rewind button.
    */
-  getRewindableProperties(): IProperty<any>[] {
+  getRewindableProperties(): IProperty<unknown>[] {
     return [
       this.positionProperty,
       this.velocityProperty,
@@ -553,11 +553,13 @@ class Body extends PhetioObject {
   }
 }
 
-const BodyIO = new IOType( 'BodyIO', {
+type BodyStateType = { pathLength: number; modelPathLength: number; path: Vector2State[] };
+
+Body.BodyIO = new IOType<Body, BodyStateType>( 'BodyIO', {
   valueType: Body,
   documentation: 'Represents a physical body in the simulation',
   toStateObject: ( body: Body ) => body.toStateObject(),
-  applyState: ( body: Body, stateObject: ReturnType<typeof Body.prototype.toStateObject> ) => body.setStateObject( stateObject ),
+  applyState: ( body: Body, stateObject: BodyStateType ) => body.setStateObject( stateObject ),
   stateSchema: {
     pathLength: NumberIO,
     modelPathLength: NumberIO,
@@ -565,8 +567,5 @@ const BodyIO = new IOType( 'BodyIO', {
   }
 } );
 
-Body.BodyIO = BodyIO;
-
 gravityAndOrbits.register( 'Body', Body );
 export type { BodyOptions };
-export default Body;

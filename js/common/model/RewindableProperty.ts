@@ -27,7 +27,8 @@ class RewindableProperty<T> extends Property<T> {
   rewindValue: T;
   private changeRewindValueProperty: IReadOnlyProperty<boolean>;
   readonly differentProperty: BooleanProperty;
-  static RewindablePropertyIO: ( parameterType: any ) => IOType;
+
+  static RewindablePropertyIO: ( parameterType: IOType ) => IOType;
 
   /**
    * @param changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
@@ -144,7 +145,7 @@ RewindableProperty.RewindablePropertyIO = ( parameterType: IOType ) => {
           return stateObject;
         },
         // @ts-ignore
-        applyState: ( property: RewindableProperty, stateObject: { rewindValue: any } ) => {
+        applyState: ( property: RewindableProperty, stateObject: { rewindValue: unknown } ) => {
           PropertyIOImpl.applyState( property, stateObject );
           property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
         },

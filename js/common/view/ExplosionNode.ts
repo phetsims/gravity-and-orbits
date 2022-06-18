@@ -11,7 +11,7 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import LinearFunction from '../../../../dot/js/LinearFunction.js';
 import { Node } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import BodyRenderer from './BodyRenderer.js';
+import BodyRenderer, { SunRenderer } from './BodyRenderer.js';
 import Body from '../model/Body.js';
 import Property from '../../../../axon/js/Property.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
@@ -60,13 +60,15 @@ class ExplosionNode extends Node {
    * @param body
    * @param getDiameter - diameter of graphic in view coordinates as function of time since collision
    */
-  private getExplosionEdgeGraphic( body: Body, getDiameter: { ( numClockTicksSinceExplosion: number ): any; ( arg0: number ): any } ): BodyRenderer {
+  private getExplosionEdgeGraphic( body: Body, getDiameter: ( ticks: number ) => number ): BodyRenderer {
     const yellowAndWhite = {
       highlight: 'white',
       color: 'yellow'
     };
     const getDoubleRadius = ( radius: number ) => radius * 2;
-    const explosionEdgeGraphic = new BodyRenderer.SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
+
+    // @ts-ignore
+    const explosionEdgeGraphic = new SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
     const explodedProperty = new DerivedProperty( [ body.isCollidedProperty, body.clockTicksSinceExplosionProperty ],
       ( collided, clockTicks ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );
