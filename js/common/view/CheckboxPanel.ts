@@ -81,32 +81,29 @@ class CheckboxPanel extends VBox {
     const optionsWithTandem = ( tandemName: string ) => merge( { tandem: options.tandem.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
 
     // gravity force checkbox
-    children.push( new Checkbox( new HBox( merge( {
-        children: [
-          gravityForceTextNode,
-          new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
-        ]
-      }, HBOX_OPTIONS ) ),
-      model.showGravityForceProperty, optionsWithTandem( 'gravityForceCheckbox' ) ) );
+    children.push( new Checkbox( model.showGravityForceProperty, new HBox( merge( {
+      children: [
+        gravityForceTextNode,
+        new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
+      ]
+    }, HBOX_OPTIONS ) ), optionsWithTandem( 'gravityForceCheckbox' ) ) );
 
     // velocity checkbox
-    children.push( new Checkbox( new HBox( merge( {
-        children: [
-          velocityTextNode,
-          new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.VELOCITY } )
-        ]
-      }, HBOX_OPTIONS ) ),
-      model.showVelocityProperty, optionsWithTandem( 'velocityCheckbox' ) ) );
+    children.push( new Checkbox( model.showVelocityProperty, new HBox( merge( {
+      children: [
+        velocityTextNode,
+        new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.VELOCITY } )
+      ]
+    }, HBOX_OPTIONS ) ), optionsWithTandem( 'velocityCheckbox' ) ) );
 
     // mass checkbox
     if ( model.showMassCheckbox ) {
-      children.push( new Checkbox( new HBox( merge( {
-          children: [
-            massTextNode,
-            new Image( iconMass_png, { scale: 0.8 } )
-          ]
-        }, HBOX_OPTIONS ) ),
-        model.showMassProperty, optionsWithTandem( 'massCheckbox' ) ) );
+      children.push( new Checkbox( model.showMassProperty, new HBox( merge( {
+        children: [
+          massTextNode,
+          new Image( iconMass_png, { scale: 0.8 } )
+        ]
+      }, HBOX_OPTIONS ) ), optionsWithTandem( 'massCheckbox' ) ) );
     }
 
     const pathIconImageNode = new Image( pathIcon_png, { scale: 0.25 } );
@@ -116,36 +113,34 @@ class CheckboxPanel extends VBox {
     } );
 
     // path checkbox
-    children.push( new Checkbox( new HBox( merge( {
-        children: [
-          pathTextNode,
-          pathIconImageNode
-        ]
-      }, HBOX_OPTIONS ) ),
-      model.showPathProperty, optionsWithTandem( 'pathCheckbox' ) ) );
+    children.push( new Checkbox( model.showPathProperty, new HBox( merge( {
+      children: [
+        pathTextNode,
+        pathIconImageNode
+      ]
+    }, HBOX_OPTIONS ) ), optionsWithTandem( 'pathCheckbox' ) ) );
 
     // grid checkbox
-    children.push( new Checkbox( new HBox( merge( {
-        children: [
-          gridTextNode,
-          new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
-            stroke: GravityAndOrbitsColors.gridIconStrokeColorProperty,
-            lineWidth: 1.5
-          } )
-        ]
-      }, HBOX_OPTIONS ) ),
-      model.showGridProperty, optionsWithTandem( 'gridCheckbox' ) ) );
+    children.push( new Checkbox( model.showGridProperty, new HBox( merge( {
+      children: [
+        gridTextNode,
+        new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
+          stroke: GravityAndOrbitsColors.gridIconStrokeColorProperty,
+          lineWidth: 1.5
+        } )
+      ]
+    }, HBOX_OPTIONS ) ), optionsWithTandem( 'gridCheckbox' ) ) );
 
     // measuring tape checkbox
     if ( model.showMeasuringTape ) {
       const measuringTapeIcon = MeasuringTapeNode.createIcon( { scale: 0.4 } );
-      children.push( new Checkbox( new HBox( combineOptions<HBoxOptions>( {
+      children.push( new Checkbox( model.showMeasuringTapeProperty, new HBox( combineOptions<HBoxOptions>( {
         align: 'top',
         children: [
           measuringTapeTextNode,
           measuringTapeIcon
         ]
-      }, HBOX_OPTIONS ) ), model.showMeasuringTapeProperty, optionsWithTandem( 'measuringTapeCheckbox' ) ) );
+      }, HBOX_OPTIONS ) ), optionsWithTandem( 'measuringTapeCheckbox' ) ) );
     }
 
     // increase the touch area of the checkboxes
