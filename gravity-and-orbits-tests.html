@@ -23,7 +23,7 @@
   window.phet.chipper.packageObject =
     {
       "name": "gravity-and-orbits",
-      "version": "1.6.0-dev.1",
+      "version": "1.6.0-dev.2",
       "license": "GPL-3.0",
       "repository": {
         "type": "git",
@@ -52,7 +52,17 @@
         "generatedUnitTests": true
       },
       "eslintConfig": {
-        "extends": "../chipper/eslint/sim_eslintrc.js"
+        "extends": "../chipper/eslint/sim_eslintrc.js",
+        "overrides": [
+          {
+            "files": [
+              "**/*.ts"
+            ],
+            "rules": {
+              "@typescript-eslint/no-explicit-any": "error"
+            }
+          }
+        ]
       }
     };
   window.phet.chipper.stringRepos =
