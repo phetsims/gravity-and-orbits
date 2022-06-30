@@ -12,7 +12,7 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import platform from '../../../../phet-core/js/platform.js';
-import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
+import MeasuringTapeNode, { MeasuringTapeUnits } from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Rectangle } from '../../../../scenery/js/imports.js';
@@ -127,11 +127,12 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // Add measuring tape
     if ( model.showMeasuringTape ) {
 
-      const unitsProperty = new Property<object>( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
+      const unitsProperty = new Property<MeasuringTapeUnits>( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
       const measuringTapeTextColorProperty = GravityAndOrbitsColors.foregroundProperty;
 
-      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, model.showMeasuringTapeProperty, {
+      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, {
+        visibleProperty: model.showMeasuringTapeProperty,
         basePositionProperty: scene.measuringTapeStartPointProperty,
         tipPositionProperty: scene.measuringTapeEndPointProperty,
         textBackgroundColor: GravityAndOrbitsColors.measuringTapeTextBackgroundColorProperty,
@@ -147,7 +148,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
         visiblePropertyOptions: { phetioReadOnly: true } // controlled by a checkbox
       } );
 
-      scene.transformProperty.link( transform => measuringTapeNode.setModelViewTransform( transform ) );
+      scene.transformProperty.link( transform => {
+        measuringTapeNode.modelViewTransformProperty.value = transform;
+      } );
       scene.modelBoundsProperty.link( bounds => {
         const basePosition = measuringTapeNode.basePositionProperty.get();
         measuringTapeNode.setDragBounds( bounds! );
