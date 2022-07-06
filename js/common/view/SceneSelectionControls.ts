@@ -59,18 +59,19 @@ class SceneSelectionControls extends Node {
     const radioButtonGroup = new RectangularRadioButtonGroup( sceneProperty, content, {
       // @ts-ignore TODO: unknown option?
       alignVertically: true,
-      selectedStroke: GravityAndOrbitsColors.foregroundProperty,
-      selectedLineWidth: 2,
-      baseColor: 'rgba(0,0,0,0)',
-      deselectedLineWidth: 0,
-      buttonContentXMargin: 5,
-      buttonContentYMargin: 5,
       spacing: 0,
-      // @ts-ignore TODO: unknown option?
-      deselectedOpacity: 1,
-      cornerRadius: 5,
-
       touchAreaYDilation: 0, // reduce to 0 to prevent overlap between buttons
+      radioButtonOptions: {
+        // @ts-ignore TODO: unknown option?
+        deselectedOpacity: 1,
+        cornerRadius: 5,
+        selectedStroke: GravityAndOrbitsColors.foregroundProperty,
+        selectedLineWidth: 2,
+        baseColor: 'rgba(0,0,0,0)',
+        deselectedLineWidth: 0,
+        xMargin: 5,
+        yMargin: 5
+      },
       tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' ),
 
       // Keep aligned with reset buttons, see https://github.com/phetsims/gravity-and-orbits/issues/348
