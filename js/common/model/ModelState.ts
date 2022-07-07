@@ -31,7 +31,7 @@ class ModelState {
   private clock: GravityAndOrbitsClock;
   private readonly adjustMoonOrbit: boolean;
 
-  constructor( bodyStates: Array<BodyState>, clock: GravityAndOrbitsClock, adjustMoonOrbit: boolean ) {
+  public constructor( bodyStates: Array<BodyState>, clock: GravityAndOrbitsClock, adjustMoonOrbit: boolean ) {
     this.bodyStates = bodyStates;
     this.clock = clock;
     this.adjustMoonOrbit = adjustMoonOrbit;
@@ -40,7 +40,7 @@ class ModelState {
   /**
    * Updates the model, producing the next ModelState
    */
-  getNextState( dt: number, gravityEnabledProperty: Property<boolean> ): this {
+  public getNextState( dt: number, gravityEnabledProperty: Property<boolean> ): this {
 
     if ( gravityEnabledProperty.get() ) {
       return this.getNextInteractingState( dt );
@@ -270,7 +270,7 @@ class ModelState {
    * change this signature to getState(Body body) since it would be safer.
    * See usage in GravityAndOrbitsPhysicsEngine constructor.
    */
-  getBodyState( index: number ): BodyState {
+  public getBodyState( index: number ): BodyState {
     return this.bodyStates[ index ];
   }
 }

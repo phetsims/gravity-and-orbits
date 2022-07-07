@@ -27,9 +27,9 @@ const SECONDS_PER_DAY = 86400;
 const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
 class GravityAndOrbitsClock {
-  baseDTValue: number;
-  timeSpeedProperty: EnumerationProperty<TimeSpeed>;
-  timeProperty: NumberProperty;
+  public baseDTValue: number;
+  public timeSpeedProperty: EnumerationProperty<TimeSpeed>;
+  public timeProperty: NumberProperty;
 
   private isRunningProperty: BooleanProperty;
   private dt: number;
@@ -44,7 +44,7 @@ class GravityAndOrbitsClock {
    * @param sceneTandem
    * @param tandem
    */
-  constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
+  public constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
                sceneTandem: Tandem, tandem: Tandem ) {
 
     // (read-only)
@@ -75,7 +75,7 @@ class GravityAndOrbitsClock {
   /**
    * Step the clock while paused, ignoring the current play speed and stepping by 1 / CLOCK_FRAME_RATE.
    */
-  stepClockWhilePaused(): void {
+  public stepClockWhilePaused(): void {
 
     // See RewindableProperty which has to know whether the clock is running, paused, stepping, rewinding for
     // application specific logic
@@ -91,7 +91,7 @@ class GravityAndOrbitsClock {
    *
    * @param  {boolean} running
    */
-  setRunning( running: boolean ): void {
+  public setRunning( running: boolean ): void {
     this.isRunningProperty.set( running );
   }
 
@@ -100,15 +100,15 @@ class GravityAndOrbitsClock {
    *
    * @param  {number} time description
    */
-  setSimulationTime( time: number ): void {
+  public setSimulationTime( time: number ): void {
     this.timeProperty.set( time );
   }
 
-  getSimulationTime(): number {
+  public getSimulationTime(): number {
     return this.timeProperty.get();
   }
 
-  resetSimulationTime(): void {
+  public resetSimulationTime(): void {
     this.timeProperty.reset();
   }
 
@@ -117,7 +117,7 @@ class GravityAndOrbitsClock {
    *
    * @param  {function} stepFunction
    */
-  addEventTimer( stepFunction: ( dt: number ) => void ): void {
+  public addEventTimer( stepFunction: ( dt: number ) => void ): void {
     assert && assert( !this.eventTimer, 'there can be only one event timer' );
     this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
   }
@@ -127,7 +127,7 @@ class GravityAndOrbitsClock {
    *
    * @param  {number} dt
    */
-  step( dt: number ): void {
+  public step( dt: number ): void {
     if ( this.eventTimer ) {
       this.eventTimer.step( dt );
       this.interpolationRatio = this.eventTimer.getRatio();
@@ -135,8 +135,8 @@ class GravityAndOrbitsClock {
   }
 
   // statics
-  static SECONDS_PER_DAY = SECONDS_PER_DAY;
-  static DEFAULT_DT = DEFAULT_DT;
+  public static SECONDS_PER_DAY = SECONDS_PER_DAY;
+  public static DEFAULT_DT = DEFAULT_DT;
 }
 
 gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );

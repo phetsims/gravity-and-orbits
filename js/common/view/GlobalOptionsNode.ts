@@ -16,7 +16,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 class GlobalOptionsNode extends VBox {
   private readonly disposeGlobalOptionsNode: () => void;
 
-  constructor( tandem: Tandem ) {
+  public constructor( tandem: Tandem ) {
 
     // add support for setting projector mode
     const projectorModeCheckbox = new ProjectorModeCheckbox( {
@@ -35,9 +35,7 @@ class GlobalOptionsNode extends VBox {
     };
   }
 
-  /**
-   */
-  override dispose(): void {
+  public override dispose(): void {
     this.disposeGlobalOptionsNode();
     super.dispose();
   }

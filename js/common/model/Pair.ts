@@ -18,7 +18,7 @@ class Pair {
   private body2: Body;
   private distanceProperty: IReadOnlyProperty<number>;
 
-  constructor( body1: Body, body2: Body, tandem: Tandem ) {
+  public constructor( body1: Body, body2: Body, tandem: Tandem ) {
     assert && assert( body1.massProperty.value > body2.massProperty.value, 'Should be ordered big to small' );
 
     this.body1 = body1;

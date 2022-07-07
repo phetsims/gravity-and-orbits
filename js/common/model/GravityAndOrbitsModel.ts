@@ -29,25 +29,27 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
 class GravityAndOrbitsModel {
-  showGravityForceProperty: BooleanProperty;
-  showVelocityProperty: BooleanProperty;
-  showPathProperty: BooleanProperty;
-  showGridProperty: BooleanProperty;
-  showMassProperty: BooleanProperty;
-  showMeasuringTapeProperty: BooleanProperty;
-  sceneProperty: Property<GravityAndOrbitsScene>;
-  isPlayingProperty: BooleanProperty;
-  timeSpeedProperty: EnumerationProperty<TimeSpeed>;
-  gravityEnabledProperty: BooleanProperty;
-  steppingProperty: BooleanProperty;
-  rewindingProperty: BooleanProperty;
-  showMassCheckbox: boolean;
-  showMeasuringTape: boolean;
-  sceneList: SceneFactory;
+  public showGravityForceProperty: BooleanProperty;
+  public showVelocityProperty: BooleanProperty;
+  public showPathProperty: BooleanProperty;
+  public showGridProperty: BooleanProperty;
+  public showMassProperty: BooleanProperty;
+  public showMeasuringTapeProperty: BooleanProperty;
+  public sceneProperty: Property<GravityAndOrbitsScene>;
 
-  static G: number;
+  // TODO: Things should be marked as readonly where possible
+  public isPlayingProperty: BooleanProperty;
+  public timeSpeedProperty: EnumerationProperty<TimeSpeed>;
+  public gravityEnabledProperty: BooleanProperty;
+  public steppingProperty: BooleanProperty;
+  public rewindingProperty: BooleanProperty;
+  public showMassCheckbox: boolean;
+  public showMeasuringTape: boolean;
+  public sceneList: SceneFactory;
 
-  constructor( showMeasuringTape: boolean, createModes: ( arg0: GravityAndOrbitsModel ) => SceneFactory, initialSceneIndex: number, showMassCheckbox: boolean, tandem: Tandem ) {
+  public static G: number;
+
+  public constructor( showMeasuringTape: boolean, createModes: ( arg0: GravityAndOrbitsModel ) => SceneFactory, initialSceneIndex: number, showMassCheckbox: boolean, tandem: Tandem ) {
 
     // Properties that are common to all "modes" should live here.
     this.showGravityForceProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGravityForceProperty' ) } );
@@ -87,7 +89,7 @@ class GravityAndOrbitsModel {
     } );
   }
 
-  step( dt: number ): void {
+  private step( dt: number ): void {
 
     // limit dt to 1 so there are no large jumps
     dt = Math.min( 1, dt );
@@ -106,7 +108,7 @@ class GravityAndOrbitsModel {
     }
   }
 
-  getScenes(): GravityAndOrbitsScene[] {
+  public getScenes(): GravityAndOrbitsScene[] {
     return this.sceneList.scenes;
   }
 
@@ -118,7 +120,7 @@ class GravityAndOrbitsModel {
 
   /**
    */
-  reset(): void {
+  public reset(): void {
     this.showGravityForceProperty.reset();
     this.showPathProperty.reset();
     this.showGridProperty.reset();

@@ -26,7 +26,7 @@ type ModelScreenOptions = {
 };
 
 class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
-  constructor( providedOptions?: Partial<ModelScreenOptions> ) {
+  public constructor( providedOptions?: Partial<ModelScreenOptions> ) {
 
     const options = merge( {
       name: modelString,

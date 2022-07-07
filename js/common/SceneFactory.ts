@@ -85,13 +85,13 @@ type SelfOptions = {
 type SceneFactoryOptions = SelfOptions;
 
 class SceneFactory {
-  scenes: GravityAndOrbitsScene[];
-  static SunEarthModeConfig: typeof SunEarthModeConfig;
-  static SunEarthMoonModeConfig: typeof SunEarthMoonModeConfig;
-  static PlanetMoonModeConfig: typeof PlanetMoonModeConfig;
-  static EarthSpaceStationModeConfig: typeof EarthSpaceStationModeConfig;
+  public scenes: GravityAndOrbitsScene[];
+  public static SunEarthModeConfig: typeof SunEarthModeConfig;
+  public static SunEarthMoonModeConfig: typeof SunEarthMoonModeConfig;
+  public static PlanetMoonModeConfig: typeof PlanetMoonModeConfig;
+  public static EarthSpaceStationModeConfig: typeof EarthSpaceStationModeConfig;
 
-  constructor( model: GravityAndOrbitsModel, planetStar: SunEarthModeConfig, sunEarthMoon: SunEarthMoonModeConfig, earthMoon: PlanetMoonModeConfig, earthSpaceStation: EarthSpaceStationModeConfig, modelTandem: Tandem, viewTandem: Tandem, providedOptions?: SceneFactoryOptions ) {
+  public constructor( model: GravityAndOrbitsModel, planetStar: SunEarthModeConfig, sunEarthMoon: SunEarthMoonModeConfig, earthMoon: PlanetMoonModeConfig, earthSpaceStation: EarthSpaceStationModeConfig, modelTandem: Tandem, viewTandem: Tandem, providedOptions?: SceneFactoryOptions ) {
 
     const options = optionize<SceneFactoryOptions, SelfOptions>()( {
       adjustMoonPathLength: false, // increase the moon path so that it matches other traces at default settings
@@ -234,10 +234,10 @@ class SceneFactory {
 }
 
 class SunEarthModeConfig extends ModeConfig {
-  readonly sun: BodyConfiguration;
-  readonly planet: BodyConfiguration;
+  public readonly sun: BodyConfiguration;
+  public readonly planet: BodyConfiguration;
 
-  constructor() {
+  public constructor() {
 
     super( 1.25 );
 
@@ -259,11 +259,11 @@ class SunEarthModeConfig extends ModeConfig {
 
 // static class: SunEarthMoonModeConfig
 class SunEarthMoonModeConfig extends ModeConfig {
-  readonly sun: BodyConfiguration;
-  readonly planet: BodyConfiguration;
-  readonly moon: BodyConfiguration;
+  public readonly sun: BodyConfiguration;
+  public readonly planet: BodyConfiguration;
+  public readonly moon: BodyConfiguration;
 
-  constructor() {
+  public constructor() {
 
     super( 1.25 );
     this.sun = new BodyConfiguration( SUN_MASS, SUN_RADIUS, 0, 0, 0, 0 );
@@ -291,13 +291,13 @@ type PlanetMoonModeConfigSelfOptions = {
 type PlanetMoonModeConfigOptions = PlanetMoonModeConfigSelfOptions;
 
 class PlanetMoonModeConfig extends ModeConfig {
-  readonly planet: BodyConfiguration;
-  readonly moon: BodyConfiguration;
+  public readonly planet: BodyConfiguration;
+  public readonly moon: BodyConfiguration;
 
   /**
    * Configuration for the Earth+Moon system.
    */
-  constructor( providedOptions?: PlanetMoonModeConfigOptions ) {
+  public constructor( providedOptions?: PlanetMoonModeConfigOptions ) {
 
     const options = optionize<PlanetMoonModeConfigOptions, PlanetMoonModeConfigSelfOptions>()( {
       moonRotationPeriod: null // rotation period for the moon in seconds, null means no rotation
@@ -329,13 +329,13 @@ class PlanetMoonModeConfig extends ModeConfig {
 }
 
 class EarthSpaceStationModeConfig extends ModeConfig {
-  readonly planet: BodyConfiguration;
-  readonly satellite: BodyConfiguration;
+  public readonly planet: BodyConfiguration;
+  public readonly satellite: BodyConfiguration;
 
   /**
    * @param [spaceStationRotationPeriod] - in seconds
    */
-  constructor( spaceStationRotationPeriod = SPACE_STATION_ORBITAL_PERIOD ) {
+  public constructor( spaceStationRotationPeriod = SPACE_STATION_ORBITAL_PERIOD ) {
 
     super( 21600 );
 
@@ -399,7 +399,7 @@ const formatMinutes = ( time: number ) => {
 
 class Satellite extends Body {
 
-  constructor( model: GravityAndOrbitsModel, earthSpaceStation: EarthSpaceStationModeConfig, tandem: Tandem, options?: BodyOptions ) {
+  public constructor( model: GravityAndOrbitsModel, earthSpaceStation: EarthSpaceStationModeConfig, tandem: Tandem, options?: BodyOptions ) {
     super(
       'satellite',
       earthSpaceStation.satellite,
@@ -418,7 +418,7 @@ class Satellite extends Body {
 
 class Moon extends Body {
 
-  constructor( model: GravityAndOrbitsModel, massSettable: boolean, massReadoutBelow: boolean, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: BodyOptions ) {
+  public constructor( model: GravityAndOrbitsModel, massSettable: boolean, massReadoutBelow: boolean, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: BodyOptions ) {
     options = merge( {
       pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
       massSettable: massSettable,
@@ -452,7 +452,7 @@ class Planet extends Body {
    * @param tandem
    * @param [providedOptions]
    */
-  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, providedOptions?: PlanetOptions ) {
+  public constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, providedOptions?: PlanetOptions ) {
     super(
       'planet',
       bodyConfiguration,
@@ -471,7 +471,7 @@ class Planet extends Body {
 
 class Star extends Body {
 
-  constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: BodyOptions ) {
+  public constructor( model: GravityAndOrbitsModel, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: BodyOptions ) {
     super(
       'star',
       bodyConfiguration,

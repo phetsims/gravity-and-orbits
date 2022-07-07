@@ -27,7 +27,7 @@ type GravityAndOrbitsControlsOptions = {
 
 class GravityAndOrbitsControls extends VBox {
 
-  constructor( model: GravityAndOrbitsModel, providedOptions?: Partial<GravityAndOrbitsControlsOptions> ) {
+  public constructor( model: GravityAndOrbitsModel, providedOptions?: Partial<GravityAndOrbitsControlsOptions> ) {
 
     const options: GravityAndOrbitsControlsOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, providedOptions ) as unknown as GravityAndOrbitsControls;
 

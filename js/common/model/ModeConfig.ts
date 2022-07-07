@@ -19,12 +19,12 @@ import { Line } from '../../../../scenery/js/imports.js';
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;
 
 abstract class ModeConfig {
-  dt: number;
-  readonly zoom: number;
+  public dt: number;
+  public readonly zoom: number;
 
   // Initial start and end point of the measuring tape
-  initialMeasuringTapePosition?: Line;
-  forceScale?: number;
+  public initialMeasuringTapePosition?: Line;
+  public forceScale?: number;
 
   /**
    * @param zoom
@@ -35,7 +35,7 @@ abstract class ModeConfig {
     this.zoom = zoom;
   }
 
-  center(): void {
+  public center(): void {
     const deltaVelocity = this.getTotalMomentum().times( -1.0 / this.getTotalMass() );
     const bodies = this.getBodies();
     for ( let i = 0; i < bodies.length; i++ ) {

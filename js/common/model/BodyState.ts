@@ -13,14 +13,14 @@ import Body from './Body.js';
 
 class BodyState {
 
-  readonly body: Body;
-  readonly position: Vector2;
-  readonly velocity: Vector2;
-  acceleration: Vector2;
-  readonly mass: number;
-  readonly exploded: boolean;
-  rotation: number;
-  readonly rotationPeriod: number|null;
+  public readonly body: Body;
+  public readonly position: Vector2;
+  public readonly velocity: Vector2;
+  public acceleration: Vector2;
+  public readonly mass: number;
+  public readonly exploded: boolean;
+  public rotation: number;
+  public readonly rotationPeriod: number|null;
 
   /**
    * @param body - the parent body from which this BodyState was created
@@ -32,7 +32,7 @@ class BodyState {
    * @param rotation - The rotation of the body about its own origin in radians
    * @param rotationPeriod - in seconds
    */
-  constructor( body: Body, position: Vector2, velocity: Vector2, acceleration: Vector2, mass: number, exploded: boolean, rotation: number, rotationPeriod: number|null ) {
+  public constructor( body: Body, position: Vector2, velocity: Vector2, acceleration: Vector2, mass: number, exploded: boolean, rotation: number, rotationPeriod: number|null ) {
 
     this.position = position;
     this.velocity = velocity;

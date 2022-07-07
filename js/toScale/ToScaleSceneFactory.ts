@@ -14,7 +14,7 @@ import Tandem from '../../../tandem/js/Tandem.js';
 
 class ToScaleSceneFactory extends SceneFactory {
 
-  constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
+  public constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       model,
       new SceneFactory.SunEarthModeConfig(),

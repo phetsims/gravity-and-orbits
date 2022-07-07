@@ -45,13 +45,13 @@ const STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
 const buttonBackgroundColor = new Color( 255, 250, 125 );
 
 class GravityAndOrbitsSceneView extends Rectangle {
-  static STAGE_SIZE: Bounds2;
-  static buttonBackgroundColor: Color;
+  public static STAGE_SIZE: Bounds2;
+  public static buttonBackgroundColor: Color;
 
   /**
    * Constructor for GravityAndOrbitsSceneView
    */
-  constructor( scene: GravityAndOrbitsScene, model: GravityAndOrbitsModel, tandem: Tandem ) {
+  public constructor( scene: GravityAndOrbitsScene, model: GravityAndOrbitsModel, tandem: Tandem ) {
     const forceScale = scene.forceScale;
 
     // each orbit mode has its own play area with a CanvasNode for rendering paths

@@ -34,7 +34,7 @@ type GravityAndOrbitsTimeControlNodeOptions = SelfOptions & PickRequired<TimeCon
 
 class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
-  constructor( model: GravityAndOrbitsModel, providedOptions: GravityAndOrbitsTimeControlNodeOptions ) {
+  public constructor( model: GravityAndOrbitsModel, providedOptions: GravityAndOrbitsTimeControlNodeOptions ) {
 
     super( model.isPlayingProperty, {
       timeSpeedProperty: model.timeSpeedProperty,

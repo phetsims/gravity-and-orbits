@@ -22,28 +22,28 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 export default abstract class BodyRenderer extends Node {
   private readonly body: Body;
-  targetBodyRenderer?: BodyRenderer;
-  static ImageRenderer: typeof ImageRenderer;
-  static SwitchableBodyRenderer: typeof SwitchableBodyRenderer;
+  public targetBodyRenderer?: BodyRenderer;
+  private static ImageRenderer: typeof ImageRenderer;
+  private static SwitchableBodyRenderer: typeof SwitchableBodyRenderer;
 
-  constructor( body: Body ) {
+  public constructor( body: Body ) {
 
     super();
 
     this.body = body;
   }
 
-  getBody(): Body {
+  private getBody(): Body {
     return this.body;
   }
 
-  abstract setDiameter( viewDiameter: number ): void;
+  public abstract setDiameter( viewDiameter: number ): void;
 }
 
 gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
 export class SwitchableBodyRenderer extends BodyRenderer {
-  override targetBodyRenderer: BodyRenderer;
+  public override targetBodyRenderer: BodyRenderer;
   private defaultBodyRenderer: BodyRenderer;
   private massListener: () => void;
 
@@ -52,7 +52,7 @@ export class SwitchableBodyRenderer extends BodyRenderer {
    * renderer otherwise.  This is so that (e.g.) the planet can be drawn with an earth image when its mass is equal to
    * earth mass or otherwise drawn as a sphere with a gradient paint.
    */
-  constructor( body: Body, targetMass: number, targetBodyRenderer: BodyRenderer, defaultBodyRenderer: BodyRenderer ) {
+  public constructor( body: Body, targetMass: number, targetBodyRenderer: BodyRenderer, defaultBodyRenderer: BodyRenderer ) {
 
     super( body );
 
@@ -73,7 +73,7 @@ export class SwitchableBodyRenderer extends BodyRenderer {
   /**
    * Set the diameter for the renderer in view coordinates for both the current and default renderers.
    */
-  setDiameter( viewDiameter: number ): void {
+  public setDiameter( viewDiameter: number ): void {
     this.targetBodyRenderer.setDiameter( viewDiameter );
     this.defaultBodyRenderer.setDiameter( viewDiameter );
   }
@@ -88,7 +88,7 @@ export class ImageRenderer extends BodyRenderer {
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
    */
-  constructor( body: Body, viewDiameter: number, imageName: string | HTMLImageElement ) {
+  public constructor( body: Body, viewDiameter: number, imageName: string | HTMLImageElement ) {
 
     super( body );
 
@@ -102,7 +102,7 @@ export class ImageRenderer extends BodyRenderer {
   /**
    * Set the diameter for the rednerer in view coordinates
    */
-  setDiameter( viewDiameter: number ): void {
+  public setDiameter( viewDiameter: number ): void {
     this.viewDiameter = viewDiameter;
     this.updateViewDiameter();
   }
@@ -127,7 +127,7 @@ export class SunRenderer extends ImageRenderer {
   /**
    * Adds triangle edges to the sun to make it look more recognizable
    */
-  constructor( body: Body, viewDiameter: number, numSegments: number, twinkleRadius: ( n: number ) => number ) {
+  public constructor( body: Body, viewDiameter: number, numSegments: number, twinkleRadius: ( n: number ) => number ) {
     super( body, viewDiameter, sun_png );
     this.twinkles = new Path( null, { fill: 'yellow' } );
     this.numSegments = numSegments;
@@ -142,7 +142,7 @@ export class SunRenderer extends ImageRenderer {
    *
    * @param  {number} viewDiameter
    */
-  override setDiameter( viewDiameter: number ): void {
+  public override setDiameter( viewDiameter: number ): void {
     super.setDiameter( viewDiameter );
     let angle = 0;
     const deltaAngle = Math.PI * 2 / this.numSegments;

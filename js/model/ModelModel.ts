@@ -16,7 +16,7 @@ class ModelModel extends GravityAndOrbitsModel {
    * @param modelTandem
    * @param viewTandem - needed to create the scene views
    */
-  constructor( modelTandem: Tandem, viewTandem: Tandem ) {
+  public constructor( modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       false,
       model => new ModelSceneFactory( model, modelTandem, viewTandem ),

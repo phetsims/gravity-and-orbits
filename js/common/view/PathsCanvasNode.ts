@@ -34,7 +34,7 @@ class PathsCanvasNode extends CanvasNode {
 
   /**
    */
-  constructor( bodies: Body[], transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, canvasBounds: Bounds2 ) {
+  public constructor( bodies: Body[], transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, canvasBounds: Bounds2 ) {
 
     assert && assert( canvasBounds, 'Paths canvas must define bounds' );
     super( {
@@ -135,7 +135,7 @@ class PathsCanvasNode extends CanvasNode {
     }
   }
 
-  paintCanvas( context: CanvasRenderingContext2D ): void {
+  public paintCanvas( context: CanvasRenderingContext2D ): void {
     let j;
 
     // draw the path for each body one by one
@@ -225,12 +225,12 @@ gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
 class NamedPoints {
   private type: BodyTypeEnum;
-  points: Vector2[];
+  public points: Vector2[];
 
   /**
    * Named points assigns an array of points a name so that it can be looked up outside of a closure.
    */
-  constructor( type: BodyTypeEnum ) {
+  public constructor( type: BodyTypeEnum ) {
     this.type = type;
     this.points = [];
   }

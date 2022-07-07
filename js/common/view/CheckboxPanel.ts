@@ -67,7 +67,7 @@ class CheckboxPanel extends VBox {
    * @param model
    * @param [providedOptions]
    */
-  constructor( model: GravityAndOrbitsModel, providedOptions?: CheckboxPanelOptions ) {
+  public constructor( model: GravityAndOrbitsModel, providedOptions?: CheckboxPanelOptions ) {
 
     const children = [];
     const options = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as Required<CheckboxPanelOptions>;

@@ -38,7 +38,7 @@ class ZoomControl extends Node {
    * @param tandem
    * @param [providedOptions]
    */
-  constructor( scaleProperty: Property<number>, tandem: Tandem, providedOptions?: ZoomControlOptions ) {
+  public constructor( scaleProperty: Property<number>, tandem: Tandem, providedOptions?: ZoomControlOptions ) {
 
     const options = optionize<ZoomControlOptions, EmptyObjectType, NodeOptions>()( {
       scale: 0.8,
@@ -97,7 +97,7 @@ class SliderButton extends RectangularPushButton {
    * @param isIncrease flag for defining type of button
    * @param [providedOptions]
    */
-  constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, providedOptions?: RectangularPushButtonOptions ) {
+  public constructor( scaleProperty: Property<number>, range: Range, step: number, isIncrease: boolean, providedOptions?: RectangularPushButtonOptions ) {
 
     // create default view
     const sample = new Node( {

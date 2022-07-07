@@ -24,7 +24,7 @@ const spaceStationMassString = gravityAndOrbitsStrings.spaceStationMass;
 
 class SpaceStationMassReadoutNode extends MassReadoutNode {
 
-  constructor( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean> ) {
+  public constructor( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean> ) {
     super( bodyNode, visibleProperty, bodyNode.body.type === 'planet' ? {
       textMaxWidth: 400
     } : {} );
@@ -37,7 +37,7 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
    *
    * @returns formatted string
    */
-  createText(): string {
+  public createText(): string {
     const massKG = this.bodyNode.body.massProperty.get();
     const spaceStationMasses = massKG / GravityAndOrbitsConstants.SPACE_STATION_MASS;
 

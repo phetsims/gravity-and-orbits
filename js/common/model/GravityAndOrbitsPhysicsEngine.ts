@@ -33,8 +33,8 @@ const getBodyState = ( body: Body ) => body.toBodyState();
 class GravityAndOrbitsPhysicsEngine {
   private gravityEnabledProperty: Property<boolean>;
   private adjustMoonOrbit: boolean;
-  clock: GravityAndOrbitsClock;
-  bodies: Body[];
+  public clock: GravityAndOrbitsClock;
+  public bodies: Body[];
   private stepCompleteEmitter: Emitter<[]>;
 
   /**
@@ -43,7 +43,7 @@ class GravityAndOrbitsPhysicsEngine {
    * @param adjustMoonOrbit - in the "Model" screen, there is an additional force from the Earth on the Moon to keep it in orbit
    *                                  - This is necessary because the moon orbital radius is higher (so it is visible)
    */
-  constructor( clock: GravityAndOrbitsClock, gravityEnabledProperty: Property<boolean>, adjustMoonOrbit: boolean ) {
+  public constructor( clock: GravityAndOrbitsClock, gravityEnabledProperty: Property<boolean>, adjustMoonOrbit: boolean ) {
 
     this.gravityEnabledProperty = gravityEnabledProperty;
     this.adjustMoonOrbit = adjustMoonOrbit;
@@ -106,7 +106,7 @@ class GravityAndOrbitsPhysicsEngine {
    * based on the current state of the entire model. Afterwards, it applies the updated values to the body objects.
    * Finally, it checks for collisions between bodies.
    */
-  step( dt: number ): void {
+  private step( dt: number ): void {
 
     // Compute the next state for each body based on the current state of all bodies in the system.
     const bodyStates = this.bodies.map( getBodyState );
@@ -133,7 +133,7 @@ class GravityAndOrbitsPhysicsEngine {
     }
   }
 
-  resetAll(): void {
+  public resetAll(): void {
     this.resetBodies();
     this.clock.resetSimulationTime();
     this.updateForceVectors();
@@ -142,7 +142,7 @@ class GravityAndOrbitsPhysicsEngine {
   /**
    * Adds a body and updates the body's force vectors
    */
-  addBody( body: Body ): void {
+  public addBody( body: Body ): void {
     this.bodies.push( body );
 
     // update the force vectors when the position or mass changes
@@ -166,11 +166,11 @@ class GravityAndOrbitsPhysicsEngine {
   /**
    * Returns a defensive copy of the bodies.
    */
-  getBodies(): Body[] {
+  public getBodies(): Body[] {
     return this.bodies.slice( 0 ); // operate on a copy, firing could result in the listeners changing
   }
 
-  resetBodies(): void {
+  public resetBodies(): void {
     this.bodies.forEach( body => body.resetAll() );
     this.updateForceVectors(); // has to be done separately since physics is computed as a batch
   }
@@ -178,7 +178,7 @@ class GravityAndOrbitsPhysicsEngine {
   /**
    * Get the body associated with the name.
    */
-  getBody( type: BodyTypeEnum ): Body | null {
+  private getBody( type: BodyTypeEnum ): Body | null {
     for ( let i = 0; i < this.bodies.length; i++ ) {
       const body = this.bodies[ i ];
 

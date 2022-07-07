@@ -23,7 +23,7 @@ type MassReadoutNodeOptions = {
 abstract class MassReadoutNode extends Node {
   protected bodyNode: BodyNode;
 
-  constructor( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean>, providedOptions?: Partial<MassReadoutNodeOptions> ) {
+  public constructor( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean>, providedOptions?: Partial<MassReadoutNodeOptions> ) {
     super();
     const options: MassReadoutNodeOptions = merge( {
       textMaxWidth: 240

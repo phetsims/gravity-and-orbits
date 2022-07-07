@@ -26,7 +26,7 @@ const daysToSeconds = ( days: number ) => days * 24 * 60 * 60;
 
 class ModelSceneFactory extends SceneFactory {
 
-  constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
+  public constructor( model: GravityAndOrbitsModel, modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       model,
       new SunEarthModeConfig(),
@@ -46,7 +46,7 @@ gravityAndOrbits.register( 'ModelSceneFactory', ModelSceneFactory );
  * Model configuration for a system with the sun and the earth.
  */
 class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
-  constructor() {
+  public constructor() {
     super();
     this.sun.radius *= SUN_RADIUS_MULTIPLIER;
     this.planet.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
@@ -63,7 +63,7 @@ gravityAndOrbits.register( 'SunEarthModeConfig', SunEarthModeConfig );
  * Model configuration for a system with the sun, earth and moon.
  */
 class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
-  constructor() {
+  public constructor() {
     super();
     this.sun.radius *= SUN_RADIUS_MULTIPLIER;
     this.planet.radius *= EARTH_MOON_RADIUS_MULTIPLIER;
@@ -82,7 +82,7 @@ class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
 gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
 
 class PlanetMoonModeConfig extends SceneFactory.PlanetMoonModeConfig {
-  constructor() {
+  public constructor() {
 
     super( { moonRotationPeriod: daysToSeconds( 27.322 ) } );
 
@@ -101,7 +101,7 @@ gravityAndOrbits.register( 'PlanetMoonModeConfig', PlanetMoonModeConfig );
  * Model configuration for a system with the earth and a space station.
  */
 class EarthSpaceStationModeConfig extends SceneFactory.EarthSpaceStationModeConfig {
-  constructor() {
+  public constructor() {
     super();
 
     // tuned by hand

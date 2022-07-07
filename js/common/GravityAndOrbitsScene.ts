@@ -61,26 +61,26 @@ type MeasuringTapeOptions = {
 type GravityAndOrbitsSceneImplementationOptions = Pick<GravityAndOrbitsSceneOptions, 'adjustMoonOrbit' | 'dt' | 'gridCenter'>;
 
 class GravityAndOrbitsScene extends PhetioObject {
-  activeProperty: BooleanProperty;
-  iconImage: Node;
-  modelBoundsProperty: Property<Bounds2 | null>;
-  transformProperty: Property<ModelViewTransform2>;
-  radioButtonTandemName: string;
-  resetButtonTandemName: string;
-  sceneView: GravityAndOrbitsSceneView;
-  massControlPanelTandemName: string;
-  forceScale: number;
-  physicsEngine: GravityAndOrbitsPhysicsEngine;
-  massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node;
-  zoomLevelProperty: NumberProperty;
-  velocityVectorScale: number;
-  gridSpacing: number;
-  gridCenter: Vector2;
-  timeFormatter: ( arg0: number ) => string;
-  measuringTapeStartPointProperty: Vector2Property;
-  measuringTapeEndPointProperty: Vector2Property;
-  isPlayingProperty: BooleanProperty;
-  massControlPanel: Node | null;
+  public activeProperty: BooleanProperty;
+  public iconImage: Node;
+  public modelBoundsProperty: Property<Bounds2 | null>;
+  public transformProperty: Property<ModelViewTransform2>;
+  public radioButtonTandemName: string;
+  public resetButtonTandemName: string;
+  public sceneView: GravityAndOrbitsSceneView;
+  public massControlPanelTandemName: string;
+  public readonly forceScale: number;
+  public physicsEngine: GravityAndOrbitsPhysicsEngine;
+  public massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node;
+  public zoomLevelProperty: NumberProperty;
+  public velocityVectorScale: number;
+  public gridSpacing: number;
+  public gridCenter: Vector2;
+  public timeFormatter: ( arg0: number ) => string;
+  public measuringTapeStartPointProperty: Vector2Property;
+  public measuringTapeEndPointProperty: Vector2Property;
+  public isPlayingProperty: BooleanProperty;
+  public massControlPanel: Node | null;
 
   private deviatedFromDefaultsProperty: BooleanProperty;
   private tandemName: string;
@@ -103,7 +103,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param pairs
    * @param [providedOptions]
    */
-  constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node, gridSpacing: number, tandem: Tandem,
+  public constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( arg0: number ) => string, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node, gridSpacing: number, tandem: Tandem,
                sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], providedOptions?: GravityAndOrbitsSceneOptions ) {
 
     const forceScale = modeConfig.forceScale;
@@ -241,11 +241,11 @@ class GravityAndOrbitsScene extends PhetioObject {
       modelHeight );
   }
 
-  getClock(): GravityAndOrbitsClock {
+  public getClock(): GravityAndOrbitsClock {
     return this.physicsEngine.clock;
   }
 
-  getBodies(): Body[] {
+  public getBodies(): Body[] {
     return this.physicsEngine.getBodies();
   }
 
@@ -256,7 +256,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.deviatedFromDefaultsProperty.set( true );
   }
 
-  addBody( body: Body ): void {
+  private addBody( body: Body ): void {
     this.physicsEngine.addBody( body );
 
     body.massProperty.link( this.setDeviatedFromDefaults.bind( this ) );
@@ -272,9 +272,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     } );
   }
 
-  /**
-   */
-  reset(): void {
+  public reset(): void {
     this.activeProperty.reset();
     this.deviatedFromDefaultsProperty.reset();
     this.measuringTapeStartPointProperty.reset();
@@ -289,7 +287,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * Return the bodies to their original states when the user presses "reset" (not "reset all")
    *
    */
-  resetScene(): void {
+  public resetScene(): void {
     this.physicsEngine.resetBodies();
     this.deviatedFromDefaultsProperty.set( false );
     this.getClock().setSimulationTime( 0.0 );
@@ -299,9 +297,8 @@ class GravityAndOrbitsScene extends PhetioObject {
 
   /**
    * Restore the last set of initial conditions that were set while the sim was paused.
-   *
    */
-  rewind(): void {
+  public rewind(): void {
     this.rewindingProperty.set( true );
     this.getClock().setSimulationTime( 0.0 );
     const bodies = this.physicsEngine.getBodies();
@@ -317,7 +314,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * Save the state of the orbital system, which includes all rewindable properties of all bodies. This should only be
    * called when the sim is paused.
    */
-  saveState(): void {
+  public saveState(): void {
     const bodies = this.physicsEngine.getBodies();
     for ( let i = 0; i < bodies.length; i++ ) {
       bodies[ i ].saveBodyState();
@@ -327,7 +324,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   /**
    * @returns All bodies in the scene for which the mass can be changed
    */
-  getMassSettableBodies(): Body[] {
+  public getMassSettableBodies(): Body[] {
     const bodies = this.getBodies();
     const massSettableBodies = [];
     for ( let i = 0; i < bodies.length; i++ ) {

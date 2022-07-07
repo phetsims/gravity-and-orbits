@@ -21,7 +21,7 @@ const NUM_STEPS_FOR_ANIMATION = 10;
 
 class ExplosionNode extends Node {
 
-  constructor( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ) {
+  public constructor( body: Body, modelViewTransformProperty: Property<ModelViewTransform2> ) {
     super();
 
     // Function that computes the diameter as a function of the animation step

@@ -16,7 +16,7 @@ class ToScaleModel extends GravityAndOrbitsModel {
    * @param modelTandem
    * @param viewTandem - needed so we can create the scenes and corresponding views
    */
-  constructor( modelTandem: Tandem, viewTandem: Tandem ) {
+  public constructor( modelTandem: Tandem, viewTandem: Tandem ) {
     super(
       true,
       model => new ToScaleSceneFactory( model, modelTandem, viewTandem ),

@@ -18,16 +18,16 @@ type BodyConfigurationOptions = {
 
 class BodyConfiguration {
 
-  mass: number;
-  radius: number;
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  isMovable: boolean;
-  readonly rotationPeriod: null | number;
+  public mass: number;
+  public radius: number;
+  public x: number;
+  public y: number;
+  public vx: number;
+  public vy: number;
+  public isMovable: boolean;
+  public readonly rotationPeriod: null | number;
 
-  constructor( mass: number, radius: number, x: number, y: number, vx: number, vy: number, providedOptions?: BodyConfigurationOptions ) {
+  public constructor( mass: number, radius: number, x: number, y: number, vx: number, vy: number, providedOptions?: BodyConfigurationOptions ) {
 
     const options = merge( {
       rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
@@ -43,7 +43,7 @@ class BodyConfiguration {
     this.rotationPeriod = options.rotationPeriod;
   }
 
-  getMomentum(): Vector2 {
+  public getMomentum(): Vector2 {
     return new Vector2( this.vx * this.mass, this.vy * this.mass );
   }
 }

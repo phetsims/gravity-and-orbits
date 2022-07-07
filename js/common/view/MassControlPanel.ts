@@ -38,7 +38,7 @@ type MassControlPanelOptions = VBoxOptions & PickRequired<VBoxOptions, 'tandem'>
 
 class MassControlPanel extends VBox {
 
-  constructor( massSettableBodies: Body[], providedOptions?: MassControlPanelOptions ) {
+  public constructor( massSettableBodies: Body[], providedOptions?: MassControlPanelOptions ) {
 
     const defaults: OptionizeDefaults<EmptyObjectType, VBoxOptions> = merge( GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
 

@@ -27,7 +27,7 @@ type ScreenOptions = {
 } & PhetioObjectOptions;
 
 class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
-  constructor( providedOptions?: ScreenOptions ) {
+  public constructor( providedOptions?: ScreenOptions ) {
     const options = merge( {
       name: toScaleString,
 
