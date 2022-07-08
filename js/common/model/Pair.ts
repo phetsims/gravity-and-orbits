@@ -14,9 +14,9 @@ import Body from './Body.js';
 import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 
 class Pair {
-  private body1: Body;
-  private body2: Body;
-  private distanceProperty: IReadOnlyProperty<number>;
+  private readonly body1: Body;
+  private readonly body2: Body;
+  private readonly distanceProperty: IReadOnlyProperty<number>;
 
   public constructor( body1: Body, body2: Body, tandem: Tandem ) {
     assert && assert( body1.massProperty.value > body2.massProperty.value, 'Should be ordered big to small' );

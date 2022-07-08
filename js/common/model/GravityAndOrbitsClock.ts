@@ -31,9 +31,9 @@ class GravityAndOrbitsClock {
   public timeSpeedProperty: EnumerationProperty<TimeSpeed>;
   public timeProperty: NumberProperty;
 
-  private isRunningProperty: BooleanProperty;
-  private dt: number;
-  private steppingProperty: BooleanProperty;
+  private readonly isRunningProperty: BooleanProperty;
+  private readonly dt: number;
+  private readonly steppingProperty: BooleanProperty;
   private interpolationRatio: number;
   private eventTimer: EventTimer | null;
 

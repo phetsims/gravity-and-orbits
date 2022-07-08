@@ -83,12 +83,12 @@ class GravityAndOrbitsScene extends PhetioObject {
   public isPlayingProperty: BooleanProperty;
   public massControlPanel: Node | null;
 
-  private deviatedFromDefaultsProperty: BooleanProperty;
-  private tandemName: string;
-  private dt: number;
-  private rewindingProperty: BooleanProperty;
-  private timeSpeedProperty: EnumerationProperty<TimeSpeed>;
-  private pairs: Pair[];
+  private readonly deviatedFromDefaultsProperty: BooleanProperty;
+  private readonly tandemName: string;
+  private readonly dt: number;
+  private readonly rewindingProperty: BooleanProperty;
+  private readonly timeSpeedProperty: EnumerationProperty<TimeSpeed>;
+  private readonly pairs: Pair[];
 
   /**
    * @param model
@@ -120,7 +120,7 @@ class GravityAndOrbitsScene extends PhetioObject {
       dt: modeConfig.dt,
       adjustMoonOrbit: false
     }, providedOptions );
-    const gridCenter = options.gridCenter as Vector2;
+    const gridCenter = options.gridCenter;
     const dt = options.dt;
 
     super( {

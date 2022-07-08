@@ -25,7 +25,7 @@ type RewindablePropertyOptions = {
 
 class RewindableProperty<T> extends Property<T> {
   private rewindValue: T;
-  private changeRewindValueProperty: IReadOnlyProperty<boolean>;
+  private readonly changeRewindValueProperty: IReadOnlyProperty<boolean>;
   public readonly differentProperty: BooleanProperty;
 
   public static RewindablePropertyIO: ( parameterType: IOType ) => IOType;

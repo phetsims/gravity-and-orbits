@@ -28,7 +28,7 @@ const netForce = new Vector2( 0, 0 ); // used in getNetForce()
 
 class ModelState {
   private readonly bodyStates: Array<BodyState>;
-  private clock: GravityAndOrbitsClock;
+  private readonly clock: GravityAndOrbitsClock;
   private readonly adjustMoonOrbit: boolean;
 
   public constructor( bodyStates: Array<BodyState>, clock: GravityAndOrbitsClock, adjustMoonOrbit: boolean ) {

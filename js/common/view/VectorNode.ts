@@ -27,8 +27,8 @@ type SelfOptions = EmptyObjectType;
 export type VectorNodeOptions = SelfOptions & NodeOptions;
 
 class VectorNode extends Node {
-  private body: Body;
-  private vectorProperty: Property<Vector2>;
+  private readonly body: Body;
+  private readonly vectorProperty: Property<Vector2>;
   protected transformProperty: Property<ModelViewTransform2>;
   private readonly propertyListener: ( visible: boolean ) => void;
   public static FORCE_SCALE: number;

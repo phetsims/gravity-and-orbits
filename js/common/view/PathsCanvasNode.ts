@@ -26,11 +26,11 @@ const STROKE_WIDTH = 3;
 
 class PathsCanvasNode extends CanvasNode {
   private readonly namedPoints: { [ key: string ]: NamedPoints };
-  private transformProperty: Property<ModelViewTransform2>;
+  private readonly transformProperty: Property<ModelViewTransform2>;
   private readonly bodies: Body[];
-  private pointAddedListener: ( point: Vector2, bodyName: BodyTypeEnum ) => void;
-  private pointRemovedListener: ( bodyName: BodyTypeEnum ) => void;
-  private clearedListener: ( bodyName: BodyTypeEnum ) => void;
+  private readonly pointAddedListener: ( point: Vector2, bodyName: BodyTypeEnum ) => void;
+  private readonly pointRemovedListener: ( bodyName: BodyTypeEnum ) => void;
+  private readonly clearedListener: ( bodyName: BodyTypeEnum ) => void;
 
   /**
    */
@@ -224,7 +224,7 @@ class PathsCanvasNode extends CanvasNode {
 gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
 
 class NamedPoints {
-  private type: BodyTypeEnum;
+  private readonly type: BodyTypeEnum;
   public points: Vector2[];
 
   /**

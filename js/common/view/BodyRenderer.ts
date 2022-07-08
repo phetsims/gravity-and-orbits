@@ -23,8 +23,8 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 export default abstract class BodyRenderer extends Node {
   private readonly body: Body;
   public targetBodyRenderer?: BodyRenderer;
-  private static ImageRenderer: typeof ImageRenderer;
-  private static SwitchableBodyRenderer: typeof SwitchableBodyRenderer;
+  private static readonly ImageRenderer: typeof ImageRenderer;
+  private static readonly SwitchableBodyRenderer: typeof SwitchableBodyRenderer;
 
   public constructor( body: Body ) {
 
@@ -44,8 +44,8 @@ gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
 export class SwitchableBodyRenderer extends BodyRenderer {
   public override targetBodyRenderer: BodyRenderer;
-  private defaultBodyRenderer: BodyRenderer;
-  private massListener: () => void;
+  private readonly defaultBodyRenderer: BodyRenderer;
+  private readonly massListener: () => void;
 
   /**
    * This SwitchableBodyRenderer displays one representation when the object is at a specific mass, and a different

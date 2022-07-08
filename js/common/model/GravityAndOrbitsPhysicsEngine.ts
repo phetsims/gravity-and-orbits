@@ -31,11 +31,11 @@ const getSmaller = ( other: Body, body: Body ): Body => other.massProperty.get()
 const getBodyState = ( body: Body ) => body.toBodyState();
 
 class GravityAndOrbitsPhysicsEngine {
-  private gravityEnabledProperty: Property<boolean>;
-  private adjustMoonOrbit: boolean;
+  private readonly gravityEnabledProperty: Property<boolean>;
+  private readonly adjustMoonOrbit: boolean;
   public clock: GravityAndOrbitsClock;
   public bodies: Body[];
-  private stepCompleteEmitter: Emitter<[]>;
+  private readonly stepCompleteEmitter: Emitter<[]>;
 
   /**
    * @param clock

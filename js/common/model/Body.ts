@@ -93,14 +93,14 @@ export default class Body extends PhetioObject {
   private readonly pathLengthLimit: number;
   private modelPathLength: number;
   public readonly color: Color;
-  private highlight: Color;
+  private readonly highlight: Color;
   private readonly rotationPeriod: number | null;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   public labelAngle: number;
-  private speedProperty: IReadOnlyProperty<number>;
+  private readonly speedProperty: IReadOnlyProperty<number>;
   private readonly isPlayingProperty: BooleanProperty;
   public readonly forceProperty: RewindableProperty<Vector2>;
-  private forceMagnitudeProperty: IReadOnlyProperty<number>;
+  private readonly forceMagnitudeProperty: IReadOnlyProperty<number>;
   public readonly isMovableProperty: BooleanProperty;
 
   public static BodyIO: IOType;
@@ -329,7 +329,7 @@ export default class Body extends PhetioObject {
     } );
 
     assert && assert( this.positionProperty.initialValue, 'initial value should be truthy' );
-    const initialPosition = this.positionProperty.initialValue!.minus( options.orbitalCenter );
+    const initialPosition = this.positionProperty.initialValue.minus( options.orbitalCenter );
     const distToCenter = initialPosition.magnitude;
 
     // determine the max path length for the body in model coordinates
