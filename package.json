@@ -52,7 +52,7 @@
         },
         "parserOptions": {
           "project": [
-            "./tsconfig.json"
+            "../gravity-and-orbits/tsconfig.json"
           ]
         }
       }
