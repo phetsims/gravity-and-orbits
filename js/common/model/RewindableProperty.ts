@@ -14,9 +14,9 @@ import Property from '../../../../axon/js/Property.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
-import merge from '../../../../phet-core/js/merge.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 
 type RewindablePropertyOptions = {
   units?: string;
@@ -37,9 +37,9 @@ class RewindableProperty<T> extends Property<T> {
    */
   public constructor( changeRewindValueProperty: IReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {
 
-    const options = merge( {
+    const options = combineOptions<RewindablePropertyOptions>( {
       tandem: Tandem.OPTIONAL
-    }, providedOptions ) as Pick<RewindablePropertyOptions, 'tandem'>;
+    }, providedOptions );
 
     super( value, options );
 

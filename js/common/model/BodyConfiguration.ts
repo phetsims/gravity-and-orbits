@@ -9,12 +9,12 @@
  */
 
 import Vector2 from '../../../../dot/js/Vector2.js';
-import merge from '../../../../phet-core/js/merge.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 type BodyConfigurationOptions = {
   rotationPeriod?: null | number;
-}
+};
 
 class BodyConfiguration {
 
@@ -29,7 +29,7 @@ class BodyConfiguration {
 
   public constructor( mass: number, radius: number, x: number, y: number, vx: number, vy: number, providedOptions?: BodyConfigurationOptions ) {
 
-    const options = merge( {
+    const options = optionize<BodyConfigurationOptions>()( {
       rotationPeriod: null // period of rotation, in seconds - null corresponds to no rotation
     }, providedOptions ) as Required<BodyConfigurationOptions>;
 

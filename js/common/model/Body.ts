@@ -15,7 +15,6 @@ import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Vector2, { Vector2State } from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
-import merge from '../../../../phet-core/js/merge.js';
 import PhetioObject, { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import ArrayIO from '../../../../tandem/js/types/ArrayIO.js';
 import BooleanIO from '../../../../tandem/js/types/BooleanIO.js';
@@ -33,6 +32,7 @@ import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 import IProperty from '../../../../axon/js/IProperty.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -42,7 +42,7 @@ const starString = gravityAndOrbitsStrings.star;
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
 
-type BodyOptions = {
+type SelfOptions = {
   pathLengthBuffer?: number;
   diameterScale?: number;
   massSettable?: boolean;
@@ -52,9 +52,9 @@ type BodyOptions = {
   pathLengthLimit?: number;
   rotationPeriod?: null | number;
   touchDilation?: number;
-} & PhetioObjectOptions;
-type BodyImplementationOptions = Pick<BodyOptions, 'tandem' | 'touchDilation' | 'diameterScale' | 'pathLengthBuffer' | 'massSettable' |
-  'pathLengthLimit' | 'massReadoutBelow' | 'rotationPeriod' | 'orbitalCenter' | 'maxPathLength'>;
+};
+
+type BodyOptions = SelfOptions & PhetioObjectOptions;
 
 export default class Body extends PhetioObject {
 
@@ -120,9 +120,11 @@ export default class Body extends PhetioObject {
    * @param [providedOptions]
    */
   public constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: string, model: GravityAndOrbitsModel,
-               tandem: Tandem, providedOptions?: BodyOptions ) {
+                      tandem: Tandem, providedOptions?: BodyOptions ) {
 
-    let options = merge( {
+    const options = optionize<BodyOptions, SelfOptions, PhetioObjectOptions>()( {
+
+      // @ts-ignore
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
       diameterScale: 1, // scale factor applied to the diameter
       massSettable: true, // can the mass of this body be set by the control panel?
@@ -134,7 +136,7 @@ export default class Body extends PhetioObject {
       phetioType: Body.BodyIO,
       touchDilation: 15,
       tandem: tandem
-    }, providedOptions ) as Required<BodyImplementationOptions>;
+    }, providedOptions );
 
     super( options );
 
@@ -166,9 +168,6 @@ export default class Body extends PhetioObject {
     } );
     this.boundsProperty = new Property( new Bounds2( 0, 0, 0, 0 ) );
 
-    options = merge( {
-      pathLengthBuffer: 0 // a buffer to alter the path trace if necessary
-    }, options ) as Required<BodyOptions>;
     this.pathLengthBuffer = options.pathLengthBuffer; // (read-only)
 
     this.massSettable = options.massSettable; // (read-only)

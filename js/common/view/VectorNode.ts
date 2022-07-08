@@ -10,17 +10,21 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
-import merge from '../../../../phet-core/js/merge.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
-import { Color, Node } from '../../../../scenery/js/imports.js';
+import { Color, Node, NodeOptions } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import Multilink from '../../../../axon/js/Multilink.js';
+import EmptyObjectType from '../../../../phet-core/js/types/EmptyObjectType.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 // constants
 const FORCE_SCALE = 76.0 / 5.179E15;
+
+type SelfOptions = EmptyObjectType;
+export type VectorNodeOptions = SelfOptions & NodeOptions;
 
 class VectorNode extends Node {
   private body: Body;
@@ -30,19 +34,9 @@ class VectorNode extends Node {
   public static FORCE_SCALE: number;
   protected readonly vectorNodeScale: number;
 
-  /**
-   * @param body
-   * @param transformProperty
-   * @param visibleProperty
-   * @param vectorProperty
-   * @param scale
-   * @param fill
-   * @param outline
-   * @param tandem
-   * @param [providedOptions]
-   */
-  public constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color, outline: Color, tandem: Tandem, providedOptions?: object ) {
-    const options = merge( {
+  public constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color, outline: Color, tandem: Tandem,
+                      providedOptions?: VectorNodeOptions ) {
+    const options = optionize<VectorNodeOptions, SelfOptions, NodeOptions>()( {
       tandem: tandem,
       visiblePropertyOptions: { phetioReadOnly: true }
     }, providedOptions );

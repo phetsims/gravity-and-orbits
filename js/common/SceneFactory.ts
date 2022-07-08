@@ -10,7 +10,6 @@
 
 import Utils from '../../../dot/js/Utils.js';
 import Vector2 from '../../../dot/js/Vector2.js';
-import merge from '../../../phet-core/js/merge.js';
 import StringUtils from '../../../phetcommon/js/util/StringUtils.js';
 import { Color, HBox, Image, Line, Node } from '../../../scenery/js/imports.js';
 import earth_png from '../../images/earth_png.js';
@@ -418,13 +417,13 @@ class Satellite extends Body {
 
 class Moon extends Body {
 
-  public constructor( model: GravityAndOrbitsModel, massSettable: boolean, massReadoutBelow: boolean, bodyConfiguration: BodyConfiguration, tandem: Tandem, options?: BodyOptions ) {
-    options = merge( {
+  public constructor( model: GravityAndOrbitsModel, massSettable: boolean, massReadoutBelow: boolean, bodyConfiguration: BodyConfiguration, tandem: Tandem, providedOptions?: BodyOptions ) {
+    const options = optionize<BodyOptions, any, any>()( { // eslint-disable-line
       pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
       massSettable: massSettable,
       massReadoutBelow: massReadoutBelow,
       rotationPeriod: null // rotation period in seconds, null means no rotation
-    }, options );
+    }, providedOptions );
 
     super(
       'moon',

@@ -6,29 +6,22 @@
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 
-import Screen from '../../../joist/js/Screen.js';
+import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
-import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import toScaleIcon_png from '../../mipmaps/toScaleIcon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
-import { ProfileColorProperty } from '../../../scenery/js/imports.js';
-import { PhetioObjectOptions } from '../../../tandem/js/PhetioObject.js';
-import Tandem from '../../../tandem/js/Tandem.js';
+import optionize from '../../../phet-core/js/optionize.js';
+import EmptyObjectType from '../../../phet-core/js/types/EmptyObjectType.js';
 
 const toScaleString = gravityAndOrbitsStrings.toScale;
 
-type ScreenOptions = {
-  backgroundColorProperty?: ProfileColorProperty;
-  tandem: Tandem;
-} & PhetioObjectOptions;
-
 class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {
-    const options = merge( {
+    const options = optionize<ScreenOptions, EmptyObjectType, ScreenOptions>()( {
       name: toScaleString,
 
       homeScreenIcon: new ScreenIcon( new Image( toScaleIcon_png ), {
@@ -36,7 +29,7 @@ class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
         maxIconHeightProportion: 1,
         fill: 'black'
       } )
-    }, providedOptions ) as ScreenOptions;
+    }, providedOptions );
 
     const viewTandem = options.tandem.createTandem( 'view' );
     super(

@@ -18,6 +18,8 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
+import EmptyObjectType from '../../../../phet-core/js/types/EmptyObjectType.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 const gravityString = gravityAndOrbitsStrings.gravity;
 const offString = gravityAndOrbitsStrings.off;
@@ -29,7 +31,6 @@ const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColors.foregroundProper
 const RADIO_OPTIONS = { radius: 7 };
 
 type GravityControlOptions = PhetioObjectOptions;
-type GravityControlImplementationOptions = Pick<GravityControlOptions, 'tandem'>;
 
 class GravityControl extends Node {
 
@@ -37,10 +38,12 @@ class GravityControl extends Node {
    * @param gravityEnabledProperty
    * @param [providedOptions] - This object contains options for main node of gravity menu.
    */
-  public constructor( gravityEnabledProperty: Property<boolean>, providedOptions?: Partial<GravityControlOptions> ) {
+  public constructor( gravityEnabledProperty: Property<boolean>, providedOptions?: GravityControlOptions ) {
     super( providedOptions );
 
-    const options = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as Required<GravityControlImplementationOptions>;
+    const options = optionize<GravityControlOptions, EmptyObjectType, PhetioObjectOptions>()( {
+      tandem: Tandem.OPTIONAL
+    }, providedOptions );
 
     const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
     const onTextNode = new Text( onString, TEXT_OPTIONS );

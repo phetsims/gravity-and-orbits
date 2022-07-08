@@ -6,29 +6,23 @@
  * @author Jesse Greenberg (PhET Interactive Simulations)
  */
 
-import Screen from '../../../joist/js/Screen.js';
+import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
-import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
-import Tandem from '../../../tandem/js/Tandem.js';
 import modelIcon_png from '../../mipmaps/modelIcon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
-import { ProfileColorProperty } from '../../../scenery/js/imports.js';
+import optionize from '../../../phet-core/js/optionize.js';
+import EmptyObjectType from '../../../phet-core/js/types/EmptyObjectType.js';
 
 const modelString = gravityAndOrbitsStrings.model;
 
-type ModelScreenOptions = {
-  tandem: Tandem;
-  backgroundColorProperty: ProfileColorProperty;
-};
-
 class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
-  public constructor( providedOptions?: Partial<ModelScreenOptions> ) {
+  public constructor( providedOptions?: ScreenOptions ) {
 
-    const options = merge( {
+    const options = optionize<ScreenOptions, EmptyObjectType, ScreenOptions>()( {
       name: modelString,
 
       homeScreenIcon: new ScreenIcon( new Image( modelIcon_png ), {
@@ -36,7 +30,7 @@ class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
         maxIconHeightProportion: 1,
         fill: 'black'
       } )
-    }, providedOptions ) as ModelScreenOptions;
+    }, providedOptions );
 
     const viewTandem = options.tandem.createTandem( 'view' );
     super(
