@@ -61,7 +61,7 @@ abstract class MassReadoutNode extends Node {
     } );
   }
 
-  protected abstract createText(): string
+  protected abstract createText(): string;
 }
 
 gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );

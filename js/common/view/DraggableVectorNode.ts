@@ -68,9 +68,9 @@ class DraggableVectorNode extends VectorNode {
     // Center the grab area on the tip (see getTip()) when any of its dependencies change
     const propertyListener = ( visible: boolean ) => {
       if ( visible ) {
-        const tip = this.getTip();
-        grabArea.center = tip;
-        text.center = tip;
+        const newTip = this.getTip();
+        grabArea.center = newTip;
+        text.center = newTip;
       }
     };
     Multilink.multilink( [ visibleProperty, vectorProperty, body.positionProperty, transformProperty ], propertyListener );

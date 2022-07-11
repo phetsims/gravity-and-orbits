@@ -65,7 +65,7 @@ abstract class ModeConfig {
     return totalMass;
   }
 
-  protected abstract getBodies(): BodyConfiguration[]
+  protected abstract getBodies(): BodyConfiguration[];
 }
 
 gravityAndOrbits.register( 'ModeConfig', ModeConfig );
