@@ -24,21 +24,8 @@ import Multilink from '../../../../axon/js/Multilink.js';
 
 class DraggableVectorNode extends VectorNode {
 
-  /**
-   * Constructor for DraggableVectorNode
-   * @param body
-   * @param transformProperty
-   * @param visibleProperty
-   * @param vectorProperty
-   * @param scale
-   * @param fill
-   * @param outline
-   * @param labelText
-   * @param tandem
-   * @param [providedOptions]
-   */
   public constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color,
-               outline: Color, labelText: string, tandem: Tandem, providedOptions?: object ) {
+                      outline: Color, labelText: string, tandem: Tandem, providedOptions?: object ) {
 
     super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, providedOptions );
 

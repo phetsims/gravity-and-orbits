@@ -61,7 +61,6 @@ class VectorNode extends Node {
       fill: fill,
       stroke: outline,
       pickable: false,
-      boundsMethod: 'none',
       isHeadDynamic: true,
       scaleTailToo: true
     } );
