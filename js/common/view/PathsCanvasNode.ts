@@ -25,7 +25,7 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 const STROKE_WIDTH = 3;
 
 class PathsCanvasNode extends CanvasNode {
-  private readonly namedPoints: { [ key: string ]: NamedPoints };
+  private readonly namedPoints: Record<string, NamedPoints>;
   private readonly transformProperty: Property<ModelViewTransform2>;
   private readonly bodies: Body[];
   private readonly pointAddedListener: ( point: Vector2, bodyName: BodyTypeEnum ) => void;
