@@ -13,7 +13,7 @@ import Emitter from '../../../../axon/js/Emitter.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
-import Vector2, { Vector2State } from '../../../../dot/js/Vector2.js';
+import Vector2, { Vector2StateObject } from '../../../../dot/js/Vector2.js';
 import Vector2Property from '../../../../dot/js/Vector2Property.js';
 import PhetioObject, { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import ArrayIO from '../../../../tandem/js/types/ArrayIO.js';
@@ -552,7 +552,7 @@ export default class Body extends PhetioObject {
   }
 }
 
-type BodyStateType = { pathLength: number; modelPathLength: number; path: Vector2State[] };
+type BodyStateType = { pathLength: number; modelPathLength: number; path: Vector2StateObject[] };
 
 Body.BodyIO = new IOType<Body, BodyStateType>( 'BodyIO', {
   valueType: Body,
