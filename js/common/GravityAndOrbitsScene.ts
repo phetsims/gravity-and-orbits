@@ -163,7 +163,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     this.massControlPanelTandemName = massControlPanelTandemName; // (read-only)
 
     this.dt = dt;
-    this.forceScale = forceScale as number;
+    this.forceScale = forceScale!;
     this.iconImage = iconImage;
 
     this.isPlayingProperty = model.isPlayingProperty;
