@@ -89,7 +89,7 @@ class GravityAndOrbitsModel {
     } );
   }
 
-  private step( dt: number ): void {
+  public step( dt: number ): void {
 
     // limit dt to 1 so there are no large jumps
     dt = Math.min( 1, dt );
