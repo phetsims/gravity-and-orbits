@@ -33,6 +33,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
 import IProperty from '../../../../axon/js/IProperty.js';
 import optionize from '../../../../phet-core/js/optionize.js';
+import IEmitter from '../../../../axon/js/IEmitter.js';
 
 const moonString = gravityAndOrbitsStrings.moon;
 const planetString = gravityAndOrbitsStrings.planet;
@@ -75,11 +76,11 @@ export default class Body extends PhetioObject {
   public readonly positionProperty: RewindableProperty<Vector2>;
   public readonly isCollidedProperty: RewindableProperty<boolean>;
   public readonly rotationProperty: RewindableProperty<number>;
-  public readonly pointAddedEmitter: Emitter<[ Vector2, BodyTypeEnum ]>;
-  public readonly pointRemovedEmitter: Emitter<[ BodyTypeEnum ]>;
-  public readonly clearedEmitter: Emitter<[ BodyTypeEnum ]>;
-  public readonly userModifiedPositionEmitter: Emitter<[]>;
-  public readonly userModifiedVelocityEmitter: Emitter<[]>;
+  public readonly pointAddedEmitter: IEmitter<[ Vector2, BodyTypeEnum ]>;
+  public readonly pointRemovedEmitter: IEmitter<[ BodyTypeEnum ]>;
+  public readonly clearedEmitter: IEmitter<[ BodyTypeEnum ]>;
+  public readonly userModifiedPositionEmitter: IEmitter;
+  public readonly userModifiedVelocityEmitter: IEmitter;
   public readonly tandemName: string;
   public readonly tickValue: number;
   public readonly tickLabel: string;

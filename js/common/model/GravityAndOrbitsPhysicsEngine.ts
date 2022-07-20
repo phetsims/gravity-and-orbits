@@ -16,6 +16,7 @@ import Body from './Body.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 import Property from '../../../../axon/js/Property.js';
 import BodyTypeEnum from './BodyTypeEnum.js';
+import IEmitter from '../../../../axon/js/IEmitter.js';
 
 /**
  * Return the smaller of two Body instances, for determining which survives a collision.
@@ -35,7 +36,7 @@ class GravityAndOrbitsPhysicsEngine {
   private readonly adjustMoonOrbit: boolean;
   public clock: GravityAndOrbitsClock;
   public bodies: Body[];
-  private readonly stepCompleteEmitter: Emitter<[]>;
+  private readonly stepCompleteEmitter: IEmitter;
 
   /**
    * @param clock
