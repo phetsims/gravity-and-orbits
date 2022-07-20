@@ -18,7 +18,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import EmptyObjectType from '../../../../phet-core/js/types/EmptyObjectType.js';
+import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 
 const gravityString = gravityAndOrbitsStrings.gravity;
@@ -41,7 +41,7 @@ class GravityControl extends Node {
   public constructor( gravityEnabledProperty: Property<boolean>, providedOptions?: GravityControlOptions ) {
     super( providedOptions );
 
-    const options = optionize<GravityControlOptions, EmptyObjectType, PhetioObjectOptions>()( {
+    const options = optionize<GravityControlOptions, EmptySelfOptions, PhetioObjectOptions>()( {
       tandem: Tandem.OPTIONAL
     }, providedOptions );
 

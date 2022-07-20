@@ -21,7 +21,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import optionize from '../../../../phet-core/js/optionize.js';
-import EmptyObjectType from '../../../../phet-core/js/types/EmptyObjectType.js';
+import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 // constants
 const TRACK_SIZE = new Dimension2( 3, 140 );
@@ -40,7 +40,7 @@ class ZoomControl extends Node {
    */
   public constructor( scaleProperty: Property<number>, tandem: Tandem, providedOptions?: ZoomControlOptions ) {
 
-    const options = optionize<ZoomControlOptions, EmptyObjectType, NodeOptions>()( {
+    const options = optionize<ZoomControlOptions, EmptySelfOptions, NodeOptions>()( {
       scale: 0.8,
       tandem: tandem,
       phetioEnabledPropertyInstrumented: true,
@@ -112,7 +112,7 @@ class SliderButton extends RectangularPushButton {
       sample.addChild( new Rectangle( BUTTON_SIZE / 2 - 1, 4, 2, BUTTON_SIZE - 8, { fill: 'black' } ) );
     }
 
-    const options = optionize<RectangularPushButtonOptions, EmptyObjectType, RectangularPushButtonOptions>()( {
+    const options = optionize<RectangularPushButtonOptions, EmptySelfOptions, RectangularPushButtonOptions>()( {
       content: sample,
       xMargin: 0,
       yMargin: 0,

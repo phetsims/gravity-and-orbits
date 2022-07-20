@@ -22,7 +22,7 @@ import Property from '../../../../axon/js/Property.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import optionize from '../../../../phet-core/js/optionize.js';
-import EmptyObjectType from '../../../../phet-core/js/types/EmptyObjectType.js';
+import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SceneSelectionControlsOptions = {
   tandem: Tandem;
@@ -101,7 +101,7 @@ class SceneResetButton extends RectangularPushButton {
    * @param [providedOptions]
    */
   public constructor( scene: GravityAndOrbitsScene, providedOptions?: RectangularPushButtonOptions ) {
-    const options = optionize<RectangularPushButtonOptions, EmptyObjectType, RectangularPushButtonOptions>()( {
+    const options = optionize<RectangularPushButtonOptions, EmptySelfOptions, RectangularPushButtonOptions>()( {
       content: new Node( {
         children: [
           new Image( resetArrow_png, { scale: 0.3 } )

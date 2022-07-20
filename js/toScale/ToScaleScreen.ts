@@ -15,13 +15,13 @@ import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 import optionize from '../../../phet-core/js/optionize.js';
-import EmptyObjectType from '../../../phet-core/js/types/EmptyObjectType.js';
+import { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
 const toScaleString = gravityAndOrbitsStrings.toScale;
 
 class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {
-    const options = optionize<ScreenOptions, EmptyObjectType, ScreenOptions>()( {
+    const options = optionize<ScreenOptions, EmptySelfOptions, ScreenOptions>()( {
       name: toScaleString,
 
       homeScreenIcon: new ScreenIcon( new Image( toScaleIcon_png ), {
