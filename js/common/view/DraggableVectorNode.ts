@@ -10,10 +10,7 @@
 import Property from '../../../../axon/js/Property.js';
 import { Shape } from '../../../../kite/js/imports.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { DragListener, PressListenerEvent } from '../../../../scenery/js/imports.js';
-import { Path } from '../../../../scenery/js/imports.js';
-import { Text } from '../../../../scenery/js/imports.js';
-import { Color } from '../../../../scenery/js/imports.js';
+import { Color, DragListener, Path, PressListenerEvent, Text } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import VectorNode from './VectorNode.js';
 import Body from '../model/Body.js';

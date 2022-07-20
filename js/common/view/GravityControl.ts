@@ -8,9 +8,7 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { HBox } from '../../../../scenery/js/imports.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import { Text } from '../../../../scenery/js/imports.js';
+import { HBox, Node, Text } from '../../../../scenery/js/imports.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
@@ -18,8 +16,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 const gravityString = gravityAndOrbitsStrings.gravity;
 const offString = gravityAndOrbitsStrings.off;

@@ -14,8 +14,7 @@ import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenVie
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
-import optionize from '../../../phet-core/js/optionize.js';
-import { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
 const toScaleString = gravityAndOrbitsStrings.toScale;
 

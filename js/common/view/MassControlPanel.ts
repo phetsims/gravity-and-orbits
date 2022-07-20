@@ -16,8 +16,7 @@ import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyMassControl from './BodyMassControl.js';
 import Body from '../model/Body.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
-import { optionize3, OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
+import { EmptySelfOptions, optionize3, OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
 import merge from '../../../../phet-core/js/merge.js';
 
 const moonMassString = gravityAndOrbitsStrings.moonMass;

@@ -6,8 +6,8 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 
-import './common/model/RewindablePropertyTests.js';
 import qunitStart from '../../chipper/js/sim-tests/qunitStart.js';
+import './common/model/RewindablePropertyTests.js';
 
 // Since our tests are loaded asynchronously, we must direct QUnit to begin the tests
 qunitStart();

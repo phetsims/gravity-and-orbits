@@ -8,11 +8,7 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import { HStrut } from '../../../../scenery/js/imports.js';
-import { Image } from '../../../../scenery/js/imports.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import { VBox } from '../../../../scenery/js/imports.js';
-import { Color } from '../../../../scenery/js/imports.js';
+import { Color, HStrut, Image, Node, VBox } from '../../../../scenery/js/imports.js';
 import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import RectangularPushButton, { RectangularPushButtonOptions } from '../../../../sun/js/buttons/RectangularPushButton.js';
 import resetArrow_png from '../../../../scenery-phet/images/resetArrow_png.js';
@@ -21,8 +17,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import optionize from '../../../../phet-core/js/optionize.js';
-import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SceneSelectionControlsOptions = {
   tandem: Tandem;
