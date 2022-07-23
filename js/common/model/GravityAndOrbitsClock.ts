@@ -9,9 +9,6 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-
-
-
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import EventTimer from '../../../../phet-core/js/EventTimer.js';
