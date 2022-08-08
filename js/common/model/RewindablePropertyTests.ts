@@ -10,5 +10,5 @@ QUnit.test( 'Basic test', assert => {
 
   const r = new RewindableProperty( new BooleanProperty( false ), 'hello' );
   r.set( 'bye' );
-  assert.ok( r.differentProperty.value === true, 'should be different' );
+  assert.ok( r.differentProperty.value, 'should be different' );
 } );

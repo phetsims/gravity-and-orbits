@@ -94,7 +94,7 @@ class BodyNode extends Node {
         body.userControlled = false;
 
         // reset the simulation time when the planet is released
-        if ( isPlayingProperty.value !== true ) {
+        if ( !isPlayingProperty.value ) {
           clock.setSimulationTime( 0.0 );
 
           // if paused, on release, the state of the orbital system should be saved so that rewind will revert to the
