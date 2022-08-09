@@ -7,6 +7,7 @@
  */
 
 import { CreditsData } from '../../joist/js/CreditsNode.js';
+import PreferencesConfiguration from '../../joist/js/preferences/PreferencesConfiguration.js';
 import Sim, { SimOptions } from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
@@ -32,11 +33,14 @@ simLauncher.launch( () => {
   const simOptions: SimOptions = {
     credits: credits,
 
-    // Creates content for the Options dialog
-    createOptionsDialogContent: ( tandem: Tandem ) => new GlobalOptionsNode( tandem ),
-
     // phet-io
-    phetioDesigned: true
+    phetioDesigned: true,
+
+    preferencesConfiguration: new PreferencesConfiguration( {
+      generalOptions: {
+        createSimControls: tandem => new GlobalOptionsNode( tandem )
+      }
+    } )
   };
 
   const backgroundColorProperty = GravityAndOrbitsColors.backgroundProperty;
