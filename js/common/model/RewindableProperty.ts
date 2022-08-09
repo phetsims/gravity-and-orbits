@@ -15,7 +15,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 
 type RewindablePropertyOptions = {
@@ -25,7 +25,7 @@ type RewindablePropertyOptions = {
 
 class RewindableProperty<T> extends Property<T> {
   private rewindValue: T;
-  private readonly changeRewindValueProperty: IReadOnlyProperty<boolean>;
+  private readonly changeRewindValueProperty: TReadOnlyProperty<boolean>;
   public readonly differentProperty: BooleanProperty;
 
   public static RewindablePropertyIO: ( parameterType: IOType ) => IOType;
@@ -35,7 +35,7 @@ class RewindableProperty<T> extends Property<T> {
    * @param value
    * @param [providedOptions]
    */
-  public constructor( changeRewindValueProperty: IReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {
+  public constructor( changeRewindValueProperty: TReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {
 
     const options = combineOptions<RewindablePropertyOptions>( {
       tandem: Tandem.OPTIONAL

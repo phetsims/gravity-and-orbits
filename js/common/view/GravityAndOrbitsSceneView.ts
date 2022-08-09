@@ -31,7 +31,7 @@ import ZoomControl from './ZoomControl.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
 const vString = gravityAndOrbitsStrings.v;
@@ -70,7 +70,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     const velocityVectorColorOutline = new Color( 64, 64, 64 );
 
     // Use canvas coordinates to determine whether something has left the visible area
-    const isReturnableProperties: IReadOnlyProperty<boolean>[] = [];
+    const isReturnableProperties: TReadOnlyProperty<boolean>[] = [];
     bodies.forEach( body => {
       const bodyNode = new BodyNode( body, body.labelAngle, model.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
       const massReadoutNode = scene.massReadoutFactory( bodyNode, model.showMassProperty );

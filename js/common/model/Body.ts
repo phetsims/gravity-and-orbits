@@ -30,7 +30,7 @@ import { Color } from '../../../../scenery/js/imports.js';
 import BodyRenderer from '../view/BodyRenderer.js';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import IProperty from '../../../../axon/js/IProperty.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import IEmitter from '../../../../axon/js/IEmitter.js';
@@ -98,10 +98,10 @@ export default class Body extends PhetioObject {
   private readonly rotationPeriod: number | null;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   public labelAngle: number;
-  private readonly speedProperty: IReadOnlyProperty<number>;
+  private readonly speedProperty: TReadOnlyProperty<number>;
   private readonly isPlayingProperty: BooleanProperty;
   public readonly forceProperty: RewindableProperty<Vector2>;
-  private readonly forceMagnitudeProperty: IReadOnlyProperty<number>;
+  private readonly forceMagnitudeProperty: TReadOnlyProperty<number>;
   public readonly isMovableProperty: BooleanProperty;
 
   public static BodyIO: IOType;

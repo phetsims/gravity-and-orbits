@@ -11,12 +11,12 @@ import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import Body from './Body.js';
-import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 class Pair {
   private readonly body1: Body;
   private readonly body2: Body;
-  private readonly distanceProperty: IReadOnlyProperty<number>;
+  private readonly distanceProperty: TReadOnlyProperty<number>;
 
   public constructor( body1: Body, body2: Body, tandem: Tandem ) {
     assert && assert( body1.massProperty.value > body2.massProperty.value, 'Should be ordered big to small' );

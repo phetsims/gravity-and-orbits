@@ -14,7 +14,7 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyNode from './BodyNode.js';
 import MassReadoutNode from './MassReadoutNode.js';
-import IReadOnlyProperty from '../../../../axon/js/IReadOnlyProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 const billionBillionSpaceStationMassesString = gravityAndOrbitsStrings.billionBillionSpaceStationMasses;
 
@@ -24,7 +24,7 @@ const spaceStationMassString = gravityAndOrbitsStrings.spaceStationMass;
 
 class SpaceStationMassReadoutNode extends MassReadoutNode {
 
-  public constructor( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean> ) {
+  public constructor( bodyNode: BodyNode, visibleProperty: TReadOnlyProperty<boolean> ) {
     super( bodyNode, visibleProperty, bodyNode.body.type === 'planet' ? {
       textMaxWidth: 400
     } : {} );

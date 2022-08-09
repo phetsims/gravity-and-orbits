@@ -34,7 +34,7 @@ import VectorNode from './view/VectorNode.js';
 import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import BodyNode from './view/BodyNode.js';
-import IReadOnlyProperty from '../../../axon/js/IReadOnlyProperty.js';
+import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
 
 const earthDaysString = gravityAndOrbitsStrings.earthDays;
@@ -104,7 +104,7 @@ class SceneFactory {
     earthMoon.center();
     earthSpaceStation.center();
 
-    const readoutInEarthMasses = ( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean> ) => new EarthMassReadoutNode( bodyNode, visibleProperty );
+    const readoutInEarthMasses = ( bodyNode: BodyNode, visibleProperty: TReadOnlyProperty<boolean> ) => new EarthMassReadoutNode( bodyNode, visibleProperty );
 
     // Create the actual modes (GravityAndOrbitsModes) from the specifications passed in (ModeConfigs).
     const SUN_MODES_VELOCITY_SCALE = 4.48E6;
@@ -188,7 +188,7 @@ class SceneFactory {
         gridCenter: new Vector2( earthMoon.planet.x, 0 )
       } ) );
 
-    const spaceStationMassReadoutFactory = ( bodyNode: BodyNode, visibleProperty: IReadOnlyProperty<boolean> ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
+    const spaceStationMassReadoutFactory = ( bodyNode: BodyNode, visibleProperty: TReadOnlyProperty<boolean> ) => new SpaceStationMassReadoutNode( bodyNode, visibleProperty );
     const planetSatelliteSceneTandem = modelTandem.createTandem( 'planetSatelliteScene' );
     const planet3 = new Planet( model, earthSpaceStation.planet, planetSatelliteSceneTandem.createTandem( 'planet' ), {
       maxPathLength: 35879455, // in km
