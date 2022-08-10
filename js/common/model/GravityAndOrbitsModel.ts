@@ -85,7 +85,7 @@ class GravityAndOrbitsModel {
     this.sceneProperty = new Property( this.sceneList.scenes[ 0 ], {
       tandem: tandem.createTandem( 'sceneProperty' ),
       validValues: this.sceneList.scenes,
-      phetioType: Property.PropertyIO( ReferenceIO( IOType.ObjectIO ) )
+      phetioValueType: ReferenceIO( IOType.ObjectIO )
     } );
   }
 

@@ -236,7 +236,7 @@ export default class Body extends PhetioObject {
     // rewindable properties - body states can be rewound, and these properties can have saved states to support this
 
     this.positionProperty = new RewindableProperty<Vector2>( changeRewindValueProperty, new Vector2( bodyConfiguration.x, bodyConfiguration.y ), {
-      phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
+      phetioValueType: Vector2.Vector2IO,
       tandem: tandem.createTandem( 'positionProperty' ),
       units: 'm',
       phetioHighFrequency: true,
@@ -244,7 +244,7 @@ export default class Body extends PhetioObject {
     } );
 
     this.velocityProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( bodyConfiguration.vx, bodyConfiguration.vy ), {
-      phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
+      phetioValueType: Vector2.Vector2IO,
       tandem: tandem.createTandem( 'velocityProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
@@ -252,7 +252,7 @@ export default class Body extends PhetioObject {
     } );
 
     this.speedProperty = new DerivedProperty( [ this.velocityProperty ], velocity => velocity.magnitude, {
-      phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
+      phetioValueType: NumberIO,
       tandem: tandem.createTandem( 'speedProperty' ),
       units: 'm/s',
       phetioHighFrequency: true,
@@ -261,7 +261,7 @@ export default class Body extends PhetioObject {
 
     this.forceProperty = new RewindableProperty( changeRewindValueProperty, new Vector2( 0, 0 ), {
       phetioDocumentation: 'The net force of gravity exerted on this body by other bodies',
-      phetioType: RewindableProperty.RewindablePropertyIO( Vector2.Vector2IO ),
+      phetioValueType: Vector2.Vector2IO,
       tandem: tandem.createTandem( 'forceProperty' ),
       phetioHighFrequency: true,
       units: 'N',
@@ -270,7 +270,7 @@ export default class Body extends PhetioObject {
 
     this.forceMagnitudeProperty = new DerivedProperty( [ this.forceProperty ], force => force.magnitude, {
       phetioDocumentation: 'The magnitude of the net force on this body by other bodies',
-      phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
+      phetioValueType: NumberIO,
       tandem: tandem.createTandem( 'forceMagnitudeProperty' ),
       phetioHighFrequency: true,
       units: 'N'
@@ -278,21 +278,21 @@ export default class Body extends PhetioObject {
 
     this.massProperty = new RewindableProperty( changeRewindValueProperty, bodyConfiguration.mass, {
       tandem: tandem.createTandem( 'massProperty' ),
-      phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
+      phetioValueType: NumberIO,
       units: 'kg',
       phetioDocumentation: 'The mass of the body'
     } );
 
     this.isCollidedProperty = new RewindableProperty<boolean>( changeRewindValueProperty, false, {
       tandem: tandem.createTandem( 'isCollidedProperty' ),
-      phetioType: RewindableProperty.RewindablePropertyIO( BooleanIO ),
+      phetioValueType: BooleanIO,
       phetioReadOnly: true,
       phetioDocumentation: 'True if the body has collided with another body'
     } );
 
     this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0, {
       tandem: tandem.createTandem( 'rotationProperty' ),
-      phetioType: RewindableProperty.RewindablePropertyIO( NumberIO ),
+      phetioValueType: NumberIO,
       units: 'radians',
       phetioHighFrequency: true,
       phetioDocumentation: 'The rotation of the body about its own origin'

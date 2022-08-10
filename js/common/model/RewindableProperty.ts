@@ -10,18 +10,19 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import Property from '../../../../axon/js/Property.js';
+import Property, { PropertyOptions } from '../../../../axon/js/Property.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
+import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 
-type RewindablePropertyOptions = {
+type RewindablePropertyOptions<T> = {
   units?: string;
   tandem: Tandem;
-} & PhetioObjectOptions;
+} & StrictOmit<PhetioObjectOptions, 'phetioType'> & Pick<PropertyOptions<T>, 'phetioOuterType' | 'phetioValueType'>;
 
 class RewindableProperty<T> extends Property<T> {
   private rewindValue: T;
@@ -35,10 +36,11 @@ class RewindableProperty<T> extends Property<T> {
    * @param value
    * @param [providedOptions]
    */
-  public constructor( changeRewindValueProperty: TReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions ) {
+  public constructor( changeRewindValueProperty: TReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions<T> ) {
 
-    const options = combineOptions<RewindablePropertyOptions>( {
-      tandem: Tandem.OPTIONAL
+    const options = combineOptions<RewindablePropertyOptions<T>>( {
+      tandem: Tandem.OPTIONAL,
+      phetioOuterType: RewindableProperty.RewindablePropertyIO
     }, providedOptions );
 
     super( value, options );

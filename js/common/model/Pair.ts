@@ -29,7 +29,7 @@ class Pair {
       this.body2.positionProperty
     ], ( body1Position, body2Position ) => body2Position.distance( body1Position ), {
       tandem: tandem.createTandem( 'distanceProperty' ),
-      phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
+      phetioValueType: NumberIO,
       phetioHighFrequency: true,
       units: 'm'
     } );
