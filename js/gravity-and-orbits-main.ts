@@ -12,7 +12,6 @@ import Sim, { SimOptions } from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import GravityAndOrbitsColors from './common/GravityAndOrbitsColors.js';
-import GlobalOptionsNode from './common/view/GlobalOptionsNode.js';
 import gravityAndOrbitsStrings from './gravityAndOrbitsStrings.js';
 import ModelScreen from './model/ModelScreen.js';
 import ToScaleScreen from './toScale/ToScaleScreen.js';
@@ -37,8 +36,8 @@ simLauncher.launch( () => {
     phetioDesigned: true,
 
     preferencesConfiguration: new PreferencesConfiguration( {
-      generalOptions: {
-        createSimControls: tandem => new GlobalOptionsNode( tandem )
+      visualOptions: {
+        supportsProjectorMode: true
       }
     } )
   };
