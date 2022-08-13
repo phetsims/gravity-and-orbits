@@ -39,11 +39,6 @@ import optionize from '../../../phet-core/js/optionize.js';
 import IProperty from '../../../axon/js/IProperty.js';
 import TinyProperty from '../../../axon/js/TinyProperty.js';
 
-const earthString = gravityAndOrbitsStrings.earth;
-const ourMoonString = gravityAndOrbitsStrings.ourMoon;
-const ourSunString = gravityAndOrbitsStrings.ourSun;
-const spaceStationString = gravityAndOrbitsStrings.spaceStation;
-
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.
 const SUN_RADIUS = 6.957E8; // m
@@ -436,7 +431,7 @@ class Satellite extends Body {
       getImageRenderer( spaceStation_png ),
       -Math.PI / 4,
       earthSpaceStation.satellite.mass,
-      spaceStationString,
+      gravityAndOrbitsStrings.spaceStationProperty,
       model,
       tandem,
       options
@@ -462,7 +457,7 @@ class Moon extends Body {
       getSwitchableRenderer( moon_png, moonGeneric_png, bodyConfiguration.mass ),
       -3 * Math.PI / 4,
       bodyConfiguration.mass,
-      ourMoonString,
+      gravityAndOrbitsStrings.ourMoonProperty,
       model,
       tandem,
       options
@@ -489,7 +484,7 @@ class Planet extends Body {
       getSwitchableRenderer( earth_png, planetGeneric_png, bodyConfiguration.mass ),
       -Math.PI / 4,
       bodyConfiguration.mass,
-      earthString,
+      gravityAndOrbitsStrings.earthProperty,
       model,
       tandem,
       providedOptions
@@ -508,7 +503,7 @@ class Star extends Body {
       getImageRenderer( sun_png ),
       -Math.PI / 4,
       bodyConfiguration.mass,
-      ourSunString,
+      gravityAndOrbitsStrings.ourSunProperty,
       model,
       tandem,
       options
