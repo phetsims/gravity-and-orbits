@@ -19,18 +19,13 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { EmptySelfOptions, optionize3, OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
 import merge from '../../../../phet-core/js/merge.js';
 
-const moonMassString = gravityAndOrbitsStrings.moonMass;
-const planetMassString = gravityAndOrbitsStrings.planetMass;
-const satelliteMassString = gravityAndOrbitsStrings.satelliteMass;
-const starMassString = gravityAndOrbitsStrings.starMass;
-
 // constants
 const CONTROL_FONT = new PhetFont( 14 );
 const LABEL_MAP = {
-  planet: planetMassString,
-  satellite: satelliteMassString,
-  star: starMassString,
-  moon: moonMassString
+  planet: gravityAndOrbitsStrings.planetMassProperty,
+  satellite: gravityAndOrbitsStrings.satelliteMassProperty,
+  star: gravityAndOrbitsStrings.starMassProperty,
+  moon: gravityAndOrbitsStrings.moonMassProperty
 };
 
 type MassControlPanelOptions = VBoxOptions & PickRequired<VBoxOptions, 'tandem'>;
@@ -55,12 +50,13 @@ class MassControlPanel extends VBox {
       const massSettableBodyTandem = options.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
       const sliderNode = new Node( { tandem: massSettableBodyTandem } );
 
-      const label = new Text( LABEL_MAP[ massSettableBody.type ], {
+      const label = new Text( LABEL_MAP[ massSettableBody.type ].value, {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColors.foregroundProperty,
         maxWidth: 175,
-        tandem: massSettableBodyTandem.createTandem( 'massLabel' )
+        tandem: massSettableBodyTandem.createTandem( 'massLabel' ),
+        textProperty: LABEL_MAP[ massSettableBody.type ]
       } );
 
       const icon = new Node( {

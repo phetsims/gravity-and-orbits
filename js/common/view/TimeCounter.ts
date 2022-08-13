@@ -19,8 +19,6 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
 
-const clearString = gravityAndOrbitsStrings.clear;
-
 // constants
 const FONT_SIZE = 22;
 
@@ -46,11 +44,12 @@ class TimeCounter extends Node {
       maxWidth: 200
     } );
 
-    const clearButton = new TextPushButton( clearString, {
+    const clearButton = new TextPushButton( gravityAndOrbitsStrings.clearProperty, {
       font: new PhetFont( FONT_SIZE ),
       listener: () => clock.setSimulationTime( 0 ),
       maxWidth: 200,
-      tandem: tandem.createTandem( 'clearButton' )
+      tandem: tandem.createTandem( 'clearButton' ),
+      widthSizable: true
     } );
 
     // update text representation of day

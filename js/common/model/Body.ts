@@ -35,11 +35,6 @@ import IProperty from '../../../../axon/js/IProperty.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import IEmitter from '../../../../axon/js/IEmitter.js';
 
-const moonString = gravityAndOrbitsStrings.moon;
-const planetString = gravityAndOrbitsStrings.planet;
-const satelliteString = gravityAndOrbitsStrings.satellite;
-const starString = gravityAndOrbitsStrings.star;
-
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
 const tempVector = new Vector2( 0, 0 );
 
@@ -68,7 +63,7 @@ export default class Body extends PhetioObject {
   public readonly touchDilation: number;
   private readonly previousPosition: Vector2;
   public readonly type: BodyTypeEnum;
-  public readonly labelString: string | null;
+  public readonly labelStringProperty: IProperty<string> | null;
   public readonly massProperty: RewindableProperty<number>;
   public readonly velocityProperty: RewindableProperty<Vector2>;
   public readonly diameterProperty: NumberProperty;
@@ -203,12 +198,12 @@ export default class Body extends PhetioObject {
     this.rotationPeriod = options.rotationPeriod;
 
     // (read-only) - passed to visual labels, must be translatable
-    this.labelString = this.type === 'planet' ? planetString :
-                       this.type === 'satellite' ? satelliteString :
-                       this.type === 'star' ? starString :
-                       this.type === 'moon' ? moonString :
+    this.labelStringProperty = this.type === 'planet' ? gravityAndOrbitsStrings.planetProperty :
+                       this.type === 'satellite' ? gravityAndOrbitsStrings.satelliteProperty :
+                       this.type === 'star' ? gravityAndOrbitsStrings.starProperty :
+                       this.type === 'moon' ? gravityAndOrbitsStrings.moonProperty :
                        null;
-    assert && assert( this.labelString, `no label found for body with identifier ${this.type}` );
+    assert && assert( this.labelStringProperty, `no label found for body with identifier ${this.type}` );
 
     assert && assert( renderer !== null );
 

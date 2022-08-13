@@ -29,13 +29,6 @@ import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
-const gravityForceString = gravityAndOrbitsStrings.gravityForce;
-const gridString = gravityAndOrbitsStrings.grid;
-const massString = gravityAndOrbitsStrings.mass;
-const measuringTapeString = gravityAndOrbitsStrings.measuringTape;
-const pathString = gravityAndOrbitsStrings.path;
-const velocityString = gravityAndOrbitsStrings.velocity;
-
 // constants
 const FONT = new PhetFont( 18 );
 const ARROW_Y_COORDINATE = -10;
@@ -71,12 +64,12 @@ class CheckboxPanel extends VBox {
     const children = [];
     const options = combineOptions<CheckboxPanelOptions>( { tandem: Tandem.OPTIONAL }, providedOptions );
 
-    const gravityForceTextNode = new Text( gravityForceString, TEXT_OPTIONS );
-    const velocityTextNode = new Text( velocityString, TEXT_OPTIONS );
-    const massTextNode = new Text( massString, TEXT_OPTIONS );
-    const pathTextNode = new Text( pathString, TEXT_OPTIONS );
-    const gridTextNode = new Text( gridString, TEXT_OPTIONS );
-    const measuringTapeTextNode = new Text( measuringTapeString, TEXT_OPTIONS );
+    const gravityForceTextNode = new Text( gravityAndOrbitsStrings.gravityForce, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.gravityForceProperty } );
+    const velocityTextNode = new Text( gravityAndOrbitsStrings.velocity, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.velocityProperty } );
+    const massTextNode = new Text( gravityAndOrbitsStrings.mass, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.massProperty } );
+    const pathTextNode = new Text( gravityAndOrbitsStrings.path, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.pathProperty } );
+    const gridTextNode = new Text( gravityAndOrbitsStrings.grid, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.gridProperty } );
+    const measuringTapeTextNode = new Text( gravityAndOrbitsStrings.measuringTape, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.measuringTapeProperty } );
     const optionsWithTandem = ( tandemName: string ) => merge( { tandem: options.tandem!.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
 
     // gravity force checkbox
