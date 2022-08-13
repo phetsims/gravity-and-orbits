@@ -11,7 +11,7 @@
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import StopwatchNode from '../../../../scenery-phet/js/StopwatchNode.js';
-import { Node, Text, VBox } from '../../../../scenery/js/imports.js';
+import { Node, NodeOptions, Text, VBox } from '../../../../scenery/js/imports.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -31,7 +31,7 @@ class TimeCounter extends Node {
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: { bottom: number; right: number; scale: number } ) {
+  public constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
     super();
 
     // day text counter
@@ -64,8 +64,6 @@ class TimeCounter extends Node {
     this.addChild( new VBox( {
       align: 'right',
 
-      // Prevent the "Clear" button from moving when the number text changes
-      resize: false,
       spacing: 4,
       children: [
         dayText,

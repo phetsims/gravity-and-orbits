@@ -15,7 +15,7 @@ import platform from '../../../../phet-core/js/platform.js';
 import MeasuringTapeNode, { MeasuringTapeUnits } from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { Color, Rectangle } from '../../../../scenery/js/imports.js';
+import { AlignBox, Color, Rectangle } from '../../../../scenery/js/imports.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
@@ -117,10 +117,14 @@ class GravityAndOrbitsSceneView extends Rectangle {
     model.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
-    this.addChild( new TimeCounter( scene.timeFormatter, scene.physicsEngine.clock, tandem.createTandem( 'timeCounter' ), {
-      bottom: STAGE_SIZE.bottom - 20,
-      right: STAGE_SIZE.right - 50,
+    this.addChild( new AlignBox( new TimeCounter( scene.timeFormatter, scene.physicsEngine.clock, tandem.createTandem( 'timeCounter' ), {
       scale: 1.2
+    } ), {
+      alignBounds: STAGE_SIZE,
+      rightMargin: 50,
+      bottomMargin: 20,
+      xAlign: 'right',
+      yAlign: 'bottom'
     } ) );
 
     // Add measuring tape
