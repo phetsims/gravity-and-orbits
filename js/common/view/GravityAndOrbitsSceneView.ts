@@ -14,7 +14,7 @@ import platform from '../../../../phet-core/js/platform.js';
 import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { AlignBox, Color, Rectangle } from '../../../../scenery/js/imports.js';
+import { AlignBox, Color, Rectangle, VBox } from '../../../../scenery/js/imports.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
@@ -211,7 +211,8 @@ class GravityAndOrbitsSceneView extends Rectangle {
       },
       tandem: tandem.createTandem( 'returnObjectsButton' )
     } );
-    this.addChild( returnObjectsButton );
+    // TODO: hack for https://github.com/phetsims/chipper/issues/1302 to get the button to resize down (more work needed)
+    this.addChild( new VBox( { children: [ returnObjectsButton ] } ) );
 
     anythingReturnable.linkAttribute( returnObjectsButton, 'visible' );
 
