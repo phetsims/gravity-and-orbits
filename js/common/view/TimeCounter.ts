@@ -8,6 +8,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import IProperty from '../../../../axon/js/IProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import StopwatchNode from '../../../../scenery-phet/js/StopwatchNode.js';
@@ -23,7 +24,6 @@ import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
 const FONT_SIZE = 22;
 
 class TimeCounter extends Node {
-  private readonly timeListener: ( time: number ) => void;
 
   /**
    * @param timeFormatter
@@ -31,7 +31,7 @@ class TimeCounter extends Node {
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
+  public constructor( timeFormatter: ( timeProperty: IProperty<number> ) => IProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
     super();
 
     // day text counter
@@ -52,14 +52,13 @@ class TimeCounter extends Node {
       widthSizable: true
     } );
 
+    dayText.textProperty = timeFormatter( clock.timeProperty );
+
     // update text representation of day
-    this.timeListener = time => {
+    clock.timeProperty.link( time => {
       assert && assert( !isNaN( time ), 'time should be a number' );
-      dayText.setText( timeFormatter( time ) );
-      dayText.right = clearButton.right;
-      clearButton.enabled = ( time !== 0 );
-    };
-    clock.timeProperty.link( this.timeListener );
+      clearButton.enabled = time !== 0;
+    } );
 
     this.addChild( new VBox( {
       align: 'right',

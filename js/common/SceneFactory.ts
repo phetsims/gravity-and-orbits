@@ -36,15 +36,12 @@ import Tandem from '../../../tandem/js/Tandem.js';
 import BodyNode from './view/BodyNode.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
+import IProperty from '../../../axon/js/IProperty.js';
+import TinyProperty from '../../../axon/js/TinyProperty.js';
 
-const earthDaysString = gravityAndOrbitsStrings.earthDays;
-const earthDayString = gravityAndOrbitsStrings.earthDay;
-const earthMinutesString = gravityAndOrbitsStrings.earthMinutes;
-const earthMinuteString = gravityAndOrbitsStrings.earthMinute;
 const earthString = gravityAndOrbitsStrings.earth;
 const ourMoonString = gravityAndOrbitsStrings.ourMoon;
 const ourSunString = gravityAndOrbitsStrings.ourSun;
-const pattern0Value1UnitsString = gravityAndOrbitsStrings.pattern[ '0value' ][ '1units' ];
 const spaceStationString = gravityAndOrbitsStrings.spaceStation;
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
@@ -118,7 +115,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       planetStar,
-      scaledDays(),
+      scaledDays,
       this.createIconImage( true, true, false, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
@@ -150,7 +147,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       sunEarthMoon,
-      scaledDays(),
+      scaledDays,
       this.createIconImage( true, true, true, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
@@ -176,7 +173,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       earthMoon,
-      scaledDays(),
+      scaledDays,
       this.createIconImage( false, true, true, false ),
       SUN_MODES_VELOCITY_SCALE * 0.06,
       readoutInEarthMasses,
@@ -378,22 +375,54 @@ const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: strin
 /**
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
  */
-const scaledDays = () => {
-  return ( time: number ) => {
-    const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
-    const units = ( value === 1 ) ? earthDayString : earthDaysString;
-    return StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( value, 0 ), units );
+const scaledDays = ( timeProperty: IProperty<number> ) => {
+  // Can't use a DerivedProperty, because it needs to be settable
+  const property = new TinyProperty( '' );
+
+  const earthDayStringProperty = gravityAndOrbitsStrings.earthDayProperty;
+  const earthDaysStringProperty = gravityAndOrbitsStrings.earthDaysProperty;
+  const patternStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ];
+
+  const update = () => {
+    const value = ( timeProperty.value / GravityAndOrbitsClock.SECONDS_PER_DAY );
+    const units = ( value === 1 ) ? earthDayStringProperty.value : earthDaysStringProperty.value;
+    property.value = StringUtils.format( patternStringProperty.value, Utils.toFixed( value, 0 ), units );
   };
+  update();
+
+  earthDayStringProperty.lazyLink( update );
+  earthDaysStringProperty.lazyLink( update );
+  patternStringProperty.lazyLink( update );
+  timeProperty.lazyLink( update );
+
+  return property;
 };
 
 /**
  * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
  * elapsed clock readout
  */
-const formatMinutes = ( time: number ) => {
-  const value = ( time / SECONDS_PER_MINUTE );
-  const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
-  return StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( value, 0 ), units );
+const formatMinutes = ( timeProperty: IProperty<number> ) => {
+  // Can't use a DerivedProperty, because it needs to be settable
+  const property = new TinyProperty( '' );
+
+  const earthMinuteStringProperty = gravityAndOrbitsStrings.earthMinuteProperty;
+  const earthMinutesStringProperty = gravityAndOrbitsStrings.earthMinutesProperty;
+  const patternStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ];
+
+  const update = () => {
+    const value = ( timeProperty.value / SECONDS_PER_MINUTE );
+    const units = ( value === 1 ) ? earthMinuteStringProperty.value : earthMinutesStringProperty.value;
+    property.value = StringUtils.format( patternStringProperty.value, Utils.toFixed( value, 0 ), units );
+  };
+  update();
+
+  earthMinuteStringProperty.lazyLink( update );
+  earthMinutesStringProperty.lazyLink( update );
+  patternStringProperty.lazyLink( update );
+  timeProperty.lazyLink( update );
+
+  return property;
 };
 
 class Satellite extends Body {
