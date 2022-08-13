@@ -196,8 +196,6 @@ class GravityAndOrbitsSceneView extends Rectangle {
     const returnObjectsButton = new TextPushButton( gravityAndOrbitsStrings.returnObjectsProperty, {
       font: new PhetFont( 16 ),
       textFill: 'black',
-      x: 100,
-      y: 100,
       widthSizable: true,
       visiblePropertyOptions: { phetioReadOnly: true },
       enabledPropertyOptions: { phetioReadOnly: true },
@@ -212,7 +210,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
       tandem: tandem.createTandem( 'returnObjectsButton' )
     } );
     // TODO: hack for https://github.com/phetsims/chipper/issues/1302 to get the button to resize down (more work needed)
-    this.addChild( new VBox( { children: [ returnObjectsButton ] } ) );
+    this.addChild( new VBox( { children: [ returnObjectsButton ], x: 100, y: 100 } ) );
 
     anythingReturnable.linkAttribute( returnObjectsButton, 'visible' );
 
