@@ -9,10 +9,9 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import platform from '../../../../phet-core/js/platform.js';
-import MeasuringTapeNode, { MeasuringTapeUnits } from '../../../../scenery-phet/js/MeasuringTapeNode.js';
+import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { AlignBox, Color, Rectangle } from '../../../../scenery/js/imports.js';
@@ -32,9 +31,6 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-
-const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
-const vString = gravityAndOrbitsStrings.v;
 
 // constants
 const SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
@@ -101,7 +97,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
         this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-          vString, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
+          gravityAndOrbitsStrings.vProperty, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
             phetioInputEnabledPropertyInstrumented: true
           } ) );
       }
@@ -130,7 +126,12 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // Add measuring tape
     if ( model.showMeasuringTape ) {
 
-      const unitsProperty = new Property<MeasuringTapeUnits>( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
+      const unitsProperty = new DerivedProperty( [ gravityAndOrbitsStrings.kilometersProperty ], kilometersString => {
+        return {
+          name: kilometersString,
+          multiplier: 1 / 1000
+        };
+      } );
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
       const measuringTapeTextColorProperty = GravityAndOrbitsColors.foregroundProperty;
 
@@ -192,11 +193,12 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // If any body is out of bounds, show a "return object" button
     const anythingReturnable = DerivedProperty.or( isReturnableProperties );
 
-    const returnObjectsButton = new TextPushButton( returnObjectsString, {
+    const returnObjectsButton = new TextPushButton( gravityAndOrbitsStrings.returnObjectsProperty, {
       font: new PhetFont( 16 ),
       textFill: 'black',
       x: 100,
       y: 100,
+      widthSizable: true,
       visiblePropertyOptions: { phetioReadOnly: true },
       enabledPropertyOptions: { phetioReadOnly: true },
       listener: () => {
