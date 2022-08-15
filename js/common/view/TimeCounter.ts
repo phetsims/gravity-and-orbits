@@ -9,6 +9,7 @@
  */
 
 import IProperty from '../../../../axon/js/IProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import StopwatchNode from '../../../../scenery-phet/js/StopwatchNode.js';
@@ -31,11 +32,11 @@ class TimeCounter extends Node {
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( timeFormatter: ( timeProperty: IProperty<number> ) => IProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
+  public constructor( timeFormatter: ( timeProperty: IProperty<number> ) => TReadOnlyProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
     super();
 
     // day text counter
-    const dayText = new Text( '', {
+    const dayText = new Text( timeFormatter( clock.timeProperty ), {
       font: new PhetFont( {
         family: StopwatchNode.NUMBER_FONT_FAMILY,
         size: FONT_SIZE
@@ -51,8 +52,6 @@ class TimeCounter extends Node {
       tandem: tandem.createTandem( 'clearButton' ),
       widthSizable: true
     } );
-
-    dayText.textProperty = timeFormatter( clock.timeProperty );
 
     // update text representation of day
     clock.timeProperty.link( time => {

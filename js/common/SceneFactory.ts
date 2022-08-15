@@ -38,6 +38,7 @@ import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
 import IProperty from '../../../axon/js/IProperty.js';
 import TinyProperty from '../../../axon/js/TinyProperty.js';
+import DerivedProperty from '../../../axon/js/DerivedProperty.js';
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.
@@ -371,26 +372,16 @@ const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: strin
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
  */
 const scaledDays = ( timeProperty: IProperty<number> ) => {
-  // Can't use a DerivedProperty, because it needs to be settable
-  const property = new TinyProperty( '' );
-
-  const earthDayStringProperty = gravityAndOrbitsStrings.earthDayProperty;
-  const earthDaysStringProperty = gravityAndOrbitsStrings.earthDaysProperty;
-  const patternStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ];
-
-  const update = () => {
-    const value = ( timeProperty.value / GravityAndOrbitsClock.SECONDS_PER_DAY );
-    const units = ( value === 1 ) ? earthDayStringProperty.value : earthDaysStringProperty.value;
-    property.value = StringUtils.format( patternStringProperty.value, Utils.toFixed( value, 0 ), units );
-  };
-  update();
-
-  earthDayStringProperty.lazyLink( update );
-  earthDaysStringProperty.lazyLink( update );
-  patternStringProperty.lazyLink( update );
-  timeProperty.lazyLink( update );
-
-  return property;
+  return new DerivedProperty( [
+    timeProperty,
+    gravityAndOrbitsStrings.earthDayProperty,
+    gravityAndOrbitsStrings.earthDaysProperty,
+    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ]
+  ], ( time, earthDayString, earthDaysString, patternString ) => {
+    const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
+    const units = ( value === 1 ) ? earthDayString : earthDaysString;
+    return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+  } );
 };
 
 /**

@@ -59,7 +59,21 @@
               "**/*.ts"
             ],
             "rules": {
-              "@typescript-eslint/no-explicit-any": "error"
+              "@typescript-eslint/no-explicit-any": "error",
+              "@typescript-eslint/no-unnecessary-type-assertion": "error",
+              "@typescript-eslint/restrict-plus-operands": "error",
+              "@typescript-eslint/prefer-readonly": "error",
+              "@typescript-eslint/await-thenable": "error",
+              "@typescript-eslint/no-floating-promises": "error",
+              "@typescript-eslint/no-for-in-array": "error",
+              "@typescript-eslint/no-misused-promises": "error",
+              "@typescript-eslint/no-implied-eval": "error",
+              "@typescript-eslint/require-await": "error"
+            },
+            "parserOptions": {
+              "project": [
+                "../gravity-and-orbits/tsconfig.json"
+              ]
             }
           }
         ]
@@ -100,6 +114,7 @@
   // Preloads, with more included for phet-io brand
   let preloads = [
     '../sherpa/lib/jquery-2.1.0.js',
+    '../sherpa/lib/jsondiffpatch-v0.3.11.umd.js',
     '../sherpa/lib/lodash-4.17.4.js',
     '../sherpa/lib/FileSaver-b8054a2.js',
     '../sherpa/lib/himalaya-1.1.0.js',
