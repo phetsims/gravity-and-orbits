@@ -31,7 +31,7 @@ import BodyRenderer from '../view/BodyRenderer.js';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import IProperty from '../../../../axon/js/IProperty.js';
+import TProperty from '../../../../axon/js/TProperty.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import TEmitter from '../../../../axon/js/TEmitter.js';
 
@@ -529,7 +529,7 @@ export default class Body extends PhetioObject {
   /**
    * Returns the Properties which, when changed, enable the rewind button.
    */
-  private getRewindableProperties(): IProperty<unknown>[] {
+  private getRewindableProperties(): TProperty<unknown>[] {
     return [
       this.positionProperty,
       this.velocityProperty,

@@ -8,7 +8,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-import IProperty from '../../../../axon/js/IProperty.js';
+import TProperty from '../../../../axon/js/TProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
@@ -32,7 +32,7 @@ class TimeCounter extends Node {
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( timeFormatter: ( timeProperty: IProperty<number> ) => TReadOnlyProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
+  public constructor( timeFormatter: ( timeProperty: TProperty<number> ) => TReadOnlyProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
     super();
 
     // day text counter

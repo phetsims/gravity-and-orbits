@@ -43,7 +43,7 @@ import EnumerationProperty from '../../../axon/js/EnumerationProperty.js';
 import TimeSpeed from '../../../scenery-phet/js/TimeSpeed.js';
 import Multilink from '../../../axon/js/Multilink.js';
 import optionize from '../../../phet-core/js/optionize.js';
-import IProperty from '../../../axon/js/IProperty.js';
+import TProperty from '../../../axon/js/TProperty.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 
 // constants
@@ -79,7 +79,7 @@ class GravityAndOrbitsScene extends PhetioObject {
   public velocityVectorScale: number;
   public gridSpacing: number;
   public gridCenter: Vector2;
-  public timeFormatter: ( numberProperty: IProperty<number> ) => TReadOnlyProperty<string>;
+  public timeFormatter: ( numberProperty: TProperty<number> ) => TReadOnlyProperty<string>;
   public measuringTapeStartPointProperty: Vector2Property;
   public measuringTapeEndPointProperty: Vector2Property;
   public isPlayingProperty: BooleanProperty;
@@ -106,7 +106,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    * @param pairs
    * @param [providedOptions]
    */
-  public constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( numberProperty: IProperty<number> ) => TReadOnlyProperty<string>, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node, gridSpacing: number, tandem: Tandem,
+  public constructor( model: GravityAndOrbitsModel, modeConfig: ModeConfig, timeFormatter: ( numberProperty: TProperty<number> ) => TReadOnlyProperty<string>, iconImage: Node, velocityVectorScale: number, massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node, gridSpacing: number, tandem: Tandem,
                       sceneViewTandem: Tandem, bodies: Body[], pairs: Pair[], providedOptions?: GravityAndOrbitsSceneOptions ) {
 
     const forceScale = modeConfig.forceScale;

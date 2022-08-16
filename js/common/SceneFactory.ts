@@ -36,7 +36,7 @@ import Tandem from '../../../tandem/js/Tandem.js';
 import BodyNode from './view/BodyNode.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
-import IProperty from '../../../axon/js/IProperty.js';
+import TProperty from '../../../axon/js/TProperty.js';
 import DerivedProperty from '../../../axon/js/DerivedProperty.js';
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
@@ -370,7 +370,7 @@ const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: strin
 /**
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
  */
-const scaledDays = ( timeProperty: IProperty<number> ) => {
+const scaledDays = ( timeProperty: TProperty<number> ) => {
   return new DerivedProperty( [
     timeProperty,
     gravityAndOrbitsStrings.earthDayProperty,
@@ -387,7 +387,7 @@ const scaledDays = ( timeProperty: IProperty<number> ) => {
  * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
  * elapsed clock readout
  */
-const formatMinutes = ( timeProperty: IProperty<number> ) => {
+const formatMinutes = ( timeProperty: TProperty<number> ) => {
   return new DerivedProperty( [
     timeProperty,
     gravityAndOrbitsStrings.earthMinuteProperty,
