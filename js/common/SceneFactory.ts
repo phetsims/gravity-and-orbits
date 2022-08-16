@@ -37,7 +37,6 @@ import BodyNode from './view/BodyNode.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
 import IProperty from '../../../axon/js/IProperty.js';
-import TinyProperty from '../../../axon/js/TinyProperty.js';
 import DerivedProperty from '../../../axon/js/DerivedProperty.js';
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
@@ -389,26 +388,16 @@ const scaledDays = ( timeProperty: IProperty<number> ) => {
  * elapsed clock readout
  */
 const formatMinutes = ( timeProperty: IProperty<number> ) => {
-  // Can't use a DerivedProperty, because it needs to be settable
-  const property = new TinyProperty( '' );
-
-  const earthMinuteStringProperty = gravityAndOrbitsStrings.earthMinuteProperty;
-  const earthMinutesStringProperty = gravityAndOrbitsStrings.earthMinutesProperty;
-  const patternStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ];
-
-  const update = () => {
-    const value = ( timeProperty.value / SECONDS_PER_MINUTE );
-    const units = ( value === 1 ) ? earthMinuteStringProperty.value : earthMinutesStringProperty.value;
-    property.value = StringUtils.format( patternStringProperty.value, Utils.toFixed( value, 0 ), units );
-  };
-  update();
-
-  earthMinuteStringProperty.lazyLink( update );
-  earthMinutesStringProperty.lazyLink( update );
-  patternStringProperty.lazyLink( update );
-  timeProperty.lazyLink( update );
-
-  return property;
+  return new DerivedProperty( [
+    timeProperty,
+    gravityAndOrbitsStrings.earthMinuteProperty,
+    gravityAndOrbitsStrings.earthMinutesProperty,
+    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ]
+  ], ( time, earthMinuteString, earthMinutesString, patternString ) => {
+    const value = ( time / SECONDS_PER_MINUTE );
+    const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
+    return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+  } );
 };
 
 class Satellite extends Body {

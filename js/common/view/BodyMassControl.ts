@@ -7,7 +7,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-import IProperty from '../../../../axon/js/IProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Range from '../../../../dot/js/Range.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
@@ -26,7 +26,7 @@ const WIDTH = 180;
 const SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
 
 class BodyMassControl extends HSlider {
-  public constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: IProperty<string>, tandem: Tandem ) {
+  public constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: TReadOnlyProperty<string>, tandem: Tandem ) {
 
     super( body.massProperty, new Range( min, max ), {
       trackSize: new Dimension2( WIDTH, 1 ),
@@ -50,12 +50,11 @@ class BodyMassControl extends HSlider {
     } );
 
     // add ticks and labels
-    const defaultLabel = new Text( valueLabel.value, {
+    const defaultLabel = new Text( valueLabel, {
       top: 10,
       centerX: SPACING,
       font: new PhetFont( 13 ),
       fill: GravityAndOrbitsColors.foregroundProperty,
-      textProperty: valueLabel,
       maxWidth: 80
     } );
 

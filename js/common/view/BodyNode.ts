@@ -165,12 +165,11 @@ class BodyNode extends Node {
     node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, {
       stroke: GravityAndOrbitsColors.bodyLabelIndicatorProperty
     } ) );
-    const labelNode = new Text( body.labelStringProperty!.value, {
+    const labelNode = new Text( body.labelStringProperty!, {
       font: new PhetFont( 18 ),
       fill: GravityAndOrbitsColors.foregroundProperty,
       maxWidth: 65,
-      tandem: labelNodeTandem,
-      textProperty: body.labelStringProperty!
+      tandem: labelNodeTandem
     } );
 
     // Eliminate artifacts seen on Windows chrome by adding an invisible rectangle underlay, see

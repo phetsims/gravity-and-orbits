@@ -63,7 +63,7 @@ export default class Body extends PhetioObject {
   public readonly touchDilation: number;
   private readonly previousPosition: Vector2;
   public readonly type: BodyTypeEnum;
-  public readonly labelStringProperty: IProperty<string> | null;
+  public readonly labelStringProperty: TReadOnlyProperty<string> | null;
   public readonly massProperty: RewindableProperty<number>;
   public readonly velocityProperty: RewindableProperty<Vector2>;
   public readonly diameterProperty: NumberProperty;
@@ -78,7 +78,7 @@ export default class Body extends PhetioObject {
   public readonly userModifiedVelocityEmitter: IEmitter;
   public readonly tandemName: string;
   public readonly tickValue: number;
-  public readonly tickLabel: IProperty<string>;
+  public readonly tickLabel: TReadOnlyProperty<string>;
   public readonly massReadoutBelow: boolean;
   public readonly bodyNodeTandemName: string;
   private readonly accelerationProperty: Vector2Property;
@@ -115,7 +115,7 @@ export default class Body extends PhetioObject {
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: IProperty<string>, model: GravityAndOrbitsModel,
+  public constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: TReadOnlyProperty<string>, model: GravityAndOrbitsModel,
                       tandem: Tandem, providedOptions?: BodyOptions ) {
 
     const options = optionize<BodyOptions, SelfOptions, PhetioObjectOptions>()( {
