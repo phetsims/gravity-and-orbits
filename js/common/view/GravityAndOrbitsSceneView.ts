@@ -9,13 +9,12 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import platform from '../../../../phet-core/js/platform.js';
-import MeasuringTapeNode, { MeasuringTapeUnits } from '../../../../scenery-phet/js/MeasuringTapeNode.js';
+import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { Color, Rectangle } from '../../../../scenery/js/imports.js';
+import { AlignBox, Color, Rectangle, VBox } from '../../../../scenery/js/imports.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
@@ -32,9 +31,6 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-
-const returnObjectsString = gravityAndOrbitsStrings.returnObjects;
-const vString = gravityAndOrbitsStrings.v;
 
 // constants
 const SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
@@ -101,7 +97,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
         this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-          vString, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
+          gravityAndOrbitsStrings.vProperty, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
             phetioInputEnabledPropertyInstrumented: true
           } ) );
       }
@@ -117,16 +113,25 @@ class GravityAndOrbitsSceneView extends Rectangle {
     model.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
-    this.addChild( new TimeCounter( scene.timeFormatter, scene.physicsEngine.clock, tandem.createTandem( 'timeCounter' ), {
-      bottom: STAGE_SIZE.bottom - 20,
-      right: STAGE_SIZE.right - 50,
+    this.addChild( new AlignBox( new TimeCounter( scene.timeFormatter, scene.physicsEngine.clock, tandem.createTandem( 'timeCounter' ), {
       scale: 1.2
+    } ), {
+      alignBounds: STAGE_SIZE,
+      rightMargin: 50,
+      bottomMargin: 20,
+      xAlign: 'right',
+      yAlign: 'bottom'
     } ) );
 
     // Add measuring tape
     if ( model.showMeasuringTape ) {
 
-      const unitsProperty = new Property<MeasuringTapeUnits>( { name: gravityAndOrbitsStrings.kilometers, multiplier: 1 / 1000 } );
+      const unitsProperty = new DerivedProperty( [ gravityAndOrbitsStrings.kilometersProperty ], kilometersString => {
+        return {
+          name: kilometersString,
+          multiplier: 1 / 1000
+        };
+      } );
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
       const measuringTapeTextColorProperty = GravityAndOrbitsColors.foregroundProperty;
 
@@ -188,11 +193,10 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // If any body is out of bounds, show a "return object" button
     const anythingReturnable = DerivedProperty.or( isReturnableProperties );
 
-    const returnObjectsButton = new TextPushButton( returnObjectsString, {
+    const returnObjectsButton = new TextPushButton( gravityAndOrbitsStrings.returnObjectsProperty, {
       font: new PhetFont( 16 ),
       textFill: 'black',
-      x: 100,
-      y: 100,
+      widthSizable: true,
       visiblePropertyOptions: { phetioReadOnly: true },
       enabledPropertyOptions: { phetioReadOnly: true },
       listener: () => {
@@ -205,7 +209,8 @@ class GravityAndOrbitsSceneView extends Rectangle {
       },
       tandem: tandem.createTandem( 'returnObjectsButton' )
     } );
-    this.addChild( returnObjectsButton );
+    // TODO: hack for https://github.com/phetsims/chipper/issues/1302 to get the button to resize down (more work needed)
+    this.addChild( new VBox( { children: [ returnObjectsButton ], x: 100, y: 100 } ) );
 
     anythingReturnable.linkAttribute( returnObjectsButton, 'visible' );
 

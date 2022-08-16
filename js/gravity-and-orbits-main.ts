@@ -16,9 +16,6 @@ import gravityAndOrbitsStrings from './gravityAndOrbitsStrings.js';
 import ModelScreen from './model/ModelScreen.js';
 import ToScaleScreen from './toScale/ToScaleScreen.js';
 
-// @ts-ignore
-const gravityAndOrbitsTitleString = gravityAndOrbitsStrings[ 'gravity-and-orbits' ].title;
-
 simLauncher.launch( () => {
 
   const credits: CreditsData = {
@@ -52,5 +49,5 @@ simLauncher.launch( () => {
     backgroundColorProperty: backgroundColorProperty,
     tandem: Tandem.ROOT.createTandem( 'toScaleScreen' )
   } );
-  new Sim( gravityAndOrbitsTitleString, [ modelScreen, toScaleScreen ], simOptions ).start();
+  new Sim( gravityAndOrbitsStrings[ 'gravity-and-orbits' ].titleProperty, [ modelScreen, toScaleScreen ], simOptions ).start();
 } );

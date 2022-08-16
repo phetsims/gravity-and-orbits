@@ -8,10 +8,12 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import IProperty from '../../../../axon/js/IProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import StopwatchNode from '../../../../scenery-phet/js/StopwatchNode.js';
-import { Node, Text, VBox } from '../../../../scenery/js/imports.js';
+import { Node, NodeOptions, Text, VBox } from '../../../../scenery/js/imports.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -19,13 +21,10 @@ import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
 
-const clearString = gravityAndOrbitsStrings.clear;
-
 // constants
 const FONT_SIZE = 22;
 
 class TimeCounter extends Node {
-  private readonly timeListener: ( time: number ) => void;
 
   /**
    * @param timeFormatter
@@ -33,11 +32,11 @@ class TimeCounter extends Node {
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( timeFormatter: ( time: number ) => string, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: { bottom: number; right: number; scale: number } ) {
+  public constructor( timeFormatter: ( timeProperty: IProperty<number> ) => TReadOnlyProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
     super();
 
     // day text counter
-    const dayText = new Text( '', {
+    const dayText = new Text( timeFormatter( clock.timeProperty ), {
       font: new PhetFont( {
         family: StopwatchNode.NUMBER_FONT_FAMILY,
         size: FONT_SIZE
@@ -46,27 +45,23 @@ class TimeCounter extends Node {
       maxWidth: 200
     } );
 
-    const clearButton = new TextPushButton( clearString, {
+    const clearButton = new TextPushButton( gravityAndOrbitsStrings.clearProperty, {
       font: new PhetFont( FONT_SIZE ),
       listener: () => clock.setSimulationTime( 0 ),
       maxWidth: 200,
-      tandem: tandem.createTandem( 'clearButton' )
+      tandem: tandem.createTandem( 'clearButton' ),
+      widthSizable: true
     } );
 
     // update text representation of day
-    this.timeListener = time => {
+    clock.timeProperty.link( time => {
       assert && assert( !isNaN( time ), 'time should be a number' );
-      dayText.setText( timeFormatter( time ) );
-      dayText.right = clearButton.right;
-      clearButton.enabled = ( time !== 0 );
-    };
-    clock.timeProperty.link( this.timeListener );
+      clearButton.enabled = time !== 0;
+    } );
 
     this.addChild( new VBox( {
       align: 'right',
 
-      // Prevent the "Clear" button from moving when the number text changes
-      resize: false,
       spacing: 4,
       children: [
         dayText,

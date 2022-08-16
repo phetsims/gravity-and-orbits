@@ -165,7 +165,7 @@ class BodyNode extends Node {
     node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, {
       stroke: GravityAndOrbitsColors.bodyLabelIndicatorProperty
     } ) );
-    const labelNode = new Text( body.labelString!, {
+    const labelNode = new Text( body.labelStringProperty!, {
       font: new PhetFont( 18 ),
       fill: GravityAndOrbitsColors.foregroundProperty,
       maxWidth: 65,
@@ -175,15 +175,19 @@ class BodyNode extends Node {
     // Eliminate artifacts seen on Windows chrome by adding an invisible rectangle underlay, see
     // https://github.com/phetsims/QA/issues/519
     // 1px is too small for ?stringTest=long because the underlay rectangle is reduced in size as well
-    const antiArtifactRectangle = new Rectangle( labelNode.bounds.dilated( 10 ), {
-
+    const antiArtifactRectangle = new Rectangle( {
       // A rectangle with no fill doesn't paint, so we paint with low or no opacity to make sure that region is painted
       fill: 'transparent'
     } );
+    labelNode.boundsProperty.link( bounds => {
+      antiArtifactRectangle.rectBounds = bounds.dilated( 10 );
+    } );
     const labelWithAntiArtifactRectangle = new Node( {
-      children: [ antiArtifactRectangle, labelNode ],
-      centerX: tail.x,
-      y: tail.y - this.height - 10
+      children: [ antiArtifactRectangle, labelNode ]
+    } );
+    labelWithAntiArtifactRectangle.localBoundsProperty.link( () => {
+      labelWithAntiArtifactRectangle.centerX = tail.x;
+      labelWithAntiArtifactRectangle.y = tail.y - this.bodyRenderer.height - 10;
     } );
     node.addChild( labelWithAntiArtifactRectangle );
 
