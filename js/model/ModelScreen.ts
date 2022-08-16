@@ -16,13 +16,11 @@ import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
 import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
-const modelString = gravityAndOrbitsStrings.model;
-
 class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {
 
     const options = optionize<ScreenOptions, EmptySelfOptions, ScreenOptions>()( {
-      name: modelString,
+      name: gravityAndOrbitsStrings.modelProperty,
 
       homeScreenIcon: new ScreenIcon( new Image( modelIcon_png ), {
         maxIconWidthProportion: 1,

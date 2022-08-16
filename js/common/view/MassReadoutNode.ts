@@ -14,26 +14,32 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 
-type MassReadoutNodeOptions = {
-  textMaxWidth: number;
+export type MassReadoutNodeOptions = {
+  textMaxWidth?: number;
 };
 
 abstract class MassReadoutNode extends Node {
   protected bodyNode: BodyNode;
 
-  public constructor( bodyNode: BodyNode, visibleProperty: TReadOnlyProperty<boolean>, providedOptions?: Partial<MassReadoutNodeOptions> ) {
-    super();
+  protected readonly textProperty = new StringProperty( '-' );
+
+  public constructor( bodyNode: BodyNode, visibleProperty: TReadOnlyProperty<boolean>, providedOptions?: MassReadoutNodeOptions ) {
+    super( {
+      visibleProperty: visibleProperty
+    } );
     const options: MassReadoutNodeOptions = merge( {
       textMaxWidth: 240
     }, providedOptions ) as MassReadoutNodeOptions;
     this.bodyNode = bodyNode;
 
-    const readoutText = new Text( this.createText(), {
+    const readoutText = new Text( this.textProperty.value, {
       pickable: false,
       font: new PhetFont( 18 ),
       maxWidth: options.textMaxWidth,
-      fill: GravityAndOrbitsColors.foregroundProperty
+      fill: GravityAndOrbitsColors.foregroundProperty,
+      textProperty: this.textProperty
     } );
     this.addChild( readoutText );
 
@@ -49,18 +55,10 @@ abstract class MassReadoutNode extends Node {
       }
     };
 
-    bodyNode.body.massProperty.link( () => {
-      readoutText.setText( this.createText() );
-      updatePosition();
-    } );
-
-    visibleProperty.link( visible => {
-      this.visible = visible;
-      updatePosition();
-    } );
+    bodyNode.body.massProperty.lazyLink( updatePosition );
+    this.textProperty.lazyLink( updatePosition );
+    visibleProperty.lazyLink( updatePosition );
   }
-
-  protected abstract createText(): string;
 }
 
 gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );

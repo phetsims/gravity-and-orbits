@@ -18,10 +18,6 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
-const gravityString = gravityAndOrbitsStrings.gravity;
-const offString = gravityAndOrbitsStrings.off;
-const onString = gravityAndOrbitsStrings.on;
-
 // constants
 const FONT = new PhetFont( 14 );
 const TEXT_OPTIONS = { font: FONT, fill: GravityAndOrbitsColors.foregroundProperty, maxWidth: 50 };
@@ -42,9 +38,9 @@ class GravityControl extends Node {
       tandem: Tandem.OPTIONAL
     }, providedOptions );
 
-    const gravityTextNode = new Text( gravityString, TEXT_OPTIONS );
-    const onTextNode = new Text( onString, TEXT_OPTIONS );
-    const offTextNode = new Text( offString, TEXT_OPTIONS );
+    const gravityTextNode = new Text( gravityAndOrbitsStrings.gravity, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.gravityProperty } );
+    const onTextNode = new Text( gravityAndOrbitsStrings.on, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.onProperty } );
+    const offTextNode = new Text( gravityAndOrbitsStrings.off, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.offProperty } );
 
     this.addLinkedElement( gravityEnabledProperty, {
       tandem: options.tandem.createTandem( 'gravityEnabledProperty' )

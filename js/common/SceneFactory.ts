@@ -36,16 +36,8 @@ import Tandem from '../../../tandem/js/Tandem.js';
 import BodyNode from './view/BodyNode.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
-
-const earthDaysString = gravityAndOrbitsStrings.earthDays;
-const earthDayString = gravityAndOrbitsStrings.earthDay;
-const earthMinutesString = gravityAndOrbitsStrings.earthMinutes;
-const earthMinuteString = gravityAndOrbitsStrings.earthMinute;
-const earthString = gravityAndOrbitsStrings.earth;
-const ourMoonString = gravityAndOrbitsStrings.ourMoon;
-const ourSunString = gravityAndOrbitsStrings.ourSun;
-const pattern0Value1UnitsString = gravityAndOrbitsStrings.pattern[ '0value' ][ '1units' ];
-const spaceStationString = gravityAndOrbitsStrings.spaceStation;
+import IProperty from '../../../axon/js/IProperty.js';
+import DerivedProperty from '../../../axon/js/DerivedProperty.js';
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.
@@ -118,7 +110,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       planetStar,
-      scaledDays(),
+      scaledDays,
       this.createIconImage( true, true, false, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
@@ -150,7 +142,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       sunEarthMoon,
-      scaledDays(),
+      scaledDays,
       this.createIconImage( true, true, true, false ),
       SUN_MODES_VELOCITY_SCALE,
       readoutInEarthMasses,
@@ -176,7 +168,7 @@ class SceneFactory {
     this.scenes.push( new GravityAndOrbitsScene(
       model,
       earthMoon,
-      scaledDays(),
+      scaledDays,
       this.createIconImage( false, true, true, false ),
       SUN_MODES_VELOCITY_SCALE * 0.06,
       readoutInEarthMasses,
@@ -378,22 +370,34 @@ const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: strin
 /**
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
  */
-const scaledDays = () => {
-  return ( time: number ) => {
+const scaledDays = ( timeProperty: IProperty<number> ) => {
+  return new DerivedProperty( [
+    timeProperty,
+    gravityAndOrbitsStrings.earthDayProperty,
+    gravityAndOrbitsStrings.earthDaysProperty,
+    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ]
+  ], ( time, earthDayString, earthDaysString, patternString ) => {
     const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
     const units = ( value === 1 ) ? earthDayString : earthDaysString;
-    return StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( value, 0 ), units );
-  };
+    return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+  } );
 };
 
 /**
  * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
  * elapsed clock readout
  */
-const formatMinutes = ( time: number ) => {
-  const value = ( time / SECONDS_PER_MINUTE );
-  const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
-  return StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( value, 0 ), units );
+const formatMinutes = ( timeProperty: IProperty<number> ) => {
+  return new DerivedProperty( [
+    timeProperty,
+    gravityAndOrbitsStrings.earthMinuteProperty,
+    gravityAndOrbitsStrings.earthMinutesProperty,
+    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ]
+  ], ( time, earthMinuteString, earthMinutesString, patternString ) => {
+    const value = ( time / SECONDS_PER_MINUTE );
+    const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
+    return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+  } );
 };
 
 class Satellite extends Body {
@@ -407,7 +411,7 @@ class Satellite extends Body {
       getImageRenderer( spaceStation_png ),
       -Math.PI / 4,
       earthSpaceStation.satellite.mass,
-      spaceStationString,
+      gravityAndOrbitsStrings.spaceStationProperty,
       model,
       tandem,
       options
@@ -433,7 +437,7 @@ class Moon extends Body {
       getSwitchableRenderer( moon_png, moonGeneric_png, bodyConfiguration.mass ),
       -3 * Math.PI / 4,
       bodyConfiguration.mass,
-      ourMoonString,
+      gravityAndOrbitsStrings.ourMoonProperty,
       model,
       tandem,
       options
@@ -460,7 +464,7 @@ class Planet extends Body {
       getSwitchableRenderer( earth_png, planetGeneric_png, bodyConfiguration.mass ),
       -Math.PI / 4,
       bodyConfiguration.mass,
-      earthString,
+      gravityAndOrbitsStrings.earthProperty,
       model,
       tandem,
       providedOptions
@@ -479,7 +483,7 @@ class Star extends Body {
       getImageRenderer( sun_png ),
       -Math.PI / 4,
       bodyConfiguration.mass,
-      ourSunString,
+      gravityAndOrbitsStrings.ourSunProperty,
       model,
       tandem,
       options

@@ -18,11 +18,12 @@ import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransfo
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import Multilink from '../../../../axon/js/Multilink.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 class DraggableVectorNode extends VectorNode {
 
   public constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color,
-                      outline: Color, labelText: string, tandem: Tandem, providedOptions?: object ) {
+                      outline: Color, labelText: TReadOnlyProperty<string>, tandem: Tandem, providedOptions?: object ) {
 
     super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, providedOptions );
 
@@ -43,7 +44,9 @@ class DraggableVectorNode extends VectorNode {
       fill: Color.gray,
       maxWidth: 25
     } );
-    text.center = tip;
+    text.localBoundsProperty.link( () => {
+      text.center = tip;
+    } );
     grabArea.center = tip;
 
     this.addChild( grabArea );
