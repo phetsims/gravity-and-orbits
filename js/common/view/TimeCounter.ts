@@ -32,11 +32,11 @@ class TimeCounter extends Node {
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( timeFormatter: ( timeProperty: TProperty<number> ) => TReadOnlyProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
+  public constructor( timeFormatter: ( timeProperty: TProperty<number>, tandem: Tandem ) => TReadOnlyProperty<string>, clock: GravityAndOrbitsClock, tandem: Tandem, providedOptions?: NodeOptions ) {
     super();
 
     // day text counter
-    const dayText = new Text( timeFormatter( clock.timeProperty ), {
+    const dayText = new Text( timeFormatter( clock.timeProperty, tandem.createTandem( 'formattedTimeProperty' ) ), {
       font: new PhetFont( {
         family: StopwatchNode.NUMBER_FONT_FAMILY,
         size: FONT_SIZE

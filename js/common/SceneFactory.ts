@@ -38,6 +38,7 @@ import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
 import TProperty from '../../../axon/js/TProperty.js';
 import DerivedProperty from '../../../axon/js/DerivedProperty.js';
+import StringIO from '../../../tandem/js/types/StringIO.js';
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.
@@ -370,7 +371,7 @@ const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: strin
 /**
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
  */
-const scaledDays = ( timeProperty: TProperty<number> ) => {
+const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
   return new DerivedProperty( [
     timeProperty,
     gravityAndOrbitsStrings.earthDayProperty,
@@ -380,6 +381,9 @@ const scaledDays = ( timeProperty: TProperty<number> ) => {
     const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
     const units = ( value === 1 ) ? earthDayString : earthDaysString;
     return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+  }, {
+    tandem: tandem,
+    phetioValueType: StringIO
   } );
 };
 
@@ -387,7 +391,7 @@ const scaledDays = ( timeProperty: TProperty<number> ) => {
  * Create a function that converts SI (seconds) to a string indicating elapsed minutes, used in formatting the
  * elapsed clock readout
  */
-const formatMinutes = ( timeProperty: TProperty<number> ) => {
+const formatMinutes = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
   return new DerivedProperty( [
     timeProperty,
     gravityAndOrbitsStrings.earthMinuteProperty,
@@ -397,6 +401,9 @@ const formatMinutes = ( timeProperty: TProperty<number> ) => {
     const value = ( time / SECONDS_PER_MINUTE );
     const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
     return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+  }, {
+    tandem: tandem,
+    phetioValueType: StringIO
   } );
 };
 
