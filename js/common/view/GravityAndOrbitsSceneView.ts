@@ -209,7 +209,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
       },
       tandem: tandem.createTandem( 'returnObjectsButton' )
     } );
-    // TODO: hack for https://github.com/phetsims/chipper/issues/1302 to get the button to resize down (more work needed)
+    // TODO: hack for https://github.com/phetsims/sun/issues/781 to get the button to resize down (more work needed)
     this.addChild( new VBox( { children: [ returnObjectsButton ], x: 100, y: 100 } ) );
 
     anythingReturnable.linkAttribute( returnObjectsButton, 'visible' );
