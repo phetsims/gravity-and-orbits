@@ -49,8 +49,7 @@ class TimeCounter extends Node {
       font: new PhetFont( FONT_SIZE ),
       listener: () => clock.setSimulationTime( 0 ),
       maxTextWidth: 200,
-      tandem: tandem.createTandem( 'clearButton' ),
-      widthSizable: true
+      tandem: tandem.createTandem( 'clearButton' )
     } );
 
     // update text representation of day

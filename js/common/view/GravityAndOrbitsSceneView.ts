@@ -196,7 +196,6 @@ class GravityAndOrbitsSceneView extends Rectangle {
     const returnObjectsButton = new TextPushButton( gravityAndOrbitsStrings.returnObjectsProperty, {
       font: new PhetFont( 16 ),
       textFill: 'black',
-      widthSizable: true,
       visiblePropertyOptions: { phetioReadOnly: true },
       enabledPropertyOptions: { phetioReadOnly: true },
       listener: () => {
