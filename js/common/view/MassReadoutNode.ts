@@ -34,12 +34,11 @@ abstract class MassReadoutNode extends Node {
     }, providedOptions ) as MassReadoutNodeOptions;
     this.bodyNode = bodyNode;
 
-    const readoutText = new Text( this.textProperty.value, {
+    const readoutText = new Text( this.textProperty, {
       pickable: false,
       font: new PhetFont( 18 ),
       maxWidth: options.textMaxWidth,
-      fill: GravityAndOrbitsColors.foregroundProperty,
-      textProperty: this.textProperty
+      fill: GravityAndOrbitsColors.foregroundProperty
     } );
     this.addChild( readoutText );
 
