@@ -199,10 +199,10 @@ export default class Body extends PhetioObject {
 
     // (read-only) - passed to visual labels, must be translatable
     this.labelStringProperty = this.type === 'planet' ? gravityAndOrbitsStrings.planetProperty :
-                       this.type === 'satellite' ? gravityAndOrbitsStrings.satelliteProperty :
-                       this.type === 'star' ? gravityAndOrbitsStrings.starProperty :
-                       this.type === 'moon' ? gravityAndOrbitsStrings.moonProperty :
-                       null;
+                               this.type === 'satellite' ? gravityAndOrbitsStrings.satelliteProperty :
+                               this.type === 'star' ? gravityAndOrbitsStrings.starProperty :
+                               this.type === 'moon' ? gravityAndOrbitsStrings.moonProperty :
+                               null;
     assert && assert( this.labelStringProperty, `no label found for body with identifier ${this.type}` );
 
     assert && assert( renderer !== null );
@@ -319,7 +319,7 @@ export default class Body extends PhetioObject {
     this.userModifiedVelocityEmitter = new Emitter();
 
     this.isCollidedProperty.link( collided => {
-      if ( collided && !phet.joist.sim.isSettingPhetioStateProperty.value ) {
+      if ( collided ) {
         this.clockTicksSinceExplosionProperty.set( 0 );
       }
     } );
