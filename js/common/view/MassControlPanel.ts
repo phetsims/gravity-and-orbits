@@ -73,13 +73,15 @@ class MassControlPanel extends VBox {
         top: labelHBox.bottom + 8,
         children: [
           new HStrut( 220 ),
+
+          // TODO: https://github.com/phetsims/tandem/issues/267 rename the class
           new BodyMassControl(
             massSettableBody,
             massSettableBody.massProperty.value / 2,
             massSettableBody.massProperty.value * 2,
             massSettableBody.tickValue,
             massSettableBody.tickLabel,
-            massSettableBodyTandem.createTandem( 'massControl' )
+            massSettableBodyTandem.createTandem( 'massSlider' )
           )
         ]
       } );
