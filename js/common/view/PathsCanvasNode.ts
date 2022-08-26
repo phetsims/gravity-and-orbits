@@ -77,10 +77,8 @@ class PathsCanvasNode extends CanvasNode {
       this.visible = isVisible;
 
       // Paths should restart from the body position when "Path" checkbox is checked
-      if ( !phet.joist.sim.isSettingPhetioStateProperty.value ) {
-        for ( let i = 0; i < bodies.length; i++ ) {
-          this.bodies[ i ].clearPath();
-        }
+      for ( let i = 0; i < bodies.length; i++ ) {
+        this.bodies[ i ].clearPath();
       }
       updateNamedPoints();
     } );
