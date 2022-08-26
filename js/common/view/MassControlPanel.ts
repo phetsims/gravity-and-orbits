@@ -50,13 +50,12 @@ class MassControlPanel extends VBox {
       const massSettableBodyTandem = options.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
       const sliderNode = new Node( { tandem: massSettableBodyTandem } );
 
-      const label = new Text( LABEL_MAP[ massSettableBody.type ].value, {
+      const label = new Text( LABEL_MAP[ massSettableBody.type ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColors.foregroundProperty,
         maxWidth: 175,
-        tandem: massSettableBodyTandem.createTandem( 'massLabel' ),
-        textProperty: LABEL_MAP[ massSettableBody.type ]
+        tandem: massSettableBodyTandem.createTandem( 'massLabel' )
       } );
 
       const icon = new Node( {
