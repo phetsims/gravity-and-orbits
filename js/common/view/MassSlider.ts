@@ -25,7 +25,7 @@ const NUM_TICKS = 4;
 const WIDTH = 180;
 const SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
 
-class BodyMassControl extends HSlider {
+class MassSlider extends HSlider {
   public constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: TReadOnlyProperty<string>, tandem: Tandem ) {
 
     super( body.massProperty, new Range( min, max ), {
@@ -83,5 +83,5 @@ class BodyMassControl extends HSlider {
   }
 }
 
-gravityAndOrbits.register( 'BodyMassControl', BodyMassControl );
-export default BodyMassControl;
+gravityAndOrbits.register( 'MassSlider', MassSlider );
+export default MassSlider;

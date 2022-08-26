@@ -13,7 +13,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
-import BodyMassControl from './BodyMassControl.js';
+import MassSlider from './MassSlider.js';
 import Body from '../model/Body.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { EmptySelfOptions, optionize3, OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
@@ -73,8 +73,7 @@ class MassControlPanel extends VBox {
         children: [
           new HStrut( 220 ),
 
-          // TODO: https://github.com/phetsims/tandem/issues/267 rename the class
-          new BodyMassControl(
+          new MassSlider(
             massSettableBody,
             massSettableBody.massProperty.value / 2,
             massSettableBody.massProperty.value * 2,
