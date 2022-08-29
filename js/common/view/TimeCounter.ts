@@ -45,7 +45,7 @@ class TimeCounter extends Node {
       maxWidth: 200
     } );
 
-    const clearButton = new TextPushButton( gravityAndOrbitsStrings.clearProperty, {
+    const clearButton = new TextPushButton( gravityAndOrbitsStrings.clearStringProperty, {
       font: new PhetFont( FONT_SIZE ),
       listener: () => clock.setSimulationTime( 0 ),
       maxTextWidth: 200,

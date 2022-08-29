@@ -22,10 +22,10 @@ import merge from '../../../../phet-core/js/merge.js';
 // constants
 const CONTROL_FONT = new PhetFont( 14 );
 const LABEL_MAP = {
-  planet: gravityAndOrbitsStrings.planetMassProperty,
-  satellite: gravityAndOrbitsStrings.satelliteMassProperty,
-  star: gravityAndOrbitsStrings.starMassProperty,
-  moon: gravityAndOrbitsStrings.moonMassProperty
+  planet: gravityAndOrbitsStrings.planetMassStringProperty,
+  satellite: gravityAndOrbitsStrings.satelliteMassStringProperty,
+  star: gravityAndOrbitsStrings.starMassStringProperty,
+  moon: gravityAndOrbitsStrings.moonMassStringProperty
 };
 
 type MassControlPanelOptions = VBoxOptions & PickRequired<VBoxOptions, 'tandem'>;

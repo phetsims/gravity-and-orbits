@@ -49,5 +49,5 @@ simLauncher.launch( () => {
     backgroundColorProperty: backgroundColorProperty,
     tandem: Tandem.ROOT.createTandem( 'toScaleScreen' )
   } );
-  new Sim( gravityAndOrbitsStrings[ 'gravity-and-orbits' ].titleProperty, [ modelScreen, toScaleScreen ], simOptions ).start();
+  new Sim( gravityAndOrbitsStrings[ 'gravity-and-orbits' ].titleStringProperty, [ modelScreen, toScaleScreen ], simOptions ).start();
 } );

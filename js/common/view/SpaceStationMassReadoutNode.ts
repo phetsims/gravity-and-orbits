@@ -16,11 +16,11 @@ import BodyNode from './BodyNode.js';
 import MassReadoutNode from './MassReadoutNode.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
-const billionBillionSpaceStationMassesStringProperty = gravityAndOrbitsStrings.billionBillionSpaceStationMassesProperty;
+const billionBillionSpaceStationMassesStringProperty = gravityAndOrbitsStrings.billionBillionSpaceStationMassesStringProperty;
 
 // @ts-ignore
-const pattern0Value1UnitsStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ];
-const spaceStationMassStringProperty = gravityAndOrbitsStrings.spaceStationMassProperty;
+const pattern0Value1UnitsStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
+const spaceStationMassStringProperty = gravityAndOrbitsStrings.spaceStationMassStringProperty;
 
 class SpaceStationMassReadoutNode extends MassReadoutNode {
 

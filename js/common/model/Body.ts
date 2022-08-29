@@ -198,10 +198,10 @@ export default class Body extends PhetioObject {
     this.rotationPeriod = options.rotationPeriod;
 
     // (read-only) - passed to visual labels, must be translatable
-    this.labelStringProperty = this.type === 'planet' ? gravityAndOrbitsStrings.planetProperty :
-                               this.type === 'satellite' ? gravityAndOrbitsStrings.satelliteProperty :
-                               this.type === 'star' ? gravityAndOrbitsStrings.starProperty :
-                               this.type === 'moon' ? gravityAndOrbitsStrings.moonProperty :
+    this.labelStringProperty = this.type === 'planet' ? gravityAndOrbitsStrings.planetStringProperty :
+                               this.type === 'satellite' ? gravityAndOrbitsStrings.satelliteStringProperty :
+                               this.type === 'star' ? gravityAndOrbitsStrings.starStringProperty :
+                               this.type === 'moon' ? gravityAndOrbitsStrings.moonStringProperty :
                                null;
     assert && assert( this.labelStringProperty, `no label found for body with identifier ${this.type}` );
 

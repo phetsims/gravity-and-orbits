@@ -20,7 +20,7 @@ class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {
 
     const options = optionize<ScreenOptions, EmptySelfOptions, ScreenOptions>()( {
-      name: gravityAndOrbitsStrings.modelProperty,
+      name: gravityAndOrbitsStrings.modelStringProperty,
 
       homeScreenIcon: new ScreenIcon( new Image( modelIcon_png ), {
         maxIconWidthProportion: 1,

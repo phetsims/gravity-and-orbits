@@ -374,9 +374,9 @@ const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: strin
 const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
   return new DerivedProperty( [
     timeProperty,
-    gravityAndOrbitsStrings.earthDayProperty,
-    gravityAndOrbitsStrings.earthDaysProperty,
-    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ]
+    gravityAndOrbitsStrings.earthDayStringProperty,
+    gravityAndOrbitsStrings.earthDaysStringProperty,
+    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
   ], ( time, earthDayString, earthDaysString, patternString ) => {
     const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
     const units = ( value === 1 ) ? earthDayString : earthDaysString;
@@ -394,9 +394,9 @@ const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
 const formatMinutes = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
   return new DerivedProperty( [
     timeProperty,
-    gravityAndOrbitsStrings.earthMinuteProperty,
-    gravityAndOrbitsStrings.earthMinutesProperty,
-    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ]
+    gravityAndOrbitsStrings.earthMinuteStringProperty,
+    gravityAndOrbitsStrings.earthMinutesStringProperty,
+    gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
   ], ( time, earthMinuteString, earthMinutesString, patternString ) => {
     const value = ( time / SECONDS_PER_MINUTE );
     const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
@@ -418,7 +418,7 @@ class Satellite extends Body {
       getImageRenderer( spaceStation_png ),
       -Math.PI / 4,
       earthSpaceStation.satellite.mass,
-      gravityAndOrbitsStrings.spaceStationProperty,
+      gravityAndOrbitsStrings.spaceStationStringProperty,
       model,
       tandem,
       options
@@ -444,7 +444,7 @@ class Moon extends Body {
       getSwitchableRenderer( moon_png, moonGeneric_png, bodyConfiguration.mass ),
       -3 * Math.PI / 4,
       bodyConfiguration.mass,
-      gravityAndOrbitsStrings.ourMoonProperty,
+      gravityAndOrbitsStrings.ourMoonStringProperty,
       model,
       tandem,
       options
@@ -471,7 +471,7 @@ class Planet extends Body {
       getSwitchableRenderer( earth_png, planetGeneric_png, bodyConfiguration.mass ),
       -Math.PI / 4,
       bodyConfiguration.mass,
-      gravityAndOrbitsStrings.earthProperty,
+      gravityAndOrbitsStrings.earthStringProperty,
       model,
       tandem,
       providedOptions
@@ -490,7 +490,7 @@ class Star extends Body {
       getImageRenderer( sun_png ),
       -Math.PI / 4,
       bodyConfiguration.mass,
-      gravityAndOrbitsStrings.ourSunProperty,
+      gravityAndOrbitsStrings.ourSunStringProperty,
       model,
       tandem,
       options

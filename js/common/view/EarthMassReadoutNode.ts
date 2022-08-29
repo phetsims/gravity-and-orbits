@@ -16,11 +16,11 @@ import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyNode from './BodyNode.js';
 import MassReadoutNode, { MassReadoutNodeOptions } from './MassReadoutNode.js';
 
-const earthMassesStringProperty = gravityAndOrbitsStrings.earthMassesProperty;
-const earthMassStringProperty = gravityAndOrbitsStrings.earthMassProperty;
+const earthMassesStringProperty = gravityAndOrbitsStrings.earthMassesStringProperty;
+const earthMassStringProperty = gravityAndOrbitsStrings.earthMassStringProperty;
 // @ts-ignore
-const pattern0Value1UnitsStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsProperty' ];
-const thousandEarthMassesStringProperty = gravityAndOrbitsStrings.thousandEarthMassesProperty;
+const pattern0Value1UnitsStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
+const thousandEarthMassesStringProperty = gravityAndOrbitsStrings.thousandEarthMassesStringProperty;
 
 class EarthMassReadoutNode extends MassReadoutNode {
 

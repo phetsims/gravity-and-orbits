@@ -19,7 +19,7 @@ import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js'
 class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {
     const options = optionize<ScreenOptions, EmptySelfOptions, ScreenOptions>()( {
-      name: gravityAndOrbitsStrings.toScaleProperty,
+      name: gravityAndOrbitsStrings.toScaleStringProperty,
 
       homeScreenIcon: new ScreenIcon( new Image( toScaleIcon_png ), {
         maxIconWidthProportion: 1,

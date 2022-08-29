@@ -64,12 +64,12 @@ class CheckboxPanel extends VBox {
     const children = [];
     const options = combineOptions<CheckboxPanelOptions>( { tandem: Tandem.OPTIONAL }, providedOptions );
 
-    const gravityForceTextNode = new Text( gravityAndOrbitsStrings.gravityForceProperty, TEXT_OPTIONS );
-    const velocityTextNode = new Text( gravityAndOrbitsStrings.velocityProperty, TEXT_OPTIONS );
-    const massTextNode = new Text( gravityAndOrbitsStrings.massProperty, TEXT_OPTIONS );
-    const pathTextNode = new Text( gravityAndOrbitsStrings.pathProperty, TEXT_OPTIONS );
-    const gridTextNode = new Text( gravityAndOrbitsStrings.gridProperty, TEXT_OPTIONS );
-    const measuringTapeTextNode = new Text( gravityAndOrbitsStrings.measuringTapeProperty, TEXT_OPTIONS );
+    const gravityForceTextNode = new Text( gravityAndOrbitsStrings.gravityForceStringProperty, TEXT_OPTIONS );
+    const velocityTextNode = new Text( gravityAndOrbitsStrings.velocityStringProperty, TEXT_OPTIONS );
+    const massTextNode = new Text( gravityAndOrbitsStrings.massStringProperty, TEXT_OPTIONS );
+    const pathTextNode = new Text( gravityAndOrbitsStrings.pathStringProperty, TEXT_OPTIONS );
+    const gridTextNode = new Text( gravityAndOrbitsStrings.gridStringProperty, TEXT_OPTIONS );
+    const measuringTapeTextNode = new Text( gravityAndOrbitsStrings.measuringTapeStringProperty, TEXT_OPTIONS );
     const optionsWithTandem = ( tandemName: string ) => merge( { tandem: options.tandem!.createTandem( tandemName ) }, CHECKBOX_OPTIONS );
 
     // gravity force checkbox

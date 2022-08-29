@@ -38,9 +38,9 @@ class GravityControl extends Node {
       tandem: Tandem.OPTIONAL
     }, providedOptions );
 
-    const gravityTextNode = new Text( gravityAndOrbitsStrings.gravity, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.gravityProperty } );
-    const onTextNode = new Text( gravityAndOrbitsStrings.on, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.onProperty } );
-    const offTextNode = new Text( gravityAndOrbitsStrings.off, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.offProperty } );
+    const gravityTextNode = new Text( gravityAndOrbitsStrings.gravity, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.gravityStringProperty } );
+    const onTextNode = new Text( gravityAndOrbitsStrings.on, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.onStringProperty } );
+    const offTextNode = new Text( gravityAndOrbitsStrings.off, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.offStringProperty } );
 
     this.addLinkedElement( gravityEnabledProperty, {
       tandem: options.tandem.createTandem( 'gravityEnabledProperty' )

@@ -97,7 +97,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
         this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-          gravityAndOrbitsStrings.vProperty, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
+          gravityAndOrbitsStrings.vStringProperty, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
             phetioInputEnabledPropertyInstrumented: true
           } ) );
       }
@@ -126,7 +126,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // Add measuring tape
     if ( model.showMeasuringTape ) {
 
-      const unitsProperty = new DerivedProperty( [ gravityAndOrbitsStrings.kilometersProperty ], kilometersString => {
+      const unitsProperty = new DerivedProperty( [ gravityAndOrbitsStrings.kilometersStringProperty ], kilometersString => {
         return {
           name: kilometersString,
           multiplier: 1 / 1000
@@ -193,7 +193,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // If any body is out of bounds, show a "return object" button
     const anythingReturnable = DerivedProperty.or( isReturnableProperties );
 
-    const returnObjectsButton = new TextPushButton( gravityAndOrbitsStrings.returnObjectsProperty, {
+    const returnObjectsButton = new TextPushButton( gravityAndOrbitsStrings.returnObjectsStringProperty, {
       font: new PhetFont( 16 ),
       textFill: 'black',
       visiblePropertyOptions: { phetioReadOnly: true },
