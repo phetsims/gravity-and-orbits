@@ -9,39 +9,49 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { Node, Text } from '../../../../scenery/js/imports.js';
+import { Color, Text } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
+import Panel from '../../../../sun/js/Panel.js';
 
 export type MassReadoutNodeOptions = {
   textMaxWidth?: number;
 };
 
-abstract class MassReadoutNode extends Node {
+abstract class MassReadoutNode extends Panel {
   protected bodyNode: BodyNode;
 
-  protected readonly textProperty = new StringProperty( '-' );
+  protected readonly textProperty;
 
   public constructor( bodyNode: BodyNode, visibleProperty: TReadOnlyProperty<boolean>, providedOptions?: MassReadoutNodeOptions ) {
-    super( {
-      visibleProperty: visibleProperty
-    } );
+
     const options: MassReadoutNodeOptions = merge( {
       textMaxWidth: 240
     }, providedOptions ) as MassReadoutNodeOptions;
-    this.bodyNode = bodyNode;
 
-    const readoutText = new Text( this.textProperty, {
+    const textProperty = new StringProperty( '-' );
+
+    const readoutText = new Text( textProperty, {
       pickable: false,
       font: new PhetFont( 18 ),
       maxWidth: options.textMaxWidth,
       fill: GravityAndOrbitsColors.foregroundProperty
     } );
-    this.addChild( readoutText );
 
+    // Expand text area to repaint artifacts
+    super( readoutText, {
+      visibleProperty: visibleProperty,
+      stroke: null,
+      fill: new Color( 0, 0, 1, 0.0001 ),
+      cornerRadius: 0
+    } );
+
+    this.bodyNode = bodyNode;
+
+    this.textProperty = textProperty;
     const updatePosition = () => {
       const bounds = bodyNode.bodyRenderer.getBounds();
 
