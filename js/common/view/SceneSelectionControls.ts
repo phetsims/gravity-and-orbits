@@ -52,8 +52,6 @@ class SceneSelectionControls extends Node {
     } );
 
     const radioButtonGroup = new RectangularRadioButtonGroup( sceneProperty, content, {
-      // @ts-ignore TODO: unknown option?
-      alignVertically: true,
       spacing: 0,
       touchAreaYDilation: 0, // reduce to 0 to prevent overlap between buttons
       radioButtonOptions: {
