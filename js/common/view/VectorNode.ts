@@ -30,7 +30,7 @@ class VectorNode extends Node {
   private readonly vectorProperty: Property<Vector2>;
   protected transformProperty: Property<ModelViewTransform2>;
   private readonly propertyListener: ( visible: boolean ) => void;
-  public static FORCE_SCALE: number;
+  public static readonly FORCE_SCALE = FORCE_SCALE;
   protected readonly vectorNodeScale: number;
 
   public constructor( body: Body, transformProperty: Property<ModelViewTransform2>, visibleProperty: Property<boolean>, vectorProperty: Property<Vector2>, scale: number, fill: Color, outline: Color, tandem: Tandem,
@@ -86,6 +86,5 @@ class VectorNode extends Node {
   }
 }
 
-VectorNode.FORCE_SCALE = FORCE_SCALE;
 gravityAndOrbits.register( 'VectorNode', VectorNode );
 export default VectorNode;

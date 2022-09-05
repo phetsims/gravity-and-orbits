@@ -18,7 +18,7 @@ type BodyConfigurationOptions = {
 
 class BodyConfiguration {
 
-  public mass: number;
+  public readonly mass: number;
   public radius: number;
   public x: number;
   public y: number;

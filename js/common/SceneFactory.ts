@@ -77,7 +77,7 @@ type SelfOptions = {
 type SceneFactoryOptions = SelfOptions;
 
 class SceneFactory {
-  public scenes: GravityAndOrbitsScene[];
+  public readonly scenes: GravityAndOrbitsScene[];
   public static SunEarthModeConfig: typeof SunEarthModeConfig;
   public static SunEarthMoonModeConfig: typeof SunEarthMoonModeConfig;
   public static PlanetMoonModeConfig: typeof PlanetMoonModeConfig;

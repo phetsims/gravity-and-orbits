@@ -29,25 +29,23 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
 class GravityAndOrbitsModel {
-  public showGravityForceProperty: BooleanProperty;
-  public showVelocityProperty: BooleanProperty;
-  public showPathProperty: BooleanProperty;
-  public showGridProperty: BooleanProperty;
-  public showMassProperty: BooleanProperty;
-  public showMeasuringTapeProperty: BooleanProperty;
-  public sceneProperty: Property<GravityAndOrbitsScene>;
+  public readonly showGravityForceProperty: BooleanProperty;
+  public readonly showVelocityProperty: BooleanProperty;
+  public readonly showPathProperty: BooleanProperty;
+  public readonly showGridProperty: BooleanProperty;
+  public readonly showMassProperty: BooleanProperty;
+  public readonly showMeasuringTapeProperty: BooleanProperty;
+  public readonly sceneProperty: Property<GravityAndOrbitsScene>;
+  public readonly isPlayingProperty: BooleanProperty;
+  public readonly timeSpeedProperty: EnumerationProperty<TimeSpeed>;
+  public readonly gravityEnabledProperty: BooleanProperty;
+  public readonly steppingProperty: BooleanProperty;
+  public readonly rewindingProperty: BooleanProperty;
+  public readonly showMassCheckbox: boolean;
+  public readonly showMeasuringTape: boolean;
+  public readonly sceneList: SceneFactory;
 
-  // TODO: Things should be marked as readonly where possible
-  public isPlayingProperty: BooleanProperty;
-  public timeSpeedProperty: EnumerationProperty<TimeSpeed>;
-  public gravityEnabledProperty: BooleanProperty;
-  public steppingProperty: BooleanProperty;
-  public rewindingProperty: BooleanProperty;
-  public showMassCheckbox: boolean;
-  public showMeasuringTape: boolean;
-  public sceneList: SceneFactory;
-
-  public static G: number;
+  public static readonly G = G;
 
   public constructor( showMeasuringTape: boolean, createModes: ( arg0: GravityAndOrbitsModel ) => SceneFactory, initialSceneIndex: number, showMassCheckbox: boolean, tandem: Tandem ) {
 
@@ -118,8 +116,6 @@ class GravityAndOrbitsModel {
     }
   }
 
-  /**
-   */
   public reset(): void {
     this.showGravityForceProperty.reset();
     this.showPathProperty.reset();
@@ -138,9 +134,6 @@ class GravityAndOrbitsModel {
     }
   }
 }
-
-//statics
-GravityAndOrbitsModel.G = G;
 
 gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
 export default GravityAndOrbitsModel;

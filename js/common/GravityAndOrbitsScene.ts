@@ -64,25 +64,25 @@ type MeasuringTapeOptions = {
 type GravityAndOrbitsSceneImplementationOptions = Pick<GravityAndOrbitsSceneOptions, 'adjustMoonOrbit' | 'dt' | 'gridCenter'>;
 
 class GravityAndOrbitsScene extends PhetioObject {
-  public activeProperty: BooleanProperty;
-  public iconImage: Node;
-  public modelBoundsProperty: Property<Bounds2 | null>;
-  public transformProperty: Property<ModelViewTransform2>;
-  public radioButtonTandemName: string;
-  public resetButtonTandemName: string;
-  public sceneView: GravityAndOrbitsSceneView;
-  public massControlPanelTandemName: string;
+  public readonly activeProperty: BooleanProperty;
+  public readonly iconImage: Node;
+  public readonly modelBoundsProperty: Property<Bounds2 | null>;
+  public readonly transformProperty: Property<ModelViewTransform2>;
+  public readonly radioButtonTandemName: string;
+  public readonly resetButtonTandemName: string;
+  public readonly sceneView: GravityAndOrbitsSceneView;
+  public readonly massControlPanelTandemName: string;
   public readonly forceScale: number;
-  public physicsEngine: GravityAndOrbitsPhysicsEngine;
-  public massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node;
-  public zoomLevelProperty: NumberProperty;
-  public velocityVectorScale: number;
-  public gridSpacing: number;
-  public gridCenter: Vector2;
-  public timeFormatter: ( numberProperty: TProperty<number>, tandem: Tandem ) => TReadOnlyProperty<string>;
-  public measuringTapeStartPointProperty: Vector2Property;
-  public measuringTapeEndPointProperty: Vector2Property;
-  public isPlayingProperty: BooleanProperty;
+  public readonly physicsEngine: GravityAndOrbitsPhysicsEngine;
+  public readonly massReadoutFactory: ( arg0: BodyNode, arg1: Property<boolean> ) => Node;
+  public readonly zoomLevelProperty: NumberProperty;
+  public readonly velocityVectorScale: number;
+  public readonly gridSpacing: number;
+  public readonly gridCenter: Vector2;
+  public readonly timeFormatter: ( numberProperty: TProperty<number>, tandem: Tandem ) => TReadOnlyProperty<string>;
+  public readonly measuringTapeStartPointProperty: Vector2Property;
+  public readonly measuringTapeEndPointProperty: Vector2Property;
+  public readonly isPlayingProperty: BooleanProperty;
   public massControlPanel: Node | null;
 
   private readonly deviatedFromDefaultsProperty: BooleanProperty;

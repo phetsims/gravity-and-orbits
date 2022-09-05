@@ -22,7 +22,7 @@ import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 export default abstract class BodyRenderer extends Node {
   private readonly body: Body;
-  public targetBodyRenderer?: BodyRenderer;
+  public readonly targetBodyRenderer?: BodyRenderer;
   private static readonly ImageRenderer: typeof ImageRenderer;
   private static readonly SwitchableBodyRenderer: typeof SwitchableBodyRenderer;
 
@@ -43,7 +43,7 @@ export default abstract class BodyRenderer extends Node {
 gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
 export class SwitchableBodyRenderer extends BodyRenderer {
-  public override targetBodyRenderer: BodyRenderer;
+  public override readonly targetBodyRenderer: BodyRenderer;
   private readonly defaultBodyRenderer: BodyRenderer;
   private readonly massListener: () => void;
 

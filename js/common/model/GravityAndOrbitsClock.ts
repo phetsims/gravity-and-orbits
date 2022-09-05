@@ -27,9 +27,9 @@ const SECONDS_PER_DAY = 86400;
 const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 
 class GravityAndOrbitsClock {
-  public baseDTValue: number;
-  public timeSpeedProperty: EnumerationProperty<TimeSpeed>;
-  public timeProperty: NumberProperty;
+  public readonly baseDTValue: number;
+  public readonly timeSpeedProperty: EnumerationProperty<TimeSpeed>;
+  public readonly timeProperty: NumberProperty;
 
   private readonly isRunningProperty: BooleanProperty;
   private readonly dt: number;
@@ -45,7 +45,7 @@ class GravityAndOrbitsClock {
    * @param tandem
    */
   public constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
-               sceneTandem: Tandem, tandem: Tandem ) {
+                      sceneTandem: Tandem, tandem: Tandem ) {
 
     // (read-only)
     this.baseDTValue = baseDTValue;
@@ -135,8 +135,8 @@ class GravityAndOrbitsClock {
   }
 
   // statics
-  public static SECONDS_PER_DAY = SECONDS_PER_DAY;
-  public static DEFAULT_DT = DEFAULT_DT;
+  public static readonly SECONDS_PER_DAY = SECONDS_PER_DAY;
+  public static readonly DEFAULT_DT = DEFAULT_DT;
 }
 
 gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );

@@ -57,7 +57,7 @@ export default class Body extends PhetioObject {
   public pathLength: number;
   public path: Vector2[];
   public userControlled: boolean;
-  public clockTicksSinceExplosionProperty: NumberProperty;
+  public readonly clockTicksSinceExplosionProperty: NumberProperty;
 
   public readonly density: number;
   public readonly touchDilation: number;
@@ -92,7 +92,7 @@ export default class Body extends PhetioObject {
   private readonly highlight: Color;
   private readonly rotationPeriod: number | null;
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
-  public labelAngle: number;
+  public readonly labelAngle: number;
   private readonly speedProperty: TReadOnlyProperty<number>;
   private readonly isPlayingProperty: BooleanProperty;
   public readonly forceProperty: RewindableProperty<Vector2>;

@@ -40,8 +40,8 @@ const STAGE_SIZE = new Bounds2( 0, 0, WIDTH, HEIGHT );
 const buttonBackgroundColor = new Color( 255, 250, 125 );
 
 class GravityAndOrbitsSceneView extends Rectangle {
-  public static STAGE_SIZE: Bounds2;
-  public static buttonBackgroundColor: Color;
+  public static readonly STAGE_SIZE = STAGE_SIZE;
+  public static readonly buttonBackgroundColor = buttonBackgroundColor;
 
   /**
    * Constructor for GravityAndOrbitsSceneView
@@ -221,10 +221,6 @@ class GravityAndOrbitsSceneView extends Rectangle {
     this.addChild( scaleControl );
   }
 }
-
-// @static
-GravityAndOrbitsSceneView.STAGE_SIZE = STAGE_SIZE;
-GravityAndOrbitsSceneView.buttonBackgroundColor = buttonBackgroundColor;
 
 gravityAndOrbits.register( 'GravityAndOrbitsSceneView', GravityAndOrbitsSceneView );
 export default GravityAndOrbitsSceneView;
