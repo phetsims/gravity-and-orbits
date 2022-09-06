@@ -42,7 +42,8 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       playPauseStepButtonOptions: {
         playPauseStepXSpacing: PUSH_BUTTON_SPACING,
         playPauseButtonOptions: {
-          radius: PLAY_PAUSE_BUTTON_RADIUS
+          radius: PLAY_PAUSE_BUTTON_RADIUS,
+          touchAreaDilation: 3
         },
         stepForwardButtonOptions: {
           radius: STEP_BUTTON_RADIUS,
