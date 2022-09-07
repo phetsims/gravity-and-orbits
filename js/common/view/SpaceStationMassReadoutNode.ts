@@ -10,17 +10,17 @@
 import Utils from '../../../../dot/js/Utils.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyNode from './BodyNode.js';
 import MassReadoutNode from './MassReadoutNode.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
-const billionBillionSpaceStationMassesStringProperty = gravityAndOrbitsStrings.billionBillionSpaceStationMassesStringProperty;
+const billionBillionSpaceStationMassesStringProperty = GravityAndOrbitsStrings.billionBillionSpaceStationMassesStringProperty;
 
 // @ts-ignore
-const pattern0Value1UnitsStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
-const spaceStationMassStringProperty = gravityAndOrbitsStrings.spaceStationMassStringProperty;
+const pattern0Value1UnitsStringProperty = GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
+const spaceStationMassStringProperty = GravityAndOrbitsStrings.spaceStationMassStringProperty;
 
 class SpaceStationMassReadoutNode extends MassReadoutNode {
 

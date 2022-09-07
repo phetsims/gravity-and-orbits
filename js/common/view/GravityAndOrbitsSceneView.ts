@@ -17,7 +17,7 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { AlignBox, Color, Rectangle } from '../../../../scenery/js/imports.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
 import DraggableVectorNode from './DraggableVectorNode.js';
@@ -97,7 +97,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
         this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
-          gravityAndOrbitsStrings.vStringProperty, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
+          GravityAndOrbitsStrings.vStringProperty, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
             phetioInputEnabledPropertyInstrumented: true
           } ) );
       }
@@ -126,7 +126,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // Add measuring tape
     if ( model.showMeasuringTape ) {
 
-      const unitsProperty = new DerivedProperty( [ gravityAndOrbitsStrings.kilometersStringProperty ], kilometersString => {
+      const unitsProperty = new DerivedProperty( [ GravityAndOrbitsStrings.kilometersStringProperty ], kilometersString => {
         return {
           name: kilometersString,
           multiplier: 1 / 1000
@@ -193,7 +193,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     // If any body is out of bounds, show a "return object" button
     const anythingReturnable = DerivedProperty.or( isReturnableProperties );
 
-    const returnObjectsButton = new TextPushButton( gravityAndOrbitsStrings.returnObjectsStringProperty, {
+    const returnObjectsButton = new TextPushButton( GravityAndOrbitsStrings.returnObjectsStringProperty, {
       font: new PhetFont( 16 ),
       textFill: 'black',
       visiblePropertyOptions: { phetioReadOnly: true },

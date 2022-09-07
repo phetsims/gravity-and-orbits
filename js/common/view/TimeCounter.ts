@@ -17,7 +17,7 @@ import { Node, NodeOptions, Text, VBox } from '../../../../scenery/js/imports.js
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
 
@@ -45,7 +45,7 @@ class TimeCounter extends Node {
       maxWidth: 200
     } );
 
-    const clearButton = new TextPushButton( gravityAndOrbitsStrings.clearStringProperty, {
+    const clearButton = new TextPushButton( GravityAndOrbitsStrings.clearStringProperty, {
       font: new PhetFont( FONT_SIZE ),
       listener: () => clock.setSimulationTime( 0 ),
       maxTextWidth: 200,

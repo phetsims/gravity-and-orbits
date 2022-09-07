@@ -21,7 +21,7 @@ import BooleanIO from '../../../../tandem/js/types/BooleanIO.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import BodyState from './BodyState.js';
 import BodyTypeEnum from './BodyTypeEnum.js';
 import RewindableProperty from './RewindableProperty.js';
@@ -198,10 +198,10 @@ export default class Body extends PhetioObject {
     this.rotationPeriod = options.rotationPeriod;
 
     // (read-only) - passed to visual labels, must be translatable
-    this.labelStringProperty = this.type === 'planet' ? gravityAndOrbitsStrings.planetStringProperty :
-                               this.type === 'satellite' ? gravityAndOrbitsStrings.satelliteStringProperty :
-                               this.type === 'star' ? gravityAndOrbitsStrings.starStringProperty :
-                               this.type === 'moon' ? gravityAndOrbitsStrings.moonStringProperty :
+    this.labelStringProperty = this.type === 'planet' ? GravityAndOrbitsStrings.planetStringProperty :
+                               this.type === 'satellite' ? GravityAndOrbitsStrings.satelliteStringProperty :
+                               this.type === 'star' ? GravityAndOrbitsStrings.starStringProperty :
+                               this.type === 'moon' ? GravityAndOrbitsStrings.moonStringProperty :
                                null;
     assert && assert( this.labelStringProperty, `no label found for body with identifier ${this.type}` );
 

@@ -12,7 +12,7 @@ import { Image } from '../../../scenery/js/imports.js';
 import modelIcon_png from '../../mipmaps/modelIcon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
 import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
@@ -20,7 +20,7 @@ class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {
 
     const options = optionize<ScreenOptions, EmptySelfOptions, ScreenOptions>()( {
-      name: gravityAndOrbitsStrings.modelStringProperty,
+      name: GravityAndOrbitsStrings.modelStringProperty,
 
       homeScreenIcon: new ScreenIcon( new Image( modelIcon_png ), {
         maxIconWidthProportion: 1,

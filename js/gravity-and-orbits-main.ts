@@ -12,7 +12,7 @@ import Sim, { SimOptions } from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import GravityAndOrbitsColors from './common/GravityAndOrbitsColors.js';
-import gravityAndOrbitsStrings from './gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from './GravityAndOrbitsStrings.js';
 import ModelScreen from './model/ModelScreen.js';
 import ToScaleScreen from './toScale/ToScaleScreen.js';
 
@@ -49,5 +49,5 @@ simLauncher.launch( () => {
     backgroundColorProperty: backgroundColorProperty,
     tandem: Tandem.ROOT.createTandem( 'toScaleScreen' )
   } );
-  new Sim( gravityAndOrbitsStrings[ 'gravity-and-orbits' ].titleStringProperty, [ modelScreen, toScaleScreen ], simOptions ).start();
+  new Sim( GravityAndOrbitsStrings[ 'gravity-and-orbits' ].titleStringProperty, [ modelScreen, toScaleScreen ], simOptions ).start();
 } );

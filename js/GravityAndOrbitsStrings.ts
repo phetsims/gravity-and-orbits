@@ -93,8 +93,8 @@ type StringsType = {
   'vStringProperty': TReadOnlyProperty<string>;
 };
 
-const gravityAndOrbitsStrings = getStringModule( 'GRAVITY_AND_ORBITS' ) as StringsType;
+const GravityAndOrbitsStrings = getStringModule( 'GRAVITY_AND_ORBITS' ) as StringsType;
 
-gravityAndOrbits.register( 'gravityAndOrbitsStrings', gravityAndOrbitsStrings );
+gravityAndOrbits.register( 'GravityAndOrbitsStrings', GravityAndOrbitsStrings );
 
-export default gravityAndOrbitsStrings;
+export default GravityAndOrbitsStrings;

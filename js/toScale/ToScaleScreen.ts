@@ -12,14 +12,14 @@ import { Image } from '../../../scenery/js/imports.js';
 import toScaleIcon_png from '../../mipmaps/toScaleIcon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
 class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {
     const options = optionize<ScreenOptions, EmptySelfOptions, ScreenOptions>()( {
-      name: gravityAndOrbitsStrings.toScaleStringProperty,
+      name: GravityAndOrbitsStrings.toScaleStringProperty,
 
       homeScreenIcon: new ScreenIcon( new Image( toScaleIcon_png ), {
         maxIconWidthProportion: 1,

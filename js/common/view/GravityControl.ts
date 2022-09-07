@@ -11,7 +11,7 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { HBox, Node, Text } from '../../../../scenery/js/imports.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
@@ -38,9 +38,9 @@ class GravityControl extends Node {
       tandem: Tandem.OPTIONAL
     }, providedOptions );
 
-    const gravityTextNode = new Text( gravityAndOrbitsStrings.gravity, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.gravityStringProperty } );
-    const onTextNode = new Text( gravityAndOrbitsStrings.on, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.onStringProperty } );
-    const offTextNode = new Text( gravityAndOrbitsStrings.off, { ...TEXT_OPTIONS, textProperty: gravityAndOrbitsStrings.offStringProperty } );
+    const gravityTextNode = new Text( GravityAndOrbitsStrings.gravity, { ...TEXT_OPTIONS, textProperty: GravityAndOrbitsStrings.gravityStringProperty } );
+    const onTextNode = new Text( GravityAndOrbitsStrings.on, { ...TEXT_OPTIONS, textProperty: GravityAndOrbitsStrings.onStringProperty } );
+    const offTextNode = new Text( GravityAndOrbitsStrings.off, { ...TEXT_OPTIONS, textProperty: GravityAndOrbitsStrings.offStringProperty } );
 
     this.addLinkedElement( gravityEnabledProperty, {
       tandem: options.tandem.createTandem( 'gravityEnabledProperty' )

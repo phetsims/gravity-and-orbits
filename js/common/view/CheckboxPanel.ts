@@ -21,7 +21,7 @@ import iconMass_png from '../../../images/iconMass_png.js';
 import pathIcon_png from '../../../images/pathIcon_png.js';
 import pathIconProjector_png from '../../../images/pathIconProjector_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
@@ -64,7 +64,7 @@ class CheckboxPanel extends VerticalCheckboxGroup {
       property: model.showGravityForceProperty,
       createNode: tandem => new HBox( merge( {
         children: [
-          new Text( gravityAndOrbitsStrings.gravityForceStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
+          new Text( GravityAndOrbitsStrings.gravityForceStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
           new ArrowNode( 135, ARROW_Y_COORDINATE, 180, ARROW_Y_COORDINATE, { fill: '#4380C2' } )
         ]
       }, HBOX_OPTIONS ) ),
@@ -76,7 +76,7 @@ class CheckboxPanel extends VerticalCheckboxGroup {
       property: model.showVelocityProperty,
       createNode: tandem => new HBox( merge( {
         children: [
-          new Text( gravityAndOrbitsStrings.velocityStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
+          new Text( GravityAndOrbitsStrings.velocityStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
           new ArrowNode( 95, ARROW_Y_COORDINATE, 140, ARROW_Y_COORDINATE, { fill: PhetColorScheme.VELOCITY } )
         ]
       }, HBOX_OPTIONS ) ),
@@ -92,7 +92,7 @@ class CheckboxPanel extends VerticalCheckboxGroup {
         tandemName: 'massCheckbox',
         createNode: tandem => new HBox( merge( {
           children: [
-            new Text( gravityAndOrbitsStrings.massStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
+            new Text( GravityAndOrbitsStrings.massStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
             new Image( iconMass_png, { scale: 0.8 } )
           ]
         }, HBOX_OPTIONS ) ),
@@ -112,7 +112,7 @@ class CheckboxPanel extends VerticalCheckboxGroup {
       tandemName: 'pathCheckbox',
       createNode: tandem => new HBox( merge( {
         children: [
-          new Text( gravityAndOrbitsStrings.pathStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
+          new Text( GravityAndOrbitsStrings.pathStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
           pathIconImageNode
         ]
       }, HBOX_OPTIONS ) ),
@@ -125,7 +125,7 @@ class CheckboxPanel extends VerticalCheckboxGroup {
       tandemName: 'gridCheckbox',
       createNode: tandem => new HBox( merge( {
         children: [
-          new Text( gravityAndOrbitsStrings.gridStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
+          new Text( GravityAndOrbitsStrings.gridStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
           new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
             stroke: GravityAndOrbitsColors.gridIconStrokeColorProperty,
             lineWidth: 1.5
@@ -144,7 +144,7 @@ class CheckboxPanel extends VerticalCheckboxGroup {
         createNode: tandem => new HBox( combineOptions<HBoxOptions>( {
           align: 'top',
           children: [
-            new Text( gravityAndOrbitsStrings.measuringTapeStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
+            new Text( GravityAndOrbitsStrings.measuringTapeStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelNode' ) }, TEXT_OPTIONS ) ),
             measuringTapeIcon
           ]
         }, HBOX_OPTIONS ) ),

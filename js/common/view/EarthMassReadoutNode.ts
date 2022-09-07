@@ -11,16 +11,16 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyNode from './BodyNode.js';
 import MassReadoutNode, { MassReadoutNodeOptions } from './MassReadoutNode.js';
 
-const earthMassesStringProperty = gravityAndOrbitsStrings.earthMassesStringProperty;
-const earthMassStringProperty = gravityAndOrbitsStrings.earthMassStringProperty;
+const earthMassesStringProperty = GravityAndOrbitsStrings.earthMassesStringProperty;
+const earthMassStringProperty = GravityAndOrbitsStrings.earthMassStringProperty;
 // @ts-ignore
-const pattern0Value1UnitsStringProperty = gravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
-const thousandEarthMassesStringProperty = gravityAndOrbitsStrings.thousandEarthMassesStringProperty;
+const pattern0Value1UnitsStringProperty = GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
+const thousandEarthMassesStringProperty = GravityAndOrbitsStrings.thousandEarthMassesStringProperty;
 
 class EarthMassReadoutNode extends MassReadoutNode {
 

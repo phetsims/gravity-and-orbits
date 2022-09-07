@@ -10,7 +10,7 @@
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { HBox, HStrut, Node, Text, VBox, VBoxOptions } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import gravityAndOrbitsStrings from '../../gravityAndOrbitsStrings.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import MassSlider from './MassSlider.js';
@@ -22,10 +22,10 @@ import merge from '../../../../phet-core/js/merge.js';
 // constants
 const CONTROL_FONT = new PhetFont( 14 );
 const LABEL_MAP = {
-  planet: gravityAndOrbitsStrings.planetMassStringProperty,
-  satellite: gravityAndOrbitsStrings.satelliteMassStringProperty,
-  star: gravityAndOrbitsStrings.starMassStringProperty,
-  moon: gravityAndOrbitsStrings.moonMassStringProperty
+  planet: GravityAndOrbitsStrings.planetMassStringProperty,
+  satellite: GravityAndOrbitsStrings.satelliteMassStringProperty,
+  star: GravityAndOrbitsStrings.starMassStringProperty,
+  moon: GravityAndOrbitsStrings.moonMassStringProperty
 };
 
 type MassControlPanelOptions = VBoxOptions & PickRequired<VBoxOptions, 'tandem'>;
