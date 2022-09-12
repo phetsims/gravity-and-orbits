@@ -161,15 +161,15 @@ class BodyNode extends Node {
     const tip = northEastVector.times( 10 ).plus( viewCenter );
     const tail = northEastVector.times( 70 ).plus( viewCenter );
 
-    const labelNodeTandem = tandem.createTandem( 'labelNode' );
+    const labelTextTandem = tandem.createTandem( 'labelText' );
     node.addChild( new Line( tail.x, tail.y, tip.x, tip.y, {
       stroke: GravityAndOrbitsColors.bodyLabelIndicatorProperty
     } ) );
-    const labelNode = new Text( body.labelStringProperty!, {
+    const labelText = new Text( body.labelStringProperty!, {
       font: new PhetFont( 18 ),
       fill: GravityAndOrbitsColors.foregroundProperty,
       maxWidth: 65,
-      tandem: labelNodeTandem
+      tandem: labelTextTandem
     } );
 
     // Eliminate artifacts seen on Windows chrome by adding an invisible rectangle underlay, see
@@ -179,11 +179,11 @@ class BodyNode extends Node {
       // A rectangle with no fill doesn't paint, so we paint with low or no opacity to make sure that region is painted
       fill: 'transparent'
     } );
-    labelNode.boundsProperty.link( bounds => {
+    labelText.boundsProperty.link( bounds => {
       antiArtifactRectangle.rectBounds = bounds.dilated( 10 );
     } );
     const labelWithAntiArtifactRectangle = new Node( {
-      children: [ antiArtifactRectangle, labelNode ]
+      children: [ antiArtifactRectangle, labelText ]
     } );
     labelWithAntiArtifactRectangle.localBoundsProperty.link( () => {
       labelWithAntiArtifactRectangle.centerX = tail.x;

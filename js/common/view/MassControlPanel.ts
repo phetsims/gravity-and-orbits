@@ -50,12 +50,12 @@ class MassControlPanel extends VBox {
       const massSettableBodyTandem = options.tandem.createTandem( `${massSettableBody.tandemName}ControlNode` );
       const sliderNode = new Node( { tandem: massSettableBodyTandem } );
 
-      const label = new Text( LABEL_MAP[ massSettableBody.type ], {
+      const massLabelText = new Text( LABEL_MAP[ massSettableBody.type ], {
         font: CONTROL_FONT,
         fontWeight: 'bold',
         fill: GravityAndOrbitsColors.foregroundProperty,
         maxWidth: 175,
-        tandem: massSettableBodyTandem.createTandem( 'massLabel' )
+        tandem: massSettableBodyTandem.createTandem( 'massLabelText' )
       } );
 
       const icon = new Node( {
@@ -64,7 +64,7 @@ class MassControlPanel extends VBox {
       } );
 
       // Top component that shows the body's name and icon
-      const labelHBox = new HBox( { children: [ icon, label ], spacing: 10 } );
+      const labelHBox = new HBox( { children: [ icon, massLabelText ], spacing: 10 } );
 
       sliderNode.addChild( labelHBox );
 
