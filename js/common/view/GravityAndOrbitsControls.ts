@@ -8,7 +8,7 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import { VBox } from '../../../../scenery/js/imports.js';
-import HSeparator from '../../../../sun/js/HSeparator.js';
+import HSeparatorDeprecated from '../../../../sun/js/HSeparatorDeprecated.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import CheckboxPanel from './CheckboxPanel.js';
@@ -32,8 +32,8 @@ class GravityAndOrbitsControls extends VBox {
     const options: GravityAndOrbitsControlsOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, providedOptions ) as unknown as GravityAndOrbitsControls;
 
     // top separator rectangle for the gravity control section
-    const topSeparator = new HSeparator( 0, merge( { tandem: options.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );
-    const bottomSeparator = new HSeparator( 0, merge( { tandem: options.tandem.createTandem( 'separator2' ) }, SEPARATOR_OPTIONS ) );
+    const topSeparator = new HSeparatorDeprecated( 0, merge( { tandem: options.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );
+    const bottomSeparator = new HSeparatorDeprecated( 0, merge( { tandem: options.tandem.createTandem( 'separator2' ) }, SEPARATOR_OPTIONS ) );
 
     // menu sections and separators
     const sections = [
