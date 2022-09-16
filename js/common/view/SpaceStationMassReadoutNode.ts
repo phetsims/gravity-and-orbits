@@ -54,7 +54,7 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
       else {
         value = Utils.toFixed( spaceStationMasses, 2 ); // use one less decimal point here
       }
-      this.textProperty.value = StringUtils.format( pattern0Value1UnitsStringProperty.value, value, units );
+      this.stringProperty.value = StringUtils.format( pattern0Value1UnitsStringProperty.value, value, units );
     };
     this.bodyNode.body.massProperty.lazyLink( updateText );
     billionBillionSpaceStationMassesStringProperty.lazyLink( updateText );

@@ -24,7 +24,7 @@ export type MassReadoutNodeOptions = {
 abstract class MassReadoutNode extends Panel {
   protected bodyNode: BodyNode;
 
-  protected readonly textProperty;
+  protected readonly stringProperty;
 
   public constructor( bodyNode: BodyNode, visibleProperty: TReadOnlyProperty<boolean>, providedOptions?: MassReadoutNodeOptions ) {
 
@@ -32,9 +32,9 @@ abstract class MassReadoutNode extends Panel {
       textMaxWidth: 240
     }, providedOptions ) as MassReadoutNodeOptions;
 
-    const textProperty = new StringProperty( '-' );
+    const stringProperty = new StringProperty( '-' );
 
-    const readoutText = new Text( textProperty, {
+    const readoutText = new Text( stringProperty, {
       pickable: false,
       font: new PhetFont( 18 ),
       maxWidth: options.textMaxWidth,
@@ -51,7 +51,7 @@ abstract class MassReadoutNode extends Panel {
 
     this.bodyNode = bodyNode;
 
-    this.textProperty = textProperty;
+    this.stringProperty = stringProperty;
     const updatePosition = () => {
       const bounds = bodyNode.bodyRenderer.getBounds();
 
@@ -65,7 +65,7 @@ abstract class MassReadoutNode extends Panel {
     };
 
     bodyNode.body.massProperty.lazyLink( updatePosition );
-    this.textProperty.lazyLink( updatePosition );
+    this.stringProperty.lazyLink( updatePosition );
     visibleProperty.lazyLink( updatePosition );
   }
 }

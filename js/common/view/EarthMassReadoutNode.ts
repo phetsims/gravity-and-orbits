@@ -56,7 +56,7 @@ class EarthMassReadoutNode extends MassReadoutNode {
         value = Utils.toFixed( earthMasses, 2 );
         units = ( earthMasses === 1 ) ? earthMassStringProperty.value : earthMassesStringProperty.value;
       }
-      this.textProperty.value = StringUtils.format( pattern0Value1UnitsStringProperty.value, value, units );
+      this.stringProperty.value = StringUtils.format( pattern0Value1UnitsStringProperty.value, value, units );
     };
     this.bodyNode.body.massProperty.lazyLink( updateText );
     thousandEarthMassesStringProperty.lazyLink( updateText );

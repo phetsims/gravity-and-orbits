@@ -730,7 +730,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.measuredDistanceProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.readoutTextProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.measuringTapeNode.readoutStringProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetMoonSceneView.returnObjectsButton.enabledProperty": {
@@ -766,7 +766,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.measuredDistanceProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.readoutTextProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.measuringTapeNode.readoutStringProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.planetSatelliteSceneView.returnObjectsButton.enabledProperty": {
@@ -802,7 +802,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.measuredDistanceProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.readoutTextProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.measuringTapeNode.readoutStringProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetMoonSceneView.returnObjectsButton.enabledProperty": {
@@ -838,7 +838,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.measuredDistanceProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.readoutTextProperty": {
+    "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.measuringTapeNode.readoutStringProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.playAreaNode.starPlanetSceneView.returnObjectsButton.enabledProperty": {
