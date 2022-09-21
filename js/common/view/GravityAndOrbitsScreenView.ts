@@ -78,10 +78,16 @@ class GravityAndOrbitsScreenView extends ScreenView {
       spacing: MARGIN,
       children: [
         new Panel( alignGroup.createBox( controlPanel ), merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
-          tandem: controlPanelTandem
+          tandem: controlPanelTandem,
+          visiblePropertyOptions: {
+            phetioReadOnly: false
+          }
         } ) ),
         new Panel( alignGroup.createBox( massesControlPanel ), merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
-          tandem: massesControlPanelTandem
+          tandem: massesControlPanelTandem,
+          visiblePropertyOptions: {
+            phetioReadOnly: false
+          }
         } ) )
       ]
     } ) );

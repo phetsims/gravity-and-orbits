@@ -15,15 +15,14 @@ import CheckboxPanel from './CheckboxPanel.js';
 import GravityControl from './GravityControl.js';
 import SceneSelectionControls from './SceneSelectionControls.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 
 // constants
 const MENU_SECTION_OPTIONS = { x: 5 };
 const SEPARATOR_OPTIONS = { lineWidth: 2, stroke: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE };
 
-type GravityAndOrbitsControlsOptions = {
-  tandem: Tandem;
-};
+type GravityAndOrbitsControlsOptions = PickRequired<PhetioObjectOptions, 'tandem'>;
 
 class GravityAndOrbitsControls extends VBox {
 
