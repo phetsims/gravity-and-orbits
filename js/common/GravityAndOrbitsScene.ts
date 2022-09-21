@@ -141,7 +141,8 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     this.deviatedFromDefaultsProperty = new BooleanProperty( false, {
       tandem: tandem.createTandem( 'deviatedFromDefaultsProperty' ),
-      phetioDocumentation: 'for internal PhET use only'
+      phetioDocumentation: 'for internal PhET use only',
+      phetioReadOnly: true
     } );
     const measuringTapePointOptions: MeasuringTapeOptions = {
       units: 'm'
