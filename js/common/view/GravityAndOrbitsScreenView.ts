@@ -47,7 +47,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
 
     // Container so all mass control panels (for each scene) can be hidden/shown at once
     const massesControlPanelTandem = tandem.createTandem( 'massesControlPanel' );
-    const massesControlPanel = new Node();
+    const massesControlPanel = new VBox();
 
     // Container so all play areas (for each scene) can be hidden/shown at once
     const playAreaNodeTandem = tandem.createTandem( GravityAndOrbitsConstants.PLAY_AREA_TANDEM_NAME );
