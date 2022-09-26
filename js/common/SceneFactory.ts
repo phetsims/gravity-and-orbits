@@ -379,8 +379,9 @@ const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
     GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
   ], ( time, earthDayString, earthDaysString, patternString ) => {
     const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
-    const units = ( value === 1 ) ? earthDayString : earthDaysString;
-    return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+    const fixedValue = Utils.toFixed( value, 0 );
+    const units = ( fixedValue === '1' ) ? earthDayString : earthDaysString;
+    return StringUtils.format( patternString, fixedValue, units );
   }, {
     tandem: tandem,
     phetioValueType: StringIO
@@ -399,8 +400,9 @@ const formatMinutes = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
     GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
   ], ( time, earthMinuteString, earthMinutesString, patternString ) => {
     const value = ( time / SECONDS_PER_MINUTE );
-    const units = ( value === 1 ) ? earthMinuteString : earthMinutesString;
-    return StringUtils.format( patternString, Utils.toFixed( value, 0 ), units );
+    const fixedValue = Utils.toFixed( value, 0 );
+    const units = ( fixedValue === '1' ) ? earthMinuteString : earthMinutesString;
+    return StringUtils.format( patternString, fixedValue, units );
   }, {
     tandem: tandem,
     phetioValueType: StringIO
