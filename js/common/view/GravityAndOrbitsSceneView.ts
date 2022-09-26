@@ -207,6 +207,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
         scene.isPlayingProperty.set( false );
       },
       tandem: tandem.createTandem( 'returnObjectsButton' ),
+      maxWidth: 225,
       x: 100,
       y: 100
     } );
