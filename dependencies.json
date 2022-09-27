@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.6.0-rc.0 Mon Sep 26 2022 15:25:23 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.6.0-rc.0 Tue Sep 27 2022 11:10:34 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "master"
@@ -13,7 +13,7 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "142cb47e9ae6a2c2c5df3474ec7a448f828368c6",
+    "sha": "59be55e18fef96793514f70317eee9c01329b582",
     "branch": "master"
   },
   "dot": {
@@ -21,11 +21,11 @@
     "branch": "master"
   },
   "gravity-and-orbits": {
-    "sha": "746488f70c7be2d17d2bce3a560c602479af1b20",
+    "sha": "6f6af362f705ae5fffb6931abbc76d7e90e538fe",
     "branch": "1.6"
   },
   "joist": {
-    "sha": "23b9d634f1615a5df0958dea0f6a0bc37b54eb4d",
+    "sha": "7b1411bbca7957e4fcef63db43214278100760ee",
     "branch": "master"
   },
   "kite": {
@@ -33,7 +33,7 @@
     "branch": "master"
   },
   "perennial-alias": {
-    "sha": "9747249efdecfbcb66ff5652d2a0ce590662c075",
+    "sha": "685c510ffd9ff904d1bc69759970fc3fb4cdd424",
     "branch": "master"
   },
   "phet-core": {
@@ -45,11 +45,11 @@
     "branch": "master"
   },
   "phet-io-sim-specific": {
-    "sha": "505721f5799a297b8b1a209c348bb4b75a75b377",
+    "sha": "7cb1d1d2e264b9212c636217532e3d12af066712",
     "branch": "master"
   },
   "phet-io-wrappers": {
-    "sha": "c0d5b80d391efbb3961f64abf3540c69eeee44fb",
+    "sha": "65acf7aa6943080961bd5a1212dd89ecd2cadc38",
     "branch": "master"
   },
   "phetcommon": {
@@ -61,7 +61,7 @@
     "branch": "master"
   },
   "query-string-machine": {
-    "sha": "fad9c77b878f6928bac4f772651da608a2965470",
+    "sha": "fa9fe44755c7324b85487791f26cb992ac3cd9b4",
     "branch": "master"
   },
   "scenery": {
@@ -69,7 +69,7 @@
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "7e245580ba8644694966ac3132d9783815515585",
+    "sha": "fe0f376ce4bc2b8f314137195625b8b45280014c",
     "branch": "master"
   },
   "sherpa": {
@@ -81,7 +81,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "0b5779fe871b2b6d29734bfccff8d40691c054bc",
+    "sha": "39081e82ec1ea6e77bb130dffdc86c9b1861f5dc",
     "branch": "master"
   },
   "tambo": {
