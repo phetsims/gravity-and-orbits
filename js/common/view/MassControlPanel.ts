@@ -59,6 +59,9 @@ class MassControlPanel extends VBox {
       } );
 
       const icon = new Node( {
+
+        // Work around a Chrome-specific bug, see https://github.com/phetsims/gravity-and-orbits/issues/449
+        renderer: 'canvas',
         children: [ massSettableBody.createRenderer( 14 ) ],
         tandem: massSettableBodyTandem.createTandem( 'icon' )
       } );
