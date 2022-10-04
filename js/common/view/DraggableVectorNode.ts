@@ -27,8 +27,6 @@ class DraggableVectorNode extends VectorNode {
 
     super( body, transformProperty, visibleProperty, vectorProperty, scale, fill, outline, tandem, providedOptions );
 
-    const tip = this.getTip();
-
     // a circle with text (a character) in the center, to help indicate what it represents
     // ("v" for velocity in this sim)
     const ellipse = Shape.ellipse( 0, 0, 18, 18, 0 );
@@ -45,9 +43,9 @@ class DraggableVectorNode extends VectorNode {
       maxWidth: 25
     } );
     text.localBoundsProperty.link( () => {
-      text.center = tip;
+      text.center = this.getTip();
     } );
-    grabArea.center = tip;
+    grabArea.center = this.getTip();
 
     this.addChild( grabArea );
     this.addChild( text );
