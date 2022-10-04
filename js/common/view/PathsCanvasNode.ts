@@ -76,9 +76,13 @@ class PathsCanvasNode extends CanvasNode {
     visibleProperty.link( isVisible => {
       this.visible = isVisible;
 
-      // Paths should restart from the body position when "Path" checkbox is checked
-      for ( let i = 0; i < bodies.length; i++ ) {
-        this.bodies[ i ].clearPath();
+      // Don't clear the path during phet-io state set, see https://github.com/phetsims/gravity-and-orbits/issues/455
+      if ( !phet.joist.sim.isSettingPhetioStateProperty.value ) {
+
+        // Paths should restart from the body position when "Path" checkbox is checked
+        for ( let i = 0; i < bodies.length; i++ ) {
+          this.bodies[ i ].clearPath();
+        }
       }
       updateNamedPoints();
     } );
