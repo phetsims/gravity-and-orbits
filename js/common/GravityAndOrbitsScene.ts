@@ -190,7 +190,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     this.zoomLevelProperty.link( () => this.transformProperty.set( this.createTransform( defaultZoomScale, gridCenter ) ) );
 
-    const clock = new GravityAndOrbitsClock( dt, model.steppingProperty, this.timeSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
+    const clock = new GravityAndOrbitsClock( model.changeRewindValueProperty, dt, model.steppingProperty, this.timeSpeedProperty, tandem, tandem.createTandem( 'clock' ) );
     this.physicsEngine = new GravityAndOrbitsPhysicsEngine( clock, model.gravityEnabledProperty, options.adjustMoonOrbit );
 
     Multilink.multilink( [ model.isPlayingProperty, this.activeProperty ], ( playButtonPressed, active ) =>
@@ -307,7 +307,7 @@ class GravityAndOrbitsScene extends PhetioObject {
    */
   public rewind(): void {
     this.rewindingProperty.set( true );
-    this.getClock().setSimulationTime( 0.0 );
+    this.getClock().timeProperty.rewind();
     const bodies = this.physicsEngine.getBodies();
     bodies.forEach( body => body.rewind() );
 
@@ -326,6 +326,7 @@ class GravityAndOrbitsScene extends PhetioObject {
     for ( let i = 0; i < bodies.length; i++ ) {
       bodies[ i ].saveBodyState();
     }
+    this.getClock().timeProperty.storeRewindValueNoNotify();
   }
 
   /**

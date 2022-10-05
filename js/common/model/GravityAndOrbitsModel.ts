@@ -24,6 +24,8 @@ import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import SceneFactory from '../SceneFactory.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 // constants
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
@@ -46,6 +48,9 @@ class GravityAndOrbitsModel {
   public readonly sceneList: SceneFactory;
 
   public static readonly G = G;
+
+  // True if when a value changes, it is allowed to be accepted as a new "initial condition" for an experiment
+  public readonly changeRewindValueProperty: TReadOnlyProperty<boolean>;
 
   public constructor( showMeasuringTape: boolean, createModes: ( arg0: GravityAndOrbitsModel ) => SceneFactory, initialSceneIndex: number, showMassCheckbox: boolean, tandem: Tandem ) {
 
@@ -77,6 +82,14 @@ class GravityAndOrbitsModel {
     // they are false for the model screen and true for the toScale screen
     this.showMassCheckbox = showMassCheckbox;
     this.showMeasuringTape = showMeasuringTape;
+
+    this.changeRewindValueProperty = new DerivedProperty( [
+        this.isPlayingProperty,
+        this.steppingProperty,
+        this.rewindingProperty
+      ], ( playButtonPressed, stepping, rewinding ) =>
+        !playButtonPressed && !stepping && !rewinding
+    );
 
     this.sceneList = createModes( this );
 

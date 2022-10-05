@@ -10,12 +10,14 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import EventTimer from '../../../../phet-core/js/EventTimer.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
+import RewindableProperty from './RewindableProperty.js';
+import NumberIO from '../../../../tandem/js/types/NumberIO.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 // constants
 // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness
@@ -29,7 +31,7 @@ const DEFAULT_DT = DAYS_PER_TICK * SECONDS_PER_DAY;
 class GravityAndOrbitsClock {
   public readonly baseDTValue: number;
   public readonly timeSpeedProperty: EnumerationProperty<TimeSpeed>;
-  public readonly timeProperty: NumberProperty;
+  public readonly timeProperty: RewindableProperty<number>;
 
   private readonly isRunningProperty: BooleanProperty;
   private readonly dt: number;
@@ -38,13 +40,14 @@ class GravityAndOrbitsClock {
   private eventTimer: EventTimer | null;
 
   /**
+   * @param changeRewindValueProperty
    * @param baseDTValue (multiplied by scale to obtain true dt)
    * @param steppingProperty
    * @param timeSpeedProperty
    * @param sceneTandem
    * @param tandem
    */
-  public constructor( baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
+  public constructor( changeRewindValueProperty: TReadOnlyProperty<boolean>, baseDTValue: number, steppingProperty: BooleanProperty, timeSpeedProperty: EnumerationProperty<TimeSpeed>,
                       sceneTandem: Tandem, tandem: Tandem ) {
 
     // (read-only)
@@ -55,11 +58,13 @@ class GravityAndOrbitsClock {
       phetioDocumentation: `This value is true when '${sceneTandem.phetioID}' is the selected scene and the play/pause button is in play mode. (It remains true even if the user switches screens. Use in combination with '${phet.joist.sim.selectedScreenProperty.tandem.phetioID}'.)`,
       phetioReadOnly: true
     } );
-    this.timeProperty = new NumberProperty( 0, {
+
+    this.timeProperty = new RewindableProperty( changeRewindValueProperty, 0, {
       tandem: tandem.createTandem( 'timeProperty' ),
       phetioHighFrequency: true,
       units: 's',
-      phetioReadOnly: true
+      phetioReadOnly: true,
+      phetioValueType: NumberIO
     } );
     this.dt = baseDTValue;
     this.steppingProperty = steppingProperty;
