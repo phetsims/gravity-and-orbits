@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.6.0-rc.1 Wed Oct 05 2022 17:28:29 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.6.0-rc.2 Wed Oct 05 2022 17:36:01 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "HEAD"
@@ -21,12 +21,12 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "b1cef22e9227986c68f85e0f33d1936018acc485",
+    "sha": "54e136298a4591279980ace9f7ad101c3c598ac7",
     "branch": "1.6"
   },
   "joist": {
     "sha": "4352f0e592eace73e3a9b7ae9f83abf98b006585",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "kite": {
     "sha": "154190932bc754506ee6693d0ec8542d4b159ad3",
@@ -46,11 +46,11 @@
   },
   "phet-io-sim-specific": {
     "sha": "16af4a6c3e0607094db58f8b254654d2e149cd38",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "phet-io-wrappers": {
     "sha": "2f51d7ad5f1aeb21f7e7a71fc978a5f2989eb0d2",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "phetcommon": {
     "sha": "dc3bb5750238e003d1204034f7593333e4a27b44",
@@ -62,7 +62,7 @@
   },
   "query-string-machine": {
     "sha": "266014ae388e58f11da75f2134bdd771597a0dc5",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "scenery": {
     "sha": "a94628fe155cb1ed660ff15053858ec376df1681",
@@ -70,7 +70,7 @@
   },
   "scenery-phet": {
     "sha": "7d6fc07521321376279a66a3ecdad7ba976ddff5",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "sherpa": {
     "sha": "5595971a4c970fb32e5254132fc7f3b79e955902",
@@ -82,7 +82,7 @@
   },
   "sun": {
     "sha": "ae69d67d9cb8deec5bc3a0d555a24fbd37cffb7c",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "tambo": {
     "sha": "bdd3e1b24fd2834f1945f173bcdeb8bbe128e753",
