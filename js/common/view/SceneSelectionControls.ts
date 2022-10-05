@@ -8,7 +8,7 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import { Color, HStrut, Image, Node, VBox } from '../../../../scenery/js/imports.js';
+import { Color, HStrut, Image, Node } from '../../../../scenery/js/imports.js';
 import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import RectangularPushButton, { RectangularPushButtonOptions } from '../../../../sun/js/buttons/RectangularPushButton.js';
 import resetArrow_png from '../../../../scenery-phet/images/resetArrow_png.js';
@@ -34,19 +34,6 @@ class SceneSelectionControls extends Node {
     super( providedOptions );
     const options: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as SceneSelectionControlsOptions;
 
-    const resetButtons = modes.map( scene => {
-
-      // For the PhET-iO design, we decided to feature the radio button group and leave the reset buttons separate.
-      const sceneResetButton = new SceneResetButton( scene, {
-        tandem: options.tandem.createTandem( scene.resetButtonTandemName )
-      } );
-
-      // link reset buttons so that only the reset button next to the selected radio button is visible
-      sceneProperty.link( selectedScene => sceneResetButton.setVisible( selectedScene === scene ) );
-
-      return sceneResetButton;
-    } );
-
     const content = modes.map( scene => {
       return ( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
     } );
@@ -65,22 +52,41 @@ class SceneSelectionControls extends Node {
           deselectedLineWidth: 0
         }
       },
-      tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' ),
-
-      // Keep aligned with reset buttons, see https://github.com/phetsims/gravity-and-orbits/issues/348
-      excludeInvisibleChildrenFromBounds: false
+      tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' )
     } );
 
     this.addChild( radioButtonGroup );
-    this.addChild( new VBox( {
-      children: resetButtons,
-      left: radioButtonGroup.right + 10,
-      spacing: 5,
-      y: 2,
 
-      // Keep aligned with scene radio buttons, see https://github.com/phetsims/gravity-and-orbits/issues/348
-      excludeInvisibleChildrenFromBounds: false
-    } ) );
+    const resetButtonTuples: Array<{ container: Node; sceneResetButton: SceneResetButton }> = modes.map( scene => {
+
+      // Extra level so visibilty can be controlled by PhET-iO
+      const sceneResetButton = new SceneResetButton( scene, {
+        tandem: options.tandem.createTandem( scene.resetButtonTandemName )
+      } );
+
+      return {
+        container: new Node( {
+          children: [ sceneResetButton ]
+        } ),
+        sceneResetButton: sceneResetButton
+      };
+    } );
+
+    resetButtonTuples.forEach( resetButtonTuple => this.addChild( resetButtonTuple.container ) );
+
+    const updateResetButtons = () => {
+      const selectedScene = sceneProperty.value;
+      resetButtonTuples.forEach( resetButtonTuple => {
+
+        const visible = selectedScene === resetButtonTuple.sceneResetButton.scene;
+        resetButtonTuple.container.visible = visible;
+        if ( visible ) {
+          resetButtonTuple.container.leftCenter = radioButtonGroup.getButtonForValue( selectedScene ).rightCenter.plusXY( 10, 0 );
+        }
+      } );
+    };
+    sceneProperty.link( updateResetButtons );
+    radioButtonGroup.boundsProperty.link( updateResetButtons );
     this.addChild( new HStrut( 219 ) );
   }
 }
@@ -88,6 +94,7 @@ class SceneSelectionControls extends Node {
 gravityAndOrbits.register( 'SceneSelectionControls', SceneSelectionControls );
 
 class SceneResetButton extends RectangularPushButton {
+  public readonly scene: GravityAndOrbitsScene;
 
   /**
    * @param scene
@@ -107,6 +114,8 @@ class SceneResetButton extends RectangularPushButton {
     }, providedOptions );
 
     super( options );
+
+    this.scene = scene;
   }
 }
 
