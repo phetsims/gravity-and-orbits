@@ -219,6 +219,8 @@ export default class Body extends PhetioObject {
     this.freezeRewindChangeProperty = new Property<boolean>( false );
 
     this.labelAngle = labelAngle;
+
+    // TODO: Note there is something in model.changeRewindValueProperty that duplicates this work
     const changeRewindValueProperty = new DerivedProperty( [
         this.isPlayingProperty,
         steppingProperty,
