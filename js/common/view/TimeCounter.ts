@@ -8,6 +8,7 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import TProperty from '../../../../axon/js/TProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
@@ -45,18 +46,16 @@ class TimeCounter extends Node {
       maxWidth: 200
     } );
 
+    const isTimeNonZeroProperty = new DerivedProperty( [ clock.timeProperty ], time => time !== 0 );
+
     const clearButton = new TextPushButton( GravityAndOrbitsStrings.clearStringProperty, {
       font: new PhetFont( FONT_SIZE ),
       listener: () => clock.setSimulationTime( 0 ),
       maxTextWidth: 200,
-      tandem: tandem.createTandem( 'clearButton' )
+      tandem: tandem.createTandem( 'clearButton' ),
+      enabledProperty: isTimeNonZeroProperty
     } );
 
-    // update text representation of day
-    clock.timeProperty.link( time => {
-      assert && assert( !isNaN( time ), 'time should be a number' );
-      clearButton.enabled = time !== 0;
-    } );
 
     this.addChild( new VBox( {
       align: 'right',
