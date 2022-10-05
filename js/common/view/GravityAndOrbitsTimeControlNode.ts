@@ -22,6 +22,8 @@ import RewindableProperty from '../model/RewindableProperty.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import animationFrameTimer from '../../../../axon/js/animationFrameTimer.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
@@ -61,8 +63,37 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       tandem: providedOptions.tandem
     } );
 
+    // Enable/disable the rewind button based on whether any Property in that scene has changed.
+    const dependencies = [ model.sceneProperty ];
+    model.getScenes().forEach( scene => {
+      scene.getBodies().forEach( body => {
+        // @ts-ignore
+        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
+          dependencies.push( property.differentProperty );
+          dependencies.push( property );
+        } );
+      } );
+    } );
+
+    const anyPropertyDifferentProperty = DerivedProperty.deriveAny( dependencies, ( ...args: GravityAndOrbitsScene[] ) => {
+      let changed = false;
+      model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
+
+        // @ts-ignore
+        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
+
+          // Make sure there are no stale values of differentProperty
+          property.updateDifferentProperty();
+
+          changed = changed || property.differentProperty.value;
+        } );
+      } );
+      return changed;
+    } );
+
+
     const restartButton = new RestartButton( {
-      enabled: false,
+      enabledProperty: anyPropertyDifferentProperty,
       radius: STEP_BUTTON_RADIUS,
       xMargin: 9.5,
       yMargin: 9.5,
@@ -72,29 +103,15 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     } );
     this.addChild( restartButton );
 
-    // Enable/disable the rewind button based on whether any Property in that scene has changed.
-    const dependencies = [ model.sceneProperty ];
-    model.getScenes().forEach( scene => {
-      scene.getBodies().forEach( body => {
-        // @ts-ignore
-        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
-          dependencies.push( property.differentProperty );
-        } );
-      } );
-    } );
+    // Update the enabled property
+    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( () => {
 
-    // @ts-ignore
-    const anyPropertyDifferentProperty = new DerivedProperty( dependencies, ( ...args: GravityAndOrbitsScene[] ) => {
-      let changed = false;
-      model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
-        // @ts-ignore
-        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
-          changed = changed || property.differentProperty.value;
-        } );
-      } );
-      return changed;
+      anyPropertyDifferentProperty.recomputeDerivation();
+
+      // For unknown reasons, we have to wait for this frame to completely resolve before this will work.
+      // See https://github.com/phetsims/gravity-and-orbits/issues/459
+      animationFrameTimer.runOnNextTick( () => anyPropertyDifferentProperty.recomputeDerivation() );
     } );
-    anyPropertyDifferentProperty.link( changed => restartButton.setEnabled( changed ) );
   }
 }
 

@@ -57,6 +57,10 @@ class RewindableProperty<T> extends Property<T> {
       phetioReadOnly: true,
       phetioDocumentation: 'for internal PhET use only'
     } );
+
+    this.link( () => {
+      this.updateDifferentProperty();
+    } );
   }
 
   /**
@@ -67,6 +71,12 @@ class RewindableProperty<T> extends Property<T> {
 
     // reset the rewind value as well
     this.rewindValue = this.value;
+    this.updateDifferentProperty();
+  }
+
+  // Whenever the primary value or rewindValue changes, update whether they differ
+  public updateDifferentProperty(): void {
+    this.differentProperty.set( !this.equalsRewindValue() );
   }
 
   public override set( value: T ): this {
@@ -77,7 +87,7 @@ class RewindableProperty<T> extends Property<T> {
     if ( this.changeRewindValueProperty.get() ) {
       this.storeRewindValueNoNotify();
     }
-    this.differentProperty.set( !this.equalsRewindValue() );
+    this.updateDifferentProperty();
 
     return this;
   }
@@ -88,7 +98,7 @@ class RewindableProperty<T> extends Property<T> {
    */
   public storeRewindValueNoNotify(): void {
     this.rewindValue = this.get();
-    this.differentProperty.set( !this.equalsRewindValue() );
+    this.updateDifferentProperty();
   }
 
   /**
@@ -149,6 +159,8 @@ RewindableProperty.RewindablePropertyIO = ( parameterType: IOType ) => {
         applyState: ( property: RewindableProperty, stateObject: { rewindValue: unknown } ) => {
           PropertyIOImpl.applyState( property, stateObject );
           property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
+
+          property.updateDifferentProperty();
         },
         stateSchema: {
           rewindValue: parameterType
