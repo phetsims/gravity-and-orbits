@@ -398,6 +398,7 @@ export default class Body extends PhetioObject {
     this.forceProperty.storeRewindValueNoNotify();
     this.massProperty.storeRewindValueNoNotify();
     this.isCollidedProperty.storeRewindValueNoNotify();
+    this.rotationProperty.storeRewindValueNoNotify();
   }
 
   /**
