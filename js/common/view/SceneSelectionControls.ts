@@ -35,7 +35,11 @@ class SceneSelectionControls extends Node {
     const options: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as SceneSelectionControlsOptions;
 
     const content = modes.map( scene => {
-      return ( { value: scene, node: scene.iconImage, tandemName: scene.radioButtonTandemName } );
+      return ( {
+        value: scene,
+        createNode: ( tandem: Tandem ) => scene.iconImage,
+        tandemName: scene.radioButtonTandemName
+      } );
     } );
 
     const radioButtonGroup = new RectangularRadioButtonGroup( sceneProperty, content, {
