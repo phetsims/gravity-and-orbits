@@ -11,9 +11,6 @@
   "ourSun": {
     "value": "Our Sun"
   },
-  "earthDay": {
-    "value": "Earth Day"
-  },
   "planet": {
     "value": "Planet"
   },
@@ -94,9 +91,6 @@
   },
   "ourMoon": {
     "value": "Our Moon"
-  },
-  "earthMinute": {
-    "value": "Earth Minute"
   },
   "returnObjects": {
     "value": "Return Objects"

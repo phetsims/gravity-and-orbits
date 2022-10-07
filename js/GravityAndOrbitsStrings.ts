@@ -19,8 +19,6 @@ type StringsType = {
   'earthMassesStringProperty': LinkableProperty<string>;
   'ourSun': string;
   'ourSunStringProperty': LinkableProperty<string>;
-  'earthDay': string;
-  'earthDayStringProperty': LinkableProperty<string>;
   'planet': string;
   'planetStringProperty': LinkableProperty<string>;
   'planetMass': string;
@@ -77,8 +75,6 @@ type StringsType = {
   'pathStringProperty': LinkableProperty<string>;
   'ourMoon': string;
   'ourMoonStringProperty': LinkableProperty<string>;
-  'earthMinute': string;
-  'earthMinuteStringProperty': LinkableProperty<string>;
   'returnObjects': string;
   'returnObjectsStringProperty': LinkableProperty<string>;
   'star': string;
