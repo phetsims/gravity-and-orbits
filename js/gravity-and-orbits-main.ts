@@ -22,7 +22,7 @@ simLauncher.launch( () => {
     leadDesign: 'Emily B. Moore, Noah Podolefsky, Amy Rouinfar',
     softwareDevelopment: 'Aaron Davis, Jesse Greenberg, Jon Olson, Sam Reid',
     team: 'Trish Loeblein, Ariel Paul, Kathy Perkins',
-    qualityAssurance: 'Logan Bray, Steele Dalton, Ethan Johnson, Brooklyn Lash, Emily Miller, Elise Morgan, Liam Mulhall, Oliver Orejola, Devon Quispe, Ben Roberts, Kathryn Woessner, Bryan Yoelin',
+    qualityAssurance: 'Logan Bray, Steele Dalton, Clifford Hardin, Ethan Johnson, Brooklyn Lash, Emily Miller, Elise Morgan, Liam Mulhall, Oliver Orejola, Devon Quispe, Ben Roberts, Nancy Salpepi, Kathryn Woessner, Bryan Yoelin',
     thanks: 'Thanks to Mobile Learner Labs for working with the PhET development team to convert this simulation to ' +
             'HTML5.'
   };
