@@ -78,7 +78,7 @@ export default class Body extends PhetioObject {
   public readonly userModifiedVelocityEmitter: TEmitter;
   public readonly tandemName: string;
   public readonly tickValue: number;
-  public readonly tickLabel: TReadOnlyProperty<string>;
+  public readonly tickLabelProperty: TReadOnlyProperty<string>;
   public readonly massReadoutBelow: boolean;
   public readonly bodyNodeTandemName: string;
   private readonly accelerationProperty: Vector2Property;
@@ -110,12 +110,12 @@ export default class Body extends PhetioObject {
    *                                                          instead of later with conditional logic or map
    * @param labelAngle
    * @param tickValue - default value for mass setting
-   * @param tickLabel - translatable label for the mass slider labeling the default value
+   * @param tickLabelProperty - translatable label for the mass slider labeling the default value
    * @param model
    * @param tandem
    * @param [providedOptions]
    */
-  public constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabel: TReadOnlyProperty<string>, model: GravityAndOrbitsModel,
+  public constructor( type: BodyTypeEnum, bodyConfiguration: BodyConfiguration, color: Color, highlight: Color, renderer: ( arg0: Body, arg1: number ) => BodyRenderer, labelAngle: number, tickValue: number, tickLabelProperty: TReadOnlyProperty<string>, model: GravityAndOrbitsModel,
                       tandem: Tandem, providedOptions?: BodyOptions ) {
 
     const options = optionize<BodyOptions, SelfOptions, PhetioObjectOptions>()( {
@@ -188,7 +188,7 @@ export default class Body extends PhetioObject {
     this.tickValue = tickValue; // (read-only)
 
     // name associated with this body when it takes on the tickValue above, for 'planet' this will be "earth"
-    this.tickLabel = tickLabel; // (read-only)
+    this.tickLabelProperty = tickLabelProperty; // (read-only)
 
     this.color = color; // (read-only)
     this.highlight = highlight; // (read-only)
