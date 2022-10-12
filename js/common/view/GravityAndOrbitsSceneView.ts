@@ -191,7 +191,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     } );
 
     // If any body is out of bounds, show a "return object" button
-    const anythingReturnable = DerivedProperty.or( isReturnableProperties );
+    const anythingReturnableProperty = DerivedProperty.or( isReturnableProperties );
 
     const returnObjectsButton = new TextPushButton( GravityAndOrbitsStrings.returnObjectsStringProperty, {
       font: new PhetFont( 16 ),
@@ -213,7 +213,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     } );
     this.addChild( returnObjectsButton );
 
-    anythingReturnable.linkAttribute( returnObjectsButton, 'visible' );
+    anythingReturnableProperty.linkAttribute( returnObjectsButton, 'visible' );
 
     const scaleControl = new ZoomControl( scene.zoomLevelProperty, tandem.createTandem( 'zoomControl' ), {
       top: STAGE_SIZE.top + 10
