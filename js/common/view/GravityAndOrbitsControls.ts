@@ -7,8 +7,7 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import { VBox } from '../../../../scenery/js/imports.js';
-import HSeparatorDeprecated from '../../../../sun/js/HSeparatorDeprecated.js';
+import { HSeparator, VBox } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import CheckboxPanel from './CheckboxPanel.js';
@@ -20,7 +19,6 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 
 // constants
 const MENU_SECTION_OPTIONS = { x: 5 };
-const SEPARATOR_OPTIONS = { lineWidth: 2, stroke: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE };
 
 type GravityAndOrbitsControlsOptions = PickRequired<PhetioObjectOptions, 'tandem'>;
 
@@ -31,8 +29,8 @@ class GravityAndOrbitsControls extends VBox {
     const options: GravityAndOrbitsControlsOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, providedOptions ) as unknown as GravityAndOrbitsControls;
 
     // top separator rectangle for the gravity control section
-    const topSeparator = new HSeparatorDeprecated( 0, merge( { tandem: options.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );
-    const bottomSeparator = new HSeparatorDeprecated( 0, merge( { tandem: options.tandem.createTandem( 'separator2' ) }, SEPARATOR_OPTIONS ) );
+    const topSeparator = new HSeparator();
+    const bottomSeparator = new HSeparator();
 
     // menu sections and separators
     const sections = [
