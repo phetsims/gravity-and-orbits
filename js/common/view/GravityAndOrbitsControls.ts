@@ -49,11 +49,6 @@ class GravityAndOrbitsControls extends VBox {
       y: 5,
       align: 'left'
     } );
-
-    // resize the separators to allow them to go inside the panel margins
-    const separatorWidth = this.width + 2 * GravityAndOrbitsConstants.PANEL_X_MARGIN;
-    topSeparator.setLine( 0, 0, separatorWidth, 0 );
-    bottomSeparator.setLine( 0, 0, separatorWidth, 0 );
   }
 }
 
