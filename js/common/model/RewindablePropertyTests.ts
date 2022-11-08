@@ -8,7 +8,7 @@ QUnit.module( 'RewindablePropertyTests' );
 QUnit.test( 'Basic test', assert => {
   assert.ok( true );
 
-  const r = new RewindableProperty( new BooleanProperty( false ), 'hello' );
-  r.set( 'bye' );
-  assert.ok( r.differentProperty.value, 'should be different' );
+  const property = new RewindableProperty( new BooleanProperty( false ), 'hello' );
+  property.set( 'bye' );
+  assert.ok( property.differentProperty.value, 'should be different' );
 } );

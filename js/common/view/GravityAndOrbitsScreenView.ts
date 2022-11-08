@@ -9,10 +9,9 @@
 
 import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
-import merge from '../../../../phet-core/js/merge.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
-import { AlignGroup, Node, VBox } from '../../../../scenery/js/imports.js';
-import Panel from '../../../../sun/js/Panel.js';
+import { Node, VBox } from '../../../../scenery/js/imports.js';
+import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsControls from './GravityAndOrbitsControls.js';
@@ -20,6 +19,7 @@ import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.j
 import MassControlPanel from './MassControlPanel.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 
 // constants
 const MARGIN = 5;
@@ -33,10 +33,6 @@ class GravityAndOrbitsScreenView extends ScreenView {
 
     super( {
       tandem: tandem
-    } );
-
-    const alignGroup = new AlignGroup( {
-      matchVertical: false
     } );
 
     // Control panel in the upper right of the play area.
@@ -76,18 +72,21 @@ class GravityAndOrbitsScreenView extends ScreenView {
       top: this.layoutBounds.top + MARGIN,
       right: this.layoutBounds.right - MARGIN,
       spacing: MARGIN,
+      stretch: true,
       children: [
-        new Panel( alignGroup.createBox( controlPanel ), merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+        new Panel( controlPanel, combineOptions<PanelOptions>( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
           tandem: controlPanelTandem,
           visiblePropertyOptions: {
             phetioReadOnly: false
-          }
+          },
+          align: 'left'
         } ) ),
-        new Panel( alignGroup.createBox( massesControlPanel ), merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
+        new Panel( massesControlPanel, combineOptions<PanelOptions>( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, {
           tandem: massesControlPanelTandem,
           visiblePropertyOptions: {
             phetioReadOnly: false
-          }
+          },
+          align: 'left'
         } ) )
       ]
     } ) );

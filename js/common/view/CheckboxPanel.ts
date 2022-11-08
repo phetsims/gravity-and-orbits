@@ -23,7 +23,7 @@ import pathIconProjector_png from '../../../images/pathIconProjector_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
-import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
+import GridNode from '../../../../scenery-phet/js/GridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import VerticalCheckboxGroup, { VerticalCheckboxGroupItem, VerticalCheckboxGroupOptions } from '../../../../sun/js/VerticalCheckboxGroup.js';
@@ -126,7 +126,7 @@ class CheckboxPanel extends VerticalCheckboxGroup {
       createNode: tandem => new HBox( merge( {
         children: [
           new Text( GravityAndOrbitsStrings.gridStringProperty, combineOptions<TextOptions>( { tandem: tandem.createTandem( 'labelText' ) }, TEXT_OPTIONS ) ),
-          new GravityAndOrbitsGridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
+          new GridNode( new Property( ModelViewTransform2.createIdentity() ), 10, new Vector2( 0, 0 ), 1, {
             stroke: GravityAndOrbitsColors.gridIconStrokeColorProperty,
             lineWidth: 1.5
           } )

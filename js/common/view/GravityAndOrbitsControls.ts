@@ -7,8 +7,7 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import { VBox } from '../../../../scenery/js/imports.js';
-import HSeparatorDeprecated from '../../../../sun/js/HSeparatorDeprecated.js';
+import { HSeparator, VBox } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import CheckboxPanel from './CheckboxPanel.js';
@@ -20,7 +19,6 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 
 // constants
 const MENU_SECTION_OPTIONS = { x: 5 };
-const SEPARATOR_OPTIONS = { lineWidth: 2, stroke: GravityAndOrbitsConstants.CONTROL_PANEL_STROKE };
 
 type GravityAndOrbitsControlsOptions = PickRequired<PhetioObjectOptions, 'tandem'>;
 
@@ -28,34 +26,20 @@ class GravityAndOrbitsControls extends VBox {
 
   public constructor( model: GravityAndOrbitsModel, providedOptions?: Partial<GravityAndOrbitsControlsOptions> ) {
 
-    const options: GravityAndOrbitsControlsOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, providedOptions ) as unknown as GravityAndOrbitsControls;
-
-    // top separator rectangle for the gravity control section
-    const topSeparator = new HSeparatorDeprecated( 0, merge( { tandem: options.tandem.createTandem( 'separator1' ) }, SEPARATOR_OPTIONS ) );
-    const bottomSeparator = new HSeparatorDeprecated( 0, merge( { tandem: options.tandem.createTandem( 'separator2' ) }, SEPARATOR_OPTIONS ) );
-
-    // menu sections and separators
-    const sections = [
-      new SceneSelectionControls( model.sceneProperty, model.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
-      topSeparator,
-      new GravityControl( model.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
-      bottomSeparator,
-      new CheckboxPanel( model, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
-    ];
-
-    assert && assert( sections.length === 5, 'There should be 5 sections in the GravityAndOrbitsControlPanel' );
+    const options: GravityAndOrbitsControlsOptions = merge( {}, GravityAndOrbitsConstants.CONTROL_PANEL_OPTIONS, providedOptions ) as unknown as GravityAndOrbitsControlsOptions;
 
     super( {
-      children: sections,
+      children: [
+        new SceneSelectionControls( model.sceneProperty, model.getScenes(), merge( { tandem: options.tandem.createTandem( 'sceneControl' ) }, MENU_SECTION_OPTIONS ) ),
+        new HSeparator(),
+        new GravityControl( model.gravityEnabledProperty, merge( { tandem: options.tandem.createTandem( 'gravityControl' ) }, MENU_SECTION_OPTIONS ) ),
+        new HSeparator(),
+        new CheckboxPanel( model, merge( { tandem: options.tandem.createTandem( 'checkboxPanel' ) }, MENU_SECTION_OPTIONS ) )
+      ],
       spacing: 4,
       y: 5,
       align: 'left'
     } );
-
-    // resize the separators to allow them to go inside the panel margins
-    const separatorWidth = this.width + 2 * GravityAndOrbitsConstants.PANEL_X_MARGIN;
-    topSeparator.setLine( 0, 0, separatorWidth, 0 );
-    bottomSeparator.setLine( 0, 0, separatorWidth, 0 );
   }
 }
 

@@ -374,14 +374,12 @@ const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: strin
 const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
   return new DerivedProperty( [
     timeProperty,
-    GravityAndOrbitsStrings.earthDayStringProperty,
     GravityAndOrbitsStrings.earthDaysStringProperty,
     GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
-  ], ( time, earthDayString, earthDaysString, patternString ) => {
+  ], ( time, earthDaysString, patternString ) => {
     const value = ( time / GravityAndOrbitsClock.SECONDS_PER_DAY );
     const fixedValue = Utils.toFixed( value, 0 );
-    const units = ( fixedValue === '1' ) ? earthDayString : earthDaysString;
-    return StringUtils.format( patternString, fixedValue, units );
+    return StringUtils.format( patternString, fixedValue, earthDaysString );
   }, {
     tandem: tandem,
     phetioValueType: StringIO
@@ -395,14 +393,12 @@ const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
 const formatMinutes = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
   return new DerivedProperty( [
     timeProperty,
-    GravityAndOrbitsStrings.earthMinuteStringProperty,
     GravityAndOrbitsStrings.earthMinutesStringProperty,
     GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
-  ], ( time, earthMinuteString, earthMinutesString, patternString ) => {
+  ], ( time, earthMinutesString, patternString ) => {
     const value = ( time / SECONDS_PER_MINUTE );
     const fixedValue = Utils.toFixed( value, 0 );
-    const units = ( fixedValue === '1' ) ? earthMinuteString : earthMinutesString;
-    return StringUtils.format( patternString, fixedValue, units );
+    return StringUtils.format( patternString, fixedValue, earthMinutesString );
   }, {
     tandem: tandem,
     phetioValueType: StringIO

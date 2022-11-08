@@ -22,7 +22,7 @@
   window.phet.chipper.packageObject =
     {
       "name": "gravity-and-orbits",
-      "version": "1.6.0-dev.5",
+      "version": "1.7.0-dev.3",
       "license": "GPL-3.0",
       "repository": {
         "type": "git",
@@ -32,10 +32,6 @@
         "grunt": "~1.5.3"
       },
       "phet": {
-        "colorProfiles": [
-          "default",
-          "projector"
-        ],
         "requirejsNamespace": "GRAVITY_AND_ORBITS",
         "runnable": true,
         "supportedBrands": [
@@ -46,6 +42,12 @@
         "simulation": true,
         "phet-io": {
           "compareDesignedAPIChanges": true
+        },
+        "simFeatures": {
+          "colorProfiles": [
+            "default",
+            "projector"
+          ]
         },
         "supportsOutputJS": true,
         "generatedUnitTests": true

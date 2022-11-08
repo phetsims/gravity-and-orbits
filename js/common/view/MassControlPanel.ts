@@ -81,7 +81,7 @@ class MassControlPanel extends VBox {
             massSettableBody.massProperty.value / 2,
             massSettableBody.massProperty.value * 2,
             massSettableBody.tickValue,
-            massSettableBody.tickLabel,
+            massSettableBody.tickLabelProperty,
             massSettableBodyTandem.createTandem( 'massSlider' )
           )
         ]

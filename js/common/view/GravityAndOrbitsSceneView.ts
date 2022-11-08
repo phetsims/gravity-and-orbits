@@ -22,7 +22,7 @@ import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
 import DraggableVectorNode from './DraggableVectorNode.js';
 import ExplosionNode from './ExplosionNode.js';
-import GravityAndOrbitsGridNode from './GravityAndOrbitsGridNode.js';
+import GridNode from '../../../../scenery-phet/js/GridNode.js';
 import PathsCanvasNode from './PathsCanvasNode.js';
 import TimeCounter from './TimeCounter.js';
 import VectorNode from './VectorNode.js';
@@ -109,7 +109,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     }
 
     // Add the node for the overlay grid, setting its visibility based on the model.showGridProperty
-    const gridNode = new GravityAndOrbitsGridNode( scene.transformProperty, scene.gridSpacing, scene.gridCenter, 28 );
+    const gridNode = new GridNode( scene.transformProperty, scene.gridSpacing, scene.gridCenter, 28 );
     model.showGridProperty.linkAttribute( gridNode, 'visible' );
     this.addChild( gridNode );
 
@@ -191,7 +191,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     } );
 
     // If any body is out of bounds, show a "return object" button
-    const anythingReturnable = DerivedProperty.or( isReturnableProperties );
+    const anythingReturnableProperty = DerivedProperty.or( isReturnableProperties );
 
     const returnObjectsButton = new TextPushButton( GravityAndOrbitsStrings.returnObjectsStringProperty, {
       font: new PhetFont( 16 ),
@@ -213,7 +213,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
     } );
     this.addChild( returnObjectsButton );
 
-    anythingReturnable.linkAttribute( returnObjectsButton, 'visible' );
+    anythingReturnableProperty.linkAttribute( returnObjectsButton, 'visible' );
 
     const scaleControl = new ZoomControl( scene.zoomLevelProperty, tandem.createTandem( 'zoomControl' ), {
       top: STAGE_SIZE.top + 10

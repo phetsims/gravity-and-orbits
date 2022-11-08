@@ -280,12 +280,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "gravityAndOrbits.modelScreen.view.controlPanel.sceneControl.visibleProperty": {
       "phetioFeatured": true
     },
-    "gravityAndOrbits.modelScreen.view.controlPanel.separator1.visibleProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.modelScreen.view.controlPanel.separator2.visibleProperty": {
-      "phetioFeatured": true
-    },
     "gravityAndOrbits.modelScreen.view.controlPanel.visibleProperty": {
       "phetioFeatured": true
     },
@@ -779,12 +773,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.controlPanel.sceneControl.visibleProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.separator1.visibleProperty": {
-      "phetioFeatured": true
-    },
-    "gravityAndOrbits.toScaleScreen.view.controlPanel.separator2.visibleProperty": {
       "phetioFeatured": true
     },
     "gravityAndOrbits.toScaleScreen.view.controlPanel.visibleProperty": {
