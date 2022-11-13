@@ -29,8 +29,10 @@ npm install
 cd ../perennial-alias
 npm install
 cd ../gravity-and-orbits
+npm install -g grunt-cli
 
-time node node_modules/grunt/bin/grunt --lint=false --minify.minify=false
+# Build the sim with options for a speed boost
+grunt --lint=false --minify.minify=false
 
 cd ../
 npm install http-server
