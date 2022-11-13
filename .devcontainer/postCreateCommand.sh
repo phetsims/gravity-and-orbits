@@ -1,7 +1,9 @@
 #!/bin/bash
 
-npm install
-cd ../
+# Prevent creating package-lock.json
+npm config set package-lock false
+
+# Clone dependencies
 git clone https://github.com/phetsims/assert.git
 git clone https://github.com/phetsims/axon.git
 git clone https://github.com/phetsims/babel.git
@@ -24,15 +26,22 @@ git clone https://github.com/phetsims/tandem.git
 git clone https://github.com/phetsims/twixt.git
 git clone https://github.com/phetsims/utterance-queue.git
 
-cd chipper
+# NPM install
+cd gravity-and-orbits
 npm install
+
+cd ../chipper
+npm install
+
 cd ../perennial-alias
 npm install
+
 cd ../gravity-and-orbits
 npm install -g grunt-cli
 
 # Build the sim with options for a speed boost
 grunt --lint=false --minify.minify=false
 
+# HTTP Server runs from the root directory ../workspaces/
 cd ../
 npm install http-server
