@@ -30,4 +30,9 @@ cd ../perennial-alias
 npm install
 cd ../gravity-and-orbits
 
-echo "postCreateCommand done"
+time node node_modules/grunt/bin/grunt --lint=false --minify.minify=false
+
+cd ../
+npm install http-server
+npx http-server
+
