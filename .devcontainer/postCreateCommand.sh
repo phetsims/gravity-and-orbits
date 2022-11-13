@@ -34,5 +34,3 @@ time node node_modules/grunt/bin/grunt --lint=false --minify.minify=false
 
 cd ../
 npm install http-server
-npx http-server
-
