@@ -54,10 +54,6 @@ type CheckboxPanelOptions = SelfOptions & VerticalCheckboxGroupOptions;
 
 class CheckboxPanel extends VerticalCheckboxGroup {
 
-  /**
-   * @param model
-   * @param [providedOptions]
-   */
   public constructor( model: GravityAndOrbitsModel, providedOptions?: CheckboxPanelOptions ) {
 
     const items: VerticalCheckboxGroupItem[] = [ {
