@@ -79,6 +79,17 @@ class BodyNode extends Node {
 
       return modelBounds!.eroded( diameter / 2 );
     } );
+
+    // If a body is dragged while the sim is paused, it sets new "initial conditions" that can be rewound to
+    const saveStateIfPaused = () => {
+
+      if ( !isPlayingProperty.value ) {
+        clock.setSimulationTime( 0.0 );
+
+        // if paused, the state of the orbital system should be saved so that rewind will revert to the last placement of bodies
+        scene.saveState();
+      }
+    };
     const dragListener = new DragListener( {
       positionProperty: body.positionProperty,
       transform: this.modelViewTransformProperty.value,
@@ -88,19 +99,16 @@ class BodyNode extends Node {
 
         // Clear the path when dragging starts.
         body.clearPath();
+
+        saveStateIfPaused();
       },
-      drag: () => body.userModifiedPositionEmitter.emit(),
+      drag: () => {
+        body.userModifiedPositionEmitter.emit();
+        saveStateIfPaused();
+      },
       end: () => {
         body.userControlled = false;
-
-        // reset the simulation time when the planet is released
-        if ( !isPlayingProperty.value ) {
-          clock.setSimulationTime( 0.0 );
-
-          // if paused, on release, the state of the orbital system should be saved so that rewind will revert to the
-          // last placement of bodies
-          scene.saveState();
-        }
+        saveStateIfPaused();
       },
       tandem: tandem.createTandem( 'dragListener' )
     } );
