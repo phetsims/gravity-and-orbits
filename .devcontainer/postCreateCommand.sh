@@ -3,6 +3,9 @@
 # Prevent creating package-lock.json
 npm config set package-lock false
 
+# We want dependencies to be siblings instead of children.
+cd ../
+
 # Clone dependencies
 git clone https://github.com/phetsims/assert.git
 git clone https://github.com/phetsims/axon.git
