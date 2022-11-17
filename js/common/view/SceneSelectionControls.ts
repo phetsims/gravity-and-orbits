@@ -18,6 +18,7 @@ import Property from '../../../../axon/js/Property.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import Interruptable from '../model/Interruptable.js';
 
 type SceneSelectionControlsOptions = {
   tandem: Tandem;
@@ -30,7 +31,7 @@ class SceneSelectionControls extends Node {
    * @param modes
    * @param [providedOptions] - This object contains options for main node of planet menu.
    */
-  public constructor( sceneProperty: Property<GravityAndOrbitsScene>, modes: GravityAndOrbitsScene[], providedOptions?: Partial<SceneSelectionControlsOptions> ) {
+  public constructor( sceneProperty: Property<GravityAndOrbitsScene>, modes: GravityAndOrbitsScene[], screenView: Interruptable, providedOptions?: Partial<SceneSelectionControlsOptions> ) {
     super( providedOptions );
     const options: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as SceneSelectionControlsOptions;
 
@@ -64,7 +65,7 @@ class SceneSelectionControls extends Node {
     const resetButtonTuples: Array<{ container: Node; sceneResetButton: SceneResetButton }> = modes.map( scene => {
 
       // Extra level so visibilty can be controlled by PhET-iO
-      const sceneResetButton = new SceneResetButton( scene, {
+      const sceneResetButton = new SceneResetButton( scene, screenView, {
         tandem: options.tandem.createTandem( scene.resetButtonTandemName )
       } );
 
@@ -104,7 +105,7 @@ class SceneResetButton extends RectangularPushButton {
    * @param scene
    * @param [providedOptions]
    */
-  public constructor( scene: GravityAndOrbitsScene, providedOptions?: RectangularPushButtonOptions ) {
+  public constructor( scene: GravityAndOrbitsScene, screenView: Interruptable, providedOptions?: RectangularPushButtonOptions ) {
     const options = optionize<RectangularPushButtonOptions, EmptySelfOptions, RectangularPushButtonOptions>()( {
       content: new Node( {
         children: [
@@ -114,7 +115,10 @@ class SceneResetButton extends RectangularPushButton {
       xMargin: 5,
       yMargin: 3,
       baseColor: new Color( 220, 220, 220 ),
-      listener: () => scene.resetScene()
+      listener: () => {
+        screenView.interruptSubtreeInput();
+        scene.resetScene();
+      }
     }, providedOptions );
 
     super( options );

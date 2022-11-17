@@ -37,7 +37,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
 
     // Control panel in the upper right of the play area.
     const controlPanelTandem = tandem.createTandem( 'controlPanel' );
-    const controlPanel = new GravityAndOrbitsControls( model, {
+    const controlPanel = new GravityAndOrbitsControls( model, this, {
       tandem: controlPanelTandem // The outer Panel below is instrumented, this is just to pass the tandem to children
     } );
 
