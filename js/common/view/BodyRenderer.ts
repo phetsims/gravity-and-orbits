@@ -16,8 +16,8 @@ import Matrix3 from '../../../../dot/js/Matrix3.js';
 import Body from '../model/Body.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import { Shape } from '../../../../kite/js/imports.js';
-import { Image, Node, Path } from '../../../../scenery/js/imports.js';
-import sun_png from '../../../images/sun_png.js';
+import { Image, Mipmap, Node, Path } from '../../../../scenery/js/imports.js';
+import sun_png from '../../../mipmaps/sun_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 export default abstract class BodyRenderer extends Node {
@@ -60,11 +60,13 @@ export class SwitchableBodyRenderer extends BodyRenderer {
     this.targetBodyRenderer = targetBodyRenderer;
     this.defaultBodyRenderer = defaultBodyRenderer;
 
-    this.massListener = () => {
+    this.addChild( defaultBodyRenderer );
+    this.addChild( targetBodyRenderer );
 
-      // this defined by bound
-      this.removeAllChildren();
-      this.addChild( ( body.massProperty.get() === targetMass ) ? targetBodyRenderer : defaultBodyRenderer );
+    this.massListener = () => {
+      const showTarget = body.massProperty.get() === targetMass;
+      targetBodyRenderer.visible = showTarget;
+      defaultBodyRenderer.visible = !showTarget;
     };
     body.massProperty.link( this.massListener.bind( this ) );
 
@@ -88,7 +90,7 @@ export class ImageRenderer extends BodyRenderer {
   /**
    * Renders the body using the specified image and the specified diameter in view coordinates.
    */
-  public constructor( body: Body, viewDiameter: number, imageName: string | HTMLImageElement ) {
+  public constructor( body: Body, viewDiameter: number, imageName: Mipmap ) {
 
     super( body );
 

@@ -11,13 +11,13 @@
 import Utils from '../../../dot/js/Utils.js';
 import Vector2 from '../../../dot/js/Vector2.js';
 import StringUtils from '../../../phetcommon/js/util/StringUtils.js';
-import { Color, HBox, Image, Line, Node } from '../../../scenery/js/imports.js';
-import earth_png from '../../images/earth_png.js';
-import moonGeneric_png from '../../images/moonGeneric_png.js';
-import moon_png from '../../images/moon_png.js';
-import planetGeneric_png from '../../images/planetGeneric_png.js';
-import spaceStation_png from '../../images/spaceStation_png.js';
-import sun_png from '../../images/sun_png.js';
+import { Color, HBox, Image, Line, Mipmap, Node } from '../../../scenery/js/imports.js';
+import earth_png from '../../mipmaps/earth_png.js';
+import moonGeneric_png from '../../mipmaps/moonGeneric_png.js';
+import moon_png from '../../mipmaps/moon_png.js';
+import planetGeneric_png from '../../mipmaps/planetGeneric_png.js';
+import spaceStation_png from '../../mipmaps/spaceStation_png.js';
+import sun_png from '../../mipmaps/sun_png.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
@@ -352,14 +352,14 @@ class EarthSpaceStationModeConfig extends ModeConfig {
 /**
  * Creates a BodyRenderer that just shows the specified image
  */
-const getImageRenderer = ( image: string | HTMLImageElement ) => {
+const getImageRenderer = ( image: Mipmap ) => {
   return ( body: Body, viewDiameter: number ) => new ImageRenderer( body, viewDiameter, image );
 };
 
 /**
  * Creates a BodyRenderer that shows an image when at the targetMass, otherwise shows a shaded sphere
  */
-const getSwitchableRenderer = ( image1: string | HTMLImageElement, image2: string | HTMLImageElement, targetMass: number ) => {
+const getSwitchableRenderer = ( image1: Mipmap, image2: Mipmap, targetMass: number ) => {
 
   // the mass for which to use the image
   return ( body: Body, viewDiameter: number ) => new SwitchableBodyRenderer(

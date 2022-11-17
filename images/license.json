@@ -1,12 +1,4 @@
 {
-  "earth.png": {
-    "text": [
-      "Copyright NASA"
-    ],
-    "projectURL": "https://visibleearth.nasa.gov/view.php?id=56236",
-    "license": "NASA",
-    "notes": "see http://visibleearth.nasa.gov/view.php?id=56236, http://cac-science8.wikispaces.com/ nasa copyright rules here http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html"
-  },
   "iconMass.png": {
     "text": [
       "Copyright 2002-2015 University of Colorado Boulder"
@@ -24,46 +16,6 @@
     "notes": "created by Amy Rouinfar"
   },
   "pathIconProjector.png": {
-    "text": [
-      "Copyright 2002-2015 University of Colorado Boulder"
-    ],
-    "projectURL": "https://phet.colorado.edu",
-    "license": "contact phethelp@colorado.edu",
-    "notes": "created by Amy Rouinfar"
-  },
-  "planetGeneric.png": {
-    "text": [
-      "Copyright 2002-2015 University of Colorado Boulder"
-    ],
-    "projectURL": "https://phet.colorado.edu",
-    "license": "contact phethelp@colorado.edu",
-    "notes": "created by Amy Rouinfar"
-  },
-  "moon.png": {
-    "text": [
-      "Public Domain"
-    ],
-    "projectURL": "https://astro.unl.edu/misc/moonpics/moon08_th.jpg",
-    "license": "Public Domain",
-    "notes": "Public domain license noted at http://astro.unl.edu/misc/moonpics"
-  },
-  "moonGeneric.png": {
-    "text": [
-      "Copyright 2002-2015 University of Colorado Boulder"
-    ],
-    "projectURL": "https://phet.colorado.edu",
-    "license": "contact phethelp@colorado.edu",
-    "notes": "created by Amy Rouinfar"
-  },
-  "spaceStation.png": {
-    "text": [
-      "Copyright 2002-2016 University of Colorado Boulder"
-    ],
-    "projectURL": "https://phet.colorado.edu",
-    "license": "contact phethelp@colorado.edu",
-    "notes": "created by Mariah Hermsmeyer"
-  },
-  "sun.png": {
     "text": [
       "Copyright 2002-2015 University of Colorado Boulder"
     ],
