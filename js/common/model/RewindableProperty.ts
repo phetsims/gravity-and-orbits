@@ -29,7 +29,47 @@ class RewindableProperty<T> extends Property<T> {
   private readonly changeRewindValueProperty: TReadOnlyProperty<boolean>;
   public readonly differentProperty: BooleanProperty;
 
-  public static RewindablePropertyIO: ( parameterType: IOType ) => IOType;
+  /**
+   * An observable Property that triggers notifications when the value changes.
+   * This caching implementation should be kept in sync with the other parametric IO Type caching implementations.
+   */
+  public static readonly RewindablePropertyIO = ( parameterType: IOType ): IOType => {
+    assert && assert( parameterType, 'RewindablePropertyIO needs parameterType' );
+
+    const cacheKey = parameterType;
+
+    if ( !cache.has( cacheKey ) ) {
+
+      const PropertyIOImpl = Property.PropertyIO( parameterType );
+      cache.set( cacheKey, new IOType( `RewindablePropertyIO<${parameterType.typeName}>`, {
+          valueType: RewindableProperty,
+          parameterTypes: [ parameterType ],
+          documentation: 'Observable values that send out notifications when the value changes. This differs from the ' +
+                         'traditional listener pattern in that added listeners also receive a callback with the current value ' +
+                         'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
+          supertype: PropertyIOImpl,
+          // @ts-ignore
+          toStateObject: ( property: RewindableProperty ) => {
+            const stateObject = PropertyIOImpl.toStateObject( property );
+            stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
+            return stateObject;
+          },
+          // @ts-ignore
+          applyState: ( property: RewindableProperty, stateObject: { rewindValue: unknown } ) => {
+            PropertyIOImpl.applyState( property, stateObject );
+            property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
+
+            property.updateDifferentProperty();
+          },
+          stateSchema: {
+            rewindValue: parameterType
+          }
+        } )
+      );
+    }
+
+    return cache.get( cacheKey );
+  };
 
   /**
    * @param changeRewindValueProperty - whether the newly set value should be captured as a rewindable point
@@ -130,47 +170,6 @@ class RewindableProperty<T> extends Property<T> {
 // {Map.<IOType, IOType>} - Cache each parameterized RewindablePropertyIO so that it is only created once
 const cache = new Map();
 
-/**
- * An observable Property that triggers notifications when the value changes.
- * This caching implementation should be kept in sync with the other parametric IO Type caching implementations.
- */
-RewindableProperty.RewindablePropertyIO = ( parameterType: IOType ) => {
-  assert && assert( parameterType, 'RewindablePropertyIO needs parameterType' );
-
-  const cacheKey = parameterType;
-
-  if ( !cache.has( cacheKey ) ) {
-
-    const PropertyIOImpl = Property.PropertyIO( parameterType );
-    cache.set( cacheKey, new IOType( `RewindablePropertyIO<${parameterType.typeName}>`, {
-        valueType: RewindableProperty,
-        parameterTypes: [ parameterType ],
-        documentation: 'Observable values that send out notifications when the value changes. This differs from the ' +
-                       'traditional listener pattern in that added listeners also receive a callback with the current value ' +
-                       'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
-        supertype: PropertyIOImpl,
-        // @ts-ignore
-        toStateObject: ( property: RewindableProperty ) => {
-          const stateObject = PropertyIOImpl.toStateObject( property );
-          stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
-          return stateObject;
-        },
-        // @ts-ignore
-        applyState: ( property: RewindableProperty, stateObject: { rewindValue: unknown } ) => {
-          PropertyIOImpl.applyState( property, stateObject );
-          property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
-
-          property.updateDifferentProperty();
-        },
-        stateSchema: {
-          rewindValue: parameterType
-        }
-      } )
-    );
-  }
-
-  return cache.get( cacheKey );
-};
 
 gravityAndOrbits.register( 'RewindableProperty', RewindableProperty );
 export default RewindableProperty;

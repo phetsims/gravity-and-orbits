@@ -99,7 +99,17 @@ export default class Body extends PhetioObject {
   private readonly forceMagnitudeProperty: TReadOnlyProperty<number>;
   public readonly isMovableProperty: BooleanProperty;
 
-  public static BodyIO: IOType;
+  public static readonly BodyIO = new IOType<Body, BodyStateType>( 'BodyIO', {
+    valueType: Body,
+    documentation: 'Represents a physical body in the simulation',
+    toStateObject: ( body: Body ) => body.toStateObject(),
+    applyState: ( body: Body, stateObject: BodyStateType ) => body.setStateObject( stateObject ),
+    stateSchema: {
+      pathLength: NumberIO,
+      modelPathLength: NumberIO,
+      path: ArrayIO( Vector2.Vector2IO )
+    }
+  } );
 
   /**
    * @param type - used for object identification
@@ -552,18 +562,6 @@ export default class Body extends PhetioObject {
 }
 
 type BodyStateType = { pathLength: number; modelPathLength: number; path: Vector2StateObject[] };
-
-Body.BodyIO = new IOType<Body, BodyStateType>( 'BodyIO', {
-  valueType: Body,
-  documentation: 'Represents a physical body in the simulation',
-  toStateObject: ( body: Body ) => body.toStateObject(),
-  applyState: ( body: Body, stateObject: BodyStateType ) => body.setStateObject( stateObject ),
-  stateSchema: {
-    pathLength: NumberIO,
-    modelPathLength: NumberIO,
-    path: ArrayIO( Vector2.Vector2IO )
-  }
-} );
 
 gravityAndOrbits.register( 'Body', Body );
 export type { BodyOptions };
