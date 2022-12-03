@@ -18,6 +18,7 @@ import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
+import { PropertyIO } from '../../../../axon/js/ReadOnlyProperty.js';
 
 type RewindablePropertyOptions<T> = {
   units?: string;
@@ -40,7 +41,7 @@ class RewindableProperty<T> extends Property<T> {
 
     if ( !cache.has( cacheKey ) ) {
 
-      const PropertyIOImpl = Property.PropertyIO( parameterType );
+      const PropertyIOImpl = PropertyIO( parameterType );
       cache.set( cacheKey, new IOType( `RewindablePropertyIO<${parameterType.typeName}>`, {
           valueType: RewindableProperty,
           parameterTypes: [ parameterType ],
