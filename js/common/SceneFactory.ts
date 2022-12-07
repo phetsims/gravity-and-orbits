@@ -427,7 +427,7 @@ class Satellite extends Body {
 class Moon extends Body {
 
   public constructor( model: GravityAndOrbitsModel, massSettable: boolean, massReadoutBelow: boolean, bodyConfiguration: BodyConfiguration, tandem: Tandem, providedOptions?: BodyOptions ) {
-    const options = optionize<BodyOptions, any, any>()( { // eslint-disable-line
+    const options = optionize<BodyOptions, any, any>()( { // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-explicit-any
       pathLengthBuffer: 0, // adjustment to moon path length so that it matches other traces at default settings
       massSettable: massSettable,
       massReadoutBelow: massReadoutBelow,
