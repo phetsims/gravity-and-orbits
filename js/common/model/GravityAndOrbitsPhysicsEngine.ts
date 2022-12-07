@@ -83,7 +83,6 @@ class GravityAndOrbitsPhysicsEngine {
     const smallestTimeStep = this.clock.baseDTValue * 0.13125;
 
     // get the number of times we will need to step the model based on the dt passed in
-    // @ts-ignore
     const numberOfSteps = this.clock.timeSpeedProperty.value === TimeSpeed.SLOW ? 1 :
                           this.clock.timeSpeedProperty.value === TimeSpeed.NORMAL ? 4 :
                           7; // TimeSpeed.FAST

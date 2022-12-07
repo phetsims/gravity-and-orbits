@@ -67,7 +67,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     const dependencies = [ model.sceneProperty ];
     model.getScenes().forEach( scene => {
       scene.getBodies().forEach( body => {
-        // @ts-ignore
+        // @ts-expect-error
         body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
           dependencies.push( property.differentProperty );
           dependencies.push( property );
@@ -79,7 +79,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       let changed = false;
       model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
 
-        // @ts-ignore
+        // @ts-expect-error
         body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
 
           // Make sure there are no stale values of differentProperty

@@ -49,13 +49,13 @@ class RewindableProperty<T> extends Property<T> {
                          'traditional listener pattern in that added listeners also receive a callback with the current value ' +
                          'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
           supertype: PropertyIOImpl,
-          // @ts-ignore
+          // @ts-expect-error
           toStateObject: ( property: RewindableProperty ) => {
             const stateObject = PropertyIOImpl.toStateObject( property );
             stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
             return stateObject;
           },
-          // @ts-ignore
+          // @ts-expect-error
           applyState: ( property: RewindableProperty, stateObject: { rewindValue: unknown } ) => {
             PropertyIOImpl.applyState( property, stateObject );
             property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
@@ -149,9 +149,9 @@ class RewindableProperty<T> extends Property<T> {
   public equalsRewindValue(): boolean {
 
     // if an object, must call unique function to check for equality
-    // @ts-ignore
+    // @ts-expect-error
     if ( this.rewindValue.equals ) {
-      // @ts-ignore
+      // @ts-expect-error
       return this.rewindValue.equals( this.get() );
     }
     else {

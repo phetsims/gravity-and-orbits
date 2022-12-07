@@ -130,7 +130,6 @@ export default class Body extends PhetioObject {
 
     const options = optionize<BodyOptions, SelfOptions, PhetioObjectOptions>()( {
 
-      // @ts-ignore
       pathLengthBuffer: 0, // a buffer to alter the path trace if necessary
       diameterScale: 1, // scale factor applied to the diameter
       massSettable: true, // can the mass of this body be set by the control panel?

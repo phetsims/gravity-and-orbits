@@ -46,7 +46,6 @@ class ZoomControl extends Node {
 
     super();
 
-    // @ts-ignore
     const slider = new VSlider( scaleProperty, GravityAndOrbitsConstants.ZOOM_RANGE, {
       trackSize: TRACK_SIZE,
       thumbSize: THUMB_SIZE,
@@ -140,7 +139,6 @@ class SliderButton extends RectangularPushButton {
     const dilationSize = 15;
     const dilateTop = ( isIncrease ) ? dilationSize : 0;
     const dilateBottom = ( isIncrease ) ? 0 : dilationSize;
-    // @ts-ignore
     this.touchArea = Shape.bounds( new Bounds2(
       this.localBounds.minX - dilationSize,
       this.localBounds.minY - dilateTop,

@@ -18,7 +18,6 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 const billionBillionSpaceStationMassesStringProperty = GravityAndOrbitsStrings.billionBillionSpaceStationMassesStringProperty;
 
-// @ts-ignore
 const pattern0Value1UnitsStringProperty = GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
 const spaceStationMassStringProperty = GravityAndOrbitsStrings.spaceStationMassStringProperty;
 

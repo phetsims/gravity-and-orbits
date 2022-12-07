@@ -18,7 +18,6 @@ import MassReadoutNode, { MassReadoutNodeOptions } from './MassReadoutNode.js';
 
 const earthMassesStringProperty = GravityAndOrbitsStrings.earthMassesStringProperty;
 const earthMassStringProperty = GravityAndOrbitsStrings.earthMassStringProperty;
-// @ts-ignore
 const pattern0Value1UnitsStringProperty = GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ];
 const thousandEarthMassesStringProperty = GravityAndOrbitsStrings.thousandEarthMassesStringProperty;
 

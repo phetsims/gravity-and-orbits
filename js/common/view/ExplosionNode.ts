@@ -67,7 +67,7 @@ class ExplosionNode extends Node {
     };
     const getDoubleRadius = ( radius: number ) => radius * 2;
 
-    // @ts-ignore
+    // @ts-expect-error
     const explosionEdgeGraphic = new SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
 
     const explodedProperty = new DerivedProperty( [ body.isCollidedProperty, body.clockTicksSinceExplosionProperty ],
