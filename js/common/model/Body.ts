@@ -31,8 +31,8 @@ import BodyRenderer from '../view/BodyRenderer.js';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import TProperty from '../../../../axon/js/TProperty.js';
 import optionize from '../../../../phet-core/js/optionize.js';
+import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
 import TEmitter from '../../../../axon/js/TEmitter.js';
 
 // reduce Vector2 allocation by reusing this Vector2 in collidesWith computation
@@ -296,7 +296,7 @@ export default class Body extends PhetioObject {
       phetioDocumentation: 'True if the body has collided with another body'
     } );
 
-    this.rotationProperty = new RewindableProperty( changeRewindValueProperty, 0, {
+    this.rotationProperty = new RewindableProperty<number>( changeRewindValueProperty, 0, {
       tandem: tandem.createTandem( 'rotationProperty' ),
       phetioValueType: NumberIO,
       units: 'radians',
@@ -541,7 +541,7 @@ export default class Body extends PhetioObject {
   /**
    * Returns the Properties which, when changed, enable the rewind button.
    */
-  private getRewindableProperties(): TProperty<unknown>[] {
+  public getRewindableProperties(): RewindableProperty<IntentionalAny>[] {
     return [
       this.positionProperty,
       this.velocityProperty,

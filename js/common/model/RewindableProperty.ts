@@ -18,6 +18,7 @@ import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
+import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
 import { PropertyIO } from '../../../../axon/js/ReadOnlyProperty.js';
 
 type RewindablePropertyOptions<T> = {
@@ -25,7 +26,7 @@ type RewindablePropertyOptions<T> = {
   tandem: Tandem;
 } & StrictOmit<PhetioObjectOptions, 'phetioType'> & Pick<PropertyOptions<T>, 'phetioOuterType' | 'phetioValueType'>;
 
-class RewindableProperty<T> extends Property<T> {
+class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolean } | number | boolean | string> extends Property<T> {
   private rewindValue: T;
   private readonly changeRewindValueProperty: TReadOnlyProperty<boolean>;
   public readonly differentProperty: BooleanProperty;
@@ -49,14 +50,12 @@ class RewindableProperty<T> extends Property<T> {
                          'traditional listener pattern in that added listeners also receive a callback with the current value ' +
                          'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
           supertype: PropertyIOImpl,
-          // @ts-expect-error
-          toStateObject: ( property: RewindableProperty ) => {
+          toStateObject: ( property: RewindableProperty<IntentionalAny> ) => {
             const stateObject = PropertyIOImpl.toStateObject( property );
             stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
             return stateObject;
           },
-          // @ts-expect-error
-          applyState: ( property: RewindableProperty, stateObject: { rewindValue: unknown } ) => {
+          applyState: ( property: RewindableProperty<IntentionalAny>, stateObject: { rewindValue: unknown } ) => {
             PropertyIOImpl.applyState( property, stateObject );
             property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
 
@@ -148,11 +147,11 @@ class RewindableProperty<T> extends Property<T> {
    */
   public equalsRewindValue(): boolean {
 
+    const rewindValue = this.rewindValue;
+
     // if an object, must call unique function to check for equality
-    // @ts-expect-error
-    if ( this.rewindValue.equals ) {
-      // @ts-expect-error
-      return this.rewindValue.equals( this.get() );
+    if ( typeof rewindValue !== 'number' && typeof rewindValue !== 'boolean' && typeof rewindValue !== 'string' ) {
+      return rewindValue.equals( this.get() );
     }
     else {
       return this.rewindValue === this.get();

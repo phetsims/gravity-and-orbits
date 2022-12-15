@@ -61,14 +61,9 @@ class ExplosionNode extends Node {
    * @param getDiameter - diameter of graphic in view coordinates as function of time since collision
    */
   private getExplosionEdgeGraphic( body: Body, getDiameter: ( ticks: number ) => number ): BodyRenderer {
-    const yellowAndWhite = {
-      highlight: 'white',
-      color: 'yellow'
-    };
     const getDoubleRadius = ( radius: number ) => radius * 2;
 
-    // @ts-expect-error
-    const explosionEdgeGraphic = new SunRenderer( yellowAndWhite, 1, 14, getDoubleRadius );
+    const explosionEdgeGraphic = new SunRenderer( body, 1, 14, getDoubleRadius );
 
     const explodedProperty = new DerivedProperty( [ body.isCollidedProperty, body.clockTicksSinceExplosionProperty ],
       ( collided, clockTicks ) => collided && clockTicks <= NUM_STEPS_FOR_ANIMATION );

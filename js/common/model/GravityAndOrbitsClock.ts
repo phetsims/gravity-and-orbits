@@ -59,7 +59,7 @@ class GravityAndOrbitsClock {
       phetioReadOnly: true
     } );
 
-    this.timeProperty = new RewindableProperty( changeRewindValueProperty, 0, {
+    this.timeProperty = new RewindableProperty<number>( changeRewindValueProperty, 0, {
       tandem: tandem.createTandem( 'timeProperty' ),
       phetioHighFrequency: true,
       units: 's',

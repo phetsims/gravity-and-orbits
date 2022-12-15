@@ -22,8 +22,10 @@ import RewindableProperty from '../model/RewindableProperty.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import animationFrameTimer from '../../../../axon/js/animationFrameTimer.js';
+import Property from '../../../../axon/js/Property.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
@@ -64,11 +66,10 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     } );
 
     // Enable/disable the rewind button based on whether any Property in that scene has changed.
-    const dependencies = [ model.sceneProperty ];
+    const dependencies: Property<IntentionalAny>[] = [ model.sceneProperty ];
     model.getScenes().forEach( scene => {
       scene.getBodies().forEach( body => {
-        // @ts-expect-error
-        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
+        body.getRewindableProperties().forEach( ( property: RewindableProperty<IntentionalAny> ) => {
           dependencies.push( property.differentProperty );
           dependencies.push( property );
         } );
@@ -79,8 +80,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       let changed = false;
       model.sceneProperty.value.getBodies().forEach( ( body: Body ) => {
 
-        // @ts-expect-error
-        body.getRewindableProperties().forEach( ( property: RewindableProperty ) => {
+        body.getRewindableProperties().forEach( property => {
 
           // Make sure there are no stale values of differentProperty
           property.updateDifferentProperty();
