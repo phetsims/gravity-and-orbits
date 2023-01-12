@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "1188abcb988a475a15345468715ae89ddf009584",
+    "sha": "69b06310eff4c69d760379d39c085ae2269c60a1",
     "branch": "1.4"
   },
   "joist": {
@@ -49,7 +49,7 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "b3ff76e06fd08af20eb5f05d74b62f8de2080a59",
+    "sha": "aa5fc8db6ad6f8e0f90afae223a0a2e114cd98f0",
     "branch": "HEAD"
   },
   "phetmarks": {
