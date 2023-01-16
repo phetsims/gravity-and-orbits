@@ -229,7 +229,7 @@ export default class Body extends PhetioObject {
 
     this.labelAngle = labelAngle;
 
-    // TODO: Note there is something in model.changeRewindValueProperty that duplicates this work
+    // TODO: Note there is something in model.changeRewindValueProperty that duplicates this work, https://github.com/phetsims/gravity-and-orbits/issues/459
     const changeRewindValueProperty = new DerivedProperty( [
         this.isPlayingProperty,
         steppingProperty,
