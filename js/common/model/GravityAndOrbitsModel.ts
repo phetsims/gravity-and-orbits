@@ -87,8 +87,8 @@ class GravityAndOrbitsModel {
         this.isPlayingProperty,
         this.steppingProperty,
         this.rewindingProperty
-      ], ( playButtonPressed, stepping, rewinding ) =>
-        !playButtonPressed && !stepping && !rewinding
+      ], ( isPlaying, stepping, rewinding ) =>
+        !isPlaying && !stepping && !rewinding
     );
 
     this.sceneList = createModes( this );

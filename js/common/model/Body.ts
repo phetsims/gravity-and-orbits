@@ -94,7 +94,6 @@ export default class Body extends PhetioObject {
   private readonly renderer: ( arg0: Body, arg1: number ) => BodyRenderer;
   public readonly labelAngle: number;
   private readonly speedProperty: TReadOnlyProperty<number>;
-  private readonly isPlayingProperty: BooleanProperty;
   public readonly forceProperty: RewindableProperty<Vector2>;
   private readonly forceMagnitudeProperty: TReadOnlyProperty<number>;
   public readonly isMovableProperty: BooleanProperty;
@@ -220,23 +219,16 @@ export default class Body extends PhetioObject {
     // representation directly instead of later with conditional logic or map
     this.renderer = renderer;
 
-    this.isPlayingProperty = model.isPlayingProperty;
-    const steppingProperty = model.steppingProperty;
-    const rewindingProperty = model.rewindingProperty;
-
     // force freeze all changes to the rewind values for rewindable Property
     this.freezeRewindChangeProperty = new Property<boolean>( false );
 
     this.labelAngle = labelAngle;
 
-    // TODO: Note there is something in model.changeRewindValueProperty that duplicates this work, https://github.com/phetsims/gravity-and-orbits/issues/459
     const changeRewindValueProperty = new DerivedProperty( [
-        this.isPlayingProperty,
-        steppingProperty,
-        rewindingProperty,
+        model.changeRewindValueProperty,
         this.freezeRewindChangeProperty
-      ], ( playButtonPressed, stepping, rewinding, freezeRewind ) =>
-        !playButtonPressed && !stepping && !rewinding && !freezeRewind
+      ], ( modelChangeRewindProperty, freezeRewind ) =>
+        modelChangeRewindProperty && !freezeRewind
     );
 
     // rewindable properties - body states can be rewound, and these properties can have saved states to support this
