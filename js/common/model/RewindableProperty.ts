@@ -19,7 +19,6 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
-import { PropertyIO } from '../../../../axon/js/ReadOnlyProperty.js';
 
 type RewindablePropertyOptions<T> = {
   units?: string;
@@ -42,7 +41,7 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
 
     if ( !cache.has( cacheKey ) ) {
 
-      const PropertyIOImpl = PropertyIO( parameterType );
+      const PropertyIOImpl = Property.PropertyIO( parameterType );
       cache.set( cacheKey, new IOType( `RewindablePropertyIO<${parameterType.typeName}>`, {
           valueType: RewindableProperty,
           parameterTypes: [ parameterType ],
