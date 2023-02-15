@@ -26,11 +26,12 @@ import SceneFactory from '../SceneFactory.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import TModel from '../../../../joist/js/TModel.js';
 
 // constants
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;
 
-class GravityAndOrbitsModel {
+class GravityAndOrbitsModel implements TModel {
   public readonly showGravityForceProperty: BooleanProperty;
   public readonly showVelocityProperty: BooleanProperty;
   public readonly showPathProperty: BooleanProperty;
