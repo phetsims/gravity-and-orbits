@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.4.12-rc.1 Thu Feb 23 2023 19:01:37 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.4.12 Fri Feb 24 2023 18:51:08 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "3df8c5ff9a465b031f84195a90bbb7e1be10a14d",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "dadb477cf975f29be16def68876c730e52d7ca27",
+    "sha": "12532574958a0bdbd8ac15d41a3e9e11e283ba5b",
     "branch": "1.4"
   },
   "joist": {
