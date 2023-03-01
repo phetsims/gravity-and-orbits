@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.6.8 Fri Feb 24 2023 18:54:08 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.6.8 Wed Mar 01 2023 13:46:27 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "f82d1c9e85db6a725a94b1e9703ed71d93d90dd3",
+    "sha": "547c926f940e045e3524e3391095dabd04dfe010",
     "branch": "1.6"
   },
   "joist": {
@@ -45,8 +45,8 @@
     "branch": "HEAD"
   },
   "phet-io-sim-specific": {
-    "sha": "5cf91cad26dcf1828e1882ba00e7257e5d5591d3",
-    "branch": "HEAD"
+    "sha": "8d7f568fc13a12dfa8f4a5f868956615f7aeb228",
+    "branch": "gravity-and-orbits-1.6"
   },
   "phet-io-wrappers": {
     "sha": "4561b5ea8c137661654d6ebafb0c72218141769e",
@@ -77,8 +77,8 @@
     "branch": "HEAD"
   },
   "studio": {
-    "sha": "da310ee16acc13e7baa958e9ee7c4896fb7c0323",
-    "branch": "HEAD"
+    "sha": "70651f2320267aa72eba5f7e7fbf40812d4ff661",
+    "branch": "gravity-and-orbits-1.6"
   },
   "sun": {
     "sha": "79e01827560f5480fe9231901d6ab4936f5d51c9",
