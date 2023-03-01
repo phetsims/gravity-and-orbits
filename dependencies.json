@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.6.8 Wed Mar 01 2023 13:46:27 GMT-0700 (Mountain Standard Time)",
+  "comment": "# gravity-and-orbits 1.6.9-rc.1 Wed Mar 01 2023 14:05:34 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "547c926f940e045e3524e3391095dabd04dfe010",
+    "sha": "e3fbebdda3571aafab35778e90f69edb85805010",
     "branch": "1.6"
   },
   "joist": {
@@ -46,7 +46,7 @@
   },
   "phet-io-sim-specific": {
     "sha": "8d7f568fc13a12dfa8f4a5f868956615f7aeb228",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "phet-io-wrappers": {
     "sha": "4561b5ea8c137661654d6ebafb0c72218141769e",
@@ -78,7 +78,7 @@
   },
   "studio": {
     "sha": "70651f2320267aa72eba5f7e7fbf40812d4ff661",
-    "branch": "gravity-and-orbits-1.6"
+    "branch": "HEAD"
   },
   "sun": {
     "sha": "79e01827560f5480fe9231901d6ab4936f5d51c9",
