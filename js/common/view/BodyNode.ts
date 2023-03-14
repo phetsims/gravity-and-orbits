@@ -92,7 +92,7 @@ class BodyNode extends Node {
     };
     const dragListener = new DragListener( {
       positionProperty: body.positionProperty,
-      transform: this.modelViewTransformProperty.value,
+      transform: this.modelViewTransformProperty.value, // TODO: this can be the actual Property, and then remove the listener below, https://github.com/phetsims/my-solar-system/issues/107
       dragBoundsProperty: dragBoundsProperty,
       start: () => {
         body.userControlled = true;
@@ -134,6 +134,7 @@ class BodyNode extends Node {
     };
     Multilink.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
 
+    // TODO: remove and just use the Property, https://github.com/phetsims/my-solar-system/issues/107
     this.modelViewTransformListener = ( modelViewTransform: Transform3 ) => dragListener.setTransform( modelViewTransform );
     this.modelViewTransformProperty.link( this.modelViewTransformListener );
 
