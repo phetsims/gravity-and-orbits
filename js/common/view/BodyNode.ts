@@ -22,7 +22,6 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import BodyRenderer from './BodyRenderer.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
-import Transform3 from '../../../../dot/js/Transform3.js';
 import Multilink from '../../../../axon/js/Multilink.js';
 
 class BodyNode extends Node {
@@ -31,7 +30,6 @@ class BodyNode extends Node {
   public readonly bodyRenderer: BodyRenderer;
   private readonly positionListener: ( position: Vector2, modelViewTransform: ModelViewTransform2 ) => void;
   private readonly diameterListener: () => void;
-  private readonly modelViewTransformListener: ( modelViewTransform: Transform3 ) => void;
   private readonly modelBoundsListener: ( dragBounds: Bounds2 | null ) => void;
 
   /**
@@ -92,7 +90,7 @@ class BodyNode extends Node {
     };
     const dragListener = new DragListener( {
       positionProperty: body.positionProperty,
-      transform: this.modelViewTransformProperty.value, // TODO: this can be the actual Property, and then remove the listener below, https://github.com/phetsims/my-solar-system/issues/107
+      transform: this.modelViewTransformProperty,
       dragBoundsProperty: dragBoundsProperty,
       start: () => {
         body.userControlled = true;
@@ -133,10 +131,6 @@ class BodyNode extends Node {
       this.mouseArea = circle;
     };
     Multilink.multilink( [ this.body.diameterProperty, this.modelViewTransformProperty ], this.diameterListener );
-
-    // TODO: remove and just use the Property, https://github.com/phetsims/my-solar-system/issues/107
-    this.modelViewTransformListener = ( modelViewTransform: Transform3 ) => dragListener.setTransform( modelViewTransform );
-    this.modelViewTransformProperty.link( this.modelViewTransformListener );
 
     this.modelBoundsListener = dragBounds => {
 
