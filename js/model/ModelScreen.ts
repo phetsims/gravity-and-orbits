@@ -10,6 +10,9 @@ import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import { Image } from '../../../scenery/js/imports.js';
 import modelIcon_png from '../../mipmaps/modelIcon_png.js';
+
+// Since the screen is named "model" this lint rule has a false positive
+// eslint-disable-next-line no-view-imported-from-model
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
