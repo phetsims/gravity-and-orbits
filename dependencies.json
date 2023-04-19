@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "9dc3846a3b05e88cc2a03dd800c7708681ac2f3d",
+    "sha": "3d21561b1b29a54f2741847cb2b193e10b49b84e",
     "branch": "1.6"
   },
   "joist": {
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "studio": {
-    "sha": "0fc9729e8963cd5a5f2a3665249c6cb0dcf77c5b",
+    "sha": "cc5ce67ec9f652fd3aab564ab8b880c315690b88",
     "branch": "HEAD"
   },
   "sun": {
