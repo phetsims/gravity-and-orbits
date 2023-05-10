@@ -28,7 +28,11 @@
       ]
     },
     "supportsOutputJS": true,
-    "generatedUnitTests": true
+    "generatedUnitTests": true,
+    "screenNameKeys": [
+      "GRAVITY_AND_ORBITS/model",
+      "GRAVITY_AND_ORBITS/toScale"
+    ]
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js"
