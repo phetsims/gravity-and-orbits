@@ -20,6 +20,7 @@ import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransfo
 import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
+import isSettingPhetioStateProperty from '../../../../tandem/js/isSettingPhetioStateProperty.js';
 
 // constants
 const STROKE_WIDTH = 3;
@@ -77,7 +78,7 @@ class PathsCanvasNode extends CanvasNode {
       this.visible = isVisible;
 
       // Don't clear the path during phet-io state set, see https://github.com/phetsims/gravity-and-orbits/issues/455
-      if ( !phet.joist.sim.isSettingPhetioStateProperty.value ) {
+      if ( !isSettingPhetioStateProperty.value ) {
 
         // Paths should restart from the body position when "Path" checkbox is checked
         for ( let i = 0; i < bodies.length; i++ ) {
