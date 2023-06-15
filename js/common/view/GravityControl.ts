@@ -43,7 +43,7 @@ class GravityControl extends Node {
     const offTextNode = new Text( GravityAndOrbitsStrings.offStringProperty, TEXT_OPTIONS );
 
     this.addLinkedElement( gravityEnabledProperty, {
-      tandem: options.tandem.createTandem( 'gravityEnabledProperty' )
+      tandemName: 'gravityEnabledProperty'
     } );
 
     this.addChild( new HBox( {
