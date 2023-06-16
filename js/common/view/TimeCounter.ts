@@ -37,7 +37,7 @@ class TimeCounter extends Node {
     super();
 
     // day text counter
-    const dayText = new Text( timeFormatter( clock.timeProperty, tandem.createTandem( 'formattedTimeProperty' ) ), {
+    const dayText = new Text( timeFormatter( clock.timeProperty, tandem.createTandem( 'formattedTimeStringProperty' ) ), {
       font: new PhetFont( {
         family: StopwatchNode.NUMBER_FONT_FAMILY,
         size: FONT_SIZE

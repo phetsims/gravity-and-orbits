@@ -37,8 +37,7 @@ import BodyNode from './view/BodyNode.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../phet-core/js/optionize.js';
 import TProperty from '../../../axon/js/TProperty.js';
-import DerivedProperty from '../../../axon/js/DerivedProperty.js';
-import StringIO from '../../../tandem/js/types/StringIO.js';
+import DerivedStringProperty from '../../../axon/js/DerivedStringProperty.js';
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.
@@ -372,7 +371,7 @@ const getSwitchableRenderer = ( image1: Mipmap, image2: Mipmap, targetMass: numb
  * Have to artificially scale up the time readout so that Sun/Earth/Moon scene has a stable orbit with correct periods
  */
 const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
-  return new DerivedProperty( [
+  return new DerivedStringProperty( [
     timeProperty,
     GravityAndOrbitsStrings.earthDaysStringProperty,
     GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
@@ -381,8 +380,7 @@ const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
     const fixedValue = Utils.toFixed( value, 0 );
     return StringUtils.format( patternString, fixedValue, earthDaysString );
   }, {
-    tandem: tandem,
-    phetioValueType: StringIO
+    tandem: tandem
   } );
 };
 
@@ -391,7 +389,7 @@ const scaledDays = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
  * elapsed clock readout
  */
 const formatMinutes = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
-  return new DerivedProperty( [
+  return new DerivedStringProperty( [
     timeProperty,
     GravityAndOrbitsStrings.earthMinutesStringProperty,
     GravityAndOrbitsStrings.pattern[ '0value' ][ '1unitsStringProperty' ]
@@ -400,8 +398,7 @@ const formatMinutes = ( timeProperty: TProperty<number>, tandem: Tandem ) => {
     const fixedValue = Utils.toFixed( value, 0 );
     return StringUtils.format( patternString, fixedValue, earthMinutesString );
   }, {
-    tandem: tandem,
-    phetioValueType: StringIO
+    tandem: tandem
   } );
 };
 
