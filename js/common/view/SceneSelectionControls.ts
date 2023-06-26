@@ -33,7 +33,7 @@ class SceneSelectionControls extends Node {
    */
   public constructor( sceneProperty: Property<GravityAndOrbitsScene>, modes: GravityAndOrbitsScene[], screenView: Interruptable, providedOptions?: Partial<SceneSelectionControlsOptions> ) {
     super( providedOptions );
-    const options: SceneSelectionControlsOptions = merge( { tandem: Tandem.OPTIONAL }, providedOptions ) as SceneSelectionControlsOptions;
+    const options: SceneSelectionControlsOptions = merge( {}, providedOptions ) as SceneSelectionControlsOptions;
 
     const content = modes.map( scene => {
       return ( {
@@ -57,7 +57,7 @@ class SceneSelectionControls extends Node {
           deselectedLineWidth: 0
         }
       },
-      tandem: options.tandem.createTandem( 'sceneSelectionRadioButtonGroup' )
+      tandem: options.tandem?.createTandem( 'sceneSelectionRadioButtonGroup' )
     } );
 
     this.addChild( radioButtonGroup );
@@ -66,7 +66,7 @@ class SceneSelectionControls extends Node {
 
       // Extra level so visibilty can be controlled by PhET-iO
       const sceneResetButton = new SceneResetButton( scene, screenView, {
-        tandem: options.tandem.createTandem( scene.resetButtonTandemName )
+        tandem: options.tandem?.createTandem( scene.resetButtonTandemName )
       } );
 
       return {

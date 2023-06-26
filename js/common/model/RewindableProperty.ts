@@ -78,7 +78,6 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
   public constructor( changeRewindValueProperty: TReadOnlyProperty<boolean>, value: T, providedOptions?: RewindablePropertyOptions<T> ) {
 
     const options = combineOptions<RewindablePropertyOptions<T>>( {
-      tandem: Tandem.OPTIONAL,
       phetioOuterType: RewindableProperty.RewindablePropertyIO
     }, providedOptions );
 
@@ -91,7 +90,7 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
 
     // (read-only) true when the rewind point value is different than the property's current value
     this.differentProperty = new BooleanProperty( !this.equalsRewindValue(), {
-      tandem: options.tandem.createTandem( 'differentProperty' ),
+      tandem: options.tandem?.createTandem( 'differentProperty' ),
       phetioFeatured: false,
       phetioReadOnly: true,
       phetioDocumentation: 'for internal PhET use only'

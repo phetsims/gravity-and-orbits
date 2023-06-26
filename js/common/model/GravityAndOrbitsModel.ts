@@ -62,8 +62,8 @@ class GravityAndOrbitsModel implements TModel {
     this.showGridProperty = new BooleanProperty( false, { tandem: tandem.createTandem( 'showGridProperty' ) } );
 
     // The following 2 tandems should not appear in the "Model" screen
-    this.showMassProperty = new BooleanProperty( false, { tandem: showMassCheckbox ? tandem.createTandem( 'showMassProperty' ) : Tandem.OPTIONAL } );
-    this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: showMeasuringTape ? tandem.createTandem( 'showMeasuringTapeProperty' ) : Tandem.OPTIONAL } );
+    this.showMassProperty = new BooleanProperty( false, { tandem: showMassCheckbox ? tandem.createTandem( 'showMassProperty' ) : Tandem.OPT_OUT } );
+    this.showMeasuringTapeProperty = new BooleanProperty( false, { tandem: showMeasuringTape ? tandem.createTandem( 'showMeasuringTapeProperty' ) : Tandem.OPT_OUT } );
 
     assert && assert( phet.joist.sim.selectedScreenProperty, 'sim should exist by now' );
     this.isPlayingProperty = new BooleanProperty( false, {
