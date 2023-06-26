@@ -12,18 +12,19 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property, { PropertyOptions } from '../../../../axon/js/Property.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 
 type RewindablePropertyOptions<T> = {
   units?: string;
-  tandem: Tandem;
-} & StrictOmit<PhetioObjectOptions, 'phetioType'> & Pick<PropertyOptions<T>, 'phetioOuterType' | 'phetioValueType'>;
+} & StrictOmit<PhetioObjectOptions, 'phetioType'> &
+  PickRequired<PropertyOptions<T>, 'tandem'> &
+  Pick<PropertyOptions<T>, 'phetioOuterType' | 'phetioValueType'>;
 
 class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolean } | number | boolean | string> extends Property<T> {
   private rewindValue: T;

@@ -19,10 +19,10 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import Interruptable from '../model/Interruptable.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 
-type SceneSelectionControlsOptions = {
-  tandem: Tandem;
-};
+type SceneSelectionControlsOptions = PickRequired<PhetioObjectOptions, 'tandem'>;
 
 class SceneSelectionControls extends Node {
 
