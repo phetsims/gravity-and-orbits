@@ -1,4 +1,4 @@
-// Copyright 2014-2022, University of Colorado Boulder
+// Copyright 2014-2023, University of Colorado Boulder
 
 /**
  * A GravityAndOrbitsScene behaves like a screen, it has its own model, control panel, canvas, and remembers its state
