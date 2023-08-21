@@ -2,10 +2,10 @@
 
 This document describes the model for the Gravity and Orbits simulation.
 
-
 ## Algorithm
 
-The model uses an algorithm based on exponential decompositions from this paper: http://arxiv.org/pdf/cond-mat/0110585v1.pdf, equation 22.
+The model uses an algorithm based on exponential decompositions from this
+paper: http://arxiv.org/pdf/cond-mat/0110585v1.pdf, equation 22.
 
 Here is the algorithm for stepping from time *t* to *t + h* for a given body (i.e. a planet, star, space station, etc.):
 
