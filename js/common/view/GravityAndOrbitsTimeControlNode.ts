@@ -24,7 +24,6 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import animationFrameTimer from '../../../../axon/js/animationFrameTimer.js';
 import Property from '../../../../axon/js/Property.js';
 
 // constants
@@ -105,12 +104,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
 
     // Update the enabled property
     Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( () => {
-
       anyPropertyDifferentProperty.recomputeDerivation();
-
-      // For unknown reasons, we have to wait for this frame to completely resolve before this will work.
-      // See https://github.com/phetsims/gravity-and-orbits/issues/459
-      animationFrameTimer.runOnNextTick( () => anyPropertyDifferentProperty.recomputeDerivation() );
     } );
   }
 }
