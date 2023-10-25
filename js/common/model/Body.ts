@@ -440,7 +440,7 @@ export default class Body extends PhetioObject {
    * This also removes points when the path gets too long.
    */
   private addPathPoint(): void {
-    const pathPoint = this.positionProperty.get();
+    const pathPoint = this.positionProperty.value;
     this.path.push( pathPoint );
     this.pointAddedEmitter.emit( pathPoint, this.type );
 
