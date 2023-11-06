@@ -3,7 +3,7 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import RewindableProperty from './RewindableProperty.js';
 
-QUnit.module( 'RewindablePropertyTests' );
+QUnit.module( 'RewindableProperty' );
 
 QUnit.test( 'Basic test', assert => {
   assert.ok( true );
