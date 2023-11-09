@@ -68,7 +68,7 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
       );
     }
 
-    return cache.get( cacheKey );
+    return cache.get( cacheKey )!;
   };
 
   /**
@@ -165,10 +165,8 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
   }
 }
 
-
 // {Map.<IOType, IOType>} - Cache each parameterized RewindablePropertyIO so that it is only created once
-const cache = new Map();
-
+const cache = new Map<IOType, IOType>();
 
 gravityAndOrbits.register( 'RewindableProperty', RewindableProperty );
 export default RewindableProperty;
