@@ -19,6 +19,7 @@ import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import ioTypeCaches from '../../../../tandem/js/ioTypeCaches.js';
 
 type RewindablePropertyOptions<T> = {
   units?: string;
@@ -167,6 +168,7 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
 
 // {Map.<IOType, IOType>} - Cache each parameterized RewindablePropertyIO so that it is only created once
 const cache = new Map<IOType, IOType>();
+ioTypeCaches.register( cache );
 
 gravityAndOrbits.register( 'RewindableProperty', RewindableProperty );
 export default RewindableProperty;
