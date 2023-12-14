@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "0ed981a50d9dc4cf0df0cc1408c6a73304f6f7d7",
+    "sha": "5b1b95b962b9d415e1e91024b51c1c26c5e32eee",
     "branch": "1.6"
   },
   "joist": {
@@ -49,7 +49,7 @@
     "branch": "HEAD"
   },
   "phet-io-wrappers": {
-    "sha": "1b16d308438f9a1b159ea60cf4513936badac12c",
+    "sha": "c40cbd6cb17126b1f9070443f2367273605a0643",
     "branch": "HEAD"
   },
   "phetcommon": {
@@ -57,7 +57,7 @@
     "branch": "HEAD"
   },
   "phetmarks": {
-    "sha": "143e268ad1707316c7007ea09dc7c1600840a9e1",
+    "sha": "05ee7f459238d3e35e641bb13adc70a77214aaef",
     "branch": "HEAD"
   },
   "query-string-machine": {
@@ -89,7 +89,7 @@
     "branch": "HEAD"
   },
   "tandem": {
-    "sha": "5f1a2402b15f02f877b3328ff79fb30dc3d16143",
+    "sha": "23aaeafeb95b6aa60555f4b392045ce7751a091f",
     "branch": "HEAD"
   },
   "twixt": {
