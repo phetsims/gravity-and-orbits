@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "905ef2b9d2d22018f91c59717f3cf2a7f80dfade",
+    "sha": "4903dbdf7ae98b5c60c10735733582045e116bb4",
     "branch": "1.6"
   },
   "joist": {
@@ -41,15 +41,15 @@
     "branch": "HEAD"
   },
   "phet-io": {
-    "sha": "811a47654222a572ef8a8a4b2b3625d418fd4d7b",
+    "sha": "ccabc26f82becf59b9109a794303cbaa297795c1",
     "branch": "HEAD"
   },
   "phet-io-sim-specific": {
-    "sha": "80e57d9880c18dec3dcf78f49ffb461094cb5fa6",
+    "sha": "500382f631fe9be6d54c2f038d9182a89c51f9d6",
     "branch": "HEAD"
   },
   "phet-io-wrappers": {
-    "sha": "0693daaba4aa2ff579462d1771bc8450092098af",
+    "sha": "7a7e1b07529ed08ec70d479f01dcfa4eea6015cd",
     "branch": "HEAD"
   },
   "phetcommon": {
