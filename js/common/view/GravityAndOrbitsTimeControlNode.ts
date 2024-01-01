@@ -89,7 +89,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       } );
       return changed;
     }, {
-      accessNonDependencies: true
+      strictAxonDependencies: false
     } );
 
     const restartButton = new RestartButton( {
