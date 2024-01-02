@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "3b4359b1409d347dda10c80c8d30d2ef24165337",
+    "sha": "fa12931ef4c3daf185d409d4bcd26ce4c074372d",
     "branch": "1.6"
   },
   "joist": {
@@ -45,7 +45,7 @@
     "branch": "HEAD"
   },
   "phet-io-sim-specific": {
-    "sha": "500382f631fe9be6d54c2f038d9182a89c51f9d6",
+    "sha": "4fc55e03ca26e1f91e9feee84c85031e4fe62d7d",
     "branch": "HEAD"
   },
   "phet-io-wrappers": {
