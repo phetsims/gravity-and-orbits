@@ -34,7 +34,7 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
 
   /**
    * An observable Property that triggers notifications when the value changes.
-   * This caching implementation should be kept in sync with the other parametric IO Type caching implementations.
+   * This caching implementation should be kept in sync with the other parametric IOType caching implementations.
    */
   public static readonly RewindablePropertyIO = ( parameterType: IOType ): IOType => {
     assert && assert( parameterType, 'RewindablePropertyIO needs parameterType' );
