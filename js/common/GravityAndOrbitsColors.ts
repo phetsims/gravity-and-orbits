@@ -1,4 +1,9 @@
 // Copyright 2021-2022, University of Colorado Boulder
+
+/**
+ * @author Sam Reid (PhET Interactive Simulations)
+ */
+
 import { Color, ProfileColorProperty } from '../../../scenery/js/imports.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';

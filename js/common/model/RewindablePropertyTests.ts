@@ -1,5 +1,9 @@
 // Copyright 2021-2023, University of Colorado Boulder
 
+/**
+ * @author Sam Reid (PhET Interactive Simulations)
+ */
+
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import RewindableProperty from './RewindableProperty.js';
 
