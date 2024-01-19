@@ -89,7 +89,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       } );
       return changed;
     }, {
-      strictAxonDependencies: false
+      strictAxonDependencies: false //TODO https://github.com/phetsims/gravity-and-orbits/issues/487
     } );
 
     const restartButton = new RestartButton( {
