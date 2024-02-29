@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "de00518f61e34efeff3a9a3ece28c452449e8eb8",
+    "sha": "dce178913647aa2ea52b2fabf5a5af29e201c8c9",
     "branch": "1.5"
   },
   "joist": {
@@ -61,7 +61,7 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "3ecc52f3516eee0d4c257d72bbd74bc6585b502e",
+    "sha": "34637d0a41ff791401c744b3ee2be3e8250bd33c",
     "branch": "HEAD"
   },
   "scenery-phet": {
