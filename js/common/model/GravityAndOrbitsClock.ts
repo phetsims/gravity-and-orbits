@@ -10,7 +10,7 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import EventTimer from '../../../../phet-core/js/EventTimer.js';
+import EventTimer, { ConstantEventModel } from '../../../../phet-core/js/EventTimer.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
@@ -124,7 +124,7 @@ class GravityAndOrbitsClock {
    */
   public addEventTimer( stepFunction: ( dt: number ) => void ): void {
     assert && assert( !this.eventTimer, 'there can be only one event timer' );
-    this.eventTimer = new EventTimer( new EventTimer.ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
+    this.eventTimer = new EventTimer( new ConstantEventModel( CLOCK_FRAME_RATE ), stepFunction );
   }
 
   /**
