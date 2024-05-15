@@ -13,7 +13,7 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "c82655635aaa9372645d371b6ce232d08617416b",
+    "sha": "b43bde235adb3f5e609d3e12ce3299a4413ba1af",
     "branch": "HEAD"
   },
   "dot": {
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "fdaf3c8820e480c00fc65a26777878f8c528d1e5",
+    "sha": "9a830c776c3fc1717207a77c8645d0cfeb1f2631",
     "branch": "1.6"
   },
   "joist": {
