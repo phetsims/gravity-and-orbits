@@ -45,6 +45,7 @@ import Multilink from '../../../axon/js/Multilink.js';
 import optionize from '../../../phet-core/js/optionize.js';
 import TProperty from '../../../axon/js/TProperty.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
+import { Units } from '../../../axon/js/units.js';
 
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
@@ -57,7 +58,7 @@ type GravityAndOrbitsSceneOptions = {
 } & PhetioObjectOptions;
 
 type MeasuringTapeOptions = {
-  units?: string;
+  units?: Units;
 } & Pick<PhetioObjectOptions, 'tandem'>;
 
 type GravityAndOrbitsSceneImplementationOptions = Pick<GravityAndOrbitsSceneOptions, 'adjustMoonOrbit' | 'dt' | 'gridCenter'>;

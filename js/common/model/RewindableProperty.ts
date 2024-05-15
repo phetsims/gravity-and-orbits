@@ -20,9 +20,10 @@ import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import IOTypeCache from '../../../../tandem/js/IOTypeCache.js';
+import { Units } from '../../../../axon/js/units.js';
 
 type RewindablePropertyOptions<T> = {
-  units?: string;
+  units?: Units;
 } & StrictOmit<PhetioObjectOptions, 'phetioType'> &
   PickRequired<PropertyOptions<T>, 'tandem'> &
   Pick<PropertyOptions<T>, 'phetioOuterType' | 'phetioValueType'>;
