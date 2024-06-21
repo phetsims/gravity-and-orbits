@@ -220,7 +220,7 @@ class SceneFactory {
       children[ i ].setScaleMagnitude( 25 / children[ i ].width );
     }
 
-    return new HBox( { children: children, spacing: 20, excludeInvisibleChildrenFromBounds: false } );
+    return new HBox( { children: children, spacing: 20, excludeInvisibleChildrenFromBounds: false, sizable: false } );
   }
 }
 
