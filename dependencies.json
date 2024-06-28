@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.6.20-rc.1 Fri Jun 14 2024 15:26:59 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# gravity-and-orbits 1.6.20-rc.2 Fri Jun 28 2024 17:02:19 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "c13a8c7741d95fbd8e37619c66ebcca8686dffe7",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "425048da1fd7d006c57d70655485ff6baaf35f13",
+    "sha": "8ebf3a7a1365a24db0fda71f45304ee3c46ba12a",
     "branch": "1.6"
   },
   "joist": {
