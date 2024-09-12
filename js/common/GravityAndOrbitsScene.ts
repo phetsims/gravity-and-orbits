@@ -46,6 +46,7 @@ import optionize from '../../../phet-core/js/optionize.js';
 import TProperty from '../../../axon/js/TProperty.js';
 import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import { Units } from '../../../axon/js/units.js';
+import phetioStateSetEmitter from '../../../tandem/js/phetioStateSetEmitter.js';
 
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;
@@ -204,7 +205,7 @@ class GravityAndOrbitsScene extends PhetioObject {
 
     // Save the new PhET-iO state as an initial configuration for this scene, but only if the state being set applies
     // to this scene.
-    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( ( state: Record<string, unknown> ) => {
+    phetioStateSetEmitter.addListener( ( state: Record<string, unknown> ) => {
 
       const phetioIDsToSet = Object.keys( state );
       for ( let i = 0; i < phetioIDsToSet.length; i++ ) {

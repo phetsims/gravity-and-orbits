@@ -23,8 +23,8 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import Property from '../../../../axon/js/Property.js';
+import phetioStateSetEmitter from '../../../../tandem/js/phetioStateSetEmitter.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;
@@ -102,7 +102,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
     this.addChild( restartButton );
 
     // Update the enabled property
-    Tandem.PHET_IO_ENABLED && phet.phetio.phetioEngine.phetioStateEngine.stateSetEmitter.addListener( () => {
+    phetioStateSetEmitter.addListener( () => {
       anyPropertyDifferentProperty.recomputeDerivation();
     } );
   }
