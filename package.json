@@ -36,6 +36,18 @@
     ]
   },
   "eslintConfig": {
-    "extends": "../chipper/eslint/sim_eslintrc.js"
+    "extends": "../chipper/eslint/sim_eslintrc.js",
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts"
+        ],
+        "parserOptions": {
+          "project": [
+            "../gravity-and-orbits/tsconfig.json"
+          ]
+        }
+      }
+    ]
   }
 }
