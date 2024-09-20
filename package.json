@@ -44,7 +44,7 @@
         ],
         "parserOptions": {
           "project": [
-            "../gravity-and-orbits/tsconfig.json"
+            "../chipper/tsconfig/eslint-all/tsconfig.json"
           ]
         }
       }
