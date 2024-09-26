@@ -29,7 +29,7 @@ import BodyConfiguration from './BodyConfiguration.js';
 import { Color } from '../../../../scenery/js/imports.js';
 
 // Used as a type annotation only
-// eslint-disable-next-line no-view-imported-from-model
+// eslint-disable-next-line phet/no-view-imported-from-model
 import BodyRenderer from '../view/BodyRenderer.js';
 import GravityAndOrbitsModel from './GravityAndOrbitsModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
