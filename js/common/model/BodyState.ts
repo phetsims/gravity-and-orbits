@@ -7,8 +7,8 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from './Body.js';
 
 class BodyState {

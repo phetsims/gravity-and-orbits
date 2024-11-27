@@ -8,6 +8,7 @@
 
 import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
+import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 import { Image } from '../../../scenery/js/imports.js';
 import modelIcon_png from '../../mipmaps/modelIcon_png.js';
 
@@ -17,7 +18,6 @@ import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenVie
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
-import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
 class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {

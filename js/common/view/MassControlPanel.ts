@@ -7,17 +7,17 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import merge from '../../../../phet-core/js/merge.js';
+import { EmptySelfOptions, optionize3, OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { HBox, HStrut, Node, Text, VBox, VBoxOptions } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
-import MassSlider from './MassSlider.js';
 import Body from '../model/Body.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { EmptySelfOptions, optionize3, OptionizeDefaults } from '../../../../phet-core/js/optionize.js';
-import merge from '../../../../phet-core/js/merge.js';
+import MassSlider from './MassSlider.js';
 
 // constants
 const CONTROL_FONT = new PhetFont( 14 );

@@ -9,20 +9,20 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import Body from '../model/Body.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 import Property from '../../../../axon/js/Property.js';
+import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import { Shape } from '../../../../kite/js/imports.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { DragListener, Line, Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import Body from '../model/Body.js';
 import BodyRenderer from './BodyRenderer.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
-import Bounds2 from '../../../../dot/js/Bounds2.js';
-import Multilink from '../../../../axon/js/Multilink.js';
 
 class BodyNode extends Node {
   private readonly modelViewTransformProperty: Property<ModelViewTransform2>;

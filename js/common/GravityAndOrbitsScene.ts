@@ -16,37 +16,37 @@
  */
 
 import BooleanProperty from '../../../axon/js/BooleanProperty.js';
+import EnumerationProperty from '../../../axon/js/EnumerationProperty.js';
+import Multilink from '../../../axon/js/Multilink.js';
 import NumberProperty from '../../../axon/js/NumberProperty.js';
 import Property from '../../../axon/js/Property.js';
+import TProperty from '../../../axon/js/TProperty.js';
+import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
+import { Units } from '../../../axon/js/units.js';
+import Bounds2 from '../../../dot/js/Bounds2.js';
 import Rectangle from '../../../dot/js/Rectangle.js';
 import Vector2 from '../../../dot/js/Vector2.js';
 import Vector2Property from '../../../dot/js/Vector2Property.js';
 import merge from '../../../phet-core/js/merge.js';
+import optionize from '../../../phet-core/js/optionize.js';
 import ModelViewTransform2 from '../../../phetcommon/js/view/ModelViewTransform2.js';
+import TimeSpeed from '../../../scenery-phet/js/TimeSpeed.js';
+import { Node } from '../../../scenery/js/imports.js';
 import PhetioObject, { PhetioObjectOptions } from '../../../tandem/js/PhetioObject.js';
+import phetioStateSetEmitter from '../../../tandem/js/phetioStateSetEmitter.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import IOType from '../../../tandem/js/types/IOType.js';
 import ReferenceIO from '../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
-import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
-import GravityAndOrbitsPhysicsEngine from './model/GravityAndOrbitsPhysicsEngine.js';
-import GravityAndOrbitsSceneView from './view/GravityAndOrbitsSceneView.js';
-import { Node } from '../../../scenery/js/imports.js';
-import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
-import ModeConfig from './model/ModeConfig.js';
-import BodyNode from './view/BodyNode.js';
 import Body from './model/Body.js';
+import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
+import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
+import GravityAndOrbitsPhysicsEngine from './model/GravityAndOrbitsPhysicsEngine.js';
+import ModeConfig from './model/ModeConfig.js';
 import Pair from './model/Pair.js';
-import Bounds2 from '../../../dot/js/Bounds2.js';
-import EnumerationProperty from '../../../axon/js/EnumerationProperty.js';
-import TimeSpeed from '../../../scenery-phet/js/TimeSpeed.js';
-import Multilink from '../../../axon/js/Multilink.js';
-import optionize from '../../../phet-core/js/optionize.js';
-import TProperty from '../../../axon/js/TProperty.js';
-import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
-import { Units } from '../../../axon/js/units.js';
-import phetioStateSetEmitter from '../../../tandem/js/phetioStateSetEmitter.js';
+import BodyNode from './view/BodyNode.js';
+import GravityAndOrbitsSceneView from './view/GravityAndOrbitsSceneView.js';
 
 // constants
 const PLAY_AREA_WIDTH = GravityAndOrbitsSceneView.STAGE_SIZE.width;

@@ -11,16 +11,16 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property, { PropertyOptions } from '../../../../axon/js/Property.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
-import IOType from '../../../../tandem/js/types/IOType.js';
-import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import { Units } from '../../../../axon/js/units.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
-import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IOTypeCache from '../../../../tandem/js/IOTypeCache.js';
-import { Units } from '../../../../axon/js/units.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
+import IOType from '../../../../tandem/js/types/IOType.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 type RewindablePropertyOptions<T> = {
   units?: Units;

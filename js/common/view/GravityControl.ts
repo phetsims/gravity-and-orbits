@@ -6,15 +6,15 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { HBox, Node, Text } from '../../../../scenery/js/imports.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
-import Property from '../../../../axon/js/Property.js';
-import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 
 // constants
 const FONT = new PhetFont( 14 );

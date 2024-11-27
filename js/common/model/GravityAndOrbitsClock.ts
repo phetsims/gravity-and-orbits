@@ -10,14 +10,14 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import EventTimer, { ConstantEventModel } from '../../../../phet-core/js/EventTimer.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
-import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
-import RewindableProperty from './RewindableProperty.js';
-import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import EventTimer, { ConstantEventModel } from '../../../../phet-core/js/EventTimer.js';
+import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import NumberIO from '../../../../tandem/js/types/NumberIO.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
+import RewindableProperty from './RewindableProperty.js';
 
 // constants
 // frames per second, was 25 in the Java version but changed to 60 for consistency and smoothness

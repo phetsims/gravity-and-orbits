@@ -14,19 +14,19 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import Property from '../../../../axon/js/Property.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import TModel from '../../../../joist/js/TModel.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import SceneFactory from '../SceneFactory.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
-import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import TModel from '../../../../joist/js/TModel.js';
+import SceneFactory from '../SceneFactory.js';
 
 // constants
 const G = PhysicalConstants.GRAVITATIONAL_CONSTANT;

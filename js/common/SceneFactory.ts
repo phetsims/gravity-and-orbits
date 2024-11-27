@@ -8,13 +8,18 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import DerivedStringProperty from '../../../axon/js/DerivedStringProperty.js';
+import TProperty from '../../../axon/js/TProperty.js';
+import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../dot/js/Utils.js';
 import Vector2 from '../../../dot/js/Vector2.js';
+import optionize from '../../../phet-core/js/optionize.js';
 import StringUtils from '../../../phetcommon/js/util/StringUtils.js';
 import { Color, HBox, Image, Line, Mipmap, Node } from '../../../scenery/js/imports.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 import earth_png from '../../mipmaps/earth_png.js';
-import moonGeneric_png from '../../mipmaps/moonGeneric_png.js';
 import moon_png from '../../mipmaps/moon_png.js';
+import moonGeneric_png from '../../mipmaps/moonGeneric_png.js';
 import planetGeneric_png from '../../mipmaps/planetGeneric_png.js';
 import spaceStation_png from '../../mipmaps/spaceStation_png.js';
 import sun_png from '../../mipmaps/sun_png.js';
@@ -25,19 +30,14 @@ import GravityAndOrbitsScene from './GravityAndOrbitsScene.js';
 import Body, { BodyOptions } from './model/Body.js';
 import BodyConfiguration from './model/BodyConfiguration.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
+import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
 import ModeConfig from './model/ModeConfig.js';
 import Pair from './model/Pair.js';
+import BodyNode from './view/BodyNode.js';
 import { ImageRenderer, SwitchableBodyRenderer } from './view/BodyRenderer.js';
 import EarthMassReadoutNode from './view/EarthMassReadoutNode.js';
 import SpaceStationMassReadoutNode from './view/SpaceStationMassReadoutNode.js';
 import VectorNode from './view/VectorNode.js';
-import GravityAndOrbitsModel from './model/GravityAndOrbitsModel.js';
-import Tandem from '../../../tandem/js/Tandem.js';
-import BodyNode from './view/BodyNode.js';
-import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
-import optionize from '../../../phet-core/js/optionize.js';
-import TProperty from '../../../axon/js/TProperty.js';
-import DerivedStringProperty from '../../../axon/js/DerivedStringProperty.js';
 
 // These constants are only used in SceneFactory, and SceneFactory is used to create the specific model instantiations,
 // so we keep them here instead of the model.

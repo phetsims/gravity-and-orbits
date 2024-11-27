@@ -7,15 +7,15 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import StringProperty from '../../../../axon/js/StringProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Color, Text } from '../../../../scenery/js/imports.js';
+import Panel from '../../../../sun/js/Panel.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import StringProperty from '../../../../axon/js/StringProperty.js';
-import Panel from '../../../../sun/js/Panel.js';
 
 export type MassReadoutNodeOptions = {
   textMaxWidth?: number;

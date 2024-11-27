@@ -9,14 +9,14 @@
  */
 
 import Emitter from '../../../../axon/js/Emitter.js';
+import Property from '../../../../axon/js/Property.js';
+import TEmitter from '../../../../axon/js/TEmitter.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import ModelState from './ModelState.js';
 import Body from './Body.js';
-import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
-import Property from '../../../../axon/js/Property.js';
 import BodyTypeEnum from './BodyTypeEnum.js';
-import TEmitter from '../../../../axon/js/TEmitter.js';
+import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
+import ModelState from './ModelState.js';
 
 /**
  * Return the smaller of two Body instances, for determining which survives a collision.

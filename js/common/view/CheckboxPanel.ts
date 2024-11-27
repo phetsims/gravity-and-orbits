@@ -10,12 +10,15 @@
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import merge from '../../../../phet-core/js/merge.js';
+import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
+import GridNode from '../../../../scenery-phet/js/GridNode.js';
 import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { colorProfileProperty, HBox, HBoxOptions, Image, SceneryConstants, Text, TextOptions } from '../../../../scenery/js/imports.js';
+import VerticalCheckboxGroup, { VerticalCheckboxGroupItem, VerticalCheckboxGroupOptions } from '../../../../sun/js/VerticalCheckboxGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import iconMass_png from '../../../images/iconMass_png.js';
 import pathIcon_png from '../../../images/pathIcon_png.js';
@@ -23,10 +26,7 @@ import pathIconProjector_png from '../../../images/pathIconProjector_png.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
-import GridNode from '../../../../scenery-phet/js/GridNode.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
-import VerticalCheckboxGroup, { VerticalCheckboxGroupItem, VerticalCheckboxGroupOptions } from '../../../../sun/js/VerticalCheckboxGroup.js';
 
 // constants
 const FONT = new PhetFont( 18 );

@@ -7,16 +7,16 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { HSeparator, VBox } from '../../../../scenery/js/imports.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
+import Interruptable from '../model/Interruptable.js';
 import CheckboxPanel from './CheckboxPanel.js';
 import GravityControl from './GravityControl.js';
 import SceneSelectionControls from './SceneSelectionControls.js';
-import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import Interruptable from '../model/Interruptable.js';
 
 // constants
 const MENU_SECTION_OPTIONS = { x: 5 };

@@ -8,13 +8,13 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import Property from '../../../../axon/js/Property.js';
 import LinearFunction from '../../../../dot/js/LinearFunction.js';
+import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import { Node } from '../../../../scenery/js/imports.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
-import BodyRenderer, { SunRenderer } from './BodyRenderer.js';
 import Body from '../model/Body.js';
-import Property from '../../../../axon/js/Property.js';
-import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
+import BodyRenderer, { SunRenderer } from './BodyRenderer.js';
 
 // constants
 const NUM_STEPS_FOR_ANIMATION = 10;

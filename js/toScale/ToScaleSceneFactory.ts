@@ -7,10 +7,10 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Tandem from '../../../tandem/js/Tandem.js';
+import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import SceneFactory from '../common/SceneFactory.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
-import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
-import Tandem from '../../../tandem/js/Tandem.js';
 
 class ToScaleSceneFactory extends SceneFactory {
 

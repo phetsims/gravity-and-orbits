@@ -10,10 +10,10 @@
  */
 
 import Vector2 from '../../../../dot/js/Vector2.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
-import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
-import BodyConfiguration from './BodyConfiguration.js';
 import { Line } from '../../../../scenery/js/imports.js';
+import gravityAndOrbits from '../../gravityAndOrbits.js';
+import BodyConfiguration from './BodyConfiguration.js';
+import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 
 // constants
 const DEFAULT_DT = GravityAndOrbitsClock.DEFAULT_DT;

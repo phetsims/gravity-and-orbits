@@ -9,17 +9,17 @@
 
 import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import { Node, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import GravityAndOrbitsControls from './GravityAndOrbitsControls.js';
 import GravityAndOrbitsTimeControlNode from './GravityAndOrbitsTimeControlNode.js';
 import MassControlPanel from './MassControlPanel.js';
-import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
-import { combineOptions } from '../../../../phet-core/js/optionize.js';
 
 // constants
 const MARGIN = 5;

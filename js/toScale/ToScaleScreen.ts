@@ -8,13 +8,13 @@
 
 import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
+import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 import { Image } from '../../../scenery/js/imports.js';
 import toScaleIcon_png from '../../mipmaps/toScaleIcon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
-import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 
 class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
   public constructor( providedOptions?: ScreenOptions ) {

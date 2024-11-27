@@ -10,21 +10,21 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import Property from '../../../../axon/js/Property.js';
+import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import RestartButton from '../../../../scenery-phet/js/buttons/RestartButton.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import TimeControlNode, { TimeControlNodeOptions } from '../../../../scenery-phet/js/TimeControlNode.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
+import phetioStateSetEmitter from '../../../../tandem/js/phetioStateSetEmitter.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Body from '../model/Body.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import RewindableProperty from '../model/RewindableProperty.js';
-import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
-import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
-import Property from '../../../../axon/js/Property.js';
-import phetioStateSetEmitter from '../../../../tandem/js/phetioStateSetEmitter.js';
 
 // constants
 const PLAY_PAUSE_BUTTON_RADIUS = 34;

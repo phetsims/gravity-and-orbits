@@ -7,20 +7,20 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { Color, HStrut, Image, Node } from '../../../../scenery/js/imports.js';
-import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
-import RectangularPushButton, { RectangularPushButtonOptions } from '../../../../sun/js/buttons/RectangularPushButton.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import resetArrow_png from '../../../../scenery-phet/images/resetArrow_png.js';
+import { Color, HStrut, Image, Node } from '../../../../scenery/js/imports.js';
+import RectangularPushButton, { RectangularPushButtonOptions } from '../../../../sun/js/buttons/RectangularPushButton.js';
+import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
-import Property from '../../../../axon/js/Property.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
-import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import Interruptable from '../model/Interruptable.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 
 type SceneSelectionControlsOptions = PickRequired<PhetioObjectOptions, 'tandem'>;
 

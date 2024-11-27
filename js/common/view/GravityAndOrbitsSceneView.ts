@@ -9,28 +9,28 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import platform from '../../../../phet-core/js/platform.js';
+import GridNode from '../../../../scenery-phet/js/GridNode.js';
 import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js';
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { AlignBox, Color, Rectangle } from '../../../../scenery/js/imports.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
+import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
+import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import BodyNode from './BodyNode.js';
 import DraggableVectorNode from './DraggableVectorNode.js';
 import ExplosionNode from './ExplosionNode.js';
-import GridNode from '../../../../scenery-phet/js/GridNode.js';
 import PathsCanvasNode from './PathsCanvasNode.js';
 import TimeCounter from './TimeCounter.js';
 import VectorNode from './VectorNode.js';
 import ZoomControl from './ZoomControl.js';
-import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
-import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 // constants
 const SCALE = 0.8; // these numbers come from trying to match the original MLL port of this sim
