@@ -18,6 +18,7 @@ import MeasuringTapeNode from '../../../../scenery-phet/js/MeasuringTapeNode.js'
 import PhetColorScheme from '../../../../scenery-phet/js/PhetColorScheme.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { colorProfileProperty, HBox, HBoxOptions, Image, SceneryConstants, Text, TextOptions } from '../../../../scenery/js/imports.js';
+import { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 import VerticalCheckboxGroup, { VerticalCheckboxGroupItem, VerticalCheckboxGroupOptions } from '../../../../sun/js/VerticalCheckboxGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import iconMass_png from '../../../images/iconMass_png.js';
@@ -65,7 +66,9 @@ class CheckboxPanel extends VerticalCheckboxGroup {
         ]
       }, HBOX_OPTIONS ) ),
       tandemName: 'gravityForceCheckbox',
-      options: CHECKBOX_OPTIONS
+      options: combineOptions<CheckboxOptions>( {
+        phetioDisplayOnlyPropertyInstrumented: true
+      }, CHECKBOX_OPTIONS )
     }, {
 
       // velocity checkbox
@@ -77,7 +80,9 @@ class CheckboxPanel extends VerticalCheckboxGroup {
         ]
       }, HBOX_OPTIONS ) ),
       tandemName: 'velocityCheckbox',
-      options: CHECKBOX_OPTIONS
+      options: combineOptions<CheckboxOptions>( {
+        phetioDisplayOnlyPropertyInstrumented: true
+      }, CHECKBOX_OPTIONS )
     }
     ];
 
