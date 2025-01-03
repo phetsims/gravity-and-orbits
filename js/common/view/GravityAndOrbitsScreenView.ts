@@ -10,7 +10,7 @@
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
-import { Node, Rectangle, VBox } from '../../../../scenery/js/imports.js';
+import { ManualConstraint, Node, Rectangle, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -123,9 +123,10 @@ class GravityAndOrbitsScreenView extends ScreenView {
     // Calculate the center point of the spacer in parent coordinates, just for the x-coordinate
     const targetCenter = this.globalToParentPoint( positionerNode.globalBounds.center );
 
-    timeControlNode.setPlayPauseButtonCenterX( this, targetCenter.x );
-
-    timeControlNode.bottom = this.layoutBounds.bottom - MARGIN;
+    ManualConstraint.create( this, [ timeControlNode ], timeControlNodeProxy => {
+      timeControlNodeProxy.x = targetCenter.x;
+      timeControlNodeProxy.bottom = this.layoutBounds.bottom - MARGIN;
+    } );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {
