@@ -53,7 +53,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused()
         }
       },
-      speedRadioButtonGroupPlacement: 'before',
+      speedRadioButtonGroupPlacement: 'left',
       speedRadioButtonGroupOptions: {
         labelOptions: {
           font: new PhetFont( 20 ),
