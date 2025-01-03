@@ -7,11 +7,10 @@
  * @author Aaron Davis (PhET Interactive Simulations)
  */
 
-import Vector2 from '../../../../dot/js/Vector2.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
-import { Node, VBox } from '../../../../scenery/js/imports.js';
+import { Node, Rectangle, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
@@ -112,11 +111,16 @@ class GravityAndOrbitsScreenView extends ScreenView {
       tandem: tandem.createTandem( 'timeControlNode' )
     } );
     this.addChild( timeControlNode );
-    timeControlNode.setPlayPauseButtonCenter( new Vector2( this.layoutBounds.centerX - 117, this.layoutBounds.bottom - timeControlNode.height / 2 - MARGIN ) );
 
-    // spacing to put the SpeedRadioButtonGroup at the edge of the layout bounds - current spacing
-    // plus distance from the left of the TimeControlNode to left edge of layout bounds
-    timeControlNode.setButtonGroupXSpacing( timeControlNode.getButtonGroupXSpacing() + timeControlNode.left - this.layoutBounds.left - MARGIN );
+    // Node to be used for getting the correct coordinates to position the TimeControlNode
+    const positionerNode = new Rectangle( 0, 0, 1, 10, {
+      visible: false,
+      centerX: this.layoutBounds.centerX - 117,
+      bottom: this.layoutBounds.bottom - MARGIN
+    } );
+    this.addChild( positionerNode );
+
+    timeControlNode.initializeFlowLayout( this, positionerNode, MARGIN );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {

@@ -53,7 +53,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
           listener: () => model.sceneProperty.value.getClock().stepClockWhilePaused()
         }
       },
-      speedRadioButtonGroupOnLeft: true,
+      speedRadioButtonGroupPlacement: 'before',
       speedRadioButtonGroupOptions: {
         labelOptions: {
           font: new PhetFont( 20 ),
@@ -96,10 +96,10 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       xMargin: 9.5,
       yMargin: 9.5,
       listener: () => model.sceneProperty.value.rewind(),
-      center: this.getPlayPauseButtonCenter().minusXY( PLAY_PAUSE_BUTTON_RADIUS + STEP_BUTTON_RADIUS + PUSH_BUTTON_SPACING, 0 ),
       tandem: providedOptions.tandem.createTandem( 'restartButton' )
     } );
-    this.addChild( restartButton );
+    this.playPauseStepButtons.insertChild( 0, restartButton );
+    this.playPauseStepButtons.updateLayout();
 
     // Update the enabled property
     phetioStateSetEmitter.addListener( () => {
