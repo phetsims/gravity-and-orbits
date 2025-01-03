@@ -120,7 +120,12 @@ class GravityAndOrbitsScreenView extends ScreenView {
     } );
     this.addChild( positionerNode );
 
-    timeControlNode.initializeFlowLayout( this, positionerNode, MARGIN );
+    // Calculate the center point of the spacer in parent coordinates, just for the x-coordinate
+    const targetCenter = this.globalToParentPoint( positionerNode.globalBounds.center );
+
+    timeControlNode.setPlayPauseButtonCenterX( this, targetCenter.x );
+
+    timeControlNode.bottom = this.layoutBounds.bottom - MARGIN;
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {
