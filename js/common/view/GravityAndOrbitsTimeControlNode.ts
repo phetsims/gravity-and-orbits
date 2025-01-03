@@ -98,8 +98,7 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
       listener: () => model.sceneProperty.value.rewind(),
       tandem: providedOptions.tandem.createTandem( 'restartButton' )
     } );
-    this.playPauseStepButtons.insertChild( 0, restartButton );
-    this.playPauseStepButtons.updateLayout();
+    this.addPushButton( restartButton, 0 );
 
     // Update the enabled property
     phetioStateSetEmitter.addListener( () => {
