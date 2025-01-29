@@ -13,7 +13,7 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "8e799bee99a631ce0cf7a0e0a273ef298ef104b9",
+    "sha": "500b580b7ec8d8fce7c14d876ee566c9d9974c6a",
     "branch": "HEAD"
   },
   "dot": {
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "8aa99c8f8bada7aaecdb299d7c193f03d2027aea",
+    "sha": "07475e3ce92bf9eca342cafac143265383ef8e8d",
     "branch": "1.6"
   },
   "joist": {
@@ -49,7 +49,7 @@
     "branch": "HEAD"
   },
   "phet-io-wrappers": {
-    "sha": "3420e46814d2874efac49b3f9fdd93b0c7421ca7",
+    "sha": "7be1b472d5bc9c23456c3ad87e8ff3bf64a4a091",
     "branch": "HEAD"
   },
   "phetcommon": {
