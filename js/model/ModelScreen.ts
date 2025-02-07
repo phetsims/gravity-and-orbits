@@ -9,7 +9,7 @@
 import Screen, { ScreenOptions } from '../../../joist/js/Screen.js';
 import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
-import { Image } from '../../../scenery/js/imports.js';
+import Image from '../../../scenery/js/nodes/Image.js';
 import modelIcon_png from '../../mipmaps/modelIcon_png.js';
 
 // Since the screen is named "model" this lint rule has a false positive

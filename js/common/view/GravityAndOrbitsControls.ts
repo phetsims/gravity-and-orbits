@@ -8,7 +8,8 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { HSeparator, VBox } from '../../../../scenery/js/imports.js';
+import HSeparator from '../../../../scenery/js/layout/nodes/HSeparator.js';
+import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
