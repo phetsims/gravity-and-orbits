@@ -1,4 +1,0 @@
-{
-  "postCreateCommand": "chmod u+x ./.devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh",
-  "postStartCommand": "chmod u+x ./.devcontainer/postStartCommand.sh && ./.devcontainer/postStartCommand.sh"
-}
