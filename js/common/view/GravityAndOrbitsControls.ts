@@ -1,4 +1,4 @@
-// Copyright 2013-2024, University of Colorado Boulder
+// Copyright 2013-2025, University of Colorado Boulder
 
 /**
  * Control panel containing the controls for orbital mode, gravity, and visibility of planetary path and vectors.
