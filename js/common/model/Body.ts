@@ -1,4 +1,5 @@
 // Copyright 2014-2025, University of Colorado Boulder
+
 /**
  * Body is a single point mass in the Gravity and Orbits simulation, such as the Earth, Sun, Moon or Space Station.
  * This class also keeps track of body-related data such as the path.
