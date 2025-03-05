@@ -9,11 +9,11 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "1e38bb54fec31bc737e3cb5f7118021abdeef076",
+    "sha": "c1b3e73a408a17a8b0067bd69e7bdc50e7414d91",
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "de1011c619a61ebcee2f8dce91ee8b7e4783476a",
+    "sha": "a28035518168c0e3c23289aac4934b6b24819659",
     "branch": "HEAD"
   },
   "dot": {
@@ -21,11 +21,11 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "f9ae3a1c981e0bcf5598410aa69f94e41446903e",
+    "sha": "352701f54669f95fae0f192c59cfc37102865df5",
     "branch": "1.6"
   },
   "joist": {
-    "sha": "93e8e9daa4bcae889383e9a71e613c4f4e128b43",
+    "sha": "a56d24d6d0803a326c07c229ae0fb685fadb3a7c",
     "branch": "HEAD"
   },
   "kite": {
