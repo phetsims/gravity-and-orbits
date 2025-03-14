@@ -1,5 +1,5 @@
 {
-  "comment": "# gravity-and-orbits 1.7.0-dev.5 Fri Mar 14 2025 12:39:49 GMT-0400 (Eastern Daylight Time)",
+  "comment": "# gravity-and-orbits 1.7.0-dev.6 Fri Mar 14 2025 12:58:47 GMT-0400 (Eastern Daylight Time)",
   "assert": {
     "sha": "f6d41b399ad32df2a00ab4b329981be0c574d77a",
     "branch": "main"
@@ -21,7 +21,7 @@
     "branch": "main"
   },
   "gravity-and-orbits": {
-    "sha": "59932444c4bf26defcdea31c18751d4ed3db10b8",
+    "sha": "bc2e763ab367f1e03aad6b741af0a61934309f08",
     "branch": "main"
   },
   "joist": {
@@ -49,7 +49,7 @@
     "branch": "main"
   },
   "phet-io-wrappers": {
-    "sha": "35200b5b33e955304d4d0933cecc3bf3cc55c8fe",
+    "sha": "f603e5e338f86cadc1ae51c9921ed54aa60dc47b",
     "branch": "main"
   },
   "phetcommon": {
