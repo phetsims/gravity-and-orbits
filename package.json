@@ -19,7 +19,10 @@
     ],
     "simulation": true,
     "phet-io": {
-      "compareDesignedAPIChanges": true
+      "compareDesignedAPIChanges": true,
+      "wrappers": [
+        "phet-io-sim-specific/repos/gravity-and-orbits/wrappers/codap"
+      ]
     },
     "simFeatures": {
       "colorProfiles": [
