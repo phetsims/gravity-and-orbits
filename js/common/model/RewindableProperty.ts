@@ -11,6 +11,7 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property, { PropertyOptions } from '../../../../axon/js/Property.js';
+import { ReadOnlyPropertyState } from '../../../../axon/js/ReadOnlyProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { Units } from '../../../../axon/js/units.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
@@ -19,7 +20,7 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IOTypeCache from '../../../../tandem/js/IOTypeCache.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import IOType from '../../../../tandem/js/types/IOType.js';
+import IOType, { AnyIOType } from '../../../../tandem/js/types/IOType.js';
 import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 type RewindablePropertyOptions<T> = {
@@ -37,7 +38,7 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
    * An observable Property that triggers notifications when the value changes.
    * This caching implementation should be kept in sync with the other parametric IOType caching implementations.
    */
-  public static readonly RewindablePropertyIO = ( parameterType: IOType ): IOType => {
+  public static readonly RewindablePropertyIO = ( parameterType: AnyIOType ): AnyIOType => {
     assert && assert( parameterType, 'RewindablePropertyIO needs parameterType' );
 
     const cacheKey = parameterType;
@@ -45,7 +46,7 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
     if ( !cache.has( cacheKey ) ) {
 
       const PropertyIOImpl = Property.PropertyIO( parameterType );
-      cache.set( cacheKey, new IOType( `RewindablePropertyIO<${parameterType.typeName}>`, {
+      cache.set( cacheKey, new IOType<IntentionalAny, IntentionalAny>( `RewindablePropertyIO<${parameterType.typeName}>`, {
           valueType: RewindableProperty,
           parameterTypes: [ parameterType ],
           documentation: 'Observable values that send out notifications when the value changes. This differs from the ' +
@@ -53,11 +54,12 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
                          'when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.',
           supertype: PropertyIOImpl,
           toStateObject: ( property: RewindableProperty<IntentionalAny> ) => {
-            const stateObject = PropertyIOImpl.toStateObject( property );
-            stateObject.rewindValue = parameterType.toStateObject( property.rewindValue );
-            return stateObject;
+            return {
+              ...PropertyIOImpl.toStateObject( property ), // eslint-disable-line phet/no-object-spread-on-non-literals
+              rewindValue: parameterType.toStateObject( property.rewindValue )
+            };
           },
-          applyState: ( property: RewindableProperty<IntentionalAny>, stateObject: { rewindValue: unknown } ) => {
+          applyState: ( property: RewindableProperty<IntentionalAny>, stateObject: { rewindValue: unknown } & ReadOnlyPropertyState<IntentionalAny> ) => {
             PropertyIOImpl.applyState( property, stateObject );
             property.rewindValue = parameterType.fromStateObject( stateObject.rewindValue );
 
