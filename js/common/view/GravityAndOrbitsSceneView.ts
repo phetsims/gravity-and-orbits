@@ -9,7 +9,7 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import platform from '../../../../phet-core/js/platform.js';
 import GridNode from '../../../../scenery-phet/js/GridNode.js';

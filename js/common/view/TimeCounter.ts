@@ -10,7 +10,7 @@
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import TProperty from '../../../../axon/js/TProperty.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import StopwatchNode from '../../../../scenery-phet/js/StopwatchNode.js';

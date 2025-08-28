@@ -11,7 +11,7 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import EventTimer, { ConstantEventModel } from '../../../../phet-core/js/EventTimer.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';

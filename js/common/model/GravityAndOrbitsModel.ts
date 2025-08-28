@@ -17,7 +17,7 @@ import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import Property from '../../../../axon/js/Property.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import TModel from '../../../../joist/js/TModel.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';

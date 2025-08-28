@@ -21,7 +21,7 @@ import Multilink from '../../../axon/js/Multilink.js';
 import NumberProperty from '../../../axon/js/NumberProperty.js';
 import Property from '../../../axon/js/Property.js';
 import TProperty from '../../../axon/js/TProperty.js';
-import TReadOnlyProperty from '../../../axon/js/TReadOnlyProperty.js';
+import { TReadOnlyProperty } from '../../../axon/js/TReadOnlyProperty.js';
 import { Units } from '../../../axon/js/units.js';
 import Bounds2 from '../../../dot/js/Bounds2.js';
 import Rectangle from '../../../dot/js/Rectangle.js';

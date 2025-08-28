@@ -12,7 +12,7 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property, { PropertyOptions } from '../../../../axon/js/Property.js';
 import { ReadOnlyPropertyState } from '../../../../axon/js/ReadOnlyProperty.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import { Units } from '../../../../axon/js/units.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import IntentionalAny from '../../../../phet-core/js/types/IntentionalAny.js';
