@@ -134,7 +134,6 @@ class GravityAndOrbitsScreenView extends ScreenView {
     // Create and add the Reset All Button in the bottom right, which resets the model
     const resetAllButton = new ResetAllButton( {
       listener: () => {
-        this.interruptSubtreeInput(); // cancel interactions that are in progress
         model.reset();
       },
       right: this.layoutBounds.right - MARGIN - 4,
