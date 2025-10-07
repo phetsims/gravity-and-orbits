@@ -7,8 +7,10 @@
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 
+import strictBooleanExpressionsConfig from '../perennial-alias/js/eslint/config/util/strictBooleanExpressionsConfig.mjs';
 import simEslintConfig from '../perennial-alias/js/eslint/config/sim.eslint.config.mjs';
 
 export default [
-  ...simEslintConfig
+  ...simEslintConfig,
+  ...strictBooleanExpressionsConfig
 ];
