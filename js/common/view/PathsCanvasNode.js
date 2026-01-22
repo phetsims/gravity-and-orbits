@@ -1,4 +1,4 @@
-// Copyright 2015, University of Colorado Boulder
+// Copyright 2015-2016, University of Colorado Boulder
 
 /**
  * Shows the "trail" left behind by a Body as it moves over time, which disappears after about 2 orbits
