@@ -9,7 +9,7 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "0c723e76a7bad4344cb588c486ae41d0f7fc4995",
+    "sha": "58c3e8f7cb687671bd6cd339b7b17585456e714c",
     "branch": "HEAD"
   },
   "chipper": {
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "6d422b4dc301b143a76d464830e163a8836112c4",
+    "sha": "c37141a301af35683b726bc8f98f5f9be3ba4d78",
     "branch": "1.5"
   },
   "joist": {
