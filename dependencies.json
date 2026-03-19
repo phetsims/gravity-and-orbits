@@ -21,11 +21,11 @@
     "branch": "HEAD"
   },
   "gravity-and-orbits": {
-    "sha": "3c9353bdeb18daa89dc8ea4a7bccae4ce4f9be2e",
+    "sha": "605a76a85916625af015081f9eb7f85f67b6e0cb",
     "branch": "1.6"
   },
   "joist": {
-    "sha": "e6c3251aacfc293a38bc0b5b55a8d5e02a93fe8d",
+    "sha": "086983d8af076aff7d387f7edd57282b3221a90b",
     "branch": "HEAD"
   },
   "kite": {
