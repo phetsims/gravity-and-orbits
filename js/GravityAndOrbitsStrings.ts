@@ -58,4 +58,6 @@ type StringsType = {
 
 const GravityAndOrbitsStrings = getStringModule( 'GRAVITY_AND_ORBITS' ) as StringsType;
 
+gravityAndOrbits.register( 'GravityAndOrbitsStrings', GravityAndOrbitsStrings );
+
 export default GravityAndOrbitsStrings;
