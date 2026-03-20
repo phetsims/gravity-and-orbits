@@ -7,7 +7,6 @@
  */
 
 import Range from '../../../dot/js/Range.js';
-import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsColors from './GravityAndOrbitsColors.js';
 
 // constants
@@ -33,7 +32,5 @@ const GravityAndOrbitsConstants = {
   PLAY_AREA_TANDEM_NAME: 'playAreaNode',
   ZOOM_RANGE: new Range( 0.5, 1.3 )
 };
-
-gravityAndOrbits.register( 'GravityAndOrbitsConstants', GravityAndOrbitsConstants );
 
 export default GravityAndOrbitsConstants;

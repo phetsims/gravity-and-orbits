@@ -13,7 +13,6 @@
 import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import PhysicalConstants from '../../../../phet-core/js/PhysicalConstants.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import BodyState from './BodyState.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 
@@ -275,5 +274,4 @@ class ModelState {
   }
 }
 
-gravityAndOrbits.register( 'ModelState', ModelState );
 export default ModelState;

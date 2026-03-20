@@ -13,7 +13,6 @@
 import Tandem from '../../../tandem/js/Tandem.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
 import SceneFactory from '../common/SceneFactory.js';
-import gravityAndOrbits from '../gravityAndOrbits.js';
 
 // constants
 const SUN_RADIUS_MULTIPLIER = 50; // sun radius multiplier for SunEarthMode and SunEarthMoonMode, tuned by hand
@@ -40,8 +39,6 @@ class ModelSceneFactory extends SceneFactory {
   }
 }
 
-gravityAndOrbits.register( 'ModelSceneFactory', ModelSceneFactory );
-
 /**
  * Model configuration for a system with the sun and the earth.
  */
@@ -56,8 +53,6 @@ class SunEarthModeConfig extends SceneFactory.SunEarthModeConfig {
     this.forceScale! *= 0.58; // Tuned so the default force arrow takes 1/2 grid cell
   }
 }
-
-gravityAndOrbits.register( 'SunEarthModeConfig', SunEarthModeConfig );
 
 /**
  * Model configuration for a system with the sun, earth and moon.
@@ -79,8 +74,6 @@ class SunEarthMoonModeConfig extends SceneFactory.SunEarthMoonModeConfig {
   }
 }
 
-gravityAndOrbits.register( 'SunEarthMoonModeConfig', SunEarthMoonModeConfig );
-
 class PlanetMoonModeConfig extends SceneFactory.PlanetMoonModeConfig {
   public constructor() {
 
@@ -95,8 +88,6 @@ class PlanetMoonModeConfig extends SceneFactory.PlanetMoonModeConfig {
   }
 }
 
-gravityAndOrbits.register( 'PlanetMoonModeConfig', PlanetMoonModeConfig );
-
 /**
  * Model configuration for a system with the earth and a space station.
  */
@@ -109,7 +100,5 @@ class EarthSpaceStationModeConfig extends SceneFactory.EarthSpaceStationModeConf
     this.satellite.radius *= 20000;
   }
 }
-
-gravityAndOrbits.register( 'EarthSpaceStationModeConfig', EarthSpaceStationModeConfig );
 
 export default ModelSceneFactory;

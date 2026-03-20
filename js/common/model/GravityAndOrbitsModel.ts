@@ -24,7 +24,6 @@ import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import ReferenceIO from '../../../../tandem/js/types/ReferenceIO.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import SceneFactory from '../SceneFactory.js';
 
@@ -149,5 +148,4 @@ class GravityAndOrbitsModel implements TModel {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsModel', GravityAndOrbitsModel );
 export default GravityAndOrbitsModel;

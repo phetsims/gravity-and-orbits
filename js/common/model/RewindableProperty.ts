@@ -21,7 +21,6 @@ import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import IOTypeCache from '../../../../tandem/js/IOTypeCache.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import IOType, { AnyIOType } from '../../../../tandem/js/types/IOType.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 type RewindablePropertyOptions<T> = {
   units?: Units;
@@ -172,5 +171,4 @@ class RewindableProperty<T extends { equals: ( value: IntentionalAny ) => boolea
 // {Map.<IOType, IOType>} - Cache each parameterized RewindablePropertyIO so that it is only created once
 const cache = new IOTypeCache();
 
-gravityAndOrbits.register( 'RewindableProperty', RewindableProperty );
 export default RewindableProperty;

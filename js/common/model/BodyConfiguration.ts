@@ -10,7 +10,6 @@
 
 import Vector2 from '../../../../dot/js/Vector2.js';
 import optionize from '../../../../phet-core/js/optionize.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 
 type BodyConfigurationOptions = {
   rotationPeriod?: null | number;
@@ -48,5 +47,4 @@ class BodyConfiguration {
   }
 }
 
-gravityAndOrbits.register( 'BodyConfiguration', BodyConfiguration );
 export default BodyConfiguration;

@@ -27,7 +27,6 @@ import ArrayIO from '../../../../tandem/js/types/ArrayIO.js';
 import BooleanIO from '../../../../tandem/js/types/BooleanIO.js';
 import IOType from '../../../../tandem/js/types/IOType.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 
 // Used as a type annotation only
@@ -558,5 +557,4 @@ export default class Body extends PhetioObject {
 
 type BodyStateType = { pathLength: number; modelPathLength: number; path: Vector2StateObject[] };
 
-gravityAndOrbits.register( 'Body', Body );
 export type { BodyOptions };

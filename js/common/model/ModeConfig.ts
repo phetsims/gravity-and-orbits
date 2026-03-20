@@ -11,7 +11,6 @@
 
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import BodyConfiguration from './BodyConfiguration.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
 
@@ -68,5 +67,4 @@ abstract class ModeConfig {
   protected abstract getBodies(): BodyConfiguration[];
 }
 
-gravityAndOrbits.register( 'ModeConfig', ModeConfig );
 export default ModeConfig;

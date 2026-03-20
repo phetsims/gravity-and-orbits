@@ -20,7 +20,6 @@ import { Mipmap } from '../../../../scenery/js/nodes/Imageable.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import sun_png from '../../../mipmaps/sun_png.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 
 export default abstract class BodyRenderer extends Node {
@@ -42,8 +41,6 @@ export default abstract class BodyRenderer extends Node {
 
   public abstract setDiameter( viewDiameter: number ): void;
 }
-
-gravityAndOrbits.register( 'BodyRenderer', BodyRenderer );
 
 export class SwitchableBodyRenderer extends BodyRenderer {
   public override readonly targetBodyRenderer: BodyRenderer;
@@ -84,8 +81,6 @@ export class SwitchableBodyRenderer extends BodyRenderer {
   }
 }
 
-gravityAndOrbits.register( 'SwitchableBodyRenderer', SwitchableBodyRenderer );
-
 export class ImageRenderer extends BodyRenderer {
   private readonly imageNode: Image;
   private viewDiameter: number;
@@ -121,8 +116,6 @@ export class ImageRenderer extends BodyRenderer {
     this.imageNode.translate( -this.imageNode.width / 2 / scale, -this.imageNode.height / 2 / scale );
   }
 }
-
-gravityAndOrbits.register( 'ImageRenderer', ImageRenderer );
 
 export class SunRenderer extends ImageRenderer {
   private readonly twinkles: Path;
@@ -163,5 +156,3 @@ export class SunRenderer extends ImageRenderer {
     this.twinkles.setShape( shape );
   }
 }
-
-gravityAndOrbits.register( 'SunRenderer', SunRenderer );

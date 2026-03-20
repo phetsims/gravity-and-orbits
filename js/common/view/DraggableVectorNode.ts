@@ -20,7 +20,6 @@ import Path from '../../../../scenery/js/nodes/Path.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import VectorNode from './VectorNode.js';
 
@@ -106,5 +105,4 @@ class DraggableVectorNode extends VectorNode {
   }
 }
 
-gravityAndOrbits.register( 'DraggableVectorNode', DraggableVectorNode );
 export default DraggableVectorNode;

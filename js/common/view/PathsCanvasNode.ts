@@ -18,7 +18,6 @@ import Vector2 from '../../../../dot/js/Vector2.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
 import CanvasNode from '../../../../scenery/js/nodes/CanvasNode.js';
 import isSettingPhetioStateProperty from '../../../../tandem/js/isSettingPhetioStateProperty.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 import BodyTypeEnum from '../model/BodyTypeEnum.js';
 
@@ -224,8 +223,6 @@ class PathsCanvasNode extends CanvasNode {
   }
 }
 
-gravityAndOrbits.register( 'PathsCanvasNode', PathsCanvasNode );
-
 class NamedPoints {
   private readonly type: BodyTypeEnum;
   public points: Vector2[];
@@ -238,7 +235,5 @@ class NamedPoints {
     this.points = [];
   }
 }
-
-gravityAndOrbits.register( 'NamedPoints', NamedPoints );
 
 export default PathsCanvasNode;

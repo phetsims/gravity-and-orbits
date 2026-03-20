@@ -14,7 +14,6 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import HSlider from '../../../../sun/js/HSlider.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import Body from '../model/Body.js';
 
@@ -83,5 +82,4 @@ class MassSlider extends HSlider {
   }
 }
 
-gravityAndOrbits.register( 'MassSlider', MassSlider );
 export default MassSlider;

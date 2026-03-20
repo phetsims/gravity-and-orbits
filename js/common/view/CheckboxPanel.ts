@@ -28,7 +28,6 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import iconMass_png from '../../../images/iconMass_png.js';
 import pathIcon_png from '../../../images/pathIcon_png.js';
 import pathIconProjector_png from '../../../images/pathIconProjector_png.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
@@ -167,5 +166,4 @@ class CheckboxPanel extends VerticalCheckboxGroup {
   }
 }
 
-gravityAndOrbits.register( 'CheckboxPanel', CheckboxPanel );
 export default CheckboxPanel;

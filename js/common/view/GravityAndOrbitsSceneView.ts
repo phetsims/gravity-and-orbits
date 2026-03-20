@@ -21,7 +21,6 @@ import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
@@ -225,5 +224,4 @@ class GravityAndOrbitsSceneView extends Rectangle {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsSceneView', GravityAndOrbitsSceneView );
 export default GravityAndOrbitsSceneView;

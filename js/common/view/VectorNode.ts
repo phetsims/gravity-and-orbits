@@ -17,7 +17,6 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from '../model/Body.js';
 
 // constants
@@ -87,5 +86,4 @@ class VectorNode extends Node {
   }
 }
 
-gravityAndOrbits.register( 'VectorNode', VectorNode );
 export default VectorNode;

@@ -16,7 +16,6 @@ import EventTimer, { ConstantEventModel } from '../../../../phet-core/js/EventTi
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import RewindableProperty from './RewindableProperty.js';
 
 // constants
@@ -144,5 +143,4 @@ class GravityAndOrbitsClock {
   public static readonly DEFAULT_DT = DEFAULT_DT;
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsClock', GravityAndOrbitsClock );
 export default GravityAndOrbitsClock;

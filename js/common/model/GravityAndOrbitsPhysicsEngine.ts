@@ -12,7 +12,6 @@ import Emitter from '../../../../axon/js/Emitter.js';
 import Property from '../../../../axon/js/Property.js';
 import TEmitter from '../../../../axon/js/TEmitter.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import Body from './Body.js';
 import BodyTypeEnum from './BodyTypeEnum.js';
 import GravityAndOrbitsClock from './GravityAndOrbitsClock.js';
@@ -190,5 +189,4 @@ class GravityAndOrbitsPhysicsEngine {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsPhysicsEngine', GravityAndOrbitsPhysicsEngine );
 export default GravityAndOrbitsPhysicsEngine;

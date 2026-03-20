@@ -12,7 +12,6 @@ import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js'
 import Image from '../../../scenery/js/nodes/Image.js';
 import toScaleIcon_png from '../../mipmaps/toScaleIcon_png.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
-import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
 
@@ -37,5 +36,4 @@ class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
   }
 }
 
-gravityAndOrbits.register( 'ToScaleScreen', ToScaleScreen );
 export default ToScaleScreen;

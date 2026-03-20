@@ -37,7 +37,6 @@ import phetioStateSetEmitter from '../../../tandem/js/phetioStateSetEmitter.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import IOType from '../../../tandem/js/types/IOType.js';
 import ReferenceIO from '../../../tandem/js/types/ReferenceIO.js';
-import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import Body from './model/Body.js';
 import GravityAndOrbitsClock from './model/GravityAndOrbitsClock.js';
@@ -343,5 +342,4 @@ class GravityAndOrbitsScene extends PhetioObject {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsScene', GravityAndOrbitsScene );
 export default GravityAndOrbitsScene;

@@ -14,7 +14,6 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import Panel from '../../../../sun/js/Panel.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import BodyNode from './BodyNode.js';
 
@@ -71,5 +70,4 @@ abstract class MassReadoutNode extends Panel {
   }
 }
 
-gravityAndOrbits.register( 'MassReadoutNode', MassReadoutNode );
 export default MassReadoutNode;

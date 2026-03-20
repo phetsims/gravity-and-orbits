@@ -15,7 +15,6 @@ import modelIcon_png from '../../mipmaps/modelIcon_png.js';
 // Since the screen is named "model" this lint rule has a false positive
 // eslint-disable-next-line phet/no-view-imported-from-model
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
-import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
 
@@ -41,5 +40,4 @@ class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
   }
 }
 
-gravityAndOrbits.register( 'ModelScreen', ModelScreen );
 export default ModelScreen;

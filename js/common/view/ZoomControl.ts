@@ -19,7 +19,6 @@ import SceneryConstants from '../../../../scenery/js/SceneryConstants.js';
 import RectangularPushButton, { RectangularPushButtonOptions } from '../../../../sun/js/buttons/RectangularPushButton.js';
 import VSlider from '../../../../sun/js/VSlider.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 
 // constants
@@ -84,8 +83,6 @@ class ZoomControl extends Node {
     this.mutate( options );
   }
 }
-
-gravityAndOrbits.register( 'ZoomControl', ZoomControl );
 
 class SliderButton extends RectangularPushButton {
   /**

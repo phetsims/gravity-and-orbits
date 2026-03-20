@@ -28,7 +28,6 @@ import moonGeneric_png from '../../mipmaps/moonGeneric_png.js';
 import planetGeneric_png from '../../mipmaps/planetGeneric_png.js';
 import spaceStation_png from '../../mipmaps/spaceStation_png.js';
 import sun_png from '../../mipmaps/sun_png.js';
-import gravityAndOrbits from '../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from './GravityAndOrbitsConstants.js';
 import GravityAndOrbitsScene from './GravityAndOrbitsScene.js';
@@ -503,5 +502,4 @@ SceneFactory.SunEarthMoonModeConfig = SunEarthMoonModeConfig;
 SceneFactory.PlanetMoonModeConfig = PlanetMoonModeConfig;
 SceneFactory.EarthSpaceStationModeConfig = EarthSpaceStationModeConfig;
 
-gravityAndOrbits.register( 'SceneFactory', SceneFactory );
 export default SceneFactory;

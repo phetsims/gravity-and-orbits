@@ -19,7 +19,6 @@ import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import TextPushButton from '../../../../sun/js/buttons/TextPushButton.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsClock from '../model/GravityAndOrbitsClock.js';
@@ -73,5 +72,4 @@ class TimeCounter extends Node {
   }
 }
 
-gravityAndOrbits.register( 'TimeCounter', TimeCounter );
 export default TimeCounter;

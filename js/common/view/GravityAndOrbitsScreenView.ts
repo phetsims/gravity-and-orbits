@@ -16,7 +16,6 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import GravityAndOrbitsModel from '../model/GravityAndOrbitsModel.js';
 import GravityAndOrbitsControls from './GravityAndOrbitsControls.js';
@@ -144,5 +143,4 @@ class GravityAndOrbitsScreenView extends ScreenView {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsScreenView', GravityAndOrbitsScreenView );
 export default GravityAndOrbitsScreenView;

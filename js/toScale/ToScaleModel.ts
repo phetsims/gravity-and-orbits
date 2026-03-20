@@ -7,7 +7,6 @@
 
 import Tandem from '../../../tandem/js/Tandem.js';
 import GravityAndOrbitsModel from '../common/model/GravityAndOrbitsModel.js';
-import gravityAndOrbits from '../gravityAndOrbits.js';
 import ToScaleSceneFactory from './ToScaleSceneFactory.js';
 
 class ToScaleModel extends GravityAndOrbitsModel {
@@ -27,5 +26,4 @@ class ToScaleModel extends GravityAndOrbitsModel {
   }
 }
 
-gravityAndOrbits.register( 'ToScaleModel', ToScaleModel );
 export default ToScaleModel;

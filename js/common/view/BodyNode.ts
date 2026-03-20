@@ -22,7 +22,6 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Body from '../model/Body.js';
@@ -215,5 +214,4 @@ class BodyNode extends Node {
   }
 }
 
-gravityAndOrbits.register( 'BodyNode', BodyNode );
 export default BodyNode;

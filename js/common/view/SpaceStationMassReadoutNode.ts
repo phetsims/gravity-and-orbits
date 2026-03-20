@@ -10,7 +10,6 @@
 import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 import BodyNode from './BodyNode.js';
@@ -63,5 +62,4 @@ class SpaceStationMassReadoutNode extends MassReadoutNode {
   }
 }
 
-gravityAndOrbits.register( 'SpaceStationMassReadoutNode', SpaceStationMassReadoutNode );
 export default SpaceStationMassReadoutNode;

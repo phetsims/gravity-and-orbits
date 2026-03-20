@@ -53,6 +53,4 @@ const GravityAndOrbitsColors = {
   } )
 };
 
-gravityAndOrbits.register( 'GravityAndOrbitsColors', GravityAndOrbitsColors );
-
 export default GravityAndOrbitsColors;

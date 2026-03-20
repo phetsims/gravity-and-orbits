@@ -20,7 +20,6 @@ import RectangularPushButton, { RectangularPushButtonOptions } from '../../../..
 import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Interruptable from '../model/Interruptable.js';
@@ -99,8 +98,6 @@ class SceneSelectionControls extends Node {
   }
 }
 
-gravityAndOrbits.register( 'SceneSelectionControls', SceneSelectionControls );
-
 class SceneResetButton extends RectangularPushButton {
   public readonly scene: GravityAndOrbitsScene;
 
@@ -129,7 +126,5 @@ class SceneResetButton extends RectangularPushButton {
     this.scene = scene;
   }
 }
-
-gravityAndOrbits.register( 'SceneResetButton', SceneResetButton );
 
 export default SceneSelectionControls;

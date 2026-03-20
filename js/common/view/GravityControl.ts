@@ -14,7 +14,6 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 
@@ -52,5 +51,4 @@ class GravityControl extends Node {
   }
 }
 
-gravityAndOrbits.register( 'GravityControl', GravityControl );
 export default GravityControl;

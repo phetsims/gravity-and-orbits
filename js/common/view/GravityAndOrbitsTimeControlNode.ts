@@ -19,7 +19,6 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import TimeControlNode, { TimeControlNodeOptions } from '../../../../scenery-phet/js/TimeControlNode.js';
 import TimeSpeed from '../../../../scenery-phet/js/TimeSpeed.js';
 import phetioStateSetEmitter from '../../../../tandem/js/phetioStateSetEmitter.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Body from '../model/Body.js';
@@ -107,5 +106,4 @@ class GravityAndOrbitsTimeControlNode extends TimeControlNode {
   }
 }
 
-gravityAndOrbits.register( 'GravityAndOrbitsTimeControlNode', GravityAndOrbitsTimeControlNode );
 export default GravityAndOrbitsTimeControlNode;

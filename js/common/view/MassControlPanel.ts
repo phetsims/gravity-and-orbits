@@ -16,7 +16,6 @@ import VBox, { VBoxOptions } from '../../../../scenery/js/layout/nodes/VBox.js';
 import HStrut from '../../../../scenery/js/nodes/HStrut.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
-import gravityAndOrbits from '../../gravityAndOrbits.js';
 import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsColors from '../GravityAndOrbitsColors.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
@@ -96,5 +95,4 @@ class MassControlPanel extends VBox {
   }
 }
 
-gravityAndOrbits.register( 'MassControlPanel', MassControlPanel );
 export default MassControlPanel;
