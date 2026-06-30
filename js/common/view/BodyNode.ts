@@ -14,11 +14,15 @@ import Property from '../../../../axon/js/Property.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Shape from '../../../../kite/js/Shape.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
+import AccessibleDraggableOptions from '../../../../scenery-phet/js/accessibility/grab-drag/AccessibleDraggableOptions.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import SoundKeyboardDragListener from '../../../../scenery-phet/js/SoundKeyboardDragListener.js';
+import InteractiveHighlighting from '../../../../scenery/js/accessibility/voicing/InteractiveHighlighting.js';
 import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
-import Node from '../../../../scenery/js/nodes/Node.js';
+import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
@@ -27,7 +31,7 @@ import GravityAndOrbitsScene from '../GravityAndOrbitsScene.js';
 import Body from '../model/Body.js';
 import BodyRenderer from './BodyRenderer.js';
 
-class BodyNode extends Node {
+class BodyNode extends InteractiveHighlighting( Node ) {
   private readonly modelViewTransformProperty: Property<ModelViewTransform2>;
   public readonly body: Body;
   public readonly bodyRenderer: BodyRenderer;
@@ -45,12 +49,15 @@ class BodyNode extends Node {
    * @param tandem
    */
   public constructor( body: Body, labelAngle: number, isPlayingProperty: Property<boolean>, scene: GravityAndOrbitsScene, tandem: Tandem ) {
-    super( {
+    // AccessibleDraggableOptions makes the body focusable and keyboard-draggable (tagName, ariaRole, etc.); the
+    // accessible name is the body's translatable label (e.g. "Earth", "Moon").
+    super( combineOptions<NodeOptions>( {
       cursor: 'pointer',
       tandem: tandem,
       pickable: true,
-      phetioInputEnabledPropertyInstrumented: true
-    } );
+      phetioInputEnabledPropertyInstrumented: true,
+      accessibleName: body.labelStringProperty
+    }, AccessibleDraggableOptions ) );
 
     const clock = scene.getClock();
 
@@ -91,30 +98,52 @@ class BodyNode extends Node {
         scene.saveState();
       }
     };
+    // Drag side effects, shared by the pointer DragListener and the keyboard drag listener below, so the body behaves
+    // identically whether moved with the mouse/touch or the keyboard.
+    const onDragStart = () => {
+      body.userControlled = true;
+
+      // Clear the path when dragging starts.
+      body.clearPath();
+
+      saveStateIfPaused();
+    };
+    const onDrag = () => {
+      body.userModifiedPositionEmitter.emit();
+      saveStateIfPaused();
+    };
+    const onDragEnd = () => {
+      body.userControlled = false;
+      saveStateIfPaused();
+    };
+
     const dragListener = new DragListener( {
       positionProperty: body.positionProperty,
       transform: this.modelViewTransformProperty,
       dragBoundsProperty: dragBoundsProperty,
-      start: () => {
-        body.userControlled = true;
-
-        // Clear the path when dragging starts.
-        body.clearPath();
-
-        saveStateIfPaused();
-      },
-      drag: () => {
-        body.userModifiedPositionEmitter.emit();
-        saveStateIfPaused();
-      },
-      end: () => {
-        body.userControlled = false;
-        saveStateIfPaused();
-      },
+      start: onDragStart,
+      drag: onDrag,
+      end: onDragEnd,
       tandem: tandem.createTandem( 'dragListener' )
     } );
 
     this.addInputListener( dragListener );
+
+    // Keyboard dragging (arrow/WASD keys, Shift for slower). The body is focusable via AccessibleDraggableOptions
+    // above; this listener moves the same positionProperty within the same model-space drag bounds, and runs the
+    // same side effects (rewind state, path clearing) as the pointer drag. SoundKeyboardDragListener adds grab and
+    // release sounds.
+    this.addInputListener( new SoundKeyboardDragListener( {
+      positionProperty: body.positionProperty,
+      transform: this.modelViewTransformProperty,
+      dragBoundsProperty: dragBoundsProperty,
+      dragSpeed: 300,
+      shiftDragSpeed: 60,
+      start: onDragStart,
+      drag: onDrag,
+      end: onDragEnd,
+      tandem: tandem.createTandem( 'keyboardDragListener' )
+    } ) );
 
     // create position and diameter listeners so that they can be unlinked for garbage collection and so that anonymous
     // closures are not necessary through multilink

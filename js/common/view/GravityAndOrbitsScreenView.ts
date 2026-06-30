@@ -69,7 +69,7 @@ class GravityAndOrbitsScreenView extends ScreenView {
     this.addChild( playAreaNode );
 
     // add the control panel on top of the canvases
-    this.addChild( new VBox( {
+    const controlsBox = new VBox( {
       top: this.layoutBounds.top + MARGIN,
       right: this.layoutBounds.right - MARGIN,
       spacing: MARGIN,
@@ -90,7 +90,8 @@ class GravityAndOrbitsScreenView extends ScreenView {
           align: 'left'
         } ) )
       ]
-    } ) );
+    } );
+    this.addChild( controlsBox );
 
     // Make sure only one scene is visible at a time
     model.sceneProperty.link( scene => {
@@ -140,6 +141,19 @@ class GravityAndOrbitsScreenView extends ScreenView {
       tandem: tandem.createTandem( 'resetAllButton' )
     } );
     this.addChild( resetAllButton );
+
+    // Keyboard traversal order. Play area: the simulation objects (bodies, velocity vectors, measuring tape, zoom
+    // and per-scene buttons live inside the visible scene's view) followed by the time controls. Control area: the
+    // scene/gravity/visibility settings and mass sliders, ending with Reset All. Only the currently visible scene's
+    // view participates in the PDOM, so this order stays correct as scenes and screens change.
+    this.pdomPlayAreaNode.pdomOrder = [
+      playAreaNode,
+      timeControlNode
+    ];
+    this.pdomControlAreaNode.pdomOrder = [
+      controlsBox,
+      resetAllButton
+    ];
   }
 }
 

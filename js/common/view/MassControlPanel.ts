@@ -82,6 +82,9 @@ class MassControlPanel extends VBox {
             massSettableBody.massProperty.value * 2,
             massSettableBody.tickValue,
             massSettableBody.tickLabelProperty,
+
+            // Accessible name reuses the visual mass label for this body (e.g. "Planet Mass").
+            LABEL_MAP[ massSettableBody.type ],
             massSettableBodyTandem.createTandem( 'massSlider' )
           )
         ]

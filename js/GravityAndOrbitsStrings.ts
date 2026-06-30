@@ -54,6 +54,10 @@ type StringsType = {
   'earthMassStringProperty': LocalizedStringProperty;
   'toScaleStringProperty': LocalizedStringProperty;
   'vStringProperty': LocalizedStringProperty;
+  'a11y': {
+    'velocityVectorAccessibleNameStringProperty': LocalizedStringProperty;
+    'zoomStringProperty': LocalizedStringProperty;
+  }
 };
 
 const GravityAndOrbitsStrings = getStringModule( 'GRAVITY_AND_ORBITS' ) as StringsType;

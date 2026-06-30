@@ -25,7 +25,12 @@ const WIDTH = 180;
 const SPACING = ( WIDTH - NUM_TICKS ) / ( NUM_TICKS - 1 );
 
 class MassSlider extends HSlider {
-  public constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: TReadOnlyProperty<string>, tandem: Tandem ) {
+  public constructor( body: Body, min: number, max: number, defaultLabelValue: number, valueLabel: TReadOnlyProperty<string>, accessibleName: TReadOnlyProperty<string>, tandem: Tandem ) {
+
+    // Keyboard steps are computed as fractions of the (mass-dependent) range. They are deliberately coarser than the
+    // 3% snap-to-default window in constrainValue below, so arrow keys always move the value rather than snapping
+    // back to the default mass.
+    const range = max - min;
 
     super( body.massProperty, new Range( min, max ), {
       trackSize: new Dimension2( WIDTH, 1 ),
@@ -42,6 +47,12 @@ class MassSlider extends HSlider {
       // custom thumb
       thumbFill: '#98BECF',
       thumbFillHighlighted: '#B3D3E2',
+
+      // alternative input
+      accessibleName: accessibleName,
+      keyboardStep: range / 20,
+      shiftKeyboardStep: range / 100,
+      pageKeyboardStep: range / 5,
 
       // snap to default value if close
       constrainValue: ( mass: number ) => Math.abs( mass - defaultLabelValue ) / defaultLabelValue < SNAP_TOLERANCE ? defaultLabelValue : mass,

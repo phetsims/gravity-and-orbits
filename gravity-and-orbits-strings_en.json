@@ -109,5 +109,11 @@
   },
   "v": {
     "value": "V"
+  },
+  "a11y.velocityVectorAccessibleName": {
+    "value": "{{bodyName}} Velocity"
+  },
+  "a11y.zoom": {
+    "value": "Zoom"
   }
 }

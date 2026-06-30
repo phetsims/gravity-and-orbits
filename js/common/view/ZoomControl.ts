@@ -19,6 +19,7 @@ import SceneryConstants from '../../../../scenery/js/SceneryConstants.js';
 import RectangularPushButton, { RectangularPushButtonOptions } from '../../../../sun/js/buttons/RectangularPushButton.js';
 import VSlider from '../../../../sun/js/VSlider.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import GravityAndOrbitsConstants from '../GravityAndOrbitsConstants.js';
 
 // constants
@@ -55,6 +56,12 @@ class ZoomControl extends Node {
       thumbFill: '#98BECF',
       thumbFillHighlighted: '#B3D3E2',
       tandem: tandem.createTandem( 'slider' ),
+
+      // alternative input - arrow keys match the +/- button step (STEP), Shift is finer, Page Up/Down is larger.
+      accessibleName: GravityAndOrbitsStrings.a11y.zoomStringProperty,
+      keyboardStep: STEP,
+      shiftKeyboardStep: STEP / 2,
+      pageKeyboardStep: STEP * 2,
 
       phetioReadOnly: true
     } );

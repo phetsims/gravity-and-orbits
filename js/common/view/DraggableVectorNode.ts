@@ -8,18 +8,23 @@
  */
 
 import Multilink from '../../../../axon/js/Multilink.js';
+import PatternStringProperty from '../../../../axon/js/PatternStringProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import Shape from '../../../../kite/js/Shape.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import ModelViewTransform2 from '../../../../phetcommon/js/view/ModelViewTransform2.js';
+import AccessibleDraggableOptions from '../../../../scenery-phet/js/accessibility/grab-drag/AccessibleDraggableOptions.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
+import SoundKeyboardDragListener from '../../../../scenery-phet/js/SoundKeyboardDragListener.js';
 import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import { PressListenerEvent } from '../../../../scenery/js/listeners/PressListener.js';
-import Path from '../../../../scenery/js/nodes/Path.js';
+import Path, { PathOptions } from '../../../../scenery/js/nodes/Path.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Color from '../../../../scenery/js/util/Color.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import GravityAndOrbitsStrings from '../../GravityAndOrbitsStrings.js';
 import Body from '../model/Body.js';
 import VectorNode from './VectorNode.js';
 
@@ -33,11 +38,17 @@ class DraggableVectorNode extends VectorNode {
     // a circle with text (a character) in the center, to help indicate what it represents
     // ("v" for velocity in this sim)
     const ellipse = Shape.ellipse( 0, 0, 18, 18, 0 );
-    const grabArea = new Path( ellipse, {
+
+    // AccessibleDraggableOptions makes the grab area focusable and keyboard-draggable. The accessible name combines
+    // the body name with "Velocity" (e.g. "Earth Velocity") so each velocity vector is distinguishable.
+    const grabArea = new Path( ellipse, combineOptions<PathOptions>( {
       lineWidth: 3,
       stroke: Color.lightGray,
-      cursor: 'pointer'
-    } );
+      cursor: 'pointer',
+      accessibleName: new PatternStringProperty( GravityAndOrbitsStrings.a11y.velocityVectorAccessibleNameStringProperty, {
+        bodyName: body.labelStringProperty!
+      } )
+    }, AccessibleDraggableOptions ) );
 
     const text = new Text( labelText, {
       font: new PhetFont( 22 ),
@@ -92,6 +103,27 @@ class DraggableVectorNode extends VectorNode {
       tandem: tandem.createTandem( 'dragListener' )
     } );
     grabArea.addInputListener( dragListener );
+
+    // Keyboard dragging: arrow/WASD keys change the velocity by a delta, mirroring the pointer drag above. The
+    // velocity is rooted on the body (there is no absolute position Property), so we apply listener.modelDelta (in
+    // view coordinates, since no transform is supplied) converted to model space and divided by the vector scale.
+    grabArea.addInputListener( new SoundKeyboardDragListener( {
+      drag: ( event, listener ) => {
+        const modelDelta = transformProperty.value.viewToModelDelta( listener.modelDelta ).timesScalar( 1 / scale );
+        const proposedVelocity = body.velocityProperty.get().plus( modelDelta );
+
+        // Snap small velocities to zero, exactly as the pointer drag does, so the vector can be cleared.
+        const viewVector = transformProperty.value.modelToViewDelta( proposedVelocity.times( scale ) );
+        if ( viewVector.magnitude < 10 ) {
+          proposedVelocity.setXY( 0, 0 );
+        }
+        body.velocityProperty.set( proposedVelocity );
+        body.userModifiedVelocityEmitter.emit();
+      },
+      dragSpeed: 150,
+      shiftDragSpeed: 30,
+      tandem: tandem.createTandem( 'keyboardDragListener' )
+    } ) );
 
     // move behind the geometry created by the superclass
     grabArea.moveToBack();

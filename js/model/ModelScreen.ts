@@ -14,6 +14,8 @@ import modelIcon_png from '../../mipmaps/modelIcon_png.js';
 
 // Since the screen is named "model" this lint rule has a false positive
 // eslint-disable-next-line phet/no-view-imported-from-model
+import GravityAndOrbitsKeyboardHelpContent from '../common/view/GravityAndOrbitsKeyboardHelpContent.js';
+// eslint-disable-next-line phet/no-view-imported-from-model
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ModelModel from './ModelModel.js';
@@ -28,7 +30,9 @@ class ModelScreen extends Screen<ModelModel, GravityAndOrbitsScreenView> {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1,
         fill: 'black'
-      } )
+      } ),
+
+      createKeyboardHelpNode: () => new GravityAndOrbitsKeyboardHelpContent()
     }, providedOptions );
 
     const viewTandem = options.tandem.createTandem( 'view' );

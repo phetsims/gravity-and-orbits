@@ -11,6 +11,7 @@ import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import optionize, { EmptySelfOptions } from '../../../phet-core/js/optionize.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import toScaleIcon_png from '../../mipmaps/toScaleIcon_png.js';
+import GravityAndOrbitsKeyboardHelpContent from '../common/view/GravityAndOrbitsKeyboardHelpContent.js';
 import GravityAndOrbitsScreenView from '../common/view/GravityAndOrbitsScreenView.js';
 import GravityAndOrbitsStrings from '../GravityAndOrbitsStrings.js';
 import ToScaleModel from './ToScaleModel.js';
@@ -24,7 +25,9 @@ class ToScaleScreen extends Screen<ToScaleModel, GravityAndOrbitsScreenView> {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1,
         fill: 'black'
-      } )
+      } ),
+
+      createKeyboardHelpNode: () => new GravityAndOrbitsKeyboardHelpContent()
     }, providedOptions );
 
     const viewTandem = options.tandem.createTandem( 'view' );

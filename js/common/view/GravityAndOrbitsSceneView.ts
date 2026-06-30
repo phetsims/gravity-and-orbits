@@ -66,10 +66,16 @@ class GravityAndOrbitsSceneView extends Rectangle {
     const velocityVectorColorFill = PhetColorScheme.VELOCITY;
     const velocityVectorColorOutline = new Color( 64, 64, 64 );
 
+    // Body and velocity-vector nodes, captured (parallel to the bodies array) so the keyboard traversal order can
+    // place each body next to its own velocity vector. See the pdomOrder assignment at the end of the constructor.
+    const bodyNodes: BodyNode[] = [];
+    const velocityVectorNodes: Array<DraggableVectorNode | null> = bodies.map( () => null );
+
     // Use canvas coordinates to determine whether something has left the visible area
     const isReturnableProperties: TReadOnlyProperty<boolean>[] = [];
     bodies.forEach( body => {
       const bodyNode = new BodyNode( body, body.labelAngle, model.isPlayingProperty, scene, tandem.createTandem( body.bodyNodeTandemName ) );
+      bodyNodes.push( bodyNode );
       const massReadoutNode = scene.massReadoutFactory( bodyNode, model.showMassProperty );
       this.addChild( bodyNode );
       bodyNode.addChild( massReadoutNode );
@@ -96,11 +102,13 @@ class GravityAndOrbitsSceneView extends Rectangle {
     for ( let i = 0; i < bodies.length; i++ ) {
       if ( bodies[ i ].isMovableProperty.value ) {
         const bodyNodeTandem = tandem.createTandem( bodies[ i ].bodyNodeTandemName );
-        this.addChild( new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
+        const velocityVectorNode = new DraggableVectorNode( bodies[ i ], scene.transformProperty, model.showVelocityProperty,
           bodies[ i ].velocityProperty, scene.velocityVectorScale, velocityVectorColorFill, velocityVectorColorOutline,
           GravityAndOrbitsStrings.vStringProperty, bodyNodeTandem.createTandem( 'velocityVectorNode' ), {
             phetioInputEnabledPropertyInstrumented: true
-          } ) );
+          } );
+        velocityVectorNodes[ i ] = velocityVectorNode;
+        this.addChild( velocityVectorNode );
       }
     }
 
@@ -124,7 +132,9 @@ class GravityAndOrbitsSceneView extends Rectangle {
       yAlign: 'bottom'
     } ) );
 
-    // Add measuring tape
+    // Add measuring tape. Hoisted so it can be placed in the keyboard traversal order below. MeasuringTapeNode is
+    // keyboard-draggable on its own (its base and tip have built-in keyboard drag listeners).
+    let measuringTapeNode: MeasuringTapeNode | null = null;
     if ( model.showMeasuringTape ) {
 
       const unitsProperty = new DerivedProperty( [ GravityAndOrbitsStrings.kilometersStringProperty ], kilometersString => {
@@ -136,7 +146,7 @@ class GravityAndOrbitsSceneView extends Rectangle {
       const measuringTapeTandem = tandem.createTandem( 'measuringTapeNode' );
       const measuringTapeTextColorProperty = GravityAndOrbitsColors.foregroundProperty;
 
-      const measuringTapeNode = new MeasuringTapeNode( unitsProperty, {
+      const tapeNode = new MeasuringTapeNode( unitsProperty, {
         visibleProperty: model.showMeasuringTapeProperty,
         basePositionProperty: scene.measuringTapeStartPointProperty,
         tipPositionProperty: scene.measuringTapeEndPointProperty,
@@ -152,24 +162,25 @@ class GravityAndOrbitsSceneView extends Rectangle {
         tandem: measuringTapeTandem,
         visiblePropertyOptions: { phetioReadOnly: true } // controlled by a checkbox
       } );
+      measuringTapeNode = tapeNode;
 
       scene.transformProperty.link( transform => {
-        measuringTapeNode.modelViewTransformProperty.value = transform;
+        tapeNode.modelViewTransformProperty.value = transform;
       } );
       scene.modelBoundsProperty.link( bounds => {
-        const basePosition = measuringTapeNode.basePositionProperty.get();
-        measuringTapeNode.setDragBounds( bounds! );
+        const basePosition = tapeNode.basePositionProperty.get();
+        tapeNode.setDragBounds( bounds! );
 
         // if the position of the base has changed due to modifying the
         // drag bounds, we want to subtract the difference from the position
         // of the tip so that the measured value remains constant
-        if ( !measuringTapeNode.basePositionProperty.get().equals( basePosition ) ) {
-          const difference = basePosition.minus( measuringTapeNode.basePositionProperty.get() );
-          measuringTapeNode.tipPositionProperty.set( measuringTapeNode.tipPositionProperty.get().minus( difference ) );
+        if ( !tapeNode.basePositionProperty.get().equals( basePosition ) ) {
+          const difference = basePosition.minus( tapeNode.basePositionProperty.get() );
+          tapeNode.tipPositionProperty.set( tapeNode.tipPositionProperty.get().minus( difference ) );
         }
       } );
 
-      this.addChild( measuringTapeNode );
+      this.addChild( tapeNode );
     }
 
     if ( phet.chipper.queryParameters.dev ) {
@@ -221,6 +232,23 @@ class GravityAndOrbitsSceneView extends Rectangle {
     } );
     scaleControl.left = scaleControl.width / 2;
     this.addChild( scaleControl );
+
+    // Keyboard traversal order within this scene's play area: each draggable body immediately followed by its own
+    // velocity vector (so they read together), then the measuring tape. The trailing null places the remaining
+    // interactive content (zoom control, return-objects button, time counter) in default (rendering) order.
+    const pdomOrder: Array<BodyNode | DraggableVectorNode | MeasuringTapeNode | null> = [];
+    for ( let i = 0; i < bodyNodes.length; i++ ) {
+      pdomOrder.push( bodyNodes[ i ] );
+      const velocityVectorNode = velocityVectorNodes[ i ];
+      if ( velocityVectorNode ) {
+        pdomOrder.push( velocityVectorNode );
+      }
+    }
+    if ( measuringTapeNode ) {
+      pdomOrder.push( measuringTapeNode );
+    }
+    pdomOrder.push( null );
+    this.pdomOrder = pdomOrder;
   }
 }
 
